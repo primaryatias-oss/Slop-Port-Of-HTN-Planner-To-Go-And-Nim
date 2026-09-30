@@ -1,0 +1,5 @@
+// (:include ignored)
+(:include // path follows
+ "Base.domain" // closing follows
+)
+(:domain Root top_level_domain (:method (run) top_level_method (ready () ((!act "(:include")))))// (:include also ignored)

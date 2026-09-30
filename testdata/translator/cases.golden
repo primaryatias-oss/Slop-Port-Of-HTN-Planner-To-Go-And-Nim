@@ -1,0 +1,900 @@
+case --check testdata/translator/cases/any_bare.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/any_bare.domain(3,32): error: Unknown variable 'any' used by primitive task 'capture'.
+htn-translator: check failed for 'testdata/translator/cases/any_bare.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/any_company.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/any_company.domain(3,32): error: Unknown variable 'company_value' used by primitive task 'capture'.
+htn-translator: check failed for 'testdata/translator/cases/any_company.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/any_distinct.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/any_distinct.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/any_singleton.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/any_singleton.domain(3,32): error: Singleton variable '?any_threat' may only be used as a fact argument; it is never bound and cannot be consumed by primitive task 'capture'.
+testdata/translator/cases/any_singleton.domain(3,32): error: Unknown variable 'any_threat' used by primitive task 'capture'.
+htn-translator: check failed for 'testdata/translator/cases/any_singleton.domain' with 2 error(s).
+--- end
+case --check testdata/translator/cases/arith_in_call_bind.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/arith_in_call_bind.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/arith_in_fact.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/arith_in_fact.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/arith_modulo_float.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/arith_modulo_float.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/axiom_arity.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/axiom_arity.domain(1,88): error: Axiom call 'a' cannot be resolved at link time: no overload accepts 2 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/axiom_arity.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/axiom_cycle.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/axiom_cycle.domain(1,64): error: Cyclic axiom dependency: a/0 -> a/1 -> a/0
+htn-translator: check failed for 'testdata/translator/cases/axiom_cycle.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/axiom_duplicate.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/axiom_duplicate.domain(1,87): error: Duplicate Axiom declaration 'Bad::a/1'
+htn-translator: check failed for 'testdata/translator/cases/axiom_duplicate.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/axiom_missing.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/axiom_missing.domain(1,86): error: Axiom call 'missing' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/axiom_missing.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/axiom_overloads_good.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/axiom_overloads_good.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/axiom_qualified.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/axiom_qualified.domain(1,81): error: Axiom call 'Bad::a' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/axiom_qualified.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/broken_method.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/broken_method.domain(1,64): error: Expected compiler branch
+htn-translator: check failed for 'testdata/translator/cases/broken_method.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/call_unbound_output.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/call_unbound_output.domain(1,87): error: Unknown variable 'y' used by call expression 'f'.
+htn-translator: check failed for 'testdata/translator/cases/call_unbound_output.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/comment_eof_1.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/comment_eof_1.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/comment_eof_2.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/comment_eof_2.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/comment_eof_3.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/comment_eof_3.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/comment_eof_4.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/comment_eof_4.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/comment_only.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/comment_only.domain(1,13): error: Missing :domain form
+htn-translator: check failed for 'testdata/translator/cases/comment_only.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/declarations_any_order.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/declarations_any_order.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/empty.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/empty.domain(1,1): error: Missing :domain form
+htn-translator: check failed for 'testdata/translator/cases/empty.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/extra_form.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/extra_form.domain(2,1): error: Unexpected source after compiler domain
+htn-translator: check failed for 'testdata/translator/cases/extra_form.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_bad_end.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_bad_end.domain(2,27): error: Expected ')' after :include path
+htn-translator: check failed for 'testdata/translator/cases/include_bad_end.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_bad_path.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_bad_path.domain(2,13): error: Expected quoted path after :include
+htn-translator: check failed for 'testdata/translator/cases/include_bad_path.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_comments.domain
+exit 0
+--- stdout
+htn-translator: 'testdata/translator/cases/include_comments.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check testdata/translator/cases/include_cycle_root.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_cycle_child.domain(2,2): error: Circular domain dependency: /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_root.domain -> /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_child.domain -> /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_root.domain
+htn-translator: check failed for 'testdata/translator/cases/include_cycle_root.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_empty_path.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_empty_path.domain(2,13): error: Expected non-empty :include path
+htn-translator: check failed for 'testdata/translator/cases/include_empty_path.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_malformed_root.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_malformed_child.domain(2,20): error: Character [$] not recognized
+htn-translator: check failed for 'testdata/translator/cases/include_malformed_root.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_misplaced.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_misplaced.domain(2,3): error: :include directives are only allowed before :domain
+htn-translator: check failed for 'testdata/translator/cases/include_misplaced.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_missing_root.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_missing_child.domain(2,2): error: Could not read included domain 'testdata/translator/cases/__htn_missing_diagnostic_fixture__.domain'
+htn-translator: check failed for 'testdata/translator/cases/include_missing_root.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/include_unterminated.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/include_unterminated.domain(2,13): error: Unterminated :include path
+htn-translator: check failed for 'testdata/translator/cases/include_unterminated.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/incomplete_1.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/incomplete_1.domain(1,83): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/incomplete_1.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/incomplete_2.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/incomplete_2.domain(1,81): error: Incomplete compiler syntax
+htn-translator: check failed for 'testdata/translator/cases/incomplete_2.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/incomplete_3.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/incomplete_3.domain(1,79): error: Incomplete compiler syntax
+htn-translator: check failed for 'testdata/translator/cases/incomplete_3.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/independent_syntax_errors.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/independent_syntax_errors.domain(2,26): error: Expected and, or or alt condition body
+testdata/translator/cases/independent_syntax_errors.domain(3,35): error: Expected compiler branch
+htn-translator: check failed for 'testdata/translator/cases/independent_syntax_errors.domain' with 2 error(s).
+--- end
+case --check testdata/translator/cases/invalid_axiom_parameter.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/invalid_axiom_parameter.domain(2,16): error: Axiom 'bad' parameter '?value' must use an inp_, out_ or io_ prefix
+htn-translator: check failed for 'testdata/translator/cases/invalid_axiom_parameter.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/invalid_method_signature.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/invalid_method_signature.domain(2,17): error: Method 'run' parameter '?out_target' must use the inp_ prefix
+htn-translator: check failed for 'testdata/translator/cases/invalid_method_signature.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/invalid_parameter.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/invalid_parameter.domain(3,19): error: Method 'child' parameter '?value' must use the inp_ prefix
+htn-translator: check failed for 'testdata/translator/cases/invalid_parameter.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_float_bounds.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_float_bounds.domain(2,52): error: Number out of bounds
+htn-translator: check failed for 'testdata/translator/cases/lex_float_bounds.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_float_denormal.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_float_denormal.domain(2,52): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/lex_float_denormal.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_float_underflow.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_float_underflow.domain(2,52): error: Number out of bounds
+htn-translator: check failed for 'testdata/translator/cases/lex_float_underflow.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_float_underflow_zero.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_float_underflow_zero.domain(2,52): error: Number out of bounds
+htn-translator: check failed for 'testdata/translator/cases/lex_float_underflow_zero.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_float_zero.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_float_zero.domain(2,52): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/lex_float_zero.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_int_bounds.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_int_bounds.domain(2,52): error: Number out of bounds
+htn-translator: check failed for 'testdata/translator/cases/lex_int_bounds.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_int_max.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_int_max.domain(2,52): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/lex_int_max.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_int_overflow.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_int_overflow.domain(2,52): error: Number out of bounds
+htn-translator: check failed for 'testdata/translator/cases/lex_int_overflow.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_unclosed_string.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_unclosed_string.domain(2,61): error: Character '"' could not be found at end of the string
+htn-translator: check failed for 'testdata/translator/cases/lex_unclosed_string.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lex_unrecognized.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lex_unrecognized.domain(2,52): error: Character [$] not recognized
+htn-translator: check failed for 'testdata/translator/cases/lex_unrecognized.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/lexer_error_location.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/lexer_error_location.domain(2,52): error: Character [$] not recognized
+htn-translator: check failed for 'testdata/translator/cases/lexer_error_location.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/overload_arity.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/overload_arity.domain(1,70): error: Compound method call 'work' cannot be resolved at link time: no overload accepts 2 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/overload_arity.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/overload_deferred.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/overload_deferred.domain(1,70): error: Deferred method call 'work' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/overload_deferred.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/overload_duplicate.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/overload_duplicate.domain(1,64): error: Duplicate Method declaration 'Bad::run/0'
+htn-translator: check failed for 'testdata/translator/cases/overload_duplicate.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/overload_qualified.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/overload_qualified.domain(1,70): error: Compound method call 'Bad::work' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: check failed for 'testdata/translator/cases/overload_qualified.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/parser_arith_arity.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_arith_arity.domain(1,44): error: Invalid arithmetic expression arity
+htn-translator: check failed for 'testdata/translator/cases/parser_arith_arity.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/parser_axiom_task.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_axiom_task.domain(1,44): error: '#' is reserved for axiom calls; use '&' for deferred method calls
+htn-translator: check failed for 'testdata/translator/cases/parser_axiom_task.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/parser_incomplete.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_incomplete.domain(1,17): error: Incomplete compiler syntax
+htn-translator: check failed for 'testdata/translator/cases/parser_incomplete.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/parser_unclosed.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_unclosed.domain(1,10): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/parser_unclosed.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/parser_valid_minimal.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_valid_minimal.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'testdata/translator/cases/parser_valid_minimal.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/unclosed_domain.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/unclosed_domain.domain(1,15): error: Unclosed compiler syntax list
+htn-translator: check failed for 'testdata/translator/cases/unclosed_domain.domain' with 1 error(s).
+--- end
+case --check testdata/translator/cases/unknown_declaration.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/unknown_declaration.domain(1,32): error: Unknown compiler declaration
+htn-translator: check failed for 'testdata/translator/cases/unknown_declaration.domain' with 1 error(s).
+--- end
+case testdata/translator/cases/declarations_any_order.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'UnorderedDeclarations' (1 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/declarations_any_order.generated.<ext>
+--- stderr
+--- end
+case testdata/translator/cases/any_distinct.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'AnySingletonGenerated' (1 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/any_distinct.generated.<ext>
+--- stderr
+--- end
+case testdata/translator/cases/axiom_overloads_good.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'Good' (1 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/axiom_overloads_good.generated.<ext>
+--- stderr
+--- end
+case testdata/translator/cases/arith_in_fact.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 5
+--- stdout
+--- stderr
+htn-translator: arith_in_fact.domain(1,80): error: Arithmetic expression '(+ 1 2)' cannot be used in this generated value context
+--- end
+case testdata/translator/cases/arith_in_call_bind.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'Arith' (1 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/arith_in_call_bind.generated.<ext>
+--- stderr
+--- end
+case testdata/translator/cases/arith_modulo_float.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'Arith' (1 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/arith_modulo_float.generated.<ext>
+--- stderr
+--- end
+case testdata/translator/cases/call_unbound_output.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/call_unbound_output.domain(1,87): error: Unknown variable 'y' used by call expression 'f'.
+htn-translator: Loading/linking failed for 'testdata/translator/cases/call_unbound_output.domain'.
+--- end
+case testdata/translator/cases/parser_valid_minimal.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/parser_valid_minimal.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: Loading/linking failed for 'testdata/translator/cases/parser_valid_minimal.domain'.
+--- end
+case testdata/translator/cases/include_comments.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+exit 0
+--- stdout
+Translated domain 'Root' (2 linked source file(s)).
+  Entry point: CreateCaseHTN
+  Backtracking: fixed-with-overflow (capacity 32)
+  Call frames: fixed capacity 8192
+  Runtime backtracking support: enabled
+  Output: $OUT/include_comments.generated.<ext>
+--- stderr
+--- end
+case --check Domains/AAACombatNPC.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/AAACombatNPC.domain' compiled successfully (6 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/BuiltinComparisonsDemo.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/BuiltinComparisonsDemo.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/EliteNinja.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/EliteNinja.domain' compiled successfully (3 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Grunt.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Grunt.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/NormalNinja.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/NormalNinja.domain' compiled successfully (3 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/RuntimeBacktrackingDemo.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/RuntimeBacktrackingDemo.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Wanderer.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Wanderer.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/include_demo.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/include_demo.domain' compiled successfully (4 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Includes/EnemyBase.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/EnemyBase.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/EnemyBase.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/Ninja.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/Ninja.domain(3,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/Ninja.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/aaa_combat.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/aaa_combat.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/aaa_combat.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/aaa_idle.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/aaa_idle.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/aaa_idle.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/aaa_investigation.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/aaa_investigation.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/aaa_investigation.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/aaa_orders.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/aaa_orders.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/aaa_orders.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/aaa_search.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/aaa_search.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/aaa_search.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/axiom_overload_base.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/axiom_overload_base.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/axiom_overload_base.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/combat_reactions.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/combat_reactions.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/combat_reactions.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/movement2.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/movement2.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/movement2.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/navigation_support.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/navigation_support.domain(3,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/navigation_support.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/overload_base.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/overload_base.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/overload_base.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/perception_common.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/perception_common.domain(1,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/perception_common.domain' with 1 error(s).
+--- end
+case --check Domains/Includes/react_to_events.domain
+exit 4
+--- stdout
+--- stderr
+Domains/Includes/react_to_events.domain(3,1): error: Root domain must be top_level_domain
+htn-translator: check failed for 'Domains/Includes/react_to_events.domain' with 1 error(s).
+--- end
+case --check Domains/Test/atom_list_demo.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/atom_list_demo.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/axiom_assignments.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/axiom_assignments.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/axiom_overloads.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/axiom_overloads.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/backtracking_policy.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/backtracking_policy.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/callterms.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/callterms.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/complex_scenario.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/complex_scenario.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/hierarchical_backtracking.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/hierarchical_backtracking.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/human.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/human.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/method_overloads.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/method_overloads.domain' compiled successfully (2 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/missing_callterms.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/missing_callterms.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/nested_axiom_choices.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/nested_axiom_choices.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/nested_calls.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/nested_calls.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/nested_operator_calls.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/nested_operator_calls.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/numeric_expressions.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/numeric_expressions.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/recursion_dispatch.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/recursion_dispatch.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check Domains/Test/worldstate_lookup_scenarios.domain
+exit 0
+--- stdout
+htn-translator: 'Domains/Test/worldstate_lookup_scenarios.domain' compiled successfully (1 linked source file(s)).
+--- stderr
+--- end
+case --check HTNDiagnosticTests/DiagnosticParserRecovery.domain
+exit 4
+--- stdout
+--- stderr
+HTNDiagnosticTests/DiagnosticParserRecovery.domain(3,5): error: Expected compiler constant
+htn-translator: check failed for 'HTNDiagnosticTests/DiagnosticParserRecovery.domain' with 1 error(s).
+--- end
+case --check HTNDiagnosticTests/DiagnosticRootWithInclude.domain
+exit 4
+--- stdout
+--- stderr
+HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain(6,26): error: Unknown variable 'missing_from_include' used by primitive task 'attack'.
+HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain(7,24): error: Unknown variable 'another_missing_from_include' used by primitive task 'move'.
+htn-translator: check failed for 'HTNDiagnosticTests/DiagnosticRootWithInclude.domain' with 2 error(s).
+--- end
+case --check HTNDiagnosticTests/DiagnosticSemanticErrors.domain
+exit 4
+--- stdout
+--- stderr
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(6,26): error: Unknown variable 'missing_target' used by primitive task 'attack'.
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(7,24): error: Unknown variable 'missing_destination' used by primitive task 'move'.
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(8,17): error: Compound method call 'method_that_does_not_exist' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: check failed for 'HTNDiagnosticTests/DiagnosticSemanticErrors.domain' with 3 error(s).
+--- end
+case --check HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain
+exit 4
+--- stdout
+--- stderr
+HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain(1,1): error: Root domain must be top_level_domain
+HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain(6,26): error: Unknown variable 'missing_from_include' used by primitive task 'attack'.
+HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain(7,24): error: Unknown variable 'another_missing_from_include' used by primitive task 'move'.
+htn-translator: check failed for 'HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain' with 3 error(s).
+--- end
+case --check testdata/translator/cases/does_not_exist.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/does_not_exist.domain(1,1): error: Could not read included domain 'testdata/translator/cases/does_not_exist.domain'
+htn-translator: check failed for 'testdata/translator/cases/does_not_exist.domain' with 1 error(s).
+--- end
+case 
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+--- end
+case Domains/Test/human.domain
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-policy=bogus
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+htn-translator: unknown backtracking policy 'bogus'.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-capacity=0
+exit 1
+--- stdout
+--- stderr
+htn-translator: backtracking capacity must be a positive integer.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --call-frame-capacity=x
+exit 1
+--- stdout
+--- stderr
+htn-translator: call frame capacity must be a positive integer.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --runtime-backtracking-support=maybe
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+htn-translator: unknown runtime backtracking support mode 'maybe'.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --frobnicate
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+htn-translator: unknown option '--frobnicate'.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT $OUT
+exit 1
+--- stdout
+htn-translator <domain-file> <entry-point> [output-directory] [options]
+htn-translator --check <domain-file>
+Options:
+  --backtracking-policy=fixed-with-overflow|fixed-capacity (default: fixed-with-overflow)
+  --backtracking-capacity=<positive integer> (default: 32)
+  --call-frame-capacity=<positive integer> (default: 8192)
+  --runtime-backtracking-support=disabled|enabled (default: disabled)
+Example: htn-translator Domains/Test/human.domain CreateHumanHTN Generated
+--- stderr
+htn-translator: more than one output directory was specified.
+--- end
+case Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-policy=fixed-capacity --backtracking-capacity=7 --call-frame-capacity=99
+exit 0
+--- stdout
+Translated domain 'Human' (1 linked source file(s)).
+  Entry point: CreateHumanHTN
+  Backtracking: fixed-capacity (capacity 7)
+  Call frames: fixed capacity 99
+  Runtime backtracking support: disabled
+  Output: $OUT/human.generated.<ext>
+--- stderr
+--- end
+case HTNDiagnosticTests/DiagnosticSemanticErrors.domain CreateBadHTN $OUT
+exit 4
+--- stdout
+--- stderr
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(6,26): error: Unknown variable 'missing_target' used by primitive task 'attack'.
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(7,24): error: Unknown variable 'missing_destination' used by primitive task 'move'.
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain(8,17): error: Compound method call 'method_that_does_not_exist' cannot be resolved at link time: no overload accepts 1 argument(s)
+htn-translator: Loading/linking failed for 'HTNDiagnosticTests/DiagnosticSemanticErrors.domain'.
+--- end

@@ -1,0 +1,4 @@
+(:domain InvalidParameter top_level_domain
+  (:method (run) top_level_method (start () ((child 1))))
+  (:method (child ?value) (body () ((!act ?value))))
+)

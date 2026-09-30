@@ -1,0 +1,4 @@
+(:domain BrokenCompiler top_level_domain
+  (:axiom (broken_axiom) (unknown_condition))
+  (:method (run) top_level_method (broken_branch))
+)

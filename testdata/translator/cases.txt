@@ -1,0 +1,124 @@
+# htn-translator command lines; see tools/translator/make_goldens.py
+--check testdata/translator/cases/any_bare.domain
+--check testdata/translator/cases/any_company.domain
+--check testdata/translator/cases/any_distinct.domain
+--check testdata/translator/cases/any_singleton.domain
+--check testdata/translator/cases/arith_in_call_bind.domain
+--check testdata/translator/cases/arith_in_fact.domain
+--check testdata/translator/cases/arith_modulo_float.domain
+--check testdata/translator/cases/axiom_arity.domain
+--check testdata/translator/cases/axiom_cycle.domain
+--check testdata/translator/cases/axiom_duplicate.domain
+--check testdata/translator/cases/axiom_missing.domain
+--check testdata/translator/cases/axiom_overloads_good.domain
+--check testdata/translator/cases/axiom_qualified.domain
+--check testdata/translator/cases/broken_method.domain
+--check testdata/translator/cases/call_unbound_output.domain
+--check testdata/translator/cases/comment_eof_1.domain
+--check testdata/translator/cases/comment_eof_2.domain
+--check testdata/translator/cases/comment_eof_3.domain
+--check testdata/translator/cases/comment_eof_4.domain
+--check testdata/translator/cases/comment_only.domain
+--check testdata/translator/cases/declarations_any_order.domain
+--check testdata/translator/cases/empty.domain
+--check testdata/translator/cases/extra_form.domain
+--check testdata/translator/cases/include_bad_end.domain
+--check testdata/translator/cases/include_bad_path.domain
+--check testdata/translator/cases/include_comments.domain
+--check testdata/translator/cases/include_cycle_root.domain
+--check testdata/translator/cases/include_empty_path.domain
+--check testdata/translator/cases/include_malformed_root.domain
+--check testdata/translator/cases/include_misplaced.domain
+--check testdata/translator/cases/include_missing_root.domain
+--check testdata/translator/cases/include_unterminated.domain
+--check testdata/translator/cases/incomplete_1.domain
+--check testdata/translator/cases/incomplete_2.domain
+--check testdata/translator/cases/incomplete_3.domain
+--check testdata/translator/cases/independent_syntax_errors.domain
+--check testdata/translator/cases/invalid_axiom_parameter.domain
+--check testdata/translator/cases/invalid_method_signature.domain
+--check testdata/translator/cases/invalid_parameter.domain
+--check testdata/translator/cases/lex_float_bounds.domain
+--check testdata/translator/cases/lex_float_denormal.domain
+--check testdata/translator/cases/lex_float_underflow.domain
+--check testdata/translator/cases/lex_float_underflow_zero.domain
+--check testdata/translator/cases/lex_float_zero.domain
+--check testdata/translator/cases/lex_int_bounds.domain
+--check testdata/translator/cases/lex_int_max.domain
+--check testdata/translator/cases/lex_int_overflow.domain
+--check testdata/translator/cases/lex_unclosed_string.domain
+--check testdata/translator/cases/lex_unrecognized.domain
+--check testdata/translator/cases/lexer_error_location.domain
+--check testdata/translator/cases/overload_arity.domain
+--check testdata/translator/cases/overload_deferred.domain
+--check testdata/translator/cases/overload_duplicate.domain
+--check testdata/translator/cases/overload_qualified.domain
+--check testdata/translator/cases/parser_arith_arity.domain
+--check testdata/translator/cases/parser_axiom_task.domain
+--check testdata/translator/cases/parser_incomplete.domain
+--check testdata/translator/cases/parser_unclosed.domain
+--check testdata/translator/cases/parser_valid_minimal.domain
+--check testdata/translator/cases/unclosed_domain.domain
+--check testdata/translator/cases/unknown_declaration.domain
+testdata/translator/cases/declarations_any_order.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/any_distinct.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/axiom_overloads_good.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/arith_in_fact.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/arith_in_call_bind.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/arith_modulo_float.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/call_unbound_output.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/parser_valid_minimal.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+testdata/translator/cases/include_comments.domain CreateCaseHTN $OUT --runtime-backtracking-support=enabled
+--check Domains/AAACombatNPC.domain
+--check Domains/BuiltinComparisonsDemo.domain
+--check Domains/EliteNinja.domain
+--check Domains/Grunt.domain
+--check Domains/NormalNinja.domain
+--check Domains/RuntimeBacktrackingDemo.domain
+--check Domains/Wanderer.domain
+--check Domains/include_demo.domain
+--check Domains/Includes/EnemyBase.domain
+--check Domains/Includes/Ninja.domain
+--check Domains/Includes/aaa_combat.domain
+--check Domains/Includes/aaa_idle.domain
+--check Domains/Includes/aaa_investigation.domain
+--check Domains/Includes/aaa_orders.domain
+--check Domains/Includes/aaa_search.domain
+--check Domains/Includes/axiom_overload_base.domain
+--check Domains/Includes/combat_reactions.domain
+--check Domains/Includes/movement2.domain
+--check Domains/Includes/navigation_support.domain
+--check Domains/Includes/overload_base.domain
+--check Domains/Includes/perception_common.domain
+--check Domains/Includes/react_to_events.domain
+--check Domains/Test/atom_list_demo.domain
+--check Domains/Test/axiom_assignments.domain
+--check Domains/Test/axiom_overloads.domain
+--check Domains/Test/backtracking_policy.domain
+--check Domains/Test/callterms.domain
+--check Domains/Test/complex_scenario.domain
+--check Domains/Test/hierarchical_backtracking.domain
+--check Domains/Test/human.domain
+--check Domains/Test/method_overloads.domain
+--check Domains/Test/missing_callterms.domain
+--check Domains/Test/nested_axiom_choices.domain
+--check Domains/Test/nested_calls.domain
+--check Domains/Test/nested_operator_calls.domain
+--check Domains/Test/numeric_expressions.domain
+--check Domains/Test/recursion_dispatch.domain
+--check Domains/Test/worldstate_lookup_scenarios.domain
+--check HTNDiagnosticTests/DiagnosticParserRecovery.domain
+--check HTNDiagnosticTests/DiagnosticRootWithInclude.domain
+--check HTNDiagnosticTests/DiagnosticSemanticErrors.domain
+--check HTNDiagnosticTests/Includes/DiagnosticBrokenInclude.domain
+--check testdata/translator/cases/does_not_exist.domain
+
+Domains/Test/human.domain
+Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-policy=bogus
+Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-capacity=0
+Domains/Test/human.domain CreateHumanHTN $OUT --call-frame-capacity=x
+Domains/Test/human.domain CreateHumanHTN $OUT --runtime-backtracking-support=maybe
+Domains/Test/human.domain CreateHumanHTN $OUT --frobnicate
+Domains/Test/human.domain CreateHumanHTN $OUT $OUT
+Domains/Test/human.domain CreateHumanHTN $OUT --backtracking-policy=fixed-capacity --backtracking-capacity=7 --call-frame-capacity=99
+HTNDiagnosticTests/DiagnosticSemanticErrors.domain CreateBadHTN $OUT

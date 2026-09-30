@@ -7,6 +7,7 @@ package lexer
 import (
 	"fmt"
 	"strconv"
+	"strings"
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/atom"
 )
@@ -254,8 +255,10 @@ func (c *Context) lexNumber() bool {
 	var value atom.Atom
 	ok := true
 	if isFloat {
+		// std::from_chars reports result_out_of_range for overflow and for
+		// non-zero literals that underflow to zero.
 		f, err := strconv.ParseFloat(lexeme, 32)
-		if err != nil {
+		if err != nil || (f == 0 && strings.ContainsAny(lexeme, "123456789")) {
 			ok = false
 		} else {
 			value = atom.NewFloat(float32(f))
