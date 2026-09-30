@@ -623,6 +623,19 @@ void RunFile(const std::string& inFile)
                 Fail(inFile, LineNumber, "daemon on|off");
             (void)S.Hook->GetCallTermBindingContext().SetDaemon("agent", Argument == "on" ? &S.Agent : nullptr);
         }
+        else if (Command == "rebind")
+        {
+            const std::vector<std::string> Parts = Split(Argument, ' ');
+            if (Parts.size() != 2u)
+                Fail(inFile, LineNumber, "rebind <name> <int>");
+            const std::string Name = Parts[0];
+            const int32 Value = static_cast<int32>(std::stol(Parts[1]));
+            S.Registry->Bind(Name, [Name, Value](const HTNCallTermArguments& inArguments) -> HTNAtomOwner {
+                HTNAtomOwner Result(Value);
+                Trace(Name, inArguments, Result);
+                return Result;
+            });
+        }
         else if (Command == "call")
         {
             Emit("call " + Argument);

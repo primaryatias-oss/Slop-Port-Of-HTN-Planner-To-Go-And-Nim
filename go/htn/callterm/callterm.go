@@ -174,7 +174,18 @@ func (r *Registry) Bind(id string, fn func(args *Arguments) atom.Atom) {
 	if fn != nil {
 		wrapped = func(_ any, args *Arguments) atom.Atom { return fn(args) }
 	}
-	r.entries[id] = &Entry{Name: id, Function: wrapped, DaemonSlot: -1}
+	r.store(id, Entry{Name: id, Function: wrapped, DaemonSlot: -1})
+}
+
+// store installs an entry. Rebinding replaces the existing entry in place, so
+// callterm slots already resolved by generated planners observe the new
+// binding (the original keeps registry entries at stable addresses).
+func (r *Registry) store(id string, entry Entry) {
+	if existing := r.entries[id]; existing != nil {
+		*existing = entry
+		return
+	}
+	r.entries[id] = &entry
 }
 
 // BindWithSignature registers a callterm whose arguments are validated against
@@ -189,7 +200,7 @@ func (r *Registry) BindWithSignature(id string, fn func(args *Arguments) atom.At
 			return fn(args)
 		}
 	}
-	r.entries[id] = &Entry{Name: id, Function: wrapped, Signature: signature, HasSignature: true, DaemonSlot: -1}
+	r.store(id, Entry{Name: id, Function: wrapped, Signature: signature, HasSignature: true, DaemonSlot: -1})
 }
 
 // BindMember registers a stateful callterm whose daemon instance is supplied
@@ -213,8 +224,8 @@ func (r *Registry) BindMember(id, daemonID string, fn Function, signature Signat
 			return fn(daemon, args)
 		}
 	}
-	r.entries[id] = &Entry{Name: id, Function: wrapped, Signature: signature, HasSignature: true,
-		DaemonSlot: slot, DaemonID: daemonID}
+	r.store(id, Entry{Name: id, Function: wrapped, Signature: signature, HasSignature: true,
+		DaemonSlot: slot, DaemonID: daemonID})
 	return true
 }
 

@@ -1,0 +1,275 @@
+# Hand-written integration scenarios: callterm error policies and binding
+# kinds, daemons, typed signatures, world-state reloads and storage reuse.
+
+scenario missing_callterms_unregistered_report
+callterms none
+planner MissingCallterms
+policy report
+call condition
+call binding
+call primitive
+call compound
+call nested
+call deferred
+resolve
+call unused
+end
+
+scenario missing_callterms_unregistered_silent
+callterms none
+planner MissingCallterms
+policy silent
+call condition
+call binding
+call nested
+end
+
+scenario missing_callterms_unregistered_unset
+callterms none
+planner MissingCallterms
+policy unset
+call condition
+call binding
+call nested
+end
+
+scenario missing_instance_then_recovery
+callterms standard -probe member:probe
+planner MissingCallterms
+policy report
+call condition
+call binding
+daemon on
+call condition
+call binding
+call nested
+call deferred
+resolve
+daemon off
+call primitive
+end
+
+scenario missing_binding
+callterms standard -probe empty:probe
+planner MissingCallterms
+policy report
+daemon on
+call condition
+call binding
+call primitive
+call nested
+end
+
+scenario missing_binding_deferred_runtime
+callterms none
+planner MissingCallterms
+policy report
+call deferred
+resolve
+raw deferred
+rawdeferred nested
+end
+
+scenario typed_signatures_nested_calls
+callterms standard -inc -add -mul typed:inc:int typed:add:int,int typed:mul:int,float
+planner NestedCalls
+policy report
+worldstate WorldStates/Test/callterms.worldstate
+call test_nested_calls
+end
+
+scenario typed_signature_count_mismatch
+callterms standard -inc typed:inc:int,int
+planner NestedCalls
+policy report
+worldstate WorldStates/Test/callterms.worldstate
+call test_nested_calls
+raw test_nested_calls
+end
+
+scenario typed_signature_any
+callterms standard -identity typed:identity:any
+planner NestedOperatorCalls
+policy report
+fact active_plan 1 moving_to_seen_entity 42 10
+call operators
+call valid_both
+call short_circuit
+call missing_right
+end
+
+scenario nested_operator_missing_member
+callterms standard member:missing_distance_callterm
+planner NestedOperatorCalls
+policy report
+fact active_plan 1 moving_to_seen_entity 42 10
+call missing_right
+call missing_arithmetic
+call missing_deep
+daemon on
+call missing_right
+call missing_arithmetic
+call missing_deep
+call missing_task_arithmetic
+end
+
+scenario callterms_without_daemon
+callterms standard
+planner Callterms
+policy report
+worldstate WorldStates/Test/callterms.worldstate
+call callterm_creates_fact_visible_immediately
+call callterm_world_state_mutation_survives_backtracking
+call test_callterms
+end
+
+scenario worldstate_reload_invalidates_fact_cache
+planner Human
+worldstate WorldStates/Test/human.worldstate
+call behave
+worldstate WorldStates/Test/human_axiom_backtracking.worldstate
+call behave
+clear_facts
+call behave
+fact item "banana"
+fact edible "banana"
+fact type "banana" "fruit"
+call behave
+remove_fact is_old 1 0
+call behave
+worldstate WorldStates/Test/human.worldstate
+raw behave
+call behave_upper_body
+remove_fact is_eating 1 0
+call behave_upper_body
+fact is_eating "sandwich"
+call behave_upper_body
+end
+
+scenario recursion_capacity_then_reuse
+planner RecursionDispatch
+fact depth 5000
+raw non_tail
+remove_fact depth 1 0
+fact depth 2
+raw non_tail
+remove_fact depth 1 0
+fact depth 5000
+raw non_tail
+call non_tail
+remove_fact depth 1 0
+fact depth 0
+raw non_tail
+call non_tail
+end
+
+scenario recursion_small_frames
+planner RecursionDispatchSmallFrames
+fact depth 3
+raw non_tail
+raw mutual
+raw deep_failure
+remove_fact depth 1 0
+fact depth 6
+raw non_tail
+raw mutual
+raw deep_failure
+remove_fact depth 1 0
+fact depth 7
+raw non_tail
+raw mutual
+raw deep_failure
+end
+
+scenario policy_capacity_reuse
+planner BacktrackingPolicyFixedSmall
+raw run
+raw run_small
+call run
+call always_fail
+call run_small
+end
+
+scenario hierarchical_modes
+planner HierarchicalBacktrackingRT
+worldstate WorldStates/Test/hierarchical_backtracking_no_combat.worldstate
+mode none
+call validate_fact_backtracking
+call validate_axiom_backtracking
+call validate_parent_guard
+mode facts_and_axioms
+call validate_fact_backtracking
+call validate_axiom_backtracking
+call validate_parent_guard
+mode branches
+call validate_fact_backtracking
+call validate_axiom_backtracking
+call validate_parent_guard
+mode all
+call validate_fact_backtracking
+call validate_axiom_backtracking
+call validate_parent_guard
+end
+
+scenario top_level_argument_types
+planner Callterms
+worldstate WorldStates/Test/callterms.worldstate
+call echo_top_level true false 3
+call echo_top_level "text with spaces" 4 2.5
+call echo_top_level (a (b "c") 1.0) (1) sym
+call echo_top_level 2147483647 0 0.0
+call echo_top_level
+raw echo_top_level 1 2
+rawdeferred echo_top_level 1 2 3
+end
+
+scenario wanderer_deferred_expansion
+planner Wanderer
+fact wanderer_location (2 4)
+call run
+resolve
+remove_fact wanderer_location 1 0
+fact wanderer_location (3 5)
+call run
+resolve
+remove_fact wanderer_location 1 0
+fact wanderer_location (3 4)
+call run
+resolve
+rawdeferred talk_about_destination
+end
+
+scenario method_overload_deferred_resolution
+planner MethodOverloads
+call deferred
+resolve
+call deferred 23
+resolve
+call defer_mixed
+resolve
+call mixed
+call mixed 9
+resolve
+end
+
+scenario rebinding_after_preparation
+planner NestedCalls
+worldstate WorldStates/Test/callterms.worldstate
+call test_nested_calls
+rebind inc 100
+call test_nested_calls
+raw test_nested_calls
+rebind add 1
+call test_nested_calls
+end
+
+scenario binding_added_after_preparation
+callterms standard -probe
+planner MissingCallterms
+policy report
+call condition
+rebind probe 1
+call condition
+raw condition
+call binding
+end

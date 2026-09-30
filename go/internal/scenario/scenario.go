@@ -507,7 +507,7 @@ func (r *runner) runFile(path string) (err error) {
 		}
 		if command == "scenario" {
 			finish()
-			current = &scenario{spec: []string{"standard"}, mode: planner.BacktrackingAll, policy: callterm.PolicyFailSilently}
+			current = &scenario{spec: []string{"standard"}, mode: planner.BacktrackingAll, policy: callterm.PolicyFailSilently, agent: agentDaemon{value: 1}}
 			r.emit("scenario " + argument)
 			continue
 		}
@@ -579,6 +579,18 @@ func (r *runner) runFile(path string) (err error) {
 			default:
 				panic(failure{"daemon on|off"})
 			}
+		case "rebind":
+			parts := strings.Split(argument, " ")
+			if len(parts) != 2 {
+				panic(failure{"rebind <name> <int>"})
+			}
+			name := parts[0]
+			value, _ := strconv.ParseInt(parts[1], 10, 32)
+			s.registry.Bind(name, func(args *callterm.Arguments) atom.Atom {
+				result := atom.NewInt(int32(value))
+				r.trace(name, args, result)
+				return result
+			})
 		case "call":
 			r.emit("call " + argument)
 			call, ok := MakeCall(argument)
