@@ -1,0 +1,86 @@
+// Copyright (c) 2026 Jose Antonio Escribano joseantonioescribanoayllon@gmail.com
+
+(:domain NestedOperatorCalls top_level_domain
+    (:method (behave) top_level_method
+        (branch
+            (and
+                (= ?old_position (1.0 0.0 0.0))
+                (= ?new_position (2.0 0.0 0.0))
+                (< (call missing_distance_callterm ?old_position ?new_position) 0.2)
+            )
+            ((!result))
+        )
+    )
+    (:method (missing_right) top_level_method
+        (branch (and (< 0.0 (call missing_distance_callterm))) ((!result))))
+    (:method (missing_arithmetic) top_level_method
+        (branch (and (< (+ 0.0 (call missing_distance_callterm)) 0.2)) ((!result))))
+    (:method (missing_deep) top_level_method
+        (branch (and (< (call identity (call missing_distance_callterm)) 0.2)) ((!result))))
+    (:method (bound_first) top_level_method
+        (branch (and (= ?distance (call missing_distance_callterm)) (< ?distance 0.2)) ((!result))))
+    (:method (two_attempts) top_level_method
+        (first (and (< (call missing_distance_callterm) 0.2)) ((!result)))
+        (second (and (< (call missing_distance_callterm) 0.2)) ((!result))))
+    (:method (valid_left) top_level_method
+        (branch (and (< (call distance) 0.2)) ((!result))))
+    (:method (valid_right) top_level_method
+        (branch (and (< 0.0 (call distance))) ((!result))))
+    (:method (valid_both) top_level_method
+        (branch (and (== (call distance) (call distance))) ((!result))))
+    (:method (valid_bound) top_level_method
+        (branch (and (= ?distance (call distance)) (< ?distance 0.2)) ((!result))))
+    (:method (operators) top_level_method
+        (branch
+            (and
+                (= ?value 3)
+                (< (call identity 2) ?value)
+                (<= ?value (call identity 3))
+                (> (call identity 4) ?value)
+                (>= ?value (call identity 3))
+                (== (call identity ?value) 3)
+                (!= 2 (call identity ?value))
+                (== (+ (call identity 1) 2) 3)
+                (== (- 5 (call identity 2)) 3)
+                (== (* (call identity 2) 3) 6)
+                (== (/ 6 (call identity 2)) 3)
+                (== (% (call identity 7) 4) 3)
+                (== (++ (call identity 2)) 3)
+                (== (-- (call identity 4)) 3)
+                (== (call identity (+ 1 (call identity 2))) 3)
+            )
+            ((!result))
+        )
+    )
+    (:method (short_circuit) top_level_method
+        (branch (and (< (+ false (call missing_distance_callterm)) 0.2)) ((!unexpected)))
+        (fallback () ((!result))))
+    (:method (task_arithmetic) top_level_method
+        (branch () ((!result (+ (call identity 1) (call identity 2))))))
+    (:method (missing_task_arithmetic) top_level_method
+        (branch () ((!result (+ 1 (call missing_distance_callterm))))))
+
+    (:method (continue_move) top_level_method
+        (continue_move_to_seen_entity
+            (and
+                (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)
+                (= ?new_entity_position (call get_entity_position ?entity_id))
+                // keep moving while the distance difference is only 0.2 meters
+                (< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2)
+            )
+            ((!continue))
+        )
+    )
+    (:method (debugger_backtracking) top_level_method
+        (branch
+            (and (candidate ?entity) (< (call identity ?entity) 2))
+            ((!result ?entity))))
+    (:method (debugger_skipped) top_level_method
+        (branch
+            (and (absent_fact) (< (call distance) 0.2))
+            ((!unexpected))))
+    (:method (debugger_assignment) top_level_method
+        (branch
+            (and (= ?value (call identity (+ 1 (call identity 2)))) (== ?value 3))
+            ((!result ?value))))
+)
