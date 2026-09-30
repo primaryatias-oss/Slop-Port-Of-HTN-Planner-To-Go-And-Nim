@@ -1,0 +1,1150 @@
+scenario AtomListDemo/demo
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+raw show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+rawdeferred show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+raw split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+rawdeferred split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+raw split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+rawdeferred split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+raw split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+rawdeferred split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+raw split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+rawdeferred split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+raw split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+rawdeferred split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+raw split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+rawdeferred split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+raw split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+rawdeferred split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+raw split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+rawdeferred split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AtomListDemo/empty
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+raw show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+rawdeferred show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+raw split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+rawdeferred split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+raw split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+rawdeferred split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+raw split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+rawdeferred split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+raw split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+rawdeferred split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+raw split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+rawdeferred split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+raw split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+rawdeferred split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+raw split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+rawdeferred split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+raw split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+rawdeferred split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AtomListDemoRT/demo
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+raw show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+rawdeferred show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+raw split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+rawdeferred split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+raw split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+rawdeferred split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+raw split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+rawdeferred split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+raw split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+rawdeferred split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+raw split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+rawdeferred split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+raw split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+rawdeferred split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+raw split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+rawdeferred split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+raw split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+rawdeferred split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AtomListDemoRT/empty
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+call show_atom_list
+status SUCCEEDED
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+resolve
+exec !print_original (patrol 3 true (10.0 20.0 30.0))
+exec !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+exec !print_removed (patrol true (10.0 20.0 30.0) "return")
+exec !print_element (10.0 20.0 30.0)
+exec !print_size 5
+exec !print_cleared ()
+resolution completed
+raw show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+rawdeferred show_atom_list
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 6
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+call split_list_basic
+status SUCCEEDED
+plan 1
+step !split_result "one" ("two" "three")
+resolve
+exec !split_result "one" ("two" "three")
+resolution completed
+raw split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+rawdeferred split_list_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_result "one" ("two" "three")
+call split_list_single_element
+status SUCCEEDED
+plan 1
+step !split_single_result "only" ()
+resolve
+exec !split_single_result "only" ()
+resolution completed
+raw split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+rawdeferred split_list_single_element
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_single_result "only" ()
+call split_list_empty_fails
+status SUCCEEDED
+plan 1
+step !empty_list_rejected
+resolve
+exec !empty_list_rejected
+resolution completed
+raw split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+rawdeferred split_list_empty_fails
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !empty_list_rejected
+call split_list_bound_outputs
+status SUCCEEDED
+plan 1
+step !bound_outputs_match
+resolve
+exec !bound_outputs_match
+resolution completed
+raw split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+rawdeferred split_list_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !bound_outputs_match
+call split_list_rollback
+status SUCCEEDED
+plan 1
+step !rollback_result "only" ()
+resolve
+exec !rollback_result "only" ()
+resolution completed
+raw split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+rawdeferred split_list_rollback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !rollback_result "only" ()
+call split_list_front_basic
+status SUCCEEDED
+plan 1
+step !split_front_result "one" ("two" "three")
+resolve
+exec !split_front_result "one" ("two" "three")
+resolution completed
+raw split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+rawdeferred split_list_front_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_front_result "one" ("two" "three")
+call split_list_back_basic
+status SUCCEEDED
+plan 1
+step !split_back_result "three" ("one" "two")
+resolve
+exec !split_back_result "three" ("one" "two")
+resolution completed
+raw split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+rawdeferred split_list_back_basic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_result "three" ("one" "two")
+call split_list_back_bound_outputs
+status SUCCEEDED
+plan 1
+step !split_back_bound_outputs_match
+resolve
+exec !split_back_bound_outputs_match
+resolution completed
+raw split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+rawdeferred split_list_back_bound_outputs
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !split_back_bound_outputs_match
+call no_such_method
+status INVALID_CALL
+plan 0
+end

@@ -1,0 +1,1060 @@
+scenario BacktrackingPolicy/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyRT/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyOverflow/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyOverflowRT/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyFixedSmall/empty
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+raw run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+raw run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyFixedSmallRT/empty
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+raw run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+resolve
+resolution completed
+raw run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyFixedEnough/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BacktrackingPolicyFixedEnoughRT/empty
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+resolve
+exec !step "small-one"
+exec !step "small-two"
+resolution completed
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+rawdeferred run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call always_fail
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred always_fail
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+resolve
+exec !step "one"
+exec !step "two"
+exec !step "three"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !step "one"
+step !step "two"
+step !step "three"
+call no_such_method
+status INVALID_CALL
+plan 0
+end

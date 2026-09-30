@@ -1,0 +1,390 @@
+scenario EliteNinja/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario EliteNinja/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario EliteNinjaRT/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario EliteNinjaRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "elite_ninja_attack" 1
+resolve
+exec !attack "elite_ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "elite_ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Grunt/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Grunt/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario GruntRT/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario GruntRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "normal_attack" 1
+resolve
+exec !attack "normal_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !attack "normal_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NormalNinja/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NormalNinja/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NormalNinjaRT/elite_ninja
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NormalNinjaRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !attack "ninja_attack" 1
+resolve
+exec !attack "ninja_attack" 1
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !attack "ninja_attack" 1
+call no_such_method
+status INVALID_CALL
+plan 0
+end

@@ -1,0 +1,918 @@
+scenario MissingCallterms/empty
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+raw binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+rawdeferred binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+raw unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+rawdeferred unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario MissingCallterms/values
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+raw binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+rawdeferred binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+raw unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+rawdeferred unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario MissingCalltermsRT/empty
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+raw binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+rawdeferred binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+raw unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+rawdeferred unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario MissingCalltermsRT/values
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+call condition
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred condition
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call binding
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !unexpected true
+resolve
+exec !unexpected true
+resolution completed
+raw binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+rawdeferred binding
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected true
+call primitive
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred primitive
+trace probe() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call compound
+trace probe() -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred compound
+trace probe() -> true
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !use true
+call nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+plan 1
+step !use true
+resolve
+exec !use true
+resolution completed
+raw nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+rawdeferred nested
+trace probe() -> true
+trace identity(true) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !use true
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> true
+trace identity(true) -> true
+exec !use true
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+resolve
+exec !safe
+resolution completed
+raw unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+rawdeferred unused
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !safe
+call no_such_method
+status INVALID_CALL
+plan 0
+end

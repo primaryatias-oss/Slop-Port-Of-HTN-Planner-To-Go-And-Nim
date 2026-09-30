@@ -1,0 +1,1018 @@
+scenario Callterms/callterms
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+raw echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+rawdeferred echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+raw echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+rawdeferred echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+raw callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+rawdeferred callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+raw callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+rawdeferred callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Callterms/empty
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+raw echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+rawdeferred echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+raw echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+rawdeferred echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+raw callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+rawdeferred callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+raw callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+rawdeferred callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario CalltermsRT/callterms
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+raw echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+rawdeferred echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+raw echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+rawdeferred echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+raw callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+rawdeferred callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+raw callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+rawdeferred callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario CalltermsRT/empty
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+plan 1
+step !top_level_args 7 "leader" guard_post
+resolve
+exec !top_level_args 7 "leader" guard_post
+resolution completed
+raw echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+rawdeferred echo_top_level 7 "leader" guard_post
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 7 "leader" guard_post
+call echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+plan 1
+step !top_level_args 1.5 role (1 2)
+resolve
+exec !top_level_args 1.5 role (1 2)
+resolution completed
+raw echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+rawdeferred echo_top_level 1.5 role (1 2)
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1.5 role (1 2)
+call echo_top_level 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred echo_top_level 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+resolve
+exec !target_available_visible "enemy0"
+resolution completed
+raw callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+rawdeferred callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !target_available_visible "enemy0"
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+resolve
+exec !persisted_target_available "enemy0"
+resolution completed
+raw callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+rawdeferred callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !persisted_target_available "enemy0"
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+resolve
+exec !log "callterms succeeded"
+exec !log 50
+exec !log 1.0
+resolution completed
+raw test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+rawdeferred test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+call no_such_method
+status INVALID_CALL
+plan 0
+end

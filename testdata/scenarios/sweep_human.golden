@@ -1,0 +1,498 @@
+scenario Human/human
+call behave
+status SUCCEEDED
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+resolve
+exec !take "apple"
+exec !peel "apple"
+exec !eat "apple"
+resolution completed
+raw behave
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+rawdeferred behave
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+resolve
+exec !talk "This fruit is very tasty!"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !talk "This fruit is very tasty!"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !talk "This fruit is very tasty!"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Human/axiom_backtracking
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "orange"
+step !eat "orange"
+resolve
+exec !take "orange"
+exec !eat "orange"
+resolution completed
+raw behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+info peak=5 capacity=8192 error=-
+plan 2
+step !take "orange"
+step !eat "orange"
+rawdeferred behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+info peak=5 capacity=8192 error=-
+plan 2
+step !take "orange"
+step !eat "orange"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Human/empty
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+raw behave
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 0
+rawdeferred behave
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 0
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HumanRT/human
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+resolve
+exec !talk "This fruit is very tasty!"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+resolve
+exec !take "apple"
+exec !peel "apple"
+exec !eat "apple"
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+resolve
+exec !talk "This fruit is very tasty!"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+resolve
+exec !talk "This fruit is very tasty!"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+resolve
+exec !take "apple"
+exec !peel "apple"
+exec !eat "apple"
+resolution completed
+raw behave
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+rawdeferred behave
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+resolve
+exec !talk "This fruit is very tasty!"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !talk "This fruit is very tasty!"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !talk "This fruit is very tasty!"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HumanRT/axiom_backtracking
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "orange"
+step !eat "orange"
+resolve
+exec !take "orange"
+exec !eat "orange"
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "orange"
+step !eat "orange"
+resolve
+exec !take "orange"
+exec !eat "orange"
+resolution completed
+raw behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+info peak=5 capacity=8192 error=-
+plan 2
+step !take "orange"
+step !eat "orange"
+rawdeferred behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+info peak=5 capacity=8192 error=-
+plan 2
+step !take "orange"
+step !eat "orange"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HumanRT/empty
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call behave
+status SUCCEEDED
+plan 0
+resolve
+resolution completed
+raw behave
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 0
+rawdeferred behave
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 0
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+resolve
+exec !log "Error"
+resolution completed
+raw behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+rawdeferred behave_upper_body
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "Error"
+call behave 1
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred behave 1
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end

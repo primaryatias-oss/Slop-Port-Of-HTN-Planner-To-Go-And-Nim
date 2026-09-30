@@ -1,0 +1,452 @@
+scenario RuntimeBacktrackingDemo/demo
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_selected second
+resolve
+exec !fact_alternative_selected second
+resolution completed
+raw demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_selected second
+rawdeferred demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_selected second
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_selected second
+resolve
+exec !axiom_alternative_selected second
+resolution completed
+raw demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_selected second
+rawdeferred demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_selected second
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+raw demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+rawdeferred demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+raw demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+rawdeferred demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario RuntimeBacktrackingDemo/empty
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+raw demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_not_retried
+rawdeferred demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_not_retried
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+raw demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_not_retried
+rawdeferred demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_not_retried
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+raw demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+rawdeferred demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+raw demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+rawdeferred demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario RuntimeBacktrackingDemoRT/demo
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+call demo_hierarchical_branches
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_selected second
+resolve
+exec !fact_alternative_selected second
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_selected second
+resolve
+exec !axiom_alternative_selected second
+resolution completed
+call demo_hierarchical_branches
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_selected second
+resolve
+exec !fact_alternative_selected second
+resolution completed
+raw demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_selected second
+rawdeferred demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_selected second
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_selected second
+resolve
+exec !axiom_alternative_selected second
+resolution completed
+raw demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_selected second
+rawdeferred demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_selected second
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+raw demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+rawdeferred demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+raw demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+rawdeferred demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario RuntimeBacktrackingDemoRT/empty
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+call demo_hierarchical_branches
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+call demo_hierarchical_branches
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+call demo_fact_alternatives
+status SUCCEEDED
+plan 1
+step !fact_alternative_not_retried
+resolve
+exec !fact_alternative_not_retried
+resolution completed
+raw demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_not_retried
+rawdeferred demo_fact_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_alternative_not_retried
+call demo_axiom_alternatives
+status SUCCEEDED
+plan 1
+step !axiom_alternative_not_retried
+resolve
+exec !axiom_alternative_not_retried
+resolution completed
+raw demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_not_retried
+rawdeferred demo_axiom_alternatives
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_alternative_not_retried
+call demo_hierarchical_branches
+status SUCCEEDED
+plan 1
+step !branch_backtracking_selected_safe_path
+resolve
+exec !branch_backtracking_selected_safe_path
+resolution completed
+raw demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+rawdeferred demo_hierarchical_branches
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !branch_backtracking_selected_safe_path
+call demo_direct_branch_fallback
+status SUCCEEDED
+plan 1
+step !direct_precondition_fallback
+resolve
+exec !direct_precondition_fallback
+resolution completed
+raw demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+rawdeferred demo_direct_branch_fallback
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !direct_precondition_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end

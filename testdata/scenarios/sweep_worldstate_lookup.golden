@@ -1,0 +1,130 @@
+scenario WorldstateLookupScenarios/lookup
+call run_scenario
+status SUCCEEDED
+plan 1
+step !engage 0 0 0 2 3 0
+resolve
+exec !engage 0 0 0 2 3 0
+resolution completed
+raw run_scenario
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !engage 0 0 0 2 3 0
+rawdeferred run_scenario
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !engage 0 0 0 2 3 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WorldstateLookupScenarios/empty
+call run_scenario
+status SUCCEEDED
+plan 1
+step !idle
+resolve
+exec !idle
+resolution completed
+raw run_scenario
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !idle
+rawdeferred run_scenario
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !idle
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WorldstateLookupScenariosRT/lookup
+call run_scenario
+status SUCCEEDED
+plan 1
+step !engage 0 0 0 2 3 0
+resolve
+exec !engage 0 0 0 2 3 0
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !engage 0 0 0 2 3 0
+resolve
+exec !engage 0 0 0 2 3 0
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !engage 0 0 0 2 3 0
+resolve
+exec !engage 0 0 0 2 3 0
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !engage 0 0 0 2 3 0
+resolve
+exec !engage 0 0 0 2 3 0
+resolution completed
+raw run_scenario
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !engage 0 0 0 2 3 0
+rawdeferred run_scenario
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !engage 0 0 0 2 3 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WorldstateLookupScenariosRT/empty
+call run_scenario
+status SUCCEEDED
+plan 1
+step !idle
+resolve
+exec !idle
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !idle
+resolve
+exec !idle
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !idle
+resolve
+exec !idle
+resolution completed
+call run_scenario
+status SUCCEEDED
+plan 1
+step !idle
+resolve
+exec !idle
+resolution completed
+raw run_scenario
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !idle
+rawdeferred run_scenario
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !idle
+call no_such_method
+status INVALID_CALL
+plan 0
+end

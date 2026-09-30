@@ -1,0 +1,374 @@
+scenario NestedCalls/callterms
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+raw test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+rawdeferred test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedCalls/empty
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+raw test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+rawdeferred test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedCallsRT/callterms
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+raw test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+rawdeferred test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedCallsRT/empty
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+resolve
+exec !capture 17
+exec !capture 19
+resolution completed
+raw test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+rawdeferred test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 17
+step !capture 19
+call no_such_method
+status INVALID_CALL
+plan 0
+end

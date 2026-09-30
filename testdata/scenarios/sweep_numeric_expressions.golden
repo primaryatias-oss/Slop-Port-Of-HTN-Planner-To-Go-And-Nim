@@ -1,0 +1,2895 @@
+scenario NumericExpressions/numeric
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "success"
+resolve
+exec !numeric_result "success"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "success"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "success"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NumericExpressions/assignment
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 3
+resolve
+exec !assignment_result 3
+resolution completed
+raw assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 3
+rawdeferred assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 3
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status SUCCEEDED
+plan 1
+step !assignment_result 2
+resolve
+exec !assignment_result 2
+resolution completed
+raw assignment_axiom
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 2
+rawdeferred assignment_axiom
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 2
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NumericExpressions/empty
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NumericExpressionsRT/numeric
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "success"
+resolve
+exec !numeric_result "success"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "success"
+resolve
+exec !numeric_result "success"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "success"
+resolve
+exec !numeric_result "success"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "success"
+resolve
+exec !numeric_result "success"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "success"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "success"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NumericExpressionsRT/assignment
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+trace assignment_probe(1) -> 2
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 3
+resolve
+exec !assignment_result 3
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status SUCCEEDED
+plan 1
+step !assignment_result 2
+resolve
+exec !assignment_result 2
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+trace assignment_probe(1) -> 2
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 3
+resolve
+exec !assignment_result 3
+resolution completed
+raw assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 3
+rawdeferred assignment_backtracking
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 3
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status SUCCEEDED
+plan 1
+step !assignment_result 2
+resolve
+exec !assignment_result 2
+resolution completed
+raw assignment_axiom
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 2
+rawdeferred assignment_axiom
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 2
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NumericExpressionsRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !numeric_result "failure"
+resolve
+exec !numeric_result "failure"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "failure"
+call division_by_zero
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred division_by_zero
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call invalid_operand_type
+status SUCCEEDED
+plan 1
+step !numeric_result "controlled_failure"
+resolve
+exec !numeric_result "controlled_failure"
+resolution completed
+raw invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+rawdeferred invalid_operand_type
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !numeric_result "controlled_failure"
+call argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+resolve
+exec !compound_arithmetic_arguments 3 6 6 6 2 7 7
+exec !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+exec !callterm_arithmetic_arguments 9 12 9 8
+exec !recursive_arithmetic_result 2
+resolution completed
+raw argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+rawdeferred argument_expressions
+trace add(3, 6) -> 9
+trace add(6, 6) -> 12
+trace add(2, 7) -> 9
+trace inc(7) -> 8
+status SUCCEEDED
+info peak=10 capacity=8192 error=-
+plan 4
+step !compound_arithmetic_arguments 3 6 6 6 2 7 7
+step !primitive_arithmetic_arguments 3 6 6 6 2 7 7
+step !callterm_arithmetic_arguments 9 12 9 8
+step !recursive_arithmetic_result 2
+call axiom_argument_expressions
+status SUCCEEDED
+plan 1
+step !axiom_arithmetic_arguments "success"
+resolve
+exec !axiom_arithmetic_arguments "success"
+resolution completed
+raw axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+rawdeferred axiom_argument_expressions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_arithmetic_arguments "success"
+call axiom_output_expression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred axiom_output_expression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call axiom_output_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+resolve
+exec !axiom_output_mismatch "controlled_failure"
+resolution completed
+raw axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+rawdeferred axiom_output_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_output_mismatch "controlled_failure"
+call axiom_io_mismatch
+status SUCCEEDED
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+resolve
+exec !axiom_io_mismatch "controlled_failure"
+resolution completed
+raw axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+rawdeferred axiom_io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_io_mismatch "controlled_failure"
+call axiom_invalid_input_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+resolve
+exec !axiom_invalid_input_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+rawdeferred axiom_invalid_input_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_input_expression "controlled_failure"
+call axiom_invalid_output_expression
+status SUCCEEDED
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+resolve
+exec !axiom_invalid_output_expression "controlled_failure"
+resolution completed
+raw axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+rawdeferred axiom_invalid_output_expression
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_invalid_output_expression "controlled_failure"
+call assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+plan 1
+step !assignment_values main_threat 5 6 false
+resolve
+exec !assignment_values main_threat 5 6 false
+resolution completed
+raw assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+rawdeferred assignment_values
+trace assignment_probe(5) -> 6
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_values main_threat 5 6 false
+call assignment_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+plan 1
+step !assignment_result 5
+resolve
+exec !assignment_result 5
+resolution completed
+raw assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+rawdeferred assignment_nested_calls
+trace assignment_probe(1) -> 2
+trace assignment_probe(2) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 5
+call assignment_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_ordered_failure
+status SUCCEEDED
+plan 1
+step !assignment_result 9
+resolve
+exec !assignment_result 9
+resolution completed
+raw assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+rawdeferred assignment_ordered_failure
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !assignment_result 9
+call assignment_axiom
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred assignment_axiom
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end

@@ -1,0 +1,389 @@
+scenario Wanderer/wanderer
+call run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((0 0)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Wanderer/even_cell
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((2 4)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Wanderer/odd_cell
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 5)) -> false
+trace both_coordinates_odd((3 5)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are odd!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario Wanderer/empty
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WandererRT/wanderer
+call run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((0 0)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((0 0)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((0 0)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+trace same_location((0 0), (15 0)) -> false
+error NotRegistered name=request_path_from_to daemon=- source=Wanderer|Domains/Includes/movement2.domain:66:30 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+info peak=3 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((0 0)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WandererRT/even_cell
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((2 4)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((2 4)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((2 4)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((2 4)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are even!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WandererRT/odd_cell
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 5)) -> false
+trace both_coordinates_odd((3 5)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are odd!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 5)) -> false
+trace both_coordinates_odd((3 5)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are odd!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 5)) -> false
+trace both_coordinates_odd((3 5)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are odd!"
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 5)) -> false
+trace both_coordinates_odd((3 5)) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "Both coordinates are odd!"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario WandererRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !wanderer_idle
+rawdeferred talk_about_destination
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end

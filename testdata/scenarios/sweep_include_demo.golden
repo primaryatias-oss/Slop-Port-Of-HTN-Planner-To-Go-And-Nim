@@ -1,0 +1,130 @@
+scenario IncludeDemo/elite_ninja
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+raw run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+rawdeferred run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario IncludeDemo/empty
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+raw run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+rawdeferred run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario IncludeDemoRT/elite_ninja
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+raw run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+rawdeferred run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario IncludeDemoRT/empty
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+call run_include_demo
+status SUCCEEDED
+plan 1
+step !log "No active entity for include demo"
+resolve
+exec !log "No active entity for include demo"
+resolution completed
+raw run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+rawdeferred run_include_demo
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !log "No active entity for include demo"
+call no_such_method
+status INVALID_CALL
+plan 0
+end

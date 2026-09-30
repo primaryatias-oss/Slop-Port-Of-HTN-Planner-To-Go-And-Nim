@@ -1,0 +1,893 @@
+scenario AAACombatNPC/high_order
+call run
+status SUCCEEDED
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+resolve
+exec !announce_state "high_order" 1
+exec !mark_order_started 1 evacuate
+exec !deploy_smoke 1
+exec !move_to_order_target 1 "extraction_zone"
+exec !mark_order_complete 1 evacuate
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/melee
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 melee
+exec !quick_melee_attack 1 202
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/ranged
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 ranged
+exec !aim_at 1 302
+exec !fire_controlled_burst 1 302
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/medium_order
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+resolve
+exec !announce_state "medium_order" 1
+exec !mark_order_started 1 escort
+exec !follow_escort_route 1 "scientist" "service_tunnel"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/investigation
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+resolve
+exec !announce_state "investigation" 1
+exec !move_to_cover 1 "pillar_7"
+exec !report_suspicious_sound 1 "upper_walkway"
+exec !scan_sector 1 "upper_walkway"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/search
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+resolve
+exec !announce_state "search" 1
+exec !announce_lost_enemy 1 501
+exec !follow_enemy_tracks 1 "muddy_corridor"
+exec !scan_sector 1 "warehouse"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/low_order
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+resolve
+exec !announce_state "low_order" 1
+exec !mark_order_started 1 guard
+exec !guard_target 1 "west_gate"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/idle
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+resolve
+exec !announce_state "idle" 1
+exec !follow_patrol_route 1 "north_loop"
+exec !inspect_checkpoint 1 "checkpoint_alpha"
+exec !report_patrol_progress 1 "checkpoint_alpha"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPC/empty
+call run
+status SUCCEEDED
+plan 1
+step !announce_state "no_controlled_npc"
+resolve
+exec !announce_state "no_controlled_npc"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !announce_state "no_controlled_npc"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !announce_state "no_controlled_npc"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/high_order
+call run
+status SUCCEEDED
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+resolve
+exec !announce_state "high_order" 1
+exec !mark_order_started 1 evacuate
+exec !deploy_smoke 1
+exec !move_to_order_target 1 "extraction_zone"
+exec !mark_order_complete 1 evacuate
+resolution completed
+call run
+status SUCCEEDED
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+resolve
+exec !announce_state "high_order" 1
+exec !mark_order_started 1 evacuate
+exec !deploy_smoke 1
+exec !move_to_order_target 1 "extraction_zone"
+exec !mark_order_complete 1 evacuate
+resolution completed
+call run
+status SUCCEEDED
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+resolve
+exec !announce_state "high_order" 1
+exec !mark_order_started 1 evacuate
+exec !deploy_smoke 1
+exec !move_to_order_target 1 "extraction_zone"
+exec !mark_order_complete 1 evacuate
+resolution completed
+call run
+status SUCCEEDED
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+resolve
+exec !announce_state "high_order" 1
+exec !mark_order_started 1 evacuate
+exec !deploy_smoke 1
+exec !move_to_order_target 1 "extraction_zone"
+exec !mark_order_complete 1 evacuate
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 5
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/melee
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "combat" 1
+step !track_enemy 1 201
+step !seek_cover 1
+resolve
+exec !announce_state "combat" 1
+exec !track_enemy 1 201
+exec !seek_cover 1
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 melee
+exec !quick_melee_attack 1 202
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "combat" 1
+step !track_enemy 1 201
+step !seek_cover 1
+resolve
+exec !announce_state "combat" 1
+exec !track_enemy 1 201
+exec !seek_cover 1
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 melee
+exec !quick_melee_attack 1 202
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/ranged
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 301
+step !fire_controlled_burst 1 301
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 ranged
+exec !aim_at 1 301
+exec !fire_controlled_burst 1 301
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 ranged
+exec !aim_at 1 302
+exec !fire_controlled_burst 1 302
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 301
+step !fire_controlled_burst 1 301
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 ranged
+exec !aim_at 1 301
+exec !fire_controlled_burst 1 301
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+resolve
+exec !announce_state "combat" 1
+exec !switch_weapon 1 ranged
+exec !aim_at 1 302
+exec !fire_controlled_burst 1 302
+resolution completed
+raw run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+rawdeferred run
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 4
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/medium_order
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+resolve
+exec !announce_state "medium_order" 1
+exec !mark_order_started 1 escort
+exec !follow_escort_route 1 "scientist" "service_tunnel"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+resolve
+exec !announce_state "medium_order" 1
+exec !mark_order_started 1 escort
+exec !follow_escort_route 1 "scientist" "service_tunnel"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+resolve
+exec !announce_state "medium_order" 1
+exec !mark_order_started 1 escort
+exec !follow_escort_route 1 "scientist" "service_tunnel"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+resolve
+exec !announce_state "medium_order" 1
+exec !mark_order_started 1 escort
+exec !follow_escort_route 1 "scientist" "service_tunnel"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/investigation
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+resolve
+exec !announce_state "investigation" 1
+exec !move_to_cover 1 "pillar_7"
+exec !report_suspicious_sound 1 "upper_walkway"
+exec !scan_sector 1 "upper_walkway"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+resolve
+exec !announce_state "investigation" 1
+exec !move_to_cover 1 "pillar_7"
+exec !report_suspicious_sound 1 "upper_walkway"
+exec !scan_sector 1 "upper_walkway"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+resolve
+exec !announce_state "investigation" 1
+exec !move_to_cover 1 "pillar_7"
+exec !report_suspicious_sound 1 "upper_walkway"
+exec !scan_sector 1 "upper_walkway"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+resolve
+exec !announce_state "investigation" 1
+exec !move_to_cover 1 "pillar_7"
+exec !report_suspicious_sound 1 "upper_walkway"
+exec !scan_sector 1 "upper_walkway"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/search
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+resolve
+exec !announce_state "search" 1
+exec !announce_lost_enemy 1 501
+exec !follow_enemy_tracks 1 "muddy_corridor"
+exec !scan_sector 1 "warehouse"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+resolve
+exec !announce_state "search" 1
+exec !announce_lost_enemy 1 501
+exec !follow_enemy_tracks 1 "muddy_corridor"
+exec !scan_sector 1 "warehouse"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+resolve
+exec !announce_state "search" 1
+exec !announce_lost_enemy 1 501
+exec !follow_enemy_tracks 1 "muddy_corridor"
+exec !scan_sector 1 "warehouse"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+resolve
+exec !announce_state "search" 1
+exec !announce_lost_enemy 1 501
+exec !follow_enemy_tracks 1 "muddy_corridor"
+exec !scan_sector 1 "warehouse"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/low_order
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+resolve
+exec !announce_state "low_order" 1
+exec !mark_order_started 1 guard
+exec !guard_target 1 "west_gate"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+resolve
+exec !announce_state "low_order" 1
+exec !mark_order_started 1 guard
+exec !guard_target 1 "west_gate"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+resolve
+exec !announce_state "low_order" 1
+exec !mark_order_started 1 guard
+exec !guard_target 1 "west_gate"
+resolution completed
+call run
+status SUCCEEDED
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+resolve
+exec !announce_state "low_order" 1
+exec !mark_order_started 1 guard
+exec !guard_target 1 "west_gate"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 3
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/idle
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+resolve
+exec !announce_state "idle" 1
+exec !follow_patrol_route 1 "north_loop"
+exec !inspect_checkpoint 1 "checkpoint_alpha"
+exec !report_patrol_progress 1 "checkpoint_alpha"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+resolve
+exec !announce_state "idle" 1
+exec !follow_patrol_route 1 "north_loop"
+exec !inspect_checkpoint 1 "checkpoint_alpha"
+exec !report_patrol_progress 1 "checkpoint_alpha"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+resolve
+exec !announce_state "idle" 1
+exec !follow_patrol_route 1 "north_loop"
+exec !inspect_checkpoint 1 "checkpoint_alpha"
+exec !report_patrol_progress 1 "checkpoint_alpha"
+resolution completed
+call run
+status SUCCEEDED
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+resolve
+exec !announce_state "idle" 1
+exec !follow_patrol_route 1 "north_loop"
+exec !inspect_checkpoint 1 "checkpoint_alpha"
+exec !report_patrol_progress 1 "checkpoint_alpha"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+rawdeferred run
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 4
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AAACombatNPCRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !announce_state "no_controlled_npc"
+resolve
+exec !announce_state "no_controlled_npc"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !announce_state "no_controlled_npc"
+resolve
+exec !announce_state "no_controlled_npc"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !announce_state "no_controlled_npc"
+resolve
+exec !announce_state "no_controlled_npc"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !announce_state "no_controlled_npc"
+resolve
+exec !announce_state "no_controlled_npc"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !announce_state "no_controlled_npc"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !announce_state "no_controlled_npc"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
