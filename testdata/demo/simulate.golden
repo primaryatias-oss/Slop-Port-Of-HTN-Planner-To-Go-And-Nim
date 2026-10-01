@@ -1,0 +1,2506 @@
+terrain 64 64 interactables 12
+map 63 ................................................................
+map 62 ..##.......#......##.......#.#.#.#................#........##...
+map 61 .#.##..#..##..#.#.#.....#..............#..#.#.#...##.....#.#....
+map 60 .#.......##.........##....#.......#......o..#..............##...
+map 59 ..#........#..........#...#.###.....#....#..#....#....##.#......
+map 58 .#..##...........###......##..###.#.......##....#.#.............
+map 57 ...#....#.......#.#.o..##.......#.#........##......#.....#####..
+map 56 ......#...##......#.#..#..#.........##...###........#...#..#....
+map 55 ..##......#..#........#..##.......#...##o.#...##.....#..#...#.#.
+map 54 .#..#....#..#..#......#..#....#.#.....#.......#.#...#..#........
+map 53 ..#.#.....#..#.......#.#..#....#..................##........o...
+map 52 .#...###...............#...###............#..##..#......#.......
+map 51 .......#.#.#.##..#..............#.......#.......###..#......#...
+map 50 .###.....#.#.#.#.##.###........#.....##....#.#...#..##.#........
+map 49 .......####....#....#....#........#..#...............#....#..#..
+map 48 .....#.....#.#....###..#.#.##....#......#..#....#.##...#....#...
+map 47 .##........##.......#..#.#....#..............#...#.......o......
+map 46 ..#..#....#.#.#....#.####...##.#..#.#....................##.....
+map 45 .........#.....#.........#.#.#.#..#....#...........#.......#.o..
+map 44 .........####...#.#........##.##....#..#...#....#.#.#..#........
+map 43 ..#.#.#.#.#....#.....#....#.....#......#...#.#..#.#...#.#.......
+map 42 ..#...##.....#..#.#...........#...#.#.#....#.......####....#..#.
+map 41 .......##..#.....#........#.#.#......................##....#.##.
+map 40 ........#.#..#........#.#....###.#..#..#...#.#...#..#..##.....#.
+map 39 .........#.##...........#.........##.#........#....#.#...#....#.
+map 38 ...#.#..#....#..#.....#......#..##...#..#...........#.##..#.###.
+map 37 ......#...o......#........#......###.#...#..##........#.#.......
+map 36 .......##..#.....#..#...#..#..#......#......#....##.#.#.#.#.#...
+map 35 ........#........#....#.....#.#...#....#..........#.....#.......
+map 34 ...#.##......#...#...#....#.#..#..#.#.............#..###.#....#.
+map 33 ...#.#...........#........##.#......#...#.......#...#.#......##.
+map 32 ......#........#..........#.###....#..##.#...#...........###..#.
+map 31 ........#....#...#..#...........#.....#....#.#...............#..
+map 30 ..#........###.#####...##......##..##.......#.##.............##.
+map 29 .##....#####.....###.........#...#....#.#.......##.....#.#......
+map 28 ....#.#.#..#.##....###..#.......#...#...........#..#.#..##..#.#.
+map 27 .......#..#.......#..#.#...#.#.#.....#....##..##................
+map 26 .............#.......##..#...#.##.#.........#........#.......#..
+map 25 ......#..#.#...#...........#..#....####.#.#.............#.....#.
+map 24 ..#...##.#....#............#......##...#.....#........#..o#..#..
+map 23 ..#.#..........#.....#..............#.....##.#....#..#..........
+map 22 .......#.#.............#.........#.....#...#.#...#...#.#........
+map 21 ..#.#.....#..#.......#....#...#..#.#..#.....#.#............#....
+map 20 ...#.........#.#...##.#......###.....#....#...#...#.###....#.#..
+map 19 ...........#.#..#..o.#.##.#.#..#..#.....#.........#...###..#....
+map 18 .....###.##.................###...#####.#.........#.....#.....#.
+map 17 ...........#.#.#.##....o......#.#....#.....##...#.#......#.#....
+map 16 ..#......#.#.##.......##...#.......#.##.......#.#.#.#..#.#....#.
+map 15 ....#..#..#.o.#..............#.....#.#...........#.#...#..#..#..
+map 14 .........#.##.....##.............#.#..#######..#....#.....#.....
+map 13 ...........#.###....#.........#....#....#......#..............#.
+map 12 ........#..##.#...#...............##...#...o................#.#.
+map 11 ...#..#..##............####......#..##.##...##...#......#.......
+map 10 .#...........#..#...#..#..#..............#.......#....#.........
+map  9 .....#..#...#...#.........###.....#.............#....#..........
+map  8 ...#.#..#..##..##..##.....#.##.##....#.......#.#...#.#...#..#.#.
+map  7 ...#.......##......#.#.....##..#.....###.....#.#.....#.#..#.#...
+map  6 ...#.#....#....#.......#.#.....#........#...#...........###.#...
+map  5 ...#..#..........#.......##...#.###..#.#.#.....#..........#.....
+map  4 ......#...#..#.....#......###.................#.#.#.............
+map  3 .#.......#..##.##.##....#....#.#.#.#..#..#...##...#.#...........
+map  2 .###..#.....#.##..................##...##...#...........#..#....
+map  1 .............#..........#...#......##.##...##...##......#.#...#.
+map  0 ................................................................
+interactable shop_window_0 Shop window (57 47) check_shop_window 3
+interactable shop_window_1 Shop window (43 12) check_shop_window 3
+interactable viewpoint_0 Viewpoint (20 57) look_at_view 2.5
+interactable bench_0 Bench (40 55) sit_on_bench 4
+interactable viewpoint_1 Viewpoint (57 24) look_at_view 2.5
+interactable shop_window_2 Shop window (60 53) check_shop_window 3
+interactable viewpoint_2 Viewpoint (41 60) look_at_view 2.5
+interactable viewpoint_3 Viewpoint (19 19) look_at_view 2.5
+interactable viewpoint_4 Viewpoint (23 17) look_at_view 2.5
+interactable bench_1 Bench (12 15) sit_on_bench 4
+interactable bench_2 Bench (10 37) sit_on_bench 4
+interactable shop_window_3 Shop window (61 45) check_shop_window 3
+waypoints (43 12) (60 53) (41 60) (33 56) (7 48) (56 34) (47 10) (30 53) (33 35) (57 2) (45 57) (39 13)
+frame 0 age 0
+npc 1 Walking at (43 12) to (60 53) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 2 Walking at (60 53) to (41 60) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 3 Walking at (41 60) to (33 56) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 4 Walking at (33 56) to (7 48) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 5 Walking at (7 48) to (56 34) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 6 Walking at (56 34) to (47 10) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 7 Walking at (47 10) to (30 53) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+npc 8 Walking at (30 53) to (33 35) task <plan failed> remaining 0 plans 0 completed 0 journeys 0 ok 0
+frame 300 age 5.00001001
+npc 1 Walking at (48 20) to (60 53) task !walk_segment remaining 0.185649246 plans 3 completed 8 journeys 0 ok 1
+    !walk_segment (45 13)
+    !walk_segment (45 18)
+    !walk_segment (48 20)
+  > !walk_segment (49 27)
+    !walk_segment (50 29)
+    !walk_segment (57 33)
+    !walk_segment (58 33)
+    !walk_segment (60 42)
+    !walk_segment (59 52)
+    !walk_segment (60 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (45 62) to (41 60) task !walk_segment remaining 0.510606289 plans 2 completed 7 journeys 0 ok 1
+    !walk_segment (54 53)
+    !walk_segment (54 56)
+    !walk_segment (49 60)
+    !walk_segment (45 60)
+    !walk_segment (45 62)
+  > !walk_segment (41 62)
+    !walk_segment (41 60)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (33 52) to (7 48) task !walk_segment remaining 1.08929026 plans 4 completed 9 journeys 1 ok 1
+    !walk_segment (33 52)
+  > !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+    !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (27 51) to (7 48) task !walk_segment remaining 0.994442701 plans 2 completed 4 journeys 0 ok 1
+    !walk_segment (33 52)
+    !walk_segment (27 51)
+  > !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+    !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (7 37) to (56 34) task !walk_segment remaining 0.521213055 plans 3 completed 8 journeys 0 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+  > !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (48 15) to (47 10) task !walk_segment remaining 0.892424285 plans 2 completed 5 journeys 0 ok 1
+    !walk_segment (48 22)
+    !walk_segment (47 15)
+    !walk_segment (48 15)
+  > !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (41 17) to (30 53) task !walk_segment remaining 1.0636375 plans 3 completed 7 journeys 0 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+  > !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (33 35) to (57 2) task !say remaining 0.55000025 plans 2 completed 8 journeys 1 ok 1
+    !walk_segment (30 49)
+    !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+  > !say "Both coordinates are odd!"
+    !after_destination_comment
+frame 600 age 10.0000191
+npc 1 Walking at (60 42) to (60 53) task !walk_segment remaining 0.777251005 plans 3 completed 13 journeys 0 ok 1
+    !walk_segment (45 13)
+    !walk_segment (45 18)
+    !walk_segment (48 20)
+    !walk_segment (49 27)
+    !walk_segment (50 29)
+    !walk_segment (57 33)
+    !walk_segment (58 33)
+    !walk_segment (60 42)
+  > !walk_segment (59 52)
+    !walk_segment (60 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (41 60) to (33 56) task !say remaining 0.066666767 plans 4 completed 12 journeys 1 ok 1
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 3 Walking at (8 50) to (7 48) task !walk_segment remaining 0.296969652 plans 4 completed 13 journeys 1 ok 1
+    !walk_segment (33 52)
+    !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+  > !walk_segment (6 50)
+    !walk_segment (6 48)
+    !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (7 48) to (56 34) task !say remaining 0.166666761 plans 4 completed 15 journeys 1 ok 1
+    !wait_for_pathfinding_query
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 5 Walking at (32 36) to (56 34) task !walk_segment remaining 0.489290804 plans 3 completed 14 journeys 0 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+  > !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (45 15) to (30 53) task !walk_segment remaining 0.646449149 plans 5 completed 15 journeys 1 ok 1
+    !walk_segment (45 15)
+  > !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (35 44) to (30 53) task !walk_segment remaining 0.146969631 plans 3 completed 13 journeys 0 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+  > !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (37 26) to (57 2) task !walk_segment remaining 0.160606086 plans 5 completed 17 journeys 1 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+  > !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+frame 900 age 14.9999428
+npc 1 Walking at (60 53) to (41 60) task !say remaining 0.733333409 plans 5 completed 18 journeys 1 ok 1
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 2 Walking at (33 52) to (7 48) task !walk_segment remaining 0.355957359 plans 7 completed 21 journeys 2 ok 1
+    !walk_segment (33 52)
+  > !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+    !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (5 41) to (56 34) task !walk_segment remaining 0.779782355 plans 7 completed 25 journeys 2 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+  > !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (15 39) to (56 34) task !walk_segment remaining 0.687879562 plans 5 completed 22 journeys 1 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+  > !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (56 34) to (47 10) task !say remaining 0.216666758 plans 3 completed 21 journeys 1 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+  > !say "Both coordinates are even!"
+    !after_destination_comment
+npc 6 Walking at (37 30) to (30 53) task !walk_segment remaining 0.577251196 plans 5 completed 18 journeys 1 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+  > !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (30 49) to (33 35) task !walk_segment remaining 0.309091151 plans 5 completed 21 journeys 1 ok 1
+    !walk_segment (30 49)
+  > !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (46 6) to (57 2) task !walk_segment remaining 1.27304697 plans 5 completed 21 journeys 1 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+  > !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+frame 1200 age 19.9998665
+npc 1 Walking at (45 62) to (41 60) task !walk_segment remaining 0.443939567 plans 6 completed 25 journeys 1 ok 1
+    !walk_segment (54 53)
+    !walk_segment (54 56)
+    !walk_segment (49 60)
+    !walk_segment (45 60)
+    !walk_segment (45 62)
+  > !walk_segment (41 62)
+    !walk_segment (41 60)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (6 48) to (7 48) task !walk_segment remaining 0.115151525 plans 7 completed 27 journeys 2 ok 1
+    !walk_segment (33 52)
+    !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+  > !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (23 38) to (56 34) task !walk_segment remaining 0.913101077 plans 7 completed 30 journeys 2 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+  > !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (38 34) to (56 34) task !walk_segment remaining 1.0166676 plans 5 completed 28 journeys 1 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+  > !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (48 22) to (47 10) task !walk_segment remaining 0.0689825863 plans 5 completed 26 journeys 1 ok 1
+    !walk_segment (48 22)
+  > !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (30 53) to (33 35) task !say remaining 0.55000025 plans 6 completed 27 journeys 2 ok 1
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 7 Walking at (33 35) to (57 2) task !say remaining 0.250000089 plans 7 completed 31 journeys 2 ok 1
+    !wait_for_pathfinding_query
+  > !say "Both coordinates are odd!"
+    !after_destination_comment
+npc 8 Walking at (56 4) to (45 57) task !walk_segment remaining 0.463115901 plans 8 completed 31 journeys 2 ok 1
+    !walk_segment (56 4)
+  > !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+frame 1500 age 24.9997902
+npc 1 Walking at (41 60) to (33 56) task !say remaining 1.00582838e-07 plans 8 completed 30 journeys 2 ok 1
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 2 Walking at (5 41) to (56 34) task !walk_segment remaining 0.0464490801 plans 10 completed 37 journeys 3 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+  > !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (49 33) to (56 34) task !walk_segment remaining 0.349655628 plans 7 completed 36 journeys 2 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+  > !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (56 34) to (47 10) task !walk_segment remaining 2.10555291 plans 7 completed 37 journeys 2 ok 1
+  > !walk_segment (48 22)
+    !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (47 10) to (30 53) task !walk_segment remaining 0.112454429 plans 8 completed 37 journeys 2 ok 1
+  > !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (33 35) to (57 2) task !say remaining 0.300000131 plans 7 completed 35 journeys 3 ok 1
+    !walk_segment (30 49)
+    !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+  > !say "Both coordinates are odd!"
+    !after_destination_comment
+npc 7 Walking at (45 19) to (57 2) task !walk_segment remaining 1.98728609 plans 8 completed 38 journeys 2 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+  > !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (51 20) to (45 57) task !walk_segment remaining 0.520620823 plans 8 completed 34 journeys 2 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+  > !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+frame 1800 age 29.9997139
+npc 1 Walking at (33 52) to (7 48) task !walk_segment remaining 0.289290637 plans 11 completed 39 journeys 3 ok 1
+    !walk_segment (33 52)
+  > !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+    !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (23 38) to (56 34) task !walk_segment remaining 0.179767922 plans 10 completed 42 journeys 3 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+  > !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (56 34) to (47 10) task !walk_segment remaining 0.488887757 plans 9 completed 43 journeys 3 ok 1
+  > !walk_segment (48 22)
+    !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (47 10) to (30 53) task !say remaining 0.500000298 plans 7 completed 42 journeys 3 ok 1
+    !walk_segment (48 22)
+    !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 5 Walking at (37 30) to (30 53) task !walk_segment remaining 0.860584259 plans 8 completed 41 journeys 2 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+  > !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (41 26) to (57 2) task !walk_segment remaining 0.643939495 plans 10 completed 45 journeys 3 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+  > !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (57 2) to (45 57) task !say remaining 0.066666767 plans 8 completed 41 journeys 3 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 8 Walking at (45 53) to (45 57) task !walk_segment remaining 0.577272892 plans 8 completed 38 journeys 2 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+  > !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+frame 2100 age 34.9996376
+npc 1 Walking at (6 48) to (7 48) task !walk_segment remaining 0.0484848619 plans 11 completed 45 journeys 3 ok 1
+    !walk_segment (33 52)
+    !walk_segment (27 51)
+    !walk_segment (9 52)
+    !walk_segment (8 52)
+    !walk_segment (8 50)
+    !walk_segment (6 50)
+    !walk_segment (6 48)
+  > !walk_segment (7 48)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (55 32) to (56 34) task !walk_segment remaining 0.389891148 plans 10 completed 50 journeys 3 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+  > !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (47 10) to (30 53) task !say remaining 0.783333361 plans 11 completed 53 journeys 4 ok 1
+    !wait_for_pathfinding_query
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 4 Walking at (41 17) to (30 53) task !walk_segment remaining 1.63030362 plans 10 completed 51 journeys 3 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+  > !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (30 53) to (33 35) task !after_destination_comment remaining 0.0333333313 plans 8 completed 49 journeys 3 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    !say "One coordinate is even and the other is odd!"
+  > !after_destination_comment
+npc 6 Walking at (46 6) to (57 2) task !walk_segment remaining 1.02304721 plans 10 completed 48 journeys 3 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+  > !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (52 6) to (45 57) task !walk_segment remaining 0.274915278 plans 11 completed 50 journeys 3 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+  > !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (42 49) to (39 13) task !walk_segment remaining 2.42272806 plans 10 completed 45 journeys 3 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+  > !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+    !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+    !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+frame 2400 age 39.9995613
+npc 1 Walking at (7 37) to (56 34) task !walk_segment remaining 1.43787885 plans 14 completed 56 journeys 4 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+  > !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (48 22) to (47 10) task !walk_segment remaining 1.05231559 plans 12 completed 56 journeys 4 ok 1
+    !walk_segment (48 22)
+  > !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (41 17) to (30 53) task !walk_segment remaining 0.0136378221 plans 12 completed 57 journeys 4 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+  > !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (35 41) to (30 53) task !walk_segment remaining 0.345454454 plans 10 completed 56 journeys 3 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+  > !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (33 35) to (57 2) task !say remaining 0.583333552 plans 10 completed 58 journeys 4 ok 1
+    !walk_segment (30 49)
+    !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+  > !say "Both coordinates are odd!"
+    !after_destination_comment
+npc 6 Walking at (56 4) to (45 57) task !walk_segment remaining 0.213115737 plans 13 completed 58 journeys 4 ok 1
+    !walk_segment (56 4)
+  > !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (47 35) to (45 57) task !walk_segment remaining 2.2727282 plans 11 completed 54 journeys 3 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+  > !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (36 20) to (39 13) task !walk_segment remaining 0.545454562 plans 10 completed 50 journeys 3 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+    !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+  > !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+    !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+frame 2700 age 44.999485
+npc 1 Walking at (23 38) to (56 34) task !walk_segment remaining 0.113101259 plans 14 completed 60 journeys 4 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+  > !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+    !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (47 10) to (30 53) task !say remaining 0.0500001013 plans 14 completed 65 journeys 5 ok 1
+    !wait_for_pathfinding_query
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 3 Walking at (33 44) to (30 53) task !walk_segment remaining 0.319673926 plans 12 completed 64 journeys 4 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+  > !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (30 49) to (33 35) task !walk_segment remaining 0.875757635 plans 12 completed 65 journeys 4 ok 1
+    !walk_segment (30 49)
+  > !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (37 26) to (57 2) task !walk_segment remaining 0.193939418 plans 13 completed 67 journeys 4 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+  > !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (51 20) to (45 57) task !walk_segment remaining 0.270620644 plans 13 completed 61 journeys 4 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+  > !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (45 57) to (39 13) task !say remaining 0.0500001013 plans 12 completed 59 journeys 4 ok 1
+  > !say "Both coordinates are odd!"
+    !after_destination_comment
+npc 8 Walking at (38 13) to (43 12) task !walk_segment remaining 0.262121052 plans 12 completed 61 journeys 4 ok 1
+    !walk_segment (38 13)
+  > !walk_segment (38 10)
+    !walk_segment (42 9)
+    !walk_segment (43 12)
+    &talk_about_destination
+    !after_destination_comment
+frame 3000 age 49.9994087
+npc 1 Walking at (55 32) to (56 34) task !walk_segment remaining 0.323224425 plans 14 completed 68 journeys 4 ok 1
+    !walk_segment (5 43)
+    !walk_segment (5 41)
+    !walk_segment (7 37)
+    !walk_segment (15 37)
+    !walk_segment (15 39)
+    !walk_segment (23 39)
+    !walk_segment (23 38)
+    !walk_segment (32 37)
+    !walk_segment (32 36)
+    !walk_segment (38 35)
+    !walk_segment (38 34)
+    !walk_segment (49 34)
+    !walk_segment (49 33)
+    !walk_segment (53 32)
+    !walk_segment (55 32)
+  > !walk_segment (56 34)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (41 30) to (30 53) task !walk_segment remaining 0.0106060915 plans 15 completed 70 journeys 5 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+  > !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+    !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (33 45) to (33 35) task !walk_segment remaining 0.37262404 plans 14 completed 72 journeys 5 ok 1
+    !walk_segment (30 49)
+    !walk_segment (33 45)
+  > !walk_segment (32 39)
+    !walk_segment (31 39)
+    !walk_segment (32 35)
+    !walk_segment (33 35)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (33 35) to (57 2) task !wait_for_pathfinding_query remaining 1.11758709e-08 plans 14 completed 74 journeys 5 ok 1
+  > !wait_for_pathfinding_query
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (46 6) to (57 2) task !walk_segment remaining 1.30638027 plans 13 completed 71 journeys 4 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+  > !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (45 53) to (45 57) task !walk_segment remaining 0.327272803 plans 13 completed 65 journeys 4 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+  > !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (42 49) to (39 13) task !walk_segment remaining 0.222729683 plans 13 completed 63 journeys 4 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+  > !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+    !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+    !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Contextual animation at (43 12) to (43 12) task !play_contextual_animation remaining 0.466669023 plans 13 completed 66 journeys 5 ok 1
+  > !play_contextual_animation check_shop_window (43 12)
+frame 3300 age 54.9993324
+npc 1 Walking at (48 22) to (47 10) task !walk_segment remaining 0.98564899 plans 16 completed 74 journeys 5 ok 1
+    !walk_segment (48 22)
+  > !walk_segment (47 15)
+    !walk_segment (48 15)
+    !walk_segment (48 10)
+    !walk_segment (47 10)
+    &talk_about_destination
+    !after_destination_comment
+npc 2 Walking at (30 50) to (30 53) task !walk_segment remaining 0.145454392 plans 15 completed 77 journeys 5 ok 1
+    !walk_segment (45 15)
+    !walk_segment (41 17)
+    !walk_segment (41 30)
+    !walk_segment (37 30)
+    !walk_segment (38 40)
+    !walk_segment (36 41)
+    !walk_segment (35 41)
+    !walk_segment (35 44)
+    !walk_segment (33 44)
+    !walk_segment (30 50)
+  > !walk_segment (30 53)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (33 35) to (57 2) task !walk_segment remaining 0.765978456 plans 17 completed 83 journeys 6 ok 1
+  > !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (41 22) to (57 2) task !walk_segment remaining 0.175757781 plans 15 completed 81 journeys 5 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+  > !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 5 Walking at (56 4) to (45 57) task !walk_segment remaining 0.496449262 plans 16 completed 81 journeys 5 ok 1
+    !walk_segment (56 4)
+  > !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+    !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (42 49) to (39 13) task !walk_segment remaining 2.1727283 plans 15 completed 72 journeys 5 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+  > !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+    !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+    !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Walking at (36 14) to (39 13) task !walk_segment remaining 0.406557828 plans 13 completed 72 journeys 4 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+    !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+    !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+  > !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+npc 8 Walking at (48 20) to (60 53) task !walk_segment remaining 0.668982625 plans 16 completed 75 journeys 5 ok 1
+    !walk_segment (45 13)
+    !walk_segment (45 18)
+    !walk_segment (48 20)
+  > !walk_segment (49 27)
+    !walk_segment (50 29)
+    !walk_segment (57 33)
+    !walk_segment (58 33)
+    !walk_segment (60 42)
+    !walk_segment (59 52)
+    !walk_segment (60 53)
+    &talk_about_destination
+    !after_destination_comment
+frame 3600 age 59.9992561
+npc 1 Walking at (47 10) to (30 53) task !after_destination_comment remaining 0.0500000007 plans 18 completed 84 journeys 6 ok 1
+    !wait_for_pathfinding_query
+    !say "One coordinate is even and the other is odd!"
+  > !after_destination_comment
+npc 2 Walking at (31 39) to (33 35) task !walk_segment remaining 0.582989037 plans 17 completed 86 journeys 6 ok 1
+    !walk_segment (30 49)
+    !walk_segment (33 45)
+    !walk_segment (32 39)
+    !walk_segment (31 39)
+  > !walk_segment (32 35)
+    !walk_segment (33 35)
+    &talk_about_destination
+    !after_destination_comment
+npc 3 Walking at (45 19) to (57 2) task !walk_segment remaining 0.937287092 plans 17 completed 88 journeys 6 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+  > !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+    &talk_about_destination
+    !after_destination_comment
+npc 4 Walking at (57 2) to (45 57) task !say remaining 0.633333504 plans 15 completed 85 journeys 6 ok 1
+    !walk_segment (35 27)
+    !walk_segment (37 26)
+    !walk_segment (41 26)
+    !walk_segment (41 22)
+    !walk_segment (45 19)
+    !walk_segment (46 6)
+    !walk_segment (57 3)
+    !walk_segment (57 2)
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 5 Walking at (51 20) to (45 57) task !walk_segment remaining 0.553954124 plans 16 completed 84 journeys 5 ok 1
+    !walk_segment (56 4)
+    !walk_segment (52 6)
+    !walk_segment (53 17)
+    !walk_segment (51 20)
+  > !walk_segment (50 33)
+    !walk_segment (47 35)
+    !walk_segment (47 53)
+    !walk_segment (45 53)
+    !walk_segment (45 57)
+    &talk_about_destination
+    !after_destination_comment
+npc 6 Walking at (36 20) to (39 13) task !walk_segment remaining 0.295454413 plans 15 completed 77 journeys 5 ok 1
+    !walk_segment (44 49)
+    !walk_segment (42 49)
+    !walk_segment (42 31)
+    !walk_segment (41 25)
+    !walk_segment (40 23)
+    !walk_segment (38 23)
+    !walk_segment (36 20)
+  > !walk_segment (33 20)
+    !walk_segment (33 17)
+    !walk_segment (36 17)
+    !walk_segment (36 14)
+    !walk_segment (38 13)
+    !walk_segment (39 13)
+    &talk_about_destination
+    !after_destination_comment
+npc 7 Contextual animation at (43 12) to (43 12) task !say remaining 0.200000092 plans 15 completed 82 journeys 6 ok 1
+    !walk_segment (38 13)
+    !walk_segment (38 10)
+    !walk_segment (42 9)
+    !walk_segment (43 12)
+  > !say "One coordinate is even and the other is odd!"
+    !after_destination_comment
+npc 8 Walking at (60 42) to (60 53) task !walk_segment remaining 1.26058388 plans 16 completed 80 journeys 5 ok 1
+    !walk_segment (45 13)
+    !walk_segment (45 18)
+    !walk_segment (48 20)
+    !walk_segment (49 27)
+    !walk_segment (50 29)
+    !walk_segment (57 33)
+    !walk_segment (58 33)
+    !walk_segment (60 42)
+  > !walk_segment (59 52)
+    !walk_segment (60 53)
+    &talk_about_destination
+    !after_destination_comment
+history 1
+  7.26670694 Start: !walk_segment (60 42)
+  8.9500351 Complete: !walk_segment (60 42)
+  8.9500351 Start: !walk_segment (59 52)
+  10.7833405 Complete: !walk_segment (59 52)
+  10.7833405 Start: !walk_segment (60 53)
+  11.0500031 Complete: !walk_segment (60 53)
+  11.0500031 Start: !say "One coordinate is even and the other is odd!"
+  11.8666573 Complete: !say "One coordinate is even and the other is odd!"
+  11.8666573 Start: !after_destination_comment
+  11.9166565 Complete: !after_destination_comment
+  11.9166565 New plan: 1 plan step(s)
+  11.9166565 Start: !play_contextual_animation check_shop_window (60 53)
+  14.9332771 Complete: !play_contextual_animation check_shop_window (60 53)
+  14.9332771 New plan: 2 plan step(s)
+  14.9332771 Start: !say "One coordinate is even and the other is odd!"
+  15.7499313 Complete: !say "One coordinate is even and the other is odd!"
+  15.7499313 Start: !after_destination_comment
+  15.7999306 Complete: !after_destination_comment
+  15.7999306 New plan: 9 plan step(s)
+  15.7999306 Start: !walk_segment (54 53)
+  16.8999138 Complete: !walk_segment (54 53)
+  16.8999138 Start: !walk_segment (54 56)
+  17.4499054 Complete: !walk_segment (54 56)
+  17.4499054 Start: !walk_segment (49 60)
+  18.6165543 Complete: !walk_segment (49 60)
+  18.6165543 Start: !walk_segment (45 60)
+  19.3498764 Complete: !walk_segment (45 60)
+  19.3498764 Start: !walk_segment (45 62)
+  19.7165375 Complete: !walk_segment (45 62)
+  19.7165375 Start: !walk_segment (41 62)
+  20.4498596 Complete: !walk_segment (41 62)
+  20.4498596 Start: !walk_segment (41 60)
+  20.8165207 Complete: !walk_segment (41 60)
+  20.8165207 Start: !say "One coordinate is even and the other is odd!"
+  21.6331749 Complete: !say "One coordinate is even and the other is odd!"
+  21.6331749 Start: !after_destination_comment
+  21.6831741 Complete: !after_destination_comment
+  21.6831741 New plan: 1 plan step(s)
+  21.6831741 Start: !play_contextual_animation look_at_view (41 60)
+  24.1998024 Complete: !play_contextual_animation look_at_view (41 60)
+  24.1998024 New plan: 2 plan step(s)
+  24.1998024 Start: !say "One coordinate is even and the other is odd!"
+  25.0164566 Complete: !say "One coordinate is even and the other is odd!"
+  25.0164566 Start: !after_destination_comment
+  25.0664558 Complete: !after_destination_comment
+  25.0664558 New plan: 4 plan step(s)
+  25.0664558 Start: !walk_segment (34 56)
+  26.5331001 Complete: !walk_segment (34 56)
+  26.5331001 Start: !walk_segment (33 56)
+  26.7164307 Complete: !walk_segment (33 56)
+  26.7164307 Start: !say "One coordinate is even and the other is odd!"
+  27.5330849 Complete: !say "One coordinate is even and the other is odd!"
+  27.5330849 Start: !after_destination_comment
+  27.5830841 Complete: !after_destination_comment
+  27.5830841 New plan: 2 plan step(s)
+  27.5830841 Start: !say "One coordinate is even and the other is odd!"
+  28.3997383 Complete: !say "One coordinate is even and the other is odd!"
+  28.3997383 Start: !after_destination_comment
+  28.4497375 Complete: !after_destination_comment
+  28.4497375 New plan: 10 plan step(s)
+  28.4497375 Start: !walk_segment (33 52)
+  29.1830597 Complete: !walk_segment (33 52)
+  29.1830597 Start: !walk_segment (27 51)
+  30.2997093 Complete: !walk_segment (27 51)
+  30.2997093 Start: !walk_segment (9 52)
+  33.5829926 Complete: !walk_segment (9 52)
+  33.5829926 Start: !walk_segment (8 52)
+  33.7663231 Complete: !walk_segment (8 52)
+  33.7663231 Start: !walk_segment (8 50)
+  34.1329842 Complete: !walk_segment (8 50)
+  34.1329842 Start: !walk_segment (6 50)
+  34.4996452 Complete: !walk_segment (6 50)
+  34.4996452 Start: !walk_segment (6 48)
+  34.8663063 Complete: !walk_segment (6 48)
+  34.8663063 Start: !walk_segment (7 48)
+  35.0496368 Complete: !walk_segment (7 48)
+  35.0496368 Start: !say "One coordinate is even and the other is odd!"
+  35.866291 Complete: !say "One coordinate is even and the other is odd!"
+  35.866291 Start: !after_destination_comment
+  35.9162903 Complete: !after_destination_comment
+  35.9162903 New plan: 2 plan step(s)
+  35.9162903 Start: !say "One coordinate is even and the other is odd!"
+  36.7329445 Complete: !say "One coordinate is even and the other is odd!"
+  36.7329445 Start: !after_destination_comment
+  36.7829437 Complete: !after_destination_comment
+  36.7829437 New plan: 3 plan step(s)
+  36.7829437 Start: !wait_for_pathfinding_query
+  36.9496078 Complete: !wait_for_pathfinding_query
+  36.9496078 Start: !say "One coordinate is even and the other is odd!"
+  37.7662621 Complete: !say "One coordinate is even and the other is odd!"
+  37.7662621 Start: !after_destination_comment
+  37.8162613 Complete: !after_destination_comment
+  37.8162613 New plan: 18 plan step(s)
+  37.8162613 Start: !walk_segment (5 43)
+  38.7995796 Complete: !walk_segment (5 43)
+  38.7995796 Start: !walk_segment (5 41)
+  39.1662407 Complete: !walk_segment (5 41)
+  39.1662407 Start: !walk_segment (7 37)
+  39.9828949 Complete: !walk_segment (7 37)
+  39.9828949 Start: !walk_segment (15 37)
+  41.4495392 Complete: !walk_segment (15 37)
+  41.4495392 Start: !walk_segment (15 39)
+  41.8162003 Complete: !walk_segment (15 39)
+  41.8162003 Start: !walk_segment (23 39)
+  43.2828445 Complete: !walk_segment (23 39)
+  43.2828445 Start: !walk_segment (23 38)
+  43.4661751 Complete: !walk_segment (23 38)
+  43.4661751 Start: !walk_segment (32 37)
+  45.1161499 Complete: !walk_segment (32 37)
+  45.1161499 Start: !walk_segment (32 36)
+  45.2994804 Complete: !walk_segment (32 36)
+  45.2994804 Start: !walk_segment (38 35)
+  46.4161301 Complete: !walk_segment (38 35)
+  46.4161301 Start: !walk_segment (38 34)
+  46.5994606 Complete: !walk_segment (38 34)
+  46.5994606 Start: !walk_segment (49 34)
+  48.6160965 Complete: !walk_segment (49 34)
+  48.6160965 Start: !walk_segment (49 33)
+  48.799427 Complete: !walk_segment (49 33)
+  48.799427 Start: !walk_segment (53 32)
+  49.5494156 Complete: !walk_segment (53 32)
+  49.5494156 Start: !walk_segment (55 32)
+  49.9160767 Complete: !walk_segment (55 32)
+  49.9160767 Start: !walk_segment (56 34)
+  50.332737 Complete: !walk_segment (56 34)
+  50.332737 Start: !say "Both coordinates are even!"
+  51.1493912 Complete: !say "Both coordinates are even!"
+  51.1493912 Start: !after_destination_comment
+  51.1993904 Complete: !after_destination_comment
+  51.1993904 New plan: 2 plan step(s)
+  51.1993904 Start: !say "Both coordinates are even!"
+  52.0160446 Complete: !say "Both coordinates are even!"
+  52.0160446 Start: !after_destination_comment
+  52.0660439 Complete: !after_destination_comment
+  52.0660439 New plan: 7 plan step(s)
+  52.0660439 Start: !walk_segment (48 22)
+  54.699337 Complete: !walk_segment (48 22)
+  54.699337 Start: !walk_segment (47 15)
+  55.9993172 Complete: !walk_segment (47 15)
+  55.9993172 Start: !walk_segment (48 15)
+  56.1826477 Complete: !walk_segment (48 15)
+  56.1826477 Start: !walk_segment (48 10)
+  57.0993004 Complete: !walk_segment (48 10)
+  57.0993004 Start: !walk_segment (47 10)
+  57.2826309 Complete: !walk_segment (47 10)
+  57.2826309 Start: !say "One coordinate is even and the other is odd!"
+  58.0992851 Complete: !say "One coordinate is even and the other is odd!"
+  58.0992851 Start: !after_destination_comment
+  58.1492844 Complete: !after_destination_comment
+  58.1492844 New plan: 2 plan step(s)
+  58.1492844 Start: !say "One coordinate is even and the other is odd!"
+  58.9659386 Complete: !say "One coordinate is even and the other is odd!"
+  58.9659386 Start: !after_destination_comment
+  59.0159378 Complete: !after_destination_comment
+  59.0159378 New plan: 3 plan step(s)
+  59.0159378 Start: !wait_for_pathfinding_query
+  59.1826019 Complete: !wait_for_pathfinding_query
+  59.1826019 Start: !say "One coordinate is even and the other is odd!"
+  59.9992561 Complete: !say "One coordinate is even and the other is odd!"
+  59.9992561 Start: !after_destination_comment
+history 2
+  10.0833511 Start: !after_destination_comment
+  10.1333504 Complete: !after_destination_comment
+  10.1333504 New plan: 4 plan step(s)
+  10.1333504 Start: !walk_segment (34 56)
+  11.5999947 Complete: !walk_segment (34 56)
+  11.5999947 Start: !walk_segment (33 56)
+  11.7833252 Complete: !walk_segment (33 56)
+  11.7833252 Start: !say "One coordinate is even and the other is odd!"
+  12.5999794 Complete: !say "One coordinate is even and the other is odd!"
+  12.5999794 Start: !after_destination_comment
+  12.6499786 Complete: !after_destination_comment
+  12.6499786 New plan: 2 plan step(s)
+  12.6499786 Start: !say "One coordinate is even and the other is odd!"
+  13.4666328 Complete: !say "One coordinate is even and the other is odd!"
+  13.4666328 Start: !after_destination_comment
+  13.5166321 Complete: !after_destination_comment
+  13.5166321 New plan: 10 plan step(s)
+  13.5166321 Start: !walk_segment (33 52)
+  14.2499542 Complete: !walk_segment (33 52)
+  14.2499542 Start: !walk_segment (27 51)
+  15.3666039 Complete: !walk_segment (27 51)
+  15.3666039 Start: !walk_segment (9 52)
+  18.6498871 Complete: !walk_segment (9 52)
+  18.6498871 Start: !walk_segment (8 52)
+  18.8332176 Complete: !walk_segment (8 52)
+  18.8332176 Start: !walk_segment (8 50)
+  19.1998787 Complete: !walk_segment (8 50)
+  19.1998787 Start: !walk_segment (6 50)
+  19.5665398 Complete: !walk_segment (6 50)
+  19.5665398 Start: !walk_segment (6 48)
+  19.9332008 Complete: !walk_segment (6 48)
+  19.9332008 Start: !walk_segment (7 48)
+  20.1165314 Complete: !walk_segment (7 48)
+  20.1165314 Start: !say "One coordinate is even and the other is odd!"
+  20.9331856 Complete: !say "One coordinate is even and the other is odd!"
+  20.9331856 Start: !after_destination_comment
+  20.9831848 Complete: !after_destination_comment
+  20.9831848 New plan: 2 plan step(s)
+  20.9831848 Start: !say "One coordinate is even and the other is odd!"
+  21.799839 Complete: !say "One coordinate is even and the other is odd!"
+  21.799839 Start: !after_destination_comment
+  21.8498383 Complete: !after_destination_comment
+  21.8498383 New plan: 3 plan step(s)
+  21.8498383 Start: !wait_for_pathfinding_query
+  22.0165024 Complete: !wait_for_pathfinding_query
+  22.0165024 Start: !say "One coordinate is even and the other is odd!"
+  22.8331566 Complete: !say "One coordinate is even and the other is odd!"
+  22.8331566 Start: !after_destination_comment
+  22.8831558 Complete: !after_destination_comment
+  22.8831558 New plan: 18 plan step(s)
+  22.8831558 Start: !walk_segment (5 43)
+  23.8664742 Complete: !walk_segment (5 43)
+  23.8664742 Start: !walk_segment (5 41)
+  24.2331352 Complete: !walk_segment (5 41)
+  24.2331352 Start: !walk_segment (7 37)
+  25.0497894 Complete: !walk_segment (7 37)
+  25.0497894 Start: !walk_segment (15 37)
+  26.5164337 Complete: !walk_segment (15 37)
+  26.5164337 Start: !walk_segment (15 39)
+  26.8830948 Complete: !walk_segment (15 39)
+  26.8830948 Start: !walk_segment (23 39)
+  28.3497391 Complete: !walk_segment (23 39)
+  28.3497391 Start: !walk_segment (23 38)
+  28.5330696 Complete: !walk_segment (23 38)
+  28.5330696 Start: !walk_segment (32 37)
+  30.1830444 Complete: !walk_segment (32 37)
+  30.1830444 Start: !walk_segment (32 36)
+  30.366375 Complete: !walk_segment (32 36)
+  30.366375 Start: !walk_segment (38 35)
+  31.4830246 Complete: !walk_segment (38 35)
+  31.4830246 Start: !walk_segment (38 34)
+  31.6663551 Complete: !walk_segment (38 34)
+  31.6663551 Start: !walk_segment (49 34)
+  33.682991 Complete: !walk_segment (49 34)
+  33.682991 Start: !walk_segment (49 33)
+  33.8663216 Complete: !walk_segment (49 33)
+  33.8663216 Start: !walk_segment (53 32)
+  34.6163101 Complete: !walk_segment (53 32)
+  34.6163101 Start: !walk_segment (55 32)
+  34.9829712 Complete: !walk_segment (55 32)
+  34.9829712 Start: !walk_segment (56 34)
+  35.3996315 Complete: !walk_segment (56 34)
+  35.3996315 Start: !say "Both coordinates are even!"
+  36.2162857 Complete: !say "Both coordinates are even!"
+  36.2162857 Start: !after_destination_comment
+  36.2662849 Complete: !after_destination_comment
+  36.2662849 New plan: 2 plan step(s)
+  36.2662849 Start: !say "Both coordinates are even!"
+  37.0829391 Complete: !say "Both coordinates are even!"
+  37.0829391 Start: !after_destination_comment
+  37.1329384 Complete: !after_destination_comment
+  37.1329384 New plan: 7 plan step(s)
+  37.1329384 Start: !walk_segment (48 22)
+  39.7662315 Complete: !walk_segment (48 22)
+  39.7662315 Start: !walk_segment (47 15)
+  41.0662117 Complete: !walk_segment (47 15)
+  41.0662117 Start: !walk_segment (48 15)
+  41.2495422 Complete: !walk_segment (48 15)
+  41.2495422 Start: !walk_segment (48 10)
+  42.1661949 Complete: !walk_segment (48 10)
+  42.1661949 Start: !walk_segment (47 10)
+  42.3495255 Complete: !walk_segment (47 10)
+  42.3495255 Start: !say "One coordinate is even and the other is odd!"
+  43.1661797 Complete: !say "One coordinate is even and the other is odd!"
+  43.1661797 Start: !after_destination_comment
+  43.2161789 Complete: !after_destination_comment
+  43.2161789 New plan: 2 plan step(s)
+  43.2161789 Start: !say "One coordinate is even and the other is odd!"
+  44.0328331 Complete: !say "One coordinate is even and the other is odd!"
+  44.0328331 Start: !after_destination_comment
+  44.0828323 Complete: !after_destination_comment
+  44.0828323 New plan: 3 plan step(s)
+  44.0828323 Start: !wait_for_pathfinding_query
+  44.2494965 Complete: !wait_for_pathfinding_query
+  44.2494965 Start: !say "One coordinate is even and the other is odd!"
+  45.0661507 Complete: !say "One coordinate is even and the other is odd!"
+  45.0661507 Start: !after_destination_comment
+  45.1161499 Complete: !after_destination_comment
+  45.1161499 New plan: 13 plan step(s)
+  45.1161499 Start: !walk_segment (45 15)
+  46.0994682 Complete: !walk_segment (45 15)
+  46.0994682 Start: !walk_segment (41 17)
+  46.9161224 Complete: !walk_segment (41 17)
+  46.9161224 Start: !walk_segment (41 30)
+  49.282753 Complete: !walk_segment (41 30)
+  49.282753 Start: !walk_segment (37 30)
+  50.0160751 Complete: !walk_segment (37 30)
+  50.0160751 Start: !walk_segment (38 40)
+  51.8493805 Complete: !walk_segment (38 40)
+  51.8493805 Start: !walk_segment (36 41)
+  52.2660408 Complete: !walk_segment (36 41)
+  52.2660408 Start: !walk_segment (35 41)
+  52.4493713 Complete: !walk_segment (35 41)
+  52.4493713 Start: !walk_segment (35 44)
+  52.9993629 Complete: !walk_segment (35 44)
+  52.9993629 Start: !walk_segment (33 44)
+  53.366024 Complete: !walk_segment (33 44)
+  53.366024 Start: !walk_segment (30 50)
+  54.5993385 Complete: !walk_segment (30 50)
+  54.5993385 Start: !walk_segment (30 53)
+  55.1493301 Complete: !walk_segment (30 53)
+  55.1493301 Start: !say "One coordinate is even and the other is odd!"
+  55.9659843 Complete: !say "One coordinate is even and the other is odd!"
+  55.9659843 Start: !after_destination_comment
+  56.0159836 Complete: !after_destination_comment
+  56.0159836 New plan: 2 plan step(s)
+  56.0159836 Start: !say "One coordinate is even and the other is odd!"
+  56.8326378 Complete: !say "One coordinate is even and the other is odd!"
+  56.8326378 Start: !after_destination_comment
+  56.882637 Complete: !after_destination_comment
+  56.882637 New plan: 8 plan step(s)
+  56.882637 Start: !walk_segment (30 49)
+  57.6159592 Complete: !walk_segment (30 49)
+  57.6159592 Start: !walk_segment (33 45)
+  58.5326118 Complete: !walk_segment (33 45)
+  58.5326118 Start: !walk_segment (32 39)
+  59.6492615 Complete: !walk_segment (32 39)
+  59.6492615 Start: !walk_segment (31 39)
+  59.832592 Complete: !walk_segment (31 39)
+  59.832592 Start: !walk_segment (32 35)
+history 3
+  10.6666756 Start: !walk_segment (7 48)
+  10.8500061 Complete: !walk_segment (7 48)
+  10.8500061 Start: !say "One coordinate is even and the other is odd!"
+  11.6666603 Complete: !say "One coordinate is even and the other is odd!"
+  11.6666603 Start: !after_destination_comment
+  11.7166595 Complete: !after_destination_comment
+  11.7166595 New plan: 2 plan step(s)
+  11.7166595 Start: !say "One coordinate is even and the other is odd!"
+  12.5333138 Complete: !say "One coordinate is even and the other is odd!"
+  12.5333138 Start: !after_destination_comment
+  12.583313 Complete: !after_destination_comment
+  12.583313 New plan: 3 plan step(s)
+  12.583313 Start: !wait_for_pathfinding_query
+  12.7499771 Complete: !wait_for_pathfinding_query
+  12.7499771 Start: !say "One coordinate is even and the other is odd!"
+  13.5666313 Complete: !say "One coordinate is even and the other is odd!"
+  13.5666313 Start: !after_destination_comment
+  13.6166306 Complete: !after_destination_comment
+  13.6166306 New plan: 18 plan step(s)
+  13.6166306 Start: !walk_segment (5 43)
+  14.5999489 Complete: !walk_segment (5 43)
+  14.5999489 Start: !walk_segment (5 41)
+  14.96661 Complete: !walk_segment (5 41)
+  14.96661 Start: !walk_segment (7 37)
+  15.7832642 Complete: !walk_segment (7 37)
+  15.7832642 Start: !walk_segment (15 37)
+  17.2499084 Complete: !walk_segment (15 37)
+  17.2499084 Start: !walk_segment (15 39)
+  17.6165695 Complete: !walk_segment (15 39)
+  17.6165695 Start: !walk_segment (23 39)
+  19.0832138 Complete: !walk_segment (23 39)
+  19.0832138 Start: !walk_segment (23 38)
+  19.2665443 Complete: !walk_segment (23 38)
+  19.2665443 Start: !walk_segment (32 37)
+  20.9165192 Complete: !walk_segment (32 37)
+  20.9165192 Start: !walk_segment (32 36)
+  21.0998497 Complete: !walk_segment (32 36)
+  21.0998497 Start: !walk_segment (38 35)
+  22.2164993 Complete: !walk_segment (38 35)
+  22.2164993 Start: !walk_segment (38 34)
+  22.3998299 Complete: !walk_segment (38 34)
+  22.3998299 Start: !walk_segment (49 34)
+  24.4164658 Complete: !walk_segment (49 34)
+  24.4164658 Start: !walk_segment (49 33)
+  24.5997963 Complete: !walk_segment (49 33)
+  24.5997963 Start: !walk_segment (53 32)
+  25.3497849 Complete: !walk_segment (53 32)
+  25.3497849 Start: !walk_segment (55 32)
+  25.7164459 Complete: !walk_segment (55 32)
+  25.7164459 Start: !walk_segment (56 34)
+  26.1331062 Complete: !walk_segment (56 34)
+  26.1331062 Start: !say "Both coordinates are even!"
+  26.9497604 Complete: !say "Both coordinates are even!"
+  26.9497604 Start: !after_destination_comment
+  26.9997597 Complete: !after_destination_comment
+  26.9997597 New plan: 2 plan step(s)
+  26.9997597 Start: !say "Both coordinates are even!"
+  27.8164139 Complete: !say "Both coordinates are even!"
+  27.8164139 Start: !after_destination_comment
+  27.8664131 Complete: !after_destination_comment
+  27.8664131 New plan: 7 plan step(s)
+  27.8664131 Start: !walk_segment (48 22)
+  30.4997063 Complete: !walk_segment (48 22)
+  30.4997063 Start: !walk_segment (47 15)
+  31.7996864 Complete: !walk_segment (47 15)
+  31.7996864 Start: !walk_segment (48 15)
+  31.983017 Complete: !walk_segment (48 15)
+  31.983017 Start: !walk_segment (48 10)
+  32.8996696 Complete: !walk_segment (48 10)
+  32.8996696 Start: !walk_segment (47 10)
+  33.0830002 Complete: !walk_segment (47 10)
+  33.0830002 Start: !say "One coordinate is even and the other is odd!"
+  33.8996544 Complete: !say "One coordinate is even and the other is odd!"
+  33.8996544 Start: !after_destination_comment
+  33.9496536 Complete: !after_destination_comment
+  33.9496536 New plan: 2 plan step(s)
+  33.9496536 Start: !say "One coordinate is even and the other is odd!"
+  34.7663078 Complete: !say "One coordinate is even and the other is odd!"
+  34.7663078 Start: !after_destination_comment
+  34.8163071 Complete: !after_destination_comment
+  34.8163071 New plan: 3 plan step(s)
+  34.8163071 Start: !wait_for_pathfinding_query
+  34.9829712 Complete: !wait_for_pathfinding_query
+  34.9829712 Start: !say "One coordinate is even and the other is odd!"
+  35.7996254 Complete: !say "One coordinate is even and the other is odd!"
+  35.7996254 Start: !after_destination_comment
+  35.8496246 Complete: !after_destination_comment
+  35.8496246 New plan: 13 plan step(s)
+  35.8496246 Start: !walk_segment (45 15)
+  36.832943 Complete: !walk_segment (45 15)
+  36.832943 Start: !walk_segment (41 17)
+  37.6495972 Complete: !walk_segment (41 17)
+  37.6495972 Start: !walk_segment (41 30)
+  40.0162277 Complete: !walk_segment (41 30)
+  40.0162277 Start: !walk_segment (37 30)
+  40.7495499 Complete: !walk_segment (37 30)
+  40.7495499 Start: !walk_segment (38 40)
+  42.5828552 Complete: !walk_segment (38 40)
+  42.5828552 Start: !walk_segment (36 41)
+  42.9995155 Complete: !walk_segment (36 41)
+  42.9995155 Start: !walk_segment (35 41)
+  43.1828461 Complete: !walk_segment (35 41)
+  43.1828461 Start: !walk_segment (35 44)
+  43.7328377 Complete: !walk_segment (35 44)
+  43.7328377 Start: !walk_segment (33 44)
+  44.0994987 Complete: !walk_segment (33 44)
+  44.0994987 Start: !walk_segment (30 50)
+  45.3328133 Complete: !walk_segment (30 50)
+  45.3328133 Start: !walk_segment (30 53)
+  45.8828049 Complete: !walk_segment (30 53)
+  45.8828049 Start: !say "One coordinate is even and the other is odd!"
+  46.6994591 Complete: !say "One coordinate is even and the other is odd!"
+  46.6994591 Start: !after_destination_comment
+  46.7494583 Complete: !after_destination_comment
+  46.7494583 New plan: 2 plan step(s)
+  46.7494583 Start: !say "One coordinate is even and the other is odd!"
+  47.5661125 Complete: !say "One coordinate is even and the other is odd!"
+  47.5661125 Start: !after_destination_comment
+  47.6161118 Complete: !after_destination_comment
+  47.6161118 New plan: 8 plan step(s)
+  47.6161118 Start: !walk_segment (30 49)
+  48.3494339 Complete: !walk_segment (30 49)
+  48.3494339 Start: !walk_segment (33 45)
+  49.2660866 Complete: !walk_segment (33 45)
+  49.2660866 Start: !walk_segment (32 39)
+  50.3827362 Complete: !walk_segment (32 39)
+  50.3827362 Start: !walk_segment (31 39)
+  50.5660667 Complete: !walk_segment (31 39)
+  50.5660667 Start: !walk_segment (32 35)
+  51.3160553 Complete: !walk_segment (32 35)
+  51.3160553 Start: !walk_segment (33 35)
+  51.4993858 Complete: !walk_segment (33 35)
+  51.4993858 Start: !say "Both coordinates are odd!"
+  52.31604 Complete: !say "Both coordinates are odd!"
+  52.31604 Start: !after_destination_comment
+  52.3660393 Complete: !after_destination_comment
+  52.3660393 New plan: 2 plan step(s)
+  52.3660393 Start: !say "Both coordinates are odd!"
+  53.1826935 Complete: !say "Both coordinates are odd!"
+  53.1826935 Start: !after_destination_comment
+  53.2326927 Complete: !after_destination_comment
+  53.2326927 New plan: 3 plan step(s)
+  53.2326927 Start: !wait_for_pathfinding_query
+  53.3993568 Complete: !wait_for_pathfinding_query
+  53.3993568 Start: !say "Both coordinates are odd!"
+  54.216011 Complete: !say "Both coordinates are odd!"
+  54.216011 Start: !after_destination_comment
+  54.2660103 Complete: !after_destination_comment
+  54.2660103 New plan: 10 plan step(s)
+  54.2660103 Start: !walk_segment (35 27)
+  55.7659874 Complete: !walk_segment (35 27)
+  55.7659874 Start: !walk_segment (37 26)
+  56.1826477 Complete: !walk_segment (37 26)
+  56.1826477 Start: !walk_segment (41 26)
+  56.9159698 Complete: !walk_segment (41 26)
+  56.9159698 Start: !walk_segment (41 22)
+  57.649292 Complete: !walk_segment (41 22)
+  57.649292 Start: !walk_segment (45 19)
+  58.5659447 Complete: !walk_segment (45 19)
+  58.5659447 Start: !walk_segment (46 6)
+history 4
+  8.33337784 New plan: 2 plan step(s)
+  8.33337784 Start: !say "One coordinate is even and the other is odd!"
+  9.15003204 Complete: !say "One coordinate is even and the other is odd!"
+  9.15003204 Start: !after_destination_comment
+  9.20003128 Complete: !after_destination_comment
+  9.20003128 New plan: 3 plan step(s)
+  9.20003128 Start: !wait_for_pathfinding_query
+  9.3666954 Complete: !wait_for_pathfinding_query
+  9.3666954 Start: !say "One coordinate is even and the other is odd!"
+  10.1833496 Complete: !say "One coordinate is even and the other is odd!"
+  10.1833496 Start: !after_destination_comment
+  10.2333488 Complete: !after_destination_comment
+  10.2333488 New plan: 18 plan step(s)
+  10.2333488 Start: !walk_segment (5 43)
+  11.2166672 Complete: !walk_segment (5 43)
+  11.2166672 Start: !walk_segment (5 41)
+  11.5833282 Complete: !walk_segment (5 41)
+  11.5833282 Start: !walk_segment (7 37)
+  12.3999825 Complete: !walk_segment (7 37)
+  12.3999825 Start: !walk_segment (15 37)
+  13.8666267 Complete: !walk_segment (15 37)
+  13.8666267 Start: !walk_segment (15 39)
+  14.2332878 Complete: !walk_segment (15 39)
+  14.2332878 Start: !walk_segment (23 39)
+  15.6999321 Complete: !walk_segment (23 39)
+  15.6999321 Start: !walk_segment (23 38)
+  15.8832626 Complete: !walk_segment (23 38)
+  15.8832626 Start: !walk_segment (32 37)
+  17.5332375 Complete: !walk_segment (32 37)
+  17.5332375 Start: !walk_segment (32 36)
+  17.716568 Complete: !walk_segment (32 36)
+  17.716568 Start: !walk_segment (38 35)
+  18.8332176 Complete: !walk_segment (38 35)
+  18.8332176 Start: !walk_segment (38 34)
+  19.0165482 Complete: !walk_segment (38 34)
+  19.0165482 Start: !walk_segment (49 34)
+  21.0331841 Complete: !walk_segment (49 34)
+  21.0331841 Start: !walk_segment (49 33)
+  21.2165146 Complete: !walk_segment (49 33)
+  21.2165146 Start: !walk_segment (53 32)
+  21.9665031 Complete: !walk_segment (53 32)
+  21.9665031 Start: !walk_segment (55 32)
+  22.3331642 Complete: !walk_segment (55 32)
+  22.3331642 Start: !walk_segment (56 34)
+  22.7498245 Complete: !walk_segment (56 34)
+  22.7498245 Start: !say "Both coordinates are even!"
+  23.5664787 Complete: !say "Both coordinates are even!"
+  23.5664787 Start: !after_destination_comment
+  23.616478 Complete: !after_destination_comment
+  23.616478 New plan: 2 plan step(s)
+  23.616478 Start: !say "Both coordinates are even!"
+  24.4331322 Complete: !say "Both coordinates are even!"
+  24.4331322 Start: !after_destination_comment
+  24.4831314 Complete: !after_destination_comment
+  24.4831314 New plan: 7 plan step(s)
+  24.4831314 Start: !walk_segment (48 22)
+  27.1164246 Complete: !walk_segment (48 22)
+  27.1164246 Start: !walk_segment (47 15)
+  28.4164047 Complete: !walk_segment (47 15)
+  28.4164047 Start: !walk_segment (48 15)
+  28.5997353 Complete: !walk_segment (48 15)
+  28.5997353 Start: !walk_segment (48 10)
+  29.5163879 Complete: !walk_segment (48 10)
+  29.5163879 Start: !walk_segment (47 10)
+  29.6997185 Complete: !walk_segment (47 10)
+  29.6997185 Start: !say "One coordinate is even and the other is odd!"
+  30.5163727 Complete: !say "One coordinate is even and the other is odd!"
+  30.5163727 Start: !after_destination_comment
+  30.5663719 Complete: !after_destination_comment
+  30.5663719 New plan: 2 plan step(s)
+  30.5663719 Start: !say "One coordinate is even and the other is odd!"
+  31.3830261 Complete: !say "One coordinate is even and the other is odd!"
+  31.3830261 Start: !after_destination_comment
+  31.4330254 Complete: !after_destination_comment
+  31.4330254 New plan: 3 plan step(s)
+  31.4330254 Start: !wait_for_pathfinding_query
+  31.5996895 Complete: !wait_for_pathfinding_query
+  31.5996895 Start: !say "One coordinate is even and the other is odd!"
+  32.4163437 Complete: !say "One coordinate is even and the other is odd!"
+  32.4163437 Start: !after_destination_comment
+  32.4663429 Complete: !after_destination_comment
+  32.4663429 New plan: 13 plan step(s)
+  32.4663429 Start: !walk_segment (45 15)
+  33.4496613 Complete: !walk_segment (45 15)
+  33.4496613 Start: !walk_segment (41 17)
+  34.2663155 Complete: !walk_segment (41 17)
+  34.2663155 Start: !walk_segment (41 30)
+  36.632946 Complete: !walk_segment (41 30)
+  36.632946 Start: !walk_segment (37 30)
+  37.3662682 Complete: !walk_segment (37 30)
+  37.3662682 Start: !walk_segment (38 40)
+  39.1995735 Complete: !walk_segment (38 40)
+  39.1995735 Start: !walk_segment (36 41)
+  39.6162338 Complete: !walk_segment (36 41)
+  39.6162338 Start: !walk_segment (35 41)
+  39.7995644 Complete: !walk_segment (35 41)
+  39.7995644 Start: !walk_segment (35 44)
+  40.349556 Complete: !walk_segment (35 44)
+  40.349556 Start: !walk_segment (33 44)
+  40.716217 Complete: !walk_segment (33 44)
+  40.716217 Start: !walk_segment (30 50)
+  41.9495316 Complete: !walk_segment (30 50)
+  41.9495316 Start: !walk_segment (30 53)
+  42.4995232 Complete: !walk_segment (30 53)
+  42.4995232 Start: !say "One coordinate is even and the other is odd!"
+  43.3161774 Complete: !say "One coordinate is even and the other is odd!"
+  43.3161774 Start: !after_destination_comment
+  43.3661766 Complete: !after_destination_comment
+  43.3661766 New plan: 2 plan step(s)
+  43.3661766 Start: !say "One coordinate is even and the other is odd!"
+  44.1828308 Complete: !say "One coordinate is even and the other is odd!"
+  44.1828308 Start: !after_destination_comment
+  44.23283 Complete: !after_destination_comment
+  44.23283 New plan: 8 plan step(s)
+  44.23283 Start: !walk_segment (30 49)
+  44.9661522 Complete: !walk_segment (30 49)
+  44.9661522 Start: !walk_segment (33 45)
+  45.8828049 Complete: !walk_segment (33 45)
+  45.8828049 Start: !walk_segment (32 39)
+  46.9994545 Complete: !walk_segment (32 39)
+  46.9994545 Start: !walk_segment (31 39)
+  47.182785 Complete: !walk_segment (31 39)
+  47.182785 Start: !walk_segment (32 35)
+  47.9327736 Complete: !walk_segment (32 35)
+  47.9327736 Start: !walk_segment (33 35)
+  48.1161041 Complete: !walk_segment (33 35)
+  48.1161041 Start: !say "Both coordinates are odd!"
+  48.9327583 Complete: !say "Both coordinates are odd!"
+  48.9327583 Start: !after_destination_comment
+  48.9827576 Complete: !after_destination_comment
+  48.9827576 New plan: 2 plan step(s)
+  48.9827576 Start: !say "Both coordinates are odd!"
+  49.7994118 Complete: !say "Both coordinates are odd!"
+  49.7994118 Start: !after_destination_comment
+  49.849411 Complete: !after_destination_comment
+  49.849411 New plan: 3 plan step(s)
+  49.849411 Start: !wait_for_pathfinding_query
+  50.0160751 Complete: !wait_for_pathfinding_query
+  50.0160751 Start: !say "Both coordinates are odd!"
+  50.8327293 Complete: !say "Both coordinates are odd!"
+  50.8327293 Start: !after_destination_comment
+  50.8827286 Complete: !after_destination_comment
+  50.8827286 New plan: 10 plan step(s)
+  50.8827286 Start: !walk_segment (35 27)
+  52.3827057 Complete: !walk_segment (35 27)
+  52.3827057 Start: !walk_segment (37 26)
+  52.799366 Complete: !walk_segment (37 26)
+  52.799366 Start: !walk_segment (41 26)
+  53.5326881 Complete: !walk_segment (41 26)
+  53.5326881 Start: !walk_segment (41 22)
+  54.2660103 Complete: !walk_segment (41 22)
+  54.2660103 Start: !walk_segment (45 19)
+  55.182663 Complete: !walk_segment (45 19)
+  55.182663 Start: !walk_segment (46 6)
+  57.5659599 Complete: !walk_segment (46 6)
+  57.5659599 Start: !walk_segment (57 3)
+  59.6492615 Complete: !walk_segment (57 3)
+  59.6492615 Start: !walk_segment (57 2)
+  59.832592 Complete: !walk_segment (57 2)
+  59.832592 Start: !say "One coordinate is even and the other is odd!"
+history 5
+  7.36670828 Start: !walk_segment (23 38)
+  7.55004406 Complete: !walk_segment (23 38)
+  7.55004406 Start: !walk_segment (32 37)
+  9.20003128 Complete: !walk_segment (32 37)
+  9.20003128 Start: !walk_segment (32 36)
+  9.38336182 Complete: !walk_segment (32 36)
+  9.38336182 Start: !walk_segment (38 35)
+  10.5000114 Complete: !walk_segment (38 35)
+  10.5000114 Start: !walk_segment (38 34)
+  10.683342 Complete: !walk_segment (38 34)
+  10.683342 Start: !walk_segment (49 34)
+  12.6999779 Complete: !walk_segment (49 34)
+  12.6999779 Start: !walk_segment (49 33)
+  12.8833084 Complete: !walk_segment (49 33)
+  12.8833084 Start: !walk_segment (53 32)
+  13.633297 Complete: !walk_segment (53 32)
+  13.633297 Start: !walk_segment (55 32)
+  13.999958 Complete: !walk_segment (55 32)
+  13.999958 Start: !walk_segment (56 34)
+  14.4166183 Complete: !walk_segment (56 34)
+  14.4166183 Start: !say "Both coordinates are even!"
+  15.2332726 Complete: !say "Both coordinates are even!"
+  15.2332726 Start: !after_destination_comment
+  15.2832718 Complete: !after_destination_comment
+  15.2832718 New plan: 2 plan step(s)
+  15.2832718 Start: !say "Both coordinates are even!"
+  16.099926 Complete: !say "Both coordinates are even!"
+  16.099926 Start: !after_destination_comment
+  16.1499252 Complete: !after_destination_comment
+  16.1499252 New plan: 7 plan step(s)
+  16.1499252 Start: !walk_segment (48 22)
+  18.7832184 Complete: !walk_segment (48 22)
+  18.7832184 Start: !walk_segment (47 15)
+  20.0831985 Complete: !walk_segment (47 15)
+  20.0831985 Start: !walk_segment (48 15)
+  20.2665291 Complete: !walk_segment (48 15)
+  20.2665291 Start: !walk_segment (48 10)
+  21.1831818 Complete: !walk_segment (48 10)
+  21.1831818 Start: !walk_segment (47 10)
+  21.3665123 Complete: !walk_segment (47 10)
+  21.3665123 Start: !say "One coordinate is even and the other is odd!"
+  22.1831665 Complete: !say "One coordinate is even and the other is odd!"
+  22.1831665 Start: !after_destination_comment
+  22.2331657 Complete: !after_destination_comment
+  22.2331657 New plan: 2 plan step(s)
+  22.2331657 Start: !say "One coordinate is even and the other is odd!"
+  23.0498199 Complete: !say "One coordinate is even and the other is odd!"
+  23.0498199 Start: !after_destination_comment
+  23.0998192 Complete: !after_destination_comment
+  23.0998192 New plan: 3 plan step(s)
+  23.0998192 Start: !wait_for_pathfinding_query
+  23.2664833 Complete: !wait_for_pathfinding_query
+  23.2664833 Start: !say "One coordinate is even and the other is odd!"
+  24.0831375 Complete: !say "One coordinate is even and the other is odd!"
+  24.0831375 Start: !after_destination_comment
+  24.1331367 Complete: !after_destination_comment
+  24.1331367 New plan: 13 plan step(s)
+  24.1331367 Start: !walk_segment (45 15)
+  25.1164551 Complete: !walk_segment (45 15)
+  25.1164551 Start: !walk_segment (41 17)
+  25.9331093 Complete: !walk_segment (41 17)
+  25.9331093 Start: !walk_segment (41 30)
+  28.2997398 Complete: !walk_segment (41 30)
+  28.2997398 Start: !walk_segment (37 30)
+  29.033062 Complete: !walk_segment (37 30)
+  29.033062 Start: !walk_segment (38 40)
+  30.8663673 Complete: !walk_segment (38 40)
+  30.8663673 Start: !walk_segment (36 41)
+  31.2830276 Complete: !walk_segment (36 41)
+  31.2830276 Start: !walk_segment (35 41)
+  31.4663582 Complete: !walk_segment (35 41)
+  31.4663582 Start: !walk_segment (35 44)
+  32.0163498 Complete: !walk_segment (35 44)
+  32.0163498 Start: !walk_segment (33 44)
+  32.3830109 Complete: !walk_segment (33 44)
+  32.3830109 Start: !walk_segment (30 50)
+  33.6163254 Complete: !walk_segment (30 50)
+  33.6163254 Start: !walk_segment (30 53)
+  34.166317 Complete: !walk_segment (30 53)
+  34.166317 Start: !say "One coordinate is even and the other is odd!"
+  34.9829712 Complete: !say "One coordinate is even and the other is odd!"
+  34.9829712 Start: !after_destination_comment
+  35.0329704 Complete: !after_destination_comment
+  35.0329704 New plan: 2 plan step(s)
+  35.0329704 Start: !say "One coordinate is even and the other is odd!"
+  35.8496246 Complete: !say "One coordinate is even and the other is odd!"
+  35.8496246 Start: !after_destination_comment
+  35.8996239 Complete: !after_destination_comment
+  35.8996239 New plan: 8 plan step(s)
+  35.8996239 Start: !walk_segment (30 49)
+  36.632946 Complete: !walk_segment (30 49)
+  36.632946 Start: !walk_segment (33 45)
+  37.5495987 Complete: !walk_segment (33 45)
+  37.5495987 Start: !walk_segment (32 39)
+  38.6662483 Complete: !walk_segment (32 39)
+  38.6662483 Start: !walk_segment (31 39)
+  38.8495789 Complete: !walk_segment (31 39)
+  38.8495789 Start: !walk_segment (32 35)
+  39.5995674 Complete: !walk_segment (32 35)
+  39.5995674 Start: !walk_segment (33 35)
+  39.7828979 Complete: !walk_segment (33 35)
+  39.7828979 Start: !say "Both coordinates are odd!"
+  40.5995522 Complete: !say "Both coordinates are odd!"
+  40.5995522 Start: !after_destination_comment
+  40.6495514 Complete: !after_destination_comment
+  40.6495514 New plan: 2 plan step(s)
+  40.6495514 Start: !say "Both coordinates are odd!"
+  41.4662056 Complete: !say "Both coordinates are odd!"
+  41.4662056 Start: !after_destination_comment
+  41.5162048 Complete: !after_destination_comment
+  41.5162048 New plan: 3 plan step(s)
+  41.5162048 Start: !wait_for_pathfinding_query
+  41.682869 Complete: !wait_for_pathfinding_query
+  41.682869 Start: !say "Both coordinates are odd!"
+  42.4995232 Complete: !say "Both coordinates are odd!"
+  42.4995232 Start: !after_destination_comment
+  42.5495224 Complete: !after_destination_comment
+  42.5495224 New plan: 10 plan step(s)
+  42.5495224 Start: !walk_segment (35 27)
+  44.0494995 Complete: !walk_segment (35 27)
+  44.0494995 Start: !walk_segment (37 26)
+  44.4661598 Complete: !walk_segment (37 26)
+  44.4661598 Start: !walk_segment (41 26)
+  45.199482 Complete: !walk_segment (41 26)
+  45.199482 Start: !walk_segment (41 22)
+  45.9328041 Complete: !walk_segment (41 22)
+  45.9328041 Start: !walk_segment (45 19)
+  46.8494568 Complete: !walk_segment (45 19)
+  46.8494568 Start: !walk_segment (46 6)
+  49.2327538 Complete: !walk_segment (46 6)
+  49.2327538 Start: !walk_segment (57 3)
+  51.3160553 Complete: !walk_segment (57 3)
+  51.3160553 Start: !walk_segment (57 2)
+  51.4993858 Complete: !walk_segment (57 2)
+  51.4993858 Start: !say "One coordinate is even and the other is odd!"
+  52.31604 Complete: !say "One coordinate is even and the other is odd!"
+  52.31604 Start: !after_destination_comment
+  52.3660393 Complete: !after_destination_comment
+  52.3660393 New plan: 2 plan step(s)
+  52.3660393 Start: !say "One coordinate is even and the other is odd!"
+  53.1826935 Complete: !say "One coordinate is even and the other is odd!"
+  53.1826935 Start: !after_destination_comment
+  53.2326927 Complete: !after_destination_comment
+  53.2326927 New plan: 3 plan step(s)
+  53.2326927 Start: !wait_for_pathfinding_query
+  53.3993568 Complete: !wait_for_pathfinding_query
+  53.3993568 Start: !say "One coordinate is even and the other is odd!"
+  54.216011 Complete: !say "One coordinate is even and the other is odd!"
+  54.216011 Start: !after_destination_comment
+  54.2660103 Complete: !after_destination_comment
+  54.2660103 New plan: 11 plan step(s)
+  54.2660103 Start: !walk_segment (56 4)
+  54.6826706 Complete: !walk_segment (56 4)
+  54.6826706 Start: !walk_segment (52 6)
+  55.4993248 Complete: !walk_segment (52 6)
+  55.4993248 Start: !walk_segment (53 17)
+  57.5159607 Complete: !walk_segment (53 17)
+  57.5159607 Start: !walk_segment (51 20)
+  58.1826172 Complete: !walk_segment (51 20)
+  58.1826172 Start: !walk_segment (50 33)
+history 6
+  4.80000734 Start: !walk_segment (48 15)
+  4.98334312 Complete: !walk_segment (48 15)
+  4.98334312 Start: !walk_segment (48 10)
+  5.90002203 Complete: !walk_segment (48 10)
+  5.90002203 Start: !walk_segment (47 10)
+  6.08335781 Complete: !walk_segment (47 10)
+  6.08335781 Start: !say "One coordinate is even and the other is odd!"
+  6.90003538 Complete: !say "One coordinate is even and the other is odd!"
+  6.90003538 Start: !after_destination_comment
+  6.95003605 Complete: !after_destination_comment
+  6.95003605 New plan: 2 plan step(s)
+  6.95003605 Start: !say "One coordinate is even and the other is odd!"
+  7.76671362 Complete: !say "One coordinate is even and the other is odd!"
+  7.76671362 Start: !after_destination_comment
+  7.81671429 Complete: !after_destination_comment
+  7.81671429 New plan: 3 plan step(s)
+  7.81671429 Start: !wait_for_pathfinding_query
+  7.98338318 Complete: !wait_for_pathfinding_query
+  7.98338318 Start: !say "One coordinate is even and the other is odd!"
+  8.80003738 Complete: !say "One coordinate is even and the other is odd!"
+  8.80003738 Start: !after_destination_comment
+  8.85003662 Complete: !after_destination_comment
+  8.85003662 New plan: 13 plan step(s)
+  8.85003662 Start: !walk_segment (45 15)
+  9.83335495 Complete: !walk_segment (45 15)
+  9.83335495 Start: !walk_segment (41 17)
+  10.6500092 Complete: !walk_segment (41 17)
+  10.6500092 Start: !walk_segment (41 30)
+  13.0166397 Complete: !walk_segment (41 30)
+  13.0166397 Start: !walk_segment (37 30)
+  13.7499619 Complete: !walk_segment (37 30)
+  13.7499619 Start: !walk_segment (38 40)
+  15.5832672 Complete: !walk_segment (38 40)
+  15.5832672 Start: !walk_segment (36 41)
+  15.9999275 Complete: !walk_segment (36 41)
+  15.9999275 Start: !walk_segment (35 41)
+  16.1832581 Complete: !walk_segment (35 41)
+  16.1832581 Start: !walk_segment (35 44)
+  16.7332497 Complete: !walk_segment (35 44)
+  16.7332497 Start: !walk_segment (33 44)
+  17.0999107 Complete: !walk_segment (33 44)
+  17.0999107 Start: !walk_segment (30 50)
+  18.3332253 Complete: !walk_segment (30 50)
+  18.3332253 Start: !walk_segment (30 53)
+  18.8832169 Complete: !walk_segment (30 53)
+  18.8832169 Start: !say "One coordinate is even and the other is odd!"
+  19.6998711 Complete: !say "One coordinate is even and the other is odd!"
+  19.6998711 Start: !after_destination_comment
+  19.7498703 Complete: !after_destination_comment
+  19.7498703 New plan: 2 plan step(s)
+  19.7498703 Start: !say "One coordinate is even and the other is odd!"
+  20.5665245 Complete: !say "One coordinate is even and the other is odd!"
+  20.5665245 Start: !after_destination_comment
+  20.6165237 Complete: !after_destination_comment
+  20.6165237 New plan: 8 plan step(s)
+  20.6165237 Start: !walk_segment (30 49)
+  21.3498459 Complete: !walk_segment (30 49)
+  21.3498459 Start: !walk_segment (33 45)
+  22.2664986 Complete: !walk_segment (33 45)
+  22.2664986 Start: !walk_segment (32 39)
+  23.3831482 Complete: !walk_segment (32 39)
+  23.3831482 Start: !walk_segment (31 39)
+  23.5664787 Complete: !walk_segment (31 39)
+  23.5664787 Start: !walk_segment (32 35)
+  24.3164673 Complete: !walk_segment (32 35)
+  24.3164673 Start: !walk_segment (33 35)
+  24.4997978 Complete: !walk_segment (33 35)
+  24.4997978 Start: !say "Both coordinates are odd!"
+  25.316452 Complete: !say "Both coordinates are odd!"
+  25.316452 Start: !after_destination_comment
+  25.3664513 Complete: !after_destination_comment
+  25.3664513 New plan: 2 plan step(s)
+  25.3664513 Start: !say "Both coordinates are odd!"
+  26.1831055 Complete: !say "Both coordinates are odd!"
+  26.1831055 Start: !after_destination_comment
+  26.2331047 Complete: !after_destination_comment
+  26.2331047 New plan: 3 plan step(s)
+  26.2331047 Start: !wait_for_pathfinding_query
+  26.3997688 Complete: !wait_for_pathfinding_query
+  26.3997688 Start: !say "Both coordinates are odd!"
+  27.216423 Complete: !say "Both coordinates are odd!"
+  27.216423 Start: !after_destination_comment
+  27.2664223 Complete: !after_destination_comment
+  27.2664223 New plan: 10 plan step(s)
+  27.2664223 Start: !walk_segment (35 27)
+  28.7663994 Complete: !walk_segment (35 27)
+  28.7663994 Start: !walk_segment (37 26)
+  29.1830597 Complete: !walk_segment (37 26)
+  29.1830597 Start: !walk_segment (41 26)
+  29.9163818 Complete: !walk_segment (41 26)
+  29.9163818 Start: !walk_segment (41 22)
+  30.649704 Complete: !walk_segment (41 22)
+  30.649704 Start: !walk_segment (45 19)
+  31.5663567 Complete: !walk_segment (45 19)
+  31.5663567 Start: !walk_segment (46 6)
+  33.9496536 Complete: !walk_segment (46 6)
+  33.9496536 Start: !walk_segment (57 3)
+  36.0329552 Complete: !walk_segment (57 3)
+  36.0329552 Start: !walk_segment (57 2)
+  36.2162857 Complete: !walk_segment (57 2)
+  36.2162857 Start: !say "One coordinate is even and the other is odd!"
+  37.0329399 Complete: !say "One coordinate is even and the other is odd!"
+  37.0329399 Start: !after_destination_comment
+  37.0829391 Complete: !after_destination_comment
+  37.0829391 New plan: 2 plan step(s)
+  37.0829391 Start: !say "One coordinate is even and the other is odd!"
+  37.8995934 Complete: !say "One coordinate is even and the other is odd!"
+  37.8995934 Start: !after_destination_comment
+  37.9495926 Complete: !after_destination_comment
+  37.9495926 New plan: 3 plan step(s)
+  37.9495926 Start: !wait_for_pathfinding_query
+  38.1162567 Complete: !wait_for_pathfinding_query
+  38.1162567 Start: !say "One coordinate is even and the other is odd!"
+  38.9329109 Complete: !say "One coordinate is even and the other is odd!"
+  38.9329109 Start: !after_destination_comment
+  38.9829102 Complete: !after_destination_comment
+  38.9829102 New plan: 11 plan step(s)
+  38.9829102 Start: !walk_segment (56 4)
+  39.3995705 Complete: !walk_segment (56 4)
+  39.3995705 Start: !walk_segment (52 6)
+  40.2162247 Complete: !walk_segment (52 6)
+  40.2162247 Start: !walk_segment (53 17)
+  42.2328606 Complete: !walk_segment (53 17)
+  42.2328606 Start: !walk_segment (51 20)
+  42.8995171 Complete: !walk_segment (51 20)
+  42.8995171 Start: !walk_segment (50 33)
+  45.282814 Complete: !walk_segment (50 33)
+  45.282814 Start: !walk_segment (47 35)
+  45.9494705 Complete: !walk_segment (47 35)
+  45.9494705 Start: !walk_segment (47 53)
+  49.2327538 Complete: !walk_segment (47 53)
+  49.2327538 Start: !walk_segment (45 53)
+  49.5994148 Complete: !walk_segment (45 53)
+  49.5994148 Start: !walk_segment (45 57)
+  50.332737 Complete: !walk_segment (45 57)
+  50.332737 Start: !say "Both coordinates are odd!"
+  51.1493912 Complete: !say "Both coordinates are odd!"
+  51.1493912 Start: !after_destination_comment
+  51.1993904 Complete: !after_destination_comment
+  51.1993904 New plan: 2 plan step(s)
+  51.1993904 Start: !say "Both coordinates are odd!"
+  52.0160446 Complete: !say "Both coordinates are odd!"
+  52.0160446 Start: !after_destination_comment
+  52.0660439 Complete: !after_destination_comment
+  52.0660439 New plan: 15 plan step(s)
+  52.0660439 Start: !walk_segment (44 49)
+  53.5326881 Complete: !walk_segment (44 49)
+  53.5326881 Start: !walk_segment (42 49)
+  53.8993492 Complete: !walk_segment (42 49)
+  53.8993492 Start: !walk_segment (42 31)
+  57.1826324 Complete: !walk_segment (42 31)
+  57.1826324 Start: !walk_segment (41 25)
+  58.2992821 Complete: !walk_segment (41 25)
+  58.2992821 Start: !walk_segment (40 23)
+  58.7159424 Complete: !walk_segment (40 23)
+  58.7159424 Start: !walk_segment (38 23)
+  59.0826035 Complete: !walk_segment (38 23)
+  59.0826035 Start: !walk_segment (36 20)
+  59.7492599 Complete: !walk_segment (36 20)
+  59.7492599 Start: !walk_segment (33 20)
+history 7
+  6.80003405 Complete: !walk_segment (37 30)
+  6.80003405 Start: !walk_segment (38 40)
+  8.63337326 Complete: !walk_segment (38 40)
+  8.63337326 Start: !walk_segment (36 41)
+  9.05003357 Complete: !walk_segment (36 41)
+  9.05003357 Start: !walk_segment (35 41)
+  9.23336411 Complete: !walk_segment (35 41)
+  9.23336411 Start: !walk_segment (35 44)
+  9.78335571 Complete: !walk_segment (35 44)
+  9.78335571 Start: !walk_segment (33 44)
+  10.1500168 Complete: !walk_segment (33 44)
+  10.1500168 Start: !walk_segment (30 50)
+  11.3833313 Complete: !walk_segment (30 50)
+  11.3833313 Start: !walk_segment (30 53)
+  11.9333229 Complete: !walk_segment (30 53)
+  11.9333229 Start: !say "One coordinate is even and the other is odd!"
+  12.7499771 Complete: !say "One coordinate is even and the other is odd!"
+  12.7499771 Start: !after_destination_comment
+  12.7999763 Complete: !after_destination_comment
+  12.7999763 New plan: 2 plan step(s)
+  12.7999763 Start: !say "One coordinate is even and the other is odd!"
+  13.6166306 Complete: !say "One coordinate is even and the other is odd!"
+  13.6166306 Start: !after_destination_comment
+  13.6666298 Complete: !after_destination_comment
+  13.6666298 New plan: 8 plan step(s)
+  13.6666298 Start: !walk_segment (30 49)
+  14.3999519 Complete: !walk_segment (30 49)
+  14.3999519 Start: !walk_segment (33 45)
+  15.3166046 Complete: !walk_segment (33 45)
+  15.3166046 Start: !walk_segment (32 39)
+  16.4332542 Complete: !walk_segment (32 39)
+  16.4332542 Start: !walk_segment (31 39)
+  16.6165848 Complete: !walk_segment (31 39)
+  16.6165848 Start: !walk_segment (32 35)
+  17.3665733 Complete: !walk_segment (32 35)
+  17.3665733 Start: !walk_segment (33 35)
+  17.5499039 Complete: !walk_segment (33 35)
+  17.5499039 Start: !say "Both coordinates are odd!"
+  18.3665581 Complete: !say "Both coordinates are odd!"
+  18.3665581 Start: !after_destination_comment
+  18.4165573 Complete: !after_destination_comment
+  18.4165573 New plan: 2 plan step(s)
+  18.4165573 Start: !say "Both coordinates are odd!"
+  19.2332115 Complete: !say "Both coordinates are odd!"
+  19.2332115 Start: !after_destination_comment
+  19.2832108 Complete: !after_destination_comment
+  19.2832108 New plan: 3 plan step(s)
+  19.2832108 Start: !wait_for_pathfinding_query
+  19.4498749 Complete: !wait_for_pathfinding_query
+  19.4498749 Start: !say "Both coordinates are odd!"
+  20.2665291 Complete: !say "Both coordinates are odd!"
+  20.2665291 Start: !after_destination_comment
+  20.3165283 Complete: !after_destination_comment
+  20.3165283 New plan: 10 plan step(s)
+  20.3165283 Start: !walk_segment (35 27)
+  21.8165054 Complete: !walk_segment (35 27)
+  21.8165054 Start: !walk_segment (37 26)
+  22.2331657 Complete: !walk_segment (37 26)
+  22.2331657 Start: !walk_segment (41 26)
+  22.9664879 Complete: !walk_segment (41 26)
+  22.9664879 Start: !walk_segment (41 22)
+  23.69981 Complete: !walk_segment (41 22)
+  23.69981 Start: !walk_segment (45 19)
+  24.6164627 Complete: !walk_segment (45 19)
+  24.6164627 Start: !walk_segment (46 6)
+  26.9997597 Complete: !walk_segment (46 6)
+  26.9997597 Start: !walk_segment (57 3)
+  29.0830612 Complete: !walk_segment (57 3)
+  29.0830612 Start: !walk_segment (57 2)
+  29.2663918 Complete: !walk_segment (57 2)
+  29.2663918 Start: !say "One coordinate is even and the other is odd!"
+  30.083046 Complete: !say "One coordinate is even and the other is odd!"
+  30.083046 Start: !after_destination_comment
+  30.1330452 Complete: !after_destination_comment
+  30.1330452 New plan: 2 plan step(s)
+  30.1330452 Start: !say "One coordinate is even and the other is odd!"
+  30.9496994 Complete: !say "One coordinate is even and the other is odd!"
+  30.9496994 Start: !after_destination_comment
+  30.9996986 Complete: !after_destination_comment
+  30.9996986 New plan: 3 plan step(s)
+  30.9996986 Start: !wait_for_pathfinding_query
+  31.1663628 Complete: !wait_for_pathfinding_query
+  31.1663628 Start: !say "One coordinate is even and the other is odd!"
+  31.983017 Complete: !say "One coordinate is even and the other is odd!"
+  31.983017 Start: !after_destination_comment
+  32.0330162 Complete: !after_destination_comment
+  32.0330162 New plan: 11 plan step(s)
+  32.0330162 Start: !walk_segment (56 4)
+  32.4496765 Complete: !walk_segment (56 4)
+  32.4496765 Start: !walk_segment (52 6)
+  33.2663307 Complete: !walk_segment (52 6)
+  33.2663307 Start: !walk_segment (53 17)
+  35.2829666 Complete: !walk_segment (53 17)
+  35.2829666 Start: !walk_segment (51 20)
+  35.9496231 Complete: !walk_segment (51 20)
+  35.9496231 Start: !walk_segment (50 33)
+  38.3329201 Complete: !walk_segment (50 33)
+  38.3329201 Start: !walk_segment (47 35)
+  38.9995766 Complete: !walk_segment (47 35)
+  38.9995766 Start: !walk_segment (47 53)
+  42.2828598 Complete: !walk_segment (47 53)
+  42.2828598 Start: !walk_segment (45 53)
+  42.6495209 Complete: !walk_segment (45 53)
+  42.6495209 Start: !walk_segment (45 57)
+  43.382843 Complete: !walk_segment (45 57)
+  43.382843 Start: !say "Both coordinates are odd!"
+  44.1994972 Complete: !say "Both coordinates are odd!"
+  44.1994972 Start: !after_destination_comment
+  44.2494965 Complete: !after_destination_comment
+  44.2494965 New plan: 2 plan step(s)
+  44.2494965 Start: !say "Both coordinates are odd!"
+  45.0661507 Complete: !say "Both coordinates are odd!"
+  45.0661507 Start: !after_destination_comment
+  45.1161499 Complete: !after_destination_comment
+  45.1161499 New plan: 15 plan step(s)
+  45.1161499 Start: !walk_segment (44 49)
+  46.5827942 Complete: !walk_segment (44 49)
+  46.5827942 Start: !walk_segment (42 49)
+  46.9494553 Complete: !walk_segment (42 49)
+  46.9494553 Start: !walk_segment (42 31)
+  50.2327385 Complete: !walk_segment (42 31)
+  50.2327385 Start: !walk_segment (41 25)
+  51.3493881 Complete: !walk_segment (41 25)
+  51.3493881 Start: !walk_segment (40 23)
+  51.7660484 Complete: !walk_segment (40 23)
+  51.7660484 Start: !walk_segment (38 23)
+  52.1327095 Complete: !walk_segment (38 23)
+  52.1327095 Start: !walk_segment (36 20)
+  52.799366 Complete: !walk_segment (36 20)
+  52.799366 Start: !walk_segment (33 20)
+  53.3493576 Complete: !walk_segment (33 20)
+  53.3493576 Start: !walk_segment (33 17)
+  53.8993492 Complete: !walk_segment (33 17)
+  53.8993492 Start: !walk_segment (36 17)
+  54.4493408 Complete: !walk_segment (36 17)
+  54.4493408 Start: !walk_segment (36 14)
+  54.9993324 Complete: !walk_segment (36 14)
+  54.9993324 Start: !walk_segment (38 13)
+  55.4159927 Complete: !walk_segment (38 13)
+  55.4159927 Start: !walk_segment (39 13)
+  55.5993233 Complete: !walk_segment (39 13)
+  55.5993233 Start: !say "Both coordinates are odd!"
+  56.4159775 Complete: !say "Both coordinates are odd!"
+  56.4159775 Start: !after_destination_comment
+  56.4659767 Complete: !after_destination_comment
+  56.4659767 New plan: 2 plan step(s)
+  56.4659767 Start: !say "Both coordinates are odd!"
+  57.2826309 Complete: !say "Both coordinates are odd!"
+  57.2826309 Start: !after_destination_comment
+  57.3326302 Complete: !after_destination_comment
+  57.3326302 New plan: 6 plan step(s)
+  57.3326302 Start: !walk_segment (38 13)
+  57.5159607 Complete: !walk_segment (38 13)
+  57.5159607 Start: !walk_segment (38 10)
+  58.0659523 Complete: !walk_segment (38 10)
+  58.0659523 Start: !walk_segment (42 9)
+  58.8159409 Complete: !walk_segment (42 9)
+  58.8159409 Start: !walk_segment (43 12)
+  59.3992653 Complete: !walk_segment (43 12)
+  59.3992653 Start: !say "One coordinate is even and the other is odd!"
+history 8
+  4.75000668 Complete: !walk_segment (33 35)
+  4.75000668 Start: !say "Both coordinates are odd!"
+  5.56668425 Complete: !say "Both coordinates are odd!"
+  5.56668425 Start: !after_destination_comment
+  5.61668491 Complete: !after_destination_comment
+  5.61668491 New plan: 2 plan step(s)
+  5.61668491 Start: !say "Both coordinates are odd!"
+  6.43336248 Complete: !say "Both coordinates are odd!"
+  6.43336248 Start: !after_destination_comment
+  6.48336315 Complete: !after_destination_comment
+  6.48336315 New plan: 3 plan step(s)
+  6.48336315 Start: !wait_for_pathfinding_query
+  6.65003204 Complete: !wait_for_pathfinding_query
+  6.65003204 Start: !say "Both coordinates are odd!"
+  7.46670961 Complete: !say "Both coordinates are odd!"
+  7.46670961 Start: !after_destination_comment
+  7.51671028 Complete: !after_destination_comment
+  7.51671028 New plan: 10 plan step(s)
+  7.51671028 Start: !walk_segment (35 27)
+  9.01670074 Complete: !walk_segment (35 27)
+  9.01670074 Start: !walk_segment (37 26)
+  9.43336105 Complete: !walk_segment (37 26)
+  9.43336105 Start: !walk_segment (41 26)
+  10.1666832 Complete: !walk_segment (41 26)
+  10.1666832 Start: !walk_segment (41 22)
+  10.9000053 Complete: !walk_segment (41 22)
+  10.9000053 Start: !walk_segment (45 19)
+  11.816658 Complete: !walk_segment (45 19)
+  11.816658 Start: !walk_segment (46 6)
+  14.199955 Complete: !walk_segment (46 6)
+  14.199955 Start: !walk_segment (57 3)
+  16.2832565 Complete: !walk_segment (57 3)
+  16.2832565 Start: !walk_segment (57 2)
+  16.4665871 Complete: !walk_segment (57 2)
+  16.4665871 Start: !say "One coordinate is even and the other is odd!"
+  17.2832413 Complete: !say "One coordinate is even and the other is odd!"
+  17.2832413 Start: !after_destination_comment
+  17.3332405 Complete: !after_destination_comment
+  17.3332405 New plan: 2 plan step(s)
+  17.3332405 Start: !say "One coordinate is even and the other is odd!"
+  18.1498947 Complete: !say "One coordinate is even and the other is odd!"
+  18.1498947 Start: !after_destination_comment
+  18.199894 Complete: !after_destination_comment
+  18.199894 New plan: 3 plan step(s)
+  18.199894 Start: !wait_for_pathfinding_query
+  18.3665581 Complete: !wait_for_pathfinding_query
+  18.3665581 Start: !say "One coordinate is even and the other is odd!"
+  19.1832123 Complete: !say "One coordinate is even and the other is odd!"
+  19.1832123 Start: !after_destination_comment
+  19.2332115 Complete: !after_destination_comment
+  19.2332115 New plan: 11 plan step(s)
+  19.2332115 Start: !walk_segment (56 4)
+  19.6498718 Complete: !walk_segment (56 4)
+  19.6498718 Start: !walk_segment (52 6)
+  20.466526 Complete: !walk_segment (52 6)
+  20.466526 Start: !walk_segment (53 17)
+  22.4831619 Complete: !walk_segment (53 17)
+  22.4831619 Start: !walk_segment (51 20)
+  23.1498184 Complete: !walk_segment (51 20)
+  23.1498184 Start: !walk_segment (50 33)
+  25.5331154 Complete: !walk_segment (50 33)
+  25.5331154 Start: !walk_segment (47 35)
+  26.1997719 Complete: !walk_segment (47 35)
+  26.1997719 Start: !walk_segment (47 53)
+  29.4830551 Complete: !walk_segment (47 53)
+  29.4830551 Start: !walk_segment (45 53)
+  29.8497162 Complete: !walk_segment (45 53)
+  29.8497162 Start: !walk_segment (45 57)
+  30.5830383 Complete: !walk_segment (45 57)
+  30.5830383 Start: !say "Both coordinates are odd!"
+  31.3996925 Complete: !say "Both coordinates are odd!"
+  31.3996925 Start: !after_destination_comment
+  31.4496918 Complete: !after_destination_comment
+  31.4496918 New plan: 2 plan step(s)
+  31.4496918 Start: !say "Both coordinates are odd!"
+  32.266346 Complete: !say "Both coordinates are odd!"
+  32.266346 Start: !after_destination_comment
+  32.3163452 Complete: !after_destination_comment
+  32.3163452 New plan: 15 plan step(s)
+  32.3163452 Start: !walk_segment (44 49)
+  33.7829895 Complete: !walk_segment (44 49)
+  33.7829895 Start: !walk_segment (42 49)
+  34.1496506 Complete: !walk_segment (42 49)
+  34.1496506 Start: !walk_segment (42 31)
+  37.4329338 Complete: !walk_segment (42 31)
+  37.4329338 Start: !walk_segment (41 25)
+  38.5495834 Complete: !walk_segment (41 25)
+  38.5495834 Start: !walk_segment (40 23)
+  38.9662437 Complete: !walk_segment (40 23)
+  38.9662437 Start: !walk_segment (38 23)
+  39.3329048 Complete: !walk_segment (38 23)
+  39.3329048 Start: !walk_segment (36 20)
+  39.9995613 Complete: !walk_segment (36 20)
+  39.9995613 Start: !walk_segment (33 20)
+  40.5495529 Complete: !walk_segment (33 20)
+  40.5495529 Start: !walk_segment (33 17)
+  41.0995445 Complete: !walk_segment (33 17)
+  41.0995445 Start: !walk_segment (36 17)
+  41.6495361 Complete: !walk_segment (36 17)
+  41.6495361 Start: !walk_segment (36 14)
+  42.1995277 Complete: !walk_segment (36 14)
+  42.1995277 Start: !walk_segment (38 13)
+  42.616188 Complete: !walk_segment (38 13)
+  42.616188 Start: !walk_segment (39 13)
+  42.7995186 Complete: !walk_segment (39 13)
+  42.7995186 Start: !say "Both coordinates are odd!"
+  43.6161728 Complete: !say "Both coordinates are odd!"
+  43.6161728 Start: !after_destination_comment
+  43.666172 Complete: !after_destination_comment
+  43.666172 New plan: 2 plan step(s)
+  43.666172 Start: !say "Both coordinates are odd!"
+  44.4828262 Complete: !say "Both coordinates are odd!"
+  44.4828262 Start: !after_destination_comment
+  44.5328255 Complete: !after_destination_comment
+  44.5328255 New plan: 6 plan step(s)
+  44.5328255 Start: !walk_segment (38 13)
+  44.716156 Complete: !walk_segment (38 13)
+  44.716156 Start: !walk_segment (38 10)
+  45.2661476 Complete: !walk_segment (38 10)
+  45.2661476 Start: !walk_segment (42 9)
+  46.0161362 Complete: !walk_segment (42 9)
+  46.0161362 Start: !walk_segment (43 12)
+  46.5994606 Complete: !walk_segment (43 12)
+  46.5994606 Start: !say "One coordinate is even and the other is odd!"
+  47.4161148 Complete: !say "One coordinate is even and the other is odd!"
+  47.4161148 Start: !after_destination_comment
+  47.466114 Complete: !after_destination_comment
+  47.466114 New plan: 1 plan step(s)
+  47.466114 Start: !play_contextual_animation check_shop_window (43 12)
+  50.4827347 Complete: !play_contextual_animation check_shop_window (43 12)
+  50.4827347 New plan: 2 plan step(s)
+  50.4827347 Start: !say "One coordinate is even and the other is odd!"
+  51.2993889 Complete: !say "One coordinate is even and the other is odd!"
+  51.2993889 Start: !after_destination_comment
+  51.3493881 Complete: !after_destination_comment
+  51.3493881 New plan: 3 plan step(s)
+  51.3493881 Start: !wait_for_pathfinding_query
+  51.5160522 Complete: !wait_for_pathfinding_query
+  51.5160522 Start: !say "One coordinate is even and the other is odd!"
+  52.3327065 Complete: !say "One coordinate is even and the other is odd!"
+  52.3327065 Start: !after_destination_comment
+  52.3827057 Complete: !after_destination_comment
+  52.3827057 New plan: 12 plan step(s)
+  52.3827057 Start: !walk_segment (45 13)
+  52.799366 Complete: !walk_segment (45 13)
+  52.799366 Start: !walk_segment (45 18)
+  53.7160187 Complete: !walk_segment (45 18)
+  53.7160187 Start: !walk_segment (48 20)
+  54.3826752 Complete: !walk_segment (48 20)
+  54.3826752 Start: !walk_segment (49 27)
+  55.6826553 Complete: !walk_segment (49 27)
+  55.6826553 Start: !walk_segment (50 29)
+  56.0993156 Complete: !walk_segment (50 29)
+  56.0993156 Start: !walk_segment (57 33)
+  57.5659599 Complete: !walk_segment (57 33)
+  57.5659599 Start: !walk_segment (58 33)
+  57.7492905 Complete: !walk_segment (58 33)
+  57.7492905 Start: !walk_segment (60 42)
+  59.4325981 Complete: !walk_segment (60 42)
+  59.4325981 Start: !walk_segment (59 52)

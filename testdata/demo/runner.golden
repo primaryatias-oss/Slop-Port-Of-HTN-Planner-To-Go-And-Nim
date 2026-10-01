@@ -1,0 +1,3961 @@
+domain AAACombatNPC method run
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !announce_state "high_order" 1
+step !mark_order_started 1 evacuate
+step !deploy_smoke 1
+step !move_to_order_target 1 "extraction_zone"
+step !mark_order_complete 1 evacuate
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !announce_state "idle" 1
+step !follow_patrol_route 1 "north_loop"
+step !inspect_checkpoint 1 "checkpoint_alpha"
+step !report_patrol_progress 1 "checkpoint_alpha"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !announce_state "investigation" 1
+step !move_to_cover 1 "pillar_7"
+step !report_suspicious_sound 1 "upper_walkway"
+step !scan_sector 1 "upper_walkway"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !announce_state "low_order" 1
+step !mark_order_started 1 guard
+step !guard_target 1 "west_gate"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !announce_state "medium_order" 1
+step !mark_order_started 1 escort
+step !follow_escort_route 1 "scientist" "service_tunnel"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !announce_state "combat" 1
+step !switch_weapon 1 melee
+step !quick_melee_attack 1 202
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !announce_state "combat" 1
+step !switch_weapon 1 ranged
+step !aim_at 1 302
+step !fire_controlled_burst 1 302
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !announce_state "search" 1
+step !announce_lost_enemy 1 501
+step !follow_enemy_tracks 1 "muddy_corridor"
+step !scan_sector 1 "warehouse"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !announce_state "no_controlled_npc"
+domain AtomListDemo method show_atom_list
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !print_original (patrol 3 true (10.0 20.0 30.0))
+step !print_added (patrol 3 true (10.0 20.0 30.0) "return")
+step !print_removed (patrol true (10.0 20.0 30.0) "return")
+step !print_element (10.0 20.0 30.0)
+step !print_size 5
+step !print_cleared ()
+domain AtomListDemo method split_list_basic
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !split_result "one" ("two" "three")
+domain AtomListDemo method split_list_single_element
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !split_single_result "only" ()
+domain AtomListDemo method split_list_empty_fails
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !empty_list_rejected
+domain AtomListDemo method split_list_bound_outputs
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !bound_outputs_match
+domain AtomListDemo method split_list_rollback
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !rollback_result "only" ()
+domain AtomListDemo method split_list_front_basic
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !split_front_result "one" ("two" "three")
+domain AtomListDemo method split_list_back_basic
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !split_back_result "three" ("one" "two")
+domain AtomListDemo method split_list_back_bound_outputs
+run WorldStates/Test/atom_list_demo.worldstate None
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate Facts and axioms
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate Branches
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !split_back_bound_outputs_match
+domain EliteNinja method run
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !attack "elite_ninja_attack" 1
+domain Grunt method run
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !attack "normal_attack" 1
+domain NormalNinja method run
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !attack "ninja_attack" 1
+domain CallTermsDemo method test_callterms
+run WorldStates/Test/callterms.worldstate None
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/callterms.worldstate Facts and axioms
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/callterms.worldstate Branches
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+domain CallTermsDemo method callterm_creates_fact_visible_immediately
+run WorldStates/Test/callterms.worldstate None
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate Facts and axioms
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate Branches
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_high_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_idle.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_investigation.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_low_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_melee.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_ranged.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_search.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/atom_list_demo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/axiom_overloads.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_combat.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_idle.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/elite_ninja.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/human.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/numeric_expressions.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+run WorldStates/Wanderer.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:32:17)
+status NO_PLAN
+domain CallTermsDemo method callterm_world_state_mutation_survives_backtracking
+run WorldStates/Test/callterms.worldstate None
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate Facts and axioms
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate Branches
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_high_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_idle.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_investigation.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_low_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_melee.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_ranged.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/AAACombatNPC_search.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/atom_list_demo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/axiom_overloads.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/callterms.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_combat.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_idle.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/elite_ninja.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/human.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/numeric_expressions.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+run WorldStates/Wanderer.worldstate All
+[Generated] Callterm 'add_target_available' failed: daemon instance missing (daemon: AIHtnDaemonDemoTest, domain: CallTermsDemo, source: Domains/Test/callterms.domain:45:17)
+status NO_PLAN
+domain ComplexScenario method run_scenario
+run WorldStates/Test/complex_scenario_combat.worldstate None
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Combat response"
+step !aim 202
+step !fire 202
+run WorldStates/Test/complex_scenario_combat.worldstate Facts and axioms
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Combat response"
+step !aim 202
+step !fire 202
+run WorldStates/Test/complex_scenario_combat.worldstate Branches
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Combat response"
+step !aim 202
+step !fire 202
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Combat response"
+step !aim 202
+step !fire 202
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Combat response"
+step !aim 202
+step !fire 202
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Emergency response"
+step !move_to_cover "cover_A"
+step !aim 101
+step !fire 101
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Idle - no special action"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Mobility response"
+step !sprint_to "route_A" 1.0
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !log "Scenario started" 7 50 1.0
+step !log "Recovery response"
+step !use_medkit 7
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !log "Recursive scenario started" 7 50 1.0
+step !log "Emergency response"
+step !move_to_cover "cover_0"
+step !aim 10000
+step !fire 10000
+step !log "Combat response"
+step !aim 10001
+step !fire 10001
+step !log "Recovery response"
+step !use_medkit 334
+step !log "Mobility response"
+step !sprint_to "route_3" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_5"
+step !aim 10005
+step !fire 10005
+step !log "Combat response"
+step !aim 10006
+step !fire 10006
+step !log "Recovery response"
+step !use_medkit 404
+step !log "Mobility response"
+step !sprint_to "route_8" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_10"
+step !aim 10010
+step !fire 10010
+step !log "Combat response"
+step !aim 10011
+step !fire 10011
+step !log "Recovery response"
+step !use_medkit 409
+step !log "Mobility response"
+step !sprint_to "route_13" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_15"
+step !aim 10015
+step !fire 10015
+step !log "Combat response"
+step !aim 10016
+step !fire 10016
+step !log "Recovery response"
+step !use_medkit 414
+step !log "Mobility response"
+step !sprint_to "route_18" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_20"
+step !aim 10020
+step !fire 10020
+step !log "Combat response"
+step !aim 10021
+step !fire 10021
+step !log "Recovery response"
+step !use_medkit 419
+step !log "Mobility response"
+step !sprint_to "route_23" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_25"
+step !aim 10025
+step !fire 10025
+step !log "Combat response"
+step !aim 10026
+step !fire 10026
+step !log "Recovery response"
+step !use_medkit 424
+step !log "Mobility response"
+step !sprint_to "route_28" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_30"
+step !aim 10030
+step !fire 10030
+step !log "Combat response"
+step !aim 10031
+step !fire 10031
+step !log "Recovery response"
+step !use_medkit 429
+step !log "Mobility response"
+step !sprint_to "route_33" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_35"
+step !aim 10035
+step !fire 10035
+step !log "Combat response"
+step !aim 10036
+step !fire 10036
+step !log "Recovery response"
+step !use_medkit 434
+step !log "Mobility response"
+step !sprint_to "route_38" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_40"
+step !aim 10040
+step !fire 10040
+step !log "Combat response"
+step !aim 10041
+step !fire 10041
+step !log "Recovery response"
+step !use_medkit 439
+step !log "Mobility response"
+step !sprint_to "route_43" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_45"
+step !aim 10045
+step !fire 10045
+step !log "Combat response"
+step !aim 10046
+step !fire 10046
+step !log "Recovery response"
+step !use_medkit 444
+step !log "Mobility response"
+step !sprint_to "route_48" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_50"
+step !aim 10050
+step !fire 10050
+step !log "Combat response"
+step !aim 10051
+step !fire 10051
+step !log "Recovery response"
+step !use_medkit 449
+step !log "Mobility response"
+step !sprint_to "route_53" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_55"
+step !aim 10055
+step !fire 10055
+step !log "Combat response"
+step !aim 10056
+step !fire 10056
+step !log "Recovery response"
+step !use_medkit 454
+step !log "Mobility response"
+step !sprint_to "route_58" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_60"
+step !aim 10060
+step !fire 10060
+step !log "Combat response"
+step !aim 10061
+step !fire 10061
+step !log "Recovery response"
+step !use_medkit 459
+step !log "Mobility response"
+step !sprint_to "route_63" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_65"
+step !aim 10065
+step !fire 10065
+step !log "Combat response"
+step !aim 10066
+step !fire 10066
+step !log "Recovery response"
+step !use_medkit 464
+step !log "Mobility response"
+step !sprint_to "route_68" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_70"
+step !aim 10070
+step !fire 10070
+step !log "Combat response"
+step !aim 10071
+step !fire 10071
+step !log "Recovery response"
+step !use_medkit 469
+step !log "Mobility response"
+step !sprint_to "route_73" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_75"
+step !aim 10075
+step !fire 10075
+step !log "Combat response"
+step !aim 10076
+step !fire 10076
+step !log "Recovery response"
+step !use_medkit 474
+step !log "Mobility response"
+step !sprint_to "route_78" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_80"
+step !aim 10080
+step !fire 10080
+step !log "Combat response"
+step !aim 10081
+step !fire 10081
+step !log "Recovery response"
+step !use_medkit 479
+step !log "Mobility response"
+step !sprint_to "route_83" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_85"
+step !aim 10085
+step !fire 10085
+step !log "Combat response"
+step !aim 10086
+step !fire 10086
+step !log "Recovery response"
+step !use_medkit 484
+step !log "Mobility response"
+step !sprint_to "route_88" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_90"
+step !aim 10090
+step !fire 10090
+step !log "Combat response"
+step !aim 10091
+step !fire 10091
+step !log "Recovery response"
+step !use_medkit 489
+step !log "Mobility response"
+step !sprint_to "route_93" 1.0
+step !log "Idle - no special action"
+step !log "Emergency response"
+step !move_to_cover "cover_95"
+step !aim 10095
+step !fire 10095
+step !log "Combat response"
+step !aim 10096
+step !fire 10096
+step !log "Recovery response"
+step !use_medkit 494
+step !log "Mobility response"
+step !sprint_to "route_98" 1.0
+step !log "Idle - no special action"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !log "No active entity"
+domain Human method behave
+run WorldStates/Test/human.worldstate None
+status SUCCEEDED
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+run WorldStates/Test/human.worldstate Facts and axioms
+status SUCCEEDED
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+run WorldStates/Test/human.worldstate Branches
+status SUCCEEDED
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !take "orange"
+step !eat "orange"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+domain Human method behave_upper_body
+run WorldStates/Test/human.worldstate None
+status SUCCEEDED
+step !talk "This fruit is very tasty!"
+run WorldStates/Test/human.worldstate Facts and axioms
+status SUCCEEDED
+step !talk "This fruit is very tasty!"
+run WorldStates/Test/human.worldstate Branches
+status SUCCEEDED
+step !talk "This fruit is very tasty!"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !talk "This fruit is very tasty!"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !talk "This fruit is very tasty!"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !log "Error"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !log "Error"
+domain NestedCallsDemo method test_nested_calls
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !capture 17
+step !capture 19
+domain IncludeDemo method run_include_demo
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !continue_normal_behavior 7
+step !wait_for_route 7
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !log "No active entity for include demo"
+domain Wanderer method run
+run WorldStates/Wanderer.worldstate None
+[Generated] Callterm 'request_path_from_to' failed: daemon instance missing (daemon: AIHTNDemoPathfinder, domain: Wanderer, source: Domains/Includes/movement2.domain:66:30)
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Wanderer.worldstate Facts and axioms
+[Generated] Callterm 'request_path_from_to' failed: daemon instance missing (daemon: AIHTNDemoPathfinder, domain: Wanderer, source: Domains/Includes/movement2.domain:66:30)
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Wanderer.worldstate Branches
+[Generated] Callterm 'request_path_from_to' failed: daemon instance missing (daemon: AIHTNDemoPathfinder, domain: Wanderer, source: Domains/Includes/movement2.domain:66:30)
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Wanderer.worldstate All
+[Generated] Callterm 'request_path_from_to' failed: daemon instance missing (daemon: AIHTNDemoPathfinder, domain: Wanderer, source: Domains/Includes/movement2.domain:66:30)
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !wanderer_idle
+run WorldStates/Wanderer.worldstate All
+[Generated] Callterm 'request_path_from_to' failed: daemon instance missing (daemon: AIHTNDemoPathfinder, domain: Wanderer, source: Domains/Includes/movement2.domain:66:30)
+status SUCCEEDED
+step !wanderer_idle
+domain BuiltinComparisonsDemo method run
+run WorldStates/AAACombatNPC_high_order.worldstate None
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_high_order.worldstate Facts and axioms
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_high_order.worldstate Branches
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !report_comparison_case "fallback"
+domain HierarchicalBacktracking method validate_parent_guard
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate None
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Facts and axioms
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Branches
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !search enemy
+domain HierarchicalBacktracking method validate_child_guard
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate None
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Facts and axioms
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Branches
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !search enemy
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !search enemy
+domain HierarchicalBacktracking method validate_fact_backtracking
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate None
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Facts and axioms
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Branches
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !selected_fact second
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !fact_fallback
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !fact_fallback
+domain HierarchicalBacktracking method validate_axiom_backtracking
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate None
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Facts and axioms
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate Branches
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !selected_axiom second
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !axiom_fallback
+domain RuntimeBacktrackingDemo method demo_fact_alternatives
+run WorldStates/RuntimeBacktrackingDemo.worldstate None
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate Facts and axioms
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate Branches
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !fact_alternative_selected second
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !fact_alternative_not_retried
+domain RuntimeBacktrackingDemo method demo_axiom_alternatives
+run WorldStates/RuntimeBacktrackingDemo.worldstate None
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate Facts and axioms
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate Branches
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !axiom_alternative_selected second
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !axiom_alternative_not_retried
+domain RuntimeBacktrackingDemo method demo_hierarchical_branches
+run WorldStates/RuntimeBacktrackingDemo.worldstate None
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/RuntimeBacktrackingDemo.worldstate Facts and axioms
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/RuntimeBacktrackingDemo.worldstate Branches
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !branch_backtracking_selected_safe_path
+domain RuntimeBacktrackingDemo method demo_direct_branch_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate None
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate Facts and axioms
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate Branches
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !direct_precondition_fallback
+domain NumericExpressionsDemo method run
+run WorldStates/Test/numeric_expressions.worldstate None
+status SUCCEEDED
+step !numeric_result "success"
+run WorldStates/Test/numeric_expressions.worldstate Facts and axioms
+status SUCCEEDED
+step !numeric_result "success"
+run WorldStates/Test/numeric_expressions.worldstate Branches
+status SUCCEEDED
+step !numeric_result "success"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "success"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "success"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !numeric_result "failure"
+domain NumericExpressionsDemo method division_by_zero
+run WorldStates/Test/numeric_expressions.worldstate None
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate Facts and axioms
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate Branches
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+domain NumericExpressionsDemo method invalid_operand_type
+run WorldStates/Test/numeric_expressions.worldstate None
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate Facts and axioms
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate Branches
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_high_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_investigation.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_low_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_medium_order.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_melee.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_ranged.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/AAACombatNPC_search.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/RuntimeBacktrackingDemo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/atom_list_demo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/axiom_overloads.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_critical.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_engage.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_out_of_ammo.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/builtin_comparisons_safe.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/callterms.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_emergency.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_idle.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_mobility.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_recovery.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/complex_scenario_recursive_100.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/elite_ninja.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/hierarchical_backtracking_no_combat.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/human.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/human_axiom_backtracking.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/numeric_expressions.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Test/worldstate_lookup_scenarios.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"
+run WorldStates/Wanderer.worldstate All
+status SUCCEEDED
+step !numeric_result "controlled_failure"

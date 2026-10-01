@@ -95,3 +95,18 @@ add_executable(htn-oracle "${CMAKE_CURRENT_LIST_DIR}/oracle.cpp" ${GENERATED_SOU
 target_include_directories(htn-oracle PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 target_link_libraries(htn-oracle PRIVATE HTNIntegration HTNFramework)
 target_compile_definitions(htn-oracle PRIVATE HTN_PORT_ROOT="${PORT_ROOT}")
+
+# Headless driver for the original HTNDemo (world, daemons and agents without
+# the SDL/ImGui front end): the reference for the ports' htn-demo commands.
+set(HTN_DEMO_SOURCES
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/World/DemoGridTerrain.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/World/DemoWanderer.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/AI/AIHTNDemoWandererAgent.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/AI/AIHTNDemoPathfinder.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/AI/AIHTNDemoWanderer.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/AI/AIHTNDemoGridTerrainDaemon.cpp"
+    "${HTN_ORIGINAL_ROOT}/HTNDemo/src/AI/AIHtnDaemonDemoTest.cpp")
+add_executable(htn-demo-oracle "${CMAKE_CURRENT_LIST_DIR}/demo_oracle.cpp" ${HTN_DEMO_SOURCES} ${GENERATED_SOURCES})
+target_include_directories(htn-demo-oracle PRIVATE "${HTN_ORIGINAL_ROOT}/HTNDemo/src")
+target_link_libraries(htn-demo-oracle PRIVATE HTNIntegration HTNFramework)
+target_compile_definitions(htn-demo-oracle PRIVATE HTN_PORT_ROOT="${PORT_ROOT}")
