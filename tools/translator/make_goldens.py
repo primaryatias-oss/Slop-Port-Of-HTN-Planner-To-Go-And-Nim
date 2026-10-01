@@ -158,7 +158,7 @@ def main():
         argv = [a.replace('$OUT', out) for a in command.split()]
         result = subprocess.run([args.oracle] + argv, cwd=ROOT, capture_output=True, text=True)
         def norm(text):
-            text = text.replace(out, '$OUT').replace('HTNTranslator', 'htn-translator')
+            text = text.replace(out, '$OUT').replace(ROOT, '$ROOT').replace('HTNTranslator', 'htn-translator')
             return re.sub(r'\.generated\.c\b', '.generated.<ext>', text)
         golden.append(f'case {command}\nexit {result.returncode}\n--- stdout\n{norm(result.stdout)}--- stderr\n{norm(result.stderr)}--- end\n')
     with open(os.path.join(CASES, 'cases.golden'), 'w') as f:

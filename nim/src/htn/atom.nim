@@ -13,12 +13,15 @@ type
     ## Runtime type of an atom. Ordinal values match HTNAtomType.
     akUnbound, akBool, akInt, akFloat, akString, akSymbol, akList
 
-  Symbol* = ref object
-    ## An interned symbol. Symbols are compared by identity and live for the
-    ## lifetime of the process.
+  SymbolObj = object
     text: string
     hash: uint64
     id: uint64
+
+  Symbol* = ptr SymbolObj
+    ## An interned symbol. Symbols are compared by identity and live for the
+    ## lifetime of the process (they are never freed, so copying a symbol atom
+    ## needs no reference counting).
 
   AtomPayload = ref object
     str: string
@@ -74,7 +77,10 @@ proc intern*(text: string): Symbol =
   ## Returns the unique symbol for `text`, creating it when necessary.
   result = symbolTable.getOrDefault(text)
   if result == nil:
-    result = Symbol(text: text, hash: hashSymbolText(text), id: nextSymbolID)
+    result = create(SymbolObj)
+    result.text = text
+    result.hash = hashSymbolText(text)
+    result.id = nextSymbolID
     inc nextSymbolID
     symbolTable[text] = result
 
@@ -82,7 +88,7 @@ proc text*(s: Symbol): string {.inline.} =
   ## The symbol text ("" for nil).
   if s == nil: "" else: s.text
 
-proc `$`*(s: Symbol): string = s.text
+proc `$`*(s: Symbol): string = s.text()
 proc symbolHash*(s: Symbol): uint64 = s.hash
 proc symbolID*(s: Symbol): uint64 = s.id
 proc hash*(s: Symbol): Hash = hash(cast[pointer](s))

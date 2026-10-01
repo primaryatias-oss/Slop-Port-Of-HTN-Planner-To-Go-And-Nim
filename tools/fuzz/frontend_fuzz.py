@@ -67,7 +67,9 @@ def run(command, cwd):
 
 def normalize(output, workdir):
     output = output.replace('HTNTranslator', 'htn-translator').replace(workdir, '<work>')
-    return re.sub(r'\.generated\.(c|go|nim)\b', '.generated.<ext>', output)
+    output = re.sub(r'_generated\.nim\b', '.generated.<ext>', output)
+    output = re.sub(r'\.generated\.(c|go)\b', '.generated.<ext>', output)
+    return output
 
 
 def main():

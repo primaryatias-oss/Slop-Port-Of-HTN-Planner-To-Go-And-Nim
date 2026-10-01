@@ -174,7 +174,7 @@ case --check testdata/translator/cases/include_cycle_root.domain
 exit 4
 --- stdout
 --- stderr
-testdata/translator/cases/include_cycle_child.domain(2,2): error: Circular domain dependency: /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_root.domain -> /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_child.domain -> /home/user/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/testdata/translator/cases/include_cycle_root.domain
+testdata/translator/cases/include_cycle_child.domain(2,2): error: Circular domain dependency: $ROOT/testdata/translator/cases/include_cycle_root.domain -> $ROOT/testdata/translator/cases/include_cycle_child.domain -> $ROOT/testdata/translator/cases/include_cycle_root.domain
 htn-translator: check failed for 'testdata/translator/cases/include_cycle_root.domain' with 1 error(s).
 --- end
 case --check testdata/translator/cases/include_empty_path.domain

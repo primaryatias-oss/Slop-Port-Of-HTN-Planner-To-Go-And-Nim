@@ -61,6 +61,7 @@ func TestTranslatorGoldens(t *testing.T) {
 		code := translator.Main(args, &stdout, &stderr)
 		normalize := func(text string) string {
 			text = strings.ReplaceAll(text, portUsageLine, "")
+			text = strings.ReplaceAll(text, root, "$ROOT")
 			return generatedExtension.ReplaceAllString(strings.ReplaceAll(text, out, "$OUT"), ".generated.<ext>")
 		}
 		actual := "case " + line + "\nexit " + strconv.Itoa(code) + "\n--- stdout\n" + normalize(stdout.String()) +
