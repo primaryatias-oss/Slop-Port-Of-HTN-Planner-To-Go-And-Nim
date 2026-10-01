@@ -390,8 +390,11 @@ macro typedAdapter(fn: typed, hasDaemon: static[bool]): untyped =
     proc (`daemonSym`: RootRef, `argsSym`: var Arguments): Atom {.closure.} =
       discard `daemonSym`
       `body`
+  # An empty bracket has no element type: spell out the sequence type.
+  let signatureSeq = if signature.len == 0: newCall(nnkBracketExpr.newTree(ident"newSeq", ident"SignatureType"))
+                     else: prefix(signature, "@")
   result = quote do:
-    (`lambda`, @`signature`)
+    (`lambda`, `signatureSeq`)
 
 template bindFunc*(r: Registry, id: string, fn: typed) =
   ## Registers a typed static callterm. `fn` is any procedure whose parameter
