@@ -2,7 +2,7 @@
 ## validation (HTNCompilerDomainLoader).
 
 import std/[os, strutils, tables]
-import ../lexer
+import ../[lexer, sourcefile]
 import ast, diagnostics, filesyntax, parser, validator
 
 type
@@ -80,14 +80,11 @@ proc visit(c: var LoaderContext, path: string, isRoot: bool, includingFile: stri
     found = true
   elif c.provider != nil:
     found = c.provider(path, text)
-  if not found:
-    try:
-      text = readFile(path)
-    except CatchableError:
-      let message = "Could not read included domain '" & path & "'"
-      let reportFile = if includingFile.len == 0: path else: includingFile
-      c.diagnostics[].error(reportFile, message, recFatal, includeRange)
-      return (message, false)
+  if not found and not readSourceFile(path, text):
+    let message = "Could not read included domain '" & path & "'"
+    let reportFile = if includingFile.len == 0: path else: includingFile
+    c.diagnostics[].error(reportFile, message, recFatal, includeRange)
+    return (message, false)
   let (includes, domainText, fileError) = splitDomainFile(text)
   if fileError.hasError:
     c.diagnostics[].error(path, fileError.message, recFatal, fileError.range)

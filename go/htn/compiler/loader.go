@@ -1,10 +1,10 @@
 package compiler
 
 import (
-	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/sourcefile"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/lexer"
 )
 
@@ -109,8 +109,7 @@ func (c *loaderContext) visit(path string, isRoot bool, includingFile string, in
 		text, found = c.provider(path)
 	}
 	if !found {
-		data, err := os.ReadFile(path)
-		if err != nil {
+		if text, found = sourcefile.Read(path); !found {
 			message := "Could not read included domain '" + path + "'"
 			reportFile := includingFile
 			if reportFile == "" {
@@ -119,7 +118,6 @@ func (c *loaderContext) visit(path string, isRoot bool, includingFile string, in
 			c.diagnostics.Error(reportFile, message, RecoveryFatal, includeRange)
 			return message, false
 		}
-		text = string(data)
 	}
 	includes, domainText, fileError := SplitDomainFile(text)
 	if fileError.HasError() {

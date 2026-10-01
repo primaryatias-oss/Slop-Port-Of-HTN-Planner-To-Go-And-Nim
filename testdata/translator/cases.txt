@@ -26,6 +26,7 @@
 --check testdata/translator/cases/include_bad_path.domain
 --check testdata/translator/cases/include_comments.domain
 --check testdata/translator/cases/include_cycle_root.domain
+--check testdata/translator/cases/include_directory.domain
 --check testdata/translator/cases/include_empty_path.domain
 --check testdata/translator/cases/include_malformed_root.domain
 --check testdata/translator/cases/include_misplaced.domain

@@ -1,0 +1,13 @@
+// Included by main.domain in the language server sessions.
+(:domain Base base
+    (:constants
+        (speed 3)
+        (cover "wall"))
+
+    (:axiom (is_hurt ?inp_entity)
+        (and (health ?inp_entity ?health) (< ?health 50)))
+
+    (:method (do_combat ?inp_threat)
+        (branch_attack (and (#is_hurt ?inp_threat)) ((!attack ?inp_threat)))
+        (branch_wait () ((!wait))))
+)

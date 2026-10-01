@@ -177,6 +177,13 @@ exit 4
 testdata/translator/cases/include_cycle_child.domain(2,2): error: Circular domain dependency: $ROOT/testdata/translator/cases/include_cycle_root.domain -> $ROOT/testdata/translator/cases/include_cycle_child.domain -> $ROOT/testdata/translator/cases/include_cycle_root.domain
 htn-translator: check failed for 'testdata/translator/cases/include_cycle_root.domain' with 1 error(s).
 --- end
+case --check testdata/translator/cases/include_directory.domain
+exit 4
+--- stdout
+--- stderr
+testdata/translator/cases/.(1,1): error: Missing :domain form
+htn-translator: check failed for 'testdata/translator/cases/include_directory.domain' with 1 error(s).
+--- end
 case --check testdata/translator/cases/include_empty_path.domain
 exit 4
 --- stdout

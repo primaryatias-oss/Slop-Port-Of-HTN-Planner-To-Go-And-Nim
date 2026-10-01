@@ -4,7 +4,9 @@
 # a checkout of https://github.com/urosidoki/htn_planner (HTN_ORIGINAL_ROOT),
 # translates every planner variant listed in testdata/planners.txt into C and
 # links them into htn-oracle, a scenario runner whose output is the golden
-# reference for the Go and Nim ports (testdata/scenarios/*.golden).
+# reference for the Go and Nim ports (testdata/scenarios/*.golden). The
+# original HTNLanguageServer is built too, as the reference for the ports'
+# language servers (tools/fuzz/lsp_fuzz.py).
 #
 #   cmake -S tools/oracle -B build/oracle -G Ninja -DCMAKE_BUILD_TYPE=Release \
 #         -DHTN_ORIGINAL_ROOT=/path/to/htn_planner
@@ -45,6 +47,10 @@ target_link_libraries(HTNIntegration PUBLIC HTNFramework)
 
 add_executable(HTNTranslator "${HTN_ORIGINAL_ROOT}/HTNTranslator/src/main.cpp")
 target_link_libraries(HTNTranslator PRIVATE HTNFramework)
+
+file(GLOB HTN_LSP_SOURCES CONFIGURE_DEPENDS "${HTN_ORIGINAL_ROOT}/HTNLanguageServer/src/*.cpp")
+add_executable(HTNLanguageServer ${HTN_LSP_SOURCES})
+target_link_libraries(HTNLanguageServer PRIVATE HTNFramework)
 
 # Translate every planner variant of the shared manifest.
 set(GENERATED_ROOT "${CMAKE_CURRENT_BINARY_DIR}/generated")

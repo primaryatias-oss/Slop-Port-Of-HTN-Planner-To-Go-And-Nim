@@ -30,7 +30,7 @@ func readAll(t *testing.T, output *bytes.Buffer) []map[string]any {
 			return messages
 		}
 		var m map[string]any
-		if err := json.Unmarshal(payload, &m); err != nil {
+		if err := json.Unmarshal([]byte(payload), &m); err != nil {
 			t.Fatal(err)
 		}
 		messages = append(messages, m)

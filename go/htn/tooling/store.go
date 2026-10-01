@@ -1,7 +1,8 @@
 package tooling
 
 import (
-	"os"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/fspath"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/sourcefile"
 )
 
 // Document is one open editor buffer.
@@ -32,7 +33,7 @@ func NewStore() *Store {
 	return &Store{documents: map[string]*Document{}, cache: map[string]*cacheEntry{}, generation: 1}
 }
 
-func pathKey(path string) string { return canonicalPath(path) }
+func pathKey(path string) string { return fspath.Key(path) }
 
 func (s *Store) invalidate() {
 	s.generation++
@@ -98,11 +99,7 @@ func (s *Store) Read(path string) (string, bool) {
 	if document := s.documents[pathKey(path)]; document != nil {
 		return document.Text, true
 	}
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return "", false
-	}
-	return string(data), true
+	return sourcefile.Read(path)
 }
 
 // Model returns the cached semantic model of an open document. A change to

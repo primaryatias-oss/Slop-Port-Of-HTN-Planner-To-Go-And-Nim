@@ -2,9 +2,9 @@ package worldstate
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/atom"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/sourcefile"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/lexer"
 )
 
@@ -121,11 +121,11 @@ func ParseText(w *WorldState, text string) bool {
 
 // ParseFile reads and parses a world-state file into w.
 func ParseFile(w *WorldState, path string) error {
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return fmt.Errorf("world state [%s] could not be read: %w", path, err)
+	text, ok := sourcefile.Read(path)
+	if !ok {
+		return fmt.Errorf("world state [%s] could not be read", path)
 	}
-	if !ParseText(w, string(data)) {
+	if !ParseText(w, text) {
 		return fmt.Errorf("world state [%s] could not be parsed", path)
 	}
 	return nil

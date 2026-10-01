@@ -1,0 +1,16 @@
+(:include "base.domain")
+(:domain Main top_level_domain
+    (:method (run ?inp_target) top_level_method
+        (branch_combat (and (enemy ?enemy) (distance ?enemy ?distance) (not (#is_safe ?enemy)))
+            ((Base::do_combat ?enemy) (!move @speed) (&work ?distance)))
+        (branch_idle () ((work) (work 1))))
+
+    (:method (work)
+        (branch_rest () ((!rest))))
+
+    (:method (work ?inp_amount)
+        (branch_work (and (not (tired ?inp_amount))) ((!work ?inp_amount))))
+
+    (:axiom (is_safe ?inp_entity)
+        (and (#Base::is_hurt ?inp_entity) (cover ?inp_entity @cover)))
+)

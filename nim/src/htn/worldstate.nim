@@ -4,7 +4,7 @@
 ## parser.
 
 import std/tables
-import atom, lexer
+import atom, lexer, sourcefile
 
 const
   MaxFactArguments* = 10
@@ -258,8 +258,5 @@ proc parseText*(w: WorldState, text: string): bool =
 proc parseFile*(w: WorldState, path: string): bool =
   ## Reads and parses a world-state file into `w`.
   var text: string
-  try:
-    text = readFile(path)
-  except IOError:
-    return false
+  if not readSourceFile(path, text): return false
   w.parseText(text)

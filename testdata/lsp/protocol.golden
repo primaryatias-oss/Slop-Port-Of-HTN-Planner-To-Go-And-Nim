@@ -1,0 +1,86 @@
+--- message
+{"id":"init","jsonrpc":"2.0","result":{"capabilities":{"completionProvider":{"resolveProvider":false},"definitionProvider":true,"textDocumentSync":1},"serverInfo":{"name":"HTNLanguageServer","version":"0.1.0"}}}
+--- message
+{"id":null,"jsonrpc":"2.0","result":{"capabilities":{"completionProvider":{"resolveProvider":false},"definitionProvider":true,"textDocumentSync":1},"serverInfo":{"name":"HTNLanguageServer","version":"0.1.0"}}}
+--- message
+{"error":{"code":-32601,"message":"Method not found: shutdown-not"},"id":1.5,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32601,"message":"Method not found: unknown/request"},"id":[1,{"a":1,"b":2}],"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Missing definition params"},"id":1,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Invalid completion params"},"id":2,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Invalid definition params"},"id":3,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Invalid definition params"},"id":4,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Invalid compile params"},"id":5,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32602,"message":"Missing compile params"},"id":6,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32601,"message":"Method not found: textDocument/hover"},"id":"dup","jsonrpc":"2.0"}
+--- message
+{"id":0,"jsonrpc":"2.0","result":{"capabilities":{"completionProvider":{"resolveProvider":false},"definitionProvider":true,"textDocumentSync":1},"serverInfo":{"name":"HTNLanguageServer","version":"0.1.0"}}}
+--- message
+{"error":{"code":-32601,"message":"Method not found: nope"},"id":"Ã©í ½í¸€\t\u0001\"/","jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32601,"message":"Method not found: nope"},"id":9223372036854775807,"jsonrpc":"2.0"}
+--- message
+{"error":{"code":-32601,"message":"Method not found: nope"},"id":2.9999999999999999e-07,"jsonrpc":"2.0"}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}
+--- message
+{"id":7,"jsonrpc":"2.0","result":{"range":{"end":{"character":47,"line":3},"start":{"character":4,"line":3}},"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}
+--- message
+{"id":8,"jsonrpc":"2.0","result":{"range":{"end":{"character":47,"line":3},"start":{"character":4,"line":3}},"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}
+--- message
+{"id":9,"jsonrpc":"2.0","result":null}
+--- message
+{"id":10,"jsonrpc":"2.0","result":null}
+--- message
+{"id":11,"jsonrpc":"2.0","result":[{"insertText":"?inp_x","kind":6,"label":"?inp_x"}]}
+--- message
+{"id":12,"jsonrpc":"2.0","result":null}
+--- message
+{"id":13,"jsonrpc":"2.0","result":null}
+--- message
+{"id":14,"jsonrpc":"2.0","result":null}
+--- message
+{"id":15,"jsonrpc":"2.0","result":null}
+--- message
+{"id":16,"jsonrpc":"2.0","result":{"diagnostics":[],"message":"Compile succeeded: Unicode (1 linked source file(s))","success":true}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Unexpected source after compiler domain","range":{"end":{"character":1,"line":4},"start":{"character":0,"line":4}},"severity":1,"source":"htn"}],"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Character [$] not recognized","range":{"end":{"character":35,"line":1},"start":{"character":34,"line":1}},"severity":1,"source":"htn"}],"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}
+--- message
+{"id":17,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Character [$] not recognized","range":{"end":{"character":35,"line":1},"start":{"character":34,"line":1}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Unclosed compiler syntax list","range":{"end":{"character":80,"line":0},"start":{"character":79,"line":0}},"severity":1,"source":"htn"}],"uri":"untitled:Untitled-1"}}
+--- message
+{"id":18,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Unclosed compiler syntax list","range":{"end":{"character":80,"line":0},"start":{"character":79,"line":0}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/untitled:Untitled-1"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Could not read included domain '$ROOT/testdata/lsp/workspace/./sub/../base.domain'","range":{"end":{"character":24,"line":0},"start":{"character":0,"line":0}},"severity":1,"source":"htn"}],"uri":"$ROOT_URI/testdata/lsp/workspace/./sub/../main.domain"}}
+--- message
+{"id":19,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Root top_level_domain has no top_level_method","range":{"end":{"character":34,"line":1},"start":{"character":0,"line":1}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/sub/../main.domain"}}
+--- message
+{"id":20,"jsonrpc":"2.0","result":{"diagnostics":[],"message":"The active HTN document is not open in the language server.","success":false}}
+--- stderr
+HTNLanguageServer: invalid JSON-RPC payload: Unexpected end of JSON input
+HTNLanguageServer: invalid JSON-RPC payload: Unterminated JSON object
+HTNLanguageServer: invalid JSON-RPC payload: Unexpected JSON token
+HTNLanguageServer: invalid JSON-RPC payload: Unexpected JSON token
+HTNLanguageServer: invalid JSON-RPC payload: Expected ':' in JSON object
+HTNLanguageServer: invalid JSON-RPC payload: Expected ',' or '}' in JSON object
+HTNLanguageServer: invalid JSON-RPC payload: Invalid JSON number
+HTNLanguageServer: invalid JSON-RPC payload: Unsupported JSON escape
+HTNLanguageServer: invalid JSON-RPC payload: Invalid JSON unicode escape
+HTNLanguageServer: invalid JSON-RPC payload: Unexpected trailing JSON content
+HTNLanguageServer: invalid JSON-RPC payload: Unexpected trailing JSON content
+HTNLanguageServer: invalid JSON-RPC payload: Unterminated JSON string
+HTNLanguageServer: invalid JSON-RPC payload: Invalid JSON number
+HTNLanguageServer: invalid JSON-RPC payload: Invalid JSON number
+--- exit 1

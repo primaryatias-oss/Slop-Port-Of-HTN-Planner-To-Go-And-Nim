@@ -5,12 +5,12 @@
 package tooling
 
 import (
-	"path/filepath"
 	"sort"
 	"strings"
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/atom"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/compiler"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/fspath"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/lexer"
 )
 
@@ -63,21 +63,8 @@ func (m *Model) IsLoaded() bool { return m.loaded }
 // LoadResult returns the linked domain of the last successful analysis.
 func (m *Model) LoadResult() *compiler.LoadResult { return m.result }
 
-// canonicalPath mirrors std::filesystem::weakly_canonical with a lexical
-// fallback.
-func canonicalPath(path string) string {
-	abs, err := filepath.Abs(path)
-	if err != nil {
-		return filepath.Clean(path)
-	}
-	if resolved, err := filepath.EvalSymlinks(abs); err == nil {
-		return resolved
-	}
-	return abs
-}
-
-// SamePath compares two paths after canonicalization.
-func SamePath(a, b string) bool { return canonicalPath(a) == canonicalPath(b) }
+// SamePath compares two paths after std::filesystem::weakly_canonical.
+func SamePath(a, b string) bool { return fspath.Same(a, b) }
 
 func contains(r lexer.Range, offset int) bool {
 	return offset >= r.Begin.Offset && offset <= r.End.Offset

@@ -56,6 +56,8 @@ SOURCES = {
     'include_missing_child': "// child\r\n (:include \"__htn_missing_diagnostic_fixture__.domain\")\r\n(:domain Base base)",
     'include_malformed_root': "// header\r\n  (:include \"include_malformed_child.domain\")\r\n" + VALID,
     'include_malformed_child': "// child\r\n(:domain Base base $)",
+    # An include that names a directory opens but reads as empty text.
+    'include_directory': "(:include \".\")\n" + VALID,
     'Base': "(:domain Base base)// no final newline",
     # Compiler validation (HTNDecompositionTest).
     'invalid_parameter': "(:domain InvalidParameter top_level_domain\n  (:method (run) top_level_method (start () ((child 1))))\n"

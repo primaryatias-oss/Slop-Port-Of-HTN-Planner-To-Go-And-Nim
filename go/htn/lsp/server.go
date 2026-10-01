@@ -1,21 +1,26 @@
-// Package lsp implements the HTN language server (HTNLanguageServer):
-// JSON-RPC over stdio with Content-Length framing, full-document sync,
-// diagnostics, go-to-definition, variable completion and the custom
-// "htn/compile" request used by the editor's compile command.
+// Package lsp implements the HTN language server (port of
+// HTNLanguageServer): JSON-RPC over stdio with Content-Length framing,
+// full-document sync, diagnostics, go-to-definition, variable completion and
+// the custom "htn/compile" request used by the editor's compile command.
+//
+// Responses are byte-identical to the original server's: the JSON library is
+// a port of HTNLspJson and paths follow std::filesystem semantics.
 package lsp
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
 	"io"
-	"path/filepath"
 	"strconv"
 	"strings"
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/compiler"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/internal/fspath"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/tooling"
 )
+
+// ServerName is the name reported in the initialize response.
+const ServerName = "HTNLanguageServer"
 
 // Transport reads and writes LSP messages with Content-Length framing.
 type Transport struct {
@@ -30,44 +35,48 @@ func NewTransport(input io.Reader, output io.Writer) *Transport {
 
 // ReadMessage reads one JSON payload. It returns false at end of input or on
 // malformed framing.
-func (t *Transport) ReadMessage() ([]byte, bool) {
-	contentLength, hasLength := 0, false
+func (t *Transport) ReadMessage() (string, bool) {
+	contentLength, hasLength := uint64(0), false
 	for {
 		line, err := t.reader.ReadString('\n')
 		if err != nil && line == "" {
-			return nil, false
+			break
 		}
-		line = strings.TrimRight(line, "\r\n")
+		line = strings.TrimSuffix(line, "\n")
+		line = strings.TrimSuffix(line, "\r")
 		if line == "" {
 			break
 		}
 		const prefix = "content-length:"
 		if len(line) >= len(prefix) && strings.EqualFold(line[:len(prefix)], prefix) {
 			value := strings.TrimLeft(line[len(prefix):], " \t")
-			parsed, parseErr := strconv.ParseUint(value, 10, 63)
-			if parseErr != nil {
-				return nil, false
+			if value == "" {
+				return "", false
 			}
-			contentLength, hasLength = int(parsed), true
+			parsed, parseErr := strconv.ParseUint(value, 10, 64)
+			if parseErr != nil || value[0] == '+' {
+				return "", false
+			}
+			contentLength, hasLength = parsed, true
 		}
 		if err != nil {
-			return nil, false
+			break
 		}
 	}
 	if !hasLength {
-		return nil, false
+		return "", false
 	}
 	payload := make([]byte, contentLength)
 	if _, err := io.ReadFull(t.reader, payload); err != nil {
-		return nil, false
+		return "", false
 	}
-	return payload, true
+	return string(payload), true
 }
 
 // WriteMessage writes one framed JSON payload.
-func (t *Transport) WriteMessage(payload []byte) {
+func (t *Transport) WriteMessage(payload string) {
 	fmt.Fprintf(t.writer, "Content-Length: %d\r\n\r\n", len(payload))
-	t.writer.Write(payload)
+	io.WriteString(t.writer, payload)
 	if flusher, ok := t.writer.(interface{ Flush() error }); ok {
 		flusher.Flush()
 	}
@@ -88,37 +97,6 @@ func NewServer(transport *Transport) *Server {
 	return &Server{transport: transport, documents: tooling.NewStore(), Log: io.Discard}
 }
 
-type message struct {
-	ID     json.RawMessage `json:"id,omitempty"`
-	Method string          `json:"method"`
-	Params json.RawMessage `json:"params,omitempty"`
-}
-
-type position struct {
-	Line      int `json:"line"`
-	Character int `json:"character"`
-}
-
-type lspRange struct {
-	Start position `json:"start"`
-	End   position `json:"end"`
-}
-
-type textDocumentPosition struct {
-	TextDocument struct {
-		URI     string `json:"uri"`
-		Text    string `json:"text"`
-		Version *int64 `json:"version"`
-	} `json:"textDocument"`
-	Position *struct {
-		Line      *int `json:"line"`
-		Character *int `json:"character"`
-	} `json:"position"`
-	ContentChanges []struct {
-		Text *string `json:"text"`
-	} `json:"contentChanges"`
-}
-
 // Run processes messages until "exit" or end of input. It returns 0 when a
 // shutdown was requested first, 1 otherwise.
 func (s *Server) Run() int {
@@ -127,19 +105,12 @@ func (s *Server) Run() int {
 		if !ok {
 			break
 		}
-		var m message
-		if err := json.Unmarshal(payload, &m); err != nil {
-			fmt.Fprintf(s.Log, "htn-lsp: invalid JSON-RPC payload: %v\n", err)
+		message, parseError, ok := ParseJSON(payload)
+		if !ok {
+			fmt.Fprintf(s.Log, "%s: invalid JSON-RPC payload: %s\n", ServerName, parseError)
 			continue
 		}
-		if m.Method == "" {
-			continue
-		}
-		if len(m.ID) != 0 && string(m.ID) != "null" {
-			s.handleRequest(m.ID, m.Method, m.Params)
-		} else {
-			s.handleNotification(m.Method, m.Params)
-		}
+		s.handleMessage(message)
 	}
 	if s.shutdownRequested {
 		return 0
@@ -147,64 +118,55 @@ func (s *Server) Run() int {
 	return 1
 }
 
-func (s *Server) send(value any) {
-	payload, err := json.Marshal(value)
-	if err != nil {
+func (s *Server) handleMessage(message JSON) {
+	method, ok := message.Find("method")
+	if !ok || !method.IsString() {
 		return
 	}
-	s.transport.WriteMessage(payload)
+	params, hasParams := message.Find("params")
+	if id, hasID := message.Find("id"); hasID {
+		s.handleRequest(id, method.AsString(), params, hasParams)
+	} else {
+		s.handleNotification(method.AsString(), params, hasParams)
+	}
 }
 
-func (s *Server) sendResponse(id json.RawMessage, result any) {
-	s.send(map[string]any{"jsonrpc": "2.0", "id": id, "result": result})
-}
-
-func (s *Server) sendError(id json.RawMessage, code int, text string) {
-	s.send(map[string]any{"jsonrpc": "2.0", "id": id, "error": map[string]any{"code": code, "message": text}})
-}
-
-func (s *Server) sendNotification(method string, params any) {
-	s.send(map[string]any{"jsonrpc": "2.0", "method": method, "params": params})
-}
-
-func (s *Server) handleRequest(id json.RawMessage, method string, params json.RawMessage) {
+func (s *Server) handleRequest(id JSON, method string, params JSON, hasParams bool) {
 	switch method {
 	case "initialize":
-		s.sendResponse(id, map[string]any{
-			"capabilities": map[string]any{
-				"textDocumentSync":   1,
-				"definitionProvider": true,
-				"completionProvider": map[string]any{"resolveProvider": false},
-			},
-			"serverInfo": map[string]any{"name": "htn-lsp", "version": "0.1.0"},
-		})
+		s.sendResponse(id, Object(
+			Field{"capabilities", Object(
+				Field{"textDocumentSync", Integer(1)},
+				Field{"definitionProvider", Bool(true)},
+				Field{"completionProvider", Object(Field{"resolveProvider", Bool(false)})})},
+			Field{"serverInfo", Object(Field{"name", String(ServerName)}, Field{"version", String("0.1.0")})}))
 	case "textDocument/definition":
-		if len(params) == 0 {
+		if !hasParams {
 			s.sendError(id, -32602, "Missing definition params")
 			return
 		}
 		s.handleDefinition(id, params)
 	case "textDocument/completion":
-		if len(params) == 0 {
+		if !hasParams {
 			s.sendError(id, -32602, "Missing completion params")
 			return
 		}
 		s.handleCompletion(id, params)
 	case "htn/compile":
-		if len(params) == 0 {
+		if !hasParams {
 			s.sendError(id, -32602, "Missing compile params")
 			return
 		}
 		s.handleCompile(id, params)
 	case "shutdown":
 		s.shutdownRequested = true
-		s.sendResponse(id, nil)
+		s.sendResponse(id, Null())
 	default:
 		s.sendError(id, -32601, "Method not found: "+method)
 	}
 }
 
-func (s *Server) handleNotification(method string, params json.RawMessage) {
+func (s *Server) handleNotification(method string, params JSON, hasParams bool) {
 	switch method {
 	case "exit":
 		s.exitRequested = true
@@ -212,60 +174,101 @@ func (s *Server) handleNotification(method string, params json.RawMessage) {
 	case "initialized":
 		return
 	}
-	if len(params) == 0 {
+	if !hasParams {
 		return
 	}
-	var p textDocumentPosition
-	if json.Unmarshal(params, &p) != nil || p.TextDocument.URI == "" {
-		return
-	}
-	version := uint64(0)
-	if p.TextDocument.Version != nil && *p.TextDocument.Version > 0 {
-		version = uint64(*p.TextDocument.Version)
-	}
-	path := URIToPath(p.TextDocument.URI)
 	switch method {
 	case "textDocument/didOpen":
-		s.documents.Open(path, p.TextDocument.Text, version)
-		s.publishDiagnostics(p.TextDocument.URI, path)
+		s.handleDidOpen(params)
 	case "textDocument/didChange":
-		// Full document sync: the first change carries the complete text.
-		if len(p.ContentChanges) == 0 || p.ContentChanges[0].Text == nil {
-			return
-		}
-		text := *p.ContentChanges[0].Text
-		if !s.documents.Update(path, text, version) {
-			s.documents.Open(path, text, version)
-		}
-		s.publishDiagnostics(p.TextDocument.URI, path)
+		s.handleDidChange(params)
 	case "textDocument/didClose":
-		s.documents.Close(path)
-		s.sendNotification("textDocument/publishDiagnostics", map[string]any{
-			"uri": p.TextDocument.URI, "diagnostics": []any{}})
+		s.handleDidClose(params)
 	}
 }
 
-func (s *Server) positionParams(params json.RawMessage) (string, int, int, bool) {
-	var p textDocumentPosition
-	if json.Unmarshal(params, &p) != nil || p.TextDocument.URI == "" || p.Position == nil ||
-		p.Position.Line == nil || p.Position.Character == nil {
+func documentVersion(params JSON) uint64 {
+	version, ok := params.FindNested("textDocument", "version")
+	if !ok || !version.IsInteger() || version.AsInteger() < 0 {
+		return 0
+	}
+	return uint64(version.AsInteger())
+}
+
+func (s *Server) handleDidOpen(params JSON) {
+	uri, hasURI := params.FindNested("textDocument", "uri")
+	text, hasText := params.FindNested("textDocument", "text")
+	if !hasURI || !hasText || !uri.IsString() || !text.IsString() {
+		return
+	}
+	path := URIToPath(uri.AsString())
+	s.documents.Open(path, text.AsString(), documentVersion(params))
+	s.publishDiagnostics(uri.AsString(), path)
+}
+
+func (s *Server) handleDidChange(params JSON) {
+	uri, hasURI := params.FindNested("textDocument", "uri")
+	changes, hasChanges := params.Find("contentChanges")
+	if !hasURI || !uri.IsString() || !hasChanges || !changes.IsArray() || len(changes.AsArray()) == 0 {
+		return
+	}
+	// Full document sync: the first change carries the complete text.
+	text, hasText := changes.AsArray()[0].Find("text")
+	if !hasText || !text.IsString() {
+		return
+	}
+	version := documentVersion(params)
+	path := URIToPath(uri.AsString())
+	if !s.documents.Update(path, text.AsString(), version) {
+		s.documents.Open(path, text.AsString(), version)
+	}
+	s.publishDiagnostics(uri.AsString(), path)
+}
+
+func (s *Server) handleDidClose(params JSON) {
+	uri, hasURI := params.FindNested("textDocument", "uri")
+	if !hasURI || !uri.IsString() {
+		return
+	}
+	s.documents.Close(URIToPath(uri.AsString()))
+	s.sendNotification("textDocument/publishDiagnostics",
+		Object(Field{"uri", uri}, Field{"diagnostics", Array()}))
+}
+
+func (s *Server) send(value JSON) { s.transport.WriteMessage(value.Serialize()) }
+
+func (s *Server) sendResponse(id, result JSON) {
+	s.send(Object(Field{"jsonrpc", String("2.0")}, Field{"id", id}, Field{"result", result}))
+}
+
+func (s *Server) sendError(id JSON, code int64, text string) {
+	s.send(Object(Field{"jsonrpc", String("2.0")}, Field{"id", id},
+		Field{"error", Object(Field{"code", Integer(code)}, Field{"message", String(text)})}))
+}
+
+func (s *Server) sendNotification(method string, params JSON) {
+	s.send(Object(Field{"jsonrpc", String("2.0")}, Field{"method", String(method)}, Field{"params", params}))
+}
+
+// positionParams extracts the document URI and position of a request. The
+// position is truncated to int like the original's static_cast<int>.
+func positionParams(params JSON) (string, int, int, bool) {
+	uri, hasURI := params.FindNested("textDocument", "uri")
+	line, hasLine := params.FindNested("position", "line")
+	character, hasCharacter := params.FindNested("position", "character")
+	if !hasURI || !uri.IsString() || !hasLine || !line.IsInteger() || !hasCharacter || !character.IsInteger() {
 		return "", 0, 0, false
 	}
-	return p.TextDocument.URI, *p.Position.Line, *p.Position.Character, true
+	return uri.AsString(), int(int32(line.AsInteger())), int(int32(character.AsInteger())), true
 }
 
-func makePosition(line, column int) position {
-	if line < 1 {
-		line = 1
-	}
-	if column < 1 {
-		column = 1
-	}
-	return position{Line: line - 1, Character: column - 1}
+func makePosition(lineOneBased, columnOneBased int) JSON {
+	return Object(Field{"line", Integer(int64(max(0, lineOneBased-1)))},
+		Field{"character", Integer(int64(max(0, columnOneBased-1)))})
 }
 
-func (s *Server) handleDefinition(id json.RawMessage, params json.RawMessage) {
-	uri, line, character, ok := s.positionParams(params)
+func (s *Server) handleDefinition(id, params JSON) {
+	uri, line, character, ok := positionParams(params)
 	if !ok {
 		s.sendError(id, -32602, "Invalid definition params")
 		return
@@ -273,123 +276,122 @@ func (s *Server) handleDefinition(id json.RawMessage, params json.RawMessage) {
 	path := URIToPath(uri)
 	document := s.documents.Document(path)
 	if document == nil {
-		s.sendResponse(id, nil)
+		s.sendResponse(id, Null())
 		return
 	}
 	offset := PositionToOffset(document.Text, line, character)
 	if model := s.documents.Model(path); model != nil {
 		if definition, found := model.DefinitionAt(offset); found {
-			s.sendResponse(id, map[string]any{
-				"uri": PathToURI(definition.FilePath),
-				"range": lspRange{
-					Start: makePosition(definition.Range.Begin.Line, definition.Range.Begin.Column),
-					End:   makePosition(definition.Range.End.Line, definition.Range.End.Column),
-				},
-			})
+			s.sendResponse(id, Object(
+				Field{"uri", String(PathToURI(definition.FilePath))},
+				Field{"range", Object(
+					Field{"start", makePosition(definition.Range.Begin.Line, definition.Range.Begin.Column)},
+					Field{"end", makePosition(definition.Range.End.Line, definition.Range.End.Column)})}))
 			return
 		}
 	}
-	s.sendResponse(id, nil)
+	s.sendResponse(id, Null())
 }
 
-func (s *Server) handleCompletion(id json.RawMessage, params json.RawMessage) {
-	uri, line, character, ok := s.positionParams(params)
+func (s *Server) handleCompletion(id, params JSON) {
+	uri, line, character, ok := positionParams(params)
 	if !ok {
 		s.sendError(id, -32602, "Invalid completion params")
 		return
 	}
 	path := URIToPath(uri)
 	document := s.documents.Document(path)
-	items := []any{}
+	items := Array()
 	if document == nil {
 		s.sendResponse(id, items)
 		return
 	}
 	offset := PositionToOffset(document.Text, line, character)
 	if model := s.documents.Model(path); model != nil {
+		added := map[string]bool{}
 		for _, candidate := range model.AutocompleteCandidates(offset) {
-			items = append(items, map[string]any{"label": candidate, "kind": 6, "insertText": candidate})
+			if added[candidate] {
+				continue
+			}
+			added[candidate] = true
+			items.Append(Object(Field{"label", String(candidate)}, Field{"kind", Integer(6)},
+				Field{"insertText", String(candidate)}))
 		}
 	}
 	s.sendResponse(id, items)
 }
 
-func diagnosticFields(d compiler.Diagnostic, source string) map[string]any {
-	beginLine, beginColumn := d.Range.Begin.Line, d.Range.Begin.Column
-	if beginLine < 1 {
-		beginLine = 1
-	}
-	if beginColumn < 1 {
-		beginColumn = 1
-	}
-	endLine, endColumn := d.Range.End.Line, d.Range.End.Column
-	if endLine < beginLine {
-		endLine = beginLine
-	}
-	if endColumn < 1 {
-		endColumn = 1
-	}
+func diagnosticFields(d compiler.Diagnostic, source string) JSON {
+	beginLine := max(1, d.Range.Begin.Line)
+	beginColumn := max(1, d.Range.Begin.Column)
+	endLine := max(beginLine, d.Range.End.Line)
+	endColumn := max(1, d.Range.End.Column)
 	// Semantic/link diagnostics do not all carry exact ranges: keep them
 	// visible with a one-character fallback range.
 	if endLine == beginLine && endColumn <= beginColumn {
 		endColumn = beginColumn + 1
 	}
-	severity := 1
+	severity := int64(1)
 	switch d.Severity {
 	case compiler.SeverityWarning:
 		severity = 2
 	case compiler.SeverityInfo:
 		severity = 3
 	}
-	return map[string]any{
-		"range":    lspRange{Start: makePosition(beginLine, beginColumn), End: makePosition(endLine, endColumn)},
-		"severity": severity,
-		"source":   source,
-		"message":  d.Message,
-	}
+	return Object(
+		Field{"range", Object(Field{"start", makePosition(beginLine, beginColumn)},
+			Field{"end", makePosition(endLine, endColumn)})},
+		Field{"severity", Integer(severity)},
+		Field{"source", String(source)},
+		Field{"message", String(d.Message)})
 }
 
-func (s *Server) handleCompile(id json.RawMessage, params json.RawMessage) {
-	var p textDocumentPosition
-	if json.Unmarshal(params, &p) != nil || p.TextDocument.URI == "" {
+func (s *Server) handleCompile(id, params JSON) {
+	uri, hasURI := params.FindNested("textDocument", "uri")
+	if !hasURI || !uri.IsString() {
 		s.sendError(id, -32602, "Invalid compile params")
 		return
 	}
-	path := URIToPath(p.TextDocument.URI)
+	path := URIToPath(uri.AsString())
 	document := s.documents.Document(path)
 	if document == nil {
-		s.sendResponse(id, map[string]any{"success": false,
-			"message": "The active HTN document is not open in the language server.", "diagnostics": []any{}})
+		s.sendResponse(id, Object(Field{"success", Bool(false)},
+			Field{"message", String("The active HTN document is not open in the language server.")},
+			Field{"diagnostics", Array()}))
 		return
 	}
 	// Compile exactly what the editor sees: open buffers win over disk.
 	var sink compiler.DiagnosticSink
 	result, ok := compiler.LoadFromSource(path, document.Text, s.documents.Read, &sink, compiler.DefaultLoadOptions())
-	diagnostics := []any{}
+	diagnostics := Array()
 	for _, d := range sink.Diagnostics() {
 		fields := diagnosticFields(d, "htn-compile")
 		file := d.FilePath
 		if file == "" {
 			file = path
 		}
-		fields["uri"] = PathToURI(file)
-		diagnostics = append(diagnostics, fields)
+		fields.Set("uri", String(PathToURI(file)))
+		diagnostics.Append(fields)
 	}
 	if ok && !sink.HasErrors() {
-		s.sendResponse(id, map[string]any{"success": true,
-			"message":     fmt.Sprintf("Compile succeeded: %s (%d linked source file(s))", result.Domain.ID, len(result.SourceFiles)),
-			"diagnostics": diagnostics})
+		s.sendResponse(id, Object(Field{"success", Bool(true)},
+			Field{"message", String(fmt.Sprintf("Compile succeeded: %s (%d linked source file(s))",
+				result.Domain.ID, len(result.SourceFiles)))},
+			Field{"diagnostics", diagnostics}))
 		return
 	}
-	s.sendResponse(id, map[string]any{"success": false,
-		"message": fmt.Sprintf("Compile failed with %d error(s).", sink.ErrorCount()), "diagnostics": diagnostics})
+	s.sendResponse(id, Object(Field{"success", Bool(false)},
+		Field{"message", String(fmt.Sprintf("Compile failed with %d error(s).", sink.ErrorCount()))},
+		Field{"diagnostics", diagnostics}))
 }
 
 func (s *Server) publishDiagnostics(uri, path string) {
-	diagnostics := []any{}
+	diagnostics := Array()
 	if document := s.documents.Document(path); document != nil {
 		var sink compiler.DiagnosticSink
-		compiler.LoadFromSource(path, document.Text, s.documents.Read, &sink, compiler.LoadOptions{RequireTopLevelRoot: false})
+		compiler.LoadFromSource(path, document.Text, s.documents.Read, &sink,
+			compiler.LoadOptions{RequireTopLevelRoot: false})
+		current := fspath.Key(path)
 		for _, d := range sink.Diagnostics() {
 			file := d.FilePath
 			if file == "" {
@@ -397,13 +399,14 @@ func (s *Server) publishDiagnostics(uri, path string) {
 			}
 			// didOpen/didChange publishes diagnostics of this document only;
 			// htn/compile reports every linked file.
-			if !tooling.SamePath(file, path) {
+			if fspath.Key(file) != current {
 				continue
 			}
-			diagnostics = append(diagnostics, diagnosticFields(d, "htn"))
+			diagnostics.Append(diagnosticFields(d, "htn"))
 		}
 	}
-	s.sendNotification("textDocument/publishDiagnostics", map[string]any{"uri": uri, "diagnostics": diagnostics})
+	s.sendNotification("textDocument/publishDiagnostics",
+		Object(Field{"uri", String(uri)}, Field{"diagnostics", diagnostics}))
 }
 
 // URIToPath converts a file:// URI into a local path.
@@ -416,10 +419,10 @@ func URIToPath(uri string) string {
 
 // PathToURI converts a local path into a file:// URI.
 func PathToURI(path string) string {
-	if absolute, err := filepath.Abs(path); err == nil {
+	if absolute, ok := fspath.Absolute(path); ok {
 		path = absolute
 	}
-	return "file://" + percentEncodePath(filepath.ToSlash(path))
+	return "file://" + percentEncodePath(path)
 }
 
 func percentEncodePath(text string) string {
@@ -440,17 +443,6 @@ func percentEncodePath(text string) string {
 }
 
 func percentDecode(text string) string {
-	hexValue := func(c byte) int {
-		switch {
-		case c >= '0' && c <= '9':
-			return int(c - '0')
-		case c >= 'a' && c <= 'f':
-			return int(c-'a') + 10
-		case c >= 'A' && c <= 'F':
-			return int(c-'A') + 10
-		}
-		return -1
-	}
 	var b strings.Builder
 	for i := 0; i < len(text); i++ {
 		if text[i] == '%' && i+2 < len(text) {
