@@ -58,7 +58,7 @@ func TestLanguageServerSession(t *testing.T) {
 		map[string]any{"jsonrpc": "2.0", "id": 3, "method": "textDocument/completion", "params": map[string]any{
 			"textDocument": map[string]any{"uri": uri}, "position": map[string]any{"line": 2, "character": moveColumn}}},
 		map[string]any{"jsonrpc": "2.0", "method": "textDocument/didChange", "params": map[string]any{
-			"textDocument": map[string]any{"uri": uri, "version": 2},
+			"textDocument":   map[string]any{"uri": uri, "version": 2},
 			"contentChanges": []any{map[string]any{"text": invalid}}}},
 		map[string]any{"jsonrpc": "2.0", "id": 4, "method": "htn/compile", "params": map[string]any{
 			"textDocument": map[string]any{"uri": uri}}},
