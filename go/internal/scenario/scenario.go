@@ -15,6 +15,7 @@ import (
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/atom"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/callterm"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/debugger"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/integration"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/planner"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/worldstate"
@@ -311,6 +312,10 @@ type scenario struct {
 	policy      callterm.ErrorPolicy
 	rawPrepared any
 	rawExec     *planner.Exec
+	// The generated event debugger (htndebug builds only).
+	debuggerEnabled bool
+	debugger        *debugger.Debugger
+	dumpedRevision  uint64
 }
 
 type failure struct{ message string }
@@ -413,6 +418,21 @@ func (r *runner) createPlanner(s *scenario, variant string) {
 	s.unit.SetBacktrackingMode(s.mode)
 	s.unit.ExecutionContext().CallTermErrorPolicy = s.policy
 	s.unit.ExecutionContext().CallTermErrorCallback = r.onError
+	if s.debuggerEnabled {
+		s.unit.SetGeneratedDebugger(s.debugger)
+	}
+}
+
+// dumpDebugger writes every recorded node of the generated event debugger
+// after a new capture (the debugger is reset by every decomposition).
+func (r *runner) dumpDebugger(s *scenario) {
+	if !s.debuggerEnabled || s.debugger.Revision() == s.dumpedRevision {
+		return
+	}
+	s.dumpedRevision = s.debugger.Revision()
+	for _, line := range s.debugger.Dump() {
+		r.emit(line)
+	}
 }
 
 // MakeCall parses "name arg..." with the world-state syntax and builds the
@@ -458,6 +478,14 @@ func (r *runner) runRaw(s *scenario, callText string, requireTopLevel bool) {
 		CallTermErrorPolicy:   s.policy,
 		CallTermErrorCallback: r.onError,
 	}
+	if s.debuggerEnabled {
+		ctx.Debugger = s.debugger
+		domainPath := ""
+		if d.DebugMetadata != nil {
+			domainPath = d.DebugMetadata.SourceFile
+		}
+		s.debugger.Reset(domainPath)
+	}
 	plan, status := d.DecomposeCall(&ctx, call, requireTopLevel)
 	r.emit("status " + StatusName(status))
 	info := s.rawExec.Info
@@ -467,6 +495,7 @@ func (r *runner) runRaw(s *scenario, callText string, requireTopLevel bool) {
 	}
 	r.emit(fmt.Sprintf("info peak=%d capacity=%d error=%s", info.PeakCallFrames, info.CallFrameCapacity, lastError))
 	r.emitPlan(plan)
+	r.dumpDebugger(s)
 }
 
 func (r *runner) runFile(path string) (err error) {
@@ -507,7 +536,8 @@ func (r *runner) runFile(path string) (err error) {
 		}
 		if command == "scenario" {
 			finish()
-			current = &scenario{spec: []string{"standard"}, mode: planner.BacktrackingAll, policy: callterm.PolicyFailSilently, agent: agentDaemon{value: 1}}
+			current = &scenario{spec: []string{"standard"}, mode: planner.BacktrackingAll, policy: callterm.PolicyFailSilently,
+				agent: agentDaemon{value: 1}, debugger: debugger.New()}
 			r.emit("scenario " + argument)
 			continue
 		}
@@ -591,6 +621,21 @@ func (r *runner) runFile(path string) (err error) {
 				r.trace(name, args, result)
 				return result
 			})
+		case "debugger":
+			if !planner.DebugEnabled {
+				panic(failure{"the debugger command needs a build with -tags htndebug"})
+			}
+			if argument != "on" && argument != "off" {
+				panic(failure{"debugger expects on or off"})
+			}
+			s.debuggerEnabled = argument == "on"
+			s.debugger.SetEnabled(s.debuggerEnabled)
+			s.dumpedRevision = s.debugger.Revision()
+			if s.debuggerEnabled {
+				s.unit.SetGeneratedDebugger(s.debugger)
+			} else {
+				s.unit.SetGeneratedDebugger(nil)
+			}
 		case "call":
 			r.emit("call " + argument)
 			call, ok := MakeCall(argument)
@@ -600,10 +645,12 @@ func (r *runner) runFile(path string) (err error) {
 			status := s.unit.DecomposeCall(call)
 			r.emit("status " + StatusName(status))
 			r.emitPlan(s.unit.LastDecomposition())
+			r.dumpDebugger(s)
 		case "resolve":
 			r.emit("resolve")
 			for {
 				resolution := s.unit.ResolveCurrentPrimitiveTask()
+				r.dumpDebugger(s)
 				if resolution == integration.TaskReady {
 					task, _ := s.unit.CurrentPrimitiveTask()
 					r.emit("exec " + FormatStep(task))

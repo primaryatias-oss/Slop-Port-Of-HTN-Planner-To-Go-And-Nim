@@ -21,6 +21,9 @@
 #include "Hook/HTNPlanningUnit.h"
 #include "Parser/HTNToken.h"
 #include "Translator/HTNGeneratedPlanner.h"
+#ifdef HTN_DEBUG_DECOMPOSITION
+#include "Translator/HTNGeneratedDebugger.h"
+#endif
 #include "WorldState/Parser/HTNWorldStateLexer.h"
 #include "WorldState/Parser/HTNWorldStateLexerContext.h"
 #include "WorldState/Parser/HTNWorldStateParser.h"
@@ -335,6 +338,11 @@ struct Scenario
     HTNCallTermErrorPolicy Policy = HTNCallTermErrorPolicy::FailSilently;
     void* RawPrepared = nullptr;
     void* RawExecution = nullptr;
+    bool DebuggerEnabled = false;
+#ifdef HTN_DEBUG_DECOMPOSITION
+    HTNGeneratedDebugger Debugger;
+    std::uint64_t DumpedRevision = 0u;
+#endif
 
     ~Scenario()
     {
@@ -474,7 +482,125 @@ void CreatePlanner(Scenario& ioScenario, const std::string& inVariant, const std
     ioScenario.Unit->SetBacktrackingMode(ioScenario.Mode);
     ioScenario.Unit->GetExecutionContext().CallTermErrorPolicy = ioScenario.Policy;
     ioScenario.Unit->GetExecutionContext().CallTermErrorCallback = &OnCallTermError;
+#ifdef HTN_DEBUG_DECOMPOSITION
+    if (ioScenario.DebuggerEnabled)
+        ioScenario.Unit->SetGeneratedDebugger(&ioScenario.Debugger);
+#endif
 }
+
+#ifdef HTN_DEBUG_DECOMPOSITION
+const char* NodeKindName(const HTNGeneratedDebugger::NodeKind inKind)
+{
+    using Kind = HTNGeneratedDebugger::NodeKind;
+    switch (inKind)
+    {
+    case Kind::Plan: return "Plan";
+    case Kind::Method: return "Method";
+    case Kind::Branch: return "Branch";
+    case Kind::Fact: return "Fact";
+    case Kind::Axiom: return "Axiom";
+    case Kind::And: return "And";
+    case Kind::Or: return "Or";
+    case Kind::Alt: return "Alt";
+    case Kind::Not: return "Not";
+    case Kind::Call: return "Call";
+    case Kind::CallBind: return "CallBind";
+    case Kind::BuiltinComparison: return "BuiltinComparison";
+    case Kind::BuiltinListSplit: return "BuiltinListSplit";
+    case Kind::Task: return "Task";
+    case Kind::UnknownCondition: return "UnknownCondition";
+    }
+    return "?";
+}
+
+const char* TokenKindName(const HTNGeneratedDebugger::Node::TitleTokenKind inKind)
+{
+    using Kind = HTNGeneratedDebugger::Node::TitleTokenKind;
+    switch (inKind)
+    {
+    case Kind::Normal: return "n";
+    case Kind::Result: return "r";
+    case Kind::Variable: return "v";
+    case Kind::Constant: return "c";
+    case Kind::StringLiteral: return "s";
+    case Kind::CallExpression: return "x";
+    }
+    return "?";
+}
+
+std::string FormatIndex(const std::uint32_t inIndex)
+{
+    return inIndex == HTN_GENERATED_NO_INDEX ? std::string("-") : std::to_string(inIndex);
+}
+
+// Writes every recorded node of the generated event debugger after a new
+// capture (the debugger is reset at the start of every decomposition).
+void DumpDebugger(Scenario& ioScenario)
+{
+    const HTNGeneratedDebugger& Debugger = ioScenario.Debugger;
+    if (!ioScenario.DebuggerEnabled || Debugger.GetRevision() == ioScenario.DumpedRevision)
+        return;
+    ioScenario.DumpedRevision = Debugger.GetRevision();
+    Emit("debugger domain=" + (Debugger.GetDomainPath().empty() ? std::string("-") : Debugger.GetDomainPath()) +
+         " nodes=" + std::to_string(Debugger.GetNodes().size()));
+    for (const HTNGeneratedDebugger::Node& Node : Debugger.GetNodes())
+    {
+        Emit("node " + std::to_string(Node.EventNodeId) + " parent=" + FormatIndex(Node.ParentEventNodeId) + " kind=" +
+             NodeKindName(Node.Kind) + " meta=" + FormatIndex(Node.MetadataIndex) + " state=" +
+             (Node.Started ? "S" : "-") + (Node.Completed ? "C" : "-") + (Node.Succeeded ? "+" : "-") + " source=" +
+             (Node.Source.DomainPath.empty() ? std::string("-") : Node.Source.DomainPath) + ":" +
+             std::to_string(Node.Source.Line) + ":" + std::to_string(Node.Source.Column) + "-" +
+             std::to_string(Node.Source.EndLine) + ":" + std::to_string(Node.Source.EndColumn));
+        Emit("  title " + Node.DisplayName);
+        if (!Node.TitleTokens.empty())
+        {
+            std::string Tokens = "  tokens";
+            for (const auto& Token : Node.TitleTokens)
+                Tokens += std::string(Token.SpaceBefore ? " " : "") + "[" + TokenKindName(Token.Kind) + "]" + Token.Text;
+            Emit(Tokens);
+        }
+        if (!Node.Constants.empty())
+        {
+            std::string Constants = "  constants";
+            for (const auto& Constant : Node.Constants)
+                Constants += " " + Constant.Name + "=" + Constant.Value + ";";
+            Emit(Constants);
+        }
+        const auto EmitVariables = [](const char* inLabel, const auto& inVariables)
+        {
+            if (inVariables.empty())
+                return;
+            std::string Variables = std::string("  ") + inLabel;
+            for (const auto& Variable : inVariables)
+                Variables += " " + std::to_string(Variable.Slot) + ":" + Variable.Name + "=" +
+                             HTNAtomToString(*Variable.Value.Get(), true) + ";";
+            Emit(Variables);
+        };
+        EmitVariables("before", Node.VariablesBefore);
+        EmitVariables("after", Node.VariablesAfter);
+        if (!Node.ScopeVariableMask.empty())
+        {
+            std::string Scope = "  scope";
+            char Buffer[24];
+            for (const std::uint64_t Word : Node.ScopeVariableMask)
+            {
+                std::snprintf(Buffer, sizeof(Buffer), " %016llx", static_cast<unsigned long long>(Word));
+                Scope += Buffer;
+            }
+            Emit(Scope);
+        }
+        if (!Node.Children.empty())
+        {
+            std::string Children = "  children";
+            for (const std::uint32_t Child : Node.Children)
+                Children += " " + std::to_string(Child);
+            Emit(Children);
+        }
+    }
+}
+#else
+void DumpDebugger(Scenario&) {}
+#endif
 
 void ReplaceAll(std::string& ioText, const std::string& inFrom, const std::string& inTo)
 {
@@ -507,6 +633,13 @@ void RunRaw(Scenario& ioScenario, const std::string& inCallText, const bool inRe
     Context.prepared_storage = ioScenario.RawPrepared;
     Context.callterm_error_policy = ioScenario.Policy;
     Context.callterm_error_callback = &OnCallTermError;
+#ifdef HTN_DEBUG_DECOMPOSITION
+    if (ioScenario.DebuggerEnabled)
+    {
+        Context.debugger = &ioScenario.Debugger;
+        ioScenario.Debugger.Reset(Definition->debug_metadata ? Definition->debug_metadata->source_file : nullptr);
+    }
+#endif
     HTNAtom Result;
     const HTNDecompositionStatus Status = Definition->decompose_call(&Context, &Call, inRequireTopLevel ? 1 : 0, &Result);
     Emit(std::string("status ") + StatusName(Status));
@@ -516,6 +649,7 @@ void RunRaw(Scenario& ioScenario, const std::string& inCallText, const bool inRe
     Emit("info peak=" + std::to_string(Info->peak_call_frames) + " capacity=" +
          std::to_string(Info->call_frame_capacity) + " error=" + Error);
     EmitPlan(Result);
+    DumpDebugger(ioScenario);
     HTNAtom_Destroy(&Result);
     HTNAtom_Destroy(&Call);
 }
@@ -636,6 +770,20 @@ void RunFile(const std::string& inFile)
                 return Result;
             });
         }
+        else if (Command == "debugger")
+        {
+#ifdef HTN_DEBUG_DECOMPOSITION
+            if (Argument != "on" && Argument != "off")
+                Fail(inFile, LineNumber, "debugger expects on or off");
+            S.DebuggerEnabled = Argument == "on";
+            S.Debugger.SetEnabled(S.DebuggerEnabled);
+            S.DumpedRevision = S.Debugger.GetRevision();
+            if (S.Unit)
+                S.Unit->SetGeneratedDebugger(S.DebuggerEnabled ? &S.Debugger : nullptr);
+#else
+            Fail(inFile, LineNumber, "the debugger command needs htn-oracle-debug (HTN_DEBUG_DECOMPOSITION)");
+#endif
+        }
         else if (Command == "call")
         {
             Emit("call " + Argument);
@@ -646,6 +794,7 @@ void RunFile(const std::string& inFile)
             HTNAtom_Destroy(&Call);
             Emit(std::string("status ") + StatusName(Status));
             EmitPlan(*S.Unit->GetLastDecomposition().GetResult().Get());
+            DumpDebugger(S);
         }
         else if (Command == "resolve")
         {
@@ -653,6 +802,7 @@ void RunFile(const std::string& inFile)
             for (;;)
             {
                 const HTNPrimitiveTaskResolution Resolution = S.Unit->ResolveCurrentPrimitiveTask();
+                DumpDebugger(S);
                 if (Resolution == HTNPrimitiveTaskResolution::TaskReady)
                 {
                     const HTNAtomOwner* Task = S.Unit->GetCurrentPrimitiveTask();

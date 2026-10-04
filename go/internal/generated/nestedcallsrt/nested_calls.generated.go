@@ -105,91 +105,275 @@ func init() {
 			{Name: "add", Source: callterm.Source{Domain: "NestedCallsDemo", File: "Domains/Test/nested_calls.domain", Line: 24, Column: 21}},
 		},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Test/nested_calls.domain",
+		Strings: []string{
+			"NestedCallsDemo::test_nested_calls",
+			"branch_nested_calls",
+			"capture",
+			"!capture",
+			"add",
+			"inc",
+			"1",
+			"(call inc 1)",
+			"__task_call_result_0",
+			"mul",
+			"2",
+			"(call inc 2)",
+			"__task_call_result_1",
+			"3",
+			"(call inc 3)",
+			"__task_call_result_2",
+			"(call inc (call inc 3))",
+			"__task_call_result_3",
+			"(call mul (call inc 2) (call inc (call inc 3)))",
+			"__task_call_result_4",
+			"(call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))",
+			"__task_call_result_5",
+			"consume_nested",
+			"4",
+			"(call inc 4)",
+			"__task_call_result_6",
+			"5",
+			"(call inc 5)",
+			"__task_call_result_7",
+			"6",
+			"(call inc 6)",
+			"__task_call_result_8",
+			"(call inc (call inc 6))",
+			"__task_call_result_9",
+			"(call add (call inc 5) (call inc (call inc 6)))",
+			"__task_call_result_10",
+			"(call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))",
+			"__task_call_result_11",
+			"NestedCallsDemo::consume_nested",
+			"inp_value",
+			"?inp_value",
+			"branch_consume",
+			"test_nested_calls",
+			"__task_call_result_12",
+			"__task_call_result_13",
+			"__task_call_result_14",
+			"__task_call_result_15",
+			"__task_call_result_16",
+			"__task_call_result_17",
+			"__task_call_result_18",
+			"__task_call_result_19",
+			"__task_call_result_20",
+			"__task_call_result_21",
+			"__task_call_result_22",
+			"__task_call_result_23",
+		},
+		Values: []uint32{
+			4, 20, 21, 12, 5,
+			4, 36, 37, 24, 11,
+			1, 40, 39, 36, 12,
+			1, 40, 39, 42, 12,
+			4, 20, 48, 12, 18,
+			4, 36, 54, 24, 24,
+			1, 40, 39, 36, 12,
+			1, 40, 39, 42, 12,
+		},
+		VariableStringIDs: []uint32{
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			39,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+		},
+		Conditions:           []uint32{},
+		ConditionExpressions: []string{},
+		ConditionChildRefs:   []uint32{},
+		Tasks: []uint32{
+			1, 2, 0, 1, 11, 3,
+			0, 22, 1, 1, 23, planner.NoIndex,
+			1, 2, 3, 1, 42, 3,
+			1, 2, 4, 1, 11, 3,
+			0, 22, 5, 1, 23, planner.NoIndex,
+			1, 2, 7, 1, 42, 3,
+		},
+		Branches: []uint32{
+			1, planner.NoIndex, 0, 2, 5,
+			41, planner.NoIndex, 2, 1, 38,
+			1, planner.NoIndex, 3, 2, 5,
+			41, planner.NoIndex, 5, 1, 38,
+		},
+		Methods: []uint64{
+			0, 0, 0, 0, 1, 3, 0xfff, 0x0, 0x0, 0x0,
+			38, 2, 1, 1, 1, 36, 0x1000, 0x0, 0x0, 0x0,
+			42, 4, 0, 2, 1, 3, 0x1ffe000, 0x0, 0x0, 0x0,
+			22, 6, 1, 3, 1, 36, 0x1000, 0x0, 0x0, 0x0,
+		},
+		Axioms:            []uint64{},
+		Constants:         []uint32{},
+		CallTermSlotCount: 3,
+		FactSlotCount:     0,
+		SourceFiles: []string{
+			"Domains/Test/nested_calls.domain",
+		},
+		ValueSources: []uint32{
+			0, 12, 21, 18, 21,
+			0, 24, 21, 30, 21,
+			0, 36, 30, 36, 40,
+			0, 42, 27, 42, 37,
+			0, 12, 21, 18, 21,
+			0, 24, 21, 30, 21,
+			0, 36, 30, 36, 40,
+			0, 42, 27, 42, 37,
+		},
+		ConditionSources: []uint32{},
+		TaskSources: []uint32{
+			0, 11, 17, 19, 17,
+			0, 23, 17, 31, 17,
+			0, 42, 17, 42, 37,
+			0, 11, 17, 19, 17,
+			0, 23, 17, 31, 17,
+			0, 42, 17, 42, 37,
+		},
+		BranchSources: []uint32{
+			0, 5, 9, 33, 9,
+			0, 38, 9, 44, 9,
+			0, 5, 9, 33, 9,
+			0, 38, 9, 44, 9,
+		},
+		MethodSources: []uint32{
+			0, 3, 5, 34, 5,
+			0, 36, 5, 45, 5,
+			0, 3, 5, 34, 5,
+			0, 36, 5, 45, 5,
+		},
+		AxiomSources:    []uint32{},
+		ConstantSources: []uint32{},
+	})
 }
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (call inc 1)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv0}, &cs0, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(0, result)
 	}
 	// (call inc 2)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv1}, &cs1, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(1, result)
 	}
 	// (call inc 3)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv2}, &cs2, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(2, result)
 	}
 	// (call inc (call inc 3))
 	if result, ok := ex.Invoke(1, []atom.Atom{ex.V[2]}, &cs3, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(3, result)
 	}
 	// (call mul (call inc 2) (call inc (call inc 3)))
 	if result, ok := ex.Invoke(2, []atom.Atom{ex.V[1], ex.V[3]}, &cs4, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(4, result)
 	}
 	// (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[0], ex.V[4]}, &cs5, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(5, result)
 	}
 	// (!capture (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3)))))
 	if !ex.AppendPlanStep(sym0, []atom.Atom{ex.V[5]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (call inc 4)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv3}, &cs6, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(6, result)
 	}
 	// (call inc 5)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv4}, &cs7, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(7, result)
 	}
 	// (call inc 6)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv5}, &cs8, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(8, result)
 	}
 	// (call inc (call inc 6))
 	if result, ok := ex.Invoke(1, []atom.Atom{ex.V[8]}, &cs9, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(9, result)
 	}
 	// (call add (call inc 5) (call inc (call inc 6)))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[7], ex.V[9]}, &cs10, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(10, result)
 	}
 	// (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[6], ex.V[10]}, &cs11, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(11, result)
@@ -197,6 +381,7 @@ func task1(ex *planner.Exec) int {
 	// (consume_nested (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6)))))
 	arg0 := ex.V[11]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[12] = atom.Atom{}
@@ -209,98 +394,120 @@ func task1(ex *planner.Exec) int {
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!capture ?inp_value)
 	if !ex.AppendPlanStep(sym0, []atom.Atom{ex.V[12]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (call inc 1)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv6}, &cs12, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(13, result)
 	}
 	// (call inc 2)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv7}, &cs13, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(14, result)
 	}
 	// (call inc 3)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv8}, &cs14, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(15, result)
 	}
 	// (call inc (call inc 3))
 	if result, ok := ex.Invoke(1, []atom.Atom{ex.V[15]}, &cs15, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(16, result)
 	}
 	// (call mul (call inc 2) (call inc (call inc 3)))
 	if result, ok := ex.Invoke(2, []atom.Atom{ex.V[14], ex.V[16]}, &cs16, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(17, result)
 	}
 	// (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[13], ex.V[17]}, &cs17, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(18, result)
 	}
 	// (!capture (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3)))))
 	if !ex.AppendPlanStep(sym0, []atom.Atom{ex.V[18]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (call inc 4)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv9}, &cs18, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(19, result)
 	}
 	// (call inc 5)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv10}, &cs19, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(20, result)
 	}
 	// (call inc 6)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv11}, &cs20, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(21, result)
 	}
 	// (call inc (call inc 6))
 	if result, ok := ex.Invoke(1, []atom.Atom{ex.V[21]}, &cs21, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(22, result)
 	}
 	// (call add (call inc 5) (call inc (call inc 6)))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[20], ex.V[22]}, &cs22, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(23, result)
 	}
 	// (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[19], ex.V[23]}, &cs23, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(24, result)
@@ -308,6 +515,7 @@ func task4(ex *planner.Exec) int {
 	// (consume_nested (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6)))))
 	arg0 := ex.V[24]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[12] = atom.Atom{}
@@ -320,12 +528,16 @@ func task4(ex *planner.Exec) int {
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (!capture ?inp_value)
 	if !ex.AppendPlanStep(sym0, []atom.Atom{ex.V[12]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -337,14 +549,20 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch branch_nested_calls
+	ex.DebugBeginBranch(&definition, 0)
 	goto L4
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
+	ex.DebugCapturePendingTask(1)
+	ex.DebugCapturePendingTask(0)
 L6:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
@@ -358,10 +576,14 @@ L6:
 	goto L7
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
 	goto L6
 L7:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -373,14 +595,19 @@ func method1(ex *planner.Exec) int {
 	case 1:
 		goto L10
 	}
+	ex.DebugBeginMethod(&definition, 1)
 	goto L9
 L9:
 	// branch branch_consume
+	ex.DebugBeginBranch(&definition, 1)
 	goto L11
 L11:
 	if !ex.PushBranch(&bc1) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
+	ex.DebugCapturePendingTask(2)
 L13:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
@@ -394,10 +621,14 @@ L13:
 	goto L14
 L10:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
 	goto L13
 L14:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -409,14 +640,20 @@ func method2(ex *planner.Exec) int {
 	case 1:
 		goto L17
 	}
+	ex.DebugBeginMethod(&definition, 2)
 	goto L16
 L16:
 	// branch branch_nested_calls
+	ex.DebugBeginBranch(&definition, 2)
 	goto L18
 L18:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
+	ex.DebugCapturePendingTask(4)
+	ex.DebugCapturePendingTask(3)
 L20:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
@@ -430,10 +667,14 @@ L20:
 	goto L21
 L17:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
 	goto L20
 L21:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -445,14 +686,19 @@ func method3(ex *planner.Exec) int {
 	case 1:
 		goto L24
 	}
+	ex.DebugBeginMethod(&definition, 3)
 	goto L23
 L23:
 	// branch branch_consume
+	ex.DebugBeginBranch(&definition, 3)
 	goto L25
 L25:
 	if !ex.PushBranch(&bc3) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
+	ex.DebugCapturePendingTask(5)
 L27:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
@@ -466,10 +712,14 @@ L27:
 	goto L28
 L24:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
 	goto L27
 L28:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -500,12 +750,14 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 2:
 		result = ex.Run(method2)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -514,8 +766,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

@@ -102,7 +102,7 @@ type Definition struct {
 	DecomposeCall        func(ctx *Context, call atom.Atom, requireTopLevel bool) (atom.Atom, DecompositionStatus)
 	FactNames            []string
 	CallTermRequirements []callterm.Requirement
-	Debug                *DebugMetadata
+	DebugMetadata        *DebugMetadata // set in htndebug builds
 }
 
 // ValidateDefinition reports whether a definition matches this runtime's ABI

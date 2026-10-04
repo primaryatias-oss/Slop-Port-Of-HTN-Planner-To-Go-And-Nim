@@ -166,6 +166,23 @@ func (g *generator) atomLiteral(a atom.Atom) string {
 
 func staticName(index uint32) string { return "sv" + strconv.FormatUint(uint64(index), 10) }
 
+// Debugger events (HTN_GENERATED_EVENT_DEBUG_*). The planner's event helpers
+// do nothing unless planner.DebugEnabled (the "htndebug" build tag), so
+// release builds inline them away like the original's empty macros.
+
+func debugEvent(event string, argument any) string {
+	return fmt.Sprintf("ex.Debug%s(&definition, %v)", event, argument)
+}
+
+// debugStatements returns event calls as statements indented by indent.
+func debugStatements(indent string, calls ...string) string {
+	var b strings.Builder
+	for _, call := range calls {
+		b.WriteString(indent + call + "\n")
+	}
+	return b.String()
+}
+
 func goComment(expression string) string {
 	expression = strings.ReplaceAll(expression, "\n", "\\n")
 	return strings.ReplaceAll(expression, "\r", "\\r")
@@ -410,9 +427,182 @@ func (g *generator) makeSource() string {
 	for _, r := range requirements {
 		out.WriteString("\t\t\t" + r + ",\n")
 	}
-	out.WriteString("\t\t},\n\t}\n}\n\n")
+	out.WriteString("\t\t},\n\t}\n")
+	out.WriteString("\tif planner.DebugEnabled {\n\t\tdefinition.DebugMetadata = newDebugMetadata()\n\t}\n}\n\n")
+	g.emitDebugMetadata(&out)
 	out.WriteString(g.funcs.String())
 	return out.String()
+}
+
+// emitDebugMetadata emits newDebugMetadata, the compiled-domain description
+// consumed by debuggers (HTN_DEBUG_DECOMPOSITION metadata). Records are
+// flattened into the rows of planner.DebugTables.
+func (g *generator) emitDebugMetadata(out *strings.Builder) {
+	ir := g.ir
+	index := func(v uint32) string {
+		if v == compiler.NoIndex {
+			return "planner.NoIndex"
+		}
+		return strconv.FormatUint(uint64(v), 10)
+	}
+	wideIndex := func(v uint32) string {
+		if v == compiler.NoIndex {
+			return "uint64(planner.NoIndex)"
+		}
+		return strconv.FormatUint(uint64(v), 10)
+	}
+	flag := func(b bool) string {
+		if b {
+			return "1"
+		}
+		return "0"
+	}
+	table := func(name, typ string, rows []string) {
+		fmt.Fprintf(out, "\t\t%s: []%s{", name, typ)
+		if len(rows) == 0 {
+			out.WriteString("},\n")
+			return
+		}
+		out.WriteString("\n")
+		for _, row := range rows {
+			out.WriteString("\t\t\t" + row + ",\n")
+		}
+		out.WriteString("\t\t},\n")
+	}
+	quoted := func(values []string) []string {
+		rows := make([]string, len(values))
+		for i, v := range values {
+			rows[i] = strconv.Quote(v)
+		}
+		return rows
+	}
+	source := func(s compiler.SourceLocation) string {
+		return fmt.Sprintf("%d, %d, %d, %d, %d", s.FileIndex, s.Range.Begin.Line, s.Range.Begin.Column,
+			s.Range.End.Line, s.Range.End.Column)
+	}
+	join := func(parts ...string) string { return strings.Join(parts, ", ") }
+	number := func(v uint32) string { return strconv.FormatUint(uint64(v), 10) }
+	maskWords := func(mask compiler.SlotMask) string {
+		words := make([]string, len(mask))
+		for i, w := range mask {
+			words[i] = "0x" + strconv.FormatUint(w, 16)
+		}
+		return strings.Join(words, ", ")
+	}
+
+	out.WriteString("func newDebugMetadata() *planner.DebugMetadata {\n\treturn planner.NewDebugMetadata(&planner.DebugTables{\n")
+	fmt.Fprintf(out, "\t\tSourceFile: %s,\n", strconv.Quote(g.displaySourceFile()))
+	table("Strings", "string", quoted(ir.Strings.Values))
+
+	var rows []string
+	for i := range ir.Values {
+		v := &ir.Values[i]
+		var flags uint32
+		if v.Kind == compiler.ValueVariable && v.DebugAsVariable {
+			flags |= 1
+		}
+		if v.Kind == compiler.ValueLiteral && v.AtomType == atom.KindString {
+			flags |= 2
+		}
+		if v.Kind == compiler.ValueVariable && !v.DebugAsVariable && v.DebugText != v.Text {
+			flags |= 4
+		}
+		rows = append(rows, join(number(flags), index(v.DebugText), index(v.Text), number(v.SourceLine), index(v.VariableSlot)))
+	}
+	table("Values", "uint32", rows)
+
+	rows = nil
+	for _, id := range ir.VariableStringIDs {
+		if ir.DebugInternalVariableStringIDs[id] {
+			rows = append(rows, "planner.NoIndex")
+		} else {
+			rows = append(rows, index(id))
+		}
+	}
+	table("VariableStringIDs", "uint32", rows)
+
+	rows = nil
+	var expressions []string
+	for i := range ir.Conditions {
+		v := &ir.Conditions[i]
+		d := v
+		if v.DebugCondition != compiler.NoIndex {
+			d = &ir.Conditions[v.DebugCondition]
+		}
+		rows = append(rows, join(number(uint32(d.Kind)), index(d.ID), index(d.FirstArgument), index(d.ArgumentCount),
+			index(v.FirstChildRef), index(v.ChildCount), index(d.OutputValue), index(d.ResolvedIndex),
+			number(uint32(v.DebugSource.Range.Begin.Line)), flag(v.DebugInternal)))
+		expressions = append(expressions, v.DebugExpression)
+	}
+	table("Conditions", "uint32", rows)
+	table("ConditionExpressions", "string", quoted(expressions))
+
+	rows = nil
+	for _, ref := range ir.ConditionChildRefs {
+		rows = append(rows, index(ref))
+	}
+	table("ConditionChildRefs", "uint32", rows)
+
+	rows = nil
+	for i := range ir.Tasks {
+		t := &ir.Tasks[i]
+		rows = append(rows, join(number(uint32(t.Kind)), index(t.ID), index(t.FirstArgument), index(t.ArgumentCount),
+			number(t.SourceLine), index(t.PlanStepHead)))
+	}
+	table("Tasks", "uint32", rows)
+
+	rows = nil
+	for i := range ir.Branches {
+		b := &ir.Branches[i]
+		rows = append(rows, join(index(b.ID), index(b.Condition), index(b.FirstTask), index(b.TaskCount), number(b.SourceLine)))
+	}
+	table("Branches", "uint32", rows)
+
+	rows = nil
+	for i := range ir.Methods {
+		m := &ir.Methods[i]
+		rows = append(rows, join(wideIndex(m.ID), wideIndex(m.FirstParameter), wideIndex(m.ParameterCount),
+			wideIndex(m.FirstBranch), wideIndex(m.BranchCount), number(m.SourceLine), maskWords(m.VariableSlotMask)))
+	}
+	table("Methods", "uint64", rows)
+
+	rows = nil
+	for i := range ir.Axioms {
+		a := &ir.Axioms[i]
+		rows = append(rows, join(wideIndex(a.ID), wideIndex(a.FirstParameter), wideIndex(a.ParameterCount),
+			wideIndex(a.Condition), number(a.SourceLine), maskWords(a.VariableSlotMask)))
+	}
+	table("Axioms", "uint64", rows)
+
+	rows = nil
+	for i := range ir.Constants {
+		c := &ir.Constants[i]
+		rows = append(rows, join(index(c.GroupID), index(c.ID), index(c.Value), number(c.SourceLine)))
+	}
+	table("Constants", "uint32", rows)
+
+	fmt.Fprintf(out, "\t\tCallTermSlotCount: %d,\n\t\tFactSlotCount: %d,\n", len(ir.CallTermStringIDs), len(ir.FactStringIDs))
+	sourceFiles := ir.SourceFiles
+	if len(sourceFiles) == 0 {
+		sourceFiles = []string{g.displaySourceFile()}
+	}
+	table("SourceFiles", "string", quoted(sourceFiles))
+
+	sources := func(name string, count int, location func(int) compiler.SourceLocation) {
+		rows := make([]string, count)
+		for i := range rows {
+			rows[i] = source(location(i))
+		}
+		table(name, "uint32", rows)
+	}
+	sources("ValueSources", len(ir.Values), func(i int) compiler.SourceLocation { return ir.Values[i].Source })
+	sources("ConditionSources", len(ir.Conditions), func(i int) compiler.SourceLocation { return ir.Conditions[i].DebugSource })
+	sources("TaskSources", len(ir.Tasks), func(i int) compiler.SourceLocation { return ir.Tasks[i].Source })
+	sources("BranchSources", len(ir.Branches), func(i int) compiler.SourceLocation { return ir.Branches[i].Source })
+	sources("MethodSources", len(ir.Methods), func(i int) compiler.SourceLocation { return ir.Methods[i].Source })
+	sources("AxiomSources", len(ir.Axioms), func(i int) compiler.SourceLocation { return ir.Axioms[i].Source })
+	sources("ConstantSources", len(ir.Constants), func(i int) compiler.SourceLocation { return ir.Constants[i].Source })
+	out.WriteString("\t})\n}\n\n")
 }
 
 func (g *generator) displaySourceFile() string {
@@ -728,6 +918,7 @@ func (g *generator) emitAxiomHelpers(condition uint32) {
 		}
 		fmt.Fprintf(f, "\tif in%d.IsBound() {\n\t\tex.SetIfChanged(%d, in%d)\n\t}\n", i, parameter.VariableSlot, i)
 	}
+	f.WriteString(debugStatements("\t", debugEvent("BeginAxiom", c.ResolvedIndex)))
 	f.WriteString("}\n\n")
 
 	fmt.Fprintf(f, "func axiomEnd%d(ex *planner.Exec, succeeded bool, scope *planner.AxiomScope) bool {\n", condition)
@@ -786,6 +977,7 @@ func (g *generator) emitAxiomHelpers(condition uint32) {
 		}
 		f.WriteString("\t}\n")
 	}
+	f.WriteString(debugStatements("\t", debugEvent("EndAxiom", "valid")))
 	for k, slot := range axiom.VariableSlotMask.Slots() {
 		fmt.Fprintf(f, "\tex.V[%d] = scope.Saved[%d]\n", slot, k)
 	}
@@ -874,7 +1066,10 @@ func (g *generator) emitTask(taskIndex uint32) {
 	f := &g.funcs
 	taskName := ir.Strings.Get(task.ID)
 	fmt.Fprintf(f, "func task%d(ex *planner.Exec) int {\n", taskIndex)
-	f.WriteString("\tif frame := ex.Frame(); frame.Resume != 0 {\n\t\treturn frame.ChildResult\n\t}\n")
+	endFailed := debugStatements("\t\t", debugEvent("EndTask", false))
+	f.WriteString("\tif frame := ex.Frame(); frame.Resume != 0 {\n" +
+		debugStatements("\t\t", debugEvent("EndTask", "frame.ChildResult != 0")) + "\t\treturn frame.ChildResult\n\t}\n")
+	f.WriteString(debugStatements("\t", debugEvent("BeginTask", taskIndex)))
 	if int(taskIndex) < len(ir.TaskCallExpressions) {
 		for ci := range ir.TaskCallExpressions[taskIndex] {
 			call := &ir.TaskCallExpressions[taskIndex][ci]
@@ -913,8 +1108,8 @@ func (g *generator) emitTask(taskIndex uint32) {
 			if len(arguments) > 0 {
 				argumentList = "[]atom.Atom{" + strings.Join(arguments, ", ") + "}"
 			}
-			fmt.Fprintf(f, "\tif result, ok := ex.Invoke(%d, %s, &%s, factSymbols); !ok {\n\t\treturn 0\n\t} else {\n\t\tex.SetIfChanged(%d, result)\n\t}\n",
-				call.CallTermSlot, argumentList, source, call.OutputSlot)
+			fmt.Fprintf(f, "\tif result, ok := ex.Invoke(%d, %s, &%s, factSymbols); !ok {\n%s\t\treturn 0\n\t} else {\n\t\tex.SetIfChanged(%d, result)\n\t}\n",
+				call.CallTermSlot, argumentList, source, endFailed, call.OutputSlot)
 		}
 	}
 	switch task.Kind {
@@ -939,12 +1134,13 @@ func (g *generator) emitTask(taskIndex uint32) {
 		if len(arguments) > 0 {
 			argumentList = "[]atom.Atom{" + strings.Join(arguments, ", ") + "}"
 		}
-		fmt.Fprintf(f, "\tif !ex.AppendPlanStep(%s, %s) {\n\t\treturn 0\n\t}\n\treturn 1\n}\n\n",
-			g.symbol(ir.Strings.Get(task.PlanStepHead)), argumentList)
+		fmt.Fprintf(f, "\tif !ex.AppendPlanStep(%s, %s) {\n%s\t\treturn 0\n\t}\n%s\treturn 1\n}\n\n",
+			g.symbol(ir.Strings.Get(task.PlanStepHead)), argumentList, endFailed,
+			debugStatements("\t", debugEvent("EndTask", true)))
 	default:
 		method := ir.FindMethod(task.ID, task.ArgumentCount)
 		if method < 0 {
-			f.WriteString("\treturn 0 // unresolved compound task\n}\n\n")
+			f.WriteString(debugStatements("\t", debugEvent("EndTask", false)) + "\treturn 0 // unresolved compound task\n}\n\n")
 			return
 		}
 		fmt.Fprintf(f, "\t// %s\n", goComment(task.DomainExpression))
@@ -974,7 +1170,7 @@ func (g *generator) emitTask(taskIndex uint32) {
 			for ai := uint32(0); ai < task.ArgumentCount; ai++ {
 				checks = append(checks, fmt.Sprintf("!arg%d.IsBound()", ai))
 			}
-			fmt.Fprintf(f, "\tif %s {\n\t\treturn 0\n\t}\n", strings.Join(checks, " || "))
+			fmt.Fprintf(f, "\tif %s {\n%s\t\treturn 0\n\t}\n", strings.Join(checks, " || "), endFailed)
 		}
 		for _, slot := range target.VariableSlotMask.Slots() {
 			fmt.Fprintf(f, "\tex.V[%d] = atom.Atom{}\n", slot)
@@ -1001,6 +1197,21 @@ type successFn func(retry int, commit commitFn)
 type methodGen struct {
 	*generator
 	w *fnWriter
+}
+
+// debug emits debugger event calls.
+func (m *methodGen) debug(calls ...string) {
+	for _, call := range calls {
+		m.w.code("%s", call)
+	}
+}
+
+func (m *methodGen) beginCondition(condition uint32) {
+	m.debug(debugEvent("BeginCondition", condition))
+}
+
+func (m *methodGen) endCondition(result any) {
+	m.debug(debugEvent("EndCondition", result))
 }
 
 func (m *methodGen) declareCheckpoint(plan checkpointPlan) {
@@ -1058,6 +1269,7 @@ func (m *methodGen) emitDeterministicFact(condition uint32, success, failure int
 	}
 	w := m.w
 	w.open("{")
+	m.beginCondition(condition)
 	w.code("table := &ex.FactTables[%d][%d]", c.ResolvedIndex, c.ArgumentCount)
 	w.code("matched := false")
 	w.open("for row, rows := 0, table.RowCount(); row < rows; row++ {")
@@ -1072,6 +1284,7 @@ func (m *methodGen) emitDeterministicFact(condition uint32, success, failure int
 	w.code("matched = true")
 	w.code("break")
 	w.close()
+	m.endCondition("matched")
 	w.code("if matched {")
 	w.code("\t%s", w.jump(success))
 	w.code("}")
@@ -1094,12 +1307,15 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 		} else {
 			reference = m.valueRef(c.FirstArgument, defaultValueContext)
 		}
+		m.beginCondition(condition)
 		w.open("{")
 		w.code("value := %s", reference)
 		w.open("if value.IsBound() && !ex.V[%d].IsBound() {", output.VariableSlot)
 		w.code("ex.V[%d] = value", output.VariableSlot)
+		m.endCondition(true)
 		w.code("%s", w.jump(success))
 		w.close()
+		m.endCondition(false)
 		w.code("%s", w.jump(failure))
 		w.close()
 		return
@@ -1109,6 +1325,8 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 			return
 		}
 		if result, ok := staticComparison(ir, c); ok {
+			m.beginCondition(condition)
+			m.endCondition(result)
 			if result {
 				w.code("%s", w.jump(success))
 			} else {
@@ -1116,11 +1334,14 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 			}
 			return
 		}
+		m.beginCondition(condition)
 		left := m.argumentValue(c.FirstArgument, defaultValueContext)
 		right := m.argumentValue(c.FirstArgument+1, defaultValueContext)
 		w.open("if planner.Compare(%s, %s, %d) {", left, right, c.ID)
+		m.endCondition(true)
 		w.code("%s", w.jump(success))
 		w.close()
+		m.endCondition(false)
 		w.code("%s", w.jump(failure))
 		return
 	case compiler.IRCondListSplit:
@@ -1139,6 +1360,7 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 		}
 		elementVariable := elementOutput.Kind == compiler.ValueVariable && elementOutput.VariableSlot != compiler.NoIndex
 		remainderVariable := remainderOutput.Kind == compiler.ValueVariable && remainderOutput.VariableSlot != compiler.NoIndex
+		m.beginCondition(condition)
 		w.open("{")
 		w.code("valid := false")
 		w.open("if element, remainder, ok := %s.SplitList(%s); ok {", listReference, direction)
@@ -1175,6 +1397,7 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 		}
 		w.close()
 		w.close()
+		m.endCondition("valid")
 		w.code("if valid {")
 		w.code("\t%s", w.jump(success))
 		w.code("}")
@@ -1200,10 +1423,13 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 			return
 		}
 		source := m.callSource(c.Source)
+		m.beginCondition(condition)
 		w.open("if result, ok := ex.Invoke(%d, %s, &%s, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {",
 			c.ResolvedIndex, argumentList, source)
+		m.endCondition(true)
 		w.code("%s", w.jump(success))
 		w.close()
+		m.endCondition(false)
 		w.code("%s", w.jump(failure))
 	case compiler.IRCondCallBind:
 		if int(c.ResolvedIndex) >= len(ir.CallTermStringIDs) {
@@ -1216,12 +1442,15 @@ func (m *methodGen) emitLeaf(condition uint32, bound boundSet, success, failure 
 		}
 		output := &ir.Values[c.OutputValue]
 		source := m.callSource(c.Source)
+		m.beginCondition(condition)
 		w.open("if !ex.V[%d].IsBound() {", output.VariableSlot)
 		w.open("if result, ok := ex.Invoke(%d, %s, &%s, factSymbols); ok {", c.ResolvedIndex, argumentList, source)
 		w.code("ex.SetIfChanged(%d, result)", output.VariableSlot)
+		m.endCondition(true)
 		w.code("%s", w.jump(success))
 		w.close()
 		w.close()
+		m.endCondition(false)
 		w.code("%s", w.jump(failure))
 	default:
 		ir.SetError("HTNTranslator attempted to emit an unsupported generated-condition fallback for condition " +
@@ -1257,11 +1486,28 @@ func (m *methodGen) emitConditionContinuation(condition uint32, bound boundSet, 
 	checkpoint := buildCheckpointPlan(ir, m.newLabel(), condition, bound)
 	m.declareCheckpoint(checkpoint)
 	m.pushCheckpoint(checkpoint)
+	// Composite conditions report their own events; leaves report theirs
+	// where they are evaluated.
+	composite := c.Kind == compiler.IRCondAnd || c.Kind == compiler.IRCondOr || c.Kind == compiler.IRCondAlt ||
+		c.Kind == compiler.IRCondNot || c.Kind == compiler.IRCondAxiom
+	if composite {
+		m.beginCondition(condition)
+	}
 	if c.AssignmentGuardValue != compiler.NoIndex {
 		m.unboundGuard(&ir.Values[c.AssignmentGuardValue], fail)
 	}
 	succeed := func(retry int, commit commitFn) {
-		success(retry, func() { commit() })
+		if !composite {
+			success(retry, func() { commit() })
+			return
+		}
+		// A retry re-enters the composite condition.
+		resume := m.newLabel()
+		m.endCondition(true)
+		success(resume, func() { commit() })
+		w.label(resume)
+		m.beginCondition(condition)
+		w.code("%s", w.jump(retry))
 	}
 	switch {
 	case c.Kind == compiler.IRCondAnd:
@@ -1316,10 +1562,13 @@ func (m *methodGen) emitConditionContinuation(condition uint32, bound boundSet, 
 		w.declare(cursor, "uint32")
 		w.code("%s = 0", cursor)
 		w.label(next)
+		m.beginCondition(condition)
 		w.code("%s++", cursor)
-		w.code("if !factChoice%d(ex, %s-1) {", condition, cursor)
-		w.code("\t%s", w.jump(fail))
-		w.code("}")
+		w.open("if !factChoice%d(ex, %s-1) {", condition, cursor)
+		m.endCondition(false)
+		w.code("%s", w.jump(fail))
+		w.close()
+		m.endCondition(true)
 		succeed(retry, func() {})
 		w.label(retry)
 		if ir.RuntimeBacktrackingSupport {
@@ -1338,6 +1587,9 @@ func (m *methodGen) emitConditionContinuation(condition uint32, bound boundSet, 
 	}
 	w.label(fail)
 	m.rollbackCheckpoint(checkpoint)
+	if composite {
+		m.endCondition(false)
+	}
 	w.code("%s", w.jump(failure))
 }
 
@@ -1393,6 +1645,7 @@ func (m *methodGen) emitAxiomCall(condition uint32, fail int, checkpoint checkpo
 		m.pushCheckpoint(checkpoint)
 		m.rollbackCheckpoint(locals)
 		w.code("ex.CurrentFrameID = %sFrame", scope)
+		m.debug(debugEvent("BeginAxiom", c.ResolvedIndex))
 		w.code("%s", w.jump(retry))
 	})
 	w.label(bodyFailure)
@@ -1406,8 +1659,11 @@ func (g *generator) emitMethod(methodIndex uint32) {
 	f := &g.funcs
 	fmt.Fprintf(f, "// method%d: %s/%d\n", methodIndex, goComment(ir.Strings.Get(method.ID)), method.ParameterCount)
 	fmt.Fprintf(f, "func method%d(ex *planner.Exec) int {\n", methodIndex)
+	beginMethod := debugEvent("BeginMethod", methodIndex)
+	endMethodFailed := debugEvent("EndMethod", false)
+	endBranchFailed := debugEvent("EndBranch", false)
 	if method.BranchCount == 0 {
-		f.WriteString("\treturn 0\n}\n\n")
+		f.WriteString(debugStatements("\t", beginMethod, endMethodFailed) + "\treturn 0\n}\n\n")
 		return
 	}
 	bound := boundSet{}
@@ -1438,6 +1694,7 @@ func (g *generator) emitMethod(methodIndex uint32) {
 		resumeCases = append(resumeCases, fmt.Sprintf("case %d:\n\t\tgoto L%d", bi+1, resumeLabels[bi]))
 		pinned[resumeLabels[bi]] = true
 	}
+	m.debug(beginMethod)
 	w.code("%s", w.jump(branchLabels[0]))
 	for bi := uint32(0); bi < method.BranchCount; bi++ {
 		branchIndex := method.FirstBranch + bi
@@ -1455,6 +1712,7 @@ func (g *generator) emitMethod(methodIndex uint32) {
 			needsSlots = true
 			w.code("ex.SaveRetry(frame, %s)", methodSlots)
 		}
+		m.debug(debugEvent("BeginBranch", branchIndex))
 		if branch.Condition == compiler.NoIndex {
 			w.code("%s", w.jump(branchSuccess))
 		} else {
@@ -1467,15 +1725,22 @@ func (g *generator) emitMethod(methodIndex uint32) {
 		if canRetry {
 			w.code("ex.ReleaseRetry(frame)")
 		}
+		m.debug(endBranchFailed)
 		w.code("%s", w.jump(branchFailure))
 		w.label(branchSuccess)
 		if branch.TaskCount != 0 {
-			w.code("if !ex.PushBranch(&bc%d) {", branchIndex)
+			w.open("if !ex.PushBranch(&bc%d) {", branchIndex)
 			if canRetry {
-				w.code("\tex.ReleaseRetry(frame)")
+				w.code("ex.ReleaseRetry(frame)")
 			}
-			w.code("\treturn 0")
-			w.code("}")
+			m.debug(endBranchFailed, endMethodFailed)
+			w.code("return 0")
+			w.close()
+			captures := make([]string, 0, branch.TaskCount)
+			for ti := uint32(0); ti < branch.TaskCount; ti++ {
+				captures = append(captures, fmt.Sprintf("ex.DebugCapturePendingTask(%d)", branch.FirstTask+(branch.TaskCount-1-ti)))
+			}
+			m.debug(captures...)
 			base := "0"
 			if canRetry {
 				base = "frame.RetryPendingBase"
@@ -1496,19 +1761,23 @@ func (g *generator) emitMethod(methodIndex uint32) {
 			w.label(resumeLabels[bi])
 			w.open("if frame.ChildResult == 0 {")
 			if canRetry {
-				w.code("if ex.FailureState != planner.NoPlan {")
-				w.code("\tex.ReleaseRetry(frame)")
-				w.code("\treturn 0")
-				w.code("}")
+				w.open("if ex.FailureState != planner.NoPlan {")
+				w.code("ex.ReleaseRetry(frame)")
+				m.debug(endBranchFailed, endMethodFailed)
+				w.code("return 0")
+				w.close()
 				if ir.RuntimeBacktrackingSupport {
-					w.code("if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {")
-					w.code("\tex.ReleaseRetry(frame)")
-					w.code("\treturn 0")
-					w.code("}")
+					w.open("if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {")
+					w.code("ex.ReleaseRetry(frame)")
+					m.debug(endBranchFailed, endMethodFailed)
+					w.code("return 0")
+					w.close()
 				}
 				w.code("ex.RestoreRetry(frame, %s)", methodSlots)
+				m.debug(endBranchFailed)
 				w.code("%s", w.jump(branchFailure))
 			} else {
+				m.debug(endBranchFailed, endMethodFailed)
 				w.code("return 0")
 			}
 			w.close()
@@ -1518,9 +1787,11 @@ func (g *generator) emitMethod(methodIndex uint32) {
 		if canRetry {
 			w.code("ex.ReleaseRetry(frame)")
 		}
+		m.debug(debugEvent("EndBranch", true), debugEvent("EndMethod", true))
 		w.code("return 1")
 	}
 	w.label(methodFailure)
+	m.debug(endMethodFailed)
 	w.code("return 0")
 
 	if needsSlots {
@@ -1586,10 +1857,13 @@ func (g *generator) emitEntryPoint() {
 		fmt.Fprintf(&cases, "\t\tresult = ex.Run(method%d)\n", mi)
 	}
 	f.WriteString("\tif entry < 0 {\n\t\treturn empty, planner.InvalidCall\n\t}\n")
+	f.WriteString(debugStatements("\t", debugEvent("BeginPlan", "uint32(entry)")))
 	f.WriteString("\tresult := 0\n\tswitch entry {\n")
 	f.WriteString(cases.String())
 	f.WriteString("\t}\n")
-	f.WriteString("\tif result == 0 {\n\t\treturn empty, ex.FailureState\n\t}\n")
-	f.WriteString("\tfor ex.PendingCount() != 0 {\n\t\tnext := ex.PopPending()\n\t\tif next == nil {\n\t\t\tbreak\n\t\t}\n\t\tif ex.Run(next) == 0 {\n\t\t\treturn empty, ex.FailureState\n\t\t}\n\t}\n")
+	f.WriteString("\tif result == 0 {\n" + debugStatements("\t\t", debugEvent("EndPlan", false)) + "\t\treturn empty, ex.FailureState\n\t}\n")
+	f.WriteString("\tfor ex.PendingCount() != 0 {\n\t\tnext := ex.PopPending()\n\t\tif next == nil {\n\t\t\tbreak\n\t\t}\n\t\tif ex.Run(next) == 0 {\n" +
+		debugStatements("\t\t\t", debugEvent("EndPlan", false)) + "\t\t\treturn empty, ex.FailureState\n\t\t}\n\t}\n")
+	f.WriteString(debugStatements("\t", debugEvent("EndPlan", true)))
 	f.WriteString("\treturn ex.PlanAtom(), planner.Succeeded\n}\n")
 }

@@ -63,6 +63,146 @@ func init() {
 		FactNames:            []string{},
 		CallTermRequirements: []callterm.Requirement{},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Grunt.domain",
+		Strings: []string{
+			"EnemyBaseConstants",
+			"combat_attack",
+			"normal_attack",
+			"\"normal_attack\"",
+			"EnemyBase::can_use_special_attack",
+			"inp_threat",
+			"?inp_threat",
+			"can_use_special_attack",
+			"EnemyBase::do_combat",
+			"branch_base_attack",
+			"attack",
+			"!attack",
+			"@combat_attack",
+			"Grunt::run",
+			"branch_run",
+			"do_combat",
+			"1",
+			"run",
+		},
+		Values: []uint32{
+			2, 3, 2, 3, planner.NoIndex,
+			1, 6, 5, 8, 0,
+			1, 6, 5, 8, 0,
+			1, 6, 5, 13, 0,
+			1, 6, 5, 16, 0,
+			2, 12, 2, 19, planner.NoIndex,
+			1, 6, 5, 19, 0,
+			0, 16, 16, 9, planner.NoIndex,
+			1, 6, 5, 13, 0,
+			1, 6, 5, 16, 0,
+			2, 12, 2, 19, planner.NoIndex,
+			1, 6, 5, 19, 0,
+			0, 16, 16, 9, planner.NoIndex,
+		},
+		VariableStringIDs: []uint32{
+			5,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 0, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			1, 7, 4, 1, 0, 0, planner.NoIndex, 1, 16, 0,
+			2, planner.NoIndex, 0, 0, 1, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			1, 7, 9, 1, 1, 0, planner.NoIndex, 1, 16, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(#can_use_special_attack ?inp_threat)",
+			"(and ...)",
+			"(#can_use_special_attack ?inp_threat)",
+		},
+		ConditionChildRefs: []uint32{
+			1,
+			3,
+		},
+		Tasks: []uint32{
+			1, 10, 5, 2, 19, 11,
+			0, 15, 7, 1, 9, planner.NoIndex,
+			1, 10, 10, 2, 19, 11,
+			0, 15, 12, 1, 9, planner.NoIndex,
+		},
+		Branches: []uint32{
+			9, 0, 0, 1, 14,
+			14, planner.NoIndex, 1, 1, 5,
+			9, 2, 2, 1, 14,
+			14, planner.NoIndex, 3, 1, 5,
+		},
+		Methods: []uint64{
+			8, 3, 1, 0, 1, 13, 0x1, 0x0, 0x0, 0x0,
+			13, 7, 0, 1, 1, 4, 0x0, 0x0, 0x0, 0x0,
+			15, 8, 1, 2, 1, 13, 0x1, 0x0, 0x0, 0x0,
+			17, 12, 0, 3, 1, 4, 0x0, 0x0, 0x0, 0x0,
+		},
+		Axioms: []uint64{
+			4, 1, 1, uint64(planner.NoIndex), 8, 0x1, 0x0, 0x0, 0x0,
+			7, 2, 1, uint64(planner.NoIndex), 8, 0x1, 0x0, 0x0, 0x0,
+		},
+		Constants: []uint32{
+			0, 1, 0, 3,
+		},
+		CallTermSlotCount: 0,
+		FactSlotCount:     0,
+		SourceFiles: []string{
+			"Domains/Includes/EnemyBase.domain",
+			"Domains/Grunt.domain",
+		},
+		ValueSources: []uint32{
+			0, 3, 24, 3, 39,
+			0, 8, 37, 8, 48,
+			0, 8, 37, 8, 48,
+			0, 13, 25, 13, 36,
+			0, 16, 42, 16, 53,
+			0, 19, 26, 19, 40,
+			0, 19, 41, 19, 52,
+			1, 9, 28, 9, 29,
+			0, 13, 25, 13, 36,
+			0, 16, 42, 16, 53,
+			0, 19, 26, 19, 40,
+			0, 19, 41, 19, 52,
+			1, 9, 28, 9, 29,
+		},
+		ConditionSources: []uint32{
+			0, 15, 14, 16, 53,
+			0, 16, 17, 16, 53,
+			0, 15, 14, 16, 53,
+			0, 16, 17, 16, 53,
+		},
+		TaskSources: []uint32{
+			0, 19, 17, 19, 52,
+			1, 9, 17, 9, 29,
+			0, 19, 17, 19, 52,
+			1, 9, 17, 9, 29,
+		},
+		BranchSources: []uint32{
+			0, 14, 9, 21, 9,
+			1, 5, 9, 11, 9,
+			0, 14, 9, 21, 9,
+			1, 5, 9, 11, 9,
+		},
+		MethodSources: []uint32{
+			0, 13, 5, 22, 5,
+			1, 4, 5, 12, 5,
+			0, 13, 5, 22, 5,
+			1, 4, 5, 12, 5,
+		},
+		AxiomSources: []uint32{
+			0, 8, 5, 11, 5,
+			0, 8, 5, 11, 5,
+		},
+		ConstantSources: []uint32{
+			0, 3, 9, 3, 39,
+		},
+	})
 }
 
 func axiomBegin1(ex *planner.Exec, scope *planner.AxiomScope) {
@@ -77,10 +217,12 @@ func axiomBegin1(ex *planner.Exec, scope *planner.AxiomScope) {
 	if in0.IsBound() {
 		ex.SetIfChanged(0, in0)
 	}
+	ex.DebugBeginAxiom(&definition, 1)
 }
 
 func axiomEnd1(ex *planner.Exec, succeeded bool, scope *planner.AxiomScope) bool {
 	valid := succeeded
+	ex.DebugEndAxiom(&definition, valid)
 	ex.V[0] = scope.Saved[0]
 	ex.CurrentFrameID = scope.CallerFrame
 	return valid
@@ -98,10 +240,12 @@ func axiomBegin3(ex *planner.Exec, scope *planner.AxiomScope) {
 	if in0.IsBound() {
 		ex.SetIfChanged(0, in0)
 	}
+	ex.DebugBeginAxiom(&definition, 1)
 }
 
 func axiomEnd3(ex *planner.Exec, succeeded bool, scope *planner.AxiomScope) bool {
 	valid := succeeded
+	ex.DebugEndAxiom(&definition, valid)
 	ex.V[0] = scope.Saved[0]
 	ex.CurrentFrameID = scope.CallerFrame
 	return valid
@@ -109,22 +253,29 @@ func axiomEnd3(ex *planner.Exec, succeeded bool, scope *planner.AxiomScope) bool
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (!attack @combat_attack ?inp_threat)
 	if !ex.AppendPlanStep(sym0, []atom.Atom{sv1, ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (do_combat 1)
 	arg0 := sv2
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -137,22 +288,29 @@ func task1(ex *planner.Exec) int {
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!attack @combat_attack ?inp_threat)
 	if !ex.AppendPlanStep(sym0, []atom.Atom{sv3, ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (do_combat 1)
 	arg0 := sv4
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -187,11 +345,15 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch branch_base_attack
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (#can_use_special_attack ?inp_threat))
+	ex.DebugBeginCondition(&definition, 0)
 	// (#can_use_special_attack ?inp_threat)
+	ex.DebugBeginCondition(&definition, 1)
 	as1_8 = planner.AxiomScope{Saved: as1_8Saved[:], Args: as1_8Args[:]}
 	axiomBegin1(ex, &as1_8)
 	as1_8Frame = ex.CurrentFrameID
@@ -202,25 +364,34 @@ L2:
 	if !axiomEnd1(ex, true, &as1_8Copy) {
 		goto L12
 	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
 	goto L4
 L12:
 	ex.V[0] = cp11_0
 	ex.CurrentFrameID = as1_8Frame
+	ex.DebugBeginAxiom(&definition, 1)
 	goto L10
 L10:
 	axiomEnd1(ex, false, &as1_8)
 	goto L8
 L8:
+	ex.DebugEndCondition(&definition, false)
 	goto L6
 L6:
+	ex.DebugEndCondition(&definition, false)
 	goto L5
 L5:
+	ex.DebugEndBranch(&definition, false)
 	goto L1
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L13:
+	ex.DebugCapturePendingTask(0)
+L15:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -230,15 +401,20 @@ L13:
 		frame.ChildResult = 0
 		goto L3
 	}
-	goto L14
+	goto L16
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L13
-L14:
+	goto L15
+L16:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L1:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -248,17 +424,22 @@ func method1(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L17
+		goto L19
 	}
-	goto L16
-L16:
-	// branch branch_run
+	ex.DebugBeginMethod(&definition, 1)
 	goto L18
 L18:
+	// branch branch_run
+	ex.DebugBeginBranch(&definition, 1)
+	goto L20
+L20:
 	if !ex.PushBranch(&bc1) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L20:
+	ex.DebugCapturePendingTask(1)
+L22:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -266,15 +447,19 @@ L20:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L17
+		goto L19
 	}
-	goto L21
-L17:
+	goto L23
+L19:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L20
-L21:
+	goto L22
+L23:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -282,60 +467,73 @@ L21:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var as3_29Saved [1]atom.Atom
-	var as3_29Args [1]atom.Atom
-	var as3_29 planner.AxiomScope
-	var as3_29Frame uint64
-	var cp32_0 atom.Atom
-	var as3_29CopySaved [1]atom.Atom
-	var as3_29CopyArgs [1]atom.Atom
-	var as3_29Copy planner.AxiomScope
-	_ = as3_29Saved
-	_ = as3_29Args
-	_ = as3_29
-	_ = as3_29Frame
-	_ = cp32_0
-	_ = as3_29CopySaved
-	_ = as3_29CopyArgs
-	_ = as3_29Copy
+	var as3_31Saved [1]atom.Atom
+	var as3_31Args [1]atom.Atom
+	var as3_31 planner.AxiomScope
+	var as3_31Frame uint64
+	var cp34_0 atom.Atom
+	var as3_31CopySaved [1]atom.Atom
+	var as3_31CopyArgs [1]atom.Atom
+	var as3_31Copy planner.AxiomScope
+	_ = as3_31Saved
+	_ = as3_31Args
+	_ = as3_31
+	_ = as3_31Frame
+	_ = cp34_0
+	_ = as3_31CopySaved
+	_ = as3_31CopyArgs
+	_ = as3_31Copy
 	switch frame.Resume {
 	case 1:
-		goto L24
+		goto L26
 	}
-	goto L23
-L23:
-	// branch branch_base_attack
-	// (and (#can_use_special_attack ?inp_threat))
-	// (#can_use_special_attack ?inp_threat)
-	as3_29 = planner.AxiomScope{Saved: as3_29Saved[:], Args: as3_29Args[:]}
-	axiomBegin3(ex, &as3_29)
-	as3_29Frame = ex.CurrentFrameID
-	cp32_0 = ex.V[0]
-	as3_29CopySaved = as3_29Saved
-	as3_29CopyArgs = as3_29Args
-	as3_29Copy = planner.AxiomScope{Saved: as3_29CopySaved[:], Args: as3_29CopyArgs[:], CallerFrame: as3_29.CallerFrame}
-	if !axiomEnd3(ex, true, &as3_29Copy) {
-		goto L33
-	}
+	ex.DebugBeginMethod(&definition, 2)
 	goto L25
+L25:
+	// branch branch_base_attack
+	ex.DebugBeginBranch(&definition, 2)
+	// (and (#can_use_special_attack ?inp_threat))
+	ex.DebugBeginCondition(&definition, 2)
+	// (#can_use_special_attack ?inp_threat)
+	ex.DebugBeginCondition(&definition, 3)
+	as3_31 = planner.AxiomScope{Saved: as3_31Saved[:], Args: as3_31Args[:]}
+	axiomBegin3(ex, &as3_31)
+	as3_31Frame = ex.CurrentFrameID
+	cp34_0 = ex.V[0]
+	as3_31CopySaved = as3_31Saved
+	as3_31CopyArgs = as3_31Args
+	as3_31Copy = planner.AxiomScope{Saved: as3_31CopySaved[:], Args: as3_31CopyArgs[:], CallerFrame: as3_31.CallerFrame}
+	if !axiomEnd3(ex, true, &as3_31Copy) {
+		goto L35
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L27
+L35:
+	ex.V[0] = cp34_0
+	ex.CurrentFrameID = as3_31Frame
+	ex.DebugBeginAxiom(&definition, 1)
+	goto L33
 L33:
-	ex.V[0] = cp32_0
-	ex.CurrentFrameID = as3_29Frame
+	axiomEnd3(ex, false, &as3_31)
 	goto L31
 L31:
-	axiomEnd3(ex, false, &as3_29)
+	ex.DebugEndCondition(&definition, false)
 	goto L29
 L29:
-	goto L27
+	ex.DebugEndCondition(&definition, false)
+	goto L28
+L28:
+	ex.DebugEndBranch(&definition, false)
+	goto L24
 L27:
-	goto L26
-L26:
-	goto L22
-L25:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L34:
+	ex.DebugCapturePendingTask(2)
+L38:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -343,17 +541,22 @@ L34:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L24
+		goto L26
 	}
-	goto L35
-L24:
+	goto L39
+L26:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L34
-L35:
+	goto L38
+L39:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L22:
+L24:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -363,17 +566,22 @@ func method3(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L38
+		goto L42
 	}
-	goto L37
-L37:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L41
+L41:
 	// branch branch_run
-	goto L39
-L39:
+	ex.DebugBeginBranch(&definition, 3)
+	goto L43
+L43:
 	if !ex.PushBranch(&bc3) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L41:
+	ex.DebugCapturePendingTask(3)
+L45:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -381,15 +589,19 @@ L41:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L38
+		goto L42
 	}
-	goto L42
-L38:
+	goto L46
+L42:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L41
-L42:
+	goto L45
+L46:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -420,12 +632,14 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 3:
 		result = ex.Run(method3)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -434,8 +648,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

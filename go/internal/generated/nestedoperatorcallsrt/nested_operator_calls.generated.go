@@ -359,6 +359,3763 @@ func init() {
 			{Name: "missing_distance_callterm", Source: callterm.Source{Domain: "NestedOperatorCalls", File: "Domains/Test/nested_operator_calls.domain", Line: 61, Column: 35}},
 		},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Test/nested_operator_calls.domain",
+		Strings: []string{
+			"NestedOperatorCalls::behave",
+			"branch",
+			"old_position",
+			"?old_position",
+			"(1.0 0.0 0.0)",
+			"new_position",
+			"?new_position",
+			"(2.0 0.0 0.0)",
+			"$assignment_call_0",
+			"$assignment_call_1",
+			"$assignment_call_2",
+			"$assignment_call_3",
+			"?$assignment_call_0",
+			"?$assignment_call_1",
+			"?$assignment_call_2",
+			"missing_distance_callterm",
+			"?$assignment_call_3",
+			"0.2",
+			"result",
+			"!result",
+			"NestedOperatorCalls::missing_right",
+			"$assignment_call_4",
+			"$assignment_call_5",
+			"?$assignment_call_4",
+			"0.0",
+			"?$assignment_call_5",
+			"NestedOperatorCalls::missing_arithmetic",
+			"$assignment_call_6",
+			"$assignment_call_7",
+			"$assignment_call_8",
+			"$assignment_call_9",
+			"$assignment_call_10",
+			"?$assignment_call_6",
+			"",
+			"(* 0.0 1)",
+			"1",
+			"?$assignment_call_7",
+			"?$assignment_call_8",
+			"(* ?$assignment_call_7 1)",
+			"?$assignment_call_9",
+			"(+ ?$assignment_call_6 ?$assignment_call_8)",
+			"?$assignment_call_10",
+			"NestedOperatorCalls::missing_deep",
+			"$assignment_call_11",
+			"$assignment_call_12",
+			"$assignment_call_13",
+			"?$assignment_call_11",
+			"?$assignment_call_12",
+			"identity",
+			"?$assignment_call_13",
+			"NestedOperatorCalls::bound_first",
+			"distance",
+			"?distance",
+			"NestedOperatorCalls::two_attempts",
+			"first",
+			"$assignment_call_14",
+			"$assignment_call_15",
+			"?$assignment_call_14",
+			"?$assignment_call_15",
+			"second",
+			"$assignment_call_16",
+			"$assignment_call_17",
+			"?$assignment_call_16",
+			"?$assignment_call_17",
+			"NestedOperatorCalls::valid_left",
+			"$assignment_call_18",
+			"$assignment_call_19",
+			"?$assignment_call_18",
+			"?$assignment_call_19",
+			"NestedOperatorCalls::valid_right",
+			"$assignment_call_20",
+			"$assignment_call_21",
+			"?$assignment_call_20",
+			"?$assignment_call_21",
+			"NestedOperatorCalls::valid_both",
+			"$assignment_call_22",
+			"$assignment_call_23",
+			"?$assignment_call_22",
+			"?$assignment_call_23",
+			"NestedOperatorCalls::valid_bound",
+			"NestedOperatorCalls::operators",
+			"value",
+			"?value",
+			"3",
+			"$assignment_call_24",
+			"$assignment_call_25",
+			"$assignment_call_26",
+			"?$assignment_call_24",
+			"2",
+			"?$assignment_call_25",
+			"?$assignment_call_26",
+			"$assignment_call_27",
+			"$assignment_call_28",
+			"$assignment_call_29",
+			"?$assignment_call_27",
+			"?$assignment_call_28",
+			"?$assignment_call_29",
+			"$assignment_call_30",
+			"$assignment_call_31",
+			"$assignment_call_32",
+			"?$assignment_call_30",
+			"4",
+			"?$assignment_call_31",
+			"?$assignment_call_32",
+			"$assignment_call_33",
+			"$assignment_call_34",
+			"$assignment_call_35",
+			"?$assignment_call_33",
+			"?$assignment_call_34",
+			"?$assignment_call_35",
+			"$assignment_call_36",
+			"$assignment_call_37",
+			"$assignment_call_38",
+			"?$assignment_call_36",
+			"?$assignment_call_37",
+			"?$assignment_call_38",
+			"$assignment_call_39",
+			"$assignment_call_40",
+			"$assignment_call_41",
+			"?$assignment_call_39",
+			"?$assignment_call_40",
+			"?$assignment_call_41",
+			"$assignment_call_42",
+			"$assignment_call_43",
+			"$assignment_call_44",
+			"$assignment_call_45",
+			"$assignment_call_46",
+			"$assignment_call_47",
+			"?$assignment_call_42",
+			"?$assignment_call_43",
+			"?$assignment_call_44",
+			"(* ?$assignment_call_43 1)",
+			"?$assignment_call_45",
+			"(* 2 1)",
+			"?$assignment_call_46",
+			"(+ ?$assignment_call_44 ?$assignment_call_45)",
+			"?$assignment_call_47",
+			"$assignment_call_48",
+			"$assignment_call_49",
+			"$assignment_call_50",
+			"$assignment_call_51",
+			"$assignment_call_52",
+			"$assignment_call_53",
+			"?$assignment_call_48",
+			"(* 5 1)",
+			"5",
+			"?$assignment_call_49",
+			"?$assignment_call_50",
+			"?$assignment_call_51",
+			"(* ?$assignment_call_50 1)",
+			"?$assignment_call_52",
+			"(- ?$assignment_call_48 ?$assignment_call_51)",
+			"?$assignment_call_53",
+			"$assignment_call_54",
+			"$assignment_call_55",
+			"$assignment_call_56",
+			"$assignment_call_57",
+			"$assignment_call_58",
+			"$assignment_call_59",
+			"?$assignment_call_54",
+			"?$assignment_call_55",
+			"?$assignment_call_56",
+			"(* ?$assignment_call_55 1)",
+			"?$assignment_call_57",
+			"(* 3 1)",
+			"?$assignment_call_58",
+			"(* ?$assignment_call_56 ?$assignment_call_57)",
+			"?$assignment_call_59",
+			"6",
+			"$assignment_call_60",
+			"$assignment_call_61",
+			"$assignment_call_62",
+			"$assignment_call_63",
+			"$assignment_call_64",
+			"$assignment_call_65",
+			"?$assignment_call_60",
+			"(* 6 1)",
+			"?$assignment_call_61",
+			"?$assignment_call_62",
+			"?$assignment_call_63",
+			"(* ?$assignment_call_62 1)",
+			"?$assignment_call_64",
+			"(/ ?$assignment_call_60 ?$assignment_call_63)",
+			"?$assignment_call_65",
+			"$assignment_call_66",
+			"$assignment_call_67",
+			"$assignment_call_68",
+			"$assignment_call_69",
+			"$assignment_call_70",
+			"$assignment_call_71",
+			"?$assignment_call_66",
+			"7",
+			"?$assignment_call_67",
+			"?$assignment_call_68",
+			"(* ?$assignment_call_67 1)",
+			"?$assignment_call_69",
+			"(* 4 1)",
+			"?$assignment_call_70",
+			"(% ?$assignment_call_68 ?$assignment_call_69)",
+			"?$assignment_call_71",
+			"$assignment_call_72",
+			"$assignment_call_73",
+			"$assignment_call_74",
+			"$assignment_call_75",
+			"$assignment_call_76",
+			"?$assignment_call_72",
+			"?$assignment_call_73",
+			"?$assignment_call_74",
+			"(* ?$assignment_call_73 1)",
+			"?$assignment_call_75",
+			"(++ ?$assignment_call_74)",
+			"?$assignment_call_76",
+			"$assignment_call_77",
+			"$assignment_call_78",
+			"$assignment_call_79",
+			"$assignment_call_80",
+			"$assignment_call_81",
+			"?$assignment_call_77",
+			"?$assignment_call_78",
+			"?$assignment_call_79",
+			"(* ?$assignment_call_78 1)",
+			"?$assignment_call_80",
+			"(-- ?$assignment_call_79)",
+			"?$assignment_call_81",
+			"$assignment_call_82",
+			"$assignment_call_83",
+			"$assignment_call_84",
+			"$assignment_call_85",
+			"$assignment_call_86",
+			"$assignment_call_87",
+			"$assignment_call_88",
+			"?$assignment_call_82",
+			"(* 1 1)",
+			"?$assignment_call_83",
+			"?$assignment_call_84",
+			"?$assignment_call_85",
+			"(* ?$assignment_call_84 1)",
+			"?$assignment_call_86",
+			"(+ ?$assignment_call_82 ?$assignment_call_85)",
+			"?$assignment_call_87",
+			"?$assignment_call_88",
+			"NestedOperatorCalls::short_circuit",
+			"$assignment_call_89",
+			"$assignment_call_90",
+			"$assignment_call_91",
+			"$assignment_call_92",
+			"$assignment_call_93",
+			"?$assignment_call_89",
+			"(* false 1)",
+			"false",
+			"?$assignment_call_90",
+			"?$assignment_call_91",
+			"(* ?$assignment_call_90 1)",
+			"?$assignment_call_92",
+			"(+ ?$assignment_call_89 ?$assignment_call_91)",
+			"?$assignment_call_93",
+			"unexpected",
+			"!unexpected",
+			"fallback",
+			"NestedOperatorCalls::task_arithmetic",
+			"(+)",
+			"(+ (call identity 1) (call identity 2))",
+			"(call identity 1)",
+			"__task_call_result_94",
+			"(call identity 2)",
+			"__task_call_result_95",
+			"NestedOperatorCalls::missing_task_arithmetic",
+			"(+ 1 (call missing_distance_callterm))",
+			"(call missing_distance_callterm)",
+			"__task_call_result_96",
+			"NestedOperatorCalls::continue_move",
+			"continue_move_to_seen_entity",
+			"active_plan",
+			"plan_time",
+			"?plan_time",
+			"moving_to_seen_entity",
+			"entity_id",
+			"?entity_id",
+			"old_entity_position",
+			"?old_entity_position",
+			"new_entity_position",
+			"?new_entity_position",
+			"get_entity_position",
+			"$assignment_call_97",
+			"$assignment_call_98",
+			"$assignment_call_99",
+			"$assignment_call_100",
+			"?$assignment_call_97",
+			"?$assignment_call_98",
+			"?$assignment_call_99",
+			"get_distance_from_to",
+			"?$assignment_call_100",
+			"continue",
+			"!continue",
+			"NestedOperatorCalls::debugger_backtracking",
+			"candidate",
+			"entity",
+			"?entity",
+			"$assignment_call_101",
+			"$assignment_call_102",
+			"$assignment_call_103",
+			"?$assignment_call_101",
+			"?$assignment_call_102",
+			"?$assignment_call_103",
+			"NestedOperatorCalls::debugger_skipped",
+			"absent_fact",
+			"$assignment_call_104",
+			"$assignment_call_105",
+			"?$assignment_call_104",
+			"?$assignment_call_105",
+			"NestedOperatorCalls::debugger_assignment",
+			"$assignment_call_106",
+			"$assignment_call_107",
+			"$assignment_call_108",
+			"$assignment_call_109",
+			"$assignment_call_110",
+			"?$assignment_call_106",
+			"?$assignment_call_107",
+			"?$assignment_call_108",
+			"?$assignment_call_109",
+			"(* ?$assignment_call_108 1)",
+			"?$assignment_call_110",
+			"(+ ?$assignment_call_106 ?$assignment_call_109)",
+			"behave",
+			"$assignment_call_111",
+			"$assignment_call_112",
+			"$assignment_call_113",
+			"$assignment_call_114",
+			"?$assignment_call_111",
+			"?$assignment_call_112",
+			"?$assignment_call_113",
+			"?$assignment_call_114",
+			"missing_right",
+			"$assignment_call_115",
+			"$assignment_call_116",
+			"?$assignment_call_115",
+			"?$assignment_call_116",
+			"missing_arithmetic",
+			"$assignment_call_117",
+			"$assignment_call_118",
+			"$assignment_call_119",
+			"$assignment_call_120",
+			"$assignment_call_121",
+			"?$assignment_call_117",
+			"?$assignment_call_118",
+			"?$assignment_call_119",
+			"(* ?$assignment_call_118 1)",
+			"?$assignment_call_120",
+			"(+ ?$assignment_call_117 ?$assignment_call_119)",
+			"?$assignment_call_121",
+			"missing_deep",
+			"$assignment_call_122",
+			"$assignment_call_123",
+			"$assignment_call_124",
+			"?$assignment_call_122",
+			"?$assignment_call_123",
+			"?$assignment_call_124",
+			"bound_first",
+			"two_attempts",
+			"$assignment_call_125",
+			"$assignment_call_126",
+			"?$assignment_call_125",
+			"?$assignment_call_126",
+			"$assignment_call_127",
+			"$assignment_call_128",
+			"?$assignment_call_127",
+			"?$assignment_call_128",
+			"valid_left",
+			"$assignment_call_129",
+			"$assignment_call_130",
+			"?$assignment_call_129",
+			"?$assignment_call_130",
+			"valid_right",
+			"$assignment_call_131",
+			"$assignment_call_132",
+			"?$assignment_call_131",
+			"?$assignment_call_132",
+			"valid_both",
+			"$assignment_call_133",
+			"$assignment_call_134",
+			"?$assignment_call_133",
+			"?$assignment_call_134",
+			"valid_bound",
+			"operators",
+			"$assignment_call_135",
+			"$assignment_call_136",
+			"$assignment_call_137",
+			"?$assignment_call_135",
+			"?$assignment_call_136",
+			"?$assignment_call_137",
+			"$assignment_call_138",
+			"$assignment_call_139",
+			"$assignment_call_140",
+			"?$assignment_call_138",
+			"?$assignment_call_139",
+			"?$assignment_call_140",
+			"$assignment_call_141",
+			"$assignment_call_142",
+			"$assignment_call_143",
+			"?$assignment_call_141",
+			"?$assignment_call_142",
+			"?$assignment_call_143",
+			"$assignment_call_144",
+			"$assignment_call_145",
+			"$assignment_call_146",
+			"?$assignment_call_144",
+			"?$assignment_call_145",
+			"?$assignment_call_146",
+			"$assignment_call_147",
+			"$assignment_call_148",
+			"$assignment_call_149",
+			"?$assignment_call_147",
+			"?$assignment_call_148",
+			"?$assignment_call_149",
+			"$assignment_call_150",
+			"$assignment_call_151",
+			"$assignment_call_152",
+			"?$assignment_call_150",
+			"?$assignment_call_151",
+			"?$assignment_call_152",
+			"$assignment_call_153",
+			"$assignment_call_154",
+			"$assignment_call_155",
+			"$assignment_call_156",
+			"$assignment_call_157",
+			"$assignment_call_158",
+			"?$assignment_call_153",
+			"?$assignment_call_154",
+			"?$assignment_call_155",
+			"(* ?$assignment_call_154 1)",
+			"?$assignment_call_156",
+			"?$assignment_call_157",
+			"(+ ?$assignment_call_155 ?$assignment_call_156)",
+			"?$assignment_call_158",
+			"$assignment_call_159",
+			"$assignment_call_160",
+			"$assignment_call_161",
+			"$assignment_call_162",
+			"$assignment_call_163",
+			"$assignment_call_164",
+			"?$assignment_call_159",
+			"?$assignment_call_160",
+			"?$assignment_call_161",
+			"?$assignment_call_162",
+			"(* ?$assignment_call_161 1)",
+			"?$assignment_call_163",
+			"(- ?$assignment_call_159 ?$assignment_call_162)",
+			"?$assignment_call_164",
+			"$assignment_call_165",
+			"$assignment_call_166",
+			"$assignment_call_167",
+			"$assignment_call_168",
+			"$assignment_call_169",
+			"$assignment_call_170",
+			"?$assignment_call_165",
+			"?$assignment_call_166",
+			"?$assignment_call_167",
+			"(* ?$assignment_call_166 1)",
+			"?$assignment_call_168",
+			"?$assignment_call_169",
+			"(* ?$assignment_call_167 ?$assignment_call_168)",
+			"?$assignment_call_170",
+			"$assignment_call_171",
+			"$assignment_call_172",
+			"$assignment_call_173",
+			"$assignment_call_174",
+			"$assignment_call_175",
+			"$assignment_call_176",
+			"?$assignment_call_171",
+			"?$assignment_call_172",
+			"?$assignment_call_173",
+			"?$assignment_call_174",
+			"(* ?$assignment_call_173 1)",
+			"?$assignment_call_175",
+			"(/ ?$assignment_call_171 ?$assignment_call_174)",
+			"?$assignment_call_176",
+			"$assignment_call_177",
+			"$assignment_call_178",
+			"$assignment_call_179",
+			"$assignment_call_180",
+			"$assignment_call_181",
+			"$assignment_call_182",
+			"?$assignment_call_177",
+			"?$assignment_call_178",
+			"?$assignment_call_179",
+			"(* ?$assignment_call_178 1)",
+			"?$assignment_call_180",
+			"?$assignment_call_181",
+			"(% ?$assignment_call_179 ?$assignment_call_180)",
+			"?$assignment_call_182",
+			"$assignment_call_183",
+			"$assignment_call_184",
+			"$assignment_call_185",
+			"$assignment_call_186",
+			"$assignment_call_187",
+			"?$assignment_call_183",
+			"?$assignment_call_184",
+			"?$assignment_call_185",
+			"(* ?$assignment_call_184 1)",
+			"?$assignment_call_186",
+			"(++ ?$assignment_call_185)",
+			"?$assignment_call_187",
+			"$assignment_call_188",
+			"$assignment_call_189",
+			"$assignment_call_190",
+			"$assignment_call_191",
+			"$assignment_call_192",
+			"?$assignment_call_188",
+			"?$assignment_call_189",
+			"?$assignment_call_190",
+			"(* ?$assignment_call_189 1)",
+			"?$assignment_call_191",
+			"(-- ?$assignment_call_190)",
+			"?$assignment_call_192",
+			"$assignment_call_193",
+			"$assignment_call_194",
+			"$assignment_call_195",
+			"$assignment_call_196",
+			"$assignment_call_197",
+			"$assignment_call_198",
+			"$assignment_call_199",
+			"?$assignment_call_193",
+			"?$assignment_call_194",
+			"?$assignment_call_195",
+			"?$assignment_call_196",
+			"(* ?$assignment_call_195 1)",
+			"?$assignment_call_197",
+			"(+ ?$assignment_call_193 ?$assignment_call_196)",
+			"?$assignment_call_198",
+			"?$assignment_call_199",
+			"short_circuit",
+			"$assignment_call_200",
+			"$assignment_call_201",
+			"$assignment_call_202",
+			"$assignment_call_203",
+			"$assignment_call_204",
+			"?$assignment_call_200",
+			"?$assignment_call_201",
+			"?$assignment_call_202",
+			"(* ?$assignment_call_201 1)",
+			"?$assignment_call_203",
+			"(+ ?$assignment_call_200 ?$assignment_call_202)",
+			"?$assignment_call_204",
+			"task_arithmetic",
+			"__task_call_result_205",
+			"__task_call_result_206",
+			"missing_task_arithmetic",
+			"__task_call_result_207",
+			"continue_move",
+			"$assignment_call_208",
+			"$assignment_call_209",
+			"$assignment_call_210",
+			"$assignment_call_211",
+			"?$assignment_call_208",
+			"?$assignment_call_209",
+			"?$assignment_call_210",
+			"?$assignment_call_211",
+			"debugger_backtracking",
+			"$assignment_call_212",
+			"$assignment_call_213",
+			"$assignment_call_214",
+			"?$assignment_call_212",
+			"?$assignment_call_213",
+			"?$assignment_call_214",
+			"debugger_skipped",
+			"$assignment_call_215",
+			"$assignment_call_216",
+			"?$assignment_call_215",
+			"?$assignment_call_216",
+			"debugger_assignment",
+			"$assignment_call_217",
+			"$assignment_call_218",
+			"$assignment_call_219",
+			"$assignment_call_220",
+			"$assignment_call_221",
+			"?$assignment_call_217",
+			"?$assignment_call_218",
+			"?$assignment_call_219",
+			"?$assignment_call_220",
+			"(* ?$assignment_call_219 1)",
+			"?$assignment_call_221",
+			"(+ ?$assignment_call_217 ?$assignment_call_220)",
+		},
+		Values: []uint32{
+			1, 3, 2, 7, 0,
+			0, 4, 4, 7, planner.NoIndex,
+			1, 6, 5, 8, 1,
+			0, 7, 7, 8, planner.NoIndex,
+			1, 12, 8, 9, 2,
+			1, 3, 2, 9, 0,
+			1, 13, 9, 9, 3,
+			1, 6, 5, 9, 1,
+			1, 14, 10, 9, 4,
+			1, 12, 8, 9, 2,
+			1, 13, 9, 9, 3,
+			1, 16, 11, 9, 5,
+			0, 17, 17, 9, planner.NoIndex,
+			1, 14, 10, 9, 4,
+			1, 16, 11, 9, 5,
+			1, 23, 21, 15, 6,
+			0, 24, 24, 15, planner.NoIndex,
+			1, 25, 22, 15, 7,
+			1, 23, 21, 15, 6,
+			1, 25, 22, 15, 7,
+			1, 32, 27, 17, 8,
+			0, 34, 33, 17, planner.NoIndex,
+			1, 36, 28, 17, 9,
+			1, 37, 29, 17, 10,
+			0, 38, 33, 17, planner.NoIndex,
+			1, 39, 30, 17, 11,
+			0, 40, 33, 17, planner.NoIndex,
+			1, 41, 31, 17, 12,
+			0, 17, 17, 17, planner.NoIndex,
+			1, 39, 30, 17, 11,
+			1, 41, 31, 17, 12,
+			1, 46, 43, 19, 13,
+			1, 47, 44, 19, 14,
+			1, 46, 43, 19, 13,
+			1, 49, 45, 19, 15,
+			0, 17, 17, 19, planner.NoIndex,
+			1, 47, 44, 19, 14,
+			1, 49, 45, 19, 15,
+			1, 52, 51, 21, 16,
+			1, 52, 51, 21, 16,
+			0, 17, 17, 21, planner.NoIndex,
+			1, 57, 55, 23, 17,
+			1, 58, 56, 23, 18,
+			0, 17, 17, 23, planner.NoIndex,
+			1, 57, 55, 23, 17,
+			1, 58, 56, 23, 18,
+			1, 62, 60, 24, 19,
+			1, 63, 61, 24, 20,
+			0, 17, 17, 24, planner.NoIndex,
+			1, 62, 60, 24, 19,
+			1, 63, 61, 24, 20,
+			1, 67, 65, 26, 21,
+			1, 68, 66, 26, 22,
+			0, 17, 17, 26, planner.NoIndex,
+			1, 67, 65, 26, 21,
+			1, 68, 66, 26, 22,
+			1, 72, 70, 28, 23,
+			0, 24, 24, 28, planner.NoIndex,
+			1, 73, 71, 28, 24,
+			1, 72, 70, 28, 23,
+			1, 73, 71, 28, 24,
+			1, 77, 75, 30, 25,
+			1, 78, 76, 30, 26,
+			1, 77, 75, 30, 25,
+			1, 78, 76, 30, 26,
+			1, 52, 51, 32, 16,
+			1, 52, 51, 32, 16,
+			0, 17, 17, 32, planner.NoIndex,
+			1, 82, 81, 36, 27,
+			0, 83, 83, 36, planner.NoIndex,
+			1, 87, 84, 37, 28,
+			0, 88, 88, 37, planner.NoIndex,
+			1, 89, 85, 37, 29,
+			1, 87, 84, 37, 28,
+			1, 90, 86, 37, 30,
+			1, 82, 81, 37, 27,
+			1, 89, 85, 37, 29,
+			1, 90, 86, 37, 30,
+			1, 94, 91, 38, 31,
+			1, 82, 81, 38, 27,
+			1, 95, 92, 38, 32,
+			0, 83, 83, 38, planner.NoIndex,
+			1, 96, 93, 38, 33,
+			1, 95, 92, 38, 32,
+			1, 94, 91, 38, 31,
+			1, 96, 93, 38, 33,
+			1, 100, 97, 39, 34,
+			0, 101, 101, 39, planner.NoIndex,
+			1, 102, 98, 39, 35,
+			1, 100, 97, 39, 34,
+			1, 103, 99, 39, 36,
+			1, 82, 81, 39, 27,
+			1, 102, 98, 39, 35,
+			1, 103, 99, 39, 36,
+			1, 107, 104, 40, 37,
+			1, 82, 81, 40, 27,
+			1, 108, 105, 40, 38,
+			0, 83, 83, 40, planner.NoIndex,
+			1, 109, 106, 40, 39,
+			1, 108, 105, 40, 38,
+			1, 107, 104, 40, 37,
+			1, 109, 106, 40, 39,
+			1, 113, 110, 41, 40,
+			1, 82, 81, 41, 27,
+			1, 114, 111, 41, 41,
+			1, 113, 110, 41, 40,
+			1, 115, 112, 41, 42,
+			0, 83, 83, 41, planner.NoIndex,
+			1, 114, 111, 41, 41,
+			1, 115, 112, 41, 42,
+			1, 119, 116, 42, 43,
+			0, 88, 88, 42, planner.NoIndex,
+			1, 120, 117, 42, 44,
+			1, 82, 81, 42, 27,
+			1, 121, 118, 42, 45,
+			1, 120, 117, 42, 44,
+			1, 119, 116, 42, 43,
+			1, 121, 118, 42, 45,
+			1, 128, 122, 43, 46,
+			0, 35, 35, 43, planner.NoIndex,
+			1, 129, 123, 43, 47,
+			1, 128, 122, 43, 46,
+			1, 130, 124, 43, 48,
+			0, 131, 33, 43, planner.NoIndex,
+			1, 132, 125, 43, 49,
+			0, 133, 33, 43, planner.NoIndex,
+			1, 134, 126, 43, 50,
+			0, 135, 33, 43, planner.NoIndex,
+			1, 136, 127, 43, 51,
+			0, 83, 83, 43, planner.NoIndex,
+			1, 134, 126, 43, 50,
+			1, 136, 127, 43, 51,
+			1, 143, 137, 44, 52,
+			0, 144, 33, 44, planner.NoIndex,
+			1, 146, 138, 44, 53,
+			0, 88, 88, 44, planner.NoIndex,
+			1, 147, 139, 44, 54,
+			1, 146, 138, 44, 53,
+			1, 148, 140, 44, 55,
+			0, 149, 33, 44, planner.NoIndex,
+			1, 150, 141, 44, 56,
+			0, 151, 33, 44, planner.NoIndex,
+			1, 152, 142, 44, 57,
+			0, 83, 83, 44, planner.NoIndex,
+			1, 150, 141, 44, 56,
+			1, 152, 142, 44, 57,
+			1, 159, 153, 45, 58,
+			0, 88, 88, 45, planner.NoIndex,
+			1, 160, 154, 45, 59,
+			1, 159, 153, 45, 58,
+			1, 161, 155, 45, 60,
+			0, 162, 33, 45, planner.NoIndex,
+			1, 163, 156, 45, 61,
+			0, 164, 33, 45, planner.NoIndex,
+			1, 165, 157, 45, 62,
+			0, 166, 33, 45, planner.NoIndex,
+			1, 167, 158, 45, 63,
+			0, 168, 168, 45, planner.NoIndex,
+			1, 165, 157, 45, 62,
+			1, 167, 158, 45, 63,
+			1, 175, 169, 46, 64,
+			0, 176, 33, 46, planner.NoIndex,
+			1, 177, 170, 46, 65,
+			0, 88, 88, 46, planner.NoIndex,
+			1, 178, 171, 46, 66,
+			1, 177, 170, 46, 65,
+			1, 179, 172, 46, 67,
+			0, 180, 33, 46, planner.NoIndex,
+			1, 181, 173, 46, 68,
+			0, 182, 33, 46, planner.NoIndex,
+			1, 183, 174, 46, 69,
+			0, 83, 83, 46, planner.NoIndex,
+			1, 181, 173, 46, 68,
+			1, 183, 174, 46, 69,
+			1, 190, 184, 47, 70,
+			0, 191, 191, 47, planner.NoIndex,
+			1, 192, 185, 47, 71,
+			1, 190, 184, 47, 70,
+			1, 193, 186, 47, 72,
+			0, 194, 33, 47, planner.NoIndex,
+			1, 195, 187, 47, 73,
+			0, 196, 33, 47, planner.NoIndex,
+			1, 197, 188, 47, 74,
+			0, 198, 33, 47, planner.NoIndex,
+			1, 199, 189, 47, 75,
+			0, 83, 83, 47, planner.NoIndex,
+			1, 197, 188, 47, 74,
+			1, 199, 189, 47, 75,
+			1, 205, 200, 48, 76,
+			0, 88, 88, 48, planner.NoIndex,
+			1, 206, 201, 48, 77,
+			1, 205, 200, 48, 76,
+			1, 207, 202, 48, 78,
+			0, 208, 33, 48, planner.NoIndex,
+			1, 209, 203, 48, 79,
+			0, 210, 33, 48, planner.NoIndex,
+			1, 211, 204, 48, 80,
+			0, 83, 83, 48, planner.NoIndex,
+			1, 209, 203, 48, 79,
+			1, 211, 204, 48, 80,
+			1, 217, 212, 49, 81,
+			0, 101, 101, 49, planner.NoIndex,
+			1, 218, 213, 49, 82,
+			1, 217, 212, 49, 81,
+			1, 219, 214, 49, 83,
+			0, 220, 33, 49, planner.NoIndex,
+			1, 221, 215, 49, 84,
+			0, 222, 33, 49, planner.NoIndex,
+			1, 223, 216, 49, 85,
+			0, 83, 83, 49, planner.NoIndex,
+			1, 221, 215, 49, 84,
+			1, 223, 216, 49, 85,
+			1, 231, 224, 50, 86,
+			0, 232, 33, 50, planner.NoIndex,
+			1, 233, 225, 50, 87,
+			0, 88, 88, 50, planner.NoIndex,
+			1, 234, 226, 50, 88,
+			1, 233, 225, 50, 87,
+			1, 235, 227, 50, 89,
+			0, 236, 33, 50, planner.NoIndex,
+			1, 237, 228, 50, 90,
+			0, 238, 33, 50, planner.NoIndex,
+			1, 239, 229, 50, 91,
+			1, 237, 228, 50, 90,
+			1, 240, 230, 50, 92,
+			0, 83, 83, 50, planner.NoIndex,
+			1, 239, 229, 50, 91,
+			1, 240, 230, 50, 92,
+			1, 247, 242, 56, 93,
+			0, 248, 33, 56, planner.NoIndex,
+			1, 250, 243, 56, 94,
+			1, 251, 244, 56, 95,
+			0, 252, 33, 56, planner.NoIndex,
+			1, 253, 245, 56, 96,
+			0, 254, 33, 56, planner.NoIndex,
+			1, 255, 246, 56, 97,
+			0, 17, 17, 56, planner.NoIndex,
+			1, 253, 245, 56, 96,
+			1, 255, 246, 56, 97,
+			0, 261, 33, 59, planner.NoIndex,
+			0, 267, 33, 61, planner.NoIndex,
+			1, 274, 273, 66, 101,
+			0, 275, 275, 66, planner.NoIndex,
+			1, 277, 276, 66, 102,
+			1, 279, 278, 66, 103,
+			1, 281, 280, 67, 104,
+			1, 277, 276, 67, 102,
+			1, 287, 283, 69, 105,
+			1, 279, 278, 69, 103,
+			1, 288, 284, 69, 106,
+			1, 281, 280, 69, 104,
+			1, 289, 285, 69, 107,
+			1, 287, 283, 69, 105,
+			1, 288, 284, 69, 106,
+			1, 291, 286, 69, 108,
+			0, 17, 17, 69, planner.NoIndex,
+			1, 289, 285, 69, 107,
+			1, 291, 286, 69, 108,
+			1, 297, 296, 76, 109,
+			1, 301, 298, 76, 110,
+			1, 297, 296, 76, 109,
+			1, 302, 299, 76, 111,
+			1, 301, 298, 76, 110,
+			1, 303, 300, 76, 112,
+			0, 88, 88, 76, planner.NoIndex,
+			1, 302, 299, 76, 111,
+			1, 303, 300, 76, 112,
+			1, 297, 296, 77, 109,
+			1, 308, 306, 80, 113,
+			1, 309, 307, 80, 114,
+			0, 17, 17, 80, planner.NoIndex,
+			1, 308, 306, 80, 113,
+			1, 309, 307, 80, 114,
+			1, 316, 311, 84, 115,
+			0, 232, 33, 84, planner.NoIndex,
+			1, 317, 312, 84, 116,
+			0, 88, 88, 84, planner.NoIndex,
+			1, 318, 313, 84, 117,
+			1, 317, 312, 84, 116,
+			1, 319, 314, 84, 118,
+			0, 320, 33, 84, planner.NoIndex,
+			1, 321, 315, 84, 119,
+			0, 322, 33, 84, planner.NoIndex,
+			1, 82, 81, 84, 27,
+			1, 321, 315, 84, 119,
+			1, 82, 81, 84, 27,
+			1, 82, 81, 84, 27,
+			0, 83, 83, 84, planner.NoIndex,
+			1, 82, 81, 85, 27,
+			1, 3, 2, 7, 0,
+			0, 4, 4, 7, planner.NoIndex,
+			1, 6, 5, 8, 1,
+			0, 7, 7, 8, planner.NoIndex,
+			1, 328, 324, 9, 120,
+			1, 3, 2, 9, 0,
+			1, 329, 325, 9, 121,
+			1, 6, 5, 9, 1,
+			1, 330, 326, 9, 122,
+			1, 328, 324, 9, 120,
+			1, 329, 325, 9, 121,
+			1, 331, 327, 9, 123,
+			0, 17, 17, 9, planner.NoIndex,
+			1, 330, 326, 9, 122,
+			1, 331, 327, 9, 123,
+			1, 335, 333, 15, 124,
+			0, 24, 24, 15, planner.NoIndex,
+			1, 336, 334, 15, 125,
+			1, 335, 333, 15, 124,
+			1, 336, 334, 15, 125,
+			1, 343, 338, 17, 126,
+			0, 34, 33, 17, planner.NoIndex,
+			1, 344, 339, 17, 127,
+			1, 345, 340, 17, 128,
+			0, 346, 33, 17, planner.NoIndex,
+			1, 347, 341, 17, 129,
+			0, 348, 33, 17, planner.NoIndex,
+			1, 349, 342, 17, 130,
+			0, 17, 17, 17, planner.NoIndex,
+			1, 347, 341, 17, 129,
+			1, 349, 342, 17, 130,
+			1, 354, 351, 19, 131,
+			1, 355, 352, 19, 132,
+			1, 354, 351, 19, 131,
+			1, 356, 353, 19, 133,
+			0, 17, 17, 19, planner.NoIndex,
+			1, 355, 352, 19, 132,
+			1, 356, 353, 19, 133,
+			1, 52, 51, 21, 16,
+			1, 52, 51, 21, 16,
+			0, 17, 17, 21, planner.NoIndex,
+			1, 361, 359, 23, 134,
+			1, 362, 360, 23, 135,
+			0, 17, 17, 23, planner.NoIndex,
+			1, 361, 359, 23, 134,
+			1, 362, 360, 23, 135,
+			1, 365, 363, 24, 136,
+			1, 366, 364, 24, 137,
+			0, 17, 17, 24, planner.NoIndex,
+			1, 365, 363, 24, 136,
+			1, 366, 364, 24, 137,
+			1, 370, 368, 26, 138,
+			1, 371, 369, 26, 139,
+			0, 17, 17, 26, planner.NoIndex,
+			1, 370, 368, 26, 138,
+			1, 371, 369, 26, 139,
+			1, 375, 373, 28, 140,
+			0, 24, 24, 28, planner.NoIndex,
+			1, 376, 374, 28, 141,
+			1, 375, 373, 28, 140,
+			1, 376, 374, 28, 141,
+			1, 380, 378, 30, 142,
+			1, 381, 379, 30, 143,
+			1, 380, 378, 30, 142,
+			1, 381, 379, 30, 143,
+			1, 52, 51, 32, 16,
+			1, 52, 51, 32, 16,
+			0, 17, 17, 32, planner.NoIndex,
+			1, 82, 81, 36, 27,
+			0, 83, 83, 36, planner.NoIndex,
+			1, 387, 384, 37, 144,
+			0, 88, 88, 37, planner.NoIndex,
+			1, 388, 385, 37, 145,
+			1, 387, 384, 37, 144,
+			1, 389, 386, 37, 146,
+			1, 82, 81, 37, 27,
+			1, 388, 385, 37, 145,
+			1, 389, 386, 37, 146,
+			1, 393, 390, 38, 147,
+			1, 82, 81, 38, 27,
+			1, 394, 391, 38, 148,
+			0, 83, 83, 38, planner.NoIndex,
+			1, 395, 392, 38, 149,
+			1, 394, 391, 38, 148,
+			1, 393, 390, 38, 147,
+			1, 395, 392, 38, 149,
+			1, 399, 396, 39, 150,
+			0, 101, 101, 39, planner.NoIndex,
+			1, 400, 397, 39, 151,
+			1, 399, 396, 39, 150,
+			1, 401, 398, 39, 152,
+			1, 82, 81, 39, 27,
+			1, 400, 397, 39, 151,
+			1, 401, 398, 39, 152,
+			1, 405, 402, 40, 153,
+			1, 82, 81, 40, 27,
+			1, 406, 403, 40, 154,
+			0, 83, 83, 40, planner.NoIndex,
+			1, 407, 404, 40, 155,
+			1, 406, 403, 40, 154,
+			1, 405, 402, 40, 153,
+			1, 407, 404, 40, 155,
+			1, 411, 408, 41, 156,
+			1, 82, 81, 41, 27,
+			1, 412, 409, 41, 157,
+			1, 411, 408, 41, 156,
+			1, 413, 410, 41, 158,
+			0, 83, 83, 41, planner.NoIndex,
+			1, 412, 409, 41, 157,
+			1, 413, 410, 41, 158,
+			1, 417, 414, 42, 159,
+			0, 88, 88, 42, planner.NoIndex,
+			1, 418, 415, 42, 160,
+			1, 82, 81, 42, 27,
+			1, 419, 416, 42, 161,
+			1, 418, 415, 42, 160,
+			1, 417, 414, 42, 159,
+			1, 419, 416, 42, 161,
+			1, 426, 420, 43, 162,
+			0, 35, 35, 43, planner.NoIndex,
+			1, 427, 421, 43, 163,
+			1, 426, 420, 43, 162,
+			1, 428, 422, 43, 164,
+			0, 429, 33, 43, planner.NoIndex,
+			1, 430, 423, 43, 165,
+			0, 133, 33, 43, planner.NoIndex,
+			1, 431, 424, 43, 166,
+			0, 432, 33, 43, planner.NoIndex,
+			1, 433, 425, 43, 167,
+			0, 83, 83, 43, planner.NoIndex,
+			1, 431, 424, 43, 166,
+			1, 433, 425, 43, 167,
+			1, 440, 434, 44, 168,
+			0, 144, 33, 44, planner.NoIndex,
+			1, 441, 435, 44, 169,
+			0, 88, 88, 44, planner.NoIndex,
+			1, 442, 436, 44, 170,
+			1, 441, 435, 44, 169,
+			1, 443, 437, 44, 171,
+			0, 444, 33, 44, planner.NoIndex,
+			1, 445, 438, 44, 172,
+			0, 446, 33, 44, planner.NoIndex,
+			1, 447, 439, 44, 173,
+			0, 83, 83, 44, planner.NoIndex,
+			1, 445, 438, 44, 172,
+			1, 447, 439, 44, 173,
+			1, 454, 448, 45, 174,
+			0, 88, 88, 45, planner.NoIndex,
+			1, 455, 449, 45, 175,
+			1, 454, 448, 45, 174,
+			1, 456, 450, 45, 176,
+			0, 457, 33, 45, planner.NoIndex,
+			1, 458, 451, 45, 177,
+			0, 164, 33, 45, planner.NoIndex,
+			1, 459, 452, 45, 178,
+			0, 460, 33, 45, planner.NoIndex,
+			1, 461, 453, 45, 179,
+			0, 168, 168, 45, planner.NoIndex,
+			1, 459, 452, 45, 178,
+			1, 461, 453, 45, 179,
+			1, 468, 462, 46, 180,
+			0, 176, 33, 46, planner.NoIndex,
+			1, 469, 463, 46, 181,
+			0, 88, 88, 46, planner.NoIndex,
+			1, 470, 464, 46, 182,
+			1, 469, 463, 46, 181,
+			1, 471, 465, 46, 183,
+			0, 472, 33, 46, planner.NoIndex,
+			1, 473, 466, 46, 184,
+			0, 474, 33, 46, planner.NoIndex,
+			1, 475, 467, 46, 185,
+			0, 83, 83, 46, planner.NoIndex,
+			1, 473, 466, 46, 184,
+			1, 475, 467, 46, 185,
+			1, 482, 476, 47, 186,
+			0, 191, 191, 47, planner.NoIndex,
+			1, 483, 477, 47, 187,
+			1, 482, 476, 47, 186,
+			1, 484, 478, 47, 188,
+			0, 485, 33, 47, planner.NoIndex,
+			1, 486, 479, 47, 189,
+			0, 196, 33, 47, planner.NoIndex,
+			1, 487, 480, 47, 190,
+			0, 488, 33, 47, planner.NoIndex,
+			1, 489, 481, 47, 191,
+			0, 83, 83, 47, planner.NoIndex,
+			1, 487, 480, 47, 190,
+			1, 489, 481, 47, 191,
+			1, 495, 490, 48, 192,
+			0, 88, 88, 48, planner.NoIndex,
+			1, 496, 491, 48, 193,
+			1, 495, 490, 48, 192,
+			1, 497, 492, 48, 194,
+			0, 498, 33, 48, planner.NoIndex,
+			1, 499, 493, 48, 195,
+			0, 500, 33, 48, planner.NoIndex,
+			1, 501, 494, 48, 196,
+			0, 83, 83, 48, planner.NoIndex,
+			1, 499, 493, 48, 195,
+			1, 501, 494, 48, 196,
+			1, 507, 502, 49, 197,
+			0, 101, 101, 49, planner.NoIndex,
+			1, 508, 503, 49, 198,
+			1, 507, 502, 49, 197,
+			1, 509, 504, 49, 199,
+			0, 510, 33, 49, planner.NoIndex,
+			1, 511, 505, 49, 200,
+			0, 512, 33, 49, planner.NoIndex,
+			1, 513, 506, 49, 201,
+			0, 83, 83, 49, planner.NoIndex,
+			1, 511, 505, 49, 200,
+			1, 513, 506, 49, 201,
+			1, 521, 514, 50, 202,
+			0, 232, 33, 50, planner.NoIndex,
+			1, 522, 515, 50, 203,
+			0, 88, 88, 50, planner.NoIndex,
+			1, 523, 516, 50, 204,
+			1, 522, 515, 50, 203,
+			1, 524, 517, 50, 205,
+			0, 525, 33, 50, planner.NoIndex,
+			1, 526, 518, 50, 206,
+			0, 527, 33, 50, planner.NoIndex,
+			1, 528, 519, 50, 207,
+			1, 526, 518, 50, 206,
+			1, 529, 520, 50, 208,
+			0, 83, 83, 50, planner.NoIndex,
+			1, 528, 519, 50, 207,
+			1, 529, 520, 50, 208,
+			1, 536, 531, 56, 209,
+			0, 248, 33, 56, planner.NoIndex,
+			1, 537, 532, 56, 210,
+			1, 538, 533, 56, 211,
+			0, 539, 33, 56, planner.NoIndex,
+			1, 540, 534, 56, 212,
+			0, 541, 33, 56, planner.NoIndex,
+			1, 542, 535, 56, 213,
+			0, 17, 17, 56, planner.NoIndex,
+			1, 540, 534, 56, 212,
+			1, 542, 535, 56, 213,
+			0, 261, 33, 59, planner.NoIndex,
+			0, 267, 33, 61, planner.NoIndex,
+			1, 274, 273, 66, 101,
+			0, 275, 275, 66, planner.NoIndex,
+			1, 277, 276, 66, 102,
+			1, 279, 278, 66, 103,
+			1, 281, 280, 67, 104,
+			1, 277, 276, 67, 102,
+			1, 553, 549, 69, 217,
+			1, 279, 278, 69, 103,
+			1, 554, 550, 69, 218,
+			1, 281, 280, 69, 104,
+			1, 555, 551, 69, 219,
+			1, 553, 549, 69, 217,
+			1, 554, 550, 69, 218,
+			1, 556, 552, 69, 220,
+			0, 17, 17, 69, planner.NoIndex,
+			1, 555, 551, 69, 219,
+			1, 556, 552, 69, 220,
+			1, 297, 296, 76, 109,
+			1, 561, 558, 76, 221,
+			1, 297, 296, 76, 109,
+			1, 562, 559, 76, 222,
+			1, 561, 558, 76, 221,
+			1, 563, 560, 76, 223,
+			0, 88, 88, 76, planner.NoIndex,
+			1, 562, 559, 76, 222,
+			1, 563, 560, 76, 223,
+			1, 297, 296, 77, 109,
+			1, 567, 565, 80, 224,
+			1, 568, 566, 80, 225,
+			0, 17, 17, 80, planner.NoIndex,
+			1, 567, 565, 80, 224,
+			1, 568, 566, 80, 225,
+			1, 575, 570, 84, 226,
+			0, 232, 33, 84, planner.NoIndex,
+			1, 576, 571, 84, 227,
+			0, 88, 88, 84, planner.NoIndex,
+			1, 577, 572, 84, 228,
+			1, 576, 571, 84, 227,
+			1, 578, 573, 84, 229,
+			0, 579, 33, 84, planner.NoIndex,
+			1, 580, 574, 84, 230,
+			0, 581, 33, 84, planner.NoIndex,
+			1, 82, 81, 84, 27,
+			1, 580, 574, 84, 230,
+			1, 82, 81, 84, 27,
+			1, 82, 81, 84, 27,
+			0, 83, 83, 84, planner.NoIndex,
+			1, 82, 81, 85, 27,
+		},
+		VariableStringIDs: []uint32{
+			2,
+			5,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			51,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			81,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			273,
+			276,
+			278,
+			280,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			296,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+			planner.NoIndex,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 5, 3, planner.NoIndex, planner.NoIndex, 6, 0,
+			10, planner.NoIndex, 1, 1, 0, 0, 0, planner.NoIndex, 7, 0,
+			10, planner.NoIndex, 3, 1, 0, 0, 2, planner.NoIndex, 8, 0,
+			8, 2, 13, 2, 0, 5, planner.NoIndex, planner.NoIndex, 9, 0,
+			10, planner.NoIndex, 5, 1, 0, 0, 4, planner.NoIndex, 9, 1,
+			10, planner.NoIndex, 7, 1, 0, 0, 6, planner.NoIndex, 9, 1,
+			7, 15, 9, 2, 0, 0, 8, 0, 9, 1,
+			10, planner.NoIndex, 12, 1, 0, 0, 11, planner.NoIndex, 9, 1,
+			8, 2, 13, 2, 0, 0, planner.NoIndex, planner.NoIndex, 9, 1,
+			2, planner.NoIndex, 0, 0, 11, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 2, 18, 2, 8, 3, planner.NoIndex, planner.NoIndex, 15, 0,
+			10, planner.NoIndex, 16, 1, 8, 0, 15, planner.NoIndex, 15, 1,
+			7, 15, 18, 0, 8, 0, 17, 0, 15, 1,
+			8, 2, 18, 2, 8, 0, planner.NoIndex, planner.NoIndex, 15, 1,
+			2, planner.NoIndex, 0, 0, 18, 1, planner.NoIndex, planner.NoIndex, 17, 0,
+			8, 2, 29, 2, 12, 6, planner.NoIndex, planner.NoIndex, 17, 0,
+			10, planner.NoIndex, 21, 1, 12, 0, 20, planner.NoIndex, 17, 1,
+			7, 15, 23, 0, 12, 0, 22, 0, 17, 1,
+			10, planner.NoIndex, 24, 1, 12, 0, 23, planner.NoIndex, 17, 1,
+			10, planner.NoIndex, 26, 1, 12, 0, 25, planner.NoIndex, 17, 1,
+			10, planner.NoIndex, 28, 1, 12, 0, 27, planner.NoIndex, 17, 1,
+			8, 2, 29, 2, 12, 0, planner.NoIndex, planner.NoIndex, 17, 1,
+			2, planner.NoIndex, 0, 0, 23, 1, planner.NoIndex, planner.NoIndex, 19, 0,
+			8, 2, 36, 2, 19, 4, planner.NoIndex, planner.NoIndex, 19, 0,
+			7, 15, 32, 0, 19, 0, 31, 0, 19, 1,
+			7, 48, 33, 1, 19, 0, 32, 1, 19, 1,
+			10, planner.NoIndex, 35, 1, 19, 0, 34, planner.NoIndex, 19, 1,
+			8, 2, 36, 2, 19, 0, planner.NoIndex, planner.NoIndex, 19, 1,
+			2, planner.NoIndex, 0, 0, 24, 2, planner.NoIndex, planner.NoIndex, 21, 0,
+			7, 15, 39, 0, 24, 0, 38, 0, 21, 0,
+			8, 2, 39, 2, 24, 0, planner.NoIndex, planner.NoIndex, 21, 0,
+			2, planner.NoIndex, 0, 0, 29, 1, planner.NoIndex, planner.NoIndex, 23, 0,
+			8, 2, 44, 2, 26, 3, planner.NoIndex, planner.NoIndex, 23, 0,
+			7, 15, 42, 0, 26, 0, 41, 0, 23, 1,
+			10, planner.NoIndex, 43, 1, 26, 0, 42, planner.NoIndex, 23, 1,
+			8, 2, 44, 2, 26, 0, planner.NoIndex, planner.NoIndex, 23, 1,
+			2, planner.NoIndex, 0, 0, 33, 1, planner.NoIndex, planner.NoIndex, 24, 0,
+			8, 2, 49, 2, 30, 3, planner.NoIndex, planner.NoIndex, 24, 0,
+			7, 15, 47, 0, 30, 0, 46, 0, 24, 1,
+			10, planner.NoIndex, 48, 1, 30, 0, 47, planner.NoIndex, 24, 1,
+			8, 2, 49, 2, 30, 0, planner.NoIndex, planner.NoIndex, 24, 1,
+			2, planner.NoIndex, 0, 0, 37, 1, planner.NoIndex, planner.NoIndex, 26, 0,
+			8, 2, 54, 2, 34, 3, planner.NoIndex, planner.NoIndex, 26, 0,
+			7, 51, 52, 0, 34, 0, 51, 2, 26, 1,
+			10, planner.NoIndex, 53, 1, 34, 0, 52, planner.NoIndex, 26, 1,
+			8, 2, 54, 2, 34, 0, planner.NoIndex, planner.NoIndex, 26, 1,
+			2, planner.NoIndex, 0, 0, 41, 1, planner.NoIndex, planner.NoIndex, 28, 0,
+			8, 2, 59, 2, 38, 3, planner.NoIndex, planner.NoIndex, 28, 0,
+			10, planner.NoIndex, 57, 1, 38, 0, 56, planner.NoIndex, 28, 1,
+			7, 51, 59, 0, 38, 0, 58, 2, 28, 1,
+			8, 2, 59, 2, 38, 0, planner.NoIndex, planner.NoIndex, 28, 1,
+			2, planner.NoIndex, 0, 0, 45, 1, planner.NoIndex, planner.NoIndex, 30, 0,
+			8, 0, 63, 2, 42, 3, planner.NoIndex, planner.NoIndex, 30, 0,
+			7, 51, 62, 0, 42, 0, 61, 2, 30, 1,
+			7, 51, 63, 0, 42, 0, 62, 2, 30, 1,
+			8, 0, 63, 2, 42, 0, planner.NoIndex, planner.NoIndex, 30, 1,
+			2, planner.NoIndex, 0, 0, 46, 2, planner.NoIndex, planner.NoIndex, 32, 0,
+			7, 51, 66, 0, 46, 0, 65, 2, 32, 0,
+			8, 2, 66, 2, 46, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 127, 15, planner.NoIndex, planner.NoIndex, 35, 0,
+			10, planner.NoIndex, 69, 1, 48, 0, 68, planner.NoIndex, 36, 0,
+			8, 2, 76, 2, 48, 4, planner.NoIndex, planner.NoIndex, 37, 0,
+			10, planner.NoIndex, 71, 1, 48, 0, 70, planner.NoIndex, 37, 1,
+			7, 48, 73, 1, 48, 0, 72, 1, 37, 1,
+			10, planner.NoIndex, 75, 1, 48, 0, 74, planner.NoIndex, 37, 1,
+			8, 2, 76, 2, 48, 0, planner.NoIndex, planner.NoIndex, 37, 1,
+			8, 3, 84, 2, 52, 4, planner.NoIndex, planner.NoIndex, 38, 0,
+			10, planner.NoIndex, 79, 1, 52, 0, 78, planner.NoIndex, 38, 1,
+			10, planner.NoIndex, 81, 1, 52, 0, 80, planner.NoIndex, 38, 1,
+			7, 48, 83, 1, 52, 0, 82, 1, 38, 1,
+			8, 3, 84, 2, 52, 0, planner.NoIndex, planner.NoIndex, 38, 1,
+			8, 4, 92, 2, 56, 4, planner.NoIndex, planner.NoIndex, 39, 0,
+			10, planner.NoIndex, 87, 1, 56, 0, 86, planner.NoIndex, 39, 1,
+			7, 48, 89, 1, 56, 0, 88, 1, 39, 1,
+			10, planner.NoIndex, 91, 1, 56, 0, 90, planner.NoIndex, 39, 1,
+			8, 4, 92, 2, 56, 0, planner.NoIndex, planner.NoIndex, 39, 1,
+			8, 5, 100, 2, 60, 4, planner.NoIndex, planner.NoIndex, 40, 0,
+			10, planner.NoIndex, 95, 1, 60, 0, 94, planner.NoIndex, 40, 1,
+			10, planner.NoIndex, 97, 1, 60, 0, 96, planner.NoIndex, 40, 1,
+			7, 48, 99, 1, 60, 0, 98, 1, 40, 1,
+			8, 5, 100, 2, 60, 0, planner.NoIndex, planner.NoIndex, 40, 1,
+			8, 0, 108, 2, 64, 4, planner.NoIndex, planner.NoIndex, 41, 0,
+			10, planner.NoIndex, 103, 1, 64, 0, 102, planner.NoIndex, 41, 1,
+			7, 48, 105, 1, 64, 0, 104, 1, 41, 1,
+			10, planner.NoIndex, 107, 1, 64, 0, 106, planner.NoIndex, 41, 1,
+			8, 0, 108, 2, 64, 0, planner.NoIndex, planner.NoIndex, 41, 1,
+			8, 1, 116, 2, 68, 4, planner.NoIndex, planner.NoIndex, 42, 0,
+			10, planner.NoIndex, 111, 1, 68, 0, 110, planner.NoIndex, 42, 1,
+			10, planner.NoIndex, 113, 1, 68, 0, 112, planner.NoIndex, 42, 1,
+			7, 48, 115, 1, 68, 0, 114, 1, 42, 1,
+			8, 1, 116, 2, 68, 0, planner.NoIndex, planner.NoIndex, 42, 1,
+			8, 0, 130, 2, 72, 7, planner.NoIndex, planner.NoIndex, 43, 0,
+			10, planner.NoIndex, 119, 1, 72, 0, 118, planner.NoIndex, 43, 1,
+			7, 48, 121, 1, 72, 0, 120, 1, 43, 1,
+			10, planner.NoIndex, 123, 1, 72, 0, 122, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 125, 1, 72, 0, 124, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 127, 1, 72, 0, 126, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 129, 1, 72, 0, 128, planner.NoIndex, 43, 1,
+			8, 0, 130, 2, 72, 0, planner.NoIndex, planner.NoIndex, 43, 1,
+			8, 0, 144, 2, 79, 7, planner.NoIndex, planner.NoIndex, 44, 0,
+			10, planner.NoIndex, 133, 1, 79, 0, 132, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 135, 1, 79, 0, 134, planner.NoIndex, 44, 1,
+			7, 48, 137, 1, 79, 0, 136, 1, 44, 1,
+			10, planner.NoIndex, 139, 1, 79, 0, 138, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 141, 1, 79, 0, 140, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 143, 1, 79, 0, 142, planner.NoIndex, 44, 1,
+			8, 0, 144, 2, 79, 0, planner.NoIndex, planner.NoIndex, 44, 1,
+			8, 0, 158, 2, 86, 7, planner.NoIndex, planner.NoIndex, 45, 0,
+			10, planner.NoIndex, 147, 1, 86, 0, 146, planner.NoIndex, 45, 1,
+			7, 48, 149, 1, 86, 0, 148, 1, 45, 1,
+			10, planner.NoIndex, 151, 1, 86, 0, 150, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 153, 1, 86, 0, 152, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 155, 1, 86, 0, 154, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 157, 1, 86, 0, 156, planner.NoIndex, 45, 1,
+			8, 0, 158, 2, 86, 0, planner.NoIndex, planner.NoIndex, 45, 1,
+			8, 0, 172, 2, 93, 7, planner.NoIndex, planner.NoIndex, 46, 0,
+			10, planner.NoIndex, 161, 1, 93, 0, 160, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 163, 1, 93, 0, 162, planner.NoIndex, 46, 1,
+			7, 48, 165, 1, 93, 0, 164, 1, 46, 1,
+			10, planner.NoIndex, 167, 1, 93, 0, 166, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 169, 1, 93, 0, 168, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 171, 1, 93, 0, 170, planner.NoIndex, 46, 1,
+			8, 0, 172, 2, 93, 0, planner.NoIndex, planner.NoIndex, 46, 1,
+			8, 0, 186, 2, 100, 7, planner.NoIndex, planner.NoIndex, 47, 0,
+			10, planner.NoIndex, 175, 1, 100, 0, 174, planner.NoIndex, 47, 1,
+			7, 48, 177, 1, 100, 0, 176, 1, 47, 1,
+			10, planner.NoIndex, 179, 1, 100, 0, 178, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 181, 1, 100, 0, 180, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 183, 1, 100, 0, 182, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 185, 1, 100, 0, 184, planner.NoIndex, 47, 1,
+			8, 0, 186, 2, 100, 0, planner.NoIndex, planner.NoIndex, 47, 1,
+			8, 0, 198, 2, 107, 6, planner.NoIndex, planner.NoIndex, 48, 0,
+			10, planner.NoIndex, 189, 1, 107, 0, 188, planner.NoIndex, 48, 1,
+			7, 48, 191, 1, 107, 0, 190, 1, 48, 1,
+			10, planner.NoIndex, 193, 1, 107, 0, 192, planner.NoIndex, 48, 1,
+			10, planner.NoIndex, 195, 1, 107, 0, 194, planner.NoIndex, 48, 1,
+			10, planner.NoIndex, 197, 1, 107, 0, 196, planner.NoIndex, 48, 1,
+			8, 0, 198, 2, 107, 0, planner.NoIndex, planner.NoIndex, 48, 1,
+			8, 0, 210, 2, 113, 6, planner.NoIndex, planner.NoIndex, 49, 0,
+			10, planner.NoIndex, 201, 1, 113, 0, 200, planner.NoIndex, 49, 1,
+			7, 48, 203, 1, 113, 0, 202, 1, 49, 1,
+			10, planner.NoIndex, 205, 1, 113, 0, 204, planner.NoIndex, 49, 1,
+			10, planner.NoIndex, 207, 1, 113, 0, 206, planner.NoIndex, 49, 1,
+			10, planner.NoIndex, 209, 1, 113, 0, 208, planner.NoIndex, 49, 1,
+			8, 0, 210, 2, 113, 0, planner.NoIndex, planner.NoIndex, 49, 1,
+			8, 0, 226, 2, 119, 8, planner.NoIndex, planner.NoIndex, 50, 0,
+			10, planner.NoIndex, 213, 1, 119, 0, 212, planner.NoIndex, 50, 1,
+			10, planner.NoIndex, 215, 1, 119, 0, 214, planner.NoIndex, 50, 1,
+			7, 48, 217, 1, 119, 0, 216, 1, 50, 1,
+			10, planner.NoIndex, 219, 1, 119, 0, 218, planner.NoIndex, 50, 1,
+			10, planner.NoIndex, 221, 1, 119, 0, 220, planner.NoIndex, 50, 1,
+			7, 48, 223, 1, 119, 0, 222, 1, 50, 1,
+			10, planner.NoIndex, 225, 1, 119, 0, 224, planner.NoIndex, 50, 1,
+			8, 0, 226, 2, 119, 0, planner.NoIndex, planner.NoIndex, 50, 1,
+			2, planner.NoIndex, 0, 0, 148, 1, planner.NoIndex, planner.NoIndex, 56, 0,
+			8, 2, 237, 2, 142, 6, planner.NoIndex, planner.NoIndex, 56, 0,
+			10, planner.NoIndex, 229, 1, 142, 0, 228, planner.NoIndex, 56, 1,
+			7, 15, 231, 0, 142, 0, 230, 0, 56, 1,
+			10, planner.NoIndex, 232, 1, 142, 0, 231, planner.NoIndex, 56, 1,
+			10, planner.NoIndex, 234, 1, 142, 0, 233, planner.NoIndex, 56, 1,
+			10, planner.NoIndex, 236, 1, 142, 0, 235, planner.NoIndex, 56, 1,
+			8, 2, 237, 2, 142, 0, planner.NoIndex, planner.NoIndex, 56, 1,
+			2, planner.NoIndex, 0, 0, 154, 3, planner.NoIndex, planner.NoIndex, 65, 0,
+			0, 272, 241, 4, 149, 0, planner.NoIndex, 0, 66, 0,
+			7, 282, 246, 1, 149, 0, 245, 3, 67, 0,
+			8, 2, 256, 2, 149, 5, planner.NoIndex, planner.NoIndex, 69, 0,
+			10, planner.NoIndex, 248, 1, 149, 0, 247, planner.NoIndex, 69, 1,
+			10, planner.NoIndex, 250, 1, 149, 0, 249, planner.NoIndex, 69, 1,
+			7, 290, 252, 2, 149, 0, 251, 4, 69, 1,
+			10, planner.NoIndex, 255, 1, 149, 0, 254, planner.NoIndex, 69, 1,
+			8, 2, 256, 2, 149, 0, planner.NoIndex, planner.NoIndex, 69, 1,
+			2, planner.NoIndex, 0, 0, 161, 2, planner.NoIndex, planner.NoIndex, 76, 0,
+			0, 295, 258, 1, 157, 0, planner.NoIndex, 1, 76, 0,
+			8, 2, 265, 2, 157, 4, planner.NoIndex, planner.NoIndex, 76, 0,
+			10, planner.NoIndex, 260, 1, 157, 0, 259, planner.NoIndex, 76, 1,
+			7, 48, 262, 1, 157, 0, 261, 1, 76, 1,
+			10, planner.NoIndex, 264, 1, 157, 0, 263, planner.NoIndex, 76, 1,
+			8, 2, 265, 2, 157, 0, planner.NoIndex, planner.NoIndex, 76, 1,
+			2, planner.NoIndex, 0, 0, 166, 2, planner.NoIndex, planner.NoIndex, 80, 0,
+			0, 305, 268, 0, 163, 0, planner.NoIndex, 2, 80, 0,
+			8, 2, 271, 2, 163, 3, planner.NoIndex, planner.NoIndex, 80, 0,
+			7, 51, 269, 0, 163, 0, 268, 2, 80, 1,
+			10, planner.NoIndex, 270, 1, 163, 0, 269, planner.NoIndex, 80, 1,
+			8, 2, 271, 2, 163, 0, planner.NoIndex, planner.NoIndex, 80, 1,
+			2, planner.NoIndex, 0, 0, 174, 2, planner.NoIndex, planner.NoIndex, 84, 0,
+			7, 48, 284, 1, 168, 6, 283, 1, 84, 0,
+			10, planner.NoIndex, 274, 1, 168, 0, 273, planner.NoIndex, 84, 1,
+			10, planner.NoIndex, 276, 1, 168, 0, 275, planner.NoIndex, 84, 1,
+			7, 48, 278, 1, 168, 0, 277, 1, 84, 1,
+			10, planner.NoIndex, 280, 1, 168, 0, 279, planner.NoIndex, 84, 1,
+			10, planner.NoIndex, 282, 1, 168, 0, 281, planner.NoIndex, 84, 1,
+			7, 48, 284, 1, 168, 0, 283, 1, 84, 1,
+			8, 0, 286, 2, 174, 0, planner.NoIndex, planner.NoIndex, 84, 0,
+			2, planner.NoIndex, 0, 0, 181, 3, planner.NoIndex, planner.NoIndex, 6, 0,
+			10, planner.NoIndex, 290, 1, 176, 0, 289, planner.NoIndex, 7, 0,
+			10, planner.NoIndex, 292, 1, 176, 0, 291, planner.NoIndex, 8, 0,
+			8, 2, 302, 2, 176, 5, planner.NoIndex, planner.NoIndex, 9, 0,
+			10, planner.NoIndex, 294, 1, 176, 0, 293, planner.NoIndex, 9, 1,
+			10, planner.NoIndex, 296, 1, 176, 0, 295, planner.NoIndex, 9, 1,
+			7, 15, 298, 2, 176, 0, 297, 0, 9, 1,
+			10, planner.NoIndex, 301, 1, 176, 0, 300, planner.NoIndex, 9, 1,
+			8, 2, 302, 2, 176, 0, planner.NoIndex, planner.NoIndex, 9, 1,
+			2, planner.NoIndex, 0, 0, 187, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 2, 307, 2, 184, 3, planner.NoIndex, planner.NoIndex, 15, 0,
+			10, planner.NoIndex, 305, 1, 184, 0, 304, planner.NoIndex, 15, 1,
+			7, 15, 307, 0, 184, 0, 306, 0, 15, 1,
+			8, 2, 307, 2, 184, 0, planner.NoIndex, planner.NoIndex, 15, 1,
+			2, planner.NoIndex, 0, 0, 194, 1, planner.NoIndex, planner.NoIndex, 17, 0,
+			8, 2, 318, 2, 188, 6, planner.NoIndex, planner.NoIndex, 17, 0,
+			10, planner.NoIndex, 310, 1, 188, 0, 309, planner.NoIndex, 17, 1,
+			7, 15, 312, 0, 188, 0, 311, 0, 17, 1,
+			10, planner.NoIndex, 313, 1, 188, 0, 312, planner.NoIndex, 17, 1,
+			10, planner.NoIndex, 315, 1, 188, 0, 314, planner.NoIndex, 17, 1,
+			10, planner.NoIndex, 317, 1, 188, 0, 316, planner.NoIndex, 17, 1,
+			8, 2, 318, 2, 188, 0, planner.NoIndex, planner.NoIndex, 17, 1,
+			2, planner.NoIndex, 0, 0, 199, 1, planner.NoIndex, planner.NoIndex, 19, 0,
+			8, 2, 325, 2, 195, 4, planner.NoIndex, planner.NoIndex, 19, 0,
+			7, 15, 321, 0, 195, 0, 320, 0, 19, 1,
+			7, 48, 322, 1, 195, 0, 321, 1, 19, 1,
+			10, planner.NoIndex, 324, 1, 195, 0, 323, planner.NoIndex, 19, 1,
+			8, 2, 325, 2, 195, 0, planner.NoIndex, planner.NoIndex, 19, 1,
+			2, planner.NoIndex, 0, 0, 200, 2, planner.NoIndex, planner.NoIndex, 21, 0,
+			7, 15, 328, 0, 200, 0, 327, 0, 21, 0,
+			8, 2, 328, 2, 200, 0, planner.NoIndex, planner.NoIndex, 21, 0,
+			2, planner.NoIndex, 0, 0, 205, 1, planner.NoIndex, planner.NoIndex, 23, 0,
+			8, 2, 333, 2, 202, 3, planner.NoIndex, planner.NoIndex, 23, 0,
+			7, 15, 331, 0, 202, 0, 330, 0, 23, 1,
+			10, planner.NoIndex, 332, 1, 202, 0, 331, planner.NoIndex, 23, 1,
+			8, 2, 333, 2, 202, 0, planner.NoIndex, planner.NoIndex, 23, 1,
+			2, planner.NoIndex, 0, 0, 209, 1, planner.NoIndex, planner.NoIndex, 24, 0,
+			8, 2, 338, 2, 206, 3, planner.NoIndex, planner.NoIndex, 24, 0,
+			7, 15, 336, 0, 206, 0, 335, 0, 24, 1,
+			10, planner.NoIndex, 337, 1, 206, 0, 336, planner.NoIndex, 24, 1,
+			8, 2, 338, 2, 206, 0, planner.NoIndex, planner.NoIndex, 24, 1,
+			2, planner.NoIndex, 0, 0, 213, 1, planner.NoIndex, planner.NoIndex, 26, 0,
+			8, 2, 343, 2, 210, 3, planner.NoIndex, planner.NoIndex, 26, 0,
+			7, 51, 341, 0, 210, 0, 340, 2, 26, 1,
+			10, planner.NoIndex, 342, 1, 210, 0, 341, planner.NoIndex, 26, 1,
+			8, 2, 343, 2, 210, 0, planner.NoIndex, planner.NoIndex, 26, 1,
+			2, planner.NoIndex, 0, 0, 217, 1, planner.NoIndex, planner.NoIndex, 28, 0,
+			8, 2, 348, 2, 214, 3, planner.NoIndex, planner.NoIndex, 28, 0,
+			10, planner.NoIndex, 346, 1, 214, 0, 345, planner.NoIndex, 28, 1,
+			7, 51, 348, 0, 214, 0, 347, 2, 28, 1,
+			8, 2, 348, 2, 214, 0, planner.NoIndex, planner.NoIndex, 28, 1,
+			2, planner.NoIndex, 0, 0, 221, 1, planner.NoIndex, planner.NoIndex, 30, 0,
+			8, 0, 352, 2, 218, 3, planner.NoIndex, planner.NoIndex, 30, 0,
+			7, 51, 351, 0, 218, 0, 350, 2, 30, 1,
+			7, 51, 352, 0, 218, 0, 351, 2, 30, 1,
+			8, 0, 352, 2, 218, 0, planner.NoIndex, planner.NoIndex, 30, 1,
+			2, planner.NoIndex, 0, 0, 222, 2, planner.NoIndex, planner.NoIndex, 32, 0,
+			7, 51, 355, 0, 222, 0, 354, 2, 32, 0,
+			8, 2, 355, 2, 222, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 303, 15, planner.NoIndex, planner.NoIndex, 35, 0,
+			10, planner.NoIndex, 358, 1, 224, 0, 357, planner.NoIndex, 36, 0,
+			8, 2, 365, 2, 224, 4, planner.NoIndex, planner.NoIndex, 37, 0,
+			10, planner.NoIndex, 360, 1, 224, 0, 359, planner.NoIndex, 37, 1,
+			7, 48, 362, 1, 224, 0, 361, 1, 37, 1,
+			10, planner.NoIndex, 364, 1, 224, 0, 363, planner.NoIndex, 37, 1,
+			8, 2, 365, 2, 224, 0, planner.NoIndex, planner.NoIndex, 37, 1,
+			8, 3, 373, 2, 228, 4, planner.NoIndex, planner.NoIndex, 38, 0,
+			10, planner.NoIndex, 368, 1, 228, 0, 367, planner.NoIndex, 38, 1,
+			10, planner.NoIndex, 370, 1, 228, 0, 369, planner.NoIndex, 38, 1,
+			7, 48, 372, 1, 228, 0, 371, 1, 38, 1,
+			8, 3, 373, 2, 228, 0, planner.NoIndex, planner.NoIndex, 38, 1,
+			8, 4, 381, 2, 232, 4, planner.NoIndex, planner.NoIndex, 39, 0,
+			10, planner.NoIndex, 376, 1, 232, 0, 375, planner.NoIndex, 39, 1,
+			7, 48, 378, 1, 232, 0, 377, 1, 39, 1,
+			10, planner.NoIndex, 380, 1, 232, 0, 379, planner.NoIndex, 39, 1,
+			8, 4, 381, 2, 232, 0, planner.NoIndex, planner.NoIndex, 39, 1,
+			8, 5, 389, 2, 236, 4, planner.NoIndex, planner.NoIndex, 40, 0,
+			10, planner.NoIndex, 384, 1, 236, 0, 383, planner.NoIndex, 40, 1,
+			10, planner.NoIndex, 386, 1, 236, 0, 385, planner.NoIndex, 40, 1,
+			7, 48, 388, 1, 236, 0, 387, 1, 40, 1,
+			8, 5, 389, 2, 236, 0, planner.NoIndex, planner.NoIndex, 40, 1,
+			8, 0, 397, 2, 240, 4, planner.NoIndex, planner.NoIndex, 41, 0,
+			10, planner.NoIndex, 392, 1, 240, 0, 391, planner.NoIndex, 41, 1,
+			7, 48, 394, 1, 240, 0, 393, 1, 41, 1,
+			10, planner.NoIndex, 396, 1, 240, 0, 395, planner.NoIndex, 41, 1,
+			8, 0, 397, 2, 240, 0, planner.NoIndex, planner.NoIndex, 41, 1,
+			8, 1, 405, 2, 244, 4, planner.NoIndex, planner.NoIndex, 42, 0,
+			10, planner.NoIndex, 400, 1, 244, 0, 399, planner.NoIndex, 42, 1,
+			10, planner.NoIndex, 402, 1, 244, 0, 401, planner.NoIndex, 42, 1,
+			7, 48, 404, 1, 244, 0, 403, 1, 42, 1,
+			8, 1, 405, 2, 244, 0, planner.NoIndex, planner.NoIndex, 42, 1,
+			8, 0, 419, 2, 248, 7, planner.NoIndex, planner.NoIndex, 43, 0,
+			10, planner.NoIndex, 408, 1, 248, 0, 407, planner.NoIndex, 43, 1,
+			7, 48, 410, 1, 248, 0, 409, 1, 43, 1,
+			10, planner.NoIndex, 412, 1, 248, 0, 411, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 414, 1, 248, 0, 413, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 416, 1, 248, 0, 415, planner.NoIndex, 43, 1,
+			10, planner.NoIndex, 418, 1, 248, 0, 417, planner.NoIndex, 43, 1,
+			8, 0, 419, 2, 248, 0, planner.NoIndex, planner.NoIndex, 43, 1,
+			8, 0, 433, 2, 255, 7, planner.NoIndex, planner.NoIndex, 44, 0,
+			10, planner.NoIndex, 422, 1, 255, 0, 421, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 424, 1, 255, 0, 423, planner.NoIndex, 44, 1,
+			7, 48, 426, 1, 255, 0, 425, 1, 44, 1,
+			10, planner.NoIndex, 428, 1, 255, 0, 427, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 430, 1, 255, 0, 429, planner.NoIndex, 44, 1,
+			10, planner.NoIndex, 432, 1, 255, 0, 431, planner.NoIndex, 44, 1,
+			8, 0, 433, 2, 255, 0, planner.NoIndex, planner.NoIndex, 44, 1,
+			8, 0, 447, 2, 262, 7, planner.NoIndex, planner.NoIndex, 45, 0,
+			10, planner.NoIndex, 436, 1, 262, 0, 435, planner.NoIndex, 45, 1,
+			7, 48, 438, 1, 262, 0, 437, 1, 45, 1,
+			10, planner.NoIndex, 440, 1, 262, 0, 439, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 442, 1, 262, 0, 441, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 444, 1, 262, 0, 443, planner.NoIndex, 45, 1,
+			10, planner.NoIndex, 446, 1, 262, 0, 445, planner.NoIndex, 45, 1,
+			8, 0, 447, 2, 262, 0, planner.NoIndex, planner.NoIndex, 45, 1,
+			8, 0, 461, 2, 269, 7, planner.NoIndex, planner.NoIndex, 46, 0,
+			10, planner.NoIndex, 450, 1, 269, 0, 449, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 452, 1, 269, 0, 451, planner.NoIndex, 46, 1,
+			7, 48, 454, 1, 269, 0, 453, 1, 46, 1,
+			10, planner.NoIndex, 456, 1, 269, 0, 455, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 458, 1, 269, 0, 457, planner.NoIndex, 46, 1,
+			10, planner.NoIndex, 460, 1, 269, 0, 459, planner.NoIndex, 46, 1,
+			8, 0, 461, 2, 269, 0, planner.NoIndex, planner.NoIndex, 46, 1,
+			8, 0, 475, 2, 276, 7, planner.NoIndex, planner.NoIndex, 47, 0,
+			10, planner.NoIndex, 464, 1, 276, 0, 463, planner.NoIndex, 47, 1,
+			7, 48, 466, 1, 276, 0, 465, 1, 47, 1,
+			10, planner.NoIndex, 468, 1, 276, 0, 467, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 470, 1, 276, 0, 469, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 472, 1, 276, 0, 471, planner.NoIndex, 47, 1,
+			10, planner.NoIndex, 474, 1, 276, 0, 473, planner.NoIndex, 47, 1,
+			8, 0, 475, 2, 276, 0, planner.NoIndex, planner.NoIndex, 47, 1,
+			8, 0, 487, 2, 283, 6, planner.NoIndex, planner.NoIndex, 48, 0,
+			10, planner.NoIndex, 478, 1, 283, 0, 477, planner.NoIndex, 48, 1,
+			7, 48, 480, 1, 283, 0, 479, 1, 48, 1,
+			10, planner.NoIndex, 482, 1, 283, 0, 481, planner.NoIndex, 48, 1,
+			10, planner.NoIndex, 484, 1, 283, 0, 483, planner.NoIndex, 48, 1,
+			10, planner.NoIndex, 486, 1, 283, 0, 485, planner.NoIndex, 48, 1,
+			8, 0, 487, 2, 283, 0, planner.NoIndex, planner.NoIndex, 48, 1,
+			8, 0, 499, 2, 289, 6, planner.NoIndex, planner.NoIndex, 49, 0,
+			10, planner.NoIndex, 490, 1, 289, 0, 489, planner.NoIndex, 49, 1,
+			7, 48, 492, 1, 289, 0, 491, 1, 49, 1,
+			10, planner.NoIndex, 494, 1, 289, 0, 493, planner.NoIndex, 49, 1,
+			10, planner.NoIndex, 496, 1, 289, 0, 495, planner.NoIndex, 49, 1,
+			10, planner.NoIndex, 498, 1, 289, 0, 497, planner.NoIndex, 49, 1,
+			8, 0, 499, 2, 289, 0, planner.NoIndex, planner.NoIndex, 49, 1,
+			8, 0, 515, 2, 295, 8, planner.NoIndex, planner.NoIndex, 50, 0,
+			10, planner.NoIndex, 502, 1, 295, 0, 501, planner.NoIndex, 50, 1,
+			10, planner.NoIndex, 504, 1, 295, 0, 503, planner.NoIndex, 50, 1,
+			7, 48, 506, 1, 295, 0, 505, 1, 50, 1,
+			10, planner.NoIndex, 508, 1, 295, 0, 507, planner.NoIndex, 50, 1,
+			10, planner.NoIndex, 510, 1, 295, 0, 509, planner.NoIndex, 50, 1,
+			7, 48, 512, 1, 295, 0, 511, 1, 50, 1,
+			10, planner.NoIndex, 514, 1, 295, 0, 513, planner.NoIndex, 50, 1,
+			8, 0, 515, 2, 295, 0, planner.NoIndex, planner.NoIndex, 50, 1,
+			2, planner.NoIndex, 0, 0, 324, 1, planner.NoIndex, planner.NoIndex, 56, 0,
+			8, 2, 526, 2, 318, 6, planner.NoIndex, planner.NoIndex, 56, 0,
+			10, planner.NoIndex, 518, 1, 318, 0, 517, planner.NoIndex, 56, 1,
+			7, 15, 520, 0, 318, 0, 519, 0, 56, 1,
+			10, planner.NoIndex, 521, 1, 318, 0, 520, planner.NoIndex, 56, 1,
+			10, planner.NoIndex, 523, 1, 318, 0, 522, planner.NoIndex, 56, 1,
+			10, planner.NoIndex, 525, 1, 318, 0, 524, planner.NoIndex, 56, 1,
+			8, 2, 526, 2, 318, 0, planner.NoIndex, planner.NoIndex, 56, 1,
+			2, planner.NoIndex, 0, 0, 330, 3, planner.NoIndex, planner.NoIndex, 65, 0,
+			0, 272, 530, 4, 325, 0, planner.NoIndex, 0, 66, 0,
+			7, 282, 535, 1, 325, 0, 534, 3, 67, 0,
+			8, 2, 545, 2, 325, 5, planner.NoIndex, planner.NoIndex, 69, 0,
+			10, planner.NoIndex, 537, 1, 325, 0, 536, planner.NoIndex, 69, 1,
+			10, planner.NoIndex, 539, 1, 325, 0, 538, planner.NoIndex, 69, 1,
+			7, 290, 541, 2, 325, 0, 540, 4, 69, 1,
+			10, planner.NoIndex, 544, 1, 325, 0, 543, planner.NoIndex, 69, 1,
+			8, 2, 545, 2, 325, 0, planner.NoIndex, planner.NoIndex, 69, 1,
+			2, planner.NoIndex, 0, 0, 337, 2, planner.NoIndex, planner.NoIndex, 76, 0,
+			0, 295, 547, 1, 333, 0, planner.NoIndex, 1, 76, 0,
+			8, 2, 554, 2, 333, 4, planner.NoIndex, planner.NoIndex, 76, 0,
+			10, planner.NoIndex, 549, 1, 333, 0, 548, planner.NoIndex, 76, 1,
+			7, 48, 551, 1, 333, 0, 550, 1, 76, 1,
+			10, planner.NoIndex, 553, 1, 333, 0, 552, planner.NoIndex, 76, 1,
+			8, 2, 554, 2, 333, 0, planner.NoIndex, planner.NoIndex, 76, 1,
+			2, planner.NoIndex, 0, 0, 342, 2, planner.NoIndex, planner.NoIndex, 80, 0,
+			0, 305, 557, 0, 339, 0, planner.NoIndex, 2, 80, 0,
+			8, 2, 560, 2, 339, 3, planner.NoIndex, planner.NoIndex, 80, 0,
+			7, 51, 558, 0, 339, 0, 557, 2, 80, 1,
+			10, planner.NoIndex, 559, 1, 339, 0, 558, planner.NoIndex, 80, 1,
+			8, 2, 560, 2, 339, 0, planner.NoIndex, planner.NoIndex, 80, 1,
+			2, planner.NoIndex, 0, 0, 350, 2, planner.NoIndex, planner.NoIndex, 84, 0,
+			7, 48, 573, 1, 344, 6, 572, 1, 84, 0,
+			10, planner.NoIndex, 563, 1, 344, 0, 562, planner.NoIndex, 84, 1,
+			10, planner.NoIndex, 565, 1, 344, 0, 564, planner.NoIndex, 84, 1,
+			7, 48, 567, 1, 344, 0, 566, 1, 84, 1,
+			10, planner.NoIndex, 569, 1, 344, 0, 568, planner.NoIndex, 84, 1,
+			10, planner.NoIndex, 571, 1, 344, 0, 570, planner.NoIndex, 84, 1,
+			7, 48, 573, 1, 344, 0, 572, 1, 84, 1,
+			8, 0, 575, 2, 350, 0, planner.NoIndex, planner.NoIndex, 84, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(= ?old_position (1.0 0.0 0.0))",
+			"(= ?new_position (2.0 0.0 0.0))",
+			"(< (call missing_distance_callterm ?old_position ?new_position) 0.2)",
+			"(= ?$assignment_call_0 ?old_position)",
+			"(= ?$assignment_call_1 ?new_position)",
+			"(= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))",
+			"(= ?$assignment_call_3 0.2)",
+			"(< ?$assignment_call_2 ?$assignment_call_3)",
+			"(and ...)",
+			"(< 0.0 (call missing_distance_callterm))",
+			"(= ?$assignment_call_4 0.0)",
+			"(= ?$assignment_call_5 (call missing_distance_callterm))",
+			"(< ?$assignment_call_4 ?$assignment_call_5)",
+			"(and ...)",
+			"(< (+ 0.0 (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_6 (* 0.0 1))",
+			"(= ?$assignment_call_7 (call missing_distance_callterm))",
+			"(= ?$assignment_call_8 (* ?$assignment_call_7 1))",
+			"(= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))",
+			"(= ?$assignment_call_10 0.2)",
+			"(< ?$assignment_call_9 ?$assignment_call_10)",
+			"(and ...)",
+			"(< (call identity (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_11 (call missing_distance_callterm))",
+			"(= ?$assignment_call_12 (call identity ?$assignment_call_11))",
+			"(= ?$assignment_call_13 0.2)",
+			"(< ?$assignment_call_12 ?$assignment_call_13)",
+			"(and ...)",
+			"(= ?distance (call missing_distance_callterm))",
+			"(< ?distance 0.2)",
+			"(and ...)",
+			"(< (call missing_distance_callterm) 0.2)",
+			"(= ?$assignment_call_14 (call missing_distance_callterm))",
+			"(= ?$assignment_call_15 0.2)",
+			"(< ?$assignment_call_14 ?$assignment_call_15)",
+			"(and ...)",
+			"(< (call missing_distance_callterm) 0.2)",
+			"(= ?$assignment_call_16 (call missing_distance_callterm))",
+			"(= ?$assignment_call_17 0.2)",
+			"(< ?$assignment_call_16 ?$assignment_call_17)",
+			"(and ...)",
+			"(< (call distance) 0.2)",
+			"(= ?$assignment_call_18 (call distance))",
+			"(= ?$assignment_call_19 0.2)",
+			"(< ?$assignment_call_18 ?$assignment_call_19)",
+			"(and ...)",
+			"(< 0.0 (call distance))",
+			"(= ?$assignment_call_20 0.0)",
+			"(= ?$assignment_call_21 (call distance))",
+			"(< ?$assignment_call_20 ?$assignment_call_21)",
+			"(and ...)",
+			"(== (call distance) (call distance))",
+			"(= ?$assignment_call_22 (call distance))",
+			"(= ?$assignment_call_23 (call distance))",
+			"(== ?$assignment_call_22 ?$assignment_call_23)",
+			"(and ...)",
+			"(= ?distance (call distance))",
+			"(< ?distance 0.2)",
+			"(and ...)",
+			"(= ?value 3)",
+			"(< (call identity 2) ?value)",
+			"(= ?$assignment_call_24 2)",
+			"(= ?$assignment_call_25 (call identity ?$assignment_call_24))",
+			"(= ?$assignment_call_26 ?value)",
+			"(< ?$assignment_call_25 ?$assignment_call_26)",
+			"(<= ?value (call identity 3))",
+			"(= ?$assignment_call_27 ?value)",
+			"(= ?$assignment_call_28 3)",
+			"(= ?$assignment_call_29 (call identity ?$assignment_call_28))",
+			"(<= ?$assignment_call_27 ?$assignment_call_29)",
+			"(> (call identity 4) ?value)",
+			"(= ?$assignment_call_30 4)",
+			"(= ?$assignment_call_31 (call identity ?$assignment_call_30))",
+			"(= ?$assignment_call_32 ?value)",
+			"(> ?$assignment_call_31 ?$assignment_call_32)",
+			"(>= ?value (call identity 3))",
+			"(= ?$assignment_call_33 ?value)",
+			"(= ?$assignment_call_34 3)",
+			"(= ?$assignment_call_35 (call identity ?$assignment_call_34))",
+			"(>= ?$assignment_call_33 ?$assignment_call_35)",
+			"(== (call identity ?value) 3)",
+			"(= ?$assignment_call_36 ?value)",
+			"(= ?$assignment_call_37 (call identity ?$assignment_call_36))",
+			"(= ?$assignment_call_38 3)",
+			"(== ?$assignment_call_37 ?$assignment_call_38)",
+			"(!= 2 (call identity ?value))",
+			"(= ?$assignment_call_39 2)",
+			"(= ?$assignment_call_40 ?value)",
+			"(= ?$assignment_call_41 (call identity ?$assignment_call_40))",
+			"(!= ?$assignment_call_39 ?$assignment_call_41)",
+			"(== (+ (call identity 1) 2) 3)",
+			"(= ?$assignment_call_42 1)",
+			"(= ?$assignment_call_43 (call identity ?$assignment_call_42))",
+			"(= ?$assignment_call_44 (* ?$assignment_call_43 1))",
+			"(= ?$assignment_call_45 (* 2 1))",
+			"(= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))",
+			"(= ?$assignment_call_47 3)",
+			"(== ?$assignment_call_46 ?$assignment_call_47)",
+			"(== (- 5 (call identity 2)) 3)",
+			"(= ?$assignment_call_48 (* 5 1))",
+			"(= ?$assignment_call_49 2)",
+			"(= ?$assignment_call_50 (call identity ?$assignment_call_49))",
+			"(= ?$assignment_call_51 (* ?$assignment_call_50 1))",
+			"(= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))",
+			"(= ?$assignment_call_53 3)",
+			"(== ?$assignment_call_52 ?$assignment_call_53)",
+			"(== (* (call identity 2) 3) 6)",
+			"(= ?$assignment_call_54 2)",
+			"(= ?$assignment_call_55 (call identity ?$assignment_call_54))",
+			"(= ?$assignment_call_56 (* ?$assignment_call_55 1))",
+			"(= ?$assignment_call_57 (* 3 1))",
+			"(= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))",
+			"(= ?$assignment_call_59 6)",
+			"(== ?$assignment_call_58 ?$assignment_call_59)",
+			"(== (/ 6 (call identity 2)) 3)",
+			"(= ?$assignment_call_60 (* 6 1))",
+			"(= ?$assignment_call_61 2)",
+			"(= ?$assignment_call_62 (call identity ?$assignment_call_61))",
+			"(= ?$assignment_call_63 (* ?$assignment_call_62 1))",
+			"(= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))",
+			"(= ?$assignment_call_65 3)",
+			"(== ?$assignment_call_64 ?$assignment_call_65)",
+			"(== (% (call identity 7) 4) 3)",
+			"(= ?$assignment_call_66 7)",
+			"(= ?$assignment_call_67 (call identity ?$assignment_call_66))",
+			"(= ?$assignment_call_68 (* ?$assignment_call_67 1))",
+			"(= ?$assignment_call_69 (* 4 1))",
+			"(= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))",
+			"(= ?$assignment_call_71 3)",
+			"(== ?$assignment_call_70 ?$assignment_call_71)",
+			"(== (++ (call identity 2)) 3)",
+			"(= ?$assignment_call_72 2)",
+			"(= ?$assignment_call_73 (call identity ?$assignment_call_72))",
+			"(= ?$assignment_call_74 (* ?$assignment_call_73 1))",
+			"(= ?$assignment_call_75 (++ ?$assignment_call_74))",
+			"(= ?$assignment_call_76 3)",
+			"(== ?$assignment_call_75 ?$assignment_call_76)",
+			"(== (-- (call identity 4)) 3)",
+			"(= ?$assignment_call_77 4)",
+			"(= ?$assignment_call_78 (call identity ?$assignment_call_77))",
+			"(= ?$assignment_call_79 (* ?$assignment_call_78 1))",
+			"(= ?$assignment_call_80 (-- ?$assignment_call_79))",
+			"(= ?$assignment_call_81 3)",
+			"(== ?$assignment_call_80 ?$assignment_call_81)",
+			"(== (call identity (+ 1 (call identity 2))) 3)",
+			"(= ?$assignment_call_82 (* 1 1))",
+			"(= ?$assignment_call_83 2)",
+			"(= ?$assignment_call_84 (call identity ?$assignment_call_83))",
+			"(= ?$assignment_call_85 (* ?$assignment_call_84 1))",
+			"(= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))",
+			"(= ?$assignment_call_87 (call identity ?$assignment_call_86))",
+			"(= ?$assignment_call_88 3)",
+			"(== ?$assignment_call_87 ?$assignment_call_88)",
+			"(and ...)",
+			"(< (+ false (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_89 (* false 1))",
+			"(= ?$assignment_call_90 (call missing_distance_callterm))",
+			"(= ?$assignment_call_91 (* ?$assignment_call_90 1))",
+			"(= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))",
+			"(= ?$assignment_call_93 0.2)",
+			"(< ?$assignment_call_92 ?$assignment_call_93)",
+			"(and ...)",
+			"(active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)",
+			"(= ?new_entity_position (call get_entity_position ?entity_id))",
+			"(< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2)",
+			"(= ?$assignment_call_97 ?old_entity_position)",
+			"(= ?$assignment_call_98 ?new_entity_position)",
+			"(= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))",
+			"(= ?$assignment_call_100 0.2)",
+			"(< ?$assignment_call_99 ?$assignment_call_100)",
+			"(and ...)",
+			"(candidate ?entity)",
+			"(< (call identity ?entity) 2)",
+			"(= ?$assignment_call_101 ?entity)",
+			"(= ?$assignment_call_102 (call identity ?$assignment_call_101))",
+			"(= ?$assignment_call_103 2)",
+			"(< ?$assignment_call_102 ?$assignment_call_103)",
+			"(and ...)",
+			"(absent_fact)",
+			"(< (call distance) 0.2)",
+			"(= ?$assignment_call_104 (call distance))",
+			"(= ?$assignment_call_105 0.2)",
+			"(< ?$assignment_call_104 ?$assignment_call_105)",
+			"(and ...)",
+			"(= ?value (call identity (+ 1 (call identity 2))))",
+			"(= ?$assignment_call_106 (* 1 1))",
+			"(= ?$assignment_call_107 2)",
+			"(= ?$assignment_call_108 (call identity ?$assignment_call_107))",
+			"(= ?$assignment_call_109 (* ?$assignment_call_108 1))",
+			"(= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))",
+			"(= ?value (call identity ?$assignment_call_110))",
+			"(== ?value 3)",
+			"(and ...)",
+			"(= ?old_position (1.0 0.0 0.0))",
+			"(= ?new_position (2.0 0.0 0.0))",
+			"(< (call missing_distance_callterm ?old_position ?new_position) 0.2)",
+			"(= ?$assignment_call_111 ?old_position)",
+			"(= ?$assignment_call_112 ?new_position)",
+			"(= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))",
+			"(= ?$assignment_call_114 0.2)",
+			"(< ?$assignment_call_113 ?$assignment_call_114)",
+			"(and ...)",
+			"(< 0.0 (call missing_distance_callterm))",
+			"(= ?$assignment_call_115 0.0)",
+			"(= ?$assignment_call_116 (call missing_distance_callterm))",
+			"(< ?$assignment_call_115 ?$assignment_call_116)",
+			"(and ...)",
+			"(< (+ 0.0 (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_117 (* 0.0 1))",
+			"(= ?$assignment_call_118 (call missing_distance_callterm))",
+			"(= ?$assignment_call_119 (* ?$assignment_call_118 1))",
+			"(= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))",
+			"(= ?$assignment_call_121 0.2)",
+			"(< ?$assignment_call_120 ?$assignment_call_121)",
+			"(and ...)",
+			"(< (call identity (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_122 (call missing_distance_callterm))",
+			"(= ?$assignment_call_123 (call identity ?$assignment_call_122))",
+			"(= ?$assignment_call_124 0.2)",
+			"(< ?$assignment_call_123 ?$assignment_call_124)",
+			"(and ...)",
+			"(= ?distance (call missing_distance_callterm))",
+			"(< ?distance 0.2)",
+			"(and ...)",
+			"(< (call missing_distance_callterm) 0.2)",
+			"(= ?$assignment_call_125 (call missing_distance_callterm))",
+			"(= ?$assignment_call_126 0.2)",
+			"(< ?$assignment_call_125 ?$assignment_call_126)",
+			"(and ...)",
+			"(< (call missing_distance_callterm) 0.2)",
+			"(= ?$assignment_call_127 (call missing_distance_callterm))",
+			"(= ?$assignment_call_128 0.2)",
+			"(< ?$assignment_call_127 ?$assignment_call_128)",
+			"(and ...)",
+			"(< (call distance) 0.2)",
+			"(= ?$assignment_call_129 (call distance))",
+			"(= ?$assignment_call_130 0.2)",
+			"(< ?$assignment_call_129 ?$assignment_call_130)",
+			"(and ...)",
+			"(< 0.0 (call distance))",
+			"(= ?$assignment_call_131 0.0)",
+			"(= ?$assignment_call_132 (call distance))",
+			"(< ?$assignment_call_131 ?$assignment_call_132)",
+			"(and ...)",
+			"(== (call distance) (call distance))",
+			"(= ?$assignment_call_133 (call distance))",
+			"(= ?$assignment_call_134 (call distance))",
+			"(== ?$assignment_call_133 ?$assignment_call_134)",
+			"(and ...)",
+			"(= ?distance (call distance))",
+			"(< ?distance 0.2)",
+			"(and ...)",
+			"(= ?value 3)",
+			"(< (call identity 2) ?value)",
+			"(= ?$assignment_call_135 2)",
+			"(= ?$assignment_call_136 (call identity ?$assignment_call_135))",
+			"(= ?$assignment_call_137 ?value)",
+			"(< ?$assignment_call_136 ?$assignment_call_137)",
+			"(<= ?value (call identity 3))",
+			"(= ?$assignment_call_138 ?value)",
+			"(= ?$assignment_call_139 3)",
+			"(= ?$assignment_call_140 (call identity ?$assignment_call_139))",
+			"(<= ?$assignment_call_138 ?$assignment_call_140)",
+			"(> (call identity 4) ?value)",
+			"(= ?$assignment_call_141 4)",
+			"(= ?$assignment_call_142 (call identity ?$assignment_call_141))",
+			"(= ?$assignment_call_143 ?value)",
+			"(> ?$assignment_call_142 ?$assignment_call_143)",
+			"(>= ?value (call identity 3))",
+			"(= ?$assignment_call_144 ?value)",
+			"(= ?$assignment_call_145 3)",
+			"(= ?$assignment_call_146 (call identity ?$assignment_call_145))",
+			"(>= ?$assignment_call_144 ?$assignment_call_146)",
+			"(== (call identity ?value) 3)",
+			"(= ?$assignment_call_147 ?value)",
+			"(= ?$assignment_call_148 (call identity ?$assignment_call_147))",
+			"(= ?$assignment_call_149 3)",
+			"(== ?$assignment_call_148 ?$assignment_call_149)",
+			"(!= 2 (call identity ?value))",
+			"(= ?$assignment_call_150 2)",
+			"(= ?$assignment_call_151 ?value)",
+			"(= ?$assignment_call_152 (call identity ?$assignment_call_151))",
+			"(!= ?$assignment_call_150 ?$assignment_call_152)",
+			"(== (+ (call identity 1) 2) 3)",
+			"(= ?$assignment_call_153 1)",
+			"(= ?$assignment_call_154 (call identity ?$assignment_call_153))",
+			"(= ?$assignment_call_155 (* ?$assignment_call_154 1))",
+			"(= ?$assignment_call_156 (* 2 1))",
+			"(= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))",
+			"(= ?$assignment_call_158 3)",
+			"(== ?$assignment_call_157 ?$assignment_call_158)",
+			"(== (- 5 (call identity 2)) 3)",
+			"(= ?$assignment_call_159 (* 5 1))",
+			"(= ?$assignment_call_160 2)",
+			"(= ?$assignment_call_161 (call identity ?$assignment_call_160))",
+			"(= ?$assignment_call_162 (* ?$assignment_call_161 1))",
+			"(= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))",
+			"(= ?$assignment_call_164 3)",
+			"(== ?$assignment_call_163 ?$assignment_call_164)",
+			"(== (* (call identity 2) 3) 6)",
+			"(= ?$assignment_call_165 2)",
+			"(= ?$assignment_call_166 (call identity ?$assignment_call_165))",
+			"(= ?$assignment_call_167 (* ?$assignment_call_166 1))",
+			"(= ?$assignment_call_168 (* 3 1))",
+			"(= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))",
+			"(= ?$assignment_call_170 6)",
+			"(== ?$assignment_call_169 ?$assignment_call_170)",
+			"(== (/ 6 (call identity 2)) 3)",
+			"(= ?$assignment_call_171 (* 6 1))",
+			"(= ?$assignment_call_172 2)",
+			"(= ?$assignment_call_173 (call identity ?$assignment_call_172))",
+			"(= ?$assignment_call_174 (* ?$assignment_call_173 1))",
+			"(= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))",
+			"(= ?$assignment_call_176 3)",
+			"(== ?$assignment_call_175 ?$assignment_call_176)",
+			"(== (% (call identity 7) 4) 3)",
+			"(= ?$assignment_call_177 7)",
+			"(= ?$assignment_call_178 (call identity ?$assignment_call_177))",
+			"(= ?$assignment_call_179 (* ?$assignment_call_178 1))",
+			"(= ?$assignment_call_180 (* 4 1))",
+			"(= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))",
+			"(= ?$assignment_call_182 3)",
+			"(== ?$assignment_call_181 ?$assignment_call_182)",
+			"(== (++ (call identity 2)) 3)",
+			"(= ?$assignment_call_183 2)",
+			"(= ?$assignment_call_184 (call identity ?$assignment_call_183))",
+			"(= ?$assignment_call_185 (* ?$assignment_call_184 1))",
+			"(= ?$assignment_call_186 (++ ?$assignment_call_185))",
+			"(= ?$assignment_call_187 3)",
+			"(== ?$assignment_call_186 ?$assignment_call_187)",
+			"(== (-- (call identity 4)) 3)",
+			"(= ?$assignment_call_188 4)",
+			"(= ?$assignment_call_189 (call identity ?$assignment_call_188))",
+			"(= ?$assignment_call_190 (* ?$assignment_call_189 1))",
+			"(= ?$assignment_call_191 (-- ?$assignment_call_190))",
+			"(= ?$assignment_call_192 3)",
+			"(== ?$assignment_call_191 ?$assignment_call_192)",
+			"(== (call identity (+ 1 (call identity 2))) 3)",
+			"(= ?$assignment_call_193 (* 1 1))",
+			"(= ?$assignment_call_194 2)",
+			"(= ?$assignment_call_195 (call identity ?$assignment_call_194))",
+			"(= ?$assignment_call_196 (* ?$assignment_call_195 1))",
+			"(= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))",
+			"(= ?$assignment_call_198 (call identity ?$assignment_call_197))",
+			"(= ?$assignment_call_199 3)",
+			"(== ?$assignment_call_198 ?$assignment_call_199)",
+			"(and ...)",
+			"(< (+ false (call missing_distance_callterm)) 0.2)",
+			"(= ?$assignment_call_200 (* false 1))",
+			"(= ?$assignment_call_201 (call missing_distance_callterm))",
+			"(= ?$assignment_call_202 (* ?$assignment_call_201 1))",
+			"(= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))",
+			"(= ?$assignment_call_204 0.2)",
+			"(< ?$assignment_call_203 ?$assignment_call_204)",
+			"(and ...)",
+			"(active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)",
+			"(= ?new_entity_position (call get_entity_position ?entity_id))",
+			"(< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2)",
+			"(= ?$assignment_call_208 ?old_entity_position)",
+			"(= ?$assignment_call_209 ?new_entity_position)",
+			"(= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))",
+			"(= ?$assignment_call_211 0.2)",
+			"(< ?$assignment_call_210 ?$assignment_call_211)",
+			"(and ...)",
+			"(candidate ?entity)",
+			"(< (call identity ?entity) 2)",
+			"(= ?$assignment_call_212 ?entity)",
+			"(= ?$assignment_call_213 (call identity ?$assignment_call_212))",
+			"(= ?$assignment_call_214 2)",
+			"(< ?$assignment_call_213 ?$assignment_call_214)",
+			"(and ...)",
+			"(absent_fact)",
+			"(< (call distance) 0.2)",
+			"(= ?$assignment_call_215 (call distance))",
+			"(= ?$assignment_call_216 0.2)",
+			"(< ?$assignment_call_215 ?$assignment_call_216)",
+			"(and ...)",
+			"(= ?value (call identity (+ 1 (call identity 2))))",
+			"(= ?$assignment_call_217 (* 1 1))",
+			"(= ?$assignment_call_218 2)",
+			"(= ?$assignment_call_219 (call identity ?$assignment_call_218))",
+			"(= ?$assignment_call_220 (* ?$assignment_call_219 1))",
+			"(= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))",
+			"(= ?value (call identity ?$assignment_call_221))",
+			"(== ?value 3)",
+		},
+		ConditionChildRefs: []uint32{
+			4,
+			5,
+			6,
+			7,
+			8,
+			1,
+			2,
+			3,
+			11,
+			12,
+			13,
+			10,
+			16,
+			17,
+			18,
+			19,
+			20,
+			21,
+			15,
+			24,
+			25,
+			26,
+			27,
+			23,
+			29,
+			30,
+			33,
+			34,
+			35,
+			32,
+			38,
+			39,
+			40,
+			37,
+			43,
+			44,
+			45,
+			42,
+			48,
+			49,
+			50,
+			47,
+			53,
+			54,
+			55,
+			52,
+			57,
+			58,
+			62,
+			63,
+			64,
+			65,
+			67,
+			68,
+			69,
+			70,
+			72,
+			73,
+			74,
+			75,
+			77,
+			78,
+			79,
+			80,
+			82,
+			83,
+			84,
+			85,
+			87,
+			88,
+			89,
+			90,
+			92,
+			93,
+			94,
+			95,
+			96,
+			97,
+			98,
+			100,
+			101,
+			102,
+			103,
+			104,
+			105,
+			106,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			139,
+			140,
+			141,
+			142,
+			143,
+			144,
+			146,
+			147,
+			148,
+			149,
+			150,
+			151,
+			152,
+			153,
+			60,
+			61,
+			66,
+			71,
+			76,
+			81,
+			86,
+			91,
+			99,
+			107,
+			115,
+			123,
+			131,
+			138,
+			145,
+			156,
+			157,
+			158,
+			159,
+			160,
+			161,
+			155,
+			166,
+			167,
+			168,
+			169,
+			170,
+			163,
+			164,
+			165,
+			174,
+			175,
+			176,
+			177,
+			172,
+			173,
+			181,
+			182,
+			183,
+			179,
+			180,
+			186,
+			187,
+			188,
+			189,
+			190,
+			191,
+			185,
+			192,
+			197,
+			198,
+			199,
+			200,
+			201,
+			194,
+			195,
+			196,
+			204,
+			205,
+			206,
+			203,
+			209,
+			210,
+			211,
+			212,
+			213,
+			214,
+			208,
+			217,
+			218,
+			219,
+			220,
+			216,
+			222,
+			223,
+			226,
+			227,
+			228,
+			225,
+			231,
+			232,
+			233,
+			230,
+			236,
+			237,
+			238,
+			235,
+			241,
+			242,
+			243,
+			240,
+			246,
+			247,
+			248,
+			245,
+			250,
+			251,
+			255,
+			256,
+			257,
+			258,
+			260,
+			261,
+			262,
+			263,
+			265,
+			266,
+			267,
+			268,
+			270,
+			271,
+			272,
+			273,
+			275,
+			276,
+			277,
+			278,
+			280,
+			281,
+			282,
+			283,
+			285,
+			286,
+			287,
+			288,
+			289,
+			290,
+			291,
+			293,
+			294,
+			295,
+			296,
+			297,
+			298,
+			299,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			309,
+			310,
+			311,
+			312,
+			313,
+			314,
+			315,
+			317,
+			318,
+			319,
+			320,
+			321,
+			322,
+			323,
+			325,
+			326,
+			327,
+			328,
+			329,
+			330,
+			332,
+			333,
+			334,
+			335,
+			336,
+			337,
+			339,
+			340,
+			341,
+			342,
+			343,
+			344,
+			345,
+			346,
+			253,
+			254,
+			259,
+			264,
+			269,
+			274,
+			279,
+			284,
+			292,
+			300,
+			308,
+			316,
+			324,
+			331,
+			338,
+			349,
+			350,
+			351,
+			352,
+			353,
+			354,
+			348,
+			359,
+			360,
+			361,
+			362,
+			363,
+			356,
+			357,
+			358,
+			367,
+			368,
+			369,
+			370,
+			365,
+			366,
+			374,
+			375,
+			376,
+			372,
+			373,
+			379,
+			380,
+			381,
+			382,
+			383,
+			384,
+			378,
+			385,
+		},
+		Tasks: []uint32{
+			1, 18, 15, 0, 11, 19,
+			1, 18, 20, 0, 15, 19,
+			1, 18, 31, 0, 17, 19,
+			1, 18, 38, 0, 19, 19,
+			1, 18, 41, 0, 21, 19,
+			1, 18, 46, 0, 23, 19,
+			1, 18, 51, 0, 24, 19,
+			1, 18, 56, 0, 26, 19,
+			1, 18, 61, 0, 28, 19,
+			1, 18, 65, 0, 30, 19,
+			1, 18, 68, 0, 32, 19,
+			1, 18, 228, 0, 52, 19,
+			1, 256, 239, 0, 56, 257,
+			1, 18, 239, 0, 57, 19,
+			1, 18, 239, 1, 59, 19,
+			1, 18, 240, 1, 61, 19,
+			1, 292, 258, 0, 71, 293,
+			1, 18, 267, 1, 77, 19,
+			1, 256, 273, 0, 81, 257,
+			1, 18, 288, 1, 85, 19,
+			1, 18, 304, 0, 11, 19,
+			1, 18, 309, 0, 15, 19,
+			1, 18, 320, 0, 17, 19,
+			1, 18, 327, 0, 19, 19,
+			1, 18, 330, 0, 21, 19,
+			1, 18, 335, 0, 23, 19,
+			1, 18, 340, 0, 24, 19,
+			1, 18, 345, 0, 26, 19,
+			1, 18, 350, 0, 28, 19,
+			1, 18, 354, 0, 30, 19,
+			1, 18, 357, 0, 32, 19,
+			1, 18, 517, 0, 52, 19,
+			1, 256, 528, 0, 56, 257,
+			1, 18, 528, 0, 57, 19,
+			1, 18, 528, 1, 59, 19,
+			1, 18, 529, 1, 61, 19,
+			1, 292, 547, 0, 71, 293,
+			1, 18, 556, 1, 77, 19,
+			1, 256, 562, 0, 81, 257,
+			1, 18, 577, 1, 85, 19,
+		},
+		Branches: []uint32{
+			1, 0, 0, 1, 5,
+			1, 9, 1, 1, 15,
+			1, 14, 2, 1, 17,
+			1, 22, 3, 1, 19,
+			1, 28, 4, 1, 21,
+			54, 31, 5, 1, 23,
+			59, 36, 6, 1, 24,
+			1, 41, 7, 1, 26,
+			1, 46, 8, 1, 28,
+			1, 51, 9, 1, 30,
+			1, 56, 10, 1, 32,
+			1, 59, 11, 1, 34,
+			1, 154, 12, 1, 56,
+			258, planner.NoIndex, 13, 1, 57,
+			1, planner.NoIndex, 14, 1, 59,
+			1, planner.NoIndex, 15, 1, 61,
+			271, 162, 16, 1, 64,
+			1, 171, 17, 1, 75,
+			1, 178, 18, 1, 79,
+			1, 184, 19, 1, 83,
+			1, 193, 20, 1, 5,
+			1, 202, 21, 1, 15,
+			1, 207, 22, 1, 17,
+			1, 215, 23, 1, 19,
+			1, 221, 24, 1, 21,
+			54, 224, 25, 1, 23,
+			59, 229, 26, 1, 24,
+			1, 234, 27, 1, 26,
+			1, 239, 28, 1, 28,
+			1, 244, 29, 1, 30,
+			1, 249, 30, 1, 32,
+			1, 252, 31, 1, 34,
+			1, 347, 32, 1, 56,
+			258, planner.NoIndex, 33, 1, 57,
+			1, planner.NoIndex, 34, 1, 59,
+			1, planner.NoIndex, 35, 1, 61,
+			271, 355, 36, 1, 64,
+			1, 364, 37, 1, 75,
+			1, 371, 38, 1, 79,
+			1, 377, 39, 1, 83,
+		},
+		Methods: []uint64{
+			0, 0, 0, 0, 1, 4, 0x3f, 0x0, 0x0, 0x0,
+			20, 15, 0, 1, 1, 14, 0xc0, 0x0, 0x0, 0x0,
+			26, 20, 0, 2, 1, 16, 0x1f00, 0x0, 0x0, 0x0,
+			42, 31, 0, 3, 1, 18, 0xe000, 0x0, 0x0, 0x0,
+			50, 38, 0, 4, 1, 20, 0x10000, 0x0, 0x0, 0x0,
+			53, 41, 0, 5, 2, 22, 0x1e0000, 0x0, 0x0, 0x0,
+			64, 51, 0, 7, 1, 25, 0x600000, 0x0, 0x0, 0x0,
+			69, 56, 0, 8, 1, 27, 0x1800000, 0x0, 0x0, 0x0,
+			74, 61, 0, 9, 1, 29, 0x6000000, 0x0, 0x0, 0x0,
+			79, 65, 0, 10, 1, 31, 0x10000, 0x0, 0x0, 0x0,
+			80, 68, 0, 11, 1, 33, 0xfffffffff8000000, 0x1fffffff, 0x0, 0x0,
+			241, 228, 0, 12, 2, 55, 0x0, 0x3e0000000, 0x0, 0x0,
+			259, 239, 0, 14, 1, 58, 0x0, 0xc00000000, 0x0, 0x0,
+			266, 240, 0, 15, 1, 60, 0x0, 0x1000000000, 0x0, 0x0,
+			270, 241, 0, 16, 1, 63, 0x0, 0x1fe000000000, 0x0, 0x0,
+			294, 258, 0, 17, 1, 74, 0x0, 0x1e00000000000, 0x0, 0x0,
+			304, 268, 0, 18, 1, 78, 0x0, 0x6000000000000, 0x0, 0x0,
+			310, 273, 0, 19, 1, 82, 0x8000000, 0xf8000000000000, 0x0, 0x0,
+			323, 289, 0, 20, 1, 4, 0x3, 0xf00000000000000, 0x0, 0x0,
+			332, 304, 0, 21, 1, 14, 0x0, 0x3000000000000000, 0x0, 0x0,
+			337, 309, 0, 22, 1, 16, 0x0, 0xc000000000000000, 0x7, 0x0,
+			350, 320, 0, 23, 1, 18, 0x0, 0x0, 0x38, 0x0,
+			357, 327, 0, 24, 1, 20, 0x10000, 0x0, 0x0, 0x0,
+			358, 330, 0, 25, 2, 22, 0x0, 0x0, 0x3c0, 0x0,
+			367, 340, 0, 27, 1, 25, 0x0, 0x0, 0xc00, 0x0,
+			372, 345, 0, 28, 1, 27, 0x0, 0x0, 0x3000, 0x0,
+			377, 350, 0, 29, 1, 29, 0x0, 0x0, 0xc000, 0x0,
+			382, 354, 0, 30, 1, 31, 0x10000, 0x0, 0x0, 0x0,
+			383, 357, 0, 31, 1, 33, 0x8000000, 0x0, 0xffffffffffff0000, 0x1ffff,
+			530, 517, 0, 32, 2, 55, 0x0, 0x0, 0x0, 0x3e0000,
+			543, 528, 0, 34, 1, 58, 0x0, 0x0, 0x0, 0xc00000,
+			546, 529, 0, 35, 1, 60, 0x0, 0x0, 0x0, 0x1000000,
+			548, 530, 0, 36, 1, 63, 0x0, 0x1e000000000, 0x0, 0x1e000000,
+			557, 547, 0, 37, 1, 74, 0x0, 0x200000000000, 0x0, 0xe0000000,
+			564, 557, 0, 38, 1, 78, 0x0, 0x0, 0x0, 0x300000000,
+			569, 562, 0, 39, 1, 82, 0x8000000, 0x0, 0x0, 0x7c00000000,
+		},
+		Axioms:            []uint64{},
+		Constants:         []uint32{},
+		CallTermSlotCount: 5,
+		FactSlotCount:     3,
+		SourceFiles: []string{
+			"Domains/Test/nested_operator_calls.domain",
+		},
+		ValueSources: []uint32{
+			0, 7, 20, 7, 33,
+			0, 7, 34, 7, 46,
+			0, 8, 20, 8, 33,
+			0, 8, 34, 8, 46,
+			0, 9, 52, 9, 65,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 66, 9, 79,
+			0, 9, 20, 9, 79,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 9, 81, 9, 84,
+			0, 9, 20, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 15, 25, 15, 28,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 17, 28, 17, 31,
+			0, 17, 28, 17, 31,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 25, 17, 64,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 17, 66, 17, 69,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 19, 40, 19, 71,
+			0, 19, 25, 19, 72,
+			0, 19, 40, 19, 71,
+			0, 19, 74, 19, 77,
+			0, 19, 74, 19, 77,
+			0, 19, 25, 19, 72,
+			0, 19, 74, 19, 77,
+			0, 21, 25, 21, 34,
+			0, 21, 72, 21, 81,
+			0, 21, 82, 21, 85,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 23, 57, 23, 60,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 24, 58, 24, 61,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 26, 41, 26, 44,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 28, 25, 28, 28,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 32, 25, 32, 34,
+			0, 32, 55, 32, 64,
+			0, 32, 65, 32, 68,
+			0, 36, 20, 36, 26,
+			0, 36, 27, 36, 28,
+			0, 37, 35, 37, 36,
+			0, 37, 35, 37, 36,
+			0, 37, 20, 37, 36,
+			0, 37, 35, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 37, 38, 37, 44,
+			0, 37, 20, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 21, 38, 27,
+			0, 38, 43, 38, 44,
+			0, 38, 43, 38, 44,
+			0, 38, 28, 38, 44,
+			0, 38, 43, 38, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 28, 38, 44,
+			0, 39, 35, 39, 36,
+			0, 39, 35, 39, 36,
+			0, 39, 20, 39, 36,
+			0, 39, 35, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 39, 38, 39, 44,
+			0, 39, 20, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 21, 40, 27,
+			0, 40, 43, 40, 44,
+			0, 40, 43, 40, 44,
+			0, 40, 28, 40, 44,
+			0, 40, 43, 40, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 28, 40, 44,
+			0, 41, 36, 41, 42,
+			0, 41, 36, 41, 42,
+			0, 41, 21, 41, 42,
+			0, 41, 36, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 41, 44, 41, 45,
+			0, 41, 21, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 42, 21, 42, 22,
+			0, 42, 21, 42, 22,
+			0, 42, 38, 42, 44,
+			0, 42, 38, 42, 44,
+			0, 42, 23, 42, 44,
+			0, 42, 38, 42, 44,
+			0, 42, 21, 42, 22,
+			0, 42, 23, 42, 44,
+			0, 43, 39, 43, 40,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 42, 43, 43,
+			0, 43, 42, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 43, 45, 43, 46,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 44, 24, 44, 25,
+			0, 44, 24, 44, 25,
+			0, 44, 41, 44, 42,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 21, 44, 43,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 44, 45, 44, 46,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 45, 39, 45, 40,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 42, 45, 43,
+			0, 45, 42, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 45, 45, 45, 46,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 46, 24, 46, 25,
+			0, 46, 24, 46, 25,
+			0, 46, 41, 46, 42,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 21, 46, 43,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 46, 45, 46, 46,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 47, 39, 47, 40,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 42, 47, 43,
+			0, 47, 42, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 47, 45, 47, 46,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 48, 40, 48, 41,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 21, 48, 42,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 48, 44, 48, 45,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 49, 40, 49, 41,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 21, 49, 42,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 49, 44, 49, 45,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 50, 39, 50, 40,
+			0, 50, 39, 50, 40,
+			0, 50, 56, 50, 57,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 36, 50, 58,
+			0, 50, 36, 50, 58,
+			0, 50, 21, 50, 59,
+			0, 50, 36, 50, 58,
+			0, 50, 61, 50, 62,
+			0, 50, 61, 50, 62,
+			0, 50, 21, 50, 59,
+			0, 50, 61, 50, 62,
+			0, 56, 28, 56, 33,
+			0, 56, 28, 56, 33,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 25, 56, 66,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 56, 68, 56, 71,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 59, 30, 59, 68,
+			0, 61, 30, 61, 67,
+			0, 66, 30, 66, 40,
+			0, 66, 41, 66, 62,
+			0, 66, 63, 66, 73,
+			0, 66, 74, 66, 94,
+			0, 67, 20, 67, 40,
+			0, 67, 67, 67, 77,
+			0, 69, 47, 69, 67,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 68, 69, 88,
+			0, 69, 20, 69, 88,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 69, 90, 69, 93,
+			0, 69, 20, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 76, 29, 76, 36,
+			0, 76, 56, 76, 63,
+			0, 76, 56, 76, 63,
+			0, 76, 41, 76, 63,
+			0, 76, 56, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 76, 65, 76, 66,
+			0, 76, 41, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 77, 23, 77, 30,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 80, 51, 80, 54,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 84, 46, 84, 47,
+			0, 84, 46, 84, 47,
+			0, 84, 63, 84, 64,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 43, 84, 65,
+			0, 84, 43, 84, 65,
+			0, 84, 21, 84, 27,
+			0, 84, 43, 84, 65,
+			0, 84, 21, 84, 27,
+			0, 84, 73, 84, 79,
+			0, 84, 80, 84, 81,
+			0, 85, 23, 85, 29,
+			0, 7, 20, 7, 33,
+			0, 7, 34, 7, 46,
+			0, 8, 20, 8, 33,
+			0, 8, 34, 8, 46,
+			0, 9, 52, 9, 65,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 66, 9, 79,
+			0, 9, 20, 9, 79,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 9, 81, 9, 84,
+			0, 9, 20, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 15, 25, 15, 28,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 17, 28, 17, 31,
+			0, 17, 28, 17, 31,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 25, 17, 64,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 17, 66, 17, 69,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 19, 40, 19, 71,
+			0, 19, 25, 19, 72,
+			0, 19, 40, 19, 71,
+			0, 19, 74, 19, 77,
+			0, 19, 74, 19, 77,
+			0, 19, 25, 19, 72,
+			0, 19, 74, 19, 77,
+			0, 21, 25, 21, 34,
+			0, 21, 72, 21, 81,
+			0, 21, 82, 21, 85,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 23, 57, 23, 60,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 24, 58, 24, 61,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 26, 41, 26, 44,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 28, 25, 28, 28,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 32, 25, 32, 34,
+			0, 32, 55, 32, 64,
+			0, 32, 65, 32, 68,
+			0, 36, 20, 36, 26,
+			0, 36, 27, 36, 28,
+			0, 37, 35, 37, 36,
+			0, 37, 35, 37, 36,
+			0, 37, 20, 37, 36,
+			0, 37, 35, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 37, 38, 37, 44,
+			0, 37, 20, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 21, 38, 27,
+			0, 38, 43, 38, 44,
+			0, 38, 43, 38, 44,
+			0, 38, 28, 38, 44,
+			0, 38, 43, 38, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 28, 38, 44,
+			0, 39, 35, 39, 36,
+			0, 39, 35, 39, 36,
+			0, 39, 20, 39, 36,
+			0, 39, 35, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 39, 38, 39, 44,
+			0, 39, 20, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 21, 40, 27,
+			0, 40, 43, 40, 44,
+			0, 40, 43, 40, 44,
+			0, 40, 28, 40, 44,
+			0, 40, 43, 40, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 28, 40, 44,
+			0, 41, 36, 41, 42,
+			0, 41, 36, 41, 42,
+			0, 41, 21, 41, 42,
+			0, 41, 36, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 41, 44, 41, 45,
+			0, 41, 21, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 42, 21, 42, 22,
+			0, 42, 21, 42, 22,
+			0, 42, 38, 42, 44,
+			0, 42, 38, 42, 44,
+			0, 42, 23, 42, 44,
+			0, 42, 38, 42, 44,
+			0, 42, 21, 42, 22,
+			0, 42, 23, 42, 44,
+			0, 43, 39, 43, 40,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 42, 43, 43,
+			0, 43, 42, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 43, 45, 43, 46,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 44, 24, 44, 25,
+			0, 44, 24, 44, 25,
+			0, 44, 41, 44, 42,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 21, 44, 43,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 44, 45, 44, 46,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 45, 39, 45, 40,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 42, 45, 43,
+			0, 45, 42, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 45, 45, 45, 46,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 46, 24, 46, 25,
+			0, 46, 24, 46, 25,
+			0, 46, 41, 46, 42,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 21, 46, 43,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 46, 45, 46, 46,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 47, 39, 47, 40,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 42, 47, 43,
+			0, 47, 42, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 47, 45, 47, 46,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 48, 40, 48, 41,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 21, 48, 42,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 48, 44, 48, 45,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 49, 40, 49, 41,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 21, 49, 42,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 49, 44, 49, 45,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 50, 39, 50, 40,
+			0, 50, 39, 50, 40,
+			0, 50, 56, 50, 57,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 36, 50, 58,
+			0, 50, 36, 50, 58,
+			0, 50, 21, 50, 59,
+			0, 50, 36, 50, 58,
+			0, 50, 61, 50, 62,
+			0, 50, 61, 50, 62,
+			0, 50, 21, 50, 59,
+			0, 50, 61, 50, 62,
+			0, 56, 28, 56, 33,
+			0, 56, 28, 56, 33,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 25, 56, 66,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 56, 68, 56, 71,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 59, 30, 59, 68,
+			0, 61, 30, 61, 67,
+			0, 66, 30, 66, 40,
+			0, 66, 41, 66, 62,
+			0, 66, 63, 66, 73,
+			0, 66, 74, 66, 94,
+			0, 67, 20, 67, 40,
+			0, 67, 67, 67, 77,
+			0, 69, 47, 69, 67,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 68, 69, 88,
+			0, 69, 20, 69, 88,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 69, 90, 69, 93,
+			0, 69, 20, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 76, 29, 76, 36,
+			0, 76, 56, 76, 63,
+			0, 76, 56, 76, 63,
+			0, 76, 41, 76, 63,
+			0, 76, 56, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 76, 65, 76, 66,
+			0, 76, 41, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 77, 23, 77, 30,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 80, 51, 80, 54,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 84, 46, 84, 47,
+			0, 84, 46, 84, 47,
+			0, 84, 63, 84, 64,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 43, 84, 65,
+			0, 84, 43, 84, 65,
+			0, 84, 21, 84, 27,
+			0, 84, 43, 84, 65,
+			0, 84, 21, 84, 27,
+			0, 84, 73, 84, 79,
+			0, 84, 80, 84, 81,
+			0, 85, 23, 85, 29,
+		},
+		ConditionSources: []uint32{
+			0, 6, 14, 9, 84,
+			0, 7, 17, 7, 46,
+			0, 8, 17, 8, 46,
+			0, 9, 18, 9, 84,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 20, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 9, 18, 9, 84,
+			0, 15, 18, 15, 61,
+			0, 15, 23, 15, 60,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 15, 23, 15, 60,
+			0, 17, 18, 17, 69,
+			0, 17, 23, 17, 69,
+			0, 17, 28, 17, 31,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 17, 23, 17, 69,
+			0, 19, 18, 19, 77,
+			0, 19, 23, 19, 77,
+			0, 19, 40, 19, 71,
+			0, 19, 25, 19, 72,
+			0, 19, 74, 19, 77,
+			0, 19, 23, 19, 77,
+			0, 21, 18, 21, 85,
+			0, 21, 22, 21, 66,
+			0, 21, 70, 21, 85,
+			0, 23, 17, 23, 60,
+			0, 23, 22, 23, 60,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 23, 22, 23, 60,
+			0, 24, 18, 24, 61,
+			0, 24, 23, 24, 61,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 24, 23, 24, 61,
+			0, 26, 18, 26, 44,
+			0, 26, 23, 26, 44,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 26, 23, 26, 44,
+			0, 28, 18, 28, 44,
+			0, 28, 23, 28, 43,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 28, 23, 28, 43,
+			0, 30, 18, 30, 57,
+			0, 30, 23, 30, 56,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 30, 23, 30, 56,
+			0, 32, 18, 32, 68,
+			0, 32, 22, 32, 49,
+			0, 32, 53, 32, 68,
+			0, 35, 14, 50, 62,
+			0, 36, 17, 36, 28,
+			0, 37, 18, 37, 44,
+			0, 37, 35, 37, 36,
+			0, 37, 20, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 37, 18, 37, 44,
+			0, 38, 18, 38, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 43, 38, 44,
+			0, 38, 28, 38, 44,
+			0, 38, 18, 38, 44,
+			0, 39, 18, 39, 44,
+			0, 39, 35, 39, 36,
+			0, 39, 20, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 39, 18, 39, 44,
+			0, 40, 18, 40, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 43, 40, 44,
+			0, 40, 28, 40, 44,
+			0, 40, 18, 40, 44,
+			0, 41, 18, 41, 45,
+			0, 41, 36, 41, 42,
+			0, 41, 21, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 41, 18, 41, 45,
+			0, 42, 18, 42, 44,
+			0, 42, 21, 42, 22,
+			0, 42, 38, 42, 44,
+			0, 42, 23, 42, 44,
+			0, 42, 18, 42, 44,
+			0, 43, 18, 43, 46,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 42, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 43, 18, 43, 46,
+			0, 44, 18, 44, 46,
+			0, 44, 24, 44, 25,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 44, 18, 44, 46,
+			0, 45, 18, 45, 46,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 42, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 45, 18, 45, 46,
+			0, 46, 18, 46, 46,
+			0, 46, 24, 46, 25,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 46, 18, 46, 46,
+			0, 47, 18, 47, 46,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 42, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 47, 18, 47, 46,
+			0, 48, 18, 48, 45,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 48, 18, 48, 45,
+			0, 49, 18, 49, 45,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 49, 18, 49, 45,
+			0, 50, 18, 50, 62,
+			0, 50, 39, 50, 40,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 36, 50, 58,
+			0, 50, 21, 50, 59,
+			0, 50, 61, 50, 62,
+			0, 50, 18, 50, 62,
+			0, 56, 18, 56, 71,
+			0, 56, 23, 56, 71,
+			0, 56, 28, 56, 33,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 56, 23, 56, 71,
+			0, 65, 14, 69, 93,
+			0, 66, 17, 66, 94,
+			0, 67, 17, 67, 77,
+			0, 69, 18, 69, 93,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 20, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 69, 18, 69, 93,
+			0, 76, 14, 76, 66,
+			0, 76, 18, 76, 36,
+			0, 76, 39, 76, 66,
+			0, 76, 56, 76, 63,
+			0, 76, 41, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 76, 39, 76, 66,
+			0, 80, 14, 80, 54,
+			0, 80, 18, 80, 30,
+			0, 80, 33, 80, 54,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 80, 33, 80, 54,
+			0, 84, 14, 84, 81,
+			0, 84, 18, 84, 66,
+			0, 84, 46, 84, 47,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 43, 84, 65,
+			0, 84, 18, 84, 66,
+			0, 84, 70, 84, 81,
+			0, 6, 14, 9, 84,
+			0, 7, 17, 7, 46,
+			0, 8, 17, 8, 46,
+			0, 9, 18, 9, 84,
+			0, 9, 52, 9, 65,
+			0, 9, 66, 9, 79,
+			0, 9, 20, 9, 79,
+			0, 9, 81, 9, 84,
+			0, 9, 18, 9, 84,
+			0, 15, 18, 15, 61,
+			0, 15, 23, 15, 60,
+			0, 15, 25, 15, 28,
+			0, 15, 29, 15, 60,
+			0, 15, 23, 15, 60,
+			0, 17, 18, 17, 69,
+			0, 17, 23, 17, 69,
+			0, 17, 28, 17, 31,
+			0, 17, 32, 17, 63,
+			0, 17, 32, 17, 63,
+			0, 17, 25, 17, 64,
+			0, 17, 66, 17, 69,
+			0, 17, 23, 17, 69,
+			0, 19, 18, 19, 77,
+			0, 19, 23, 19, 77,
+			0, 19, 40, 19, 71,
+			0, 19, 25, 19, 72,
+			0, 19, 74, 19, 77,
+			0, 19, 23, 19, 77,
+			0, 21, 18, 21, 85,
+			0, 21, 22, 21, 66,
+			0, 21, 70, 21, 85,
+			0, 23, 17, 23, 60,
+			0, 23, 22, 23, 60,
+			0, 23, 24, 23, 55,
+			0, 23, 57, 23, 60,
+			0, 23, 22, 23, 60,
+			0, 24, 18, 24, 61,
+			0, 24, 23, 24, 61,
+			0, 24, 25, 24, 56,
+			0, 24, 58, 24, 61,
+			0, 24, 23, 24, 61,
+			0, 26, 18, 26, 44,
+			0, 26, 23, 26, 44,
+			0, 26, 25, 26, 39,
+			0, 26, 41, 26, 44,
+			0, 26, 23, 26, 44,
+			0, 28, 18, 28, 44,
+			0, 28, 23, 28, 43,
+			0, 28, 25, 28, 28,
+			0, 28, 29, 28, 43,
+			0, 28, 23, 28, 43,
+			0, 30, 18, 30, 57,
+			0, 30, 23, 30, 56,
+			0, 30, 26, 30, 40,
+			0, 30, 42, 30, 56,
+			0, 30, 23, 30, 56,
+			0, 32, 18, 32, 68,
+			0, 32, 22, 32, 49,
+			0, 32, 53, 32, 68,
+			0, 35, 14, 50, 62,
+			0, 36, 17, 36, 28,
+			0, 37, 18, 37, 44,
+			0, 37, 35, 37, 36,
+			0, 37, 20, 37, 36,
+			0, 37, 38, 37, 44,
+			0, 37, 18, 37, 44,
+			0, 38, 18, 38, 44,
+			0, 38, 21, 38, 27,
+			0, 38, 43, 38, 44,
+			0, 38, 28, 38, 44,
+			0, 38, 18, 38, 44,
+			0, 39, 18, 39, 44,
+			0, 39, 35, 39, 36,
+			0, 39, 20, 39, 36,
+			0, 39, 38, 39, 44,
+			0, 39, 18, 39, 44,
+			0, 40, 18, 40, 44,
+			0, 40, 21, 40, 27,
+			0, 40, 43, 40, 44,
+			0, 40, 28, 40, 44,
+			0, 40, 18, 40, 44,
+			0, 41, 18, 41, 45,
+			0, 41, 36, 41, 42,
+			0, 41, 21, 41, 42,
+			0, 41, 44, 41, 45,
+			0, 41, 18, 41, 45,
+			0, 42, 18, 42, 44,
+			0, 42, 21, 42, 22,
+			0, 42, 38, 42, 44,
+			0, 42, 23, 42, 44,
+			0, 42, 18, 42, 44,
+			0, 43, 18, 43, 46,
+			0, 43, 39, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 24, 43, 40,
+			0, 43, 42, 43, 43,
+			0, 43, 21, 43, 43,
+			0, 43, 45, 43, 46,
+			0, 43, 18, 43, 46,
+			0, 44, 18, 44, 46,
+			0, 44, 24, 44, 25,
+			0, 44, 41, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 26, 44, 42,
+			0, 44, 21, 44, 43,
+			0, 44, 45, 44, 46,
+			0, 44, 18, 44, 46,
+			0, 45, 18, 45, 46,
+			0, 45, 39, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 24, 45, 40,
+			0, 45, 42, 45, 43,
+			0, 45, 21, 45, 43,
+			0, 45, 45, 45, 46,
+			0, 45, 18, 45, 46,
+			0, 46, 18, 46, 46,
+			0, 46, 24, 46, 25,
+			0, 46, 41, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 26, 46, 42,
+			0, 46, 21, 46, 43,
+			0, 46, 45, 46, 46,
+			0, 46, 18, 46, 46,
+			0, 47, 18, 47, 46,
+			0, 47, 39, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 24, 47, 40,
+			0, 47, 42, 47, 43,
+			0, 47, 21, 47, 43,
+			0, 47, 45, 47, 46,
+			0, 47, 18, 47, 46,
+			0, 48, 18, 48, 45,
+			0, 48, 40, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 25, 48, 41,
+			0, 48, 21, 48, 42,
+			0, 48, 44, 48, 45,
+			0, 48, 18, 48, 45,
+			0, 49, 18, 49, 45,
+			0, 49, 40, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 25, 49, 41,
+			0, 49, 21, 49, 42,
+			0, 49, 44, 49, 45,
+			0, 49, 18, 49, 45,
+			0, 50, 18, 50, 62,
+			0, 50, 39, 50, 40,
+			0, 50, 56, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 41, 50, 57,
+			0, 50, 36, 50, 58,
+			0, 50, 21, 50, 59,
+			0, 50, 61, 50, 62,
+			0, 50, 18, 50, 62,
+			0, 56, 18, 56, 71,
+			0, 56, 23, 56, 71,
+			0, 56, 28, 56, 33,
+			0, 56, 34, 56, 65,
+			0, 56, 34, 56, 65,
+			0, 56, 25, 56, 66,
+			0, 56, 68, 56, 71,
+			0, 56, 23, 56, 71,
+			0, 65, 14, 69, 93,
+			0, 66, 17, 66, 94,
+			0, 67, 17, 67, 77,
+			0, 69, 18, 69, 93,
+			0, 69, 47, 69, 67,
+			0, 69, 68, 69, 88,
+			0, 69, 20, 69, 88,
+			0, 69, 90, 69, 93,
+			0, 69, 18, 69, 93,
+			0, 76, 14, 76, 66,
+			0, 76, 18, 76, 36,
+			0, 76, 39, 76, 66,
+			0, 76, 56, 76, 63,
+			0, 76, 41, 76, 63,
+			0, 76, 65, 76, 66,
+			0, 76, 39, 76, 66,
+			0, 80, 14, 80, 54,
+			0, 80, 18, 80, 30,
+			0, 80, 33, 80, 54,
+			0, 80, 35, 80, 49,
+			0, 80, 51, 80, 54,
+			0, 80, 33, 80, 54,
+			0, 84, 14, 84, 81,
+			0, 84, 18, 84, 66,
+			0, 84, 46, 84, 47,
+			0, 84, 63, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 48, 84, 64,
+			0, 84, 43, 84, 65,
+			0, 84, 18, 84, 66,
+			0, 84, 70, 84, 81,
+		},
+		TaskSources: []uint32{
+			0, 11, 14, 11, 22,
+			0, 15, 65, 15, 73,
+			0, 17, 73, 17, 81,
+			0, 19, 81, 19, 89,
+			0, 21, 89, 21, 97,
+			0, 23, 64, 23, 72,
+			0, 24, 65, 24, 73,
+			0, 26, 48, 26, 56,
+			0, 28, 48, 28, 56,
+			0, 30, 61, 30, 69,
+			0, 32, 72, 32, 80,
+			0, 52, 14, 52, 22,
+			0, 56, 75, 56, 87,
+			0, 57, 23, 57, 31,
+			0, 59, 21, 59, 69,
+			0, 61, 21, 61, 68,
+			0, 71, 14, 71, 24,
+			0, 77, 14, 77, 30,
+			0, 81, 14, 81, 26,
+			0, 85, 14, 85, 29,
+			0, 11, 14, 11, 22,
+			0, 15, 65, 15, 73,
+			0, 17, 73, 17, 81,
+			0, 19, 81, 19, 89,
+			0, 21, 89, 21, 97,
+			0, 23, 64, 23, 72,
+			0, 24, 65, 24, 73,
+			0, 26, 48, 26, 56,
+			0, 28, 48, 28, 56,
+			0, 30, 61, 30, 69,
+			0, 32, 72, 32, 80,
+			0, 52, 14, 52, 22,
+			0, 56, 75, 56, 87,
+			0, 57, 23, 57, 31,
+			0, 59, 21, 59, 69,
+			0, 61, 21, 61, 68,
+			0, 71, 14, 71, 24,
+			0, 77, 14, 77, 30,
+			0, 81, 14, 81, 26,
+			0, 85, 14, 85, 29,
+		},
+		BranchSources: []uint32{
+			0, 5, 9, 12, 9,
+			0, 15, 9, 15, 75,
+			0, 17, 9, 17, 83,
+			0, 19, 9, 19, 91,
+			0, 21, 9, 21, 99,
+			0, 23, 9, 23, 74,
+			0, 24, 9, 24, 75,
+			0, 26, 9, 26, 58,
+			0, 28, 9, 28, 58,
+			0, 30, 9, 30, 71,
+			0, 32, 9, 32, 82,
+			0, 34, 9, 53, 9,
+			0, 56, 9, 56, 89,
+			0, 57, 9, 57, 33,
+			0, 59, 9, 59, 71,
+			0, 61, 9, 61, 70,
+			0, 64, 9, 72, 9,
+			0, 75, 9, 77, 32,
+			0, 79, 9, 81, 28,
+			0, 83, 9, 85, 31,
+			0, 5, 9, 12, 9,
+			0, 15, 9, 15, 75,
+			0, 17, 9, 17, 83,
+			0, 19, 9, 19, 91,
+			0, 21, 9, 21, 99,
+			0, 23, 9, 23, 74,
+			0, 24, 9, 24, 75,
+			0, 26, 9, 26, 58,
+			0, 28, 9, 28, 58,
+			0, 30, 9, 30, 71,
+			0, 32, 9, 32, 82,
+			0, 34, 9, 53, 9,
+			0, 56, 9, 56, 89,
+			0, 57, 9, 57, 33,
+			0, 59, 9, 59, 71,
+			0, 61, 9, 61, 70,
+			0, 64, 9, 72, 9,
+			0, 75, 9, 77, 32,
+			0, 79, 9, 81, 28,
+			0, 83, 9, 85, 31,
+		},
+		MethodSources: []uint32{
+			0, 4, 5, 13, 5,
+			0, 14, 5, 15, 76,
+			0, 16, 5, 17, 84,
+			0, 18, 5, 19, 92,
+			0, 20, 5, 21, 100,
+			0, 22, 5, 24, 76,
+			0, 25, 5, 26, 59,
+			0, 27, 5, 28, 59,
+			0, 29, 5, 30, 72,
+			0, 31, 5, 32, 83,
+			0, 33, 5, 54, 5,
+			0, 55, 5, 57, 34,
+			0, 58, 5, 59, 72,
+			0, 60, 5, 61, 71,
+			0, 63, 5, 73, 5,
+			0, 74, 5, 77, 33,
+			0, 78, 5, 81, 29,
+			0, 82, 5, 85, 32,
+			0, 4, 5, 13, 5,
+			0, 14, 5, 15, 76,
+			0, 16, 5, 17, 84,
+			0, 18, 5, 19, 92,
+			0, 20, 5, 21, 100,
+			0, 22, 5, 24, 76,
+			0, 25, 5, 26, 59,
+			0, 27, 5, 28, 59,
+			0, 29, 5, 30, 72,
+			0, 31, 5, 32, 83,
+			0, 33, 5, 54, 5,
+			0, 55, 5, 57, 34,
+			0, 58, 5, 59, 72,
+			0, 60, 5, 61, 71,
+			0, 63, 5, 73, 5,
+			0, 74, 5, 77, 33,
+			0, 78, 5, 81, 29,
+			0, 82, 5, 85, 32,
+		},
+		AxiomSources:    []uint32{},
+		ConstantSources: []uint32{},
+	})
 }
 
 func factChoice163(ex *planner.Exec, target uint32) bool {
@@ -473,477 +4230,643 @@ func factChoice365(ex *planner.Exec, target uint32) bool {
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task6(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 6)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task7(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 7)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task8(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 8)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task9(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 9)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task10(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 10)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task11(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 11)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task12(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 12)
 	// (!unexpected)
 	if !ex.AppendPlanStep(sym5, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task13(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 13)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task14(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 14)
 	// (call identity 1)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv84}, &cs0, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(98, result)
 	}
 	// (call identity 2)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv85}, &cs1, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(99, result)
 	}
 	// (!result (+ (call identity 1) (call identity 2)))
 	if !ex.AppendPlanStep(sym4, []atom.Atom{planner.Arith(0, []atom.Atom{ex.V[98], ex.V[99]})}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task15(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 15)
 	// (call missing_distance_callterm)
 	if result, ok := ex.Invoke(0, nil, &cs2, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(100, result)
 	}
 	// (!result (+ 1 (call missing_distance_callterm)))
 	if !ex.AppendPlanStep(sym4, []atom.Atom{planner.Arith(0, []atom.Atom{atom.NewInt(1), ex.V[100]})}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task16(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 16)
 	// (!continue)
 	if !ex.AppendPlanStep(sym6, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task17(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 17)
 	// (!result ?entity)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[109]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task18(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 18)
 	// (!unexpected)
 	if !ex.AppendPlanStep(sym5, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task19(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 19)
 	// (!result ?value)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[27]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task20(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 20)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task21(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 21)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task22(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 22)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task23(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 23)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task24(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 24)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task25(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 25)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task26(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 26)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task27(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 27)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task28(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 28)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task29(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 29)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task30(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 30)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task31(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 31)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task32(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 32)
 	// (!unexpected)
 	if !ex.AppendPlanStep(sym5, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task33(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 33)
 	// (!result)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task34(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 34)
 	// (call identity 1)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv86}, &cs3, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(214, result)
 	}
 	// (call identity 2)
 	if result, ok := ex.Invoke(1, []atom.Atom{sv87}, &cs4, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(215, result)
 	}
 	// (!result (+ (call identity 1) (call identity 2)))
 	if !ex.AppendPlanStep(sym4, []atom.Atom{planner.Arith(0, []atom.Atom{ex.V[214], ex.V[215]})}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task35(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 35)
 	// (call missing_distance_callterm)
 	if result, ok := ex.Invoke(0, nil, &cs5, factSymbols); !ok {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	} else {
 		ex.SetIfChanged(216, result)
 	}
 	// (!result (+ 1 (call missing_distance_callterm)))
 	if !ex.AppendPlanStep(sym4, []atom.Atom{planner.Arith(0, []atom.Atom{atom.NewInt(1), ex.V[216]})}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task36(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 36)
 	// (!continue)
 	if !ex.AppendPlanStep(sym6, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task37(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 37)
 	// (!result ?entity)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[109]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task38(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 38)
 	// (!unexpected)
 	if !ex.AppendPlanStep(sym5, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task39(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 39)
 	// (!result ?value)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[27]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -987,9 +4910,11 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (= ?old_position (1.0 0.0 0.0)) (= ?new_position (2.0 0.0 0.0)) (< (call missing_distance_callterm ?old_position ?new_position) 0.2))
 	cp7_0 = ex.V[0]
 	cp7_1 = ex.V[1]
@@ -997,27 +4922,34 @@ L2:
 	cp7_3 = ex.V[3]
 	cp7_4 = ex.V[4]
 	cp7_5 = ex.V[5]
+	ex.DebugBeginCondition(&definition, 0)
 	// (= ?old_position (1.0 0.0 0.0))
 	cp9_0 = ex.V[0]
 	// (= ?old_position (1.0 0.0 0.0))
+	ex.DebugBeginCondition(&definition, 1)
 	{
 		value := sv0
 		if value.IsBound() && !ex.V[0].IsBound() {
 			ex.V[0] = value
+			ex.DebugEndCondition(&definition, true)
 			goto L10
 		}
+		ex.DebugEndCondition(&definition, false)
 		goto L8
 	}
 L10:
 	// (= ?new_position (2.0 0.0 0.0))
 	cp12_1 = ex.V[1]
 	// (= ?new_position (2.0 0.0 0.0))
+	ex.DebugBeginCondition(&definition, 2)
 	{
 		value := sv1
 		if value.IsBound() && !ex.V[1].IsBound() {
 			ex.V[1] = value
+			ex.DebugEndCondition(&definition, true)
 			goto L13
 		}
+		ex.DebugEndCondition(&definition, false)
 		goto L11
 	}
 L13:
@@ -1026,60 +4958,78 @@ L13:
 	cp15_3 = ex.V[3]
 	cp15_4 = ex.V[4]
 	cp15_5 = ex.V[5]
+	ex.DebugBeginCondition(&definition, 3)
 	// (= ?$assignment_call_0 ?old_position)
 	cp17_2 = ex.V[2]
 	// (= ?$assignment_call_0 ?old_position)
+	ex.DebugBeginCondition(&definition, 4)
 	{
 		value := ex.V[0]
 		if value.IsBound() && !ex.V[2].IsBound() {
 			ex.V[2] = value
+			ex.DebugEndCondition(&definition, true)
 			goto L18
 		}
+		ex.DebugEndCondition(&definition, false)
 		goto L16
 	}
 L18:
 	// (= ?$assignment_call_1 ?new_position)
 	cp20_3 = ex.V[3]
 	// (= ?$assignment_call_1 ?new_position)
+	ex.DebugBeginCondition(&definition, 5)
 	{
 		value := ex.V[1]
 		if value.IsBound() && !ex.V[3].IsBound() {
 			ex.V[3] = value
+			ex.DebugEndCondition(&definition, true)
 			goto L21
 		}
+		ex.DebugEndCondition(&definition, false)
 		goto L19
 	}
 L21:
 	// (= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))
 	cp23_4 = ex.V[4]
 	// (= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))
+	ex.DebugBeginCondition(&definition, 6)
 	if !ex.V[4].IsBound() {
 		if result, ok := ex.Invoke(0, []atom.Atom{ex.V[2], ex.V[3]}, &cs6, factSymbols); ok {
 			ex.SetIfChanged(4, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L24
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L22
 L24:
 	// (= ?$assignment_call_3 0.2)
 	cp26_5 = ex.V[5]
 	// (= ?$assignment_call_3 0.2)
+	ex.DebugBeginCondition(&definition, 7)
 	{
 		value := sv2
 		if value.IsBound() && !ex.V[5].IsBound() {
 			ex.V[5] = value
+			ex.DebugEndCondition(&definition, true)
 			goto L27
 		}
+		ex.DebugEndCondition(&definition, false)
 		goto L25
 	}
 L27:
 	// (< ?$assignment_call_2 ?$assignment_call_3)
 	// (< ?$assignment_call_2 ?$assignment_call_3)
+	ex.DebugBeginCondition(&definition, 8)
 	if planner.Compare(ex.V[4], ex.V[5], 2) {
+		ex.DebugEndCondition(&definition, true)
 		goto L30
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L28
 L30:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
 	goto L4
 L28:
 	goto L25
@@ -1100,6 +5050,7 @@ L14:
 	ex.V[3] = cp15_3
 	ex.V[4] = cp15_4
 	ex.V[5] = cp15_5
+	ex.DebugEndCondition(&definition, false)
 	goto L11
 L11:
 	ex.V[1] = cp12_1
@@ -1114,14 +5065,19 @@ L6:
 	ex.V[3] = cp7_3
 	ex.V[4] = cp7_4
 	ex.V[5] = cp7_5
+	ex.DebugEndCondition(&definition, false)
 	goto L5
 L5:
+	ex.DebugEndBranch(&definition, false)
 	goto L1
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L31:
+	ex.DebugCapturePendingTask(0)
+L33:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1131,15 +5087,20 @@ L31:
 		frame.ChildResult = 0
 		goto L3
 	}
-	goto L32
+	goto L34
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L31
-L32:
+	goto L33
+L34:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L1:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1147,85 +5108,106 @@ L1:
 func method1(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp39_6 atom.Atom
-	var cp39_7 atom.Atom
 	var cp41_6 atom.Atom
 	var cp41_7 atom.Atom
 	var cp43_6 atom.Atom
-	var cp46_7 atom.Atom
-	_ = cp39_6
-	_ = cp39_7
+	var cp43_7 atom.Atom
+	var cp45_6 atom.Atom
+	var cp48_7 atom.Atom
 	_ = cp41_6
 	_ = cp41_7
 	_ = cp43_6
-	_ = cp46_7
+	_ = cp43_7
+	_ = cp45_6
+	_ = cp48_7
 	switch frame.Resume {
 	case 1:
-		goto L35
+		goto L37
 	}
-	goto L34
-L34:
+	ex.DebugBeginMethod(&definition, 1)
+	goto L36
+L36:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 1)
 	// (and (< 0.0 (call missing_distance_callterm)))
-	cp39_6 = ex.V[6]
-	cp39_7 = ex.V[7]
-	// (and (= ?$assignment_call_4 0.0) (= ?$assignment_call_5 (call missing_distance_callterm)) (< ?$assignment_call_4 ?$assignment_call_5))
 	cp41_6 = ex.V[6]
 	cp41_7 = ex.V[7]
-	// (= ?$assignment_call_4 0.0)
+	ex.DebugBeginCondition(&definition, 9)
+	// (and (= ?$assignment_call_4 0.0) (= ?$assignment_call_5 (call missing_distance_callterm)) (< ?$assignment_call_4 ?$assignment_call_5))
 	cp43_6 = ex.V[6]
+	cp43_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 10)
 	// (= ?$assignment_call_4 0.0)
+	cp45_6 = ex.V[6]
+	// (= ?$assignment_call_4 0.0)
+	ex.DebugBeginCondition(&definition, 11)
 	{
 		value := sv3
 		if value.IsBound() && !ex.V[6].IsBound() {
 			ex.V[6] = value
-			goto L44
+			ex.DebugEndCondition(&definition, true)
+			goto L46
 		}
-		goto L42
+		ex.DebugEndCondition(&definition, false)
+		goto L44
 	}
-L44:
+L46:
 	// (= ?$assignment_call_5 (call missing_distance_callterm))
-	cp46_7 = ex.V[7]
+	cp48_7 = ex.V[7]
 	// (= ?$assignment_call_5 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 12)
 	if !ex.V[7].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs7, factSymbols); ok {
 			ex.SetIfChanged(7, result)
-			goto L47
+			ex.DebugEndCondition(&definition, true)
+			goto L49
 		}
 	}
-	goto L45
-L47:
+	ex.DebugEndCondition(&definition, false)
+	goto L47
+L49:
 	// (< ?$assignment_call_4 ?$assignment_call_5)
 	// (< ?$assignment_call_4 ?$assignment_call_5)
+	ex.DebugBeginCondition(&definition, 13)
 	if planner.Compare(ex.V[6], ex.V[7], 2) {
-		goto L50
+		ex.DebugEndCondition(&definition, true)
+		goto L52
 	}
-	goto L48
+	ex.DebugEndCondition(&definition, false)
+	goto L50
+L52:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L38
 L50:
-	goto L36
-L48:
-	goto L45
-L45:
-	ex.V[7] = cp46_7
+	goto L47
+L47:
+	ex.V[7] = cp48_7
+	goto L44
+L44:
+	ex.V[6] = cp45_6
 	goto L42
 L42:
 	ex.V[6] = cp43_6
+	ex.V[7] = cp43_7
+	ex.DebugEndCondition(&definition, false)
 	goto L40
 L40:
 	ex.V[6] = cp41_6
 	ex.V[7] = cp41_7
-	goto L38
+	ex.DebugEndCondition(&definition, false)
+	goto L39
+L39:
+	ex.DebugEndBranch(&definition, false)
+	goto L35
 L38:
-	ex.V[6] = cp39_6
-	ex.V[7] = cp39_7
-	goto L37
-L37:
-	goto L33
-L36:
 	if !ex.PushBranch(&bc1) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L51:
+	ex.DebugCapturePendingTask(1)
+L55:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1233,17 +5215,22 @@ L51:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L35
+		goto L37
 	}
-	goto L52
-L35:
+	goto L56
+L37:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L51
-L52:
+	goto L55
+L56:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L33:
+L35:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1251,160 +5238,190 @@ L33:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp59_8 atom.Atom
-	var cp59_9 atom.Atom
-	var cp59_10 atom.Atom
-	var cp59_11 atom.Atom
-	var cp59_12 atom.Atom
-	var cp61_8 atom.Atom
-	var cp61_9 atom.Atom
-	var cp61_10 atom.Atom
-	var cp61_11 atom.Atom
-	var cp61_12 atom.Atom
 	var cp63_8 atom.Atom
-	var cp66_9 atom.Atom
-	var cp69_10 atom.Atom
-	var cp72_11 atom.Atom
-	var cp75_12 atom.Atom
-	_ = cp59_8
-	_ = cp59_9
-	_ = cp59_10
-	_ = cp59_11
-	_ = cp59_12
-	_ = cp61_8
-	_ = cp61_9
-	_ = cp61_10
-	_ = cp61_11
-	_ = cp61_12
+	var cp63_9 atom.Atom
+	var cp63_10 atom.Atom
+	var cp63_11 atom.Atom
+	var cp63_12 atom.Atom
+	var cp65_8 atom.Atom
+	var cp65_9 atom.Atom
+	var cp65_10 atom.Atom
+	var cp65_11 atom.Atom
+	var cp65_12 atom.Atom
+	var cp67_8 atom.Atom
+	var cp70_9 atom.Atom
+	var cp73_10 atom.Atom
+	var cp76_11 atom.Atom
+	var cp79_12 atom.Atom
 	_ = cp63_8
-	_ = cp66_9
-	_ = cp69_10
-	_ = cp72_11
-	_ = cp75_12
+	_ = cp63_9
+	_ = cp63_10
+	_ = cp63_11
+	_ = cp63_12
+	_ = cp65_8
+	_ = cp65_9
+	_ = cp65_10
+	_ = cp65_11
+	_ = cp65_12
+	_ = cp67_8
+	_ = cp70_9
+	_ = cp73_10
+	_ = cp76_11
+	_ = cp79_12
 	switch frame.Resume {
 	case 1:
-		goto L55
+		goto L59
 	}
-	goto L54
-L54:
+	ex.DebugBeginMethod(&definition, 2)
+	goto L58
+L58:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 2)
 	// (and (< (+ 0.0 (call missing_distance_callterm)) 0.2))
-	cp59_8 = ex.V[8]
-	cp59_9 = ex.V[9]
-	cp59_10 = ex.V[10]
-	cp59_11 = ex.V[11]
-	cp59_12 = ex.V[12]
-	// (and (= ?$assignment_call_6 (* 0.0 1)) (= ?$assignment_call_7 (call missing_distance_callterm)) (= ?$assignment_call_8 (* ?$assignment_call_7 1)) (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8)) (= ?$assignment_call_10 0.2) (< ?$assignment_call_9 ?$assignment_call_10))
-	cp61_8 = ex.V[8]
-	cp61_9 = ex.V[9]
-	cp61_10 = ex.V[10]
-	cp61_11 = ex.V[11]
-	cp61_12 = ex.V[12]
-	// (= ?$assignment_call_6 (* 0.0 1))
 	cp63_8 = ex.V[8]
+	cp63_9 = ex.V[9]
+	cp63_10 = ex.V[10]
+	cp63_11 = ex.V[11]
+	cp63_12 = ex.V[12]
+	ex.DebugBeginCondition(&definition, 14)
+	// (and (= ?$assignment_call_6 (* 0.0 1)) (= ?$assignment_call_7 (call missing_distance_callterm)) (= ?$assignment_call_8 (* ?$assignment_call_7 1)) (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8)) (= ?$assignment_call_10 0.2) (< ?$assignment_call_9 ?$assignment_call_10))
+	cp65_8 = ex.V[8]
+	cp65_9 = ex.V[9]
+	cp65_10 = ex.V[10]
+	cp65_11 = ex.V[11]
+	cp65_12 = ex.V[12]
+	ex.DebugBeginCondition(&definition, 15)
 	// (= ?$assignment_call_6 (* 0.0 1))
+	cp67_8 = ex.V[8]
+	// (= ?$assignment_call_6 (* 0.0 1))
+	ex.DebugBeginCondition(&definition, 16)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewFloat(math.Float32frombits(0x00000000)), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[8].IsBound() {
 			ex.V[8] = value
-			goto L64
+			ex.DebugEndCondition(&definition, true)
+			goto L68
 		}
-		goto L62
+		ex.DebugEndCondition(&definition, false)
+		goto L66
 	}
-L64:
+L68:
 	// (= ?$assignment_call_7 (call missing_distance_callterm))
-	cp66_9 = ex.V[9]
+	cp70_9 = ex.V[9]
 	// (= ?$assignment_call_7 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 17)
 	if !ex.V[9].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs8, factSymbols); ok {
 			ex.SetIfChanged(9, result)
-			goto L67
+			ex.DebugEndCondition(&definition, true)
+			goto L71
 		}
 	}
-	goto L65
-L67:
+	ex.DebugEndCondition(&definition, false)
+	goto L69
+L71:
 	// (= ?$assignment_call_8 (* ?$assignment_call_7 1))
-	cp69_10 = ex.V[10]
+	cp73_10 = ex.V[10]
 	// (= ?$assignment_call_8 (* ?$assignment_call_7 1))
+	ex.DebugBeginCondition(&definition, 18)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[9], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[10].IsBound() {
 			ex.V[10] = value
-			goto L70
+			ex.DebugEndCondition(&definition, true)
+			goto L74
 		}
-		goto L68
+		ex.DebugEndCondition(&definition, false)
+		goto L72
 	}
-L70:
+L74:
 	// (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))
-	cp72_11 = ex.V[11]
+	cp76_11 = ex.V[11]
 	// (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))
+	ex.DebugBeginCondition(&definition, 19)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[8], ex.V[10]})
 		if value.IsBound() && !ex.V[11].IsBound() {
 			ex.V[11] = value
-			goto L73
+			ex.DebugEndCondition(&definition, true)
+			goto L77
 		}
-		goto L71
+		ex.DebugEndCondition(&definition, false)
+		goto L75
 	}
-L73:
+L77:
 	// (= ?$assignment_call_10 0.2)
-	cp75_12 = ex.V[12]
+	cp79_12 = ex.V[12]
 	// (= ?$assignment_call_10 0.2)
+	ex.DebugBeginCondition(&definition, 20)
 	{
 		value := sv4
 		if value.IsBound() && !ex.V[12].IsBound() {
 			ex.V[12] = value
-			goto L76
+			ex.DebugEndCondition(&definition, true)
+			goto L80
 		}
-		goto L74
+		ex.DebugEndCondition(&definition, false)
+		goto L78
 	}
-L76:
+L80:
 	// (< ?$assignment_call_9 ?$assignment_call_10)
 	// (< ?$assignment_call_9 ?$assignment_call_10)
+	ex.DebugBeginCondition(&definition, 21)
 	if planner.Compare(ex.V[11], ex.V[12], 2) {
-		goto L79
+		ex.DebugEndCondition(&definition, true)
+		goto L83
 	}
-	goto L77
-L79:
-	goto L56
-L77:
-	goto L74
-L74:
-	ex.V[12] = cp75_12
-	goto L71
-L71:
-	ex.V[11] = cp72_11
-	goto L68
-L68:
-	ex.V[10] = cp69_10
-	goto L65
-L65:
-	ex.V[9] = cp66_9
+	ex.DebugEndCondition(&definition, false)
+	goto L81
+L83:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L60
+L81:
+	goto L78
+L78:
+	ex.V[12] = cp79_12
+	goto L75
+L75:
+	ex.V[11] = cp76_11
+	goto L72
+L72:
+	ex.V[10] = cp73_10
+	goto L69
+L69:
+	ex.V[9] = cp70_9
+	goto L66
+L66:
+	ex.V[8] = cp67_8
+	goto L64
+L64:
+	ex.V[8] = cp65_8
+	ex.V[9] = cp65_9
+	ex.V[10] = cp65_10
+	ex.V[11] = cp65_11
+	ex.V[12] = cp65_12
+	ex.DebugEndCondition(&definition, false)
 	goto L62
 L62:
 	ex.V[8] = cp63_8
-	goto L60
-L60:
-	ex.V[8] = cp61_8
-	ex.V[9] = cp61_9
-	ex.V[10] = cp61_10
-	ex.V[11] = cp61_11
-	ex.V[12] = cp61_12
-	goto L58
-L58:
-	ex.V[8] = cp59_8
-	ex.V[9] = cp59_9
-	ex.V[10] = cp59_10
-	ex.V[11] = cp59_11
-	ex.V[12] = cp59_12
+	ex.V[9] = cp63_9
+	ex.V[10] = cp63_10
+	ex.V[11] = cp63_11
+	ex.V[12] = cp63_12
+	ex.DebugEndCondition(&definition, false)
+	goto L61
+L61:
+	ex.DebugEndBranch(&definition, false)
 	goto L57
-L57:
-	goto L53
-L56:
+L60:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L80:
+	ex.DebugCapturePendingTask(2)
+L86:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1412,17 +5429,22 @@ L80:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L55
+		goto L59
 	}
-	goto L81
-L55:
+	goto L87
+L59:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L80
-L81:
+	goto L86
+L87:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L53:
+L57:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1430,109 +5452,133 @@ L53:
 func method3(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp88_13 atom.Atom
-	var cp88_14 atom.Atom
-	var cp88_15 atom.Atom
-	var cp90_13 atom.Atom
-	var cp90_14 atom.Atom
-	var cp90_15 atom.Atom
-	var cp92_13 atom.Atom
-	var cp95_14 atom.Atom
-	var cp98_15 atom.Atom
-	_ = cp88_13
-	_ = cp88_14
-	_ = cp88_15
-	_ = cp90_13
-	_ = cp90_14
-	_ = cp90_15
-	_ = cp92_13
-	_ = cp95_14
-	_ = cp98_15
+	var cp94_13 atom.Atom
+	var cp94_14 atom.Atom
+	var cp94_15 atom.Atom
+	var cp96_13 atom.Atom
+	var cp96_14 atom.Atom
+	var cp96_15 atom.Atom
+	var cp98_13 atom.Atom
+	var cp101_14 atom.Atom
+	var cp104_15 atom.Atom
+	_ = cp94_13
+	_ = cp94_14
+	_ = cp94_15
+	_ = cp96_13
+	_ = cp96_14
+	_ = cp96_15
+	_ = cp98_13
+	_ = cp101_14
+	_ = cp104_15
 	switch frame.Resume {
 	case 1:
-		goto L84
+		goto L90
 	}
-	goto L83
-L83:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L89
+L89:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 3)
 	// (and (< (call identity (call missing_distance_callterm)) 0.2))
-	cp88_13 = ex.V[13]
-	cp88_14 = ex.V[14]
-	cp88_15 = ex.V[15]
+	cp94_13 = ex.V[13]
+	cp94_14 = ex.V[14]
+	cp94_15 = ex.V[15]
+	ex.DebugBeginCondition(&definition, 22)
 	// (and (= ?$assignment_call_11 (call missing_distance_callterm)) (= ?$assignment_call_12 (call identity ?$assignment_call_11)) (= ?$assignment_call_13 0.2) (< ?$assignment_call_12 ?$assignment_call_13))
-	cp90_13 = ex.V[13]
-	cp90_14 = ex.V[14]
-	cp90_15 = ex.V[15]
+	cp96_13 = ex.V[13]
+	cp96_14 = ex.V[14]
+	cp96_15 = ex.V[15]
+	ex.DebugBeginCondition(&definition, 23)
 	// (= ?$assignment_call_11 (call missing_distance_callterm))
-	cp92_13 = ex.V[13]
+	cp98_13 = ex.V[13]
 	// (= ?$assignment_call_11 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 24)
 	if !ex.V[13].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs9, factSymbols); ok {
 			ex.SetIfChanged(13, result)
-			goto L93
+			ex.DebugEndCondition(&definition, true)
+			goto L99
 		}
 	}
-	goto L91
-L93:
+	ex.DebugEndCondition(&definition, false)
+	goto L97
+L99:
 	// (= ?$assignment_call_12 (call identity ?$assignment_call_11))
-	cp95_14 = ex.V[14]
+	cp101_14 = ex.V[14]
 	// (= ?$assignment_call_12 (call identity ?$assignment_call_11))
+	ex.DebugBeginCondition(&definition, 25)
 	if !ex.V[14].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[13]}, &cs10, factSymbols); ok {
 			ex.SetIfChanged(14, result)
-			goto L96
+			ex.DebugEndCondition(&definition, true)
+			goto L102
 		}
 	}
-	goto L94
-L96:
+	ex.DebugEndCondition(&definition, false)
+	goto L100
+L102:
 	// (= ?$assignment_call_13 0.2)
-	cp98_15 = ex.V[15]
+	cp104_15 = ex.V[15]
 	// (= ?$assignment_call_13 0.2)
+	ex.DebugBeginCondition(&definition, 26)
 	{
 		value := sv5
 		if value.IsBound() && !ex.V[15].IsBound() {
 			ex.V[15] = value
-			goto L99
+			ex.DebugEndCondition(&definition, true)
+			goto L105
 		}
-		goto L97
+		ex.DebugEndCondition(&definition, false)
+		goto L103
 	}
-L99:
+L105:
 	// (< ?$assignment_call_12 ?$assignment_call_13)
 	// (< ?$assignment_call_12 ?$assignment_call_13)
+	ex.DebugBeginCondition(&definition, 27)
 	if planner.Compare(ex.V[14], ex.V[15], 2) {
-		goto L102
+		ex.DebugEndCondition(&definition, true)
+		goto L108
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L106
+L108:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L91
+L106:
+	goto L103
+L103:
+	ex.V[15] = cp104_15
 	goto L100
-L102:
-	goto L85
 L100:
+	ex.V[14] = cp101_14
 	goto L97
 L97:
-	ex.V[15] = cp98_15
-	goto L94
-L94:
-	ex.V[14] = cp95_14
-	goto L91
+	ex.V[13] = cp98_13
+	goto L95
+L95:
+	ex.V[13] = cp96_13
+	ex.V[14] = cp96_14
+	ex.V[15] = cp96_15
+	ex.DebugEndCondition(&definition, false)
+	goto L93
+L93:
+	ex.V[13] = cp94_13
+	ex.V[14] = cp94_14
+	ex.V[15] = cp94_15
+	ex.DebugEndCondition(&definition, false)
+	goto L92
+L92:
+	ex.DebugEndBranch(&definition, false)
+	goto L88
 L91:
-	ex.V[13] = cp92_13
-	goto L89
-L89:
-	ex.V[13] = cp90_13
-	ex.V[14] = cp90_14
-	ex.V[15] = cp90_15
-	goto L87
-L87:
-	ex.V[13] = cp88_13
-	ex.V[14] = cp88_14
-	ex.V[15] = cp88_15
-	goto L86
-L86:
-	goto L82
-L85:
 	if !ex.PushBranch(&bc3) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L103:
+	ex.DebugCapturePendingTask(3)
+L111:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1540,17 +5586,22 @@ L103:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L84
+		goto L90
 	}
-	goto L104
-L84:
+	goto L112
+L90:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L103
-L104:
+	goto L111
+L112:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L82:
+L88:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1558,53 +5609,68 @@ L82:
 func method4(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp111_16 atom.Atom
-	var cp113_16 atom.Atom
-	_ = cp111_16
-	_ = cp113_16
+	var cp119_16 atom.Atom
+	var cp121_16 atom.Atom
+	_ = cp119_16
+	_ = cp121_16
 	switch frame.Resume {
 	case 1:
-		goto L107
+		goto L115
 	}
-	goto L106
-L106:
+	ex.DebugBeginMethod(&definition, 4)
+	goto L114
+L114:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 4)
 	// (and (= ?distance (call missing_distance_callterm)) (< ?distance 0.2))
-	cp111_16 = ex.V[16]
+	cp119_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 28)
 	// (= ?distance (call missing_distance_callterm))
-	cp113_16 = ex.V[16]
+	cp121_16 = ex.V[16]
 	// (= ?distance (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 29)
 	if !ex.V[16].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs11, factSymbols); ok {
 			ex.SetIfChanged(16, result)
-			goto L114
+			ex.DebugEndCondition(&definition, true)
+			goto L122
 		}
 	}
-	goto L112
-L114:
+	ex.DebugEndCondition(&definition, false)
+	goto L120
+L122:
 	// (< ?distance 0.2)
 	// (< ?distance 0.2)
+	ex.DebugBeginCondition(&definition, 30)
 	if planner.Compare(ex.V[16], sv6, 2) {
-		goto L117
+		ex.DebugEndCondition(&definition, true)
+		goto L125
 	}
-	goto L115
+	ex.DebugEndCondition(&definition, false)
+	goto L123
+L125:
+	ex.DebugEndCondition(&definition, true)
+	goto L116
+L123:
+	goto L120
+L120:
+	ex.V[16] = cp121_16
+	goto L118
+L118:
+	ex.V[16] = cp119_16
+	ex.DebugEndCondition(&definition, false)
+	goto L117
 L117:
-	goto L108
-L115:
-	goto L112
-L112:
-	ex.V[16] = cp113_16
-	goto L110
-L110:
-	ex.V[16] = cp111_16
-	goto L109
-L109:
-	goto L105
-L108:
+	ex.DebugEndBranch(&definition, false)
+	goto L113
+L116:
 	if !ex.PushBranch(&bc4) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L118:
+	ex.DebugCapturePendingTask(4)
+L127:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1612,17 +5678,22 @@ L118:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L107
+		goto L115
 	}
-	goto L119
-L107:
+	goto L128
+L115:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L118
-L119:
+	goto L127
+L128:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L105:
+L113:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1630,102 +5701,123 @@ L105:
 func method5(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp128_17 atom.Atom
-	var cp128_18 atom.Atom
-	var cp130_17 atom.Atom
-	var cp130_18 atom.Atom
-	var cp132_17 atom.Atom
-	var cp135_18 atom.Atom
-	var cp145_19 atom.Atom
-	var cp145_20 atom.Atom
-	var cp147_19 atom.Atom
-	var cp147_20 atom.Atom
-	var cp149_19 atom.Atom
-	var cp152_20 atom.Atom
-	_ = cp128_17
-	_ = cp128_18
-	_ = cp130_17
-	_ = cp130_18
-	_ = cp132_17
-	_ = cp135_18
-	_ = cp145_19
-	_ = cp145_20
-	_ = cp147_19
-	_ = cp147_20
-	_ = cp149_19
-	_ = cp152_20
+	var cp137_17 atom.Atom
+	var cp137_18 atom.Atom
+	var cp139_17 atom.Atom
+	var cp139_18 atom.Atom
+	var cp141_17 atom.Atom
+	var cp144_18 atom.Atom
+	var cp156_19 atom.Atom
+	var cp156_20 atom.Atom
+	var cp158_19 atom.Atom
+	var cp158_20 atom.Atom
+	var cp160_19 atom.Atom
+	var cp163_20 atom.Atom
+	_ = cp137_17
+	_ = cp137_18
+	_ = cp139_17
+	_ = cp139_18
+	_ = cp141_17
+	_ = cp144_18
+	_ = cp156_19
+	_ = cp156_20
+	_ = cp158_19
+	_ = cp158_20
+	_ = cp160_19
+	_ = cp163_20
 	switch frame.Resume {
 	case 1:
-		goto L123
+		goto L132
 	case 2:
-		goto L124
+		goto L133
 	}
-	goto L121
-L121:
+	ex.DebugBeginMethod(&definition, 5)
+	goto L130
+L130:
 	// branch first
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 5)
 	// (and (< (call missing_distance_callterm) 0.2))
-	cp128_17 = ex.V[17]
-	cp128_18 = ex.V[18]
+	cp137_17 = ex.V[17]
+	cp137_18 = ex.V[18]
+	ex.DebugBeginCondition(&definition, 31)
 	// (and (= ?$assignment_call_14 (call missing_distance_callterm)) (= ?$assignment_call_15 0.2) (< ?$assignment_call_14 ?$assignment_call_15))
-	cp130_17 = ex.V[17]
-	cp130_18 = ex.V[18]
+	cp139_17 = ex.V[17]
+	cp139_18 = ex.V[18]
+	ex.DebugBeginCondition(&definition, 32)
 	// (= ?$assignment_call_14 (call missing_distance_callterm))
-	cp132_17 = ex.V[17]
+	cp141_17 = ex.V[17]
 	// (= ?$assignment_call_14 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 33)
 	if !ex.V[17].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs12, factSymbols); ok {
 			ex.SetIfChanged(17, result)
-			goto L133
+			ex.DebugEndCondition(&definition, true)
+			goto L142
 		}
 	}
-	goto L131
-L133:
+	ex.DebugEndCondition(&definition, false)
+	goto L140
+L142:
 	// (= ?$assignment_call_15 0.2)
-	cp135_18 = ex.V[18]
+	cp144_18 = ex.V[18]
 	// (= ?$assignment_call_15 0.2)
+	ex.DebugBeginCondition(&definition, 34)
 	{
 		value := sv7
 		if value.IsBound() && !ex.V[18].IsBound() {
 			ex.V[18] = value
-			goto L136
+			ex.DebugEndCondition(&definition, true)
+			goto L145
 		}
-		goto L134
+		ex.DebugEndCondition(&definition, false)
+		goto L143
 	}
-L136:
+L145:
 	// (< ?$assignment_call_14 ?$assignment_call_15)
 	// (< ?$assignment_call_14 ?$assignment_call_15)
+	ex.DebugBeginCondition(&definition, 35)
 	if planner.Compare(ex.V[17], ex.V[18], 2) {
-		goto L139
+		ex.DebugEndCondition(&definition, true)
+		goto L148
 	}
-	goto L137
-L139:
-	goto L125
-L137:
+	ex.DebugEndCondition(&definition, false)
+	goto L146
+L148:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
 	goto L134
-L134:
-	ex.V[18] = cp135_18
-	goto L131
-L131:
-	ex.V[17] = cp132_17
-	goto L129
-L129:
-	ex.V[17] = cp130_17
-	ex.V[18] = cp130_18
-	goto L127
-L127:
-	ex.V[17] = cp128_17
-	ex.V[18] = cp128_18
-	goto L126
-L126:
+L146:
+	goto L143
+L143:
+	ex.V[18] = cp144_18
+	goto L140
+L140:
+	ex.V[17] = cp141_17
+	goto L138
+L138:
+	ex.V[17] = cp139_17
+	ex.V[18] = cp139_18
+	ex.DebugEndCondition(&definition, false)
+	goto L136
+L136:
+	ex.V[17] = cp137_17
+	ex.V[18] = cp137_18
+	ex.DebugEndCondition(&definition, false)
+	goto L135
+L135:
 	ex.ReleaseRetry(frame)
-	goto L122
-L125:
+	ex.DebugEndBranch(&definition, false)
+	goto L131
+L134:
 	if !ex.PushBranch(&bc5) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L140:
+	ex.DebugCapturePendingTask(5)
+L151:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1733,88 +5825,115 @@ L140:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L123
+		goto L132
 	}
-	goto L141
-L123:
+	goto L152
+L132:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L122
+		ex.DebugEndBranch(&definition, false)
+		goto L131
 	}
-	goto L140
-L141:
+	goto L151
+L152:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L122:
+L131:
 	// branch second
+	ex.DebugBeginBranch(&definition, 6)
 	// (and (< (call missing_distance_callterm) 0.2))
-	cp145_19 = ex.V[19]
-	cp145_20 = ex.V[20]
+	cp156_19 = ex.V[19]
+	cp156_20 = ex.V[20]
+	ex.DebugBeginCondition(&definition, 36)
 	// (and (= ?$assignment_call_16 (call missing_distance_callterm)) (= ?$assignment_call_17 0.2) (< ?$assignment_call_16 ?$assignment_call_17))
-	cp147_19 = ex.V[19]
-	cp147_20 = ex.V[20]
+	cp158_19 = ex.V[19]
+	cp158_20 = ex.V[20]
+	ex.DebugBeginCondition(&definition, 37)
 	// (= ?$assignment_call_16 (call missing_distance_callterm))
-	cp149_19 = ex.V[19]
+	cp160_19 = ex.V[19]
 	// (= ?$assignment_call_16 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 38)
 	if !ex.V[19].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs13, factSymbols); ok {
 			ex.SetIfChanged(19, result)
-			goto L150
+			ex.DebugEndCondition(&definition, true)
+			goto L161
 		}
 	}
-	goto L148
-L150:
+	ex.DebugEndCondition(&definition, false)
+	goto L159
+L161:
 	// (= ?$assignment_call_17 0.2)
-	cp152_20 = ex.V[20]
+	cp163_20 = ex.V[20]
 	// (= ?$assignment_call_17 0.2)
+	ex.DebugBeginCondition(&definition, 39)
 	{
 		value := sv8
 		if value.IsBound() && !ex.V[20].IsBound() {
 			ex.V[20] = value
-			goto L153
+			ex.DebugEndCondition(&definition, true)
+			goto L164
 		}
-		goto L151
+		ex.DebugEndCondition(&definition, false)
+		goto L162
 	}
-L153:
+L164:
 	// (< ?$assignment_call_16 ?$assignment_call_17)
 	// (< ?$assignment_call_16 ?$assignment_call_17)
+	ex.DebugBeginCondition(&definition, 40)
 	if planner.Compare(ex.V[19], ex.V[20], 2) {
-		goto L156
+		ex.DebugEndCondition(&definition, true)
+		goto L167
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L165
+L167:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L153
+L165:
+	goto L162
+L162:
+	ex.V[20] = cp163_20
+	goto L159
+L159:
+	ex.V[19] = cp160_19
+	goto L157
+L157:
+	ex.V[19] = cp158_19
+	ex.V[20] = cp158_20
+	ex.DebugEndCondition(&definition, false)
+	goto L155
+L155:
+	ex.V[19] = cp156_19
+	ex.V[20] = cp156_20
+	ex.DebugEndCondition(&definition, false)
 	goto L154
-L156:
-	goto L142
 L154:
-	goto L151
-L151:
-	ex.V[20] = cp152_20
-	goto L148
-L148:
-	ex.V[19] = cp149_19
-	goto L146
-L146:
-	ex.V[19] = cp147_19
-	ex.V[20] = cp147_20
-	goto L144
-L144:
-	ex.V[19] = cp145_19
-	ex.V[20] = cp145_20
-	goto L143
-L143:
-	goto L120
-L142:
+	ex.DebugEndBranch(&definition, false)
+	goto L129
+L153:
 	if !ex.PushBranch(&bc6) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L157:
+	ex.DebugCapturePendingTask(6)
+L170:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1822,17 +5941,22 @@ L157:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L124
+		goto L133
 	}
-	goto L158
-L124:
+	goto L171
+L133:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L157
-L158:
+	goto L170
+L171:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L120:
+L129:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1840,85 +5964,106 @@ L120:
 func method6(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp165_21 atom.Atom
-	var cp165_22 atom.Atom
-	var cp167_21 atom.Atom
-	var cp167_22 atom.Atom
-	var cp169_21 atom.Atom
-	var cp172_22 atom.Atom
-	_ = cp165_21
-	_ = cp165_22
-	_ = cp167_21
-	_ = cp167_22
-	_ = cp169_21
-	_ = cp172_22
+	var cp178_21 atom.Atom
+	var cp178_22 atom.Atom
+	var cp180_21 atom.Atom
+	var cp180_22 atom.Atom
+	var cp182_21 atom.Atom
+	var cp185_22 atom.Atom
+	_ = cp178_21
+	_ = cp178_22
+	_ = cp180_21
+	_ = cp180_22
+	_ = cp182_21
+	_ = cp185_22
 	switch frame.Resume {
 	case 1:
-		goto L161
+		goto L174
 	}
-	goto L160
-L160:
+	ex.DebugBeginMethod(&definition, 6)
+	goto L173
+L173:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 7)
 	// (and (< (call distance) 0.2))
-	cp165_21 = ex.V[21]
-	cp165_22 = ex.V[22]
+	cp178_21 = ex.V[21]
+	cp178_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 41)
 	// (and (= ?$assignment_call_18 (call distance)) (= ?$assignment_call_19 0.2) (< ?$assignment_call_18 ?$assignment_call_19))
-	cp167_21 = ex.V[21]
-	cp167_22 = ex.V[22]
+	cp180_21 = ex.V[21]
+	cp180_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 42)
 	// (= ?$assignment_call_18 (call distance))
-	cp169_21 = ex.V[21]
+	cp182_21 = ex.V[21]
 	// (= ?$assignment_call_18 (call distance))
+	ex.DebugBeginCondition(&definition, 43)
 	if !ex.V[21].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs14, factSymbols); ok {
 			ex.SetIfChanged(21, result)
-			goto L170
+			ex.DebugEndCondition(&definition, true)
+			goto L183
 		}
 	}
-	goto L168
-L170:
+	ex.DebugEndCondition(&definition, false)
+	goto L181
+L183:
 	// (= ?$assignment_call_19 0.2)
-	cp172_22 = ex.V[22]
+	cp185_22 = ex.V[22]
 	// (= ?$assignment_call_19 0.2)
+	ex.DebugBeginCondition(&definition, 44)
 	{
 		value := sv9
 		if value.IsBound() && !ex.V[22].IsBound() {
 			ex.V[22] = value
-			goto L173
+			ex.DebugEndCondition(&definition, true)
+			goto L186
 		}
-		goto L171
+		ex.DebugEndCondition(&definition, false)
+		goto L184
 	}
-L173:
+L186:
 	// (< ?$assignment_call_18 ?$assignment_call_19)
 	// (< ?$assignment_call_18 ?$assignment_call_19)
+	ex.DebugBeginCondition(&definition, 45)
 	if planner.Compare(ex.V[21], ex.V[22], 2) {
-		goto L176
+		ex.DebugEndCondition(&definition, true)
+		goto L189
 	}
-	goto L174
+	ex.DebugEndCondition(&definition, false)
+	goto L187
+L189:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L175
+L187:
+	goto L184
+L184:
+	ex.V[22] = cp185_22
+	goto L181
+L181:
+	ex.V[21] = cp182_21
+	goto L179
+L179:
+	ex.V[21] = cp180_21
+	ex.V[22] = cp180_22
+	ex.DebugEndCondition(&definition, false)
+	goto L177
+L177:
+	ex.V[21] = cp178_21
+	ex.V[22] = cp178_22
+	ex.DebugEndCondition(&definition, false)
+	goto L176
 L176:
-	goto L162
-L174:
-	goto L171
-L171:
-	ex.V[22] = cp172_22
-	goto L168
-L168:
-	ex.V[21] = cp169_21
-	goto L166
-L166:
-	ex.V[21] = cp167_21
-	ex.V[22] = cp167_22
-	goto L164
-L164:
-	ex.V[21] = cp165_21
-	ex.V[22] = cp165_22
-	goto L163
-L163:
-	goto L159
-L162:
+	ex.DebugEndBranch(&definition, false)
+	goto L172
+L175:
 	if !ex.PushBranch(&bc7) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L177:
+	ex.DebugCapturePendingTask(7)
+L192:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1926,17 +6071,22 @@ L177:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L161
+		goto L174
 	}
-	goto L178
-L161:
+	goto L193
+L174:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L177
-L178:
+	goto L192
+L193:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L159:
+L172:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1944,85 +6094,106 @@ L159:
 func method7(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp185_23 atom.Atom
-	var cp185_24 atom.Atom
-	var cp187_23 atom.Atom
-	var cp187_24 atom.Atom
-	var cp189_23 atom.Atom
-	var cp192_24 atom.Atom
-	_ = cp185_23
-	_ = cp185_24
-	_ = cp187_23
-	_ = cp187_24
-	_ = cp189_23
-	_ = cp192_24
+	var cp200_23 atom.Atom
+	var cp200_24 atom.Atom
+	var cp202_23 atom.Atom
+	var cp202_24 atom.Atom
+	var cp204_23 atom.Atom
+	var cp207_24 atom.Atom
+	_ = cp200_23
+	_ = cp200_24
+	_ = cp202_23
+	_ = cp202_24
+	_ = cp204_23
+	_ = cp207_24
 	switch frame.Resume {
 	case 1:
-		goto L181
+		goto L196
 	}
-	goto L180
-L180:
+	ex.DebugBeginMethod(&definition, 7)
+	goto L195
+L195:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 8)
 	// (and (< 0.0 (call distance)))
-	cp185_23 = ex.V[23]
-	cp185_24 = ex.V[24]
+	cp200_23 = ex.V[23]
+	cp200_24 = ex.V[24]
+	ex.DebugBeginCondition(&definition, 46)
 	// (and (= ?$assignment_call_20 0.0) (= ?$assignment_call_21 (call distance)) (< ?$assignment_call_20 ?$assignment_call_21))
-	cp187_23 = ex.V[23]
-	cp187_24 = ex.V[24]
+	cp202_23 = ex.V[23]
+	cp202_24 = ex.V[24]
+	ex.DebugBeginCondition(&definition, 47)
 	// (= ?$assignment_call_20 0.0)
-	cp189_23 = ex.V[23]
+	cp204_23 = ex.V[23]
 	// (= ?$assignment_call_20 0.0)
+	ex.DebugBeginCondition(&definition, 48)
 	{
 		value := sv10
 		if value.IsBound() && !ex.V[23].IsBound() {
 			ex.V[23] = value
-			goto L190
+			ex.DebugEndCondition(&definition, true)
+			goto L205
 		}
-		goto L188
+		ex.DebugEndCondition(&definition, false)
+		goto L203
 	}
-L190:
+L205:
 	// (= ?$assignment_call_21 (call distance))
-	cp192_24 = ex.V[24]
+	cp207_24 = ex.V[24]
 	// (= ?$assignment_call_21 (call distance))
+	ex.DebugBeginCondition(&definition, 49)
 	if !ex.V[24].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs15, factSymbols); ok {
 			ex.SetIfChanged(24, result)
-			goto L193
+			ex.DebugEndCondition(&definition, true)
+			goto L208
 		}
 	}
-	goto L191
-L193:
+	ex.DebugEndCondition(&definition, false)
+	goto L206
+L208:
 	// (< ?$assignment_call_20 ?$assignment_call_21)
 	// (< ?$assignment_call_20 ?$assignment_call_21)
+	ex.DebugBeginCondition(&definition, 50)
 	if planner.Compare(ex.V[23], ex.V[24], 2) {
-		goto L196
+		ex.DebugEndCondition(&definition, true)
+		goto L211
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L209
+L211:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L197
+L209:
+	goto L206
+L206:
+	ex.V[24] = cp207_24
+	goto L203
+L203:
+	ex.V[23] = cp204_23
+	goto L201
+L201:
+	ex.V[23] = cp202_23
+	ex.V[24] = cp202_24
+	ex.DebugEndCondition(&definition, false)
+	goto L199
+L199:
+	ex.V[23] = cp200_23
+	ex.V[24] = cp200_24
+	ex.DebugEndCondition(&definition, false)
+	goto L198
+L198:
+	ex.DebugEndBranch(&definition, false)
 	goto L194
-L196:
-	goto L182
-L194:
-	goto L191
-L191:
-	ex.V[24] = cp192_24
-	goto L188
-L188:
-	ex.V[23] = cp189_23
-	goto L186
-L186:
-	ex.V[23] = cp187_23
-	ex.V[24] = cp187_24
-	goto L184
-L184:
-	ex.V[23] = cp185_23
-	ex.V[24] = cp185_24
-	goto L183
-L183:
-	goto L179
-L182:
+L197:
 	if !ex.PushBranch(&bc8) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L197:
+	ex.DebugCapturePendingTask(8)
+L214:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2030,17 +6201,22 @@ L197:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L181
+		goto L196
 	}
-	goto L198
-L181:
+	goto L215
+L196:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L197
-L198:
+	goto L214
+L215:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L179:
+L194:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2048,84 +6224,105 @@ L179:
 func method8(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp205_25 atom.Atom
-	var cp205_26 atom.Atom
-	var cp207_25 atom.Atom
-	var cp207_26 atom.Atom
-	var cp209_25 atom.Atom
-	var cp212_26 atom.Atom
-	_ = cp205_25
-	_ = cp205_26
-	_ = cp207_25
-	_ = cp207_26
-	_ = cp209_25
-	_ = cp212_26
+	var cp222_25 atom.Atom
+	var cp222_26 atom.Atom
+	var cp224_25 atom.Atom
+	var cp224_26 atom.Atom
+	var cp226_25 atom.Atom
+	var cp229_26 atom.Atom
+	_ = cp222_25
+	_ = cp222_26
+	_ = cp224_25
+	_ = cp224_26
+	_ = cp226_25
+	_ = cp229_26
 	switch frame.Resume {
 	case 1:
-		goto L201
+		goto L218
 	}
-	goto L200
-L200:
+	ex.DebugBeginMethod(&definition, 8)
+	goto L217
+L217:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 9)
 	// (and (== (call distance) (call distance)))
-	cp205_25 = ex.V[25]
-	cp205_26 = ex.V[26]
+	cp222_25 = ex.V[25]
+	cp222_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 51)
 	// (and (= ?$assignment_call_22 (call distance)) (= ?$assignment_call_23 (call distance)) (== ?$assignment_call_22 ?$assignment_call_23))
-	cp207_25 = ex.V[25]
-	cp207_26 = ex.V[26]
+	cp224_25 = ex.V[25]
+	cp224_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 52)
 	// (= ?$assignment_call_22 (call distance))
-	cp209_25 = ex.V[25]
+	cp226_25 = ex.V[25]
 	// (= ?$assignment_call_22 (call distance))
+	ex.DebugBeginCondition(&definition, 53)
 	if !ex.V[25].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs16, factSymbols); ok {
 			ex.SetIfChanged(25, result)
-			goto L210
+			ex.DebugEndCondition(&definition, true)
+			goto L227
 		}
 	}
-	goto L208
-L210:
+	ex.DebugEndCondition(&definition, false)
+	goto L225
+L227:
 	// (= ?$assignment_call_23 (call distance))
-	cp212_26 = ex.V[26]
+	cp229_26 = ex.V[26]
 	// (= ?$assignment_call_23 (call distance))
+	ex.DebugBeginCondition(&definition, 54)
 	if !ex.V[26].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs17, factSymbols); ok {
 			ex.SetIfChanged(26, result)
-			goto L213
+			ex.DebugEndCondition(&definition, true)
+			goto L230
 		}
 	}
-	goto L211
-L213:
+	ex.DebugEndCondition(&definition, false)
+	goto L228
+L230:
 	// (== ?$assignment_call_22 ?$assignment_call_23)
 	// (== ?$assignment_call_22 ?$assignment_call_23)
+	ex.DebugBeginCondition(&definition, 55)
 	if planner.Compare(ex.V[25], ex.V[26], 0) {
-		goto L216
+		ex.DebugEndCondition(&definition, true)
+		goto L233
 	}
-	goto L214
-L216:
-	goto L202
-L214:
-	goto L211
-L211:
-	ex.V[26] = cp212_26
-	goto L208
-L208:
-	ex.V[25] = cp209_25
-	goto L206
-L206:
-	ex.V[25] = cp207_25
-	ex.V[26] = cp207_26
-	goto L204
-L204:
-	ex.V[25] = cp205_25
-	ex.V[26] = cp205_26
-	goto L203
-L203:
-	goto L199
-L202:
+	ex.DebugEndCondition(&definition, false)
+	goto L231
+L233:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L219
+L231:
+	goto L228
+L228:
+	ex.V[26] = cp229_26
+	goto L225
+L225:
+	ex.V[25] = cp226_25
+	goto L223
+L223:
+	ex.V[25] = cp224_25
+	ex.V[26] = cp224_26
+	ex.DebugEndCondition(&definition, false)
+	goto L221
+L221:
+	ex.V[25] = cp222_25
+	ex.V[26] = cp222_26
+	ex.DebugEndCondition(&definition, false)
+	goto L220
+L220:
+	ex.DebugEndBranch(&definition, false)
+	goto L216
+L219:
 	if !ex.PushBranch(&bc9) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L217:
+	ex.DebugCapturePendingTask(9)
+L236:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2133,17 +6330,22 @@ L217:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L201
+		goto L218
 	}
-	goto L218
-L201:
+	goto L237
+L218:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L217
-L218:
+	goto L236
+L237:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L199:
+L216:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2151,53 +6353,68 @@ L199:
 func method9(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp225_16 atom.Atom
-	var cp227_16 atom.Atom
-	_ = cp225_16
-	_ = cp227_16
+	var cp244_16 atom.Atom
+	var cp246_16 atom.Atom
+	_ = cp244_16
+	_ = cp246_16
 	switch frame.Resume {
 	case 1:
-		goto L221
+		goto L240
 	}
-	goto L220
-L220:
+	ex.DebugBeginMethod(&definition, 9)
+	goto L239
+L239:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 10)
 	// (and (= ?distance (call distance)) (< ?distance 0.2))
-	cp225_16 = ex.V[16]
+	cp244_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 56)
 	// (= ?distance (call distance))
-	cp227_16 = ex.V[16]
+	cp246_16 = ex.V[16]
 	// (= ?distance (call distance))
+	ex.DebugBeginCondition(&definition, 57)
 	if !ex.V[16].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs18, factSymbols); ok {
 			ex.SetIfChanged(16, result)
-			goto L228
+			ex.DebugEndCondition(&definition, true)
+			goto L247
 		}
 	}
-	goto L226
-L228:
+	ex.DebugEndCondition(&definition, false)
+	goto L245
+L247:
 	// (< ?distance 0.2)
 	// (< ?distance 0.2)
+	ex.DebugBeginCondition(&definition, 58)
 	if planner.Compare(ex.V[16], sv11, 2) {
-		goto L231
+		ex.DebugEndCondition(&definition, true)
+		goto L250
 	}
-	goto L229
-L231:
-	goto L222
-L229:
-	goto L226
-L226:
-	ex.V[16] = cp227_16
-	goto L224
-L224:
-	ex.V[16] = cp225_16
-	goto L223
-L223:
-	goto L219
-L222:
+	ex.DebugEndCondition(&definition, false)
+	goto L248
+L250:
+	ex.DebugEndCondition(&definition, true)
+	goto L241
+L248:
+	goto L245
+L245:
+	ex.V[16] = cp246_16
+	goto L243
+L243:
+	ex.V[16] = cp244_16
+	ex.DebugEndCondition(&definition, false)
+	goto L242
+L242:
+	ex.DebugEndBranch(&definition, false)
+	goto L238
+L241:
 	if !ex.PushBranch(&bc10) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L232:
+	ex.DebugCapturePendingTask(10)
+L252:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2205,17 +6422,22 @@ L232:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L221
+		goto L240
 	}
-	goto L233
-L221:
+	goto L253
+L240:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L232
-L233:
+	goto L252
+L253:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L219:
+L238:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2223,1823 +6445,2153 @@ L219:
 func method10(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp240_27 atom.Atom
-	var cp240_28 atom.Atom
-	var cp240_29 atom.Atom
-	var cp240_30 atom.Atom
-	var cp240_31 atom.Atom
-	var cp240_32 atom.Atom
-	var cp240_33 atom.Atom
-	var cp240_34 atom.Atom
-	var cp240_35 atom.Atom
-	var cp240_36 atom.Atom
-	var cp240_37 atom.Atom
-	var cp240_38 atom.Atom
-	var cp240_39 atom.Atom
-	var cp240_40 atom.Atom
-	var cp240_41 atom.Atom
-	var cp240_42 atom.Atom
-	var cp240_43 atom.Atom
-	var cp240_44 atom.Atom
-	var cp240_45 atom.Atom
-	var cp240_46 atom.Atom
-	var cp240_47 atom.Atom
-	var cp240_48 atom.Atom
-	var cp240_49 atom.Atom
-	var cp240_50 atom.Atom
-	var cp240_51 atom.Atom
-	var cp240_52 atom.Atom
-	var cp240_53 atom.Atom
-	var cp240_54 atom.Atom
-	var cp240_55 atom.Atom
-	var cp240_56 atom.Atom
-	var cp240_57 atom.Atom
-	var cp240_58 atom.Atom
-	var cp240_59 atom.Atom
-	var cp240_60 atom.Atom
-	var cp240_61 atom.Atom
-	var cp240_62 atom.Atom
-	var cp240_63 atom.Atom
-	var cp240_64 atom.Atom
-	var cp240_65 atom.Atom
-	var cp240_66 atom.Atom
-	var cp240_67 atom.Atom
-	var cp240_68 atom.Atom
-	var cp240_69 atom.Atom
-	var cp240_70 atom.Atom
-	var cp240_71 atom.Atom
-	var cp240_72 atom.Atom
-	var cp240_73 atom.Atom
-	var cp240_74 atom.Atom
-	var cp240_75 atom.Atom
-	var cp240_76 atom.Atom
-	var cp240_77 atom.Atom
-	var cp240_78 atom.Atom
-	var cp240_79 atom.Atom
-	var cp240_80 atom.Atom
-	var cp240_81 atom.Atom
-	var cp240_82 atom.Atom
-	var cp240_83 atom.Atom
-	var cp240_84 atom.Atom
-	var cp240_85 atom.Atom
-	var cp240_86 atom.Atom
-	var cp240_87 atom.Atom
-	var cp240_88 atom.Atom
-	var cp240_89 atom.Atom
-	var cp240_90 atom.Atom
-	var cp240_91 atom.Atom
-	var cp240_92 atom.Atom
-	var cp242_27 atom.Atom
-	var cp245_28 atom.Atom
-	var cp245_29 atom.Atom
-	var cp245_30 atom.Atom
-	var cp247_28 atom.Atom
-	var cp250_29 atom.Atom
-	var cp253_30 atom.Atom
-	var cp259_31 atom.Atom
-	var cp259_32 atom.Atom
-	var cp259_33 atom.Atom
-	var cp261_31 atom.Atom
-	var cp264_32 atom.Atom
-	var cp267_33 atom.Atom
-	var cp273_34 atom.Atom
-	var cp273_35 atom.Atom
-	var cp273_36 atom.Atom
-	var cp275_34 atom.Atom
-	var cp278_35 atom.Atom
-	var cp281_36 atom.Atom
-	var cp287_37 atom.Atom
-	var cp287_38 atom.Atom
-	var cp287_39 atom.Atom
-	var cp289_37 atom.Atom
-	var cp292_38 atom.Atom
-	var cp295_39 atom.Atom
-	var cp301_40 atom.Atom
-	var cp301_41 atom.Atom
-	var cp301_42 atom.Atom
-	var cp303_40 atom.Atom
-	var cp306_41 atom.Atom
-	var cp309_42 atom.Atom
-	var cp315_43 atom.Atom
-	var cp315_44 atom.Atom
-	var cp315_45 atom.Atom
-	var cp317_43 atom.Atom
-	var cp320_44 atom.Atom
-	var cp323_45 atom.Atom
-	var cp329_46 atom.Atom
-	var cp329_47 atom.Atom
-	var cp329_48 atom.Atom
-	var cp329_49 atom.Atom
-	var cp329_50 atom.Atom
-	var cp329_51 atom.Atom
-	var cp331_46 atom.Atom
-	var cp334_47 atom.Atom
-	var cp337_48 atom.Atom
-	var cp340_49 atom.Atom
-	var cp343_50 atom.Atom
-	var cp346_51 atom.Atom
-	var cp352_52 atom.Atom
-	var cp352_53 atom.Atom
-	var cp352_54 atom.Atom
-	var cp352_55 atom.Atom
-	var cp352_56 atom.Atom
-	var cp352_57 atom.Atom
-	var cp354_52 atom.Atom
-	var cp357_53 atom.Atom
-	var cp360_54 atom.Atom
-	var cp363_55 atom.Atom
-	var cp366_56 atom.Atom
-	var cp369_57 atom.Atom
-	var cp375_58 atom.Atom
-	var cp375_59 atom.Atom
-	var cp375_60 atom.Atom
-	var cp375_61 atom.Atom
-	var cp375_62 atom.Atom
-	var cp375_63 atom.Atom
-	var cp377_58 atom.Atom
-	var cp380_59 atom.Atom
-	var cp383_60 atom.Atom
-	var cp386_61 atom.Atom
-	var cp389_62 atom.Atom
-	var cp392_63 atom.Atom
-	var cp398_64 atom.Atom
-	var cp398_65 atom.Atom
-	var cp398_66 atom.Atom
-	var cp398_67 atom.Atom
-	var cp398_68 atom.Atom
-	var cp398_69 atom.Atom
-	var cp400_64 atom.Atom
-	var cp403_65 atom.Atom
-	var cp406_66 atom.Atom
-	var cp409_67 atom.Atom
-	var cp412_68 atom.Atom
-	var cp415_69 atom.Atom
-	var cp421_70 atom.Atom
-	var cp421_71 atom.Atom
-	var cp421_72 atom.Atom
-	var cp421_73 atom.Atom
-	var cp421_74 atom.Atom
-	var cp421_75 atom.Atom
-	var cp423_70 atom.Atom
-	var cp426_71 atom.Atom
-	var cp429_72 atom.Atom
-	var cp432_73 atom.Atom
-	var cp435_74 atom.Atom
-	var cp438_75 atom.Atom
-	var cp444_76 atom.Atom
-	var cp444_77 atom.Atom
-	var cp444_78 atom.Atom
-	var cp444_79 atom.Atom
-	var cp444_80 atom.Atom
-	var cp446_76 atom.Atom
-	var cp449_77 atom.Atom
-	var cp452_78 atom.Atom
-	var cp455_79 atom.Atom
-	var cp458_80 atom.Atom
-	var cp464_81 atom.Atom
-	var cp464_82 atom.Atom
-	var cp464_83 atom.Atom
-	var cp464_84 atom.Atom
-	var cp464_85 atom.Atom
-	var cp466_81 atom.Atom
-	var cp469_82 atom.Atom
-	var cp472_83 atom.Atom
-	var cp475_84 atom.Atom
-	var cp478_85 atom.Atom
-	var cp484_86 atom.Atom
-	var cp484_87 atom.Atom
-	var cp484_88 atom.Atom
-	var cp484_89 atom.Atom
-	var cp484_90 atom.Atom
-	var cp484_91 atom.Atom
-	var cp484_92 atom.Atom
-	var cp486_86 atom.Atom
-	var cp489_87 atom.Atom
-	var cp492_88 atom.Atom
-	var cp495_89 atom.Atom
-	var cp498_90 atom.Atom
-	var cp501_91 atom.Atom
-	var cp504_92 atom.Atom
-	_ = cp240_27
-	_ = cp240_28
-	_ = cp240_29
-	_ = cp240_30
-	_ = cp240_31
-	_ = cp240_32
-	_ = cp240_33
-	_ = cp240_34
-	_ = cp240_35
-	_ = cp240_36
-	_ = cp240_37
-	_ = cp240_38
-	_ = cp240_39
-	_ = cp240_40
-	_ = cp240_41
-	_ = cp240_42
-	_ = cp240_43
-	_ = cp240_44
-	_ = cp240_45
-	_ = cp240_46
-	_ = cp240_47
-	_ = cp240_48
-	_ = cp240_49
-	_ = cp240_50
-	_ = cp240_51
-	_ = cp240_52
-	_ = cp240_53
-	_ = cp240_54
-	_ = cp240_55
-	_ = cp240_56
-	_ = cp240_57
-	_ = cp240_58
-	_ = cp240_59
-	_ = cp240_60
-	_ = cp240_61
-	_ = cp240_62
-	_ = cp240_63
-	_ = cp240_64
-	_ = cp240_65
-	_ = cp240_66
-	_ = cp240_67
-	_ = cp240_68
-	_ = cp240_69
-	_ = cp240_70
-	_ = cp240_71
-	_ = cp240_72
-	_ = cp240_73
-	_ = cp240_74
-	_ = cp240_75
-	_ = cp240_76
-	_ = cp240_77
-	_ = cp240_78
-	_ = cp240_79
-	_ = cp240_80
-	_ = cp240_81
-	_ = cp240_82
-	_ = cp240_83
-	_ = cp240_84
-	_ = cp240_85
-	_ = cp240_86
-	_ = cp240_87
-	_ = cp240_88
-	_ = cp240_89
-	_ = cp240_90
-	_ = cp240_91
-	_ = cp240_92
-	_ = cp242_27
-	_ = cp245_28
-	_ = cp245_29
-	_ = cp245_30
-	_ = cp247_28
-	_ = cp250_29
-	_ = cp253_30
-	_ = cp259_31
-	_ = cp259_32
-	_ = cp259_33
-	_ = cp261_31
-	_ = cp264_32
-	_ = cp267_33
-	_ = cp273_34
-	_ = cp273_35
-	_ = cp273_36
-	_ = cp275_34
-	_ = cp278_35
-	_ = cp281_36
-	_ = cp287_37
-	_ = cp287_38
-	_ = cp287_39
-	_ = cp289_37
-	_ = cp292_38
-	_ = cp295_39
-	_ = cp301_40
-	_ = cp301_41
-	_ = cp301_42
-	_ = cp303_40
-	_ = cp306_41
-	_ = cp309_42
-	_ = cp315_43
-	_ = cp315_44
-	_ = cp315_45
-	_ = cp317_43
-	_ = cp320_44
-	_ = cp323_45
-	_ = cp329_46
-	_ = cp329_47
-	_ = cp329_48
-	_ = cp329_49
-	_ = cp329_50
-	_ = cp329_51
-	_ = cp331_46
-	_ = cp334_47
-	_ = cp337_48
-	_ = cp340_49
-	_ = cp343_50
-	_ = cp346_51
-	_ = cp352_52
-	_ = cp352_53
-	_ = cp352_54
-	_ = cp352_55
-	_ = cp352_56
-	_ = cp352_57
-	_ = cp354_52
-	_ = cp357_53
-	_ = cp360_54
-	_ = cp363_55
-	_ = cp366_56
-	_ = cp369_57
-	_ = cp375_58
-	_ = cp375_59
-	_ = cp375_60
-	_ = cp375_61
-	_ = cp375_62
-	_ = cp375_63
-	_ = cp377_58
-	_ = cp380_59
-	_ = cp383_60
-	_ = cp386_61
-	_ = cp389_62
-	_ = cp392_63
-	_ = cp398_64
-	_ = cp398_65
-	_ = cp398_66
-	_ = cp398_67
-	_ = cp398_68
-	_ = cp398_69
-	_ = cp400_64
-	_ = cp403_65
-	_ = cp406_66
-	_ = cp409_67
-	_ = cp412_68
-	_ = cp415_69
-	_ = cp421_70
-	_ = cp421_71
-	_ = cp421_72
-	_ = cp421_73
-	_ = cp421_74
-	_ = cp421_75
-	_ = cp423_70
-	_ = cp426_71
-	_ = cp429_72
-	_ = cp432_73
-	_ = cp435_74
-	_ = cp438_75
-	_ = cp444_76
-	_ = cp444_77
-	_ = cp444_78
-	_ = cp444_79
-	_ = cp444_80
-	_ = cp446_76
-	_ = cp449_77
-	_ = cp452_78
-	_ = cp455_79
-	_ = cp458_80
-	_ = cp464_81
-	_ = cp464_82
-	_ = cp464_83
-	_ = cp464_84
-	_ = cp464_85
-	_ = cp466_81
-	_ = cp469_82
-	_ = cp472_83
-	_ = cp475_84
-	_ = cp478_85
-	_ = cp484_86
-	_ = cp484_87
-	_ = cp484_88
-	_ = cp484_89
-	_ = cp484_90
-	_ = cp484_91
-	_ = cp484_92
-	_ = cp486_86
-	_ = cp489_87
-	_ = cp492_88
-	_ = cp495_89
-	_ = cp498_90
-	_ = cp501_91
-	_ = cp504_92
+	var cp260_27 atom.Atom
+	var cp260_28 atom.Atom
+	var cp260_29 atom.Atom
+	var cp260_30 atom.Atom
+	var cp260_31 atom.Atom
+	var cp260_32 atom.Atom
+	var cp260_33 atom.Atom
+	var cp260_34 atom.Atom
+	var cp260_35 atom.Atom
+	var cp260_36 atom.Atom
+	var cp260_37 atom.Atom
+	var cp260_38 atom.Atom
+	var cp260_39 atom.Atom
+	var cp260_40 atom.Atom
+	var cp260_41 atom.Atom
+	var cp260_42 atom.Atom
+	var cp260_43 atom.Atom
+	var cp260_44 atom.Atom
+	var cp260_45 atom.Atom
+	var cp260_46 atom.Atom
+	var cp260_47 atom.Atom
+	var cp260_48 atom.Atom
+	var cp260_49 atom.Atom
+	var cp260_50 atom.Atom
+	var cp260_51 atom.Atom
+	var cp260_52 atom.Atom
+	var cp260_53 atom.Atom
+	var cp260_54 atom.Atom
+	var cp260_55 atom.Atom
+	var cp260_56 atom.Atom
+	var cp260_57 atom.Atom
+	var cp260_58 atom.Atom
+	var cp260_59 atom.Atom
+	var cp260_60 atom.Atom
+	var cp260_61 atom.Atom
+	var cp260_62 atom.Atom
+	var cp260_63 atom.Atom
+	var cp260_64 atom.Atom
+	var cp260_65 atom.Atom
+	var cp260_66 atom.Atom
+	var cp260_67 atom.Atom
+	var cp260_68 atom.Atom
+	var cp260_69 atom.Atom
+	var cp260_70 atom.Atom
+	var cp260_71 atom.Atom
+	var cp260_72 atom.Atom
+	var cp260_73 atom.Atom
+	var cp260_74 atom.Atom
+	var cp260_75 atom.Atom
+	var cp260_76 atom.Atom
+	var cp260_77 atom.Atom
+	var cp260_78 atom.Atom
+	var cp260_79 atom.Atom
+	var cp260_80 atom.Atom
+	var cp260_81 atom.Atom
+	var cp260_82 atom.Atom
+	var cp260_83 atom.Atom
+	var cp260_84 atom.Atom
+	var cp260_85 atom.Atom
+	var cp260_86 atom.Atom
+	var cp260_87 atom.Atom
+	var cp260_88 atom.Atom
+	var cp260_89 atom.Atom
+	var cp260_90 atom.Atom
+	var cp260_91 atom.Atom
+	var cp260_92 atom.Atom
+	var cp262_27 atom.Atom
+	var cp265_28 atom.Atom
+	var cp265_29 atom.Atom
+	var cp265_30 atom.Atom
+	var cp267_28 atom.Atom
+	var cp270_29 atom.Atom
+	var cp273_30 atom.Atom
+	var cp280_31 atom.Atom
+	var cp280_32 atom.Atom
+	var cp280_33 atom.Atom
+	var cp282_31 atom.Atom
+	var cp285_32 atom.Atom
+	var cp288_33 atom.Atom
+	var cp295_34 atom.Atom
+	var cp295_35 atom.Atom
+	var cp295_36 atom.Atom
+	var cp297_34 atom.Atom
+	var cp300_35 atom.Atom
+	var cp303_36 atom.Atom
+	var cp310_37 atom.Atom
+	var cp310_38 atom.Atom
+	var cp310_39 atom.Atom
+	var cp312_37 atom.Atom
+	var cp315_38 atom.Atom
+	var cp318_39 atom.Atom
+	var cp325_40 atom.Atom
+	var cp325_41 atom.Atom
+	var cp325_42 atom.Atom
+	var cp327_40 atom.Atom
+	var cp330_41 atom.Atom
+	var cp333_42 atom.Atom
+	var cp340_43 atom.Atom
+	var cp340_44 atom.Atom
+	var cp340_45 atom.Atom
+	var cp342_43 atom.Atom
+	var cp345_44 atom.Atom
+	var cp348_45 atom.Atom
+	var cp355_46 atom.Atom
+	var cp355_47 atom.Atom
+	var cp355_48 atom.Atom
+	var cp355_49 atom.Atom
+	var cp355_50 atom.Atom
+	var cp355_51 atom.Atom
+	var cp357_46 atom.Atom
+	var cp360_47 atom.Atom
+	var cp363_48 atom.Atom
+	var cp366_49 atom.Atom
+	var cp369_50 atom.Atom
+	var cp372_51 atom.Atom
+	var cp379_52 atom.Atom
+	var cp379_53 atom.Atom
+	var cp379_54 atom.Atom
+	var cp379_55 atom.Atom
+	var cp379_56 atom.Atom
+	var cp379_57 atom.Atom
+	var cp381_52 atom.Atom
+	var cp384_53 atom.Atom
+	var cp387_54 atom.Atom
+	var cp390_55 atom.Atom
+	var cp393_56 atom.Atom
+	var cp396_57 atom.Atom
+	var cp403_58 atom.Atom
+	var cp403_59 atom.Atom
+	var cp403_60 atom.Atom
+	var cp403_61 atom.Atom
+	var cp403_62 atom.Atom
+	var cp403_63 atom.Atom
+	var cp405_58 atom.Atom
+	var cp408_59 atom.Atom
+	var cp411_60 atom.Atom
+	var cp414_61 atom.Atom
+	var cp417_62 atom.Atom
+	var cp420_63 atom.Atom
+	var cp427_64 atom.Atom
+	var cp427_65 atom.Atom
+	var cp427_66 atom.Atom
+	var cp427_67 atom.Atom
+	var cp427_68 atom.Atom
+	var cp427_69 atom.Atom
+	var cp429_64 atom.Atom
+	var cp432_65 atom.Atom
+	var cp435_66 atom.Atom
+	var cp438_67 atom.Atom
+	var cp441_68 atom.Atom
+	var cp444_69 atom.Atom
+	var cp451_70 atom.Atom
+	var cp451_71 atom.Atom
+	var cp451_72 atom.Atom
+	var cp451_73 atom.Atom
+	var cp451_74 atom.Atom
+	var cp451_75 atom.Atom
+	var cp453_70 atom.Atom
+	var cp456_71 atom.Atom
+	var cp459_72 atom.Atom
+	var cp462_73 atom.Atom
+	var cp465_74 atom.Atom
+	var cp468_75 atom.Atom
+	var cp475_76 atom.Atom
+	var cp475_77 atom.Atom
+	var cp475_78 atom.Atom
+	var cp475_79 atom.Atom
+	var cp475_80 atom.Atom
+	var cp477_76 atom.Atom
+	var cp480_77 atom.Atom
+	var cp483_78 atom.Atom
+	var cp486_79 atom.Atom
+	var cp489_80 atom.Atom
+	var cp496_81 atom.Atom
+	var cp496_82 atom.Atom
+	var cp496_83 atom.Atom
+	var cp496_84 atom.Atom
+	var cp496_85 atom.Atom
+	var cp498_81 atom.Atom
+	var cp501_82 atom.Atom
+	var cp504_83 atom.Atom
+	var cp507_84 atom.Atom
+	var cp510_85 atom.Atom
+	var cp517_86 atom.Atom
+	var cp517_87 atom.Atom
+	var cp517_88 atom.Atom
+	var cp517_89 atom.Atom
+	var cp517_90 atom.Atom
+	var cp517_91 atom.Atom
+	var cp517_92 atom.Atom
+	var cp519_86 atom.Atom
+	var cp522_87 atom.Atom
+	var cp525_88 atom.Atom
+	var cp528_89 atom.Atom
+	var cp531_90 atom.Atom
+	var cp534_91 atom.Atom
+	var cp537_92 atom.Atom
+	_ = cp260_27
+	_ = cp260_28
+	_ = cp260_29
+	_ = cp260_30
+	_ = cp260_31
+	_ = cp260_32
+	_ = cp260_33
+	_ = cp260_34
+	_ = cp260_35
+	_ = cp260_36
+	_ = cp260_37
+	_ = cp260_38
+	_ = cp260_39
+	_ = cp260_40
+	_ = cp260_41
+	_ = cp260_42
+	_ = cp260_43
+	_ = cp260_44
+	_ = cp260_45
+	_ = cp260_46
+	_ = cp260_47
+	_ = cp260_48
+	_ = cp260_49
+	_ = cp260_50
+	_ = cp260_51
+	_ = cp260_52
+	_ = cp260_53
+	_ = cp260_54
+	_ = cp260_55
+	_ = cp260_56
+	_ = cp260_57
+	_ = cp260_58
+	_ = cp260_59
+	_ = cp260_60
+	_ = cp260_61
+	_ = cp260_62
+	_ = cp260_63
+	_ = cp260_64
+	_ = cp260_65
+	_ = cp260_66
+	_ = cp260_67
+	_ = cp260_68
+	_ = cp260_69
+	_ = cp260_70
+	_ = cp260_71
+	_ = cp260_72
+	_ = cp260_73
+	_ = cp260_74
+	_ = cp260_75
+	_ = cp260_76
+	_ = cp260_77
+	_ = cp260_78
+	_ = cp260_79
+	_ = cp260_80
+	_ = cp260_81
+	_ = cp260_82
+	_ = cp260_83
+	_ = cp260_84
+	_ = cp260_85
+	_ = cp260_86
+	_ = cp260_87
+	_ = cp260_88
+	_ = cp260_89
+	_ = cp260_90
+	_ = cp260_91
+	_ = cp260_92
+	_ = cp262_27
+	_ = cp265_28
+	_ = cp265_29
+	_ = cp265_30
+	_ = cp267_28
+	_ = cp270_29
+	_ = cp273_30
+	_ = cp280_31
+	_ = cp280_32
+	_ = cp280_33
+	_ = cp282_31
+	_ = cp285_32
+	_ = cp288_33
+	_ = cp295_34
+	_ = cp295_35
+	_ = cp295_36
+	_ = cp297_34
+	_ = cp300_35
+	_ = cp303_36
+	_ = cp310_37
+	_ = cp310_38
+	_ = cp310_39
+	_ = cp312_37
+	_ = cp315_38
+	_ = cp318_39
+	_ = cp325_40
+	_ = cp325_41
+	_ = cp325_42
+	_ = cp327_40
+	_ = cp330_41
+	_ = cp333_42
+	_ = cp340_43
+	_ = cp340_44
+	_ = cp340_45
+	_ = cp342_43
+	_ = cp345_44
+	_ = cp348_45
+	_ = cp355_46
+	_ = cp355_47
+	_ = cp355_48
+	_ = cp355_49
+	_ = cp355_50
+	_ = cp355_51
+	_ = cp357_46
+	_ = cp360_47
+	_ = cp363_48
+	_ = cp366_49
+	_ = cp369_50
+	_ = cp372_51
+	_ = cp379_52
+	_ = cp379_53
+	_ = cp379_54
+	_ = cp379_55
+	_ = cp379_56
+	_ = cp379_57
+	_ = cp381_52
+	_ = cp384_53
+	_ = cp387_54
+	_ = cp390_55
+	_ = cp393_56
+	_ = cp396_57
+	_ = cp403_58
+	_ = cp403_59
+	_ = cp403_60
+	_ = cp403_61
+	_ = cp403_62
+	_ = cp403_63
+	_ = cp405_58
+	_ = cp408_59
+	_ = cp411_60
+	_ = cp414_61
+	_ = cp417_62
+	_ = cp420_63
+	_ = cp427_64
+	_ = cp427_65
+	_ = cp427_66
+	_ = cp427_67
+	_ = cp427_68
+	_ = cp427_69
+	_ = cp429_64
+	_ = cp432_65
+	_ = cp435_66
+	_ = cp438_67
+	_ = cp441_68
+	_ = cp444_69
+	_ = cp451_70
+	_ = cp451_71
+	_ = cp451_72
+	_ = cp451_73
+	_ = cp451_74
+	_ = cp451_75
+	_ = cp453_70
+	_ = cp456_71
+	_ = cp459_72
+	_ = cp462_73
+	_ = cp465_74
+	_ = cp468_75
+	_ = cp475_76
+	_ = cp475_77
+	_ = cp475_78
+	_ = cp475_79
+	_ = cp475_80
+	_ = cp477_76
+	_ = cp480_77
+	_ = cp483_78
+	_ = cp486_79
+	_ = cp489_80
+	_ = cp496_81
+	_ = cp496_82
+	_ = cp496_83
+	_ = cp496_84
+	_ = cp496_85
+	_ = cp498_81
+	_ = cp501_82
+	_ = cp504_83
+	_ = cp507_84
+	_ = cp510_85
+	_ = cp517_86
+	_ = cp517_87
+	_ = cp517_88
+	_ = cp517_89
+	_ = cp517_90
+	_ = cp517_91
+	_ = cp517_92
+	_ = cp519_86
+	_ = cp522_87
+	_ = cp525_88
+	_ = cp528_89
+	_ = cp531_90
+	_ = cp534_91
+	_ = cp537_92
 	switch frame.Resume {
 	case 1:
-		goto L236
+		goto L256
 	}
-	goto L235
-L235:
+	ex.DebugBeginMethod(&definition, 10)
+	goto L255
+L255:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 11)
 	// (and (= ?value 3) (< (call identity 2) ?value) (<= ?value (call identity 3)) (> (call identity 4) ?value) (>= ?value (call identity 3)) (== (call identity ?value) 3) (!= 2 (call identity ?value)) (== (+ (call identity 1) 2) 3) (== (- 5 (call identity 2)) 3) (== (* (call identity 2) 3) 6) (== (/ 6 (call identity 2)) 3) (== (% (call identity 7) 4) 3) (== (++ (call identity 2)) 3) (== (-- (call identity 4)) 3) (== (call identity (+ 1 (call identity 2))) 3))
-	cp240_27 = ex.V[27]
-	cp240_28 = ex.V[28]
-	cp240_29 = ex.V[29]
-	cp240_30 = ex.V[30]
-	cp240_31 = ex.V[31]
-	cp240_32 = ex.V[32]
-	cp240_33 = ex.V[33]
-	cp240_34 = ex.V[34]
-	cp240_35 = ex.V[35]
-	cp240_36 = ex.V[36]
-	cp240_37 = ex.V[37]
-	cp240_38 = ex.V[38]
-	cp240_39 = ex.V[39]
-	cp240_40 = ex.V[40]
-	cp240_41 = ex.V[41]
-	cp240_42 = ex.V[42]
-	cp240_43 = ex.V[43]
-	cp240_44 = ex.V[44]
-	cp240_45 = ex.V[45]
-	cp240_46 = ex.V[46]
-	cp240_47 = ex.V[47]
-	cp240_48 = ex.V[48]
-	cp240_49 = ex.V[49]
-	cp240_50 = ex.V[50]
-	cp240_51 = ex.V[51]
-	cp240_52 = ex.V[52]
-	cp240_53 = ex.V[53]
-	cp240_54 = ex.V[54]
-	cp240_55 = ex.V[55]
-	cp240_56 = ex.V[56]
-	cp240_57 = ex.V[57]
-	cp240_58 = ex.V[58]
-	cp240_59 = ex.V[59]
-	cp240_60 = ex.V[60]
-	cp240_61 = ex.V[61]
-	cp240_62 = ex.V[62]
-	cp240_63 = ex.V[63]
-	cp240_64 = ex.V[64]
-	cp240_65 = ex.V[65]
-	cp240_66 = ex.V[66]
-	cp240_67 = ex.V[67]
-	cp240_68 = ex.V[68]
-	cp240_69 = ex.V[69]
-	cp240_70 = ex.V[70]
-	cp240_71 = ex.V[71]
-	cp240_72 = ex.V[72]
-	cp240_73 = ex.V[73]
-	cp240_74 = ex.V[74]
-	cp240_75 = ex.V[75]
-	cp240_76 = ex.V[76]
-	cp240_77 = ex.V[77]
-	cp240_78 = ex.V[78]
-	cp240_79 = ex.V[79]
-	cp240_80 = ex.V[80]
-	cp240_81 = ex.V[81]
-	cp240_82 = ex.V[82]
-	cp240_83 = ex.V[83]
-	cp240_84 = ex.V[84]
-	cp240_85 = ex.V[85]
-	cp240_86 = ex.V[86]
-	cp240_87 = ex.V[87]
-	cp240_88 = ex.V[88]
-	cp240_89 = ex.V[89]
-	cp240_90 = ex.V[90]
-	cp240_91 = ex.V[91]
-	cp240_92 = ex.V[92]
+	cp260_27 = ex.V[27]
+	cp260_28 = ex.V[28]
+	cp260_29 = ex.V[29]
+	cp260_30 = ex.V[30]
+	cp260_31 = ex.V[31]
+	cp260_32 = ex.V[32]
+	cp260_33 = ex.V[33]
+	cp260_34 = ex.V[34]
+	cp260_35 = ex.V[35]
+	cp260_36 = ex.V[36]
+	cp260_37 = ex.V[37]
+	cp260_38 = ex.V[38]
+	cp260_39 = ex.V[39]
+	cp260_40 = ex.V[40]
+	cp260_41 = ex.V[41]
+	cp260_42 = ex.V[42]
+	cp260_43 = ex.V[43]
+	cp260_44 = ex.V[44]
+	cp260_45 = ex.V[45]
+	cp260_46 = ex.V[46]
+	cp260_47 = ex.V[47]
+	cp260_48 = ex.V[48]
+	cp260_49 = ex.V[49]
+	cp260_50 = ex.V[50]
+	cp260_51 = ex.V[51]
+	cp260_52 = ex.V[52]
+	cp260_53 = ex.V[53]
+	cp260_54 = ex.V[54]
+	cp260_55 = ex.V[55]
+	cp260_56 = ex.V[56]
+	cp260_57 = ex.V[57]
+	cp260_58 = ex.V[58]
+	cp260_59 = ex.V[59]
+	cp260_60 = ex.V[60]
+	cp260_61 = ex.V[61]
+	cp260_62 = ex.V[62]
+	cp260_63 = ex.V[63]
+	cp260_64 = ex.V[64]
+	cp260_65 = ex.V[65]
+	cp260_66 = ex.V[66]
+	cp260_67 = ex.V[67]
+	cp260_68 = ex.V[68]
+	cp260_69 = ex.V[69]
+	cp260_70 = ex.V[70]
+	cp260_71 = ex.V[71]
+	cp260_72 = ex.V[72]
+	cp260_73 = ex.V[73]
+	cp260_74 = ex.V[74]
+	cp260_75 = ex.V[75]
+	cp260_76 = ex.V[76]
+	cp260_77 = ex.V[77]
+	cp260_78 = ex.V[78]
+	cp260_79 = ex.V[79]
+	cp260_80 = ex.V[80]
+	cp260_81 = ex.V[81]
+	cp260_82 = ex.V[82]
+	cp260_83 = ex.V[83]
+	cp260_84 = ex.V[84]
+	cp260_85 = ex.V[85]
+	cp260_86 = ex.V[86]
+	cp260_87 = ex.V[87]
+	cp260_88 = ex.V[88]
+	cp260_89 = ex.V[89]
+	cp260_90 = ex.V[90]
+	cp260_91 = ex.V[91]
+	cp260_92 = ex.V[92]
+	ex.DebugBeginCondition(&definition, 59)
 	// (= ?value 3)
-	cp242_27 = ex.V[27]
+	cp262_27 = ex.V[27]
 	// (= ?value 3)
+	ex.DebugBeginCondition(&definition, 60)
 	{
 		value := sv12
 		if value.IsBound() && !ex.V[27].IsBound() {
 			ex.V[27] = value
-			goto L243
+			ex.DebugEndCondition(&definition, true)
+			goto L263
 		}
-		goto L241
+		ex.DebugEndCondition(&definition, false)
+		goto L261
 	}
-L243:
+L263:
 	// (and (= ?$assignment_call_24 2) (= ?$assignment_call_25 (call identity ?$assignment_call_24)) (= ?$assignment_call_26 ?value) (< ?$assignment_call_25 ?$assignment_call_26))
-	cp245_28 = ex.V[28]
-	cp245_29 = ex.V[29]
-	cp245_30 = ex.V[30]
+	cp265_28 = ex.V[28]
+	cp265_29 = ex.V[29]
+	cp265_30 = ex.V[30]
+	ex.DebugBeginCondition(&definition, 61)
 	// (= ?$assignment_call_24 2)
-	cp247_28 = ex.V[28]
+	cp267_28 = ex.V[28]
 	// (= ?$assignment_call_24 2)
+	ex.DebugBeginCondition(&definition, 62)
 	{
 		value := sv13
 		if value.IsBound() && !ex.V[28].IsBound() {
 			ex.V[28] = value
-			goto L248
+			ex.DebugEndCondition(&definition, true)
+			goto L268
 		}
-		goto L246
+		ex.DebugEndCondition(&definition, false)
+		goto L266
 	}
-L248:
+L268:
 	// (= ?$assignment_call_25 (call identity ?$assignment_call_24))
-	cp250_29 = ex.V[29]
+	cp270_29 = ex.V[29]
 	// (= ?$assignment_call_25 (call identity ?$assignment_call_24))
+	ex.DebugBeginCondition(&definition, 63)
 	if !ex.V[29].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[28]}, &cs19, factSymbols); ok {
 			ex.SetIfChanged(29, result)
-			goto L251
+			ex.DebugEndCondition(&definition, true)
+			goto L271
 		}
 	}
-	goto L249
-L251:
+	ex.DebugEndCondition(&definition, false)
+	goto L269
+L271:
 	// (= ?$assignment_call_26 ?value)
-	cp253_30 = ex.V[30]
+	cp273_30 = ex.V[30]
 	// (= ?$assignment_call_26 ?value)
+	ex.DebugBeginCondition(&definition, 64)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[30].IsBound() {
 			ex.V[30] = value
-			goto L254
+			ex.DebugEndCondition(&definition, true)
+			goto L274
 		}
-		goto L252
+		ex.DebugEndCondition(&definition, false)
+		goto L272
 	}
-L254:
+L274:
 	// (< ?$assignment_call_25 ?$assignment_call_26)
 	// (< ?$assignment_call_25 ?$assignment_call_26)
+	ex.DebugBeginCondition(&definition, 65)
 	if planner.Compare(ex.V[29], ex.V[30], 2) {
-		goto L257
+		ex.DebugEndCondition(&definition, true)
+		goto L277
 	}
-	goto L255
-L257:
+	ex.DebugEndCondition(&definition, false)
+	goto L275
+L277:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_27 ?value) (= ?$assignment_call_28 3) (= ?$assignment_call_29 (call identity ?$assignment_call_28)) (<= ?$assignment_call_27 ?$assignment_call_29))
-	cp259_31 = ex.V[31]
-	cp259_32 = ex.V[32]
-	cp259_33 = ex.V[33]
+	cp280_31 = ex.V[31]
+	cp280_32 = ex.V[32]
+	cp280_33 = ex.V[33]
+	ex.DebugBeginCondition(&definition, 66)
 	// (= ?$assignment_call_27 ?value)
-	cp261_31 = ex.V[31]
+	cp282_31 = ex.V[31]
 	// (= ?$assignment_call_27 ?value)
+	ex.DebugBeginCondition(&definition, 67)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[31].IsBound() {
 			ex.V[31] = value
-			goto L262
+			ex.DebugEndCondition(&definition, true)
+			goto L283
 		}
-		goto L260
+		ex.DebugEndCondition(&definition, false)
+		goto L281
 	}
-L262:
+L283:
 	// (= ?$assignment_call_28 3)
-	cp264_32 = ex.V[32]
+	cp285_32 = ex.V[32]
 	// (= ?$assignment_call_28 3)
+	ex.DebugBeginCondition(&definition, 68)
 	{
 		value := sv14
 		if value.IsBound() && !ex.V[32].IsBound() {
 			ex.V[32] = value
-			goto L265
+			ex.DebugEndCondition(&definition, true)
+			goto L286
 		}
-		goto L263
+		ex.DebugEndCondition(&definition, false)
+		goto L284
 	}
-L265:
+L286:
 	// (= ?$assignment_call_29 (call identity ?$assignment_call_28))
-	cp267_33 = ex.V[33]
+	cp288_33 = ex.V[33]
 	// (= ?$assignment_call_29 (call identity ?$assignment_call_28))
+	ex.DebugBeginCondition(&definition, 69)
 	if !ex.V[33].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[32]}, &cs20, factSymbols); ok {
 			ex.SetIfChanged(33, result)
-			goto L268
+			ex.DebugEndCondition(&definition, true)
+			goto L289
 		}
 	}
-	goto L266
-L268:
+	ex.DebugEndCondition(&definition, false)
+	goto L287
+L289:
 	// (<= ?$assignment_call_27 ?$assignment_call_29)
 	// (<= ?$assignment_call_27 ?$assignment_call_29)
+	ex.DebugBeginCondition(&definition, 70)
 	if planner.Compare(ex.V[31], ex.V[33], 3) {
-		goto L271
+		ex.DebugEndCondition(&definition, true)
+		goto L292
 	}
-	goto L269
-L271:
+	ex.DebugEndCondition(&definition, false)
+	goto L290
+L292:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_30 4) (= ?$assignment_call_31 (call identity ?$assignment_call_30)) (= ?$assignment_call_32 ?value) (> ?$assignment_call_31 ?$assignment_call_32))
-	cp273_34 = ex.V[34]
-	cp273_35 = ex.V[35]
-	cp273_36 = ex.V[36]
+	cp295_34 = ex.V[34]
+	cp295_35 = ex.V[35]
+	cp295_36 = ex.V[36]
+	ex.DebugBeginCondition(&definition, 71)
 	// (= ?$assignment_call_30 4)
-	cp275_34 = ex.V[34]
+	cp297_34 = ex.V[34]
 	// (= ?$assignment_call_30 4)
+	ex.DebugBeginCondition(&definition, 72)
 	{
 		value := sv15
 		if value.IsBound() && !ex.V[34].IsBound() {
 			ex.V[34] = value
-			goto L276
+			ex.DebugEndCondition(&definition, true)
+			goto L298
 		}
-		goto L274
+		ex.DebugEndCondition(&definition, false)
+		goto L296
 	}
-L276:
+L298:
 	// (= ?$assignment_call_31 (call identity ?$assignment_call_30))
-	cp278_35 = ex.V[35]
+	cp300_35 = ex.V[35]
 	// (= ?$assignment_call_31 (call identity ?$assignment_call_30))
+	ex.DebugBeginCondition(&definition, 73)
 	if !ex.V[35].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[34]}, &cs21, factSymbols); ok {
 			ex.SetIfChanged(35, result)
-			goto L279
+			ex.DebugEndCondition(&definition, true)
+			goto L301
 		}
 	}
-	goto L277
-L279:
+	ex.DebugEndCondition(&definition, false)
+	goto L299
+L301:
 	// (= ?$assignment_call_32 ?value)
-	cp281_36 = ex.V[36]
+	cp303_36 = ex.V[36]
 	// (= ?$assignment_call_32 ?value)
+	ex.DebugBeginCondition(&definition, 74)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[36].IsBound() {
 			ex.V[36] = value
-			goto L282
+			ex.DebugEndCondition(&definition, true)
+			goto L304
 		}
-		goto L280
+		ex.DebugEndCondition(&definition, false)
+		goto L302
 	}
-L282:
+L304:
 	// (> ?$assignment_call_31 ?$assignment_call_32)
 	// (> ?$assignment_call_31 ?$assignment_call_32)
+	ex.DebugBeginCondition(&definition, 75)
 	if planner.Compare(ex.V[35], ex.V[36], 4) {
-		goto L285
+		ex.DebugEndCondition(&definition, true)
+		goto L307
 	}
-	goto L283
-L285:
+	ex.DebugEndCondition(&definition, false)
+	goto L305
+L307:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_33 ?value) (= ?$assignment_call_34 3) (= ?$assignment_call_35 (call identity ?$assignment_call_34)) (>= ?$assignment_call_33 ?$assignment_call_35))
-	cp287_37 = ex.V[37]
-	cp287_38 = ex.V[38]
-	cp287_39 = ex.V[39]
+	cp310_37 = ex.V[37]
+	cp310_38 = ex.V[38]
+	cp310_39 = ex.V[39]
+	ex.DebugBeginCondition(&definition, 76)
 	// (= ?$assignment_call_33 ?value)
-	cp289_37 = ex.V[37]
+	cp312_37 = ex.V[37]
 	// (= ?$assignment_call_33 ?value)
+	ex.DebugBeginCondition(&definition, 77)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[37].IsBound() {
 			ex.V[37] = value
-			goto L290
+			ex.DebugEndCondition(&definition, true)
+			goto L313
 		}
-		goto L288
+		ex.DebugEndCondition(&definition, false)
+		goto L311
 	}
-L290:
+L313:
 	// (= ?$assignment_call_34 3)
-	cp292_38 = ex.V[38]
+	cp315_38 = ex.V[38]
 	// (= ?$assignment_call_34 3)
+	ex.DebugBeginCondition(&definition, 78)
 	{
 		value := sv16
 		if value.IsBound() && !ex.V[38].IsBound() {
 			ex.V[38] = value
-			goto L293
+			ex.DebugEndCondition(&definition, true)
+			goto L316
 		}
-		goto L291
+		ex.DebugEndCondition(&definition, false)
+		goto L314
 	}
-L293:
+L316:
 	// (= ?$assignment_call_35 (call identity ?$assignment_call_34))
-	cp295_39 = ex.V[39]
+	cp318_39 = ex.V[39]
 	// (= ?$assignment_call_35 (call identity ?$assignment_call_34))
+	ex.DebugBeginCondition(&definition, 79)
 	if !ex.V[39].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[38]}, &cs22, factSymbols); ok {
 			ex.SetIfChanged(39, result)
-			goto L296
+			ex.DebugEndCondition(&definition, true)
+			goto L319
 		}
 	}
-	goto L294
-L296:
+	ex.DebugEndCondition(&definition, false)
+	goto L317
+L319:
 	// (>= ?$assignment_call_33 ?$assignment_call_35)
 	// (>= ?$assignment_call_33 ?$assignment_call_35)
+	ex.DebugBeginCondition(&definition, 80)
 	if planner.Compare(ex.V[37], ex.V[39], 5) {
-		goto L299
+		ex.DebugEndCondition(&definition, true)
+		goto L322
 	}
-	goto L297
-L299:
+	ex.DebugEndCondition(&definition, false)
+	goto L320
+L322:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_36 ?value) (= ?$assignment_call_37 (call identity ?$assignment_call_36)) (= ?$assignment_call_38 3) (== ?$assignment_call_37 ?$assignment_call_38))
-	cp301_40 = ex.V[40]
-	cp301_41 = ex.V[41]
-	cp301_42 = ex.V[42]
+	cp325_40 = ex.V[40]
+	cp325_41 = ex.V[41]
+	cp325_42 = ex.V[42]
+	ex.DebugBeginCondition(&definition, 81)
 	// (= ?$assignment_call_36 ?value)
-	cp303_40 = ex.V[40]
+	cp327_40 = ex.V[40]
 	// (= ?$assignment_call_36 ?value)
+	ex.DebugBeginCondition(&definition, 82)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[40].IsBound() {
 			ex.V[40] = value
-			goto L304
+			ex.DebugEndCondition(&definition, true)
+			goto L328
 		}
-		goto L302
+		ex.DebugEndCondition(&definition, false)
+		goto L326
 	}
-L304:
+L328:
 	// (= ?$assignment_call_37 (call identity ?$assignment_call_36))
-	cp306_41 = ex.V[41]
+	cp330_41 = ex.V[41]
 	// (= ?$assignment_call_37 (call identity ?$assignment_call_36))
+	ex.DebugBeginCondition(&definition, 83)
 	if !ex.V[41].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[40]}, &cs23, factSymbols); ok {
 			ex.SetIfChanged(41, result)
-			goto L307
+			ex.DebugEndCondition(&definition, true)
+			goto L331
 		}
 	}
-	goto L305
-L307:
+	ex.DebugEndCondition(&definition, false)
+	goto L329
+L331:
 	// (= ?$assignment_call_38 3)
-	cp309_42 = ex.V[42]
+	cp333_42 = ex.V[42]
 	// (= ?$assignment_call_38 3)
+	ex.DebugBeginCondition(&definition, 84)
 	{
 		value := sv17
 		if value.IsBound() && !ex.V[42].IsBound() {
 			ex.V[42] = value
-			goto L310
+			ex.DebugEndCondition(&definition, true)
+			goto L334
 		}
-		goto L308
+		ex.DebugEndCondition(&definition, false)
+		goto L332
 	}
-L310:
+L334:
 	// (== ?$assignment_call_37 ?$assignment_call_38)
 	// (== ?$assignment_call_37 ?$assignment_call_38)
+	ex.DebugBeginCondition(&definition, 85)
 	if planner.Compare(ex.V[41], ex.V[42], 0) {
-		goto L313
+		ex.DebugEndCondition(&definition, true)
+		goto L337
 	}
-	goto L311
-L313:
+	ex.DebugEndCondition(&definition, false)
+	goto L335
+L337:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_39 2) (= ?$assignment_call_40 ?value) (= ?$assignment_call_41 (call identity ?$assignment_call_40)) (!= ?$assignment_call_39 ?$assignment_call_41))
-	cp315_43 = ex.V[43]
-	cp315_44 = ex.V[44]
-	cp315_45 = ex.V[45]
+	cp340_43 = ex.V[43]
+	cp340_44 = ex.V[44]
+	cp340_45 = ex.V[45]
+	ex.DebugBeginCondition(&definition, 86)
 	// (= ?$assignment_call_39 2)
-	cp317_43 = ex.V[43]
+	cp342_43 = ex.V[43]
 	// (= ?$assignment_call_39 2)
+	ex.DebugBeginCondition(&definition, 87)
 	{
 		value := sv18
 		if value.IsBound() && !ex.V[43].IsBound() {
 			ex.V[43] = value
-			goto L318
+			ex.DebugEndCondition(&definition, true)
+			goto L343
 		}
-		goto L316
+		ex.DebugEndCondition(&definition, false)
+		goto L341
 	}
-L318:
+L343:
 	// (= ?$assignment_call_40 ?value)
-	cp320_44 = ex.V[44]
+	cp345_44 = ex.V[44]
 	// (= ?$assignment_call_40 ?value)
+	ex.DebugBeginCondition(&definition, 88)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[44].IsBound() {
 			ex.V[44] = value
-			goto L321
+			ex.DebugEndCondition(&definition, true)
+			goto L346
 		}
-		goto L319
+		ex.DebugEndCondition(&definition, false)
+		goto L344
 	}
-L321:
+L346:
 	// (= ?$assignment_call_41 (call identity ?$assignment_call_40))
-	cp323_45 = ex.V[45]
+	cp348_45 = ex.V[45]
 	// (= ?$assignment_call_41 (call identity ?$assignment_call_40))
+	ex.DebugBeginCondition(&definition, 89)
 	if !ex.V[45].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[44]}, &cs24, factSymbols); ok {
 			ex.SetIfChanged(45, result)
-			goto L324
+			ex.DebugEndCondition(&definition, true)
+			goto L349
 		}
 	}
-	goto L322
-L324:
+	ex.DebugEndCondition(&definition, false)
+	goto L347
+L349:
 	// (!= ?$assignment_call_39 ?$assignment_call_41)
 	// (!= ?$assignment_call_39 ?$assignment_call_41)
+	ex.DebugBeginCondition(&definition, 90)
 	if planner.Compare(ex.V[43], ex.V[45], 1) {
-		goto L327
+		ex.DebugEndCondition(&definition, true)
+		goto L352
 	}
-	goto L325
-L327:
+	ex.DebugEndCondition(&definition, false)
+	goto L350
+L352:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_42 1) (= ?$assignment_call_43 (call identity ?$assignment_call_42)) (= ?$assignment_call_44 (* ?$assignment_call_43 1)) (= ?$assignment_call_45 (* 2 1)) (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45)) (= ?$assignment_call_47 3) (== ?$assignment_call_46 ?$assignment_call_47))
-	cp329_46 = ex.V[46]
-	cp329_47 = ex.V[47]
-	cp329_48 = ex.V[48]
-	cp329_49 = ex.V[49]
-	cp329_50 = ex.V[50]
-	cp329_51 = ex.V[51]
+	cp355_46 = ex.V[46]
+	cp355_47 = ex.V[47]
+	cp355_48 = ex.V[48]
+	cp355_49 = ex.V[49]
+	cp355_50 = ex.V[50]
+	cp355_51 = ex.V[51]
+	ex.DebugBeginCondition(&definition, 91)
 	// (= ?$assignment_call_42 1)
-	cp331_46 = ex.V[46]
+	cp357_46 = ex.V[46]
 	// (= ?$assignment_call_42 1)
+	ex.DebugBeginCondition(&definition, 92)
 	{
 		value := sv19
 		if value.IsBound() && !ex.V[46].IsBound() {
 			ex.V[46] = value
-			goto L332
+			ex.DebugEndCondition(&definition, true)
+			goto L358
 		}
-		goto L330
+		ex.DebugEndCondition(&definition, false)
+		goto L356
 	}
-L332:
+L358:
 	// (= ?$assignment_call_43 (call identity ?$assignment_call_42))
-	cp334_47 = ex.V[47]
+	cp360_47 = ex.V[47]
 	// (= ?$assignment_call_43 (call identity ?$assignment_call_42))
+	ex.DebugBeginCondition(&definition, 93)
 	if !ex.V[47].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[46]}, &cs25, factSymbols); ok {
 			ex.SetIfChanged(47, result)
-			goto L335
+			ex.DebugEndCondition(&definition, true)
+			goto L361
 		}
 	}
-	goto L333
-L335:
+	ex.DebugEndCondition(&definition, false)
+	goto L359
+L361:
 	// (= ?$assignment_call_44 (* ?$assignment_call_43 1))
-	cp337_48 = ex.V[48]
+	cp363_48 = ex.V[48]
 	// (= ?$assignment_call_44 (* ?$assignment_call_43 1))
+	ex.DebugBeginCondition(&definition, 94)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[47], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[48].IsBound() {
 			ex.V[48] = value
-			goto L338
+			ex.DebugEndCondition(&definition, true)
+			goto L364
 		}
-		goto L336
+		ex.DebugEndCondition(&definition, false)
+		goto L362
 	}
-L338:
+L364:
 	// (= ?$assignment_call_45 (* 2 1))
-	cp340_49 = ex.V[49]
+	cp366_49 = ex.V[49]
 	// (= ?$assignment_call_45 (* 2 1))
+	ex.DebugBeginCondition(&definition, 95)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(2), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[49].IsBound() {
 			ex.V[49] = value
-			goto L341
+			ex.DebugEndCondition(&definition, true)
+			goto L367
 		}
-		goto L339
+		ex.DebugEndCondition(&definition, false)
+		goto L365
 	}
-L341:
+L367:
 	// (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
-	cp343_50 = ex.V[50]
+	cp369_50 = ex.V[50]
 	// (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
+	ex.DebugBeginCondition(&definition, 96)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[48], ex.V[49]})
 		if value.IsBound() && !ex.V[50].IsBound() {
 			ex.V[50] = value
-			goto L344
+			ex.DebugEndCondition(&definition, true)
+			goto L370
 		}
-		goto L342
+		ex.DebugEndCondition(&definition, false)
+		goto L368
 	}
-L344:
+L370:
 	// (= ?$assignment_call_47 3)
-	cp346_51 = ex.V[51]
+	cp372_51 = ex.V[51]
 	// (= ?$assignment_call_47 3)
+	ex.DebugBeginCondition(&definition, 97)
 	{
 		value := sv20
 		if value.IsBound() && !ex.V[51].IsBound() {
 			ex.V[51] = value
-			goto L347
+			ex.DebugEndCondition(&definition, true)
+			goto L373
 		}
-		goto L345
+		ex.DebugEndCondition(&definition, false)
+		goto L371
 	}
-L347:
+L373:
 	// (== ?$assignment_call_46 ?$assignment_call_47)
 	// (== ?$assignment_call_46 ?$assignment_call_47)
+	ex.DebugBeginCondition(&definition, 98)
 	if planner.Compare(ex.V[50], ex.V[51], 0) {
-		goto L350
+		ex.DebugEndCondition(&definition, true)
+		goto L376
 	}
-	goto L348
-L350:
+	ex.DebugEndCondition(&definition, false)
+	goto L374
+L376:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_48 (* 5 1)) (= ?$assignment_call_49 2) (= ?$assignment_call_50 (call identity ?$assignment_call_49)) (= ?$assignment_call_51 (* ?$assignment_call_50 1)) (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51)) (= ?$assignment_call_53 3) (== ?$assignment_call_52 ?$assignment_call_53))
-	cp352_52 = ex.V[52]
-	cp352_53 = ex.V[53]
-	cp352_54 = ex.V[54]
-	cp352_55 = ex.V[55]
-	cp352_56 = ex.V[56]
-	cp352_57 = ex.V[57]
+	cp379_52 = ex.V[52]
+	cp379_53 = ex.V[53]
+	cp379_54 = ex.V[54]
+	cp379_55 = ex.V[55]
+	cp379_56 = ex.V[56]
+	cp379_57 = ex.V[57]
+	ex.DebugBeginCondition(&definition, 99)
 	// (= ?$assignment_call_48 (* 5 1))
-	cp354_52 = ex.V[52]
+	cp381_52 = ex.V[52]
 	// (= ?$assignment_call_48 (* 5 1))
+	ex.DebugBeginCondition(&definition, 100)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(5), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[52].IsBound() {
 			ex.V[52] = value
-			goto L355
+			ex.DebugEndCondition(&definition, true)
+			goto L382
 		}
-		goto L353
+		ex.DebugEndCondition(&definition, false)
+		goto L380
 	}
-L355:
+L382:
 	// (= ?$assignment_call_49 2)
-	cp357_53 = ex.V[53]
+	cp384_53 = ex.V[53]
 	// (= ?$assignment_call_49 2)
+	ex.DebugBeginCondition(&definition, 101)
 	{
 		value := sv21
 		if value.IsBound() && !ex.V[53].IsBound() {
 			ex.V[53] = value
-			goto L358
+			ex.DebugEndCondition(&definition, true)
+			goto L385
 		}
-		goto L356
+		ex.DebugEndCondition(&definition, false)
+		goto L383
 	}
-L358:
+L385:
 	// (= ?$assignment_call_50 (call identity ?$assignment_call_49))
-	cp360_54 = ex.V[54]
+	cp387_54 = ex.V[54]
 	// (= ?$assignment_call_50 (call identity ?$assignment_call_49))
+	ex.DebugBeginCondition(&definition, 102)
 	if !ex.V[54].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[53]}, &cs26, factSymbols); ok {
 			ex.SetIfChanged(54, result)
-			goto L361
+			ex.DebugEndCondition(&definition, true)
+			goto L388
 		}
 	}
-	goto L359
-L361:
+	ex.DebugEndCondition(&definition, false)
+	goto L386
+L388:
 	// (= ?$assignment_call_51 (* ?$assignment_call_50 1))
-	cp363_55 = ex.V[55]
+	cp390_55 = ex.V[55]
 	// (= ?$assignment_call_51 (* ?$assignment_call_50 1))
+	ex.DebugBeginCondition(&definition, 103)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[54], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[55].IsBound() {
 			ex.V[55] = value
-			goto L364
+			ex.DebugEndCondition(&definition, true)
+			goto L391
 		}
-		goto L362
+		ex.DebugEndCondition(&definition, false)
+		goto L389
 	}
-L364:
+L391:
 	// (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
-	cp366_56 = ex.V[56]
+	cp393_56 = ex.V[56]
 	// (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
+	ex.DebugBeginCondition(&definition, 104)
 	{
 		value := planner.Arith(1, []atom.Atom{ex.V[52], ex.V[55]})
 		if value.IsBound() && !ex.V[56].IsBound() {
 			ex.V[56] = value
-			goto L367
+			ex.DebugEndCondition(&definition, true)
+			goto L394
 		}
-		goto L365
+		ex.DebugEndCondition(&definition, false)
+		goto L392
 	}
-L367:
+L394:
 	// (= ?$assignment_call_53 3)
-	cp369_57 = ex.V[57]
+	cp396_57 = ex.V[57]
 	// (= ?$assignment_call_53 3)
+	ex.DebugBeginCondition(&definition, 105)
 	{
 		value := sv22
 		if value.IsBound() && !ex.V[57].IsBound() {
 			ex.V[57] = value
-			goto L370
+			ex.DebugEndCondition(&definition, true)
+			goto L397
 		}
-		goto L368
+		ex.DebugEndCondition(&definition, false)
+		goto L395
 	}
-L370:
+L397:
 	// (== ?$assignment_call_52 ?$assignment_call_53)
 	// (== ?$assignment_call_52 ?$assignment_call_53)
+	ex.DebugBeginCondition(&definition, 106)
 	if planner.Compare(ex.V[56], ex.V[57], 0) {
-		goto L373
+		ex.DebugEndCondition(&definition, true)
+		goto L400
 	}
-	goto L371
-L373:
+	ex.DebugEndCondition(&definition, false)
+	goto L398
+L400:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_54 2) (= ?$assignment_call_55 (call identity ?$assignment_call_54)) (= ?$assignment_call_56 (* ?$assignment_call_55 1)) (= ?$assignment_call_57 (* 3 1)) (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57)) (= ?$assignment_call_59 6) (== ?$assignment_call_58 ?$assignment_call_59))
-	cp375_58 = ex.V[58]
-	cp375_59 = ex.V[59]
-	cp375_60 = ex.V[60]
-	cp375_61 = ex.V[61]
-	cp375_62 = ex.V[62]
-	cp375_63 = ex.V[63]
+	cp403_58 = ex.V[58]
+	cp403_59 = ex.V[59]
+	cp403_60 = ex.V[60]
+	cp403_61 = ex.V[61]
+	cp403_62 = ex.V[62]
+	cp403_63 = ex.V[63]
+	ex.DebugBeginCondition(&definition, 107)
 	// (= ?$assignment_call_54 2)
-	cp377_58 = ex.V[58]
+	cp405_58 = ex.V[58]
 	// (= ?$assignment_call_54 2)
+	ex.DebugBeginCondition(&definition, 108)
 	{
 		value := sv23
 		if value.IsBound() && !ex.V[58].IsBound() {
 			ex.V[58] = value
-			goto L378
+			ex.DebugEndCondition(&definition, true)
+			goto L406
 		}
-		goto L376
+		ex.DebugEndCondition(&definition, false)
+		goto L404
 	}
-L378:
+L406:
 	// (= ?$assignment_call_55 (call identity ?$assignment_call_54))
-	cp380_59 = ex.V[59]
+	cp408_59 = ex.V[59]
 	// (= ?$assignment_call_55 (call identity ?$assignment_call_54))
+	ex.DebugBeginCondition(&definition, 109)
 	if !ex.V[59].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[58]}, &cs27, factSymbols); ok {
 			ex.SetIfChanged(59, result)
-			goto L381
+			ex.DebugEndCondition(&definition, true)
+			goto L409
 		}
 	}
-	goto L379
-L381:
+	ex.DebugEndCondition(&definition, false)
+	goto L407
+L409:
 	// (= ?$assignment_call_56 (* ?$assignment_call_55 1))
-	cp383_60 = ex.V[60]
+	cp411_60 = ex.V[60]
 	// (= ?$assignment_call_56 (* ?$assignment_call_55 1))
+	ex.DebugBeginCondition(&definition, 110)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[59], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[60].IsBound() {
 			ex.V[60] = value
-			goto L384
+			ex.DebugEndCondition(&definition, true)
+			goto L412
 		}
-		goto L382
+		ex.DebugEndCondition(&definition, false)
+		goto L410
 	}
-L384:
+L412:
 	// (= ?$assignment_call_57 (* 3 1))
-	cp386_61 = ex.V[61]
+	cp414_61 = ex.V[61]
 	// (= ?$assignment_call_57 (* 3 1))
+	ex.DebugBeginCondition(&definition, 111)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(3), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[61].IsBound() {
 			ex.V[61] = value
-			goto L387
+			ex.DebugEndCondition(&definition, true)
+			goto L415
 		}
-		goto L385
+		ex.DebugEndCondition(&definition, false)
+		goto L413
 	}
-L387:
+L415:
 	// (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))
-	cp389_62 = ex.V[62]
+	cp417_62 = ex.V[62]
 	// (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))
+	ex.DebugBeginCondition(&definition, 112)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[60], ex.V[61]})
 		if value.IsBound() && !ex.V[62].IsBound() {
 			ex.V[62] = value
-			goto L390
+			ex.DebugEndCondition(&definition, true)
+			goto L418
 		}
-		goto L388
+		ex.DebugEndCondition(&definition, false)
+		goto L416
 	}
-L390:
+L418:
 	// (= ?$assignment_call_59 6)
-	cp392_63 = ex.V[63]
+	cp420_63 = ex.V[63]
 	// (= ?$assignment_call_59 6)
+	ex.DebugBeginCondition(&definition, 113)
 	{
 		value := sv24
 		if value.IsBound() && !ex.V[63].IsBound() {
 			ex.V[63] = value
-			goto L393
+			ex.DebugEndCondition(&definition, true)
+			goto L421
 		}
-		goto L391
+		ex.DebugEndCondition(&definition, false)
+		goto L419
 	}
-L393:
+L421:
 	// (== ?$assignment_call_58 ?$assignment_call_59)
 	// (== ?$assignment_call_58 ?$assignment_call_59)
+	ex.DebugBeginCondition(&definition, 114)
 	if planner.Compare(ex.V[62], ex.V[63], 0) {
-		goto L396
+		ex.DebugEndCondition(&definition, true)
+		goto L424
 	}
-	goto L394
-L396:
+	ex.DebugEndCondition(&definition, false)
+	goto L422
+L424:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_60 (* 6 1)) (= ?$assignment_call_61 2) (= ?$assignment_call_62 (call identity ?$assignment_call_61)) (= ?$assignment_call_63 (* ?$assignment_call_62 1)) (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63)) (= ?$assignment_call_65 3) (== ?$assignment_call_64 ?$assignment_call_65))
-	cp398_64 = ex.V[64]
-	cp398_65 = ex.V[65]
-	cp398_66 = ex.V[66]
-	cp398_67 = ex.V[67]
-	cp398_68 = ex.V[68]
-	cp398_69 = ex.V[69]
+	cp427_64 = ex.V[64]
+	cp427_65 = ex.V[65]
+	cp427_66 = ex.V[66]
+	cp427_67 = ex.V[67]
+	cp427_68 = ex.V[68]
+	cp427_69 = ex.V[69]
+	ex.DebugBeginCondition(&definition, 115)
 	// (= ?$assignment_call_60 (* 6 1))
-	cp400_64 = ex.V[64]
+	cp429_64 = ex.V[64]
 	// (= ?$assignment_call_60 (* 6 1))
+	ex.DebugBeginCondition(&definition, 116)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(6), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[64].IsBound() {
 			ex.V[64] = value
-			goto L401
+			ex.DebugEndCondition(&definition, true)
+			goto L430
 		}
-		goto L399
+		ex.DebugEndCondition(&definition, false)
+		goto L428
 	}
-L401:
+L430:
 	// (= ?$assignment_call_61 2)
-	cp403_65 = ex.V[65]
+	cp432_65 = ex.V[65]
 	// (= ?$assignment_call_61 2)
+	ex.DebugBeginCondition(&definition, 117)
 	{
 		value := sv25
 		if value.IsBound() && !ex.V[65].IsBound() {
 			ex.V[65] = value
-			goto L404
+			ex.DebugEndCondition(&definition, true)
+			goto L433
 		}
-		goto L402
+		ex.DebugEndCondition(&definition, false)
+		goto L431
 	}
-L404:
+L433:
 	// (= ?$assignment_call_62 (call identity ?$assignment_call_61))
-	cp406_66 = ex.V[66]
+	cp435_66 = ex.V[66]
 	// (= ?$assignment_call_62 (call identity ?$assignment_call_61))
+	ex.DebugBeginCondition(&definition, 118)
 	if !ex.V[66].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[65]}, &cs28, factSymbols); ok {
 			ex.SetIfChanged(66, result)
-			goto L407
+			ex.DebugEndCondition(&definition, true)
+			goto L436
 		}
 	}
-	goto L405
-L407:
+	ex.DebugEndCondition(&definition, false)
+	goto L434
+L436:
 	// (= ?$assignment_call_63 (* ?$assignment_call_62 1))
-	cp409_67 = ex.V[67]
+	cp438_67 = ex.V[67]
 	// (= ?$assignment_call_63 (* ?$assignment_call_62 1))
+	ex.DebugBeginCondition(&definition, 119)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[66], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[67].IsBound() {
 			ex.V[67] = value
-			goto L410
+			ex.DebugEndCondition(&definition, true)
+			goto L439
 		}
-		goto L408
+		ex.DebugEndCondition(&definition, false)
+		goto L437
 	}
-L410:
+L439:
 	// (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
-	cp412_68 = ex.V[68]
+	cp441_68 = ex.V[68]
 	// (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
+	ex.DebugBeginCondition(&definition, 120)
 	{
 		value := planner.Arith(3, []atom.Atom{ex.V[64], ex.V[67]})
 		if value.IsBound() && !ex.V[68].IsBound() {
 			ex.V[68] = value
-			goto L413
+			ex.DebugEndCondition(&definition, true)
+			goto L442
 		}
-		goto L411
+		ex.DebugEndCondition(&definition, false)
+		goto L440
 	}
-L413:
+L442:
 	// (= ?$assignment_call_65 3)
-	cp415_69 = ex.V[69]
+	cp444_69 = ex.V[69]
 	// (= ?$assignment_call_65 3)
+	ex.DebugBeginCondition(&definition, 121)
 	{
 		value := sv26
 		if value.IsBound() && !ex.V[69].IsBound() {
 			ex.V[69] = value
-			goto L416
+			ex.DebugEndCondition(&definition, true)
+			goto L445
 		}
-		goto L414
+		ex.DebugEndCondition(&definition, false)
+		goto L443
 	}
-L416:
+L445:
 	// (== ?$assignment_call_64 ?$assignment_call_65)
 	// (== ?$assignment_call_64 ?$assignment_call_65)
+	ex.DebugBeginCondition(&definition, 122)
 	if planner.Compare(ex.V[68], ex.V[69], 0) {
-		goto L419
+		ex.DebugEndCondition(&definition, true)
+		goto L448
 	}
-	goto L417
-L419:
+	ex.DebugEndCondition(&definition, false)
+	goto L446
+L448:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_66 7) (= ?$assignment_call_67 (call identity ?$assignment_call_66)) (= ?$assignment_call_68 (* ?$assignment_call_67 1)) (= ?$assignment_call_69 (* 4 1)) (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69)) (= ?$assignment_call_71 3) (== ?$assignment_call_70 ?$assignment_call_71))
-	cp421_70 = ex.V[70]
-	cp421_71 = ex.V[71]
-	cp421_72 = ex.V[72]
-	cp421_73 = ex.V[73]
-	cp421_74 = ex.V[74]
-	cp421_75 = ex.V[75]
+	cp451_70 = ex.V[70]
+	cp451_71 = ex.V[71]
+	cp451_72 = ex.V[72]
+	cp451_73 = ex.V[73]
+	cp451_74 = ex.V[74]
+	cp451_75 = ex.V[75]
+	ex.DebugBeginCondition(&definition, 123)
 	// (= ?$assignment_call_66 7)
-	cp423_70 = ex.V[70]
+	cp453_70 = ex.V[70]
 	// (= ?$assignment_call_66 7)
+	ex.DebugBeginCondition(&definition, 124)
 	{
 		value := sv27
 		if value.IsBound() && !ex.V[70].IsBound() {
 			ex.V[70] = value
-			goto L424
+			ex.DebugEndCondition(&definition, true)
+			goto L454
 		}
-		goto L422
+		ex.DebugEndCondition(&definition, false)
+		goto L452
 	}
-L424:
+L454:
 	// (= ?$assignment_call_67 (call identity ?$assignment_call_66))
-	cp426_71 = ex.V[71]
+	cp456_71 = ex.V[71]
 	// (= ?$assignment_call_67 (call identity ?$assignment_call_66))
+	ex.DebugBeginCondition(&definition, 125)
 	if !ex.V[71].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[70]}, &cs29, factSymbols); ok {
 			ex.SetIfChanged(71, result)
-			goto L427
+			ex.DebugEndCondition(&definition, true)
+			goto L457
 		}
 	}
-	goto L425
-L427:
+	ex.DebugEndCondition(&definition, false)
+	goto L455
+L457:
 	// (= ?$assignment_call_68 (* ?$assignment_call_67 1))
-	cp429_72 = ex.V[72]
+	cp459_72 = ex.V[72]
 	// (= ?$assignment_call_68 (* ?$assignment_call_67 1))
+	ex.DebugBeginCondition(&definition, 126)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[71], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[72].IsBound() {
 			ex.V[72] = value
-			goto L430
+			ex.DebugEndCondition(&definition, true)
+			goto L460
 		}
-		goto L428
+		ex.DebugEndCondition(&definition, false)
+		goto L458
 	}
-L430:
+L460:
 	// (= ?$assignment_call_69 (* 4 1))
-	cp432_73 = ex.V[73]
+	cp462_73 = ex.V[73]
 	// (= ?$assignment_call_69 (* 4 1))
+	ex.DebugBeginCondition(&definition, 127)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(4), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[73].IsBound() {
 			ex.V[73] = value
-			goto L433
+			ex.DebugEndCondition(&definition, true)
+			goto L463
 		}
-		goto L431
+		ex.DebugEndCondition(&definition, false)
+		goto L461
 	}
-L433:
+L463:
 	// (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
-	cp435_74 = ex.V[74]
+	cp465_74 = ex.V[74]
 	// (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
+	ex.DebugBeginCondition(&definition, 128)
 	{
 		value := planner.Arith(4, []atom.Atom{ex.V[72], ex.V[73]})
 		if value.IsBound() && !ex.V[74].IsBound() {
 			ex.V[74] = value
-			goto L436
+			ex.DebugEndCondition(&definition, true)
+			goto L466
 		}
-		goto L434
+		ex.DebugEndCondition(&definition, false)
+		goto L464
 	}
-L436:
+L466:
 	// (= ?$assignment_call_71 3)
-	cp438_75 = ex.V[75]
+	cp468_75 = ex.V[75]
 	// (= ?$assignment_call_71 3)
+	ex.DebugBeginCondition(&definition, 129)
 	{
 		value := sv28
 		if value.IsBound() && !ex.V[75].IsBound() {
 			ex.V[75] = value
-			goto L439
+			ex.DebugEndCondition(&definition, true)
+			goto L469
 		}
-		goto L437
+		ex.DebugEndCondition(&definition, false)
+		goto L467
 	}
-L439:
+L469:
 	// (== ?$assignment_call_70 ?$assignment_call_71)
 	// (== ?$assignment_call_70 ?$assignment_call_71)
+	ex.DebugBeginCondition(&definition, 130)
 	if planner.Compare(ex.V[74], ex.V[75], 0) {
-		goto L442
+		ex.DebugEndCondition(&definition, true)
+		goto L472
 	}
-	goto L440
-L442:
+	ex.DebugEndCondition(&definition, false)
+	goto L470
+L472:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_72 2) (= ?$assignment_call_73 (call identity ?$assignment_call_72)) (= ?$assignment_call_74 (* ?$assignment_call_73 1)) (= ?$assignment_call_75 (++ ?$assignment_call_74)) (= ?$assignment_call_76 3) (== ?$assignment_call_75 ?$assignment_call_76))
-	cp444_76 = ex.V[76]
-	cp444_77 = ex.V[77]
-	cp444_78 = ex.V[78]
-	cp444_79 = ex.V[79]
-	cp444_80 = ex.V[80]
+	cp475_76 = ex.V[76]
+	cp475_77 = ex.V[77]
+	cp475_78 = ex.V[78]
+	cp475_79 = ex.V[79]
+	cp475_80 = ex.V[80]
+	ex.DebugBeginCondition(&definition, 131)
 	// (= ?$assignment_call_72 2)
-	cp446_76 = ex.V[76]
+	cp477_76 = ex.V[76]
 	// (= ?$assignment_call_72 2)
+	ex.DebugBeginCondition(&definition, 132)
 	{
 		value := sv29
 		if value.IsBound() && !ex.V[76].IsBound() {
 			ex.V[76] = value
-			goto L447
+			ex.DebugEndCondition(&definition, true)
+			goto L478
 		}
-		goto L445
+		ex.DebugEndCondition(&definition, false)
+		goto L476
 	}
-L447:
+L478:
 	// (= ?$assignment_call_73 (call identity ?$assignment_call_72))
-	cp449_77 = ex.V[77]
+	cp480_77 = ex.V[77]
 	// (= ?$assignment_call_73 (call identity ?$assignment_call_72))
+	ex.DebugBeginCondition(&definition, 133)
 	if !ex.V[77].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[76]}, &cs30, factSymbols); ok {
 			ex.SetIfChanged(77, result)
-			goto L450
+			ex.DebugEndCondition(&definition, true)
+			goto L481
 		}
 	}
-	goto L448
-L450:
+	ex.DebugEndCondition(&definition, false)
+	goto L479
+L481:
 	// (= ?$assignment_call_74 (* ?$assignment_call_73 1))
-	cp452_78 = ex.V[78]
+	cp483_78 = ex.V[78]
 	// (= ?$assignment_call_74 (* ?$assignment_call_73 1))
+	ex.DebugBeginCondition(&definition, 134)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[77], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[78].IsBound() {
 			ex.V[78] = value
-			goto L453
+			ex.DebugEndCondition(&definition, true)
+			goto L484
 		}
-		goto L451
+		ex.DebugEndCondition(&definition, false)
+		goto L482
 	}
-L453:
+L484:
 	// (= ?$assignment_call_75 (++ ?$assignment_call_74))
-	cp455_79 = ex.V[79]
+	cp486_79 = ex.V[79]
 	// (= ?$assignment_call_75 (++ ?$assignment_call_74))
+	ex.DebugBeginCondition(&definition, 135)
 	{
 		value := planner.Arith(5, []atom.Atom{ex.V[78]})
 		if value.IsBound() && !ex.V[79].IsBound() {
 			ex.V[79] = value
-			goto L456
+			ex.DebugEndCondition(&definition, true)
+			goto L487
 		}
-		goto L454
+		ex.DebugEndCondition(&definition, false)
+		goto L485
 	}
-L456:
+L487:
 	// (= ?$assignment_call_76 3)
-	cp458_80 = ex.V[80]
+	cp489_80 = ex.V[80]
 	// (= ?$assignment_call_76 3)
+	ex.DebugBeginCondition(&definition, 136)
 	{
 		value := sv30
 		if value.IsBound() && !ex.V[80].IsBound() {
 			ex.V[80] = value
-			goto L459
+			ex.DebugEndCondition(&definition, true)
+			goto L490
 		}
-		goto L457
+		ex.DebugEndCondition(&definition, false)
+		goto L488
 	}
-L459:
+L490:
 	// (== ?$assignment_call_75 ?$assignment_call_76)
 	// (== ?$assignment_call_75 ?$assignment_call_76)
+	ex.DebugBeginCondition(&definition, 137)
 	if planner.Compare(ex.V[79], ex.V[80], 0) {
-		goto L462
+		ex.DebugEndCondition(&definition, true)
+		goto L493
 	}
-	goto L460
-L462:
+	ex.DebugEndCondition(&definition, false)
+	goto L491
+L493:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_77 4) (= ?$assignment_call_78 (call identity ?$assignment_call_77)) (= ?$assignment_call_79 (* ?$assignment_call_78 1)) (= ?$assignment_call_80 (-- ?$assignment_call_79)) (= ?$assignment_call_81 3) (== ?$assignment_call_80 ?$assignment_call_81))
-	cp464_81 = ex.V[81]
-	cp464_82 = ex.V[82]
-	cp464_83 = ex.V[83]
-	cp464_84 = ex.V[84]
-	cp464_85 = ex.V[85]
+	cp496_81 = ex.V[81]
+	cp496_82 = ex.V[82]
+	cp496_83 = ex.V[83]
+	cp496_84 = ex.V[84]
+	cp496_85 = ex.V[85]
+	ex.DebugBeginCondition(&definition, 138)
 	// (= ?$assignment_call_77 4)
-	cp466_81 = ex.V[81]
+	cp498_81 = ex.V[81]
 	// (= ?$assignment_call_77 4)
+	ex.DebugBeginCondition(&definition, 139)
 	{
 		value := sv31
 		if value.IsBound() && !ex.V[81].IsBound() {
 			ex.V[81] = value
-			goto L467
+			ex.DebugEndCondition(&definition, true)
+			goto L499
 		}
-		goto L465
+		ex.DebugEndCondition(&definition, false)
+		goto L497
 	}
-L467:
+L499:
 	// (= ?$assignment_call_78 (call identity ?$assignment_call_77))
-	cp469_82 = ex.V[82]
+	cp501_82 = ex.V[82]
 	// (= ?$assignment_call_78 (call identity ?$assignment_call_77))
+	ex.DebugBeginCondition(&definition, 140)
 	if !ex.V[82].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[81]}, &cs31, factSymbols); ok {
 			ex.SetIfChanged(82, result)
-			goto L470
+			ex.DebugEndCondition(&definition, true)
+			goto L502
 		}
 	}
-	goto L468
-L470:
+	ex.DebugEndCondition(&definition, false)
+	goto L500
+L502:
 	// (= ?$assignment_call_79 (* ?$assignment_call_78 1))
-	cp472_83 = ex.V[83]
+	cp504_83 = ex.V[83]
 	// (= ?$assignment_call_79 (* ?$assignment_call_78 1))
+	ex.DebugBeginCondition(&definition, 141)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[82], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[83].IsBound() {
 			ex.V[83] = value
-			goto L473
+			ex.DebugEndCondition(&definition, true)
+			goto L505
 		}
-		goto L471
+		ex.DebugEndCondition(&definition, false)
+		goto L503
 	}
-L473:
+L505:
 	// (= ?$assignment_call_80 (-- ?$assignment_call_79))
-	cp475_84 = ex.V[84]
+	cp507_84 = ex.V[84]
 	// (= ?$assignment_call_80 (-- ?$assignment_call_79))
+	ex.DebugBeginCondition(&definition, 142)
 	{
 		value := planner.Arith(6, []atom.Atom{ex.V[83]})
 		if value.IsBound() && !ex.V[84].IsBound() {
 			ex.V[84] = value
-			goto L476
+			ex.DebugEndCondition(&definition, true)
+			goto L508
 		}
-		goto L474
+		ex.DebugEndCondition(&definition, false)
+		goto L506
 	}
-L476:
+L508:
 	// (= ?$assignment_call_81 3)
-	cp478_85 = ex.V[85]
+	cp510_85 = ex.V[85]
 	// (= ?$assignment_call_81 3)
+	ex.DebugBeginCondition(&definition, 143)
 	{
 		value := sv32
 		if value.IsBound() && !ex.V[85].IsBound() {
 			ex.V[85] = value
-			goto L479
+			ex.DebugEndCondition(&definition, true)
+			goto L511
 		}
-		goto L477
+		ex.DebugEndCondition(&definition, false)
+		goto L509
 	}
-L479:
+L511:
 	// (== ?$assignment_call_80 ?$assignment_call_81)
 	// (== ?$assignment_call_80 ?$assignment_call_81)
+	ex.DebugBeginCondition(&definition, 144)
 	if planner.Compare(ex.V[84], ex.V[85], 0) {
-		goto L482
+		ex.DebugEndCondition(&definition, true)
+		goto L514
 	}
-	goto L480
-L482:
+	ex.DebugEndCondition(&definition, false)
+	goto L512
+L514:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_82 (* 1 1)) (= ?$assignment_call_83 2) (= ?$assignment_call_84 (call identity ?$assignment_call_83)) (= ?$assignment_call_85 (* ?$assignment_call_84 1)) (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85)) (= ?$assignment_call_87 (call identity ?$assignment_call_86)) (= ?$assignment_call_88 3) (== ?$assignment_call_87 ?$assignment_call_88))
-	cp484_86 = ex.V[86]
-	cp484_87 = ex.V[87]
-	cp484_88 = ex.V[88]
-	cp484_89 = ex.V[89]
-	cp484_90 = ex.V[90]
-	cp484_91 = ex.V[91]
-	cp484_92 = ex.V[92]
+	cp517_86 = ex.V[86]
+	cp517_87 = ex.V[87]
+	cp517_88 = ex.V[88]
+	cp517_89 = ex.V[89]
+	cp517_90 = ex.V[90]
+	cp517_91 = ex.V[91]
+	cp517_92 = ex.V[92]
+	ex.DebugBeginCondition(&definition, 145)
 	// (= ?$assignment_call_82 (* 1 1))
-	cp486_86 = ex.V[86]
+	cp519_86 = ex.V[86]
 	// (= ?$assignment_call_82 (* 1 1))
+	ex.DebugBeginCondition(&definition, 146)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(1), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[86].IsBound() {
 			ex.V[86] = value
-			goto L487
+			ex.DebugEndCondition(&definition, true)
+			goto L520
 		}
-		goto L485
+		ex.DebugEndCondition(&definition, false)
+		goto L518
 	}
-L487:
+L520:
 	// (= ?$assignment_call_83 2)
-	cp489_87 = ex.V[87]
+	cp522_87 = ex.V[87]
 	// (= ?$assignment_call_83 2)
+	ex.DebugBeginCondition(&definition, 147)
 	{
 		value := sv33
 		if value.IsBound() && !ex.V[87].IsBound() {
 			ex.V[87] = value
-			goto L490
+			ex.DebugEndCondition(&definition, true)
+			goto L523
 		}
-		goto L488
+		ex.DebugEndCondition(&definition, false)
+		goto L521
 	}
-L490:
+L523:
 	// (= ?$assignment_call_84 (call identity ?$assignment_call_83))
-	cp492_88 = ex.V[88]
+	cp525_88 = ex.V[88]
 	// (= ?$assignment_call_84 (call identity ?$assignment_call_83))
+	ex.DebugBeginCondition(&definition, 148)
 	if !ex.V[88].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[87]}, &cs32, factSymbols); ok {
 			ex.SetIfChanged(88, result)
-			goto L493
+			ex.DebugEndCondition(&definition, true)
+			goto L526
 		}
 	}
-	goto L491
-L493:
+	ex.DebugEndCondition(&definition, false)
+	goto L524
+L526:
 	// (= ?$assignment_call_85 (* ?$assignment_call_84 1))
-	cp495_89 = ex.V[89]
+	cp528_89 = ex.V[89]
 	// (= ?$assignment_call_85 (* ?$assignment_call_84 1))
+	ex.DebugBeginCondition(&definition, 149)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[88], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[89].IsBound() {
 			ex.V[89] = value
-			goto L496
+			ex.DebugEndCondition(&definition, true)
+			goto L529
 		}
-		goto L494
+		ex.DebugEndCondition(&definition, false)
+		goto L527
 	}
-L496:
+L529:
 	// (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
-	cp498_90 = ex.V[90]
+	cp531_90 = ex.V[90]
 	// (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
+	ex.DebugBeginCondition(&definition, 150)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[86], ex.V[89]})
 		if value.IsBound() && !ex.V[90].IsBound() {
 			ex.V[90] = value
-			goto L499
+			ex.DebugEndCondition(&definition, true)
+			goto L532
 		}
-		goto L497
+		ex.DebugEndCondition(&definition, false)
+		goto L530
 	}
-L499:
+L532:
 	// (= ?$assignment_call_87 (call identity ?$assignment_call_86))
-	cp501_91 = ex.V[91]
+	cp534_91 = ex.V[91]
 	// (= ?$assignment_call_87 (call identity ?$assignment_call_86))
+	ex.DebugBeginCondition(&definition, 151)
 	if !ex.V[91].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[90]}, &cs33, factSymbols); ok {
 			ex.SetIfChanged(91, result)
-			goto L502
+			ex.DebugEndCondition(&definition, true)
+			goto L535
 		}
 	}
-	goto L500
-L502:
+	ex.DebugEndCondition(&definition, false)
+	goto L533
+L535:
 	// (= ?$assignment_call_88 3)
-	cp504_92 = ex.V[92]
+	cp537_92 = ex.V[92]
 	// (= ?$assignment_call_88 3)
+	ex.DebugBeginCondition(&definition, 152)
 	{
 		value := sv34
 		if value.IsBound() && !ex.V[92].IsBound() {
 			ex.V[92] = value
-			goto L505
+			ex.DebugEndCondition(&definition, true)
+			goto L538
 		}
-		goto L503
+		ex.DebugEndCondition(&definition, false)
+		goto L536
 	}
-L505:
+L538:
 	// (== ?$assignment_call_87 ?$assignment_call_88)
 	// (== ?$assignment_call_87 ?$assignment_call_88)
+	ex.DebugBeginCondition(&definition, 153)
 	if planner.Compare(ex.V[91], ex.V[92], 0) {
-		goto L508
+		ex.DebugEndCondition(&definition, true)
+		goto L541
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L539
+L541:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L257
+L539:
+	goto L536
+L536:
+	ex.V[92] = cp537_92
+	goto L533
+L533:
+	ex.V[91] = cp534_91
+	goto L530
+L530:
+	ex.V[90] = cp531_90
+	goto L527
+L527:
+	ex.V[89] = cp528_89
+	goto L524
+L524:
+	ex.V[88] = cp525_88
+	goto L521
+L521:
+	ex.V[87] = cp522_87
+	goto L518
+L518:
+	ex.V[86] = cp519_86
+	goto L516
+L516:
+	ex.V[86] = cp517_86
+	ex.V[87] = cp517_87
+	ex.V[88] = cp517_88
+	ex.V[89] = cp517_89
+	ex.V[90] = cp517_90
+	ex.V[91] = cp517_91
+	ex.V[92] = cp517_92
+	ex.DebugEndCondition(&definition, false)
+	goto L515
+L515:
+	ex.DebugBeginCondition(&definition, 138)
+	goto L512
+L512:
+	goto L509
+L509:
+	ex.V[85] = cp510_85
 	goto L506
-L508:
-	goto L237
 L506:
+	ex.V[84] = cp507_84
 	goto L503
 L503:
-	ex.V[92] = cp504_92
+	ex.V[83] = cp504_83
 	goto L500
 L500:
-	ex.V[91] = cp501_91
+	ex.V[82] = cp501_82
 	goto L497
 L497:
-	ex.V[90] = cp498_90
+	ex.V[81] = cp498_81
+	goto L495
+L495:
+	ex.V[81] = cp496_81
+	ex.V[82] = cp496_82
+	ex.V[83] = cp496_83
+	ex.V[84] = cp496_84
+	ex.V[85] = cp496_85
+	ex.DebugEndCondition(&definition, false)
 	goto L494
 L494:
-	ex.V[89] = cp495_89
+	ex.DebugBeginCondition(&definition, 131)
 	goto L491
 L491:
-	ex.V[88] = cp492_88
 	goto L488
 L488:
-	ex.V[87] = cp489_87
+	ex.V[80] = cp489_80
 	goto L485
 L485:
-	ex.V[86] = cp486_86
-	goto L483
-L483:
-	ex.V[86] = cp484_86
-	ex.V[87] = cp484_87
-	ex.V[88] = cp484_88
-	ex.V[89] = cp484_89
-	ex.V[90] = cp484_90
-	ex.V[91] = cp484_91
-	ex.V[92] = cp484_92
-	goto L480
-L480:
-	goto L477
-L477:
-	ex.V[85] = cp478_85
+	ex.V[79] = cp486_79
+	goto L482
+L482:
+	ex.V[78] = cp483_78
+	goto L479
+L479:
+	ex.V[77] = cp480_77
+	goto L476
+L476:
+	ex.V[76] = cp477_76
 	goto L474
 L474:
-	ex.V[84] = cp475_84
-	goto L471
-L471:
-	ex.V[83] = cp472_83
-	goto L468
-L468:
-	ex.V[82] = cp469_82
-	goto L465
-L465:
-	ex.V[81] = cp466_81
-	goto L463
-L463:
-	ex.V[81] = cp464_81
-	ex.V[82] = cp464_82
-	ex.V[83] = cp464_83
-	ex.V[84] = cp464_84
-	ex.V[85] = cp464_85
-	goto L460
-L460:
-	goto L457
-L457:
-	ex.V[80] = cp458_80
-	goto L454
-L454:
-	ex.V[79] = cp455_79
-	goto L451
-L451:
-	ex.V[78] = cp452_78
-	goto L448
-L448:
-	ex.V[77] = cp449_77
-	goto L445
-L445:
-	ex.V[76] = cp446_76
+	ex.V[76] = cp475_76
+	ex.V[77] = cp475_77
+	ex.V[78] = cp475_78
+	ex.V[79] = cp475_79
+	ex.V[80] = cp475_80
+	ex.DebugEndCondition(&definition, false)
+	goto L473
+L473:
+	ex.DebugBeginCondition(&definition, 123)
+	goto L470
+L470:
+	goto L467
+L467:
+	ex.V[75] = cp468_75
+	goto L464
+L464:
+	ex.V[74] = cp465_74
+	goto L461
+L461:
+	ex.V[73] = cp462_73
+	goto L458
+L458:
+	ex.V[72] = cp459_72
+	goto L455
+L455:
+	ex.V[71] = cp456_71
+	goto L452
+L452:
+	ex.V[70] = cp453_70
+	goto L450
+L450:
+	ex.V[70] = cp451_70
+	ex.V[71] = cp451_71
+	ex.V[72] = cp451_72
+	ex.V[73] = cp451_73
+	ex.V[74] = cp451_74
+	ex.V[75] = cp451_75
+	ex.DebugEndCondition(&definition, false)
+	goto L449
+L449:
+	ex.DebugBeginCondition(&definition, 115)
+	goto L446
+L446:
 	goto L443
 L443:
-	ex.V[76] = cp444_76
-	ex.V[77] = cp444_77
-	ex.V[78] = cp444_78
-	ex.V[79] = cp444_79
-	ex.V[80] = cp444_80
+	ex.V[69] = cp444_69
 	goto L440
 L440:
+	ex.V[68] = cp441_68
 	goto L437
 L437:
-	ex.V[75] = cp438_75
+	ex.V[67] = cp438_67
 	goto L434
 L434:
-	ex.V[74] = cp435_74
+	ex.V[66] = cp435_66
 	goto L431
 L431:
-	ex.V[73] = cp432_73
+	ex.V[65] = cp432_65
 	goto L428
 L428:
-	ex.V[72] = cp429_72
+	ex.V[64] = cp429_64
+	goto L426
+L426:
+	ex.V[64] = cp427_64
+	ex.V[65] = cp427_65
+	ex.V[66] = cp427_66
+	ex.V[67] = cp427_67
+	ex.V[68] = cp427_68
+	ex.V[69] = cp427_69
+	ex.DebugEndCondition(&definition, false)
 	goto L425
 L425:
-	ex.V[71] = cp426_71
+	ex.DebugBeginCondition(&definition, 107)
 	goto L422
 L422:
-	ex.V[70] = cp423_70
-	goto L420
-L420:
-	ex.V[70] = cp421_70
-	ex.V[71] = cp421_71
-	ex.V[72] = cp421_72
-	ex.V[73] = cp421_73
-	ex.V[74] = cp421_74
-	ex.V[75] = cp421_75
-	goto L417
-L417:
-	goto L414
-L414:
-	ex.V[69] = cp415_69
-	goto L411
-L411:
-	ex.V[68] = cp412_68
-	goto L408
-L408:
-	ex.V[67] = cp409_67
-	goto L405
-L405:
-	ex.V[66] = cp406_66
+	goto L419
+L419:
+	ex.V[63] = cp420_63
+	goto L416
+L416:
+	ex.V[62] = cp417_62
+	goto L413
+L413:
+	ex.V[61] = cp414_61
+	goto L410
+L410:
+	ex.V[60] = cp411_60
+	goto L407
+L407:
+	ex.V[59] = cp408_59
+	goto L404
+L404:
+	ex.V[58] = cp405_58
 	goto L402
 L402:
-	ex.V[65] = cp403_65
-	goto L399
-L399:
-	ex.V[64] = cp400_64
-	goto L397
-L397:
-	ex.V[64] = cp398_64
-	ex.V[65] = cp398_65
-	ex.V[66] = cp398_66
-	ex.V[67] = cp398_67
-	ex.V[68] = cp398_68
-	ex.V[69] = cp398_69
-	goto L394
-L394:
-	goto L391
-L391:
-	ex.V[63] = cp392_63
-	goto L388
-L388:
-	ex.V[62] = cp389_62
-	goto L385
-L385:
-	ex.V[61] = cp386_61
-	goto L382
-L382:
-	ex.V[60] = cp383_60
-	goto L379
-L379:
-	ex.V[59] = cp380_59
-	goto L376
-L376:
-	ex.V[58] = cp377_58
+	ex.V[58] = cp403_58
+	ex.V[59] = cp403_59
+	ex.V[60] = cp403_60
+	ex.V[61] = cp403_61
+	ex.V[62] = cp403_62
+	ex.V[63] = cp403_63
+	ex.DebugEndCondition(&definition, false)
+	goto L401
+L401:
+	ex.DebugBeginCondition(&definition, 99)
+	goto L398
+L398:
+	goto L395
+L395:
+	ex.V[57] = cp396_57
+	goto L392
+L392:
+	ex.V[56] = cp393_56
+	goto L389
+L389:
+	ex.V[55] = cp390_55
+	goto L386
+L386:
+	ex.V[54] = cp387_54
+	goto L383
+L383:
+	ex.V[53] = cp384_53
+	goto L380
+L380:
+	ex.V[52] = cp381_52
+	goto L378
+L378:
+	ex.V[52] = cp379_52
+	ex.V[53] = cp379_53
+	ex.V[54] = cp379_54
+	ex.V[55] = cp379_55
+	ex.V[56] = cp379_56
+	ex.V[57] = cp379_57
+	ex.DebugEndCondition(&definition, false)
+	goto L377
+L377:
+	ex.DebugBeginCondition(&definition, 91)
 	goto L374
 L374:
-	ex.V[58] = cp375_58
-	ex.V[59] = cp375_59
-	ex.V[60] = cp375_60
-	ex.V[61] = cp375_61
-	ex.V[62] = cp375_62
-	ex.V[63] = cp375_63
 	goto L371
 L371:
+	ex.V[51] = cp372_51
 	goto L368
 L368:
-	ex.V[57] = cp369_57
+	ex.V[50] = cp369_50
 	goto L365
 L365:
-	ex.V[56] = cp366_56
+	ex.V[49] = cp366_49
 	goto L362
 L362:
-	ex.V[55] = cp363_55
+	ex.V[48] = cp363_48
 	goto L359
 L359:
-	ex.V[54] = cp360_54
+	ex.V[47] = cp360_47
 	goto L356
 L356:
-	ex.V[53] = cp357_53
+	ex.V[46] = cp357_46
+	goto L354
+L354:
+	ex.V[46] = cp355_46
+	ex.V[47] = cp355_47
+	ex.V[48] = cp355_48
+	ex.V[49] = cp355_49
+	ex.V[50] = cp355_50
+	ex.V[51] = cp355_51
+	ex.DebugEndCondition(&definition, false)
 	goto L353
 L353:
-	ex.V[52] = cp354_52
-	goto L351
-L351:
-	ex.V[52] = cp352_52
-	ex.V[53] = cp352_53
-	ex.V[54] = cp352_54
-	ex.V[55] = cp352_55
-	ex.V[56] = cp352_56
-	ex.V[57] = cp352_57
-	goto L348
-L348:
-	goto L345
-L345:
-	ex.V[51] = cp346_51
-	goto L342
-L342:
-	ex.V[50] = cp343_50
+	ex.DebugBeginCondition(&definition, 86)
+	goto L350
+L350:
+	goto L347
+L347:
+	ex.V[45] = cp348_45
+	goto L344
+L344:
+	ex.V[44] = cp345_44
+	goto L341
+L341:
+	ex.V[43] = cp342_43
 	goto L339
 L339:
-	ex.V[49] = cp340_49
-	goto L336
-L336:
-	ex.V[48] = cp337_48
-	goto L333
-L333:
-	ex.V[47] = cp334_47
-	goto L330
-L330:
-	ex.V[46] = cp331_46
-	goto L328
-L328:
-	ex.V[46] = cp329_46
-	ex.V[47] = cp329_47
-	ex.V[48] = cp329_48
-	ex.V[49] = cp329_49
-	ex.V[50] = cp329_50
-	ex.V[51] = cp329_51
-	goto L325
-L325:
-	goto L322
-L322:
-	ex.V[45] = cp323_45
-	goto L319
-L319:
-	ex.V[44] = cp320_44
-	goto L316
-L316:
-	ex.V[43] = cp317_43
+	ex.V[43] = cp340_43
+	ex.V[44] = cp340_44
+	ex.V[45] = cp340_45
+	ex.DebugEndCondition(&definition, false)
+	goto L338
+L338:
+	ex.DebugBeginCondition(&definition, 81)
+	goto L335
+L335:
+	goto L332
+L332:
+	ex.V[42] = cp333_42
+	goto L329
+L329:
+	ex.V[41] = cp330_41
+	goto L326
+L326:
+	ex.V[40] = cp327_40
+	goto L324
+L324:
+	ex.V[40] = cp325_40
+	ex.V[41] = cp325_41
+	ex.V[42] = cp325_42
+	ex.DebugEndCondition(&definition, false)
+	goto L323
+L323:
+	ex.DebugBeginCondition(&definition, 76)
+	goto L320
+L320:
+	goto L317
+L317:
+	ex.V[39] = cp318_39
 	goto L314
 L314:
-	ex.V[43] = cp315_43
-	ex.V[44] = cp315_44
-	ex.V[45] = cp315_45
+	ex.V[38] = cp315_38
 	goto L311
 L311:
+	ex.V[37] = cp312_37
+	goto L309
+L309:
+	ex.V[37] = cp310_37
+	ex.V[38] = cp310_38
+	ex.V[39] = cp310_39
+	ex.DebugEndCondition(&definition, false)
 	goto L308
 L308:
-	ex.V[42] = cp309_42
+	ex.DebugBeginCondition(&definition, 71)
 	goto L305
 L305:
-	ex.V[41] = cp306_41
 	goto L302
 L302:
-	ex.V[40] = cp303_40
-	goto L300
-L300:
-	ex.V[40] = cp301_40
-	ex.V[41] = cp301_41
-	ex.V[42] = cp301_42
-	goto L297
-L297:
+	ex.V[36] = cp303_36
+	goto L299
+L299:
+	ex.V[35] = cp300_35
+	goto L296
+L296:
+	ex.V[34] = cp297_34
 	goto L294
 L294:
-	ex.V[39] = cp295_39
-	goto L291
-L291:
-	ex.V[38] = cp292_38
-	goto L288
-L288:
-	ex.V[37] = cp289_37
-	goto L286
-L286:
-	ex.V[37] = cp287_37
-	ex.V[38] = cp287_38
-	ex.V[39] = cp287_39
-	goto L283
-L283:
-	goto L280
-L280:
-	ex.V[36] = cp281_36
-	goto L277
-L277:
-	ex.V[35] = cp278_35
-	goto L274
-L274:
-	ex.V[34] = cp275_34
+	ex.V[34] = cp295_34
+	ex.V[35] = cp295_35
+	ex.V[36] = cp295_36
+	ex.DebugEndCondition(&definition, false)
+	goto L293
+L293:
+	ex.DebugBeginCondition(&definition, 66)
+	goto L290
+L290:
+	goto L287
+L287:
+	ex.V[33] = cp288_33
+	goto L284
+L284:
+	ex.V[32] = cp285_32
+	goto L281
+L281:
+	ex.V[31] = cp282_31
+	goto L279
+L279:
+	ex.V[31] = cp280_31
+	ex.V[32] = cp280_32
+	ex.V[33] = cp280_33
+	ex.DebugEndCondition(&definition, false)
+	goto L278
+L278:
+	ex.DebugBeginCondition(&definition, 61)
+	goto L275
+L275:
 	goto L272
 L272:
-	ex.V[34] = cp273_34
-	ex.V[35] = cp273_35
-	ex.V[36] = cp273_36
+	ex.V[30] = cp273_30
 	goto L269
 L269:
+	ex.V[29] = cp270_29
 	goto L266
 L266:
-	ex.V[33] = cp267_33
-	goto L263
-L263:
-	ex.V[32] = cp264_32
-	goto L260
-L260:
-	ex.V[31] = cp261_31
+	ex.V[28] = cp267_28
+	goto L264
+L264:
+	ex.V[28] = cp265_28
+	ex.V[29] = cp265_29
+	ex.V[30] = cp265_30
+	ex.DebugEndCondition(&definition, false)
+	goto L261
+L261:
+	ex.V[27] = cp262_27
+	goto L259
+L259:
+	ex.V[27] = cp260_27
+	ex.V[28] = cp260_28
+	ex.V[29] = cp260_29
+	ex.V[30] = cp260_30
+	ex.V[31] = cp260_31
+	ex.V[32] = cp260_32
+	ex.V[33] = cp260_33
+	ex.V[34] = cp260_34
+	ex.V[35] = cp260_35
+	ex.V[36] = cp260_36
+	ex.V[37] = cp260_37
+	ex.V[38] = cp260_38
+	ex.V[39] = cp260_39
+	ex.V[40] = cp260_40
+	ex.V[41] = cp260_41
+	ex.V[42] = cp260_42
+	ex.V[43] = cp260_43
+	ex.V[44] = cp260_44
+	ex.V[45] = cp260_45
+	ex.V[46] = cp260_46
+	ex.V[47] = cp260_47
+	ex.V[48] = cp260_48
+	ex.V[49] = cp260_49
+	ex.V[50] = cp260_50
+	ex.V[51] = cp260_51
+	ex.V[52] = cp260_52
+	ex.V[53] = cp260_53
+	ex.V[54] = cp260_54
+	ex.V[55] = cp260_55
+	ex.V[56] = cp260_56
+	ex.V[57] = cp260_57
+	ex.V[58] = cp260_58
+	ex.V[59] = cp260_59
+	ex.V[60] = cp260_60
+	ex.V[61] = cp260_61
+	ex.V[62] = cp260_62
+	ex.V[63] = cp260_63
+	ex.V[64] = cp260_64
+	ex.V[65] = cp260_65
+	ex.V[66] = cp260_66
+	ex.V[67] = cp260_67
+	ex.V[68] = cp260_68
+	ex.V[69] = cp260_69
+	ex.V[70] = cp260_70
+	ex.V[71] = cp260_71
+	ex.V[72] = cp260_72
+	ex.V[73] = cp260_73
+	ex.V[74] = cp260_74
+	ex.V[75] = cp260_75
+	ex.V[76] = cp260_76
+	ex.V[77] = cp260_77
+	ex.V[78] = cp260_78
+	ex.V[79] = cp260_79
+	ex.V[80] = cp260_80
+	ex.V[81] = cp260_81
+	ex.V[82] = cp260_82
+	ex.V[83] = cp260_83
+	ex.V[84] = cp260_84
+	ex.V[85] = cp260_85
+	ex.V[86] = cp260_86
+	ex.V[87] = cp260_87
+	ex.V[88] = cp260_88
+	ex.V[89] = cp260_89
+	ex.V[90] = cp260_90
+	ex.V[91] = cp260_91
+	ex.V[92] = cp260_92
+	ex.DebugEndCondition(&definition, false)
 	goto L258
 L258:
-	ex.V[31] = cp259_31
-	ex.V[32] = cp259_32
-	ex.V[33] = cp259_33
-	goto L255
-L255:
-	goto L252
-L252:
-	ex.V[30] = cp253_30
-	goto L249
-L249:
-	ex.V[29] = cp250_29
-	goto L246
-L246:
-	ex.V[28] = cp247_28
-	goto L244
-L244:
-	ex.V[28] = cp245_28
-	ex.V[29] = cp245_29
-	ex.V[30] = cp245_30
-	goto L241
-L241:
-	ex.V[27] = cp242_27
-	goto L239
-L239:
-	ex.V[27] = cp240_27
-	ex.V[28] = cp240_28
-	ex.V[29] = cp240_29
-	ex.V[30] = cp240_30
-	ex.V[31] = cp240_31
-	ex.V[32] = cp240_32
-	ex.V[33] = cp240_33
-	ex.V[34] = cp240_34
-	ex.V[35] = cp240_35
-	ex.V[36] = cp240_36
-	ex.V[37] = cp240_37
-	ex.V[38] = cp240_38
-	ex.V[39] = cp240_39
-	ex.V[40] = cp240_40
-	ex.V[41] = cp240_41
-	ex.V[42] = cp240_42
-	ex.V[43] = cp240_43
-	ex.V[44] = cp240_44
-	ex.V[45] = cp240_45
-	ex.V[46] = cp240_46
-	ex.V[47] = cp240_47
-	ex.V[48] = cp240_48
-	ex.V[49] = cp240_49
-	ex.V[50] = cp240_50
-	ex.V[51] = cp240_51
-	ex.V[52] = cp240_52
-	ex.V[53] = cp240_53
-	ex.V[54] = cp240_54
-	ex.V[55] = cp240_55
-	ex.V[56] = cp240_56
-	ex.V[57] = cp240_57
-	ex.V[58] = cp240_58
-	ex.V[59] = cp240_59
-	ex.V[60] = cp240_60
-	ex.V[61] = cp240_61
-	ex.V[62] = cp240_62
-	ex.V[63] = cp240_63
-	ex.V[64] = cp240_64
-	ex.V[65] = cp240_65
-	ex.V[66] = cp240_66
-	ex.V[67] = cp240_67
-	ex.V[68] = cp240_68
-	ex.V[69] = cp240_69
-	ex.V[70] = cp240_70
-	ex.V[71] = cp240_71
-	ex.V[72] = cp240_72
-	ex.V[73] = cp240_73
-	ex.V[74] = cp240_74
-	ex.V[75] = cp240_75
-	ex.V[76] = cp240_76
-	ex.V[77] = cp240_77
-	ex.V[78] = cp240_78
-	ex.V[79] = cp240_79
-	ex.V[80] = cp240_80
-	ex.V[81] = cp240_81
-	ex.V[82] = cp240_82
-	ex.V[83] = cp240_83
-	ex.V[84] = cp240_84
-	ex.V[85] = cp240_85
-	ex.V[86] = cp240_86
-	ex.V[87] = cp240_87
-	ex.V[88] = cp240_88
-	ex.V[89] = cp240_89
-	ex.V[90] = cp240_90
-	ex.V[91] = cp240_91
-	ex.V[92] = cp240_92
-	goto L238
-L238:
-	goto L234
-L237:
+	ex.DebugEndBranch(&definition, false)
+	goto L254
+L257:
 	if !ex.PushBranch(&bc11) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L509:
+	ex.DebugCapturePendingTask(11)
+L544:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4047,17 +8599,22 @@ L509:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L236
+		goto L256
 	}
-	goto L510
-L236:
+	goto L545
+L256:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L509
-L510:
+	goto L544
+L545:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L234:
+L254:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -4065,165 +8622,195 @@ L234:
 func method11(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp519_93 atom.Atom
-	var cp519_94 atom.Atom
-	var cp519_95 atom.Atom
-	var cp519_96 atom.Atom
-	var cp519_97 atom.Atom
-	var cp521_93 atom.Atom
-	var cp521_94 atom.Atom
-	var cp521_95 atom.Atom
-	var cp521_96 atom.Atom
-	var cp521_97 atom.Atom
-	var cp523_93 atom.Atom
-	var cp526_94 atom.Atom
-	var cp529_95 atom.Atom
-	var cp532_96 atom.Atom
-	var cp535_97 atom.Atom
-	_ = cp519_93
-	_ = cp519_94
-	_ = cp519_95
-	_ = cp519_96
-	_ = cp519_97
-	_ = cp521_93
-	_ = cp521_94
-	_ = cp521_95
-	_ = cp521_96
-	_ = cp521_97
-	_ = cp523_93
-	_ = cp526_94
-	_ = cp529_95
-	_ = cp532_96
-	_ = cp535_97
+	var cp554_93 atom.Atom
+	var cp554_94 atom.Atom
+	var cp554_95 atom.Atom
+	var cp554_96 atom.Atom
+	var cp554_97 atom.Atom
+	var cp556_93 atom.Atom
+	var cp556_94 atom.Atom
+	var cp556_95 atom.Atom
+	var cp556_96 atom.Atom
+	var cp556_97 atom.Atom
+	var cp558_93 atom.Atom
+	var cp561_94 atom.Atom
+	var cp564_95 atom.Atom
+	var cp567_96 atom.Atom
+	var cp570_97 atom.Atom
+	_ = cp554_93
+	_ = cp554_94
+	_ = cp554_95
+	_ = cp554_96
+	_ = cp554_97
+	_ = cp556_93
+	_ = cp556_94
+	_ = cp556_95
+	_ = cp556_96
+	_ = cp556_97
+	_ = cp558_93
+	_ = cp561_94
+	_ = cp564_95
+	_ = cp567_96
+	_ = cp570_97
 	switch frame.Resume {
 	case 1:
-		goto L514
+		goto L549
 	case 2:
-		goto L515
+		goto L550
 	}
-	goto L512
-L512:
+	ex.DebugBeginMethod(&definition, 11)
+	goto L547
+L547:
 	// branch branch
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 12)
 	// (and (< (+ false (call missing_distance_callterm)) 0.2))
-	cp519_93 = ex.V[93]
-	cp519_94 = ex.V[94]
-	cp519_95 = ex.V[95]
-	cp519_96 = ex.V[96]
-	cp519_97 = ex.V[97]
+	cp554_93 = ex.V[93]
+	cp554_94 = ex.V[94]
+	cp554_95 = ex.V[95]
+	cp554_96 = ex.V[96]
+	cp554_97 = ex.V[97]
+	ex.DebugBeginCondition(&definition, 154)
 	// (and (= ?$assignment_call_89 (* false 1)) (= ?$assignment_call_90 (call missing_distance_callterm)) (= ?$assignment_call_91 (* ?$assignment_call_90 1)) (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91)) (= ?$assignment_call_93 0.2) (< ?$assignment_call_92 ?$assignment_call_93))
-	cp521_93 = ex.V[93]
-	cp521_94 = ex.V[94]
-	cp521_95 = ex.V[95]
-	cp521_96 = ex.V[96]
-	cp521_97 = ex.V[97]
+	cp556_93 = ex.V[93]
+	cp556_94 = ex.V[94]
+	cp556_95 = ex.V[95]
+	cp556_96 = ex.V[96]
+	cp556_97 = ex.V[97]
+	ex.DebugBeginCondition(&definition, 155)
 	// (= ?$assignment_call_89 (* false 1))
-	cp523_93 = ex.V[93]
+	cp558_93 = ex.V[93]
 	// (= ?$assignment_call_89 (* false 1))
+	ex.DebugBeginCondition(&definition, 156)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.Atom{}, atom.NewInt(1)})
 		if value.IsBound() && !ex.V[93].IsBound() {
 			ex.V[93] = value
-			goto L524
+			ex.DebugEndCondition(&definition, true)
+			goto L559
 		}
-		goto L522
+		ex.DebugEndCondition(&definition, false)
+		goto L557
 	}
-L524:
+L559:
 	// (= ?$assignment_call_90 (call missing_distance_callterm))
-	cp526_94 = ex.V[94]
+	cp561_94 = ex.V[94]
 	// (= ?$assignment_call_90 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 157)
 	if !ex.V[94].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs34, factSymbols); ok {
 			ex.SetIfChanged(94, result)
-			goto L527
+			ex.DebugEndCondition(&definition, true)
+			goto L562
 		}
 	}
-	goto L525
-L527:
+	ex.DebugEndCondition(&definition, false)
+	goto L560
+L562:
 	// (= ?$assignment_call_91 (* ?$assignment_call_90 1))
-	cp529_95 = ex.V[95]
+	cp564_95 = ex.V[95]
 	// (= ?$assignment_call_91 (* ?$assignment_call_90 1))
+	ex.DebugBeginCondition(&definition, 158)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[94], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[95].IsBound() {
 			ex.V[95] = value
-			goto L530
+			ex.DebugEndCondition(&definition, true)
+			goto L565
 		}
-		goto L528
+		ex.DebugEndCondition(&definition, false)
+		goto L563
 	}
-L530:
+L565:
 	// (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))
-	cp532_96 = ex.V[96]
+	cp567_96 = ex.V[96]
 	// (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))
+	ex.DebugBeginCondition(&definition, 159)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[93], ex.V[95]})
 		if value.IsBound() && !ex.V[96].IsBound() {
 			ex.V[96] = value
-			goto L533
+			ex.DebugEndCondition(&definition, true)
+			goto L568
 		}
-		goto L531
+		ex.DebugEndCondition(&definition, false)
+		goto L566
 	}
-L533:
+L568:
 	// (= ?$assignment_call_93 0.2)
-	cp535_97 = ex.V[97]
+	cp570_97 = ex.V[97]
 	// (= ?$assignment_call_93 0.2)
+	ex.DebugBeginCondition(&definition, 160)
 	{
 		value := sv35
 		if value.IsBound() && !ex.V[97].IsBound() {
 			ex.V[97] = value
-			goto L536
+			ex.DebugEndCondition(&definition, true)
+			goto L571
 		}
-		goto L534
+		ex.DebugEndCondition(&definition, false)
+		goto L569
 	}
-L536:
+L571:
 	// (< ?$assignment_call_92 ?$assignment_call_93)
 	// (< ?$assignment_call_92 ?$assignment_call_93)
+	ex.DebugBeginCondition(&definition, 161)
 	if planner.Compare(ex.V[96], ex.V[97], 2) {
-		goto L539
+		ex.DebugEndCondition(&definition, true)
+		goto L574
 	}
-	goto L537
-L539:
-	goto L516
-L537:
-	goto L534
-L534:
-	ex.V[97] = cp535_97
-	goto L531
-L531:
-	ex.V[96] = cp532_96
-	goto L528
-L528:
-	ex.V[95] = cp529_95
-	goto L525
-L525:
-	ex.V[94] = cp526_94
-	goto L522
-L522:
-	ex.V[93] = cp523_93
-	goto L520
-L520:
-	ex.V[93] = cp521_93
-	ex.V[94] = cp521_94
-	ex.V[95] = cp521_95
-	ex.V[96] = cp521_96
-	ex.V[97] = cp521_97
-	goto L518
-L518:
-	ex.V[93] = cp519_93
-	ex.V[94] = cp519_94
-	ex.V[95] = cp519_95
-	ex.V[96] = cp519_96
-	ex.V[97] = cp519_97
-	goto L517
-L517:
+	ex.DebugEndCondition(&definition, false)
+	goto L572
+L574:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L551
+L572:
+	goto L569
+L569:
+	ex.V[97] = cp570_97
+	goto L566
+L566:
+	ex.V[96] = cp567_96
+	goto L563
+L563:
+	ex.V[95] = cp564_95
+	goto L560
+L560:
+	ex.V[94] = cp561_94
+	goto L557
+L557:
+	ex.V[93] = cp558_93
+	goto L555
+L555:
+	ex.V[93] = cp556_93
+	ex.V[94] = cp556_94
+	ex.V[95] = cp556_95
+	ex.V[96] = cp556_96
+	ex.V[97] = cp556_97
+	ex.DebugEndCondition(&definition, false)
+	goto L553
+L553:
+	ex.V[93] = cp554_93
+	ex.V[94] = cp554_94
+	ex.V[95] = cp554_95
+	ex.V[96] = cp554_96
+	ex.V[97] = cp554_97
+	ex.DebugEndCondition(&definition, false)
+	goto L552
+L552:
 	ex.ReleaseRetry(frame)
-	goto L513
-L516:
+	ex.DebugEndBranch(&definition, false)
+	goto L548
+L551:
 	if !ex.PushBranch(&bc12) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L540:
+	ex.DebugCapturePendingTask(12)
+L577:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4231,34 +8818,45 @@ L540:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L514
+		goto L549
 	}
-	goto L541
-L514:
+	goto L578
+L549:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L513
+		ex.DebugEndBranch(&definition, false)
+		goto L548
 	}
-	goto L540
-L541:
+	goto L577
+L578:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L513:
+L548:
 	// branch fallback
-	goto L542
-L542:
+	ex.DebugBeginBranch(&definition, 13)
+	goto L579
+L579:
 	if !ex.PushBranch(&bc13) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L544:
+	ex.DebugCapturePendingTask(13)
+L581:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -4266,15 +8864,19 @@ L544:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L515
+		goto L550
 	}
-	goto L545
-L515:
+	goto L582
+L550:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L544
-L545:
+	goto L581
+L582:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -4284,17 +8886,22 @@ func method12(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L548
+		goto L585
 	}
-	goto L547
-L547:
+	ex.DebugBeginMethod(&definition, 12)
+	goto L584
+L584:
 	// branch branch
-	goto L549
-L549:
+	ex.DebugBeginBranch(&definition, 14)
+	goto L586
+L586:
 	if !ex.PushBranch(&bc14) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L551:
+	ex.DebugCapturePendingTask(14)
+L588:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4302,15 +8909,19 @@ L551:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L548
+		goto L585
 	}
-	goto L552
-L548:
+	goto L589
+L585:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L551
-L552:
+	goto L588
+L589:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -4320,17 +8931,22 @@ func method13(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L555
+		goto L592
 	}
-	goto L554
-L554:
+	ex.DebugBeginMethod(&definition, 13)
+	goto L591
+L591:
 	// branch branch
-	goto L556
-L556:
+	ex.DebugBeginBranch(&definition, 15)
+	goto L593
+L593:
 	if !ex.PushBranch(&bc15) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L558:
+	ex.DebugCapturePendingTask(15)
+L595:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4338,15 +8954,19 @@ L558:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L555
+		goto L592
 	}
-	goto L559
-L555:
+	goto L596
+L592:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L558
-L559:
+	goto L595
+L596:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -4354,201 +8974,234 @@ L559:
 func method14(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp566_101 atom.Atom
-	var cp566_102 atom.Atom
-	var cp566_103 atom.Atom
-	var cp566_104 atom.Atom
-	var cp566_105 atom.Atom
-	var cp566_106 atom.Atom
-	var cp566_107 atom.Atom
-	var cp566_108 atom.Atom
-	var cp568_101 atom.Atom
-	var cp568_102 atom.Atom
-	var cp568_103 atom.Atom
-	var fc569 uint32
-	var cp572_104 atom.Atom
-	var cp575_105 atom.Atom
-	var cp575_106 atom.Atom
-	var cp575_107 atom.Atom
-	var cp575_108 atom.Atom
-	var cp577_105 atom.Atom
-	var cp580_106 atom.Atom
-	var cp583_107 atom.Atom
-	var cp586_108 atom.Atom
-	_ = cp566_101
-	_ = cp566_102
-	_ = cp566_103
-	_ = cp566_104
-	_ = cp566_105
-	_ = cp566_106
-	_ = cp566_107
-	_ = cp566_108
-	_ = cp568_101
-	_ = cp568_102
-	_ = cp568_103
-	_ = fc569
-	_ = cp572_104
-	_ = cp575_105
-	_ = cp575_106
-	_ = cp575_107
-	_ = cp575_108
-	_ = cp577_105
-	_ = cp580_106
-	_ = cp583_107
-	_ = cp586_108
+	var cp603_101 atom.Atom
+	var cp603_102 atom.Atom
+	var cp603_103 atom.Atom
+	var cp603_104 atom.Atom
+	var cp603_105 atom.Atom
+	var cp603_106 atom.Atom
+	var cp603_107 atom.Atom
+	var cp603_108 atom.Atom
+	var cp605_101 atom.Atom
+	var cp605_102 atom.Atom
+	var cp605_103 atom.Atom
+	var fc606 uint32
+	var cp609_104 atom.Atom
+	var cp612_105 atom.Atom
+	var cp612_106 atom.Atom
+	var cp612_107 atom.Atom
+	var cp612_108 atom.Atom
+	var cp614_105 atom.Atom
+	var cp617_106 atom.Atom
+	var cp620_107 atom.Atom
+	var cp623_108 atom.Atom
+	_ = cp603_101
+	_ = cp603_102
+	_ = cp603_103
+	_ = cp603_104
+	_ = cp603_105
+	_ = cp603_106
+	_ = cp603_107
+	_ = cp603_108
+	_ = cp605_101
+	_ = cp605_102
+	_ = cp605_103
+	_ = fc606
+	_ = cp609_104
+	_ = cp612_105
+	_ = cp612_106
+	_ = cp612_107
+	_ = cp612_108
+	_ = cp614_105
+	_ = cp617_106
+	_ = cp620_107
+	_ = cp623_108
 	switch frame.Resume {
 	case 1:
-		goto L562
+		goto L599
 	}
-	goto L561
-L561:
+	ex.DebugBeginMethod(&definition, 14)
+	goto L598
+L598:
 	// branch continue_move_to_seen_entity
+	ex.DebugBeginBranch(&definition, 16)
 	// (and (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position) (= ?new_entity_position (call get_entity_position ?entity_id)) (< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2))
-	cp566_101 = ex.V[101]
-	cp566_102 = ex.V[102]
-	cp566_103 = ex.V[103]
-	cp566_104 = ex.V[104]
-	cp566_105 = ex.V[105]
-	cp566_106 = ex.V[106]
-	cp566_107 = ex.V[107]
-	cp566_108 = ex.V[108]
+	cp603_101 = ex.V[101]
+	cp603_102 = ex.V[102]
+	cp603_103 = ex.V[103]
+	cp603_104 = ex.V[104]
+	cp603_105 = ex.V[105]
+	cp603_106 = ex.V[106]
+	cp603_107 = ex.V[107]
+	cp603_108 = ex.V[108]
+	ex.DebugBeginCondition(&definition, 162)
 	// (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)
-	cp568_101 = ex.V[101]
-	cp568_102 = ex.V[102]
-	cp568_103 = ex.V[103]
-	fc569 = 0
-L570:
-	fc569++
-	if !factChoice163(ex, fc569-1) {
-		goto L567
+	cp605_101 = ex.V[101]
+	cp605_102 = ex.V[102]
+	cp605_103 = ex.V[103]
+	fc606 = 0
+L607:
+	ex.DebugBeginCondition(&definition, 163)
+	fc606++
+	if !factChoice163(ex, fc606-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L604
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (= ?new_entity_position (call get_entity_position ?entity_id))
-	cp572_104 = ex.V[104]
+	cp609_104 = ex.V[104]
 	// (= ?new_entity_position (call get_entity_position ?entity_id))
+	ex.DebugBeginCondition(&definition, 164)
 	if !ex.V[104].IsBound() {
 		if result, ok := ex.Invoke(3, []atom.Atom{ex.V[102]}, &cs35, factSymbols); ok {
 			ex.SetIfChanged(104, result)
-			goto L573
+			ex.DebugEndCondition(&definition, true)
+			goto L610
 		}
 	}
-	goto L571
-L573:
+	ex.DebugEndCondition(&definition, false)
+	goto L608
+L610:
 	// (and (= ?$assignment_call_97 ?old_entity_position) (= ?$assignment_call_98 ?new_entity_position) (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98)) (= ?$assignment_call_100 0.2) (< ?$assignment_call_99 ?$assignment_call_100))
-	cp575_105 = ex.V[105]
-	cp575_106 = ex.V[106]
-	cp575_107 = ex.V[107]
-	cp575_108 = ex.V[108]
+	cp612_105 = ex.V[105]
+	cp612_106 = ex.V[106]
+	cp612_107 = ex.V[107]
+	cp612_108 = ex.V[108]
+	ex.DebugBeginCondition(&definition, 165)
 	// (= ?$assignment_call_97 ?old_entity_position)
-	cp577_105 = ex.V[105]
+	cp614_105 = ex.V[105]
 	// (= ?$assignment_call_97 ?old_entity_position)
+	ex.DebugBeginCondition(&definition, 166)
 	{
 		value := ex.V[103]
 		if value.IsBound() && !ex.V[105].IsBound() {
 			ex.V[105] = value
-			goto L578
+			ex.DebugEndCondition(&definition, true)
+			goto L615
 		}
-		goto L576
+		ex.DebugEndCondition(&definition, false)
+		goto L613
 	}
-L578:
+L615:
 	// (= ?$assignment_call_98 ?new_entity_position)
-	cp580_106 = ex.V[106]
+	cp617_106 = ex.V[106]
 	// (= ?$assignment_call_98 ?new_entity_position)
+	ex.DebugBeginCondition(&definition, 167)
 	{
 		value := ex.V[104]
 		if value.IsBound() && !ex.V[106].IsBound() {
 			ex.V[106] = value
-			goto L581
+			ex.DebugEndCondition(&definition, true)
+			goto L618
 		}
-		goto L579
+		ex.DebugEndCondition(&definition, false)
+		goto L616
 	}
-L581:
+L618:
 	// (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))
-	cp583_107 = ex.V[107]
+	cp620_107 = ex.V[107]
 	// (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))
+	ex.DebugBeginCondition(&definition, 168)
 	if !ex.V[107].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{ex.V[105], ex.V[106]}, &cs36, factSymbols); ok {
 			ex.SetIfChanged(107, result)
-			goto L584
+			ex.DebugEndCondition(&definition, true)
+			goto L621
 		}
 	}
-	goto L582
-L584:
+	ex.DebugEndCondition(&definition, false)
+	goto L619
+L621:
 	// (= ?$assignment_call_100 0.2)
-	cp586_108 = ex.V[108]
+	cp623_108 = ex.V[108]
 	// (= ?$assignment_call_100 0.2)
+	ex.DebugBeginCondition(&definition, 169)
 	{
 		value := sv37
 		if value.IsBound() && !ex.V[108].IsBound() {
 			ex.V[108] = value
-			goto L587
+			ex.DebugEndCondition(&definition, true)
+			goto L624
 		}
-		goto L585
+		ex.DebugEndCondition(&definition, false)
+		goto L622
 	}
-L587:
+L624:
 	// (< ?$assignment_call_99 ?$assignment_call_100)
 	// (< ?$assignment_call_99 ?$assignment_call_100)
+	ex.DebugBeginCondition(&definition, 170)
 	if planner.Compare(ex.V[107], ex.V[108], 2) {
-		goto L590
+		ex.DebugEndCondition(&definition, true)
+		goto L627
 	}
-	goto L588
-L590:
-	goto L563
-L588:
-	goto L585
-L585:
-	ex.V[108] = cp586_108
-	goto L582
-L582:
-	ex.V[107] = cp583_107
-	goto L579
-L579:
-	ex.V[106] = cp580_106
-	goto L576
-L576:
-	ex.V[105] = cp577_105
-	goto L574
-L574:
-	ex.V[105] = cp575_105
-	ex.V[106] = cp575_106
-	ex.V[107] = cp575_107
-	ex.V[108] = cp575_108
-	goto L571
-L571:
-	ex.V[104] = cp572_104
-	goto L569
-L569:
+	ex.DebugEndCondition(&definition, false)
+	goto L625
+L627:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L600
+L625:
+	goto L622
+L622:
+	ex.V[108] = cp623_108
+	goto L619
+L619:
+	ex.V[107] = cp620_107
+	goto L616
+L616:
+	ex.V[106] = cp617_106
+	goto L613
+L613:
+	ex.V[105] = cp614_105
+	goto L611
+L611:
+	ex.V[105] = cp612_105
+	ex.V[106] = cp612_106
+	ex.V[107] = cp612_107
+	ex.V[108] = cp612_108
+	ex.DebugEndCondition(&definition, false)
+	goto L608
+L608:
+	ex.V[104] = cp609_104
+	goto L606
+L606:
 	if ex.Ctx.BacktrackingMode&planner.BacktrackingFactsAndAxioms == 0 {
-		goto L567
+		goto L604
 	}
-	ex.V[101] = cp568_101
-	ex.V[102] = cp568_102
-	ex.V[103] = cp568_103
-	cp568_101 = ex.V[101]
-	cp568_102 = ex.V[102]
-	cp568_103 = ex.V[103]
-	goto L570
-L567:
-	ex.V[101] = cp568_101
-	ex.V[102] = cp568_102
-	ex.V[103] = cp568_103
-	goto L565
-L565:
-	ex.V[101] = cp566_101
-	ex.V[102] = cp566_102
-	ex.V[103] = cp566_103
-	ex.V[104] = cp566_104
-	ex.V[105] = cp566_105
-	ex.V[106] = cp566_106
-	ex.V[107] = cp566_107
-	ex.V[108] = cp566_108
-	goto L564
-L564:
-	goto L560
-L563:
+	ex.V[101] = cp605_101
+	ex.V[102] = cp605_102
+	ex.V[103] = cp605_103
+	cp605_101 = ex.V[101]
+	cp605_102 = ex.V[102]
+	cp605_103 = ex.V[103]
+	goto L607
+L604:
+	ex.V[101] = cp605_101
+	ex.V[102] = cp605_102
+	ex.V[103] = cp605_103
+	goto L602
+L602:
+	ex.V[101] = cp603_101
+	ex.V[102] = cp603_102
+	ex.V[103] = cp603_103
+	ex.V[104] = cp603_104
+	ex.V[105] = cp603_105
+	ex.V[106] = cp603_106
+	ex.V[107] = cp603_107
+	ex.V[108] = cp603_108
+	ex.DebugEndCondition(&definition, false)
+	goto L601
+L601:
+	ex.DebugEndBranch(&definition, false)
+	goto L597
+L600:
 	if !ex.PushBranch(&bc16) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L591:
+	ex.DebugCapturePendingTask(16)
+L630:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4556,17 +9209,22 @@ L591:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L562
+		goto L599
 	}
-	goto L592
-L562:
+	goto L631
+L599:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L591
-L592:
+	goto L630
+L631:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L560:
+L597:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -4574,136 +9232,163 @@ L560:
 func method15(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp599_109 atom.Atom
-	var cp599_110 atom.Atom
-	var cp599_111 atom.Atom
-	var cp599_112 atom.Atom
-	var cp601_109 atom.Atom
-	var fc602 uint32
-	var cp605_110 atom.Atom
-	var cp605_111 atom.Atom
-	var cp605_112 atom.Atom
-	var cp607_110 atom.Atom
-	var cp610_111 atom.Atom
-	var cp613_112 atom.Atom
-	_ = cp599_109
-	_ = cp599_110
-	_ = cp599_111
-	_ = cp599_112
-	_ = cp601_109
-	_ = fc602
-	_ = cp605_110
-	_ = cp605_111
-	_ = cp605_112
-	_ = cp607_110
-	_ = cp610_111
-	_ = cp613_112
+	var cp638_109 atom.Atom
+	var cp638_110 atom.Atom
+	var cp638_111 atom.Atom
+	var cp638_112 atom.Atom
+	var cp640_109 atom.Atom
+	var fc641 uint32
+	var cp644_110 atom.Atom
+	var cp644_111 atom.Atom
+	var cp644_112 atom.Atom
+	var cp646_110 atom.Atom
+	var cp649_111 atom.Atom
+	var cp652_112 atom.Atom
+	_ = cp638_109
+	_ = cp638_110
+	_ = cp638_111
+	_ = cp638_112
+	_ = cp640_109
+	_ = fc641
+	_ = cp644_110
+	_ = cp644_111
+	_ = cp644_112
+	_ = cp646_110
+	_ = cp649_111
+	_ = cp652_112
 	switch frame.Resume {
 	case 1:
-		goto L595
+		goto L634
 	}
-	goto L594
-L594:
+	ex.DebugBeginMethod(&definition, 15)
+	goto L633
+L633:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 17)
 	// (and (candidate ?entity) (< (call identity ?entity) 2))
-	cp599_109 = ex.V[109]
-	cp599_110 = ex.V[110]
-	cp599_111 = ex.V[111]
-	cp599_112 = ex.V[112]
+	cp638_109 = ex.V[109]
+	cp638_110 = ex.V[110]
+	cp638_111 = ex.V[111]
+	cp638_112 = ex.V[112]
+	ex.DebugBeginCondition(&definition, 171)
 	// (candidate ?entity)
-	cp601_109 = ex.V[109]
-	fc602 = 0
-L603:
-	fc602++
-	if !factChoice172(ex, fc602-1) {
-		goto L600
+	cp640_109 = ex.V[109]
+	fc641 = 0
+L642:
+	ex.DebugBeginCondition(&definition, 172)
+	fc641++
+	if !factChoice172(ex, fc641-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L639
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_101 ?entity) (= ?$assignment_call_102 (call identity ?$assignment_call_101)) (= ?$assignment_call_103 2) (< ?$assignment_call_102 ?$assignment_call_103))
-	cp605_110 = ex.V[110]
-	cp605_111 = ex.V[111]
-	cp605_112 = ex.V[112]
+	cp644_110 = ex.V[110]
+	cp644_111 = ex.V[111]
+	cp644_112 = ex.V[112]
+	ex.DebugBeginCondition(&definition, 173)
 	// (= ?$assignment_call_101 ?entity)
-	cp607_110 = ex.V[110]
+	cp646_110 = ex.V[110]
 	// (= ?$assignment_call_101 ?entity)
+	ex.DebugBeginCondition(&definition, 174)
 	{
 		value := ex.V[109]
 		if value.IsBound() && !ex.V[110].IsBound() {
 			ex.V[110] = value
-			goto L608
+			ex.DebugEndCondition(&definition, true)
+			goto L647
 		}
-		goto L606
+		ex.DebugEndCondition(&definition, false)
+		goto L645
 	}
-L608:
+L647:
 	// (= ?$assignment_call_102 (call identity ?$assignment_call_101))
-	cp610_111 = ex.V[111]
+	cp649_111 = ex.V[111]
 	// (= ?$assignment_call_102 (call identity ?$assignment_call_101))
+	ex.DebugBeginCondition(&definition, 175)
 	if !ex.V[111].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[110]}, &cs37, factSymbols); ok {
 			ex.SetIfChanged(111, result)
-			goto L611
+			ex.DebugEndCondition(&definition, true)
+			goto L650
 		}
 	}
-	goto L609
-L611:
+	ex.DebugEndCondition(&definition, false)
+	goto L648
+L650:
 	// (= ?$assignment_call_103 2)
-	cp613_112 = ex.V[112]
+	cp652_112 = ex.V[112]
 	// (= ?$assignment_call_103 2)
+	ex.DebugBeginCondition(&definition, 176)
 	{
 		value := sv38
 		if value.IsBound() && !ex.V[112].IsBound() {
 			ex.V[112] = value
-			goto L614
+			ex.DebugEndCondition(&definition, true)
+			goto L653
 		}
-		goto L612
+		ex.DebugEndCondition(&definition, false)
+		goto L651
 	}
-L614:
+L653:
 	// (< ?$assignment_call_102 ?$assignment_call_103)
 	// (< ?$assignment_call_102 ?$assignment_call_103)
+	ex.DebugBeginCondition(&definition, 177)
 	if planner.Compare(ex.V[111], ex.V[112], 2) {
-		goto L617
+		ex.DebugEndCondition(&definition, true)
+		goto L656
 	}
-	goto L615
-L617:
-	goto L596
-L615:
-	goto L612
-L612:
-	ex.V[112] = cp613_112
-	goto L609
-L609:
-	ex.V[111] = cp610_111
-	goto L606
-L606:
-	ex.V[110] = cp607_110
-	goto L604
-L604:
-	ex.V[110] = cp605_110
-	ex.V[111] = cp605_111
-	ex.V[112] = cp605_112
-	goto L602
-L602:
+	ex.DebugEndCondition(&definition, false)
+	goto L654
+L656:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L635
+L654:
+	goto L651
+L651:
+	ex.V[112] = cp652_112
+	goto L648
+L648:
+	ex.V[111] = cp649_111
+	goto L645
+L645:
+	ex.V[110] = cp646_110
+	goto L643
+L643:
+	ex.V[110] = cp644_110
+	ex.V[111] = cp644_111
+	ex.V[112] = cp644_112
+	ex.DebugEndCondition(&definition, false)
+	goto L641
+L641:
 	if ex.Ctx.BacktrackingMode&planner.BacktrackingFactsAndAxioms == 0 {
-		goto L600
+		goto L639
 	}
-	ex.V[109] = cp601_109
-	cp601_109 = ex.V[109]
-	goto L603
-L600:
-	ex.V[109] = cp601_109
-	goto L598
-L598:
-	ex.V[109] = cp599_109
-	ex.V[110] = cp599_110
-	ex.V[111] = cp599_111
-	ex.V[112] = cp599_112
-	goto L597
-L597:
-	goto L593
-L596:
+	ex.V[109] = cp640_109
+	cp640_109 = ex.V[109]
+	goto L642
+L639:
+	ex.V[109] = cp640_109
+	goto L637
+L637:
+	ex.V[109] = cp638_109
+	ex.V[110] = cp638_110
+	ex.V[111] = cp638_111
+	ex.V[112] = cp638_112
+	ex.DebugEndCondition(&definition, false)
+	goto L636
+L636:
+	ex.DebugEndBranch(&definition, false)
+	goto L632
+L635:
 	if !ex.PushBranch(&bc17) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L618:
+	ex.DebugCapturePendingTask(17)
+L659:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4711,17 +9396,22 @@ L618:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L595
+		goto L634
 	}
-	goto L619
-L595:
+	goto L660
+L634:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L618
-L619:
+	goto L659
+L660:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L593:
+L632:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -4729,102 +9419,125 @@ L593:
 func method16(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp626_113 atom.Atom
-	var cp626_114 atom.Atom
-	var cp631_113 atom.Atom
-	var cp631_114 atom.Atom
-	var cp633_113 atom.Atom
-	var cp636_114 atom.Atom
-	_ = cp626_113
-	_ = cp626_114
-	_ = cp631_113
-	_ = cp631_114
-	_ = cp633_113
-	_ = cp636_114
+	var cp667_113 atom.Atom
+	var cp667_114 atom.Atom
+	var cp672_113 atom.Atom
+	var cp672_114 atom.Atom
+	var cp674_113 atom.Atom
+	var cp677_114 atom.Atom
+	_ = cp667_113
+	_ = cp667_114
+	_ = cp672_113
+	_ = cp672_114
+	_ = cp674_113
+	_ = cp677_114
 	switch frame.Resume {
 	case 1:
-		goto L622
+		goto L663
 	}
-	goto L621
-L621:
+	ex.DebugBeginMethod(&definition, 16)
+	goto L662
+L662:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 18)
 	// (and (absent_fact) (< (call distance) 0.2))
-	cp626_113 = ex.V[113]
-	cp626_114 = ex.V[114]
+	cp667_113 = ex.V[113]
+	cp667_114 = ex.V[114]
+	ex.DebugBeginCondition(&definition, 178)
 	// (absent_fact)
 	// (absent_fact)
 	{
+		ex.DebugBeginCondition(&definition, 179)
 		table := &ex.FactTables[2][0]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L629
+			goto L670
 		}
-		goto L627
+		goto L668
 	}
-L629:
+L670:
 	// (and (= ?$assignment_call_104 (call distance)) (= ?$assignment_call_105 0.2) (< ?$assignment_call_104 ?$assignment_call_105))
-	cp631_113 = ex.V[113]
-	cp631_114 = ex.V[114]
+	cp672_113 = ex.V[113]
+	cp672_114 = ex.V[114]
+	ex.DebugBeginCondition(&definition, 180)
 	// (= ?$assignment_call_104 (call distance))
-	cp633_113 = ex.V[113]
+	cp674_113 = ex.V[113]
 	// (= ?$assignment_call_104 (call distance))
+	ex.DebugBeginCondition(&definition, 181)
 	if !ex.V[113].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs38, factSymbols); ok {
 			ex.SetIfChanged(113, result)
-			goto L634
+			ex.DebugEndCondition(&definition, true)
+			goto L675
 		}
 	}
-	goto L632
-L634:
+	ex.DebugEndCondition(&definition, false)
+	goto L673
+L675:
 	// (= ?$assignment_call_105 0.2)
-	cp636_114 = ex.V[114]
+	cp677_114 = ex.V[114]
 	// (= ?$assignment_call_105 0.2)
+	ex.DebugBeginCondition(&definition, 182)
 	{
 		value := sv39
 		if value.IsBound() && !ex.V[114].IsBound() {
 			ex.V[114] = value
-			goto L637
+			ex.DebugEndCondition(&definition, true)
+			goto L678
 		}
-		goto L635
+		ex.DebugEndCondition(&definition, false)
+		goto L676
 	}
-L637:
+L678:
 	// (< ?$assignment_call_104 ?$assignment_call_105)
 	// (< ?$assignment_call_104 ?$assignment_call_105)
+	ex.DebugBeginCondition(&definition, 183)
 	if planner.Compare(ex.V[113], ex.V[114], 2) {
-		goto L640
+		ex.DebugEndCondition(&definition, true)
+		goto L681
 	}
-	goto L638
-L640:
-	goto L623
-L638:
-	goto L635
-L635:
-	ex.V[114] = cp636_114
-	goto L632
-L632:
-	ex.V[113] = cp633_113
-	goto L630
-L630:
-	ex.V[113] = cp631_113
-	ex.V[114] = cp631_114
-	goto L627
-L627:
-	goto L625
-L625:
-	ex.V[113] = cp626_113
-	ex.V[114] = cp626_114
-	goto L624
-L624:
-	goto L620
-L623:
+	ex.DebugEndCondition(&definition, false)
+	goto L679
+L681:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L664
+L679:
+	goto L676
+L676:
+	ex.V[114] = cp677_114
+	goto L673
+L673:
+	ex.V[113] = cp674_113
+	goto L671
+L671:
+	ex.V[113] = cp672_113
+	ex.V[114] = cp672_114
+	ex.DebugEndCondition(&definition, false)
+	goto L668
+L668:
+	goto L666
+L666:
+	ex.V[113] = cp667_113
+	ex.V[114] = cp667_114
+	ex.DebugEndCondition(&definition, false)
+	goto L665
+L665:
+	ex.DebugEndBranch(&definition, false)
+	goto L661
+L664:
 	if !ex.PushBranch(&bc18) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L641:
+	ex.DebugCapturePendingTask(18)
+L684:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -4832,17 +9545,22 @@ L641:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L622
+		goto L663
 	}
-	goto L642
-L622:
+	goto L685
+L663:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L641
-L642:
+	goto L684
+L685:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L620:
+L661:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -4850,187 +9568,223 @@ L620:
 func method17(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp649_27 atom.Atom
-	var cp649_115 atom.Atom
-	var cp649_116 atom.Atom
-	var cp649_117 atom.Atom
-	var cp649_118 atom.Atom
-	var cp649_119 atom.Atom
-	var cp651_27 atom.Atom
-	var cp651_115 atom.Atom
-	var cp651_116 atom.Atom
-	var cp651_117 atom.Atom
-	var cp651_118 atom.Atom
-	var cp651_119 atom.Atom
-	var cp653_115 atom.Atom
-	var cp656_116 atom.Atom
-	var cp659_117 atom.Atom
-	var cp662_118 atom.Atom
-	var cp665_119 atom.Atom
-	var cp668_27 atom.Atom
-	_ = cp649_27
-	_ = cp649_115
-	_ = cp649_116
-	_ = cp649_117
-	_ = cp649_118
-	_ = cp649_119
-	_ = cp651_27
-	_ = cp651_115
-	_ = cp651_116
-	_ = cp651_117
-	_ = cp651_118
-	_ = cp651_119
-	_ = cp653_115
-	_ = cp656_116
-	_ = cp659_117
-	_ = cp662_118
-	_ = cp665_119
-	_ = cp668_27
+	var cp692_27 atom.Atom
+	var cp692_115 atom.Atom
+	var cp692_116 atom.Atom
+	var cp692_117 atom.Atom
+	var cp692_118 atom.Atom
+	var cp692_119 atom.Atom
+	var cp694_27 atom.Atom
+	var cp694_115 atom.Atom
+	var cp694_116 atom.Atom
+	var cp694_117 atom.Atom
+	var cp694_118 atom.Atom
+	var cp694_119 atom.Atom
+	var cp696_115 atom.Atom
+	var cp699_116 atom.Atom
+	var cp702_117 atom.Atom
+	var cp705_118 atom.Atom
+	var cp708_119 atom.Atom
+	var cp711_27 atom.Atom
+	_ = cp692_27
+	_ = cp692_115
+	_ = cp692_116
+	_ = cp692_117
+	_ = cp692_118
+	_ = cp692_119
+	_ = cp694_27
+	_ = cp694_115
+	_ = cp694_116
+	_ = cp694_117
+	_ = cp694_118
+	_ = cp694_119
+	_ = cp696_115
+	_ = cp699_116
+	_ = cp702_117
+	_ = cp705_118
+	_ = cp708_119
+	_ = cp711_27
 	switch frame.Resume {
 	case 1:
-		goto L645
+		goto L688
 	}
-	goto L644
-L644:
+	ex.DebugBeginMethod(&definition, 17)
+	goto L687
+L687:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 19)
 	// (and (= ?value (call identity (+ 1 (call identity 2)))) (== ?value 3))
-	cp649_27 = ex.V[27]
-	cp649_115 = ex.V[115]
-	cp649_116 = ex.V[116]
-	cp649_117 = ex.V[117]
-	cp649_118 = ex.V[118]
-	cp649_119 = ex.V[119]
+	cp692_27 = ex.V[27]
+	cp692_115 = ex.V[115]
+	cp692_116 = ex.V[116]
+	cp692_117 = ex.V[117]
+	cp692_118 = ex.V[118]
+	cp692_119 = ex.V[119]
+	ex.DebugBeginCondition(&definition, 184)
 	// (and (= ?$assignment_call_106 (* 1 1)) (= ?$assignment_call_107 2) (= ?$assignment_call_108 (call identity ?$assignment_call_107)) (= ?$assignment_call_109 (* ?$assignment_call_108 1)) (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109)) (= ?value (call identity ?$assignment_call_110)))
-	cp651_27 = ex.V[27]
-	cp651_115 = ex.V[115]
-	cp651_116 = ex.V[116]
-	cp651_117 = ex.V[117]
-	cp651_118 = ex.V[118]
-	cp651_119 = ex.V[119]
+	cp694_27 = ex.V[27]
+	cp694_115 = ex.V[115]
+	cp694_116 = ex.V[116]
+	cp694_117 = ex.V[117]
+	cp694_118 = ex.V[118]
+	cp694_119 = ex.V[119]
+	ex.DebugBeginCondition(&definition, 185)
 	if ex.V[27].IsBound() {
-		goto L650
+		goto L693
 	}
 	// (= ?$assignment_call_106 (* 1 1))
-	cp653_115 = ex.V[115]
+	cp696_115 = ex.V[115]
 	// (= ?$assignment_call_106 (* 1 1))
+	ex.DebugBeginCondition(&definition, 186)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(1), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[115].IsBound() {
 			ex.V[115] = value
-			goto L654
+			ex.DebugEndCondition(&definition, true)
+			goto L697
 		}
-		goto L652
+		ex.DebugEndCondition(&definition, false)
+		goto L695
 	}
-L654:
+L697:
 	// (= ?$assignment_call_107 2)
-	cp656_116 = ex.V[116]
+	cp699_116 = ex.V[116]
 	// (= ?$assignment_call_107 2)
+	ex.DebugBeginCondition(&definition, 187)
 	{
 		value := sv40
 		if value.IsBound() && !ex.V[116].IsBound() {
 			ex.V[116] = value
-			goto L657
+			ex.DebugEndCondition(&definition, true)
+			goto L700
 		}
-		goto L655
+		ex.DebugEndCondition(&definition, false)
+		goto L698
 	}
-L657:
+L700:
 	// (= ?$assignment_call_108 (call identity ?$assignment_call_107))
-	cp659_117 = ex.V[117]
+	cp702_117 = ex.V[117]
 	// (= ?$assignment_call_108 (call identity ?$assignment_call_107))
+	ex.DebugBeginCondition(&definition, 188)
 	if !ex.V[117].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[116]}, &cs39, factSymbols); ok {
 			ex.SetIfChanged(117, result)
-			goto L660
+			ex.DebugEndCondition(&definition, true)
+			goto L703
 		}
 	}
-	goto L658
-L660:
+	ex.DebugEndCondition(&definition, false)
+	goto L701
+L703:
 	// (= ?$assignment_call_109 (* ?$assignment_call_108 1))
-	cp662_118 = ex.V[118]
+	cp705_118 = ex.V[118]
 	// (= ?$assignment_call_109 (* ?$assignment_call_108 1))
+	ex.DebugBeginCondition(&definition, 189)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[117], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[118].IsBound() {
 			ex.V[118] = value
-			goto L663
+			ex.DebugEndCondition(&definition, true)
+			goto L706
 		}
-		goto L661
+		ex.DebugEndCondition(&definition, false)
+		goto L704
 	}
-L663:
+L706:
 	// (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))
-	cp665_119 = ex.V[119]
+	cp708_119 = ex.V[119]
 	// (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))
+	ex.DebugBeginCondition(&definition, 190)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[115], ex.V[118]})
 		if value.IsBound() && !ex.V[119].IsBound() {
 			ex.V[119] = value
-			goto L666
+			ex.DebugEndCondition(&definition, true)
+			goto L709
 		}
-		goto L664
+		ex.DebugEndCondition(&definition, false)
+		goto L707
 	}
-L666:
+L709:
 	// (= ?value (call identity ?$assignment_call_110))
-	cp668_27 = ex.V[27]
+	cp711_27 = ex.V[27]
 	// (= ?value (call identity ?$assignment_call_110))
+	ex.DebugBeginCondition(&definition, 191)
 	if !ex.V[27].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[119]}, &cs40, factSymbols); ok {
 			ex.SetIfChanged(27, result)
-			goto L669
+			ex.DebugEndCondition(&definition, true)
+			goto L712
 		}
 	}
-	goto L667
-L669:
+	ex.DebugEndCondition(&definition, false)
+	goto L710
+L712:
+	ex.DebugEndCondition(&definition, true)
 	// (== ?value 3)
 	// (== ?value 3)
+	ex.DebugBeginCondition(&definition, 192)
 	if planner.Compare(ex.V[27], sv41, 0) {
-		goto L672
+		ex.DebugEndCondition(&definition, true)
+		goto L716
 	}
-	goto L670
-L672:
-	goto L646
-L670:
-	goto L667
-L667:
-	ex.V[27] = cp668_27
-	goto L664
-L664:
-	ex.V[119] = cp665_119
-	goto L661
-L661:
-	ex.V[118] = cp662_118
-	goto L658
-L658:
-	ex.V[117] = cp659_117
-	goto L655
-L655:
-	ex.V[116] = cp656_116
-	goto L652
-L652:
-	ex.V[115] = cp653_115
-	goto L650
-L650:
-	ex.V[27] = cp651_27
-	ex.V[115] = cp651_115
-	ex.V[116] = cp651_116
-	ex.V[117] = cp651_117
-	ex.V[118] = cp651_118
-	ex.V[119] = cp651_119
-	goto L648
-L648:
-	ex.V[27] = cp649_27
-	ex.V[115] = cp649_115
-	ex.V[116] = cp649_116
-	ex.V[117] = cp649_117
-	ex.V[118] = cp649_118
-	ex.V[119] = cp649_119
-	goto L647
-L647:
-	goto L643
-L646:
+	ex.DebugEndCondition(&definition, false)
+	goto L714
+L716:
+	ex.DebugEndCondition(&definition, true)
+	goto L689
+L714:
+	goto L713
+L713:
+	ex.DebugBeginCondition(&definition, 185)
+	goto L710
+L710:
+	ex.V[27] = cp711_27
+	goto L707
+L707:
+	ex.V[119] = cp708_119
+	goto L704
+L704:
+	ex.V[118] = cp705_118
+	goto L701
+L701:
+	ex.V[117] = cp702_117
+	goto L698
+L698:
+	ex.V[116] = cp699_116
+	goto L695
+L695:
+	ex.V[115] = cp696_115
+	goto L693
+L693:
+	ex.V[27] = cp694_27
+	ex.V[115] = cp694_115
+	ex.V[116] = cp694_116
+	ex.V[117] = cp694_117
+	ex.V[118] = cp694_118
+	ex.V[119] = cp694_119
+	ex.DebugEndCondition(&definition, false)
+	goto L691
+L691:
+	ex.V[27] = cp692_27
+	ex.V[115] = cp692_115
+	ex.V[116] = cp692_116
+	ex.V[117] = cp692_117
+	ex.V[118] = cp692_118
+	ex.V[119] = cp692_119
+	ex.DebugEndCondition(&definition, false)
+	goto L690
+L690:
+	ex.DebugEndBranch(&definition, false)
+	goto L686
+L689:
 	if !ex.PushBranch(&bc19) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L673:
+	ex.DebugCapturePendingTask(19)
+L718:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5038,17 +9792,22 @@ L673:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L645
+		goto L688
 	}
-	goto L674
-L645:
+	goto L719
+L688:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L673
-L674:
+	goto L718
+L719:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L643:
+L686:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5056,177 +9815,210 @@ L643:
 func method18(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp681_0 atom.Atom
-	var cp681_1 atom.Atom
-	var cp681_120 atom.Atom
-	var cp681_121 atom.Atom
-	var cp681_122 atom.Atom
-	var cp681_123 atom.Atom
-	var cp683_0 atom.Atom
-	var cp686_1 atom.Atom
-	var cp689_120 atom.Atom
-	var cp689_121 atom.Atom
-	var cp689_122 atom.Atom
-	var cp689_123 atom.Atom
-	var cp691_120 atom.Atom
-	var cp694_121 atom.Atom
-	var cp697_122 atom.Atom
-	var cp700_123 atom.Atom
-	_ = cp681_0
-	_ = cp681_1
-	_ = cp681_120
-	_ = cp681_121
-	_ = cp681_122
-	_ = cp681_123
-	_ = cp683_0
-	_ = cp686_1
-	_ = cp689_120
-	_ = cp689_121
-	_ = cp689_122
-	_ = cp689_123
-	_ = cp691_120
-	_ = cp694_121
-	_ = cp697_122
-	_ = cp700_123
+	var cp726_0 atom.Atom
+	var cp726_1 atom.Atom
+	var cp726_120 atom.Atom
+	var cp726_121 atom.Atom
+	var cp726_122 atom.Atom
+	var cp726_123 atom.Atom
+	var cp728_0 atom.Atom
+	var cp731_1 atom.Atom
+	var cp734_120 atom.Atom
+	var cp734_121 atom.Atom
+	var cp734_122 atom.Atom
+	var cp734_123 atom.Atom
+	var cp736_120 atom.Atom
+	var cp739_121 atom.Atom
+	var cp742_122 atom.Atom
+	var cp745_123 atom.Atom
+	_ = cp726_0
+	_ = cp726_1
+	_ = cp726_120
+	_ = cp726_121
+	_ = cp726_122
+	_ = cp726_123
+	_ = cp728_0
+	_ = cp731_1
+	_ = cp734_120
+	_ = cp734_121
+	_ = cp734_122
+	_ = cp734_123
+	_ = cp736_120
+	_ = cp739_121
+	_ = cp742_122
+	_ = cp745_123
 	switch frame.Resume {
 	case 1:
-		goto L677
+		goto L722
 	}
-	goto L676
-L676:
+	ex.DebugBeginMethod(&definition, 18)
+	goto L721
+L721:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 20)
 	// (and (= ?old_position (1.0 0.0 0.0)) (= ?new_position (2.0 0.0 0.0)) (< (call missing_distance_callterm ?old_position ?new_position) 0.2))
-	cp681_0 = ex.V[0]
-	cp681_1 = ex.V[1]
-	cp681_120 = ex.V[120]
-	cp681_121 = ex.V[121]
-	cp681_122 = ex.V[122]
-	cp681_123 = ex.V[123]
+	cp726_0 = ex.V[0]
+	cp726_1 = ex.V[1]
+	cp726_120 = ex.V[120]
+	cp726_121 = ex.V[121]
+	cp726_122 = ex.V[122]
+	cp726_123 = ex.V[123]
+	ex.DebugBeginCondition(&definition, 193)
 	// (= ?old_position (1.0 0.0 0.0))
-	cp683_0 = ex.V[0]
+	cp728_0 = ex.V[0]
 	// (= ?old_position (1.0 0.0 0.0))
+	ex.DebugBeginCondition(&definition, 194)
 	{
 		value := sv42
 		if value.IsBound() && !ex.V[0].IsBound() {
 			ex.V[0] = value
-			goto L684
+			ex.DebugEndCondition(&definition, true)
+			goto L729
 		}
-		goto L682
+		ex.DebugEndCondition(&definition, false)
+		goto L727
 	}
-L684:
+L729:
 	// (= ?new_position (2.0 0.0 0.0))
-	cp686_1 = ex.V[1]
+	cp731_1 = ex.V[1]
 	// (= ?new_position (2.0 0.0 0.0))
+	ex.DebugBeginCondition(&definition, 195)
 	{
 		value := sv43
 		if value.IsBound() && !ex.V[1].IsBound() {
 			ex.V[1] = value
-			goto L687
+			ex.DebugEndCondition(&definition, true)
+			goto L732
 		}
-		goto L685
+		ex.DebugEndCondition(&definition, false)
+		goto L730
 	}
-L687:
+L732:
 	// (and (= ?$assignment_call_111 ?old_position) (= ?$assignment_call_112 ?new_position) (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112)) (= ?$assignment_call_114 0.2) (< ?$assignment_call_113 ?$assignment_call_114))
-	cp689_120 = ex.V[120]
-	cp689_121 = ex.V[121]
-	cp689_122 = ex.V[122]
-	cp689_123 = ex.V[123]
+	cp734_120 = ex.V[120]
+	cp734_121 = ex.V[121]
+	cp734_122 = ex.V[122]
+	cp734_123 = ex.V[123]
+	ex.DebugBeginCondition(&definition, 196)
 	// (= ?$assignment_call_111 ?old_position)
-	cp691_120 = ex.V[120]
+	cp736_120 = ex.V[120]
 	// (= ?$assignment_call_111 ?old_position)
+	ex.DebugBeginCondition(&definition, 197)
 	{
 		value := ex.V[0]
 		if value.IsBound() && !ex.V[120].IsBound() {
 			ex.V[120] = value
-			goto L692
+			ex.DebugEndCondition(&definition, true)
+			goto L737
 		}
-		goto L690
+		ex.DebugEndCondition(&definition, false)
+		goto L735
 	}
-L692:
+L737:
 	// (= ?$assignment_call_112 ?new_position)
-	cp694_121 = ex.V[121]
+	cp739_121 = ex.V[121]
 	// (= ?$assignment_call_112 ?new_position)
+	ex.DebugBeginCondition(&definition, 198)
 	{
 		value := ex.V[1]
 		if value.IsBound() && !ex.V[121].IsBound() {
 			ex.V[121] = value
-			goto L695
+			ex.DebugEndCondition(&definition, true)
+			goto L740
 		}
-		goto L693
+		ex.DebugEndCondition(&definition, false)
+		goto L738
 	}
-L695:
+L740:
 	// (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))
-	cp697_122 = ex.V[122]
+	cp742_122 = ex.V[122]
 	// (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))
+	ex.DebugBeginCondition(&definition, 199)
 	if !ex.V[122].IsBound() {
 		if result, ok := ex.Invoke(0, []atom.Atom{ex.V[120], ex.V[121]}, &cs41, factSymbols); ok {
 			ex.SetIfChanged(122, result)
-			goto L698
+			ex.DebugEndCondition(&definition, true)
+			goto L743
 		}
 	}
-	goto L696
-L698:
+	ex.DebugEndCondition(&definition, false)
+	goto L741
+L743:
 	// (= ?$assignment_call_114 0.2)
-	cp700_123 = ex.V[123]
+	cp745_123 = ex.V[123]
 	// (= ?$assignment_call_114 0.2)
+	ex.DebugBeginCondition(&definition, 200)
 	{
 		value := sv44
 		if value.IsBound() && !ex.V[123].IsBound() {
 			ex.V[123] = value
-			goto L701
+			ex.DebugEndCondition(&definition, true)
+			goto L746
 		}
-		goto L699
+		ex.DebugEndCondition(&definition, false)
+		goto L744
 	}
-L701:
+L746:
 	// (< ?$assignment_call_113 ?$assignment_call_114)
 	// (< ?$assignment_call_113 ?$assignment_call_114)
+	ex.DebugBeginCondition(&definition, 201)
 	if planner.Compare(ex.V[122], ex.V[123], 2) {
-		goto L704
+		ex.DebugEndCondition(&definition, true)
+		goto L749
 	}
-	goto L702
-L704:
-	goto L678
-L702:
-	goto L699
-L699:
-	ex.V[123] = cp700_123
-	goto L696
-L696:
-	ex.V[122] = cp697_122
-	goto L693
-L693:
-	ex.V[121] = cp694_121
-	goto L690
-L690:
-	ex.V[120] = cp691_120
-	goto L688
-L688:
-	ex.V[120] = cp689_120
-	ex.V[121] = cp689_121
-	ex.V[122] = cp689_122
-	ex.V[123] = cp689_123
-	goto L685
-L685:
-	ex.V[1] = cp686_1
-	goto L682
-L682:
-	ex.V[0] = cp683_0
-	goto L680
-L680:
-	ex.V[0] = cp681_0
-	ex.V[1] = cp681_1
-	ex.V[120] = cp681_120
-	ex.V[121] = cp681_121
-	ex.V[122] = cp681_122
-	ex.V[123] = cp681_123
-	goto L679
-L679:
-	goto L675
-L678:
+	ex.DebugEndCondition(&definition, false)
+	goto L747
+L749:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L723
+L747:
+	goto L744
+L744:
+	ex.V[123] = cp745_123
+	goto L741
+L741:
+	ex.V[122] = cp742_122
+	goto L738
+L738:
+	ex.V[121] = cp739_121
+	goto L735
+L735:
+	ex.V[120] = cp736_120
+	goto L733
+L733:
+	ex.V[120] = cp734_120
+	ex.V[121] = cp734_121
+	ex.V[122] = cp734_122
+	ex.V[123] = cp734_123
+	ex.DebugEndCondition(&definition, false)
+	goto L730
+L730:
+	ex.V[1] = cp731_1
+	goto L727
+L727:
+	ex.V[0] = cp728_0
+	goto L725
+L725:
+	ex.V[0] = cp726_0
+	ex.V[1] = cp726_1
+	ex.V[120] = cp726_120
+	ex.V[121] = cp726_121
+	ex.V[122] = cp726_122
+	ex.V[123] = cp726_123
+	ex.DebugEndCondition(&definition, false)
+	goto L724
+L724:
+	ex.DebugEndBranch(&definition, false)
+	goto L720
+L723:
 	if !ex.PushBranch(&bc20) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L705:
+	ex.DebugCapturePendingTask(20)
+L752:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5234,17 +10026,22 @@ L705:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L677
+		goto L722
 	}
-	goto L706
-L677:
+	goto L753
+L722:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L705
-L706:
+	goto L752
+L753:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L675:
+L720:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5252,85 +10049,106 @@ L675:
 func method19(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp713_124 atom.Atom
-	var cp713_125 atom.Atom
-	var cp715_124 atom.Atom
-	var cp715_125 atom.Atom
-	var cp717_124 atom.Atom
-	var cp720_125 atom.Atom
-	_ = cp713_124
-	_ = cp713_125
-	_ = cp715_124
-	_ = cp715_125
-	_ = cp717_124
-	_ = cp720_125
+	var cp760_124 atom.Atom
+	var cp760_125 atom.Atom
+	var cp762_124 atom.Atom
+	var cp762_125 atom.Atom
+	var cp764_124 atom.Atom
+	var cp767_125 atom.Atom
+	_ = cp760_124
+	_ = cp760_125
+	_ = cp762_124
+	_ = cp762_125
+	_ = cp764_124
+	_ = cp767_125
 	switch frame.Resume {
 	case 1:
-		goto L709
+		goto L756
 	}
-	goto L708
-L708:
+	ex.DebugBeginMethod(&definition, 19)
+	goto L755
+L755:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 21)
 	// (and (< 0.0 (call missing_distance_callterm)))
-	cp713_124 = ex.V[124]
-	cp713_125 = ex.V[125]
+	cp760_124 = ex.V[124]
+	cp760_125 = ex.V[125]
+	ex.DebugBeginCondition(&definition, 202)
 	// (and (= ?$assignment_call_115 0.0) (= ?$assignment_call_116 (call missing_distance_callterm)) (< ?$assignment_call_115 ?$assignment_call_116))
-	cp715_124 = ex.V[124]
-	cp715_125 = ex.V[125]
+	cp762_124 = ex.V[124]
+	cp762_125 = ex.V[125]
+	ex.DebugBeginCondition(&definition, 203)
 	// (= ?$assignment_call_115 0.0)
-	cp717_124 = ex.V[124]
+	cp764_124 = ex.V[124]
 	// (= ?$assignment_call_115 0.0)
+	ex.DebugBeginCondition(&definition, 204)
 	{
 		value := sv45
 		if value.IsBound() && !ex.V[124].IsBound() {
 			ex.V[124] = value
-			goto L718
+			ex.DebugEndCondition(&definition, true)
+			goto L765
 		}
-		goto L716
+		ex.DebugEndCondition(&definition, false)
+		goto L763
 	}
-L718:
+L765:
 	// (= ?$assignment_call_116 (call missing_distance_callterm))
-	cp720_125 = ex.V[125]
+	cp767_125 = ex.V[125]
 	// (= ?$assignment_call_116 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 205)
 	if !ex.V[125].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs42, factSymbols); ok {
 			ex.SetIfChanged(125, result)
-			goto L721
+			ex.DebugEndCondition(&definition, true)
+			goto L768
 		}
 	}
-	goto L719
-L721:
+	ex.DebugEndCondition(&definition, false)
+	goto L766
+L768:
 	// (< ?$assignment_call_115 ?$assignment_call_116)
 	// (< ?$assignment_call_115 ?$assignment_call_116)
+	ex.DebugBeginCondition(&definition, 206)
 	if planner.Compare(ex.V[124], ex.V[125], 2) {
-		goto L724
+		ex.DebugEndCondition(&definition, true)
+		goto L771
 	}
-	goto L722
-L724:
-	goto L710
-L722:
-	goto L719
-L719:
-	ex.V[125] = cp720_125
-	goto L716
-L716:
-	ex.V[124] = cp717_124
-	goto L714
-L714:
-	ex.V[124] = cp715_124
-	ex.V[125] = cp715_125
-	goto L712
-L712:
-	ex.V[124] = cp713_124
-	ex.V[125] = cp713_125
-	goto L711
-L711:
-	goto L707
-L710:
+	ex.DebugEndCondition(&definition, false)
+	goto L769
+L771:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L757
+L769:
+	goto L766
+L766:
+	ex.V[125] = cp767_125
+	goto L763
+L763:
+	ex.V[124] = cp764_124
+	goto L761
+L761:
+	ex.V[124] = cp762_124
+	ex.V[125] = cp762_125
+	ex.DebugEndCondition(&definition, false)
+	goto L759
+L759:
+	ex.V[124] = cp760_124
+	ex.V[125] = cp760_125
+	ex.DebugEndCondition(&definition, false)
+	goto L758
+L758:
+	ex.DebugEndBranch(&definition, false)
+	goto L754
+L757:
 	if !ex.PushBranch(&bc21) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L725:
+	ex.DebugCapturePendingTask(21)
+L774:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5338,17 +10156,22 @@ L725:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L709
+		goto L756
 	}
-	goto L726
-L709:
+	goto L775
+L756:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L725
-L726:
+	goto L774
+L775:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L707:
+L754:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5356,160 +10179,190 @@ L707:
 func method20(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp733_126 atom.Atom
-	var cp733_127 atom.Atom
-	var cp733_128 atom.Atom
-	var cp733_129 atom.Atom
-	var cp733_130 atom.Atom
-	var cp735_126 atom.Atom
-	var cp735_127 atom.Atom
-	var cp735_128 atom.Atom
-	var cp735_129 atom.Atom
-	var cp735_130 atom.Atom
-	var cp737_126 atom.Atom
-	var cp740_127 atom.Atom
-	var cp743_128 atom.Atom
-	var cp746_129 atom.Atom
-	var cp749_130 atom.Atom
-	_ = cp733_126
-	_ = cp733_127
-	_ = cp733_128
-	_ = cp733_129
-	_ = cp733_130
-	_ = cp735_126
-	_ = cp735_127
-	_ = cp735_128
-	_ = cp735_129
-	_ = cp735_130
-	_ = cp737_126
-	_ = cp740_127
-	_ = cp743_128
-	_ = cp746_129
-	_ = cp749_130
+	var cp782_126 atom.Atom
+	var cp782_127 atom.Atom
+	var cp782_128 atom.Atom
+	var cp782_129 atom.Atom
+	var cp782_130 atom.Atom
+	var cp784_126 atom.Atom
+	var cp784_127 atom.Atom
+	var cp784_128 atom.Atom
+	var cp784_129 atom.Atom
+	var cp784_130 atom.Atom
+	var cp786_126 atom.Atom
+	var cp789_127 atom.Atom
+	var cp792_128 atom.Atom
+	var cp795_129 atom.Atom
+	var cp798_130 atom.Atom
+	_ = cp782_126
+	_ = cp782_127
+	_ = cp782_128
+	_ = cp782_129
+	_ = cp782_130
+	_ = cp784_126
+	_ = cp784_127
+	_ = cp784_128
+	_ = cp784_129
+	_ = cp784_130
+	_ = cp786_126
+	_ = cp789_127
+	_ = cp792_128
+	_ = cp795_129
+	_ = cp798_130
 	switch frame.Resume {
 	case 1:
-		goto L729
+		goto L778
 	}
-	goto L728
-L728:
+	ex.DebugBeginMethod(&definition, 20)
+	goto L777
+L777:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 22)
 	// (and (< (+ 0.0 (call missing_distance_callterm)) 0.2))
-	cp733_126 = ex.V[126]
-	cp733_127 = ex.V[127]
-	cp733_128 = ex.V[128]
-	cp733_129 = ex.V[129]
-	cp733_130 = ex.V[130]
+	cp782_126 = ex.V[126]
+	cp782_127 = ex.V[127]
+	cp782_128 = ex.V[128]
+	cp782_129 = ex.V[129]
+	cp782_130 = ex.V[130]
+	ex.DebugBeginCondition(&definition, 207)
 	// (and (= ?$assignment_call_117 (* 0.0 1)) (= ?$assignment_call_118 (call missing_distance_callterm)) (= ?$assignment_call_119 (* ?$assignment_call_118 1)) (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119)) (= ?$assignment_call_121 0.2) (< ?$assignment_call_120 ?$assignment_call_121))
-	cp735_126 = ex.V[126]
-	cp735_127 = ex.V[127]
-	cp735_128 = ex.V[128]
-	cp735_129 = ex.V[129]
-	cp735_130 = ex.V[130]
+	cp784_126 = ex.V[126]
+	cp784_127 = ex.V[127]
+	cp784_128 = ex.V[128]
+	cp784_129 = ex.V[129]
+	cp784_130 = ex.V[130]
+	ex.DebugBeginCondition(&definition, 208)
 	// (= ?$assignment_call_117 (* 0.0 1))
-	cp737_126 = ex.V[126]
+	cp786_126 = ex.V[126]
 	// (= ?$assignment_call_117 (* 0.0 1))
+	ex.DebugBeginCondition(&definition, 209)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewFloat(math.Float32frombits(0x00000000)), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[126].IsBound() {
 			ex.V[126] = value
-			goto L738
+			ex.DebugEndCondition(&definition, true)
+			goto L787
 		}
-		goto L736
+		ex.DebugEndCondition(&definition, false)
+		goto L785
 	}
-L738:
+L787:
 	// (= ?$assignment_call_118 (call missing_distance_callterm))
-	cp740_127 = ex.V[127]
+	cp789_127 = ex.V[127]
 	// (= ?$assignment_call_118 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 210)
 	if !ex.V[127].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs43, factSymbols); ok {
 			ex.SetIfChanged(127, result)
-			goto L741
+			ex.DebugEndCondition(&definition, true)
+			goto L790
 		}
 	}
-	goto L739
-L741:
+	ex.DebugEndCondition(&definition, false)
+	goto L788
+L790:
 	// (= ?$assignment_call_119 (* ?$assignment_call_118 1))
-	cp743_128 = ex.V[128]
+	cp792_128 = ex.V[128]
 	// (= ?$assignment_call_119 (* ?$assignment_call_118 1))
+	ex.DebugBeginCondition(&definition, 211)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[127], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[128].IsBound() {
 			ex.V[128] = value
-			goto L744
+			ex.DebugEndCondition(&definition, true)
+			goto L793
 		}
-		goto L742
+		ex.DebugEndCondition(&definition, false)
+		goto L791
 	}
-L744:
+L793:
 	// (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))
-	cp746_129 = ex.V[129]
+	cp795_129 = ex.V[129]
 	// (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))
+	ex.DebugBeginCondition(&definition, 212)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[126], ex.V[128]})
 		if value.IsBound() && !ex.V[129].IsBound() {
 			ex.V[129] = value
-			goto L747
+			ex.DebugEndCondition(&definition, true)
+			goto L796
 		}
-		goto L745
+		ex.DebugEndCondition(&definition, false)
+		goto L794
 	}
-L747:
+L796:
 	// (= ?$assignment_call_121 0.2)
-	cp749_130 = ex.V[130]
+	cp798_130 = ex.V[130]
 	// (= ?$assignment_call_121 0.2)
+	ex.DebugBeginCondition(&definition, 213)
 	{
 		value := sv46
 		if value.IsBound() && !ex.V[130].IsBound() {
 			ex.V[130] = value
-			goto L750
+			ex.DebugEndCondition(&definition, true)
+			goto L799
 		}
-		goto L748
+		ex.DebugEndCondition(&definition, false)
+		goto L797
 	}
-L750:
+L799:
 	// (< ?$assignment_call_120 ?$assignment_call_121)
 	// (< ?$assignment_call_120 ?$assignment_call_121)
+	ex.DebugBeginCondition(&definition, 214)
 	if planner.Compare(ex.V[129], ex.V[130], 2) {
-		goto L753
+		ex.DebugEndCondition(&definition, true)
+		goto L802
 	}
-	goto L751
-L753:
-	goto L730
-L751:
-	goto L748
-L748:
-	ex.V[130] = cp749_130
-	goto L745
-L745:
-	ex.V[129] = cp746_129
-	goto L742
-L742:
-	ex.V[128] = cp743_128
-	goto L739
-L739:
-	ex.V[127] = cp740_127
-	goto L736
-L736:
-	ex.V[126] = cp737_126
-	goto L734
-L734:
-	ex.V[126] = cp735_126
-	ex.V[127] = cp735_127
-	ex.V[128] = cp735_128
-	ex.V[129] = cp735_129
-	ex.V[130] = cp735_130
-	goto L732
-L732:
-	ex.V[126] = cp733_126
-	ex.V[127] = cp733_127
-	ex.V[128] = cp733_128
-	ex.V[129] = cp733_129
-	ex.V[130] = cp733_130
-	goto L731
-L731:
-	goto L727
-L730:
+	ex.DebugEndCondition(&definition, false)
+	goto L800
+L802:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L779
+L800:
+	goto L797
+L797:
+	ex.V[130] = cp798_130
+	goto L794
+L794:
+	ex.V[129] = cp795_129
+	goto L791
+L791:
+	ex.V[128] = cp792_128
+	goto L788
+L788:
+	ex.V[127] = cp789_127
+	goto L785
+L785:
+	ex.V[126] = cp786_126
+	goto L783
+L783:
+	ex.V[126] = cp784_126
+	ex.V[127] = cp784_127
+	ex.V[128] = cp784_128
+	ex.V[129] = cp784_129
+	ex.V[130] = cp784_130
+	ex.DebugEndCondition(&definition, false)
+	goto L781
+L781:
+	ex.V[126] = cp782_126
+	ex.V[127] = cp782_127
+	ex.V[128] = cp782_128
+	ex.V[129] = cp782_129
+	ex.V[130] = cp782_130
+	ex.DebugEndCondition(&definition, false)
+	goto L780
+L780:
+	ex.DebugEndBranch(&definition, false)
+	goto L776
+L779:
 	if !ex.PushBranch(&bc22) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L754:
+	ex.DebugCapturePendingTask(22)
+L805:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5517,17 +10370,22 @@ L754:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L729
+		goto L778
 	}
-	goto L755
-L729:
+	goto L806
+L778:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L754
-L755:
+	goto L805
+L806:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L727:
+L776:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5535,109 +10393,133 @@ L727:
 func method21(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp762_131 atom.Atom
-	var cp762_132 atom.Atom
-	var cp762_133 atom.Atom
-	var cp764_131 atom.Atom
-	var cp764_132 atom.Atom
-	var cp764_133 atom.Atom
-	var cp766_131 atom.Atom
-	var cp769_132 atom.Atom
-	var cp772_133 atom.Atom
-	_ = cp762_131
-	_ = cp762_132
-	_ = cp762_133
-	_ = cp764_131
-	_ = cp764_132
-	_ = cp764_133
-	_ = cp766_131
-	_ = cp769_132
-	_ = cp772_133
+	var cp813_131 atom.Atom
+	var cp813_132 atom.Atom
+	var cp813_133 atom.Atom
+	var cp815_131 atom.Atom
+	var cp815_132 atom.Atom
+	var cp815_133 atom.Atom
+	var cp817_131 atom.Atom
+	var cp820_132 atom.Atom
+	var cp823_133 atom.Atom
+	_ = cp813_131
+	_ = cp813_132
+	_ = cp813_133
+	_ = cp815_131
+	_ = cp815_132
+	_ = cp815_133
+	_ = cp817_131
+	_ = cp820_132
+	_ = cp823_133
 	switch frame.Resume {
 	case 1:
-		goto L758
+		goto L809
 	}
-	goto L757
-L757:
+	ex.DebugBeginMethod(&definition, 21)
+	goto L808
+L808:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 23)
 	// (and (< (call identity (call missing_distance_callterm)) 0.2))
-	cp762_131 = ex.V[131]
-	cp762_132 = ex.V[132]
-	cp762_133 = ex.V[133]
+	cp813_131 = ex.V[131]
+	cp813_132 = ex.V[132]
+	cp813_133 = ex.V[133]
+	ex.DebugBeginCondition(&definition, 215)
 	// (and (= ?$assignment_call_122 (call missing_distance_callterm)) (= ?$assignment_call_123 (call identity ?$assignment_call_122)) (= ?$assignment_call_124 0.2) (< ?$assignment_call_123 ?$assignment_call_124))
-	cp764_131 = ex.V[131]
-	cp764_132 = ex.V[132]
-	cp764_133 = ex.V[133]
+	cp815_131 = ex.V[131]
+	cp815_132 = ex.V[132]
+	cp815_133 = ex.V[133]
+	ex.DebugBeginCondition(&definition, 216)
 	// (= ?$assignment_call_122 (call missing_distance_callterm))
-	cp766_131 = ex.V[131]
+	cp817_131 = ex.V[131]
 	// (= ?$assignment_call_122 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 217)
 	if !ex.V[131].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs44, factSymbols); ok {
 			ex.SetIfChanged(131, result)
-			goto L767
+			ex.DebugEndCondition(&definition, true)
+			goto L818
 		}
 	}
-	goto L765
-L767:
+	ex.DebugEndCondition(&definition, false)
+	goto L816
+L818:
 	// (= ?$assignment_call_123 (call identity ?$assignment_call_122))
-	cp769_132 = ex.V[132]
+	cp820_132 = ex.V[132]
 	// (= ?$assignment_call_123 (call identity ?$assignment_call_122))
+	ex.DebugBeginCondition(&definition, 218)
 	if !ex.V[132].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[131]}, &cs45, factSymbols); ok {
 			ex.SetIfChanged(132, result)
-			goto L770
+			ex.DebugEndCondition(&definition, true)
+			goto L821
 		}
 	}
-	goto L768
-L770:
+	ex.DebugEndCondition(&definition, false)
+	goto L819
+L821:
 	// (= ?$assignment_call_124 0.2)
-	cp772_133 = ex.V[133]
+	cp823_133 = ex.V[133]
 	// (= ?$assignment_call_124 0.2)
+	ex.DebugBeginCondition(&definition, 219)
 	{
 		value := sv47
 		if value.IsBound() && !ex.V[133].IsBound() {
 			ex.V[133] = value
-			goto L773
+			ex.DebugEndCondition(&definition, true)
+			goto L824
 		}
-		goto L771
+		ex.DebugEndCondition(&definition, false)
+		goto L822
 	}
-L773:
+L824:
 	// (< ?$assignment_call_123 ?$assignment_call_124)
 	// (< ?$assignment_call_123 ?$assignment_call_124)
+	ex.DebugBeginCondition(&definition, 220)
 	if planner.Compare(ex.V[132], ex.V[133], 2) {
-		goto L776
+		ex.DebugEndCondition(&definition, true)
+		goto L827
 	}
-	goto L774
-L776:
-	goto L759
-L774:
-	goto L771
-L771:
-	ex.V[133] = cp772_133
-	goto L768
-L768:
-	ex.V[132] = cp769_132
-	goto L765
-L765:
-	ex.V[131] = cp766_131
-	goto L763
-L763:
-	ex.V[131] = cp764_131
-	ex.V[132] = cp764_132
-	ex.V[133] = cp764_133
-	goto L761
-L761:
-	ex.V[131] = cp762_131
-	ex.V[132] = cp762_132
-	ex.V[133] = cp762_133
-	goto L760
-L760:
-	goto L756
-L759:
+	ex.DebugEndCondition(&definition, false)
+	goto L825
+L827:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L810
+L825:
+	goto L822
+L822:
+	ex.V[133] = cp823_133
+	goto L819
+L819:
+	ex.V[132] = cp820_132
+	goto L816
+L816:
+	ex.V[131] = cp817_131
+	goto L814
+L814:
+	ex.V[131] = cp815_131
+	ex.V[132] = cp815_132
+	ex.V[133] = cp815_133
+	ex.DebugEndCondition(&definition, false)
+	goto L812
+L812:
+	ex.V[131] = cp813_131
+	ex.V[132] = cp813_132
+	ex.V[133] = cp813_133
+	ex.DebugEndCondition(&definition, false)
+	goto L811
+L811:
+	ex.DebugEndBranch(&definition, false)
+	goto L807
+L810:
 	if !ex.PushBranch(&bc23) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L777:
+	ex.DebugCapturePendingTask(23)
+L830:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5645,17 +10527,22 @@ L777:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L758
+		goto L809
 	}
-	goto L778
-L758:
+	goto L831
+L809:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L777
-L778:
+	goto L830
+L831:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L756:
+L807:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5663,53 +10550,68 @@ L756:
 func method22(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp785_16 atom.Atom
-	var cp787_16 atom.Atom
-	_ = cp785_16
-	_ = cp787_16
+	var cp838_16 atom.Atom
+	var cp840_16 atom.Atom
+	_ = cp838_16
+	_ = cp840_16
 	switch frame.Resume {
 	case 1:
-		goto L781
+		goto L834
 	}
-	goto L780
-L780:
+	ex.DebugBeginMethod(&definition, 22)
+	goto L833
+L833:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 24)
 	// (and (= ?distance (call missing_distance_callterm)) (< ?distance 0.2))
-	cp785_16 = ex.V[16]
+	cp838_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 221)
 	// (= ?distance (call missing_distance_callterm))
-	cp787_16 = ex.V[16]
+	cp840_16 = ex.V[16]
 	// (= ?distance (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 222)
 	if !ex.V[16].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs46, factSymbols); ok {
 			ex.SetIfChanged(16, result)
-			goto L788
+			ex.DebugEndCondition(&definition, true)
+			goto L841
 		}
 	}
-	goto L786
-L788:
+	ex.DebugEndCondition(&definition, false)
+	goto L839
+L841:
 	// (< ?distance 0.2)
 	// (< ?distance 0.2)
+	ex.DebugBeginCondition(&definition, 223)
 	if planner.Compare(ex.V[16], sv48, 2) {
-		goto L791
+		ex.DebugEndCondition(&definition, true)
+		goto L844
 	}
-	goto L789
-L791:
-	goto L782
-L789:
-	goto L786
-L786:
-	ex.V[16] = cp787_16
-	goto L784
-L784:
-	ex.V[16] = cp785_16
-	goto L783
-L783:
-	goto L779
-L782:
+	ex.DebugEndCondition(&definition, false)
+	goto L842
+L844:
+	ex.DebugEndCondition(&definition, true)
+	goto L835
+L842:
+	goto L839
+L839:
+	ex.V[16] = cp840_16
+	goto L837
+L837:
+	ex.V[16] = cp838_16
+	ex.DebugEndCondition(&definition, false)
+	goto L836
+L836:
+	ex.DebugEndBranch(&definition, false)
+	goto L832
+L835:
 	if !ex.PushBranch(&bc24) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L792:
+	ex.DebugCapturePendingTask(24)
+L846:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5717,17 +10619,22 @@ L792:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L781
+		goto L834
 	}
-	goto L793
-L781:
+	goto L847
+L834:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L792
-L793:
+	goto L846
+L847:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L779:
+L832:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5735,102 +10642,123 @@ L779:
 func method23(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp802_134 atom.Atom
-	var cp802_135 atom.Atom
-	var cp804_134 atom.Atom
-	var cp804_135 atom.Atom
-	var cp806_134 atom.Atom
-	var cp809_135 atom.Atom
-	var cp819_136 atom.Atom
-	var cp819_137 atom.Atom
-	var cp821_136 atom.Atom
-	var cp821_137 atom.Atom
-	var cp823_136 atom.Atom
-	var cp826_137 atom.Atom
-	_ = cp802_134
-	_ = cp802_135
-	_ = cp804_134
-	_ = cp804_135
-	_ = cp806_134
-	_ = cp809_135
-	_ = cp819_136
-	_ = cp819_137
-	_ = cp821_136
-	_ = cp821_137
-	_ = cp823_136
-	_ = cp826_137
+	var cp856_134 atom.Atom
+	var cp856_135 atom.Atom
+	var cp858_134 atom.Atom
+	var cp858_135 atom.Atom
+	var cp860_134 atom.Atom
+	var cp863_135 atom.Atom
+	var cp875_136 atom.Atom
+	var cp875_137 atom.Atom
+	var cp877_136 atom.Atom
+	var cp877_137 atom.Atom
+	var cp879_136 atom.Atom
+	var cp882_137 atom.Atom
+	_ = cp856_134
+	_ = cp856_135
+	_ = cp858_134
+	_ = cp858_135
+	_ = cp860_134
+	_ = cp863_135
+	_ = cp875_136
+	_ = cp875_137
+	_ = cp877_136
+	_ = cp877_137
+	_ = cp879_136
+	_ = cp882_137
 	switch frame.Resume {
 	case 1:
-		goto L797
+		goto L851
 	case 2:
-		goto L798
+		goto L852
 	}
-	goto L795
-L795:
+	ex.DebugBeginMethod(&definition, 23)
+	goto L849
+L849:
 	// branch first
 	ex.SaveRetry(frame, ms23)
+	ex.DebugBeginBranch(&definition, 25)
 	// (and (< (call missing_distance_callterm) 0.2))
-	cp802_134 = ex.V[134]
-	cp802_135 = ex.V[135]
+	cp856_134 = ex.V[134]
+	cp856_135 = ex.V[135]
+	ex.DebugBeginCondition(&definition, 224)
 	// (and (= ?$assignment_call_125 (call missing_distance_callterm)) (= ?$assignment_call_126 0.2) (< ?$assignment_call_125 ?$assignment_call_126))
-	cp804_134 = ex.V[134]
-	cp804_135 = ex.V[135]
+	cp858_134 = ex.V[134]
+	cp858_135 = ex.V[135]
+	ex.DebugBeginCondition(&definition, 225)
 	// (= ?$assignment_call_125 (call missing_distance_callterm))
-	cp806_134 = ex.V[134]
+	cp860_134 = ex.V[134]
 	// (= ?$assignment_call_125 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 226)
 	if !ex.V[134].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs47, factSymbols); ok {
 			ex.SetIfChanged(134, result)
-			goto L807
+			ex.DebugEndCondition(&definition, true)
+			goto L861
 		}
 	}
-	goto L805
-L807:
+	ex.DebugEndCondition(&definition, false)
+	goto L859
+L861:
 	// (= ?$assignment_call_126 0.2)
-	cp809_135 = ex.V[135]
+	cp863_135 = ex.V[135]
 	// (= ?$assignment_call_126 0.2)
+	ex.DebugBeginCondition(&definition, 227)
 	{
 		value := sv49
 		if value.IsBound() && !ex.V[135].IsBound() {
 			ex.V[135] = value
-			goto L810
+			ex.DebugEndCondition(&definition, true)
+			goto L864
 		}
-		goto L808
+		ex.DebugEndCondition(&definition, false)
+		goto L862
 	}
-L810:
+L864:
 	// (< ?$assignment_call_125 ?$assignment_call_126)
 	// (< ?$assignment_call_125 ?$assignment_call_126)
+	ex.DebugBeginCondition(&definition, 228)
 	if planner.Compare(ex.V[134], ex.V[135], 2) {
-		goto L813
+		ex.DebugEndCondition(&definition, true)
+		goto L867
 	}
-	goto L811
-L813:
-	goto L799
-L811:
-	goto L808
-L808:
-	ex.V[135] = cp809_135
-	goto L805
-L805:
-	ex.V[134] = cp806_134
-	goto L803
-L803:
-	ex.V[134] = cp804_134
-	ex.V[135] = cp804_135
-	goto L801
-L801:
-	ex.V[134] = cp802_134
-	ex.V[135] = cp802_135
-	goto L800
-L800:
+	ex.DebugEndCondition(&definition, false)
+	goto L865
+L867:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L853
+L865:
+	goto L862
+L862:
+	ex.V[135] = cp863_135
+	goto L859
+L859:
+	ex.V[134] = cp860_134
+	goto L857
+L857:
+	ex.V[134] = cp858_134
+	ex.V[135] = cp858_135
+	ex.DebugEndCondition(&definition, false)
+	goto L855
+L855:
+	ex.V[134] = cp856_134
+	ex.V[135] = cp856_135
+	ex.DebugEndCondition(&definition, false)
+	goto L854
+L854:
 	ex.ReleaseRetry(frame)
-	goto L796
-L799:
+	ex.DebugEndBranch(&definition, false)
+	goto L850
+L853:
 	if !ex.PushBranch(&bc25) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L814:
+	ex.DebugCapturePendingTask(25)
+L870:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -5838,88 +10766,115 @@ L814:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L797
+		goto L851
 	}
-	goto L815
-L797:
+	goto L871
+L851:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms23)
-		goto L796
+		ex.DebugEndBranch(&definition, false)
+		goto L850
 	}
-	goto L814
-L815:
+	goto L870
+L871:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L796:
+L850:
 	// branch second
+	ex.DebugBeginBranch(&definition, 26)
 	// (and (< (call missing_distance_callterm) 0.2))
-	cp819_136 = ex.V[136]
-	cp819_137 = ex.V[137]
+	cp875_136 = ex.V[136]
+	cp875_137 = ex.V[137]
+	ex.DebugBeginCondition(&definition, 229)
 	// (and (= ?$assignment_call_127 (call missing_distance_callterm)) (= ?$assignment_call_128 0.2) (< ?$assignment_call_127 ?$assignment_call_128))
-	cp821_136 = ex.V[136]
-	cp821_137 = ex.V[137]
+	cp877_136 = ex.V[136]
+	cp877_137 = ex.V[137]
+	ex.DebugBeginCondition(&definition, 230)
 	// (= ?$assignment_call_127 (call missing_distance_callterm))
-	cp823_136 = ex.V[136]
+	cp879_136 = ex.V[136]
 	// (= ?$assignment_call_127 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 231)
 	if !ex.V[136].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs48, factSymbols); ok {
 			ex.SetIfChanged(136, result)
-			goto L824
+			ex.DebugEndCondition(&definition, true)
+			goto L880
 		}
 	}
-	goto L822
-L824:
+	ex.DebugEndCondition(&definition, false)
+	goto L878
+L880:
 	// (= ?$assignment_call_128 0.2)
-	cp826_137 = ex.V[137]
+	cp882_137 = ex.V[137]
 	// (= ?$assignment_call_128 0.2)
+	ex.DebugBeginCondition(&definition, 232)
 	{
 		value := sv50
 		if value.IsBound() && !ex.V[137].IsBound() {
 			ex.V[137] = value
-			goto L827
+			ex.DebugEndCondition(&definition, true)
+			goto L883
 		}
-		goto L825
+		ex.DebugEndCondition(&definition, false)
+		goto L881
 	}
-L827:
+L883:
 	// (< ?$assignment_call_127 ?$assignment_call_128)
 	// (< ?$assignment_call_127 ?$assignment_call_128)
+	ex.DebugBeginCondition(&definition, 233)
 	if planner.Compare(ex.V[136], ex.V[137], 2) {
-		goto L830
+		ex.DebugEndCondition(&definition, true)
+		goto L886
 	}
-	goto L828
-L830:
-	goto L816
-L828:
-	goto L825
-L825:
-	ex.V[137] = cp826_137
-	goto L822
-L822:
-	ex.V[136] = cp823_136
-	goto L820
-L820:
-	ex.V[136] = cp821_136
-	ex.V[137] = cp821_137
-	goto L818
-L818:
-	ex.V[136] = cp819_136
-	ex.V[137] = cp819_137
-	goto L817
-L817:
-	goto L794
-L816:
+	ex.DebugEndCondition(&definition, false)
+	goto L884
+L886:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L872
+L884:
+	goto L881
+L881:
+	ex.V[137] = cp882_137
+	goto L878
+L878:
+	ex.V[136] = cp879_136
+	goto L876
+L876:
+	ex.V[136] = cp877_136
+	ex.V[137] = cp877_137
+	ex.DebugEndCondition(&definition, false)
+	goto L874
+L874:
+	ex.V[136] = cp875_136
+	ex.V[137] = cp875_137
+	ex.DebugEndCondition(&definition, false)
+	goto L873
+L873:
+	ex.DebugEndBranch(&definition, false)
+	goto L848
+L872:
 	if !ex.PushBranch(&bc26) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L831:
+	ex.DebugCapturePendingTask(26)
+L889:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -5927,17 +10882,22 @@ L831:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L798
+		goto L852
 	}
-	goto L832
-L798:
+	goto L890
+L852:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L831
-L832:
+	goto L889
+L890:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L794:
+L848:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -5945,85 +10905,106 @@ L794:
 func method24(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp839_138 atom.Atom
-	var cp839_139 atom.Atom
-	var cp841_138 atom.Atom
-	var cp841_139 atom.Atom
-	var cp843_138 atom.Atom
-	var cp846_139 atom.Atom
-	_ = cp839_138
-	_ = cp839_139
-	_ = cp841_138
-	_ = cp841_139
-	_ = cp843_138
-	_ = cp846_139
+	var cp897_138 atom.Atom
+	var cp897_139 atom.Atom
+	var cp899_138 atom.Atom
+	var cp899_139 atom.Atom
+	var cp901_138 atom.Atom
+	var cp904_139 atom.Atom
+	_ = cp897_138
+	_ = cp897_139
+	_ = cp899_138
+	_ = cp899_139
+	_ = cp901_138
+	_ = cp904_139
 	switch frame.Resume {
 	case 1:
-		goto L835
+		goto L893
 	}
-	goto L834
-L834:
+	ex.DebugBeginMethod(&definition, 24)
+	goto L892
+L892:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 27)
 	// (and (< (call distance) 0.2))
-	cp839_138 = ex.V[138]
-	cp839_139 = ex.V[139]
+	cp897_138 = ex.V[138]
+	cp897_139 = ex.V[139]
+	ex.DebugBeginCondition(&definition, 234)
 	// (and (= ?$assignment_call_129 (call distance)) (= ?$assignment_call_130 0.2) (< ?$assignment_call_129 ?$assignment_call_130))
-	cp841_138 = ex.V[138]
-	cp841_139 = ex.V[139]
+	cp899_138 = ex.V[138]
+	cp899_139 = ex.V[139]
+	ex.DebugBeginCondition(&definition, 235)
 	// (= ?$assignment_call_129 (call distance))
-	cp843_138 = ex.V[138]
+	cp901_138 = ex.V[138]
 	// (= ?$assignment_call_129 (call distance))
+	ex.DebugBeginCondition(&definition, 236)
 	if !ex.V[138].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs49, factSymbols); ok {
 			ex.SetIfChanged(138, result)
-			goto L844
+			ex.DebugEndCondition(&definition, true)
+			goto L902
 		}
 	}
-	goto L842
-L844:
+	ex.DebugEndCondition(&definition, false)
+	goto L900
+L902:
 	// (= ?$assignment_call_130 0.2)
-	cp846_139 = ex.V[139]
+	cp904_139 = ex.V[139]
 	// (= ?$assignment_call_130 0.2)
+	ex.DebugBeginCondition(&definition, 237)
 	{
 		value := sv51
 		if value.IsBound() && !ex.V[139].IsBound() {
 			ex.V[139] = value
-			goto L847
+			ex.DebugEndCondition(&definition, true)
+			goto L905
 		}
-		goto L845
+		ex.DebugEndCondition(&definition, false)
+		goto L903
 	}
-L847:
+L905:
 	// (< ?$assignment_call_129 ?$assignment_call_130)
 	// (< ?$assignment_call_129 ?$assignment_call_130)
+	ex.DebugBeginCondition(&definition, 238)
 	if planner.Compare(ex.V[138], ex.V[139], 2) {
-		goto L850
+		ex.DebugEndCondition(&definition, true)
+		goto L908
 	}
-	goto L848
-L850:
-	goto L836
-L848:
-	goto L845
-L845:
-	ex.V[139] = cp846_139
-	goto L842
-L842:
-	ex.V[138] = cp843_138
-	goto L840
-L840:
-	ex.V[138] = cp841_138
-	ex.V[139] = cp841_139
-	goto L838
-L838:
-	ex.V[138] = cp839_138
-	ex.V[139] = cp839_139
-	goto L837
-L837:
-	goto L833
-L836:
+	ex.DebugEndCondition(&definition, false)
+	goto L906
+L908:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L894
+L906:
+	goto L903
+L903:
+	ex.V[139] = cp904_139
+	goto L900
+L900:
+	ex.V[138] = cp901_138
+	goto L898
+L898:
+	ex.V[138] = cp899_138
+	ex.V[139] = cp899_139
+	ex.DebugEndCondition(&definition, false)
+	goto L896
+L896:
+	ex.V[138] = cp897_138
+	ex.V[139] = cp897_139
+	ex.DebugEndCondition(&definition, false)
+	goto L895
+L895:
+	ex.DebugEndBranch(&definition, false)
+	goto L891
+L894:
 	if !ex.PushBranch(&bc27) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L851:
+	ex.DebugCapturePendingTask(27)
+L911:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -6031,17 +11012,22 @@ L851:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L835
+		goto L893
 	}
-	goto L852
-L835:
+	goto L912
+L893:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L851
-L852:
+	goto L911
+L912:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L833:
+L891:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -6049,85 +11035,106 @@ L833:
 func method25(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp859_140 atom.Atom
-	var cp859_141 atom.Atom
-	var cp861_140 atom.Atom
-	var cp861_141 atom.Atom
-	var cp863_140 atom.Atom
-	var cp866_141 atom.Atom
-	_ = cp859_140
-	_ = cp859_141
-	_ = cp861_140
-	_ = cp861_141
-	_ = cp863_140
-	_ = cp866_141
+	var cp919_140 atom.Atom
+	var cp919_141 atom.Atom
+	var cp921_140 atom.Atom
+	var cp921_141 atom.Atom
+	var cp923_140 atom.Atom
+	var cp926_141 atom.Atom
+	_ = cp919_140
+	_ = cp919_141
+	_ = cp921_140
+	_ = cp921_141
+	_ = cp923_140
+	_ = cp926_141
 	switch frame.Resume {
 	case 1:
-		goto L855
+		goto L915
 	}
-	goto L854
-L854:
+	ex.DebugBeginMethod(&definition, 25)
+	goto L914
+L914:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 28)
 	// (and (< 0.0 (call distance)))
-	cp859_140 = ex.V[140]
-	cp859_141 = ex.V[141]
+	cp919_140 = ex.V[140]
+	cp919_141 = ex.V[141]
+	ex.DebugBeginCondition(&definition, 239)
 	// (and (= ?$assignment_call_131 0.0) (= ?$assignment_call_132 (call distance)) (< ?$assignment_call_131 ?$assignment_call_132))
-	cp861_140 = ex.V[140]
-	cp861_141 = ex.V[141]
+	cp921_140 = ex.V[140]
+	cp921_141 = ex.V[141]
+	ex.DebugBeginCondition(&definition, 240)
 	// (= ?$assignment_call_131 0.0)
-	cp863_140 = ex.V[140]
+	cp923_140 = ex.V[140]
 	// (= ?$assignment_call_131 0.0)
+	ex.DebugBeginCondition(&definition, 241)
 	{
 		value := sv52
 		if value.IsBound() && !ex.V[140].IsBound() {
 			ex.V[140] = value
-			goto L864
+			ex.DebugEndCondition(&definition, true)
+			goto L924
 		}
-		goto L862
+		ex.DebugEndCondition(&definition, false)
+		goto L922
 	}
-L864:
+L924:
 	// (= ?$assignment_call_132 (call distance))
-	cp866_141 = ex.V[141]
+	cp926_141 = ex.V[141]
 	// (= ?$assignment_call_132 (call distance))
+	ex.DebugBeginCondition(&definition, 242)
 	if !ex.V[141].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs50, factSymbols); ok {
 			ex.SetIfChanged(141, result)
-			goto L867
+			ex.DebugEndCondition(&definition, true)
+			goto L927
 		}
 	}
-	goto L865
-L867:
+	ex.DebugEndCondition(&definition, false)
+	goto L925
+L927:
 	// (< ?$assignment_call_131 ?$assignment_call_132)
 	// (< ?$assignment_call_131 ?$assignment_call_132)
+	ex.DebugBeginCondition(&definition, 243)
 	if planner.Compare(ex.V[140], ex.V[141], 2) {
-		goto L870
+		ex.DebugEndCondition(&definition, true)
+		goto L930
 	}
-	goto L868
-L870:
-	goto L856
-L868:
-	goto L865
-L865:
-	ex.V[141] = cp866_141
-	goto L862
-L862:
-	ex.V[140] = cp863_140
-	goto L860
-L860:
-	ex.V[140] = cp861_140
-	ex.V[141] = cp861_141
-	goto L858
-L858:
-	ex.V[140] = cp859_140
-	ex.V[141] = cp859_141
-	goto L857
-L857:
-	goto L853
-L856:
+	ex.DebugEndCondition(&definition, false)
+	goto L928
+L930:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L916
+L928:
+	goto L925
+L925:
+	ex.V[141] = cp926_141
+	goto L922
+L922:
+	ex.V[140] = cp923_140
+	goto L920
+L920:
+	ex.V[140] = cp921_140
+	ex.V[141] = cp921_141
+	ex.DebugEndCondition(&definition, false)
+	goto L918
+L918:
+	ex.V[140] = cp919_140
+	ex.V[141] = cp919_141
+	ex.DebugEndCondition(&definition, false)
+	goto L917
+L917:
+	ex.DebugEndBranch(&definition, false)
+	goto L913
+L916:
 	if !ex.PushBranch(&bc28) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L871:
+	ex.DebugCapturePendingTask(28)
+L933:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -6135,17 +11142,22 @@ L871:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L855
+		goto L915
 	}
-	goto L872
-L855:
+	goto L934
+L915:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L871
-L872:
+	goto L933
+L934:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L853:
+L913:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -6153,84 +11165,105 @@ L853:
 func method26(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp879_142 atom.Atom
-	var cp879_143 atom.Atom
-	var cp881_142 atom.Atom
-	var cp881_143 atom.Atom
-	var cp883_142 atom.Atom
-	var cp886_143 atom.Atom
-	_ = cp879_142
-	_ = cp879_143
-	_ = cp881_142
-	_ = cp881_143
-	_ = cp883_142
-	_ = cp886_143
+	var cp941_142 atom.Atom
+	var cp941_143 atom.Atom
+	var cp943_142 atom.Atom
+	var cp943_143 atom.Atom
+	var cp945_142 atom.Atom
+	var cp948_143 atom.Atom
+	_ = cp941_142
+	_ = cp941_143
+	_ = cp943_142
+	_ = cp943_143
+	_ = cp945_142
+	_ = cp948_143
 	switch frame.Resume {
 	case 1:
-		goto L875
+		goto L937
 	}
-	goto L874
-L874:
+	ex.DebugBeginMethod(&definition, 26)
+	goto L936
+L936:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 29)
 	// (and (== (call distance) (call distance)))
-	cp879_142 = ex.V[142]
-	cp879_143 = ex.V[143]
+	cp941_142 = ex.V[142]
+	cp941_143 = ex.V[143]
+	ex.DebugBeginCondition(&definition, 244)
 	// (and (= ?$assignment_call_133 (call distance)) (= ?$assignment_call_134 (call distance)) (== ?$assignment_call_133 ?$assignment_call_134))
-	cp881_142 = ex.V[142]
-	cp881_143 = ex.V[143]
+	cp943_142 = ex.V[142]
+	cp943_143 = ex.V[143]
+	ex.DebugBeginCondition(&definition, 245)
 	// (= ?$assignment_call_133 (call distance))
-	cp883_142 = ex.V[142]
+	cp945_142 = ex.V[142]
 	// (= ?$assignment_call_133 (call distance))
+	ex.DebugBeginCondition(&definition, 246)
 	if !ex.V[142].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs51, factSymbols); ok {
 			ex.SetIfChanged(142, result)
-			goto L884
+			ex.DebugEndCondition(&definition, true)
+			goto L946
 		}
 	}
-	goto L882
-L884:
+	ex.DebugEndCondition(&definition, false)
+	goto L944
+L946:
 	// (= ?$assignment_call_134 (call distance))
-	cp886_143 = ex.V[143]
+	cp948_143 = ex.V[143]
 	// (= ?$assignment_call_134 (call distance))
+	ex.DebugBeginCondition(&definition, 247)
 	if !ex.V[143].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs52, factSymbols); ok {
 			ex.SetIfChanged(143, result)
-			goto L887
+			ex.DebugEndCondition(&definition, true)
+			goto L949
 		}
 	}
-	goto L885
-L887:
+	ex.DebugEndCondition(&definition, false)
+	goto L947
+L949:
 	// (== ?$assignment_call_133 ?$assignment_call_134)
 	// (== ?$assignment_call_133 ?$assignment_call_134)
+	ex.DebugBeginCondition(&definition, 248)
 	if planner.Compare(ex.V[142], ex.V[143], 0) {
-		goto L890
+		ex.DebugEndCondition(&definition, true)
+		goto L952
 	}
-	goto L888
-L890:
-	goto L876
-L888:
-	goto L885
-L885:
-	ex.V[143] = cp886_143
-	goto L882
-L882:
-	ex.V[142] = cp883_142
-	goto L880
-L880:
-	ex.V[142] = cp881_142
-	ex.V[143] = cp881_143
-	goto L878
-L878:
-	ex.V[142] = cp879_142
-	ex.V[143] = cp879_143
-	goto L877
-L877:
-	goto L873
-L876:
+	ex.DebugEndCondition(&definition, false)
+	goto L950
+L952:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L938
+L950:
+	goto L947
+L947:
+	ex.V[143] = cp948_143
+	goto L944
+L944:
+	ex.V[142] = cp945_142
+	goto L942
+L942:
+	ex.V[142] = cp943_142
+	ex.V[143] = cp943_143
+	ex.DebugEndCondition(&definition, false)
+	goto L940
+L940:
+	ex.V[142] = cp941_142
+	ex.V[143] = cp941_143
+	ex.DebugEndCondition(&definition, false)
+	goto L939
+L939:
+	ex.DebugEndBranch(&definition, false)
+	goto L935
+L938:
 	if !ex.PushBranch(&bc29) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L891:
+	ex.DebugCapturePendingTask(29)
+L955:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -6238,17 +11271,22 @@ L891:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L875
+		goto L937
 	}
-	goto L892
-L875:
+	goto L956
+L937:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L891
-L892:
+	goto L955
+L956:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L873:
+L935:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -6256,53 +11294,68 @@ L873:
 func method27(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp899_16 atom.Atom
-	var cp901_16 atom.Atom
-	_ = cp899_16
-	_ = cp901_16
+	var cp963_16 atom.Atom
+	var cp965_16 atom.Atom
+	_ = cp963_16
+	_ = cp965_16
 	switch frame.Resume {
 	case 1:
-		goto L895
+		goto L959
 	}
-	goto L894
-L894:
+	ex.DebugBeginMethod(&definition, 27)
+	goto L958
+L958:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 30)
 	// (and (= ?distance (call distance)) (< ?distance 0.2))
-	cp899_16 = ex.V[16]
+	cp963_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 249)
 	// (= ?distance (call distance))
-	cp901_16 = ex.V[16]
+	cp965_16 = ex.V[16]
 	// (= ?distance (call distance))
+	ex.DebugBeginCondition(&definition, 250)
 	if !ex.V[16].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs53, factSymbols); ok {
 			ex.SetIfChanged(16, result)
-			goto L902
+			ex.DebugEndCondition(&definition, true)
+			goto L966
 		}
 	}
-	goto L900
-L902:
+	ex.DebugEndCondition(&definition, false)
+	goto L964
+L966:
 	// (< ?distance 0.2)
 	// (< ?distance 0.2)
+	ex.DebugBeginCondition(&definition, 251)
 	if planner.Compare(ex.V[16], sv53, 2) {
-		goto L905
+		ex.DebugEndCondition(&definition, true)
+		goto L969
 	}
-	goto L903
-L905:
-	goto L896
-L903:
-	goto L900
-L900:
-	ex.V[16] = cp901_16
-	goto L898
-L898:
-	ex.V[16] = cp899_16
-	goto L897
-L897:
-	goto L893
-L896:
+	ex.DebugEndCondition(&definition, false)
+	goto L967
+L969:
+	ex.DebugEndCondition(&definition, true)
+	goto L960
+L967:
+	goto L964
+L964:
+	ex.V[16] = cp965_16
+	goto L962
+L962:
+	ex.V[16] = cp963_16
+	ex.DebugEndCondition(&definition, false)
+	goto L961
+L961:
+	ex.DebugEndBranch(&definition, false)
+	goto L957
+L960:
 	if !ex.PushBranch(&bc30) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L906:
+	ex.DebugCapturePendingTask(30)
+L971:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -6310,17 +11363,22 @@ L906:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L895
+		goto L959
 	}
-	goto L907
-L895:
+	goto L972
+L959:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L906
-L907:
+	goto L971
+L972:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L893:
+L957:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -6328,1823 +11386,2153 @@ L893:
 func method28(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp914_27 atom.Atom
-	var cp914_144 atom.Atom
-	var cp914_145 atom.Atom
-	var cp914_146 atom.Atom
-	var cp914_147 atom.Atom
-	var cp914_148 atom.Atom
-	var cp914_149 atom.Atom
-	var cp914_150 atom.Atom
-	var cp914_151 atom.Atom
-	var cp914_152 atom.Atom
-	var cp914_153 atom.Atom
-	var cp914_154 atom.Atom
-	var cp914_155 atom.Atom
-	var cp914_156 atom.Atom
-	var cp914_157 atom.Atom
-	var cp914_158 atom.Atom
-	var cp914_159 atom.Atom
-	var cp914_160 atom.Atom
-	var cp914_161 atom.Atom
-	var cp914_162 atom.Atom
-	var cp914_163 atom.Atom
-	var cp914_164 atom.Atom
-	var cp914_165 atom.Atom
-	var cp914_166 atom.Atom
-	var cp914_167 atom.Atom
-	var cp914_168 atom.Atom
-	var cp914_169 atom.Atom
-	var cp914_170 atom.Atom
-	var cp914_171 atom.Atom
-	var cp914_172 atom.Atom
-	var cp914_173 atom.Atom
-	var cp914_174 atom.Atom
-	var cp914_175 atom.Atom
-	var cp914_176 atom.Atom
-	var cp914_177 atom.Atom
-	var cp914_178 atom.Atom
-	var cp914_179 atom.Atom
-	var cp914_180 atom.Atom
-	var cp914_181 atom.Atom
-	var cp914_182 atom.Atom
-	var cp914_183 atom.Atom
-	var cp914_184 atom.Atom
-	var cp914_185 atom.Atom
-	var cp914_186 atom.Atom
-	var cp914_187 atom.Atom
-	var cp914_188 atom.Atom
-	var cp914_189 atom.Atom
-	var cp914_190 atom.Atom
-	var cp914_191 atom.Atom
-	var cp914_192 atom.Atom
-	var cp914_193 atom.Atom
-	var cp914_194 atom.Atom
-	var cp914_195 atom.Atom
-	var cp914_196 atom.Atom
-	var cp914_197 atom.Atom
-	var cp914_198 atom.Atom
-	var cp914_199 atom.Atom
-	var cp914_200 atom.Atom
-	var cp914_201 atom.Atom
-	var cp914_202 atom.Atom
-	var cp914_203 atom.Atom
-	var cp914_204 atom.Atom
-	var cp914_205 atom.Atom
-	var cp914_206 atom.Atom
-	var cp914_207 atom.Atom
-	var cp914_208 atom.Atom
-	var cp916_27 atom.Atom
-	var cp919_144 atom.Atom
-	var cp919_145 atom.Atom
-	var cp919_146 atom.Atom
-	var cp921_144 atom.Atom
-	var cp924_145 atom.Atom
-	var cp927_146 atom.Atom
-	var cp933_147 atom.Atom
-	var cp933_148 atom.Atom
-	var cp933_149 atom.Atom
-	var cp935_147 atom.Atom
-	var cp938_148 atom.Atom
-	var cp941_149 atom.Atom
-	var cp947_150 atom.Atom
-	var cp947_151 atom.Atom
-	var cp947_152 atom.Atom
-	var cp949_150 atom.Atom
-	var cp952_151 atom.Atom
-	var cp955_152 atom.Atom
-	var cp961_153 atom.Atom
-	var cp961_154 atom.Atom
-	var cp961_155 atom.Atom
-	var cp963_153 atom.Atom
-	var cp966_154 atom.Atom
-	var cp969_155 atom.Atom
-	var cp975_156 atom.Atom
-	var cp975_157 atom.Atom
-	var cp975_158 atom.Atom
-	var cp977_156 atom.Atom
-	var cp980_157 atom.Atom
-	var cp983_158 atom.Atom
-	var cp989_159 atom.Atom
-	var cp989_160 atom.Atom
-	var cp989_161 atom.Atom
-	var cp991_159 atom.Atom
-	var cp994_160 atom.Atom
-	var cp997_161 atom.Atom
-	var cp1003_162 atom.Atom
-	var cp1003_163 atom.Atom
-	var cp1003_164 atom.Atom
-	var cp1003_165 atom.Atom
-	var cp1003_166 atom.Atom
-	var cp1003_167 atom.Atom
-	var cp1005_162 atom.Atom
-	var cp1008_163 atom.Atom
-	var cp1011_164 atom.Atom
-	var cp1014_165 atom.Atom
-	var cp1017_166 atom.Atom
-	var cp1020_167 atom.Atom
-	var cp1026_168 atom.Atom
-	var cp1026_169 atom.Atom
-	var cp1026_170 atom.Atom
-	var cp1026_171 atom.Atom
-	var cp1026_172 atom.Atom
-	var cp1026_173 atom.Atom
-	var cp1028_168 atom.Atom
-	var cp1031_169 atom.Atom
-	var cp1034_170 atom.Atom
-	var cp1037_171 atom.Atom
-	var cp1040_172 atom.Atom
-	var cp1043_173 atom.Atom
-	var cp1049_174 atom.Atom
-	var cp1049_175 atom.Atom
-	var cp1049_176 atom.Atom
-	var cp1049_177 atom.Atom
-	var cp1049_178 atom.Atom
-	var cp1049_179 atom.Atom
-	var cp1051_174 atom.Atom
-	var cp1054_175 atom.Atom
-	var cp1057_176 atom.Atom
-	var cp1060_177 atom.Atom
-	var cp1063_178 atom.Atom
-	var cp1066_179 atom.Atom
-	var cp1072_180 atom.Atom
-	var cp1072_181 atom.Atom
-	var cp1072_182 atom.Atom
-	var cp1072_183 atom.Atom
-	var cp1072_184 atom.Atom
-	var cp1072_185 atom.Atom
-	var cp1074_180 atom.Atom
-	var cp1077_181 atom.Atom
-	var cp1080_182 atom.Atom
-	var cp1083_183 atom.Atom
-	var cp1086_184 atom.Atom
-	var cp1089_185 atom.Atom
-	var cp1095_186 atom.Atom
-	var cp1095_187 atom.Atom
-	var cp1095_188 atom.Atom
-	var cp1095_189 atom.Atom
-	var cp1095_190 atom.Atom
-	var cp1095_191 atom.Atom
-	var cp1097_186 atom.Atom
-	var cp1100_187 atom.Atom
-	var cp1103_188 atom.Atom
-	var cp1106_189 atom.Atom
-	var cp1109_190 atom.Atom
-	var cp1112_191 atom.Atom
-	var cp1118_192 atom.Atom
-	var cp1118_193 atom.Atom
-	var cp1118_194 atom.Atom
-	var cp1118_195 atom.Atom
-	var cp1118_196 atom.Atom
-	var cp1120_192 atom.Atom
-	var cp1123_193 atom.Atom
-	var cp1126_194 atom.Atom
-	var cp1129_195 atom.Atom
-	var cp1132_196 atom.Atom
-	var cp1138_197 atom.Atom
-	var cp1138_198 atom.Atom
-	var cp1138_199 atom.Atom
-	var cp1138_200 atom.Atom
-	var cp1138_201 atom.Atom
-	var cp1140_197 atom.Atom
-	var cp1143_198 atom.Atom
-	var cp1146_199 atom.Atom
-	var cp1149_200 atom.Atom
-	var cp1152_201 atom.Atom
-	var cp1158_202 atom.Atom
-	var cp1158_203 atom.Atom
-	var cp1158_204 atom.Atom
-	var cp1158_205 atom.Atom
-	var cp1158_206 atom.Atom
-	var cp1158_207 atom.Atom
-	var cp1158_208 atom.Atom
-	var cp1160_202 atom.Atom
-	var cp1163_203 atom.Atom
-	var cp1166_204 atom.Atom
-	var cp1169_205 atom.Atom
-	var cp1172_206 atom.Atom
-	var cp1175_207 atom.Atom
-	var cp1178_208 atom.Atom
-	_ = cp914_27
-	_ = cp914_144
-	_ = cp914_145
-	_ = cp914_146
-	_ = cp914_147
-	_ = cp914_148
-	_ = cp914_149
-	_ = cp914_150
-	_ = cp914_151
-	_ = cp914_152
-	_ = cp914_153
-	_ = cp914_154
-	_ = cp914_155
-	_ = cp914_156
-	_ = cp914_157
-	_ = cp914_158
-	_ = cp914_159
-	_ = cp914_160
-	_ = cp914_161
-	_ = cp914_162
-	_ = cp914_163
-	_ = cp914_164
-	_ = cp914_165
-	_ = cp914_166
-	_ = cp914_167
-	_ = cp914_168
-	_ = cp914_169
-	_ = cp914_170
-	_ = cp914_171
-	_ = cp914_172
-	_ = cp914_173
-	_ = cp914_174
-	_ = cp914_175
-	_ = cp914_176
-	_ = cp914_177
-	_ = cp914_178
-	_ = cp914_179
-	_ = cp914_180
-	_ = cp914_181
-	_ = cp914_182
-	_ = cp914_183
-	_ = cp914_184
-	_ = cp914_185
-	_ = cp914_186
-	_ = cp914_187
-	_ = cp914_188
-	_ = cp914_189
-	_ = cp914_190
-	_ = cp914_191
-	_ = cp914_192
-	_ = cp914_193
-	_ = cp914_194
-	_ = cp914_195
-	_ = cp914_196
-	_ = cp914_197
-	_ = cp914_198
-	_ = cp914_199
-	_ = cp914_200
-	_ = cp914_201
-	_ = cp914_202
-	_ = cp914_203
-	_ = cp914_204
-	_ = cp914_205
-	_ = cp914_206
-	_ = cp914_207
-	_ = cp914_208
-	_ = cp916_27
-	_ = cp919_144
-	_ = cp919_145
-	_ = cp919_146
-	_ = cp921_144
-	_ = cp924_145
-	_ = cp927_146
-	_ = cp933_147
-	_ = cp933_148
-	_ = cp933_149
-	_ = cp935_147
-	_ = cp938_148
-	_ = cp941_149
-	_ = cp947_150
-	_ = cp947_151
-	_ = cp947_152
-	_ = cp949_150
-	_ = cp952_151
-	_ = cp955_152
-	_ = cp961_153
-	_ = cp961_154
-	_ = cp961_155
-	_ = cp963_153
-	_ = cp966_154
-	_ = cp969_155
-	_ = cp975_156
-	_ = cp975_157
-	_ = cp975_158
-	_ = cp977_156
-	_ = cp980_157
-	_ = cp983_158
-	_ = cp989_159
-	_ = cp989_160
-	_ = cp989_161
-	_ = cp991_159
-	_ = cp994_160
-	_ = cp997_161
-	_ = cp1003_162
-	_ = cp1003_163
-	_ = cp1003_164
-	_ = cp1003_165
-	_ = cp1003_166
-	_ = cp1003_167
-	_ = cp1005_162
-	_ = cp1008_163
-	_ = cp1011_164
-	_ = cp1014_165
-	_ = cp1017_166
-	_ = cp1020_167
-	_ = cp1026_168
-	_ = cp1026_169
-	_ = cp1026_170
-	_ = cp1026_171
-	_ = cp1026_172
-	_ = cp1026_173
-	_ = cp1028_168
-	_ = cp1031_169
-	_ = cp1034_170
-	_ = cp1037_171
-	_ = cp1040_172
-	_ = cp1043_173
-	_ = cp1049_174
-	_ = cp1049_175
-	_ = cp1049_176
-	_ = cp1049_177
-	_ = cp1049_178
-	_ = cp1049_179
-	_ = cp1051_174
-	_ = cp1054_175
-	_ = cp1057_176
-	_ = cp1060_177
-	_ = cp1063_178
-	_ = cp1066_179
-	_ = cp1072_180
-	_ = cp1072_181
-	_ = cp1072_182
-	_ = cp1072_183
-	_ = cp1072_184
-	_ = cp1072_185
-	_ = cp1074_180
-	_ = cp1077_181
-	_ = cp1080_182
-	_ = cp1083_183
-	_ = cp1086_184
-	_ = cp1089_185
-	_ = cp1095_186
-	_ = cp1095_187
-	_ = cp1095_188
-	_ = cp1095_189
-	_ = cp1095_190
-	_ = cp1095_191
-	_ = cp1097_186
-	_ = cp1100_187
-	_ = cp1103_188
-	_ = cp1106_189
-	_ = cp1109_190
-	_ = cp1112_191
-	_ = cp1118_192
-	_ = cp1118_193
-	_ = cp1118_194
-	_ = cp1118_195
-	_ = cp1118_196
-	_ = cp1120_192
-	_ = cp1123_193
-	_ = cp1126_194
-	_ = cp1129_195
-	_ = cp1132_196
-	_ = cp1138_197
-	_ = cp1138_198
-	_ = cp1138_199
-	_ = cp1138_200
-	_ = cp1138_201
-	_ = cp1140_197
-	_ = cp1143_198
-	_ = cp1146_199
-	_ = cp1149_200
-	_ = cp1152_201
-	_ = cp1158_202
-	_ = cp1158_203
-	_ = cp1158_204
-	_ = cp1158_205
-	_ = cp1158_206
-	_ = cp1158_207
-	_ = cp1158_208
-	_ = cp1160_202
-	_ = cp1163_203
-	_ = cp1166_204
-	_ = cp1169_205
-	_ = cp1172_206
-	_ = cp1175_207
-	_ = cp1178_208
+	var cp979_27 atom.Atom
+	var cp979_144 atom.Atom
+	var cp979_145 atom.Atom
+	var cp979_146 atom.Atom
+	var cp979_147 atom.Atom
+	var cp979_148 atom.Atom
+	var cp979_149 atom.Atom
+	var cp979_150 atom.Atom
+	var cp979_151 atom.Atom
+	var cp979_152 atom.Atom
+	var cp979_153 atom.Atom
+	var cp979_154 atom.Atom
+	var cp979_155 atom.Atom
+	var cp979_156 atom.Atom
+	var cp979_157 atom.Atom
+	var cp979_158 atom.Atom
+	var cp979_159 atom.Atom
+	var cp979_160 atom.Atom
+	var cp979_161 atom.Atom
+	var cp979_162 atom.Atom
+	var cp979_163 atom.Atom
+	var cp979_164 atom.Atom
+	var cp979_165 atom.Atom
+	var cp979_166 atom.Atom
+	var cp979_167 atom.Atom
+	var cp979_168 atom.Atom
+	var cp979_169 atom.Atom
+	var cp979_170 atom.Atom
+	var cp979_171 atom.Atom
+	var cp979_172 atom.Atom
+	var cp979_173 atom.Atom
+	var cp979_174 atom.Atom
+	var cp979_175 atom.Atom
+	var cp979_176 atom.Atom
+	var cp979_177 atom.Atom
+	var cp979_178 atom.Atom
+	var cp979_179 atom.Atom
+	var cp979_180 atom.Atom
+	var cp979_181 atom.Atom
+	var cp979_182 atom.Atom
+	var cp979_183 atom.Atom
+	var cp979_184 atom.Atom
+	var cp979_185 atom.Atom
+	var cp979_186 atom.Atom
+	var cp979_187 atom.Atom
+	var cp979_188 atom.Atom
+	var cp979_189 atom.Atom
+	var cp979_190 atom.Atom
+	var cp979_191 atom.Atom
+	var cp979_192 atom.Atom
+	var cp979_193 atom.Atom
+	var cp979_194 atom.Atom
+	var cp979_195 atom.Atom
+	var cp979_196 atom.Atom
+	var cp979_197 atom.Atom
+	var cp979_198 atom.Atom
+	var cp979_199 atom.Atom
+	var cp979_200 atom.Atom
+	var cp979_201 atom.Atom
+	var cp979_202 atom.Atom
+	var cp979_203 atom.Atom
+	var cp979_204 atom.Atom
+	var cp979_205 atom.Atom
+	var cp979_206 atom.Atom
+	var cp979_207 atom.Atom
+	var cp979_208 atom.Atom
+	var cp981_27 atom.Atom
+	var cp984_144 atom.Atom
+	var cp984_145 atom.Atom
+	var cp984_146 atom.Atom
+	var cp986_144 atom.Atom
+	var cp989_145 atom.Atom
+	var cp992_146 atom.Atom
+	var cp999_147 atom.Atom
+	var cp999_148 atom.Atom
+	var cp999_149 atom.Atom
+	var cp1001_147 atom.Atom
+	var cp1004_148 atom.Atom
+	var cp1007_149 atom.Atom
+	var cp1014_150 atom.Atom
+	var cp1014_151 atom.Atom
+	var cp1014_152 atom.Atom
+	var cp1016_150 atom.Atom
+	var cp1019_151 atom.Atom
+	var cp1022_152 atom.Atom
+	var cp1029_153 atom.Atom
+	var cp1029_154 atom.Atom
+	var cp1029_155 atom.Atom
+	var cp1031_153 atom.Atom
+	var cp1034_154 atom.Atom
+	var cp1037_155 atom.Atom
+	var cp1044_156 atom.Atom
+	var cp1044_157 atom.Atom
+	var cp1044_158 atom.Atom
+	var cp1046_156 atom.Atom
+	var cp1049_157 atom.Atom
+	var cp1052_158 atom.Atom
+	var cp1059_159 atom.Atom
+	var cp1059_160 atom.Atom
+	var cp1059_161 atom.Atom
+	var cp1061_159 atom.Atom
+	var cp1064_160 atom.Atom
+	var cp1067_161 atom.Atom
+	var cp1074_162 atom.Atom
+	var cp1074_163 atom.Atom
+	var cp1074_164 atom.Atom
+	var cp1074_165 atom.Atom
+	var cp1074_166 atom.Atom
+	var cp1074_167 atom.Atom
+	var cp1076_162 atom.Atom
+	var cp1079_163 atom.Atom
+	var cp1082_164 atom.Atom
+	var cp1085_165 atom.Atom
+	var cp1088_166 atom.Atom
+	var cp1091_167 atom.Atom
+	var cp1098_168 atom.Atom
+	var cp1098_169 atom.Atom
+	var cp1098_170 atom.Atom
+	var cp1098_171 atom.Atom
+	var cp1098_172 atom.Atom
+	var cp1098_173 atom.Atom
+	var cp1100_168 atom.Atom
+	var cp1103_169 atom.Atom
+	var cp1106_170 atom.Atom
+	var cp1109_171 atom.Atom
+	var cp1112_172 atom.Atom
+	var cp1115_173 atom.Atom
+	var cp1122_174 atom.Atom
+	var cp1122_175 atom.Atom
+	var cp1122_176 atom.Atom
+	var cp1122_177 atom.Atom
+	var cp1122_178 atom.Atom
+	var cp1122_179 atom.Atom
+	var cp1124_174 atom.Atom
+	var cp1127_175 atom.Atom
+	var cp1130_176 atom.Atom
+	var cp1133_177 atom.Atom
+	var cp1136_178 atom.Atom
+	var cp1139_179 atom.Atom
+	var cp1146_180 atom.Atom
+	var cp1146_181 atom.Atom
+	var cp1146_182 atom.Atom
+	var cp1146_183 atom.Atom
+	var cp1146_184 atom.Atom
+	var cp1146_185 atom.Atom
+	var cp1148_180 atom.Atom
+	var cp1151_181 atom.Atom
+	var cp1154_182 atom.Atom
+	var cp1157_183 atom.Atom
+	var cp1160_184 atom.Atom
+	var cp1163_185 atom.Atom
+	var cp1170_186 atom.Atom
+	var cp1170_187 atom.Atom
+	var cp1170_188 atom.Atom
+	var cp1170_189 atom.Atom
+	var cp1170_190 atom.Atom
+	var cp1170_191 atom.Atom
+	var cp1172_186 atom.Atom
+	var cp1175_187 atom.Atom
+	var cp1178_188 atom.Atom
+	var cp1181_189 atom.Atom
+	var cp1184_190 atom.Atom
+	var cp1187_191 atom.Atom
+	var cp1194_192 atom.Atom
+	var cp1194_193 atom.Atom
+	var cp1194_194 atom.Atom
+	var cp1194_195 atom.Atom
+	var cp1194_196 atom.Atom
+	var cp1196_192 atom.Atom
+	var cp1199_193 atom.Atom
+	var cp1202_194 atom.Atom
+	var cp1205_195 atom.Atom
+	var cp1208_196 atom.Atom
+	var cp1215_197 atom.Atom
+	var cp1215_198 atom.Atom
+	var cp1215_199 atom.Atom
+	var cp1215_200 atom.Atom
+	var cp1215_201 atom.Atom
+	var cp1217_197 atom.Atom
+	var cp1220_198 atom.Atom
+	var cp1223_199 atom.Atom
+	var cp1226_200 atom.Atom
+	var cp1229_201 atom.Atom
+	var cp1236_202 atom.Atom
+	var cp1236_203 atom.Atom
+	var cp1236_204 atom.Atom
+	var cp1236_205 atom.Atom
+	var cp1236_206 atom.Atom
+	var cp1236_207 atom.Atom
+	var cp1236_208 atom.Atom
+	var cp1238_202 atom.Atom
+	var cp1241_203 atom.Atom
+	var cp1244_204 atom.Atom
+	var cp1247_205 atom.Atom
+	var cp1250_206 atom.Atom
+	var cp1253_207 atom.Atom
+	var cp1256_208 atom.Atom
+	_ = cp979_27
+	_ = cp979_144
+	_ = cp979_145
+	_ = cp979_146
+	_ = cp979_147
+	_ = cp979_148
+	_ = cp979_149
+	_ = cp979_150
+	_ = cp979_151
+	_ = cp979_152
+	_ = cp979_153
+	_ = cp979_154
+	_ = cp979_155
+	_ = cp979_156
+	_ = cp979_157
+	_ = cp979_158
+	_ = cp979_159
+	_ = cp979_160
+	_ = cp979_161
+	_ = cp979_162
+	_ = cp979_163
+	_ = cp979_164
+	_ = cp979_165
+	_ = cp979_166
+	_ = cp979_167
+	_ = cp979_168
+	_ = cp979_169
+	_ = cp979_170
+	_ = cp979_171
+	_ = cp979_172
+	_ = cp979_173
+	_ = cp979_174
+	_ = cp979_175
+	_ = cp979_176
+	_ = cp979_177
+	_ = cp979_178
+	_ = cp979_179
+	_ = cp979_180
+	_ = cp979_181
+	_ = cp979_182
+	_ = cp979_183
+	_ = cp979_184
+	_ = cp979_185
+	_ = cp979_186
+	_ = cp979_187
+	_ = cp979_188
+	_ = cp979_189
+	_ = cp979_190
+	_ = cp979_191
+	_ = cp979_192
+	_ = cp979_193
+	_ = cp979_194
+	_ = cp979_195
+	_ = cp979_196
+	_ = cp979_197
+	_ = cp979_198
+	_ = cp979_199
+	_ = cp979_200
+	_ = cp979_201
+	_ = cp979_202
+	_ = cp979_203
+	_ = cp979_204
+	_ = cp979_205
+	_ = cp979_206
+	_ = cp979_207
+	_ = cp979_208
+	_ = cp981_27
+	_ = cp984_144
+	_ = cp984_145
+	_ = cp984_146
+	_ = cp986_144
+	_ = cp989_145
+	_ = cp992_146
+	_ = cp999_147
+	_ = cp999_148
+	_ = cp999_149
+	_ = cp1001_147
+	_ = cp1004_148
+	_ = cp1007_149
+	_ = cp1014_150
+	_ = cp1014_151
+	_ = cp1014_152
+	_ = cp1016_150
+	_ = cp1019_151
+	_ = cp1022_152
+	_ = cp1029_153
+	_ = cp1029_154
+	_ = cp1029_155
+	_ = cp1031_153
+	_ = cp1034_154
+	_ = cp1037_155
+	_ = cp1044_156
+	_ = cp1044_157
+	_ = cp1044_158
+	_ = cp1046_156
+	_ = cp1049_157
+	_ = cp1052_158
+	_ = cp1059_159
+	_ = cp1059_160
+	_ = cp1059_161
+	_ = cp1061_159
+	_ = cp1064_160
+	_ = cp1067_161
+	_ = cp1074_162
+	_ = cp1074_163
+	_ = cp1074_164
+	_ = cp1074_165
+	_ = cp1074_166
+	_ = cp1074_167
+	_ = cp1076_162
+	_ = cp1079_163
+	_ = cp1082_164
+	_ = cp1085_165
+	_ = cp1088_166
+	_ = cp1091_167
+	_ = cp1098_168
+	_ = cp1098_169
+	_ = cp1098_170
+	_ = cp1098_171
+	_ = cp1098_172
+	_ = cp1098_173
+	_ = cp1100_168
+	_ = cp1103_169
+	_ = cp1106_170
+	_ = cp1109_171
+	_ = cp1112_172
+	_ = cp1115_173
+	_ = cp1122_174
+	_ = cp1122_175
+	_ = cp1122_176
+	_ = cp1122_177
+	_ = cp1122_178
+	_ = cp1122_179
+	_ = cp1124_174
+	_ = cp1127_175
+	_ = cp1130_176
+	_ = cp1133_177
+	_ = cp1136_178
+	_ = cp1139_179
+	_ = cp1146_180
+	_ = cp1146_181
+	_ = cp1146_182
+	_ = cp1146_183
+	_ = cp1146_184
+	_ = cp1146_185
+	_ = cp1148_180
+	_ = cp1151_181
+	_ = cp1154_182
+	_ = cp1157_183
+	_ = cp1160_184
+	_ = cp1163_185
+	_ = cp1170_186
+	_ = cp1170_187
+	_ = cp1170_188
+	_ = cp1170_189
+	_ = cp1170_190
+	_ = cp1170_191
+	_ = cp1172_186
+	_ = cp1175_187
+	_ = cp1178_188
+	_ = cp1181_189
+	_ = cp1184_190
+	_ = cp1187_191
+	_ = cp1194_192
+	_ = cp1194_193
+	_ = cp1194_194
+	_ = cp1194_195
+	_ = cp1194_196
+	_ = cp1196_192
+	_ = cp1199_193
+	_ = cp1202_194
+	_ = cp1205_195
+	_ = cp1208_196
+	_ = cp1215_197
+	_ = cp1215_198
+	_ = cp1215_199
+	_ = cp1215_200
+	_ = cp1215_201
+	_ = cp1217_197
+	_ = cp1220_198
+	_ = cp1223_199
+	_ = cp1226_200
+	_ = cp1229_201
+	_ = cp1236_202
+	_ = cp1236_203
+	_ = cp1236_204
+	_ = cp1236_205
+	_ = cp1236_206
+	_ = cp1236_207
+	_ = cp1236_208
+	_ = cp1238_202
+	_ = cp1241_203
+	_ = cp1244_204
+	_ = cp1247_205
+	_ = cp1250_206
+	_ = cp1253_207
+	_ = cp1256_208
 	switch frame.Resume {
 	case 1:
-		goto L910
+		goto L975
 	}
-	goto L909
-L909:
+	ex.DebugBeginMethod(&definition, 28)
+	goto L974
+L974:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 31)
 	// (and (= ?value 3) (< (call identity 2) ?value) (<= ?value (call identity 3)) (> (call identity 4) ?value) (>= ?value (call identity 3)) (== (call identity ?value) 3) (!= 2 (call identity ?value)) (== (+ (call identity 1) 2) 3) (== (- 5 (call identity 2)) 3) (== (* (call identity 2) 3) 6) (== (/ 6 (call identity 2)) 3) (== (% (call identity 7) 4) 3) (== (++ (call identity 2)) 3) (== (-- (call identity 4)) 3) (== (call identity (+ 1 (call identity 2))) 3))
-	cp914_27 = ex.V[27]
-	cp914_144 = ex.V[144]
-	cp914_145 = ex.V[145]
-	cp914_146 = ex.V[146]
-	cp914_147 = ex.V[147]
-	cp914_148 = ex.V[148]
-	cp914_149 = ex.V[149]
-	cp914_150 = ex.V[150]
-	cp914_151 = ex.V[151]
-	cp914_152 = ex.V[152]
-	cp914_153 = ex.V[153]
-	cp914_154 = ex.V[154]
-	cp914_155 = ex.V[155]
-	cp914_156 = ex.V[156]
-	cp914_157 = ex.V[157]
-	cp914_158 = ex.V[158]
-	cp914_159 = ex.V[159]
-	cp914_160 = ex.V[160]
-	cp914_161 = ex.V[161]
-	cp914_162 = ex.V[162]
-	cp914_163 = ex.V[163]
-	cp914_164 = ex.V[164]
-	cp914_165 = ex.V[165]
-	cp914_166 = ex.V[166]
-	cp914_167 = ex.V[167]
-	cp914_168 = ex.V[168]
-	cp914_169 = ex.V[169]
-	cp914_170 = ex.V[170]
-	cp914_171 = ex.V[171]
-	cp914_172 = ex.V[172]
-	cp914_173 = ex.V[173]
-	cp914_174 = ex.V[174]
-	cp914_175 = ex.V[175]
-	cp914_176 = ex.V[176]
-	cp914_177 = ex.V[177]
-	cp914_178 = ex.V[178]
-	cp914_179 = ex.V[179]
-	cp914_180 = ex.V[180]
-	cp914_181 = ex.V[181]
-	cp914_182 = ex.V[182]
-	cp914_183 = ex.V[183]
-	cp914_184 = ex.V[184]
-	cp914_185 = ex.V[185]
-	cp914_186 = ex.V[186]
-	cp914_187 = ex.V[187]
-	cp914_188 = ex.V[188]
-	cp914_189 = ex.V[189]
-	cp914_190 = ex.V[190]
-	cp914_191 = ex.V[191]
-	cp914_192 = ex.V[192]
-	cp914_193 = ex.V[193]
-	cp914_194 = ex.V[194]
-	cp914_195 = ex.V[195]
-	cp914_196 = ex.V[196]
-	cp914_197 = ex.V[197]
-	cp914_198 = ex.V[198]
-	cp914_199 = ex.V[199]
-	cp914_200 = ex.V[200]
-	cp914_201 = ex.V[201]
-	cp914_202 = ex.V[202]
-	cp914_203 = ex.V[203]
-	cp914_204 = ex.V[204]
-	cp914_205 = ex.V[205]
-	cp914_206 = ex.V[206]
-	cp914_207 = ex.V[207]
-	cp914_208 = ex.V[208]
+	cp979_27 = ex.V[27]
+	cp979_144 = ex.V[144]
+	cp979_145 = ex.V[145]
+	cp979_146 = ex.V[146]
+	cp979_147 = ex.V[147]
+	cp979_148 = ex.V[148]
+	cp979_149 = ex.V[149]
+	cp979_150 = ex.V[150]
+	cp979_151 = ex.V[151]
+	cp979_152 = ex.V[152]
+	cp979_153 = ex.V[153]
+	cp979_154 = ex.V[154]
+	cp979_155 = ex.V[155]
+	cp979_156 = ex.V[156]
+	cp979_157 = ex.V[157]
+	cp979_158 = ex.V[158]
+	cp979_159 = ex.V[159]
+	cp979_160 = ex.V[160]
+	cp979_161 = ex.V[161]
+	cp979_162 = ex.V[162]
+	cp979_163 = ex.V[163]
+	cp979_164 = ex.V[164]
+	cp979_165 = ex.V[165]
+	cp979_166 = ex.V[166]
+	cp979_167 = ex.V[167]
+	cp979_168 = ex.V[168]
+	cp979_169 = ex.V[169]
+	cp979_170 = ex.V[170]
+	cp979_171 = ex.V[171]
+	cp979_172 = ex.V[172]
+	cp979_173 = ex.V[173]
+	cp979_174 = ex.V[174]
+	cp979_175 = ex.V[175]
+	cp979_176 = ex.V[176]
+	cp979_177 = ex.V[177]
+	cp979_178 = ex.V[178]
+	cp979_179 = ex.V[179]
+	cp979_180 = ex.V[180]
+	cp979_181 = ex.V[181]
+	cp979_182 = ex.V[182]
+	cp979_183 = ex.V[183]
+	cp979_184 = ex.V[184]
+	cp979_185 = ex.V[185]
+	cp979_186 = ex.V[186]
+	cp979_187 = ex.V[187]
+	cp979_188 = ex.V[188]
+	cp979_189 = ex.V[189]
+	cp979_190 = ex.V[190]
+	cp979_191 = ex.V[191]
+	cp979_192 = ex.V[192]
+	cp979_193 = ex.V[193]
+	cp979_194 = ex.V[194]
+	cp979_195 = ex.V[195]
+	cp979_196 = ex.V[196]
+	cp979_197 = ex.V[197]
+	cp979_198 = ex.V[198]
+	cp979_199 = ex.V[199]
+	cp979_200 = ex.V[200]
+	cp979_201 = ex.V[201]
+	cp979_202 = ex.V[202]
+	cp979_203 = ex.V[203]
+	cp979_204 = ex.V[204]
+	cp979_205 = ex.V[205]
+	cp979_206 = ex.V[206]
+	cp979_207 = ex.V[207]
+	cp979_208 = ex.V[208]
+	ex.DebugBeginCondition(&definition, 252)
 	// (= ?value 3)
-	cp916_27 = ex.V[27]
+	cp981_27 = ex.V[27]
 	// (= ?value 3)
+	ex.DebugBeginCondition(&definition, 253)
 	{
 		value := sv54
 		if value.IsBound() && !ex.V[27].IsBound() {
 			ex.V[27] = value
-			goto L917
+			ex.DebugEndCondition(&definition, true)
+			goto L982
 		}
-		goto L915
+		ex.DebugEndCondition(&definition, false)
+		goto L980
 	}
-L917:
+L982:
 	// (and (= ?$assignment_call_135 2) (= ?$assignment_call_136 (call identity ?$assignment_call_135)) (= ?$assignment_call_137 ?value) (< ?$assignment_call_136 ?$assignment_call_137))
-	cp919_144 = ex.V[144]
-	cp919_145 = ex.V[145]
-	cp919_146 = ex.V[146]
+	cp984_144 = ex.V[144]
+	cp984_145 = ex.V[145]
+	cp984_146 = ex.V[146]
+	ex.DebugBeginCondition(&definition, 254)
 	// (= ?$assignment_call_135 2)
-	cp921_144 = ex.V[144]
+	cp986_144 = ex.V[144]
 	// (= ?$assignment_call_135 2)
+	ex.DebugBeginCondition(&definition, 255)
 	{
 		value := sv55
 		if value.IsBound() && !ex.V[144].IsBound() {
 			ex.V[144] = value
-			goto L922
+			ex.DebugEndCondition(&definition, true)
+			goto L987
 		}
-		goto L920
+		ex.DebugEndCondition(&definition, false)
+		goto L985
 	}
-L922:
+L987:
 	// (= ?$assignment_call_136 (call identity ?$assignment_call_135))
-	cp924_145 = ex.V[145]
+	cp989_145 = ex.V[145]
 	// (= ?$assignment_call_136 (call identity ?$assignment_call_135))
+	ex.DebugBeginCondition(&definition, 256)
 	if !ex.V[145].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[144]}, &cs54, factSymbols); ok {
 			ex.SetIfChanged(145, result)
-			goto L925
+			ex.DebugEndCondition(&definition, true)
+			goto L990
 		}
 	}
-	goto L923
-L925:
+	ex.DebugEndCondition(&definition, false)
+	goto L988
+L990:
 	// (= ?$assignment_call_137 ?value)
-	cp927_146 = ex.V[146]
+	cp992_146 = ex.V[146]
 	// (= ?$assignment_call_137 ?value)
+	ex.DebugBeginCondition(&definition, 257)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[146].IsBound() {
 			ex.V[146] = value
-			goto L928
+			ex.DebugEndCondition(&definition, true)
+			goto L993
 		}
-		goto L926
+		ex.DebugEndCondition(&definition, false)
+		goto L991
 	}
-L928:
+L993:
 	// (< ?$assignment_call_136 ?$assignment_call_137)
 	// (< ?$assignment_call_136 ?$assignment_call_137)
+	ex.DebugBeginCondition(&definition, 258)
 	if planner.Compare(ex.V[145], ex.V[146], 2) {
-		goto L931
+		ex.DebugEndCondition(&definition, true)
+		goto L996
 	}
-	goto L929
-L931:
+	ex.DebugEndCondition(&definition, false)
+	goto L994
+L996:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_138 ?value) (= ?$assignment_call_139 3) (= ?$assignment_call_140 (call identity ?$assignment_call_139)) (<= ?$assignment_call_138 ?$assignment_call_140))
-	cp933_147 = ex.V[147]
-	cp933_148 = ex.V[148]
-	cp933_149 = ex.V[149]
+	cp999_147 = ex.V[147]
+	cp999_148 = ex.V[148]
+	cp999_149 = ex.V[149]
+	ex.DebugBeginCondition(&definition, 259)
 	// (= ?$assignment_call_138 ?value)
-	cp935_147 = ex.V[147]
+	cp1001_147 = ex.V[147]
 	// (= ?$assignment_call_138 ?value)
+	ex.DebugBeginCondition(&definition, 260)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[147].IsBound() {
 			ex.V[147] = value
-			goto L936
+			ex.DebugEndCondition(&definition, true)
+			goto L1002
 		}
-		goto L934
+		ex.DebugEndCondition(&definition, false)
+		goto L1000
 	}
-L936:
+L1002:
 	// (= ?$assignment_call_139 3)
-	cp938_148 = ex.V[148]
+	cp1004_148 = ex.V[148]
 	// (= ?$assignment_call_139 3)
+	ex.DebugBeginCondition(&definition, 261)
 	{
 		value := sv56
 		if value.IsBound() && !ex.V[148].IsBound() {
 			ex.V[148] = value
-			goto L939
+			ex.DebugEndCondition(&definition, true)
+			goto L1005
 		}
-		goto L937
+		ex.DebugEndCondition(&definition, false)
+		goto L1003
 	}
-L939:
+L1005:
 	// (= ?$assignment_call_140 (call identity ?$assignment_call_139))
-	cp941_149 = ex.V[149]
+	cp1007_149 = ex.V[149]
 	// (= ?$assignment_call_140 (call identity ?$assignment_call_139))
+	ex.DebugBeginCondition(&definition, 262)
 	if !ex.V[149].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[148]}, &cs55, factSymbols); ok {
 			ex.SetIfChanged(149, result)
-			goto L942
+			ex.DebugEndCondition(&definition, true)
+			goto L1008
 		}
 	}
-	goto L940
-L942:
+	ex.DebugEndCondition(&definition, false)
+	goto L1006
+L1008:
 	// (<= ?$assignment_call_138 ?$assignment_call_140)
 	// (<= ?$assignment_call_138 ?$assignment_call_140)
+	ex.DebugBeginCondition(&definition, 263)
 	if planner.Compare(ex.V[147], ex.V[149], 3) {
-		goto L945
+		ex.DebugEndCondition(&definition, true)
+		goto L1011
 	}
-	goto L943
-L945:
+	ex.DebugEndCondition(&definition, false)
+	goto L1009
+L1011:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_141 4) (= ?$assignment_call_142 (call identity ?$assignment_call_141)) (= ?$assignment_call_143 ?value) (> ?$assignment_call_142 ?$assignment_call_143))
-	cp947_150 = ex.V[150]
-	cp947_151 = ex.V[151]
-	cp947_152 = ex.V[152]
+	cp1014_150 = ex.V[150]
+	cp1014_151 = ex.V[151]
+	cp1014_152 = ex.V[152]
+	ex.DebugBeginCondition(&definition, 264)
 	// (= ?$assignment_call_141 4)
-	cp949_150 = ex.V[150]
+	cp1016_150 = ex.V[150]
 	// (= ?$assignment_call_141 4)
+	ex.DebugBeginCondition(&definition, 265)
 	{
 		value := sv57
 		if value.IsBound() && !ex.V[150].IsBound() {
 			ex.V[150] = value
-			goto L950
+			ex.DebugEndCondition(&definition, true)
+			goto L1017
 		}
-		goto L948
+		ex.DebugEndCondition(&definition, false)
+		goto L1015
 	}
-L950:
+L1017:
 	// (= ?$assignment_call_142 (call identity ?$assignment_call_141))
-	cp952_151 = ex.V[151]
+	cp1019_151 = ex.V[151]
 	// (= ?$assignment_call_142 (call identity ?$assignment_call_141))
+	ex.DebugBeginCondition(&definition, 266)
 	if !ex.V[151].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[150]}, &cs56, factSymbols); ok {
 			ex.SetIfChanged(151, result)
-			goto L953
+			ex.DebugEndCondition(&definition, true)
+			goto L1020
 		}
 	}
-	goto L951
-L953:
+	ex.DebugEndCondition(&definition, false)
+	goto L1018
+L1020:
 	// (= ?$assignment_call_143 ?value)
-	cp955_152 = ex.V[152]
+	cp1022_152 = ex.V[152]
 	// (= ?$assignment_call_143 ?value)
+	ex.DebugBeginCondition(&definition, 267)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[152].IsBound() {
 			ex.V[152] = value
-			goto L956
+			ex.DebugEndCondition(&definition, true)
+			goto L1023
 		}
-		goto L954
+		ex.DebugEndCondition(&definition, false)
+		goto L1021
 	}
-L956:
+L1023:
 	// (> ?$assignment_call_142 ?$assignment_call_143)
 	// (> ?$assignment_call_142 ?$assignment_call_143)
+	ex.DebugBeginCondition(&definition, 268)
 	if planner.Compare(ex.V[151], ex.V[152], 4) {
-		goto L959
+		ex.DebugEndCondition(&definition, true)
+		goto L1026
 	}
-	goto L957
-L959:
+	ex.DebugEndCondition(&definition, false)
+	goto L1024
+L1026:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_144 ?value) (= ?$assignment_call_145 3) (= ?$assignment_call_146 (call identity ?$assignment_call_145)) (>= ?$assignment_call_144 ?$assignment_call_146))
-	cp961_153 = ex.V[153]
-	cp961_154 = ex.V[154]
-	cp961_155 = ex.V[155]
+	cp1029_153 = ex.V[153]
+	cp1029_154 = ex.V[154]
+	cp1029_155 = ex.V[155]
+	ex.DebugBeginCondition(&definition, 269)
 	// (= ?$assignment_call_144 ?value)
-	cp963_153 = ex.V[153]
+	cp1031_153 = ex.V[153]
 	// (= ?$assignment_call_144 ?value)
+	ex.DebugBeginCondition(&definition, 270)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[153].IsBound() {
 			ex.V[153] = value
-			goto L964
+			ex.DebugEndCondition(&definition, true)
+			goto L1032
 		}
-		goto L962
+		ex.DebugEndCondition(&definition, false)
+		goto L1030
 	}
-L964:
+L1032:
 	// (= ?$assignment_call_145 3)
-	cp966_154 = ex.V[154]
+	cp1034_154 = ex.V[154]
 	// (= ?$assignment_call_145 3)
+	ex.DebugBeginCondition(&definition, 271)
 	{
 		value := sv58
 		if value.IsBound() && !ex.V[154].IsBound() {
 			ex.V[154] = value
-			goto L967
+			ex.DebugEndCondition(&definition, true)
+			goto L1035
 		}
-		goto L965
+		ex.DebugEndCondition(&definition, false)
+		goto L1033
 	}
-L967:
+L1035:
 	// (= ?$assignment_call_146 (call identity ?$assignment_call_145))
-	cp969_155 = ex.V[155]
+	cp1037_155 = ex.V[155]
 	// (= ?$assignment_call_146 (call identity ?$assignment_call_145))
+	ex.DebugBeginCondition(&definition, 272)
 	if !ex.V[155].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[154]}, &cs57, factSymbols); ok {
 			ex.SetIfChanged(155, result)
-			goto L970
+			ex.DebugEndCondition(&definition, true)
+			goto L1038
 		}
 	}
-	goto L968
-L970:
+	ex.DebugEndCondition(&definition, false)
+	goto L1036
+L1038:
 	// (>= ?$assignment_call_144 ?$assignment_call_146)
 	// (>= ?$assignment_call_144 ?$assignment_call_146)
+	ex.DebugBeginCondition(&definition, 273)
 	if planner.Compare(ex.V[153], ex.V[155], 5) {
-		goto L973
+		ex.DebugEndCondition(&definition, true)
+		goto L1041
 	}
-	goto L971
-L973:
+	ex.DebugEndCondition(&definition, false)
+	goto L1039
+L1041:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_147 ?value) (= ?$assignment_call_148 (call identity ?$assignment_call_147)) (= ?$assignment_call_149 3) (== ?$assignment_call_148 ?$assignment_call_149))
-	cp975_156 = ex.V[156]
-	cp975_157 = ex.V[157]
-	cp975_158 = ex.V[158]
+	cp1044_156 = ex.V[156]
+	cp1044_157 = ex.V[157]
+	cp1044_158 = ex.V[158]
+	ex.DebugBeginCondition(&definition, 274)
 	// (= ?$assignment_call_147 ?value)
-	cp977_156 = ex.V[156]
+	cp1046_156 = ex.V[156]
 	// (= ?$assignment_call_147 ?value)
+	ex.DebugBeginCondition(&definition, 275)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[156].IsBound() {
 			ex.V[156] = value
-			goto L978
+			ex.DebugEndCondition(&definition, true)
+			goto L1047
 		}
-		goto L976
+		ex.DebugEndCondition(&definition, false)
+		goto L1045
 	}
-L978:
+L1047:
 	// (= ?$assignment_call_148 (call identity ?$assignment_call_147))
-	cp980_157 = ex.V[157]
+	cp1049_157 = ex.V[157]
 	// (= ?$assignment_call_148 (call identity ?$assignment_call_147))
+	ex.DebugBeginCondition(&definition, 276)
 	if !ex.V[157].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[156]}, &cs58, factSymbols); ok {
 			ex.SetIfChanged(157, result)
-			goto L981
+			ex.DebugEndCondition(&definition, true)
+			goto L1050
 		}
 	}
-	goto L979
-L981:
+	ex.DebugEndCondition(&definition, false)
+	goto L1048
+L1050:
 	// (= ?$assignment_call_149 3)
-	cp983_158 = ex.V[158]
+	cp1052_158 = ex.V[158]
 	// (= ?$assignment_call_149 3)
+	ex.DebugBeginCondition(&definition, 277)
 	{
 		value := sv59
 		if value.IsBound() && !ex.V[158].IsBound() {
 			ex.V[158] = value
-			goto L984
+			ex.DebugEndCondition(&definition, true)
+			goto L1053
 		}
-		goto L982
+		ex.DebugEndCondition(&definition, false)
+		goto L1051
 	}
-L984:
+L1053:
 	// (== ?$assignment_call_148 ?$assignment_call_149)
 	// (== ?$assignment_call_148 ?$assignment_call_149)
+	ex.DebugBeginCondition(&definition, 278)
 	if planner.Compare(ex.V[157], ex.V[158], 0) {
-		goto L987
+		ex.DebugEndCondition(&definition, true)
+		goto L1056
 	}
-	goto L985
-L987:
+	ex.DebugEndCondition(&definition, false)
+	goto L1054
+L1056:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_150 2) (= ?$assignment_call_151 ?value) (= ?$assignment_call_152 (call identity ?$assignment_call_151)) (!= ?$assignment_call_150 ?$assignment_call_152))
-	cp989_159 = ex.V[159]
-	cp989_160 = ex.V[160]
-	cp989_161 = ex.V[161]
+	cp1059_159 = ex.V[159]
+	cp1059_160 = ex.V[160]
+	cp1059_161 = ex.V[161]
+	ex.DebugBeginCondition(&definition, 279)
 	// (= ?$assignment_call_150 2)
-	cp991_159 = ex.V[159]
+	cp1061_159 = ex.V[159]
 	// (= ?$assignment_call_150 2)
+	ex.DebugBeginCondition(&definition, 280)
 	{
 		value := sv60
 		if value.IsBound() && !ex.V[159].IsBound() {
 			ex.V[159] = value
-			goto L992
+			ex.DebugEndCondition(&definition, true)
+			goto L1062
 		}
-		goto L990
+		ex.DebugEndCondition(&definition, false)
+		goto L1060
 	}
-L992:
+L1062:
 	// (= ?$assignment_call_151 ?value)
-	cp994_160 = ex.V[160]
+	cp1064_160 = ex.V[160]
 	// (= ?$assignment_call_151 ?value)
+	ex.DebugBeginCondition(&definition, 281)
 	{
 		value := ex.V[27]
 		if value.IsBound() && !ex.V[160].IsBound() {
 			ex.V[160] = value
-			goto L995
+			ex.DebugEndCondition(&definition, true)
+			goto L1065
 		}
-		goto L993
+		ex.DebugEndCondition(&definition, false)
+		goto L1063
 	}
-L995:
+L1065:
 	// (= ?$assignment_call_152 (call identity ?$assignment_call_151))
-	cp997_161 = ex.V[161]
+	cp1067_161 = ex.V[161]
 	// (= ?$assignment_call_152 (call identity ?$assignment_call_151))
+	ex.DebugBeginCondition(&definition, 282)
 	if !ex.V[161].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[160]}, &cs59, factSymbols); ok {
 			ex.SetIfChanged(161, result)
-			goto L998
+			ex.DebugEndCondition(&definition, true)
+			goto L1068
 		}
 	}
-	goto L996
-L998:
+	ex.DebugEndCondition(&definition, false)
+	goto L1066
+L1068:
 	// (!= ?$assignment_call_150 ?$assignment_call_152)
 	// (!= ?$assignment_call_150 ?$assignment_call_152)
+	ex.DebugBeginCondition(&definition, 283)
 	if planner.Compare(ex.V[159], ex.V[161], 1) {
-		goto L1001
+		ex.DebugEndCondition(&definition, true)
+		goto L1071
 	}
-	goto L999
-L1001:
+	ex.DebugEndCondition(&definition, false)
+	goto L1069
+L1071:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_153 1) (= ?$assignment_call_154 (call identity ?$assignment_call_153)) (= ?$assignment_call_155 (* ?$assignment_call_154 1)) (= ?$assignment_call_156 (* 2 1)) (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156)) (= ?$assignment_call_158 3) (== ?$assignment_call_157 ?$assignment_call_158))
-	cp1003_162 = ex.V[162]
-	cp1003_163 = ex.V[163]
-	cp1003_164 = ex.V[164]
-	cp1003_165 = ex.V[165]
-	cp1003_166 = ex.V[166]
-	cp1003_167 = ex.V[167]
+	cp1074_162 = ex.V[162]
+	cp1074_163 = ex.V[163]
+	cp1074_164 = ex.V[164]
+	cp1074_165 = ex.V[165]
+	cp1074_166 = ex.V[166]
+	cp1074_167 = ex.V[167]
+	ex.DebugBeginCondition(&definition, 284)
 	// (= ?$assignment_call_153 1)
-	cp1005_162 = ex.V[162]
+	cp1076_162 = ex.V[162]
 	// (= ?$assignment_call_153 1)
+	ex.DebugBeginCondition(&definition, 285)
 	{
 		value := sv61
 		if value.IsBound() && !ex.V[162].IsBound() {
 			ex.V[162] = value
-			goto L1006
+			ex.DebugEndCondition(&definition, true)
+			goto L1077
 		}
-		goto L1004
+		ex.DebugEndCondition(&definition, false)
+		goto L1075
 	}
-L1006:
+L1077:
 	// (= ?$assignment_call_154 (call identity ?$assignment_call_153))
-	cp1008_163 = ex.V[163]
+	cp1079_163 = ex.V[163]
 	// (= ?$assignment_call_154 (call identity ?$assignment_call_153))
+	ex.DebugBeginCondition(&definition, 286)
 	if !ex.V[163].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[162]}, &cs60, factSymbols); ok {
 			ex.SetIfChanged(163, result)
-			goto L1009
+			ex.DebugEndCondition(&definition, true)
+			goto L1080
 		}
 	}
-	goto L1007
-L1009:
+	ex.DebugEndCondition(&definition, false)
+	goto L1078
+L1080:
 	// (= ?$assignment_call_155 (* ?$assignment_call_154 1))
-	cp1011_164 = ex.V[164]
+	cp1082_164 = ex.V[164]
 	// (= ?$assignment_call_155 (* ?$assignment_call_154 1))
+	ex.DebugBeginCondition(&definition, 287)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[163], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[164].IsBound() {
 			ex.V[164] = value
-			goto L1012
+			ex.DebugEndCondition(&definition, true)
+			goto L1083
 		}
-		goto L1010
+		ex.DebugEndCondition(&definition, false)
+		goto L1081
 	}
-L1012:
+L1083:
 	// (= ?$assignment_call_156 (* 2 1))
-	cp1014_165 = ex.V[165]
+	cp1085_165 = ex.V[165]
 	// (= ?$assignment_call_156 (* 2 1))
+	ex.DebugBeginCondition(&definition, 288)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(2), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[165].IsBound() {
 			ex.V[165] = value
-			goto L1015
+			ex.DebugEndCondition(&definition, true)
+			goto L1086
 		}
-		goto L1013
+		ex.DebugEndCondition(&definition, false)
+		goto L1084
 	}
-L1015:
+L1086:
 	// (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
-	cp1017_166 = ex.V[166]
+	cp1088_166 = ex.V[166]
 	// (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
+	ex.DebugBeginCondition(&definition, 289)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[164], ex.V[165]})
 		if value.IsBound() && !ex.V[166].IsBound() {
 			ex.V[166] = value
-			goto L1018
+			ex.DebugEndCondition(&definition, true)
+			goto L1089
 		}
-		goto L1016
+		ex.DebugEndCondition(&definition, false)
+		goto L1087
 	}
-L1018:
+L1089:
 	// (= ?$assignment_call_158 3)
-	cp1020_167 = ex.V[167]
+	cp1091_167 = ex.V[167]
 	// (= ?$assignment_call_158 3)
+	ex.DebugBeginCondition(&definition, 290)
 	{
 		value := sv62
 		if value.IsBound() && !ex.V[167].IsBound() {
 			ex.V[167] = value
-			goto L1021
+			ex.DebugEndCondition(&definition, true)
+			goto L1092
 		}
-		goto L1019
+		ex.DebugEndCondition(&definition, false)
+		goto L1090
 	}
-L1021:
+L1092:
 	// (== ?$assignment_call_157 ?$assignment_call_158)
 	// (== ?$assignment_call_157 ?$assignment_call_158)
+	ex.DebugBeginCondition(&definition, 291)
 	if planner.Compare(ex.V[166], ex.V[167], 0) {
-		goto L1024
+		ex.DebugEndCondition(&definition, true)
+		goto L1095
 	}
-	goto L1022
-L1024:
+	ex.DebugEndCondition(&definition, false)
+	goto L1093
+L1095:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_159 (* 5 1)) (= ?$assignment_call_160 2) (= ?$assignment_call_161 (call identity ?$assignment_call_160)) (= ?$assignment_call_162 (* ?$assignment_call_161 1)) (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162)) (= ?$assignment_call_164 3) (== ?$assignment_call_163 ?$assignment_call_164))
-	cp1026_168 = ex.V[168]
-	cp1026_169 = ex.V[169]
-	cp1026_170 = ex.V[170]
-	cp1026_171 = ex.V[171]
-	cp1026_172 = ex.V[172]
-	cp1026_173 = ex.V[173]
+	cp1098_168 = ex.V[168]
+	cp1098_169 = ex.V[169]
+	cp1098_170 = ex.V[170]
+	cp1098_171 = ex.V[171]
+	cp1098_172 = ex.V[172]
+	cp1098_173 = ex.V[173]
+	ex.DebugBeginCondition(&definition, 292)
 	// (= ?$assignment_call_159 (* 5 1))
-	cp1028_168 = ex.V[168]
+	cp1100_168 = ex.V[168]
 	// (= ?$assignment_call_159 (* 5 1))
+	ex.DebugBeginCondition(&definition, 293)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(5), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[168].IsBound() {
 			ex.V[168] = value
-			goto L1029
+			ex.DebugEndCondition(&definition, true)
+			goto L1101
 		}
-		goto L1027
+		ex.DebugEndCondition(&definition, false)
+		goto L1099
 	}
-L1029:
+L1101:
 	// (= ?$assignment_call_160 2)
-	cp1031_169 = ex.V[169]
+	cp1103_169 = ex.V[169]
 	// (= ?$assignment_call_160 2)
+	ex.DebugBeginCondition(&definition, 294)
 	{
 		value := sv63
 		if value.IsBound() && !ex.V[169].IsBound() {
 			ex.V[169] = value
-			goto L1032
+			ex.DebugEndCondition(&definition, true)
+			goto L1104
 		}
-		goto L1030
+		ex.DebugEndCondition(&definition, false)
+		goto L1102
 	}
-L1032:
+L1104:
 	// (= ?$assignment_call_161 (call identity ?$assignment_call_160))
-	cp1034_170 = ex.V[170]
+	cp1106_170 = ex.V[170]
 	// (= ?$assignment_call_161 (call identity ?$assignment_call_160))
+	ex.DebugBeginCondition(&definition, 295)
 	if !ex.V[170].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[169]}, &cs61, factSymbols); ok {
 			ex.SetIfChanged(170, result)
-			goto L1035
+			ex.DebugEndCondition(&definition, true)
+			goto L1107
 		}
 	}
-	goto L1033
-L1035:
+	ex.DebugEndCondition(&definition, false)
+	goto L1105
+L1107:
 	// (= ?$assignment_call_162 (* ?$assignment_call_161 1))
-	cp1037_171 = ex.V[171]
+	cp1109_171 = ex.V[171]
 	// (= ?$assignment_call_162 (* ?$assignment_call_161 1))
+	ex.DebugBeginCondition(&definition, 296)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[170], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[171].IsBound() {
 			ex.V[171] = value
-			goto L1038
+			ex.DebugEndCondition(&definition, true)
+			goto L1110
 		}
-		goto L1036
+		ex.DebugEndCondition(&definition, false)
+		goto L1108
 	}
-L1038:
+L1110:
 	// (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
-	cp1040_172 = ex.V[172]
+	cp1112_172 = ex.V[172]
 	// (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
+	ex.DebugBeginCondition(&definition, 297)
 	{
 		value := planner.Arith(1, []atom.Atom{ex.V[168], ex.V[171]})
 		if value.IsBound() && !ex.V[172].IsBound() {
 			ex.V[172] = value
-			goto L1041
+			ex.DebugEndCondition(&definition, true)
+			goto L1113
 		}
-		goto L1039
+		ex.DebugEndCondition(&definition, false)
+		goto L1111
 	}
-L1041:
+L1113:
 	// (= ?$assignment_call_164 3)
-	cp1043_173 = ex.V[173]
+	cp1115_173 = ex.V[173]
 	// (= ?$assignment_call_164 3)
+	ex.DebugBeginCondition(&definition, 298)
 	{
 		value := sv64
 		if value.IsBound() && !ex.V[173].IsBound() {
 			ex.V[173] = value
-			goto L1044
+			ex.DebugEndCondition(&definition, true)
+			goto L1116
 		}
-		goto L1042
+		ex.DebugEndCondition(&definition, false)
+		goto L1114
 	}
-L1044:
+L1116:
 	// (== ?$assignment_call_163 ?$assignment_call_164)
 	// (== ?$assignment_call_163 ?$assignment_call_164)
+	ex.DebugBeginCondition(&definition, 299)
 	if planner.Compare(ex.V[172], ex.V[173], 0) {
-		goto L1047
+		ex.DebugEndCondition(&definition, true)
+		goto L1119
 	}
-	goto L1045
-L1047:
+	ex.DebugEndCondition(&definition, false)
+	goto L1117
+L1119:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_165 2) (= ?$assignment_call_166 (call identity ?$assignment_call_165)) (= ?$assignment_call_167 (* ?$assignment_call_166 1)) (= ?$assignment_call_168 (* 3 1)) (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168)) (= ?$assignment_call_170 6) (== ?$assignment_call_169 ?$assignment_call_170))
-	cp1049_174 = ex.V[174]
-	cp1049_175 = ex.V[175]
-	cp1049_176 = ex.V[176]
-	cp1049_177 = ex.V[177]
-	cp1049_178 = ex.V[178]
-	cp1049_179 = ex.V[179]
+	cp1122_174 = ex.V[174]
+	cp1122_175 = ex.V[175]
+	cp1122_176 = ex.V[176]
+	cp1122_177 = ex.V[177]
+	cp1122_178 = ex.V[178]
+	cp1122_179 = ex.V[179]
+	ex.DebugBeginCondition(&definition, 300)
 	// (= ?$assignment_call_165 2)
-	cp1051_174 = ex.V[174]
+	cp1124_174 = ex.V[174]
 	// (= ?$assignment_call_165 2)
+	ex.DebugBeginCondition(&definition, 301)
 	{
 		value := sv65
 		if value.IsBound() && !ex.V[174].IsBound() {
 			ex.V[174] = value
-			goto L1052
+			ex.DebugEndCondition(&definition, true)
+			goto L1125
 		}
-		goto L1050
+		ex.DebugEndCondition(&definition, false)
+		goto L1123
 	}
-L1052:
+L1125:
 	// (= ?$assignment_call_166 (call identity ?$assignment_call_165))
-	cp1054_175 = ex.V[175]
+	cp1127_175 = ex.V[175]
 	// (= ?$assignment_call_166 (call identity ?$assignment_call_165))
+	ex.DebugBeginCondition(&definition, 302)
 	if !ex.V[175].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[174]}, &cs62, factSymbols); ok {
 			ex.SetIfChanged(175, result)
-			goto L1055
+			ex.DebugEndCondition(&definition, true)
+			goto L1128
 		}
 	}
-	goto L1053
-L1055:
+	ex.DebugEndCondition(&definition, false)
+	goto L1126
+L1128:
 	// (= ?$assignment_call_167 (* ?$assignment_call_166 1))
-	cp1057_176 = ex.V[176]
+	cp1130_176 = ex.V[176]
 	// (= ?$assignment_call_167 (* ?$assignment_call_166 1))
+	ex.DebugBeginCondition(&definition, 303)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[175], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[176].IsBound() {
 			ex.V[176] = value
-			goto L1058
+			ex.DebugEndCondition(&definition, true)
+			goto L1131
 		}
-		goto L1056
+		ex.DebugEndCondition(&definition, false)
+		goto L1129
 	}
-L1058:
+L1131:
 	// (= ?$assignment_call_168 (* 3 1))
-	cp1060_177 = ex.V[177]
+	cp1133_177 = ex.V[177]
 	// (= ?$assignment_call_168 (* 3 1))
+	ex.DebugBeginCondition(&definition, 304)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(3), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[177].IsBound() {
 			ex.V[177] = value
-			goto L1061
+			ex.DebugEndCondition(&definition, true)
+			goto L1134
 		}
-		goto L1059
+		ex.DebugEndCondition(&definition, false)
+		goto L1132
 	}
-L1061:
+L1134:
 	// (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
-	cp1063_178 = ex.V[178]
+	cp1136_178 = ex.V[178]
 	// (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
+	ex.DebugBeginCondition(&definition, 305)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[176], ex.V[177]})
 		if value.IsBound() && !ex.V[178].IsBound() {
 			ex.V[178] = value
-			goto L1064
+			ex.DebugEndCondition(&definition, true)
+			goto L1137
 		}
-		goto L1062
+		ex.DebugEndCondition(&definition, false)
+		goto L1135
 	}
-L1064:
+L1137:
 	// (= ?$assignment_call_170 6)
-	cp1066_179 = ex.V[179]
+	cp1139_179 = ex.V[179]
 	// (= ?$assignment_call_170 6)
+	ex.DebugBeginCondition(&definition, 306)
 	{
 		value := sv66
 		if value.IsBound() && !ex.V[179].IsBound() {
 			ex.V[179] = value
-			goto L1067
+			ex.DebugEndCondition(&definition, true)
+			goto L1140
 		}
-		goto L1065
+		ex.DebugEndCondition(&definition, false)
+		goto L1138
 	}
-L1067:
+L1140:
 	// (== ?$assignment_call_169 ?$assignment_call_170)
 	// (== ?$assignment_call_169 ?$assignment_call_170)
+	ex.DebugBeginCondition(&definition, 307)
 	if planner.Compare(ex.V[178], ex.V[179], 0) {
-		goto L1070
+		ex.DebugEndCondition(&definition, true)
+		goto L1143
 	}
-	goto L1068
-L1070:
+	ex.DebugEndCondition(&definition, false)
+	goto L1141
+L1143:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_171 (* 6 1)) (= ?$assignment_call_172 2) (= ?$assignment_call_173 (call identity ?$assignment_call_172)) (= ?$assignment_call_174 (* ?$assignment_call_173 1)) (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174)) (= ?$assignment_call_176 3) (== ?$assignment_call_175 ?$assignment_call_176))
-	cp1072_180 = ex.V[180]
-	cp1072_181 = ex.V[181]
-	cp1072_182 = ex.V[182]
-	cp1072_183 = ex.V[183]
-	cp1072_184 = ex.V[184]
-	cp1072_185 = ex.V[185]
+	cp1146_180 = ex.V[180]
+	cp1146_181 = ex.V[181]
+	cp1146_182 = ex.V[182]
+	cp1146_183 = ex.V[183]
+	cp1146_184 = ex.V[184]
+	cp1146_185 = ex.V[185]
+	ex.DebugBeginCondition(&definition, 308)
 	// (= ?$assignment_call_171 (* 6 1))
-	cp1074_180 = ex.V[180]
+	cp1148_180 = ex.V[180]
 	// (= ?$assignment_call_171 (* 6 1))
+	ex.DebugBeginCondition(&definition, 309)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(6), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[180].IsBound() {
 			ex.V[180] = value
-			goto L1075
+			ex.DebugEndCondition(&definition, true)
+			goto L1149
 		}
-		goto L1073
+		ex.DebugEndCondition(&definition, false)
+		goto L1147
 	}
-L1075:
+L1149:
 	// (= ?$assignment_call_172 2)
-	cp1077_181 = ex.V[181]
+	cp1151_181 = ex.V[181]
 	// (= ?$assignment_call_172 2)
+	ex.DebugBeginCondition(&definition, 310)
 	{
 		value := sv67
 		if value.IsBound() && !ex.V[181].IsBound() {
 			ex.V[181] = value
-			goto L1078
+			ex.DebugEndCondition(&definition, true)
+			goto L1152
 		}
-		goto L1076
+		ex.DebugEndCondition(&definition, false)
+		goto L1150
 	}
-L1078:
+L1152:
 	// (= ?$assignment_call_173 (call identity ?$assignment_call_172))
-	cp1080_182 = ex.V[182]
+	cp1154_182 = ex.V[182]
 	// (= ?$assignment_call_173 (call identity ?$assignment_call_172))
+	ex.DebugBeginCondition(&definition, 311)
 	if !ex.V[182].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[181]}, &cs63, factSymbols); ok {
 			ex.SetIfChanged(182, result)
-			goto L1081
+			ex.DebugEndCondition(&definition, true)
+			goto L1155
 		}
 	}
-	goto L1079
-L1081:
+	ex.DebugEndCondition(&definition, false)
+	goto L1153
+L1155:
 	// (= ?$assignment_call_174 (* ?$assignment_call_173 1))
-	cp1083_183 = ex.V[183]
+	cp1157_183 = ex.V[183]
 	// (= ?$assignment_call_174 (* ?$assignment_call_173 1))
+	ex.DebugBeginCondition(&definition, 312)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[182], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[183].IsBound() {
 			ex.V[183] = value
-			goto L1084
+			ex.DebugEndCondition(&definition, true)
+			goto L1158
 		}
-		goto L1082
+		ex.DebugEndCondition(&definition, false)
+		goto L1156
 	}
-L1084:
+L1158:
 	// (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
-	cp1086_184 = ex.V[184]
+	cp1160_184 = ex.V[184]
 	// (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
+	ex.DebugBeginCondition(&definition, 313)
 	{
 		value := planner.Arith(3, []atom.Atom{ex.V[180], ex.V[183]})
 		if value.IsBound() && !ex.V[184].IsBound() {
 			ex.V[184] = value
-			goto L1087
+			ex.DebugEndCondition(&definition, true)
+			goto L1161
 		}
-		goto L1085
+		ex.DebugEndCondition(&definition, false)
+		goto L1159
 	}
-L1087:
+L1161:
 	// (= ?$assignment_call_176 3)
-	cp1089_185 = ex.V[185]
+	cp1163_185 = ex.V[185]
 	// (= ?$assignment_call_176 3)
+	ex.DebugBeginCondition(&definition, 314)
 	{
 		value := sv68
 		if value.IsBound() && !ex.V[185].IsBound() {
 			ex.V[185] = value
-			goto L1090
+			ex.DebugEndCondition(&definition, true)
+			goto L1164
 		}
-		goto L1088
+		ex.DebugEndCondition(&definition, false)
+		goto L1162
 	}
-L1090:
+L1164:
 	// (== ?$assignment_call_175 ?$assignment_call_176)
 	// (== ?$assignment_call_175 ?$assignment_call_176)
+	ex.DebugBeginCondition(&definition, 315)
 	if planner.Compare(ex.V[184], ex.V[185], 0) {
-		goto L1093
+		ex.DebugEndCondition(&definition, true)
+		goto L1167
 	}
-	goto L1091
-L1093:
+	ex.DebugEndCondition(&definition, false)
+	goto L1165
+L1167:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_177 7) (= ?$assignment_call_178 (call identity ?$assignment_call_177)) (= ?$assignment_call_179 (* ?$assignment_call_178 1)) (= ?$assignment_call_180 (* 4 1)) (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180)) (= ?$assignment_call_182 3) (== ?$assignment_call_181 ?$assignment_call_182))
-	cp1095_186 = ex.V[186]
-	cp1095_187 = ex.V[187]
-	cp1095_188 = ex.V[188]
-	cp1095_189 = ex.V[189]
-	cp1095_190 = ex.V[190]
-	cp1095_191 = ex.V[191]
+	cp1170_186 = ex.V[186]
+	cp1170_187 = ex.V[187]
+	cp1170_188 = ex.V[188]
+	cp1170_189 = ex.V[189]
+	cp1170_190 = ex.V[190]
+	cp1170_191 = ex.V[191]
+	ex.DebugBeginCondition(&definition, 316)
 	// (= ?$assignment_call_177 7)
-	cp1097_186 = ex.V[186]
+	cp1172_186 = ex.V[186]
 	// (= ?$assignment_call_177 7)
+	ex.DebugBeginCondition(&definition, 317)
 	{
 		value := sv69
 		if value.IsBound() && !ex.V[186].IsBound() {
 			ex.V[186] = value
-			goto L1098
+			ex.DebugEndCondition(&definition, true)
+			goto L1173
 		}
-		goto L1096
+		ex.DebugEndCondition(&definition, false)
+		goto L1171
 	}
-L1098:
+L1173:
 	// (= ?$assignment_call_178 (call identity ?$assignment_call_177))
-	cp1100_187 = ex.V[187]
+	cp1175_187 = ex.V[187]
 	// (= ?$assignment_call_178 (call identity ?$assignment_call_177))
+	ex.DebugBeginCondition(&definition, 318)
 	if !ex.V[187].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[186]}, &cs64, factSymbols); ok {
 			ex.SetIfChanged(187, result)
-			goto L1101
+			ex.DebugEndCondition(&definition, true)
+			goto L1176
 		}
 	}
-	goto L1099
-L1101:
+	ex.DebugEndCondition(&definition, false)
+	goto L1174
+L1176:
 	// (= ?$assignment_call_179 (* ?$assignment_call_178 1))
-	cp1103_188 = ex.V[188]
+	cp1178_188 = ex.V[188]
 	// (= ?$assignment_call_179 (* ?$assignment_call_178 1))
+	ex.DebugBeginCondition(&definition, 319)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[187], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[188].IsBound() {
 			ex.V[188] = value
-			goto L1104
+			ex.DebugEndCondition(&definition, true)
+			goto L1179
 		}
-		goto L1102
+		ex.DebugEndCondition(&definition, false)
+		goto L1177
 	}
-L1104:
+L1179:
 	// (= ?$assignment_call_180 (* 4 1))
-	cp1106_189 = ex.V[189]
+	cp1181_189 = ex.V[189]
 	// (= ?$assignment_call_180 (* 4 1))
+	ex.DebugBeginCondition(&definition, 320)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(4), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[189].IsBound() {
 			ex.V[189] = value
-			goto L1107
+			ex.DebugEndCondition(&definition, true)
+			goto L1182
 		}
-		goto L1105
+		ex.DebugEndCondition(&definition, false)
+		goto L1180
 	}
-L1107:
+L1182:
 	// (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
-	cp1109_190 = ex.V[190]
+	cp1184_190 = ex.V[190]
 	// (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
+	ex.DebugBeginCondition(&definition, 321)
 	{
 		value := planner.Arith(4, []atom.Atom{ex.V[188], ex.V[189]})
 		if value.IsBound() && !ex.V[190].IsBound() {
 			ex.V[190] = value
-			goto L1110
+			ex.DebugEndCondition(&definition, true)
+			goto L1185
 		}
-		goto L1108
+		ex.DebugEndCondition(&definition, false)
+		goto L1183
 	}
-L1110:
+L1185:
 	// (= ?$assignment_call_182 3)
-	cp1112_191 = ex.V[191]
+	cp1187_191 = ex.V[191]
 	// (= ?$assignment_call_182 3)
+	ex.DebugBeginCondition(&definition, 322)
 	{
 		value := sv70
 		if value.IsBound() && !ex.V[191].IsBound() {
 			ex.V[191] = value
-			goto L1113
+			ex.DebugEndCondition(&definition, true)
+			goto L1188
 		}
-		goto L1111
+		ex.DebugEndCondition(&definition, false)
+		goto L1186
 	}
-L1113:
+L1188:
 	// (== ?$assignment_call_181 ?$assignment_call_182)
 	// (== ?$assignment_call_181 ?$assignment_call_182)
+	ex.DebugBeginCondition(&definition, 323)
 	if planner.Compare(ex.V[190], ex.V[191], 0) {
-		goto L1116
+		ex.DebugEndCondition(&definition, true)
+		goto L1191
 	}
-	goto L1114
-L1116:
+	ex.DebugEndCondition(&definition, false)
+	goto L1189
+L1191:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_183 2) (= ?$assignment_call_184 (call identity ?$assignment_call_183)) (= ?$assignment_call_185 (* ?$assignment_call_184 1)) (= ?$assignment_call_186 (++ ?$assignment_call_185)) (= ?$assignment_call_187 3) (== ?$assignment_call_186 ?$assignment_call_187))
-	cp1118_192 = ex.V[192]
-	cp1118_193 = ex.V[193]
-	cp1118_194 = ex.V[194]
-	cp1118_195 = ex.V[195]
-	cp1118_196 = ex.V[196]
+	cp1194_192 = ex.V[192]
+	cp1194_193 = ex.V[193]
+	cp1194_194 = ex.V[194]
+	cp1194_195 = ex.V[195]
+	cp1194_196 = ex.V[196]
+	ex.DebugBeginCondition(&definition, 324)
 	// (= ?$assignment_call_183 2)
-	cp1120_192 = ex.V[192]
+	cp1196_192 = ex.V[192]
 	// (= ?$assignment_call_183 2)
+	ex.DebugBeginCondition(&definition, 325)
 	{
 		value := sv71
 		if value.IsBound() && !ex.V[192].IsBound() {
 			ex.V[192] = value
-			goto L1121
+			ex.DebugEndCondition(&definition, true)
+			goto L1197
 		}
-		goto L1119
+		ex.DebugEndCondition(&definition, false)
+		goto L1195
 	}
-L1121:
+L1197:
 	// (= ?$assignment_call_184 (call identity ?$assignment_call_183))
-	cp1123_193 = ex.V[193]
+	cp1199_193 = ex.V[193]
 	// (= ?$assignment_call_184 (call identity ?$assignment_call_183))
+	ex.DebugBeginCondition(&definition, 326)
 	if !ex.V[193].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[192]}, &cs65, factSymbols); ok {
 			ex.SetIfChanged(193, result)
-			goto L1124
+			ex.DebugEndCondition(&definition, true)
+			goto L1200
 		}
 	}
-	goto L1122
-L1124:
+	ex.DebugEndCondition(&definition, false)
+	goto L1198
+L1200:
 	// (= ?$assignment_call_185 (* ?$assignment_call_184 1))
-	cp1126_194 = ex.V[194]
+	cp1202_194 = ex.V[194]
 	// (= ?$assignment_call_185 (* ?$assignment_call_184 1))
+	ex.DebugBeginCondition(&definition, 327)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[193], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[194].IsBound() {
 			ex.V[194] = value
-			goto L1127
+			ex.DebugEndCondition(&definition, true)
+			goto L1203
 		}
-		goto L1125
+		ex.DebugEndCondition(&definition, false)
+		goto L1201
 	}
-L1127:
+L1203:
 	// (= ?$assignment_call_186 (++ ?$assignment_call_185))
-	cp1129_195 = ex.V[195]
+	cp1205_195 = ex.V[195]
 	// (= ?$assignment_call_186 (++ ?$assignment_call_185))
+	ex.DebugBeginCondition(&definition, 328)
 	{
 		value := planner.Arith(5, []atom.Atom{ex.V[194]})
 		if value.IsBound() && !ex.V[195].IsBound() {
 			ex.V[195] = value
-			goto L1130
+			ex.DebugEndCondition(&definition, true)
+			goto L1206
 		}
-		goto L1128
+		ex.DebugEndCondition(&definition, false)
+		goto L1204
 	}
-L1130:
+L1206:
 	// (= ?$assignment_call_187 3)
-	cp1132_196 = ex.V[196]
+	cp1208_196 = ex.V[196]
 	// (= ?$assignment_call_187 3)
+	ex.DebugBeginCondition(&definition, 329)
 	{
 		value := sv72
 		if value.IsBound() && !ex.V[196].IsBound() {
 			ex.V[196] = value
-			goto L1133
+			ex.DebugEndCondition(&definition, true)
+			goto L1209
 		}
-		goto L1131
+		ex.DebugEndCondition(&definition, false)
+		goto L1207
 	}
-L1133:
+L1209:
 	// (== ?$assignment_call_186 ?$assignment_call_187)
 	// (== ?$assignment_call_186 ?$assignment_call_187)
+	ex.DebugBeginCondition(&definition, 330)
 	if planner.Compare(ex.V[195], ex.V[196], 0) {
-		goto L1136
+		ex.DebugEndCondition(&definition, true)
+		goto L1212
 	}
-	goto L1134
-L1136:
+	ex.DebugEndCondition(&definition, false)
+	goto L1210
+L1212:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_188 4) (= ?$assignment_call_189 (call identity ?$assignment_call_188)) (= ?$assignment_call_190 (* ?$assignment_call_189 1)) (= ?$assignment_call_191 (-- ?$assignment_call_190)) (= ?$assignment_call_192 3) (== ?$assignment_call_191 ?$assignment_call_192))
-	cp1138_197 = ex.V[197]
-	cp1138_198 = ex.V[198]
-	cp1138_199 = ex.V[199]
-	cp1138_200 = ex.V[200]
-	cp1138_201 = ex.V[201]
+	cp1215_197 = ex.V[197]
+	cp1215_198 = ex.V[198]
+	cp1215_199 = ex.V[199]
+	cp1215_200 = ex.V[200]
+	cp1215_201 = ex.V[201]
+	ex.DebugBeginCondition(&definition, 331)
 	// (= ?$assignment_call_188 4)
-	cp1140_197 = ex.V[197]
+	cp1217_197 = ex.V[197]
 	// (= ?$assignment_call_188 4)
+	ex.DebugBeginCondition(&definition, 332)
 	{
 		value := sv73
 		if value.IsBound() && !ex.V[197].IsBound() {
 			ex.V[197] = value
-			goto L1141
+			ex.DebugEndCondition(&definition, true)
+			goto L1218
 		}
-		goto L1139
+		ex.DebugEndCondition(&definition, false)
+		goto L1216
 	}
-L1141:
+L1218:
 	// (= ?$assignment_call_189 (call identity ?$assignment_call_188))
-	cp1143_198 = ex.V[198]
+	cp1220_198 = ex.V[198]
 	// (= ?$assignment_call_189 (call identity ?$assignment_call_188))
+	ex.DebugBeginCondition(&definition, 333)
 	if !ex.V[198].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[197]}, &cs66, factSymbols); ok {
 			ex.SetIfChanged(198, result)
-			goto L1144
+			ex.DebugEndCondition(&definition, true)
+			goto L1221
 		}
 	}
-	goto L1142
-L1144:
+	ex.DebugEndCondition(&definition, false)
+	goto L1219
+L1221:
 	// (= ?$assignment_call_190 (* ?$assignment_call_189 1))
-	cp1146_199 = ex.V[199]
+	cp1223_199 = ex.V[199]
 	// (= ?$assignment_call_190 (* ?$assignment_call_189 1))
+	ex.DebugBeginCondition(&definition, 334)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[198], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[199].IsBound() {
 			ex.V[199] = value
-			goto L1147
+			ex.DebugEndCondition(&definition, true)
+			goto L1224
 		}
-		goto L1145
+		ex.DebugEndCondition(&definition, false)
+		goto L1222
 	}
-L1147:
+L1224:
 	// (= ?$assignment_call_191 (-- ?$assignment_call_190))
-	cp1149_200 = ex.V[200]
+	cp1226_200 = ex.V[200]
 	// (= ?$assignment_call_191 (-- ?$assignment_call_190))
+	ex.DebugBeginCondition(&definition, 335)
 	{
 		value := planner.Arith(6, []atom.Atom{ex.V[199]})
 		if value.IsBound() && !ex.V[200].IsBound() {
 			ex.V[200] = value
-			goto L1150
+			ex.DebugEndCondition(&definition, true)
+			goto L1227
 		}
-		goto L1148
+		ex.DebugEndCondition(&definition, false)
+		goto L1225
 	}
-L1150:
+L1227:
 	// (= ?$assignment_call_192 3)
-	cp1152_201 = ex.V[201]
+	cp1229_201 = ex.V[201]
 	// (= ?$assignment_call_192 3)
+	ex.DebugBeginCondition(&definition, 336)
 	{
 		value := sv74
 		if value.IsBound() && !ex.V[201].IsBound() {
 			ex.V[201] = value
-			goto L1153
+			ex.DebugEndCondition(&definition, true)
+			goto L1230
 		}
-		goto L1151
+		ex.DebugEndCondition(&definition, false)
+		goto L1228
 	}
-L1153:
+L1230:
 	// (== ?$assignment_call_191 ?$assignment_call_192)
 	// (== ?$assignment_call_191 ?$assignment_call_192)
+	ex.DebugBeginCondition(&definition, 337)
 	if planner.Compare(ex.V[200], ex.V[201], 0) {
-		goto L1156
+		ex.DebugEndCondition(&definition, true)
+		goto L1233
 	}
-	goto L1154
-L1156:
+	ex.DebugEndCondition(&definition, false)
+	goto L1231
+L1233:
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_193 (* 1 1)) (= ?$assignment_call_194 2) (= ?$assignment_call_195 (call identity ?$assignment_call_194)) (= ?$assignment_call_196 (* ?$assignment_call_195 1)) (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196)) (= ?$assignment_call_198 (call identity ?$assignment_call_197)) (= ?$assignment_call_199 3) (== ?$assignment_call_198 ?$assignment_call_199))
-	cp1158_202 = ex.V[202]
-	cp1158_203 = ex.V[203]
-	cp1158_204 = ex.V[204]
-	cp1158_205 = ex.V[205]
-	cp1158_206 = ex.V[206]
-	cp1158_207 = ex.V[207]
-	cp1158_208 = ex.V[208]
+	cp1236_202 = ex.V[202]
+	cp1236_203 = ex.V[203]
+	cp1236_204 = ex.V[204]
+	cp1236_205 = ex.V[205]
+	cp1236_206 = ex.V[206]
+	cp1236_207 = ex.V[207]
+	cp1236_208 = ex.V[208]
+	ex.DebugBeginCondition(&definition, 338)
 	// (= ?$assignment_call_193 (* 1 1))
-	cp1160_202 = ex.V[202]
+	cp1238_202 = ex.V[202]
 	// (= ?$assignment_call_193 (* 1 1))
+	ex.DebugBeginCondition(&definition, 339)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(1), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[202].IsBound() {
 			ex.V[202] = value
-			goto L1161
+			ex.DebugEndCondition(&definition, true)
+			goto L1239
 		}
-		goto L1159
+		ex.DebugEndCondition(&definition, false)
+		goto L1237
 	}
-L1161:
+L1239:
 	// (= ?$assignment_call_194 2)
-	cp1163_203 = ex.V[203]
+	cp1241_203 = ex.V[203]
 	// (= ?$assignment_call_194 2)
+	ex.DebugBeginCondition(&definition, 340)
 	{
 		value := sv75
 		if value.IsBound() && !ex.V[203].IsBound() {
 			ex.V[203] = value
-			goto L1164
+			ex.DebugEndCondition(&definition, true)
+			goto L1242
 		}
-		goto L1162
+		ex.DebugEndCondition(&definition, false)
+		goto L1240
 	}
-L1164:
+L1242:
 	// (= ?$assignment_call_195 (call identity ?$assignment_call_194))
-	cp1166_204 = ex.V[204]
+	cp1244_204 = ex.V[204]
 	// (= ?$assignment_call_195 (call identity ?$assignment_call_194))
+	ex.DebugBeginCondition(&definition, 341)
 	if !ex.V[204].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[203]}, &cs67, factSymbols); ok {
 			ex.SetIfChanged(204, result)
-			goto L1167
+			ex.DebugEndCondition(&definition, true)
+			goto L1245
 		}
 	}
-	goto L1165
-L1167:
+	ex.DebugEndCondition(&definition, false)
+	goto L1243
+L1245:
 	// (= ?$assignment_call_196 (* ?$assignment_call_195 1))
-	cp1169_205 = ex.V[205]
+	cp1247_205 = ex.V[205]
 	// (= ?$assignment_call_196 (* ?$assignment_call_195 1))
+	ex.DebugBeginCondition(&definition, 342)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[204], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[205].IsBound() {
 			ex.V[205] = value
-			goto L1170
+			ex.DebugEndCondition(&definition, true)
+			goto L1248
 		}
-		goto L1168
+		ex.DebugEndCondition(&definition, false)
+		goto L1246
 	}
-L1170:
+L1248:
 	// (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
-	cp1172_206 = ex.V[206]
+	cp1250_206 = ex.V[206]
 	// (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
+	ex.DebugBeginCondition(&definition, 343)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[202], ex.V[205]})
 		if value.IsBound() && !ex.V[206].IsBound() {
 			ex.V[206] = value
-			goto L1173
+			ex.DebugEndCondition(&definition, true)
+			goto L1251
 		}
-		goto L1171
+		ex.DebugEndCondition(&definition, false)
+		goto L1249
 	}
-L1173:
+L1251:
 	// (= ?$assignment_call_198 (call identity ?$assignment_call_197))
-	cp1175_207 = ex.V[207]
+	cp1253_207 = ex.V[207]
 	// (= ?$assignment_call_198 (call identity ?$assignment_call_197))
+	ex.DebugBeginCondition(&definition, 344)
 	if !ex.V[207].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[206]}, &cs68, factSymbols); ok {
 			ex.SetIfChanged(207, result)
-			goto L1176
+			ex.DebugEndCondition(&definition, true)
+			goto L1254
 		}
 	}
-	goto L1174
-L1176:
+	ex.DebugEndCondition(&definition, false)
+	goto L1252
+L1254:
 	// (= ?$assignment_call_199 3)
-	cp1178_208 = ex.V[208]
+	cp1256_208 = ex.V[208]
 	// (= ?$assignment_call_199 3)
+	ex.DebugBeginCondition(&definition, 345)
 	{
 		value := sv76
 		if value.IsBound() && !ex.V[208].IsBound() {
 			ex.V[208] = value
-			goto L1179
+			ex.DebugEndCondition(&definition, true)
+			goto L1257
 		}
-		goto L1177
+		ex.DebugEndCondition(&definition, false)
+		goto L1255
 	}
-L1179:
+L1257:
 	// (== ?$assignment_call_198 ?$assignment_call_199)
 	// (== ?$assignment_call_198 ?$assignment_call_199)
+	ex.DebugBeginCondition(&definition, 346)
 	if planner.Compare(ex.V[207], ex.V[208], 0) {
-		goto L1182
+		ex.DebugEndCondition(&definition, true)
+		goto L1260
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L1258
+L1260:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L976
+L1258:
+	goto L1255
+L1255:
+	ex.V[208] = cp1256_208
+	goto L1252
+L1252:
+	ex.V[207] = cp1253_207
+	goto L1249
+L1249:
+	ex.V[206] = cp1250_206
+	goto L1246
+L1246:
+	ex.V[205] = cp1247_205
+	goto L1243
+L1243:
+	ex.V[204] = cp1244_204
+	goto L1240
+L1240:
+	ex.V[203] = cp1241_203
+	goto L1237
+L1237:
+	ex.V[202] = cp1238_202
+	goto L1235
+L1235:
+	ex.V[202] = cp1236_202
+	ex.V[203] = cp1236_203
+	ex.V[204] = cp1236_204
+	ex.V[205] = cp1236_205
+	ex.V[206] = cp1236_206
+	ex.V[207] = cp1236_207
+	ex.V[208] = cp1236_208
+	ex.DebugEndCondition(&definition, false)
+	goto L1234
+L1234:
+	ex.DebugBeginCondition(&definition, 331)
+	goto L1231
+L1231:
+	goto L1228
+L1228:
+	ex.V[201] = cp1229_201
+	goto L1225
+L1225:
+	ex.V[200] = cp1226_200
+	goto L1222
+L1222:
+	ex.V[199] = cp1223_199
+	goto L1219
+L1219:
+	ex.V[198] = cp1220_198
+	goto L1216
+L1216:
+	ex.V[197] = cp1217_197
+	goto L1214
+L1214:
+	ex.V[197] = cp1215_197
+	ex.V[198] = cp1215_198
+	ex.V[199] = cp1215_199
+	ex.V[200] = cp1215_200
+	ex.V[201] = cp1215_201
+	ex.DebugEndCondition(&definition, false)
+	goto L1213
+L1213:
+	ex.DebugBeginCondition(&definition, 324)
+	goto L1210
+L1210:
+	goto L1207
+L1207:
+	ex.V[196] = cp1208_196
+	goto L1204
+L1204:
+	ex.V[195] = cp1205_195
+	goto L1201
+L1201:
+	ex.V[194] = cp1202_194
+	goto L1198
+L1198:
+	ex.V[193] = cp1199_193
+	goto L1195
+L1195:
+	ex.V[192] = cp1196_192
+	goto L1193
+L1193:
+	ex.V[192] = cp1194_192
+	ex.V[193] = cp1194_193
+	ex.V[194] = cp1194_194
+	ex.V[195] = cp1194_195
+	ex.V[196] = cp1194_196
+	ex.DebugEndCondition(&definition, false)
+	goto L1192
+L1192:
+	ex.DebugBeginCondition(&definition, 316)
+	goto L1189
+L1189:
+	goto L1186
+L1186:
+	ex.V[191] = cp1187_191
+	goto L1183
+L1183:
+	ex.V[190] = cp1184_190
 	goto L1180
-L1182:
-	goto L911
 L1180:
+	ex.V[189] = cp1181_189
 	goto L1177
 L1177:
-	ex.V[208] = cp1178_208
+	ex.V[188] = cp1178_188
 	goto L1174
 L1174:
-	ex.V[207] = cp1175_207
+	ex.V[187] = cp1175_187
 	goto L1171
 L1171:
-	ex.V[206] = cp1172_206
+	ex.V[186] = cp1172_186
+	goto L1169
+L1169:
+	ex.V[186] = cp1170_186
+	ex.V[187] = cp1170_187
+	ex.V[188] = cp1170_188
+	ex.V[189] = cp1170_189
+	ex.V[190] = cp1170_190
+	ex.V[191] = cp1170_191
+	ex.DebugEndCondition(&definition, false)
 	goto L1168
 L1168:
-	ex.V[205] = cp1169_205
+	ex.DebugBeginCondition(&definition, 308)
 	goto L1165
 L1165:
-	ex.V[204] = cp1166_204
 	goto L1162
 L1162:
-	ex.V[203] = cp1163_203
+	ex.V[185] = cp1163_185
 	goto L1159
 L1159:
-	ex.V[202] = cp1160_202
-	goto L1157
-L1157:
-	ex.V[202] = cp1158_202
-	ex.V[203] = cp1158_203
-	ex.V[204] = cp1158_204
-	ex.V[205] = cp1158_205
-	ex.V[206] = cp1158_206
-	ex.V[207] = cp1158_207
-	ex.V[208] = cp1158_208
-	goto L1154
-L1154:
-	goto L1151
-L1151:
-	ex.V[201] = cp1152_201
-	goto L1148
-L1148:
-	ex.V[200] = cp1149_200
+	ex.V[184] = cp1160_184
+	goto L1156
+L1156:
+	ex.V[183] = cp1157_183
+	goto L1153
+L1153:
+	ex.V[182] = cp1154_182
+	goto L1150
+L1150:
+	ex.V[181] = cp1151_181
+	goto L1147
+L1147:
+	ex.V[180] = cp1148_180
 	goto L1145
 L1145:
-	ex.V[199] = cp1146_199
-	goto L1142
-L1142:
-	ex.V[198] = cp1143_198
-	goto L1139
-L1139:
-	ex.V[197] = cp1140_197
-	goto L1137
-L1137:
-	ex.V[197] = cp1138_197
-	ex.V[198] = cp1138_198
-	ex.V[199] = cp1138_199
-	ex.V[200] = cp1138_200
-	ex.V[201] = cp1138_201
-	goto L1134
-L1134:
-	goto L1131
-L1131:
-	ex.V[196] = cp1132_196
-	goto L1128
-L1128:
-	ex.V[195] = cp1129_195
-	goto L1125
-L1125:
-	ex.V[194] = cp1126_194
-	goto L1122
-L1122:
-	ex.V[193] = cp1123_193
-	goto L1119
-L1119:
-	ex.V[192] = cp1120_192
+	ex.V[180] = cp1146_180
+	ex.V[181] = cp1146_181
+	ex.V[182] = cp1146_182
+	ex.V[183] = cp1146_183
+	ex.V[184] = cp1146_184
+	ex.V[185] = cp1146_185
+	ex.DebugEndCondition(&definition, false)
+	goto L1144
+L1144:
+	ex.DebugBeginCondition(&definition, 300)
+	goto L1141
+L1141:
+	goto L1138
+L1138:
+	ex.V[179] = cp1139_179
+	goto L1135
+L1135:
+	ex.V[178] = cp1136_178
+	goto L1132
+L1132:
+	ex.V[177] = cp1133_177
+	goto L1129
+L1129:
+	ex.V[176] = cp1130_176
+	goto L1126
+L1126:
+	ex.V[175] = cp1127_175
+	goto L1123
+L1123:
+	ex.V[174] = cp1124_174
+	goto L1121
+L1121:
+	ex.V[174] = cp1122_174
+	ex.V[175] = cp1122_175
+	ex.V[176] = cp1122_176
+	ex.V[177] = cp1122_177
+	ex.V[178] = cp1122_178
+	ex.V[179] = cp1122_179
+	ex.DebugEndCondition(&definition, false)
+	goto L1120
+L1120:
+	ex.DebugBeginCondition(&definition, 292)
 	goto L1117
 L1117:
-	ex.V[192] = cp1118_192
-	ex.V[193] = cp1118_193
-	ex.V[194] = cp1118_194
-	ex.V[195] = cp1118_195
-	ex.V[196] = cp1118_196
 	goto L1114
 L1114:
+	ex.V[173] = cp1115_173
 	goto L1111
 L1111:
-	ex.V[191] = cp1112_191
+	ex.V[172] = cp1112_172
 	goto L1108
 L1108:
-	ex.V[190] = cp1109_190
+	ex.V[171] = cp1109_171
 	goto L1105
 L1105:
-	ex.V[189] = cp1106_189
+	ex.V[170] = cp1106_170
 	goto L1102
 L1102:
-	ex.V[188] = cp1103_188
+	ex.V[169] = cp1103_169
 	goto L1099
 L1099:
-	ex.V[187] = cp1100_187
+	ex.V[168] = cp1100_168
+	goto L1097
+L1097:
+	ex.V[168] = cp1098_168
+	ex.V[169] = cp1098_169
+	ex.V[170] = cp1098_170
+	ex.V[171] = cp1098_171
+	ex.V[172] = cp1098_172
+	ex.V[173] = cp1098_173
+	ex.DebugEndCondition(&definition, false)
 	goto L1096
 L1096:
-	ex.V[186] = cp1097_186
-	goto L1094
-L1094:
-	ex.V[186] = cp1095_186
-	ex.V[187] = cp1095_187
-	ex.V[188] = cp1095_188
-	ex.V[189] = cp1095_189
-	ex.V[190] = cp1095_190
-	ex.V[191] = cp1095_191
-	goto L1091
-L1091:
-	goto L1088
-L1088:
-	ex.V[185] = cp1089_185
-	goto L1085
-L1085:
-	ex.V[184] = cp1086_184
-	goto L1082
-L1082:
-	ex.V[183] = cp1083_183
-	goto L1079
-L1079:
-	ex.V[182] = cp1080_182
-	goto L1076
-L1076:
-	ex.V[181] = cp1077_181
+	ex.DebugBeginCondition(&definition, 284)
+	goto L1093
+L1093:
+	goto L1090
+L1090:
+	ex.V[167] = cp1091_167
+	goto L1087
+L1087:
+	ex.V[166] = cp1088_166
+	goto L1084
+L1084:
+	ex.V[165] = cp1085_165
+	goto L1081
+L1081:
+	ex.V[164] = cp1082_164
+	goto L1078
+L1078:
+	ex.V[163] = cp1079_163
+	goto L1075
+L1075:
+	ex.V[162] = cp1076_162
 	goto L1073
 L1073:
-	ex.V[180] = cp1074_180
-	goto L1071
-L1071:
-	ex.V[180] = cp1072_180
-	ex.V[181] = cp1072_181
-	ex.V[182] = cp1072_182
-	ex.V[183] = cp1072_183
-	ex.V[184] = cp1072_184
-	ex.V[185] = cp1072_185
-	goto L1068
-L1068:
-	goto L1065
-L1065:
-	ex.V[179] = cp1066_179
-	goto L1062
-L1062:
-	ex.V[178] = cp1063_178
-	goto L1059
-L1059:
-	ex.V[177] = cp1060_177
-	goto L1056
-L1056:
-	ex.V[176] = cp1057_176
-	goto L1053
-L1053:
-	ex.V[175] = cp1054_175
-	goto L1050
-L1050:
-	ex.V[174] = cp1051_174
+	ex.V[162] = cp1074_162
+	ex.V[163] = cp1074_163
+	ex.V[164] = cp1074_164
+	ex.V[165] = cp1074_165
+	ex.V[166] = cp1074_166
+	ex.V[167] = cp1074_167
+	ex.DebugEndCondition(&definition, false)
+	goto L1072
+L1072:
+	ex.DebugBeginCondition(&definition, 279)
+	goto L1069
+L1069:
+	goto L1066
+L1066:
+	ex.V[161] = cp1067_161
+	goto L1063
+L1063:
+	ex.V[160] = cp1064_160
+	goto L1060
+L1060:
+	ex.V[159] = cp1061_159
+	goto L1058
+L1058:
+	ex.V[159] = cp1059_159
+	ex.V[160] = cp1059_160
+	ex.V[161] = cp1059_161
+	ex.DebugEndCondition(&definition, false)
+	goto L1057
+L1057:
+	ex.DebugBeginCondition(&definition, 274)
+	goto L1054
+L1054:
+	goto L1051
+L1051:
+	ex.V[158] = cp1052_158
 	goto L1048
 L1048:
-	ex.V[174] = cp1049_174
-	ex.V[175] = cp1049_175
-	ex.V[176] = cp1049_176
-	ex.V[177] = cp1049_177
-	ex.V[178] = cp1049_178
-	ex.V[179] = cp1049_179
+	ex.V[157] = cp1049_157
 	goto L1045
 L1045:
+	ex.V[156] = cp1046_156
+	goto L1043
+L1043:
+	ex.V[156] = cp1044_156
+	ex.V[157] = cp1044_157
+	ex.V[158] = cp1044_158
+	ex.DebugEndCondition(&definition, false)
 	goto L1042
 L1042:
-	ex.V[173] = cp1043_173
+	ex.DebugBeginCondition(&definition, 269)
 	goto L1039
 L1039:
-	ex.V[172] = cp1040_172
 	goto L1036
 L1036:
-	ex.V[171] = cp1037_171
+	ex.V[155] = cp1037_155
 	goto L1033
 L1033:
-	ex.V[170] = cp1034_170
+	ex.V[154] = cp1034_154
 	goto L1030
 L1030:
-	ex.V[169] = cp1031_169
+	ex.V[153] = cp1031_153
+	goto L1028
+L1028:
+	ex.V[153] = cp1029_153
+	ex.V[154] = cp1029_154
+	ex.V[155] = cp1029_155
+	ex.DebugEndCondition(&definition, false)
 	goto L1027
 L1027:
-	ex.V[168] = cp1028_168
-	goto L1025
-L1025:
-	ex.V[168] = cp1026_168
-	ex.V[169] = cp1026_169
-	ex.V[170] = cp1026_170
-	ex.V[171] = cp1026_171
-	ex.V[172] = cp1026_172
-	ex.V[173] = cp1026_173
-	goto L1022
-L1022:
-	goto L1019
-L1019:
-	ex.V[167] = cp1020_167
-	goto L1016
-L1016:
-	ex.V[166] = cp1017_166
+	ex.DebugBeginCondition(&definition, 264)
+	goto L1024
+L1024:
+	goto L1021
+L1021:
+	ex.V[152] = cp1022_152
+	goto L1018
+L1018:
+	ex.V[151] = cp1019_151
+	goto L1015
+L1015:
+	ex.V[150] = cp1016_150
 	goto L1013
 L1013:
-	ex.V[165] = cp1014_165
-	goto L1010
-L1010:
-	ex.V[164] = cp1011_164
-	goto L1007
-L1007:
-	ex.V[163] = cp1008_163
-	goto L1004
-L1004:
-	ex.V[162] = cp1005_162
-	goto L1002
-L1002:
-	ex.V[162] = cp1003_162
-	ex.V[163] = cp1003_163
-	ex.V[164] = cp1003_164
-	ex.V[165] = cp1003_165
-	ex.V[166] = cp1003_166
-	ex.V[167] = cp1003_167
-	goto L999
-L999:
-	goto L996
-L996:
-	ex.V[161] = cp997_161
-	goto L993
-L993:
-	ex.V[160] = cp994_160
-	goto L990
-L990:
-	ex.V[159] = cp991_159
+	ex.V[150] = cp1014_150
+	ex.V[151] = cp1014_151
+	ex.V[152] = cp1014_152
+	ex.DebugEndCondition(&definition, false)
+	goto L1012
+L1012:
+	ex.DebugBeginCondition(&definition, 259)
+	goto L1009
+L1009:
+	goto L1006
+L1006:
+	ex.V[149] = cp1007_149
+	goto L1003
+L1003:
+	ex.V[148] = cp1004_148
+	goto L1000
+L1000:
+	ex.V[147] = cp1001_147
+	goto L998
+L998:
+	ex.V[147] = cp999_147
+	ex.V[148] = cp999_148
+	ex.V[149] = cp999_149
+	ex.DebugEndCondition(&definition, false)
+	goto L997
+L997:
+	ex.DebugBeginCondition(&definition, 254)
+	goto L994
+L994:
+	goto L991
+L991:
+	ex.V[146] = cp992_146
 	goto L988
 L988:
-	ex.V[159] = cp989_159
-	ex.V[160] = cp989_160
-	ex.V[161] = cp989_161
+	ex.V[145] = cp989_145
 	goto L985
 L985:
-	goto L982
-L982:
-	ex.V[158] = cp983_158
-	goto L979
-L979:
-	ex.V[157] = cp980_157
-	goto L976
+	ex.V[144] = cp986_144
+	goto L983
+L983:
+	ex.V[144] = cp984_144
+	ex.V[145] = cp984_145
+	ex.V[146] = cp984_146
+	ex.DebugEndCondition(&definition, false)
+	goto L980
+L980:
+	ex.V[27] = cp981_27
+	goto L978
+L978:
+	ex.V[27] = cp979_27
+	ex.V[144] = cp979_144
+	ex.V[145] = cp979_145
+	ex.V[146] = cp979_146
+	ex.V[147] = cp979_147
+	ex.V[148] = cp979_148
+	ex.V[149] = cp979_149
+	ex.V[150] = cp979_150
+	ex.V[151] = cp979_151
+	ex.V[152] = cp979_152
+	ex.V[153] = cp979_153
+	ex.V[154] = cp979_154
+	ex.V[155] = cp979_155
+	ex.V[156] = cp979_156
+	ex.V[157] = cp979_157
+	ex.V[158] = cp979_158
+	ex.V[159] = cp979_159
+	ex.V[160] = cp979_160
+	ex.V[161] = cp979_161
+	ex.V[162] = cp979_162
+	ex.V[163] = cp979_163
+	ex.V[164] = cp979_164
+	ex.V[165] = cp979_165
+	ex.V[166] = cp979_166
+	ex.V[167] = cp979_167
+	ex.V[168] = cp979_168
+	ex.V[169] = cp979_169
+	ex.V[170] = cp979_170
+	ex.V[171] = cp979_171
+	ex.V[172] = cp979_172
+	ex.V[173] = cp979_173
+	ex.V[174] = cp979_174
+	ex.V[175] = cp979_175
+	ex.V[176] = cp979_176
+	ex.V[177] = cp979_177
+	ex.V[178] = cp979_178
+	ex.V[179] = cp979_179
+	ex.V[180] = cp979_180
+	ex.V[181] = cp979_181
+	ex.V[182] = cp979_182
+	ex.V[183] = cp979_183
+	ex.V[184] = cp979_184
+	ex.V[185] = cp979_185
+	ex.V[186] = cp979_186
+	ex.V[187] = cp979_187
+	ex.V[188] = cp979_188
+	ex.V[189] = cp979_189
+	ex.V[190] = cp979_190
+	ex.V[191] = cp979_191
+	ex.V[192] = cp979_192
+	ex.V[193] = cp979_193
+	ex.V[194] = cp979_194
+	ex.V[195] = cp979_195
+	ex.V[196] = cp979_196
+	ex.V[197] = cp979_197
+	ex.V[198] = cp979_198
+	ex.V[199] = cp979_199
+	ex.V[200] = cp979_200
+	ex.V[201] = cp979_201
+	ex.V[202] = cp979_202
+	ex.V[203] = cp979_203
+	ex.V[204] = cp979_204
+	ex.V[205] = cp979_205
+	ex.V[206] = cp979_206
+	ex.V[207] = cp979_207
+	ex.V[208] = cp979_208
+	ex.DebugEndCondition(&definition, false)
+	goto L977
+L977:
+	ex.DebugEndBranch(&definition, false)
+	goto L973
 L976:
-	ex.V[156] = cp977_156
-	goto L974
-L974:
-	ex.V[156] = cp975_156
-	ex.V[157] = cp975_157
-	ex.V[158] = cp975_158
-	goto L971
-L971:
-	goto L968
-L968:
-	ex.V[155] = cp969_155
-	goto L965
-L965:
-	ex.V[154] = cp966_154
-	goto L962
-L962:
-	ex.V[153] = cp963_153
-	goto L960
-L960:
-	ex.V[153] = cp961_153
-	ex.V[154] = cp961_154
-	ex.V[155] = cp961_155
-	goto L957
-L957:
-	goto L954
-L954:
-	ex.V[152] = cp955_152
-	goto L951
-L951:
-	ex.V[151] = cp952_151
-	goto L948
-L948:
-	ex.V[150] = cp949_150
-	goto L946
-L946:
-	ex.V[150] = cp947_150
-	ex.V[151] = cp947_151
-	ex.V[152] = cp947_152
-	goto L943
-L943:
-	goto L940
-L940:
-	ex.V[149] = cp941_149
-	goto L937
-L937:
-	ex.V[148] = cp938_148
-	goto L934
-L934:
-	ex.V[147] = cp935_147
-	goto L932
-L932:
-	ex.V[147] = cp933_147
-	ex.V[148] = cp933_148
-	ex.V[149] = cp933_149
-	goto L929
-L929:
-	goto L926
-L926:
-	ex.V[146] = cp927_146
-	goto L923
-L923:
-	ex.V[145] = cp924_145
-	goto L920
-L920:
-	ex.V[144] = cp921_144
-	goto L918
-L918:
-	ex.V[144] = cp919_144
-	ex.V[145] = cp919_145
-	ex.V[146] = cp919_146
-	goto L915
-L915:
-	ex.V[27] = cp916_27
-	goto L913
-L913:
-	ex.V[27] = cp914_27
-	ex.V[144] = cp914_144
-	ex.V[145] = cp914_145
-	ex.V[146] = cp914_146
-	ex.V[147] = cp914_147
-	ex.V[148] = cp914_148
-	ex.V[149] = cp914_149
-	ex.V[150] = cp914_150
-	ex.V[151] = cp914_151
-	ex.V[152] = cp914_152
-	ex.V[153] = cp914_153
-	ex.V[154] = cp914_154
-	ex.V[155] = cp914_155
-	ex.V[156] = cp914_156
-	ex.V[157] = cp914_157
-	ex.V[158] = cp914_158
-	ex.V[159] = cp914_159
-	ex.V[160] = cp914_160
-	ex.V[161] = cp914_161
-	ex.V[162] = cp914_162
-	ex.V[163] = cp914_163
-	ex.V[164] = cp914_164
-	ex.V[165] = cp914_165
-	ex.V[166] = cp914_166
-	ex.V[167] = cp914_167
-	ex.V[168] = cp914_168
-	ex.V[169] = cp914_169
-	ex.V[170] = cp914_170
-	ex.V[171] = cp914_171
-	ex.V[172] = cp914_172
-	ex.V[173] = cp914_173
-	ex.V[174] = cp914_174
-	ex.V[175] = cp914_175
-	ex.V[176] = cp914_176
-	ex.V[177] = cp914_177
-	ex.V[178] = cp914_178
-	ex.V[179] = cp914_179
-	ex.V[180] = cp914_180
-	ex.V[181] = cp914_181
-	ex.V[182] = cp914_182
-	ex.V[183] = cp914_183
-	ex.V[184] = cp914_184
-	ex.V[185] = cp914_185
-	ex.V[186] = cp914_186
-	ex.V[187] = cp914_187
-	ex.V[188] = cp914_188
-	ex.V[189] = cp914_189
-	ex.V[190] = cp914_190
-	ex.V[191] = cp914_191
-	ex.V[192] = cp914_192
-	ex.V[193] = cp914_193
-	ex.V[194] = cp914_194
-	ex.V[195] = cp914_195
-	ex.V[196] = cp914_196
-	ex.V[197] = cp914_197
-	ex.V[198] = cp914_198
-	ex.V[199] = cp914_199
-	ex.V[200] = cp914_200
-	ex.V[201] = cp914_201
-	ex.V[202] = cp914_202
-	ex.V[203] = cp914_203
-	ex.V[204] = cp914_204
-	ex.V[205] = cp914_205
-	ex.V[206] = cp914_206
-	ex.V[207] = cp914_207
-	ex.V[208] = cp914_208
-	goto L912
-L912:
-	goto L908
-L911:
 	if !ex.PushBranch(&bc31) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1183:
+	ex.DebugCapturePendingTask(31)
+L1263:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8152,17 +13540,22 @@ L1183:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L910
+		goto L975
 	}
-	goto L1184
-L910:
+	goto L1264
+L975:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1183
-L1184:
+	goto L1263
+L1264:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L908:
+L973:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -8170,165 +13563,195 @@ L908:
 func method29(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1193_209 atom.Atom
-	var cp1193_210 atom.Atom
-	var cp1193_211 atom.Atom
-	var cp1193_212 atom.Atom
-	var cp1193_213 atom.Atom
-	var cp1195_209 atom.Atom
-	var cp1195_210 atom.Atom
-	var cp1195_211 atom.Atom
-	var cp1195_212 atom.Atom
-	var cp1195_213 atom.Atom
-	var cp1197_209 atom.Atom
-	var cp1200_210 atom.Atom
-	var cp1203_211 atom.Atom
-	var cp1206_212 atom.Atom
-	var cp1209_213 atom.Atom
-	_ = cp1193_209
-	_ = cp1193_210
-	_ = cp1193_211
-	_ = cp1193_212
-	_ = cp1193_213
-	_ = cp1195_209
-	_ = cp1195_210
-	_ = cp1195_211
-	_ = cp1195_212
-	_ = cp1195_213
-	_ = cp1197_209
-	_ = cp1200_210
-	_ = cp1203_211
-	_ = cp1206_212
-	_ = cp1209_213
+	var cp1273_209 atom.Atom
+	var cp1273_210 atom.Atom
+	var cp1273_211 atom.Atom
+	var cp1273_212 atom.Atom
+	var cp1273_213 atom.Atom
+	var cp1275_209 atom.Atom
+	var cp1275_210 atom.Atom
+	var cp1275_211 atom.Atom
+	var cp1275_212 atom.Atom
+	var cp1275_213 atom.Atom
+	var cp1277_209 atom.Atom
+	var cp1280_210 atom.Atom
+	var cp1283_211 atom.Atom
+	var cp1286_212 atom.Atom
+	var cp1289_213 atom.Atom
+	_ = cp1273_209
+	_ = cp1273_210
+	_ = cp1273_211
+	_ = cp1273_212
+	_ = cp1273_213
+	_ = cp1275_209
+	_ = cp1275_210
+	_ = cp1275_211
+	_ = cp1275_212
+	_ = cp1275_213
+	_ = cp1277_209
+	_ = cp1280_210
+	_ = cp1283_211
+	_ = cp1286_212
+	_ = cp1289_213
 	switch frame.Resume {
 	case 1:
-		goto L1188
+		goto L1268
 	case 2:
-		goto L1189
+		goto L1269
 	}
-	goto L1186
-L1186:
+	ex.DebugBeginMethod(&definition, 29)
+	goto L1266
+L1266:
 	// branch branch
 	ex.SaveRetry(frame, ms29)
+	ex.DebugBeginBranch(&definition, 32)
 	// (and (< (+ false (call missing_distance_callterm)) 0.2))
-	cp1193_209 = ex.V[209]
-	cp1193_210 = ex.V[210]
-	cp1193_211 = ex.V[211]
-	cp1193_212 = ex.V[212]
-	cp1193_213 = ex.V[213]
+	cp1273_209 = ex.V[209]
+	cp1273_210 = ex.V[210]
+	cp1273_211 = ex.V[211]
+	cp1273_212 = ex.V[212]
+	cp1273_213 = ex.V[213]
+	ex.DebugBeginCondition(&definition, 347)
 	// (and (= ?$assignment_call_200 (* false 1)) (= ?$assignment_call_201 (call missing_distance_callterm)) (= ?$assignment_call_202 (* ?$assignment_call_201 1)) (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202)) (= ?$assignment_call_204 0.2) (< ?$assignment_call_203 ?$assignment_call_204))
-	cp1195_209 = ex.V[209]
-	cp1195_210 = ex.V[210]
-	cp1195_211 = ex.V[211]
-	cp1195_212 = ex.V[212]
-	cp1195_213 = ex.V[213]
+	cp1275_209 = ex.V[209]
+	cp1275_210 = ex.V[210]
+	cp1275_211 = ex.V[211]
+	cp1275_212 = ex.V[212]
+	cp1275_213 = ex.V[213]
+	ex.DebugBeginCondition(&definition, 348)
 	// (= ?$assignment_call_200 (* false 1))
-	cp1197_209 = ex.V[209]
+	cp1277_209 = ex.V[209]
 	// (= ?$assignment_call_200 (* false 1))
+	ex.DebugBeginCondition(&definition, 349)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.Atom{}, atom.NewInt(1)})
 		if value.IsBound() && !ex.V[209].IsBound() {
 			ex.V[209] = value
-			goto L1198
+			ex.DebugEndCondition(&definition, true)
+			goto L1278
 		}
-		goto L1196
+		ex.DebugEndCondition(&definition, false)
+		goto L1276
 	}
-L1198:
+L1278:
 	// (= ?$assignment_call_201 (call missing_distance_callterm))
-	cp1200_210 = ex.V[210]
+	cp1280_210 = ex.V[210]
 	// (= ?$assignment_call_201 (call missing_distance_callterm))
+	ex.DebugBeginCondition(&definition, 350)
 	if !ex.V[210].IsBound() {
 		if result, ok := ex.Invoke(0, nil, &cs69, factSymbols); ok {
 			ex.SetIfChanged(210, result)
-			goto L1201
+			ex.DebugEndCondition(&definition, true)
+			goto L1281
 		}
 	}
-	goto L1199
-L1201:
+	ex.DebugEndCondition(&definition, false)
+	goto L1279
+L1281:
 	// (= ?$assignment_call_202 (* ?$assignment_call_201 1))
-	cp1203_211 = ex.V[211]
+	cp1283_211 = ex.V[211]
 	// (= ?$assignment_call_202 (* ?$assignment_call_201 1))
+	ex.DebugBeginCondition(&definition, 351)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[210], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[211].IsBound() {
 			ex.V[211] = value
-			goto L1204
+			ex.DebugEndCondition(&definition, true)
+			goto L1284
 		}
-		goto L1202
+		ex.DebugEndCondition(&definition, false)
+		goto L1282
 	}
-L1204:
+L1284:
 	// (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))
-	cp1206_212 = ex.V[212]
+	cp1286_212 = ex.V[212]
 	// (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))
+	ex.DebugBeginCondition(&definition, 352)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[209], ex.V[211]})
 		if value.IsBound() && !ex.V[212].IsBound() {
 			ex.V[212] = value
-			goto L1207
+			ex.DebugEndCondition(&definition, true)
+			goto L1287
 		}
-		goto L1205
+		ex.DebugEndCondition(&definition, false)
+		goto L1285
 	}
-L1207:
+L1287:
 	// (= ?$assignment_call_204 0.2)
-	cp1209_213 = ex.V[213]
+	cp1289_213 = ex.V[213]
 	// (= ?$assignment_call_204 0.2)
+	ex.DebugBeginCondition(&definition, 353)
 	{
 		value := sv77
 		if value.IsBound() && !ex.V[213].IsBound() {
 			ex.V[213] = value
-			goto L1210
+			ex.DebugEndCondition(&definition, true)
+			goto L1290
 		}
-		goto L1208
+		ex.DebugEndCondition(&definition, false)
+		goto L1288
 	}
-L1210:
+L1290:
 	// (< ?$assignment_call_203 ?$assignment_call_204)
 	// (< ?$assignment_call_203 ?$assignment_call_204)
+	ex.DebugBeginCondition(&definition, 354)
 	if planner.Compare(ex.V[212], ex.V[213], 2) {
-		goto L1213
+		ex.DebugEndCondition(&definition, true)
+		goto L1293
 	}
-	goto L1211
-L1213:
-	goto L1190
-L1211:
-	goto L1208
-L1208:
-	ex.V[213] = cp1209_213
-	goto L1205
-L1205:
-	ex.V[212] = cp1206_212
-	goto L1202
-L1202:
-	ex.V[211] = cp1203_211
-	goto L1199
-L1199:
-	ex.V[210] = cp1200_210
-	goto L1196
-L1196:
-	ex.V[209] = cp1197_209
-	goto L1194
-L1194:
-	ex.V[209] = cp1195_209
-	ex.V[210] = cp1195_210
-	ex.V[211] = cp1195_211
-	ex.V[212] = cp1195_212
-	ex.V[213] = cp1195_213
-	goto L1192
-L1192:
-	ex.V[209] = cp1193_209
-	ex.V[210] = cp1193_210
-	ex.V[211] = cp1193_211
-	ex.V[212] = cp1193_212
-	ex.V[213] = cp1193_213
-	goto L1191
-L1191:
+	ex.DebugEndCondition(&definition, false)
+	goto L1291
+L1293:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1270
+L1291:
+	goto L1288
+L1288:
+	ex.V[213] = cp1289_213
+	goto L1285
+L1285:
+	ex.V[212] = cp1286_212
+	goto L1282
+L1282:
+	ex.V[211] = cp1283_211
+	goto L1279
+L1279:
+	ex.V[210] = cp1280_210
+	goto L1276
+L1276:
+	ex.V[209] = cp1277_209
+	goto L1274
+L1274:
+	ex.V[209] = cp1275_209
+	ex.V[210] = cp1275_210
+	ex.V[211] = cp1275_211
+	ex.V[212] = cp1275_212
+	ex.V[213] = cp1275_213
+	ex.DebugEndCondition(&definition, false)
+	goto L1272
+L1272:
+	ex.V[209] = cp1273_209
+	ex.V[210] = cp1273_210
+	ex.V[211] = cp1273_211
+	ex.V[212] = cp1273_212
+	ex.V[213] = cp1273_213
+	ex.DebugEndCondition(&definition, false)
+	goto L1271
+L1271:
 	ex.ReleaseRetry(frame)
-	goto L1187
-L1190:
+	ex.DebugEndBranch(&definition, false)
+	goto L1267
+L1270:
 	if !ex.PushBranch(&bc32) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1214:
+	ex.DebugCapturePendingTask(32)
+L1296:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8336,34 +13759,45 @@ L1214:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1188
+		goto L1268
 	}
-	goto L1215
-L1188:
+	goto L1297
+L1268:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms29)
-		goto L1187
+		ex.DebugEndBranch(&definition, false)
+		goto L1267
 	}
-	goto L1214
-L1215:
+	goto L1296
+L1297:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1187:
+L1267:
 	// branch fallback
-	goto L1216
-L1216:
+	ex.DebugBeginBranch(&definition, 33)
+	goto L1298
+L1298:
 	if !ex.PushBranch(&bc33) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1218:
+	ex.DebugCapturePendingTask(33)
+L1300:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -8371,15 +13805,19 @@ L1218:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1189
+		goto L1269
 	}
-	goto L1219
-L1189:
+	goto L1301
+L1269:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1218
-L1219:
+	goto L1300
+L1301:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -8389,17 +13827,22 @@ func method30(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L1222
+		goto L1304
 	}
-	goto L1221
-L1221:
+	ex.DebugBeginMethod(&definition, 30)
+	goto L1303
+L1303:
 	// branch branch
-	goto L1223
-L1223:
+	ex.DebugBeginBranch(&definition, 34)
+	goto L1305
+L1305:
 	if !ex.PushBranch(&bc34) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1225:
+	ex.DebugCapturePendingTask(34)
+L1307:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8407,15 +13850,19 @@ L1225:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1222
+		goto L1304
 	}
-	goto L1226
-L1222:
+	goto L1308
+L1304:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1225
-L1226:
+	goto L1307
+L1308:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -8425,17 +13872,22 @@ func method31(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L1229
+		goto L1311
 	}
-	goto L1228
-L1228:
+	ex.DebugBeginMethod(&definition, 31)
+	goto L1310
+L1310:
 	// branch branch
-	goto L1230
-L1230:
+	ex.DebugBeginBranch(&definition, 35)
+	goto L1312
+L1312:
 	if !ex.PushBranch(&bc35) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1232:
+	ex.DebugCapturePendingTask(35)
+L1314:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8443,15 +13895,19 @@ L1232:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1229
+		goto L1311
 	}
-	goto L1233
-L1229:
+	goto L1315
+L1311:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1232
-L1233:
+	goto L1314
+L1315:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -8459,201 +13915,234 @@ L1233:
 func method32(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1240_101 atom.Atom
-	var cp1240_102 atom.Atom
-	var cp1240_103 atom.Atom
-	var cp1240_104 atom.Atom
-	var cp1240_217 atom.Atom
-	var cp1240_218 atom.Atom
-	var cp1240_219 atom.Atom
-	var cp1240_220 atom.Atom
-	var cp1242_101 atom.Atom
-	var cp1242_102 atom.Atom
-	var cp1242_103 atom.Atom
-	var fc1243 uint32
-	var cp1246_104 atom.Atom
-	var cp1249_217 atom.Atom
-	var cp1249_218 atom.Atom
-	var cp1249_219 atom.Atom
-	var cp1249_220 atom.Atom
-	var cp1251_217 atom.Atom
-	var cp1254_218 atom.Atom
-	var cp1257_219 atom.Atom
-	var cp1260_220 atom.Atom
-	_ = cp1240_101
-	_ = cp1240_102
-	_ = cp1240_103
-	_ = cp1240_104
-	_ = cp1240_217
-	_ = cp1240_218
-	_ = cp1240_219
-	_ = cp1240_220
-	_ = cp1242_101
-	_ = cp1242_102
-	_ = cp1242_103
-	_ = fc1243
-	_ = cp1246_104
-	_ = cp1249_217
-	_ = cp1249_218
-	_ = cp1249_219
-	_ = cp1249_220
-	_ = cp1251_217
-	_ = cp1254_218
-	_ = cp1257_219
-	_ = cp1260_220
+	var cp1322_101 atom.Atom
+	var cp1322_102 atom.Atom
+	var cp1322_103 atom.Atom
+	var cp1322_104 atom.Atom
+	var cp1322_217 atom.Atom
+	var cp1322_218 atom.Atom
+	var cp1322_219 atom.Atom
+	var cp1322_220 atom.Atom
+	var cp1324_101 atom.Atom
+	var cp1324_102 atom.Atom
+	var cp1324_103 atom.Atom
+	var fc1325 uint32
+	var cp1328_104 atom.Atom
+	var cp1331_217 atom.Atom
+	var cp1331_218 atom.Atom
+	var cp1331_219 atom.Atom
+	var cp1331_220 atom.Atom
+	var cp1333_217 atom.Atom
+	var cp1336_218 atom.Atom
+	var cp1339_219 atom.Atom
+	var cp1342_220 atom.Atom
+	_ = cp1322_101
+	_ = cp1322_102
+	_ = cp1322_103
+	_ = cp1322_104
+	_ = cp1322_217
+	_ = cp1322_218
+	_ = cp1322_219
+	_ = cp1322_220
+	_ = cp1324_101
+	_ = cp1324_102
+	_ = cp1324_103
+	_ = fc1325
+	_ = cp1328_104
+	_ = cp1331_217
+	_ = cp1331_218
+	_ = cp1331_219
+	_ = cp1331_220
+	_ = cp1333_217
+	_ = cp1336_218
+	_ = cp1339_219
+	_ = cp1342_220
 	switch frame.Resume {
 	case 1:
-		goto L1236
+		goto L1318
 	}
-	goto L1235
-L1235:
+	ex.DebugBeginMethod(&definition, 32)
+	goto L1317
+L1317:
 	// branch continue_move_to_seen_entity
+	ex.DebugBeginBranch(&definition, 36)
 	// (and (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position) (= ?new_entity_position (call get_entity_position ?entity_id)) (< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2))
-	cp1240_101 = ex.V[101]
-	cp1240_102 = ex.V[102]
-	cp1240_103 = ex.V[103]
-	cp1240_104 = ex.V[104]
-	cp1240_217 = ex.V[217]
-	cp1240_218 = ex.V[218]
-	cp1240_219 = ex.V[219]
-	cp1240_220 = ex.V[220]
+	cp1322_101 = ex.V[101]
+	cp1322_102 = ex.V[102]
+	cp1322_103 = ex.V[103]
+	cp1322_104 = ex.V[104]
+	cp1322_217 = ex.V[217]
+	cp1322_218 = ex.V[218]
+	cp1322_219 = ex.V[219]
+	cp1322_220 = ex.V[220]
+	ex.DebugBeginCondition(&definition, 355)
 	// (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)
-	cp1242_101 = ex.V[101]
-	cp1242_102 = ex.V[102]
-	cp1242_103 = ex.V[103]
-	fc1243 = 0
-L1244:
-	fc1243++
-	if !factChoice356(ex, fc1243-1) {
-		goto L1241
+	cp1324_101 = ex.V[101]
+	cp1324_102 = ex.V[102]
+	cp1324_103 = ex.V[103]
+	fc1325 = 0
+L1326:
+	ex.DebugBeginCondition(&definition, 356)
+	fc1325++
+	if !factChoice356(ex, fc1325-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1323
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (= ?new_entity_position (call get_entity_position ?entity_id))
-	cp1246_104 = ex.V[104]
+	cp1328_104 = ex.V[104]
 	// (= ?new_entity_position (call get_entity_position ?entity_id))
+	ex.DebugBeginCondition(&definition, 357)
 	if !ex.V[104].IsBound() {
 		if result, ok := ex.Invoke(3, []atom.Atom{ex.V[102]}, &cs70, factSymbols); ok {
 			ex.SetIfChanged(104, result)
-			goto L1247
+			ex.DebugEndCondition(&definition, true)
+			goto L1329
 		}
 	}
-	goto L1245
-L1247:
+	ex.DebugEndCondition(&definition, false)
+	goto L1327
+L1329:
 	// (and (= ?$assignment_call_208 ?old_entity_position) (= ?$assignment_call_209 ?new_entity_position) (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209)) (= ?$assignment_call_211 0.2) (< ?$assignment_call_210 ?$assignment_call_211))
-	cp1249_217 = ex.V[217]
-	cp1249_218 = ex.V[218]
-	cp1249_219 = ex.V[219]
-	cp1249_220 = ex.V[220]
+	cp1331_217 = ex.V[217]
+	cp1331_218 = ex.V[218]
+	cp1331_219 = ex.V[219]
+	cp1331_220 = ex.V[220]
+	ex.DebugBeginCondition(&definition, 358)
 	// (= ?$assignment_call_208 ?old_entity_position)
-	cp1251_217 = ex.V[217]
+	cp1333_217 = ex.V[217]
 	// (= ?$assignment_call_208 ?old_entity_position)
+	ex.DebugBeginCondition(&definition, 359)
 	{
 		value := ex.V[103]
 		if value.IsBound() && !ex.V[217].IsBound() {
 			ex.V[217] = value
-			goto L1252
+			ex.DebugEndCondition(&definition, true)
+			goto L1334
 		}
-		goto L1250
+		ex.DebugEndCondition(&definition, false)
+		goto L1332
 	}
-L1252:
+L1334:
 	// (= ?$assignment_call_209 ?new_entity_position)
-	cp1254_218 = ex.V[218]
+	cp1336_218 = ex.V[218]
 	// (= ?$assignment_call_209 ?new_entity_position)
+	ex.DebugBeginCondition(&definition, 360)
 	{
 		value := ex.V[104]
 		if value.IsBound() && !ex.V[218].IsBound() {
 			ex.V[218] = value
-			goto L1255
+			ex.DebugEndCondition(&definition, true)
+			goto L1337
 		}
-		goto L1253
+		ex.DebugEndCondition(&definition, false)
+		goto L1335
 	}
-L1255:
+L1337:
 	// (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))
-	cp1257_219 = ex.V[219]
+	cp1339_219 = ex.V[219]
 	// (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))
+	ex.DebugBeginCondition(&definition, 361)
 	if !ex.V[219].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{ex.V[217], ex.V[218]}, &cs71, factSymbols); ok {
 			ex.SetIfChanged(219, result)
-			goto L1258
+			ex.DebugEndCondition(&definition, true)
+			goto L1340
 		}
 	}
-	goto L1256
-L1258:
+	ex.DebugEndCondition(&definition, false)
+	goto L1338
+L1340:
 	// (= ?$assignment_call_211 0.2)
-	cp1260_220 = ex.V[220]
+	cp1342_220 = ex.V[220]
 	// (= ?$assignment_call_211 0.2)
+	ex.DebugBeginCondition(&definition, 362)
 	{
 		value := sv79
 		if value.IsBound() && !ex.V[220].IsBound() {
 			ex.V[220] = value
-			goto L1261
+			ex.DebugEndCondition(&definition, true)
+			goto L1343
 		}
-		goto L1259
+		ex.DebugEndCondition(&definition, false)
+		goto L1341
 	}
-L1261:
+L1343:
 	// (< ?$assignment_call_210 ?$assignment_call_211)
 	// (< ?$assignment_call_210 ?$assignment_call_211)
+	ex.DebugBeginCondition(&definition, 363)
 	if planner.Compare(ex.V[219], ex.V[220], 2) {
-		goto L1264
+		ex.DebugEndCondition(&definition, true)
+		goto L1346
 	}
-	goto L1262
-L1264:
-	goto L1237
-L1262:
-	goto L1259
-L1259:
-	ex.V[220] = cp1260_220
-	goto L1256
-L1256:
-	ex.V[219] = cp1257_219
-	goto L1253
-L1253:
-	ex.V[218] = cp1254_218
-	goto L1250
-L1250:
-	ex.V[217] = cp1251_217
-	goto L1248
-L1248:
-	ex.V[217] = cp1249_217
-	ex.V[218] = cp1249_218
-	ex.V[219] = cp1249_219
-	ex.V[220] = cp1249_220
-	goto L1245
-L1245:
-	ex.V[104] = cp1246_104
-	goto L1243
-L1243:
+	ex.DebugEndCondition(&definition, false)
+	goto L1344
+L1346:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1319
+L1344:
+	goto L1341
+L1341:
+	ex.V[220] = cp1342_220
+	goto L1338
+L1338:
+	ex.V[219] = cp1339_219
+	goto L1335
+L1335:
+	ex.V[218] = cp1336_218
+	goto L1332
+L1332:
+	ex.V[217] = cp1333_217
+	goto L1330
+L1330:
+	ex.V[217] = cp1331_217
+	ex.V[218] = cp1331_218
+	ex.V[219] = cp1331_219
+	ex.V[220] = cp1331_220
+	ex.DebugEndCondition(&definition, false)
+	goto L1327
+L1327:
+	ex.V[104] = cp1328_104
+	goto L1325
+L1325:
 	if ex.Ctx.BacktrackingMode&planner.BacktrackingFactsAndAxioms == 0 {
-		goto L1241
+		goto L1323
 	}
-	ex.V[101] = cp1242_101
-	ex.V[102] = cp1242_102
-	ex.V[103] = cp1242_103
-	cp1242_101 = ex.V[101]
-	cp1242_102 = ex.V[102]
-	cp1242_103 = ex.V[103]
-	goto L1244
-L1241:
-	ex.V[101] = cp1242_101
-	ex.V[102] = cp1242_102
-	ex.V[103] = cp1242_103
-	goto L1239
-L1239:
-	ex.V[101] = cp1240_101
-	ex.V[102] = cp1240_102
-	ex.V[103] = cp1240_103
-	ex.V[104] = cp1240_104
-	ex.V[217] = cp1240_217
-	ex.V[218] = cp1240_218
-	ex.V[219] = cp1240_219
-	ex.V[220] = cp1240_220
-	goto L1238
-L1238:
-	goto L1234
-L1237:
+	ex.V[101] = cp1324_101
+	ex.V[102] = cp1324_102
+	ex.V[103] = cp1324_103
+	cp1324_101 = ex.V[101]
+	cp1324_102 = ex.V[102]
+	cp1324_103 = ex.V[103]
+	goto L1326
+L1323:
+	ex.V[101] = cp1324_101
+	ex.V[102] = cp1324_102
+	ex.V[103] = cp1324_103
+	goto L1321
+L1321:
+	ex.V[101] = cp1322_101
+	ex.V[102] = cp1322_102
+	ex.V[103] = cp1322_103
+	ex.V[104] = cp1322_104
+	ex.V[217] = cp1322_217
+	ex.V[218] = cp1322_218
+	ex.V[219] = cp1322_219
+	ex.V[220] = cp1322_220
+	ex.DebugEndCondition(&definition, false)
+	goto L1320
+L1320:
+	ex.DebugEndBranch(&definition, false)
+	goto L1316
+L1319:
 	if !ex.PushBranch(&bc36) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1265:
+	ex.DebugCapturePendingTask(36)
+L1349:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8661,17 +14150,22 @@ L1265:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1236
+		goto L1318
 	}
-	goto L1266
-L1236:
+	goto L1350
+L1318:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1265
-L1266:
+	goto L1349
+L1350:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1234:
+L1316:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -8679,136 +14173,163 @@ L1234:
 func method33(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1273_109 atom.Atom
-	var cp1273_221 atom.Atom
-	var cp1273_222 atom.Atom
-	var cp1273_223 atom.Atom
-	var cp1275_109 atom.Atom
-	var fc1276 uint32
-	var cp1279_221 atom.Atom
-	var cp1279_222 atom.Atom
-	var cp1279_223 atom.Atom
-	var cp1281_221 atom.Atom
-	var cp1284_222 atom.Atom
-	var cp1287_223 atom.Atom
-	_ = cp1273_109
-	_ = cp1273_221
-	_ = cp1273_222
-	_ = cp1273_223
-	_ = cp1275_109
-	_ = fc1276
-	_ = cp1279_221
-	_ = cp1279_222
-	_ = cp1279_223
-	_ = cp1281_221
-	_ = cp1284_222
-	_ = cp1287_223
+	var cp1357_109 atom.Atom
+	var cp1357_221 atom.Atom
+	var cp1357_222 atom.Atom
+	var cp1357_223 atom.Atom
+	var cp1359_109 atom.Atom
+	var fc1360 uint32
+	var cp1363_221 atom.Atom
+	var cp1363_222 atom.Atom
+	var cp1363_223 atom.Atom
+	var cp1365_221 atom.Atom
+	var cp1368_222 atom.Atom
+	var cp1371_223 atom.Atom
+	_ = cp1357_109
+	_ = cp1357_221
+	_ = cp1357_222
+	_ = cp1357_223
+	_ = cp1359_109
+	_ = fc1360
+	_ = cp1363_221
+	_ = cp1363_222
+	_ = cp1363_223
+	_ = cp1365_221
+	_ = cp1368_222
+	_ = cp1371_223
 	switch frame.Resume {
 	case 1:
-		goto L1269
+		goto L1353
 	}
-	goto L1268
-L1268:
+	ex.DebugBeginMethod(&definition, 33)
+	goto L1352
+L1352:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 37)
 	// (and (candidate ?entity) (< (call identity ?entity) 2))
-	cp1273_109 = ex.V[109]
-	cp1273_221 = ex.V[221]
-	cp1273_222 = ex.V[222]
-	cp1273_223 = ex.V[223]
+	cp1357_109 = ex.V[109]
+	cp1357_221 = ex.V[221]
+	cp1357_222 = ex.V[222]
+	cp1357_223 = ex.V[223]
+	ex.DebugBeginCondition(&definition, 364)
 	// (candidate ?entity)
-	cp1275_109 = ex.V[109]
-	fc1276 = 0
-L1277:
-	fc1276++
-	if !factChoice365(ex, fc1276-1) {
-		goto L1274
+	cp1359_109 = ex.V[109]
+	fc1360 = 0
+L1361:
+	ex.DebugBeginCondition(&definition, 365)
+	fc1360++
+	if !factChoice365(ex, fc1360-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1358
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (and (= ?$assignment_call_212 ?entity) (= ?$assignment_call_213 (call identity ?$assignment_call_212)) (= ?$assignment_call_214 2) (< ?$assignment_call_213 ?$assignment_call_214))
-	cp1279_221 = ex.V[221]
-	cp1279_222 = ex.V[222]
-	cp1279_223 = ex.V[223]
+	cp1363_221 = ex.V[221]
+	cp1363_222 = ex.V[222]
+	cp1363_223 = ex.V[223]
+	ex.DebugBeginCondition(&definition, 366)
 	// (= ?$assignment_call_212 ?entity)
-	cp1281_221 = ex.V[221]
+	cp1365_221 = ex.V[221]
 	// (= ?$assignment_call_212 ?entity)
+	ex.DebugBeginCondition(&definition, 367)
 	{
 		value := ex.V[109]
 		if value.IsBound() && !ex.V[221].IsBound() {
 			ex.V[221] = value
-			goto L1282
+			ex.DebugEndCondition(&definition, true)
+			goto L1366
 		}
-		goto L1280
+		ex.DebugEndCondition(&definition, false)
+		goto L1364
 	}
-L1282:
+L1366:
 	// (= ?$assignment_call_213 (call identity ?$assignment_call_212))
-	cp1284_222 = ex.V[222]
+	cp1368_222 = ex.V[222]
 	// (= ?$assignment_call_213 (call identity ?$assignment_call_212))
+	ex.DebugBeginCondition(&definition, 368)
 	if !ex.V[222].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[221]}, &cs72, factSymbols); ok {
 			ex.SetIfChanged(222, result)
-			goto L1285
+			ex.DebugEndCondition(&definition, true)
+			goto L1369
 		}
 	}
-	goto L1283
-L1285:
+	ex.DebugEndCondition(&definition, false)
+	goto L1367
+L1369:
 	// (= ?$assignment_call_214 2)
-	cp1287_223 = ex.V[223]
+	cp1371_223 = ex.V[223]
 	// (= ?$assignment_call_214 2)
+	ex.DebugBeginCondition(&definition, 369)
 	{
 		value := sv80
 		if value.IsBound() && !ex.V[223].IsBound() {
 			ex.V[223] = value
-			goto L1288
+			ex.DebugEndCondition(&definition, true)
+			goto L1372
 		}
-		goto L1286
+		ex.DebugEndCondition(&definition, false)
+		goto L1370
 	}
-L1288:
+L1372:
 	// (< ?$assignment_call_213 ?$assignment_call_214)
 	// (< ?$assignment_call_213 ?$assignment_call_214)
+	ex.DebugBeginCondition(&definition, 370)
 	if planner.Compare(ex.V[222], ex.V[223], 2) {
-		goto L1291
+		ex.DebugEndCondition(&definition, true)
+		goto L1375
 	}
-	goto L1289
-L1291:
-	goto L1270
-L1289:
-	goto L1286
-L1286:
-	ex.V[223] = cp1287_223
-	goto L1283
-L1283:
-	ex.V[222] = cp1284_222
-	goto L1280
-L1280:
-	ex.V[221] = cp1281_221
-	goto L1278
-L1278:
-	ex.V[221] = cp1279_221
-	ex.V[222] = cp1279_222
-	ex.V[223] = cp1279_223
-	goto L1276
-L1276:
+	ex.DebugEndCondition(&definition, false)
+	goto L1373
+L1375:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1354
+L1373:
+	goto L1370
+L1370:
+	ex.V[223] = cp1371_223
+	goto L1367
+L1367:
+	ex.V[222] = cp1368_222
+	goto L1364
+L1364:
+	ex.V[221] = cp1365_221
+	goto L1362
+L1362:
+	ex.V[221] = cp1363_221
+	ex.V[222] = cp1363_222
+	ex.V[223] = cp1363_223
+	ex.DebugEndCondition(&definition, false)
+	goto L1360
+L1360:
 	if ex.Ctx.BacktrackingMode&planner.BacktrackingFactsAndAxioms == 0 {
-		goto L1274
+		goto L1358
 	}
-	ex.V[109] = cp1275_109
-	cp1275_109 = ex.V[109]
-	goto L1277
-L1274:
-	ex.V[109] = cp1275_109
-	goto L1272
-L1272:
-	ex.V[109] = cp1273_109
-	ex.V[221] = cp1273_221
-	ex.V[222] = cp1273_222
-	ex.V[223] = cp1273_223
-	goto L1271
-L1271:
-	goto L1267
-L1270:
+	ex.V[109] = cp1359_109
+	cp1359_109 = ex.V[109]
+	goto L1361
+L1358:
+	ex.V[109] = cp1359_109
+	goto L1356
+L1356:
+	ex.V[109] = cp1357_109
+	ex.V[221] = cp1357_221
+	ex.V[222] = cp1357_222
+	ex.V[223] = cp1357_223
+	ex.DebugEndCondition(&definition, false)
+	goto L1355
+L1355:
+	ex.DebugEndBranch(&definition, false)
+	goto L1351
+L1354:
 	if !ex.PushBranch(&bc37) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1292:
+	ex.DebugCapturePendingTask(37)
+L1378:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8816,17 +14337,22 @@ L1292:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1269
+		goto L1353
 	}
-	goto L1293
-L1269:
+	goto L1379
+L1353:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1292
-L1293:
+	goto L1378
+L1379:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1267:
+L1351:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -8834,102 +14360,125 @@ L1267:
 func method34(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1300_224 atom.Atom
-	var cp1300_225 atom.Atom
-	var cp1305_224 atom.Atom
-	var cp1305_225 atom.Atom
-	var cp1307_224 atom.Atom
-	var cp1310_225 atom.Atom
-	_ = cp1300_224
-	_ = cp1300_225
-	_ = cp1305_224
-	_ = cp1305_225
-	_ = cp1307_224
-	_ = cp1310_225
+	var cp1386_224 atom.Atom
+	var cp1386_225 atom.Atom
+	var cp1391_224 atom.Atom
+	var cp1391_225 atom.Atom
+	var cp1393_224 atom.Atom
+	var cp1396_225 atom.Atom
+	_ = cp1386_224
+	_ = cp1386_225
+	_ = cp1391_224
+	_ = cp1391_225
+	_ = cp1393_224
+	_ = cp1396_225
 	switch frame.Resume {
 	case 1:
-		goto L1296
+		goto L1382
 	}
-	goto L1295
-L1295:
+	ex.DebugBeginMethod(&definition, 34)
+	goto L1381
+L1381:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 38)
 	// (and (absent_fact) (< (call distance) 0.2))
-	cp1300_224 = ex.V[224]
-	cp1300_225 = ex.V[225]
+	cp1386_224 = ex.V[224]
+	cp1386_225 = ex.V[225]
+	ex.DebugBeginCondition(&definition, 371)
 	// (absent_fact)
 	// (absent_fact)
 	{
+		ex.DebugBeginCondition(&definition, 372)
 		table := &ex.FactTables[2][0]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1303
+			goto L1389
 		}
-		goto L1301
+		goto L1387
 	}
-L1303:
+L1389:
 	// (and (= ?$assignment_call_215 (call distance)) (= ?$assignment_call_216 0.2) (< ?$assignment_call_215 ?$assignment_call_216))
-	cp1305_224 = ex.V[224]
-	cp1305_225 = ex.V[225]
+	cp1391_224 = ex.V[224]
+	cp1391_225 = ex.V[225]
+	ex.DebugBeginCondition(&definition, 373)
 	// (= ?$assignment_call_215 (call distance))
-	cp1307_224 = ex.V[224]
+	cp1393_224 = ex.V[224]
 	// (= ?$assignment_call_215 (call distance))
+	ex.DebugBeginCondition(&definition, 374)
 	if !ex.V[224].IsBound() {
 		if result, ok := ex.Invoke(2, nil, &cs73, factSymbols); ok {
 			ex.SetIfChanged(224, result)
-			goto L1308
+			ex.DebugEndCondition(&definition, true)
+			goto L1394
 		}
 	}
-	goto L1306
-L1308:
+	ex.DebugEndCondition(&definition, false)
+	goto L1392
+L1394:
 	// (= ?$assignment_call_216 0.2)
-	cp1310_225 = ex.V[225]
+	cp1396_225 = ex.V[225]
 	// (= ?$assignment_call_216 0.2)
+	ex.DebugBeginCondition(&definition, 375)
 	{
 		value := sv81
 		if value.IsBound() && !ex.V[225].IsBound() {
 			ex.V[225] = value
-			goto L1311
+			ex.DebugEndCondition(&definition, true)
+			goto L1397
 		}
-		goto L1309
+		ex.DebugEndCondition(&definition, false)
+		goto L1395
 	}
-L1311:
+L1397:
 	// (< ?$assignment_call_215 ?$assignment_call_216)
 	// (< ?$assignment_call_215 ?$assignment_call_216)
+	ex.DebugBeginCondition(&definition, 376)
 	if planner.Compare(ex.V[224], ex.V[225], 2) {
-		goto L1314
+		ex.DebugEndCondition(&definition, true)
+		goto L1400
 	}
-	goto L1312
-L1314:
-	goto L1297
-L1312:
-	goto L1309
-L1309:
-	ex.V[225] = cp1310_225
-	goto L1306
-L1306:
-	ex.V[224] = cp1307_224
-	goto L1304
-L1304:
-	ex.V[224] = cp1305_224
-	ex.V[225] = cp1305_225
-	goto L1301
-L1301:
-	goto L1299
-L1299:
-	ex.V[224] = cp1300_224
-	ex.V[225] = cp1300_225
-	goto L1298
-L1298:
-	goto L1294
-L1297:
+	ex.DebugEndCondition(&definition, false)
+	goto L1398
+L1400:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1383
+L1398:
+	goto L1395
+L1395:
+	ex.V[225] = cp1396_225
+	goto L1392
+L1392:
+	ex.V[224] = cp1393_224
+	goto L1390
+L1390:
+	ex.V[224] = cp1391_224
+	ex.V[225] = cp1391_225
+	ex.DebugEndCondition(&definition, false)
+	goto L1387
+L1387:
+	goto L1385
+L1385:
+	ex.V[224] = cp1386_224
+	ex.V[225] = cp1386_225
+	ex.DebugEndCondition(&definition, false)
+	goto L1384
+L1384:
+	ex.DebugEndBranch(&definition, false)
+	goto L1380
+L1383:
 	if !ex.PushBranch(&bc38) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1315:
+	ex.DebugCapturePendingTask(38)
+L1403:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8937,17 +14486,22 @@ L1315:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1296
+		goto L1382
 	}
-	goto L1316
-L1296:
+	goto L1404
+L1382:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1315
-L1316:
+	goto L1403
+L1404:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1294:
+L1380:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -8955,187 +14509,223 @@ L1294:
 func method35(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1323_27 atom.Atom
-	var cp1323_226 atom.Atom
-	var cp1323_227 atom.Atom
-	var cp1323_228 atom.Atom
-	var cp1323_229 atom.Atom
-	var cp1323_230 atom.Atom
-	var cp1325_27 atom.Atom
-	var cp1325_226 atom.Atom
-	var cp1325_227 atom.Atom
-	var cp1325_228 atom.Atom
-	var cp1325_229 atom.Atom
-	var cp1325_230 atom.Atom
-	var cp1327_226 atom.Atom
-	var cp1330_227 atom.Atom
-	var cp1333_228 atom.Atom
-	var cp1336_229 atom.Atom
-	var cp1339_230 atom.Atom
-	var cp1342_27 atom.Atom
-	_ = cp1323_27
-	_ = cp1323_226
-	_ = cp1323_227
-	_ = cp1323_228
-	_ = cp1323_229
-	_ = cp1323_230
-	_ = cp1325_27
-	_ = cp1325_226
-	_ = cp1325_227
-	_ = cp1325_228
-	_ = cp1325_229
-	_ = cp1325_230
-	_ = cp1327_226
-	_ = cp1330_227
-	_ = cp1333_228
-	_ = cp1336_229
-	_ = cp1339_230
-	_ = cp1342_27
+	var cp1411_27 atom.Atom
+	var cp1411_226 atom.Atom
+	var cp1411_227 atom.Atom
+	var cp1411_228 atom.Atom
+	var cp1411_229 atom.Atom
+	var cp1411_230 atom.Atom
+	var cp1413_27 atom.Atom
+	var cp1413_226 atom.Atom
+	var cp1413_227 atom.Atom
+	var cp1413_228 atom.Atom
+	var cp1413_229 atom.Atom
+	var cp1413_230 atom.Atom
+	var cp1415_226 atom.Atom
+	var cp1418_227 atom.Atom
+	var cp1421_228 atom.Atom
+	var cp1424_229 atom.Atom
+	var cp1427_230 atom.Atom
+	var cp1430_27 atom.Atom
+	_ = cp1411_27
+	_ = cp1411_226
+	_ = cp1411_227
+	_ = cp1411_228
+	_ = cp1411_229
+	_ = cp1411_230
+	_ = cp1413_27
+	_ = cp1413_226
+	_ = cp1413_227
+	_ = cp1413_228
+	_ = cp1413_229
+	_ = cp1413_230
+	_ = cp1415_226
+	_ = cp1418_227
+	_ = cp1421_228
+	_ = cp1424_229
+	_ = cp1427_230
+	_ = cp1430_27
 	switch frame.Resume {
 	case 1:
-		goto L1319
+		goto L1407
 	}
-	goto L1318
-L1318:
+	ex.DebugBeginMethod(&definition, 35)
+	goto L1406
+L1406:
 	// branch branch
+	ex.DebugBeginBranch(&definition, 39)
 	// (and (= ?value (call identity (+ 1 (call identity 2)))) (== ?value 3))
-	cp1323_27 = ex.V[27]
-	cp1323_226 = ex.V[226]
-	cp1323_227 = ex.V[227]
-	cp1323_228 = ex.V[228]
-	cp1323_229 = ex.V[229]
-	cp1323_230 = ex.V[230]
+	cp1411_27 = ex.V[27]
+	cp1411_226 = ex.V[226]
+	cp1411_227 = ex.V[227]
+	cp1411_228 = ex.V[228]
+	cp1411_229 = ex.V[229]
+	cp1411_230 = ex.V[230]
+	ex.DebugBeginCondition(&definition, 377)
 	// (and (= ?$assignment_call_217 (* 1 1)) (= ?$assignment_call_218 2) (= ?$assignment_call_219 (call identity ?$assignment_call_218)) (= ?$assignment_call_220 (* ?$assignment_call_219 1)) (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220)) (= ?value (call identity ?$assignment_call_221)))
-	cp1325_27 = ex.V[27]
-	cp1325_226 = ex.V[226]
-	cp1325_227 = ex.V[227]
-	cp1325_228 = ex.V[228]
-	cp1325_229 = ex.V[229]
-	cp1325_230 = ex.V[230]
+	cp1413_27 = ex.V[27]
+	cp1413_226 = ex.V[226]
+	cp1413_227 = ex.V[227]
+	cp1413_228 = ex.V[228]
+	cp1413_229 = ex.V[229]
+	cp1413_230 = ex.V[230]
+	ex.DebugBeginCondition(&definition, 378)
 	if ex.V[27].IsBound() {
-		goto L1324
+		goto L1412
 	}
 	// (= ?$assignment_call_217 (* 1 1))
-	cp1327_226 = ex.V[226]
+	cp1415_226 = ex.V[226]
 	// (= ?$assignment_call_217 (* 1 1))
+	ex.DebugBeginCondition(&definition, 379)
 	{
 		value := planner.Arith(2, []atom.Atom{atom.NewInt(1), atom.NewInt(1)})
 		if value.IsBound() && !ex.V[226].IsBound() {
 			ex.V[226] = value
-			goto L1328
+			ex.DebugEndCondition(&definition, true)
+			goto L1416
 		}
-		goto L1326
+		ex.DebugEndCondition(&definition, false)
+		goto L1414
 	}
-L1328:
+L1416:
 	// (= ?$assignment_call_218 2)
-	cp1330_227 = ex.V[227]
+	cp1418_227 = ex.V[227]
 	// (= ?$assignment_call_218 2)
+	ex.DebugBeginCondition(&definition, 380)
 	{
 		value := sv82
 		if value.IsBound() && !ex.V[227].IsBound() {
 			ex.V[227] = value
-			goto L1331
+			ex.DebugEndCondition(&definition, true)
+			goto L1419
 		}
-		goto L1329
+		ex.DebugEndCondition(&definition, false)
+		goto L1417
 	}
-L1331:
+L1419:
 	// (= ?$assignment_call_219 (call identity ?$assignment_call_218))
-	cp1333_228 = ex.V[228]
+	cp1421_228 = ex.V[228]
 	// (= ?$assignment_call_219 (call identity ?$assignment_call_218))
+	ex.DebugBeginCondition(&definition, 381)
 	if !ex.V[228].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[227]}, &cs74, factSymbols); ok {
 			ex.SetIfChanged(228, result)
-			goto L1334
+			ex.DebugEndCondition(&definition, true)
+			goto L1422
 		}
 	}
-	goto L1332
-L1334:
+	ex.DebugEndCondition(&definition, false)
+	goto L1420
+L1422:
 	// (= ?$assignment_call_220 (* ?$assignment_call_219 1))
-	cp1336_229 = ex.V[229]
+	cp1424_229 = ex.V[229]
 	// (= ?$assignment_call_220 (* ?$assignment_call_219 1))
+	ex.DebugBeginCondition(&definition, 382)
 	{
 		value := planner.Arith(2, []atom.Atom{ex.V[228], atom.NewInt(1)})
 		if value.IsBound() && !ex.V[229].IsBound() {
 			ex.V[229] = value
-			goto L1337
+			ex.DebugEndCondition(&definition, true)
+			goto L1425
 		}
-		goto L1335
+		ex.DebugEndCondition(&definition, false)
+		goto L1423
 	}
-L1337:
+L1425:
 	// (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))
-	cp1339_230 = ex.V[230]
+	cp1427_230 = ex.V[230]
 	// (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))
+	ex.DebugBeginCondition(&definition, 383)
 	{
 		value := planner.Arith(0, []atom.Atom{ex.V[226], ex.V[229]})
 		if value.IsBound() && !ex.V[230].IsBound() {
 			ex.V[230] = value
-			goto L1340
+			ex.DebugEndCondition(&definition, true)
+			goto L1428
 		}
-		goto L1338
+		ex.DebugEndCondition(&definition, false)
+		goto L1426
 	}
-L1340:
+L1428:
 	// (= ?value (call identity ?$assignment_call_221))
-	cp1342_27 = ex.V[27]
+	cp1430_27 = ex.V[27]
 	// (= ?value (call identity ?$assignment_call_221))
+	ex.DebugBeginCondition(&definition, 384)
 	if !ex.V[27].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[230]}, &cs75, factSymbols); ok {
 			ex.SetIfChanged(27, result)
-			goto L1343
+			ex.DebugEndCondition(&definition, true)
+			goto L1431
 		}
 	}
-	goto L1341
-L1343:
+	ex.DebugEndCondition(&definition, false)
+	goto L1429
+L1431:
+	ex.DebugEndCondition(&definition, true)
 	// (== ?value 3)
 	// (== ?value 3)
+	ex.DebugBeginCondition(&definition, 385)
 	if planner.Compare(ex.V[27], sv83, 0) {
-		goto L1346
+		ex.DebugEndCondition(&definition, true)
+		goto L1435
 	}
-	goto L1344
-L1346:
-	goto L1320
-L1344:
-	goto L1341
-L1341:
-	ex.V[27] = cp1342_27
-	goto L1338
-L1338:
-	ex.V[230] = cp1339_230
-	goto L1335
-L1335:
-	ex.V[229] = cp1336_229
-	goto L1332
-L1332:
-	ex.V[228] = cp1333_228
-	goto L1329
-L1329:
-	ex.V[227] = cp1330_227
-	goto L1326
-L1326:
-	ex.V[226] = cp1327_226
-	goto L1324
-L1324:
-	ex.V[27] = cp1325_27
-	ex.V[226] = cp1325_226
-	ex.V[227] = cp1325_227
-	ex.V[228] = cp1325_228
-	ex.V[229] = cp1325_229
-	ex.V[230] = cp1325_230
-	goto L1322
-L1322:
-	ex.V[27] = cp1323_27
-	ex.V[226] = cp1323_226
-	ex.V[227] = cp1323_227
-	ex.V[228] = cp1323_228
-	ex.V[229] = cp1323_229
-	ex.V[230] = cp1323_230
-	goto L1321
-L1321:
-	goto L1317
-L1320:
+	ex.DebugEndCondition(&definition, false)
+	goto L1433
+L1435:
+	ex.DebugEndCondition(&definition, true)
+	goto L1408
+L1433:
+	goto L1432
+L1432:
+	ex.DebugBeginCondition(&definition, 378)
+	goto L1429
+L1429:
+	ex.V[27] = cp1430_27
+	goto L1426
+L1426:
+	ex.V[230] = cp1427_230
+	goto L1423
+L1423:
+	ex.V[229] = cp1424_229
+	goto L1420
+L1420:
+	ex.V[228] = cp1421_228
+	goto L1417
+L1417:
+	ex.V[227] = cp1418_227
+	goto L1414
+L1414:
+	ex.V[226] = cp1415_226
+	goto L1412
+L1412:
+	ex.V[27] = cp1413_27
+	ex.V[226] = cp1413_226
+	ex.V[227] = cp1413_227
+	ex.V[228] = cp1413_228
+	ex.V[229] = cp1413_229
+	ex.V[230] = cp1413_230
+	ex.DebugEndCondition(&definition, false)
+	goto L1410
+L1410:
+	ex.V[27] = cp1411_27
+	ex.V[226] = cp1411_226
+	ex.V[227] = cp1411_227
+	ex.V[228] = cp1411_228
+	ex.V[229] = cp1411_229
+	ex.V[230] = cp1411_230
+	ex.DebugEndCondition(&definition, false)
+	goto L1409
+L1409:
+	ex.DebugEndBranch(&definition, false)
+	goto L1405
+L1408:
 	if !ex.PushBranch(&bc39) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1347:
+	ex.DebugCapturePendingTask(39)
+L1437:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -9143,17 +14733,22 @@ L1347:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1319
+		goto L1407
 	}
-	goto L1348
-L1319:
+	goto L1438
+L1407:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1347
-L1348:
+	goto L1437
+L1438:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1317:
+L1405:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -9235,6 +14830,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 18:
@@ -9275,6 +14871,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 		result = ex.Run(method35)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -9283,8 +14880,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

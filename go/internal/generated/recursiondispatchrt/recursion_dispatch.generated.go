@@ -127,6 +127,472 @@ func init() {
 			{Name: "visit", Source: callterm.Source{Domain: "recursion_dispatch", File: "Domains/Test/recursion_dispatch.domain", Line: 27, Column: 20}},
 		},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Test/recursion_dispatch.domain",
+		Strings: []string{
+			"recursion_dispatch::non_tail",
+			"run",
+			"depth",
+			"count",
+			"?count",
+			"descend",
+			"recursion_dispatch::descend",
+			"inp_count",
+			"?inp_count",
+			"step",
+			"0",
+			"before",
+			"!before",
+			"",
+			"(--)",
+			"(-- ?inp_count)",
+			"after",
+			"!after",
+			"done",
+			"leaf",
+			"!leaf",
+			"recursion_dispatch::mutual",
+			"even_step",
+			"recursion_dispatch::even_step",
+			"odd_step",
+			"even",
+			"!even",
+			"recursion_dispatch::odd_step",
+			"odd",
+			"!odd",
+			"recursion_dispatch::deep_failure",
+			"attempt",
+			"discard",
+			"!discard",
+			"owned string",
+			"\"owned string\"",
+			"fail_down",
+			"fallback",
+			"!fallback",
+			"retained string",
+			"\"retained string\"",
+			"recursion_dispatch::fail_down",
+			"visit",
+			"unreachable",
+			"!unreachable",
+			"non_tail",
+			"mutual",
+			"deep_failure",
+		},
+		Values: []uint32{
+			1, 4, 3, 4, 0,
+			1, 4, 3, 4, 0,
+			1, 8, 7, 6, 1,
+			1, 8, 7, 7, 1,
+			0, 10, 10, 7, planner.NoIndex,
+			1, 8, 7, 8, 1,
+			0, 15, 13, 8, planner.NoIndex,
+			1, 8, 7, 8, 1,
+			1, 4, 3, 12, 0,
+			1, 4, 3, 12, 0,
+			1, 8, 7, 14, 1,
+			1, 8, 7, 15, 1,
+			0, 10, 10, 15, planner.NoIndex,
+			0, 15, 13, 15, planner.NoIndex,
+			1, 8, 7, 15, 1,
+			1, 8, 7, 18, 1,
+			1, 8, 7, 19, 1,
+			0, 10, 10, 19, planner.NoIndex,
+			0, 15, 13, 19, planner.NoIndex,
+			1, 8, 7, 19, 1,
+			1, 4, 3, 23, 0,
+			2, 35, 34, 23, planner.NoIndex,
+			1, 4, 3, 23, 0,
+			2, 40, 39, 24, planner.NoIndex,
+			1, 8, 7, 26, 1,
+			1, 8, 7, 27, 1,
+			1, 8, 7, 27, 1,
+			0, 10, 10, 27, planner.NoIndex,
+			1, 8, 7, 28, 1,
+			0, 15, 13, 28, planner.NoIndex,
+			1, 4, 3, 4, 0,
+			1, 4, 3, 4, 0,
+			1, 8, 7, 6, 1,
+			1, 8, 7, 7, 1,
+			0, 10, 10, 7, planner.NoIndex,
+			1, 8, 7, 8, 1,
+			0, 15, 13, 8, planner.NoIndex,
+			1, 8, 7, 8, 1,
+			1, 4, 3, 12, 0,
+			1, 4, 3, 12, 0,
+			1, 8, 7, 14, 1,
+			1, 8, 7, 15, 1,
+			0, 10, 10, 15, planner.NoIndex,
+			0, 15, 13, 15, planner.NoIndex,
+			1, 8, 7, 15, 1,
+			1, 8, 7, 18, 1,
+			1, 8, 7, 19, 1,
+			0, 10, 10, 19, planner.NoIndex,
+			0, 15, 13, 19, planner.NoIndex,
+			1, 8, 7, 19, 1,
+			1, 4, 3, 23, 0,
+			2, 35, 34, 23, planner.NoIndex,
+			1, 4, 3, 23, 0,
+			2, 40, 39, 24, planner.NoIndex,
+			1, 8, 7, 26, 1,
+			1, 8, 7, 27, 1,
+			1, 8, 7, 27, 1,
+			0, 10, 10, 27, planner.NoIndex,
+			1, 8, 7, 28, 1,
+			0, 15, 13, 28, planner.NoIndex,
+		},
+		VariableStringIDs: []uint32{
+			3,
+			7,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 0, 1, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 2, 0, 1, 0, 0, planner.NoIndex, 0, 4, 0,
+			2, planner.NoIndex, 0, 0, 1, 1, planner.NoIndex, planner.NoIndex, 7, 0,
+			8, 4, 3, 2, 1, 0, planner.NoIndex, planner.NoIndex, 7, 0,
+			2, planner.NoIndex, 0, 0, 2, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 2, 8, 1, 2, 0, planner.NoIndex, 0, 12, 0,
+			2, planner.NoIndex, 0, 0, 3, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 4, 11, 2, 3, 0, planner.NoIndex, planner.NoIndex, 15, 0,
+			2, planner.NoIndex, 0, 0, 4, 1, planner.NoIndex, planner.NoIndex, 19, 0,
+			8, 4, 16, 2, 4, 0, planner.NoIndex, planner.NoIndex, 19, 0,
+			2, planner.NoIndex, 0, 0, 5, 1, planner.NoIndex, planner.NoIndex, 23, 0,
+			0, 2, 20, 1, 5, 0, planner.NoIndex, 0, 23, 0,
+			2, planner.NoIndex, 0, 0, 6, 2, planner.NoIndex, planner.NoIndex, 27, 0,
+			6, 42, 25, 1, 6, 0, planner.NoIndex, 0, 27, 0,
+			8, 4, 26, 2, 6, 0, planner.NoIndex, planner.NoIndex, 27, 0,
+			2, planner.NoIndex, 0, 0, 8, 1, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 2, 30, 1, 8, 0, planner.NoIndex, 0, 4, 0,
+			2, planner.NoIndex, 0, 0, 9, 1, planner.NoIndex, planner.NoIndex, 7, 0,
+			8, 4, 33, 2, 9, 0, planner.NoIndex, planner.NoIndex, 7, 0,
+			2, planner.NoIndex, 0, 0, 10, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 2, 38, 1, 10, 0, planner.NoIndex, 0, 12, 0,
+			2, planner.NoIndex, 0, 0, 11, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 4, 41, 2, 11, 0, planner.NoIndex, planner.NoIndex, 15, 0,
+			2, planner.NoIndex, 0, 0, 12, 1, planner.NoIndex, planner.NoIndex, 19, 0,
+			8, 4, 46, 2, 12, 0, planner.NoIndex, planner.NoIndex, 19, 0,
+			2, planner.NoIndex, 0, 0, 13, 1, planner.NoIndex, planner.NoIndex, 23, 0,
+			0, 2, 50, 1, 13, 0, planner.NoIndex, 0, 23, 0,
+			2, planner.NoIndex, 0, 0, 14, 2, planner.NoIndex, planner.NoIndex, 27, 0,
+			6, 42, 55, 1, 14, 0, planner.NoIndex, 0, 27, 0,
+			8, 4, 56, 2, 14, 0, planner.NoIndex, planner.NoIndex, 27, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(call visit ?inp_count)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(> ?inp_count 0)",
+			"(and ...)",
+			"(depth ?count)",
+			"(and ...)",
+			"(call visit ?inp_count)",
+			"(> ?inp_count 0)",
+		},
+		ConditionChildRefs: []uint32{
+			1,
+			3,
+			5,
+			7,
+			9,
+			11,
+			13,
+			14,
+			16,
+			18,
+			20,
+			22,
+			24,
+			26,
+			28,
+			29,
+		},
+		Tasks: []uint32{
+			0, 5, 1, 1, 4, planner.NoIndex,
+			1, 11, 5, 1, 8, 12,
+			0, 5, 6, 1, 8, planner.NoIndex,
+			1, 16, 7, 1, 8, 17,
+			1, 19, 8, 0, 9, 20,
+			0, 22, 9, 1, 12, planner.NoIndex,
+			0, 24, 13, 1, 15, planner.NoIndex,
+			1, 25, 14, 1, 15, 26,
+			1, 19, 15, 0, 16, 20,
+			0, 22, 18, 1, 19, planner.NoIndex,
+			1, 28, 19, 1, 19, 29,
+			1, 19, 20, 0, 20, 20,
+			1, 32, 21, 1, 23, 33,
+			0, 36, 22, 1, 23, planner.NoIndex,
+			1, 37, 23, 1, 24, 38,
+			1, 32, 28, 1, 28, 33,
+			0, 36, 29, 1, 28, planner.NoIndex,
+			1, 43, 30, 0, 28, 44,
+			0, 5, 31, 1, 4, planner.NoIndex,
+			1, 11, 35, 1, 8, 12,
+			0, 5, 36, 1, 8, planner.NoIndex,
+			1, 16, 37, 1, 8, 17,
+			1, 19, 38, 0, 9, 20,
+			0, 22, 39, 1, 12, planner.NoIndex,
+			0, 24, 43, 1, 15, planner.NoIndex,
+			1, 25, 44, 1, 15, 26,
+			1, 19, 45, 0, 16, 20,
+			0, 22, 48, 1, 19, planner.NoIndex,
+			1, 28, 49, 1, 19, 29,
+			1, 19, 50, 0, 20, 20,
+			1, 32, 51, 1, 23, 33,
+			0, 36, 52, 1, 23, planner.NoIndex,
+			1, 37, 53, 1, 24, 38,
+			1, 32, 58, 1, 28, 33,
+			0, 36, 59, 1, 28, planner.NoIndex,
+			1, 43, 60, 0, 28, 44,
+		},
+		Branches: []uint32{
+			1, 0, 0, 1, 4,
+			9, 2, 1, 3, 7,
+			18, planner.NoIndex, 4, 1, 9,
+			1, 4, 5, 1, 12,
+			9, 6, 6, 2, 15,
+			18, planner.NoIndex, 8, 1, 16,
+			9, 8, 9, 2, 19,
+			18, planner.NoIndex, 11, 1, 20,
+			31, 10, 12, 2, 23,
+			37, planner.NoIndex, 14, 1, 24,
+			9, 12, 15, 3, 27,
+			1, 15, 18, 1, 4,
+			9, 17, 19, 3, 7,
+			18, planner.NoIndex, 22, 1, 9,
+			1, 19, 23, 1, 12,
+			9, 21, 24, 2, 15,
+			18, planner.NoIndex, 26, 1, 16,
+			9, 23, 27, 2, 19,
+			18, planner.NoIndex, 29, 1, 20,
+			31, 25, 30, 2, 23,
+			37, planner.NoIndex, 32, 1, 24,
+			9, 27, 33, 3, 27,
+		},
+		Methods: []uint64{
+			0, 0, 0, 0, 1, 3, 0x1, 0x0, 0x0, 0x0,
+			6, 2, 1, 1, 2, 6, 0x2, 0x0, 0x0, 0x0,
+			21, 8, 0, 3, 1, 11, 0x1, 0x0, 0x0, 0x0,
+			23, 10, 1, 4, 2, 14, 0x2, 0x0, 0x0, 0x0,
+			27, 15, 1, 6, 2, 18, 0x2, 0x0, 0x0, 0x0,
+			30, 20, 0, 8, 2, 22, 0x1, 0x0, 0x0, 0x0,
+			41, 24, 1, 10, 1, 26, 0x2, 0x0, 0x0, 0x0,
+			45, 30, 0, 11, 1, 3, 0x1, 0x0, 0x0, 0x0,
+			5, 32, 1, 12, 2, 6, 0x2, 0x0, 0x0, 0x0,
+			46, 38, 0, 14, 1, 11, 0x1, 0x0, 0x0, 0x0,
+			22, 40, 1, 15, 2, 14, 0x2, 0x0, 0x0, 0x0,
+			24, 45, 1, 17, 2, 18, 0x2, 0x0, 0x0, 0x0,
+			47, 50, 0, 19, 2, 22, 0x1, 0x0, 0x0, 0x0,
+			36, 54, 1, 21, 1, 26, 0x2, 0x0, 0x0, 0x0,
+		},
+		Axioms:            []uint64{},
+		Constants:         []uint32{},
+		CallTermSlotCount: 1,
+		FactSlotCount:     1,
+		SourceFiles: []string{
+			"Domains/Test/recursion_dispatch.domain",
+		},
+		ValueSources: []uint32{
+			0, 4, 26, 4, 32,
+			0, 4, 45, 4, 51,
+			0, 6, 23, 6, 33,
+			0, 7, 23, 7, 33,
+			0, 7, 34, 7, 35,
+			0, 8, 23, 8, 33,
+			0, 8, 44, 8, 58,
+			0, 8, 69, 8, 79,
+			0, 12, 26, 12, 32,
+			0, 12, 47, 12, 53,
+			0, 14, 25, 14, 35,
+			0, 15, 23, 15, 33,
+			0, 15, 34, 15, 35,
+			0, 15, 49, 15, 63,
+			0, 15, 73, 15, 83,
+			0, 18, 24, 18, 34,
+			0, 19, 23, 19, 33,
+			0, 19, 34, 19, 35,
+			0, 19, 50, 19, 64,
+			0, 19, 73, 19, 83,
+			0, 23, 30, 23, 36,
+			0, 23, 50, 23, 64,
+			0, 23, 77, 23, 83,
+			0, 24, 34, 24, 51,
+			0, 26, 25, 26, 35,
+			0, 27, 32, 27, 42,
+			0, 27, 47, 27, 57,
+			0, 27, 58, 27, 59,
+			0, 28, 24, 28, 34,
+			0, 28, 47, 28, 61,
+			0, 4, 26, 4, 32,
+			0, 4, 45, 4, 51,
+			0, 6, 23, 6, 33,
+			0, 7, 23, 7, 33,
+			0, 7, 34, 7, 35,
+			0, 8, 23, 8, 33,
+			0, 8, 44, 8, 58,
+			0, 8, 69, 8, 79,
+			0, 12, 26, 12, 32,
+			0, 12, 47, 12, 53,
+			0, 14, 25, 14, 35,
+			0, 15, 23, 15, 33,
+			0, 15, 34, 15, 35,
+			0, 15, 49, 15, 63,
+			0, 15, 73, 15, 83,
+			0, 18, 24, 18, 34,
+			0, 19, 23, 19, 33,
+			0, 19, 34, 19, 35,
+			0, 19, 50, 19, 64,
+			0, 19, 73, 19, 83,
+			0, 23, 30, 23, 36,
+			0, 23, 50, 23, 64,
+			0, 23, 77, 23, 83,
+			0, 24, 34, 24, 51,
+			0, 26, 25, 26, 35,
+			0, 27, 32, 27, 42,
+			0, 27, 47, 27, 57,
+			0, 27, 58, 27, 59,
+			0, 28, 24, 28, 34,
+			0, 28, 47, 28, 61,
+		},
+		ConditionSources: []uint32{
+			0, 4, 15, 4, 32,
+			0, 4, 19, 4, 32,
+			0, 7, 16, 7, 35,
+			0, 7, 21, 7, 35,
+			0, 12, 15, 12, 32,
+			0, 12, 19, 12, 32,
+			0, 15, 16, 15, 35,
+			0, 15, 21, 15, 35,
+			0, 19, 16, 19, 35,
+			0, 19, 21, 19, 35,
+			0, 23, 19, 23, 36,
+			0, 23, 23, 23, 36,
+			0, 27, 16, 27, 59,
+			0, 27, 20, 27, 42,
+			0, 27, 45, 27, 59,
+			0, 4, 15, 4, 32,
+			0, 4, 19, 4, 32,
+			0, 7, 16, 7, 35,
+			0, 7, 21, 7, 35,
+			0, 12, 15, 12, 32,
+			0, 12, 19, 12, 32,
+			0, 15, 16, 15, 35,
+			0, 15, 21, 15, 35,
+			0, 19, 16, 19, 35,
+			0, 19, 21, 19, 35,
+			0, 23, 19, 23, 36,
+			0, 23, 23, 23, 36,
+			0, 27, 16, 27, 59,
+			0, 27, 20, 27, 42,
+			0, 27, 45, 27, 59,
+		},
+		TaskSources: []uint32{
+			0, 4, 36, 4, 51,
+			0, 8, 14, 8, 33,
+			0, 8, 35, 8, 59,
+			0, 8, 61, 8, 79,
+			0, 9, 19, 9, 25,
+			0, 12, 36, 12, 53,
+			0, 15, 39, 15, 64,
+			0, 15, 66, 15, 83,
+			0, 16, 19, 16, 25,
+			0, 19, 39, 19, 65,
+			0, 19, 67, 19, 83,
+			0, 20, 19, 20, 25,
+			0, 23, 40, 23, 64,
+			0, 23, 66, 23, 83,
+			0, 24, 23, 24, 51,
+			0, 28, 14, 28, 34,
+			0, 28, 36, 28, 62,
+			0, 28, 64, 28, 77,
+			0, 4, 36, 4, 51,
+			0, 8, 14, 8, 33,
+			0, 8, 35, 8, 59,
+			0, 8, 61, 8, 79,
+			0, 9, 19, 9, 25,
+			0, 12, 36, 12, 53,
+			0, 15, 39, 15, 64,
+			0, 15, 66, 15, 83,
+			0, 16, 19, 16, 25,
+			0, 19, 39, 19, 65,
+			0, 19, 67, 19, 83,
+			0, 20, 19, 20, 25,
+			0, 23, 40, 23, 64,
+			0, 23, 66, 23, 83,
+			0, 24, 23, 24, 51,
+			0, 28, 14, 28, 34,
+			0, 28, 36, 28, 62,
+			0, 28, 64, 28, 77,
+		},
+		BranchSources: []uint32{
+			0, 4, 9, 4, 53,
+			0, 7, 9, 8, 81,
+			0, 9, 9, 9, 27,
+			0, 12, 9, 12, 55,
+			0, 15, 9, 15, 85,
+			0, 16, 9, 16, 27,
+			0, 19, 9, 19, 85,
+			0, 20, 9, 20, 27,
+			0, 23, 9, 23, 85,
+			0, 24, 9, 24, 53,
+			0, 27, 9, 28, 79,
+			0, 4, 9, 4, 53,
+			0, 7, 9, 8, 81,
+			0, 9, 9, 9, 27,
+			0, 12, 9, 12, 55,
+			0, 15, 9, 15, 85,
+			0, 16, 9, 16, 27,
+			0, 19, 9, 19, 85,
+			0, 20, 9, 20, 27,
+			0, 23, 9, 23, 85,
+			0, 24, 9, 24, 53,
+			0, 27, 9, 28, 79,
+		},
+		MethodSources: []uint32{
+			0, 3, 5, 5, 5,
+			0, 6, 5, 10, 5,
+			0, 11, 5, 13, 5,
+			0, 14, 5, 17, 5,
+			0, 18, 5, 21, 5,
+			0, 22, 5, 25, 5,
+			0, 26, 5, 29, 5,
+			0, 3, 5, 5, 5,
+			0, 6, 5, 10, 5,
+			0, 11, 5, 13, 5,
+			0, 14, 5, 17, 5,
+			0, 18, 5, 21, 5,
+			0, 22, 5, 25, 5,
+			0, 26, 5, 29, 5,
+		},
+		AxiomSources:    []uint32{},
+		ConstantSources: []uint32{},
+	})
 }
 
 func factChoice1(ex *planner.Exec, target uint32) bool {
@@ -251,11 +717,14 @@ func factChoice26(ex *planner.Exec, target uint32) bool {
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (descend ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -268,22 +737,29 @@ func task0(ex *planner.Exec) int {
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (!before ?inp_count)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (descend (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -296,33 +772,44 @@ func task2(ex *planner.Exec) int {
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (!after ?inp_count)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (even_step ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -335,11 +822,14 @@ func task5(ex *planner.Exec) int {
 
 func task6(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 6)
 	// (odd_step (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -352,33 +842,44 @@ func task6(ex *planner.Exec) int {
 
 func task7(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 7)
 	// (!even ?inp_count)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task8(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 8)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task9(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 9)
 	// (even_step (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -391,44 +892,59 @@ func task9(ex *planner.Exec) int {
 
 func task10(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 10)
 	// (!odd ?inp_count)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task11(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 11)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task12(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 12)
 	// (!discard "owned string")
 	if !ex.AppendPlanStep(sym6, []atom.Atom{sv3}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task13(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 13)
 	// (fail_down ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -441,33 +957,44 @@ func task13(ex *planner.Exec) int {
 
 func task14(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 14)
 	// (!fallback "retained string")
 	if !ex.AppendPlanStep(sym7, []atom.Atom{sv4}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task15(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 15)
 	// (!discard ?inp_count)
 	if !ex.AppendPlanStep(sym6, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task16(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 16)
 	// (fail_down (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -480,22 +1007,29 @@ func task16(ex *planner.Exec) int {
 
 func task17(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 17)
 	// (!unreachable)
 	if !ex.AppendPlanStep(sym8, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task18(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 18)
 	// (descend ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -508,22 +1042,29 @@ func task18(ex *planner.Exec) int {
 
 func task19(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 19)
 	// (!before ?inp_count)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task20(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 20)
 	// (descend (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -536,33 +1077,44 @@ func task20(ex *planner.Exec) int {
 
 func task21(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 21)
 	// (!after ?inp_count)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task22(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 22)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task23(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 23)
 	// (even_step ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -575,11 +1127,14 @@ func task23(ex *planner.Exec) int {
 
 func task24(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 24)
 	// (odd_step (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -592,33 +1147,44 @@ func task24(ex *planner.Exec) int {
 
 func task25(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 25)
 	// (!even ?inp_count)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task26(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 26)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task27(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 27)
 	// (even_step (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -631,44 +1197,59 @@ func task27(ex *planner.Exec) int {
 
 func task28(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 28)
 	// (!odd ?inp_count)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task29(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 29)
 	// (!leaf)
 	if !ex.AppendPlanStep(sym3, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task30(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 30)
 	// (!discard "owned string")
 	if !ex.AppendPlanStep(sym6, []atom.Atom{sv9}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task31(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 31)
 	// (fail_down ?count)
 	arg0 := ex.V[0]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -681,33 +1262,44 @@ func task31(ex *planner.Exec) int {
 
 func task32(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 32)
 	// (!fallback "retained string")
 	if !ex.AppendPlanStep(sym7, []atom.Atom{sv10}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task33(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 33)
 	// (!discard ?inp_count)
 	if !ex.AppendPlanStep(sym6, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task34(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 34)
 	// (fail_down (-- ?inp_count))
 	arg0 := planner.Arith(6, []atom.Atom{ex.V[1]})
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[1] = atom.Atom{}
@@ -720,12 +1312,16 @@ func task34(ex *planner.Exec) int {
 
 func task35(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 35)
 	// (!unreachable)
 	if !ex.AppendPlanStep(sym8, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -743,32 +1339,44 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch run
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (depth ?count))
 	cp7_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 0)
 	// (depth ?count)
 	cp9_0 = ex.V[0]
 	fc10 = 0
+	ex.DebugBeginCondition(&definition, 1)
 	fc10++
 	if !factChoice1(ex, fc10-1) {
+		ex.DebugEndCondition(&definition, false)
 		goto L8
 	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
 	goto L4
 L8:
 	ex.V[0] = cp9_0
 	goto L6
 L6:
 	ex.V[0] = cp7_0
+	ex.DebugEndCondition(&definition, false)
 	goto L5
 L5:
+	ex.DebugEndBranch(&definition, false)
 	goto L1
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L12:
+	ex.DebugCapturePendingTask(0)
+L13:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -778,15 +1386,20 @@ L12:
 		frame.ChildResult = 0
 		goto L3
 	}
-	goto L13
+	goto L14
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L12
-L13:
+	goto L13
+L14:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L1:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -796,36 +1409,50 @@ func method1(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L17
-	case 2:
 		goto L18
+	case 2:
+		goto L19
 	}
-	goto L15
-L15:
+	ex.DebugBeginMethod(&definition, 1)
+	goto L16
+L16:
 	// branch step
 	ex.SaveRetry(frame, ms1)
+	ex.DebugBeginBranch(&definition, 1)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 2)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 3)
 	if planner.Compare(ex.V[1], sv0, 4) {
-		goto L25
+		ex.DebugEndCondition(&definition, true)
+		goto L26
 	}
-	goto L23
-L25:
-	goto L19
-L23:
+	ex.DebugEndCondition(&definition, false)
+	goto L24
+L26:
+	ex.DebugEndCondition(&definition, true)
+	goto L20
+L24:
+	goto L22
+L22:
+	ex.DebugEndCondition(&definition, false)
 	goto L21
 L21:
-	goto L20
-L20:
 	ex.ReleaseRetry(frame)
-	goto L16
-L19:
+	ex.DebugEndBranch(&definition, false)
+	goto L17
+L20:
 	if !ex.PushBranch(&bc1) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L26:
+	ex.DebugCapturePendingTask(3)
+	ex.DebugCapturePendingTask(2)
+	ex.DebugCapturePendingTask(1)
+L28:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -833,34 +1460,45 @@ L26:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L17
+		goto L18
 	}
-	goto L27
-L17:
+	goto L29
+L18:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms1)
-		goto L16
+		ex.DebugEndBranch(&definition, false)
+		goto L17
 	}
-	goto L26
-L27:
-	ex.ReleaseRetry(frame)
-	return 1
-L16:
-	// branch done
 	goto L28
-L28:
+L29:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L17:
+	// branch done
+	ex.DebugBeginBranch(&definition, 2)
+	goto L30
+L30:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L30:
+	ex.DebugCapturePendingTask(4)
+L32:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -868,15 +1506,19 @@ L30:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L18
+		goto L19
 	}
-	goto L31
-L18:
+	goto L33
+L19:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L30
-L31:
+	goto L32
+L33:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -884,42 +1526,54 @@ L31:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp38_0 atom.Atom
 	var cp40_0 atom.Atom
-	var fc41 uint32
-	_ = cp38_0
+	var cp42_0 atom.Atom
+	var fc43 uint32
 	_ = cp40_0
-	_ = fc41
+	_ = cp42_0
+	_ = fc43
 	switch frame.Resume {
 	case 1:
-		goto L34
+		goto L36
 	}
-	goto L33
-L33:
-	// branch run
-	// (and (depth ?count))
-	cp38_0 = ex.V[0]
-	// (depth ?count)
-	cp40_0 = ex.V[0]
-	fc41 = 0
-	fc41++
-	if !factChoice5(ex, fc41-1) {
-		goto L39
-	}
+	ex.DebugBeginMethod(&definition, 2)
 	goto L35
+L35:
+	// branch run
+	ex.DebugBeginBranch(&definition, 3)
+	// (and (depth ?count))
+	cp40_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 4)
+	// (depth ?count)
+	cp42_0 = ex.V[0]
+	fc43 = 0
+	ex.DebugBeginCondition(&definition, 5)
+	fc43++
+	if !factChoice5(ex, fc43-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L41
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L37
+L41:
+	ex.V[0] = cp42_0
+	goto L39
 L39:
 	ex.V[0] = cp40_0
-	goto L37
+	ex.DebugEndCondition(&definition, false)
+	goto L38
+L38:
+	ex.DebugEndBranch(&definition, false)
+	goto L34
 L37:
-	ex.V[0] = cp38_0
-	goto L36
-L36:
-	goto L32
-L35:
 	if !ex.PushBranch(&bc3) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L43:
+	ex.DebugCapturePendingTask(5)
+L46:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -927,17 +1581,22 @@ L43:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L34
+		goto L36
 	}
-	goto L44
-L34:
+	goto L47
+L36:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L43
-L44:
+	goto L46
+L47:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L32:
+L34:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -947,36 +1606,49 @@ func method3(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L48
+		goto L51
 	case 2:
-		goto L49
+		goto L52
 	}
-	goto L46
-L46:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L49
+L49:
 	// branch step
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 4)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 6)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 7)
 	if planner.Compare(ex.V[1], sv1, 4) {
-		goto L56
+		ex.DebugEndCondition(&definition, true)
+		goto L59
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L57
+L59:
+	ex.DebugEndCondition(&definition, true)
+	goto L53
+L57:
+	goto L55
+L55:
+	ex.DebugEndCondition(&definition, false)
 	goto L54
-L56:
-	goto L50
 L54:
-	goto L52
-L52:
-	goto L51
-L51:
 	ex.ReleaseRetry(frame)
-	goto L47
-L50:
+	ex.DebugEndBranch(&definition, false)
+	goto L50
+L53:
 	if !ex.PushBranch(&bc4) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L57:
+	ex.DebugCapturePendingTask(7)
+	ex.DebugCapturePendingTask(6)
+L61:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -984,34 +1656,45 @@ L57:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L48
+		goto L51
 	}
-	goto L58
-L48:
+	goto L62
+L51:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L47
+		ex.DebugEndBranch(&definition, false)
+		goto L50
 	}
-	goto L57
-L58:
+	goto L61
+L62:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L47:
+L50:
 	// branch done
-	goto L59
-L59:
+	ex.DebugBeginBranch(&definition, 5)
+	goto L63
+L63:
 	if !ex.PushBranch(&bc5) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L61:
+	ex.DebugCapturePendingTask(8)
+L65:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1019,15 +1702,19 @@ L61:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L49
+		goto L52
 	}
-	goto L62
-L49:
+	goto L66
+L52:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L61
-L62:
+	goto L65
+L66:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1037,36 +1724,49 @@ func method4(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L66
+		goto L70
 	case 2:
-		goto L67
+		goto L71
 	}
-	goto L64
-L64:
+	ex.DebugBeginMethod(&definition, 4)
+	goto L68
+L68:
 	// branch step
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 6)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 8)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 9)
 	if planner.Compare(ex.V[1], sv2, 4) {
-		goto L74
+		ex.DebugEndCondition(&definition, true)
+		goto L78
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L76
+L78:
+	ex.DebugEndCondition(&definition, true)
 	goto L72
+L76:
+	goto L74
 L74:
-	goto L68
-L72:
-	goto L70
-L70:
-	goto L69
-L69:
+	ex.DebugEndCondition(&definition, false)
+	goto L73
+L73:
 	ex.ReleaseRetry(frame)
-	goto L65
-L68:
+	ex.DebugEndBranch(&definition, false)
+	goto L69
+L72:
 	if !ex.PushBranch(&bc6) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L75:
+	ex.DebugCapturePendingTask(10)
+	ex.DebugCapturePendingTask(9)
+L80:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1074,34 +1774,45 @@ L75:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L66
+		goto L70
 	}
-	goto L76
-L66:
+	goto L81
+L70:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L65
+		ex.DebugEndBranch(&definition, false)
+		goto L69
 	}
-	goto L75
-L76:
+	goto L80
+L81:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L65:
+L69:
 	// branch done
-	goto L77
-L77:
+	ex.DebugBeginBranch(&definition, 7)
+	goto L82
+L82:
 	if !ex.PushBranch(&bc7) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L79:
+	ex.DebugCapturePendingTask(11)
+L84:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1109,15 +1820,19 @@ L79:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L67
+		goto L71
 	}
-	goto L80
-L67:
+	goto L85
+L71:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L79
-L80:
+	goto L84
+L85:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1125,47 +1840,60 @@ L80:
 func method5(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp89_0 atom.Atom
-	var cp91_0 atom.Atom
-	var fc92 uint32
-	_ = cp89_0
-	_ = cp91_0
-	_ = fc92
+	var cp94_0 atom.Atom
+	var cp96_0 atom.Atom
+	var fc97 uint32
+	_ = cp94_0
+	_ = cp96_0
+	_ = fc97
 	switch frame.Resume {
 	case 1:
-		goto L84
+		goto L89
 	case 2:
-		goto L85
-	}
-	goto L82
-L82:
-	// branch attempt
-	ex.SaveRetry(frame, ms5)
-	// (and (depth ?count))
-	cp89_0 = ex.V[0]
-	// (depth ?count)
-	cp91_0 = ex.V[0]
-	fc92 = 0
-	fc92++
-	if !factChoice11(ex, fc92-1) {
 		goto L90
 	}
-	goto L86
-L90:
-	ex.V[0] = cp91_0
-	goto L88
-L88:
-	ex.V[0] = cp89_0
+	ex.DebugBeginMethod(&definition, 5)
 	goto L87
 L87:
+	// branch attempt
+	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 8)
+	// (and (depth ?count))
+	cp94_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 10)
+	// (depth ?count)
+	cp96_0 = ex.V[0]
+	fc97 = 0
+	ex.DebugBeginCondition(&definition, 11)
+	fc97++
+	if !factChoice11(ex, fc97-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L95
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L91
+L95:
+	ex.V[0] = cp96_0
+	goto L93
+L93:
+	ex.V[0] = cp94_0
+	ex.DebugEndCondition(&definition, false)
+	goto L92
+L92:
 	ex.ReleaseRetry(frame)
-	goto L83
-L86:
+	ex.DebugEndBranch(&definition, false)
+	goto L88
+L91:
 	if !ex.PushBranch(&bc8) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L94:
+	ex.DebugCapturePendingTask(13)
+	ex.DebugCapturePendingTask(12)
+L100:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1173,34 +1901,45 @@ L94:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L84
+		goto L89
 	}
-	goto L95
-L84:
+	goto L101
+L89:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L83
+		ex.DebugEndBranch(&definition, false)
+		goto L88
 	}
-	goto L94
-L95:
+	goto L100
+L101:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L83:
+L88:
 	// branch fallback
-	goto L96
-L96:
+	ex.DebugBeginBranch(&definition, 9)
+	goto L102
+L102:
 	if !ex.PushBranch(&bc9) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L98:
+	ex.DebugCapturePendingTask(14)
+L104:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1208,15 +1947,19 @@ L98:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L85
+		goto L90
 	}
-	goto L99
-L85:
+	goto L105
+L90:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L98
-L99:
+	goto L104
+L105:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1226,40 +1969,57 @@ func method6(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L102
+		goto L108
 	}
-	goto L101
-L101:
-	// branch step
-	// (and (call visit ?inp_count) (> ?inp_count 0))
-	// (call visit ?inp_count)
-	// (call visit ?inp_count)
-	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[1]}, &cs0, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L109
-	}
-	goto L107
-L109:
-	// (> ?inp_count 0)
-	// (> ?inp_count 0)
-	if planner.Compare(ex.V[1], sv5, 4) {
-		goto L112
-	}
-	goto L110
-L112:
-	goto L103
-L110:
+	ex.DebugBeginMethod(&definition, 6)
 	goto L107
 L107:
-	goto L105
-L105:
-	goto L104
-L104:
-	goto L100
-L103:
+	// branch step
+	ex.DebugBeginBranch(&definition, 10)
+	// (and (call visit ?inp_count) (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 12)
+	// (call visit ?inp_count)
+	// (call visit ?inp_count)
+	ex.DebugBeginCondition(&definition, 13)
+	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[1]}, &cs0, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
+		ex.DebugEndCondition(&definition, true)
+		goto L115
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L113
+L115:
+	// (> ?inp_count 0)
+	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 14)
+	if planner.Compare(ex.V[1], sv5, 4) {
+		ex.DebugEndCondition(&definition, true)
+		goto L118
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L116
+L118:
+	ex.DebugEndCondition(&definition, true)
+	goto L109
+L116:
+	goto L113
+L113:
+	goto L111
+L111:
+	ex.DebugEndCondition(&definition, false)
+	goto L110
+L110:
+	ex.DebugEndBranch(&definition, false)
+	goto L106
+L109:
 	if !ex.PushBranch(&bc10) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L113:
+	ex.DebugCapturePendingTask(17)
+	ex.DebugCapturePendingTask(16)
+	ex.DebugCapturePendingTask(15)
+L120:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1267,17 +2027,22 @@ L113:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L102
+		goto L108
 	}
-	goto L114
-L102:
+	goto L121
+L108:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L113
-L114:
+	goto L120
+L121:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L100:
+L106:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1285,42 +2050,54 @@ L100:
 func method7(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp121_0 atom.Atom
-	var cp123_0 atom.Atom
-	var fc124 uint32
-	_ = cp121_0
-	_ = cp123_0
-	_ = fc124
+	var cp128_0 atom.Atom
+	var cp130_0 atom.Atom
+	var fc131 uint32
+	_ = cp128_0
+	_ = cp130_0
+	_ = fc131
 	switch frame.Resume {
 	case 1:
-		goto L117
+		goto L124
 	}
-	goto L116
-L116:
+	ex.DebugBeginMethod(&definition, 7)
+	goto L123
+L123:
 	// branch run
+	ex.DebugBeginBranch(&definition, 11)
 	// (and (depth ?count))
-	cp121_0 = ex.V[0]
+	cp128_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 15)
 	// (depth ?count)
-	cp123_0 = ex.V[0]
-	fc124 = 0
-	fc124++
-	if !factChoice16(ex, fc124-1) {
-		goto L122
+	cp130_0 = ex.V[0]
+	fc131 = 0
+	ex.DebugBeginCondition(&definition, 16)
+	fc131++
+	if !factChoice16(ex, fc131-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L129
 	}
-	goto L118
-L122:
-	ex.V[0] = cp123_0
-	goto L120
-L120:
-	ex.V[0] = cp121_0
-	goto L119
-L119:
-	goto L115
-L118:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L125
+L129:
+	ex.V[0] = cp130_0
+	goto L127
+L127:
+	ex.V[0] = cp128_0
+	ex.DebugEndCondition(&definition, false)
+	goto L126
+L126:
+	ex.DebugEndBranch(&definition, false)
+	goto L122
+L125:
 	if !ex.PushBranch(&bc11) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L126:
+	ex.DebugCapturePendingTask(18)
+L134:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1328,17 +2105,22 @@ L126:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L117
+		goto L124
 	}
-	goto L127
-L117:
+	goto L135
+L124:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L126
-L127:
+	goto L134
+L135:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L115:
+L122:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1348,36 +2130,50 @@ func method8(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L131
+		goto L139
 	case 2:
-		goto L132
+		goto L140
 	}
-	goto L129
-L129:
+	ex.DebugBeginMethod(&definition, 8)
+	goto L137
+L137:
 	// branch step
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 12)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 17)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 18)
 	if planner.Compare(ex.V[1], sv6, 4) {
-		goto L139
+		ex.DebugEndCondition(&definition, true)
+		goto L147
 	}
-	goto L137
-L139:
-	goto L133
-L137:
-	goto L135
-L135:
-	goto L134
-L134:
+	ex.DebugEndCondition(&definition, false)
+	goto L145
+L147:
+	ex.DebugEndCondition(&definition, true)
+	goto L141
+L145:
+	goto L143
+L143:
+	ex.DebugEndCondition(&definition, false)
+	goto L142
+L142:
 	ex.ReleaseRetry(frame)
-	goto L130
-L133:
+	ex.DebugEndBranch(&definition, false)
+	goto L138
+L141:
 	if !ex.PushBranch(&bc12) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L140:
+	ex.DebugCapturePendingTask(21)
+	ex.DebugCapturePendingTask(20)
+	ex.DebugCapturePendingTask(19)
+L149:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1385,34 +2181,45 @@ L140:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L131
+		goto L139
 	}
-	goto L141
-L131:
+	goto L150
+L139:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L130
+		ex.DebugEndBranch(&definition, false)
+		goto L138
 	}
-	goto L140
-L141:
+	goto L149
+L150:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L130:
+L138:
 	// branch done
-	goto L142
-L142:
+	ex.DebugBeginBranch(&definition, 13)
+	goto L151
+L151:
 	if !ex.PushBranch(&bc13) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L144:
+	ex.DebugCapturePendingTask(22)
+L153:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1420,15 +2227,19 @@ L144:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L132
+		goto L140
 	}
-	goto L145
-L132:
+	goto L154
+L140:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L144
-L145:
+	goto L153
+L154:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1436,42 +2247,54 @@ L145:
 func method9(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp152_0 atom.Atom
-	var cp154_0 atom.Atom
-	var fc155 uint32
-	_ = cp152_0
-	_ = cp154_0
-	_ = fc155
+	var cp161_0 atom.Atom
+	var cp163_0 atom.Atom
+	var fc164 uint32
+	_ = cp161_0
+	_ = cp163_0
+	_ = fc164
 	switch frame.Resume {
 	case 1:
-		goto L148
+		goto L157
 	}
-	goto L147
-L147:
+	ex.DebugBeginMethod(&definition, 9)
+	goto L156
+L156:
 	// branch run
+	ex.DebugBeginBranch(&definition, 14)
 	// (and (depth ?count))
-	cp152_0 = ex.V[0]
+	cp161_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 19)
 	// (depth ?count)
-	cp154_0 = ex.V[0]
-	fc155 = 0
-	fc155++
-	if !factChoice20(ex, fc155-1) {
-		goto L153
+	cp163_0 = ex.V[0]
+	fc164 = 0
+	ex.DebugBeginCondition(&definition, 20)
+	fc164++
+	if !factChoice20(ex, fc164-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L162
 	}
-	goto L149
-L153:
-	ex.V[0] = cp154_0
-	goto L151
-L151:
-	ex.V[0] = cp152_0
-	goto L150
-L150:
-	goto L146
-L149:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L158
+L162:
+	ex.V[0] = cp163_0
+	goto L160
+L160:
+	ex.V[0] = cp161_0
+	ex.DebugEndCondition(&definition, false)
+	goto L159
+L159:
+	ex.DebugEndBranch(&definition, false)
+	goto L155
+L158:
 	if !ex.PushBranch(&bc14) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L157:
+	ex.DebugCapturePendingTask(23)
+L167:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1479,17 +2302,22 @@ L157:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L148
+		goto L157
 	}
-	goto L158
-L148:
+	goto L168
+L157:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L157
-L158:
+	goto L167
+L168:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L146:
+L155:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1499,36 +2327,49 @@ func method10(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L162
+		goto L172
 	case 2:
-		goto L163
+		goto L173
 	}
-	goto L160
-L160:
+	ex.DebugBeginMethod(&definition, 10)
+	goto L170
+L170:
 	// branch step
 	ex.SaveRetry(frame, ms10)
+	ex.DebugBeginBranch(&definition, 15)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 21)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 22)
 	if planner.Compare(ex.V[1], sv7, 4) {
-		goto L170
+		ex.DebugEndCondition(&definition, true)
+		goto L180
 	}
-	goto L168
-L170:
-	goto L164
-L168:
-	goto L166
-L166:
-	goto L165
-L165:
+	ex.DebugEndCondition(&definition, false)
+	goto L178
+L180:
+	ex.DebugEndCondition(&definition, true)
+	goto L174
+L178:
+	goto L176
+L176:
+	ex.DebugEndCondition(&definition, false)
+	goto L175
+L175:
 	ex.ReleaseRetry(frame)
-	goto L161
-L164:
+	ex.DebugEndBranch(&definition, false)
+	goto L171
+L174:
 	if !ex.PushBranch(&bc15) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L171:
+	ex.DebugCapturePendingTask(25)
+	ex.DebugCapturePendingTask(24)
+L182:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1536,34 +2377,45 @@ L171:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L162
+		goto L172
 	}
-	goto L172
-L162:
+	goto L183
+L172:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms10)
-		goto L161
+		ex.DebugEndBranch(&definition, false)
+		goto L171
 	}
-	goto L171
-L172:
+	goto L182
+L183:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L161:
+L171:
 	// branch done
-	goto L173
-L173:
+	ex.DebugBeginBranch(&definition, 16)
+	goto L184
+L184:
 	if !ex.PushBranch(&bc16) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L175:
+	ex.DebugCapturePendingTask(26)
+L186:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1571,15 +2423,19 @@ L175:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L163
+		goto L173
 	}
-	goto L176
-L163:
+	goto L187
+L173:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L175
-L176:
+	goto L186
+L187:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1589,36 +2445,49 @@ func method11(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L180
+		goto L191
 	case 2:
-		goto L181
+		goto L192
 	}
-	goto L178
-L178:
+	ex.DebugBeginMethod(&definition, 11)
+	goto L189
+L189:
 	// branch step
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 17)
 	// (and (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 23)
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 24)
 	if planner.Compare(ex.V[1], sv8, 4) {
-		goto L188
+		ex.DebugEndCondition(&definition, true)
+		goto L199
 	}
-	goto L186
-L188:
-	goto L182
-L186:
-	goto L184
-L184:
-	goto L183
-L183:
+	ex.DebugEndCondition(&definition, false)
+	goto L197
+L199:
+	ex.DebugEndCondition(&definition, true)
+	goto L193
+L197:
+	goto L195
+L195:
+	ex.DebugEndCondition(&definition, false)
+	goto L194
+L194:
 	ex.ReleaseRetry(frame)
-	goto L179
-L182:
+	ex.DebugEndBranch(&definition, false)
+	goto L190
+L193:
 	if !ex.PushBranch(&bc17) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L189:
+	ex.DebugCapturePendingTask(28)
+	ex.DebugCapturePendingTask(27)
+L201:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1626,34 +2495,45 @@ L189:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L180
+		goto L191
 	}
-	goto L190
-L180:
+	goto L202
+L191:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L179
+		ex.DebugEndBranch(&definition, false)
+		goto L190
 	}
-	goto L189
-L190:
+	goto L201
+L202:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L179:
+L190:
 	// branch done
-	goto L191
-L191:
+	ex.DebugBeginBranch(&definition, 18)
+	goto L203
+L203:
 	if !ex.PushBranch(&bc18) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L193:
+	ex.DebugCapturePendingTask(29)
+L205:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1661,15 +2541,19 @@ L193:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L181
+		goto L192
 	}
-	goto L194
-L181:
+	goto L206
+L192:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L193
-L194:
+	goto L205
+L206:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1677,47 +2561,60 @@ L194:
 func method12(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp203_0 atom.Atom
-	var cp205_0 atom.Atom
-	var fc206 uint32
-	_ = cp203_0
-	_ = cp205_0
-	_ = fc206
+	var cp215_0 atom.Atom
+	var cp217_0 atom.Atom
+	var fc218 uint32
+	_ = cp215_0
+	_ = cp217_0
+	_ = fc218
 	switch frame.Resume {
 	case 1:
-		goto L198
+		goto L210
 	case 2:
-		goto L199
+		goto L211
 	}
-	goto L196
-L196:
+	ex.DebugBeginMethod(&definition, 12)
+	goto L208
+L208:
 	// branch attempt
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 19)
 	// (and (depth ?count))
-	cp203_0 = ex.V[0]
+	cp215_0 = ex.V[0]
+	ex.DebugBeginCondition(&definition, 25)
 	// (depth ?count)
-	cp205_0 = ex.V[0]
-	fc206 = 0
-	fc206++
-	if !factChoice26(ex, fc206-1) {
-		goto L204
+	cp217_0 = ex.V[0]
+	fc218 = 0
+	ex.DebugBeginCondition(&definition, 26)
+	fc218++
+	if !factChoice26(ex, fc218-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L216
 	}
-	goto L200
-L204:
-	ex.V[0] = cp205_0
-	goto L202
-L202:
-	ex.V[0] = cp203_0
-	goto L201
-L201:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L212
+L216:
+	ex.V[0] = cp217_0
+	goto L214
+L214:
+	ex.V[0] = cp215_0
+	ex.DebugEndCondition(&definition, false)
+	goto L213
+L213:
 	ex.ReleaseRetry(frame)
-	goto L197
-L200:
+	ex.DebugEndBranch(&definition, false)
+	goto L209
+L212:
 	if !ex.PushBranch(&bc19) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L208:
+	ex.DebugCapturePendingTask(31)
+	ex.DebugCapturePendingTask(30)
+L221:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1725,34 +2622,45 @@ L208:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L198
+		goto L210
 	}
-	goto L209
-L198:
+	goto L222
+L210:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L197
+		ex.DebugEndBranch(&definition, false)
+		goto L209
 	}
-	goto L208
-L209:
+	goto L221
+L222:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L197:
+L209:
 	// branch fallback
-	goto L210
-L210:
+	ex.DebugBeginBranch(&definition, 20)
+	goto L223
+L223:
 	if !ex.PushBranch(&bc20) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L212:
+	ex.DebugCapturePendingTask(32)
+L225:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1760,15 +2668,19 @@ L212:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L199
+		goto L211
 	}
-	goto L213
-L199:
+	goto L226
+L211:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L212
-L213:
+	goto L225
+L226:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1778,40 +2690,57 @@ func method13(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L216
+		goto L229
 	}
-	goto L215
-L215:
+	ex.DebugBeginMethod(&definition, 13)
+	goto L228
+L228:
 	// branch step
+	ex.DebugBeginBranch(&definition, 21)
 	// (and (call visit ?inp_count) (> ?inp_count 0))
+	ex.DebugBeginCondition(&definition, 27)
 	// (call visit ?inp_count)
 	// (call visit ?inp_count)
+	ex.DebugBeginCondition(&definition, 28)
 	if result, ok := ex.Invoke(0, []atom.Atom{ex.V[1]}, &cs1, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L223
+		ex.DebugEndCondition(&definition, true)
+		goto L236
 	}
-	goto L221
-L223:
+	ex.DebugEndCondition(&definition, false)
+	goto L234
+L236:
 	// (> ?inp_count 0)
 	// (> ?inp_count 0)
+	ex.DebugBeginCondition(&definition, 29)
 	if planner.Compare(ex.V[1], sv11, 4) {
-		goto L226
+		ex.DebugEndCondition(&definition, true)
+		goto L239
 	}
-	goto L224
-L226:
-	goto L217
-L224:
-	goto L221
-L221:
-	goto L219
-L219:
-	goto L218
-L218:
-	goto L214
-L217:
+	ex.DebugEndCondition(&definition, false)
+	goto L237
+L239:
+	ex.DebugEndCondition(&definition, true)
+	goto L230
+L237:
+	goto L234
+L234:
+	goto L232
+L232:
+	ex.DebugEndCondition(&definition, false)
+	goto L231
+L231:
+	ex.DebugEndBranch(&definition, false)
+	goto L227
+L230:
 	if !ex.PushBranch(&bc21) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L227:
+	ex.DebugCapturePendingTask(35)
+	ex.DebugCapturePendingTask(34)
+	ex.DebugCapturePendingTask(33)
+L241:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1819,17 +2748,22 @@ L227:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L216
+		goto L229
 	}
-	goto L228
-L216:
+	goto L242
+L229:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L227
-L228:
+	goto L241
+L242:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L214:
+L227:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1866,6 +2800,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 7:
@@ -1876,6 +2811,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 		result = ex.Run(method12)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -1884,8 +2820,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

@@ -523,6 +523,4305 @@ func init() {
 		FactNames:            []string{"under_fire", "escort_route", "interaction_ready", "health", "retreat_route", "enemy_attacking", "stamina", "weapon_equipped", "enemy_staggered", "weapon_available", "enemy_suppressed", "flank_route", "ammo", "cover_available", "cover_compromised", "reserve_ammo", "clear_shot", "advance_route", "squad_alert", "track_route", "route_blocked_to", "alternate_investigation_route", "enemy_tracks", "escape_sound", "squad_search_route", "cover_at", "search_perimeter", "medkit_available", "ammo_cache", "weapon_jammed", "patrol_route", "patrol_checkpoint", "nearby_ally", "social_cooldown_ready", "assigned_post", "controlled_npc", "scripted_order", "visible_enemy", "hostile_enemy", "enemy_distance", "enemy_dead", "suspicious_stimulus", "combat_memory"},
 		CallTermRequirements: []callterm.Requirement{},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/AAACombatNPC.domain",
+		Strings: []string{
+			"aaa_orders::execute_scripted_order",
+			"inp_npc",
+			"?inp_npc",
+			"inp_order",
+			"?inp_order",
+			"inp_target",
+			"?inp_target",
+			"evacuate_under_fire",
+			"evacuate",
+			"under_fire",
+			"mark_order_started",
+			"!mark_order_started",
+			"deploy_smoke",
+			"!deploy_smoke",
+			"move_to_order_target",
+			"!move_to_order_target",
+			"mark_order_complete",
+			"!mark_order_complete",
+			"hold_position",
+			"hold",
+			"face_order_target",
+			"!face_order_target",
+			"!hold_position",
+			"escort",
+			"escort_route",
+			"route",
+			"?route",
+			"follow_escort_route",
+			"!follow_escort_route",
+			"guard",
+			"guard_target",
+			"!guard_target",
+			"interact",
+			"interaction_ready",
+			"interact_with",
+			"!interact_with",
+			"move",
+			"unknown_order",
+			"report_invalid_order",
+			"!report_invalid_order",
+			"aaa_combat::combat_tick",
+			"inp_enemy",
+			"?inp_enemy",
+			"inp_distance",
+			"?inp_distance",
+			"critical_retreat",
+			"health",
+			"hp",
+			"?hp",
+			"20",
+			"retreat_route",
+			"remember_enemy",
+			"!remember_enemy",
+			"throw_smoke",
+			"!throw_smoke",
+			"retreat_via",
+			"!retreat_via",
+			"melee",
+			"8",
+			"melee_tick",
+			"ranged",
+			"ranged_tick",
+			"aaa_combat::melee_tick",
+			"parry_counter",
+			"enemy_attacking",
+			"stamina",
+			"amount",
+			"?amount",
+			"30",
+			"weapon_equipped",
+			"face_enemy",
+			"!face_enemy",
+			"parry_attack",
+			"!parry_attack",
+			"counter_attack",
+			"!counter_attack",
+			"heavy_strike",
+			"enemy_staggered",
+			"45",
+			"heavy_melee_attack",
+			"!heavy_melee_attack",
+			"quick_strike",
+			"quick_melee_attack",
+			"!quick_melee_attack",
+			"draw_melee",
+			"weapon_available",
+			"switch_weapon",
+			"!switch_weapon",
+			"improvised_defense",
+			"dodge_enemy",
+			"!dodge_enemy",
+			"improvised_melee_attack",
+			"!improvised_melee_attack",
+			"aaa_combat::ranged_tick",
+			"flank_suppressed_target",
+			"enemy_suppressed",
+			"flank_route",
+			"ammo",
+			"count",
+			"?count",
+			"0",
+			"follow_flank_route",
+			"!follow_flank_route",
+			"aim_at",
+			"!aim_at",
+			"fire_burst",
+			"!fire_burst",
+			"take_cover_and_fire",
+			"cover_available",
+			"cover",
+			"?cover",
+			"cover_compromised",
+			"move_to_cover",
+			"!move_to_cover",
+			"peek_from_cover",
+			"!peek_from_cover",
+			"fire_controlled_burst",
+			"!fire_controlled_burst",
+			"reload_in_cover",
+			"reserve_ammo",
+			"reload_weapon",
+			"!reload_weapon",
+			"reload",
+			"precision_shot",
+			"clear_shot",
+			"fire_precision_shot",
+			"!fire_precision_shot",
+			"controlled_burst",
+			"switch_to_ranged",
+			"close_distance",
+			"advance_route",
+			"advance_under_cover",
+			"!advance_under_cover",
+			"suppress_enemy",
+			"!suppress_enemy",
+			"defensive_fallback",
+			"track_enemy",
+			"!track_enemy",
+			"seek_cover",
+			"!seek_cover",
+			"aaa_investigation::investigation_tick",
+			"inp_stimulus",
+			"?inp_stimulus",
+			"inp_location",
+			"?inp_location",
+			"radio_contact",
+			"radio",
+			"squad_alert",
+			"report",
+			"?report",
+			"acknowledge_radio_alert",
+			"!acknowledge_radio_alert",
+			"set_cautious_stance",
+			"!set_cautious_stance",
+			"move_to_investigation_point",
+			"!move_to_investigation_point",
+			"scan_sector",
+			"!scan_sector",
+			"gunshot_with_cover",
+			"gunshot",
+			"report_suspicious_sound",
+			"!report_suspicious_sound",
+			"footprints",
+			"track_route",
+			"inspect_tracks",
+			"!inspect_tracks",
+			"follow_track_route",
+			"!follow_track_route",
+			"visual_anomaly",
+			"anomaly",
+			"focus_attention",
+			"!focus_attention",
+			"inspect_anomaly",
+			"!inspect_anomaly",
+			"blocked_route",
+			"route_blocked_to",
+			"alternate_investigation_route",
+			"follow_investigation_route",
+			"!follow_investigation_route",
+			"generic",
+			"report_investigation_result",
+			"!report_investigation_result",
+			"aaa_search::search_tick",
+			"inp_last_location",
+			"?inp_last_location",
+			"fresh_tracks",
+			"enemy_tracks",
+			"announce_lost_enemy",
+			"!announce_lost_enemy",
+			"follow_enemy_tracks",
+			"!follow_enemy_tracks",
+			"heard_escape",
+			"escape_sound",
+			"location",
+			"?location",
+			"move_to_search_point",
+			"!move_to_search_point",
+			"search_with_squad",
+			"squad_search_route",
+			"coordinate_squad_search",
+			"!coordinate_squad_search",
+			"follow_search_route",
+			"!follow_search_route",
+			"last_known_cover",
+			"cover_at",
+			"clear_cover",
+			"!clear_cover",
+			"search_perimeter",
+			"last_known_position",
+			"report_search_progress",
+			"!report_search_progress",
+			"aaa_idle::idle_tick",
+			"injury_care",
+			"medkit_available",
+			"use_medkit",
+			"!use_medkit",
+			"check_equipment",
+			"!check_equipment",
+			"resupply_ammo",
+			"5",
+			"ammo_cache",
+			"cache",
+			"?cache",
+			"move_to_supply",
+			"!move_to_supply",
+			"!resupply_ammo",
+			"repair_weapon",
+			"weapon_jammed",
+			"weapon",
+			"?weapon",
+			"clear_weapon_jam",
+			"!clear_weapon_jam",
+			"patrol",
+			"patrol_route",
+			"patrol_checkpoint",
+			"point",
+			"?point",
+			"follow_patrol_route",
+			"!follow_patrol_route",
+			"inspect_checkpoint",
+			"!inspect_checkpoint",
+			"report_patrol_progress",
+			"!report_patrol_progress",
+			"socialize",
+			"nearby_ally",
+			"ally",
+			"?ally",
+			"social_cooldown_ready",
+			"greet_ally",
+			"!greet_ally",
+			"exchange_status",
+			"!exchange_status",
+			"guard_post",
+			"assigned_post",
+			"post",
+			"?post",
+			"move_to_guard_post",
+			"!move_to_guard_post",
+			"watch_post",
+			"!watch_post",
+			"rest",
+			"25",
+			"rest_briefly",
+			"!rest_briefly",
+			"check_surroundings",
+			"!check_surroundings",
+			"ambient_idle",
+			"play_idle_animation",
+			"!play_idle_animation",
+			"AAACombatNPC::run",
+			"high_priority_script",
+			"controlled_npc",
+			"npc",
+			"?npc",
+			"scripted_order",
+			"high",
+			"order",
+			"?order",
+			"target",
+			"?target",
+			"announce_state",
+			"!announce_state",
+			"high_order",
+			"\"high_order\"",
+			"execute_scripted_order",
+			"visible_combat",
+			"visible_enemy",
+			"enemy",
+			"?enemy",
+			"hostile_enemy",
+			"enemy_distance",
+			"distance",
+			"?distance",
+			"enemy_dead",
+			"other",
+			"?other",
+			"other_distance",
+			"?other_distance",
+			"combat",
+			"\"combat\"",
+			"combat_tick",
+			"medium_priority_script",
+			"medium",
+			"medium_order",
+			"\"medium_order\"",
+			"investigate_precombat",
+			"suspicious_stimulus",
+			"stimulus",
+			"?stimulus",
+			"combat_memory",
+			"lost_enemy",
+			"?lost_enemy",
+			"last_location",
+			"?last_location",
+			"investigation",
+			"\"investigation\"",
+			"investigation_tick",
+			"search_lost_enemy",
+			"search",
+			"\"search\"",
+			"search_tick",
+			"low_priority_script",
+			"low",
+			"low_order",
+			"\"low_order\"",
+			"idle",
+			"\"idle\"",
+			"idle_tick",
+			"no_npc",
+			"no_controlled_npc",
+			"\"no_controlled_npc\"",
+			"run",
+		},
+		Values: []uint32{
+			1, 2, 1, 3, 0,
+			1, 4, 3, 3, 1,
+			1, 6, 5, 3, 2,
+			1, 4, 3, 5, 1,
+			0, 8, 8, 5, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 2, 1, 6, 0,
+			1, 4, 3, 6, 1,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 8, 0,
+			1, 6, 5, 8, 2,
+			1, 2, 1, 9, 0,
+			1, 4, 3, 9, 1,
+			1, 4, 3, 12, 1,
+			0, 8, 8, 12, planner.NoIndex,
+			1, 2, 1, 13, 0,
+			1, 4, 3, 13, 1,
+			1, 2, 1, 14, 0,
+			1, 6, 5, 14, 2,
+			1, 2, 1, 15, 0,
+			1, 4, 3, 15, 1,
+			1, 4, 3, 18, 1,
+			0, 19, 19, 18, planner.NoIndex,
+			1, 2, 1, 19, 0,
+			1, 4, 3, 19, 1,
+			1, 2, 1, 20, 0,
+			1, 6, 5, 20, 2,
+			1, 2, 1, 21, 0,
+			1, 6, 5, 21, 2,
+			1, 4, 3, 24, 1,
+			0, 23, 23, 24, planner.NoIndex,
+			1, 2, 1, 24, 0,
+			1, 6, 5, 24, 2,
+			1, 26, 25, 24, 3,
+			1, 2, 1, 25, 0,
+			1, 4, 3, 25, 1,
+			1, 2, 1, 26, 0,
+			1, 6, 5, 26, 2,
+			1, 26, 25, 26, 3,
+			1, 4, 3, 29, 1,
+			0, 29, 29, 29, planner.NoIndex,
+			1, 2, 1, 30, 0,
+			1, 4, 3, 30, 1,
+			1, 2, 1, 31, 0,
+			1, 6, 5, 31, 2,
+			1, 4, 3, 34, 1,
+			0, 32, 32, 34, planner.NoIndex,
+			1, 6, 5, 34, 2,
+			1, 2, 1, 35, 0,
+			1, 6, 5, 35, 2,
+			1, 2, 1, 36, 0,
+			1, 6, 5, 36, 2,
+			1, 2, 1, 37, 0,
+			1, 4, 3, 37, 1,
+			1, 4, 3, 40, 1,
+			0, 36, 36, 40, planner.NoIndex,
+			1, 2, 1, 41, 0,
+			1, 6, 5, 41, 2,
+			1, 2, 1, 42, 0,
+			1, 4, 3, 42, 1,
+			1, 2, 1, 46, 0,
+			1, 4, 3, 46, 1,
+			1, 6, 5, 46, 2,
+			1, 2, 1, 2, 0,
+			1, 42, 41, 2, 4,
+			1, 44, 43, 2, 5,
+			1, 2, 1, 4, 0,
+			1, 48, 47, 4, 6,
+			1, 48, 47, 4, 6,
+			0, 49, 49, 4, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 26, 25, 5, 3,
+			1, 2, 1, 6, 0,
+			1, 42, 41, 6, 4,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 8, 0,
+			1, 26, 25, 8, 3,
+			1, 44, 43, 11, 5,
+			0, 58, 58, 11, planner.NoIndex,
+			1, 2, 1, 12, 0,
+			1, 42, 41, 12, 4,
+			1, 44, 43, 15, 5,
+			0, 58, 58, 15, planner.NoIndex,
+			1, 2, 1, 16, 0,
+			1, 42, 41, 16, 4,
+			1, 44, 43, 16, 5,
+			1, 2, 1, 20, 0,
+			1, 42, 41, 20, 4,
+			1, 42, 41, 22, 4,
+			1, 2, 1, 22, 0,
+			1, 67, 66, 22, 7,
+			1, 67, 66, 23, 7,
+			0, 68, 68, 23, planner.NoIndex,
+			1, 2, 1, 23, 0,
+			0, 57, 57, 23, planner.NoIndex,
+			1, 2, 1, 24, 0,
+			1, 42, 41, 24, 4,
+			1, 2, 1, 25, 0,
+			1, 42, 41, 25, 4,
+			1, 2, 1, 26, 0,
+			1, 42, 41, 26, 4,
+			1, 42, 41, 29, 4,
+			1, 2, 1, 29, 0,
+			1, 67, 66, 29, 7,
+			1, 67, 66, 30, 7,
+			0, 78, 78, 30, planner.NoIndex,
+			1, 2, 1, 30, 0,
+			0, 57, 57, 30, planner.NoIndex,
+			1, 2, 1, 31, 0,
+			1, 42, 41, 31, 4,
+			1, 2, 1, 34, 0,
+			0, 57, 57, 34, planner.NoIndex,
+			1, 2, 1, 35, 0,
+			1, 42, 41, 35, 4,
+			1, 2, 1, 36, 0,
+			1, 42, 41, 36, 4,
+			1, 2, 1, 39, 0,
+			0, 57, 57, 39, planner.NoIndex,
+			1, 2, 1, 40, 0,
+			0, 57, 57, 40, planner.NoIndex,
+			1, 2, 1, 41, 0,
+			1, 42, 41, 41, 4,
+			1, 2, 1, 45, 0,
+			1, 42, 41, 45, 4,
+			1, 2, 1, 46, 0,
+			1, 42, 41, 46, 4,
+			1, 2, 1, 50, 0,
+			1, 42, 41, 50, 4,
+			1, 44, 43, 50, 5,
+			1, 42, 41, 52, 4,
+			1, 2, 1, 52, 0,
+			1, 42, 41, 52, 4,
+			1, 26, 25, 52, 3,
+			1, 2, 1, 53, 0,
+			0, 60, 60, 53, planner.NoIndex,
+			1, 2, 1, 53, 0,
+			1, 99, 98, 53, 8,
+			1, 99, 98, 54, 8,
+			0, 100, 100, 54, planner.NoIndex,
+			1, 2, 1, 55, 0,
+			1, 26, 25, 55, 3,
+			1, 2, 1, 56, 0,
+			1, 42, 41, 56, 4,
+			1, 2, 1, 57, 0,
+			1, 42, 41, 57, 4,
+			1, 2, 1, 60, 0,
+			1, 2, 1, 60, 0,
+			1, 110, 109, 60, 9,
+			1, 110, 109, 61, 9,
+			1, 2, 1, 62, 0,
+			0, 60, 60, 62, planner.NoIndex,
+			1, 2, 1, 62, 0,
+			1, 99, 98, 62, 8,
+			1, 99, 98, 63, 8,
+			0, 100, 100, 63, planner.NoIndex,
+			1, 2, 1, 64, 0,
+			1, 110, 109, 64, 9,
+			1, 2, 1, 65, 0,
+			1, 42, 41, 65, 4,
+			1, 2, 1, 66, 0,
+			1, 42, 41, 66, 4,
+			1, 2, 1, 69, 0,
+			0, 60, 60, 69, planner.NoIndex,
+			1, 2, 1, 69, 0,
+			0, 100, 100, 69, planner.NoIndex,
+			1, 2, 1, 70, 0,
+			1, 99, 98, 70, 8,
+			1, 99, 98, 70, 8,
+			0, 100, 100, 70, planner.NoIndex,
+			1, 2, 1, 71, 0,
+			1, 110, 109, 71, 9,
+			1, 2, 1, 72, 0,
+			1, 110, 109, 72, 9,
+			1, 2, 1, 73, 0,
+			0, 60, 60, 73, planner.NoIndex,
+			1, 2, 1, 76, 0,
+			0, 60, 60, 76, planner.NoIndex,
+			1, 2, 1, 76, 0,
+			0, 100, 100, 76, planner.NoIndex,
+			1, 2, 1, 77, 0,
+			1, 99, 98, 77, 8,
+			1, 99, 98, 77, 8,
+			0, 100, 100, 77, planner.NoIndex,
+			1, 2, 1, 78, 0,
+			0, 60, 60, 78, planner.NoIndex,
+			1, 2, 1, 81, 0,
+			0, 60, 60, 81, planner.NoIndex,
+			1, 2, 1, 81, 0,
+			1, 99, 98, 81, 8,
+			1, 99, 98, 82, 8,
+			0, 100, 100, 82, planner.NoIndex,
+			1, 44, 43, 82, 5,
+			0, 68, 68, 82, planner.NoIndex,
+			1, 2, 1, 82, 0,
+			1, 42, 41, 82, 4,
+			1, 2, 1, 83, 0,
+			1, 42, 41, 83, 4,
+			1, 2, 1, 84, 0,
+			1, 42, 41, 84, 4,
+			1, 2, 1, 87, 0,
+			0, 60, 60, 87, planner.NoIndex,
+			1, 2, 1, 87, 0,
+			1, 99, 98, 87, 8,
+			1, 99, 98, 88, 8,
+			0, 100, 100, 88, planner.NoIndex,
+			1, 2, 1, 88, 0,
+			1, 42, 41, 88, 4,
+			1, 2, 1, 89, 0,
+			1, 42, 41, 89, 4,
+			1, 2, 1, 90, 0,
+			1, 42, 41, 90, 4,
+			1, 2, 1, 93, 0,
+			0, 60, 60, 93, planner.NoIndex,
+			1, 2, 1, 93, 0,
+			1, 99, 98, 93, 8,
+			1, 99, 98, 94, 8,
+			0, 100, 100, 94, planner.NoIndex,
+			1, 2, 1, 95, 0,
+			0, 60, 60, 95, planner.NoIndex,
+			1, 2, 1, 96, 0,
+			1, 42, 41, 96, 4,
+			1, 2, 1, 97, 0,
+			1, 42, 41, 97, 4,
+			1, 2, 1, 100, 0,
+			1, 42, 41, 100, 4,
+			1, 26, 25, 100, 3,
+			1, 2, 1, 101, 0,
+			1, 26, 25, 101, 3,
+			1, 2, 1, 102, 0,
+			1, 42, 41, 102, 4,
+			1, 2, 1, 106, 0,
+			1, 42, 41, 106, 4,
+			1, 2, 1, 107, 0,
+			1, 2, 1, 4, 0,
+			1, 142, 141, 4, 10,
+			1, 144, 143, 4, 11,
+			1, 142, 141, 6, 10,
+			0, 146, 146, 6, planner.NoIndex,
+			1, 2, 1, 6, 0,
+			1, 149, 148, 6, 12,
+			1, 2, 1, 7, 0,
+			1, 149, 148, 7, 12,
+			1, 2, 1, 8, 0,
+			1, 2, 1, 9, 0,
+			1, 144, 143, 9, 11,
+			1, 2, 1, 10, 0,
+			1, 144, 143, 10, 11,
+			1, 142, 141, 13, 10,
+			0, 159, 159, 13, planner.NoIndex,
+			1, 2, 1, 13, 0,
+			1, 110, 109, 13, 9,
+			1, 110, 109, 14, 9,
+			1, 2, 1, 15, 0,
+			1, 110, 109, 15, 9,
+			1, 2, 1, 16, 0,
+			1, 144, 143, 16, 11,
+			1, 2, 1, 17, 0,
+			1, 144, 143, 17, 11,
+			1, 142, 141, 20, 10,
+			0, 159, 159, 20, planner.NoIndex,
+			1, 2, 1, 21, 0,
+			1, 2, 1, 22, 0,
+			1, 144, 143, 22, 11,
+			1, 2, 1, 23, 0,
+			1, 144, 143, 23, 11,
+			1, 142, 141, 26, 10,
+			0, 162, 162, 26, planner.NoIndex,
+			1, 2, 1, 26, 0,
+			1, 144, 143, 26, 11,
+			1, 26, 25, 26, 3,
+			1, 2, 1, 27, 0,
+			1, 144, 143, 27, 11,
+			1, 2, 1, 28, 0,
+			1, 26, 25, 28, 3,
+			1, 2, 1, 29, 0,
+			1, 144, 143, 29, 11,
+			1, 142, 141, 32, 10,
+			0, 169, 169, 32, planner.NoIndex,
+			1, 2, 1, 33, 0,
+			1, 144, 143, 33, 11,
+			1, 2, 1, 34, 0,
+			1, 144, 143, 34, 11,
+			1, 2, 1, 35, 0,
+			1, 144, 143, 35, 11,
+			1, 2, 1, 38, 0,
+			1, 144, 143, 38, 11,
+			1, 2, 1, 39, 0,
+			1, 144, 143, 39, 11,
+			1, 26, 25, 39, 3,
+			1, 2, 1, 40, 0,
+			1, 26, 25, 40, 3,
+			1, 2, 1, 41, 0,
+			1, 144, 143, 41, 11,
+			1, 2, 1, 45, 0,
+			1, 2, 1, 46, 0,
+			1, 144, 143, 46, 11,
+			1, 2, 1, 47, 0,
+			1, 144, 143, 47, 11,
+			1, 2, 1, 48, 0,
+			1, 142, 141, 48, 10,
+			1, 144, 143, 48, 11,
+			1, 2, 1, 4, 0,
+			1, 42, 41, 4, 4,
+			1, 184, 183, 4, 13,
+			1, 2, 1, 6, 0,
+			1, 42, 41, 6, 4,
+			1, 26, 25, 6, 3,
+			1, 2, 1, 7, 0,
+			1, 42, 41, 7, 4,
+			1, 2, 1, 8, 0,
+			1, 26, 25, 8, 3,
+			1, 2, 1, 9, 0,
+			1, 184, 183, 9, 13,
+			1, 2, 1, 12, 0,
+			1, 42, 41, 12, 4,
+			1, 194, 193, 12, 14,
+			1, 2, 1, 13, 0,
+			1, 42, 41, 13, 4,
+			1, 2, 1, 14, 0,
+			1, 194, 193, 14, 14,
+			1, 2, 1, 15, 0,
+			1, 194, 193, 15, 14,
+			1, 2, 1, 18, 0,
+			1, 42, 41, 18, 4,
+			1, 26, 25, 18, 3,
+			1, 2, 1, 19, 0,
+			1, 42, 41, 19, 4,
+			1, 2, 1, 20, 0,
+			1, 26, 25, 20, 3,
+			1, 2, 1, 21, 0,
+			1, 184, 183, 21, 13,
+			1, 184, 183, 24, 13,
+			1, 110, 109, 24, 9,
+			1, 2, 1, 25, 0,
+			1, 184, 183, 25, 13,
+			1, 2, 1, 26, 0,
+			1, 110, 109, 26, 9,
+			1, 2, 1, 27, 0,
+			1, 184, 183, 27, 13,
+			1, 2, 1, 30, 0,
+			1, 184, 183, 30, 13,
+			1, 26, 25, 30, 3,
+			1, 2, 1, 31, 0,
+			1, 26, 25, 31, 3,
+			1, 2, 1, 32, 0,
+			1, 184, 183, 32, 13,
+			1, 2, 1, 36, 0,
+			1, 184, 183, 36, 13,
+			1, 2, 1, 37, 0,
+			1, 184, 183, 37, 13,
+			1, 2, 1, 38, 0,
+			1, 42, 41, 38, 4,
+			1, 2, 1, 2, 0,
+			1, 2, 1, 4, 0,
+			1, 48, 47, 4, 6,
+			1, 48, 47, 4, 6,
+			0, 78, 78, 4, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 2, 1, 6, 0,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 10, 0,
+			1, 99, 98, 10, 8,
+			1, 99, 98, 10, 8,
+			0, 219, 219, 10, planner.NoIndex,
+			1, 2, 1, 11, 0,
+			1, 222, 221, 11, 15,
+			1, 2, 1, 12, 0,
+			1, 222, 221, 12, 15,
+			1, 2, 1, 13, 0,
+			1, 222, 221, 13, 15,
+			1, 2, 1, 16, 0,
+			1, 229, 228, 16, 16,
+			1, 2, 1, 17, 0,
+			1, 229, 228, 17, 16,
+			1, 2, 1, 18, 0,
+			1, 2, 1, 21, 0,
+			1, 26, 25, 21, 3,
+			1, 2, 1, 21, 0,
+			1, 236, 235, 21, 17,
+			1, 2, 1, 22, 0,
+			1, 26, 25, 22, 3,
+			1, 2, 1, 23, 0,
+			1, 236, 235, 23, 17,
+			1, 2, 1, 24, 0,
+			1, 236, 235, 24, 17,
+			1, 2, 1, 27, 0,
+			1, 246, 245, 27, 18,
+			1, 2, 1, 27, 0,
+			1, 2, 1, 28, 0,
+			1, 246, 245, 28, 18,
+			1, 2, 1, 29, 0,
+			1, 246, 245, 29, 18,
+			1, 2, 1, 32, 0,
+			1, 255, 254, 32, 19,
+			1, 2, 1, 33, 0,
+			1, 255, 254, 33, 19,
+			1, 2, 1, 34, 0,
+			1, 255, 254, 34, 19,
+			1, 2, 1, 37, 0,
+			1, 67, 66, 37, 7,
+			1, 67, 66, 37, 7,
+			0, 261, 261, 37, planner.NoIndex,
+			1, 2, 1, 38, 0,
+			1, 2, 1, 39, 0,
+			1, 2, 1, 43, 0,
+			1, 2, 1, 44, 0,
+			1, 273, 272, 13, 20,
+			1, 273, 272, 14, 20,
+			0, 275, 275, 14, planner.NoIndex,
+			1, 277, 276, 14, 21,
+			1, 279, 278, 14, 22,
+			2, 283, 282, 17, planner.NoIndex,
+			1, 273, 272, 17, 20,
+			1, 273, 272, 18, 20,
+			1, 277, 276, 18, 21,
+			1, 279, 278, 18, 22,
+			1, 273, 272, 23, 20,
+			1, 273, 272, 24, 20,
+			1, 288, 287, 24, 23,
+			1, 288, 287, 25, 23,
+			1, 273, 272, 26, 20,
+			1, 288, 287, 26, 23,
+			1, 292, 291, 26, 24,
+			1, 288, 287, 27, 23,
+			1, 273, 272, 30, 20,
+			1, 295, 294, 30, 25,
+			1, 295, 294, 31, 25,
+			1, 273, 272, 32, 20,
+			1, 295, 294, 32, 25,
+			1, 297, 296, 32, 26,
+			1, 297, 296, 33, 26,
+			1, 292, 291, 33, 24,
+			2, 299, 298, 38, planner.NoIndex,
+			1, 273, 272, 38, 20,
+			1, 273, 272, 39, 20,
+			1, 288, 287, 39, 23,
+			1, 292, 291, 39, 24,
+			1, 273, 272, 44, 20,
+			1, 273, 272, 45, 20,
+			0, 302, 302, 45, planner.NoIndex,
+			1, 277, 276, 45, 21,
+			1, 279, 278, 45, 22,
+			2, 304, 303, 48, planner.NoIndex,
+			1, 273, 272, 48, 20,
+			1, 273, 272, 49, 20,
+			1, 277, 276, 49, 21,
+			1, 279, 278, 49, 22,
+			1, 273, 272, 54, 20,
+			1, 273, 272, 55, 20,
+			1, 308, 307, 55, 27,
+			1, 194, 193, 55, 14,
+			1, 273, 272, 56, 20,
+			1, 311, 310, 56, 28,
+			1, 313, 312, 56, 29,
+			2, 315, 314, 59, planner.NoIndex,
+			1, 273, 272, 59, 20,
+			1, 273, 272, 60, 20,
+			1, 308, 307, 60, 27,
+			1, 194, 193, 60, 14,
+			1, 273, 272, 65, 20,
+			1, 273, 272, 66, 20,
+			1, 288, 287, 66, 23,
+			1, 313, 312, 66, 29,
+			2, 319, 318, 69, planner.NoIndex,
+			1, 273, 272, 69, 20,
+			1, 273, 272, 70, 20,
+			1, 288, 287, 70, 23,
+			1, 313, 312, 70, 29,
+			1, 273, 272, 75, 20,
+			1, 273, 272, 76, 20,
+			0, 322, 322, 76, planner.NoIndex,
+			1, 277, 276, 76, 21,
+			1, 279, 278, 76, 22,
+			2, 324, 323, 79, planner.NoIndex,
+			1, 273, 272, 79, 20,
+			1, 273, 272, 80, 20,
+			1, 277, 276, 80, 21,
+			1, 279, 278, 80, 22,
+			1, 273, 272, 84, 20,
+			2, 326, 325, 86, planner.NoIndex,
+			1, 273, 272, 86, 20,
+			1, 273, 272, 87, 20,
+			2, 330, 329, 92, planner.NoIndex,
+			1, 2, 1, 3, 0,
+			1, 4, 3, 3, 1,
+			1, 6, 5, 3, 2,
+			1, 4, 3, 5, 1,
+			0, 8, 8, 5, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 2, 1, 6, 0,
+			1, 4, 3, 6, 1,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 8, 0,
+			1, 6, 5, 8, 2,
+			1, 2, 1, 9, 0,
+			1, 4, 3, 9, 1,
+			1, 4, 3, 12, 1,
+			0, 8, 8, 12, planner.NoIndex,
+			1, 2, 1, 13, 0,
+			1, 4, 3, 13, 1,
+			1, 2, 1, 14, 0,
+			1, 6, 5, 14, 2,
+			1, 2, 1, 15, 0,
+			1, 4, 3, 15, 1,
+			1, 4, 3, 18, 1,
+			0, 19, 19, 18, planner.NoIndex,
+			1, 2, 1, 19, 0,
+			1, 4, 3, 19, 1,
+			1, 2, 1, 20, 0,
+			1, 6, 5, 20, 2,
+			1, 2, 1, 21, 0,
+			1, 6, 5, 21, 2,
+			1, 4, 3, 24, 1,
+			0, 23, 23, 24, planner.NoIndex,
+			1, 2, 1, 24, 0,
+			1, 6, 5, 24, 2,
+			1, 26, 25, 24, 3,
+			1, 2, 1, 25, 0,
+			1, 4, 3, 25, 1,
+			1, 2, 1, 26, 0,
+			1, 6, 5, 26, 2,
+			1, 26, 25, 26, 3,
+			1, 4, 3, 29, 1,
+			0, 29, 29, 29, planner.NoIndex,
+			1, 2, 1, 30, 0,
+			1, 4, 3, 30, 1,
+			1, 2, 1, 31, 0,
+			1, 6, 5, 31, 2,
+			1, 4, 3, 34, 1,
+			0, 32, 32, 34, planner.NoIndex,
+			1, 6, 5, 34, 2,
+			1, 2, 1, 35, 0,
+			1, 6, 5, 35, 2,
+			1, 2, 1, 36, 0,
+			1, 6, 5, 36, 2,
+			1, 2, 1, 37, 0,
+			1, 4, 3, 37, 1,
+			1, 4, 3, 40, 1,
+			0, 36, 36, 40, planner.NoIndex,
+			1, 2, 1, 41, 0,
+			1, 6, 5, 41, 2,
+			1, 2, 1, 42, 0,
+			1, 4, 3, 42, 1,
+			1, 2, 1, 46, 0,
+			1, 4, 3, 46, 1,
+			1, 6, 5, 46, 2,
+			1, 2, 1, 2, 0,
+			1, 42, 41, 2, 4,
+			1, 44, 43, 2, 5,
+			1, 2, 1, 4, 0,
+			1, 48, 47, 4, 6,
+			1, 48, 47, 4, 6,
+			0, 49, 49, 4, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 26, 25, 5, 3,
+			1, 2, 1, 6, 0,
+			1, 42, 41, 6, 4,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 8, 0,
+			1, 26, 25, 8, 3,
+			1, 44, 43, 11, 5,
+			0, 58, 58, 11, planner.NoIndex,
+			1, 2, 1, 12, 0,
+			1, 42, 41, 12, 4,
+			1, 44, 43, 15, 5,
+			0, 58, 58, 15, planner.NoIndex,
+			1, 2, 1, 16, 0,
+			1, 42, 41, 16, 4,
+			1, 44, 43, 16, 5,
+			1, 2, 1, 20, 0,
+			1, 42, 41, 20, 4,
+			1, 42, 41, 22, 4,
+			1, 2, 1, 22, 0,
+			1, 67, 66, 22, 7,
+			1, 67, 66, 23, 7,
+			0, 68, 68, 23, planner.NoIndex,
+			1, 2, 1, 23, 0,
+			0, 57, 57, 23, planner.NoIndex,
+			1, 2, 1, 24, 0,
+			1, 42, 41, 24, 4,
+			1, 2, 1, 25, 0,
+			1, 42, 41, 25, 4,
+			1, 2, 1, 26, 0,
+			1, 42, 41, 26, 4,
+			1, 42, 41, 29, 4,
+			1, 2, 1, 29, 0,
+			1, 67, 66, 29, 7,
+			1, 67, 66, 30, 7,
+			0, 78, 78, 30, planner.NoIndex,
+			1, 2, 1, 30, 0,
+			0, 57, 57, 30, planner.NoIndex,
+			1, 2, 1, 31, 0,
+			1, 42, 41, 31, 4,
+			1, 2, 1, 34, 0,
+			0, 57, 57, 34, planner.NoIndex,
+			1, 2, 1, 35, 0,
+			1, 42, 41, 35, 4,
+			1, 2, 1, 36, 0,
+			1, 42, 41, 36, 4,
+			1, 2, 1, 39, 0,
+			0, 57, 57, 39, planner.NoIndex,
+			1, 2, 1, 40, 0,
+			0, 57, 57, 40, planner.NoIndex,
+			1, 2, 1, 41, 0,
+			1, 42, 41, 41, 4,
+			1, 2, 1, 45, 0,
+			1, 42, 41, 45, 4,
+			1, 2, 1, 46, 0,
+			1, 42, 41, 46, 4,
+			1, 2, 1, 50, 0,
+			1, 42, 41, 50, 4,
+			1, 44, 43, 50, 5,
+			1, 42, 41, 52, 4,
+			1, 2, 1, 52, 0,
+			1, 42, 41, 52, 4,
+			1, 26, 25, 52, 3,
+			1, 2, 1, 53, 0,
+			0, 60, 60, 53, planner.NoIndex,
+			1, 2, 1, 53, 0,
+			1, 99, 98, 53, 8,
+			1, 99, 98, 54, 8,
+			0, 100, 100, 54, planner.NoIndex,
+			1, 2, 1, 55, 0,
+			1, 26, 25, 55, 3,
+			1, 2, 1, 56, 0,
+			1, 42, 41, 56, 4,
+			1, 2, 1, 57, 0,
+			1, 42, 41, 57, 4,
+			1, 2, 1, 60, 0,
+			1, 2, 1, 60, 0,
+			1, 110, 109, 60, 9,
+			1, 110, 109, 61, 9,
+			1, 2, 1, 62, 0,
+			0, 60, 60, 62, planner.NoIndex,
+			1, 2, 1, 62, 0,
+			1, 99, 98, 62, 8,
+			1, 99, 98, 63, 8,
+			0, 100, 100, 63, planner.NoIndex,
+			1, 2, 1, 64, 0,
+			1, 110, 109, 64, 9,
+			1, 2, 1, 65, 0,
+			1, 42, 41, 65, 4,
+			1, 2, 1, 66, 0,
+			1, 42, 41, 66, 4,
+			1, 2, 1, 69, 0,
+			0, 60, 60, 69, planner.NoIndex,
+			1, 2, 1, 69, 0,
+			0, 100, 100, 69, planner.NoIndex,
+			1, 2, 1, 70, 0,
+			1, 99, 98, 70, 8,
+			1, 99, 98, 70, 8,
+			0, 100, 100, 70, planner.NoIndex,
+			1, 2, 1, 71, 0,
+			1, 110, 109, 71, 9,
+			1, 2, 1, 72, 0,
+			1, 110, 109, 72, 9,
+			1, 2, 1, 73, 0,
+			0, 60, 60, 73, planner.NoIndex,
+			1, 2, 1, 76, 0,
+			0, 60, 60, 76, planner.NoIndex,
+			1, 2, 1, 76, 0,
+			0, 100, 100, 76, planner.NoIndex,
+			1, 2, 1, 77, 0,
+			1, 99, 98, 77, 8,
+			1, 99, 98, 77, 8,
+			0, 100, 100, 77, planner.NoIndex,
+			1, 2, 1, 78, 0,
+			0, 60, 60, 78, planner.NoIndex,
+			1, 2, 1, 81, 0,
+			0, 60, 60, 81, planner.NoIndex,
+			1, 2, 1, 81, 0,
+			1, 99, 98, 81, 8,
+			1, 99, 98, 82, 8,
+			0, 100, 100, 82, planner.NoIndex,
+			1, 44, 43, 82, 5,
+			0, 68, 68, 82, planner.NoIndex,
+			1, 2, 1, 82, 0,
+			1, 42, 41, 82, 4,
+			1, 2, 1, 83, 0,
+			1, 42, 41, 83, 4,
+			1, 2, 1, 84, 0,
+			1, 42, 41, 84, 4,
+			1, 2, 1, 87, 0,
+			0, 60, 60, 87, planner.NoIndex,
+			1, 2, 1, 87, 0,
+			1, 99, 98, 87, 8,
+			1, 99, 98, 88, 8,
+			0, 100, 100, 88, planner.NoIndex,
+			1, 2, 1, 88, 0,
+			1, 42, 41, 88, 4,
+			1, 2, 1, 89, 0,
+			1, 42, 41, 89, 4,
+			1, 2, 1, 90, 0,
+			1, 42, 41, 90, 4,
+			1, 2, 1, 93, 0,
+			0, 60, 60, 93, planner.NoIndex,
+			1, 2, 1, 93, 0,
+			1, 99, 98, 93, 8,
+			1, 99, 98, 94, 8,
+			0, 100, 100, 94, planner.NoIndex,
+			1, 2, 1, 95, 0,
+			0, 60, 60, 95, planner.NoIndex,
+			1, 2, 1, 96, 0,
+			1, 42, 41, 96, 4,
+			1, 2, 1, 97, 0,
+			1, 42, 41, 97, 4,
+			1, 2, 1, 100, 0,
+			1, 42, 41, 100, 4,
+			1, 26, 25, 100, 3,
+			1, 2, 1, 101, 0,
+			1, 26, 25, 101, 3,
+			1, 2, 1, 102, 0,
+			1, 42, 41, 102, 4,
+			1, 2, 1, 106, 0,
+			1, 42, 41, 106, 4,
+			1, 2, 1, 107, 0,
+			1, 2, 1, 4, 0,
+			1, 142, 141, 4, 10,
+			1, 144, 143, 4, 11,
+			1, 142, 141, 6, 10,
+			0, 146, 146, 6, planner.NoIndex,
+			1, 2, 1, 6, 0,
+			1, 149, 148, 6, 12,
+			1, 2, 1, 7, 0,
+			1, 149, 148, 7, 12,
+			1, 2, 1, 8, 0,
+			1, 2, 1, 9, 0,
+			1, 144, 143, 9, 11,
+			1, 2, 1, 10, 0,
+			1, 144, 143, 10, 11,
+			1, 142, 141, 13, 10,
+			0, 159, 159, 13, planner.NoIndex,
+			1, 2, 1, 13, 0,
+			1, 110, 109, 13, 9,
+			1, 110, 109, 14, 9,
+			1, 2, 1, 15, 0,
+			1, 110, 109, 15, 9,
+			1, 2, 1, 16, 0,
+			1, 144, 143, 16, 11,
+			1, 2, 1, 17, 0,
+			1, 144, 143, 17, 11,
+			1, 142, 141, 20, 10,
+			0, 159, 159, 20, planner.NoIndex,
+			1, 2, 1, 21, 0,
+			1, 2, 1, 22, 0,
+			1, 144, 143, 22, 11,
+			1, 2, 1, 23, 0,
+			1, 144, 143, 23, 11,
+			1, 142, 141, 26, 10,
+			0, 162, 162, 26, planner.NoIndex,
+			1, 2, 1, 26, 0,
+			1, 144, 143, 26, 11,
+			1, 26, 25, 26, 3,
+			1, 2, 1, 27, 0,
+			1, 144, 143, 27, 11,
+			1, 2, 1, 28, 0,
+			1, 26, 25, 28, 3,
+			1, 2, 1, 29, 0,
+			1, 144, 143, 29, 11,
+			1, 142, 141, 32, 10,
+			0, 169, 169, 32, planner.NoIndex,
+			1, 2, 1, 33, 0,
+			1, 144, 143, 33, 11,
+			1, 2, 1, 34, 0,
+			1, 144, 143, 34, 11,
+			1, 2, 1, 35, 0,
+			1, 144, 143, 35, 11,
+			1, 2, 1, 38, 0,
+			1, 144, 143, 38, 11,
+			1, 2, 1, 39, 0,
+			1, 144, 143, 39, 11,
+			1, 26, 25, 39, 3,
+			1, 2, 1, 40, 0,
+			1, 26, 25, 40, 3,
+			1, 2, 1, 41, 0,
+			1, 144, 143, 41, 11,
+			1, 2, 1, 45, 0,
+			1, 2, 1, 46, 0,
+			1, 144, 143, 46, 11,
+			1, 2, 1, 47, 0,
+			1, 144, 143, 47, 11,
+			1, 2, 1, 48, 0,
+			1, 142, 141, 48, 10,
+			1, 144, 143, 48, 11,
+			1, 2, 1, 4, 0,
+			1, 42, 41, 4, 4,
+			1, 184, 183, 4, 13,
+			1, 2, 1, 6, 0,
+			1, 42, 41, 6, 4,
+			1, 26, 25, 6, 3,
+			1, 2, 1, 7, 0,
+			1, 42, 41, 7, 4,
+			1, 2, 1, 8, 0,
+			1, 26, 25, 8, 3,
+			1, 2, 1, 9, 0,
+			1, 184, 183, 9, 13,
+			1, 2, 1, 12, 0,
+			1, 42, 41, 12, 4,
+			1, 194, 193, 12, 14,
+			1, 2, 1, 13, 0,
+			1, 42, 41, 13, 4,
+			1, 2, 1, 14, 0,
+			1, 194, 193, 14, 14,
+			1, 2, 1, 15, 0,
+			1, 194, 193, 15, 14,
+			1, 2, 1, 18, 0,
+			1, 42, 41, 18, 4,
+			1, 26, 25, 18, 3,
+			1, 2, 1, 19, 0,
+			1, 42, 41, 19, 4,
+			1, 2, 1, 20, 0,
+			1, 26, 25, 20, 3,
+			1, 2, 1, 21, 0,
+			1, 184, 183, 21, 13,
+			1, 184, 183, 24, 13,
+			1, 110, 109, 24, 9,
+			1, 2, 1, 25, 0,
+			1, 184, 183, 25, 13,
+			1, 2, 1, 26, 0,
+			1, 110, 109, 26, 9,
+			1, 2, 1, 27, 0,
+			1, 184, 183, 27, 13,
+			1, 2, 1, 30, 0,
+			1, 184, 183, 30, 13,
+			1, 26, 25, 30, 3,
+			1, 2, 1, 31, 0,
+			1, 26, 25, 31, 3,
+			1, 2, 1, 32, 0,
+			1, 184, 183, 32, 13,
+			1, 2, 1, 36, 0,
+			1, 184, 183, 36, 13,
+			1, 2, 1, 37, 0,
+			1, 184, 183, 37, 13,
+			1, 2, 1, 38, 0,
+			1, 42, 41, 38, 4,
+			1, 2, 1, 2, 0,
+			1, 2, 1, 4, 0,
+			1, 48, 47, 4, 6,
+			1, 48, 47, 4, 6,
+			0, 78, 78, 4, planner.NoIndex,
+			1, 2, 1, 5, 0,
+			1, 2, 1, 6, 0,
+			1, 2, 1, 7, 0,
+			1, 2, 1, 10, 0,
+			1, 99, 98, 10, 8,
+			1, 99, 98, 10, 8,
+			0, 219, 219, 10, planner.NoIndex,
+			1, 2, 1, 11, 0,
+			1, 222, 221, 11, 15,
+			1, 2, 1, 12, 0,
+			1, 222, 221, 12, 15,
+			1, 2, 1, 13, 0,
+			1, 222, 221, 13, 15,
+			1, 2, 1, 16, 0,
+			1, 229, 228, 16, 16,
+			1, 2, 1, 17, 0,
+			1, 229, 228, 17, 16,
+			1, 2, 1, 18, 0,
+			1, 2, 1, 21, 0,
+			1, 26, 25, 21, 3,
+			1, 2, 1, 21, 0,
+			1, 236, 235, 21, 17,
+			1, 2, 1, 22, 0,
+			1, 26, 25, 22, 3,
+			1, 2, 1, 23, 0,
+			1, 236, 235, 23, 17,
+			1, 2, 1, 24, 0,
+			1, 236, 235, 24, 17,
+			1, 2, 1, 27, 0,
+			1, 246, 245, 27, 18,
+			1, 2, 1, 27, 0,
+			1, 2, 1, 28, 0,
+			1, 246, 245, 28, 18,
+			1, 2, 1, 29, 0,
+			1, 246, 245, 29, 18,
+			1, 2, 1, 32, 0,
+			1, 255, 254, 32, 19,
+			1, 2, 1, 33, 0,
+			1, 255, 254, 33, 19,
+			1, 2, 1, 34, 0,
+			1, 255, 254, 34, 19,
+			1, 2, 1, 37, 0,
+			1, 67, 66, 37, 7,
+			1, 67, 66, 37, 7,
+			0, 261, 261, 37, planner.NoIndex,
+			1, 2, 1, 38, 0,
+			1, 2, 1, 39, 0,
+			1, 2, 1, 43, 0,
+			1, 2, 1, 44, 0,
+			1, 273, 272, 13, 20,
+			1, 273, 272, 14, 20,
+			0, 275, 275, 14, planner.NoIndex,
+			1, 277, 276, 14, 21,
+			1, 279, 278, 14, 22,
+			2, 283, 282, 17, planner.NoIndex,
+			1, 273, 272, 17, 20,
+			1, 273, 272, 18, 20,
+			1, 277, 276, 18, 21,
+			1, 279, 278, 18, 22,
+			1, 273, 272, 23, 20,
+			1, 273, 272, 24, 20,
+			1, 288, 287, 24, 23,
+			1, 288, 287, 25, 23,
+			1, 273, 272, 26, 20,
+			1, 288, 287, 26, 23,
+			1, 292, 291, 26, 24,
+			1, 288, 287, 27, 23,
+			1, 273, 272, 30, 20,
+			1, 295, 294, 30, 25,
+			1, 295, 294, 31, 25,
+			1, 273, 272, 32, 20,
+			1, 295, 294, 32, 25,
+			1, 297, 296, 32, 26,
+			1, 297, 296, 33, 26,
+			1, 292, 291, 33, 24,
+			2, 299, 298, 38, planner.NoIndex,
+			1, 273, 272, 38, 20,
+			1, 273, 272, 39, 20,
+			1, 288, 287, 39, 23,
+			1, 292, 291, 39, 24,
+			1, 273, 272, 44, 20,
+			1, 273, 272, 45, 20,
+			0, 302, 302, 45, planner.NoIndex,
+			1, 277, 276, 45, 21,
+			1, 279, 278, 45, 22,
+			2, 304, 303, 48, planner.NoIndex,
+			1, 273, 272, 48, 20,
+			1, 273, 272, 49, 20,
+			1, 277, 276, 49, 21,
+			1, 279, 278, 49, 22,
+			1, 273, 272, 54, 20,
+			1, 273, 272, 55, 20,
+			1, 308, 307, 55, 27,
+			1, 194, 193, 55, 14,
+			1, 273, 272, 56, 20,
+			1, 311, 310, 56, 28,
+			1, 313, 312, 56, 29,
+			2, 315, 314, 59, planner.NoIndex,
+			1, 273, 272, 59, 20,
+			1, 273, 272, 60, 20,
+			1, 308, 307, 60, 27,
+			1, 194, 193, 60, 14,
+			1, 273, 272, 65, 20,
+			1, 273, 272, 66, 20,
+			1, 288, 287, 66, 23,
+			1, 313, 312, 66, 29,
+			2, 319, 318, 69, planner.NoIndex,
+			1, 273, 272, 69, 20,
+			1, 273, 272, 70, 20,
+			1, 288, 287, 70, 23,
+			1, 313, 312, 70, 29,
+			1, 273, 272, 75, 20,
+			1, 273, 272, 76, 20,
+			0, 322, 322, 76, planner.NoIndex,
+			1, 277, 276, 76, 21,
+			1, 279, 278, 76, 22,
+			2, 324, 323, 79, planner.NoIndex,
+			1, 273, 272, 79, 20,
+			1, 273, 272, 80, 20,
+			1, 277, 276, 80, 21,
+			1, 279, 278, 80, 22,
+			1, 273, 272, 84, 20,
+			2, 326, 325, 86, planner.NoIndex,
+			1, 273, 272, 86, 20,
+			1, 273, 272, 87, 20,
+			2, 330, 329, 92, planner.NoIndex,
+		},
+		VariableStringIDs: []uint32{
+			1,
+			3,
+			5,
+			25,
+			41,
+			43,
+			47,
+			66,
+			98,
+			109,
+			141,
+			143,
+			148,
+			183,
+			193,
+			221,
+			228,
+			235,
+			245,
+			254,
+			272,
+			276,
+			278,
+			287,
+			291,
+			294,
+			296,
+			307,
+			310,
+			312,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 0, 2, planner.NoIndex, planner.NoIndex, 5, 0,
+			8, 0, 3, 2, 0, 0, planner.NoIndex, planner.NoIndex, 5, 0,
+			0, 9, 5, 1, 0, 0, planner.NoIndex, 0, 5, 0,
+			2, planner.NoIndex, 0, 0, 2, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			8, 0, 13, 2, 2, 0, planner.NoIndex, planner.NoIndex, 12, 0,
+			2, planner.NoIndex, 0, 0, 3, 1, planner.NoIndex, planner.NoIndex, 18, 0,
+			8, 0, 21, 2, 3, 0, planner.NoIndex, planner.NoIndex, 18, 0,
+			2, planner.NoIndex, 0, 0, 4, 2, planner.NoIndex, planner.NoIndex, 24, 0,
+			8, 0, 29, 2, 4, 0, planner.NoIndex, planner.NoIndex, 24, 0,
+			0, 24, 31, 3, 4, 0, planner.NoIndex, 1, 24, 0,
+			2, planner.NoIndex, 0, 0, 6, 1, planner.NoIndex, planner.NoIndex, 29, 0,
+			8, 0, 39, 2, 6, 0, planner.NoIndex, planner.NoIndex, 29, 0,
+			2, planner.NoIndex, 0, 0, 7, 2, planner.NoIndex, planner.NoIndex, 34, 0,
+			8, 0, 45, 2, 7, 0, planner.NoIndex, planner.NoIndex, 34, 0,
+			0, 33, 47, 1, 7, 0, planner.NoIndex, 2, 34, 0,
+			2, planner.NoIndex, 0, 0, 9, 1, planner.NoIndex, planner.NoIndex, 40, 0,
+			8, 0, 54, 2, 9, 0, planner.NoIndex, planner.NoIndex, 40, 0,
+			2, planner.NoIndex, 0, 0, 10, 3, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 46, 66, 2, 10, 0, planner.NoIndex, 3, 4, 0,
+			8, 3, 68, 2, 10, 0, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 50, 70, 2, 10, 0, planner.NoIndex, 4, 5, 0,
+			2, planner.NoIndex, 0, 0, 13, 1, planner.NoIndex, planner.NoIndex, 11, 0,
+			8, 2, 77, 2, 13, 0, planner.NoIndex, planner.NoIndex, 11, 0,
+			2, planner.NoIndex, 0, 0, 14, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 5, 81, 2, 14, 0, planner.NoIndex, planner.NoIndex, 15, 0,
+			2, planner.NoIndex, 0, 0, 15, 4, planner.NoIndex, planner.NoIndex, 22, 0,
+			0, 64, 88, 1, 15, 0, planner.NoIndex, 5, 22, 0,
+			0, 65, 89, 2, 15, 0, planner.NoIndex, 6, 22, 0,
+			8, 5, 91, 2, 15, 0, planner.NoIndex, planner.NoIndex, 23, 0,
+			0, 69, 93, 2, 15, 0, planner.NoIndex, 7, 23, 0,
+			2, planner.NoIndex, 0, 0, 19, 4, planner.NoIndex, planner.NoIndex, 29, 0,
+			0, 77, 101, 1, 19, 0, planner.NoIndex, 8, 29, 0,
+			0, 65, 102, 2, 19, 0, planner.NoIndex, 6, 29, 0,
+			8, 5, 104, 2, 19, 0, planner.NoIndex, planner.NoIndex, 30, 0,
+			0, 69, 106, 2, 19, 0, planner.NoIndex, 7, 30, 0,
+			2, planner.NoIndex, 0, 0, 23, 1, planner.NoIndex, planner.NoIndex, 34, 0,
+			0, 69, 110, 2, 23, 0, planner.NoIndex, 7, 34, 0,
+			2, planner.NoIndex, 0, 0, 24, 1, planner.NoIndex, planner.NoIndex, 39, 0,
+			0, 85, 116, 2, 24, 0, planner.NoIndex, 9, 39, 0,
+			2, planner.NoIndex, 0, 0, 25, 5, planner.NoIndex, planner.NoIndex, 52, 0,
+			0, 95, 129, 1, 25, 0, planner.NoIndex, 10, 52, 0,
+			0, 96, 130, 3, 25, 0, planner.NoIndex, 11, 52, 0,
+			0, 69, 133, 2, 25, 0, planner.NoIndex, 7, 53, 0,
+			0, 97, 135, 2, 25, 0, planner.NoIndex, 12, 53, 0,
+			8, 4, 137, 2, 25, 0, planner.NoIndex, planner.NoIndex, 54, 0,
+			2, planner.NoIndex, 0, 0, 31, 6, planner.NoIndex, planner.NoIndex, 60, 0,
+			0, 9, 145, 1, 30, 0, planner.NoIndex, 0, 60, 0,
+			0, 108, 146, 2, 30, 0, planner.NoIndex, 13, 60, 0,
+			5, planner.NoIndex, 0, 0, 30, 1, planner.NoIndex, planner.NoIndex, 61, 0,
+			0, 111, 148, 1, 30, 0, planner.NoIndex, 14, 61, 0,
+			0, 69, 149, 2, 31, 0, planner.NoIndex, 7, 62, 0,
+			0, 97, 151, 2, 31, 0, planner.NoIndex, 12, 62, 0,
+			8, 4, 153, 2, 31, 0, planner.NoIndex, planner.NoIndex, 63, 0,
+			2, planner.NoIndex, 0, 0, 37, 5, planner.NoIndex, planner.NoIndex, 69, 0,
+			0, 69, 161, 2, 37, 0, planner.NoIndex, 7, 69, 0,
+			0, 97, 163, 2, 37, 0, planner.NoIndex, 12, 69, 0,
+			0, 119, 165, 2, 37, 0, planner.NoIndex, 15, 70, 0,
+			8, 4, 167, 2, 37, 0, planner.NoIndex, planner.NoIndex, 70, 0,
+			0, 108, 169, 2, 37, 0, planner.NoIndex, 13, 71, 0,
+			2, planner.NoIndex, 0, 0, 42, 4, planner.NoIndex, planner.NoIndex, 76, 0,
+			0, 69, 175, 2, 42, 0, planner.NoIndex, 7, 76, 0,
+			0, 97, 177, 2, 42, 0, planner.NoIndex, 12, 76, 0,
+			0, 119, 179, 2, 42, 0, planner.NoIndex, 15, 77, 0,
+			8, 4, 181, 2, 42, 0, planner.NoIndex, planner.NoIndex, 77, 0,
+			2, planner.NoIndex, 0, 0, 46, 5, planner.NoIndex, planner.NoIndex, 81, 0,
+			0, 69, 185, 2, 46, 0, planner.NoIndex, 7, 81, 0,
+			0, 97, 187, 2, 46, 0, planner.NoIndex, 12, 81, 0,
+			8, 4, 189, 2, 46, 0, planner.NoIndex, planner.NoIndex, 82, 0,
+			8, 5, 191, 2, 46, 0, planner.NoIndex, planner.NoIndex, 82, 0,
+			0, 124, 193, 2, 46, 0, planner.NoIndex, 16, 82, 0,
+			2, planner.NoIndex, 0, 0, 51, 4, planner.NoIndex, planner.NoIndex, 87, 0,
+			0, 69, 199, 2, 51, 0, planner.NoIndex, 7, 87, 0,
+			0, 97, 201, 2, 51, 0, planner.NoIndex, 12, 87, 0,
+			8, 4, 203, 2, 51, 0, planner.NoIndex, planner.NoIndex, 88, 0,
+			0, 124, 205, 2, 51, 0, planner.NoIndex, 16, 88, 0,
+			2, planner.NoIndex, 0, 0, 55, 3, planner.NoIndex, planner.NoIndex, 93, 0,
+			0, 85, 211, 2, 55, 0, planner.NoIndex, 9, 93, 0,
+			0, 97, 213, 2, 55, 0, planner.NoIndex, 12, 93, 0,
+			8, 4, 215, 2, 55, 0, planner.NoIndex, planner.NoIndex, 94, 0,
+			2, planner.NoIndex, 0, 0, 58, 1, planner.NoIndex, planner.NoIndex, 100, 0,
+			0, 130, 223, 3, 58, 0, planner.NoIndex, 17, 100, 0,
+			2, planner.NoIndex, 0, 0, 59, 2, planner.NoIndex, planner.NoIndex, 6, 0,
+			8, 0, 236, 2, 59, 0, planner.NoIndex, planner.NoIndex, 6, 0,
+			0, 147, 238, 2, 59, 0, planner.NoIndex, 18, 6, 0,
+			2, planner.NoIndex, 0, 0, 62, 3, planner.NoIndex, planner.NoIndex, 13, 0,
+			8, 0, 247, 2, 61, 0, planner.NoIndex, planner.NoIndex, 13, 0,
+			0, 108, 249, 2, 61, 0, planner.NoIndex, 13, 13, 0,
+			5, planner.NoIndex, 0, 0, 61, 1, planner.NoIndex, planner.NoIndex, 14, 0,
+			0, 111, 251, 1, 61, 0, planner.NoIndex, 14, 14, 0,
+			2, planner.NoIndex, 0, 0, 65, 1, planner.NoIndex, planner.NoIndex, 20, 0,
+			8, 0, 258, 2, 65, 0, planner.NoIndex, planner.NoIndex, 20, 0,
+			2, planner.NoIndex, 0, 0, 66, 2, planner.NoIndex, planner.NoIndex, 26, 0,
+			8, 0, 265, 2, 66, 0, planner.NoIndex, planner.NoIndex, 26, 0,
+			0, 163, 267, 3, 66, 0, planner.NoIndex, 19, 26, 0,
+			2, planner.NoIndex, 0, 0, 68, 1, planner.NoIndex, planner.NoIndex, 32, 0,
+			8, 0, 276, 2, 68, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 69, 2, planner.NoIndex, planner.NoIndex, 38, 0,
+			0, 175, 284, 2, 69, 0, planner.NoIndex, 20, 38, 0,
+			0, 176, 286, 3, 69, 0, planner.NoIndex, 21, 39, 0,
+			2, planner.NoIndex, 0, 0, 71, 1, planner.NoIndex, planner.NoIndex, 6, 0,
+			0, 186, 304, 3, 71, 0, planner.NoIndex, 22, 6, 0,
+			2, planner.NoIndex, 0, 0, 72, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 192, 313, 3, 72, 0, planner.NoIndex, 23, 12, 0,
+			2, planner.NoIndex, 0, 0, 73, 1, planner.NoIndex, planner.NoIndex, 18, 0,
+			0, 198, 322, 3, 73, 0, planner.NoIndex, 24, 18, 0,
+			2, planner.NoIndex, 0, 0, 74, 1, planner.NoIndex, planner.NoIndex, 24, 0,
+			0, 204, 331, 2, 74, 0, planner.NoIndex, 25, 24, 0,
+			2, planner.NoIndex, 0, 0, 75, 1, planner.NoIndex, planner.NoIndex, 30, 0,
+			0, 207, 339, 3, 75, 0, planner.NoIndex, 26, 30, 0,
+			2, planner.NoIndex, 0, 0, 76, 3, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 46, 353, 2, 76, 0, planner.NoIndex, 3, 4, 0,
+			8, 3, 355, 2, 76, 0, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 213, 357, 1, 76, 0, planner.NoIndex, 27, 5, 0,
+			2, planner.NoIndex, 0, 0, 79, 3, planner.NoIndex, planner.NoIndex, 10, 0,
+			0, 97, 360, 2, 79, 0, planner.NoIndex, 12, 10, 0,
+			8, 3, 362, 2, 79, 0, planner.NoIndex, planner.NoIndex, 10, 0,
+			0, 220, 364, 2, 79, 0, planner.NoIndex, 28, 11, 0,
+			2, planner.NoIndex, 0, 0, 82, 1, planner.NoIndex, planner.NoIndex, 16, 0,
+			0, 227, 370, 2, 82, 0, planner.NoIndex, 29, 16, 0,
+			2, planner.NoIndex, 0, 0, 83, 2, planner.NoIndex, planner.NoIndex, 21, 0,
+			0, 233, 375, 2, 83, 0, planner.NoIndex, 30, 21, 0,
+			0, 234, 377, 2, 83, 0, planner.NoIndex, 31, 21, 0,
+			2, planner.NoIndex, 0, 0, 85, 2, planner.NoIndex, planner.NoIndex, 27, 0,
+			0, 244, 385, 2, 85, 0, planner.NoIndex, 32, 27, 0,
+			0, 247, 387, 1, 85, 0, planner.NoIndex, 33, 27, 0,
+			2, planner.NoIndex, 0, 0, 87, 1, planner.NoIndex, planner.NoIndex, 32, 0,
+			0, 253, 392, 2, 87, 0, planner.NoIndex, 34, 32, 0,
+			2, planner.NoIndex, 0, 0, 88, 2, planner.NoIndex, planner.NoIndex, 37, 0,
+			0, 65, 398, 2, 88, 0, planner.NoIndex, 6, 37, 0,
+			8, 3, 400, 2, 88, 0, planner.NoIndex, planner.NoIndex, 37, 0,
+			2, planner.NoIndex, 0, 0, 90, 2, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 271, 406, 1, 90, 0, planner.NoIndex, 35, 13, 0,
+			0, 274, 407, 4, 90, 0, planner.NoIndex, 36, 14, 0,
+			2, planner.NoIndex, 0, 0, 98, 6, planner.NoIndex, planner.NoIndex, 22, 0,
+			0, 271, 416, 1, 92, 0, planner.NoIndex, 35, 23, 0,
+			0, 286, 417, 2, 92, 0, planner.NoIndex, 37, 24, 0,
+			0, 289, 419, 1, 92, 0, planner.NoIndex, 38, 25, 0,
+			0, 290, 420, 3, 92, 0, planner.NoIndex, 39, 26, 0,
+			5, planner.NoIndex, 0, 0, 92, 1, planner.NoIndex, planner.NoIndex, 27, 0,
+			0, 293, 423, 1, 92, 0, planner.NoIndex, 40, 27, 0,
+			5, planner.NoIndex, 0, 0, 97, 1, planner.NoIndex, planner.NoIndex, 28, 0,
+			2, planner.NoIndex, 0, 0, 93, 4, planner.NoIndex, planner.NoIndex, 29, 0,
+			0, 286, 424, 2, 93, 0, planner.NoIndex, 37, 30, 0,
+			0, 289, 426, 1, 93, 0, planner.NoIndex, 38, 31, 0,
+			0, 290, 427, 3, 93, 0, planner.NoIndex, 39, 32, 0,
+			8, 2, 430, 2, 93, 0, planner.NoIndex, planner.NoIndex, 33, 0,
+			2, planner.NoIndex, 0, 0, 104, 2, planner.NoIndex, planner.NoIndex, 43, 0,
+			0, 271, 437, 1, 104, 0, planner.NoIndex, 35, 44, 0,
+			0, 274, 438, 4, 104, 0, planner.NoIndex, 36, 45, 0,
+			2, planner.NoIndex, 0, 0, 107, 3, planner.NoIndex, planner.NoIndex, 53, 0,
+			0, 271, 447, 1, 106, 0, planner.NoIndex, 35, 54, 0,
+			0, 306, 448, 3, 106, 0, planner.NoIndex, 41, 55, 0,
+			5, planner.NoIndex, 0, 0, 106, 1, planner.NoIndex, planner.NoIndex, 56, 0,
+			0, 309, 451, 3, 106, 0, planner.NoIndex, 42, 56, 0,
+			2, planner.NoIndex, 0, 0, 110, 2, planner.NoIndex, planner.NoIndex, 64, 0,
+			0, 271, 459, 1, 110, 0, planner.NoIndex, 35, 65, 0,
+			0, 309, 460, 3, 110, 0, planner.NoIndex, 42, 66, 0,
+			2, planner.NoIndex, 0, 0, 112, 2, planner.NoIndex, planner.NoIndex, 74, 0,
+			0, 271, 468, 1, 112, 0, planner.NoIndex, 35, 75, 0,
+			0, 274, 469, 4, 112, 0, planner.NoIndex, 36, 76, 0,
+			2, planner.NoIndex, 0, 0, 114, 1, planner.NoIndex, planner.NoIndex, 84, 0,
+			0, 271, 478, 1, 114, 0, planner.NoIndex, 35, 84, 0,
+			2, planner.NoIndex, 0, 0, 115, 2, planner.NoIndex, planner.NoIndex, 5, 0,
+			8, 0, 486, 2, 115, 0, planner.NoIndex, planner.NoIndex, 5, 0,
+			0, 9, 488, 1, 115, 0, planner.NoIndex, 0, 5, 0,
+			2, planner.NoIndex, 0, 0, 117, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			8, 0, 496, 2, 117, 0, planner.NoIndex, planner.NoIndex, 12, 0,
+			2, planner.NoIndex, 0, 0, 118, 1, planner.NoIndex, planner.NoIndex, 18, 0,
+			8, 0, 504, 2, 118, 0, planner.NoIndex, planner.NoIndex, 18, 0,
+			2, planner.NoIndex, 0, 0, 119, 2, planner.NoIndex, planner.NoIndex, 24, 0,
+			8, 0, 512, 2, 119, 0, planner.NoIndex, planner.NoIndex, 24, 0,
+			0, 24, 514, 3, 119, 0, planner.NoIndex, 1, 24, 0,
+			2, planner.NoIndex, 0, 0, 121, 1, planner.NoIndex, planner.NoIndex, 29, 0,
+			8, 0, 522, 2, 121, 0, planner.NoIndex, planner.NoIndex, 29, 0,
+			2, planner.NoIndex, 0, 0, 122, 2, planner.NoIndex, planner.NoIndex, 34, 0,
+			8, 0, 528, 2, 122, 0, planner.NoIndex, planner.NoIndex, 34, 0,
+			0, 33, 530, 1, 122, 0, planner.NoIndex, 2, 34, 0,
+			2, planner.NoIndex, 0, 0, 124, 1, planner.NoIndex, planner.NoIndex, 40, 0,
+			8, 0, 537, 2, 124, 0, planner.NoIndex, planner.NoIndex, 40, 0,
+			2, planner.NoIndex, 0, 0, 125, 3, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 46, 549, 2, 125, 0, planner.NoIndex, 3, 4, 0,
+			8, 3, 551, 2, 125, 0, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 50, 553, 2, 125, 0, planner.NoIndex, 4, 5, 0,
+			2, planner.NoIndex, 0, 0, 128, 1, planner.NoIndex, planner.NoIndex, 11, 0,
+			8, 2, 560, 2, 128, 0, planner.NoIndex, planner.NoIndex, 11, 0,
+			2, planner.NoIndex, 0, 0, 129, 1, planner.NoIndex, planner.NoIndex, 15, 0,
+			8, 5, 564, 2, 129, 0, planner.NoIndex, planner.NoIndex, 15, 0,
+			2, planner.NoIndex, 0, 0, 130, 4, planner.NoIndex, planner.NoIndex, 22, 0,
+			0, 64, 571, 1, 130, 0, planner.NoIndex, 5, 22, 0,
+			0, 65, 572, 2, 130, 0, planner.NoIndex, 6, 22, 0,
+			8, 5, 574, 2, 130, 0, planner.NoIndex, planner.NoIndex, 23, 0,
+			0, 69, 576, 2, 130, 0, planner.NoIndex, 7, 23, 0,
+			2, planner.NoIndex, 0, 0, 134, 4, planner.NoIndex, planner.NoIndex, 29, 0,
+			0, 77, 584, 1, 134, 0, planner.NoIndex, 8, 29, 0,
+			0, 65, 585, 2, 134, 0, planner.NoIndex, 6, 29, 0,
+			8, 5, 587, 2, 134, 0, planner.NoIndex, planner.NoIndex, 30, 0,
+			0, 69, 589, 2, 134, 0, planner.NoIndex, 7, 30, 0,
+			2, planner.NoIndex, 0, 0, 138, 1, planner.NoIndex, planner.NoIndex, 34, 0,
+			0, 69, 593, 2, 138, 0, planner.NoIndex, 7, 34, 0,
+			2, planner.NoIndex, 0, 0, 139, 1, planner.NoIndex, planner.NoIndex, 39, 0,
+			0, 85, 599, 2, 139, 0, planner.NoIndex, 9, 39, 0,
+			2, planner.NoIndex, 0, 0, 140, 5, planner.NoIndex, planner.NoIndex, 52, 0,
+			0, 95, 612, 1, 140, 0, planner.NoIndex, 10, 52, 0,
+			0, 96, 613, 3, 140, 0, planner.NoIndex, 11, 52, 0,
+			0, 69, 616, 2, 140, 0, planner.NoIndex, 7, 53, 0,
+			0, 97, 618, 2, 140, 0, planner.NoIndex, 12, 53, 0,
+			8, 4, 620, 2, 140, 0, planner.NoIndex, planner.NoIndex, 54, 0,
+			2, planner.NoIndex, 0, 0, 146, 6, planner.NoIndex, planner.NoIndex, 60, 0,
+			0, 9, 628, 1, 145, 0, planner.NoIndex, 0, 60, 0,
+			0, 108, 629, 2, 145, 0, planner.NoIndex, 13, 60, 0,
+			5, planner.NoIndex, 0, 0, 145, 1, planner.NoIndex, planner.NoIndex, 61, 0,
+			0, 111, 631, 1, 145, 0, planner.NoIndex, 14, 61, 0,
+			0, 69, 632, 2, 146, 0, planner.NoIndex, 7, 62, 0,
+			0, 97, 634, 2, 146, 0, planner.NoIndex, 12, 62, 0,
+			8, 4, 636, 2, 146, 0, planner.NoIndex, planner.NoIndex, 63, 0,
+			2, planner.NoIndex, 0, 0, 152, 5, planner.NoIndex, planner.NoIndex, 69, 0,
+			0, 69, 644, 2, 152, 0, planner.NoIndex, 7, 69, 0,
+			0, 97, 646, 2, 152, 0, planner.NoIndex, 12, 69, 0,
+			0, 119, 648, 2, 152, 0, planner.NoIndex, 15, 70, 0,
+			8, 4, 650, 2, 152, 0, planner.NoIndex, planner.NoIndex, 70, 0,
+			0, 108, 652, 2, 152, 0, planner.NoIndex, 13, 71, 0,
+			2, planner.NoIndex, 0, 0, 157, 4, planner.NoIndex, planner.NoIndex, 76, 0,
+			0, 69, 658, 2, 157, 0, planner.NoIndex, 7, 76, 0,
+			0, 97, 660, 2, 157, 0, planner.NoIndex, 12, 76, 0,
+			0, 119, 662, 2, 157, 0, planner.NoIndex, 15, 77, 0,
+			8, 4, 664, 2, 157, 0, planner.NoIndex, planner.NoIndex, 77, 0,
+			2, planner.NoIndex, 0, 0, 161, 5, planner.NoIndex, planner.NoIndex, 81, 0,
+			0, 69, 668, 2, 161, 0, planner.NoIndex, 7, 81, 0,
+			0, 97, 670, 2, 161, 0, planner.NoIndex, 12, 81, 0,
+			8, 4, 672, 2, 161, 0, planner.NoIndex, planner.NoIndex, 82, 0,
+			8, 5, 674, 2, 161, 0, planner.NoIndex, planner.NoIndex, 82, 0,
+			0, 124, 676, 2, 161, 0, planner.NoIndex, 16, 82, 0,
+			2, planner.NoIndex, 0, 0, 166, 4, planner.NoIndex, planner.NoIndex, 87, 0,
+			0, 69, 682, 2, 166, 0, planner.NoIndex, 7, 87, 0,
+			0, 97, 684, 2, 166, 0, planner.NoIndex, 12, 87, 0,
+			8, 4, 686, 2, 166, 0, planner.NoIndex, planner.NoIndex, 88, 0,
+			0, 124, 688, 2, 166, 0, planner.NoIndex, 16, 88, 0,
+			2, planner.NoIndex, 0, 0, 170, 3, planner.NoIndex, planner.NoIndex, 93, 0,
+			0, 85, 694, 2, 170, 0, planner.NoIndex, 9, 93, 0,
+			0, 97, 696, 2, 170, 0, planner.NoIndex, 12, 93, 0,
+			8, 4, 698, 2, 170, 0, planner.NoIndex, planner.NoIndex, 94, 0,
+			2, planner.NoIndex, 0, 0, 173, 1, planner.NoIndex, planner.NoIndex, 100, 0,
+			0, 130, 706, 3, 173, 0, planner.NoIndex, 17, 100, 0,
+			2, planner.NoIndex, 0, 0, 174, 2, planner.NoIndex, planner.NoIndex, 6, 0,
+			8, 0, 719, 2, 174, 0, planner.NoIndex, planner.NoIndex, 6, 0,
+			0, 147, 721, 2, 174, 0, planner.NoIndex, 18, 6, 0,
+			2, planner.NoIndex, 0, 0, 177, 3, planner.NoIndex, planner.NoIndex, 13, 0,
+			8, 0, 730, 2, 176, 0, planner.NoIndex, planner.NoIndex, 13, 0,
+			0, 108, 732, 2, 176, 0, planner.NoIndex, 13, 13, 0,
+			5, planner.NoIndex, 0, 0, 176, 1, planner.NoIndex, planner.NoIndex, 14, 0,
+			0, 111, 734, 1, 176, 0, planner.NoIndex, 14, 14, 0,
+			2, planner.NoIndex, 0, 0, 180, 1, planner.NoIndex, planner.NoIndex, 20, 0,
+			8, 0, 741, 2, 180, 0, planner.NoIndex, planner.NoIndex, 20, 0,
+			2, planner.NoIndex, 0, 0, 181, 2, planner.NoIndex, planner.NoIndex, 26, 0,
+			8, 0, 748, 2, 181, 0, planner.NoIndex, planner.NoIndex, 26, 0,
+			0, 163, 750, 3, 181, 0, planner.NoIndex, 19, 26, 0,
+			2, planner.NoIndex, 0, 0, 183, 1, planner.NoIndex, planner.NoIndex, 32, 0,
+			8, 0, 759, 2, 183, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 184, 2, planner.NoIndex, planner.NoIndex, 38, 0,
+			0, 175, 767, 2, 184, 0, planner.NoIndex, 20, 38, 0,
+			0, 176, 769, 3, 184, 0, planner.NoIndex, 21, 39, 0,
+			2, planner.NoIndex, 0, 0, 186, 1, planner.NoIndex, planner.NoIndex, 6, 0,
+			0, 186, 787, 3, 186, 0, planner.NoIndex, 22, 6, 0,
+			2, planner.NoIndex, 0, 0, 187, 1, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 192, 796, 3, 187, 0, planner.NoIndex, 23, 12, 0,
+			2, planner.NoIndex, 0, 0, 188, 1, planner.NoIndex, planner.NoIndex, 18, 0,
+			0, 198, 805, 3, 188, 0, planner.NoIndex, 24, 18, 0,
+			2, planner.NoIndex, 0, 0, 189, 1, planner.NoIndex, planner.NoIndex, 24, 0,
+			0, 204, 814, 2, 189, 0, planner.NoIndex, 25, 24, 0,
+			2, planner.NoIndex, 0, 0, 190, 1, planner.NoIndex, planner.NoIndex, 30, 0,
+			0, 207, 822, 3, 190, 0, planner.NoIndex, 26, 30, 0,
+			2, planner.NoIndex, 0, 0, 191, 3, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 46, 836, 2, 191, 0, planner.NoIndex, 3, 4, 0,
+			8, 3, 838, 2, 191, 0, planner.NoIndex, planner.NoIndex, 4, 0,
+			0, 213, 840, 1, 191, 0, planner.NoIndex, 27, 5, 0,
+			2, planner.NoIndex, 0, 0, 194, 3, planner.NoIndex, planner.NoIndex, 10, 0,
+			0, 97, 843, 2, 194, 0, planner.NoIndex, 12, 10, 0,
+			8, 3, 845, 2, 194, 0, planner.NoIndex, planner.NoIndex, 10, 0,
+			0, 220, 847, 2, 194, 0, planner.NoIndex, 28, 11, 0,
+			2, planner.NoIndex, 0, 0, 197, 1, planner.NoIndex, planner.NoIndex, 16, 0,
+			0, 227, 853, 2, 197, 0, planner.NoIndex, 29, 16, 0,
+			2, planner.NoIndex, 0, 0, 198, 2, planner.NoIndex, planner.NoIndex, 21, 0,
+			0, 233, 858, 2, 198, 0, planner.NoIndex, 30, 21, 0,
+			0, 234, 860, 2, 198, 0, planner.NoIndex, 31, 21, 0,
+			2, planner.NoIndex, 0, 0, 200, 2, planner.NoIndex, planner.NoIndex, 27, 0,
+			0, 244, 868, 2, 200, 0, planner.NoIndex, 32, 27, 0,
+			0, 247, 870, 1, 200, 0, planner.NoIndex, 33, 27, 0,
+			2, planner.NoIndex, 0, 0, 202, 1, planner.NoIndex, planner.NoIndex, 32, 0,
+			0, 253, 875, 2, 202, 0, planner.NoIndex, 34, 32, 0,
+			2, planner.NoIndex, 0, 0, 203, 2, planner.NoIndex, planner.NoIndex, 37, 0,
+			0, 65, 881, 2, 203, 0, planner.NoIndex, 6, 37, 0,
+			8, 3, 883, 2, 203, 0, planner.NoIndex, planner.NoIndex, 37, 0,
+			2, planner.NoIndex, 0, 0, 205, 2, planner.NoIndex, planner.NoIndex, 12, 0,
+			0, 271, 889, 1, 205, 0, planner.NoIndex, 35, 13, 0,
+			0, 274, 890, 4, 205, 0, planner.NoIndex, 36, 14, 0,
+			2, planner.NoIndex, 0, 0, 213, 6, planner.NoIndex, planner.NoIndex, 22, 0,
+			0, 271, 899, 1, 207, 0, planner.NoIndex, 35, 23, 0,
+			0, 286, 900, 2, 207, 0, planner.NoIndex, 37, 24, 0,
+			0, 289, 902, 1, 207, 0, planner.NoIndex, 38, 25, 0,
+			0, 290, 903, 3, 207, 0, planner.NoIndex, 39, 26, 0,
+			5, planner.NoIndex, 0, 0, 207, 1, planner.NoIndex, planner.NoIndex, 27, 0,
+			0, 293, 906, 1, 207, 0, planner.NoIndex, 40, 27, 0,
+			5, planner.NoIndex, 0, 0, 212, 1, planner.NoIndex, planner.NoIndex, 28, 0,
+			2, planner.NoIndex, 0, 0, 208, 4, planner.NoIndex, planner.NoIndex, 29, 0,
+			0, 286, 907, 2, 208, 0, planner.NoIndex, 37, 30, 0,
+			0, 289, 909, 1, 208, 0, planner.NoIndex, 38, 31, 0,
+			0, 290, 910, 3, 208, 0, planner.NoIndex, 39, 32, 0,
+			8, 2, 913, 2, 208, 0, planner.NoIndex, planner.NoIndex, 33, 0,
+			2, planner.NoIndex, 0, 0, 219, 2, planner.NoIndex, planner.NoIndex, 43, 0,
+			0, 271, 920, 1, 219, 0, planner.NoIndex, 35, 44, 0,
+			0, 274, 921, 4, 219, 0, planner.NoIndex, 36, 45, 0,
+			2, planner.NoIndex, 0, 0, 222, 3, planner.NoIndex, planner.NoIndex, 53, 0,
+			0, 271, 930, 1, 221, 0, planner.NoIndex, 35, 54, 0,
+			0, 306, 931, 3, 221, 0, planner.NoIndex, 41, 55, 0,
+			5, planner.NoIndex, 0, 0, 221, 1, planner.NoIndex, planner.NoIndex, 56, 0,
+			0, 309, 934, 3, 221, 0, planner.NoIndex, 42, 56, 0,
+			2, planner.NoIndex, 0, 0, 225, 2, planner.NoIndex, planner.NoIndex, 64, 0,
+			0, 271, 942, 1, 225, 0, planner.NoIndex, 35, 65, 0,
+			0, 309, 943, 3, 225, 0, planner.NoIndex, 42, 66, 0,
+			2, planner.NoIndex, 0, 0, 227, 2, planner.NoIndex, planner.NoIndex, 74, 0,
+			0, 271, 951, 1, 227, 0, planner.NoIndex, 35, 75, 0,
+			0, 274, 952, 4, 227, 0, planner.NoIndex, 36, 76, 0,
+			2, planner.NoIndex, 0, 0, 229, 1, planner.NoIndex, planner.NoIndex, 84, 0,
+			0, 271, 961, 1, 229, 0, planner.NoIndex, 35, 84, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(== ?inp_order evacuate)",
+			"(under_fire ?inp_npc)",
+			"(and ...)",
+			"(== ?inp_order evacuate)",
+			"(and ...)",
+			"(== ?inp_order hold)",
+			"(and ...)",
+			"(== ?inp_order escort)",
+			"(escort_route ?inp_npc ?inp_target ?route)",
+			"(and ...)",
+			"(== ?inp_order guard)",
+			"(and ...)",
+			"(== ?inp_order interact)",
+			"(interaction_ready ?inp_target)",
+			"(and ...)",
+			"(== ?inp_order move)",
+			"(and ...)",
+			"(health ?inp_npc ?hp)",
+			"(<= ?hp 20)",
+			"(retreat_route ?inp_npc ?route)",
+			"(and ...)",
+			"(< ?inp_distance 8)",
+			"(and ...)",
+			"(>= ?inp_distance 8)",
+			"(and ...)",
+			"(enemy_attacking ?inp_enemy)",
+			"(stamina ?inp_npc ?amount)",
+			"(>= ?amount 30)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(enemy_staggered ?inp_enemy)",
+			"(stamina ?inp_npc ?amount)",
+			"(>= ?amount 45)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(weapon_available ?inp_npc melee)",
+			"(and ...)",
+			"(enemy_suppressed ?inp_enemy)",
+			"(flank_route ?inp_npc ?inp_enemy ?route)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(under_fire ?inp_npc)",
+			"(cover_available ?inp_npc ?cover)",
+			"(not ...)",
+			"(cover_compromised ?cover)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc 0)",
+			"(reserve_ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(cover_available ?inp_npc ?cover)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc 0)",
+			"(reserve_ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(>= ?inp_distance 30)",
+			"(clear_shot ?inp_npc ?inp_enemy)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(clear_shot ?inp_npc ?inp_enemy)",
+			"(and ...)",
+			"(weapon_available ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(advance_route ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(== ?inp_stimulus radio)",
+			"(squad_alert ?inp_npc ?report)",
+			"(and ...)",
+			"(== ?inp_stimulus gunshot)",
+			"(cover_available ?inp_npc ?cover)",
+			"(not ...)",
+			"(cover_compromised ?cover)",
+			"(and ...)",
+			"(== ?inp_stimulus gunshot)",
+			"(and ...)",
+			"(== ?inp_stimulus footprints)",
+			"(track_route ?inp_npc ?inp_location ?route)",
+			"(and ...)",
+			"(== ?inp_stimulus anomaly)",
+			"(and ...)",
+			"(route_blocked_to ?inp_npc ?inp_location)",
+			"(alternate_investigation_route ?inp_npc ?inp_location ?route)",
+			"(and ...)",
+			"(enemy_tracks ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(escape_sound ?inp_npc ?inp_enemy ?location)",
+			"(and ...)",
+			"(squad_search_route ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(cover_at ?inp_last_location ?cover)",
+			"(and ...)",
+			"(search_perimeter ?inp_npc ?inp_last_location ?route)",
+			"(and ...)",
+			"(health ?inp_npc ?hp)",
+			"(<= ?hp 45)",
+			"(medkit_available ?inp_npc)",
+			"(and ...)",
+			"(ammo ?inp_npc ?count)",
+			"(<= ?count 5)",
+			"(ammo_cache ?inp_npc ?cache)",
+			"(and ...)",
+			"(weapon_jammed ?inp_npc ?weapon)",
+			"(and ...)",
+			"(patrol_route ?inp_npc ?route)",
+			"(patrol_checkpoint ?inp_npc ?point)",
+			"(and ...)",
+			"(nearby_ally ?inp_npc ?ally)",
+			"(social_cooldown_ready ?inp_npc)",
+			"(and ...)",
+			"(assigned_post ?inp_npc ?post)",
+			"(and ...)",
+			"(stamina ?inp_npc ?amount)",
+			"(<= ?amount 25)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc high ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(visible_enemy ?npc ?enemy)",
+			"(hostile_enemy ?enemy)",
+			"(enemy_distance ?npc ?enemy ?distance)",
+			"(not ...)",
+			"(enemy_dead ?enemy)",
+			"(not ...)",
+			"(and ...)",
+			"(visible_enemy ?npc ?other)",
+			"(hostile_enemy ?other)",
+			"(enemy_distance ?npc ?other ?other_distance)",
+			"(< ?other_distance ?distance)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc medium ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(suspicious_stimulus ?npc ?stimulus ?location)",
+			"(not ...)",
+			"(combat_memory ?npc ?lost_enemy ?last_location)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(combat_memory ?npc ?enemy ?last_location)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc low ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(and ...)",
+			"(== ?inp_order evacuate)",
+			"(under_fire ?inp_npc)",
+			"(and ...)",
+			"(== ?inp_order evacuate)",
+			"(and ...)",
+			"(== ?inp_order hold)",
+			"(and ...)",
+			"(== ?inp_order escort)",
+			"(escort_route ?inp_npc ?inp_target ?route)",
+			"(and ...)",
+			"(== ?inp_order guard)",
+			"(and ...)",
+			"(== ?inp_order interact)",
+			"(interaction_ready ?inp_target)",
+			"(and ...)",
+			"(== ?inp_order move)",
+			"(and ...)",
+			"(health ?inp_npc ?hp)",
+			"(<= ?hp 20)",
+			"(retreat_route ?inp_npc ?route)",
+			"(and ...)",
+			"(< ?inp_distance 8)",
+			"(and ...)",
+			"(>= ?inp_distance 8)",
+			"(and ...)",
+			"(enemy_attacking ?inp_enemy)",
+			"(stamina ?inp_npc ?amount)",
+			"(>= ?amount 30)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(enemy_staggered ?inp_enemy)",
+			"(stamina ?inp_npc ?amount)",
+			"(>= ?amount 45)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc melee)",
+			"(and ...)",
+			"(weapon_available ?inp_npc melee)",
+			"(and ...)",
+			"(enemy_suppressed ?inp_enemy)",
+			"(flank_route ?inp_npc ?inp_enemy ?route)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(under_fire ?inp_npc)",
+			"(cover_available ?inp_npc ?cover)",
+			"(not ...)",
+			"(cover_compromised ?cover)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc 0)",
+			"(reserve_ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(cover_available ?inp_npc ?cover)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc 0)",
+			"(reserve_ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(>= ?inp_distance 30)",
+			"(clear_shot ?inp_npc ?inp_enemy)",
+			"(and ...)",
+			"(weapon_equipped ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(clear_shot ?inp_npc ?inp_enemy)",
+			"(and ...)",
+			"(weapon_available ?inp_npc ranged)",
+			"(ammo ?inp_npc ?count)",
+			"(> ?count 0)",
+			"(and ...)",
+			"(advance_route ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(== ?inp_stimulus radio)",
+			"(squad_alert ?inp_npc ?report)",
+			"(and ...)",
+			"(== ?inp_stimulus gunshot)",
+			"(cover_available ?inp_npc ?cover)",
+			"(not ...)",
+			"(cover_compromised ?cover)",
+			"(and ...)",
+			"(== ?inp_stimulus gunshot)",
+			"(and ...)",
+			"(== ?inp_stimulus footprints)",
+			"(track_route ?inp_npc ?inp_location ?route)",
+			"(and ...)",
+			"(== ?inp_stimulus anomaly)",
+			"(and ...)",
+			"(route_blocked_to ?inp_npc ?inp_location)",
+			"(alternate_investigation_route ?inp_npc ?inp_location ?route)",
+			"(and ...)",
+			"(enemy_tracks ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(escape_sound ?inp_npc ?inp_enemy ?location)",
+			"(and ...)",
+			"(squad_search_route ?inp_npc ?inp_enemy ?route)",
+			"(and ...)",
+			"(cover_at ?inp_last_location ?cover)",
+			"(and ...)",
+			"(search_perimeter ?inp_npc ?inp_last_location ?route)",
+			"(and ...)",
+			"(health ?inp_npc ?hp)",
+			"(<= ?hp 45)",
+			"(medkit_available ?inp_npc)",
+			"(and ...)",
+			"(ammo ?inp_npc ?count)",
+			"(<= ?count 5)",
+			"(ammo_cache ?inp_npc ?cache)",
+			"(and ...)",
+			"(weapon_jammed ?inp_npc ?weapon)",
+			"(and ...)",
+			"(patrol_route ?inp_npc ?route)",
+			"(patrol_checkpoint ?inp_npc ?point)",
+			"(and ...)",
+			"(nearby_ally ?inp_npc ?ally)",
+			"(social_cooldown_ready ?inp_npc)",
+			"(and ...)",
+			"(assigned_post ?inp_npc ?post)",
+			"(and ...)",
+			"(stamina ?inp_npc ?amount)",
+			"(<= ?amount 25)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc high ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(visible_enemy ?npc ?enemy)",
+			"(hostile_enemy ?enemy)",
+			"(enemy_distance ?npc ?enemy ?distance)",
+			"(not ...)",
+			"(enemy_dead ?enemy)",
+			"(not ...)",
+			"(and ...)",
+			"(visible_enemy ?npc ?other)",
+			"(hostile_enemy ?other)",
+			"(enemy_distance ?npc ?other ?other_distance)",
+			"(< ?other_distance ?distance)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc medium ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(suspicious_stimulus ?npc ?stimulus ?location)",
+			"(not ...)",
+			"(combat_memory ?npc ?lost_enemy ?last_location)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(combat_memory ?npc ?enemy ?last_location)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+			"(scripted_order ?npc low ?order ?target)",
+			"(and ...)",
+			"(controlled_npc ?npc)",
+		},
+		ConditionChildRefs: []uint32{
+			1,
+			2,
+			4,
+			6,
+			8,
+			9,
+			11,
+			13,
+			14,
+			16,
+			18,
+			19,
+			20,
+			22,
+			24,
+			26,
+			27,
+			28,
+			29,
+			31,
+			32,
+			33,
+			34,
+			36,
+			38,
+			40,
+			41,
+			42,
+			43,
+			44,
+			49,
+			46,
+			47,
+			48,
+			50,
+			51,
+			52,
+			54,
+			55,
+			56,
+			57,
+			58,
+			60,
+			61,
+			62,
+			63,
+			65,
+			66,
+			67,
+			68,
+			69,
+			71,
+			72,
+			73,
+			74,
+			76,
+			77,
+			78,
+			80,
+			82,
+			83,
+			88,
+			85,
+			86,
+			87,
+			90,
+			92,
+			93,
+			95,
+			97,
+			98,
+			100,
+			102,
+			104,
+			106,
+			108,
+			110,
+			111,
+			112,
+			114,
+			115,
+			116,
+			118,
+			120,
+			121,
+			123,
+			124,
+			126,
+			128,
+			129,
+			131,
+			132,
+			139,
+			142,
+			143,
+			144,
+			145,
+			141,
+			134,
+			135,
+			136,
+			137,
+			138,
+			140,
+			147,
+			148,
+			153,
+			150,
+			151,
+			152,
+			155,
+			156,
+			158,
+			159,
+			161,
+			163,
+			164,
+			166,
+			168,
+			170,
+			171,
+			173,
+			175,
+			176,
+			178,
+			180,
+			181,
+			182,
+			184,
+			186,
+			188,
+			189,
+			190,
+			191,
+			193,
+			194,
+			195,
+			196,
+			198,
+			200,
+			202,
+			203,
+			204,
+			205,
+			206,
+			211,
+			208,
+			209,
+			210,
+			212,
+			213,
+			214,
+			216,
+			217,
+			218,
+			219,
+			220,
+			222,
+			223,
+			224,
+			225,
+			227,
+			228,
+			229,
+			230,
+			231,
+			233,
+			234,
+			235,
+			236,
+			238,
+			239,
+			240,
+			242,
+			244,
+			245,
+			250,
+			247,
+			248,
+			249,
+			252,
+			254,
+			255,
+			257,
+			259,
+			260,
+			262,
+			264,
+			266,
+			268,
+			270,
+			272,
+			273,
+			274,
+			276,
+			277,
+			278,
+			280,
+			282,
+			283,
+			285,
+			286,
+			288,
+			290,
+			291,
+			293,
+			294,
+			301,
+			304,
+			305,
+			306,
+			307,
+			303,
+			296,
+			297,
+			298,
+			299,
+			300,
+			302,
+			309,
+			310,
+			315,
+			312,
+			313,
+			314,
+			317,
+			318,
+			320,
+			321,
+			323,
+		},
+		Tasks: []uint32{
+			1, 10, 6, 2, 6, 11,
+			1, 12, 8, 1, 7, 13,
+			1, 14, 9, 2, 8, 15,
+			1, 16, 11, 2, 9, 17,
+			1, 10, 15, 2, 13, 11,
+			1, 14, 17, 2, 14, 15,
+			1, 16, 19, 2, 15, 17,
+			1, 10, 23, 2, 19, 11,
+			1, 20, 25, 2, 20, 21,
+			1, 18, 27, 2, 21, 22,
+			1, 10, 34, 2, 25, 11,
+			1, 27, 36, 3, 26, 28,
+			1, 10, 41, 2, 30, 11,
+			1, 30, 43, 2, 31, 31,
+			1, 14, 48, 2, 35, 15,
+			1, 34, 50, 2, 36, 35,
+			1, 16, 52, 2, 37, 17,
+			1, 14, 56, 2, 41, 15,
+			1, 16, 58, 2, 42, 17,
+			1, 38, 60, 3, 46, 39,
+			1, 51, 72, 2, 6, 52,
+			1, 53, 74, 1, 7, 54,
+			1, 55, 75, 2, 8, 56,
+			0, 59, 79, 2, 12, planner.NoIndex,
+			0, 61, 83, 3, 16, planner.NoIndex,
+			1, 70, 95, 2, 24, 71,
+			1, 72, 97, 2, 25, 73,
+			1, 74, 99, 2, 26, 75,
+			1, 79, 108, 2, 31, 80,
+			1, 70, 112, 2, 35, 71,
+			1, 82, 114, 2, 36, 83,
+			1, 86, 118, 2, 40, 87,
+			1, 82, 120, 2, 41, 83,
+			1, 89, 122, 2, 45, 90,
+			1, 91, 124, 2, 46, 92,
+			1, 101, 139, 2, 55, 102,
+			1, 103, 141, 2, 56, 104,
+			1, 105, 143, 2, 57, 106,
+			1, 112, 155, 2, 64, 113,
+			1, 114, 157, 2, 65, 115,
+			1, 116, 159, 2, 66, 117,
+			1, 112, 171, 2, 72, 113,
+			1, 120, 173, 2, 73, 121,
+			1, 120, 183, 2, 78, 121,
+			1, 103, 195, 2, 83, 104,
+			1, 125, 197, 2, 84, 126,
+			1, 103, 207, 2, 89, 104,
+			1, 116, 209, 2, 90, 117,
+			1, 86, 217, 2, 95, 87,
+			1, 103, 219, 2, 96, 104,
+			1, 116, 221, 2, 97, 117,
+			1, 131, 226, 2, 101, 132,
+			1, 133, 228, 2, 102, 134,
+			1, 136, 230, 2, 106, 137,
+			1, 138, 232, 1, 107, 139,
+			1, 150, 240, 2, 7, 151,
+			1, 152, 242, 1, 8, 153,
+			1, 154, 243, 2, 9, 155,
+			1, 156, 245, 2, 10, 157,
+			1, 112, 252, 2, 15, 113,
+			1, 160, 254, 2, 16, 161,
+			1, 156, 256, 2, 17, 157,
+			1, 152, 260, 1, 21, 153,
+			1, 154, 261, 2, 22, 155,
+			1, 156, 263, 2, 23, 157,
+			1, 164, 270, 2, 27, 165,
+			1, 166, 272, 2, 28, 167,
+			1, 156, 274, 2, 29, 157,
+			1, 170, 278, 2, 33, 171,
+			1, 154, 280, 2, 34, 155,
+			1, 172, 282, 2, 35, 173,
+			1, 177, 289, 2, 40, 178,
+			1, 156, 291, 2, 41, 157,
+			1, 152, 293, 1, 45, 153,
+			1, 154, 294, 2, 46, 155,
+			1, 156, 296, 2, 47, 157,
+			1, 180, 298, 3, 48, 181,
+			1, 187, 307, 2, 7, 188,
+			1, 189, 309, 2, 8, 190,
+			1, 156, 311, 2, 9, 157,
+			1, 187, 316, 2, 13, 188,
+			1, 195, 318, 2, 14, 196,
+			1, 156, 320, 2, 15, 157,
+			1, 199, 325, 2, 19, 200,
+			1, 201, 327, 2, 20, 202,
+			1, 156, 329, 2, 21, 157,
+			1, 195, 333, 2, 25, 196,
+			1, 205, 335, 2, 26, 206,
+			1, 156, 337, 2, 27, 157,
+			1, 201, 342, 2, 31, 202,
+			1, 156, 344, 2, 32, 157,
+			1, 195, 346, 2, 36, 196,
+			1, 156, 348, 2, 37, 157,
+			1, 209, 350, 2, 38, 210,
+			1, 214, 358, 1, 6, 215,
+			1, 216, 359, 1, 7, 217,
+			1, 223, 366, 2, 12, 224,
+			1, 218, 368, 2, 13, 225,
+			1, 230, 372, 2, 17, 231,
+			1, 216, 374, 1, 18, 217,
+			1, 237, 379, 2, 22, 238,
+			1, 239, 381, 2, 23, 240,
+			1, 241, 383, 2, 24, 242,
+			1, 248, 388, 2, 28, 249,
+			1, 250, 390, 2, 29, 251,
+			1, 256, 394, 2, 33, 257,
+			1, 258, 396, 2, 34, 259,
+			1, 262, 402, 1, 38, 263,
+			1, 264, 403, 1, 39, 265,
+			1, 267, 404, 1, 43, 268,
+			1, 264, 405, 1, 44, 265,
+			1, 280, 411, 2, 17, 281,
+			0, 284, 413, 3, 18, planner.NoIndex,
+			1, 280, 432, 2, 38, 281,
+			0, 300, 434, 3, 39, planner.NoIndex,
+			1, 280, 442, 2, 48, 281,
+			0, 284, 444, 3, 49, planner.NoIndex,
+			1, 280, 454, 2, 59, 281,
+			0, 316, 456, 3, 60, planner.NoIndex,
+			1, 280, 463, 2, 69, 281,
+			0, 320, 465, 3, 70, planner.NoIndex,
+			1, 280, 473, 2, 79, 281,
+			0, 284, 475, 3, 80, planner.NoIndex,
+			1, 280, 479, 2, 86, 281,
+			0, 327, 481, 1, 87, planner.NoIndex,
+			1, 280, 482, 1, 92, 281,
+			1, 10, 489, 2, 6, 11,
+			1, 12, 491, 1, 7, 13,
+			1, 14, 492, 2, 8, 15,
+			1, 16, 494, 2, 9, 17,
+			1, 10, 498, 2, 13, 11,
+			1, 14, 500, 2, 14, 15,
+			1, 16, 502, 2, 15, 17,
+			1, 10, 506, 2, 19, 11,
+			1, 20, 508, 2, 20, 21,
+			1, 18, 510, 2, 21, 22,
+			1, 10, 517, 2, 25, 11,
+			1, 27, 519, 3, 26, 28,
+			1, 10, 524, 2, 30, 11,
+			1, 30, 526, 2, 31, 31,
+			1, 14, 531, 2, 35, 15,
+			1, 34, 533, 2, 36, 35,
+			1, 16, 535, 2, 37, 17,
+			1, 14, 539, 2, 41, 15,
+			1, 16, 541, 2, 42, 17,
+			1, 38, 543, 3, 46, 39,
+			1, 51, 555, 2, 6, 52,
+			1, 53, 557, 1, 7, 54,
+			1, 55, 558, 2, 8, 56,
+			0, 59, 562, 2, 12, planner.NoIndex,
+			0, 61, 566, 3, 16, planner.NoIndex,
+			1, 70, 578, 2, 24, 71,
+			1, 72, 580, 2, 25, 73,
+			1, 74, 582, 2, 26, 75,
+			1, 79, 591, 2, 31, 80,
+			1, 70, 595, 2, 35, 71,
+			1, 82, 597, 2, 36, 83,
+			1, 86, 601, 2, 40, 87,
+			1, 82, 603, 2, 41, 83,
+			1, 89, 605, 2, 45, 90,
+			1, 91, 607, 2, 46, 92,
+			1, 101, 622, 2, 55, 102,
+			1, 103, 624, 2, 56, 104,
+			1, 105, 626, 2, 57, 106,
+			1, 112, 638, 2, 64, 113,
+			1, 114, 640, 2, 65, 115,
+			1, 116, 642, 2, 66, 117,
+			1, 112, 654, 2, 72, 113,
+			1, 120, 656, 2, 73, 121,
+			1, 120, 666, 2, 78, 121,
+			1, 103, 678, 2, 83, 104,
+			1, 125, 680, 2, 84, 126,
+			1, 103, 690, 2, 89, 104,
+			1, 116, 692, 2, 90, 117,
+			1, 86, 700, 2, 95, 87,
+			1, 103, 702, 2, 96, 104,
+			1, 116, 704, 2, 97, 117,
+			1, 131, 709, 2, 101, 132,
+			1, 133, 711, 2, 102, 134,
+			1, 136, 713, 2, 106, 137,
+			1, 138, 715, 1, 107, 139,
+			1, 150, 723, 2, 7, 151,
+			1, 152, 725, 1, 8, 153,
+			1, 154, 726, 2, 9, 155,
+			1, 156, 728, 2, 10, 157,
+			1, 112, 735, 2, 15, 113,
+			1, 160, 737, 2, 16, 161,
+			1, 156, 739, 2, 17, 157,
+			1, 152, 743, 1, 21, 153,
+			1, 154, 744, 2, 22, 155,
+			1, 156, 746, 2, 23, 157,
+			1, 164, 753, 2, 27, 165,
+			1, 166, 755, 2, 28, 167,
+			1, 156, 757, 2, 29, 157,
+			1, 170, 761, 2, 33, 171,
+			1, 154, 763, 2, 34, 155,
+			1, 172, 765, 2, 35, 173,
+			1, 177, 772, 2, 40, 178,
+			1, 156, 774, 2, 41, 157,
+			1, 152, 776, 1, 45, 153,
+			1, 154, 777, 2, 46, 155,
+			1, 156, 779, 2, 47, 157,
+			1, 180, 781, 3, 48, 181,
+			1, 187, 790, 2, 7, 188,
+			1, 189, 792, 2, 8, 190,
+			1, 156, 794, 2, 9, 157,
+			1, 187, 799, 2, 13, 188,
+			1, 195, 801, 2, 14, 196,
+			1, 156, 803, 2, 15, 157,
+			1, 199, 808, 2, 19, 200,
+			1, 201, 810, 2, 20, 202,
+			1, 156, 812, 2, 21, 157,
+			1, 195, 816, 2, 25, 196,
+			1, 205, 818, 2, 26, 206,
+			1, 156, 820, 2, 27, 157,
+			1, 201, 825, 2, 31, 202,
+			1, 156, 827, 2, 32, 157,
+			1, 195, 829, 2, 36, 196,
+			1, 156, 831, 2, 37, 157,
+			1, 209, 833, 2, 38, 210,
+			1, 214, 841, 1, 6, 215,
+			1, 216, 842, 1, 7, 217,
+			1, 223, 849, 2, 12, 224,
+			1, 218, 851, 2, 13, 225,
+			1, 230, 855, 2, 17, 231,
+			1, 216, 857, 1, 18, 217,
+			1, 237, 862, 2, 22, 238,
+			1, 239, 864, 2, 23, 240,
+			1, 241, 866, 2, 24, 242,
+			1, 248, 871, 2, 28, 249,
+			1, 250, 873, 2, 29, 251,
+			1, 256, 877, 2, 33, 257,
+			1, 258, 879, 2, 34, 259,
+			1, 262, 885, 1, 38, 263,
+			1, 264, 886, 1, 39, 265,
+			1, 267, 887, 1, 43, 268,
+			1, 264, 888, 1, 44, 265,
+			1, 280, 894, 2, 17, 281,
+			0, 284, 896, 3, 18, planner.NoIndex,
+			1, 280, 915, 2, 38, 281,
+			0, 300, 917, 3, 39, planner.NoIndex,
+			1, 280, 925, 2, 48, 281,
+			0, 284, 927, 3, 49, planner.NoIndex,
+			1, 280, 937, 2, 59, 281,
+			0, 316, 939, 3, 60, planner.NoIndex,
+			1, 280, 946, 2, 69, 281,
+			0, 320, 948, 3, 70, planner.NoIndex,
+			1, 280, 956, 2, 79, 281,
+			0, 284, 958, 3, 80, planner.NoIndex,
+			1, 280, 962, 2, 86, 281,
+			0, 327, 964, 1, 87, planner.NoIndex,
+			1, 280, 965, 1, 92, 281,
+		},
+		Branches: []uint32{
+			7, 0, 0, 4, 4,
+			8, 3, 4, 3, 11,
+			18, 5, 7, 3, 17,
+			23, 7, 10, 2, 23,
+			29, 10, 12, 2, 28,
+			32, 12, 14, 3, 33,
+			36, 15, 17, 2, 39,
+			37, planner.NoIndex, 19, 1, 44,
+			45, 17, 20, 3, 3,
+			57, 21, 23, 1, 10,
+			60, 23, 24, 1, 14,
+			63, 25, 25, 3, 21,
+			76, 30, 28, 1, 28,
+			81, 35, 29, 2, 33,
+			84, 37, 31, 2, 38,
+			88, planner.NoIndex, 33, 2, 43,
+			94, 39, 35, 3, 51,
+			107, 45, 38, 3, 59,
+			118, 53, 41, 2, 68,
+			122, 59, 43, 1, 75,
+			123, 64, 44, 2, 80,
+			127, 70, 46, 2, 86,
+			128, 75, 48, 3, 92,
+			129, 79, 51, 2, 99,
+			135, planner.NoIndex, 53, 2, 104,
+			145, 81, 55, 4, 5,
+			158, 84, 59, 3, 12,
+			159, 89, 62, 3, 19,
+			162, 91, 65, 3, 25,
+			168, 94, 68, 3, 31,
+			174, 96, 71, 2, 37,
+			179, planner.NoIndex, 73, 4, 43,
+			185, 99, 77, 3, 5,
+			191, 101, 80, 3, 11,
+			197, 103, 83, 3, 17,
+			203, 105, 86, 3, 23,
+			207, 107, 89, 2, 29,
+			208, planner.NoIndex, 91, 3, 34,
+			212, 109, 94, 2, 3,
+			218, 113, 96, 2, 9,
+			226, 117, 98, 2, 15,
+			232, 119, 100, 3, 20,
+			243, 122, 103, 2, 26,
+			252, 125, 105, 2, 31,
+			260, 127, 107, 2, 36,
+			266, planner.NoIndex, 109, 2, 41,
+			270, 130, 111, 2, 11,
+			285, 133, 113, 2, 21,
+			301, 146, 115, 2, 42,
+			305, 149, 117, 2, 52,
+			317, 154, 119, 2, 63,
+			321, 157, 121, 2, 73,
+			325, 160, 123, 2, 83,
+			328, planner.NoIndex, 125, 1, 90,
+			7, 162, 126, 4, 4,
+			8, 165, 130, 3, 11,
+			18, 167, 133, 3, 17,
+			23, 169, 136, 2, 23,
+			29, 172, 138, 2, 28,
+			32, 174, 140, 3, 33,
+			36, 177, 143, 2, 39,
+			37, planner.NoIndex, 145, 1, 44,
+			45, 179, 146, 3, 3,
+			57, 183, 149, 1, 10,
+			60, 185, 150, 1, 14,
+			63, 187, 151, 3, 21,
+			76, 192, 154, 1, 28,
+			81, 197, 155, 2, 33,
+			84, 199, 157, 2, 38,
+			88, planner.NoIndex, 159, 2, 43,
+			94, 201, 161, 3, 51,
+			107, 207, 164, 3, 59,
+			118, 215, 167, 2, 68,
+			122, 221, 169, 1, 75,
+			123, 226, 170, 2, 80,
+			127, 232, 172, 2, 86,
+			128, 237, 174, 3, 92,
+			129, 241, 177, 2, 99,
+			135, planner.NoIndex, 179, 2, 104,
+			145, 243, 181, 4, 5,
+			158, 246, 185, 3, 12,
+			159, 251, 188, 3, 19,
+			162, 253, 191, 3, 25,
+			168, 256, 194, 3, 31,
+			174, 258, 197, 2, 37,
+			179, planner.NoIndex, 199, 4, 43,
+			185, 261, 203, 3, 5,
+			191, 263, 206, 3, 11,
+			197, 265, 209, 3, 17,
+			203, 267, 212, 3, 23,
+			207, 269, 215, 2, 29,
+			208, planner.NoIndex, 217, 3, 34,
+			212, 271, 220, 2, 3,
+			218, 275, 222, 2, 9,
+			226, 279, 224, 2, 15,
+			232, 281, 226, 3, 20,
+			243, 284, 229, 2, 26,
+			252, 287, 231, 2, 31,
+			260, 289, 233, 2, 36,
+			266, planner.NoIndex, 235, 2, 41,
+			270, 292, 237, 2, 11,
+			285, 295, 239, 2, 21,
+			301, 308, 241, 2, 42,
+			305, 311, 243, 2, 52,
+			317, 316, 245, 2, 63,
+			321, 319, 247, 2, 73,
+			325, 322, 249, 2, 83,
+			328, planner.NoIndex, 251, 1, 90,
+		},
+		Methods: []uint64{
+			0, 0, 3, 0, 8, 3, 0xf, 0x0, 0x0, 0x0,
+			40, 63, 3, 8, 3, 2, 0x79, 0x0, 0x0, 0x0,
+			62, 86, 2, 11, 5, 20, 0x91, 0x0, 0x0, 0x0,
+			93, 126, 3, 16, 9, 50, 0x339, 0x0, 0x0, 0x0,
+			140, 233, 3, 25, 7, 4, 0x1e09, 0x0, 0x0, 0x0,
+			182, 301, 3, 32, 6, 4, 0x6219, 0x0, 0x0, 0x0,
+			211, 352, 1, 38, 8, 2, 0xf81c9, 0x0, 0x0, 0x0,
+			269, 406, 0, 46, 8, 10, 0x3ff04000, 0x0, 0x0, 0x0,
+			284, 483, 3, 54, 8, 3, 0xf, 0x0, 0x0, 0x0,
+			300, 546, 3, 62, 3, 2, 0x79, 0x0, 0x0, 0x0,
+			59, 569, 2, 65, 5, 20, 0x91, 0x0, 0x0, 0x0,
+			61, 609, 3, 70, 9, 50, 0x339, 0x0, 0x0, 0x0,
+			316, 716, 3, 79, 7, 4, 0x1e09, 0x0, 0x0, 0x0,
+			320, 784, 3, 86, 6, 4, 0x6219, 0x0, 0x0, 0x0,
+			327, 835, 1, 92, 8, 2, 0xf81c9, 0x0, 0x0, 0x0,
+			331, 889, 0, 100, 8, 10, 0x3ff04000, 0x0, 0x0, 0x0,
+		},
+		Axioms:            []uint64{},
+		Constants:         []uint32{},
+		CallTermSlotCount: 0,
+		FactSlotCount:     43,
+		SourceFiles: []string{
+			"Domains/Includes/aaa_orders.domain",
+			"Domains/Includes/aaa_combat.domain",
+			"Domains/Includes/aaa_investigation.domain",
+			"Domains/Includes/aaa_search.domain",
+			"Domains/Includes/aaa_idle.domain",
+			"Domains/AAACombatNPC.domain",
+		},
+		ValueSources: []uint32{
+			0, 3, 38, 3, 46,
+			0, 3, 47, 3, 57,
+			0, 3, 58, 3, 69,
+			0, 5, 22, 5, 32,
+			0, 5, 33, 5, 41,
+			0, 5, 55, 5, 63,
+			0, 6, 35, 6, 43,
+			0, 6, 44, 6, 54,
+			0, 7, 29, 7, 37,
+			0, 8, 37, 8, 45,
+			0, 8, 46, 8, 57,
+			0, 9, 36, 9, 44,
+			0, 9, 45, 9, 55,
+			0, 12, 22, 12, 32,
+			0, 12, 33, 12, 41,
+			0, 13, 35, 13, 43,
+			0, 13, 44, 13, 54,
+			0, 14, 37, 14, 45,
+			0, 14, 46, 14, 57,
+			0, 15, 36, 15, 44,
+			0, 15, 45, 15, 55,
+			0, 18, 22, 18, 32,
+			0, 18, 33, 18, 37,
+			0, 19, 35, 19, 43,
+			0, 19, 44, 19, 54,
+			0, 20, 34, 20, 42,
+			0, 20, 43, 20, 54,
+			0, 21, 30, 21, 38,
+			0, 21, 39, 21, 50,
+			0, 24, 22, 24, 32,
+			0, 24, 33, 24, 39,
+			0, 24, 55, 24, 63,
+			0, 24, 64, 24, 75,
+			0, 24, 76, 24, 82,
+			0, 25, 35, 25, 43,
+			0, 25, 44, 25, 54,
+			0, 26, 36, 26, 44,
+			0, 26, 45, 26, 56,
+			0, 26, 57, 26, 63,
+			0, 29, 22, 29, 32,
+			0, 29, 33, 29, 38,
+			0, 30, 35, 30, 43,
+			0, 30, 44, 30, 54,
+			0, 31, 29, 31, 37,
+			0, 31, 38, 31, 49,
+			0, 34, 22, 34, 32,
+			0, 34, 33, 34, 41,
+			0, 34, 62, 34, 73,
+			0, 35, 37, 35, 45,
+			0, 35, 46, 35, 57,
+			0, 36, 30, 36, 38,
+			0, 36, 39, 36, 50,
+			0, 37, 36, 37, 44,
+			0, 37, 45, 37, 55,
+			0, 40, 22, 40, 32,
+			0, 40, 33, 40, 37,
+			0, 41, 37, 41, 45,
+			0, 41, 46, 41, 57,
+			0, 42, 36, 42, 44,
+			0, 42, 45, 42, 55,
+			0, 46, 37, 46, 45,
+			0, 46, 46, 46, 56,
+			0, 46, 57, 46, 68,
+			1, 2, 27, 2, 35,
+			1, 2, 36, 2, 46,
+			1, 2, 47, 2, 60,
+			1, 4, 26, 4, 34,
+			1, 4, 35, 4, 38,
+			1, 4, 44, 4, 47,
+			1, 4, 48, 4, 50,
+			1, 5, 33, 5, 41,
+			1, 5, 42, 5, 48,
+			1, 6, 31, 6, 39,
+			1, 6, 40, 6, 50,
+			1, 7, 28, 7, 36,
+			1, 8, 28, 8, 36,
+			1, 8, 37, 8, 43,
+			1, 11, 21, 11, 34,
+			1, 11, 35, 11, 36,
+			1, 12, 26, 12, 34,
+			1, 12, 35, 12, 45,
+			1, 15, 22, 15, 35,
+			1, 15, 36, 15, 37,
+			1, 16, 27, 16, 35,
+			1, 16, 36, 16, 46,
+			1, 16, 47, 16, 60,
+			1, 20, 26, 20, 34,
+			1, 20, 35, 20, 45,
+			1, 22, 35, 22, 45,
+			1, 22, 56, 22, 64,
+			1, 22, 65, 22, 72,
+			1, 23, 22, 23, 29,
+			1, 23, 30, 23, 32,
+			1, 23, 51, 23, 59,
+			1, 23, 60, 23, 65,
+			1, 24, 27, 24, 35,
+			1, 24, 36, 24, 46,
+			1, 25, 29, 25, 37,
+			1, 25, 38, 25, 48,
+			1, 26, 31, 26, 39,
+			1, 26, 40, 26, 50,
+			1, 29, 35, 29, 45,
+			1, 29, 56, 29, 64,
+			1, 29, 65, 29, 72,
+			1, 30, 22, 30, 29,
+			1, 30, 30, 30, 32,
+			1, 30, 51, 30, 59,
+			1, 30, 60, 30, 65,
+			1, 31, 35, 31, 43,
+			1, 31, 44, 31, 54,
+			1, 34, 35, 34, 43,
+			1, 34, 44, 34, 49,
+			1, 35, 27, 35, 35,
+			1, 35, 36, 35, 46,
+			1, 36, 35, 36, 43,
+			1, 36, 44, 36, 54,
+			1, 39, 36, 39, 44,
+			1, 39, 45, 39, 50,
+			1, 40, 30, 40, 38,
+			1, 40, 39, 40, 44,
+			1, 41, 35, 41, 43,
+			1, 41, 44, 41, 54,
+			1, 45, 28, 45, 36,
+			1, 45, 37, 45, 47,
+			1, 46, 40, 46, 48,
+			1, 46, 49, 46, 59,
+			1, 50, 27, 50, 35,
+			1, 50, 36, 50, 46,
+			1, 50, 47, 50, 60,
+			1, 52, 36, 52, 46,
+			1, 52, 61, 52, 69,
+			1, 52, 70, 52, 80,
+			1, 52, 81, 52, 87,
+			1, 53, 35, 53, 43,
+			1, 53, 44, 53, 50,
+			1, 53, 58, 53, 66,
+			1, 53, 67, 53, 73,
+			1, 54, 21, 54, 27,
+			1, 54, 28, 54, 29,
+			1, 55, 35, 55, 43,
+			1, 55, 44, 55, 50,
+			1, 56, 23, 56, 31,
+			1, 56, 32, 56, 42,
+			1, 57, 27, 57, 35,
+			1, 57, 36, 57, 46,
+			1, 60, 30, 60, 38,
+			1, 60, 57, 60, 65,
+			1, 60, 66, 60, 72,
+			1, 61, 42, 61, 48,
+			1, 62, 35, 62, 43,
+			1, 62, 44, 62, 50,
+			1, 62, 58, 62, 66,
+			1, 62, 67, 62, 73,
+			1, 63, 21, 63, 27,
+			1, 63, 28, 63, 29,
+			1, 64, 30, 64, 38,
+			1, 64, 39, 64, 45,
+			1, 65, 32, 65, 40,
+			1, 65, 41, 65, 51,
+			1, 66, 38, 66, 46,
+			1, 66, 47, 66, 57,
+			1, 69, 35, 69, 43,
+			1, 69, 44, 69, 50,
+			1, 69, 58, 69, 66,
+			1, 69, 67, 69, 68,
+			1, 70, 32, 70, 40,
+			1, 70, 41, 70, 47,
+			1, 70, 52, 70, 58,
+			1, 70, 59, 70, 60,
+			1, 71, 35, 71, 43,
+			1, 71, 44, 71, 50,
+			1, 72, 30, 72, 38,
+			1, 72, 39, 72, 45,
+			1, 73, 30, 73, 38,
+			1, 73, 39, 73, 45,
+			1, 76, 35, 76, 43,
+			1, 76, 44, 76, 50,
+			1, 76, 58, 76, 66,
+			1, 76, 67, 76, 68,
+			1, 77, 32, 77, 40,
+			1, 77, 41, 77, 47,
+			1, 77, 52, 77, 58,
+			1, 77, 59, 77, 60,
+			1, 78, 30, 78, 38,
+			1, 78, 39, 78, 45,
+			1, 81, 35, 81, 43,
+			1, 81, 44, 81, 50,
+			1, 81, 58, 81, 66,
+			1, 81, 67, 81, 73,
+			1, 82, 21, 82, 27,
+			1, 82, 28, 82, 29,
+			1, 82, 35, 82, 48,
+			1, 82, 49, 82, 51,
+			1, 82, 65, 82, 73,
+			1, 82, 74, 82, 84,
+			1, 83, 23, 83, 31,
+			1, 83, 32, 83, 42,
+			1, 84, 36, 84, 44,
+			1, 84, 45, 84, 55,
+			1, 87, 35, 87, 43,
+			1, 87, 44, 87, 50,
+			1, 87, 58, 87, 66,
+			1, 87, 67, 87, 73,
+			1, 88, 21, 88, 27,
+			1, 88, 28, 88, 29,
+			1, 88, 43, 88, 51,
+			1, 88, 52, 88, 62,
+			1, 89, 23, 89, 31,
+			1, 89, 32, 89, 42,
+			1, 90, 38, 90, 46,
+			1, 90, 47, 90, 57,
+			1, 93, 36, 93, 44,
+			1, 93, 45, 93, 51,
+			1, 93, 59, 93, 67,
+			1, 93, 68, 93, 74,
+			1, 94, 21, 94, 27,
+			1, 94, 28, 94, 29,
+			1, 95, 30, 95, 38,
+			1, 95, 39, 95, 45,
+			1, 96, 23, 96, 31,
+			1, 96, 32, 96, 42,
+			1, 97, 38, 97, 46,
+			1, 97, 47, 97, 57,
+			1, 100, 33, 100, 41,
+			1, 100, 42, 100, 52,
+			1, 100, 53, 100, 59,
+			1, 101, 36, 101, 44,
+			1, 101, 45, 101, 51,
+			1, 102, 31, 102, 39,
+			1, 102, 40, 102, 50,
+			1, 106, 28, 106, 36,
+			1, 106, 37, 106, 47,
+			1, 107, 27, 107, 35,
+			2, 4, 34, 4, 42,
+			2, 4, 43, 4, 56,
+			2, 4, 57, 4, 70,
+			2, 6, 22, 6, 35,
+			2, 6, 36, 6, 41,
+			2, 6, 56, 6, 64,
+			2, 6, 65, 6, 72,
+			2, 7, 40, 7, 48,
+			2, 7, 49, 7, 56,
+			2, 8, 36, 8, 44,
+			2, 9, 44, 9, 52,
+			2, 9, 53, 9, 66,
+			2, 10, 28, 10, 36,
+			2, 10, 37, 10, 50,
+			2, 13, 22, 13, 35,
+			2, 13, 36, 13, 43,
+			2, 13, 62, 13, 70,
+			2, 13, 71, 13, 77,
+			2, 14, 42, 14, 48,
+			2, 15, 30, 15, 38,
+			2, 15, 39, 15, 45,
+			2, 16, 40, 16, 48,
+			2, 16, 49, 16, 62,
+			2, 17, 28, 17, 36,
+			2, 17, 37, 17, 50,
+			2, 20, 22, 20, 35,
+			2, 20, 36, 20, 43,
+			2, 21, 36, 21, 44,
+			2, 22, 44, 22, 52,
+			2, 22, 53, 22, 66,
+			2, 23, 28, 23, 36,
+			2, 23, 37, 23, 50,
+			2, 26, 22, 26, 35,
+			2, 26, 36, 26, 46,
+			2, 26, 61, 26, 69,
+			2, 26, 70, 26, 83,
+			2, 26, 84, 26, 90,
+			2, 27, 31, 27, 39,
+			2, 27, 40, 27, 53,
+			2, 28, 35, 28, 43,
+			2, 28, 44, 28, 50,
+			2, 29, 28, 29, 36,
+			2, 29, 37, 29, 50,
+			2, 32, 22, 32, 35,
+			2, 32, 36, 32, 43,
+			2, 33, 32, 33, 40,
+			2, 33, 41, 33, 54,
+			2, 34, 44, 34, 52,
+			2, 34, 53, 34, 66,
+			2, 35, 32, 35, 40,
+			2, 35, 41, 35, 54,
+			2, 38, 36, 38, 44,
+			2, 38, 45, 38, 58,
+			2, 39, 49, 39, 57,
+			2, 39, 58, 39, 71,
+			2, 39, 72, 39, 78,
+			2, 40, 43, 40, 51,
+			2, 40, 52, 40, 58,
+			2, 41, 28, 41, 36,
+			2, 41, 37, 41, 50,
+			2, 45, 36, 45, 44,
+			2, 46, 44, 46, 52,
+			2, 46, 53, 46, 66,
+			2, 47, 28, 47, 36,
+			2, 47, 37, 47, 50,
+			2, 48, 44, 48, 52,
+			2, 48, 53, 48, 66,
+			2, 48, 67, 48, 80,
+			3, 4, 27, 4, 35,
+			3, 4, 36, 4, 46,
+			3, 4, 47, 4, 65,
+			3, 6, 32, 6, 40,
+			3, 6, 41, 6, 51,
+			3, 6, 52, 6, 58,
+			3, 7, 36, 7, 44,
+			3, 7, 45, 7, 55,
+			3, 8, 36, 8, 44,
+			3, 8, 45, 8, 51,
+			3, 9, 28, 9, 36,
+			3, 9, 37, 9, 55,
+			3, 12, 32, 12, 40,
+			3, 12, 41, 12, 51,
+			3, 12, 52, 12, 61,
+			3, 13, 36, 13, 44,
+			3, 13, 45, 13, 55,
+			3, 14, 37, 14, 45,
+			3, 14, 46, 14, 55,
+			3, 15, 28, 15, 36,
+			3, 15, 37, 15, 46,
+			3, 18, 38, 18, 46,
+			3, 18, 47, 18, 57,
+			3, 18, 58, 18, 64,
+			3, 19, 40, 19, 48,
+			3, 19, 49, 19, 59,
+			3, 20, 36, 20, 44,
+			3, 20, 45, 20, 51,
+			3, 21, 28, 21, 36,
+			3, 21, 37, 21, 55,
+			3, 24, 28, 24, 46,
+			3, 24, 47, 24, 53,
+			3, 25, 37, 25, 45,
+			3, 25, 46, 25, 64,
+			3, 26, 28, 26, 36,
+			3, 26, 37, 26, 43,
+			3, 27, 28, 27, 36,
+			3, 27, 37, 27, 55,
+			3, 30, 36, 30, 44,
+			3, 30, 45, 30, 63,
+			3, 30, 64, 30, 70,
+			3, 31, 36, 31, 44,
+			3, 31, 45, 31, 51,
+			3, 32, 28, 32, 36,
+			3, 32, 37, 32, 55,
+			3, 36, 37, 36, 45,
+			3, 36, 46, 36, 64,
+			3, 37, 28, 37, 36,
+			3, 37, 37, 37, 55,
+			3, 38, 39, 38, 47,
+			3, 38, 48, 38, 58,
+			4, 2, 25, 2, 33,
+			4, 4, 26, 4, 34,
+			4, 4, 35, 4, 38,
+			4, 4, 44, 4, 47,
+			4, 4, 48, 4, 50,
+			4, 5, 36, 5, 44,
+			4, 6, 27, 6, 35,
+			4, 7, 32, 7, 40,
+			4, 10, 24, 10, 32,
+			4, 10, 33, 10, 39,
+			4, 10, 45, 10, 51,
+			4, 10, 52, 10, 53,
+			4, 11, 30, 11, 38,
+			4, 11, 39, 11, 45,
+			4, 12, 31, 12, 39,
+			4, 12, 40, 12, 46,
+			4, 13, 30, 13, 38,
+			4, 13, 39, 13, 45,
+			4, 16, 33, 16, 41,
+			4, 16, 42, 16, 49,
+			4, 17, 33, 17, 41,
+			4, 17, 42, 17, 49,
+			4, 18, 32, 18, 40,
+			4, 21, 32, 21, 40,
+			4, 21, 41, 21, 47,
+			4, 21, 68, 21, 76,
+			4, 21, 77, 21, 83,
+			4, 22, 36, 22, 44,
+			4, 22, 45, 22, 51,
+			4, 23, 35, 23, 43,
+			4, 23, 44, 23, 50,
+			4, 24, 39, 24, 47,
+			4, 24, 48, 24, 54,
+			4, 27, 31, 27, 39,
+			4, 27, 40, 27, 45,
+			4, 27, 70, 27, 78,
+			4, 28, 27, 28, 35,
+			4, 28, 36, 28, 41,
+			4, 29, 32, 29, 40,
+			4, 29, 41, 29, 46,
+			4, 32, 33, 32, 41,
+			4, 32, 42, 32, 47,
+			4, 33, 35, 33, 43,
+			4, 33, 44, 33, 49,
+			4, 34, 27, 34, 35,
+			4, 34, 36, 34, 41,
+			4, 37, 27, 37, 35,
+			4, 37, 36, 37, 43,
+			4, 37, 49, 37, 56,
+			4, 37, 57, 37, 59,
+			4, 38, 29, 38, 37,
+			4, 39, 35, 39, 43,
+			4, 43, 36, 43, 44,
+			4, 44, 35, 44, 43,
+			5, 13, 33, 13, 37,
+			5, 14, 33, 14, 37,
+			5, 14, 38, 14, 42,
+			5, 14, 43, 14, 49,
+			5, 14, 50, 14, 57,
+			5, 17, 34, 17, 46,
+			5, 17, 47, 17, 51,
+			5, 18, 41, 18, 45,
+			5, 18, 46, 18, 52,
+			5, 18, 53, 18, 60,
+			5, 23, 33, 23, 37,
+			5, 24, 32, 24, 36,
+			5, 24, 37, 24, 43,
+			5, 25, 32, 25, 38,
+			5, 26, 33, 26, 37,
+			5, 26, 38, 26, 44,
+			5, 26, 45, 26, 54,
+			5, 27, 34, 27, 40,
+			5, 30, 40, 30, 44,
+			5, 30, 45, 30, 51,
+			5, 31, 40, 31, 46,
+			5, 32, 41, 32, 45,
+			5, 32, 46, 32, 52,
+			5, 32, 53, 32, 68,
+			5, 33, 28, 33, 43,
+			5, 33, 44, 33, 53,
+			5, 38, 34, 38, 42,
+			5, 38, 43, 38, 47,
+			5, 39, 30, 39, 34,
+			5, 39, 35, 39, 41,
+			5, 39, 42, 39, 51,
+			5, 44, 33, 44, 37,
+			5, 45, 33, 45, 37,
+			5, 45, 38, 45, 44,
+			5, 45, 45, 45, 51,
+			5, 45, 52, 45, 59,
+			5, 48, 34, 48, 48,
+			5, 48, 49, 48, 53,
+			5, 49, 41, 49, 45,
+			5, 49, 46, 49, 52,
+			5, 49, 53, 49, 60,
+			5, 54, 33, 54, 37,
+			5, 55, 38, 55, 42,
+			5, 55, 43, 55, 52,
+			5, 55, 53, 55, 62,
+			5, 56, 37, 56, 41,
+			5, 56, 42, 56, 53,
+			5, 56, 54, 56, 68,
+			5, 59, 34, 59, 49,
+			5, 59, 50, 59, 54,
+			5, 60, 37, 60, 41,
+			5, 60, 42, 60, 51,
+			5, 60, 52, 60, 61,
+			5, 65, 33, 65, 37,
+			5, 66, 32, 66, 36,
+			5, 66, 37, 66, 43,
+			5, 66, 44, 66, 58,
+			5, 69, 34, 69, 42,
+			5, 69, 43, 69, 47,
+			5, 70, 30, 70, 34,
+			5, 70, 35, 70, 41,
+			5, 70, 42, 70, 56,
+			5, 75, 33, 75, 37,
+			5, 76, 33, 76, 37,
+			5, 76, 38, 76, 41,
+			5, 76, 42, 76, 48,
+			5, 76, 49, 76, 56,
+			5, 79, 34, 79, 45,
+			5, 79, 46, 79, 50,
+			5, 80, 41, 80, 45,
+			5, 80, 46, 80, 52,
+			5, 80, 53, 80, 60,
+			5, 84, 34, 84, 38,
+			5, 86, 34, 86, 40,
+			5, 86, 41, 86, 45,
+			5, 87, 28, 87, 32,
+			5, 92, 31, 92, 50,
+			0, 3, 38, 3, 46,
+			0, 3, 47, 3, 57,
+			0, 3, 58, 3, 69,
+			0, 5, 22, 5, 32,
+			0, 5, 33, 5, 41,
+			0, 5, 55, 5, 63,
+			0, 6, 35, 6, 43,
+			0, 6, 44, 6, 54,
+			0, 7, 29, 7, 37,
+			0, 8, 37, 8, 45,
+			0, 8, 46, 8, 57,
+			0, 9, 36, 9, 44,
+			0, 9, 45, 9, 55,
+			0, 12, 22, 12, 32,
+			0, 12, 33, 12, 41,
+			0, 13, 35, 13, 43,
+			0, 13, 44, 13, 54,
+			0, 14, 37, 14, 45,
+			0, 14, 46, 14, 57,
+			0, 15, 36, 15, 44,
+			0, 15, 45, 15, 55,
+			0, 18, 22, 18, 32,
+			0, 18, 33, 18, 37,
+			0, 19, 35, 19, 43,
+			0, 19, 44, 19, 54,
+			0, 20, 34, 20, 42,
+			0, 20, 43, 20, 54,
+			0, 21, 30, 21, 38,
+			0, 21, 39, 21, 50,
+			0, 24, 22, 24, 32,
+			0, 24, 33, 24, 39,
+			0, 24, 55, 24, 63,
+			0, 24, 64, 24, 75,
+			0, 24, 76, 24, 82,
+			0, 25, 35, 25, 43,
+			0, 25, 44, 25, 54,
+			0, 26, 36, 26, 44,
+			0, 26, 45, 26, 56,
+			0, 26, 57, 26, 63,
+			0, 29, 22, 29, 32,
+			0, 29, 33, 29, 38,
+			0, 30, 35, 30, 43,
+			0, 30, 44, 30, 54,
+			0, 31, 29, 31, 37,
+			0, 31, 38, 31, 49,
+			0, 34, 22, 34, 32,
+			0, 34, 33, 34, 41,
+			0, 34, 62, 34, 73,
+			0, 35, 37, 35, 45,
+			0, 35, 46, 35, 57,
+			0, 36, 30, 36, 38,
+			0, 36, 39, 36, 50,
+			0, 37, 36, 37, 44,
+			0, 37, 45, 37, 55,
+			0, 40, 22, 40, 32,
+			0, 40, 33, 40, 37,
+			0, 41, 37, 41, 45,
+			0, 41, 46, 41, 57,
+			0, 42, 36, 42, 44,
+			0, 42, 45, 42, 55,
+			0, 46, 37, 46, 45,
+			0, 46, 46, 46, 56,
+			0, 46, 57, 46, 68,
+			1, 2, 27, 2, 35,
+			1, 2, 36, 2, 46,
+			1, 2, 47, 2, 60,
+			1, 4, 26, 4, 34,
+			1, 4, 35, 4, 38,
+			1, 4, 44, 4, 47,
+			1, 4, 48, 4, 50,
+			1, 5, 33, 5, 41,
+			1, 5, 42, 5, 48,
+			1, 6, 31, 6, 39,
+			1, 6, 40, 6, 50,
+			1, 7, 28, 7, 36,
+			1, 8, 28, 8, 36,
+			1, 8, 37, 8, 43,
+			1, 11, 21, 11, 34,
+			1, 11, 35, 11, 36,
+			1, 12, 26, 12, 34,
+			1, 12, 35, 12, 45,
+			1, 15, 22, 15, 35,
+			1, 15, 36, 15, 37,
+			1, 16, 27, 16, 35,
+			1, 16, 36, 16, 46,
+			1, 16, 47, 16, 60,
+			1, 20, 26, 20, 34,
+			1, 20, 35, 20, 45,
+			1, 22, 35, 22, 45,
+			1, 22, 56, 22, 64,
+			1, 22, 65, 22, 72,
+			1, 23, 22, 23, 29,
+			1, 23, 30, 23, 32,
+			1, 23, 51, 23, 59,
+			1, 23, 60, 23, 65,
+			1, 24, 27, 24, 35,
+			1, 24, 36, 24, 46,
+			1, 25, 29, 25, 37,
+			1, 25, 38, 25, 48,
+			1, 26, 31, 26, 39,
+			1, 26, 40, 26, 50,
+			1, 29, 35, 29, 45,
+			1, 29, 56, 29, 64,
+			1, 29, 65, 29, 72,
+			1, 30, 22, 30, 29,
+			1, 30, 30, 30, 32,
+			1, 30, 51, 30, 59,
+			1, 30, 60, 30, 65,
+			1, 31, 35, 31, 43,
+			1, 31, 44, 31, 54,
+			1, 34, 35, 34, 43,
+			1, 34, 44, 34, 49,
+			1, 35, 27, 35, 35,
+			1, 35, 36, 35, 46,
+			1, 36, 35, 36, 43,
+			1, 36, 44, 36, 54,
+			1, 39, 36, 39, 44,
+			1, 39, 45, 39, 50,
+			1, 40, 30, 40, 38,
+			1, 40, 39, 40, 44,
+			1, 41, 35, 41, 43,
+			1, 41, 44, 41, 54,
+			1, 45, 28, 45, 36,
+			1, 45, 37, 45, 47,
+			1, 46, 40, 46, 48,
+			1, 46, 49, 46, 59,
+			1, 50, 27, 50, 35,
+			1, 50, 36, 50, 46,
+			1, 50, 47, 50, 60,
+			1, 52, 36, 52, 46,
+			1, 52, 61, 52, 69,
+			1, 52, 70, 52, 80,
+			1, 52, 81, 52, 87,
+			1, 53, 35, 53, 43,
+			1, 53, 44, 53, 50,
+			1, 53, 58, 53, 66,
+			1, 53, 67, 53, 73,
+			1, 54, 21, 54, 27,
+			1, 54, 28, 54, 29,
+			1, 55, 35, 55, 43,
+			1, 55, 44, 55, 50,
+			1, 56, 23, 56, 31,
+			1, 56, 32, 56, 42,
+			1, 57, 27, 57, 35,
+			1, 57, 36, 57, 46,
+			1, 60, 30, 60, 38,
+			1, 60, 57, 60, 65,
+			1, 60, 66, 60, 72,
+			1, 61, 42, 61, 48,
+			1, 62, 35, 62, 43,
+			1, 62, 44, 62, 50,
+			1, 62, 58, 62, 66,
+			1, 62, 67, 62, 73,
+			1, 63, 21, 63, 27,
+			1, 63, 28, 63, 29,
+			1, 64, 30, 64, 38,
+			1, 64, 39, 64, 45,
+			1, 65, 32, 65, 40,
+			1, 65, 41, 65, 51,
+			1, 66, 38, 66, 46,
+			1, 66, 47, 66, 57,
+			1, 69, 35, 69, 43,
+			1, 69, 44, 69, 50,
+			1, 69, 58, 69, 66,
+			1, 69, 67, 69, 68,
+			1, 70, 32, 70, 40,
+			1, 70, 41, 70, 47,
+			1, 70, 52, 70, 58,
+			1, 70, 59, 70, 60,
+			1, 71, 35, 71, 43,
+			1, 71, 44, 71, 50,
+			1, 72, 30, 72, 38,
+			1, 72, 39, 72, 45,
+			1, 73, 30, 73, 38,
+			1, 73, 39, 73, 45,
+			1, 76, 35, 76, 43,
+			1, 76, 44, 76, 50,
+			1, 76, 58, 76, 66,
+			1, 76, 67, 76, 68,
+			1, 77, 32, 77, 40,
+			1, 77, 41, 77, 47,
+			1, 77, 52, 77, 58,
+			1, 77, 59, 77, 60,
+			1, 78, 30, 78, 38,
+			1, 78, 39, 78, 45,
+			1, 81, 35, 81, 43,
+			1, 81, 44, 81, 50,
+			1, 81, 58, 81, 66,
+			1, 81, 67, 81, 73,
+			1, 82, 21, 82, 27,
+			1, 82, 28, 82, 29,
+			1, 82, 35, 82, 48,
+			1, 82, 49, 82, 51,
+			1, 82, 65, 82, 73,
+			1, 82, 74, 82, 84,
+			1, 83, 23, 83, 31,
+			1, 83, 32, 83, 42,
+			1, 84, 36, 84, 44,
+			1, 84, 45, 84, 55,
+			1, 87, 35, 87, 43,
+			1, 87, 44, 87, 50,
+			1, 87, 58, 87, 66,
+			1, 87, 67, 87, 73,
+			1, 88, 21, 88, 27,
+			1, 88, 28, 88, 29,
+			1, 88, 43, 88, 51,
+			1, 88, 52, 88, 62,
+			1, 89, 23, 89, 31,
+			1, 89, 32, 89, 42,
+			1, 90, 38, 90, 46,
+			1, 90, 47, 90, 57,
+			1, 93, 36, 93, 44,
+			1, 93, 45, 93, 51,
+			1, 93, 59, 93, 67,
+			1, 93, 68, 93, 74,
+			1, 94, 21, 94, 27,
+			1, 94, 28, 94, 29,
+			1, 95, 30, 95, 38,
+			1, 95, 39, 95, 45,
+			1, 96, 23, 96, 31,
+			1, 96, 32, 96, 42,
+			1, 97, 38, 97, 46,
+			1, 97, 47, 97, 57,
+			1, 100, 33, 100, 41,
+			1, 100, 42, 100, 52,
+			1, 100, 53, 100, 59,
+			1, 101, 36, 101, 44,
+			1, 101, 45, 101, 51,
+			1, 102, 31, 102, 39,
+			1, 102, 40, 102, 50,
+			1, 106, 28, 106, 36,
+			1, 106, 37, 106, 47,
+			1, 107, 27, 107, 35,
+			2, 4, 34, 4, 42,
+			2, 4, 43, 4, 56,
+			2, 4, 57, 4, 70,
+			2, 6, 22, 6, 35,
+			2, 6, 36, 6, 41,
+			2, 6, 56, 6, 64,
+			2, 6, 65, 6, 72,
+			2, 7, 40, 7, 48,
+			2, 7, 49, 7, 56,
+			2, 8, 36, 8, 44,
+			2, 9, 44, 9, 52,
+			2, 9, 53, 9, 66,
+			2, 10, 28, 10, 36,
+			2, 10, 37, 10, 50,
+			2, 13, 22, 13, 35,
+			2, 13, 36, 13, 43,
+			2, 13, 62, 13, 70,
+			2, 13, 71, 13, 77,
+			2, 14, 42, 14, 48,
+			2, 15, 30, 15, 38,
+			2, 15, 39, 15, 45,
+			2, 16, 40, 16, 48,
+			2, 16, 49, 16, 62,
+			2, 17, 28, 17, 36,
+			2, 17, 37, 17, 50,
+			2, 20, 22, 20, 35,
+			2, 20, 36, 20, 43,
+			2, 21, 36, 21, 44,
+			2, 22, 44, 22, 52,
+			2, 22, 53, 22, 66,
+			2, 23, 28, 23, 36,
+			2, 23, 37, 23, 50,
+			2, 26, 22, 26, 35,
+			2, 26, 36, 26, 46,
+			2, 26, 61, 26, 69,
+			2, 26, 70, 26, 83,
+			2, 26, 84, 26, 90,
+			2, 27, 31, 27, 39,
+			2, 27, 40, 27, 53,
+			2, 28, 35, 28, 43,
+			2, 28, 44, 28, 50,
+			2, 29, 28, 29, 36,
+			2, 29, 37, 29, 50,
+			2, 32, 22, 32, 35,
+			2, 32, 36, 32, 43,
+			2, 33, 32, 33, 40,
+			2, 33, 41, 33, 54,
+			2, 34, 44, 34, 52,
+			2, 34, 53, 34, 66,
+			2, 35, 32, 35, 40,
+			2, 35, 41, 35, 54,
+			2, 38, 36, 38, 44,
+			2, 38, 45, 38, 58,
+			2, 39, 49, 39, 57,
+			2, 39, 58, 39, 71,
+			2, 39, 72, 39, 78,
+			2, 40, 43, 40, 51,
+			2, 40, 52, 40, 58,
+			2, 41, 28, 41, 36,
+			2, 41, 37, 41, 50,
+			2, 45, 36, 45, 44,
+			2, 46, 44, 46, 52,
+			2, 46, 53, 46, 66,
+			2, 47, 28, 47, 36,
+			2, 47, 37, 47, 50,
+			2, 48, 44, 48, 52,
+			2, 48, 53, 48, 66,
+			2, 48, 67, 48, 80,
+			3, 4, 27, 4, 35,
+			3, 4, 36, 4, 46,
+			3, 4, 47, 4, 65,
+			3, 6, 32, 6, 40,
+			3, 6, 41, 6, 51,
+			3, 6, 52, 6, 58,
+			3, 7, 36, 7, 44,
+			3, 7, 45, 7, 55,
+			3, 8, 36, 8, 44,
+			3, 8, 45, 8, 51,
+			3, 9, 28, 9, 36,
+			3, 9, 37, 9, 55,
+			3, 12, 32, 12, 40,
+			3, 12, 41, 12, 51,
+			3, 12, 52, 12, 61,
+			3, 13, 36, 13, 44,
+			3, 13, 45, 13, 55,
+			3, 14, 37, 14, 45,
+			3, 14, 46, 14, 55,
+			3, 15, 28, 15, 36,
+			3, 15, 37, 15, 46,
+			3, 18, 38, 18, 46,
+			3, 18, 47, 18, 57,
+			3, 18, 58, 18, 64,
+			3, 19, 40, 19, 48,
+			3, 19, 49, 19, 59,
+			3, 20, 36, 20, 44,
+			3, 20, 45, 20, 51,
+			3, 21, 28, 21, 36,
+			3, 21, 37, 21, 55,
+			3, 24, 28, 24, 46,
+			3, 24, 47, 24, 53,
+			3, 25, 37, 25, 45,
+			3, 25, 46, 25, 64,
+			3, 26, 28, 26, 36,
+			3, 26, 37, 26, 43,
+			3, 27, 28, 27, 36,
+			3, 27, 37, 27, 55,
+			3, 30, 36, 30, 44,
+			3, 30, 45, 30, 63,
+			3, 30, 64, 30, 70,
+			3, 31, 36, 31, 44,
+			3, 31, 45, 31, 51,
+			3, 32, 28, 32, 36,
+			3, 32, 37, 32, 55,
+			3, 36, 37, 36, 45,
+			3, 36, 46, 36, 64,
+			3, 37, 28, 37, 36,
+			3, 37, 37, 37, 55,
+			3, 38, 39, 38, 47,
+			3, 38, 48, 38, 58,
+			4, 2, 25, 2, 33,
+			4, 4, 26, 4, 34,
+			4, 4, 35, 4, 38,
+			4, 4, 44, 4, 47,
+			4, 4, 48, 4, 50,
+			4, 5, 36, 5, 44,
+			4, 6, 27, 6, 35,
+			4, 7, 32, 7, 40,
+			4, 10, 24, 10, 32,
+			4, 10, 33, 10, 39,
+			4, 10, 45, 10, 51,
+			4, 10, 52, 10, 53,
+			4, 11, 30, 11, 38,
+			4, 11, 39, 11, 45,
+			4, 12, 31, 12, 39,
+			4, 12, 40, 12, 46,
+			4, 13, 30, 13, 38,
+			4, 13, 39, 13, 45,
+			4, 16, 33, 16, 41,
+			4, 16, 42, 16, 49,
+			4, 17, 33, 17, 41,
+			4, 17, 42, 17, 49,
+			4, 18, 32, 18, 40,
+			4, 21, 32, 21, 40,
+			4, 21, 41, 21, 47,
+			4, 21, 68, 21, 76,
+			4, 21, 77, 21, 83,
+			4, 22, 36, 22, 44,
+			4, 22, 45, 22, 51,
+			4, 23, 35, 23, 43,
+			4, 23, 44, 23, 50,
+			4, 24, 39, 24, 47,
+			4, 24, 48, 24, 54,
+			4, 27, 31, 27, 39,
+			4, 27, 40, 27, 45,
+			4, 27, 70, 27, 78,
+			4, 28, 27, 28, 35,
+			4, 28, 36, 28, 41,
+			4, 29, 32, 29, 40,
+			4, 29, 41, 29, 46,
+			4, 32, 33, 32, 41,
+			4, 32, 42, 32, 47,
+			4, 33, 35, 33, 43,
+			4, 33, 44, 33, 49,
+			4, 34, 27, 34, 35,
+			4, 34, 36, 34, 41,
+			4, 37, 27, 37, 35,
+			4, 37, 36, 37, 43,
+			4, 37, 49, 37, 56,
+			4, 37, 57, 37, 59,
+			4, 38, 29, 38, 37,
+			4, 39, 35, 39, 43,
+			4, 43, 36, 43, 44,
+			4, 44, 35, 44, 43,
+			5, 13, 33, 13, 37,
+			5, 14, 33, 14, 37,
+			5, 14, 38, 14, 42,
+			5, 14, 43, 14, 49,
+			5, 14, 50, 14, 57,
+			5, 17, 34, 17, 46,
+			5, 17, 47, 17, 51,
+			5, 18, 41, 18, 45,
+			5, 18, 46, 18, 52,
+			5, 18, 53, 18, 60,
+			5, 23, 33, 23, 37,
+			5, 24, 32, 24, 36,
+			5, 24, 37, 24, 43,
+			5, 25, 32, 25, 38,
+			5, 26, 33, 26, 37,
+			5, 26, 38, 26, 44,
+			5, 26, 45, 26, 54,
+			5, 27, 34, 27, 40,
+			5, 30, 40, 30, 44,
+			5, 30, 45, 30, 51,
+			5, 31, 40, 31, 46,
+			5, 32, 41, 32, 45,
+			5, 32, 46, 32, 52,
+			5, 32, 53, 32, 68,
+			5, 33, 28, 33, 43,
+			5, 33, 44, 33, 53,
+			5, 38, 34, 38, 42,
+			5, 38, 43, 38, 47,
+			5, 39, 30, 39, 34,
+			5, 39, 35, 39, 41,
+			5, 39, 42, 39, 51,
+			5, 44, 33, 44, 37,
+			5, 45, 33, 45, 37,
+			5, 45, 38, 45, 44,
+			5, 45, 45, 45, 51,
+			5, 45, 52, 45, 59,
+			5, 48, 34, 48, 48,
+			5, 48, 49, 48, 53,
+			5, 49, 41, 49, 45,
+			5, 49, 46, 49, 52,
+			5, 49, 53, 49, 60,
+			5, 54, 33, 54, 37,
+			5, 55, 38, 55, 42,
+			5, 55, 43, 55, 52,
+			5, 55, 53, 55, 62,
+			5, 56, 37, 56, 41,
+			5, 56, 42, 56, 53,
+			5, 56, 54, 56, 68,
+			5, 59, 34, 59, 49,
+			5, 59, 50, 59, 54,
+			5, 60, 37, 60, 41,
+			5, 60, 42, 60, 51,
+			5, 60, 52, 60, 61,
+			5, 65, 33, 65, 37,
+			5, 66, 32, 66, 36,
+			5, 66, 37, 66, 43,
+			5, 66, 44, 66, 58,
+			5, 69, 34, 69, 42,
+			5, 69, 43, 69, 47,
+			5, 70, 30, 70, 34,
+			5, 70, 35, 70, 41,
+			5, 70, 42, 70, 56,
+			5, 75, 33, 75, 37,
+			5, 76, 33, 76, 37,
+			5, 76, 38, 76, 41,
+			5, 76, 42, 76, 48,
+			5, 76, 49, 76, 56,
+			5, 79, 34, 79, 45,
+			5, 79, 46, 79, 50,
+			5, 80, 41, 80, 45,
+			5, 80, 46, 80, 52,
+			5, 80, 53, 80, 60,
+			5, 84, 34, 84, 38,
+			5, 86, 34, 86, 40,
+			5, 86, 41, 86, 45,
+			5, 87, 28, 87, 32,
+			5, 92, 31, 92, 50,
+		},
+		ConditionSources: []uint32{
+			0, 5, 14, 5, 63,
+			0, 5, 19, 5, 41,
+			0, 5, 43, 5, 63,
+			0, 12, 14, 12, 41,
+			0, 12, 19, 12, 41,
+			0, 18, 14, 18, 37,
+			0, 18, 19, 18, 37,
+			0, 24, 14, 24, 82,
+			0, 24, 19, 24, 39,
+			0, 24, 41, 24, 82,
+			0, 29, 14, 29, 38,
+			0, 29, 19, 29, 38,
+			0, 34, 14, 34, 73,
+			0, 34, 19, 34, 41,
+			0, 34, 43, 34, 73,
+			0, 40, 14, 40, 37,
+			0, 40, 19, 40, 37,
+			1, 4, 14, 5, 48,
+			1, 4, 18, 4, 38,
+			1, 4, 41, 4, 50,
+			1, 5, 18, 5, 48,
+			1, 11, 14, 11, 36,
+			1, 11, 19, 11, 36,
+			1, 15, 14, 15, 37,
+			1, 15, 19, 15, 37,
+			1, 22, 14, 23, 65,
+			1, 22, 18, 22, 45,
+			1, 22, 47, 22, 72,
+			1, 23, 19, 23, 32,
+			1, 23, 34, 23, 65,
+			1, 29, 14, 30, 65,
+			1, 29, 18, 29, 45,
+			1, 29, 47, 29, 72,
+			1, 30, 19, 30, 32,
+			1, 30, 34, 30, 65,
+			1, 34, 14, 34, 49,
+			1, 34, 18, 34, 49,
+			1, 39, 14, 39, 50,
+			1, 39, 18, 39, 50,
+			1, 52, 14, 54, 29,
+			1, 52, 18, 52, 46,
+			1, 52, 48, 52, 87,
+			1, 53, 18, 53, 50,
+			1, 53, 52, 53, 73,
+			1, 54, 19, 54, 29,
+			1, 60, 14, 63, 29,
+			1, 60, 18, 60, 38,
+			1, 60, 40, 60, 72,
+			1, 61, 18, 61, 48,
+			1, 61, 23, 61, 48,
+			1, 62, 18, 62, 50,
+			1, 62, 52, 62, 73,
+			1, 63, 19, 63, 29,
+			1, 69, 14, 71, 50,
+			1, 69, 18, 69, 50,
+			1, 69, 52, 69, 68,
+			1, 70, 18, 70, 47,
+			1, 70, 50, 70, 60,
+			1, 71, 18, 71, 50,
+			1, 76, 14, 77, 60,
+			1, 76, 18, 76, 50,
+			1, 76, 52, 76, 68,
+			1, 77, 18, 77, 47,
+			1, 77, 50, 77, 60,
+			1, 81, 14, 82, 84,
+			1, 81, 18, 81, 50,
+			1, 81, 52, 81, 73,
+			1, 82, 19, 82, 29,
+			1, 82, 32, 82, 51,
+			1, 82, 53, 82, 84,
+			1, 87, 14, 88, 62,
+			1, 87, 18, 87, 50,
+			1, 87, 52, 87, 73,
+			1, 88, 19, 88, 29,
+			1, 88, 31, 88, 62,
+			1, 93, 14, 94, 29,
+			1, 93, 18, 93, 51,
+			1, 93, 53, 93, 74,
+			1, 94, 19, 94, 29,
+			1, 100, 14, 100, 59,
+			1, 100, 18, 100, 59,
+			2, 6, 14, 6, 72,
+			2, 6, 19, 6, 41,
+			2, 6, 43, 6, 72,
+			2, 13, 14, 14, 49,
+			2, 13, 19, 13, 43,
+			2, 13, 45, 13, 77,
+			2, 14, 18, 14, 48,
+			2, 14, 23, 14, 48,
+			2, 20, 14, 20, 43,
+			2, 20, 19, 20, 43,
+			2, 26, 14, 26, 90,
+			2, 26, 19, 26, 46,
+			2, 26, 48, 26, 90,
+			2, 32, 14, 32, 43,
+			2, 32, 19, 32, 43,
+			2, 38, 14, 39, 78,
+			2, 38, 18, 38, 58,
+			2, 39, 18, 39, 78,
+			3, 6, 14, 6, 58,
+			3, 6, 18, 6, 58,
+			3, 12, 14, 12, 61,
+			3, 12, 18, 12, 61,
+			3, 18, 14, 18, 64,
+			3, 18, 18, 18, 64,
+			3, 24, 14, 24, 53,
+			3, 24, 18, 24, 53,
+			3, 30, 14, 30, 70,
+			3, 30, 18, 30, 70,
+			4, 4, 14, 5, 44,
+			4, 4, 18, 4, 38,
+			4, 4, 41, 4, 50,
+			4, 5, 18, 5, 44,
+			4, 10, 14, 11, 45,
+			4, 10, 18, 10, 39,
+			4, 10, 42, 10, 53,
+			4, 11, 18, 11, 45,
+			4, 16, 14, 16, 49,
+			4, 16, 18, 16, 49,
+			4, 21, 14, 21, 83,
+			4, 21, 18, 21, 47,
+			4, 21, 49, 21, 83,
+			4, 27, 14, 27, 78,
+			4, 27, 18, 27, 45,
+			4, 27, 47, 27, 78,
+			4, 32, 14, 32, 47,
+			4, 32, 18, 32, 47,
+			4, 37, 14, 37, 59,
+			4, 37, 18, 37, 43,
+			4, 37, 46, 37, 59,
+			5, 12, 14, 14, 57,
+			5, 13, 17, 13, 37,
+			5, 14, 17, 14, 57,
+			5, 22, 14, 35, 17,
+			5, 23, 17, 23, 37,
+			5, 24, 17, 24, 43,
+			5, 25, 17, 25, 38,
+			5, 26, 17, 26, 54,
+			5, 27, 17, 27, 40,
+			5, 27, 22, 27, 40,
+			5, 28, 17, 34, 21,
+			5, 29, 22, 33, 53,
+			5, 30, 25, 30, 51,
+			5, 31, 25, 31, 46,
+			5, 32, 25, 32, 68,
+			5, 33, 26, 33, 53,
+			5, 43, 14, 45, 59,
+			5, 44, 17, 44, 37,
+			5, 45, 17, 45, 59,
+			5, 53, 14, 56, 69,
+			5, 54, 17, 54, 37,
+			5, 55, 17, 55, 62,
+			5, 56, 17, 56, 68,
+			5, 56, 22, 56, 68,
+			5, 64, 14, 66, 58,
+			5, 65, 17, 65, 37,
+			5, 66, 17, 66, 58,
+			5, 74, 14, 76, 56,
+			5, 75, 17, 75, 37,
+			5, 76, 17, 76, 56,
+			5, 84, 14, 84, 38,
+			5, 84, 18, 84, 38,
+			0, 5, 14, 5, 63,
+			0, 5, 19, 5, 41,
+			0, 5, 43, 5, 63,
+			0, 12, 14, 12, 41,
+			0, 12, 19, 12, 41,
+			0, 18, 14, 18, 37,
+			0, 18, 19, 18, 37,
+			0, 24, 14, 24, 82,
+			0, 24, 19, 24, 39,
+			0, 24, 41, 24, 82,
+			0, 29, 14, 29, 38,
+			0, 29, 19, 29, 38,
+			0, 34, 14, 34, 73,
+			0, 34, 19, 34, 41,
+			0, 34, 43, 34, 73,
+			0, 40, 14, 40, 37,
+			0, 40, 19, 40, 37,
+			1, 4, 14, 5, 48,
+			1, 4, 18, 4, 38,
+			1, 4, 41, 4, 50,
+			1, 5, 18, 5, 48,
+			1, 11, 14, 11, 36,
+			1, 11, 19, 11, 36,
+			1, 15, 14, 15, 37,
+			1, 15, 19, 15, 37,
+			1, 22, 14, 23, 65,
+			1, 22, 18, 22, 45,
+			1, 22, 47, 22, 72,
+			1, 23, 19, 23, 32,
+			1, 23, 34, 23, 65,
+			1, 29, 14, 30, 65,
+			1, 29, 18, 29, 45,
+			1, 29, 47, 29, 72,
+			1, 30, 19, 30, 32,
+			1, 30, 34, 30, 65,
+			1, 34, 14, 34, 49,
+			1, 34, 18, 34, 49,
+			1, 39, 14, 39, 50,
+			1, 39, 18, 39, 50,
+			1, 52, 14, 54, 29,
+			1, 52, 18, 52, 46,
+			1, 52, 48, 52, 87,
+			1, 53, 18, 53, 50,
+			1, 53, 52, 53, 73,
+			1, 54, 19, 54, 29,
+			1, 60, 14, 63, 29,
+			1, 60, 18, 60, 38,
+			1, 60, 40, 60, 72,
+			1, 61, 18, 61, 48,
+			1, 61, 23, 61, 48,
+			1, 62, 18, 62, 50,
+			1, 62, 52, 62, 73,
+			1, 63, 19, 63, 29,
+			1, 69, 14, 71, 50,
+			1, 69, 18, 69, 50,
+			1, 69, 52, 69, 68,
+			1, 70, 18, 70, 47,
+			1, 70, 50, 70, 60,
+			1, 71, 18, 71, 50,
+			1, 76, 14, 77, 60,
+			1, 76, 18, 76, 50,
+			1, 76, 52, 76, 68,
+			1, 77, 18, 77, 47,
+			1, 77, 50, 77, 60,
+			1, 81, 14, 82, 84,
+			1, 81, 18, 81, 50,
+			1, 81, 52, 81, 73,
+			1, 82, 19, 82, 29,
+			1, 82, 32, 82, 51,
+			1, 82, 53, 82, 84,
+			1, 87, 14, 88, 62,
+			1, 87, 18, 87, 50,
+			1, 87, 52, 87, 73,
+			1, 88, 19, 88, 29,
+			1, 88, 31, 88, 62,
+			1, 93, 14, 94, 29,
+			1, 93, 18, 93, 51,
+			1, 93, 53, 93, 74,
+			1, 94, 19, 94, 29,
+			1, 100, 14, 100, 59,
+			1, 100, 18, 100, 59,
+			2, 6, 14, 6, 72,
+			2, 6, 19, 6, 41,
+			2, 6, 43, 6, 72,
+			2, 13, 14, 14, 49,
+			2, 13, 19, 13, 43,
+			2, 13, 45, 13, 77,
+			2, 14, 18, 14, 48,
+			2, 14, 23, 14, 48,
+			2, 20, 14, 20, 43,
+			2, 20, 19, 20, 43,
+			2, 26, 14, 26, 90,
+			2, 26, 19, 26, 46,
+			2, 26, 48, 26, 90,
+			2, 32, 14, 32, 43,
+			2, 32, 19, 32, 43,
+			2, 38, 14, 39, 78,
+			2, 38, 18, 38, 58,
+			2, 39, 18, 39, 78,
+			3, 6, 14, 6, 58,
+			3, 6, 18, 6, 58,
+			3, 12, 14, 12, 61,
+			3, 12, 18, 12, 61,
+			3, 18, 14, 18, 64,
+			3, 18, 18, 18, 64,
+			3, 24, 14, 24, 53,
+			3, 24, 18, 24, 53,
+			3, 30, 14, 30, 70,
+			3, 30, 18, 30, 70,
+			4, 4, 14, 5, 44,
+			4, 4, 18, 4, 38,
+			4, 4, 41, 4, 50,
+			4, 5, 18, 5, 44,
+			4, 10, 14, 11, 45,
+			4, 10, 18, 10, 39,
+			4, 10, 42, 10, 53,
+			4, 11, 18, 11, 45,
+			4, 16, 14, 16, 49,
+			4, 16, 18, 16, 49,
+			4, 21, 14, 21, 83,
+			4, 21, 18, 21, 47,
+			4, 21, 49, 21, 83,
+			4, 27, 14, 27, 78,
+			4, 27, 18, 27, 45,
+			4, 27, 47, 27, 78,
+			4, 32, 14, 32, 47,
+			4, 32, 18, 32, 47,
+			4, 37, 14, 37, 59,
+			4, 37, 18, 37, 43,
+			4, 37, 46, 37, 59,
+			5, 12, 14, 14, 57,
+			5, 13, 17, 13, 37,
+			5, 14, 17, 14, 57,
+			5, 22, 14, 35, 17,
+			5, 23, 17, 23, 37,
+			5, 24, 17, 24, 43,
+			5, 25, 17, 25, 38,
+			5, 26, 17, 26, 54,
+			5, 27, 17, 27, 40,
+			5, 27, 22, 27, 40,
+			5, 28, 17, 34, 21,
+			5, 29, 22, 33, 53,
+			5, 30, 25, 30, 51,
+			5, 31, 25, 31, 46,
+			5, 32, 25, 32, 68,
+			5, 33, 26, 33, 53,
+			5, 43, 14, 45, 59,
+			5, 44, 17, 44, 37,
+			5, 45, 17, 45, 59,
+			5, 53, 14, 56, 69,
+			5, 54, 17, 54, 37,
+			5, 55, 17, 55, 62,
+			5, 56, 17, 56, 68,
+			5, 56, 22, 56, 68,
+			5, 64, 14, 66, 58,
+			5, 65, 17, 65, 37,
+			5, 66, 17, 66, 58,
+			5, 74, 14, 76, 56,
+			5, 75, 17, 75, 37,
+			5, 76, 17, 76, 56,
+			5, 84, 14, 84, 38,
+			5, 84, 18, 84, 38,
+		},
+		TaskSources: []uint32{
+			0, 6, 14, 6, 54,
+			0, 7, 14, 7, 37,
+			0, 8, 14, 8, 57,
+			0, 9, 14, 9, 55,
+			0, 13, 14, 13, 54,
+			0, 14, 14, 14, 57,
+			0, 15, 14, 15, 55,
+			0, 19, 14, 19, 54,
+			0, 20, 14, 20, 54,
+			0, 21, 14, 21, 50,
+			0, 25, 14, 25, 54,
+			0, 26, 14, 26, 63,
+			0, 30, 14, 30, 54,
+			0, 31, 14, 31, 49,
+			0, 35, 14, 35, 57,
+			0, 36, 14, 36, 50,
+			0, 37, 14, 37, 55,
+			0, 41, 14, 41, 57,
+			0, 42, 14, 42, 55,
+			0, 46, 14, 46, 68,
+			1, 6, 14, 6, 50,
+			1, 7, 14, 7, 36,
+			1, 8, 14, 8, 43,
+			1, 12, 14, 12, 45,
+			1, 16, 14, 16, 60,
+			1, 24, 14, 24, 46,
+			1, 25, 14, 25, 48,
+			1, 26, 14, 26, 50,
+			1, 31, 14, 31, 54,
+			1, 35, 14, 35, 46,
+			1, 36, 14, 36, 54,
+			1, 40, 14, 40, 44,
+			1, 41, 14, 41, 54,
+			1, 45, 14, 45, 47,
+			1, 46, 14, 46, 59,
+			1, 55, 14, 55, 50,
+			1, 56, 14, 56, 42,
+			1, 57, 14, 57, 46,
+			1, 64, 14, 64, 45,
+			1, 65, 14, 65, 51,
+			1, 66, 14, 66, 57,
+			1, 72, 14, 72, 45,
+			1, 73, 14, 73, 45,
+			1, 78, 14, 78, 45,
+			1, 83, 14, 83, 42,
+			1, 84, 14, 84, 55,
+			1, 89, 14, 89, 42,
+			1, 90, 14, 90, 57,
+			1, 95, 14, 95, 45,
+			1, 96, 14, 96, 42,
+			1, 97, 14, 97, 57,
+			1, 101, 14, 101, 51,
+			1, 102, 14, 102, 50,
+			1, 106, 14, 106, 47,
+			1, 107, 14, 107, 35,
+			2, 7, 14, 7, 56,
+			2, 8, 14, 8, 44,
+			2, 9, 14, 9, 66,
+			2, 10, 14, 10, 50,
+			2, 15, 14, 15, 45,
+			2, 16, 14, 16, 62,
+			2, 17, 14, 17, 50,
+			2, 21, 14, 21, 44,
+			2, 22, 14, 22, 66,
+			2, 23, 14, 23, 50,
+			2, 27, 14, 27, 53,
+			2, 28, 14, 28, 50,
+			2, 29, 14, 29, 50,
+			2, 33, 14, 33, 54,
+			2, 34, 14, 34, 66,
+			2, 35, 14, 35, 54,
+			2, 40, 14, 40, 58,
+			2, 41, 14, 41, 50,
+			2, 45, 14, 45, 44,
+			2, 46, 14, 46, 66,
+			2, 47, 14, 47, 50,
+			2, 48, 14, 48, 80,
+			3, 7, 14, 7, 55,
+			3, 8, 14, 8, 51,
+			3, 9, 14, 9, 55,
+			3, 13, 14, 13, 55,
+			3, 14, 14, 14, 55,
+			3, 15, 14, 15, 46,
+			3, 19, 14, 19, 59,
+			3, 20, 14, 20, 51,
+			3, 21, 14, 21, 55,
+			3, 25, 14, 25, 64,
+			3, 26, 14, 26, 43,
+			3, 27, 14, 27, 55,
+			3, 31, 14, 31, 51,
+			3, 32, 14, 32, 55,
+			3, 36, 14, 36, 64,
+			3, 37, 14, 37, 55,
+			3, 38, 14, 38, 58,
+			4, 6, 14, 6, 35,
+			4, 7, 14, 7, 40,
+			4, 12, 14, 12, 46,
+			4, 13, 14, 13, 45,
+			4, 17, 14, 17, 49,
+			4, 18, 14, 18, 40,
+			4, 22, 14, 22, 51,
+			4, 23, 14, 23, 50,
+			4, 24, 14, 24, 54,
+			4, 28, 14, 28, 41,
+			4, 29, 14, 29, 46,
+			4, 33, 14, 33, 49,
+			4, 34, 14, 34, 41,
+			4, 38, 14, 38, 37,
+			4, 39, 14, 39, 43,
+			4, 43, 14, 43, 44,
+			4, 44, 14, 44, 43,
+			5, 17, 17, 17, 51,
+			5, 18, 17, 18, 60,
+			5, 38, 17, 38, 47,
+			5, 39, 17, 39, 51,
+			5, 48, 17, 48, 53,
+			5, 49, 17, 49, 60,
+			5, 59, 17, 59, 54,
+			5, 60, 17, 60, 61,
+			5, 69, 17, 69, 47,
+			5, 70, 17, 70, 56,
+			5, 79, 17, 79, 50,
+			5, 80, 17, 80, 60,
+			5, 86, 17, 86, 45,
+			5, 87, 17, 87, 32,
+			5, 92, 14, 92, 50,
+			0, 6, 14, 6, 54,
+			0, 7, 14, 7, 37,
+			0, 8, 14, 8, 57,
+			0, 9, 14, 9, 55,
+			0, 13, 14, 13, 54,
+			0, 14, 14, 14, 57,
+			0, 15, 14, 15, 55,
+			0, 19, 14, 19, 54,
+			0, 20, 14, 20, 54,
+			0, 21, 14, 21, 50,
+			0, 25, 14, 25, 54,
+			0, 26, 14, 26, 63,
+			0, 30, 14, 30, 54,
+			0, 31, 14, 31, 49,
+			0, 35, 14, 35, 57,
+			0, 36, 14, 36, 50,
+			0, 37, 14, 37, 55,
+			0, 41, 14, 41, 57,
+			0, 42, 14, 42, 55,
+			0, 46, 14, 46, 68,
+			1, 6, 14, 6, 50,
+			1, 7, 14, 7, 36,
+			1, 8, 14, 8, 43,
+			1, 12, 14, 12, 45,
+			1, 16, 14, 16, 60,
+			1, 24, 14, 24, 46,
+			1, 25, 14, 25, 48,
+			1, 26, 14, 26, 50,
+			1, 31, 14, 31, 54,
+			1, 35, 14, 35, 46,
+			1, 36, 14, 36, 54,
+			1, 40, 14, 40, 44,
+			1, 41, 14, 41, 54,
+			1, 45, 14, 45, 47,
+			1, 46, 14, 46, 59,
+			1, 55, 14, 55, 50,
+			1, 56, 14, 56, 42,
+			1, 57, 14, 57, 46,
+			1, 64, 14, 64, 45,
+			1, 65, 14, 65, 51,
+			1, 66, 14, 66, 57,
+			1, 72, 14, 72, 45,
+			1, 73, 14, 73, 45,
+			1, 78, 14, 78, 45,
+			1, 83, 14, 83, 42,
+			1, 84, 14, 84, 55,
+			1, 89, 14, 89, 42,
+			1, 90, 14, 90, 57,
+			1, 95, 14, 95, 45,
+			1, 96, 14, 96, 42,
+			1, 97, 14, 97, 57,
+			1, 101, 14, 101, 51,
+			1, 102, 14, 102, 50,
+			1, 106, 14, 106, 47,
+			1, 107, 14, 107, 35,
+			2, 7, 14, 7, 56,
+			2, 8, 14, 8, 44,
+			2, 9, 14, 9, 66,
+			2, 10, 14, 10, 50,
+			2, 15, 14, 15, 45,
+			2, 16, 14, 16, 62,
+			2, 17, 14, 17, 50,
+			2, 21, 14, 21, 44,
+			2, 22, 14, 22, 66,
+			2, 23, 14, 23, 50,
+			2, 27, 14, 27, 53,
+			2, 28, 14, 28, 50,
+			2, 29, 14, 29, 50,
+			2, 33, 14, 33, 54,
+			2, 34, 14, 34, 66,
+			2, 35, 14, 35, 54,
+			2, 40, 14, 40, 58,
+			2, 41, 14, 41, 50,
+			2, 45, 14, 45, 44,
+			2, 46, 14, 46, 66,
+			2, 47, 14, 47, 50,
+			2, 48, 14, 48, 80,
+			3, 7, 14, 7, 55,
+			3, 8, 14, 8, 51,
+			3, 9, 14, 9, 55,
+			3, 13, 14, 13, 55,
+			3, 14, 14, 14, 55,
+			3, 15, 14, 15, 46,
+			3, 19, 14, 19, 59,
+			3, 20, 14, 20, 51,
+			3, 21, 14, 21, 55,
+			3, 25, 14, 25, 64,
+			3, 26, 14, 26, 43,
+			3, 27, 14, 27, 55,
+			3, 31, 14, 31, 51,
+			3, 32, 14, 32, 55,
+			3, 36, 14, 36, 64,
+			3, 37, 14, 37, 55,
+			3, 38, 14, 38, 58,
+			4, 6, 14, 6, 35,
+			4, 7, 14, 7, 40,
+			4, 12, 14, 12, 46,
+			4, 13, 14, 13, 45,
+			4, 17, 14, 17, 49,
+			4, 18, 14, 18, 40,
+			4, 22, 14, 22, 51,
+			4, 23, 14, 23, 50,
+			4, 24, 14, 24, 54,
+			4, 28, 14, 28, 41,
+			4, 29, 14, 29, 46,
+			4, 33, 14, 33, 49,
+			4, 34, 14, 34, 41,
+			4, 38, 14, 38, 37,
+			4, 39, 14, 39, 43,
+			4, 43, 14, 43, 44,
+			4, 44, 14, 44, 43,
+			5, 17, 17, 17, 51,
+			5, 18, 17, 18, 60,
+			5, 38, 17, 38, 47,
+			5, 39, 17, 39, 51,
+			5, 48, 17, 48, 53,
+			5, 49, 17, 49, 60,
+			5, 59, 17, 59, 54,
+			5, 60, 17, 60, 61,
+			5, 69, 17, 69, 47,
+			5, 70, 17, 70, 56,
+			5, 79, 17, 79, 50,
+			5, 80, 17, 80, 60,
+			5, 86, 17, 86, 45,
+			5, 87, 17, 87, 32,
+			5, 92, 14, 92, 50,
+		},
+		BranchSources: []uint32{
+			0, 4, 9, 10, 9,
+			0, 11, 9, 16, 9,
+			0, 17, 9, 22, 9,
+			0, 23, 9, 27, 9,
+			0, 28, 9, 32, 9,
+			0, 33, 9, 38, 9,
+			0, 39, 9, 43, 9,
+			0, 44, 9, 47, 9,
+			1, 3, 9, 9, 9,
+			1, 10, 9, 13, 9,
+			1, 14, 9, 17, 9,
+			1, 21, 9, 27, 9,
+			1, 28, 9, 32, 9,
+			1, 33, 9, 37, 9,
+			1, 38, 9, 42, 9,
+			1, 43, 9, 47, 9,
+			1, 51, 9, 58, 9,
+			1, 59, 9, 67, 9,
+			1, 68, 9, 74, 9,
+			1, 75, 9, 79, 9,
+			1, 80, 9, 85, 9,
+			1, 86, 9, 91, 9,
+			1, 92, 9, 98, 9,
+			1, 99, 9, 103, 9,
+			1, 104, 9, 108, 9,
+			2, 5, 9, 11, 9,
+			2, 12, 9, 18, 9,
+			2, 19, 9, 24, 9,
+			2, 25, 9, 30, 9,
+			2, 31, 9, 36, 9,
+			2, 37, 9, 42, 9,
+			2, 43, 9, 49, 9,
+			3, 5, 9, 10, 9,
+			3, 11, 9, 16, 9,
+			3, 17, 9, 22, 9,
+			3, 23, 9, 28, 9,
+			3, 29, 9, 33, 9,
+			3, 34, 9, 39, 9,
+			4, 3, 9, 8, 9,
+			4, 9, 9, 14, 9,
+			4, 15, 9, 19, 9,
+			4, 20, 9, 25, 9,
+			4, 26, 9, 30, 9,
+			4, 31, 9, 35, 9,
+			4, 36, 9, 40, 9,
+			4, 41, 9, 45, 9,
+			5, 11, 9, 20, 9,
+			5, 21, 9, 41, 9,
+			5, 42, 9, 51, 9,
+			5, 52, 9, 62, 9,
+			5, 63, 9, 72, 9,
+			5, 73, 9, 82, 9,
+			5, 83, 9, 89, 9,
+			5, 90, 9, 93, 9,
+			0, 4, 9, 10, 9,
+			0, 11, 9, 16, 9,
+			0, 17, 9, 22, 9,
+			0, 23, 9, 27, 9,
+			0, 28, 9, 32, 9,
+			0, 33, 9, 38, 9,
+			0, 39, 9, 43, 9,
+			0, 44, 9, 47, 9,
+			1, 3, 9, 9, 9,
+			1, 10, 9, 13, 9,
+			1, 14, 9, 17, 9,
+			1, 21, 9, 27, 9,
+			1, 28, 9, 32, 9,
+			1, 33, 9, 37, 9,
+			1, 38, 9, 42, 9,
+			1, 43, 9, 47, 9,
+			1, 51, 9, 58, 9,
+			1, 59, 9, 67, 9,
+			1, 68, 9, 74, 9,
+			1, 75, 9, 79, 9,
+			1, 80, 9, 85, 9,
+			1, 86, 9, 91, 9,
+			1, 92, 9, 98, 9,
+			1, 99, 9, 103, 9,
+			1, 104, 9, 108, 9,
+			2, 5, 9, 11, 9,
+			2, 12, 9, 18, 9,
+			2, 19, 9, 24, 9,
+			2, 25, 9, 30, 9,
+			2, 31, 9, 36, 9,
+			2, 37, 9, 42, 9,
+			2, 43, 9, 49, 9,
+			3, 5, 9, 10, 9,
+			3, 11, 9, 16, 9,
+			3, 17, 9, 22, 9,
+			3, 23, 9, 28, 9,
+			3, 29, 9, 33, 9,
+			3, 34, 9, 39, 9,
+			4, 3, 9, 8, 9,
+			4, 9, 9, 14, 9,
+			4, 15, 9, 19, 9,
+			4, 20, 9, 25, 9,
+			4, 26, 9, 30, 9,
+			4, 31, 9, 35, 9,
+			4, 36, 9, 40, 9,
+			4, 41, 9, 45, 9,
+			5, 11, 9, 20, 9,
+			5, 21, 9, 41, 9,
+			5, 42, 9, 51, 9,
+			5, 52, 9, 62, 9,
+			5, 63, 9, 72, 9,
+			5, 73, 9, 82, 9,
+			5, 83, 9, 89, 9,
+			5, 90, 9, 93, 9,
+		},
+		MethodSources: []uint32{
+			0, 3, 5, 48, 5,
+			1, 2, 5, 18, 5,
+			1, 20, 5, 48, 5,
+			1, 50, 5, 109, 5,
+			2, 4, 5, 50, 5,
+			3, 4, 5, 40, 5,
+			4, 2, 5, 46, 5,
+			5, 10, 5, 94, 5,
+			0, 3, 5, 48, 5,
+			1, 2, 5, 18, 5,
+			1, 20, 5, 48, 5,
+			1, 50, 5, 109, 5,
+			2, 4, 5, 50, 5,
+			3, 4, 5, 40, 5,
+			4, 2, 5, 46, 5,
+			5, 10, 5, 94, 5,
+		},
+		AxiomSources:    []uint32{},
+		ConstantSources: []uint32{},
+	})
 }
 
 func factChoice2(ex *planner.Exec, target uint32) bool {
@@ -4591,265 +8890,360 @@ func factChoice323(ex *planner.Exec, target uint32) bool {
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (!deploy_smoke ?inp_npc)
 	if !ex.AppendPlanStep(sym59, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task6(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 6)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task7(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 7)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task8(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 8)
 	// (!face_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym62, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task9(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 9)
 	// (!hold_position ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym63, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task10(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 10)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task11(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 11)
 	// (!follow_escort_route ?inp_npc ?inp_target ?route)
 	if !ex.AppendPlanStep(sym64, []atom.Atom{ex.V[0], ex.V[2], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task12(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 12)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task13(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 13)
 	// (!guard_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym65, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task14(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 14)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task15(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 15)
 	// (!interact_with ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym66, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task16(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 16)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task17(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 17)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task18(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 18)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task19(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 19)
 	// (!report_invalid_order ?inp_npc ?inp_order ?inp_target)
 	if !ex.AppendPlanStep(sym67, []atom.Atom{ex.V[0], ex.V[1], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task20(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 20)
 	// (!remember_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym68, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task21(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 21)
 	// (!throw_smoke ?inp_npc)
 	if !ex.AppendPlanStep(sym69, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task22(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 22)
 	// (!retreat_via ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym70, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task23(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 23)
 	// (melee_tick ?inp_npc ?inp_enemy)
 	arg0 := ex.V[0]
 	arg1 := ex.V[4]
 	if !arg0.IsBound() || !arg1.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -4865,13 +9259,16 @@ func task23(ex *planner.Exec) int {
 
 func task24(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 24)
 	// (ranged_tick ?inp_npc ?inp_enemy ?inp_distance)
 	arg0 := ex.V[0]
 	arg1 := ex.V[4]
 	arg2 := ex.V[5]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -4891,970 +9288,1321 @@ func task24(ex *planner.Exec) int {
 
 func task25(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 25)
 	// (!face_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym71, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task26(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 26)
 	// (!parry_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym72, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task27(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 27)
 	// (!counter_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym73, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task28(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 28)
 	// (!heavy_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym74, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task29(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 29)
 	// (!face_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym71, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task30(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 30)
 	// (!quick_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym75, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task31(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 31)
 	// (!switch_weapon ?inp_npc melee)
 	if !ex.AppendPlanStep(sym76, []atom.Atom{ex.V[0], sv16}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task32(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 32)
 	// (!quick_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym75, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task33(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 33)
 	// (!dodge_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym77, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task34(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 34)
 	// (!improvised_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym78, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task35(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 35)
 	// (!follow_flank_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym79, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task36(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 36)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task37(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 37)
 	// (!fire_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym81, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task38(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 38)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task39(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 39)
 	// (!peek_from_cover ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym83, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task40(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 40)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task41(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 41)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task42(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 42)
 	// (!reload_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym85, []atom.Atom{ex.V[0], sv24}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task43(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 43)
 	// (!reload_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym85, []atom.Atom{ex.V[0], sv28}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task44(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 44)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task45(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 45)
 	// (!fire_precision_shot ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym86, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task46(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 46)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task47(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 47)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task48(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 48)
 	// (!switch_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym76, []atom.Atom{ex.V[0], sv36}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task49(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 49)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task50(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 50)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task51(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 51)
 	// (!advance_under_cover ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym87, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task52(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 52)
 	// (!suppress_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym88, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task53(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 53)
 	// (!track_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym89, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task54(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 54)
 	// (!seek_cover ?inp_npc)
 	if !ex.AppendPlanStep(sym90, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task55(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 55)
 	// (!acknowledge_radio_alert ?inp_npc ?report)
 	if !ex.AppendPlanStep(sym91, []atom.Atom{ex.V[0], ex.V[12]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task56(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 56)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task57(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 57)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task58(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 58)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task59(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 59)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task60(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 60)
 	// (!report_suspicious_sound ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym95, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task61(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 61)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task62(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 62)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task63(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 63)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task64(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 64)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task65(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 65)
 	// (!inspect_tracks ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym96, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task66(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 66)
 	// (!follow_track_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym97, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task67(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 67)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task68(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 68)
 	// (!focus_attention ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym98, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task69(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 69)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task70(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 70)
 	// (!inspect_anomaly ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym99, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task71(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 71)
 	// (!follow_investigation_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym100, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task72(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 72)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task73(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 73)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task74(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 74)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task75(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 75)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task76(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 76)
 	// (!report_investigation_result ?inp_npc ?inp_stimulus ?inp_location)
 	if !ex.AppendPlanStep(sym101, []atom.Atom{ex.V[0], ex.V[10], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task77(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 77)
 	// (!announce_lost_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym102, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task78(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 78)
 	// (!follow_enemy_tracks ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym103, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task79(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 79)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task80(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 80)
 	// (!announce_lost_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym102, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task81(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 81)
 	// (!move_to_search_point ?inp_npc ?location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[14]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task82(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 82)
 	// (!scan_sector ?inp_npc ?location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[14]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task83(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 83)
 	// (!coordinate_squad_search ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym105, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task84(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 84)
 	// (!follow_search_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym106, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task85(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 85)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task86(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 86)
 	// (!move_to_search_point ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task87(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 87)
 	// (!clear_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym107, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task88(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 88)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task89(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 89)
 	// (!follow_search_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym106, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task90(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 90)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task91(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 91)
 	// (!move_to_search_point ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task92(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 92)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task93(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 93)
 	// (!report_search_progress ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym108, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task94(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 94)
 	// (!use_medkit ?inp_npc)
 	if !ex.AppendPlanStep(sym109, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task95(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 95)
 	// (!check_equipment ?inp_npc)
 	if !ex.AppendPlanStep(sym110, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task96(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 96)
 	// (!move_to_supply ?inp_npc ?cache)
 	if !ex.AppendPlanStep(sym111, []atom.Atom{ex.V[0], ex.V[15]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task97(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 97)
 	// (!resupply_ammo ?inp_npc ?cache)
 	if !ex.AppendPlanStep(sym112, []atom.Atom{ex.V[0], ex.V[15]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task98(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 98)
 	// (!clear_weapon_jam ?inp_npc ?weapon)
 	if !ex.AppendPlanStep(sym113, []atom.Atom{ex.V[0], ex.V[16]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task99(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 99)
 	// (!check_equipment ?inp_npc)
 	if !ex.AppendPlanStep(sym110, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task100(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 100)
 	// (!follow_patrol_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym114, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task101(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 101)
 	// (!inspect_checkpoint ?inp_npc ?point)
 	if !ex.AppendPlanStep(sym115, []atom.Atom{ex.V[0], ex.V[17]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task102(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 102)
 	// (!report_patrol_progress ?inp_npc ?point)
 	if !ex.AppendPlanStep(sym116, []atom.Atom{ex.V[0], ex.V[17]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task103(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 103)
 	// (!greet_ally ?inp_npc ?ally)
 	if !ex.AppendPlanStep(sym117, []atom.Atom{ex.V[0], ex.V[18]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task104(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 104)
 	// (!exchange_status ?inp_npc ?ally)
 	if !ex.AppendPlanStep(sym118, []atom.Atom{ex.V[0], ex.V[18]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task105(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 105)
 	// (!move_to_guard_post ?inp_npc ?post)
 	if !ex.AppendPlanStep(sym119, []atom.Atom{ex.V[0], ex.V[19]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task106(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 106)
 	// (!watch_post ?inp_npc ?post)
 	if !ex.AppendPlanStep(sym120, []atom.Atom{ex.V[0], ex.V[19]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task107(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 107)
 	// (!rest_briefly ?inp_npc)
 	if !ex.AppendPlanStep(sym121, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task108(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 108)
 	// (!check_surroundings ?inp_npc)
 	if !ex.AppendPlanStep(sym122, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task109(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 109)
 	// (!play_idle_animation ?inp_npc)
 	if !ex.AppendPlanStep(sym123, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task110(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 110)
 	// (!check_surroundings ?inp_npc)
 	if !ex.AppendPlanStep(sym122, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task111(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 111)
 	// (!announce_state "high_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv46, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task112(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 112)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -5872,24 +10620,31 @@ func task112(ex *planner.Exec) int {
 
 func task113(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 113)
 	// (!announce_state "combat" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv47, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task114(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 114)
 	// (combat_tick ?npc ?enemy ?distance)
 	arg0 := ex.V[20]
 	arg1 := ex.V[23]
 	arg2 := ex.V[24]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -5908,24 +10663,31 @@ func task114(ex *planner.Exec) int {
 
 func task115(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 115)
 	// (!announce_state "medium_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv49, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task116(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 116)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -5943,24 +10705,31 @@ func task116(ex *planner.Exec) int {
 
 func task117(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 117)
 	// (!announce_state "investigation" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv50, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task118(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 118)
 	// (investigation_tick ?npc ?stimulus ?location)
 	arg0 := ex.V[20]
 	arg1 := ex.V[27]
 	arg2 := ex.V[14]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -5980,24 +10749,31 @@ func task118(ex *planner.Exec) int {
 
 func task119(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 119)
 	// (!announce_state "search" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv51, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task120(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 120)
 	// (search_tick ?npc ?enemy ?last_location)
 	arg0 := ex.V[20]
 	arg1 := ex.V[23]
 	arg2 := ex.V[29]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -6017,24 +10793,31 @@ func task120(ex *planner.Exec) int {
 
 func task121(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 121)
 	// (!announce_state "low_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv53, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task122(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 122)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -6052,22 +10835,29 @@ func task122(ex *planner.Exec) int {
 
 func task123(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 123)
 	// (!announce_state "idle" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv54, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task124(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 124)
 	// (idle_tick ?npc)
 	arg0 := ex.V[20]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -6089,276 +10879,375 @@ func task124(ex *planner.Exec) int {
 
 func task125(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 125)
 	// (!announce_state "no_controlled_npc")
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv55}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task126(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 126)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task127(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 127)
 	// (!deploy_smoke ?inp_npc)
 	if !ex.AppendPlanStep(sym59, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task128(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 128)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task129(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 129)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task130(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 130)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task131(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 131)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task132(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 132)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task133(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 133)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task134(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 134)
 	// (!face_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym62, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task135(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 135)
 	// (!hold_position ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym63, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task136(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 136)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task137(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 137)
 	// (!follow_escort_route ?inp_npc ?inp_target ?route)
 	if !ex.AppendPlanStep(sym64, []atom.Atom{ex.V[0], ex.V[2], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task138(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 138)
 	// (!mark_order_started ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym58, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task139(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 139)
 	// (!guard_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym65, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task140(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 140)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task141(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 141)
 	// (!interact_with ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym66, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task142(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 142)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task143(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 143)
 	// (!move_to_order_target ?inp_npc ?inp_target)
 	if !ex.AppendPlanStep(sym60, []atom.Atom{ex.V[0], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task144(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 144)
 	// (!mark_order_complete ?inp_npc ?inp_order)
 	if !ex.AppendPlanStep(sym61, []atom.Atom{ex.V[0], ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task145(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 145)
 	// (!report_invalid_order ?inp_npc ?inp_order ?inp_target)
 	if !ex.AppendPlanStep(sym67, []atom.Atom{ex.V[0], ex.V[1], ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task146(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 146)
 	// (!remember_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym68, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task147(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 147)
 	// (!throw_smoke ?inp_npc)
 	if !ex.AppendPlanStep(sym69, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task148(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 148)
 	// (!retreat_via ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym70, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task149(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 149)
 	// (melee_tick ?inp_npc ?inp_enemy)
 	arg0 := ex.V[0]
 	arg1 := ex.V[4]
 	if !arg0.IsBound() || !arg1.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -6374,13 +11263,16 @@ func task149(ex *planner.Exec) int {
 
 func task150(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 150)
 	// (ranged_tick ?inp_npc ?inp_enemy ?inp_distance)
 	arg0 := ex.V[0]
 	arg1 := ex.V[4]
 	arg2 := ex.V[5]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -6400,970 +11292,1321 @@ func task150(ex *planner.Exec) int {
 
 func task151(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 151)
 	// (!face_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym71, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task152(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 152)
 	// (!parry_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym72, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task153(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 153)
 	// (!counter_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym73, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task154(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 154)
 	// (!heavy_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym74, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task155(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 155)
 	// (!face_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym71, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task156(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 156)
 	// (!quick_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym75, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task157(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 157)
 	// (!switch_weapon ?inp_npc melee)
 	if !ex.AppendPlanStep(sym76, []atom.Atom{ex.V[0], sv72}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task158(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 158)
 	// (!quick_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym75, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task159(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 159)
 	// (!dodge_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym77, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task160(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 160)
 	// (!improvised_melee_attack ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym78, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task161(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 161)
 	// (!follow_flank_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym79, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task162(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 162)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task163(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 163)
 	// (!fire_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym81, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task164(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 164)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task165(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 165)
 	// (!peek_from_cover ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym83, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task166(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 166)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task167(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 167)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task168(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 168)
 	// (!reload_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym85, []atom.Atom{ex.V[0], sv80}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task169(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 169)
 	// (!reload_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym85, []atom.Atom{ex.V[0], sv84}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task170(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 170)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task171(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 171)
 	// (!fire_precision_shot ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym86, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task172(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 172)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task173(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 173)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task174(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 174)
 	// (!switch_weapon ?inp_npc ranged)
 	if !ex.AppendPlanStep(sym76, []atom.Atom{ex.V[0], sv92}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task175(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 175)
 	// (!aim_at ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym80, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task176(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 176)
 	// (!fire_controlled_burst ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym84, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task177(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 177)
 	// (!advance_under_cover ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym87, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task178(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 178)
 	// (!suppress_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym88, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task179(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 179)
 	// (!track_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym89, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task180(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 180)
 	// (!seek_cover ?inp_npc)
 	if !ex.AppendPlanStep(sym90, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task181(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 181)
 	// (!acknowledge_radio_alert ?inp_npc ?report)
 	if !ex.AppendPlanStep(sym91, []atom.Atom{ex.V[0], ex.V[12]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task182(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 182)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task183(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 183)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task184(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 184)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task185(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 185)
 	// (!move_to_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym82, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task186(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 186)
 	// (!report_suspicious_sound ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym95, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task187(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 187)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task188(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 188)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task189(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 189)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task190(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 190)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task191(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 191)
 	// (!inspect_tracks ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym96, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task192(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 192)
 	// (!follow_track_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym97, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task193(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 193)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task194(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 194)
 	// (!focus_attention ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym98, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task195(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 195)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task196(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 196)
 	// (!inspect_anomaly ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym99, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task197(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 197)
 	// (!follow_investigation_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym100, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task198(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 198)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task199(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 199)
 	// (!set_cautious_stance ?inp_npc)
 	if !ex.AppendPlanStep(sym92, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task200(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 200)
 	// (!move_to_investigation_point ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym93, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task201(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 201)
 	// (!scan_sector ?inp_npc ?inp_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task202(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 202)
 	// (!report_investigation_result ?inp_npc ?inp_stimulus ?inp_location)
 	if !ex.AppendPlanStep(sym101, []atom.Atom{ex.V[0], ex.V[10], ex.V[11]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task203(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 203)
 	// (!announce_lost_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym102, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task204(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 204)
 	// (!follow_enemy_tracks ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym103, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task205(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 205)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task206(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 206)
 	// (!announce_lost_enemy ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym102, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task207(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 207)
 	// (!move_to_search_point ?inp_npc ?location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[14]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task208(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 208)
 	// (!scan_sector ?inp_npc ?location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[14]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task209(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 209)
 	// (!coordinate_squad_search ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym105, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task210(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 210)
 	// (!follow_search_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym106, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task211(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 211)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task212(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 212)
 	// (!move_to_search_point ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task213(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 213)
 	// (!clear_cover ?inp_npc ?cover)
 	if !ex.AppendPlanStep(sym107, []atom.Atom{ex.V[0], ex.V[9]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task214(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 214)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task215(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 215)
 	// (!follow_search_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym106, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task216(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 216)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task217(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 217)
 	// (!move_to_search_point ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym104, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task218(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 218)
 	// (!scan_sector ?inp_npc ?inp_last_location)
 	if !ex.AppendPlanStep(sym94, []atom.Atom{ex.V[0], ex.V[13]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task219(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 219)
 	// (!report_search_progress ?inp_npc ?inp_enemy)
 	if !ex.AppendPlanStep(sym108, []atom.Atom{ex.V[0], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task220(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 220)
 	// (!use_medkit ?inp_npc)
 	if !ex.AppendPlanStep(sym109, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task221(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 221)
 	// (!check_equipment ?inp_npc)
 	if !ex.AppendPlanStep(sym110, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task222(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 222)
 	// (!move_to_supply ?inp_npc ?cache)
 	if !ex.AppendPlanStep(sym111, []atom.Atom{ex.V[0], ex.V[15]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task223(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 223)
 	// (!resupply_ammo ?inp_npc ?cache)
 	if !ex.AppendPlanStep(sym112, []atom.Atom{ex.V[0], ex.V[15]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task224(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 224)
 	// (!clear_weapon_jam ?inp_npc ?weapon)
 	if !ex.AppendPlanStep(sym113, []atom.Atom{ex.V[0], ex.V[16]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task225(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 225)
 	// (!check_equipment ?inp_npc)
 	if !ex.AppendPlanStep(sym110, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task226(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 226)
 	// (!follow_patrol_route ?inp_npc ?route)
 	if !ex.AppendPlanStep(sym114, []atom.Atom{ex.V[0], ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task227(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 227)
 	// (!inspect_checkpoint ?inp_npc ?point)
 	if !ex.AppendPlanStep(sym115, []atom.Atom{ex.V[0], ex.V[17]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task228(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 228)
 	// (!report_patrol_progress ?inp_npc ?point)
 	if !ex.AppendPlanStep(sym116, []atom.Atom{ex.V[0], ex.V[17]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task229(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 229)
 	// (!greet_ally ?inp_npc ?ally)
 	if !ex.AppendPlanStep(sym117, []atom.Atom{ex.V[0], ex.V[18]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task230(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 230)
 	// (!exchange_status ?inp_npc ?ally)
 	if !ex.AppendPlanStep(sym118, []atom.Atom{ex.V[0], ex.V[18]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task231(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 231)
 	// (!move_to_guard_post ?inp_npc ?post)
 	if !ex.AppendPlanStep(sym119, []atom.Atom{ex.V[0], ex.V[19]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task232(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 232)
 	// (!watch_post ?inp_npc ?post)
 	if !ex.AppendPlanStep(sym120, []atom.Atom{ex.V[0], ex.V[19]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task233(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 233)
 	// (!rest_briefly ?inp_npc)
 	if !ex.AppendPlanStep(sym121, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task234(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 234)
 	// (!check_surroundings ?inp_npc)
 	if !ex.AppendPlanStep(sym122, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task235(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 235)
 	// (!play_idle_animation ?inp_npc)
 	if !ex.AppendPlanStep(sym123, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task236(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 236)
 	// (!check_surroundings ?inp_npc)
 	if !ex.AppendPlanStep(sym122, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task237(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 237)
 	// (!announce_state "high_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv102, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task238(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 238)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7381,24 +12624,31 @@ func task238(ex *planner.Exec) int {
 
 func task239(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 239)
 	// (!announce_state "combat" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv103, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task240(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 240)
 	// (combat_tick ?npc ?enemy ?distance)
 	arg0 := ex.V[20]
 	arg1 := ex.V[23]
 	arg2 := ex.V[24]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7417,24 +12667,31 @@ func task240(ex *planner.Exec) int {
 
 func task241(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 241)
 	// (!announce_state "medium_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv105, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task242(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 242)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7452,24 +12709,31 @@ func task242(ex *planner.Exec) int {
 
 func task243(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 243)
 	// (!announce_state "investigation" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv106, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task244(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 244)
 	// (investigation_tick ?npc ?stimulus ?location)
 	arg0 := ex.V[20]
 	arg1 := ex.V[27]
 	arg2 := ex.V[14]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7489,24 +12753,31 @@ func task244(ex *planner.Exec) int {
 
 func task245(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 245)
 	// (!announce_state "search" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv107, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task246(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 246)
 	// (search_tick ?npc ?enemy ?last_location)
 	arg0 := ex.V[20]
 	arg1 := ex.V[23]
 	arg2 := ex.V[29]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7526,24 +12797,31 @@ func task246(ex *planner.Exec) int {
 
 func task247(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 247)
 	// (!announce_state "low_order" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv109, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task248(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 248)
 	// (execute_scripted_order ?npc ?order ?target)
 	arg0 := ex.V[20]
 	arg1 := ex.V[21]
 	arg2 := ex.V[22]
 	if !arg0.IsBound() || !arg1.IsBound() || !arg2.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7561,22 +12839,29 @@ func task248(ex *planner.Exec) int {
 
 func task249(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 249)
 	// (!announce_state "idle" ?npc)
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv110, ex.V[20]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task250(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 250)
 	// (idle_tick ?npc)
 	arg0 := ex.V[20]
 	if !arg0.IsBound() {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
 	ex.V[0] = atom.Atom{}
@@ -7598,12 +12883,16 @@ func task250(ex *planner.Exec) int {
 
 func task251(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 251)
 	// (!announce_state "no_controlled_npc")
 	if !ex.AppendPlanStep(sym124, []atom.Atom{sv111}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -7611,12 +12900,12 @@ func task251(ex *planner.Exec) int {
 func method0(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp51_3 atom.Atom
-	var cp56_3 atom.Atom
-	var fc57 uint32
-	_ = cp51_3
-	_ = cp56_3
-	_ = fc57
+	var cp54_3 atom.Atom
+	var cp59_3 atom.Atom
+	var fc60 uint32
+	_ = cp54_3
+	_ = cp59_3
+	_ = fc60
 	switch frame.Resume {
 	case 1:
 		goto L10
@@ -7635,21 +12924,28 @@ func method0(ex *planner.Exec) int {
 	case 8:
 		goto L17
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch evacuate_under_fire
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (== ?inp_order evacuate) (under_fire ?inp_npc))
+	ex.DebugBeginCondition(&definition, 0)
 	// (== ?inp_order evacuate)
 	// (== ?inp_order evacuate)
+	ex.DebugBeginCondition(&definition, 1)
 	if planner.Compare(ex.V[1], sv0, 0) {
+		ex.DebugEndCondition(&definition, true)
 		goto L24
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L22
 L24:
 	// (under_fire ?inp_npc)
 	// (under_fire ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 2)
 		table := &ex.FactTables[0][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -7660,28 +12956,38 @@ L24:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
 			goto L27
 		}
 		goto L25
 	}
 L27:
+	ex.DebugEndCondition(&definition, true)
 	goto L18
 L25:
 	goto L22
 L22:
 	goto L20
 L20:
+	ex.DebugEndCondition(&definition, false)
 	goto L19
 L19:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L3
 L18:
 	if !ex.PushBranch(&bc0) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L28:
+	ex.DebugCapturePendingTask(3)
+	ex.DebugCapturePendingTask(2)
+	ex.DebugCapturePendingTask(1)
+	ex.DebugCapturePendingTask(0)
+L29:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -7691,45 +12997,63 @@ L28:
 		frame.ChildResult = 0
 		goto L10
 	}
-	goto L29
+	goto L30
 L10:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L3
 	}
-	goto L28
-L29:
+	goto L29
+L30:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L3:
 	// branch evacuate
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 1)
 	// (and (== ?inp_order evacuate))
+	ex.DebugBeginCondition(&definition, 3)
 	// (== ?inp_order evacuate)
 	// (== ?inp_order evacuate)
+	ex.DebugBeginCondition(&definition, 4)
 	if planner.Compare(ex.V[1], sv1, 0) {
-		goto L36
+		ex.DebugEndCondition(&definition, true)
+		goto L37
 	}
-	goto L34
-L36:
-	goto L30
-L34:
+	ex.DebugEndCondition(&definition, false)
+	goto L35
+L37:
+	ex.DebugEndCondition(&definition, true)
+	goto L31
+L35:
+	goto L33
+L33:
+	ex.DebugEndCondition(&definition, false)
 	goto L32
 L32:
-	goto L31
-L31:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L4
-L30:
+L31:
 	if !ex.PushBranch(&bc1) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L37:
+	ex.DebugCapturePendingTask(6)
+	ex.DebugCapturePendingTask(5)
+	ex.DebugCapturePendingTask(4)
+L39:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -7739,45 +13063,63 @@ L37:
 		frame.ChildResult = 0
 		goto L11
 	}
-	goto L38
+	goto L40
 L11:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L4
 	}
-	goto L37
-L38:
+	goto L39
+L40:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L4:
 	// branch hold_position
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 2)
 	// (and (== ?inp_order hold))
+	ex.DebugBeginCondition(&definition, 5)
 	// (== ?inp_order hold)
 	// (== ?inp_order hold)
+	ex.DebugBeginCondition(&definition, 6)
 	if planner.Compare(ex.V[1], sv2, 0) {
-		goto L45
+		ex.DebugEndCondition(&definition, true)
+		goto L47
 	}
-	goto L43
-L45:
-	goto L39
-L43:
+	ex.DebugEndCondition(&definition, false)
+	goto L45
+L47:
+	ex.DebugEndCondition(&definition, true)
 	goto L41
-L41:
-	goto L40
-L40:
+L45:
+	goto L43
+L43:
+	ex.DebugEndCondition(&definition, false)
+	goto L42
+L42:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L5
-L39:
+L41:
 	if !ex.PushBranch(&bc2) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L46:
+	ex.DebugCapturePendingTask(9)
+	ex.DebugCapturePendingTask(8)
+	ex.DebugCapturePendingTask(7)
+L49:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -7787,57 +13129,77 @@ L46:
 		frame.ChildResult = 0
 		goto L12
 	}
-	goto L47
+	goto L50
 L12:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L5
 	}
-	goto L46
-L47:
+	goto L49
+L50:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L5:
 	// branch escort
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 3)
 	// (and (== ?inp_order escort) (escort_route ?inp_npc ?inp_target ?route))
-	cp51_3 = ex.V[3]
+	cp54_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 7)
 	// (== ?inp_order escort)
 	// (== ?inp_order escort)
+	ex.DebugBeginCondition(&definition, 8)
 	if planner.Compare(ex.V[1], sv3, 0) {
-		goto L54
+		ex.DebugEndCondition(&definition, true)
+		goto L57
 	}
-	goto L52
-L54:
+	ex.DebugEndCondition(&definition, false)
+	goto L55
+L57:
 	// (escort_route ?inp_npc ?inp_target ?route)
-	cp56_3 = ex.V[3]
-	fc57 = 0
-	fc57++
-	if !factChoice9(ex, fc57-1) {
-		goto L55
+	cp59_3 = ex.V[3]
+	fc60 = 0
+	ex.DebugBeginCondition(&definition, 9)
+	fc60++
+	if !factChoice9(ex, fc60-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L58
 	}
-	goto L48
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L51
+L58:
+	ex.V[3] = cp59_3
+	goto L55
 L55:
-	ex.V[3] = cp56_3
+	goto L53
+L53:
+	ex.V[3] = cp54_3
+	ex.DebugEndCondition(&definition, false)
 	goto L52
 L52:
-	goto L50
-L50:
-	ex.V[3] = cp51_3
-	goto L49
-L49:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L6
-L48:
+L51:
 	if !ex.PushBranch(&bc3) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L59:
+	ex.DebugCapturePendingTask(11)
+	ex.DebugCapturePendingTask(10)
+L63:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -7847,45 +13209,62 @@ L59:
 		frame.ChildResult = 0
 		goto L13
 	}
-	goto L60
+	goto L64
 L13:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L6
 	}
-	goto L59
-L60:
+	goto L63
+L64:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L6:
 	// branch guard
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 4)
 	// (and (== ?inp_order guard))
+	ex.DebugBeginCondition(&definition, 10)
 	// (== ?inp_order guard)
 	// (== ?inp_order guard)
+	ex.DebugBeginCondition(&definition, 11)
 	if planner.Compare(ex.V[1], sv4, 0) {
-		goto L67
+		ex.DebugEndCondition(&definition, true)
+		goto L71
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L69
+L71:
+	ex.DebugEndCondition(&definition, true)
 	goto L65
+L69:
+	goto L67
 L67:
-	goto L61
-L65:
-	goto L63
-L63:
-	goto L62
-L62:
+	ex.DebugEndCondition(&definition, false)
+	goto L66
+L66:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L7
-L61:
+L65:
 	if !ex.PushBranch(&bc4) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L68:
+	ex.DebugCapturePendingTask(13)
+	ex.DebugCapturePendingTask(12)
+L73:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -7895,34 +13274,45 @@ L68:
 		frame.ChildResult = 0
 		goto L14
 	}
-	goto L69
+	goto L74
 L14:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L7
 	}
-	goto L68
-L69:
+	goto L73
+L74:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L7:
 	// branch interact
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 5)
 	// (and (== ?inp_order interact) (interaction_ready ?inp_target))
+	ex.DebugBeginCondition(&definition, 12)
 	// (== ?inp_order interact)
 	// (== ?inp_order interact)
+	ex.DebugBeginCondition(&definition, 13)
 	if planner.Compare(ex.V[1], sv5, 0) {
-		goto L76
+		ex.DebugEndCondition(&definition, true)
+		goto L81
 	}
-	goto L74
-L76:
+	ex.DebugEndCondition(&definition, false)
+	goto L79
+L81:
 	// (interaction_ready ?inp_target)
 	// (interaction_ready ?inp_target)
 	{
+		ex.DebugBeginCondition(&definition, 14)
 		table := &ex.FactTables[2][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -7933,28 +13323,37 @@ L76:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L79
+			goto L84
 		}
-		goto L77
+		goto L82
 	}
+L84:
+	ex.DebugEndCondition(&definition, true)
+	goto L75
+L82:
+	goto L79
 L79:
-	goto L70
+	goto L77
 L77:
-	goto L74
-L74:
-	goto L72
-L72:
-	goto L71
-L71:
+	ex.DebugEndCondition(&definition, false)
+	goto L76
+L76:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L8
-L70:
+L75:
 	if !ex.PushBranch(&bc5) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L80:
+	ex.DebugCapturePendingTask(16)
+	ex.DebugCapturePendingTask(15)
+	ex.DebugCapturePendingTask(14)
+L86:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -7964,45 +13363,62 @@ L80:
 		frame.ChildResult = 0
 		goto L15
 	}
-	goto L81
+	goto L87
 L15:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L8
 	}
-	goto L80
-L81:
+	goto L86
+L87:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L8:
 	// branch move
 	ex.SaveRetry(frame, ms0)
+	ex.DebugBeginBranch(&definition, 6)
 	// (and (== ?inp_order move))
+	ex.DebugBeginCondition(&definition, 15)
 	// (== ?inp_order move)
 	// (== ?inp_order move)
+	ex.DebugBeginCondition(&definition, 16)
 	if planner.Compare(ex.V[1], sv6, 0) {
-		goto L88
+		ex.DebugEndCondition(&definition, true)
+		goto L94
 	}
-	goto L86
-L88:
-	goto L82
-L86:
-	goto L84
-L84:
-	goto L83
-L83:
+	ex.DebugEndCondition(&definition, false)
+	goto L92
+L94:
+	ex.DebugEndCondition(&definition, true)
+	goto L88
+L92:
+	goto L90
+L90:
+	ex.DebugEndCondition(&definition, false)
+	goto L89
+L89:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
 	goto L9
-L82:
+L88:
 	if !ex.PushBranch(&bc6) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L89:
+	ex.DebugCapturePendingTask(18)
+	ex.DebugCapturePendingTask(17)
+L96:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -8012,28 +13428,37 @@ L89:
 		frame.ChildResult = 0
 		goto L16
 	}
-	goto L90
+	goto L97
 L16:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms0)
+		ex.DebugEndBranch(&definition, false)
 		goto L9
 	}
-	goto L89
-L90:
+	goto L96
+L97:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L9:
 	// branch unknown_order
-	goto L91
-L91:
+	ex.DebugBeginBranch(&definition, 7)
+	goto L98
+L98:
 	if !ex.PushBranch(&bc7) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L93:
+	ex.DebugCapturePendingTask(19)
+L100:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -8043,13 +13468,17 @@ L93:
 		frame.ChildResult = 0
 		goto L17
 	}
-	goto L94
+	goto L101
 L17:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L93
-L94:
+	goto L100
+L101:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -8057,81 +13486,101 @@ L94:
 func method1(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp105_3 atom.Atom
-	var cp105_6 atom.Atom
-	var cp107_6 atom.Atom
-	var fc108 uint32
-	var cp114_3 atom.Atom
+	var cp112_3 atom.Atom
+	var cp112_6 atom.Atom
+	var cp114_6 atom.Atom
 	var fc115 uint32
-	_ = cp105_3
-	_ = cp105_6
-	_ = cp107_6
-	_ = fc108
-	_ = cp114_3
+	var cp121_3 atom.Atom
+	var fc122 uint32
+	_ = cp112_3
+	_ = cp112_6
+	_ = cp114_6
 	_ = fc115
+	_ = cp121_3
+	_ = fc122
 	switch frame.Resume {
 	case 1:
-		goto L99
-	case 2:
-		goto L100
-	case 3:
-		goto L101
-	}
-	goto L96
-L96:
-	// branch critical_retreat
-	ex.SaveRetry(frame, ms1)
-	// (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
-	cp105_3 = ex.V[3]
-	cp105_6 = ex.V[6]
-	// (health ?inp_npc ?hp)
-	cp107_6 = ex.V[6]
-	fc108 = 0
-L109:
-	fc108++
-	if !factChoice18(ex, fc108-1) {
 		goto L106
+	case 2:
+		goto L107
+	case 3:
+		goto L108
 	}
-	// (<= ?hp 20)
-	// (<= ?hp 20)
-	if planner.Compare(ex.V[6], sv7, 3) {
-		goto L112
-	}
-	goto L110
-L112:
-	// (retreat_route ?inp_npc ?route)
-	cp114_3 = ex.V[3]
-	fc115 = 0
-	fc115++
-	if !factChoice20(ex, fc115-1) {
-		goto L113
-	}
-	goto L102
-L113:
-	ex.V[3] = cp114_3
-	goto L110
-L110:
-	goto L108
-L108:
-	ex.V[6] = cp107_6
-	cp107_6 = ex.V[6]
-	goto L109
-L106:
-	ex.V[6] = cp107_6
-	goto L104
-L104:
-	ex.V[3] = cp105_3
-	ex.V[6] = cp105_6
+	ex.DebugBeginMethod(&definition, 1)
 	goto L103
 L103:
+	// branch critical_retreat
+	ex.SaveRetry(frame, ms1)
+	ex.DebugBeginBranch(&definition, 8)
+	// (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
+	cp112_3 = ex.V[3]
+	cp112_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 17)
+	// (health ?inp_npc ?hp)
+	cp114_6 = ex.V[6]
+	fc115 = 0
+L116:
+	ex.DebugBeginCondition(&definition, 18)
+	fc115++
+	if !factChoice18(ex, fc115-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L113
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (<= ?hp 20)
+	// (<= ?hp 20)
+	ex.DebugBeginCondition(&definition, 19)
+	if planner.Compare(ex.V[6], sv7, 3) {
+		ex.DebugEndCondition(&definition, true)
+		goto L119
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L117
+L119:
+	// (retreat_route ?inp_npc ?route)
+	cp121_3 = ex.V[3]
+	fc122 = 0
+	ex.DebugBeginCondition(&definition, 20)
+	fc122++
+	if !factChoice20(ex, fc122-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L120
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L109
+L120:
+	ex.V[3] = cp121_3
+	goto L117
+L117:
+	goto L115
+L115:
+	ex.V[6] = cp114_6
+	cp114_6 = ex.V[6]
+	goto L116
+L113:
+	ex.V[6] = cp114_6
+	goto L111
+L111:
+	ex.V[3] = cp112_3
+	ex.V[6] = cp112_6
+	ex.DebugEndCondition(&definition, false)
+	goto L110
+L110:
 	ex.ReleaseRetry(frame)
-	goto L97
-L102:
+	ex.DebugEndBranch(&definition, false)
+	goto L104
+L109:
 	if !ex.PushBranch(&bc8) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L117:
+	ex.DebugCapturePendingTask(22)
+	ex.DebugCapturePendingTask(21)
+	ex.DebugCapturePendingTask(20)
+L125:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8139,47 +13588,63 @@ L117:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L99
+		goto L106
 	}
-	goto L118
-L99:
+	goto L126
+L106:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms1)
-		goto L97
+		ex.DebugEndBranch(&definition, false)
+		goto L104
 	}
-	goto L117
-L118:
+	goto L125
+L126:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L97:
+L104:
 	// branch melee
 	ex.SaveRetry(frame, ms1)
+	ex.DebugBeginBranch(&definition, 9)
 	// (and (< ?inp_distance 8))
+	ex.DebugBeginCondition(&definition, 21)
 	// (< ?inp_distance 8)
 	// (< ?inp_distance 8)
+	ex.DebugBeginCondition(&definition, 22)
 	if planner.Compare(ex.V[5], sv8, 2) {
-		goto L125
+		ex.DebugEndCondition(&definition, true)
+		goto L133
 	}
-	goto L123
-L125:
-	goto L119
-L123:
-	goto L121
-L121:
-	goto L120
-L120:
+	ex.DebugEndCondition(&definition, false)
+	goto L131
+L133:
+	ex.DebugEndCondition(&definition, true)
+	goto L127
+L131:
+	goto L129
+L129:
+	ex.DebugEndCondition(&definition, false)
+	goto L128
+L128:
 	ex.ReleaseRetry(frame)
-	goto L98
-L119:
+	ex.DebugEndBranch(&definition, false)
+	goto L105
+L127:
 	if !ex.PushBranch(&bc9) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L126:
+	ex.DebugCapturePendingTask(23)
+L135:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -8187,44 +13652,60 @@ L126:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L100
+		goto L107
 	}
-	goto L127
-L100:
+	goto L136
+L107:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms1)
-		goto L98
+		ex.DebugEndBranch(&definition, false)
+		goto L105
 	}
-	goto L126
-L127:
+	goto L135
+L136:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L98:
+L105:
 	// branch ranged
+	ex.DebugBeginBranch(&definition, 10)
 	// (and (>= ?inp_distance 8))
+	ex.DebugBeginCondition(&definition, 23)
 	// (>= ?inp_distance 8)
 	// (>= ?inp_distance 8)
+	ex.DebugBeginCondition(&definition, 24)
 	if planner.Compare(ex.V[5], sv9, 5) {
-		goto L134
+		ex.DebugEndCondition(&definition, true)
+		goto L143
 	}
-	goto L132
-L134:
-	goto L128
-L132:
-	goto L130
-L130:
-	goto L129
-L129:
-	goto L95
-L128:
+	ex.DebugEndCondition(&definition, false)
+	goto L141
+L143:
+	ex.DebugEndCondition(&definition, true)
+	goto L137
+L141:
+	goto L139
+L139:
+	ex.DebugEndCondition(&definition, false)
+	goto L138
+L138:
+	ex.DebugEndBranch(&definition, false)
+	goto L102
+L137:
 	if !ex.PushBranch(&bc10) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L135:
+	ex.DebugCapturePendingTask(24)
+L145:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -8232,17 +13713,22 @@ L135:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L101
+		goto L108
 	}
-	goto L136
-L101:
+	goto L146
+L108:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L135
-L136:
+	goto L145
+L146:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L95:
+L102:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -8250,39 +13736,43 @@ L95:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp151_7 atom.Atom
-	var cp156_7 atom.Atom
-	var fc157 uint32
-	var cp170_7 atom.Atom
-	var cp175_7 atom.Atom
-	var fc176 uint32
-	_ = cp151_7
-	_ = cp156_7
-	_ = fc157
-	_ = cp170_7
-	_ = cp175_7
-	_ = fc176
+	var cp161_7 atom.Atom
+	var cp166_7 atom.Atom
+	var fc167 uint32
+	var cp181_7 atom.Atom
+	var cp186_7 atom.Atom
+	var fc187 uint32
+	_ = cp161_7
+	_ = cp166_7
+	_ = fc167
+	_ = cp181_7
+	_ = cp186_7
+	_ = fc187
 	switch frame.Resume {
 	case 1:
-		goto L143
+		goto L153
 	case 2:
-		goto L144
+		goto L154
 	case 3:
-		goto L145
+		goto L155
 	case 4:
-		goto L146
+		goto L156
 	case 5:
-		goto L147
+		goto L157
 	}
-	goto L138
-L138:
+	ex.DebugBeginMethod(&definition, 2)
+	goto L148
+L148:
 	// branch parry_counter
 	ex.SaveRetry(frame, ms2)
+	ex.DebugBeginBranch(&definition, 11)
 	// (and (enemy_attacking ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 30) (weapon_equipped ?inp_npc melee))
-	cp151_7 = ex.V[7]
+	cp161_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 25)
 	// (enemy_attacking ?inp_enemy)
 	// (enemy_attacking ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 26)
 		table := &ex.FactTables[5][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8293,30 +13783,38 @@ L138:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L154
+			goto L164
 		}
-		goto L152
+		goto L162
 	}
-L154:
+L164:
 	// (stamina ?inp_npc ?amount)
-	cp156_7 = ex.V[7]
-	fc157 = 0
-L158:
-	fc157++
-	if !factChoice27(ex, fc157-1) {
-		goto L155
+	cp166_7 = ex.V[7]
+	fc167 = 0
+L168:
+	ex.DebugBeginCondition(&definition, 27)
+	fc167++
+	if !factChoice27(ex, fc167-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L165
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (>= ?amount 30)
 	// (>= ?amount 30)
+	ex.DebugBeginCondition(&definition, 28)
 	if planner.Compare(ex.V[7], sv10, 5) {
-		goto L161
+		ex.DebugEndCondition(&definition, true)
+		goto L171
 	}
-	goto L159
-L161:
+	ex.DebugEndCondition(&definition, false)
+	goto L169
+L171:
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 29)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8330,38 +13828,47 @@ L161:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L164
+			goto L174
 		}
-		goto L162
+		goto L172
 	}
-L164:
-	goto L148
+L174:
+	ex.DebugEndCondition(&definition, true)
+	goto L158
+L172:
+	goto L169
+L169:
+	goto L167
+L167:
+	ex.V[7] = cp166_7
+	cp166_7 = ex.V[7]
+	goto L168
+L165:
+	ex.V[7] = cp166_7
+	goto L162
 L162:
+	goto L160
+L160:
+	ex.V[7] = cp161_7
+	ex.DebugEndCondition(&definition, false)
 	goto L159
 L159:
-	goto L157
-L157:
-	ex.V[7] = cp156_7
-	cp156_7 = ex.V[7]
-	goto L158
-L155:
-	ex.V[7] = cp156_7
-	goto L152
-L152:
-	goto L150
-L150:
-	ex.V[7] = cp151_7
-	goto L149
-L149:
 	ex.ReleaseRetry(frame)
-	goto L139
-L148:
+	ex.DebugEndBranch(&definition, false)
+	goto L149
+L158:
 	if !ex.PushBranch(&bc11) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L165:
+	ex.DebugCapturePendingTask(27)
+	ex.DebugCapturePendingTask(26)
+	ex.DebugCapturePendingTask(25)
+L176:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8369,30 +13876,38 @@ L165:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L143
+		goto L153
 	}
-	goto L166
-L143:
+	goto L177
+L153:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms2)
-		goto L139
+		ex.DebugEndBranch(&definition, false)
+		goto L149
 	}
-	goto L165
-L166:
+	goto L176
+L177:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L139:
+L149:
 	// branch heavy_strike
 	ex.SaveRetry(frame, ms2)
+	ex.DebugBeginBranch(&definition, 12)
 	// (and (enemy_staggered ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 45) (weapon_equipped ?inp_npc melee))
-	cp170_7 = ex.V[7]
+	cp181_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 30)
 	// (enemy_staggered ?inp_enemy)
 	// (enemy_staggered ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 31)
 		table := &ex.FactTables[8][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8403,30 +13918,38 @@ L139:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L173
+			goto L184
 		}
-		goto L171
+		goto L182
 	}
-L173:
+L184:
 	// (stamina ?inp_npc ?amount)
-	cp175_7 = ex.V[7]
-	fc176 = 0
-L177:
-	fc176++
-	if !factChoice32(ex, fc176-1) {
-		goto L174
+	cp186_7 = ex.V[7]
+	fc187 = 0
+L188:
+	ex.DebugBeginCondition(&definition, 32)
+	fc187++
+	if !factChoice32(ex, fc187-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L185
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (>= ?amount 45)
 	// (>= ?amount 45)
+	ex.DebugBeginCondition(&definition, 33)
 	if planner.Compare(ex.V[7], sv12, 5) {
-		goto L180
+		ex.DebugEndCondition(&definition, true)
+		goto L191
 	}
-	goto L178
-L180:
+	ex.DebugEndCondition(&definition, false)
+	goto L189
+L191:
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 34)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8440,38 +13963,45 @@ L180:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L183
+			goto L194
 		}
-		goto L181
+		goto L192
 	}
-L183:
-	goto L167
-L181:
+L194:
+	ex.DebugEndCondition(&definition, true)
 	goto L178
-L178:
-	goto L176
-L176:
-	ex.V[7] = cp175_7
-	cp175_7 = ex.V[7]
-	goto L177
-L174:
-	ex.V[7] = cp175_7
-	goto L171
-L171:
-	goto L169
-L169:
-	ex.V[7] = cp170_7
-	goto L168
-L168:
+L192:
+	goto L189
+L189:
+	goto L187
+L187:
+	ex.V[7] = cp186_7
+	cp186_7 = ex.V[7]
+	goto L188
+L185:
+	ex.V[7] = cp186_7
+	goto L182
+L182:
+	goto L180
+L180:
+	ex.V[7] = cp181_7
+	ex.DebugEndCondition(&definition, false)
+	goto L179
+L179:
 	ex.ReleaseRetry(frame)
-	goto L140
-L167:
+	ex.DebugEndBranch(&definition, false)
+	goto L150
+L178:
 	if !ex.PushBranch(&bc12) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L184:
+	ex.DebugCapturePendingTask(28)
+L196:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -8479,29 +14009,37 @@ L184:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L144
+		goto L154
 	}
-	goto L185
-L144:
+	goto L197
+L154:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms2)
-		goto L140
+		ex.DebugEndBranch(&definition, false)
+		goto L150
 	}
-	goto L184
-L185:
+	goto L196
+L197:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L140:
+L150:
 	// branch quick_strike
 	ex.SaveRetry(frame, ms2)
+	ex.DebugBeginBranch(&definition, 13)
 	// (and (weapon_equipped ?inp_npc melee))
+	ex.DebugBeginCondition(&definition, 35)
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 36)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8515,26 +14053,34 @@ L140:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L192
+			goto L204
 		}
-		goto L190
+		goto L202
 	}
-L192:
-	goto L186
-L190:
-	goto L188
-L188:
-	goto L187
-L187:
+L204:
+	ex.DebugEndCondition(&definition, true)
+	goto L198
+L202:
+	goto L200
+L200:
+	ex.DebugEndCondition(&definition, false)
+	goto L199
+L199:
 	ex.ReleaseRetry(frame)
-	goto L141
-L186:
+	ex.DebugEndBranch(&definition, false)
+	goto L151
+L198:
 	if !ex.PushBranch(&bc13) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L193:
+	ex.DebugCapturePendingTask(30)
+	ex.DebugCapturePendingTask(29)
+L206:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -8542,29 +14088,37 @@ L193:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L145
+		goto L155
 	}
-	goto L194
-L145:
+	goto L207
+L155:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms2)
-		goto L141
+		ex.DebugEndBranch(&definition, false)
+		goto L151
 	}
-	goto L193
-L194:
+	goto L206
+L207:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L141:
+L151:
 	// branch draw_melee
 	ex.SaveRetry(frame, ms2)
+	ex.DebugBeginBranch(&definition, 14)
 	// (and (weapon_available ?inp_npc melee))
+	ex.DebugBeginCondition(&definition, 37)
 	// (weapon_available ?inp_npc melee)
 	// (weapon_available ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 38)
 		table := &ex.FactTables[9][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8578,26 +14132,34 @@ L141:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L201
+			goto L214
 		}
-		goto L199
+		goto L212
 	}
-L201:
-	goto L195
-L199:
-	goto L197
-L197:
-	goto L196
-L196:
+L214:
+	ex.DebugEndCondition(&definition, true)
+	goto L208
+L212:
+	goto L210
+L210:
+	ex.DebugEndCondition(&definition, false)
+	goto L209
+L209:
 	ex.ReleaseRetry(frame)
-	goto L142
-L195:
+	ex.DebugEndBranch(&definition, false)
+	goto L152
+L208:
 	if !ex.PushBranch(&bc14) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L202:
+	ex.DebugCapturePendingTask(32)
+	ex.DebugCapturePendingTask(31)
+L216:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -8605,30 +14167,40 @@ L202:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L146
+		goto L156
 	}
-	goto L203
-L146:
+	goto L217
+L156:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms2)
-		goto L142
+		ex.DebugEndBranch(&definition, false)
+		goto L152
 	}
-	goto L202
-L203:
+	goto L216
+L217:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L142:
+L152:
 	// branch improvised_defense
-	goto L204
-L204:
+	ex.DebugBeginBranch(&definition, 15)
+	goto L218
+L218:
 	if !ex.PushBranch(&bc15) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L206:
+	ex.DebugCapturePendingTask(34)
+	ex.DebugCapturePendingTask(33)
+L220:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -8636,15 +14208,19 @@ L206:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L147
+		goto L157
 	}
-	goto L207
-L147:
+	goto L221
+L157:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L206
-L207:
+	goto L220
+L221:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -8652,102 +14228,106 @@ L207:
 func method3(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp230_3 atom.Atom
-	var cp230_8 atom.Atom
-	var cp235_3 atom.Atom
-	var fc236 uint32
-	var cp242_8 atom.Atom
-	var fc243 uint32
-	var cp253_8 atom.Atom
-	var cp253_9 atom.Atom
-	var cp258_9 atom.Atom
-	var fc259 uint32
-	var cp271_8 atom.Atom
-	var fc272 uint32
-	var cp282_8 atom.Atom
-	var cp282_9 atom.Atom
-	var cp290_8 atom.Atom
-	var fc291 uint32
-	var cp297_9 atom.Atom
-	var fc298 uint32
-	var cp305_8 atom.Atom
-	var cp313_8 atom.Atom
-	var fc314 uint32
-	var cp324_8 atom.Atom
-	var cp329_8 atom.Atom
-	var fc330 uint32
-	var cp346_8 atom.Atom
-	var cp351_8 atom.Atom
-	var fc352 uint32
-	var cp365_8 atom.Atom
-	var cp370_8 atom.Atom
-	var fc371 uint32
-	var cp381_3 atom.Atom
-	var cp383_3 atom.Atom
-	var fc384 uint32
-	_ = cp230_3
-	_ = cp230_8
-	_ = cp235_3
-	_ = fc236
-	_ = cp242_8
-	_ = fc243
-	_ = cp253_8
-	_ = cp253_9
-	_ = cp258_9
-	_ = fc259
-	_ = cp271_8
-	_ = fc272
-	_ = cp282_8
-	_ = cp282_9
-	_ = cp290_8
-	_ = fc291
-	_ = cp297_9
-	_ = fc298
-	_ = cp305_8
-	_ = cp313_8
-	_ = fc314
-	_ = cp324_8
-	_ = cp329_8
-	_ = fc330
-	_ = cp346_8
-	_ = cp351_8
-	_ = fc352
-	_ = cp365_8
-	_ = cp370_8
-	_ = fc371
-	_ = cp381_3
-	_ = cp383_3
-	_ = fc384
+	var cp244_3 atom.Atom
+	var cp244_8 atom.Atom
+	var cp249_3 atom.Atom
+	var fc250 uint32
+	var cp256_8 atom.Atom
+	var fc257 uint32
+	var cp268_8 atom.Atom
+	var cp268_9 atom.Atom
+	var cp273_9 atom.Atom
+	var fc274 uint32
+	var cp287_8 atom.Atom
+	var fc288 uint32
+	var cp299_8 atom.Atom
+	var cp299_9 atom.Atom
+	var cp307_8 atom.Atom
+	var fc308 uint32
+	var cp314_9 atom.Atom
+	var fc315 uint32
+	var cp323_8 atom.Atom
+	var cp331_8 atom.Atom
+	var fc332 uint32
+	var cp343_8 atom.Atom
+	var cp348_8 atom.Atom
+	var fc349 uint32
+	var cp366_8 atom.Atom
+	var cp371_8 atom.Atom
+	var fc372 uint32
+	var cp386_8 atom.Atom
+	var cp391_8 atom.Atom
+	var fc392 uint32
+	var cp403_3 atom.Atom
+	var cp405_3 atom.Atom
+	var fc406 uint32
+	_ = cp244_3
+	_ = cp244_8
+	_ = cp249_3
+	_ = fc250
+	_ = cp256_8
+	_ = fc257
+	_ = cp268_8
+	_ = cp268_9
+	_ = cp273_9
+	_ = fc274
+	_ = cp287_8
+	_ = fc288
+	_ = cp299_8
+	_ = cp299_9
+	_ = cp307_8
+	_ = fc308
+	_ = cp314_9
+	_ = fc315
+	_ = cp323_8
+	_ = cp331_8
+	_ = fc332
+	_ = cp343_8
+	_ = cp348_8
+	_ = fc349
+	_ = cp366_8
+	_ = cp371_8
+	_ = fc372
+	_ = cp386_8
+	_ = cp391_8
+	_ = fc392
+	_ = cp403_3
+	_ = cp405_3
+	_ = fc406
 	switch frame.Resume {
 	case 1:
-		goto L218
+		goto L232
 	case 2:
-		goto L219
+		goto L233
 	case 3:
-		goto L220
+		goto L234
 	case 4:
-		goto L221
+		goto L235
 	case 5:
-		goto L222
+		goto L236
 	case 6:
-		goto L223
+		goto L237
 	case 7:
-		goto L224
+		goto L238
 	case 8:
-		goto L225
+		goto L239
 	case 9:
-		goto L226
+		goto L240
 	}
-	goto L209
-L209:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L223
+L223:
 	// branch flank_suppressed_target
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 16)
 	// (and (enemy_suppressed ?inp_enemy) (flank_route ?inp_npc ?inp_enemy ?route) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp230_3 = ex.V[3]
-	cp230_8 = ex.V[8]
+	cp244_3 = ex.V[3]
+	cp244_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 39)
 	// (enemy_suppressed ?inp_enemy)
 	// (enemy_suppressed ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 40)
 		table := &ex.FactTables[10][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8758,23 +14338,28 @@ L209:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L233
+			goto L247
 		}
-		goto L231
+		goto L245
 	}
-L233:
+L247:
 	// (flank_route ?inp_npc ?inp_enemy ?route)
-	cp235_3 = ex.V[3]
-	fc236 = 0
-L237:
-	fc236++
-	if !factChoice41(ex, fc236-1) {
-		goto L234
+	cp249_3 = ex.V[3]
+	fc250 = 0
+L251:
+	ex.DebugBeginCondition(&definition, 41)
+	fc250++
+	if !factChoice41(ex, fc250-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L248
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 42)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8788,61 +14373,76 @@ L237:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L240
+			goto L254
 		}
-		goto L238
+		goto L252
 	}
-L240:
+L254:
 	// (ammo ?inp_npc ?count)
-	cp242_8 = ex.V[8]
-	fc243 = 0
-L244:
-	fc243++
-	if !factChoice43(ex, fc243-1) {
-		goto L241
+	cp256_8 = ex.V[8]
+	fc257 = 0
+L258:
+	ex.DebugBeginCondition(&definition, 43)
+	fc257++
+	if !factChoice43(ex, fc257-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L255
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 44)
 	if planner.Compare(ex.V[8], sv18, 4) {
-		goto L247
+		ex.DebugEndCondition(&definition, true)
+		goto L261
 	}
+	ex.DebugEndCondition(&definition, false)
+	goto L259
+L261:
+	ex.DebugEndCondition(&definition, true)
+	goto L241
+L259:
+	goto L257
+L257:
+	ex.V[8] = cp256_8
+	cp256_8 = ex.V[8]
+	goto L258
+L255:
+	ex.V[8] = cp256_8
+	goto L252
+L252:
+	goto L250
+L250:
+	ex.V[3] = cp249_3
+	cp249_3 = ex.V[3]
+	goto L251
+L248:
+	ex.V[3] = cp249_3
 	goto L245
-L247:
-	goto L227
 L245:
 	goto L243
 L243:
-	ex.V[8] = cp242_8
-	cp242_8 = ex.V[8]
-	goto L244
-L241:
-	ex.V[8] = cp242_8
-	goto L238
-L238:
-	goto L236
-L236:
-	ex.V[3] = cp235_3
-	cp235_3 = ex.V[3]
-	goto L237
-L234:
-	ex.V[3] = cp235_3
-	goto L231
-L231:
-	goto L229
-L229:
-	ex.V[3] = cp230_3
-	ex.V[8] = cp230_8
-	goto L228
-L228:
+	ex.V[3] = cp244_3
+	ex.V[8] = cp244_8
+	ex.DebugEndCondition(&definition, false)
+	goto L242
+L242:
 	ex.ReleaseRetry(frame)
-	goto L210
-L227:
+	ex.DebugEndBranch(&definition, false)
+	goto L224
+L241:
 	if !ex.PushBranch(&bc16) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L248:
+	ex.DebugCapturePendingTask(37)
+	ex.DebugCapturePendingTask(36)
+	ex.DebugCapturePendingTask(35)
+L263:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -8850,31 +14450,39 @@ L248:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L218
+		goto L232
 	}
-	goto L249
-L218:
+	goto L264
+L232:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L210
+		ex.DebugEndBranch(&definition, false)
+		goto L224
 	}
-	goto L248
-L249:
+	goto L263
+L264:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L210:
+L224:
 	// branch take_cover_and_fire
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 17)
 	// (and (under_fire ?inp_npc) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp253_8 = ex.V[8]
-	cp253_9 = ex.V[9]
+	cp268_8 = ex.V[8]
+	cp268_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 45)
 	// (under_fire ?inp_npc)
 	// (under_fire ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 46)
 		table := &ex.FactTables[0][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8885,24 +14493,30 @@ L210:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L256
+			goto L271
 		}
-		goto L254
+		goto L269
 	}
-L256:
+L271:
 	// (cover_available ?inp_npc ?cover)
-	cp258_9 = ex.V[9]
-	fc259 = 0
-L260:
-	fc259++
-	if !factChoice47(ex, fc259-1) {
-		goto L257
+	cp273_9 = ex.V[9]
+	fc274 = 0
+L275:
+	ex.DebugBeginCondition(&definition, 47)
+	fc274++
+	if !factChoice47(ex, fc274-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L272
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (cover_compromised ?cover))
+	ex.DebugBeginCondition(&definition, 48)
 	// (cover_compromised ?cover)
 	// (cover_compromised ?cover)
 	{
+		ex.DebugBeginCondition(&definition, 49)
 		table := &ex.FactTables[14][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8913,19 +14527,22 @@ L260:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L266
+			goto L281
 		}
-		goto L264
+		goto L279
 	}
-L266:
-	goto L261
-L264:
-	goto L263
-L263:
+L281:
+	goto L276
+L279:
+	goto L278
+L278:
+	ex.DebugEndCondition(&definition, true)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 50)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -8939,63 +14556,82 @@ L263:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L269
+			goto L285
 		}
-		goto L267
+		goto L283
 	}
-L269:
+L285:
 	// (ammo ?inp_npc ?count)
-	cp271_8 = ex.V[8]
-	fc272 = 0
-L273:
-	fc272++
-	if !factChoice51(ex, fc272-1) {
-		goto L270
+	cp287_8 = ex.V[8]
+	fc288 = 0
+L289:
+	ex.DebugBeginCondition(&definition, 51)
+	fc288++
+	if !factChoice51(ex, fc288-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L286
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 52)
 	if planner.Compare(ex.V[8], sv20, 4) {
-		goto L276
+		ex.DebugEndCondition(&definition, true)
+		goto L292
 	}
-	goto L274
+	ex.DebugEndCondition(&definition, false)
+	goto L290
+L292:
+	ex.DebugEndCondition(&definition, true)
+	goto L265
+L290:
+	goto L288
+L288:
+	ex.V[8] = cp287_8
+	cp287_8 = ex.V[8]
+	goto L289
+L286:
+	ex.V[8] = cp287_8
+	goto L283
+L283:
+	goto L282
+L282:
+	ex.DebugBeginCondition(&definition, 48)
+	goto L276
 L276:
-	goto L250
+	ex.DebugEndCondition(&definition, false)
+	goto L274
 L274:
-	goto L272
+	ex.V[9] = cp273_9
+	cp273_9 = ex.V[9]
+	goto L275
 L272:
-	ex.V[8] = cp271_8
-	cp271_8 = ex.V[8]
-	goto L273
-L270:
-	ex.V[8] = cp271_8
+	ex.V[9] = cp273_9
+	goto L269
+L269:
 	goto L267
 L267:
-	goto L261
-L261:
-	goto L259
-L259:
-	ex.V[9] = cp258_9
-	cp258_9 = ex.V[9]
-	goto L260
-L257:
-	ex.V[9] = cp258_9
-	goto L254
-L254:
-	goto L252
-L252:
-	ex.V[8] = cp253_8
-	ex.V[9] = cp253_9
-	goto L251
-L251:
+	ex.V[8] = cp268_8
+	ex.V[9] = cp268_9
+	ex.DebugEndCondition(&definition, false)
+	goto L266
+L266:
 	ex.ReleaseRetry(frame)
-	goto L211
-L250:
+	ex.DebugEndBranch(&definition, false)
+	goto L225
+L265:
 	if !ex.PushBranch(&bc17) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L277:
+	ex.DebugCapturePendingTask(40)
+	ex.DebugCapturePendingTask(39)
+	ex.DebugCapturePendingTask(38)
+L294:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -9003,31 +14639,39 @@ L277:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L219
+		goto L233
 	}
-	goto L278
-L219:
+	goto L295
+L233:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L211
+		ex.DebugEndBranch(&definition, false)
+		goto L225
 	}
-	goto L277
-L278:
+	goto L294
+L295:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L211:
+L225:
 	// branch reload_in_cover
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 18)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0) (cover_available ?inp_npc ?cover))
-	cp282_8 = ex.V[8]
-	cp282_9 = ex.V[9]
+	cp299_8 = ex.V[8]
+	cp299_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 53)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 54)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9041,15 +14685,17 @@ L211:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L285
+			goto L302
 		}
-		goto L283
+		goto L300
 	}
-L285:
+L302:
 	// (ammo ?inp_npc 0)
 	// (ammo ?inp_npc 0)
 	{
+		ex.DebugBeginCondition(&definition, 55)
 		table := &ex.FactTables[12][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9063,64 +14709,81 @@ L285:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L288
+			goto L305
 		}
-		goto L286
+		goto L303
 	}
-L288:
+L305:
 	// (reserve_ammo ?inp_npc ?count)
-	cp290_8 = ex.V[8]
-	fc291 = 0
-L292:
-	fc291++
-	if !factChoice56(ex, fc291-1) {
-		goto L289
+	cp307_8 = ex.V[8]
+	fc308 = 0
+L309:
+	ex.DebugBeginCondition(&definition, 56)
+	fc308++
+	if !factChoice56(ex, fc308-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L306
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 57)
 	if planner.Compare(ex.V[8], sv23, 4) {
-		goto L295
+		ex.DebugEndCondition(&definition, true)
+		goto L312
 	}
-	goto L293
-L295:
+	ex.DebugEndCondition(&definition, false)
+	goto L310
+L312:
 	// (cover_available ?inp_npc ?cover)
-	cp297_9 = ex.V[9]
-	fc298 = 0
-	fc298++
-	if !factChoice58(ex, fc298-1) {
-		goto L296
+	cp314_9 = ex.V[9]
+	fc315 = 0
+	ex.DebugBeginCondition(&definition, 58)
+	fc315++
+	if !factChoice58(ex, fc315-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L313
 	}
-	goto L279
-L296:
-	ex.V[9] = cp297_9
-	goto L293
-L293:
-	goto L291
-L291:
-	ex.V[8] = cp290_8
-	cp290_8 = ex.V[8]
-	goto L292
-L289:
-	ex.V[8] = cp290_8
-	goto L286
-L286:
-	goto L283
-L283:
-	goto L281
-L281:
-	ex.V[8] = cp282_8
-	ex.V[9] = cp282_9
-	goto L280
-L280:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L296
+L313:
+	ex.V[9] = cp314_9
+	goto L310
+L310:
+	goto L308
+L308:
+	ex.V[8] = cp307_8
+	cp307_8 = ex.V[8]
+	goto L309
+L306:
+	ex.V[8] = cp307_8
+	goto L303
+L303:
+	goto L300
+L300:
+	goto L298
+L298:
+	ex.V[8] = cp299_8
+	ex.V[9] = cp299_9
+	ex.DebugEndCondition(&definition, false)
+	goto L297
+L297:
 	ex.ReleaseRetry(frame)
-	goto L212
-L279:
+	ex.DebugEndBranch(&definition, false)
+	goto L226
+L296:
 	if !ex.PushBranch(&bc18) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L300:
+	ex.DebugCapturePendingTask(42)
+	ex.DebugCapturePendingTask(41)
+L318:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -9128,30 +14791,38 @@ L300:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L220
+		goto L234
 	}
-	goto L301
-L220:
+	goto L319
+L234:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L212
+		ex.DebugEndBranch(&definition, false)
+		goto L226
 	}
-	goto L300
-L301:
+	goto L318
+L319:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L212:
+L226:
 	// branch reload
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 19)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0))
-	cp305_8 = ex.V[8]
+	cp323_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 59)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 60)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9165,15 +14836,17 @@ L212:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L308
+			goto L326
 		}
-		goto L306
+		goto L324
 	}
-L308:
+L326:
 	// (ammo ?inp_npc 0)
 	// (ammo ?inp_npc 0)
 	{
+		ex.DebugBeginCondition(&definition, 61)
 		table := &ex.FactTables[12][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9187,53 +14860,66 @@ L308:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L311
+			goto L329
 		}
-		goto L309
+		goto L327
 	}
-L311:
+L329:
 	// (reserve_ammo ?inp_npc ?count)
-	cp313_8 = ex.V[8]
-	fc314 = 0
-L315:
-	fc314++
-	if !factChoice62(ex, fc314-1) {
-		goto L312
+	cp331_8 = ex.V[8]
+	fc332 = 0
+L333:
+	ex.DebugBeginCondition(&definition, 62)
+	fc332++
+	if !factChoice62(ex, fc332-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L330
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 63)
 	if planner.Compare(ex.V[8], sv27, 4) {
-		goto L318
+		ex.DebugEndCondition(&definition, true)
+		goto L336
 	}
-	goto L316
-L318:
-	goto L302
-L316:
-	goto L314
-L314:
-	ex.V[8] = cp313_8
-	cp313_8 = ex.V[8]
-	goto L315
-L312:
-	ex.V[8] = cp313_8
-	goto L309
-L309:
-	goto L306
-L306:
-	goto L304
-L304:
-	ex.V[8] = cp305_8
-	goto L303
-L303:
+	ex.DebugEndCondition(&definition, false)
+	goto L334
+L336:
+	ex.DebugEndCondition(&definition, true)
+	goto L320
+L334:
+	goto L332
+L332:
+	ex.V[8] = cp331_8
+	cp331_8 = ex.V[8]
+	goto L333
+L330:
+	ex.V[8] = cp331_8
+	goto L327
+L327:
+	goto L324
+L324:
+	goto L322
+L322:
+	ex.V[8] = cp323_8
+	ex.DebugEndCondition(&definition, false)
+	goto L321
+L321:
 	ex.ReleaseRetry(frame)
-	goto L213
-L302:
+	ex.DebugEndBranch(&definition, false)
+	goto L227
+L320:
 	if !ex.PushBranch(&bc19) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L319:
+	ex.DebugCapturePendingTask(43)
+L338:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -9241,30 +14927,38 @@ L319:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L221
+		goto L235
 	}
-	goto L320
-L221:
+	goto L339
+L235:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L213
+		ex.DebugEndBranch(&definition, false)
+		goto L227
 	}
-	goto L319
-L320:
+	goto L338
+L339:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L213:
+L227:
 	// branch precision_shot
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 20)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (>= ?inp_distance 30) (clear_shot ?inp_npc ?inp_enemy))
-	cp324_8 = ex.V[8]
+	cp343_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 64)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 65)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9278,37 +14972,48 @@ L213:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L327
+			goto L346
 		}
-		goto L325
+		goto L344
 	}
-L327:
+L346:
 	// (ammo ?inp_npc ?count)
-	cp329_8 = ex.V[8]
-	fc330 = 0
-L331:
-	fc330++
-	if !factChoice66(ex, fc330-1) {
-		goto L328
+	cp348_8 = ex.V[8]
+	fc349 = 0
+L350:
+	ex.DebugBeginCondition(&definition, 66)
+	fc349++
+	if !factChoice66(ex, fc349-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L347
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 67)
 	if planner.Compare(ex.V[8], sv30, 4) {
-		goto L334
+		ex.DebugEndCondition(&definition, true)
+		goto L353
 	}
-	goto L332
-L334:
+	ex.DebugEndCondition(&definition, false)
+	goto L351
+L353:
 	// (>= ?inp_distance 30)
 	// (>= ?inp_distance 30)
+	ex.DebugBeginCondition(&definition, 68)
 	if planner.Compare(ex.V[5], sv31, 5) {
-		goto L337
+		ex.DebugEndCondition(&definition, true)
+		goto L356
 	}
-	goto L335
-L337:
+	ex.DebugEndCondition(&definition, false)
+	goto L354
+L356:
 	// (clear_shot ?inp_npc ?inp_enemy)
 	// (clear_shot ?inp_npc ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 69)
 		table := &ex.FactTables[16][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9322,40 +15027,48 @@ L337:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L340
+			goto L359
 		}
-		goto L338
+		goto L357
 	}
-L340:
-	goto L321
-L338:
-	goto L335
-L335:
-	goto L332
-L332:
-	goto L330
-L330:
-	ex.V[8] = cp329_8
-	cp329_8 = ex.V[8]
-	goto L331
-L328:
-	ex.V[8] = cp329_8
-	goto L325
-L325:
-	goto L323
-L323:
-	ex.V[8] = cp324_8
-	goto L322
-L322:
+L359:
+	ex.DebugEndCondition(&definition, true)
+	goto L340
+L357:
+	goto L354
+L354:
+	goto L351
+L351:
+	goto L349
+L349:
+	ex.V[8] = cp348_8
+	cp348_8 = ex.V[8]
+	goto L350
+L347:
+	ex.V[8] = cp348_8
+	goto L344
+L344:
+	goto L342
+L342:
+	ex.V[8] = cp343_8
+	ex.DebugEndCondition(&definition, false)
+	goto L341
+L341:
 	ex.ReleaseRetry(frame)
-	goto L214
-L321:
+	ex.DebugEndBranch(&definition, false)
+	goto L228
+L340:
 	if !ex.PushBranch(&bc20) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L341:
+	ex.DebugCapturePendingTask(45)
+	ex.DebugCapturePendingTask(44)
+L361:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -9363,30 +15076,38 @@ L341:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L222
+		goto L236
 	}
-	goto L342
-L222:
+	goto L362
+L236:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L214
+		ex.DebugEndBranch(&definition, false)
+		goto L228
 	}
-	goto L341
-L342:
+	goto L361
+L362:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L214:
+L228:
 	// branch controlled_burst
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 21)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (clear_shot ?inp_npc ?inp_enemy))
-	cp346_8 = ex.V[8]
+	cp366_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 70)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 71)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9400,30 +15121,38 @@ L214:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L349
+			goto L369
 		}
-		goto L347
+		goto L367
 	}
-L349:
+L369:
 	// (ammo ?inp_npc ?count)
-	cp351_8 = ex.V[8]
-	fc352 = 0
-L353:
-	fc352++
-	if !factChoice72(ex, fc352-1) {
-		goto L350
+	cp371_8 = ex.V[8]
+	fc372 = 0
+L373:
+	ex.DebugBeginCondition(&definition, 72)
+	fc372++
+	if !factChoice72(ex, fc372-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L370
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 73)
 	if planner.Compare(ex.V[8], sv33, 4) {
-		goto L356
+		ex.DebugEndCondition(&definition, true)
+		goto L376
 	}
-	goto L354
-L356:
+	ex.DebugEndCondition(&definition, false)
+	goto L374
+L376:
 	// (clear_shot ?inp_npc ?inp_enemy)
 	// (clear_shot ?inp_npc ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 74)
 		table := &ex.FactTables[16][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9437,38 +15166,46 @@ L356:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L359
+			goto L379
 		}
-		goto L357
+		goto L377
 	}
-L359:
-	goto L343
-L357:
-	goto L354
-L354:
-	goto L352
-L352:
-	ex.V[8] = cp351_8
-	cp351_8 = ex.V[8]
-	goto L353
-L350:
-	ex.V[8] = cp351_8
-	goto L347
-L347:
-	goto L345
-L345:
-	ex.V[8] = cp346_8
-	goto L344
-L344:
+L379:
+	ex.DebugEndCondition(&definition, true)
+	goto L363
+L377:
+	goto L374
+L374:
+	goto L372
+L372:
+	ex.V[8] = cp371_8
+	cp371_8 = ex.V[8]
+	goto L373
+L370:
+	ex.V[8] = cp371_8
+	goto L367
+L367:
+	goto L365
+L365:
+	ex.V[8] = cp366_8
+	ex.DebugEndCondition(&definition, false)
+	goto L364
+L364:
 	ex.ReleaseRetry(frame)
-	goto L215
-L343:
+	ex.DebugEndBranch(&definition, false)
+	goto L229
+L363:
 	if !ex.PushBranch(&bc21) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L360:
+	ex.DebugCapturePendingTask(47)
+	ex.DebugCapturePendingTask(46)
+L381:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -9476,30 +15213,38 @@ L360:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L223
+		goto L237
 	}
-	goto L361
-L223:
+	goto L382
+L237:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L215
+		ex.DebugEndBranch(&definition, false)
+		goto L229
 	}
-	goto L360
-L361:
+	goto L381
+L382:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L215:
+L229:
 	// branch switch_to_ranged
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 22)
 	// (and (weapon_available ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp365_8 = ex.V[8]
+	cp386_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 75)
 	// (weapon_available ?inp_npc ranged)
 	// (weapon_available ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 76)
 		table := &ex.FactTables[9][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9513,51 +15258,66 @@ L215:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L368
+			goto L389
 		}
-		goto L366
+		goto L387
 	}
-L368:
+L389:
 	// (ammo ?inp_npc ?count)
-	cp370_8 = ex.V[8]
-	fc371 = 0
-L372:
-	fc371++
-	if !factChoice77(ex, fc371-1) {
-		goto L369
+	cp391_8 = ex.V[8]
+	fc392 = 0
+L393:
+	ex.DebugBeginCondition(&definition, 77)
+	fc392++
+	if !factChoice77(ex, fc392-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L390
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 78)
 	if planner.Compare(ex.V[8], sv35, 4) {
-		goto L375
+		ex.DebugEndCondition(&definition, true)
+		goto L396
 	}
-	goto L373
-L375:
-	goto L362
-L373:
-	goto L371
-L371:
-	ex.V[8] = cp370_8
-	cp370_8 = ex.V[8]
-	goto L372
-L369:
-	ex.V[8] = cp370_8
-	goto L366
-L366:
-	goto L364
-L364:
-	ex.V[8] = cp365_8
-	goto L363
-L363:
+	ex.DebugEndCondition(&definition, false)
+	goto L394
+L396:
+	ex.DebugEndCondition(&definition, true)
+	goto L383
+L394:
+	goto L392
+L392:
+	ex.V[8] = cp391_8
+	cp391_8 = ex.V[8]
+	goto L393
+L390:
+	ex.V[8] = cp391_8
+	goto L387
+L387:
+	goto L385
+L385:
+	ex.V[8] = cp386_8
+	ex.DebugEndCondition(&definition, false)
+	goto L384
+L384:
 	ex.ReleaseRetry(frame)
-	goto L216
-L362:
+	ex.DebugEndBranch(&definition, false)
+	goto L230
+L383:
 	if !ex.PushBranch(&bc22) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L376:
+	ex.DebugCapturePendingTask(50)
+	ex.DebugCapturePendingTask(49)
+	ex.DebugCapturePendingTask(48)
+L398:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -9565,50 +15325,67 @@ L376:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L224
+		goto L238
 	}
-	goto L377
-L224:
+	goto L399
+L238:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L216
+		ex.DebugEndBranch(&definition, false)
+		goto L230
 	}
-	goto L376
-L377:
+	goto L398
+L399:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L216:
+L230:
 	// branch close_distance
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 23)
 	// (and (advance_route ?inp_npc ?inp_enemy ?route))
-	cp381_3 = ex.V[3]
+	cp403_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 79)
 	// (advance_route ?inp_npc ?inp_enemy ?route)
-	cp383_3 = ex.V[3]
-	fc384 = 0
-	fc384++
-	if !factChoice80(ex, fc384-1) {
-		goto L382
+	cp405_3 = ex.V[3]
+	fc406 = 0
+	ex.DebugBeginCondition(&definition, 80)
+	fc406++
+	if !factChoice80(ex, fc406-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L404
 	}
-	goto L378
-L382:
-	ex.V[3] = cp383_3
-	goto L380
-L380:
-	ex.V[3] = cp381_3
-	goto L379
-L379:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L400
+L404:
+	ex.V[3] = cp405_3
+	goto L402
+L402:
+	ex.V[3] = cp403_3
+	ex.DebugEndCondition(&definition, false)
+	goto L401
+L401:
 	ex.ReleaseRetry(frame)
-	goto L217
-L378:
+	ex.DebugEndBranch(&definition, false)
+	goto L231
+L400:
 	if !ex.PushBranch(&bc23) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L386:
+	ex.DebugCapturePendingTask(52)
+	ex.DebugCapturePendingTask(51)
+L409:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -9616,30 +15393,40 @@ L386:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L225
+		goto L239
 	}
-	goto L387
-L225:
+	goto L410
+L239:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L217
+		ex.DebugEndBranch(&definition, false)
+		goto L231
 	}
-	goto L386
-L387:
+	goto L409
+L410:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L217:
+L231:
 	// branch defensive_fallback
-	goto L388
-L388:
+	ex.DebugBeginBranch(&definition, 24)
+	goto L411
+L411:
 	if !ex.PushBranch(&bc24) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L390:
+	ex.DebugCapturePendingTask(54)
+	ex.DebugCapturePendingTask(53)
+L413:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 9
@@ -9647,15 +15434,19 @@ L390:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L226
+		goto L240
 	}
-	goto L391
-L226:
+	goto L414
+L240:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L390
-L391:
+	goto L413
+L414:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -9663,84 +15454,102 @@ L391:
 func method4(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp410_12 atom.Atom
-	var cp415_12 atom.Atom
-	var fc416 uint32
-	var cp423_9 atom.Atom
-	var cp428_9 atom.Atom
-	var fc429 uint32
-	var cp451_3 atom.Atom
-	var cp456_3 atom.Atom
-	var fc457 uint32
-	var cp473_3 atom.Atom
+	var cp433_12 atom.Atom
+	var cp438_12 atom.Atom
+	var fc439 uint32
+	var cp447_9 atom.Atom
+	var cp452_9 atom.Atom
+	var fc453 uint32
 	var cp478_3 atom.Atom
-	var fc479 uint32
-	_ = cp410_12
-	_ = cp415_12
-	_ = fc416
-	_ = cp423_9
-	_ = cp428_9
-	_ = fc429
-	_ = cp451_3
-	_ = cp456_3
-	_ = fc457
-	_ = cp473_3
+	var cp483_3 atom.Atom
+	var fc484 uint32
+	var cp502_3 atom.Atom
+	var cp507_3 atom.Atom
+	var fc508 uint32
+	_ = cp433_12
+	_ = cp438_12
+	_ = fc439
+	_ = cp447_9
+	_ = cp452_9
+	_ = fc453
 	_ = cp478_3
-	_ = fc479
+	_ = cp483_3
+	_ = fc484
+	_ = cp502_3
+	_ = cp507_3
+	_ = fc508
 	switch frame.Resume {
 	case 1:
-		goto L400
+		goto L423
 	case 2:
-		goto L401
+		goto L424
 	case 3:
-		goto L402
+		goto L425
 	case 4:
-		goto L403
+		goto L426
 	case 5:
-		goto L404
+		goto L427
 	case 6:
-		goto L405
+		goto L428
 	case 7:
-		goto L406
+		goto L429
 	}
-	goto L393
-L393:
+	ex.DebugBeginMethod(&definition, 4)
+	goto L416
+L416:
 	// branch radio_contact
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 25)
 	// (and (== ?inp_stimulus radio) (squad_alert ?inp_npc ?report))
-	cp410_12 = ex.V[12]
+	cp433_12 = ex.V[12]
+	ex.DebugBeginCondition(&definition, 81)
 	// (== ?inp_stimulus radio)
 	// (== ?inp_stimulus radio)
+	ex.DebugBeginCondition(&definition, 82)
 	if planner.Compare(ex.V[10], sv37, 0) {
-		goto L413
+		ex.DebugEndCondition(&definition, true)
+		goto L436
 	}
-	goto L411
-L413:
+	ex.DebugEndCondition(&definition, false)
+	goto L434
+L436:
 	// (squad_alert ?inp_npc ?report)
-	cp415_12 = ex.V[12]
-	fc416 = 0
-	fc416++
-	if !factChoice83(ex, fc416-1) {
-		goto L414
+	cp438_12 = ex.V[12]
+	fc439 = 0
+	ex.DebugBeginCondition(&definition, 83)
+	fc439++
+	if !factChoice83(ex, fc439-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L437
 	}
-	goto L407
-L414:
-	ex.V[12] = cp415_12
-	goto L411
-L411:
-	goto L409
-L409:
-	ex.V[12] = cp410_12
-	goto L408
-L408:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L430
+L437:
+	ex.V[12] = cp438_12
+	goto L434
+L434:
+	goto L432
+L432:
+	ex.V[12] = cp433_12
+	ex.DebugEndCondition(&definition, false)
+	goto L431
+L431:
 	ex.ReleaseRetry(frame)
-	goto L394
-L407:
+	ex.DebugEndBranch(&definition, false)
+	goto L417
+L430:
 	if !ex.PushBranch(&bc25) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L418:
+	ex.DebugCapturePendingTask(58)
+	ex.DebugCapturePendingTask(57)
+	ex.DebugCapturePendingTask(56)
+	ex.DebugCapturePendingTask(55)
+L442:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -9748,46 +15557,61 @@ L418:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L400
+		goto L423
 	}
-	goto L419
-L400:
+	goto L443
+L423:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L394
+		ex.DebugEndBranch(&definition, false)
+		goto L417
 	}
-	goto L418
-L419:
+	goto L442
+L443:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L394:
+L417:
 	// branch gunshot_with_cover
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 26)
 	// (and (== ?inp_stimulus gunshot) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)))
-	cp423_9 = ex.V[9]
+	cp447_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 84)
 	// (== ?inp_stimulus gunshot)
 	// (== ?inp_stimulus gunshot)
+	ex.DebugBeginCondition(&definition, 85)
 	if planner.Compare(ex.V[10], sv38, 0) {
-		goto L426
+		ex.DebugEndCondition(&definition, true)
+		goto L450
 	}
-	goto L424
-L426:
+	ex.DebugEndCondition(&definition, false)
+	goto L448
+L450:
 	// (cover_available ?inp_npc ?cover)
-	cp428_9 = ex.V[9]
-	fc429 = 0
-L430:
-	fc429++
-	if !factChoice86(ex, fc429-1) {
-		goto L427
+	cp452_9 = ex.V[9]
+	fc453 = 0
+L454:
+	ex.DebugBeginCondition(&definition, 86)
+	fc453++
+	if !factChoice86(ex, fc453-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L451
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (cover_compromised ?cover))
+	ex.DebugBeginCondition(&definition, 87)
 	// (cover_compromised ?cover)
 	// (cover_compromised ?cover)
 	{
+		ex.DebugBeginCondition(&definition, 88)
 		table := &ex.FactTables[14][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -9798,40 +15622,51 @@ L430:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L436
+			goto L460
 		}
-		goto L434
+		goto L458
 	}
-L436:
-	goto L431
-L434:
-	goto L433
-L433:
-	goto L420
-L431:
-	goto L429
-L429:
-	ex.V[9] = cp428_9
-	cp428_9 = ex.V[9]
-	goto L430
-L427:
-	ex.V[9] = cp428_9
-	goto L424
-L424:
-	goto L422
-L422:
-	ex.V[9] = cp423_9
-	goto L421
-L421:
+L460:
+	goto L455
+L458:
+	goto L457
+L457:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L444
+L455:
+	ex.DebugEndCondition(&definition, false)
+	goto L453
+L453:
+	ex.V[9] = cp452_9
+	cp452_9 = ex.V[9]
+	goto L454
+L451:
+	ex.V[9] = cp452_9
+	goto L448
+L448:
+	goto L446
+L446:
+	ex.V[9] = cp447_9
+	ex.DebugEndCondition(&definition, false)
+	goto L445
+L445:
 	ex.ReleaseRetry(frame)
-	goto L395
-L420:
+	ex.DebugEndBranch(&definition, false)
+	goto L418
+L444:
 	if !ex.PushBranch(&bc26) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L437:
+	ex.DebugCapturePendingTask(61)
+	ex.DebugCapturePendingTask(60)
+	ex.DebugCapturePendingTask(59)
+L463:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -9839,47 +15674,65 @@ L437:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L401
+		goto L424
 	}
-	goto L438
-L401:
+	goto L464
+L424:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L395
+		ex.DebugEndBranch(&definition, false)
+		goto L418
 	}
-	goto L437
-L438:
+	goto L463
+L464:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L395:
+L418:
 	// branch gunshot
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 27)
 	// (and (== ?inp_stimulus gunshot))
+	ex.DebugBeginCondition(&definition, 89)
 	// (== ?inp_stimulus gunshot)
 	// (== ?inp_stimulus gunshot)
+	ex.DebugBeginCondition(&definition, 90)
 	if planner.Compare(ex.V[10], sv39, 0) {
-		goto L445
+		ex.DebugEndCondition(&definition, true)
+		goto L471
 	}
-	goto L443
-L445:
-	goto L439
-L443:
-	goto L441
-L441:
-	goto L440
-L440:
+	ex.DebugEndCondition(&definition, false)
+	goto L469
+L471:
+	ex.DebugEndCondition(&definition, true)
+	goto L465
+L469:
+	goto L467
+L467:
+	ex.DebugEndCondition(&definition, false)
+	goto L466
+L466:
 	ex.ReleaseRetry(frame)
-	goto L396
-L439:
+	ex.DebugEndBranch(&definition, false)
+	goto L419
+L465:
 	if !ex.PushBranch(&bc27) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L446:
+	ex.DebugCapturePendingTask(64)
+	ex.DebugCapturePendingTask(63)
+	ex.DebugCapturePendingTask(62)
+L473:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -9887,59 +15740,80 @@ L446:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L402
+		goto L425
 	}
-	goto L447
-L402:
+	goto L474
+L425:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L396
+		ex.DebugEndBranch(&definition, false)
+		goto L419
 	}
-	goto L446
-L447:
+	goto L473
+L474:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L396:
+L419:
 	// branch footprints
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 28)
 	// (and (== ?inp_stimulus footprints) (track_route ?inp_npc ?inp_location ?route))
-	cp451_3 = ex.V[3]
+	cp478_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 91)
 	// (== ?inp_stimulus footprints)
 	// (== ?inp_stimulus footprints)
+	ex.DebugBeginCondition(&definition, 92)
 	if planner.Compare(ex.V[10], sv40, 0) {
-		goto L454
+		ex.DebugEndCondition(&definition, true)
+		goto L481
 	}
-	goto L452
-L454:
+	ex.DebugEndCondition(&definition, false)
+	goto L479
+L481:
 	// (track_route ?inp_npc ?inp_location ?route)
-	cp456_3 = ex.V[3]
-	fc457 = 0
-	fc457++
-	if !factChoice93(ex, fc457-1) {
-		goto L455
+	cp483_3 = ex.V[3]
+	fc484 = 0
+	ex.DebugBeginCondition(&definition, 93)
+	fc484++
+	if !factChoice93(ex, fc484-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L482
 	}
-	goto L448
-L455:
-	ex.V[3] = cp456_3
-	goto L452
-L452:
-	goto L450
-L450:
-	ex.V[3] = cp451_3
-	goto L449
-L449:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L475
+L482:
+	ex.V[3] = cp483_3
+	goto L479
+L479:
+	goto L477
+L477:
+	ex.V[3] = cp478_3
+	ex.DebugEndCondition(&definition, false)
+	goto L476
+L476:
 	ex.ReleaseRetry(frame)
-	goto L397
-L448:
+	ex.DebugEndBranch(&definition, false)
+	goto L420
+L475:
 	if !ex.PushBranch(&bc28) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L459:
+	ex.DebugCapturePendingTask(67)
+	ex.DebugCapturePendingTask(66)
+	ex.DebugCapturePendingTask(65)
+L487:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -9947,47 +15821,65 @@ L459:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L403
+		goto L426
 	}
-	goto L460
-L403:
+	goto L488
+L426:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L397
+		ex.DebugEndBranch(&definition, false)
+		goto L420
 	}
-	goto L459
-L460:
+	goto L487
+L488:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L397:
+L420:
 	// branch visual_anomaly
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 29)
 	// (and (== ?inp_stimulus anomaly))
+	ex.DebugBeginCondition(&definition, 94)
 	// (== ?inp_stimulus anomaly)
 	// (== ?inp_stimulus anomaly)
+	ex.DebugBeginCondition(&definition, 95)
 	if planner.Compare(ex.V[10], sv41, 0) {
-		goto L467
+		ex.DebugEndCondition(&definition, true)
+		goto L495
 	}
-	goto L465
-L467:
-	goto L461
-L465:
-	goto L463
-L463:
-	goto L462
-L462:
+	ex.DebugEndCondition(&definition, false)
+	goto L493
+L495:
+	ex.DebugEndCondition(&definition, true)
+	goto L489
+L493:
+	goto L491
+L491:
+	ex.DebugEndCondition(&definition, false)
+	goto L490
+L490:
 	ex.ReleaseRetry(frame)
-	goto L398
-L461:
+	ex.DebugEndBranch(&definition, false)
+	goto L421
+L489:
 	if !ex.PushBranch(&bc29) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L468:
+	ex.DebugCapturePendingTask(70)
+	ex.DebugCapturePendingTask(69)
+	ex.DebugCapturePendingTask(68)
+L497:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -9995,30 +15887,38 @@ L468:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L404
+		goto L427
 	}
-	goto L469
-L404:
+	goto L498
+L427:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L398
+		ex.DebugEndBranch(&definition, false)
+		goto L421
 	}
-	goto L468
-L469:
+	goto L497
+L498:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L398:
+L421:
 	// branch blocked_route
 	ex.SaveRetry(frame, ms4)
+	ex.DebugBeginBranch(&definition, 30)
 	// (and (route_blocked_to ?inp_npc ?inp_location) (alternate_investigation_route ?inp_npc ?inp_location ?route))
-	cp473_3 = ex.V[3]
+	cp502_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 96)
 	// (route_blocked_to ?inp_npc ?inp_location)
 	// (route_blocked_to ?inp_npc ?inp_location)
 	{
+		ex.DebugBeginCondition(&definition, 97)
 		table := &ex.FactTables[20][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -10032,37 +15932,48 @@ L398:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L476
+			goto L505
 		}
-		goto L474
+		goto L503
 	}
-L476:
+L505:
 	// (alternate_investigation_route ?inp_npc ?inp_location ?route)
-	cp478_3 = ex.V[3]
-	fc479 = 0
-	fc479++
-	if !factChoice98(ex, fc479-1) {
-		goto L477
+	cp507_3 = ex.V[3]
+	fc508 = 0
+	ex.DebugBeginCondition(&definition, 98)
+	fc508++
+	if !factChoice98(ex, fc508-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L506
 	}
-	goto L470
-L477:
-	ex.V[3] = cp478_3
-	goto L474
-L474:
-	goto L472
-L472:
-	ex.V[3] = cp473_3
-	goto L471
-L471:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L499
+L506:
+	ex.V[3] = cp507_3
+	goto L503
+L503:
+	goto L501
+L501:
+	ex.V[3] = cp502_3
+	ex.DebugEndCondition(&definition, false)
+	goto L500
+L500:
 	ex.ReleaseRetry(frame)
-	goto L399
-L470:
+	ex.DebugEndBranch(&definition, false)
+	goto L422
+L499:
 	if !ex.PushBranch(&bc30) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L481:
+	ex.DebugCapturePendingTask(72)
+	ex.DebugCapturePendingTask(71)
+L511:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -10070,30 +15981,42 @@ L481:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L405
+		goto L428
 	}
-	goto L482
-L405:
+	goto L512
+L428:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms4)
-		goto L399
+		ex.DebugEndBranch(&definition, false)
+		goto L422
 	}
-	goto L481
-L482:
+	goto L511
+L512:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L399:
+L422:
 	// branch generic
-	goto L483
-L483:
+	ex.DebugBeginBranch(&definition, 31)
+	goto L513
+L513:
 	if !ex.PushBranch(&bc31) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L485:
+	ex.DebugCapturePendingTask(76)
+	ex.DebugCapturePendingTask(75)
+	ex.DebugCapturePendingTask(74)
+	ex.DebugCapturePendingTask(73)
+L515:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -10101,15 +16024,19 @@ L485:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L406
+		goto L429
 	}
-	goto L486
-L406:
+	goto L516
+L429:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L485
-L486:
+	goto L515
+L516:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -10117,79 +16044,93 @@ L486:
 func method5(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp503_3 atom.Atom
-	var cp505_3 atom.Atom
-	var fc506 uint32
-	var cp513_14 atom.Atom
-	var cp515_14 atom.Atom
-	var fc516 uint32
-	var cp523_3 atom.Atom
-	var cp525_3 atom.Atom
-	var fc526 uint32
-	var cp533_9 atom.Atom
-	var cp535_9 atom.Atom
+	var cp533_3 atom.Atom
+	var cp535_3 atom.Atom
 	var fc536 uint32
-	var cp543_3 atom.Atom
-	var cp545_3 atom.Atom
-	var fc546 uint32
-	_ = cp503_3
-	_ = cp505_3
-	_ = fc506
-	_ = cp513_14
-	_ = cp515_14
-	_ = fc516
-	_ = cp523_3
-	_ = cp525_3
-	_ = fc526
-	_ = cp533_9
-	_ = cp535_9
+	var cp544_14 atom.Atom
+	var cp546_14 atom.Atom
+	var fc547 uint32
+	var cp555_3 atom.Atom
+	var cp557_3 atom.Atom
+	var fc558 uint32
+	var cp566_9 atom.Atom
+	var cp568_9 atom.Atom
+	var fc569 uint32
+	var cp577_3 atom.Atom
+	var cp579_3 atom.Atom
+	var fc580 uint32
+	_ = cp533_3
+	_ = cp535_3
 	_ = fc536
-	_ = cp543_3
-	_ = cp545_3
-	_ = fc546
+	_ = cp544_14
+	_ = cp546_14
+	_ = fc547
+	_ = cp555_3
+	_ = cp557_3
+	_ = fc558
+	_ = cp566_9
+	_ = cp568_9
+	_ = fc569
+	_ = cp577_3
+	_ = cp579_3
+	_ = fc580
 	switch frame.Resume {
 	case 1:
-		goto L494
+		goto L524
 	case 2:
-		goto L495
+		goto L525
 	case 3:
-		goto L496
+		goto L526
 	case 4:
-		goto L497
+		goto L527
 	case 5:
-		goto L498
+		goto L528
 	case 6:
-		goto L499
+		goto L529
 	}
-	goto L488
-L488:
+	ex.DebugBeginMethod(&definition, 5)
+	goto L518
+L518:
 	// branch fresh_tracks
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 32)
 	// (and (enemy_tracks ?inp_npc ?inp_enemy ?route))
-	cp503_3 = ex.V[3]
+	cp533_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 99)
 	// (enemy_tracks ?inp_npc ?inp_enemy ?route)
-	cp505_3 = ex.V[3]
-	fc506 = 0
-	fc506++
-	if !factChoice100(ex, fc506-1) {
-		goto L504
+	cp535_3 = ex.V[3]
+	fc536 = 0
+	ex.DebugBeginCondition(&definition, 100)
+	fc536++
+	if !factChoice100(ex, fc536-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L534
 	}
-	goto L500
-L504:
-	ex.V[3] = cp505_3
-	goto L502
-L502:
-	ex.V[3] = cp503_3
-	goto L501
-L501:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L530
+L534:
+	ex.V[3] = cp535_3
+	goto L532
+L532:
+	ex.V[3] = cp533_3
+	ex.DebugEndCondition(&definition, false)
+	goto L531
+L531:
 	ex.ReleaseRetry(frame)
-	goto L489
-L500:
+	ex.DebugEndBranch(&definition, false)
+	goto L519
+L530:
 	if !ex.PushBranch(&bc32) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L508:
+	ex.DebugCapturePendingTask(79)
+	ex.DebugCapturePendingTask(78)
+	ex.DebugCapturePendingTask(77)
+L539:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -10197,50 +16138,68 @@ L508:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L494
+		goto L524
 	}
-	goto L509
-L494:
+	goto L540
+L524:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L489
+		ex.DebugEndBranch(&definition, false)
+		goto L519
 	}
-	goto L508
-L509:
+	goto L539
+L540:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L489:
+L519:
 	// branch heard_escape
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 33)
 	// (and (escape_sound ?inp_npc ?inp_enemy ?location))
-	cp513_14 = ex.V[14]
+	cp544_14 = ex.V[14]
+	ex.DebugBeginCondition(&definition, 101)
 	// (escape_sound ?inp_npc ?inp_enemy ?location)
-	cp515_14 = ex.V[14]
-	fc516 = 0
-	fc516++
-	if !factChoice102(ex, fc516-1) {
-		goto L514
+	cp546_14 = ex.V[14]
+	fc547 = 0
+	ex.DebugBeginCondition(&definition, 102)
+	fc547++
+	if !factChoice102(ex, fc547-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L545
 	}
-	goto L510
-L514:
-	ex.V[14] = cp515_14
-	goto L512
-L512:
-	ex.V[14] = cp513_14
-	goto L511
-L511:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L541
+L545:
+	ex.V[14] = cp546_14
+	goto L543
+L543:
+	ex.V[14] = cp544_14
+	ex.DebugEndCondition(&definition, false)
+	goto L542
+L542:
 	ex.ReleaseRetry(frame)
-	goto L490
-L510:
+	ex.DebugEndBranch(&definition, false)
+	goto L520
+L541:
 	if !ex.PushBranch(&bc33) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L518:
+	ex.DebugCapturePendingTask(82)
+	ex.DebugCapturePendingTask(81)
+	ex.DebugCapturePendingTask(80)
+L550:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -10248,50 +16207,68 @@ L518:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L495
+		goto L525
 	}
-	goto L519
-L495:
+	goto L551
+L525:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L490
+		ex.DebugEndBranch(&definition, false)
+		goto L520
 	}
-	goto L518
-L519:
+	goto L550
+L551:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L490:
+L520:
 	// branch search_with_squad
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 34)
 	// (and (squad_search_route ?inp_npc ?inp_enemy ?route))
-	cp523_3 = ex.V[3]
+	cp555_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 103)
 	// (squad_search_route ?inp_npc ?inp_enemy ?route)
-	cp525_3 = ex.V[3]
-	fc526 = 0
-	fc526++
-	if !factChoice104(ex, fc526-1) {
-		goto L524
+	cp557_3 = ex.V[3]
+	fc558 = 0
+	ex.DebugBeginCondition(&definition, 104)
+	fc558++
+	if !factChoice104(ex, fc558-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L556
 	}
-	goto L520
-L524:
-	ex.V[3] = cp525_3
-	goto L522
-L522:
-	ex.V[3] = cp523_3
-	goto L521
-L521:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L552
+L556:
+	ex.V[3] = cp557_3
+	goto L554
+L554:
+	ex.V[3] = cp555_3
+	ex.DebugEndCondition(&definition, false)
+	goto L553
+L553:
 	ex.ReleaseRetry(frame)
-	goto L491
-L520:
+	ex.DebugEndBranch(&definition, false)
+	goto L521
+L552:
 	if !ex.PushBranch(&bc34) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L528:
+	ex.DebugCapturePendingTask(85)
+	ex.DebugCapturePendingTask(84)
+	ex.DebugCapturePendingTask(83)
+L561:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -10299,50 +16276,68 @@ L528:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L496
+		goto L526
 	}
-	goto L529
-L496:
+	goto L562
+L526:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L491
+		ex.DebugEndBranch(&definition, false)
+		goto L521
 	}
-	goto L528
-L529:
+	goto L561
+L562:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L491:
+L521:
 	// branch last_known_cover
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 35)
 	// (and (cover_at ?inp_last_location ?cover))
-	cp533_9 = ex.V[9]
+	cp566_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 105)
 	// (cover_at ?inp_last_location ?cover)
-	cp535_9 = ex.V[9]
-	fc536 = 0
-	fc536++
-	if !factChoice106(ex, fc536-1) {
-		goto L534
+	cp568_9 = ex.V[9]
+	fc569 = 0
+	ex.DebugBeginCondition(&definition, 106)
+	fc569++
+	if !factChoice106(ex, fc569-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L567
 	}
-	goto L530
-L534:
-	ex.V[9] = cp535_9
-	goto L532
-L532:
-	ex.V[9] = cp533_9
-	goto L531
-L531:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L563
+L567:
+	ex.V[9] = cp568_9
+	goto L565
+L565:
+	ex.V[9] = cp566_9
+	ex.DebugEndCondition(&definition, false)
+	goto L564
+L564:
 	ex.ReleaseRetry(frame)
-	goto L492
-L530:
+	ex.DebugEndBranch(&definition, false)
+	goto L522
+L563:
 	if !ex.PushBranch(&bc35) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L538:
+	ex.DebugCapturePendingTask(88)
+	ex.DebugCapturePendingTask(87)
+	ex.DebugCapturePendingTask(86)
+L572:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -10350,50 +16345,67 @@ L538:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L497
+		goto L527
 	}
-	goto L539
-L497:
+	goto L573
+L527:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L492
+		ex.DebugEndBranch(&definition, false)
+		goto L522
 	}
-	goto L538
-L539:
+	goto L572
+L573:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L492:
+L522:
 	// branch search_perimeter
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 36)
 	// (and (search_perimeter ?inp_npc ?inp_last_location ?route))
-	cp543_3 = ex.V[3]
+	cp577_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 107)
 	// (search_perimeter ?inp_npc ?inp_last_location ?route)
-	cp545_3 = ex.V[3]
-	fc546 = 0
-	fc546++
-	if !factChoice108(ex, fc546-1) {
-		goto L544
+	cp579_3 = ex.V[3]
+	fc580 = 0
+	ex.DebugBeginCondition(&definition, 108)
+	fc580++
+	if !factChoice108(ex, fc580-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L578
 	}
-	goto L540
-L544:
-	ex.V[3] = cp545_3
-	goto L542
-L542:
-	ex.V[3] = cp543_3
-	goto L541
-L541:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L574
+L578:
+	ex.V[3] = cp579_3
+	goto L576
+L576:
+	ex.V[3] = cp577_3
+	ex.DebugEndCondition(&definition, false)
+	goto L575
+L575:
 	ex.ReleaseRetry(frame)
-	goto L493
-L540:
+	ex.DebugEndBranch(&definition, false)
+	goto L523
+L574:
 	if !ex.PushBranch(&bc36) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L548:
+	ex.DebugCapturePendingTask(90)
+	ex.DebugCapturePendingTask(89)
+L583:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -10401,30 +16413,41 @@ L548:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L498
+		goto L528
 	}
-	goto L549
-L498:
+	goto L584
+L528:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L493
+		ex.DebugEndBranch(&definition, false)
+		goto L523
 	}
-	goto L548
-L549:
+	goto L583
+L584:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L493:
+L523:
 	// branch last_known_position
-	goto L550
-L550:
+	ex.DebugBeginBranch(&definition, 37)
+	goto L585
+L585:
 	if !ex.PushBranch(&bc37) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L552:
+	ex.DebugCapturePendingTask(93)
+	ex.DebugCapturePendingTask(92)
+	ex.DebugCapturePendingTask(91)
+L587:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -10432,15 +16455,19 @@ L552:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L499
+		goto L529
 	}
-	goto L553
-L499:
+	goto L588
+L529:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L552
-L553:
+	goto L587
+L588:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -10448,102 +16475,112 @@ L553:
 func method6(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp574_6 atom.Atom
-	var cp576_6 atom.Atom
-	var fc577 uint32
-	var cp590_8 atom.Atom
-	var cp590_15 atom.Atom
-	var cp592_8 atom.Atom
-	var fc593 uint32
-	var cp599_15 atom.Atom
-	var fc600 uint32
-	var cp607_16 atom.Atom
-	var cp609_16 atom.Atom
-	var fc610 uint32
-	var cp617_3 atom.Atom
-	var cp617_17 atom.Atom
-	var cp619_3 atom.Atom
-	var fc620 uint32
-	var cp623_17 atom.Atom
-	var fc624 uint32
-	var cp631_18 atom.Atom
-	var cp633_18 atom.Atom
-	var fc634 uint32
-	var cp644_19 atom.Atom
-	var cp646_19 atom.Atom
+	var cp609_6 atom.Atom
+	var cp611_6 atom.Atom
+	var fc612 uint32
+	var cp626_8 atom.Atom
+	var cp626_15 atom.Atom
+	var cp628_8 atom.Atom
+	var fc629 uint32
+	var cp635_15 atom.Atom
+	var fc636 uint32
+	var cp644_16 atom.Atom
+	var cp646_16 atom.Atom
 	var fc647 uint32
-	var cp654_7 atom.Atom
-	var cp656_7 atom.Atom
-	var fc657 uint32
-	_ = cp574_6
-	_ = cp576_6
-	_ = fc577
-	_ = cp590_8
-	_ = cp590_15
-	_ = cp592_8
-	_ = fc593
-	_ = cp599_15
-	_ = fc600
-	_ = cp607_16
-	_ = cp609_16
-	_ = fc610
-	_ = cp617_3
-	_ = cp617_17
-	_ = cp619_3
-	_ = fc620
-	_ = cp623_17
-	_ = fc624
-	_ = cp631_18
-	_ = cp633_18
-	_ = fc634
-	_ = cp644_19
-	_ = cp646_19
+	var cp655_3 atom.Atom
+	var cp655_17 atom.Atom
+	var cp657_3 atom.Atom
+	var fc658 uint32
+	var cp661_17 atom.Atom
+	var fc662 uint32
+	var cp670_18 atom.Atom
+	var cp672_18 atom.Atom
+	var fc673 uint32
+	var cp684_19 atom.Atom
+	var cp686_19 atom.Atom
+	var fc687 uint32
+	var cp695_7 atom.Atom
+	var cp697_7 atom.Atom
+	var fc698 uint32
+	_ = cp609_6
+	_ = cp611_6
+	_ = fc612
+	_ = cp626_8
+	_ = cp626_15
+	_ = cp628_8
+	_ = fc629
+	_ = cp635_15
+	_ = fc636
+	_ = cp644_16
+	_ = cp646_16
 	_ = fc647
-	_ = cp654_7
-	_ = cp656_7
-	_ = fc657
+	_ = cp655_3
+	_ = cp655_17
+	_ = cp657_3
+	_ = fc658
+	_ = cp661_17
+	_ = fc662
+	_ = cp670_18
+	_ = cp672_18
+	_ = fc673
+	_ = cp684_19
+	_ = cp686_19
+	_ = fc687
+	_ = cp695_7
+	_ = cp697_7
+	_ = fc698
 	switch frame.Resume {
 	case 1:
-		goto L563
+		goto L598
 	case 2:
-		goto L564
+		goto L599
 	case 3:
-		goto L565
+		goto L600
 	case 4:
-		goto L566
+		goto L601
 	case 5:
-		goto L567
+		goto L602
 	case 6:
-		goto L568
+		goto L603
 	case 7:
-		goto L569
+		goto L604
 	case 8:
-		goto L570
+		goto L605
 	}
-	goto L555
-L555:
+	ex.DebugBeginMethod(&definition, 6)
+	goto L590
+L590:
 	// branch injury_care
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 38)
 	// (and (health ?inp_npc ?hp) (<= ?hp 45) (medkit_available ?inp_npc))
-	cp574_6 = ex.V[6]
+	cp609_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 109)
 	// (health ?inp_npc ?hp)
-	cp576_6 = ex.V[6]
-	fc577 = 0
-L578:
-	fc577++
-	if !factChoice110(ex, fc577-1) {
-		goto L575
+	cp611_6 = ex.V[6]
+	fc612 = 0
+L613:
+	ex.DebugBeginCondition(&definition, 110)
+	fc612++
+	if !factChoice110(ex, fc612-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L610
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?hp 45)
 	// (<= ?hp 45)
+	ex.DebugBeginCondition(&definition, 111)
 	if planner.Compare(ex.V[6], sv42, 3) {
-		goto L581
+		ex.DebugEndCondition(&definition, true)
+		goto L616
 	}
-	goto L579
-L581:
+	ex.DebugEndCondition(&definition, false)
+	goto L614
+L616:
 	// (medkit_available ?inp_npc)
 	// (medkit_available ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 112)
 		table := &ex.FactTables[27][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -10554,36 +16591,44 @@ L581:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L584
+			goto L619
 		}
-		goto L582
+		goto L617
 	}
-L584:
-	goto L571
-L582:
-	goto L579
-L579:
-	goto L577
-L577:
-	ex.V[6] = cp576_6
-	cp576_6 = ex.V[6]
-	goto L578
-L575:
-	ex.V[6] = cp576_6
-	goto L573
-L573:
-	ex.V[6] = cp574_6
-	goto L572
-L572:
+L619:
+	ex.DebugEndCondition(&definition, true)
+	goto L606
+L617:
+	goto L614
+L614:
+	goto L612
+L612:
+	ex.V[6] = cp611_6
+	cp611_6 = ex.V[6]
+	goto L613
+L610:
+	ex.V[6] = cp611_6
+	goto L608
+L608:
+	ex.V[6] = cp609_6
+	ex.DebugEndCondition(&definition, false)
+	goto L607
+L607:
 	ex.ReleaseRetry(frame)
-	goto L556
-L571:
+	ex.DebugEndBranch(&definition, false)
+	goto L591
+L606:
 	if !ex.PushBranch(&bc38) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L585:
+	ex.DebugCapturePendingTask(95)
+	ex.DebugCapturePendingTask(94)
+L621:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -10591,76 +16636,99 @@ L585:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L563
+		goto L598
 	}
-	goto L586
-L563:
+	goto L622
+L598:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L556
-	}
-	goto L585
-L586:
-	ex.ReleaseRetry(frame)
-	return 1
-L556:
-	// branch resupply_ammo
-	ex.SaveRetry(frame, ms6)
-	// (and (ammo ?inp_npc ?count) (<= ?count 5) (ammo_cache ?inp_npc ?cache))
-	cp590_8 = ex.V[8]
-	cp590_15 = ex.V[15]
-	// (ammo ?inp_npc ?count)
-	cp592_8 = ex.V[8]
-	fc593 = 0
-L594:
-	fc593++
-	if !factChoice114(ex, fc593-1) {
+		ex.DebugEndBranch(&definition, false)
 		goto L591
 	}
-	// (<= ?count 5)
-	// (<= ?count 5)
-	if planner.Compare(ex.V[8], sv43, 3) {
-		goto L597
-	}
-	goto L595
-L597:
-	// (ammo_cache ?inp_npc ?cache)
-	cp599_15 = ex.V[15]
-	fc600 = 0
-	fc600++
-	if !factChoice116(ex, fc600-1) {
-		goto L598
-	}
-	goto L587
-L598:
-	ex.V[15] = cp599_15
-	goto L595
-L595:
-	goto L593
-L593:
-	ex.V[8] = cp592_8
-	cp592_8 = ex.V[8]
-	goto L594
-L591:
-	ex.V[8] = cp592_8
-	goto L589
-L589:
-	ex.V[8] = cp590_8
-	ex.V[15] = cp590_15
-	goto L588
-L588:
+	goto L621
+L622:
 	ex.ReleaseRetry(frame)
-	goto L557
-L587:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L591:
+	// branch resupply_ammo
+	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 39)
+	// (and (ammo ?inp_npc ?count) (<= ?count 5) (ammo_cache ?inp_npc ?cache))
+	cp626_8 = ex.V[8]
+	cp626_15 = ex.V[15]
+	ex.DebugBeginCondition(&definition, 113)
+	// (ammo ?inp_npc ?count)
+	cp628_8 = ex.V[8]
+	fc629 = 0
+L630:
+	ex.DebugBeginCondition(&definition, 114)
+	fc629++
+	if !factChoice114(ex, fc629-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L627
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (<= ?count 5)
+	// (<= ?count 5)
+	ex.DebugBeginCondition(&definition, 115)
+	if planner.Compare(ex.V[8], sv43, 3) {
+		ex.DebugEndCondition(&definition, true)
+		goto L633
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L631
+L633:
+	// (ammo_cache ?inp_npc ?cache)
+	cp635_15 = ex.V[15]
+	fc636 = 0
+	ex.DebugBeginCondition(&definition, 116)
+	fc636++
+	if !factChoice116(ex, fc636-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L634
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L623
+L634:
+	ex.V[15] = cp635_15
+	goto L631
+L631:
+	goto L629
+L629:
+	ex.V[8] = cp628_8
+	cp628_8 = ex.V[8]
+	goto L630
+L627:
+	ex.V[8] = cp628_8
+	goto L625
+L625:
+	ex.V[8] = cp626_8
+	ex.V[15] = cp626_15
+	ex.DebugEndCondition(&definition, false)
+	goto L624
+L624:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L592
+L623:
 	if !ex.PushBranch(&bc39) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L602:
+	ex.DebugCapturePendingTask(97)
+	ex.DebugCapturePendingTask(96)
+L639:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -10668,50 +16736,67 @@ L602:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L564
+		goto L599
 	}
-	goto L603
-L564:
+	goto L640
+L599:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L557
+		ex.DebugEndBranch(&definition, false)
+		goto L592
 	}
-	goto L602
-L603:
+	goto L639
+L640:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L557:
+L592:
 	// branch repair_weapon
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 40)
 	// (and (weapon_jammed ?inp_npc ?weapon))
-	cp607_16 = ex.V[16]
+	cp644_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 117)
 	// (weapon_jammed ?inp_npc ?weapon)
-	cp609_16 = ex.V[16]
-	fc610 = 0
-	fc610++
-	if !factChoice118(ex, fc610-1) {
-		goto L608
+	cp646_16 = ex.V[16]
+	fc647 = 0
+	ex.DebugBeginCondition(&definition, 118)
+	fc647++
+	if !factChoice118(ex, fc647-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L645
 	}
-	goto L604
-L608:
-	ex.V[16] = cp609_16
-	goto L606
-L606:
-	ex.V[16] = cp607_16
-	goto L605
-L605:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L641
+L645:
+	ex.V[16] = cp646_16
+	goto L643
+L643:
+	ex.V[16] = cp644_16
+	ex.DebugEndCondition(&definition, false)
+	goto L642
+L642:
 	ex.ReleaseRetry(frame)
-	goto L558
-L604:
+	ex.DebugEndBranch(&definition, false)
+	goto L593
+L641:
 	if !ex.PushBranch(&bc40) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L612:
+	ex.DebugCapturePendingTask(99)
+	ex.DebugCapturePendingTask(98)
+L650:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -10719,67 +16804,88 @@ L612:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L565
+		goto L600
 	}
-	goto L613
-L565:
+	goto L651
+L600:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L558
+		ex.DebugEndBranch(&definition, false)
+		goto L593
 	}
-	goto L612
-L613:
+	goto L650
+L651:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L558:
+L593:
 	// branch patrol
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 41)
 	// (and (patrol_route ?inp_npc ?route) (patrol_checkpoint ?inp_npc ?point))
-	cp617_3 = ex.V[3]
-	cp617_17 = ex.V[17]
+	cp655_3 = ex.V[3]
+	cp655_17 = ex.V[17]
+	ex.DebugBeginCondition(&definition, 119)
 	// (patrol_route ?inp_npc ?route)
-	cp619_3 = ex.V[3]
-	fc620 = 0
-L621:
-	fc620++
-	if !factChoice120(ex, fc620-1) {
-		goto L618
+	cp657_3 = ex.V[3]
+	fc658 = 0
+L659:
+	ex.DebugBeginCondition(&definition, 120)
+	fc658++
+	if !factChoice120(ex, fc658-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L656
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (patrol_checkpoint ?inp_npc ?point)
-	cp623_17 = ex.V[17]
-	fc624 = 0
-	fc624++
-	if !factChoice121(ex, fc624-1) {
-		goto L622
+	cp661_17 = ex.V[17]
+	fc662 = 0
+	ex.DebugBeginCondition(&definition, 121)
+	fc662++
+	if !factChoice121(ex, fc662-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L660
 	}
-	goto L614
-L622:
-	ex.V[17] = cp623_17
-	goto L620
-L620:
-	ex.V[3] = cp619_3
-	cp619_3 = ex.V[3]
-	goto L621
-L618:
-	ex.V[3] = cp619_3
-	goto L616
-L616:
-	ex.V[3] = cp617_3
-	ex.V[17] = cp617_17
-	goto L615
-L615:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L652
+L660:
+	ex.V[17] = cp661_17
+	goto L658
+L658:
+	ex.V[3] = cp657_3
+	cp657_3 = ex.V[3]
+	goto L659
+L656:
+	ex.V[3] = cp657_3
+	goto L654
+L654:
+	ex.V[3] = cp655_3
+	ex.V[17] = cp655_17
+	ex.DebugEndCondition(&definition, false)
+	goto L653
+L653:
 	ex.ReleaseRetry(frame)
-	goto L559
-L614:
+	ex.DebugEndBranch(&definition, false)
+	goto L594
+L652:
 	if !ex.PushBranch(&bc41) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L626:
+	ex.DebugCapturePendingTask(102)
+	ex.DebugCapturePendingTask(101)
+	ex.DebugCapturePendingTask(100)
+L665:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -10787,38 +16893,49 @@ L626:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L566
+		goto L601
 	}
-	goto L627
-L566:
+	goto L666
+L601:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L559
+		ex.DebugEndBranch(&definition, false)
+		goto L594
 	}
-	goto L626
-L627:
+	goto L665
+L666:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L559:
+L594:
 	// branch socialize
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 42)
 	// (and (nearby_ally ?inp_npc ?ally) (social_cooldown_ready ?inp_npc))
-	cp631_18 = ex.V[18]
+	cp670_18 = ex.V[18]
+	ex.DebugBeginCondition(&definition, 122)
 	// (nearby_ally ?inp_npc ?ally)
-	cp633_18 = ex.V[18]
-	fc634 = 0
-L635:
-	fc634++
-	if !factChoice123(ex, fc634-1) {
-		goto L632
+	cp672_18 = ex.V[18]
+	fc673 = 0
+L674:
+	ex.DebugBeginCondition(&definition, 123)
+	fc673++
+	if !factChoice123(ex, fc673-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L671
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (social_cooldown_ready ?inp_npc)
 	// (social_cooldown_ready ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 124)
 		table := &ex.FactTables[33][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -10829,34 +16946,42 @@ L635:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L638
+			goto L677
 		}
-		goto L636
+		goto L675
 	}
-L638:
-	goto L628
-L636:
-	goto L634
-L634:
-	ex.V[18] = cp633_18
-	cp633_18 = ex.V[18]
-	goto L635
-L632:
-	ex.V[18] = cp633_18
-	goto L630
-L630:
-	ex.V[18] = cp631_18
-	goto L629
-L629:
+L677:
+	ex.DebugEndCondition(&definition, true)
+	goto L667
+L675:
+	goto L673
+L673:
+	ex.V[18] = cp672_18
+	cp672_18 = ex.V[18]
+	goto L674
+L671:
+	ex.V[18] = cp672_18
+	goto L669
+L669:
+	ex.V[18] = cp670_18
+	ex.DebugEndCondition(&definition, false)
+	goto L668
+L668:
 	ex.ReleaseRetry(frame)
-	goto L560
-L628:
+	ex.DebugEndBranch(&definition, false)
+	goto L595
+L667:
 	if !ex.PushBranch(&bc42) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L639:
+	ex.DebugCapturePendingTask(104)
+	ex.DebugCapturePendingTask(103)
+L679:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -10864,50 +16989,67 @@ L639:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L567
+		goto L602
 	}
-	goto L640
-L567:
+	goto L680
+L602:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L560
+		ex.DebugEndBranch(&definition, false)
+		goto L595
 	}
-	goto L639
-L640:
+	goto L679
+L680:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L560:
+L595:
 	// branch guard_post
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 43)
 	// (and (assigned_post ?inp_npc ?post))
-	cp644_19 = ex.V[19]
+	cp684_19 = ex.V[19]
+	ex.DebugBeginCondition(&definition, 125)
 	// (assigned_post ?inp_npc ?post)
-	cp646_19 = ex.V[19]
-	fc647 = 0
-	fc647++
-	if !factChoice126(ex, fc647-1) {
-		goto L645
+	cp686_19 = ex.V[19]
+	fc687 = 0
+	ex.DebugBeginCondition(&definition, 126)
+	fc687++
+	if !factChoice126(ex, fc687-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L685
 	}
-	goto L641
-L645:
-	ex.V[19] = cp646_19
-	goto L643
-L643:
-	ex.V[19] = cp644_19
-	goto L642
-L642:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L681
+L685:
+	ex.V[19] = cp686_19
+	goto L683
+L683:
+	ex.V[19] = cp684_19
+	ex.DebugEndCondition(&definition, false)
+	goto L682
+L682:
 	ex.ReleaseRetry(frame)
-	goto L561
-L641:
+	ex.DebugEndBranch(&definition, false)
+	goto L596
+L681:
 	if !ex.PushBranch(&bc43) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L649:
+	ex.DebugCapturePendingTask(106)
+	ex.DebugCapturePendingTask(105)
+L690:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -10915,64 +17057,84 @@ L649:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L568
+		goto L603
 	}
-	goto L650
-L568:
+	goto L691
+L603:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L561
+		ex.DebugEndBranch(&definition, false)
+		goto L596
 	}
-	goto L649
-L650:
+	goto L690
+L691:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L561:
+L596:
 	// branch rest
 	ex.SaveRetry(frame, ms6)
+	ex.DebugBeginBranch(&definition, 44)
 	// (and (stamina ?inp_npc ?amount) (<= ?amount 25))
-	cp654_7 = ex.V[7]
+	cp695_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 127)
 	// (stamina ?inp_npc ?amount)
-	cp656_7 = ex.V[7]
-	fc657 = 0
-L658:
-	fc657++
-	if !factChoice128(ex, fc657-1) {
-		goto L655
+	cp697_7 = ex.V[7]
+	fc698 = 0
+L699:
+	ex.DebugBeginCondition(&definition, 128)
+	fc698++
+	if !factChoice128(ex, fc698-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L696
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?amount 25)
 	// (<= ?amount 25)
+	ex.DebugBeginCondition(&definition, 129)
 	if planner.Compare(ex.V[7], sv44, 3) {
-		goto L661
+		ex.DebugEndCondition(&definition, true)
+		goto L702
 	}
-	goto L659
-L661:
-	goto L651
-L659:
-	goto L657
-L657:
-	ex.V[7] = cp656_7
-	cp656_7 = ex.V[7]
-	goto L658
-L655:
-	ex.V[7] = cp656_7
-	goto L653
-L653:
-	ex.V[7] = cp654_7
-	goto L652
-L652:
+	ex.DebugEndCondition(&definition, false)
+	goto L700
+L702:
+	ex.DebugEndCondition(&definition, true)
+	goto L692
+L700:
+	goto L698
+L698:
+	ex.V[7] = cp697_7
+	cp697_7 = ex.V[7]
+	goto L699
+L696:
+	ex.V[7] = cp697_7
+	goto L694
+L694:
+	ex.V[7] = cp695_7
+	ex.DebugEndCondition(&definition, false)
+	goto L693
+L693:
 	ex.ReleaseRetry(frame)
-	goto L562
-L651:
+	ex.DebugEndBranch(&definition, false)
+	goto L597
+L692:
 	if !ex.PushBranch(&bc44) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L662:
+	ex.DebugCapturePendingTask(108)
+	ex.DebugCapturePendingTask(107)
+L704:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -10980,30 +17142,40 @@ L662:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L569
+		goto L604
 	}
-	goto L663
-L569:
+	goto L705
+L604:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms6)
-		goto L562
+		ex.DebugEndBranch(&definition, false)
+		goto L597
 	}
-	goto L662
-L663:
+	goto L704
+L705:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L562:
+L597:
 	// branch ambient_idle
-	goto L664
-L664:
+	ex.DebugBeginBranch(&definition, 45)
+	goto L706
+L706:
 	if !ex.PushBranch(&bc45) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L666:
+	ex.DebugCapturePendingTask(110)
+	ex.DebugCapturePendingTask(109)
+L708:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -11011,15 +17183,19 @@ L666:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L570
+		goto L605
 	}
-	goto L667
-L570:
+	goto L709
+L605:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L666
-L667:
+	goto L708
+L709:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -11027,212 +17203,228 @@ L667:
 func method7(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp688_20 atom.Atom
-	var cp688_21 atom.Atom
-	var cp688_22 atom.Atom
-	var cp690_20 atom.Atom
-	var fc691 uint32
-	var cp694_21 atom.Atom
-	var cp694_22 atom.Atom
-	var fc695 uint32
-	var cp702_20 atom.Atom
-	var cp702_23 atom.Atom
-	var cp702_24 atom.Atom
-	var cp702_25 atom.Atom
-	var cp702_26 atom.Atom
-	var cp704_20 atom.Atom
-	var fc705 uint32
-	var cp708_23 atom.Atom
-	var fc709 uint32
-	var cp715_24 atom.Atom
-	var fc716 uint32
-	var cp725_25 atom.Atom
-	var cp725_26 atom.Atom
-	var cp728_25 atom.Atom
-	var cp728_26 atom.Atom
-	var cp730_25 atom.Atom
-	var fc731 uint32
-	var cp737_26 atom.Atom
-	var fc738 uint32
-	var cp748_20 atom.Atom
-	var cp748_21 atom.Atom
-	var cp748_22 atom.Atom
-	var cp750_20 atom.Atom
-	var fc751 uint32
-	var cp754_21 atom.Atom
-	var cp754_22 atom.Atom
-	var fc755 uint32
-	var cp762_14 atom.Atom
-	var cp762_20 atom.Atom
-	var cp762_27 atom.Atom
-	var cp762_28 atom.Atom
-	var cp762_29 atom.Atom
-	var cp764_20 atom.Atom
-	var fc765 uint32
-	var cp768_14 atom.Atom
-	var cp768_27 atom.Atom
-	var fc769 uint32
-	var cp772_28 atom.Atom
-	var cp772_29 atom.Atom
-	var cp775_28 atom.Atom
-	var cp775_29 atom.Atom
-	var fc776 uint32
-	var cp783_20 atom.Atom
-	var cp783_23 atom.Atom
-	var cp783_29 atom.Atom
-	var cp785_20 atom.Atom
-	var fc786 uint32
-	var cp789_23 atom.Atom
-	var cp789_29 atom.Atom
-	var fc790 uint32
+	var cp730_20 atom.Atom
+	var cp730_21 atom.Atom
+	var cp730_22 atom.Atom
+	var cp732_20 atom.Atom
+	var fc733 uint32
+	var cp736_21 atom.Atom
+	var cp736_22 atom.Atom
+	var fc737 uint32
+	var cp745_20 atom.Atom
+	var cp745_23 atom.Atom
+	var cp745_24 atom.Atom
+	var cp745_25 atom.Atom
+	var cp745_26 atom.Atom
+	var cp747_20 atom.Atom
+	var fc748 uint32
+	var cp751_23 atom.Atom
+	var fc752 uint32
+	var cp758_24 atom.Atom
+	var fc759 uint32
+	var cp769_25 atom.Atom
+	var cp769_26 atom.Atom
+	var cp772_25 atom.Atom
+	var cp772_26 atom.Atom
+	var cp774_25 atom.Atom
+	var fc775 uint32
+	var cp781_26 atom.Atom
+	var fc782 uint32
+	var cp795_20 atom.Atom
+	var cp795_21 atom.Atom
+	var cp795_22 atom.Atom
 	var cp797_20 atom.Atom
-	var cp797_21 atom.Atom
-	var cp797_22 atom.Atom
-	var cp799_20 atom.Atom
-	var fc800 uint32
-	var cp803_21 atom.Atom
-	var cp803_22 atom.Atom
-	var fc804 uint32
-	var cp811_20 atom.Atom
-	var cp813_20 atom.Atom
-	var fc814 uint32
-	_ = cp688_20
-	_ = cp688_21
-	_ = cp688_22
-	_ = cp690_20
-	_ = fc691
-	_ = cp694_21
-	_ = cp694_22
-	_ = fc695
-	_ = cp702_20
-	_ = cp702_23
-	_ = cp702_24
-	_ = cp702_25
-	_ = cp702_26
-	_ = cp704_20
-	_ = fc705
-	_ = cp708_23
-	_ = fc709
-	_ = cp715_24
-	_ = fc716
-	_ = cp725_25
-	_ = cp725_26
-	_ = cp728_25
-	_ = cp728_26
-	_ = cp730_25
-	_ = fc731
-	_ = cp737_26
-	_ = fc738
-	_ = cp748_20
-	_ = cp748_21
-	_ = cp748_22
-	_ = cp750_20
-	_ = fc751
-	_ = cp754_21
-	_ = cp754_22
-	_ = fc755
-	_ = cp762_14
-	_ = cp762_20
-	_ = cp762_27
-	_ = cp762_28
-	_ = cp762_29
-	_ = cp764_20
-	_ = fc765
-	_ = cp768_14
-	_ = cp768_27
-	_ = fc769
-	_ = cp772_28
-	_ = cp772_29
-	_ = cp775_28
-	_ = cp775_29
-	_ = fc776
-	_ = cp783_20
-	_ = cp783_23
-	_ = cp783_29
-	_ = cp785_20
-	_ = fc786
-	_ = cp789_23
-	_ = cp789_29
-	_ = fc790
+	var fc798 uint32
+	var cp801_21 atom.Atom
+	var cp801_22 atom.Atom
+	var fc802 uint32
+	var cp810_14 atom.Atom
+	var cp810_20 atom.Atom
+	var cp810_27 atom.Atom
+	var cp810_28 atom.Atom
+	var cp810_29 atom.Atom
+	var cp812_20 atom.Atom
+	var fc813 uint32
+	var cp816_14 atom.Atom
+	var cp816_27 atom.Atom
+	var fc817 uint32
+	var cp820_28 atom.Atom
+	var cp820_29 atom.Atom
+	var cp823_28 atom.Atom
+	var cp823_29 atom.Atom
+	var fc824 uint32
+	var cp833_20 atom.Atom
+	var cp833_23 atom.Atom
+	var cp833_29 atom.Atom
+	var cp835_20 atom.Atom
+	var fc836 uint32
+	var cp839_23 atom.Atom
+	var cp839_29 atom.Atom
+	var fc840 uint32
+	var cp848_20 atom.Atom
+	var cp848_21 atom.Atom
+	var cp848_22 atom.Atom
+	var cp850_20 atom.Atom
+	var fc851 uint32
+	var cp854_21 atom.Atom
+	var cp854_22 atom.Atom
+	var fc855 uint32
+	var cp863_20 atom.Atom
+	var cp865_20 atom.Atom
+	var fc866 uint32
+	_ = cp730_20
+	_ = cp730_21
+	_ = cp730_22
+	_ = cp732_20
+	_ = fc733
+	_ = cp736_21
+	_ = cp736_22
+	_ = fc737
+	_ = cp745_20
+	_ = cp745_23
+	_ = cp745_24
+	_ = cp745_25
+	_ = cp745_26
+	_ = cp747_20
+	_ = fc748
+	_ = cp751_23
+	_ = fc752
+	_ = cp758_24
+	_ = fc759
+	_ = cp769_25
+	_ = cp769_26
+	_ = cp772_25
+	_ = cp772_26
+	_ = cp774_25
+	_ = fc775
+	_ = cp781_26
+	_ = fc782
+	_ = cp795_20
+	_ = cp795_21
+	_ = cp795_22
 	_ = cp797_20
-	_ = cp797_21
-	_ = cp797_22
-	_ = cp799_20
-	_ = fc800
-	_ = cp803_21
-	_ = cp803_22
-	_ = fc804
-	_ = cp811_20
-	_ = cp813_20
-	_ = fc814
+	_ = fc798
+	_ = cp801_21
+	_ = cp801_22
+	_ = fc802
+	_ = cp810_14
+	_ = cp810_20
+	_ = cp810_27
+	_ = cp810_28
+	_ = cp810_29
+	_ = cp812_20
+	_ = fc813
+	_ = cp816_14
+	_ = cp816_27
+	_ = fc817
+	_ = cp820_28
+	_ = cp820_29
+	_ = cp823_28
+	_ = cp823_29
+	_ = fc824
+	_ = cp833_20
+	_ = cp833_23
+	_ = cp833_29
+	_ = cp835_20
+	_ = fc836
+	_ = cp839_23
+	_ = cp839_29
+	_ = fc840
+	_ = cp848_20
+	_ = cp848_21
+	_ = cp848_22
+	_ = cp850_20
+	_ = fc851
+	_ = cp854_21
+	_ = cp854_22
+	_ = fc855
+	_ = cp863_20
+	_ = cp865_20
+	_ = fc866
 	switch frame.Resume {
 	case 1:
-		goto L677
+		goto L719
 	case 2:
-		goto L678
+		goto L720
 	case 3:
-		goto L679
+		goto L721
 	case 4:
-		goto L680
+		goto L722
 	case 5:
-		goto L681
+		goto L723
 	case 6:
-		goto L682
+		goto L724
 	case 7:
-		goto L683
+		goto L725
 	case 8:
-		goto L684
+		goto L726
 	}
-	goto L669
-L669:
+	ex.DebugBeginMethod(&definition, 7)
+	goto L711
+L711:
 	// branch high_priority_script
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 46)
 	// (and (controlled_npc ?npc) (scripted_order ?npc high ?order ?target))
-	cp688_20 = ex.V[20]
-	cp688_21 = ex.V[21]
-	cp688_22 = ex.V[22]
+	cp730_20 = ex.V[20]
+	cp730_21 = ex.V[21]
+	cp730_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 130)
 	// (controlled_npc ?npc)
-	cp690_20 = ex.V[20]
-	fc691 = 0
-L692:
-	fc691++
-	if !factChoice131(ex, fc691-1) {
-		goto L689
+	cp732_20 = ex.V[20]
+	fc733 = 0
+L734:
+	ex.DebugBeginCondition(&definition, 131)
+	fc733++
+	if !factChoice131(ex, fc733-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L731
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (scripted_order ?npc high ?order ?target)
-	cp694_21 = ex.V[21]
-	cp694_22 = ex.V[22]
-	fc695 = 0
-	fc695++
-	if !factChoice132(ex, fc695-1) {
-		goto L693
+	cp736_21 = ex.V[21]
+	cp736_22 = ex.V[22]
+	fc737 = 0
+	ex.DebugBeginCondition(&definition, 132)
+	fc737++
+	if !factChoice132(ex, fc737-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L735
 	}
-	goto L685
-L693:
-	ex.V[21] = cp694_21
-	ex.V[22] = cp694_22
-	goto L691
-L691:
-	ex.V[20] = cp690_20
-	cp690_20 = ex.V[20]
-	goto L692
-L689:
-	ex.V[20] = cp690_20
-	goto L687
-L687:
-	ex.V[20] = cp688_20
-	ex.V[21] = cp688_21
-	ex.V[22] = cp688_22
-	goto L686
-L686:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L727
+L735:
+	ex.V[21] = cp736_21
+	ex.V[22] = cp736_22
+	goto L733
+L733:
+	ex.V[20] = cp732_20
+	cp732_20 = ex.V[20]
+	goto L734
+L731:
+	ex.V[20] = cp732_20
+	goto L729
+L729:
+	ex.V[20] = cp730_20
+	ex.V[21] = cp730_21
+	ex.V[22] = cp730_22
+	ex.DebugEndCondition(&definition, false)
+	goto L728
+L728:
 	ex.ReleaseRetry(frame)
-	goto L670
-L685:
+	ex.DebugEndBranch(&definition, false)
+	goto L712
+L727:
 	if !ex.PushBranch(&bc46) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L697:
+	ex.DebugCapturePendingTask(112)
+	ex.DebugCapturePendingTask(111)
+L740:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -11240,50 +17432,64 @@ L697:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L677
+		goto L719
 	}
-	goto L698
-L677:
+	goto L741
+L719:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L670
+		ex.DebugEndBranch(&definition, false)
+		goto L712
 	}
-	goto L697
-L698:
+	goto L740
+L741:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L670:
+L712:
 	// branch visible_combat
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 47)
 	// (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
-	cp702_20 = ex.V[20]
-	cp702_23 = ex.V[23]
-	cp702_24 = ex.V[24]
-	cp702_25 = ex.V[25]
-	cp702_26 = ex.V[26]
+	cp745_20 = ex.V[20]
+	cp745_23 = ex.V[23]
+	cp745_24 = ex.V[24]
+	cp745_25 = ex.V[25]
+	cp745_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 133)
 	// (controlled_npc ?npc)
-	cp704_20 = ex.V[20]
-	fc705 = 0
-L706:
-	fc705++
-	if !factChoice134(ex, fc705-1) {
-		goto L703
+	cp747_20 = ex.V[20]
+	fc748 = 0
+L749:
+	ex.DebugBeginCondition(&definition, 134)
+	fc748++
+	if !factChoice134(ex, fc748-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L746
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (visible_enemy ?npc ?enemy)
-	cp708_23 = ex.V[23]
-	fc709 = 0
-L710:
-	fc709++
-	if !factChoice135(ex, fc709-1) {
-		goto L707
+	cp751_23 = ex.V[23]
+	fc752 = 0
+L753:
+	ex.DebugBeginCondition(&definition, 135)
+	fc752++
+	if !factChoice135(ex, fc752-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L750
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (hostile_enemy ?enemy)
 	// (hostile_enemy ?enemy)
 	{
+		ex.DebugBeginCondition(&definition, 136)
 		table := &ex.FactTables[38][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -11294,24 +17500,30 @@ L710:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L713
+			goto L756
 		}
-		goto L711
+		goto L754
 	}
-L713:
+L756:
 	// (enemy_distance ?npc ?enemy ?distance)
-	cp715_24 = ex.V[24]
-	fc716 = 0
-L717:
-	fc716++
-	if !factChoice137(ex, fc716-1) {
-		goto L714
+	cp758_24 = ex.V[24]
+	fc759 = 0
+L760:
+	ex.DebugBeginCondition(&definition, 137)
+	fc759++
+	if !factChoice137(ex, fc759-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L757
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (enemy_dead ?enemy))
+	ex.DebugBeginCondition(&definition, 138)
 	// (enemy_dead ?enemy)
 	// (enemy_dead ?enemy)
 	{
+		ex.DebugBeginCondition(&definition, 139)
 		table := &ex.FactTables[40][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -11322,33 +17534,41 @@ L717:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L723
+			goto L766
 		}
-		goto L721
+		goto L764
 	}
-L723:
-	goto L718
-L721:
-	goto L720
-L720:
+L766:
+	goto L761
+L764:
+	goto L763
+L763:
+	ex.DebugEndCondition(&definition, true)
 	// (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
-	cp725_25 = ex.V[25]
-	cp725_26 = ex.V[26]
+	cp769_25 = ex.V[25]
+	cp769_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 140)
 	// (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
-	cp728_25 = ex.V[25]
-	cp728_26 = ex.V[26]
+	cp772_25 = ex.V[25]
+	cp772_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 141)
 	// (visible_enemy ?npc ?other)
-	cp730_25 = ex.V[25]
-	fc731 = 0
-L732:
-	fc731++
-	if !factChoice142(ex, fc731-1) {
-		goto L729
+	cp774_25 = ex.V[25]
+	fc775 = 0
+L776:
+	ex.DebugBeginCondition(&definition, 142)
+	fc775++
+	if !factChoice142(ex, fc775-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L773
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (hostile_enemy ?other)
 	// (hostile_enemy ?other)
 	{
+		ex.DebugBeginCondition(&definition, 143)
 		table := &ex.FactTables[38][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -11359,97 +17579,119 @@ L732:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L735
+			goto L779
 		}
-		goto L733
+		goto L777
 	}
-L735:
+L779:
 	// (enemy_distance ?npc ?other ?other_distance)
-	cp737_26 = ex.V[26]
-	fc738 = 0
-L739:
-	fc738++
-	if !factChoice144(ex, fc738-1) {
-		goto L736
+	cp781_26 = ex.V[26]
+	fc782 = 0
+L783:
+	ex.DebugBeginCondition(&definition, 144)
+	fc782++
+	if !factChoice144(ex, fc782-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L780
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (< ?other_distance ?distance)
 	// (< ?other_distance ?distance)
+	ex.DebugBeginCondition(&definition, 145)
 	if planner.Compare(ex.V[26], ex.V[24], 2) {
-		goto L742
+		ex.DebugEndCondition(&definition, true)
+		goto L786
 	}
-	goto L740
-L742:
-	goto L724
-L740:
-	goto L738
-L738:
-	ex.V[26] = cp737_26
-	cp737_26 = ex.V[26]
-	goto L739
-L736:
-	ex.V[26] = cp737_26
-	goto L733
-L733:
-	goto L731
-L731:
-	ex.V[25] = cp730_25
-	cp730_25 = ex.V[25]
-	goto L732
-L729:
-	ex.V[25] = cp730_25
-	goto L727
-L727:
-	ex.V[25] = cp728_25
-	ex.V[26] = cp728_26
-	goto L726
-L726:
-	goto L699
-L724:
-	ex.V[25] = cp725_25
-	ex.V[26] = cp725_26
-	goto L718
-L718:
-	goto L716
-L716:
-	ex.V[24] = cp715_24
-	cp715_24 = ex.V[24]
-	goto L717
-L714:
-	ex.V[24] = cp715_24
-	goto L711
-L711:
-	goto L709
-L709:
-	ex.V[23] = cp708_23
-	cp708_23 = ex.V[23]
-	goto L710
-L707:
-	ex.V[23] = cp708_23
-	goto L705
-L705:
-	ex.V[20] = cp704_20
-	cp704_20 = ex.V[20]
-	goto L706
-L703:
-	ex.V[20] = cp704_20
-	goto L701
-L701:
-	ex.V[20] = cp702_20
-	ex.V[23] = cp702_23
-	ex.V[24] = cp702_24
-	ex.V[25] = cp702_25
-	ex.V[26] = cp702_26
-	goto L700
-L700:
+	ex.DebugEndCondition(&definition, false)
+	goto L784
+L786:
+	ex.DebugEndCondition(&definition, true)
+	goto L768
+L784:
+	goto L782
+L782:
+	ex.V[26] = cp781_26
+	cp781_26 = ex.V[26]
+	goto L783
+L780:
+	ex.V[26] = cp781_26
+	goto L777
+L777:
+	goto L775
+L775:
+	ex.V[25] = cp774_25
+	cp774_25 = ex.V[25]
+	goto L776
+L773:
+	ex.V[25] = cp774_25
+	goto L771
+L771:
+	ex.V[25] = cp772_25
+	ex.V[26] = cp772_26
+	ex.DebugEndCondition(&definition, false)
+	goto L770
+L770:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L742
+L768:
+	ex.V[25] = cp769_25
+	ex.V[26] = cp769_26
+	ex.DebugEndCondition(&definition, false)
+	goto L767
+L767:
+	ex.DebugBeginCondition(&definition, 138)
+	goto L761
+L761:
+	ex.DebugEndCondition(&definition, false)
+	goto L759
+L759:
+	ex.V[24] = cp758_24
+	cp758_24 = ex.V[24]
+	goto L760
+L757:
+	ex.V[24] = cp758_24
+	goto L754
+L754:
+	goto L752
+L752:
+	ex.V[23] = cp751_23
+	cp751_23 = ex.V[23]
+	goto L753
+L750:
+	ex.V[23] = cp751_23
+	goto L748
+L748:
+	ex.V[20] = cp747_20
+	cp747_20 = ex.V[20]
+	goto L749
+L746:
+	ex.V[20] = cp747_20
+	goto L744
+L744:
+	ex.V[20] = cp745_20
+	ex.V[23] = cp745_23
+	ex.V[24] = cp745_24
+	ex.V[25] = cp745_25
+	ex.V[26] = cp745_26
+	ex.DebugEndCondition(&definition, false)
+	goto L743
+L743:
 	ex.ReleaseRetry(frame)
-	goto L671
-L699:
+	ex.DebugEndBranch(&definition, false)
+	goto L713
+L742:
 	if !ex.PushBranch(&bc47) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L743:
+	ex.DebugCapturePendingTask(114)
+	ex.DebugCapturePendingTask(113)
+L790:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -11457,71 +17699,91 @@ L743:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L678
+		goto L720
 	}
-	goto L744
-L678:
+	goto L791
+L720:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L671
+		ex.DebugEndBranch(&definition, false)
+		goto L713
 	}
-	goto L743
-L744:
+	goto L790
+L791:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L671:
+L713:
 	// branch medium_priority_script
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 48)
 	// (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
-	cp748_20 = ex.V[20]
-	cp748_21 = ex.V[21]
-	cp748_22 = ex.V[22]
+	cp795_20 = ex.V[20]
+	cp795_21 = ex.V[21]
+	cp795_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 146)
 	// (controlled_npc ?npc)
-	cp750_20 = ex.V[20]
-	fc751 = 0
-L752:
-	fc751++
-	if !factChoice147(ex, fc751-1) {
-		goto L749
+	cp797_20 = ex.V[20]
+	fc798 = 0
+L799:
+	ex.DebugBeginCondition(&definition, 147)
+	fc798++
+	if !factChoice147(ex, fc798-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L796
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (scripted_order ?npc medium ?order ?target)
-	cp754_21 = ex.V[21]
-	cp754_22 = ex.V[22]
-	fc755 = 0
-	fc755++
-	if !factChoice148(ex, fc755-1) {
-		goto L753
+	cp801_21 = ex.V[21]
+	cp801_22 = ex.V[22]
+	fc802 = 0
+	ex.DebugBeginCondition(&definition, 148)
+	fc802++
+	if !factChoice148(ex, fc802-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L800
 	}
-	goto L745
-L753:
-	ex.V[21] = cp754_21
-	ex.V[22] = cp754_22
-	goto L751
-L751:
-	ex.V[20] = cp750_20
-	cp750_20 = ex.V[20]
-	goto L752
-L749:
-	ex.V[20] = cp750_20
-	goto L747
-L747:
-	ex.V[20] = cp748_20
-	ex.V[21] = cp748_21
-	ex.V[22] = cp748_22
-	goto L746
-L746:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L792
+L800:
+	ex.V[21] = cp801_21
+	ex.V[22] = cp801_22
+	goto L798
+L798:
+	ex.V[20] = cp797_20
+	cp797_20 = ex.V[20]
+	goto L799
+L796:
+	ex.V[20] = cp797_20
+	goto L794
+L794:
+	ex.V[20] = cp795_20
+	ex.V[21] = cp795_21
+	ex.V[22] = cp795_22
+	ex.DebugEndCondition(&definition, false)
+	goto L793
+L793:
 	ex.ReleaseRetry(frame)
-	goto L672
-L745:
+	ex.DebugEndBranch(&definition, false)
+	goto L714
+L792:
 	if !ex.PushBranch(&bc48) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L757:
+	ex.DebugCapturePendingTask(116)
+	ex.DebugCapturePendingTask(115)
+L805:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -11529,103 +17791,129 @@ L757:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L679
+		goto L721
 	}
-	goto L758
-L679:
+	goto L806
+L721:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L672
+		ex.DebugEndBranch(&definition, false)
+		goto L714
 	}
-	goto L757
-L758:
+	goto L805
+L806:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L672:
+L714:
 	// branch investigate_precombat
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 49)
 	// (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
-	cp762_14 = ex.V[14]
-	cp762_20 = ex.V[20]
-	cp762_27 = ex.V[27]
-	cp762_28 = ex.V[28]
-	cp762_29 = ex.V[29]
+	cp810_14 = ex.V[14]
+	cp810_20 = ex.V[20]
+	cp810_27 = ex.V[27]
+	cp810_28 = ex.V[28]
+	cp810_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 149)
 	// (controlled_npc ?npc)
-	cp764_20 = ex.V[20]
-	fc765 = 0
-L766:
-	fc765++
-	if !factChoice150(ex, fc765-1) {
-		goto L763
+	cp812_20 = ex.V[20]
+	fc813 = 0
+L814:
+	ex.DebugBeginCondition(&definition, 150)
+	fc813++
+	if !factChoice150(ex, fc813-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L811
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (suspicious_stimulus ?npc ?stimulus ?location)
-	cp768_14 = ex.V[14]
-	cp768_27 = ex.V[27]
-	fc769 = 0
-L770:
-	fc769++
-	if !factChoice151(ex, fc769-1) {
-		goto L767
+	cp816_14 = ex.V[14]
+	cp816_27 = ex.V[27]
+	fc817 = 0
+L818:
+	ex.DebugBeginCondition(&definition, 151)
+	fc817++
+	if !factChoice151(ex, fc817-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L815
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (combat_memory ?npc ?lost_enemy ?last_location))
-	cp772_28 = ex.V[28]
-	cp772_29 = ex.V[29]
+	cp820_28 = ex.V[28]
+	cp820_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 152)
 	// (combat_memory ?npc ?lost_enemy ?last_location)
-	cp775_28 = ex.V[28]
-	cp775_29 = ex.V[29]
-	fc776 = 0
-	fc776++
-	if !factChoice153(ex, fc776-1) {
-		goto L774
+	cp823_28 = ex.V[28]
+	cp823_29 = ex.V[29]
+	fc824 = 0
+	ex.DebugBeginCondition(&definition, 153)
+	fc824++
+	if !factChoice153(ex, fc824-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L822
 	}
-	goto L771
-L774:
-	ex.V[28] = cp775_28
-	ex.V[29] = cp775_29
-	goto L773
-L773:
-	goto L759
-L771:
-	ex.V[28] = cp772_28
-	ex.V[29] = cp772_29
-	goto L769
-L769:
-	ex.V[14] = cp768_14
-	ex.V[27] = cp768_27
-	cp768_14 = ex.V[14]
-	cp768_27 = ex.V[27]
-	goto L770
-L767:
-	ex.V[14] = cp768_14
-	ex.V[27] = cp768_27
-	goto L765
-L765:
-	ex.V[20] = cp764_20
-	cp764_20 = ex.V[20]
-	goto L766
-L763:
-	ex.V[20] = cp764_20
-	goto L761
-L761:
-	ex.V[14] = cp762_14
-	ex.V[20] = cp762_20
-	ex.V[27] = cp762_27
-	ex.V[28] = cp762_28
-	ex.V[29] = cp762_29
-	goto L760
-L760:
+	ex.DebugEndCondition(&definition, true)
+	goto L819
+L822:
+	ex.V[28] = cp823_28
+	ex.V[29] = cp823_29
+	goto L821
+L821:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L807
+L819:
+	ex.V[28] = cp820_28
+	ex.V[29] = cp820_29
+	ex.DebugEndCondition(&definition, false)
+	goto L817
+L817:
+	ex.V[14] = cp816_14
+	ex.V[27] = cp816_27
+	cp816_14 = ex.V[14]
+	cp816_27 = ex.V[27]
+	goto L818
+L815:
+	ex.V[14] = cp816_14
+	ex.V[27] = cp816_27
+	goto L813
+L813:
+	ex.V[20] = cp812_20
+	cp812_20 = ex.V[20]
+	goto L814
+L811:
+	ex.V[20] = cp812_20
+	goto L809
+L809:
+	ex.V[14] = cp810_14
+	ex.V[20] = cp810_20
+	ex.V[27] = cp810_27
+	ex.V[28] = cp810_28
+	ex.V[29] = cp810_29
+	ex.DebugEndCondition(&definition, false)
+	goto L808
+L808:
 	ex.ReleaseRetry(frame)
-	goto L673
-L759:
+	ex.DebugEndBranch(&definition, false)
+	goto L715
+L807:
 	if !ex.PushBranch(&bc49) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L778:
+	ex.DebugCapturePendingTask(118)
+	ex.DebugCapturePendingTask(117)
+L828:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -11633,71 +17921,91 @@ L778:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L680
+		goto L722
 	}
-	goto L779
-L680:
+	goto L829
+L722:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L673
+		ex.DebugEndBranch(&definition, false)
+		goto L715
 	}
-	goto L778
-L779:
+	goto L828
+L829:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L673:
+L715:
 	// branch search_lost_enemy
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 50)
 	// (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
-	cp783_20 = ex.V[20]
-	cp783_23 = ex.V[23]
-	cp783_29 = ex.V[29]
+	cp833_20 = ex.V[20]
+	cp833_23 = ex.V[23]
+	cp833_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 154)
 	// (controlled_npc ?npc)
-	cp785_20 = ex.V[20]
-	fc786 = 0
-L787:
-	fc786++
-	if !factChoice155(ex, fc786-1) {
-		goto L784
+	cp835_20 = ex.V[20]
+	fc836 = 0
+L837:
+	ex.DebugBeginCondition(&definition, 155)
+	fc836++
+	if !factChoice155(ex, fc836-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L834
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (combat_memory ?npc ?enemy ?last_location)
-	cp789_23 = ex.V[23]
-	cp789_29 = ex.V[29]
-	fc790 = 0
-	fc790++
-	if !factChoice156(ex, fc790-1) {
-		goto L788
+	cp839_23 = ex.V[23]
+	cp839_29 = ex.V[29]
+	fc840 = 0
+	ex.DebugBeginCondition(&definition, 156)
+	fc840++
+	if !factChoice156(ex, fc840-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L838
 	}
-	goto L780
-L788:
-	ex.V[23] = cp789_23
-	ex.V[29] = cp789_29
-	goto L786
-L786:
-	ex.V[20] = cp785_20
-	cp785_20 = ex.V[20]
-	goto L787
-L784:
-	ex.V[20] = cp785_20
-	goto L782
-L782:
-	ex.V[20] = cp783_20
-	ex.V[23] = cp783_23
-	ex.V[29] = cp783_29
-	goto L781
-L781:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L830
+L838:
+	ex.V[23] = cp839_23
+	ex.V[29] = cp839_29
+	goto L836
+L836:
+	ex.V[20] = cp835_20
+	cp835_20 = ex.V[20]
+	goto L837
+L834:
+	ex.V[20] = cp835_20
+	goto L832
+L832:
+	ex.V[20] = cp833_20
+	ex.V[23] = cp833_23
+	ex.V[29] = cp833_29
+	ex.DebugEndCondition(&definition, false)
+	goto L831
+L831:
 	ex.ReleaseRetry(frame)
-	goto L674
-L780:
+	ex.DebugEndBranch(&definition, false)
+	goto L716
+L830:
 	if !ex.PushBranch(&bc50) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L792:
+	ex.DebugCapturePendingTask(120)
+	ex.DebugCapturePendingTask(119)
+L843:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -11705,71 +18013,91 @@ L792:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L681
+		goto L723
 	}
-	goto L793
-L681:
+	goto L844
+L723:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L674
+		ex.DebugEndBranch(&definition, false)
+		goto L716
 	}
-	goto L792
-L793:
+	goto L843
+L844:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L674:
+L716:
 	// branch low_priority_script
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 51)
 	// (and (controlled_npc ?npc) (scripted_order ?npc low ?order ?target))
-	cp797_20 = ex.V[20]
-	cp797_21 = ex.V[21]
-	cp797_22 = ex.V[22]
+	cp848_20 = ex.V[20]
+	cp848_21 = ex.V[21]
+	cp848_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 157)
 	// (controlled_npc ?npc)
-	cp799_20 = ex.V[20]
-	fc800 = 0
-L801:
-	fc800++
-	if !factChoice158(ex, fc800-1) {
-		goto L798
+	cp850_20 = ex.V[20]
+	fc851 = 0
+L852:
+	ex.DebugBeginCondition(&definition, 158)
+	fc851++
+	if !factChoice158(ex, fc851-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L849
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (scripted_order ?npc low ?order ?target)
-	cp803_21 = ex.V[21]
-	cp803_22 = ex.V[22]
-	fc804 = 0
-	fc804++
-	if !factChoice159(ex, fc804-1) {
-		goto L802
+	cp854_21 = ex.V[21]
+	cp854_22 = ex.V[22]
+	fc855 = 0
+	ex.DebugBeginCondition(&definition, 159)
+	fc855++
+	if !factChoice159(ex, fc855-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L853
 	}
-	goto L794
-L802:
-	ex.V[21] = cp803_21
-	ex.V[22] = cp803_22
-	goto L800
-L800:
-	ex.V[20] = cp799_20
-	cp799_20 = ex.V[20]
-	goto L801
-L798:
-	ex.V[20] = cp799_20
-	goto L796
-L796:
-	ex.V[20] = cp797_20
-	ex.V[21] = cp797_21
-	ex.V[22] = cp797_22
-	goto L795
-L795:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L845
+L853:
+	ex.V[21] = cp854_21
+	ex.V[22] = cp854_22
+	goto L851
+L851:
+	ex.V[20] = cp850_20
+	cp850_20 = ex.V[20]
+	goto L852
+L849:
+	ex.V[20] = cp850_20
+	goto L847
+L847:
+	ex.V[20] = cp848_20
+	ex.V[21] = cp848_21
+	ex.V[22] = cp848_22
+	ex.DebugEndCondition(&definition, false)
+	goto L846
+L846:
 	ex.ReleaseRetry(frame)
-	goto L675
-L794:
+	ex.DebugEndBranch(&definition, false)
+	goto L717
+L845:
 	if !ex.PushBranch(&bc51) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L806:
+	ex.DebugCapturePendingTask(122)
+	ex.DebugCapturePendingTask(121)
+L858:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -11777,50 +18105,67 @@ L806:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L682
+		goto L724
 	}
-	goto L807
-L682:
+	goto L859
+L724:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L675
+		ex.DebugEndBranch(&definition, false)
+		goto L717
 	}
-	goto L806
-L807:
+	goto L858
+L859:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L675:
+L717:
 	// branch idle
 	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 52)
 	// (and (controlled_npc ?npc))
-	cp811_20 = ex.V[20]
+	cp863_20 = ex.V[20]
+	ex.DebugBeginCondition(&definition, 160)
 	// (controlled_npc ?npc)
-	cp813_20 = ex.V[20]
-	fc814 = 0
-	fc814++
-	if !factChoice161(ex, fc814-1) {
-		goto L812
+	cp865_20 = ex.V[20]
+	fc866 = 0
+	ex.DebugBeginCondition(&definition, 161)
+	fc866++
+	if !factChoice161(ex, fc866-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L864
 	}
-	goto L808
-L812:
-	ex.V[20] = cp813_20
-	goto L810
-L810:
-	ex.V[20] = cp811_20
-	goto L809
-L809:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L860
+L864:
+	ex.V[20] = cp865_20
+	goto L862
+L862:
+	ex.V[20] = cp863_20
+	ex.DebugEndCondition(&definition, false)
+	goto L861
+L861:
 	ex.ReleaseRetry(frame)
-	goto L676
-L808:
+	ex.DebugEndBranch(&definition, false)
+	goto L718
+L860:
 	if !ex.PushBranch(&bc52) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L816:
+	ex.DebugCapturePendingTask(124)
+	ex.DebugCapturePendingTask(123)
+L869:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -11828,30 +18173,39 @@ L816:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L683
+		goto L725
 	}
-	goto L817
-L683:
+	goto L870
+L725:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L676
+		ex.DebugEndBranch(&definition, false)
+		goto L718
 	}
-	goto L816
-L817:
+	goto L869
+L870:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L676:
+L718:
 	// branch no_npc
-	goto L818
-L818:
+	ex.DebugBeginBranch(&definition, 53)
+	goto L871
+L871:
 	if !ex.PushBranch(&bc53) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L820:
+	ex.DebugCapturePendingTask(125)
+L873:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -11859,15 +18213,19 @@ L820:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L684
+		goto L726
 	}
-	goto L821
-L684:
+	goto L874
+L726:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L820
-L821:
+	goto L873
+L874:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -11875,45 +18233,52 @@ L821:
 func method8(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp872_3 atom.Atom
-	var cp877_3 atom.Atom
-	var fc878 uint32
-	_ = cp872_3
-	_ = cp877_3
-	_ = fc878
+	var cp928_3 atom.Atom
+	var cp933_3 atom.Atom
+	var fc934 uint32
+	_ = cp928_3
+	_ = cp933_3
+	_ = fc934
 	switch frame.Resume {
 	case 1:
-		goto L831
+		goto L884
 	case 2:
-		goto L832
+		goto L885
 	case 3:
-		goto L833
+		goto L886
 	case 4:
-		goto L834
+		goto L887
 	case 5:
-		goto L835
+		goto L888
 	case 6:
-		goto L836
+		goto L889
 	case 7:
-		goto L837
+		goto L890
 	case 8:
-		goto L838
+		goto L891
 	}
-	goto L823
-L823:
+	ex.DebugBeginMethod(&definition, 8)
+	goto L876
+L876:
 	// branch evacuate_under_fire
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 54)
 	// (and (== ?inp_order evacuate) (under_fire ?inp_npc))
+	ex.DebugBeginCondition(&definition, 162)
 	// (== ?inp_order evacuate)
 	// (== ?inp_order evacuate)
+	ex.DebugBeginCondition(&definition, 163)
 	if planner.Compare(ex.V[1], sv56, 0) {
-		goto L845
+		ex.DebugEndCondition(&definition, true)
+		goto L898
 	}
-	goto L843
-L845:
+	ex.DebugEndCondition(&definition, false)
+	goto L896
+L898:
 	// (under_fire ?inp_npc)
 	// (under_fire ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 164)
 		table := &ex.FactTables[0][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -11924,28 +18289,38 @@ L845:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L848
+			goto L901
 		}
-		goto L846
+		goto L899
 	}
-L848:
-	goto L839
-L846:
-	goto L843
-L843:
-	goto L841
-L841:
-	goto L840
-L840:
+L901:
+	ex.DebugEndCondition(&definition, true)
+	goto L892
+L899:
+	goto L896
+L896:
+	goto L894
+L894:
+	ex.DebugEndCondition(&definition, false)
+	goto L893
+L893:
 	ex.ReleaseRetry(frame)
-	goto L824
-L839:
+	ex.DebugEndBranch(&definition, false)
+	goto L877
+L892:
 	if !ex.PushBranch(&bc54) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L849:
+	ex.DebugCapturePendingTask(129)
+	ex.DebugCapturePendingTask(128)
+	ex.DebugCapturePendingTask(127)
+	ex.DebugCapturePendingTask(126)
+L903:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -11953,47 +18328,65 @@ L849:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L831
+		goto L884
 	}
-	goto L850
-L831:
+	goto L904
+L884:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L824
+		ex.DebugEndBranch(&definition, false)
+		goto L877
 	}
-	goto L849
-L850:
+	goto L903
+L904:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L824:
+L877:
 	// branch evacuate
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 55)
 	// (and (== ?inp_order evacuate))
+	ex.DebugBeginCondition(&definition, 165)
 	// (== ?inp_order evacuate)
 	// (== ?inp_order evacuate)
+	ex.DebugBeginCondition(&definition, 166)
 	if planner.Compare(ex.V[1], sv57, 0) {
-		goto L857
+		ex.DebugEndCondition(&definition, true)
+		goto L911
 	}
-	goto L855
-L857:
-	goto L851
-L855:
-	goto L853
-L853:
-	goto L852
-L852:
+	ex.DebugEndCondition(&definition, false)
+	goto L909
+L911:
+	ex.DebugEndCondition(&definition, true)
+	goto L905
+L909:
+	goto L907
+L907:
+	ex.DebugEndCondition(&definition, false)
+	goto L906
+L906:
 	ex.ReleaseRetry(frame)
-	goto L825
-L851:
+	ex.DebugEndBranch(&definition, false)
+	goto L878
+L905:
 	if !ex.PushBranch(&bc55) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L858:
+	ex.DebugCapturePendingTask(132)
+	ex.DebugCapturePendingTask(131)
+	ex.DebugCapturePendingTask(130)
+L913:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -12001,47 +18394,65 @@ L858:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L832
+		goto L885
 	}
-	goto L859
-L832:
+	goto L914
+L885:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L825
+		ex.DebugEndBranch(&definition, false)
+		goto L878
 	}
-	goto L858
-L859:
+	goto L913
+L914:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L825:
+L878:
 	// branch hold_position
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 56)
 	// (and (== ?inp_order hold))
+	ex.DebugBeginCondition(&definition, 167)
 	// (== ?inp_order hold)
 	// (== ?inp_order hold)
+	ex.DebugBeginCondition(&definition, 168)
 	if planner.Compare(ex.V[1], sv58, 0) {
-		goto L866
+		ex.DebugEndCondition(&definition, true)
+		goto L921
 	}
-	goto L864
-L866:
-	goto L860
-L864:
-	goto L862
-L862:
-	goto L861
-L861:
+	ex.DebugEndCondition(&definition, false)
+	goto L919
+L921:
+	ex.DebugEndCondition(&definition, true)
+	goto L915
+L919:
+	goto L917
+L917:
+	ex.DebugEndCondition(&definition, false)
+	goto L916
+L916:
 	ex.ReleaseRetry(frame)
-	goto L826
-L860:
+	ex.DebugEndBranch(&definition, false)
+	goto L879
+L915:
 	if !ex.PushBranch(&bc56) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L867:
+	ex.DebugCapturePendingTask(135)
+	ex.DebugCapturePendingTask(134)
+	ex.DebugCapturePendingTask(133)
+L923:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -12049,59 +18460,79 @@ L867:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L833
+		goto L886
 	}
-	goto L868
-L833:
+	goto L924
+L886:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L826
+		ex.DebugEndBranch(&definition, false)
+		goto L879
 	}
-	goto L867
-L868:
+	goto L923
+L924:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L826:
+L879:
 	// branch escort
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 57)
 	// (and (== ?inp_order escort) (escort_route ?inp_npc ?inp_target ?route))
-	cp872_3 = ex.V[3]
+	cp928_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 169)
 	// (== ?inp_order escort)
 	// (== ?inp_order escort)
+	ex.DebugBeginCondition(&definition, 170)
 	if planner.Compare(ex.V[1], sv59, 0) {
-		goto L875
+		ex.DebugEndCondition(&definition, true)
+		goto L931
 	}
-	goto L873
-L875:
+	ex.DebugEndCondition(&definition, false)
+	goto L929
+L931:
 	// (escort_route ?inp_npc ?inp_target ?route)
-	cp877_3 = ex.V[3]
-	fc878 = 0
-	fc878++
-	if !factChoice171(ex, fc878-1) {
-		goto L876
+	cp933_3 = ex.V[3]
+	fc934 = 0
+	ex.DebugBeginCondition(&definition, 171)
+	fc934++
+	if !factChoice171(ex, fc934-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L932
 	}
-	goto L869
-L876:
-	ex.V[3] = cp877_3
-	goto L873
-L873:
-	goto L871
-L871:
-	ex.V[3] = cp872_3
-	goto L870
-L870:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L925
+L932:
+	ex.V[3] = cp933_3
+	goto L929
+L929:
+	goto L927
+L927:
+	ex.V[3] = cp928_3
+	ex.DebugEndCondition(&definition, false)
+	goto L926
+L926:
 	ex.ReleaseRetry(frame)
-	goto L827
-L869:
+	ex.DebugEndBranch(&definition, false)
+	goto L880
+L925:
 	if !ex.PushBranch(&bc57) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L880:
+	ex.DebugCapturePendingTask(137)
+	ex.DebugCapturePendingTask(136)
+L937:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -12109,47 +18540,64 @@ L880:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L834
+		goto L887
 	}
-	goto L881
-L834:
+	goto L938
+L887:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L827
+		ex.DebugEndBranch(&definition, false)
+		goto L880
 	}
-	goto L880
-L881:
+	goto L937
+L938:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L827:
+L880:
 	// branch guard
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 58)
 	// (and (== ?inp_order guard))
+	ex.DebugBeginCondition(&definition, 172)
 	// (== ?inp_order guard)
 	// (== ?inp_order guard)
+	ex.DebugBeginCondition(&definition, 173)
 	if planner.Compare(ex.V[1], sv60, 0) {
-		goto L888
+		ex.DebugEndCondition(&definition, true)
+		goto L945
 	}
-	goto L886
-L888:
-	goto L882
-L886:
-	goto L884
-L884:
-	goto L883
-L883:
+	ex.DebugEndCondition(&definition, false)
+	goto L943
+L945:
+	ex.DebugEndCondition(&definition, true)
+	goto L939
+L943:
+	goto L941
+L941:
+	ex.DebugEndCondition(&definition, false)
+	goto L940
+L940:
 	ex.ReleaseRetry(frame)
-	goto L828
-L882:
+	ex.DebugEndBranch(&definition, false)
+	goto L881
+L939:
 	if !ex.PushBranch(&bc58) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L889:
+	ex.DebugCapturePendingTask(139)
+	ex.DebugCapturePendingTask(138)
+L947:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -12157,36 +18605,47 @@ L889:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L835
+		goto L888
 	}
-	goto L890
-L835:
+	goto L948
+L888:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L828
+		ex.DebugEndBranch(&definition, false)
+		goto L881
 	}
-	goto L889
-L890:
+	goto L947
+L948:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L828:
+L881:
 	// branch interact
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 59)
 	// (and (== ?inp_order interact) (interaction_ready ?inp_target))
+	ex.DebugBeginCondition(&definition, 174)
 	// (== ?inp_order interact)
 	// (== ?inp_order interact)
+	ex.DebugBeginCondition(&definition, 175)
 	if planner.Compare(ex.V[1], sv61, 0) {
-		goto L897
+		ex.DebugEndCondition(&definition, true)
+		goto L955
 	}
-	goto L895
-L897:
+	ex.DebugEndCondition(&definition, false)
+	goto L953
+L955:
 	// (interaction_ready ?inp_target)
 	// (interaction_ready ?inp_target)
 	{
+		ex.DebugBeginCondition(&definition, 176)
 		table := &ex.FactTables[2][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12197,28 +18656,37 @@ L897:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L900
+			goto L958
 		}
-		goto L898
+		goto L956
 	}
-L900:
-	goto L891
-L898:
-	goto L895
-L895:
-	goto L893
-L893:
-	goto L892
-L892:
+L958:
+	ex.DebugEndCondition(&definition, true)
+	goto L949
+L956:
+	goto L953
+L953:
+	goto L951
+L951:
+	ex.DebugEndCondition(&definition, false)
+	goto L950
+L950:
 	ex.ReleaseRetry(frame)
-	goto L829
-L891:
+	ex.DebugEndBranch(&definition, false)
+	goto L882
+L949:
 	if !ex.PushBranch(&bc59) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L901:
+	ex.DebugCapturePendingTask(142)
+	ex.DebugCapturePendingTask(141)
+	ex.DebugCapturePendingTask(140)
+L960:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -12226,47 +18694,64 @@ L901:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L836
+		goto L889
 	}
-	goto L902
-L836:
+	goto L961
+L889:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L829
+		ex.DebugEndBranch(&definition, false)
+		goto L882
 	}
-	goto L901
-L902:
+	goto L960
+L961:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L829:
+L882:
 	// branch move
 	ex.SaveRetry(frame, ms8)
+	ex.DebugBeginBranch(&definition, 60)
 	// (and (== ?inp_order move))
+	ex.DebugBeginCondition(&definition, 177)
 	// (== ?inp_order move)
 	// (== ?inp_order move)
+	ex.DebugBeginCondition(&definition, 178)
 	if planner.Compare(ex.V[1], sv62, 0) {
-		goto L909
+		ex.DebugEndCondition(&definition, true)
+		goto L968
 	}
-	goto L907
-L909:
-	goto L903
-L907:
-	goto L905
-L905:
-	goto L904
-L904:
+	ex.DebugEndCondition(&definition, false)
+	goto L966
+L968:
+	ex.DebugEndCondition(&definition, true)
+	goto L962
+L966:
+	goto L964
+L964:
+	ex.DebugEndCondition(&definition, false)
+	goto L963
+L963:
 	ex.ReleaseRetry(frame)
-	goto L830
-L903:
+	ex.DebugEndBranch(&definition, false)
+	goto L883
+L962:
 	if !ex.PushBranch(&bc60) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L910:
+	ex.DebugCapturePendingTask(144)
+	ex.DebugCapturePendingTask(143)
+L970:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -12274,30 +18759,39 @@ L910:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L837
+		goto L890
 	}
-	goto L911
-L837:
+	goto L971
+L890:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms8)
-		goto L830
+		ex.DebugEndBranch(&definition, false)
+		goto L883
 	}
-	goto L910
-L911:
+	goto L970
+L971:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L830:
+L883:
 	// branch unknown_order
-	goto L912
-L912:
+	ex.DebugBeginBranch(&definition, 61)
+	goto L972
+L972:
 	if !ex.PushBranch(&bc61) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L914:
+	ex.DebugCapturePendingTask(145)
+L974:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -12305,15 +18799,19 @@ L914:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L838
+		goto L891
 	}
-	goto L915
-L838:
+	goto L975
+L891:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L914
-L915:
+	goto L974
+L975:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -12321,81 +18819,101 @@ L915:
 func method9(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp926_3 atom.Atom
-	var cp926_6 atom.Atom
-	var cp928_6 atom.Atom
-	var fc929 uint32
-	var cp935_3 atom.Atom
-	var fc936 uint32
-	_ = cp926_3
-	_ = cp926_6
-	_ = cp928_6
-	_ = fc929
-	_ = cp935_3
-	_ = fc936
+	var cp986_3 atom.Atom
+	var cp986_6 atom.Atom
+	var cp988_6 atom.Atom
+	var fc989 uint32
+	var cp995_3 atom.Atom
+	var fc996 uint32
+	_ = cp986_3
+	_ = cp986_6
+	_ = cp988_6
+	_ = fc989
+	_ = cp995_3
+	_ = fc996
 	switch frame.Resume {
 	case 1:
-		goto L920
+		goto L980
 	case 2:
-		goto L921
+		goto L981
 	case 3:
-		goto L922
+		goto L982
 	}
-	goto L917
-L917:
+	ex.DebugBeginMethod(&definition, 9)
+	goto L977
+L977:
 	// branch critical_retreat
 	ex.SaveRetry(frame, ms9)
+	ex.DebugBeginBranch(&definition, 62)
 	// (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
-	cp926_3 = ex.V[3]
-	cp926_6 = ex.V[6]
+	cp986_3 = ex.V[3]
+	cp986_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 179)
 	// (health ?inp_npc ?hp)
-	cp928_6 = ex.V[6]
-	fc929 = 0
-L930:
-	fc929++
-	if !factChoice180(ex, fc929-1) {
-		goto L927
+	cp988_6 = ex.V[6]
+	fc989 = 0
+L990:
+	ex.DebugBeginCondition(&definition, 180)
+	fc989++
+	if !factChoice180(ex, fc989-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L987
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?hp 20)
 	// (<= ?hp 20)
+	ex.DebugBeginCondition(&definition, 181)
 	if planner.Compare(ex.V[6], sv63, 3) {
-		goto L933
+		ex.DebugEndCondition(&definition, true)
+		goto L993
 	}
-	goto L931
-L933:
+	ex.DebugEndCondition(&definition, false)
+	goto L991
+L993:
 	// (retreat_route ?inp_npc ?route)
-	cp935_3 = ex.V[3]
-	fc936 = 0
-	fc936++
-	if !factChoice182(ex, fc936-1) {
-		goto L934
+	cp995_3 = ex.V[3]
+	fc996 = 0
+	ex.DebugBeginCondition(&definition, 182)
+	fc996++
+	if !factChoice182(ex, fc996-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L994
 	}
-	goto L923
-L934:
-	ex.V[3] = cp935_3
-	goto L931
-L931:
-	goto L929
-L929:
-	ex.V[6] = cp928_6
-	cp928_6 = ex.V[6]
-	goto L930
-L927:
-	ex.V[6] = cp928_6
-	goto L925
-L925:
-	ex.V[3] = cp926_3
-	ex.V[6] = cp926_6
-	goto L924
-L924:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L983
+L994:
+	ex.V[3] = cp995_3
+	goto L991
+L991:
+	goto L989
+L989:
+	ex.V[6] = cp988_6
+	cp988_6 = ex.V[6]
+	goto L990
+L987:
+	ex.V[6] = cp988_6
+	goto L985
+L985:
+	ex.V[3] = cp986_3
+	ex.V[6] = cp986_6
+	ex.DebugEndCondition(&definition, false)
+	goto L984
+L984:
 	ex.ReleaseRetry(frame)
-	goto L918
-L923:
+	ex.DebugEndBranch(&definition, false)
+	goto L978
+L983:
 	if !ex.PushBranch(&bc62) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L938:
+	ex.DebugCapturePendingTask(148)
+	ex.DebugCapturePendingTask(147)
+	ex.DebugCapturePendingTask(146)
+L999:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -12403,47 +18921,63 @@ L938:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L920
+		goto L980
 	}
-	goto L939
-L920:
+	goto L1000
+L980:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms9)
-		goto L918
+		ex.DebugEndBranch(&definition, false)
+		goto L978
 	}
-	goto L938
-L939:
+	goto L999
+L1000:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L918:
+L978:
 	// branch melee
 	ex.SaveRetry(frame, ms9)
+	ex.DebugBeginBranch(&definition, 63)
 	// (and (< ?inp_distance 8))
+	ex.DebugBeginCondition(&definition, 183)
 	// (< ?inp_distance 8)
 	// (< ?inp_distance 8)
+	ex.DebugBeginCondition(&definition, 184)
 	if planner.Compare(ex.V[5], sv64, 2) {
-		goto L946
+		ex.DebugEndCondition(&definition, true)
+		goto L1007
 	}
-	goto L944
-L946:
-	goto L940
-L944:
-	goto L942
-L942:
-	goto L941
-L941:
+	ex.DebugEndCondition(&definition, false)
+	goto L1005
+L1007:
+	ex.DebugEndCondition(&definition, true)
+	goto L1001
+L1005:
+	goto L1003
+L1003:
+	ex.DebugEndCondition(&definition, false)
+	goto L1002
+L1002:
 	ex.ReleaseRetry(frame)
-	goto L919
-L940:
+	ex.DebugEndBranch(&definition, false)
+	goto L979
+L1001:
 	if !ex.PushBranch(&bc63) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L947:
+	ex.DebugCapturePendingTask(149)
+L1009:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -12451,44 +18985,60 @@ L947:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L921
+		goto L981
 	}
-	goto L948
-L921:
+	goto L1010
+L981:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms9)
-		goto L919
+		ex.DebugEndBranch(&definition, false)
+		goto L979
 	}
-	goto L947
-L948:
+	goto L1009
+L1010:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L919:
+L979:
 	// branch ranged
+	ex.DebugBeginBranch(&definition, 64)
 	// (and (>= ?inp_distance 8))
+	ex.DebugBeginCondition(&definition, 185)
 	// (>= ?inp_distance 8)
 	// (>= ?inp_distance 8)
+	ex.DebugBeginCondition(&definition, 186)
 	if planner.Compare(ex.V[5], sv65, 5) {
-		goto L955
+		ex.DebugEndCondition(&definition, true)
+		goto L1017
 	}
-	goto L953
-L955:
-	goto L949
-L953:
-	goto L951
-L951:
-	goto L950
-L950:
-	goto L916
-L949:
+	ex.DebugEndCondition(&definition, false)
+	goto L1015
+L1017:
+	ex.DebugEndCondition(&definition, true)
+	goto L1011
+L1015:
+	goto L1013
+L1013:
+	ex.DebugEndCondition(&definition, false)
+	goto L1012
+L1012:
+	ex.DebugEndBranch(&definition, false)
+	goto L976
+L1011:
 	if !ex.PushBranch(&bc64) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L956:
+	ex.DebugCapturePendingTask(150)
+L1019:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -12496,17 +19046,22 @@ L956:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L922
+		goto L982
 	}
-	goto L957
-L922:
+	goto L1020
+L982:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L956
-L957:
+	goto L1019
+L1020:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L916:
+L976:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -12514,39 +19069,43 @@ L916:
 func method10(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp972_7 atom.Atom
-	var cp977_7 atom.Atom
-	var fc978 uint32
-	var cp991_7 atom.Atom
-	var cp996_7 atom.Atom
-	var fc997 uint32
-	_ = cp972_7
-	_ = cp977_7
-	_ = fc978
-	_ = cp991_7
-	_ = cp996_7
-	_ = fc997
+	var cp1035_7 atom.Atom
+	var cp1040_7 atom.Atom
+	var fc1041 uint32
+	var cp1055_7 atom.Atom
+	var cp1060_7 atom.Atom
+	var fc1061 uint32
+	_ = cp1035_7
+	_ = cp1040_7
+	_ = fc1041
+	_ = cp1055_7
+	_ = cp1060_7
+	_ = fc1061
 	switch frame.Resume {
 	case 1:
-		goto L964
+		goto L1027
 	case 2:
-		goto L965
+		goto L1028
 	case 3:
-		goto L966
+		goto L1029
 	case 4:
-		goto L967
+		goto L1030
 	case 5:
-		goto L968
+		goto L1031
 	}
-	goto L959
-L959:
+	ex.DebugBeginMethod(&definition, 10)
+	goto L1022
+L1022:
 	// branch parry_counter
 	ex.SaveRetry(frame, ms10)
+	ex.DebugBeginBranch(&definition, 65)
 	// (and (enemy_attacking ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 30) (weapon_equipped ?inp_npc melee))
-	cp972_7 = ex.V[7]
+	cp1035_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 187)
 	// (enemy_attacking ?inp_enemy)
 	// (enemy_attacking ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 188)
 		table := &ex.FactTables[5][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12557,30 +19116,38 @@ L959:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L975
+			goto L1038
 		}
-		goto L973
+		goto L1036
 	}
-L975:
+L1038:
 	// (stamina ?inp_npc ?amount)
-	cp977_7 = ex.V[7]
-	fc978 = 0
-L979:
-	fc978++
-	if !factChoice189(ex, fc978-1) {
-		goto L976
+	cp1040_7 = ex.V[7]
+	fc1041 = 0
+L1042:
+	ex.DebugBeginCondition(&definition, 189)
+	fc1041++
+	if !factChoice189(ex, fc1041-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1039
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (>= ?amount 30)
 	// (>= ?amount 30)
+	ex.DebugBeginCondition(&definition, 190)
 	if planner.Compare(ex.V[7], sv66, 5) {
-		goto L982
+		ex.DebugEndCondition(&definition, true)
+		goto L1045
 	}
-	goto L980
-L982:
+	ex.DebugEndCondition(&definition, false)
+	goto L1043
+L1045:
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 191)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12594,38 +19161,47 @@ L982:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L985
+			goto L1048
 		}
-		goto L983
+		goto L1046
 	}
-L985:
-	goto L969
-L983:
-	goto L980
-L980:
-	goto L978
-L978:
-	ex.V[7] = cp977_7
-	cp977_7 = ex.V[7]
-	goto L979
-L976:
-	ex.V[7] = cp977_7
-	goto L973
-L973:
-	goto L971
-L971:
-	ex.V[7] = cp972_7
-	goto L970
-L970:
+L1048:
+	ex.DebugEndCondition(&definition, true)
+	goto L1032
+L1046:
+	goto L1043
+L1043:
+	goto L1041
+L1041:
+	ex.V[7] = cp1040_7
+	cp1040_7 = ex.V[7]
+	goto L1042
+L1039:
+	ex.V[7] = cp1040_7
+	goto L1036
+L1036:
+	goto L1034
+L1034:
+	ex.V[7] = cp1035_7
+	ex.DebugEndCondition(&definition, false)
+	goto L1033
+L1033:
 	ex.ReleaseRetry(frame)
-	goto L960
-L969:
+	ex.DebugEndBranch(&definition, false)
+	goto L1023
+L1032:
 	if !ex.PushBranch(&bc65) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L986:
+	ex.DebugCapturePendingTask(153)
+	ex.DebugCapturePendingTask(152)
+	ex.DebugCapturePendingTask(151)
+L1050:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -12633,30 +19209,38 @@ L986:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L964
+		goto L1027
 	}
-	goto L987
-L964:
+	goto L1051
+L1027:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms10)
-		goto L960
+		ex.DebugEndBranch(&definition, false)
+		goto L1023
 	}
-	goto L986
-L987:
+	goto L1050
+L1051:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L960:
+L1023:
 	// branch heavy_strike
 	ex.SaveRetry(frame, ms10)
+	ex.DebugBeginBranch(&definition, 66)
 	// (and (enemy_staggered ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 45) (weapon_equipped ?inp_npc melee))
-	cp991_7 = ex.V[7]
+	cp1055_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 192)
 	// (enemy_staggered ?inp_enemy)
 	// (enemy_staggered ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 193)
 		table := &ex.FactTables[8][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12667,30 +19251,38 @@ L960:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L994
+			goto L1058
 		}
-		goto L992
+		goto L1056
 	}
-L994:
+L1058:
 	// (stamina ?inp_npc ?amount)
-	cp996_7 = ex.V[7]
-	fc997 = 0
-L998:
-	fc997++
-	if !factChoice194(ex, fc997-1) {
-		goto L995
+	cp1060_7 = ex.V[7]
+	fc1061 = 0
+L1062:
+	ex.DebugBeginCondition(&definition, 194)
+	fc1061++
+	if !factChoice194(ex, fc1061-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1059
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (>= ?amount 45)
 	// (>= ?amount 45)
+	ex.DebugBeginCondition(&definition, 195)
 	if planner.Compare(ex.V[7], sv68, 5) {
-		goto L1001
+		ex.DebugEndCondition(&definition, true)
+		goto L1065
 	}
-	goto L999
-L1001:
+	ex.DebugEndCondition(&definition, false)
+	goto L1063
+L1065:
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 196)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12704,38 +19296,45 @@ L1001:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1004
+			goto L1068
 		}
-		goto L1002
+		goto L1066
 	}
-L1004:
-	goto L988
-L1002:
-	goto L999
-L999:
-	goto L997
-L997:
-	ex.V[7] = cp996_7
-	cp996_7 = ex.V[7]
-	goto L998
-L995:
-	ex.V[7] = cp996_7
-	goto L992
-L992:
-	goto L990
-L990:
-	ex.V[7] = cp991_7
-	goto L989
-L989:
+L1068:
+	ex.DebugEndCondition(&definition, true)
+	goto L1052
+L1066:
+	goto L1063
+L1063:
+	goto L1061
+L1061:
+	ex.V[7] = cp1060_7
+	cp1060_7 = ex.V[7]
+	goto L1062
+L1059:
+	ex.V[7] = cp1060_7
+	goto L1056
+L1056:
+	goto L1054
+L1054:
+	ex.V[7] = cp1055_7
+	ex.DebugEndCondition(&definition, false)
+	goto L1053
+L1053:
 	ex.ReleaseRetry(frame)
-	goto L961
-L988:
+	ex.DebugEndBranch(&definition, false)
+	goto L1024
+L1052:
 	if !ex.PushBranch(&bc66) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1005:
+	ex.DebugCapturePendingTask(154)
+L1070:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -12743,29 +19342,37 @@ L1005:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L965
+		goto L1028
 	}
-	goto L1006
-L965:
+	goto L1071
+L1028:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms10)
-		goto L961
+		ex.DebugEndBranch(&definition, false)
+		goto L1024
 	}
-	goto L1005
-L1006:
+	goto L1070
+L1071:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L961:
+L1024:
 	// branch quick_strike
 	ex.SaveRetry(frame, ms10)
+	ex.DebugBeginBranch(&definition, 67)
 	// (and (weapon_equipped ?inp_npc melee))
+	ex.DebugBeginCondition(&definition, 197)
 	// (weapon_equipped ?inp_npc melee)
 	// (weapon_equipped ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 198)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12779,26 +19386,34 @@ L961:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1013
+			goto L1078
 		}
-		goto L1011
+		goto L1076
 	}
-L1013:
-	goto L1007
-L1011:
-	goto L1009
-L1009:
-	goto L1008
-L1008:
+L1078:
+	ex.DebugEndCondition(&definition, true)
+	goto L1072
+L1076:
+	goto L1074
+L1074:
+	ex.DebugEndCondition(&definition, false)
+	goto L1073
+L1073:
 	ex.ReleaseRetry(frame)
-	goto L962
-L1007:
+	ex.DebugEndBranch(&definition, false)
+	goto L1025
+L1072:
 	if !ex.PushBranch(&bc67) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1014:
+	ex.DebugCapturePendingTask(156)
+	ex.DebugCapturePendingTask(155)
+L1080:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -12806,29 +19421,37 @@ L1014:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L966
+		goto L1029
 	}
-	goto L1015
-L966:
+	goto L1081
+L1029:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms10)
-		goto L962
+		ex.DebugEndBranch(&definition, false)
+		goto L1025
 	}
-	goto L1014
-L1015:
+	goto L1080
+L1081:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L962:
+L1025:
 	// branch draw_melee
 	ex.SaveRetry(frame, ms10)
+	ex.DebugBeginBranch(&definition, 68)
 	// (and (weapon_available ?inp_npc melee))
+	ex.DebugBeginCondition(&definition, 199)
 	// (weapon_available ?inp_npc melee)
 	// (weapon_available ?inp_npc melee)
 	{
+		ex.DebugBeginCondition(&definition, 200)
 		table := &ex.FactTables[9][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -12842,26 +19465,34 @@ L962:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1022
+			goto L1088
 		}
-		goto L1020
+		goto L1086
 	}
-L1022:
-	goto L1016
-L1020:
-	goto L1018
-L1018:
-	goto L1017
-L1017:
+L1088:
+	ex.DebugEndCondition(&definition, true)
+	goto L1082
+L1086:
+	goto L1084
+L1084:
+	ex.DebugEndCondition(&definition, false)
+	goto L1083
+L1083:
 	ex.ReleaseRetry(frame)
-	goto L963
-L1016:
+	ex.DebugEndBranch(&definition, false)
+	goto L1026
+L1082:
 	if !ex.PushBranch(&bc68) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1023:
+	ex.DebugCapturePendingTask(158)
+	ex.DebugCapturePendingTask(157)
+L1090:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -12869,30 +19500,40 @@ L1023:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L967
+		goto L1030
 	}
-	goto L1024
-L967:
+	goto L1091
+L1030:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms10)
-		goto L963
+		ex.DebugEndBranch(&definition, false)
+		goto L1026
 	}
-	goto L1023
-L1024:
+	goto L1090
+L1091:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L963:
+L1026:
 	// branch improvised_defense
-	goto L1025
-L1025:
+	ex.DebugBeginBranch(&definition, 69)
+	goto L1092
+L1092:
 	if !ex.PushBranch(&bc69) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1027:
+	ex.DebugCapturePendingTask(160)
+	ex.DebugCapturePendingTask(159)
+L1094:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -12900,15 +19541,19 @@ L1027:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L968
+		goto L1031
 	}
-	goto L1028
-L968:
+	goto L1095
+L1031:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1027
-L1028:
+	goto L1094
+L1095:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -12916,102 +19561,106 @@ L1028:
 func method11(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1051_3 atom.Atom
-	var cp1051_8 atom.Atom
-	var cp1056_3 atom.Atom
-	var fc1057 uint32
-	var cp1063_8 atom.Atom
-	var fc1064 uint32
-	var cp1074_8 atom.Atom
-	var cp1074_9 atom.Atom
-	var cp1079_9 atom.Atom
-	var fc1080 uint32
-	var cp1092_8 atom.Atom
-	var fc1093 uint32
-	var cp1103_8 atom.Atom
-	var cp1103_9 atom.Atom
-	var cp1111_8 atom.Atom
-	var fc1112 uint32
-	var cp1118_9 atom.Atom
-	var fc1119 uint32
-	var cp1126_8 atom.Atom
-	var cp1134_8 atom.Atom
-	var fc1135 uint32
-	var cp1145_8 atom.Atom
-	var cp1150_8 atom.Atom
-	var fc1151 uint32
-	var cp1167_8 atom.Atom
-	var cp1172_8 atom.Atom
-	var fc1173 uint32
-	var cp1186_8 atom.Atom
-	var cp1191_8 atom.Atom
-	var fc1192 uint32
-	var cp1202_3 atom.Atom
-	var cp1204_3 atom.Atom
-	var fc1205 uint32
-	_ = cp1051_3
-	_ = cp1051_8
-	_ = cp1056_3
-	_ = fc1057
-	_ = cp1063_8
-	_ = fc1064
-	_ = cp1074_8
-	_ = cp1074_9
-	_ = cp1079_9
-	_ = fc1080
-	_ = cp1092_8
-	_ = fc1093
-	_ = cp1103_8
-	_ = cp1103_9
-	_ = cp1111_8
-	_ = fc1112
-	_ = cp1118_9
-	_ = fc1119
-	_ = cp1126_8
-	_ = cp1134_8
-	_ = fc1135
-	_ = cp1145_8
-	_ = cp1150_8
-	_ = fc1151
-	_ = cp1167_8
-	_ = cp1172_8
-	_ = fc1173
-	_ = cp1186_8
-	_ = cp1191_8
-	_ = fc1192
-	_ = cp1202_3
-	_ = cp1204_3
-	_ = fc1205
+	var cp1118_3 atom.Atom
+	var cp1118_8 atom.Atom
+	var cp1123_3 atom.Atom
+	var fc1124 uint32
+	var cp1130_8 atom.Atom
+	var fc1131 uint32
+	var cp1142_8 atom.Atom
+	var cp1142_9 atom.Atom
+	var cp1147_9 atom.Atom
+	var fc1148 uint32
+	var cp1161_8 atom.Atom
+	var fc1162 uint32
+	var cp1173_8 atom.Atom
+	var cp1173_9 atom.Atom
+	var cp1181_8 atom.Atom
+	var fc1182 uint32
+	var cp1188_9 atom.Atom
+	var fc1189 uint32
+	var cp1197_8 atom.Atom
+	var cp1205_8 atom.Atom
+	var fc1206 uint32
+	var cp1217_8 atom.Atom
+	var cp1222_8 atom.Atom
+	var fc1223 uint32
+	var cp1240_8 atom.Atom
+	var cp1245_8 atom.Atom
+	var fc1246 uint32
+	var cp1260_8 atom.Atom
+	var cp1265_8 atom.Atom
+	var fc1266 uint32
+	var cp1277_3 atom.Atom
+	var cp1279_3 atom.Atom
+	var fc1280 uint32
+	_ = cp1118_3
+	_ = cp1118_8
+	_ = cp1123_3
+	_ = fc1124
+	_ = cp1130_8
+	_ = fc1131
+	_ = cp1142_8
+	_ = cp1142_9
+	_ = cp1147_9
+	_ = fc1148
+	_ = cp1161_8
+	_ = fc1162
+	_ = cp1173_8
+	_ = cp1173_9
+	_ = cp1181_8
+	_ = fc1182
+	_ = cp1188_9
+	_ = fc1189
+	_ = cp1197_8
+	_ = cp1205_8
+	_ = fc1206
+	_ = cp1217_8
+	_ = cp1222_8
+	_ = fc1223
+	_ = cp1240_8
+	_ = cp1245_8
+	_ = fc1246
+	_ = cp1260_8
+	_ = cp1265_8
+	_ = fc1266
+	_ = cp1277_3
+	_ = cp1279_3
+	_ = fc1280
 	switch frame.Resume {
 	case 1:
-		goto L1039
+		goto L1106
 	case 2:
-		goto L1040
+		goto L1107
 	case 3:
-		goto L1041
+		goto L1108
 	case 4:
-		goto L1042
+		goto L1109
 	case 5:
-		goto L1043
+		goto L1110
 	case 6:
-		goto L1044
+		goto L1111
 	case 7:
-		goto L1045
+		goto L1112
 	case 8:
-		goto L1046
+		goto L1113
 	case 9:
-		goto L1047
+		goto L1114
 	}
-	goto L1030
-L1030:
+	ex.DebugBeginMethod(&definition, 11)
+	goto L1097
+L1097:
 	// branch flank_suppressed_target
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 70)
 	// (and (enemy_suppressed ?inp_enemy) (flank_route ?inp_npc ?inp_enemy ?route) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp1051_3 = ex.V[3]
-	cp1051_8 = ex.V[8]
+	cp1118_3 = ex.V[3]
+	cp1118_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 201)
 	// (enemy_suppressed ?inp_enemy)
 	// (enemy_suppressed ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 202)
 		table := &ex.FactTables[10][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13022,23 +19671,28 @@ L1030:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1054
+			goto L1121
 		}
-		goto L1052
+		goto L1119
 	}
-L1054:
+L1121:
 	// (flank_route ?inp_npc ?inp_enemy ?route)
-	cp1056_3 = ex.V[3]
-	fc1057 = 0
-L1058:
-	fc1057++
-	if !factChoice203(ex, fc1057-1) {
-		goto L1055
+	cp1123_3 = ex.V[3]
+	fc1124 = 0
+L1125:
+	ex.DebugBeginCondition(&definition, 203)
+	fc1124++
+	if !factChoice203(ex, fc1124-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1122
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 204)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13052,61 +19706,76 @@ L1058:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1061
+			goto L1128
 		}
-		goto L1059
+		goto L1126
 	}
-L1061:
+L1128:
 	// (ammo ?inp_npc ?count)
-	cp1063_8 = ex.V[8]
-	fc1064 = 0
-L1065:
-	fc1064++
-	if !factChoice205(ex, fc1064-1) {
-		goto L1062
+	cp1130_8 = ex.V[8]
+	fc1131 = 0
+L1132:
+	ex.DebugBeginCondition(&definition, 205)
+	fc1131++
+	if !factChoice205(ex, fc1131-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1129
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 206)
 	if planner.Compare(ex.V[8], sv74, 4) {
-		goto L1068
+		ex.DebugEndCondition(&definition, true)
+		goto L1135
 	}
-	goto L1066
-L1068:
-	goto L1048
-L1066:
-	goto L1064
-L1064:
-	ex.V[8] = cp1063_8
-	cp1063_8 = ex.V[8]
-	goto L1065
-L1062:
-	ex.V[8] = cp1063_8
-	goto L1059
-L1059:
-	goto L1057
-L1057:
-	ex.V[3] = cp1056_3
-	cp1056_3 = ex.V[3]
-	goto L1058
-L1055:
-	ex.V[3] = cp1056_3
-	goto L1052
-L1052:
-	goto L1050
-L1050:
-	ex.V[3] = cp1051_3
-	ex.V[8] = cp1051_8
-	goto L1049
-L1049:
+	ex.DebugEndCondition(&definition, false)
+	goto L1133
+L1135:
+	ex.DebugEndCondition(&definition, true)
+	goto L1115
+L1133:
+	goto L1131
+L1131:
+	ex.V[8] = cp1130_8
+	cp1130_8 = ex.V[8]
+	goto L1132
+L1129:
+	ex.V[8] = cp1130_8
+	goto L1126
+L1126:
+	goto L1124
+L1124:
+	ex.V[3] = cp1123_3
+	cp1123_3 = ex.V[3]
+	goto L1125
+L1122:
+	ex.V[3] = cp1123_3
+	goto L1119
+L1119:
+	goto L1117
+L1117:
+	ex.V[3] = cp1118_3
+	ex.V[8] = cp1118_8
+	ex.DebugEndCondition(&definition, false)
+	goto L1116
+L1116:
 	ex.ReleaseRetry(frame)
-	goto L1031
-L1048:
+	ex.DebugEndBranch(&definition, false)
+	goto L1098
+L1115:
 	if !ex.PushBranch(&bc70) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1069:
+	ex.DebugCapturePendingTask(163)
+	ex.DebugCapturePendingTask(162)
+	ex.DebugCapturePendingTask(161)
+L1137:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -13114,31 +19783,39 @@ L1069:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1039
+		goto L1106
 	}
-	goto L1070
-L1039:
+	goto L1138
+L1106:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1031
+		ex.DebugEndBranch(&definition, false)
+		goto L1098
 	}
-	goto L1069
-L1070:
+	goto L1137
+L1138:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1031:
+L1098:
 	// branch take_cover_and_fire
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 71)
 	// (and (under_fire ?inp_npc) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp1074_8 = ex.V[8]
-	cp1074_9 = ex.V[9]
+	cp1142_8 = ex.V[8]
+	cp1142_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 207)
 	// (under_fire ?inp_npc)
 	// (under_fire ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 208)
 		table := &ex.FactTables[0][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13149,24 +19826,30 @@ L1031:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1077
+			goto L1145
 		}
-		goto L1075
+		goto L1143
 	}
-L1077:
+L1145:
 	// (cover_available ?inp_npc ?cover)
-	cp1079_9 = ex.V[9]
-	fc1080 = 0
-L1081:
-	fc1080++
-	if !factChoice209(ex, fc1080-1) {
-		goto L1078
+	cp1147_9 = ex.V[9]
+	fc1148 = 0
+L1149:
+	ex.DebugBeginCondition(&definition, 209)
+	fc1148++
+	if !factChoice209(ex, fc1148-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1146
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (cover_compromised ?cover))
+	ex.DebugBeginCondition(&definition, 210)
 	// (cover_compromised ?cover)
 	// (cover_compromised ?cover)
 	{
+		ex.DebugBeginCondition(&definition, 211)
 		table := &ex.FactTables[14][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13177,19 +19860,22 @@ L1081:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1087
+			goto L1155
 		}
-		goto L1085
+		goto L1153
 	}
-L1087:
-	goto L1082
-L1085:
-	goto L1084
-L1084:
+L1155:
+	goto L1150
+L1153:
+	goto L1152
+L1152:
+	ex.DebugEndCondition(&definition, true)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 212)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13203,63 +19889,82 @@ L1084:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1090
+			goto L1159
 		}
-		goto L1088
+		goto L1157
 	}
-L1090:
+L1159:
 	// (ammo ?inp_npc ?count)
-	cp1092_8 = ex.V[8]
-	fc1093 = 0
-L1094:
-	fc1093++
-	if !factChoice213(ex, fc1093-1) {
-		goto L1091
+	cp1161_8 = ex.V[8]
+	fc1162 = 0
+L1163:
+	ex.DebugBeginCondition(&definition, 213)
+	fc1162++
+	if !factChoice213(ex, fc1162-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1160
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 214)
 	if planner.Compare(ex.V[8], sv76, 4) {
-		goto L1097
+		ex.DebugEndCondition(&definition, true)
+		goto L1166
 	}
-	goto L1095
-L1097:
-	goto L1071
-L1095:
-	goto L1093
-L1093:
-	ex.V[8] = cp1092_8
-	cp1092_8 = ex.V[8]
-	goto L1094
-L1091:
-	ex.V[8] = cp1092_8
-	goto L1088
-L1088:
-	goto L1082
-L1082:
-	goto L1080
-L1080:
-	ex.V[9] = cp1079_9
-	cp1079_9 = ex.V[9]
-	goto L1081
-L1078:
-	ex.V[9] = cp1079_9
-	goto L1075
-L1075:
-	goto L1073
-L1073:
-	ex.V[8] = cp1074_8
-	ex.V[9] = cp1074_9
-	goto L1072
-L1072:
+	ex.DebugEndCondition(&definition, false)
+	goto L1164
+L1166:
+	ex.DebugEndCondition(&definition, true)
+	goto L1139
+L1164:
+	goto L1162
+L1162:
+	ex.V[8] = cp1161_8
+	cp1161_8 = ex.V[8]
+	goto L1163
+L1160:
+	ex.V[8] = cp1161_8
+	goto L1157
+L1157:
+	goto L1156
+L1156:
+	ex.DebugBeginCondition(&definition, 210)
+	goto L1150
+L1150:
+	ex.DebugEndCondition(&definition, false)
+	goto L1148
+L1148:
+	ex.V[9] = cp1147_9
+	cp1147_9 = ex.V[9]
+	goto L1149
+L1146:
+	ex.V[9] = cp1147_9
+	goto L1143
+L1143:
+	goto L1141
+L1141:
+	ex.V[8] = cp1142_8
+	ex.V[9] = cp1142_9
+	ex.DebugEndCondition(&definition, false)
+	goto L1140
+L1140:
 	ex.ReleaseRetry(frame)
-	goto L1032
-L1071:
+	ex.DebugEndBranch(&definition, false)
+	goto L1099
+L1139:
 	if !ex.PushBranch(&bc71) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1098:
+	ex.DebugCapturePendingTask(166)
+	ex.DebugCapturePendingTask(165)
+	ex.DebugCapturePendingTask(164)
+L1168:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -13267,31 +19972,39 @@ L1098:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1040
+		goto L1107
 	}
-	goto L1099
-L1040:
+	goto L1169
+L1107:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1032
+		ex.DebugEndBranch(&definition, false)
+		goto L1099
 	}
-	goto L1098
-L1099:
+	goto L1168
+L1169:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1032:
+L1099:
 	// branch reload_in_cover
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 72)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0) (cover_available ?inp_npc ?cover))
-	cp1103_8 = ex.V[8]
-	cp1103_9 = ex.V[9]
+	cp1173_8 = ex.V[8]
+	cp1173_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 215)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 216)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13305,15 +20018,17 @@ L1032:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1106
+			goto L1176
 		}
-		goto L1104
+		goto L1174
 	}
-L1106:
+L1176:
 	// (ammo ?inp_npc 0)
 	// (ammo ?inp_npc 0)
 	{
+		ex.DebugBeginCondition(&definition, 217)
 		table := &ex.FactTables[12][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13327,64 +20042,81 @@ L1106:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1109
+			goto L1179
 		}
-		goto L1107
+		goto L1177
 	}
-L1109:
+L1179:
 	// (reserve_ammo ?inp_npc ?count)
-	cp1111_8 = ex.V[8]
-	fc1112 = 0
-L1113:
-	fc1112++
-	if !factChoice218(ex, fc1112-1) {
-		goto L1110
+	cp1181_8 = ex.V[8]
+	fc1182 = 0
+L1183:
+	ex.DebugBeginCondition(&definition, 218)
+	fc1182++
+	if !factChoice218(ex, fc1182-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1180
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 219)
 	if planner.Compare(ex.V[8], sv79, 4) {
-		goto L1116
+		ex.DebugEndCondition(&definition, true)
+		goto L1186
 	}
-	goto L1114
-L1116:
+	ex.DebugEndCondition(&definition, false)
+	goto L1184
+L1186:
 	// (cover_available ?inp_npc ?cover)
-	cp1118_9 = ex.V[9]
-	fc1119 = 0
-	fc1119++
-	if !factChoice220(ex, fc1119-1) {
-		goto L1117
+	cp1188_9 = ex.V[9]
+	fc1189 = 0
+	ex.DebugBeginCondition(&definition, 220)
+	fc1189++
+	if !factChoice220(ex, fc1189-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1187
 	}
-	goto L1100
-L1117:
-	ex.V[9] = cp1118_9
-	goto L1114
-L1114:
-	goto L1112
-L1112:
-	ex.V[8] = cp1111_8
-	cp1111_8 = ex.V[8]
-	goto L1113
-L1110:
-	ex.V[8] = cp1111_8
-	goto L1107
-L1107:
-	goto L1104
-L1104:
-	goto L1102
-L1102:
-	ex.V[8] = cp1103_8
-	ex.V[9] = cp1103_9
-	goto L1101
-L1101:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1170
+L1187:
+	ex.V[9] = cp1188_9
+	goto L1184
+L1184:
+	goto L1182
+L1182:
+	ex.V[8] = cp1181_8
+	cp1181_8 = ex.V[8]
+	goto L1183
+L1180:
+	ex.V[8] = cp1181_8
+	goto L1177
+L1177:
+	goto L1174
+L1174:
+	goto L1172
+L1172:
+	ex.V[8] = cp1173_8
+	ex.V[9] = cp1173_9
+	ex.DebugEndCondition(&definition, false)
+	goto L1171
+L1171:
 	ex.ReleaseRetry(frame)
-	goto L1033
-L1100:
+	ex.DebugEndBranch(&definition, false)
+	goto L1100
+L1170:
 	if !ex.PushBranch(&bc72) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1121:
+	ex.DebugCapturePendingTask(168)
+	ex.DebugCapturePendingTask(167)
+L1192:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -13392,30 +20124,38 @@ L1121:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1041
+		goto L1108
 	}
-	goto L1122
-L1041:
+	goto L1193
+L1108:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1033
+		ex.DebugEndBranch(&definition, false)
+		goto L1100
 	}
-	goto L1121
-L1122:
+	goto L1192
+L1193:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1033:
+L1100:
 	// branch reload
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 73)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0))
-	cp1126_8 = ex.V[8]
+	cp1197_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 221)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 222)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13429,15 +20169,17 @@ L1033:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1129
+			goto L1200
 		}
-		goto L1127
+		goto L1198
 	}
-L1129:
+L1200:
 	// (ammo ?inp_npc 0)
 	// (ammo ?inp_npc 0)
 	{
+		ex.DebugBeginCondition(&definition, 223)
 		table := &ex.FactTables[12][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13451,53 +20193,66 @@ L1129:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1132
+			goto L1203
 		}
-		goto L1130
+		goto L1201
 	}
-L1132:
+L1203:
 	// (reserve_ammo ?inp_npc ?count)
-	cp1134_8 = ex.V[8]
-	fc1135 = 0
-L1136:
-	fc1135++
-	if !factChoice224(ex, fc1135-1) {
-		goto L1133
+	cp1205_8 = ex.V[8]
+	fc1206 = 0
+L1207:
+	ex.DebugBeginCondition(&definition, 224)
+	fc1206++
+	if !factChoice224(ex, fc1206-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1204
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 225)
 	if planner.Compare(ex.V[8], sv83, 4) {
-		goto L1139
+		ex.DebugEndCondition(&definition, true)
+		goto L1210
 	}
-	goto L1137
-L1139:
-	goto L1123
-L1137:
-	goto L1135
-L1135:
-	ex.V[8] = cp1134_8
-	cp1134_8 = ex.V[8]
-	goto L1136
-L1133:
-	ex.V[8] = cp1134_8
-	goto L1130
-L1130:
-	goto L1127
-L1127:
-	goto L1125
-L1125:
-	ex.V[8] = cp1126_8
-	goto L1124
-L1124:
+	ex.DebugEndCondition(&definition, false)
+	goto L1208
+L1210:
+	ex.DebugEndCondition(&definition, true)
+	goto L1194
+L1208:
+	goto L1206
+L1206:
+	ex.V[8] = cp1205_8
+	cp1205_8 = ex.V[8]
+	goto L1207
+L1204:
+	ex.V[8] = cp1205_8
+	goto L1201
+L1201:
+	goto L1198
+L1198:
+	goto L1196
+L1196:
+	ex.V[8] = cp1197_8
+	ex.DebugEndCondition(&definition, false)
+	goto L1195
+L1195:
 	ex.ReleaseRetry(frame)
-	goto L1034
-L1123:
+	ex.DebugEndBranch(&definition, false)
+	goto L1101
+L1194:
 	if !ex.PushBranch(&bc73) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1140:
+	ex.DebugCapturePendingTask(169)
+L1212:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -13505,30 +20260,38 @@ L1140:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1042
+		goto L1109
 	}
-	goto L1141
-L1042:
+	goto L1213
+L1109:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1034
+		ex.DebugEndBranch(&definition, false)
+		goto L1101
 	}
-	goto L1140
-L1141:
+	goto L1212
+L1213:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1034:
+L1101:
 	// branch precision_shot
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 74)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (>= ?inp_distance 30) (clear_shot ?inp_npc ?inp_enemy))
-	cp1145_8 = ex.V[8]
+	cp1217_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 226)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 227)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13542,37 +20305,48 @@ L1034:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1148
+			goto L1220
 		}
-		goto L1146
+		goto L1218
 	}
-L1148:
+L1220:
 	// (ammo ?inp_npc ?count)
-	cp1150_8 = ex.V[8]
-	fc1151 = 0
-L1152:
-	fc1151++
-	if !factChoice228(ex, fc1151-1) {
-		goto L1149
+	cp1222_8 = ex.V[8]
+	fc1223 = 0
+L1224:
+	ex.DebugBeginCondition(&definition, 228)
+	fc1223++
+	if !factChoice228(ex, fc1223-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1221
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 229)
 	if planner.Compare(ex.V[8], sv86, 4) {
-		goto L1155
+		ex.DebugEndCondition(&definition, true)
+		goto L1227
 	}
-	goto L1153
-L1155:
+	ex.DebugEndCondition(&definition, false)
+	goto L1225
+L1227:
 	// (>= ?inp_distance 30)
 	// (>= ?inp_distance 30)
+	ex.DebugBeginCondition(&definition, 230)
 	if planner.Compare(ex.V[5], sv87, 5) {
-		goto L1158
+		ex.DebugEndCondition(&definition, true)
+		goto L1230
 	}
-	goto L1156
-L1158:
+	ex.DebugEndCondition(&definition, false)
+	goto L1228
+L1230:
 	// (clear_shot ?inp_npc ?inp_enemy)
 	// (clear_shot ?inp_npc ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 231)
 		table := &ex.FactTables[16][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13586,40 +20360,48 @@ L1158:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1161
+			goto L1233
 		}
-		goto L1159
+		goto L1231
 	}
-L1161:
-	goto L1142
-L1159:
-	goto L1156
-L1156:
-	goto L1153
-L1153:
-	goto L1151
-L1151:
-	ex.V[8] = cp1150_8
-	cp1150_8 = ex.V[8]
-	goto L1152
-L1149:
-	ex.V[8] = cp1150_8
-	goto L1146
-L1146:
-	goto L1144
-L1144:
-	ex.V[8] = cp1145_8
-	goto L1143
-L1143:
+L1233:
+	ex.DebugEndCondition(&definition, true)
+	goto L1214
+L1231:
+	goto L1228
+L1228:
+	goto L1225
+L1225:
+	goto L1223
+L1223:
+	ex.V[8] = cp1222_8
+	cp1222_8 = ex.V[8]
+	goto L1224
+L1221:
+	ex.V[8] = cp1222_8
+	goto L1218
+L1218:
+	goto L1216
+L1216:
+	ex.V[8] = cp1217_8
+	ex.DebugEndCondition(&definition, false)
+	goto L1215
+L1215:
 	ex.ReleaseRetry(frame)
-	goto L1035
-L1142:
+	ex.DebugEndBranch(&definition, false)
+	goto L1102
+L1214:
 	if !ex.PushBranch(&bc74) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1162:
+	ex.DebugCapturePendingTask(171)
+	ex.DebugCapturePendingTask(170)
+L1235:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -13627,30 +20409,38 @@ L1162:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1043
+		goto L1110
 	}
-	goto L1163
-L1043:
+	goto L1236
+L1110:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1035
+		ex.DebugEndBranch(&definition, false)
+		goto L1102
 	}
-	goto L1162
-L1163:
+	goto L1235
+L1236:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1035:
+L1102:
 	// branch controlled_burst
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 75)
 	// (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (clear_shot ?inp_npc ?inp_enemy))
-	cp1167_8 = ex.V[8]
+	cp1240_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 232)
 	// (weapon_equipped ?inp_npc ranged)
 	// (weapon_equipped ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 233)
 		table := &ex.FactTables[7][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13664,30 +20454,38 @@ L1035:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1170
+			goto L1243
 		}
-		goto L1168
+		goto L1241
 	}
-L1170:
+L1243:
 	// (ammo ?inp_npc ?count)
-	cp1172_8 = ex.V[8]
-	fc1173 = 0
-L1174:
-	fc1173++
-	if !factChoice234(ex, fc1173-1) {
-		goto L1171
+	cp1245_8 = ex.V[8]
+	fc1246 = 0
+L1247:
+	ex.DebugBeginCondition(&definition, 234)
+	fc1246++
+	if !factChoice234(ex, fc1246-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1244
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 235)
 	if planner.Compare(ex.V[8], sv89, 4) {
-		goto L1177
+		ex.DebugEndCondition(&definition, true)
+		goto L1250
 	}
-	goto L1175
-L1177:
+	ex.DebugEndCondition(&definition, false)
+	goto L1248
+L1250:
 	// (clear_shot ?inp_npc ?inp_enemy)
 	// (clear_shot ?inp_npc ?inp_enemy)
 	{
+		ex.DebugBeginCondition(&definition, 236)
 		table := &ex.FactTables[16][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13701,38 +20499,46 @@ L1177:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1180
+			goto L1253
 		}
-		goto L1178
+		goto L1251
 	}
-L1180:
-	goto L1164
-L1178:
-	goto L1175
-L1175:
-	goto L1173
-L1173:
-	ex.V[8] = cp1172_8
-	cp1172_8 = ex.V[8]
-	goto L1174
-L1171:
-	ex.V[8] = cp1172_8
-	goto L1168
-L1168:
-	goto L1166
-L1166:
-	ex.V[8] = cp1167_8
-	goto L1165
-L1165:
+L1253:
+	ex.DebugEndCondition(&definition, true)
+	goto L1237
+L1251:
+	goto L1248
+L1248:
+	goto L1246
+L1246:
+	ex.V[8] = cp1245_8
+	cp1245_8 = ex.V[8]
+	goto L1247
+L1244:
+	ex.V[8] = cp1245_8
+	goto L1241
+L1241:
+	goto L1239
+L1239:
+	ex.V[8] = cp1240_8
+	ex.DebugEndCondition(&definition, false)
+	goto L1238
+L1238:
 	ex.ReleaseRetry(frame)
-	goto L1036
-L1164:
+	ex.DebugEndBranch(&definition, false)
+	goto L1103
+L1237:
 	if !ex.PushBranch(&bc75) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1181:
+	ex.DebugCapturePendingTask(173)
+	ex.DebugCapturePendingTask(172)
+L1255:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -13740,30 +20546,38 @@ L1181:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1044
+		goto L1111
 	}
-	goto L1182
-L1044:
+	goto L1256
+L1111:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1036
+		ex.DebugEndBranch(&definition, false)
+		goto L1103
 	}
-	goto L1181
-L1182:
+	goto L1255
+L1256:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1036:
+L1103:
 	// branch switch_to_ranged
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 76)
 	// (and (weapon_available ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-	cp1186_8 = ex.V[8]
+	cp1260_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 237)
 	// (weapon_available ?inp_npc ranged)
 	// (weapon_available ?inp_npc ranged)
 	{
+		ex.DebugBeginCondition(&definition, 238)
 		table := &ex.FactTables[9][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -13777,51 +20591,66 @@ L1036:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1189
+			goto L1263
 		}
-		goto L1187
+		goto L1261
 	}
-L1189:
+L1263:
 	// (ammo ?inp_npc ?count)
-	cp1191_8 = ex.V[8]
-	fc1192 = 0
-L1193:
-	fc1192++
-	if !factChoice239(ex, fc1192-1) {
-		goto L1190
+	cp1265_8 = ex.V[8]
+	fc1266 = 0
+L1267:
+	ex.DebugBeginCondition(&definition, 239)
+	fc1266++
+	if !factChoice239(ex, fc1266-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1264
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (> ?count 0)
 	// (> ?count 0)
+	ex.DebugBeginCondition(&definition, 240)
 	if planner.Compare(ex.V[8], sv91, 4) {
-		goto L1196
+		ex.DebugEndCondition(&definition, true)
+		goto L1270
 	}
-	goto L1194
-L1196:
-	goto L1183
-L1194:
-	goto L1192
-L1192:
-	ex.V[8] = cp1191_8
-	cp1191_8 = ex.V[8]
-	goto L1193
-L1190:
-	ex.V[8] = cp1191_8
-	goto L1187
-L1187:
-	goto L1185
-L1185:
-	ex.V[8] = cp1186_8
-	goto L1184
-L1184:
+	ex.DebugEndCondition(&definition, false)
+	goto L1268
+L1270:
+	ex.DebugEndCondition(&definition, true)
+	goto L1257
+L1268:
+	goto L1266
+L1266:
+	ex.V[8] = cp1265_8
+	cp1265_8 = ex.V[8]
+	goto L1267
+L1264:
+	ex.V[8] = cp1265_8
+	goto L1261
+L1261:
+	goto L1259
+L1259:
+	ex.V[8] = cp1260_8
+	ex.DebugEndCondition(&definition, false)
+	goto L1258
+L1258:
 	ex.ReleaseRetry(frame)
-	goto L1037
-L1183:
+	ex.DebugEndBranch(&definition, false)
+	goto L1104
+L1257:
 	if !ex.PushBranch(&bc76) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1197:
+	ex.DebugCapturePendingTask(176)
+	ex.DebugCapturePendingTask(175)
+	ex.DebugCapturePendingTask(174)
+L1272:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -13829,50 +20658,67 @@ L1197:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1045
+		goto L1112
 	}
-	goto L1198
-L1045:
+	goto L1273
+L1112:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1037
+		ex.DebugEndBranch(&definition, false)
+		goto L1104
 	}
-	goto L1197
-L1198:
+	goto L1272
+L1273:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1037:
+L1104:
 	// branch close_distance
 	ex.SaveRetry(frame, ms11)
+	ex.DebugBeginBranch(&definition, 77)
 	// (and (advance_route ?inp_npc ?inp_enemy ?route))
-	cp1202_3 = ex.V[3]
+	cp1277_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 241)
 	// (advance_route ?inp_npc ?inp_enemy ?route)
-	cp1204_3 = ex.V[3]
-	fc1205 = 0
-	fc1205++
-	if !factChoice242(ex, fc1205-1) {
-		goto L1203
+	cp1279_3 = ex.V[3]
+	fc1280 = 0
+	ex.DebugBeginCondition(&definition, 242)
+	fc1280++
+	if !factChoice242(ex, fc1280-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1278
 	}
-	goto L1199
-L1203:
-	ex.V[3] = cp1204_3
-	goto L1201
-L1201:
-	ex.V[3] = cp1202_3
-	goto L1200
-L1200:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1274
+L1278:
+	ex.V[3] = cp1279_3
+	goto L1276
+L1276:
+	ex.V[3] = cp1277_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1275
+L1275:
 	ex.ReleaseRetry(frame)
-	goto L1038
-L1199:
+	ex.DebugEndBranch(&definition, false)
+	goto L1105
+L1274:
 	if !ex.PushBranch(&bc77) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1207:
+	ex.DebugCapturePendingTask(178)
+	ex.DebugCapturePendingTask(177)
+L1283:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -13880,30 +20726,40 @@ L1207:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1046
+		goto L1113
 	}
-	goto L1208
-L1046:
+	goto L1284
+L1113:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms11)
-		goto L1038
+		ex.DebugEndBranch(&definition, false)
+		goto L1105
 	}
-	goto L1207
-L1208:
+	goto L1283
+L1284:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1038:
+L1105:
 	// branch defensive_fallback
-	goto L1209
-L1209:
+	ex.DebugBeginBranch(&definition, 78)
+	goto L1285
+L1285:
 	if !ex.PushBranch(&bc78) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1211:
+	ex.DebugCapturePendingTask(180)
+	ex.DebugCapturePendingTask(179)
+L1287:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 9
@@ -13911,15 +20767,19 @@ L1211:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1047
+		goto L1114
 	}
-	goto L1212
-L1047:
+	goto L1288
+L1114:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1211
-L1212:
+	goto L1287
+L1288:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -13927,84 +20787,102 @@ L1212:
 func method12(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1231_12 atom.Atom
-	var cp1236_12 atom.Atom
-	var fc1237 uint32
-	var cp1244_9 atom.Atom
-	var cp1249_9 atom.Atom
-	var fc1250 uint32
-	var cp1272_3 atom.Atom
-	var cp1277_3 atom.Atom
-	var fc1278 uint32
-	var cp1294_3 atom.Atom
-	var cp1299_3 atom.Atom
-	var fc1300 uint32
-	_ = cp1231_12
-	_ = cp1236_12
-	_ = fc1237
-	_ = cp1244_9
-	_ = cp1249_9
-	_ = fc1250
-	_ = cp1272_3
-	_ = cp1277_3
-	_ = fc1278
-	_ = cp1294_3
-	_ = cp1299_3
-	_ = fc1300
+	var cp1307_12 atom.Atom
+	var cp1312_12 atom.Atom
+	var fc1313 uint32
+	var cp1321_9 atom.Atom
+	var cp1326_9 atom.Atom
+	var fc1327 uint32
+	var cp1352_3 atom.Atom
+	var cp1357_3 atom.Atom
+	var fc1358 uint32
+	var cp1376_3 atom.Atom
+	var cp1381_3 atom.Atom
+	var fc1382 uint32
+	_ = cp1307_12
+	_ = cp1312_12
+	_ = fc1313
+	_ = cp1321_9
+	_ = cp1326_9
+	_ = fc1327
+	_ = cp1352_3
+	_ = cp1357_3
+	_ = fc1358
+	_ = cp1376_3
+	_ = cp1381_3
+	_ = fc1382
 	switch frame.Resume {
 	case 1:
-		goto L1221
+		goto L1297
 	case 2:
-		goto L1222
+		goto L1298
 	case 3:
-		goto L1223
+		goto L1299
 	case 4:
-		goto L1224
+		goto L1300
 	case 5:
-		goto L1225
+		goto L1301
 	case 6:
-		goto L1226
+		goto L1302
 	case 7:
-		goto L1227
+		goto L1303
 	}
-	goto L1214
-L1214:
+	ex.DebugBeginMethod(&definition, 12)
+	goto L1290
+L1290:
 	// branch radio_contact
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 79)
 	// (and (== ?inp_stimulus radio) (squad_alert ?inp_npc ?report))
-	cp1231_12 = ex.V[12]
+	cp1307_12 = ex.V[12]
+	ex.DebugBeginCondition(&definition, 243)
 	// (== ?inp_stimulus radio)
 	// (== ?inp_stimulus radio)
+	ex.DebugBeginCondition(&definition, 244)
 	if planner.Compare(ex.V[10], sv93, 0) {
-		goto L1234
+		ex.DebugEndCondition(&definition, true)
+		goto L1310
 	}
-	goto L1232
-L1234:
+	ex.DebugEndCondition(&definition, false)
+	goto L1308
+L1310:
 	// (squad_alert ?inp_npc ?report)
-	cp1236_12 = ex.V[12]
-	fc1237 = 0
-	fc1237++
-	if !factChoice245(ex, fc1237-1) {
-		goto L1235
+	cp1312_12 = ex.V[12]
+	fc1313 = 0
+	ex.DebugBeginCondition(&definition, 245)
+	fc1313++
+	if !factChoice245(ex, fc1313-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1311
 	}
-	goto L1228
-L1235:
-	ex.V[12] = cp1236_12
-	goto L1232
-L1232:
-	goto L1230
-L1230:
-	ex.V[12] = cp1231_12
-	goto L1229
-L1229:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1304
+L1311:
+	ex.V[12] = cp1312_12
+	goto L1308
+L1308:
+	goto L1306
+L1306:
+	ex.V[12] = cp1307_12
+	ex.DebugEndCondition(&definition, false)
+	goto L1305
+L1305:
 	ex.ReleaseRetry(frame)
-	goto L1215
-L1228:
+	ex.DebugEndBranch(&definition, false)
+	goto L1291
+L1304:
 	if !ex.PushBranch(&bc79) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1239:
+	ex.DebugCapturePendingTask(184)
+	ex.DebugCapturePendingTask(183)
+	ex.DebugCapturePendingTask(182)
+	ex.DebugCapturePendingTask(181)
+L1316:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -14012,46 +20890,61 @@ L1239:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1221
+		goto L1297
 	}
-	goto L1240
-L1221:
+	goto L1317
+L1297:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1215
+		ex.DebugEndBranch(&definition, false)
+		goto L1291
 	}
-	goto L1239
-L1240:
+	goto L1316
+L1317:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1215:
+L1291:
 	// branch gunshot_with_cover
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 80)
 	// (and (== ?inp_stimulus gunshot) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)))
-	cp1244_9 = ex.V[9]
+	cp1321_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 246)
 	// (== ?inp_stimulus gunshot)
 	// (== ?inp_stimulus gunshot)
+	ex.DebugBeginCondition(&definition, 247)
 	if planner.Compare(ex.V[10], sv94, 0) {
-		goto L1247
+		ex.DebugEndCondition(&definition, true)
+		goto L1324
 	}
-	goto L1245
-L1247:
+	ex.DebugEndCondition(&definition, false)
+	goto L1322
+L1324:
 	// (cover_available ?inp_npc ?cover)
-	cp1249_9 = ex.V[9]
-	fc1250 = 0
-L1251:
-	fc1250++
-	if !factChoice248(ex, fc1250-1) {
-		goto L1248
+	cp1326_9 = ex.V[9]
+	fc1327 = 0
+L1328:
+	ex.DebugBeginCondition(&definition, 248)
+	fc1327++
+	if !factChoice248(ex, fc1327-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1325
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (not (cover_compromised ?cover))
+	ex.DebugBeginCondition(&definition, 249)
 	// (cover_compromised ?cover)
 	// (cover_compromised ?cover)
 	{
+		ex.DebugBeginCondition(&definition, 250)
 		table := &ex.FactTables[14][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -14062,40 +20955,51 @@ L1251:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1257
+			goto L1334
 		}
-		goto L1255
+		goto L1332
 	}
-L1257:
-	goto L1252
-L1255:
-	goto L1254
-L1254:
-	goto L1241
-L1252:
-	goto L1250
-L1250:
-	ex.V[9] = cp1249_9
-	cp1249_9 = ex.V[9]
-	goto L1251
-L1248:
-	ex.V[9] = cp1249_9
-	goto L1245
-L1245:
-	goto L1243
-L1243:
-	ex.V[9] = cp1244_9
-	goto L1242
-L1242:
+L1334:
+	goto L1329
+L1332:
+	goto L1331
+L1331:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1318
+L1329:
+	ex.DebugEndCondition(&definition, false)
+	goto L1327
+L1327:
+	ex.V[9] = cp1326_9
+	cp1326_9 = ex.V[9]
+	goto L1328
+L1325:
+	ex.V[9] = cp1326_9
+	goto L1322
+L1322:
+	goto L1320
+L1320:
+	ex.V[9] = cp1321_9
+	ex.DebugEndCondition(&definition, false)
+	goto L1319
+L1319:
 	ex.ReleaseRetry(frame)
-	goto L1216
-L1241:
+	ex.DebugEndBranch(&definition, false)
+	goto L1292
+L1318:
 	if !ex.PushBranch(&bc80) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1258:
+	ex.DebugCapturePendingTask(187)
+	ex.DebugCapturePendingTask(186)
+	ex.DebugCapturePendingTask(185)
+L1337:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -14103,47 +21007,65 @@ L1258:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1222
+		goto L1298
 	}
-	goto L1259
-L1222:
+	goto L1338
+L1298:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1216
+		ex.DebugEndBranch(&definition, false)
+		goto L1292
 	}
-	goto L1258
-L1259:
+	goto L1337
+L1338:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1216:
+L1292:
 	// branch gunshot
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 81)
 	// (and (== ?inp_stimulus gunshot))
+	ex.DebugBeginCondition(&definition, 251)
 	// (== ?inp_stimulus gunshot)
 	// (== ?inp_stimulus gunshot)
+	ex.DebugBeginCondition(&definition, 252)
 	if planner.Compare(ex.V[10], sv95, 0) {
-		goto L1266
+		ex.DebugEndCondition(&definition, true)
+		goto L1345
 	}
-	goto L1264
-L1266:
-	goto L1260
-L1264:
-	goto L1262
-L1262:
-	goto L1261
-L1261:
+	ex.DebugEndCondition(&definition, false)
+	goto L1343
+L1345:
+	ex.DebugEndCondition(&definition, true)
+	goto L1339
+L1343:
+	goto L1341
+L1341:
+	ex.DebugEndCondition(&definition, false)
+	goto L1340
+L1340:
 	ex.ReleaseRetry(frame)
-	goto L1217
-L1260:
+	ex.DebugEndBranch(&definition, false)
+	goto L1293
+L1339:
 	if !ex.PushBranch(&bc81) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1267:
+	ex.DebugCapturePendingTask(190)
+	ex.DebugCapturePendingTask(189)
+	ex.DebugCapturePendingTask(188)
+L1347:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -14151,59 +21073,80 @@ L1267:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1223
+		goto L1299
 	}
-	goto L1268
-L1223:
+	goto L1348
+L1299:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1217
+		ex.DebugEndBranch(&definition, false)
+		goto L1293
 	}
-	goto L1267
-L1268:
+	goto L1347
+L1348:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1217:
+L1293:
 	// branch footprints
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 82)
 	// (and (== ?inp_stimulus footprints) (track_route ?inp_npc ?inp_location ?route))
-	cp1272_3 = ex.V[3]
+	cp1352_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 253)
 	// (== ?inp_stimulus footprints)
 	// (== ?inp_stimulus footprints)
+	ex.DebugBeginCondition(&definition, 254)
 	if planner.Compare(ex.V[10], sv96, 0) {
-		goto L1275
+		ex.DebugEndCondition(&definition, true)
+		goto L1355
 	}
-	goto L1273
-L1275:
+	ex.DebugEndCondition(&definition, false)
+	goto L1353
+L1355:
 	// (track_route ?inp_npc ?inp_location ?route)
-	cp1277_3 = ex.V[3]
-	fc1278 = 0
-	fc1278++
-	if !factChoice255(ex, fc1278-1) {
-		goto L1276
+	cp1357_3 = ex.V[3]
+	fc1358 = 0
+	ex.DebugBeginCondition(&definition, 255)
+	fc1358++
+	if !factChoice255(ex, fc1358-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1356
 	}
-	goto L1269
-L1276:
-	ex.V[3] = cp1277_3
-	goto L1273
-L1273:
-	goto L1271
-L1271:
-	ex.V[3] = cp1272_3
-	goto L1270
-L1270:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1349
+L1356:
+	ex.V[3] = cp1357_3
+	goto L1353
+L1353:
+	goto L1351
+L1351:
+	ex.V[3] = cp1352_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1350
+L1350:
 	ex.ReleaseRetry(frame)
-	goto L1218
-L1269:
+	ex.DebugEndBranch(&definition, false)
+	goto L1294
+L1349:
 	if !ex.PushBranch(&bc82) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1280:
+	ex.DebugCapturePendingTask(193)
+	ex.DebugCapturePendingTask(192)
+	ex.DebugCapturePendingTask(191)
+L1361:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -14211,47 +21154,65 @@ L1280:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1224
+		goto L1300
 	}
-	goto L1281
-L1224:
+	goto L1362
+L1300:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1218
+		ex.DebugEndBranch(&definition, false)
+		goto L1294
 	}
-	goto L1280
-L1281:
+	goto L1361
+L1362:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1218:
+L1294:
 	// branch visual_anomaly
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 83)
 	// (and (== ?inp_stimulus anomaly))
+	ex.DebugBeginCondition(&definition, 256)
 	// (== ?inp_stimulus anomaly)
 	// (== ?inp_stimulus anomaly)
+	ex.DebugBeginCondition(&definition, 257)
 	if planner.Compare(ex.V[10], sv97, 0) {
-		goto L1288
+		ex.DebugEndCondition(&definition, true)
+		goto L1369
 	}
-	goto L1286
-L1288:
-	goto L1282
-L1286:
-	goto L1284
-L1284:
-	goto L1283
-L1283:
+	ex.DebugEndCondition(&definition, false)
+	goto L1367
+L1369:
+	ex.DebugEndCondition(&definition, true)
+	goto L1363
+L1367:
+	goto L1365
+L1365:
+	ex.DebugEndCondition(&definition, false)
+	goto L1364
+L1364:
 	ex.ReleaseRetry(frame)
-	goto L1219
-L1282:
+	ex.DebugEndBranch(&definition, false)
+	goto L1295
+L1363:
 	if !ex.PushBranch(&bc83) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1289:
+	ex.DebugCapturePendingTask(196)
+	ex.DebugCapturePendingTask(195)
+	ex.DebugCapturePendingTask(194)
+L1371:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -14259,30 +21220,38 @@ L1289:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1225
+		goto L1301
 	}
-	goto L1290
-L1225:
+	goto L1372
+L1301:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1219
+		ex.DebugEndBranch(&definition, false)
+		goto L1295
 	}
-	goto L1289
-L1290:
+	goto L1371
+L1372:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1219:
+L1295:
 	// branch blocked_route
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 84)
 	// (and (route_blocked_to ?inp_npc ?inp_location) (alternate_investigation_route ?inp_npc ?inp_location ?route))
-	cp1294_3 = ex.V[3]
+	cp1376_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 258)
 	// (route_blocked_to ?inp_npc ?inp_location)
 	// (route_blocked_to ?inp_npc ?inp_location)
 	{
+		ex.DebugBeginCondition(&definition, 259)
 		table := &ex.FactTables[20][2]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -14296,37 +21265,48 @@ L1219:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1297
+			goto L1379
 		}
-		goto L1295
+		goto L1377
 	}
-L1297:
+L1379:
 	// (alternate_investigation_route ?inp_npc ?inp_location ?route)
-	cp1299_3 = ex.V[3]
-	fc1300 = 0
-	fc1300++
-	if !factChoice260(ex, fc1300-1) {
-		goto L1298
+	cp1381_3 = ex.V[3]
+	fc1382 = 0
+	ex.DebugBeginCondition(&definition, 260)
+	fc1382++
+	if !factChoice260(ex, fc1382-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1380
 	}
-	goto L1291
-L1298:
-	ex.V[3] = cp1299_3
-	goto L1295
-L1295:
-	goto L1293
-L1293:
-	ex.V[3] = cp1294_3
-	goto L1292
-L1292:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1373
+L1380:
+	ex.V[3] = cp1381_3
+	goto L1377
+L1377:
+	goto L1375
+L1375:
+	ex.V[3] = cp1376_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1374
+L1374:
 	ex.ReleaseRetry(frame)
-	goto L1220
-L1291:
+	ex.DebugEndBranch(&definition, false)
+	goto L1296
+L1373:
 	if !ex.PushBranch(&bc84) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1302:
+	ex.DebugCapturePendingTask(198)
+	ex.DebugCapturePendingTask(197)
+L1385:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -14334,30 +21314,42 @@ L1302:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1226
+		goto L1302
 	}
-	goto L1303
-L1226:
+	goto L1386
+L1302:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L1220
+		ex.DebugEndBranch(&definition, false)
+		goto L1296
 	}
-	goto L1302
-L1303:
+	goto L1385
+L1386:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1220:
+L1296:
 	// branch generic
-	goto L1304
-L1304:
+	ex.DebugBeginBranch(&definition, 85)
+	goto L1387
+L1387:
 	if !ex.PushBranch(&bc85) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1306:
+	ex.DebugCapturePendingTask(202)
+	ex.DebugCapturePendingTask(201)
+	ex.DebugCapturePendingTask(200)
+	ex.DebugCapturePendingTask(199)
+L1389:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -14365,15 +21357,19 @@ L1306:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1227
+		goto L1303
 	}
-	goto L1307
-L1227:
+	goto L1390
+L1303:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1306
-L1307:
+	goto L1389
+L1390:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -14381,79 +21377,93 @@ L1307:
 func method13(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1324_3 atom.Atom
-	var cp1326_3 atom.Atom
-	var fc1327 uint32
-	var cp1334_14 atom.Atom
-	var cp1336_14 atom.Atom
-	var fc1337 uint32
-	var cp1344_3 atom.Atom
-	var cp1346_3 atom.Atom
-	var fc1347 uint32
-	var cp1354_9 atom.Atom
-	var cp1356_9 atom.Atom
-	var fc1357 uint32
-	var cp1364_3 atom.Atom
-	var cp1366_3 atom.Atom
-	var fc1367 uint32
-	_ = cp1324_3
-	_ = cp1326_3
-	_ = fc1327
-	_ = cp1334_14
-	_ = cp1336_14
-	_ = fc1337
-	_ = cp1344_3
-	_ = cp1346_3
-	_ = fc1347
-	_ = cp1354_9
-	_ = cp1356_9
-	_ = fc1357
-	_ = cp1364_3
-	_ = cp1366_3
-	_ = fc1367
+	var cp1407_3 atom.Atom
+	var cp1409_3 atom.Atom
+	var fc1410 uint32
+	var cp1418_14 atom.Atom
+	var cp1420_14 atom.Atom
+	var fc1421 uint32
+	var cp1429_3 atom.Atom
+	var cp1431_3 atom.Atom
+	var fc1432 uint32
+	var cp1440_9 atom.Atom
+	var cp1442_9 atom.Atom
+	var fc1443 uint32
+	var cp1451_3 atom.Atom
+	var cp1453_3 atom.Atom
+	var fc1454 uint32
+	_ = cp1407_3
+	_ = cp1409_3
+	_ = fc1410
+	_ = cp1418_14
+	_ = cp1420_14
+	_ = fc1421
+	_ = cp1429_3
+	_ = cp1431_3
+	_ = fc1432
+	_ = cp1440_9
+	_ = cp1442_9
+	_ = fc1443
+	_ = cp1451_3
+	_ = cp1453_3
+	_ = fc1454
 	switch frame.Resume {
 	case 1:
-		goto L1315
+		goto L1398
 	case 2:
-		goto L1316
+		goto L1399
 	case 3:
-		goto L1317
+		goto L1400
 	case 4:
-		goto L1318
+		goto L1401
 	case 5:
-		goto L1319
+		goto L1402
 	case 6:
-		goto L1320
+		goto L1403
 	}
-	goto L1309
-L1309:
+	ex.DebugBeginMethod(&definition, 13)
+	goto L1392
+L1392:
 	// branch fresh_tracks
 	ex.SaveRetry(frame, ms13)
+	ex.DebugBeginBranch(&definition, 86)
 	// (and (enemy_tracks ?inp_npc ?inp_enemy ?route))
-	cp1324_3 = ex.V[3]
+	cp1407_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 261)
 	// (enemy_tracks ?inp_npc ?inp_enemy ?route)
-	cp1326_3 = ex.V[3]
-	fc1327 = 0
-	fc1327++
-	if !factChoice262(ex, fc1327-1) {
-		goto L1325
+	cp1409_3 = ex.V[3]
+	fc1410 = 0
+	ex.DebugBeginCondition(&definition, 262)
+	fc1410++
+	if !factChoice262(ex, fc1410-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1408
 	}
-	goto L1321
-L1325:
-	ex.V[3] = cp1326_3
-	goto L1323
-L1323:
-	ex.V[3] = cp1324_3
-	goto L1322
-L1322:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1404
+L1408:
+	ex.V[3] = cp1409_3
+	goto L1406
+L1406:
+	ex.V[3] = cp1407_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1405
+L1405:
 	ex.ReleaseRetry(frame)
-	goto L1310
-L1321:
+	ex.DebugEndBranch(&definition, false)
+	goto L1393
+L1404:
 	if !ex.PushBranch(&bc86) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1329:
+	ex.DebugCapturePendingTask(205)
+	ex.DebugCapturePendingTask(204)
+	ex.DebugCapturePendingTask(203)
+L1413:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -14461,50 +21471,68 @@ L1329:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1315
+		goto L1398
 	}
-	goto L1330
-L1315:
+	goto L1414
+L1398:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms13)
-		goto L1310
+		ex.DebugEndBranch(&definition, false)
+		goto L1393
 	}
-	goto L1329
-L1330:
+	goto L1413
+L1414:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1310:
+L1393:
 	// branch heard_escape
 	ex.SaveRetry(frame, ms13)
+	ex.DebugBeginBranch(&definition, 87)
 	// (and (escape_sound ?inp_npc ?inp_enemy ?location))
-	cp1334_14 = ex.V[14]
+	cp1418_14 = ex.V[14]
+	ex.DebugBeginCondition(&definition, 263)
 	// (escape_sound ?inp_npc ?inp_enemy ?location)
-	cp1336_14 = ex.V[14]
-	fc1337 = 0
-	fc1337++
-	if !factChoice264(ex, fc1337-1) {
-		goto L1335
+	cp1420_14 = ex.V[14]
+	fc1421 = 0
+	ex.DebugBeginCondition(&definition, 264)
+	fc1421++
+	if !factChoice264(ex, fc1421-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1419
 	}
-	goto L1331
-L1335:
-	ex.V[14] = cp1336_14
-	goto L1333
-L1333:
-	ex.V[14] = cp1334_14
-	goto L1332
-L1332:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1415
+L1419:
+	ex.V[14] = cp1420_14
+	goto L1417
+L1417:
+	ex.V[14] = cp1418_14
+	ex.DebugEndCondition(&definition, false)
+	goto L1416
+L1416:
 	ex.ReleaseRetry(frame)
-	goto L1311
-L1331:
+	ex.DebugEndBranch(&definition, false)
+	goto L1394
+L1415:
 	if !ex.PushBranch(&bc87) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1339:
+	ex.DebugCapturePendingTask(208)
+	ex.DebugCapturePendingTask(207)
+	ex.DebugCapturePendingTask(206)
+L1424:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -14512,50 +21540,68 @@ L1339:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1316
+		goto L1399
 	}
-	goto L1340
-L1316:
+	goto L1425
+L1399:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms13)
-		goto L1311
+		ex.DebugEndBranch(&definition, false)
+		goto L1394
 	}
-	goto L1339
-L1340:
+	goto L1424
+L1425:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1311:
+L1394:
 	// branch search_with_squad
 	ex.SaveRetry(frame, ms13)
+	ex.DebugBeginBranch(&definition, 88)
 	// (and (squad_search_route ?inp_npc ?inp_enemy ?route))
-	cp1344_3 = ex.V[3]
+	cp1429_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 265)
 	// (squad_search_route ?inp_npc ?inp_enemy ?route)
-	cp1346_3 = ex.V[3]
-	fc1347 = 0
-	fc1347++
-	if !factChoice266(ex, fc1347-1) {
-		goto L1345
+	cp1431_3 = ex.V[3]
+	fc1432 = 0
+	ex.DebugBeginCondition(&definition, 266)
+	fc1432++
+	if !factChoice266(ex, fc1432-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1430
 	}
-	goto L1341
-L1345:
-	ex.V[3] = cp1346_3
-	goto L1343
-L1343:
-	ex.V[3] = cp1344_3
-	goto L1342
-L1342:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1426
+L1430:
+	ex.V[3] = cp1431_3
+	goto L1428
+L1428:
+	ex.V[3] = cp1429_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1427
+L1427:
 	ex.ReleaseRetry(frame)
-	goto L1312
-L1341:
+	ex.DebugEndBranch(&definition, false)
+	goto L1395
+L1426:
 	if !ex.PushBranch(&bc88) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1349:
+	ex.DebugCapturePendingTask(211)
+	ex.DebugCapturePendingTask(210)
+	ex.DebugCapturePendingTask(209)
+L1435:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -14563,50 +21609,68 @@ L1349:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1317
+		goto L1400
 	}
-	goto L1350
-L1317:
+	goto L1436
+L1400:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms13)
-		goto L1312
+		ex.DebugEndBranch(&definition, false)
+		goto L1395
 	}
-	goto L1349
-L1350:
+	goto L1435
+L1436:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1312:
+L1395:
 	// branch last_known_cover
 	ex.SaveRetry(frame, ms13)
+	ex.DebugBeginBranch(&definition, 89)
 	// (and (cover_at ?inp_last_location ?cover))
-	cp1354_9 = ex.V[9]
+	cp1440_9 = ex.V[9]
+	ex.DebugBeginCondition(&definition, 267)
 	// (cover_at ?inp_last_location ?cover)
-	cp1356_9 = ex.V[9]
-	fc1357 = 0
-	fc1357++
-	if !factChoice268(ex, fc1357-1) {
-		goto L1355
+	cp1442_9 = ex.V[9]
+	fc1443 = 0
+	ex.DebugBeginCondition(&definition, 268)
+	fc1443++
+	if !factChoice268(ex, fc1443-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1441
 	}
-	goto L1351
-L1355:
-	ex.V[9] = cp1356_9
-	goto L1353
-L1353:
-	ex.V[9] = cp1354_9
-	goto L1352
-L1352:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1437
+L1441:
+	ex.V[9] = cp1442_9
+	goto L1439
+L1439:
+	ex.V[9] = cp1440_9
+	ex.DebugEndCondition(&definition, false)
+	goto L1438
+L1438:
 	ex.ReleaseRetry(frame)
-	goto L1313
-L1351:
+	ex.DebugEndBranch(&definition, false)
+	goto L1396
+L1437:
 	if !ex.PushBranch(&bc89) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1359:
+	ex.DebugCapturePendingTask(214)
+	ex.DebugCapturePendingTask(213)
+	ex.DebugCapturePendingTask(212)
+L1446:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -14614,50 +21678,67 @@ L1359:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1318
+		goto L1401
 	}
-	goto L1360
-L1318:
+	goto L1447
+L1401:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms13)
-		goto L1313
+		ex.DebugEndBranch(&definition, false)
+		goto L1396
 	}
-	goto L1359
-L1360:
+	goto L1446
+L1447:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1313:
+L1396:
 	// branch search_perimeter
 	ex.SaveRetry(frame, ms13)
+	ex.DebugBeginBranch(&definition, 90)
 	// (and (search_perimeter ?inp_npc ?inp_last_location ?route))
-	cp1364_3 = ex.V[3]
+	cp1451_3 = ex.V[3]
+	ex.DebugBeginCondition(&definition, 269)
 	// (search_perimeter ?inp_npc ?inp_last_location ?route)
-	cp1366_3 = ex.V[3]
-	fc1367 = 0
-	fc1367++
-	if !factChoice270(ex, fc1367-1) {
-		goto L1365
+	cp1453_3 = ex.V[3]
+	fc1454 = 0
+	ex.DebugBeginCondition(&definition, 270)
+	fc1454++
+	if !factChoice270(ex, fc1454-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1452
 	}
-	goto L1361
-L1365:
-	ex.V[3] = cp1366_3
-	goto L1363
-L1363:
-	ex.V[3] = cp1364_3
-	goto L1362
-L1362:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1448
+L1452:
+	ex.V[3] = cp1453_3
+	goto L1450
+L1450:
+	ex.V[3] = cp1451_3
+	ex.DebugEndCondition(&definition, false)
+	goto L1449
+L1449:
 	ex.ReleaseRetry(frame)
-	goto L1314
-L1361:
+	ex.DebugEndBranch(&definition, false)
+	goto L1397
+L1448:
 	if !ex.PushBranch(&bc90) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1369:
+	ex.DebugCapturePendingTask(216)
+	ex.DebugCapturePendingTask(215)
+L1457:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -14665,30 +21746,41 @@ L1369:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1319
+		goto L1402
 	}
-	goto L1370
-L1319:
+	goto L1458
+L1402:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms13)
-		goto L1314
+		ex.DebugEndBranch(&definition, false)
+		goto L1397
 	}
-	goto L1369
-L1370:
+	goto L1457
+L1458:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1314:
+L1397:
 	// branch last_known_position
-	goto L1371
-L1371:
+	ex.DebugBeginBranch(&definition, 91)
+	goto L1459
+L1459:
 	if !ex.PushBranch(&bc91) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1373:
+	ex.DebugCapturePendingTask(219)
+	ex.DebugCapturePendingTask(218)
+	ex.DebugCapturePendingTask(217)
+L1461:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -14696,15 +21788,19 @@ L1373:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1320
+		goto L1403
 	}
-	goto L1374
-L1320:
+	goto L1462
+L1403:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1373
-L1374:
+	goto L1461
+L1462:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -14712,102 +21808,112 @@ L1374:
 func method14(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1395_6 atom.Atom
-	var cp1397_6 atom.Atom
-	var fc1398 uint32
-	var cp1411_8 atom.Atom
-	var cp1411_15 atom.Atom
-	var cp1413_8 atom.Atom
-	var fc1414 uint32
-	var cp1420_15 atom.Atom
-	var fc1421 uint32
-	var cp1428_16 atom.Atom
-	var cp1430_16 atom.Atom
-	var fc1431 uint32
-	var cp1438_3 atom.Atom
-	var cp1438_17 atom.Atom
-	var cp1440_3 atom.Atom
-	var fc1441 uint32
-	var cp1444_17 atom.Atom
-	var fc1445 uint32
-	var cp1452_18 atom.Atom
-	var cp1454_18 atom.Atom
-	var fc1455 uint32
-	var cp1465_19 atom.Atom
-	var cp1467_19 atom.Atom
-	var fc1468 uint32
-	var cp1475_7 atom.Atom
-	var cp1477_7 atom.Atom
-	var fc1478 uint32
-	_ = cp1395_6
-	_ = cp1397_6
-	_ = fc1398
-	_ = cp1411_8
-	_ = cp1411_15
-	_ = cp1413_8
-	_ = fc1414
-	_ = cp1420_15
-	_ = fc1421
-	_ = cp1428_16
-	_ = cp1430_16
-	_ = fc1431
-	_ = cp1438_3
-	_ = cp1438_17
-	_ = cp1440_3
-	_ = fc1441
-	_ = cp1444_17
-	_ = fc1445
-	_ = cp1452_18
-	_ = cp1454_18
-	_ = fc1455
-	_ = cp1465_19
-	_ = cp1467_19
-	_ = fc1468
-	_ = cp1475_7
-	_ = cp1477_7
-	_ = fc1478
+	var cp1483_6 atom.Atom
+	var cp1485_6 atom.Atom
+	var fc1486 uint32
+	var cp1500_8 atom.Atom
+	var cp1500_15 atom.Atom
+	var cp1502_8 atom.Atom
+	var fc1503 uint32
+	var cp1509_15 atom.Atom
+	var fc1510 uint32
+	var cp1518_16 atom.Atom
+	var cp1520_16 atom.Atom
+	var fc1521 uint32
+	var cp1529_3 atom.Atom
+	var cp1529_17 atom.Atom
+	var cp1531_3 atom.Atom
+	var fc1532 uint32
+	var cp1535_17 atom.Atom
+	var fc1536 uint32
+	var cp1544_18 atom.Atom
+	var cp1546_18 atom.Atom
+	var fc1547 uint32
+	var cp1558_19 atom.Atom
+	var cp1560_19 atom.Atom
+	var fc1561 uint32
+	var cp1569_7 atom.Atom
+	var cp1571_7 atom.Atom
+	var fc1572 uint32
+	_ = cp1483_6
+	_ = cp1485_6
+	_ = fc1486
+	_ = cp1500_8
+	_ = cp1500_15
+	_ = cp1502_8
+	_ = fc1503
+	_ = cp1509_15
+	_ = fc1510
+	_ = cp1518_16
+	_ = cp1520_16
+	_ = fc1521
+	_ = cp1529_3
+	_ = cp1529_17
+	_ = cp1531_3
+	_ = fc1532
+	_ = cp1535_17
+	_ = fc1536
+	_ = cp1544_18
+	_ = cp1546_18
+	_ = fc1547
+	_ = cp1558_19
+	_ = cp1560_19
+	_ = fc1561
+	_ = cp1569_7
+	_ = cp1571_7
+	_ = fc1572
 	switch frame.Resume {
 	case 1:
-		goto L1384
+		goto L1472
 	case 2:
-		goto L1385
+		goto L1473
 	case 3:
-		goto L1386
+		goto L1474
 	case 4:
-		goto L1387
+		goto L1475
 	case 5:
-		goto L1388
+		goto L1476
 	case 6:
-		goto L1389
+		goto L1477
 	case 7:
-		goto L1390
+		goto L1478
 	case 8:
-		goto L1391
+		goto L1479
 	}
-	goto L1376
-L1376:
+	ex.DebugBeginMethod(&definition, 14)
+	goto L1464
+L1464:
 	// branch injury_care
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 92)
 	// (and (health ?inp_npc ?hp) (<= ?hp 45) (medkit_available ?inp_npc))
-	cp1395_6 = ex.V[6]
+	cp1483_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 271)
 	// (health ?inp_npc ?hp)
-	cp1397_6 = ex.V[6]
-	fc1398 = 0
-L1399:
-	fc1398++
-	if !factChoice272(ex, fc1398-1) {
-		goto L1396
+	cp1485_6 = ex.V[6]
+	fc1486 = 0
+L1487:
+	ex.DebugBeginCondition(&definition, 272)
+	fc1486++
+	if !factChoice272(ex, fc1486-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1484
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?hp 45)
 	// (<= ?hp 45)
+	ex.DebugBeginCondition(&definition, 273)
 	if planner.Compare(ex.V[6], sv98, 3) {
-		goto L1402
+		ex.DebugEndCondition(&definition, true)
+		goto L1490
 	}
-	goto L1400
-L1402:
+	ex.DebugEndCondition(&definition, false)
+	goto L1488
+L1490:
 	// (medkit_available ?inp_npc)
 	// (medkit_available ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 274)
 		table := &ex.FactTables[27][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -14818,36 +21924,44 @@ L1402:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1405
+			goto L1493
 		}
-		goto L1403
+		goto L1491
 	}
-L1405:
-	goto L1392
-L1403:
-	goto L1400
-L1400:
-	goto L1398
-L1398:
-	ex.V[6] = cp1397_6
-	cp1397_6 = ex.V[6]
-	goto L1399
-L1396:
-	ex.V[6] = cp1397_6
-	goto L1394
-L1394:
-	ex.V[6] = cp1395_6
-	goto L1393
-L1393:
+L1493:
+	ex.DebugEndCondition(&definition, true)
+	goto L1480
+L1491:
+	goto L1488
+L1488:
+	goto L1486
+L1486:
+	ex.V[6] = cp1485_6
+	cp1485_6 = ex.V[6]
+	goto L1487
+L1484:
+	ex.V[6] = cp1485_6
+	goto L1482
+L1482:
+	ex.V[6] = cp1483_6
+	ex.DebugEndCondition(&definition, false)
+	goto L1481
+L1481:
 	ex.ReleaseRetry(frame)
-	goto L1377
-L1392:
+	ex.DebugEndBranch(&definition, false)
+	goto L1465
+L1480:
 	if !ex.PushBranch(&bc92) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1406:
+	ex.DebugCapturePendingTask(221)
+	ex.DebugCapturePendingTask(220)
+L1495:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -14855,76 +21969,99 @@ L1406:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1384
+		goto L1472
 	}
-	goto L1407
-L1384:
+	goto L1496
+L1472:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1377
+		ex.DebugEndBranch(&definition, false)
+		goto L1465
 	}
-	goto L1406
-L1407:
+	goto L1495
+L1496:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1377:
+L1465:
 	// branch resupply_ammo
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 93)
 	// (and (ammo ?inp_npc ?count) (<= ?count 5) (ammo_cache ?inp_npc ?cache))
-	cp1411_8 = ex.V[8]
-	cp1411_15 = ex.V[15]
+	cp1500_8 = ex.V[8]
+	cp1500_15 = ex.V[15]
+	ex.DebugBeginCondition(&definition, 275)
 	// (ammo ?inp_npc ?count)
-	cp1413_8 = ex.V[8]
-	fc1414 = 0
-L1415:
-	fc1414++
-	if !factChoice276(ex, fc1414-1) {
-		goto L1412
+	cp1502_8 = ex.V[8]
+	fc1503 = 0
+L1504:
+	ex.DebugBeginCondition(&definition, 276)
+	fc1503++
+	if !factChoice276(ex, fc1503-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1501
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?count 5)
 	// (<= ?count 5)
+	ex.DebugBeginCondition(&definition, 277)
 	if planner.Compare(ex.V[8], sv99, 3) {
-		goto L1418
+		ex.DebugEndCondition(&definition, true)
+		goto L1507
 	}
-	goto L1416
-L1418:
+	ex.DebugEndCondition(&definition, false)
+	goto L1505
+L1507:
 	// (ammo_cache ?inp_npc ?cache)
-	cp1420_15 = ex.V[15]
-	fc1421 = 0
-	fc1421++
-	if !factChoice278(ex, fc1421-1) {
-		goto L1419
+	cp1509_15 = ex.V[15]
+	fc1510 = 0
+	ex.DebugBeginCondition(&definition, 278)
+	fc1510++
+	if !factChoice278(ex, fc1510-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1508
 	}
-	goto L1408
-L1419:
-	ex.V[15] = cp1420_15
-	goto L1416
-L1416:
-	goto L1414
-L1414:
-	ex.V[8] = cp1413_8
-	cp1413_8 = ex.V[8]
-	goto L1415
-L1412:
-	ex.V[8] = cp1413_8
-	goto L1410
-L1410:
-	ex.V[8] = cp1411_8
-	ex.V[15] = cp1411_15
-	goto L1409
-L1409:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1497
+L1508:
+	ex.V[15] = cp1509_15
+	goto L1505
+L1505:
+	goto L1503
+L1503:
+	ex.V[8] = cp1502_8
+	cp1502_8 = ex.V[8]
+	goto L1504
+L1501:
+	ex.V[8] = cp1502_8
+	goto L1499
+L1499:
+	ex.V[8] = cp1500_8
+	ex.V[15] = cp1500_15
+	ex.DebugEndCondition(&definition, false)
+	goto L1498
+L1498:
 	ex.ReleaseRetry(frame)
-	goto L1378
-L1408:
+	ex.DebugEndBranch(&definition, false)
+	goto L1466
+L1497:
 	if !ex.PushBranch(&bc93) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1423:
+	ex.DebugCapturePendingTask(223)
+	ex.DebugCapturePendingTask(222)
+L1513:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -14932,50 +22069,67 @@ L1423:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1385
+		goto L1473
 	}
-	goto L1424
-L1385:
+	goto L1514
+L1473:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1378
+		ex.DebugEndBranch(&definition, false)
+		goto L1466
 	}
-	goto L1423
-L1424:
+	goto L1513
+L1514:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1378:
+L1466:
 	// branch repair_weapon
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 94)
 	// (and (weapon_jammed ?inp_npc ?weapon))
-	cp1428_16 = ex.V[16]
+	cp1518_16 = ex.V[16]
+	ex.DebugBeginCondition(&definition, 279)
 	// (weapon_jammed ?inp_npc ?weapon)
-	cp1430_16 = ex.V[16]
-	fc1431 = 0
-	fc1431++
-	if !factChoice280(ex, fc1431-1) {
-		goto L1429
+	cp1520_16 = ex.V[16]
+	fc1521 = 0
+	ex.DebugBeginCondition(&definition, 280)
+	fc1521++
+	if !factChoice280(ex, fc1521-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1519
 	}
-	goto L1425
-L1429:
-	ex.V[16] = cp1430_16
-	goto L1427
-L1427:
-	ex.V[16] = cp1428_16
-	goto L1426
-L1426:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1515
+L1519:
+	ex.V[16] = cp1520_16
+	goto L1517
+L1517:
+	ex.V[16] = cp1518_16
+	ex.DebugEndCondition(&definition, false)
+	goto L1516
+L1516:
 	ex.ReleaseRetry(frame)
-	goto L1379
-L1425:
+	ex.DebugEndBranch(&definition, false)
+	goto L1467
+L1515:
 	if !ex.PushBranch(&bc94) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1433:
+	ex.DebugCapturePendingTask(225)
+	ex.DebugCapturePendingTask(224)
+L1524:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 3
@@ -14983,67 +22137,88 @@ L1433:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1386
+		goto L1474
 	}
-	goto L1434
-L1386:
+	goto L1525
+L1474:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1379
+		ex.DebugEndBranch(&definition, false)
+		goto L1467
 	}
-	goto L1433
-L1434:
+	goto L1524
+L1525:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1379:
+L1467:
 	// branch patrol
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 95)
 	// (and (patrol_route ?inp_npc ?route) (patrol_checkpoint ?inp_npc ?point))
-	cp1438_3 = ex.V[3]
-	cp1438_17 = ex.V[17]
+	cp1529_3 = ex.V[3]
+	cp1529_17 = ex.V[17]
+	ex.DebugBeginCondition(&definition, 281)
 	// (patrol_route ?inp_npc ?route)
-	cp1440_3 = ex.V[3]
-	fc1441 = 0
-L1442:
-	fc1441++
-	if !factChoice282(ex, fc1441-1) {
-		goto L1439
+	cp1531_3 = ex.V[3]
+	fc1532 = 0
+L1533:
+	ex.DebugBeginCondition(&definition, 282)
+	fc1532++
+	if !factChoice282(ex, fc1532-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1530
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (patrol_checkpoint ?inp_npc ?point)
-	cp1444_17 = ex.V[17]
-	fc1445 = 0
-	fc1445++
-	if !factChoice283(ex, fc1445-1) {
-		goto L1443
+	cp1535_17 = ex.V[17]
+	fc1536 = 0
+	ex.DebugBeginCondition(&definition, 283)
+	fc1536++
+	if !factChoice283(ex, fc1536-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1534
 	}
-	goto L1435
-L1443:
-	ex.V[17] = cp1444_17
-	goto L1441
-L1441:
-	ex.V[3] = cp1440_3
-	cp1440_3 = ex.V[3]
-	goto L1442
-L1439:
-	ex.V[3] = cp1440_3
-	goto L1437
-L1437:
-	ex.V[3] = cp1438_3
-	ex.V[17] = cp1438_17
-	goto L1436
-L1436:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1526
+L1534:
+	ex.V[17] = cp1535_17
+	goto L1532
+L1532:
+	ex.V[3] = cp1531_3
+	cp1531_3 = ex.V[3]
+	goto L1533
+L1530:
+	ex.V[3] = cp1531_3
+	goto L1528
+L1528:
+	ex.V[3] = cp1529_3
+	ex.V[17] = cp1529_17
+	ex.DebugEndCondition(&definition, false)
+	goto L1527
+L1527:
 	ex.ReleaseRetry(frame)
-	goto L1380
-L1435:
+	ex.DebugEndBranch(&definition, false)
+	goto L1468
+L1526:
 	if !ex.PushBranch(&bc95) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1447:
+	ex.DebugCapturePendingTask(228)
+	ex.DebugCapturePendingTask(227)
+	ex.DebugCapturePendingTask(226)
+L1539:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 4
@@ -15051,38 +22226,49 @@ L1447:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1387
+		goto L1475
 	}
-	goto L1448
-L1387:
+	goto L1540
+L1475:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1380
+		ex.DebugEndBranch(&definition, false)
+		goto L1468
 	}
-	goto L1447
-L1448:
+	goto L1539
+L1540:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1380:
+L1468:
 	// branch socialize
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 96)
 	// (and (nearby_ally ?inp_npc ?ally) (social_cooldown_ready ?inp_npc))
-	cp1452_18 = ex.V[18]
+	cp1544_18 = ex.V[18]
+	ex.DebugBeginCondition(&definition, 284)
 	// (nearby_ally ?inp_npc ?ally)
-	cp1454_18 = ex.V[18]
-	fc1455 = 0
-L1456:
-	fc1455++
-	if !factChoice285(ex, fc1455-1) {
-		goto L1453
+	cp1546_18 = ex.V[18]
+	fc1547 = 0
+L1548:
+	ex.DebugBeginCondition(&definition, 285)
+	fc1547++
+	if !factChoice285(ex, fc1547-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1545
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (social_cooldown_ready ?inp_npc)
 	// (social_cooldown_ready ?inp_npc)
 	{
+		ex.DebugBeginCondition(&definition, 286)
 		table := &ex.FactTables[33][1]
 		matched := false
 		for row, rows := 0, table.RowCount(); row < rows; row++ {
@@ -15093,34 +22279,42 @@ L1456:
 			matched = true
 			break
 		}
+		ex.DebugEndCondition(&definition, matched)
 		if matched {
-			goto L1459
+			goto L1551
 		}
-		goto L1457
+		goto L1549
 	}
-L1459:
-	goto L1449
-L1457:
-	goto L1455
-L1455:
-	ex.V[18] = cp1454_18
-	cp1454_18 = ex.V[18]
-	goto L1456
-L1453:
-	ex.V[18] = cp1454_18
-	goto L1451
-L1451:
-	ex.V[18] = cp1452_18
-	goto L1450
-L1450:
+L1551:
+	ex.DebugEndCondition(&definition, true)
+	goto L1541
+L1549:
+	goto L1547
+L1547:
+	ex.V[18] = cp1546_18
+	cp1546_18 = ex.V[18]
+	goto L1548
+L1545:
+	ex.V[18] = cp1546_18
+	goto L1543
+L1543:
+	ex.V[18] = cp1544_18
+	ex.DebugEndCondition(&definition, false)
+	goto L1542
+L1542:
 	ex.ReleaseRetry(frame)
-	goto L1381
-L1449:
+	ex.DebugEndBranch(&definition, false)
+	goto L1469
+L1541:
 	if !ex.PushBranch(&bc96) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1460:
+	ex.DebugCapturePendingTask(230)
+	ex.DebugCapturePendingTask(229)
+L1553:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -15128,50 +22322,67 @@ L1460:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1388
+		goto L1476
 	}
-	goto L1461
-L1388:
+	goto L1554
+L1476:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1381
+		ex.DebugEndBranch(&definition, false)
+		goto L1469
 	}
-	goto L1460
-L1461:
+	goto L1553
+L1554:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1381:
+L1469:
 	// branch guard_post
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 97)
 	// (and (assigned_post ?inp_npc ?post))
-	cp1465_19 = ex.V[19]
+	cp1558_19 = ex.V[19]
+	ex.DebugBeginCondition(&definition, 287)
 	// (assigned_post ?inp_npc ?post)
-	cp1467_19 = ex.V[19]
-	fc1468 = 0
-	fc1468++
-	if !factChoice288(ex, fc1468-1) {
-		goto L1466
+	cp1560_19 = ex.V[19]
+	fc1561 = 0
+	ex.DebugBeginCondition(&definition, 288)
+	fc1561++
+	if !factChoice288(ex, fc1561-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1559
 	}
-	goto L1462
-L1466:
-	ex.V[19] = cp1467_19
-	goto L1464
-L1464:
-	ex.V[19] = cp1465_19
-	goto L1463
-L1463:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1555
+L1559:
+	ex.V[19] = cp1560_19
+	goto L1557
+L1557:
+	ex.V[19] = cp1558_19
+	ex.DebugEndCondition(&definition, false)
+	goto L1556
+L1556:
 	ex.ReleaseRetry(frame)
-	goto L1382
-L1462:
+	ex.DebugEndBranch(&definition, false)
+	goto L1470
+L1555:
 	if !ex.PushBranch(&bc97) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1470:
+	ex.DebugCapturePendingTask(232)
+	ex.DebugCapturePendingTask(231)
+L1564:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -15179,64 +22390,84 @@ L1470:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1389
+		goto L1477
 	}
-	goto L1471
-L1389:
+	goto L1565
+L1477:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1382
+		ex.DebugEndBranch(&definition, false)
+		goto L1470
 	}
-	goto L1470
-L1471:
+	goto L1564
+L1565:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1382:
+L1470:
 	// branch rest
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 98)
 	// (and (stamina ?inp_npc ?amount) (<= ?amount 25))
-	cp1475_7 = ex.V[7]
+	cp1569_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 289)
 	// (stamina ?inp_npc ?amount)
-	cp1477_7 = ex.V[7]
-	fc1478 = 0
-L1479:
-	fc1478++
-	if !factChoice290(ex, fc1478-1) {
-		goto L1476
+	cp1571_7 = ex.V[7]
+	fc1572 = 0
+L1573:
+	ex.DebugBeginCondition(&definition, 290)
+	fc1572++
+	if !factChoice290(ex, fc1572-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1570
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (<= ?amount 25)
 	// (<= ?amount 25)
+	ex.DebugBeginCondition(&definition, 291)
 	if planner.Compare(ex.V[7], sv100, 3) {
-		goto L1482
+		ex.DebugEndCondition(&definition, true)
+		goto L1576
 	}
-	goto L1480
-L1482:
-	goto L1472
-L1480:
-	goto L1478
-L1478:
-	ex.V[7] = cp1477_7
-	cp1477_7 = ex.V[7]
-	goto L1479
-L1476:
-	ex.V[7] = cp1477_7
-	goto L1474
-L1474:
-	ex.V[7] = cp1475_7
-	goto L1473
-L1473:
+	ex.DebugEndCondition(&definition, false)
+	goto L1574
+L1576:
+	ex.DebugEndCondition(&definition, true)
+	goto L1566
+L1574:
+	goto L1572
+L1572:
+	ex.V[7] = cp1571_7
+	cp1571_7 = ex.V[7]
+	goto L1573
+L1570:
+	ex.V[7] = cp1571_7
+	goto L1568
+L1568:
+	ex.V[7] = cp1569_7
+	ex.DebugEndCondition(&definition, false)
+	goto L1567
+L1567:
 	ex.ReleaseRetry(frame)
-	goto L1383
-L1472:
+	ex.DebugEndBranch(&definition, false)
+	goto L1471
+L1566:
 	if !ex.PushBranch(&bc98) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1483:
+	ex.DebugCapturePendingTask(234)
+	ex.DebugCapturePendingTask(233)
+L1578:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -15244,30 +22475,40 @@ L1483:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1390
+		goto L1478
 	}
-	goto L1484
-L1390:
+	goto L1579
+L1478:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L1383
+		ex.DebugEndBranch(&definition, false)
+		goto L1471
 	}
-	goto L1483
-L1484:
+	goto L1578
+L1579:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1383:
+L1471:
 	// branch ambient_idle
-	goto L1485
-L1485:
+	ex.DebugBeginBranch(&definition, 99)
+	goto L1580
+L1580:
 	if !ex.PushBranch(&bc99) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1487:
+	ex.DebugCapturePendingTask(236)
+	ex.DebugCapturePendingTask(235)
+L1582:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -15275,15 +22516,19 @@ L1487:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1391
+		goto L1479
 	}
-	goto L1488
-L1391:
+	goto L1583
+L1479:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1487
-L1488:
+	goto L1582
+L1583:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -15291,655 +22536,200 @@ L1488:
 func method15(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp1509_20 atom.Atom
-	var cp1509_21 atom.Atom
-	var cp1509_22 atom.Atom
-	var cp1511_20 atom.Atom
-	var fc1512 uint32
-	var cp1515_21 atom.Atom
-	var cp1515_22 atom.Atom
-	var fc1516 uint32
-	var cp1523_20 atom.Atom
-	var cp1523_23 atom.Atom
-	var cp1523_24 atom.Atom
-	var cp1523_25 atom.Atom
-	var cp1523_26 atom.Atom
-	var cp1525_20 atom.Atom
-	var fc1526 uint32
-	var cp1529_23 atom.Atom
-	var fc1530 uint32
-	var cp1536_24 atom.Atom
-	var fc1537 uint32
-	var cp1546_25 atom.Atom
-	var cp1546_26 atom.Atom
-	var cp1549_25 atom.Atom
-	var cp1549_26 atom.Atom
-	var cp1551_25 atom.Atom
-	var fc1552 uint32
-	var cp1558_26 atom.Atom
-	var fc1559 uint32
-	var cp1569_20 atom.Atom
-	var cp1569_21 atom.Atom
-	var cp1569_22 atom.Atom
-	var cp1571_20 atom.Atom
-	var fc1572 uint32
-	var cp1575_21 atom.Atom
-	var cp1575_22 atom.Atom
-	var fc1576 uint32
-	var cp1583_14 atom.Atom
-	var cp1583_20 atom.Atom
-	var cp1583_27 atom.Atom
-	var cp1583_28 atom.Atom
-	var cp1583_29 atom.Atom
-	var cp1585_20 atom.Atom
-	var fc1586 uint32
-	var cp1589_14 atom.Atom
-	var cp1589_27 atom.Atom
-	var fc1590 uint32
-	var cp1593_28 atom.Atom
-	var cp1593_29 atom.Atom
-	var cp1596_28 atom.Atom
-	var cp1596_29 atom.Atom
-	var fc1597 uint32
 	var cp1604_20 atom.Atom
-	var cp1604_23 atom.Atom
-	var cp1604_29 atom.Atom
+	var cp1604_21 atom.Atom
+	var cp1604_22 atom.Atom
 	var cp1606_20 atom.Atom
 	var fc1607 uint32
-	var cp1610_23 atom.Atom
-	var cp1610_29 atom.Atom
+	var cp1610_21 atom.Atom
+	var cp1610_22 atom.Atom
 	var fc1611 uint32
-	var cp1618_20 atom.Atom
-	var cp1618_21 atom.Atom
-	var cp1618_22 atom.Atom
-	var cp1620_20 atom.Atom
-	var fc1621 uint32
-	var cp1624_21 atom.Atom
-	var cp1624_22 atom.Atom
-	var fc1625 uint32
-	var cp1632_20 atom.Atom
-	var cp1634_20 atom.Atom
-	var fc1635 uint32
-	_ = cp1509_20
-	_ = cp1509_21
-	_ = cp1509_22
-	_ = cp1511_20
-	_ = fc1512
-	_ = cp1515_21
-	_ = cp1515_22
-	_ = fc1516
-	_ = cp1523_20
-	_ = cp1523_23
-	_ = cp1523_24
-	_ = cp1523_25
-	_ = cp1523_26
-	_ = cp1525_20
-	_ = fc1526
-	_ = cp1529_23
-	_ = fc1530
-	_ = cp1536_24
-	_ = fc1537
-	_ = cp1546_25
-	_ = cp1546_26
-	_ = cp1549_25
-	_ = cp1549_26
-	_ = cp1551_25
-	_ = fc1552
-	_ = cp1558_26
-	_ = fc1559
-	_ = cp1569_20
-	_ = cp1569_21
-	_ = cp1569_22
-	_ = cp1571_20
-	_ = fc1572
-	_ = cp1575_21
-	_ = cp1575_22
-	_ = fc1576
-	_ = cp1583_14
-	_ = cp1583_20
-	_ = cp1583_27
-	_ = cp1583_28
-	_ = cp1583_29
-	_ = cp1585_20
-	_ = fc1586
-	_ = cp1589_14
-	_ = cp1589_27
-	_ = fc1590
-	_ = cp1593_28
-	_ = cp1593_29
-	_ = cp1596_28
-	_ = cp1596_29
-	_ = fc1597
+	var cp1619_20 atom.Atom
+	var cp1619_23 atom.Atom
+	var cp1619_24 atom.Atom
+	var cp1619_25 atom.Atom
+	var cp1619_26 atom.Atom
+	var cp1621_20 atom.Atom
+	var fc1622 uint32
+	var cp1625_23 atom.Atom
+	var fc1626 uint32
+	var cp1632_24 atom.Atom
+	var fc1633 uint32
+	var cp1643_25 atom.Atom
+	var cp1643_26 atom.Atom
+	var cp1646_25 atom.Atom
+	var cp1646_26 atom.Atom
+	var cp1648_25 atom.Atom
+	var fc1649 uint32
+	var cp1655_26 atom.Atom
+	var fc1656 uint32
+	var cp1669_20 atom.Atom
+	var cp1669_21 atom.Atom
+	var cp1669_22 atom.Atom
+	var cp1671_20 atom.Atom
+	var fc1672 uint32
+	var cp1675_21 atom.Atom
+	var cp1675_22 atom.Atom
+	var fc1676 uint32
+	var cp1684_14 atom.Atom
+	var cp1684_20 atom.Atom
+	var cp1684_27 atom.Atom
+	var cp1684_28 atom.Atom
+	var cp1684_29 atom.Atom
+	var cp1686_20 atom.Atom
+	var fc1687 uint32
+	var cp1690_14 atom.Atom
+	var cp1690_27 atom.Atom
+	var fc1691 uint32
+	var cp1694_28 atom.Atom
+	var cp1694_29 atom.Atom
+	var cp1697_28 atom.Atom
+	var cp1697_29 atom.Atom
+	var fc1698 uint32
+	var cp1707_20 atom.Atom
+	var cp1707_23 atom.Atom
+	var cp1707_29 atom.Atom
+	var cp1709_20 atom.Atom
+	var fc1710 uint32
+	var cp1713_23 atom.Atom
+	var cp1713_29 atom.Atom
+	var fc1714 uint32
+	var cp1722_20 atom.Atom
+	var cp1722_21 atom.Atom
+	var cp1722_22 atom.Atom
+	var cp1724_20 atom.Atom
+	var fc1725 uint32
+	var cp1728_21 atom.Atom
+	var cp1728_22 atom.Atom
+	var fc1729 uint32
+	var cp1737_20 atom.Atom
+	var cp1739_20 atom.Atom
+	var fc1740 uint32
 	_ = cp1604_20
-	_ = cp1604_23
-	_ = cp1604_29
+	_ = cp1604_21
+	_ = cp1604_22
 	_ = cp1606_20
 	_ = fc1607
-	_ = cp1610_23
-	_ = cp1610_29
+	_ = cp1610_21
+	_ = cp1610_22
 	_ = fc1611
-	_ = cp1618_20
-	_ = cp1618_21
-	_ = cp1618_22
-	_ = cp1620_20
-	_ = fc1621
-	_ = cp1624_21
-	_ = cp1624_22
-	_ = fc1625
-	_ = cp1632_20
-	_ = cp1634_20
-	_ = fc1635
+	_ = cp1619_20
+	_ = cp1619_23
+	_ = cp1619_24
+	_ = cp1619_25
+	_ = cp1619_26
+	_ = cp1621_20
+	_ = fc1622
+	_ = cp1625_23
+	_ = fc1626
+	_ = cp1632_24
+	_ = fc1633
+	_ = cp1643_25
+	_ = cp1643_26
+	_ = cp1646_25
+	_ = cp1646_26
+	_ = cp1648_25
+	_ = fc1649
+	_ = cp1655_26
+	_ = fc1656
+	_ = cp1669_20
+	_ = cp1669_21
+	_ = cp1669_22
+	_ = cp1671_20
+	_ = fc1672
+	_ = cp1675_21
+	_ = cp1675_22
+	_ = fc1676
+	_ = cp1684_14
+	_ = cp1684_20
+	_ = cp1684_27
+	_ = cp1684_28
+	_ = cp1684_29
+	_ = cp1686_20
+	_ = fc1687
+	_ = cp1690_14
+	_ = cp1690_27
+	_ = fc1691
+	_ = cp1694_28
+	_ = cp1694_29
+	_ = cp1697_28
+	_ = cp1697_29
+	_ = fc1698
+	_ = cp1707_20
+	_ = cp1707_23
+	_ = cp1707_29
+	_ = cp1709_20
+	_ = fc1710
+	_ = cp1713_23
+	_ = cp1713_29
+	_ = fc1714
+	_ = cp1722_20
+	_ = cp1722_21
+	_ = cp1722_22
+	_ = cp1724_20
+	_ = fc1725
+	_ = cp1728_21
+	_ = cp1728_22
+	_ = fc1729
+	_ = cp1737_20
+	_ = cp1739_20
+	_ = fc1740
 	switch frame.Resume {
 	case 1:
-		goto L1498
+		goto L1593
 	case 2:
-		goto L1499
+		goto L1594
 	case 3:
-		goto L1500
+		goto L1595
 	case 4:
-		goto L1501
+		goto L1596
 	case 5:
-		goto L1502
+		goto L1597
 	case 6:
-		goto L1503
+		goto L1598
 	case 7:
-		goto L1504
+		goto L1599
 	case 8:
-		goto L1505
+		goto L1600
 	}
-	goto L1490
-L1490:
+	ex.DebugBeginMethod(&definition, 15)
+	goto L1585
+L1585:
 	// branch high_priority_script
 	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 100)
 	// (and (controlled_npc ?npc) (scripted_order ?npc high ?order ?target))
-	cp1509_20 = ex.V[20]
-	cp1509_21 = ex.V[21]
-	cp1509_22 = ex.V[22]
-	// (controlled_npc ?npc)
-	cp1511_20 = ex.V[20]
-	fc1512 = 0
-L1513:
-	fc1512++
-	if !factChoice293(ex, fc1512-1) {
-		goto L1510
-	}
-	// (scripted_order ?npc high ?order ?target)
-	cp1515_21 = ex.V[21]
-	cp1515_22 = ex.V[22]
-	fc1516 = 0
-	fc1516++
-	if !factChoice294(ex, fc1516-1) {
-		goto L1514
-	}
-	goto L1506
-L1514:
-	ex.V[21] = cp1515_21
-	ex.V[22] = cp1515_22
-	goto L1512
-L1512:
-	ex.V[20] = cp1511_20
-	cp1511_20 = ex.V[20]
-	goto L1513
-L1510:
-	ex.V[20] = cp1511_20
-	goto L1508
-L1508:
-	ex.V[20] = cp1509_20
-	ex.V[21] = cp1509_21
-	ex.V[22] = cp1509_22
-	goto L1507
-L1507:
-	ex.ReleaseRetry(frame)
-	goto L1491
-L1506:
-	if !ex.PushBranch(&bc100) {
-		ex.ReleaseRetry(frame)
-		return 0
-	}
-L1518:
-	if ex.PendingCount() > frame.RetryPendingBase {
-		if next := ex.PopPending(); next != nil {
-			frame.Resume = 1
-			ex.Next = next
-			return 2
-		}
-		frame.ChildResult = 0
-		goto L1498
-	}
-	goto L1519
-L1498:
-	if frame.ChildResult == 0 {
-		if ex.FailureState != planner.NoPlan {
-			ex.ReleaseRetry(frame)
-			return 0
-		}
-		ex.RestoreRetry(frame, ms15)
-		goto L1491
-	}
-	goto L1518
-L1519:
-	ex.ReleaseRetry(frame)
-	return 1
-L1491:
-	// branch visible_combat
-	ex.SaveRetry(frame, ms15)
-	// (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
-	cp1523_20 = ex.V[20]
-	cp1523_23 = ex.V[23]
-	cp1523_24 = ex.V[24]
-	cp1523_25 = ex.V[25]
-	cp1523_26 = ex.V[26]
-	// (controlled_npc ?npc)
-	cp1525_20 = ex.V[20]
-	fc1526 = 0
-L1527:
-	fc1526++
-	if !factChoice296(ex, fc1526-1) {
-		goto L1524
-	}
-	// (visible_enemy ?npc ?enemy)
-	cp1529_23 = ex.V[23]
-	fc1530 = 0
-L1531:
-	fc1530++
-	if !factChoice297(ex, fc1530-1) {
-		goto L1528
-	}
-	// (hostile_enemy ?enemy)
-	// (hostile_enemy ?enemy)
-	{
-		table := &ex.FactTables[38][1]
-		matched := false
-		for row, rows := 0, table.RowCount(); row < rows; row++ {
-			args := table.Row(row)
-			if !atom.Equal(args[0], ex.V[23]) {
-				continue
-			}
-			matched = true
-			break
-		}
-		if matched {
-			goto L1534
-		}
-		goto L1532
-	}
-L1534:
-	// (enemy_distance ?npc ?enemy ?distance)
-	cp1536_24 = ex.V[24]
-	fc1537 = 0
-L1538:
-	fc1537++
-	if !factChoice299(ex, fc1537-1) {
-		goto L1535
-	}
-	// (not (enemy_dead ?enemy))
-	// (enemy_dead ?enemy)
-	// (enemy_dead ?enemy)
-	{
-		table := &ex.FactTables[40][1]
-		matched := false
-		for row, rows := 0, table.RowCount(); row < rows; row++ {
-			args := table.Row(row)
-			if !atom.Equal(args[0], ex.V[23]) {
-				continue
-			}
-			matched = true
-			break
-		}
-		if matched {
-			goto L1544
-		}
-		goto L1542
-	}
-L1544:
-	goto L1539
-L1542:
-	goto L1541
-L1541:
-	// (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
-	cp1546_25 = ex.V[25]
-	cp1546_26 = ex.V[26]
-	// (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
-	cp1549_25 = ex.V[25]
-	cp1549_26 = ex.V[26]
-	// (visible_enemy ?npc ?other)
-	cp1551_25 = ex.V[25]
-	fc1552 = 0
-L1553:
-	fc1552++
-	if !factChoice304(ex, fc1552-1) {
-		goto L1550
-	}
-	// (hostile_enemy ?other)
-	// (hostile_enemy ?other)
-	{
-		table := &ex.FactTables[38][1]
-		matched := false
-		for row, rows := 0, table.RowCount(); row < rows; row++ {
-			args := table.Row(row)
-			if !atom.Equal(args[0], ex.V[25]) {
-				continue
-			}
-			matched = true
-			break
-		}
-		if matched {
-			goto L1556
-		}
-		goto L1554
-	}
-L1556:
-	// (enemy_distance ?npc ?other ?other_distance)
-	cp1558_26 = ex.V[26]
-	fc1559 = 0
-L1560:
-	fc1559++
-	if !factChoice306(ex, fc1559-1) {
-		goto L1557
-	}
-	// (< ?other_distance ?distance)
-	// (< ?other_distance ?distance)
-	if planner.Compare(ex.V[26], ex.V[24], 2) {
-		goto L1563
-	}
-	goto L1561
-L1563:
-	goto L1545
-L1561:
-	goto L1559
-L1559:
-	ex.V[26] = cp1558_26
-	cp1558_26 = ex.V[26]
-	goto L1560
-L1557:
-	ex.V[26] = cp1558_26
-	goto L1554
-L1554:
-	goto L1552
-L1552:
-	ex.V[25] = cp1551_25
-	cp1551_25 = ex.V[25]
-	goto L1553
-L1550:
-	ex.V[25] = cp1551_25
-	goto L1548
-L1548:
-	ex.V[25] = cp1549_25
-	ex.V[26] = cp1549_26
-	goto L1547
-L1547:
-	goto L1520
-L1545:
-	ex.V[25] = cp1546_25
-	ex.V[26] = cp1546_26
-	goto L1539
-L1539:
-	goto L1537
-L1537:
-	ex.V[24] = cp1536_24
-	cp1536_24 = ex.V[24]
-	goto L1538
-L1535:
-	ex.V[24] = cp1536_24
-	goto L1532
-L1532:
-	goto L1530
-L1530:
-	ex.V[23] = cp1529_23
-	cp1529_23 = ex.V[23]
-	goto L1531
-L1528:
-	ex.V[23] = cp1529_23
-	goto L1526
-L1526:
-	ex.V[20] = cp1525_20
-	cp1525_20 = ex.V[20]
-	goto L1527
-L1524:
-	ex.V[20] = cp1525_20
-	goto L1522
-L1522:
-	ex.V[20] = cp1523_20
-	ex.V[23] = cp1523_23
-	ex.V[24] = cp1523_24
-	ex.V[25] = cp1523_25
-	ex.V[26] = cp1523_26
-	goto L1521
-L1521:
-	ex.ReleaseRetry(frame)
-	goto L1492
-L1520:
-	if !ex.PushBranch(&bc101) {
-		ex.ReleaseRetry(frame)
-		return 0
-	}
-L1564:
-	if ex.PendingCount() > frame.RetryPendingBase {
-		if next := ex.PopPending(); next != nil {
-			frame.Resume = 2
-			ex.Next = next
-			return 2
-		}
-		frame.ChildResult = 0
-		goto L1499
-	}
-	goto L1565
-L1499:
-	if frame.ChildResult == 0 {
-		if ex.FailureState != planner.NoPlan {
-			ex.ReleaseRetry(frame)
-			return 0
-		}
-		ex.RestoreRetry(frame, ms15)
-		goto L1492
-	}
-	goto L1564
-L1565:
-	ex.ReleaseRetry(frame)
-	return 1
-L1492:
-	// branch medium_priority_script
-	ex.SaveRetry(frame, ms15)
-	// (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
-	cp1569_20 = ex.V[20]
-	cp1569_21 = ex.V[21]
-	cp1569_22 = ex.V[22]
-	// (controlled_npc ?npc)
-	cp1571_20 = ex.V[20]
-	fc1572 = 0
-L1573:
-	fc1572++
-	if !factChoice309(ex, fc1572-1) {
-		goto L1570
-	}
-	// (scripted_order ?npc medium ?order ?target)
-	cp1575_21 = ex.V[21]
-	cp1575_22 = ex.V[22]
-	fc1576 = 0
-	fc1576++
-	if !factChoice310(ex, fc1576-1) {
-		goto L1574
-	}
-	goto L1566
-L1574:
-	ex.V[21] = cp1575_21
-	ex.V[22] = cp1575_22
-	goto L1572
-L1572:
-	ex.V[20] = cp1571_20
-	cp1571_20 = ex.V[20]
-	goto L1573
-L1570:
-	ex.V[20] = cp1571_20
-	goto L1568
-L1568:
-	ex.V[20] = cp1569_20
-	ex.V[21] = cp1569_21
-	ex.V[22] = cp1569_22
-	goto L1567
-L1567:
-	ex.ReleaseRetry(frame)
-	goto L1493
-L1566:
-	if !ex.PushBranch(&bc102) {
-		ex.ReleaseRetry(frame)
-		return 0
-	}
-L1578:
-	if ex.PendingCount() > frame.RetryPendingBase {
-		if next := ex.PopPending(); next != nil {
-			frame.Resume = 3
-			ex.Next = next
-			return 2
-		}
-		frame.ChildResult = 0
-		goto L1500
-	}
-	goto L1579
-L1500:
-	if frame.ChildResult == 0 {
-		if ex.FailureState != planner.NoPlan {
-			ex.ReleaseRetry(frame)
-			return 0
-		}
-		ex.RestoreRetry(frame, ms15)
-		goto L1493
-	}
-	goto L1578
-L1579:
-	ex.ReleaseRetry(frame)
-	return 1
-L1493:
-	// branch investigate_precombat
-	ex.SaveRetry(frame, ms15)
-	// (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
-	cp1583_14 = ex.V[14]
-	cp1583_20 = ex.V[20]
-	cp1583_27 = ex.V[27]
-	cp1583_28 = ex.V[28]
-	cp1583_29 = ex.V[29]
-	// (controlled_npc ?npc)
-	cp1585_20 = ex.V[20]
-	fc1586 = 0
-L1587:
-	fc1586++
-	if !factChoice312(ex, fc1586-1) {
-		goto L1584
-	}
-	// (suspicious_stimulus ?npc ?stimulus ?location)
-	cp1589_14 = ex.V[14]
-	cp1589_27 = ex.V[27]
-	fc1590 = 0
-L1591:
-	fc1590++
-	if !factChoice313(ex, fc1590-1) {
-		goto L1588
-	}
-	// (not (combat_memory ?npc ?lost_enemy ?last_location))
-	cp1593_28 = ex.V[28]
-	cp1593_29 = ex.V[29]
-	// (combat_memory ?npc ?lost_enemy ?last_location)
-	cp1596_28 = ex.V[28]
-	cp1596_29 = ex.V[29]
-	fc1597 = 0
-	fc1597++
-	if !factChoice315(ex, fc1597-1) {
-		goto L1595
-	}
-	goto L1592
-L1595:
-	ex.V[28] = cp1596_28
-	ex.V[29] = cp1596_29
-	goto L1594
-L1594:
-	goto L1580
-L1592:
-	ex.V[28] = cp1593_28
-	ex.V[29] = cp1593_29
-	goto L1590
-L1590:
-	ex.V[14] = cp1589_14
-	ex.V[27] = cp1589_27
-	cp1589_14 = ex.V[14]
-	cp1589_27 = ex.V[27]
-	goto L1591
-L1588:
-	ex.V[14] = cp1589_14
-	ex.V[27] = cp1589_27
-	goto L1586
-L1586:
-	ex.V[20] = cp1585_20
-	cp1585_20 = ex.V[20]
-	goto L1587
-L1584:
-	ex.V[20] = cp1585_20
-	goto L1582
-L1582:
-	ex.V[14] = cp1583_14
-	ex.V[20] = cp1583_20
-	ex.V[27] = cp1583_27
-	ex.V[28] = cp1583_28
-	ex.V[29] = cp1583_29
-	goto L1581
-L1581:
-	ex.ReleaseRetry(frame)
-	goto L1494
-L1580:
-	if !ex.PushBranch(&bc103) {
-		ex.ReleaseRetry(frame)
-		return 0
-	}
-L1599:
-	if ex.PendingCount() > frame.RetryPendingBase {
-		if next := ex.PopPending(); next != nil {
-			frame.Resume = 4
-			ex.Next = next
-			return 2
-		}
-		frame.ChildResult = 0
-		goto L1501
-	}
-	goto L1600
-L1501:
-	if frame.ChildResult == 0 {
-		if ex.FailureState != planner.NoPlan {
-			ex.ReleaseRetry(frame)
-			return 0
-		}
-		ex.RestoreRetry(frame, ms15)
-		goto L1494
-	}
-	goto L1599
-L1600:
-	ex.ReleaseRetry(frame)
-	return 1
-L1494:
-	// branch search_lost_enemy
-	ex.SaveRetry(frame, ms15)
-	// (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
 	cp1604_20 = ex.V[20]
-	cp1604_23 = ex.V[23]
-	cp1604_29 = ex.V[29]
+	cp1604_21 = ex.V[21]
+	cp1604_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 292)
 	// (controlled_npc ?npc)
 	cp1606_20 = ex.V[20]
 	fc1607 = 0
 L1608:
+	ex.DebugBeginCondition(&definition, 293)
 	fc1607++
-	if !factChoice317(ex, fc1607-1) {
+	if !factChoice293(ex, fc1607-1) {
+		ex.DebugEndCondition(&definition, false)
 		goto L1605
 	}
-	// (combat_memory ?npc ?enemy ?last_location)
-	cp1610_23 = ex.V[23]
-	cp1610_29 = ex.V[29]
+	ex.DebugEndCondition(&definition, true)
+	// (scripted_order ?npc high ?order ?target)
+	cp1610_21 = ex.V[21]
+	cp1610_22 = ex.V[22]
 	fc1611 = 0
+	ex.DebugBeginCondition(&definition, 294)
 	fc1611++
-	if !factChoice318(ex, fc1611-1) {
+	if !factChoice294(ex, fc1611-1) {
+		ex.DebugEndCondition(&definition, false)
 		goto L1609
 	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
 	goto L1601
 L1609:
-	ex.V[23] = cp1610_23
-	ex.V[29] = cp1610_29
+	ex.V[21] = cp1610_21
+	ex.V[22] = cp1610_22
 	goto L1607
 L1607:
 	ex.V[20] = cp1606_20
@@ -15950,18 +22740,605 @@ L1605:
 	goto L1603
 L1603:
 	ex.V[20] = cp1604_20
-	ex.V[23] = cp1604_23
-	ex.V[29] = cp1604_29
+	ex.V[21] = cp1604_21
+	ex.V[22] = cp1604_22
+	ex.DebugEndCondition(&definition, false)
 	goto L1602
 L1602:
 	ex.ReleaseRetry(frame)
-	goto L1495
+	ex.DebugEndBranch(&definition, false)
+	goto L1586
 L1601:
-	if !ex.PushBranch(&bc104) {
+	if !ex.PushBranch(&bc100) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1613:
+	ex.DebugCapturePendingTask(238)
+	ex.DebugCapturePendingTask(237)
+L1614:
+	if ex.PendingCount() > frame.RetryPendingBase {
+		if next := ex.PopPending(); next != nil {
+			frame.Resume = 1
+			ex.Next = next
+			return 2
+		}
+		frame.ChildResult = 0
+		goto L1593
+	}
+	goto L1615
+L1593:
+	if frame.ChildResult == 0 {
+		if ex.FailureState != planner.NoPlan {
+			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
+			return 0
+		}
+		ex.RestoreRetry(frame, ms15)
+		ex.DebugEndBranch(&definition, false)
+		goto L1586
+	}
+	goto L1614
+L1615:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L1586:
+	// branch visible_combat
+	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 101)
+	// (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
+	cp1619_20 = ex.V[20]
+	cp1619_23 = ex.V[23]
+	cp1619_24 = ex.V[24]
+	cp1619_25 = ex.V[25]
+	cp1619_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 295)
+	// (controlled_npc ?npc)
+	cp1621_20 = ex.V[20]
+	fc1622 = 0
+L1623:
+	ex.DebugBeginCondition(&definition, 296)
+	fc1622++
+	if !factChoice296(ex, fc1622-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1620
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (visible_enemy ?npc ?enemy)
+	cp1625_23 = ex.V[23]
+	fc1626 = 0
+L1627:
+	ex.DebugBeginCondition(&definition, 297)
+	fc1626++
+	if !factChoice297(ex, fc1626-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1624
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (hostile_enemy ?enemy)
+	// (hostile_enemy ?enemy)
+	{
+		ex.DebugBeginCondition(&definition, 298)
+		table := &ex.FactTables[38][1]
+		matched := false
+		for row, rows := 0, table.RowCount(); row < rows; row++ {
+			args := table.Row(row)
+			if !atom.Equal(args[0], ex.V[23]) {
+				continue
+			}
+			matched = true
+			break
+		}
+		ex.DebugEndCondition(&definition, matched)
+		if matched {
+			goto L1630
+		}
+		goto L1628
+	}
+L1630:
+	// (enemy_distance ?npc ?enemy ?distance)
+	cp1632_24 = ex.V[24]
+	fc1633 = 0
+L1634:
+	ex.DebugBeginCondition(&definition, 299)
+	fc1633++
+	if !factChoice299(ex, fc1633-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1631
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (not (enemy_dead ?enemy))
+	ex.DebugBeginCondition(&definition, 300)
+	// (enemy_dead ?enemy)
+	// (enemy_dead ?enemy)
+	{
+		ex.DebugBeginCondition(&definition, 301)
+		table := &ex.FactTables[40][1]
+		matched := false
+		for row, rows := 0, table.RowCount(); row < rows; row++ {
+			args := table.Row(row)
+			if !atom.Equal(args[0], ex.V[23]) {
+				continue
+			}
+			matched = true
+			break
+		}
+		ex.DebugEndCondition(&definition, matched)
+		if matched {
+			goto L1640
+		}
+		goto L1638
+	}
+L1640:
+	goto L1635
+L1638:
+	goto L1637
+L1637:
+	ex.DebugEndCondition(&definition, true)
+	// (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
+	cp1643_25 = ex.V[25]
+	cp1643_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 302)
+	// (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
+	cp1646_25 = ex.V[25]
+	cp1646_26 = ex.V[26]
+	ex.DebugBeginCondition(&definition, 303)
+	// (visible_enemy ?npc ?other)
+	cp1648_25 = ex.V[25]
+	fc1649 = 0
+L1650:
+	ex.DebugBeginCondition(&definition, 304)
+	fc1649++
+	if !factChoice304(ex, fc1649-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1647
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (hostile_enemy ?other)
+	// (hostile_enemy ?other)
+	{
+		ex.DebugBeginCondition(&definition, 305)
+		table := &ex.FactTables[38][1]
+		matched := false
+		for row, rows := 0, table.RowCount(); row < rows; row++ {
+			args := table.Row(row)
+			if !atom.Equal(args[0], ex.V[25]) {
+				continue
+			}
+			matched = true
+			break
+		}
+		ex.DebugEndCondition(&definition, matched)
+		if matched {
+			goto L1653
+		}
+		goto L1651
+	}
+L1653:
+	// (enemy_distance ?npc ?other ?other_distance)
+	cp1655_26 = ex.V[26]
+	fc1656 = 0
+L1657:
+	ex.DebugBeginCondition(&definition, 306)
+	fc1656++
+	if !factChoice306(ex, fc1656-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1654
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (< ?other_distance ?distance)
+	// (< ?other_distance ?distance)
+	ex.DebugBeginCondition(&definition, 307)
+	if planner.Compare(ex.V[26], ex.V[24], 2) {
+		ex.DebugEndCondition(&definition, true)
+		goto L1660
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L1658
+L1660:
+	ex.DebugEndCondition(&definition, true)
+	goto L1642
+L1658:
+	goto L1656
+L1656:
+	ex.V[26] = cp1655_26
+	cp1655_26 = ex.V[26]
+	goto L1657
+L1654:
+	ex.V[26] = cp1655_26
+	goto L1651
+L1651:
+	goto L1649
+L1649:
+	ex.V[25] = cp1648_25
+	cp1648_25 = ex.V[25]
+	goto L1650
+L1647:
+	ex.V[25] = cp1648_25
+	goto L1645
+L1645:
+	ex.V[25] = cp1646_25
+	ex.V[26] = cp1646_26
+	ex.DebugEndCondition(&definition, false)
+	goto L1644
+L1644:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1616
+L1642:
+	ex.V[25] = cp1643_25
+	ex.V[26] = cp1643_26
+	ex.DebugEndCondition(&definition, false)
+	goto L1641
+L1641:
+	ex.DebugBeginCondition(&definition, 300)
+	goto L1635
+L1635:
+	ex.DebugEndCondition(&definition, false)
+	goto L1633
+L1633:
+	ex.V[24] = cp1632_24
+	cp1632_24 = ex.V[24]
+	goto L1634
+L1631:
+	ex.V[24] = cp1632_24
+	goto L1628
+L1628:
+	goto L1626
+L1626:
+	ex.V[23] = cp1625_23
+	cp1625_23 = ex.V[23]
+	goto L1627
+L1624:
+	ex.V[23] = cp1625_23
+	goto L1622
+L1622:
+	ex.V[20] = cp1621_20
+	cp1621_20 = ex.V[20]
+	goto L1623
+L1620:
+	ex.V[20] = cp1621_20
+	goto L1618
+L1618:
+	ex.V[20] = cp1619_20
+	ex.V[23] = cp1619_23
+	ex.V[24] = cp1619_24
+	ex.V[25] = cp1619_25
+	ex.V[26] = cp1619_26
+	ex.DebugEndCondition(&definition, false)
+	goto L1617
+L1617:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L1587
+L1616:
+	if !ex.PushBranch(&bc101) {
+		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
+		return 0
+	}
+	ex.DebugCapturePendingTask(240)
+	ex.DebugCapturePendingTask(239)
+L1664:
+	if ex.PendingCount() > frame.RetryPendingBase {
+		if next := ex.PopPending(); next != nil {
+			frame.Resume = 2
+			ex.Next = next
+			return 2
+		}
+		frame.ChildResult = 0
+		goto L1594
+	}
+	goto L1665
+L1594:
+	if frame.ChildResult == 0 {
+		if ex.FailureState != planner.NoPlan {
+			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
+			return 0
+		}
+		ex.RestoreRetry(frame, ms15)
+		ex.DebugEndBranch(&definition, false)
+		goto L1587
+	}
+	goto L1664
+L1665:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L1587:
+	// branch medium_priority_script
+	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 102)
+	// (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
+	cp1669_20 = ex.V[20]
+	cp1669_21 = ex.V[21]
+	cp1669_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 308)
+	// (controlled_npc ?npc)
+	cp1671_20 = ex.V[20]
+	fc1672 = 0
+L1673:
+	ex.DebugBeginCondition(&definition, 309)
+	fc1672++
+	if !factChoice309(ex, fc1672-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1670
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (scripted_order ?npc medium ?order ?target)
+	cp1675_21 = ex.V[21]
+	cp1675_22 = ex.V[22]
+	fc1676 = 0
+	ex.DebugBeginCondition(&definition, 310)
+	fc1676++
+	if !factChoice310(ex, fc1676-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1674
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1666
+L1674:
+	ex.V[21] = cp1675_21
+	ex.V[22] = cp1675_22
+	goto L1672
+L1672:
+	ex.V[20] = cp1671_20
+	cp1671_20 = ex.V[20]
+	goto L1673
+L1670:
+	ex.V[20] = cp1671_20
+	goto L1668
+L1668:
+	ex.V[20] = cp1669_20
+	ex.V[21] = cp1669_21
+	ex.V[22] = cp1669_22
+	ex.DebugEndCondition(&definition, false)
+	goto L1667
+L1667:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L1588
+L1666:
+	if !ex.PushBranch(&bc102) {
+		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
+		return 0
+	}
+	ex.DebugCapturePendingTask(242)
+	ex.DebugCapturePendingTask(241)
+L1679:
+	if ex.PendingCount() > frame.RetryPendingBase {
+		if next := ex.PopPending(); next != nil {
+			frame.Resume = 3
+			ex.Next = next
+			return 2
+		}
+		frame.ChildResult = 0
+		goto L1595
+	}
+	goto L1680
+L1595:
+	if frame.ChildResult == 0 {
+		if ex.FailureState != planner.NoPlan {
+			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
+			return 0
+		}
+		ex.RestoreRetry(frame, ms15)
+		ex.DebugEndBranch(&definition, false)
+		goto L1588
+	}
+	goto L1679
+L1680:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L1588:
+	// branch investigate_precombat
+	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 103)
+	// (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
+	cp1684_14 = ex.V[14]
+	cp1684_20 = ex.V[20]
+	cp1684_27 = ex.V[27]
+	cp1684_28 = ex.V[28]
+	cp1684_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 311)
+	// (controlled_npc ?npc)
+	cp1686_20 = ex.V[20]
+	fc1687 = 0
+L1688:
+	ex.DebugBeginCondition(&definition, 312)
+	fc1687++
+	if !factChoice312(ex, fc1687-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1685
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (suspicious_stimulus ?npc ?stimulus ?location)
+	cp1690_14 = ex.V[14]
+	cp1690_27 = ex.V[27]
+	fc1691 = 0
+L1692:
+	ex.DebugBeginCondition(&definition, 313)
+	fc1691++
+	if !factChoice313(ex, fc1691-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1689
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (not (combat_memory ?npc ?lost_enemy ?last_location))
+	cp1694_28 = ex.V[28]
+	cp1694_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 314)
+	// (combat_memory ?npc ?lost_enemy ?last_location)
+	cp1697_28 = ex.V[28]
+	cp1697_29 = ex.V[29]
+	fc1698 = 0
+	ex.DebugBeginCondition(&definition, 315)
+	fc1698++
+	if !factChoice315(ex, fc1698-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1696
+	}
+	ex.DebugEndCondition(&definition, true)
+	goto L1693
+L1696:
+	ex.V[28] = cp1697_28
+	ex.V[29] = cp1697_29
+	goto L1695
+L1695:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1681
+L1693:
+	ex.V[28] = cp1694_28
+	ex.V[29] = cp1694_29
+	ex.DebugEndCondition(&definition, false)
+	goto L1691
+L1691:
+	ex.V[14] = cp1690_14
+	ex.V[27] = cp1690_27
+	cp1690_14 = ex.V[14]
+	cp1690_27 = ex.V[27]
+	goto L1692
+L1689:
+	ex.V[14] = cp1690_14
+	ex.V[27] = cp1690_27
+	goto L1687
+L1687:
+	ex.V[20] = cp1686_20
+	cp1686_20 = ex.V[20]
+	goto L1688
+L1685:
+	ex.V[20] = cp1686_20
+	goto L1683
+L1683:
+	ex.V[14] = cp1684_14
+	ex.V[20] = cp1684_20
+	ex.V[27] = cp1684_27
+	ex.V[28] = cp1684_28
+	ex.V[29] = cp1684_29
+	ex.DebugEndCondition(&definition, false)
+	goto L1682
+L1682:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L1589
+L1681:
+	if !ex.PushBranch(&bc103) {
+		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
+		return 0
+	}
+	ex.DebugCapturePendingTask(244)
+	ex.DebugCapturePendingTask(243)
+L1702:
+	if ex.PendingCount() > frame.RetryPendingBase {
+		if next := ex.PopPending(); next != nil {
+			frame.Resume = 4
+			ex.Next = next
+			return 2
+		}
+		frame.ChildResult = 0
+		goto L1596
+	}
+	goto L1703
+L1596:
+	if frame.ChildResult == 0 {
+		if ex.FailureState != planner.NoPlan {
+			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
+			return 0
+		}
+		ex.RestoreRetry(frame, ms15)
+		ex.DebugEndBranch(&definition, false)
+		goto L1589
+	}
+	goto L1702
+L1703:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L1589:
+	// branch search_lost_enemy
+	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 104)
+	// (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
+	cp1707_20 = ex.V[20]
+	cp1707_23 = ex.V[23]
+	cp1707_29 = ex.V[29]
+	ex.DebugBeginCondition(&definition, 316)
+	// (controlled_npc ?npc)
+	cp1709_20 = ex.V[20]
+	fc1710 = 0
+L1711:
+	ex.DebugBeginCondition(&definition, 317)
+	fc1710++
+	if !factChoice317(ex, fc1710-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1708
+	}
+	ex.DebugEndCondition(&definition, true)
+	// (combat_memory ?npc ?enemy ?last_location)
+	cp1713_23 = ex.V[23]
+	cp1713_29 = ex.V[29]
+	fc1714 = 0
+	ex.DebugBeginCondition(&definition, 318)
+	fc1714++
+	if !factChoice318(ex, fc1714-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1712
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1704
+L1712:
+	ex.V[23] = cp1713_23
+	ex.V[29] = cp1713_29
+	goto L1710
+L1710:
+	ex.V[20] = cp1709_20
+	cp1709_20 = ex.V[20]
+	goto L1711
+L1708:
+	ex.V[20] = cp1709_20
+	goto L1706
+L1706:
+	ex.V[20] = cp1707_20
+	ex.V[23] = cp1707_23
+	ex.V[29] = cp1707_29
+	ex.DebugEndCondition(&definition, false)
+	goto L1705
+L1705:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L1590
+L1704:
+	if !ex.PushBranch(&bc104) {
+		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
+		return 0
+	}
+	ex.DebugCapturePendingTask(246)
+	ex.DebugCapturePendingTask(245)
+L1717:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 5
@@ -15969,71 +23346,91 @@ L1613:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1502
+		goto L1597
 	}
-	goto L1614
-L1502:
+	goto L1718
+L1597:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms15)
-		goto L1495
+		ex.DebugEndBranch(&definition, false)
+		goto L1590
 	}
-	goto L1613
-L1614:
+	goto L1717
+L1718:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1495:
+L1590:
 	// branch low_priority_script
 	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 105)
 	// (and (controlled_npc ?npc) (scripted_order ?npc low ?order ?target))
-	cp1618_20 = ex.V[20]
-	cp1618_21 = ex.V[21]
-	cp1618_22 = ex.V[22]
+	cp1722_20 = ex.V[20]
+	cp1722_21 = ex.V[21]
+	cp1722_22 = ex.V[22]
+	ex.DebugBeginCondition(&definition, 319)
 	// (controlled_npc ?npc)
-	cp1620_20 = ex.V[20]
-	fc1621 = 0
-L1622:
-	fc1621++
-	if !factChoice320(ex, fc1621-1) {
-		goto L1619
+	cp1724_20 = ex.V[20]
+	fc1725 = 0
+L1726:
+	ex.DebugBeginCondition(&definition, 320)
+	fc1725++
+	if !factChoice320(ex, fc1725-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1723
 	}
+	ex.DebugEndCondition(&definition, true)
 	// (scripted_order ?npc low ?order ?target)
-	cp1624_21 = ex.V[21]
-	cp1624_22 = ex.V[22]
-	fc1625 = 0
-	fc1625++
-	if !factChoice321(ex, fc1625-1) {
-		goto L1623
+	cp1728_21 = ex.V[21]
+	cp1728_22 = ex.V[22]
+	fc1729 = 0
+	ex.DebugBeginCondition(&definition, 321)
+	fc1729++
+	if !factChoice321(ex, fc1729-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1727
 	}
-	goto L1615
-L1623:
-	ex.V[21] = cp1624_21
-	ex.V[22] = cp1624_22
-	goto L1621
-L1621:
-	ex.V[20] = cp1620_20
-	cp1620_20 = ex.V[20]
-	goto L1622
-L1619:
-	ex.V[20] = cp1620_20
-	goto L1617
-L1617:
-	ex.V[20] = cp1618_20
-	ex.V[21] = cp1618_21
-	ex.V[22] = cp1618_22
-	goto L1616
-L1616:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1719
+L1727:
+	ex.V[21] = cp1728_21
+	ex.V[22] = cp1728_22
+	goto L1725
+L1725:
+	ex.V[20] = cp1724_20
+	cp1724_20 = ex.V[20]
+	goto L1726
+L1723:
+	ex.V[20] = cp1724_20
+	goto L1721
+L1721:
+	ex.V[20] = cp1722_20
+	ex.V[21] = cp1722_21
+	ex.V[22] = cp1722_22
+	ex.DebugEndCondition(&definition, false)
+	goto L1720
+L1720:
 	ex.ReleaseRetry(frame)
-	goto L1496
-L1615:
+	ex.DebugEndBranch(&definition, false)
+	goto L1591
+L1719:
 	if !ex.PushBranch(&bc105) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1627:
+	ex.DebugCapturePendingTask(248)
+	ex.DebugCapturePendingTask(247)
+L1732:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 6
@@ -16041,50 +23438,67 @@ L1627:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1503
+		goto L1598
 	}
-	goto L1628
-L1503:
+	goto L1733
+L1598:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms15)
-		goto L1496
+		ex.DebugEndBranch(&definition, false)
+		goto L1591
 	}
-	goto L1627
-L1628:
+	goto L1732
+L1733:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1496:
+L1591:
 	// branch idle
 	ex.SaveRetry(frame, ms15)
+	ex.DebugBeginBranch(&definition, 106)
 	// (and (controlled_npc ?npc))
-	cp1632_20 = ex.V[20]
+	cp1737_20 = ex.V[20]
+	ex.DebugBeginCondition(&definition, 322)
 	// (controlled_npc ?npc)
-	cp1634_20 = ex.V[20]
-	fc1635 = 0
-	fc1635++
-	if !factChoice323(ex, fc1635-1) {
-		goto L1633
+	cp1739_20 = ex.V[20]
+	fc1740 = 0
+	ex.DebugBeginCondition(&definition, 323)
+	fc1740++
+	if !factChoice323(ex, fc1740-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L1738
 	}
-	goto L1629
-L1633:
-	ex.V[20] = cp1634_20
-	goto L1631
-L1631:
-	ex.V[20] = cp1632_20
-	goto L1630
-L1630:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L1734
+L1738:
+	ex.V[20] = cp1739_20
+	goto L1736
+L1736:
+	ex.V[20] = cp1737_20
+	ex.DebugEndCondition(&definition, false)
+	goto L1735
+L1735:
 	ex.ReleaseRetry(frame)
-	goto L1497
-L1629:
+	ex.DebugEndBranch(&definition, false)
+	goto L1592
+L1734:
 	if !ex.PushBranch(&bc106) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1637:
+	ex.DebugCapturePendingTask(250)
+	ex.DebugCapturePendingTask(249)
+L1743:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 7
@@ -16092,30 +23506,39 @@ L1637:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1504
+		goto L1599
 	}
-	goto L1638
-L1504:
+	goto L1744
+L1599:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms15)
-		goto L1497
+		ex.DebugEndBranch(&definition, false)
+		goto L1592
 	}
-	goto L1637
-L1638:
+	goto L1743
+L1744:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L1497:
+L1592:
 	// branch no_npc
-	goto L1639
-L1639:
+	ex.DebugBeginBranch(&definition, 107)
+	goto L1745
+L1745:
 	if !ex.PushBranch(&bc107) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L1641:
+	ex.DebugCapturePendingTask(251)
+L1747:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 8
@@ -16123,15 +23546,19 @@ L1641:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L1505
+		goto L1600
 	}
-	goto L1642
-L1505:
+	goto L1748
+L1600:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L1641
-L1642:
+	goto L1747
+L1748:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -16162,12 +23589,14 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 15:
 		result = ex.Run(method15)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -16176,8 +23605,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

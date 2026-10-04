@@ -181,357 +181,1241 @@ func init() {
 			{Name: "list_clear", Source: callterm.Source{Domain: "AtomListDemo", File: "Domains/Test/atom_list_demo.domain", Line: 54, Column: 27}},
 		},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Test/atom_list_demo.domain",
+		Strings: []string{
+			"AtomListDemoConstants",
+			"demo_list",
+			"(patrol 3 true (10.0 20.0 30.0))",
+			"patrol",
+			"split_list_input",
+			"(one two three)",
+			"(\"one\" \"two\" \"three\")",
+			"split_list_single",
+			"(only)",
+			"(\"only\")",
+			"AtomListDemo::show_atom_list",
+			"print_constant_list",
+			"added",
+			"?added",
+			"list_add",
+			"@demo_list",
+			"return",
+			"\"return\"",
+			"removed",
+			"?removed",
+			"list_remove_at",
+			"1",
+			"element",
+			"?element",
+			"list_get",
+			"2",
+			"size",
+			"?size",
+			"list_size",
+			"cleared",
+			"?cleared",
+			"list_clear",
+			"print_original",
+			"!print_original",
+			"print_added",
+			"!print_added",
+			"print_removed",
+			"!print_removed",
+			"print_element",
+			"!print_element",
+			"print_size",
+			"!print_size",
+			"print_cleared",
+			"!print_cleared",
+			"AtomListDemo::split_list_basic",
+			"split",
+			"@split_list_input",
+			"head",
+			"?head",
+			"tail",
+			"?tail",
+			"split_result",
+			"!split_result",
+			"AtomListDemo::split_list_single_element",
+			"@split_list_single",
+			"split_single_result",
+			"!split_single_result",
+			"AtomListDemo::split_list_empty_fails",
+			"unexpected",
+			"empty",
+			"?empty",
+			"unexpected_split",
+			"!unexpected_split",
+			"expected",
+			"empty_list_rejected",
+			"!empty_list_rejected",
+			"AtomListDemo::split_list_bound_outputs",
+			"compatible",
+			"one",
+			"\"one\"",
+			"(two three)",
+			"(\"two\" \"three\")",
+			"bound_outputs_match",
+			"!bound_outputs_match",
+			"AtomListDemo::split_list_rollback",
+			"fails_after_binding",
+			"wrong",
+			"\"wrong\"",
+			"unexpected_first_branch",
+			"!unexpected_first_branch",
+			"reuses_same_variables",
+			"rollback_result",
+			"!rollback_result",
+			"AtomListDemo::split_list_front_basic",
+			"remainder",
+			"?remainder",
+			"split_front_result",
+			"!split_front_result",
+			"AtomListDemo::split_list_back_basic",
+			"split_back_result",
+			"!split_back_result",
+			"AtomListDemo::split_list_back_bound_outputs",
+			"three",
+			"\"three\"",
+			"(one two)",
+			"(\"one\" \"two\")",
+			"split_back_bound_outputs_match",
+			"!split_back_bound_outputs_match",
+			"show_atom_list",
+			"split_list_basic",
+			"split_list_single_element",
+			"split_list_empty_fails",
+			"split_list_bound_outputs",
+			"split_list_rollback",
+			"split_list_front_basic",
+			"split_list_back_basic",
+			"split_list_back_bound_outputs",
+		},
+		Values: []uint32{
+			0, 2, 2, 4, planner.NoIndex,
+			0, 6, 5, 5, planner.NoIndex,
+			0, 9, 8, 6, planner.NoIndex,
+			1, 13, 12, 12, 0,
+			0, 15, 2, 12, planner.NoIndex,
+			2, 17, 16, 12, planner.NoIndex,
+			1, 19, 18, 13, 1,
+			1, 13, 12, 13, 0,
+			0, 21, 21, 13, planner.NoIndex,
+			1, 23, 22, 14, 2,
+			1, 19, 18, 14, 1,
+			0, 25, 25, 14, planner.NoIndex,
+			1, 27, 26, 15, 3,
+			1, 13, 12, 15, 0,
+			1, 30, 29, 16, 4,
+			1, 19, 18, 16, 1,
+			0, 15, 2, 19, planner.NoIndex,
+			1, 13, 12, 20, 0,
+			1, 19, 18, 21, 1,
+			1, 23, 22, 22, 2,
+			1, 27, 26, 23, 3,
+			1, 30, 29, 24, 4,
+			0, 46, 5, 32, planner.NoIndex,
+			1, 48, 47, 32, 5,
+			1, 50, 49, 32, 6,
+			1, 48, 47, 35, 5,
+			1, 50, 49, 35, 6,
+			0, 54, 8, 43, planner.NoIndex,
+			1, 48, 47, 43, 5,
+			1, 50, 49, 43, 6,
+			1, 48, 47, 46, 5,
+			1, 50, 49, 46, 6,
+			1, 60, 59, 54, 7,
+			0, 54, 8, 54, planner.NoIndex,
+			1, 60, 59, 55, 7,
+			1, 48, 47, 55, 5,
+			1, 50, 49, 55, 6,
+			1, 48, 47, 58, 5,
+			1, 50, 49, 58, 6,
+			0, 46, 5, 72, planner.NoIndex,
+			2, 69, 68, 72, planner.NoIndex,
+			0, 71, 70, 72, planner.NoIndex,
+			0, 46, 5, 83, planner.NoIndex,
+			1, 48, 47, 83, 5,
+			1, 50, 49, 83, 6,
+			1, 48, 47, 84, 5,
+			2, 77, 76, 84, planner.NoIndex,
+			0, 54, 8, 92, planner.NoIndex,
+			1, 48, 47, 92, 5,
+			1, 50, 49, 92, 6,
+			1, 48, 47, 95, 5,
+			1, 50, 49, 95, 6,
+			0, 46, 5, 102, planner.NoIndex,
+			1, 23, 22, 102, 2,
+			1, 85, 84, 102, 8,
+			1, 23, 22, 105, 2,
+			1, 85, 84, 105, 8,
+			0, 46, 5, 113, planner.NoIndex,
+			1, 23, 22, 113, 2,
+			1, 85, 84, 113, 8,
+			1, 23, 22, 116, 2,
+			1, 85, 84, 116, 8,
+			0, 46, 5, 124, planner.NoIndex,
+			2, 93, 92, 124, planner.NoIndex,
+			0, 95, 94, 124, planner.NoIndex,
+			1, 13, 12, 12, 0,
+			0, 15, 2, 12, planner.NoIndex,
+			2, 17, 16, 12, planner.NoIndex,
+			1, 19, 18, 13, 1,
+			1, 13, 12, 13, 0,
+			0, 21, 21, 13, planner.NoIndex,
+			1, 23, 22, 14, 2,
+			1, 19, 18, 14, 1,
+			0, 25, 25, 14, planner.NoIndex,
+			1, 27, 26, 15, 3,
+			1, 13, 12, 15, 0,
+			1, 30, 29, 16, 4,
+			1, 19, 18, 16, 1,
+			0, 15, 2, 19, planner.NoIndex,
+			1, 13, 12, 20, 0,
+			1, 19, 18, 21, 1,
+			1, 23, 22, 22, 2,
+			1, 27, 26, 23, 3,
+			1, 30, 29, 24, 4,
+			0, 46, 5, 32, planner.NoIndex,
+			1, 48, 47, 32, 5,
+			1, 50, 49, 32, 6,
+			1, 48, 47, 35, 5,
+			1, 50, 49, 35, 6,
+			0, 54, 8, 43, planner.NoIndex,
+			1, 48, 47, 43, 5,
+			1, 50, 49, 43, 6,
+			1, 48, 47, 46, 5,
+			1, 50, 49, 46, 6,
+			1, 60, 59, 54, 7,
+			0, 54, 8, 54, planner.NoIndex,
+			1, 60, 59, 55, 7,
+			1, 48, 47, 55, 5,
+			1, 50, 49, 55, 6,
+			1, 48, 47, 58, 5,
+			1, 50, 49, 58, 6,
+			0, 46, 5, 72, planner.NoIndex,
+			2, 69, 68, 72, planner.NoIndex,
+			0, 71, 70, 72, planner.NoIndex,
+			0, 46, 5, 83, planner.NoIndex,
+			1, 48, 47, 83, 5,
+			1, 50, 49, 83, 6,
+			1, 48, 47, 84, 5,
+			2, 77, 76, 84, planner.NoIndex,
+			0, 54, 8, 92, planner.NoIndex,
+			1, 48, 47, 92, 5,
+			1, 50, 49, 92, 6,
+			1, 48, 47, 95, 5,
+			1, 50, 49, 95, 6,
+			0, 46, 5, 102, planner.NoIndex,
+			1, 23, 22, 102, 2,
+			1, 85, 84, 102, 8,
+			1, 23, 22, 105, 2,
+			1, 85, 84, 105, 8,
+			0, 46, 5, 113, planner.NoIndex,
+			1, 23, 22, 113, 2,
+			1, 85, 84, 113, 8,
+			1, 23, 22, 116, 2,
+			1, 85, 84, 116, 8,
+			0, 46, 5, 124, planner.NoIndex,
+			2, 93, 92, 124, planner.NoIndex,
+			0, 95, 94, 124, planner.NoIndex,
+		},
+		VariableStringIDs: []uint32{
+			12,
+			18,
+			22,
+			26,
+			29,
+			47,
+			49,
+			59,
+			84,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 0, 5, planner.NoIndex, planner.NoIndex, 11, 0,
+			7, 14, 4, 2, 0, 0, 3, 0, 12, 0,
+			7, 20, 7, 2, 0, 0, 6, 1, 13, 0,
+			7, 24, 10, 2, 0, 0, 9, 2, 14, 0,
+			7, 28, 13, 1, 0, 0, 12, 3, 15, 0,
+			7, 31, 15, 1, 0, 0, 14, 4, 16, 0,
+			2, planner.NoIndex, 0, 0, 5, 1, planner.NoIndex, planner.NoIndex, 31, 0,
+			9, 0, 22, 3, 5, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 6, 1, planner.NoIndex, planner.NoIndex, 42, 0,
+			9, 0, 27, 3, 6, 0, planner.NoIndex, planner.NoIndex, 43, 0,
+			2, planner.NoIndex, 0, 0, 7, 2, planner.NoIndex, planner.NoIndex, 53, 0,
+			7, 31, 33, 1, 7, 0, 32, 4, 54, 0,
+			9, 0, 34, 3, 7, 0, planner.NoIndex, planner.NoIndex, 55, 0,
+			2, planner.NoIndex, 0, 0, 9, 1, planner.NoIndex, planner.NoIndex, 71, 0,
+			9, 0, 39, 3, 9, 0, planner.NoIndex, planner.NoIndex, 72, 0,
+			2, planner.NoIndex, 0, 0, 10, 2, planner.NoIndex, planner.NoIndex, 82, 0,
+			9, 0, 42, 3, 10, 0, planner.NoIndex, planner.NoIndex, 83, 0,
+			8, 0, 45, 2, 10, 0, planner.NoIndex, planner.NoIndex, 84, 0,
+			2, planner.NoIndex, 0, 0, 12, 1, planner.NoIndex, planner.NoIndex, 91, 0,
+			9, 0, 47, 3, 12, 0, planner.NoIndex, planner.NoIndex, 92, 0,
+			2, planner.NoIndex, 0, 0, 13, 1, planner.NoIndex, planner.NoIndex, 101, 0,
+			9, 1, 52, 3, 13, 0, planner.NoIndex, planner.NoIndex, 102, 0,
+			2, planner.NoIndex, 0, 0, 14, 1, planner.NoIndex, planner.NoIndex, 112, 0,
+			9, 2, 57, 3, 14, 0, planner.NoIndex, planner.NoIndex, 113, 0,
+			2, planner.NoIndex, 0, 0, 15, 1, planner.NoIndex, planner.NoIndex, 123, 0,
+			9, 2, 62, 3, 15, 0, planner.NoIndex, planner.NoIndex, 124, 0,
+			2, planner.NoIndex, 0, 0, 16, 5, planner.NoIndex, planner.NoIndex, 11, 0,
+			7, 14, 66, 2, 16, 0, 65, 0, 12, 0,
+			7, 20, 69, 2, 16, 0, 68, 1, 13, 0,
+			7, 24, 72, 2, 16, 0, 71, 2, 14, 0,
+			7, 28, 75, 1, 16, 0, 74, 3, 15, 0,
+			7, 31, 77, 1, 16, 0, 76, 4, 16, 0,
+			2, planner.NoIndex, 0, 0, 21, 1, planner.NoIndex, planner.NoIndex, 31, 0,
+			9, 0, 84, 3, 21, 0, planner.NoIndex, planner.NoIndex, 32, 0,
+			2, planner.NoIndex, 0, 0, 22, 1, planner.NoIndex, planner.NoIndex, 42, 0,
+			9, 0, 89, 3, 22, 0, planner.NoIndex, planner.NoIndex, 43, 0,
+			2, planner.NoIndex, 0, 0, 23, 2, planner.NoIndex, planner.NoIndex, 53, 0,
+			7, 31, 95, 1, 23, 0, 94, 4, 54, 0,
+			9, 0, 96, 3, 23, 0, planner.NoIndex, planner.NoIndex, 55, 0,
+			2, planner.NoIndex, 0, 0, 25, 1, planner.NoIndex, planner.NoIndex, 71, 0,
+			9, 0, 101, 3, 25, 0, planner.NoIndex, planner.NoIndex, 72, 0,
+			2, planner.NoIndex, 0, 0, 26, 2, planner.NoIndex, planner.NoIndex, 82, 0,
+			9, 0, 104, 3, 26, 0, planner.NoIndex, planner.NoIndex, 83, 0,
+			8, 0, 107, 2, 26, 0, planner.NoIndex, planner.NoIndex, 84, 0,
+			2, planner.NoIndex, 0, 0, 28, 1, planner.NoIndex, planner.NoIndex, 91, 0,
+			9, 0, 109, 3, 28, 0, planner.NoIndex, planner.NoIndex, 92, 0,
+			2, planner.NoIndex, 0, 0, 29, 1, planner.NoIndex, planner.NoIndex, 101, 0,
+			9, 1, 114, 3, 29, 0, planner.NoIndex, planner.NoIndex, 102, 0,
+			2, planner.NoIndex, 0, 0, 30, 1, planner.NoIndex, planner.NoIndex, 112, 0,
+			9, 2, 119, 3, 30, 0, planner.NoIndex, planner.NoIndex, 113, 0,
+			2, planner.NoIndex, 0, 0, 31, 1, planner.NoIndex, planner.NoIndex, 123, 0,
+			9, 2, 124, 3, 31, 0, planner.NoIndex, planner.NoIndex, 124, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(= ?added (call list_add @demo_list \"return\"))",
+			"(= ?removed (call list_remove_at ?added 1))",
+			"(= ?element (call list_get ?removed 2))",
+			"(= ?size (call list_size ?added))",
+			"(= ?cleared (call list_clear ?removed))",
+			"(and ...)",
+			"(split_list @split_list_input ?head ?tail)",
+			"(and ...)",
+			"(split_list @split_list_single ?head ?tail)",
+			"(and ...)",
+			"(= ?empty (call list_clear @split_list_single))",
+			"(split_list ?empty ?head ?tail)",
+			"(and ...)",
+			"(split_list @split_list_input \"one\" (\"two\" \"three\"))",
+			"(and ...)",
+			"(split_list @split_list_input ?head ?tail)",
+			"(== ?head \"wrong\")",
+			"(and ...)",
+			"(split_list @split_list_single ?head ?tail)",
+			"(and ...)",
+			"(split_list_front @split_list_input ?element ?remainder)",
+			"(and ...)",
+			"(split_list_back @split_list_input ?remainder ?element)",
+			"(and ...)",
+			"(split_list_back @split_list_input (\"one\" \"two\") \"three\")",
+			"(and ...)",
+			"(= ?added (call list_add @demo_list \"return\"))",
+			"(= ?removed (call list_remove_at ?added 1))",
+			"(= ?element (call list_get ?removed 2))",
+			"(= ?size (call list_size ?added))",
+			"(= ?cleared (call list_clear ?removed))",
+			"(and ...)",
+			"(split_list @split_list_input ?head ?tail)",
+			"(and ...)",
+			"(split_list @split_list_single ?head ?tail)",
+			"(and ...)",
+			"(= ?empty (call list_clear @split_list_single))",
+			"(split_list ?empty ?head ?tail)",
+			"(and ...)",
+			"(split_list @split_list_input \"one\" (\"two\" \"three\"))",
+			"(and ...)",
+			"(split_list @split_list_input ?head ?tail)",
+			"(== ?head \"wrong\")",
+			"(and ...)",
+			"(split_list @split_list_single ?head ?tail)",
+			"(and ...)",
+			"(split_list_front @split_list_input ?element ?remainder)",
+			"(and ...)",
+			"(split_list_back @split_list_input ?remainder ?element)",
+			"(and ...)",
+			"(split_list_back @split_list_input (\"one\" \"two\") \"three\")",
+		},
+		ConditionChildRefs: []uint32{
+			1,
+			2,
+			3,
+			4,
+			5,
+			7,
+			9,
+			11,
+			12,
+			14,
+			16,
+			17,
+			19,
+			21,
+			23,
+			25,
+			27,
+			28,
+			29,
+			30,
+			31,
+			33,
+			35,
+			37,
+			38,
+			40,
+			42,
+			43,
+			45,
+			47,
+			49,
+			51,
+		},
+		Tasks: []uint32{
+			1, 32, 16, 1, 19, 33,
+			1, 34, 17, 1, 20, 35,
+			1, 36, 18, 1, 21, 37,
+			1, 38, 19, 1, 22, 39,
+			1, 40, 20, 1, 23, 41,
+			1, 42, 21, 1, 24, 43,
+			1, 51, 25, 2, 35, 52,
+			1, 55, 30, 2, 46, 56,
+			1, 61, 37, 2, 58, 62,
+			1, 64, 39, 0, 64, 65,
+			1, 72, 42, 0, 75, 73,
+			1, 78, 47, 0, 87, 79,
+			1, 81, 50, 2, 95, 82,
+			1, 86, 55, 2, 105, 87,
+			1, 89, 60, 2, 116, 90,
+			1, 96, 65, 0, 127, 97,
+			1, 32, 78, 1, 19, 33,
+			1, 34, 79, 1, 20, 35,
+			1, 36, 80, 1, 21, 37,
+			1, 38, 81, 1, 22, 39,
+			1, 40, 82, 1, 23, 41,
+			1, 42, 83, 1, 24, 43,
+			1, 51, 87, 2, 35, 52,
+			1, 55, 92, 2, 46, 56,
+			1, 61, 99, 2, 58, 62,
+			1, 64, 101, 0, 64, 65,
+			1, 72, 104, 0, 75, 73,
+			1, 78, 109, 0, 87, 79,
+			1, 81, 112, 2, 95, 82,
+			1, 86, 117, 2, 105, 87,
+			1, 89, 122, 2, 116, 90,
+			1, 96, 127, 0, 127, 97,
+		},
+		Branches: []uint32{
+			11, 0, 0, 6, 10,
+			45, 6, 6, 1, 30,
+			45, 8, 7, 1, 41,
+			58, 10, 8, 1, 52,
+			63, planner.NoIndex, 9, 1, 61,
+			67, 13, 10, 1, 70,
+			75, 15, 11, 1, 81,
+			80, 18, 12, 1, 90,
+			45, 20, 13, 1, 100,
+			45, 22, 14, 1, 111,
+			67, 24, 15, 1, 122,
+			11, 26, 16, 6, 10,
+			45, 32, 22, 1, 30,
+			45, 34, 23, 1, 41,
+			58, 36, 24, 1, 52,
+			63, planner.NoIndex, 25, 1, 61,
+			67, 39, 26, 1, 70,
+			75, 41, 27, 1, 81,
+			80, 44, 28, 1, 90,
+			45, 46, 29, 1, 100,
+			45, 48, 30, 1, 111,
+			67, 50, 31, 1, 122,
+		},
+		Methods: []uint64{
+			10, 3, 0, 0, 1, 9, 0x1f, 0x0, 0x0, 0x0,
+			44, 22, 0, 1, 1, 29, 0x60, 0x0, 0x0, 0x0,
+			53, 27, 0, 2, 1, 40, 0x60, 0x0, 0x0, 0x0,
+			57, 32, 0, 3, 2, 51, 0xe0, 0x0, 0x0, 0x0,
+			66, 39, 0, 5, 1, 69, 0x0, 0x0, 0x0, 0x0,
+			74, 42, 0, 6, 2, 80, 0x60, 0x0, 0x0, 0x0,
+			83, 52, 0, 8, 1, 99, 0x104, 0x0, 0x0, 0x0,
+			88, 57, 0, 9, 1, 110, 0x104, 0x0, 0x0, 0x0,
+			91, 62, 0, 10, 1, 121, 0x0, 0x0, 0x0, 0x0,
+			98, 65, 0, 11, 1, 9, 0x1f, 0x0, 0x0, 0x0,
+			99, 84, 0, 12, 1, 29, 0x60, 0x0, 0x0, 0x0,
+			100, 89, 0, 13, 1, 40, 0x60, 0x0, 0x0, 0x0,
+			101, 94, 0, 14, 2, 51, 0xe0, 0x0, 0x0, 0x0,
+			102, 101, 0, 16, 1, 69, 0x0, 0x0, 0x0, 0x0,
+			103, 104, 0, 17, 2, 80, 0x60, 0x0, 0x0, 0x0,
+			104, 114, 0, 19, 1, 99, 0x104, 0x0, 0x0, 0x0,
+			105, 119, 0, 20, 1, 110, 0x104, 0x0, 0x0, 0x0,
+			106, 124, 0, 21, 1, 121, 0x0, 0x0, 0x0, 0x0,
+		},
+		Axioms: []uint64{},
+		Constants: []uint32{
+			0, 1, 0, 4,
+			0, 4, 1, 5,
+			0, 7, 2, 6,
+		},
+		CallTermSlotCount: 5,
+		FactSlotCount:     0,
+		SourceFiles: []string{
+			"Domains/Test/atom_list_demo.domain",
+		},
+		ValueSources: []uint32{
+			0, 4, 20, 4, 51,
+			0, 5, 27, 5, 47,
+			0, 6, 28, 6, 35,
+			0, 12, 20, 12, 26,
+			0, 12, 42, 12, 52,
+			0, 12, 53, 12, 61,
+			0, 13, 20, 13, 28,
+			0, 13, 50, 13, 56,
+			0, 13, 57, 13, 58,
+			0, 14, 20, 14, 28,
+			0, 14, 44, 14, 52,
+			0, 14, 53, 14, 54,
+			0, 15, 20, 15, 25,
+			0, 15, 42, 15, 48,
+			0, 16, 20, 16, 28,
+			0, 16, 46, 16, 54,
+			0, 19, 34, 19, 44,
+			0, 20, 31, 20, 37,
+			0, 21, 33, 21, 41,
+			0, 22, 33, 22, 41,
+			0, 23, 30, 23, 35,
+			0, 24, 33, 24, 41,
+			0, 32, 29, 32, 46,
+			0, 32, 47, 32, 52,
+			0, 32, 53, 32, 58,
+			0, 35, 32, 35, 37,
+			0, 35, 38, 35, 43,
+			0, 43, 29, 43, 47,
+			0, 43, 48, 43, 53,
+			0, 43, 54, 43, 59,
+			0, 46, 39, 46, 44,
+			0, 46, 45, 46, 50,
+			0, 54, 20, 54, 26,
+			0, 54, 44, 54, 62,
+			0, 55, 29, 55, 35,
+			0, 55, 36, 55, 41,
+			0, 55, 42, 55, 47,
+			0, 58, 36, 58, 41,
+			0, 58, 42, 58, 47,
+			0, 72, 29, 72, 46,
+			0, 72, 47, 72, 52,
+			0, 72, 53, 72, 67,
+			0, 83, 29, 83, 46,
+			0, 83, 47, 83, 52,
+			0, 83, 53, 83, 58,
+			0, 84, 21, 84, 26,
+			0, 84, 27, 84, 34,
+			0, 92, 29, 92, 47,
+			0, 92, 48, 92, 53,
+			0, 92, 54, 92, 59,
+			0, 95, 35, 95, 40,
+			0, 95, 41, 95, 46,
+			0, 102, 35, 102, 52,
+			0, 102, 53, 102, 61,
+			0, 102, 62, 102, 72,
+			0, 105, 38, 105, 46,
+			0, 105, 47, 105, 57,
+			0, 113, 34, 113, 51,
+			0, 113, 63, 113, 71,
+			0, 113, 52, 113, 62,
+			0, 116, 37, 116, 45,
+			0, 116, 46, 116, 56,
+			0, 124, 34, 124, 51,
+			0, 124, 66, 124, 73,
+			0, 124, 52, 124, 64,
+			0, 12, 20, 12, 26,
+			0, 12, 42, 12, 52,
+			0, 12, 53, 12, 61,
+			0, 13, 20, 13, 28,
+			0, 13, 50, 13, 56,
+			0, 13, 57, 13, 58,
+			0, 14, 20, 14, 28,
+			0, 14, 44, 14, 52,
+			0, 14, 53, 14, 54,
+			0, 15, 20, 15, 25,
+			0, 15, 42, 15, 48,
+			0, 16, 20, 16, 28,
+			0, 16, 46, 16, 54,
+			0, 19, 34, 19, 44,
+			0, 20, 31, 20, 37,
+			0, 21, 33, 21, 41,
+			0, 22, 33, 22, 41,
+			0, 23, 30, 23, 35,
+			0, 24, 33, 24, 41,
+			0, 32, 29, 32, 46,
+			0, 32, 47, 32, 52,
+			0, 32, 53, 32, 58,
+			0, 35, 32, 35, 37,
+			0, 35, 38, 35, 43,
+			0, 43, 29, 43, 47,
+			0, 43, 48, 43, 53,
+			0, 43, 54, 43, 59,
+			0, 46, 39, 46, 44,
+			0, 46, 45, 46, 50,
+			0, 54, 20, 54, 26,
+			0, 54, 44, 54, 62,
+			0, 55, 29, 55, 35,
+			0, 55, 36, 55, 41,
+			0, 55, 42, 55, 47,
+			0, 58, 36, 58, 41,
+			0, 58, 42, 58, 47,
+			0, 72, 29, 72, 46,
+			0, 72, 47, 72, 52,
+			0, 72, 53, 72, 67,
+			0, 83, 29, 83, 46,
+			0, 83, 47, 83, 52,
+			0, 83, 53, 83, 58,
+			0, 84, 21, 84, 26,
+			0, 84, 27, 84, 34,
+			0, 92, 29, 92, 47,
+			0, 92, 48, 92, 53,
+			0, 92, 54, 92, 59,
+			0, 95, 35, 95, 40,
+			0, 95, 41, 95, 46,
+			0, 102, 35, 102, 52,
+			0, 102, 53, 102, 61,
+			0, 102, 62, 102, 72,
+			0, 105, 38, 105, 46,
+			0, 105, 47, 105, 57,
+			0, 113, 34, 113, 51,
+			0, 113, 63, 113, 71,
+			0, 113, 52, 113, 62,
+			0, 116, 37, 116, 45,
+			0, 116, 46, 116, 56,
+			0, 124, 34, 124, 51,
+			0, 124, 66, 124, 73,
+			0, 124, 52, 124, 64,
+		},
+		ConditionSources: []uint32{
+			0, 11, 14, 16, 55,
+			0, 12, 17, 12, 61,
+			0, 13, 17, 13, 58,
+			0, 14, 17, 14, 54,
+			0, 15, 17, 15, 48,
+			0, 16, 17, 16, 54,
+			0, 31, 14, 32, 58,
+			0, 32, 17, 32, 58,
+			0, 42, 14, 43, 59,
+			0, 43, 17, 43, 59,
+			0, 53, 14, 55, 47,
+			0, 54, 17, 54, 62,
+			0, 55, 17, 55, 47,
+			0, 71, 14, 72, 68,
+			0, 72, 17, 72, 67,
+			0, 82, 14, 84, 34,
+			0, 83, 17, 83, 58,
+			0, 84, 18, 84, 34,
+			0, 91, 14, 92, 59,
+			0, 92, 17, 92, 59,
+			0, 101, 14, 102, 72,
+			0, 102, 17, 102, 72,
+			0, 112, 14, 113, 71,
+			0, 113, 17, 113, 71,
+			0, 123, 14, 124, 73,
+			0, 124, 17, 124, 73,
+			0, 11, 14, 16, 55,
+			0, 12, 17, 12, 61,
+			0, 13, 17, 13, 58,
+			0, 14, 17, 14, 54,
+			0, 15, 17, 15, 48,
+			0, 16, 17, 16, 54,
+			0, 31, 14, 32, 58,
+			0, 32, 17, 32, 58,
+			0, 42, 14, 43, 59,
+			0, 43, 17, 43, 59,
+			0, 53, 14, 55, 47,
+			0, 54, 17, 54, 62,
+			0, 55, 17, 55, 47,
+			0, 71, 14, 72, 68,
+			0, 72, 17, 72, 67,
+			0, 82, 14, 84, 34,
+			0, 83, 17, 83, 58,
+			0, 84, 18, 84, 34,
+			0, 91, 14, 92, 59,
+			0, 92, 17, 92, 59,
+			0, 101, 14, 102, 72,
+			0, 102, 17, 102, 72,
+			0, 112, 14, 113, 71,
+			0, 113, 17, 113, 71,
+			0, 123, 14, 124, 73,
+			0, 124, 17, 124, 73,
+		},
+		TaskSources: []uint32{
+			0, 19, 17, 19, 44,
+			0, 20, 17, 20, 37,
+			0, 21, 17, 21, 41,
+			0, 22, 17, 22, 41,
+			0, 23, 17, 23, 35,
+			0, 24, 17, 24, 41,
+			0, 35, 17, 35, 43,
+			0, 46, 17, 46, 50,
+			0, 58, 17, 58, 47,
+			0, 64, 17, 64, 38,
+			0, 75, 17, 75, 38,
+			0, 87, 17, 87, 42,
+			0, 95, 17, 95, 46,
+			0, 105, 17, 105, 57,
+			0, 116, 17, 116, 56,
+			0, 127, 17, 127, 49,
+			0, 19, 17, 19, 44,
+			0, 20, 17, 20, 37,
+			0, 21, 17, 21, 41,
+			0, 22, 17, 22, 41,
+			0, 23, 17, 23, 35,
+			0, 24, 17, 24, 41,
+			0, 35, 17, 35, 43,
+			0, 46, 17, 46, 50,
+			0, 58, 17, 58, 47,
+			0, 64, 17, 64, 38,
+			0, 75, 17, 75, 38,
+			0, 87, 17, 87, 42,
+			0, 95, 17, 95, 46,
+			0, 105, 17, 105, 57,
+			0, 116, 17, 116, 56,
+			0, 127, 17, 127, 49,
+		},
+		BranchSources: []uint32{
+			0, 10, 9, 26, 9,
+			0, 30, 9, 37, 9,
+			0, 41, 9, 48, 9,
+			0, 52, 9, 60, 9,
+			0, 61, 9, 66, 9,
+			0, 70, 9, 77, 9,
+			0, 81, 9, 89, 9,
+			0, 90, 9, 97, 9,
+			0, 100, 9, 107, 9,
+			0, 111, 9, 118, 9,
+			0, 122, 9, 129, 9,
+			0, 10, 9, 26, 9,
+			0, 30, 9, 37, 9,
+			0, 41, 9, 48, 9,
+			0, 52, 9, 60, 9,
+			0, 61, 9, 66, 9,
+			0, 70, 9, 77, 9,
+			0, 81, 9, 89, 9,
+			0, 90, 9, 97, 9,
+			0, 100, 9, 107, 9,
+			0, 111, 9, 118, 9,
+			0, 122, 9, 129, 9,
+		},
+		MethodSources: []uint32{
+			0, 9, 5, 27, 5,
+			0, 29, 5, 38, 5,
+			0, 40, 5, 49, 5,
+			0, 51, 5, 67, 5,
+			0, 69, 5, 78, 5,
+			0, 80, 5, 98, 5,
+			0, 99, 5, 108, 5,
+			0, 110, 5, 119, 5,
+			0, 121, 5, 130, 5,
+			0, 9, 5, 27, 5,
+			0, 29, 5, 38, 5,
+			0, 40, 5, 49, 5,
+			0, 51, 5, 67, 5,
+			0, 69, 5, 78, 5,
+			0, 80, 5, 98, 5,
+			0, 99, 5, 108, 5,
+			0, 110, 5, 119, 5,
+			0, 121, 5, 130, 5,
+		},
+		AxiomSources: []uint32{},
+		ConstantSources: []uint32{
+			0, 4, 9, 4, 52,
+			0, 5, 9, 5, 48,
+			0, 6, 9, 6, 36,
+		},
+	})
 }
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (!print_original @demo_list)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{sv7}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (!print_added ?added)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!print_removed ?removed)
 	if !ex.AppendPlanStep(sym3, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (!print_element ?element)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (!print_size ?size)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (!print_cleared ?cleared)
 	if !ex.AppendPlanStep(sym6, []atom.Atom{ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task6(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 6)
 	// (!split_result ?head ?tail)
 	if !ex.AppendPlanStep(sym7, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task7(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 7)
 	// (!split_single_result ?head ?tail)
 	if !ex.AppendPlanStep(sym8, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task8(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 8)
 	// (!unexpected_split ?head ?tail)
 	if !ex.AppendPlanStep(sym9, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task9(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 9)
 	// (!empty_list_rejected)
 	if !ex.AppendPlanStep(sym10, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task10(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 10)
 	// (!bound_outputs_match)
 	if !ex.AppendPlanStep(sym11, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task11(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 11)
 	// (!unexpected_first_branch)
 	if !ex.AppendPlanStep(sym12, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task12(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 12)
 	// (!rollback_result ?head ?tail)
 	if !ex.AppendPlanStep(sym13, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task13(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 13)
 	// (!split_front_result ?element ?remainder)
 	if !ex.AppendPlanStep(sym14, []atom.Atom{ex.V[2], ex.V[8]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task14(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 14)
 	// (!split_back_result ?element ?remainder)
 	if !ex.AppendPlanStep(sym15, []atom.Atom{ex.V[2], ex.V[8]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task15(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 15)
 	// (!split_back_bound_outputs_match)
 	if !ex.AppendPlanStep(sym16, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task16(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 16)
 	// (!print_original @demo_list)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{sv26}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task17(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 17)
 	// (!print_added ?added)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task18(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 18)
 	// (!print_removed ?removed)
 	if !ex.AppendPlanStep(sym3, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task19(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 19)
 	// (!print_element ?element)
 	if !ex.AppendPlanStep(sym4, []atom.Atom{ex.V[2]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task20(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 20)
 	// (!print_size ?size)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[3]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task21(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 21)
 	// (!print_cleared ?cleared)
 	if !ex.AppendPlanStep(sym6, []atom.Atom{ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task22(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 22)
 	// (!split_result ?head ?tail)
 	if !ex.AppendPlanStep(sym7, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task23(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 23)
 	// (!split_single_result ?head ?tail)
 	if !ex.AppendPlanStep(sym8, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task24(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 24)
 	// (!unexpected_split ?head ?tail)
 	if !ex.AppendPlanStep(sym9, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task25(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 25)
 	// (!empty_list_rejected)
 	if !ex.AppendPlanStep(sym10, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task26(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 26)
 	// (!bound_outputs_match)
 	if !ex.AppendPlanStep(sym11, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task27(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 27)
 	// (!unexpected_first_branch)
 	if !ex.AppendPlanStep(sym12, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task28(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 28)
 	// (!rollback_result ?head ?tail)
 	if !ex.AppendPlanStep(sym13, []atom.Atom{ex.V[5], ex.V[6]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task29(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 29)
 	// (!split_front_result ?element ?remainder)
 	if !ex.AppendPlanStep(sym14, []atom.Atom{ex.V[2], ex.V[8]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task30(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 30)
 	// (!split_back_result ?element ?remainder)
 	if !ex.AppendPlanStep(sym15, []atom.Atom{ex.V[2], ex.V[8]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task31(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 31)
 	// (!split_back_bound_outputs_match)
 	if !ex.AppendPlanStep(sym16, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -563,70 +1447,89 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch print_constant_list
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (= ?added (call list_add @demo_list "return")) (= ?removed (call list_remove_at ?added 1)) (= ?element (call list_get ?removed 2)) (= ?size (call list_size ?added)) (= ?cleared (call list_clear ?removed)))
 	cp7_0 = ex.V[0]
 	cp7_1 = ex.V[1]
 	cp7_2 = ex.V[2]
 	cp7_3 = ex.V[3]
 	cp7_4 = ex.V[4]
+	ex.DebugBeginCondition(&definition, 0)
 	// (= ?added (call list_add @demo_list "return"))
 	cp9_0 = ex.V[0]
 	// (= ?added (call list_add @demo_list "return"))
+	ex.DebugBeginCondition(&definition, 1)
 	if !ex.V[0].IsBound() {
 		if result, ok := ex.Invoke(0, []atom.Atom{sv3, sv4}, &cs0, factSymbols); ok {
 			ex.SetIfChanged(0, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L10
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L8
 L10:
 	// (= ?removed (call list_remove_at ?added 1))
 	cp12_1 = ex.V[1]
 	// (= ?removed (call list_remove_at ?added 1))
+	ex.DebugBeginCondition(&definition, 2)
 	if !ex.V[1].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[0], sv5}, &cs1, factSymbols); ok {
 			ex.SetIfChanged(1, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L13
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L11
 L13:
 	// (= ?element (call list_get ?removed 2))
 	cp15_2 = ex.V[2]
 	// (= ?element (call list_get ?removed 2))
+	ex.DebugBeginCondition(&definition, 3)
 	if !ex.V[2].IsBound() {
 		if result, ok := ex.Invoke(2, []atom.Atom{ex.V[1], sv6}, &cs2, factSymbols); ok {
 			ex.SetIfChanged(2, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L16
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L14
 L16:
 	// (= ?size (call list_size ?added))
 	cp18_3 = ex.V[3]
 	// (= ?size (call list_size ?added))
+	ex.DebugBeginCondition(&definition, 4)
 	if !ex.V[3].IsBound() {
 		if result, ok := ex.Invoke(3, []atom.Atom{ex.V[0]}, &cs3, factSymbols); ok {
 			ex.SetIfChanged(3, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L19
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L17
 L19:
 	// (= ?cleared (call list_clear ?removed))
 	cp21_4 = ex.V[4]
 	// (= ?cleared (call list_clear ?removed))
+	ex.DebugBeginCondition(&definition, 5)
 	if !ex.V[4].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{ex.V[1]}, &cs4, factSymbols); ok {
 			ex.SetIfChanged(4, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L22
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L20
 L22:
+	ex.DebugEndCondition(&definition, true)
 	goto L4
 L20:
 	ex.V[4] = cp21_4
@@ -649,14 +1552,24 @@ L6:
 	ex.V[2] = cp7_2
 	ex.V[3] = cp7_3
 	ex.V[4] = cp7_4
+	ex.DebugEndCondition(&definition, false)
 	goto L5
 L5:
+	ex.DebugEndBranch(&definition, false)
 	goto L1
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L23:
+	ex.DebugCapturePendingTask(5)
+	ex.DebugCapturePendingTask(4)
+	ex.DebugCapturePendingTask(3)
+	ex.DebugCapturePendingTask(2)
+	ex.DebugCapturePendingTask(1)
+	ex.DebugCapturePendingTask(0)
+L24:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -666,15 +1579,20 @@ L23:
 		frame.ChildResult = 0
 		goto L3
 	}
-	goto L24
+	goto L25
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L23
-L24:
+	goto L24
+L25:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L1:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -682,28 +1600,32 @@ L1:
 func method1(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp31_5 atom.Atom
-	var cp31_6 atom.Atom
-	var cp33_5 atom.Atom
-	var cp33_6 atom.Atom
-	_ = cp31_5
-	_ = cp31_6
-	_ = cp33_5
-	_ = cp33_6
+	var cp32_5 atom.Atom
+	var cp32_6 atom.Atom
+	var cp34_5 atom.Atom
+	var cp34_6 atom.Atom
+	_ = cp32_5
+	_ = cp32_6
+	_ = cp34_5
+	_ = cp34_6
 	switch frame.Resume {
 	case 1:
-		goto L27
+		goto L28
 	}
-	goto L26
-L26:
+	ex.DebugBeginMethod(&definition, 1)
+	goto L27
+L27:
 	// branch split
+	ex.DebugBeginBranch(&definition, 1)
 	// (and (split_list @split_list_input ?head ?tail))
-	cp31_5 = ex.V[5]
-	cp31_6 = ex.V[6]
+	cp32_5 = ex.V[5]
+	cp32_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 6)
 	// (split_list @split_list_input ?head ?tail)
-	cp33_5 = ex.V[5]
-	cp33_6 = ex.V[6]
+	cp34_5 = ex.V[5]
+	cp34_6 = ex.V[6]
 	// (split_list @split_list_input ?head ?tail)
+	ex.DebugBeginCondition(&definition, 7)
 	{
 		valid := false
 		if element, remainder, ok := sv8.SplitList(atom.SplitFront); ok {
@@ -723,28 +1645,35 @@ L26:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L34
+			goto L35
 		}
-		goto L32
-	}
-L34:
-	goto L28
-L32:
-	ex.V[5] = cp33_5
-	ex.V[6] = cp33_6
-	goto L30
-L30:
-	ex.V[5] = cp31_5
-	ex.V[6] = cp31_6
-	goto L29
-L29:
-	goto L25
-L28:
-	if !ex.PushBranch(&bc1) {
-		return 0
+		goto L33
 	}
 L35:
+	ex.DebugEndCondition(&definition, true)
+	goto L29
+L33:
+	ex.V[5] = cp34_5
+	ex.V[6] = cp34_6
+	goto L31
+L31:
+	ex.V[5] = cp32_5
+	ex.V[6] = cp32_6
+	ex.DebugEndCondition(&definition, false)
+	goto L30
+L30:
+	ex.DebugEndBranch(&definition, false)
+	goto L26
+L29:
+	if !ex.PushBranch(&bc1) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
+		return 0
+	}
+	ex.DebugCapturePendingTask(6)
+L37:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -752,17 +1681,22 @@ L35:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L27
+		goto L28
 	}
-	goto L36
-L27:
+	goto L38
+L28:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L35
-L36:
+	goto L37
+L38:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L25:
+L26:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -770,28 +1704,32 @@ L25:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp43_5 atom.Atom
-	var cp43_6 atom.Atom
 	var cp45_5 atom.Atom
 	var cp45_6 atom.Atom
-	_ = cp43_5
-	_ = cp43_6
+	var cp47_5 atom.Atom
+	var cp47_6 atom.Atom
 	_ = cp45_5
 	_ = cp45_6
+	_ = cp47_5
+	_ = cp47_6
 	switch frame.Resume {
 	case 1:
-		goto L39
+		goto L41
 	}
-	goto L38
-L38:
+	ex.DebugBeginMethod(&definition, 2)
+	goto L40
+L40:
 	// branch split
+	ex.DebugBeginBranch(&definition, 2)
 	// (and (split_list @split_list_single ?head ?tail))
-	cp43_5 = ex.V[5]
-	cp43_6 = ex.V[6]
-	// (split_list @split_list_single ?head ?tail)
 	cp45_5 = ex.V[5]
 	cp45_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 8)
 	// (split_list @split_list_single ?head ?tail)
+	cp47_5 = ex.V[5]
+	cp47_6 = ex.V[6]
+	// (split_list @split_list_single ?head ?tail)
+	ex.DebugBeginCondition(&definition, 9)
 	{
 		valid := false
 		if element, remainder, ok := sv9.SplitList(atom.SplitFront); ok {
@@ -811,28 +1749,35 @@ L38:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L46
+			goto L48
 		}
-		goto L44
+		goto L46
 	}
+L48:
+	ex.DebugEndCondition(&definition, true)
+	goto L42
 L46:
-	goto L40
+	ex.V[5] = cp47_5
+	ex.V[6] = cp47_6
+	goto L44
 L44:
 	ex.V[5] = cp45_5
 	ex.V[6] = cp45_6
-	goto L42
+	ex.DebugEndCondition(&definition, false)
+	goto L43
+L43:
+	ex.DebugEndBranch(&definition, false)
+	goto L39
 L42:
-	ex.V[5] = cp43_5
-	ex.V[6] = cp43_6
-	goto L41
-L41:
-	goto L37
-L40:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L47:
+	ex.DebugCapturePendingTask(7)
+L50:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -840,17 +1785,22 @@ L47:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L39
+		goto L41
 	}
-	goto L48
-L39:
+	goto L51
+L41:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L47
-L48:
+	goto L50
+L51:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L37:
+L39:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -858,47 +1808,54 @@ L37:
 func method3(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp57_5 atom.Atom
-	var cp57_6 atom.Atom
-	var cp57_7 atom.Atom
-	var cp59_7 atom.Atom
-	var cp62_5 atom.Atom
-	var cp62_6 atom.Atom
-	_ = cp57_5
-	_ = cp57_6
-	_ = cp57_7
-	_ = cp59_7
-	_ = cp62_5
-	_ = cp62_6
+	var cp60_5 atom.Atom
+	var cp60_6 atom.Atom
+	var cp60_7 atom.Atom
+	var cp62_7 atom.Atom
+	var cp65_5 atom.Atom
+	var cp65_6 atom.Atom
+	_ = cp60_5
+	_ = cp60_6
+	_ = cp60_7
+	_ = cp62_7
+	_ = cp65_5
+	_ = cp65_6
 	switch frame.Resume {
 	case 1:
-		goto L52
+		goto L55
 	case 2:
-		goto L53
+		goto L56
 	}
-	goto L50
-L50:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L53
+L53:
 	// branch unexpected
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 3)
 	// (and (= ?empty (call list_clear @split_list_single)) (split_list ?empty ?head ?tail))
-	cp57_5 = ex.V[5]
-	cp57_6 = ex.V[6]
-	cp57_7 = ex.V[7]
+	cp60_5 = ex.V[5]
+	cp60_6 = ex.V[6]
+	cp60_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 10)
 	// (= ?empty (call list_clear @split_list_single))
-	cp59_7 = ex.V[7]
+	cp62_7 = ex.V[7]
 	// (= ?empty (call list_clear @split_list_single))
+	ex.DebugBeginCondition(&definition, 11)
 	if !ex.V[7].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{sv10}, &cs5, factSymbols); ok {
 			ex.SetIfChanged(7, result)
-			goto L60
+			ex.DebugEndCondition(&definition, true)
+			goto L63
 		}
 	}
-	goto L58
-L60:
+	ex.DebugEndCondition(&definition, false)
+	goto L61
+L63:
 	// (split_list ?empty ?head ?tail)
-	cp62_5 = ex.V[5]
-	cp62_6 = ex.V[6]
+	cp65_5 = ex.V[5]
+	cp65_6 = ex.V[6]
 	// (split_list ?empty ?head ?tail)
+	ex.DebugBeginCondition(&definition, 12)
 	{
 		valid := false
 		if element, remainder, ok := ex.V[7].SplitList(atom.SplitFront); ok {
@@ -918,34 +1875,41 @@ L60:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L63
+			goto L66
 		}
-		goto L61
+		goto L64
 	}
-L63:
-	goto L54
+L66:
+	ex.DebugEndCondition(&definition, true)
+	goto L57
+L64:
+	ex.V[5] = cp65_5
+	ex.V[6] = cp65_6
+	goto L61
 L61:
-	ex.V[5] = cp62_5
-	ex.V[6] = cp62_6
+	ex.V[7] = cp62_7
+	goto L59
+L59:
+	ex.V[5] = cp60_5
+	ex.V[6] = cp60_6
+	ex.V[7] = cp60_7
+	ex.DebugEndCondition(&definition, false)
 	goto L58
 L58:
-	ex.V[7] = cp59_7
-	goto L56
-L56:
-	ex.V[5] = cp57_5
-	ex.V[6] = cp57_6
-	ex.V[7] = cp57_7
-	goto L55
-L55:
 	ex.ReleaseRetry(frame)
-	goto L51
-L54:
+	ex.DebugEndBranch(&definition, false)
+	goto L54
+L57:
 	if !ex.PushBranch(&bc3) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L64:
+	ex.DebugCapturePendingTask(8)
+L68:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -953,34 +1917,45 @@ L64:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L52
+		goto L55
 	}
-	goto L65
-L52:
+	goto L69
+L55:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L51
+		ex.DebugEndBranch(&definition, false)
+		goto L54
 	}
-	goto L64
-L65:
+	goto L68
+L69:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L51:
+L54:
 	// branch expected
-	goto L66
-L66:
+	ex.DebugBeginBranch(&definition, 4)
+	goto L70
+L70:
 	if !ex.PushBranch(&bc4) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L68:
+	ex.DebugCapturePendingTask(9)
+L72:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -988,15 +1963,19 @@ L68:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L53
+		goto L56
 	}
-	goto L69
-L53:
+	goto L73
+L56:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L68
-L69:
+	goto L72
+L73:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1006,14 +1985,18 @@ func method4(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L72
+		goto L76
 	}
-	goto L71
-L71:
+	ex.DebugBeginMethod(&definition, 4)
+	goto L75
+L75:
 	// branch compatible
+	ex.DebugBeginBranch(&definition, 5)
 	// (and (split_list @split_list_input "one" ("two" "three")))
+	ex.DebugBeginCondition(&definition, 13)
 	// (split_list @split_list_input "one" ("two" "three"))
 	// (split_list @split_list_input "one" ("two" "three"))
+	ex.DebugBeginCondition(&definition, 14)
 	{
 		valid := false
 		if element, remainder, ok := sv11.SplitList(atom.SplitFront); ok {
@@ -1027,24 +2010,31 @@ L71:
 			if valid {
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L79
+			goto L83
 		}
-		goto L77
+		goto L81
 	}
+L83:
+	ex.DebugEndCondition(&definition, true)
+	goto L77
+L81:
+	goto L79
 L79:
-	goto L73
-L77:
-	goto L75
-L75:
+	ex.DebugEndCondition(&definition, false)
+	goto L78
+L78:
+	ex.DebugEndBranch(&definition, false)
 	goto L74
-L74:
-	goto L70
-L73:
+L77:
 	if !ex.PushBranch(&bc5) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L80:
+	ex.DebugCapturePendingTask(10)
+L85:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1052,17 +2042,22 @@ L80:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L72
+		goto L76
 	}
-	goto L81
-L72:
+	goto L86
+L76:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L80
-L81:
+	goto L85
+L86:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L70:
+L74:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1070,39 +2065,43 @@ L70:
 func method5(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp90_5 atom.Atom
-	var cp90_6 atom.Atom
-	var cp92_5 atom.Atom
-	var cp92_6 atom.Atom
-	var cp102_5 atom.Atom
-	var cp102_6 atom.Atom
-	var cp104_5 atom.Atom
-	var cp104_6 atom.Atom
-	_ = cp90_5
-	_ = cp90_6
-	_ = cp92_5
-	_ = cp92_6
-	_ = cp102_5
-	_ = cp102_6
-	_ = cp104_5
-	_ = cp104_6
+	var cp95_5 atom.Atom
+	var cp95_6 atom.Atom
+	var cp97_5 atom.Atom
+	var cp97_6 atom.Atom
+	var cp108_5 atom.Atom
+	var cp108_6 atom.Atom
+	var cp110_5 atom.Atom
+	var cp110_6 atom.Atom
+	_ = cp95_5
+	_ = cp95_6
+	_ = cp97_5
+	_ = cp97_6
+	_ = cp108_5
+	_ = cp108_6
+	_ = cp110_5
+	_ = cp110_6
 	switch frame.Resume {
 	case 1:
-		goto L85
+		goto L90
 	case 2:
-		goto L86
+		goto L91
 	}
-	goto L83
-L83:
+	ex.DebugBeginMethod(&definition, 5)
+	goto L88
+L88:
 	// branch fails_after_binding
 	ex.SaveRetry(frame, ms5)
+	ex.DebugBeginBranch(&definition, 6)
 	// (and (split_list @split_list_input ?head ?tail) (== ?head "wrong"))
-	cp90_5 = ex.V[5]
-	cp90_6 = ex.V[6]
+	cp95_5 = ex.V[5]
+	cp95_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 15)
 	// (split_list @split_list_input ?head ?tail)
-	cp92_5 = ex.V[5]
-	cp92_6 = ex.V[6]
+	cp97_5 = ex.V[5]
+	cp97_6 = ex.V[6]
 	// (split_list @split_list_input ?head ?tail)
+	ex.DebugBeginCondition(&definition, 16)
 	{
 		valid := false
 		if element, remainder, ok := sv14.SplitList(atom.SplitFront); ok {
@@ -1122,39 +2121,49 @@ L83:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L93
+			goto L98
 		}
-		goto L91
-	}
-L93:
-	// (== ?head "wrong")
-	// (== ?head "wrong")
-	if planner.Compare(ex.V[5], sv15, 0) {
 		goto L96
 	}
-	goto L94
+L98:
+	// (== ?head "wrong")
+	// (== ?head "wrong")
+	ex.DebugBeginCondition(&definition, 17)
+	if planner.Compare(ex.V[5], sv15, 0) {
+		ex.DebugEndCondition(&definition, true)
+		goto L101
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L99
+L101:
+	ex.DebugEndCondition(&definition, true)
+	goto L92
+L99:
+	goto L96
 L96:
-	goto L87
+	ex.V[5] = cp97_5
+	ex.V[6] = cp97_6
+	goto L94
 L94:
-	goto L91
-L91:
-	ex.V[5] = cp92_5
-	ex.V[6] = cp92_6
-	goto L89
-L89:
-	ex.V[5] = cp90_5
-	ex.V[6] = cp90_6
-	goto L88
-L88:
+	ex.V[5] = cp95_5
+	ex.V[6] = cp95_6
+	ex.DebugEndCondition(&definition, false)
+	goto L93
+L93:
 	ex.ReleaseRetry(frame)
-	goto L84
-L87:
+	ex.DebugEndBranch(&definition, false)
+	goto L89
+L92:
 	if !ex.PushBranch(&bc6) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L97:
+	ex.DebugCapturePendingTask(11)
+L103:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1162,35 +2171,45 @@ L97:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L85
+		goto L90
 	}
-	goto L98
-L85:
+	goto L104
+L90:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms5)
-		goto L84
+		ex.DebugEndBranch(&definition, false)
+		goto L89
 	}
-	goto L97
-L98:
+	goto L103
+L104:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L84:
+L89:
 	// branch reuses_same_variables
+	ex.DebugBeginBranch(&definition, 7)
 	// (and (split_list @split_list_single ?head ?tail))
-	cp102_5 = ex.V[5]
-	cp102_6 = ex.V[6]
+	cp108_5 = ex.V[5]
+	cp108_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 18)
 	// (split_list @split_list_single ?head ?tail)
-	cp104_5 = ex.V[5]
-	cp104_6 = ex.V[6]
+	cp110_5 = ex.V[5]
+	cp110_6 = ex.V[6]
 	// (split_list @split_list_single ?head ?tail)
+	ex.DebugBeginCondition(&definition, 19)
 	{
 		valid := false
 		if element, remainder, ok := sv16.SplitList(atom.SplitFront); ok {
@@ -1210,28 +2229,35 @@ L84:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L105
+			goto L111
 		}
-		goto L103
+		goto L109
 	}
+L111:
+	ex.DebugEndCondition(&definition, true)
+	goto L105
+L109:
+	ex.V[5] = cp110_5
+	ex.V[6] = cp110_6
+	goto L107
+L107:
+	ex.V[5] = cp108_5
+	ex.V[6] = cp108_6
+	ex.DebugEndCondition(&definition, false)
+	goto L106
+L106:
+	ex.DebugEndBranch(&definition, false)
+	goto L87
 L105:
-	goto L99
-L103:
-	ex.V[5] = cp104_5
-	ex.V[6] = cp104_6
-	goto L101
-L101:
-	ex.V[5] = cp102_5
-	ex.V[6] = cp102_6
-	goto L100
-L100:
-	goto L82
-L99:
 	if !ex.PushBranch(&bc7) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L106:
+	ex.DebugCapturePendingTask(12)
+L113:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1239,17 +2265,22 @@ L106:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L86
+		goto L91
 	}
-	goto L107
-L86:
+	goto L114
+L91:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L106
-L107:
+	goto L113
+L114:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L82:
+L87:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1257,28 +2288,32 @@ L82:
 func method6(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp114_2 atom.Atom
-	var cp114_8 atom.Atom
-	var cp116_2 atom.Atom
-	var cp116_8 atom.Atom
-	_ = cp114_2
-	_ = cp114_8
-	_ = cp116_2
-	_ = cp116_8
+	var cp121_2 atom.Atom
+	var cp121_8 atom.Atom
+	var cp123_2 atom.Atom
+	var cp123_8 atom.Atom
+	_ = cp121_2
+	_ = cp121_8
+	_ = cp123_2
+	_ = cp123_8
 	switch frame.Resume {
 	case 1:
-		goto L110
+		goto L117
 	}
-	goto L109
-L109:
+	ex.DebugBeginMethod(&definition, 6)
+	goto L116
+L116:
 	// branch split
+	ex.DebugBeginBranch(&definition, 8)
 	// (and (split_list_front @split_list_input ?element ?remainder))
-	cp114_2 = ex.V[2]
-	cp114_8 = ex.V[8]
+	cp121_2 = ex.V[2]
+	cp121_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 20)
 	// (split_list_front @split_list_input ?element ?remainder)
-	cp116_2 = ex.V[2]
-	cp116_8 = ex.V[8]
+	cp123_2 = ex.V[2]
+	cp123_8 = ex.V[8]
 	// (split_list_front @split_list_input ?element ?remainder)
+	ex.DebugBeginCondition(&definition, 21)
 	{
 		valid := false
 		if element, remainder, ok := sv17.SplitList(atom.SplitFront); ok {
@@ -1298,28 +2333,35 @@ L109:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L117
+			goto L124
 		}
-		goto L115
+		goto L122
 	}
-L117:
-	goto L111
-L115:
-	ex.V[2] = cp116_2
-	ex.V[8] = cp116_8
-	goto L113
-L113:
-	ex.V[2] = cp114_2
-	ex.V[8] = cp114_8
-	goto L112
-L112:
-	goto L108
-L111:
+L124:
+	ex.DebugEndCondition(&definition, true)
+	goto L118
+L122:
+	ex.V[2] = cp123_2
+	ex.V[8] = cp123_8
+	goto L120
+L120:
+	ex.V[2] = cp121_2
+	ex.V[8] = cp121_8
+	ex.DebugEndCondition(&definition, false)
+	goto L119
+L119:
+	ex.DebugEndBranch(&definition, false)
+	goto L115
+L118:
 	if !ex.PushBranch(&bc8) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L118:
+	ex.DebugCapturePendingTask(13)
+L126:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1327,17 +2369,22 @@ L118:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L110
+		goto L117
 	}
-	goto L119
-L110:
+	goto L127
+L117:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L118
-L119:
+	goto L126
+L127:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L108:
+L115:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1345,28 +2392,32 @@ L108:
 func method7(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp126_2 atom.Atom
-	var cp126_8 atom.Atom
-	var cp128_2 atom.Atom
-	var cp128_8 atom.Atom
-	_ = cp126_2
-	_ = cp126_8
-	_ = cp128_2
-	_ = cp128_8
+	var cp134_2 atom.Atom
+	var cp134_8 atom.Atom
+	var cp136_2 atom.Atom
+	var cp136_8 atom.Atom
+	_ = cp134_2
+	_ = cp134_8
+	_ = cp136_2
+	_ = cp136_8
 	switch frame.Resume {
 	case 1:
-		goto L122
+		goto L130
 	}
-	goto L121
-L121:
+	ex.DebugBeginMethod(&definition, 7)
+	goto L129
+L129:
 	// branch split
+	ex.DebugBeginBranch(&definition, 9)
 	// (and (split_list_back @split_list_input ?remainder ?element))
-	cp126_2 = ex.V[2]
-	cp126_8 = ex.V[8]
+	cp134_2 = ex.V[2]
+	cp134_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 22)
 	// (split_list_back @split_list_input ?remainder ?element)
-	cp128_2 = ex.V[2]
-	cp128_8 = ex.V[8]
+	cp136_2 = ex.V[2]
+	cp136_8 = ex.V[8]
 	// (split_list_back @split_list_input ?remainder ?element)
+	ex.DebugBeginCondition(&definition, 23)
 	{
 		valid := false
 		if element, remainder, ok := sv18.SplitList(atom.SplitBack); ok {
@@ -1386,28 +2437,35 @@ L121:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L129
+			goto L137
 		}
-		goto L127
+		goto L135
 	}
-L129:
-	goto L123
-L127:
-	ex.V[2] = cp128_2
-	ex.V[8] = cp128_8
-	goto L125
-L125:
-	ex.V[2] = cp126_2
-	ex.V[8] = cp126_8
-	goto L124
-L124:
-	goto L120
-L123:
+L137:
+	ex.DebugEndCondition(&definition, true)
+	goto L131
+L135:
+	ex.V[2] = cp136_2
+	ex.V[8] = cp136_8
+	goto L133
+L133:
+	ex.V[2] = cp134_2
+	ex.V[8] = cp134_8
+	ex.DebugEndCondition(&definition, false)
+	goto L132
+L132:
+	ex.DebugEndBranch(&definition, false)
+	goto L128
+L131:
 	if !ex.PushBranch(&bc9) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L130:
+	ex.DebugCapturePendingTask(14)
+L139:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1415,17 +2473,22 @@ L130:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L122
+		goto L130
 	}
-	goto L131
-L122:
+	goto L140
+L130:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L130
-L131:
+	goto L139
+L140:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L120:
+L128:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1435,14 +2498,18 @@ func method8(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L134
+		goto L143
 	}
-	goto L133
-L133:
+	ex.DebugBeginMethod(&definition, 8)
+	goto L142
+L142:
 	// branch compatible
+	ex.DebugBeginBranch(&definition, 10)
 	// (and (split_list_back @split_list_input ("one" "two") "three"))
+	ex.DebugBeginCondition(&definition, 24)
 	// (split_list_back @split_list_input ("one" "two") "three")
 	// (split_list_back @split_list_input ("one" "two") "three")
+	ex.DebugBeginCondition(&definition, 25)
 	{
 		valid := false
 		if element, remainder, ok := sv19.SplitList(atom.SplitBack); ok {
@@ -1456,24 +2523,31 @@ L133:
 			if valid {
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L141
+			goto L150
 		}
-		goto L139
+		goto L148
 	}
-L141:
-	goto L135
-L139:
-	goto L137
-L137:
-	goto L136
-L136:
-	goto L132
-L135:
+L150:
+	ex.DebugEndCondition(&definition, true)
+	goto L144
+L148:
+	goto L146
+L146:
+	ex.DebugEndCondition(&definition, false)
+	goto L145
+L145:
+	ex.DebugEndBranch(&definition, false)
+	goto L141
+L144:
 	if !ex.PushBranch(&bc10) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L142:
+	ex.DebugCapturePendingTask(15)
+L152:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1481,17 +2555,22 @@ L142:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L134
+		goto L143
 	}
-	goto L143
-L134:
+	goto L153
+L143:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L142
-L143:
+	goto L152
+L153:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L132:
+L141:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1499,124 +2578,153 @@ L132:
 func method9(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp150_0 atom.Atom
-	var cp150_1 atom.Atom
-	var cp150_2 atom.Atom
-	var cp150_3 atom.Atom
-	var cp150_4 atom.Atom
-	var cp152_0 atom.Atom
-	var cp155_1 atom.Atom
-	var cp158_2 atom.Atom
-	var cp161_3 atom.Atom
-	var cp164_4 atom.Atom
-	_ = cp150_0
-	_ = cp150_1
-	_ = cp150_2
-	_ = cp150_3
-	_ = cp150_4
-	_ = cp152_0
-	_ = cp155_1
-	_ = cp158_2
-	_ = cp161_3
-	_ = cp164_4
+	var cp160_0 atom.Atom
+	var cp160_1 atom.Atom
+	var cp160_2 atom.Atom
+	var cp160_3 atom.Atom
+	var cp160_4 atom.Atom
+	var cp162_0 atom.Atom
+	var cp165_1 atom.Atom
+	var cp168_2 atom.Atom
+	var cp171_3 atom.Atom
+	var cp174_4 atom.Atom
+	_ = cp160_0
+	_ = cp160_1
+	_ = cp160_2
+	_ = cp160_3
+	_ = cp160_4
+	_ = cp162_0
+	_ = cp165_1
+	_ = cp168_2
+	_ = cp171_3
+	_ = cp174_4
 	switch frame.Resume {
 	case 1:
-		goto L146
+		goto L156
 	}
-	goto L145
-L145:
+	ex.DebugBeginMethod(&definition, 9)
+	goto L155
+L155:
 	// branch print_constant_list
+	ex.DebugBeginBranch(&definition, 11)
 	// (and (= ?added (call list_add @demo_list "return")) (= ?removed (call list_remove_at ?added 1)) (= ?element (call list_get ?removed 2)) (= ?size (call list_size ?added)) (= ?cleared (call list_clear ?removed)))
-	cp150_0 = ex.V[0]
-	cp150_1 = ex.V[1]
-	cp150_2 = ex.V[2]
-	cp150_3 = ex.V[3]
-	cp150_4 = ex.V[4]
+	cp160_0 = ex.V[0]
+	cp160_1 = ex.V[1]
+	cp160_2 = ex.V[2]
+	cp160_3 = ex.V[3]
+	cp160_4 = ex.V[4]
+	ex.DebugBeginCondition(&definition, 26)
 	// (= ?added (call list_add @demo_list "return"))
-	cp152_0 = ex.V[0]
+	cp162_0 = ex.V[0]
 	// (= ?added (call list_add @demo_list "return"))
+	ex.DebugBeginCondition(&definition, 27)
 	if !ex.V[0].IsBound() {
 		if result, ok := ex.Invoke(0, []atom.Atom{sv22, sv23}, &cs6, factSymbols); ok {
 			ex.SetIfChanged(0, result)
-			goto L153
+			ex.DebugEndCondition(&definition, true)
+			goto L163
 		}
 	}
-	goto L151
-L153:
+	ex.DebugEndCondition(&definition, false)
+	goto L161
+L163:
 	// (= ?removed (call list_remove_at ?added 1))
-	cp155_1 = ex.V[1]
+	cp165_1 = ex.V[1]
 	// (= ?removed (call list_remove_at ?added 1))
+	ex.DebugBeginCondition(&definition, 28)
 	if !ex.V[1].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{ex.V[0], sv24}, &cs7, factSymbols); ok {
 			ex.SetIfChanged(1, result)
-			goto L156
+			ex.DebugEndCondition(&definition, true)
+			goto L166
 		}
 	}
-	goto L154
-L156:
+	ex.DebugEndCondition(&definition, false)
+	goto L164
+L166:
 	// (= ?element (call list_get ?removed 2))
-	cp158_2 = ex.V[2]
+	cp168_2 = ex.V[2]
 	// (= ?element (call list_get ?removed 2))
+	ex.DebugBeginCondition(&definition, 29)
 	if !ex.V[2].IsBound() {
 		if result, ok := ex.Invoke(2, []atom.Atom{ex.V[1], sv25}, &cs8, factSymbols); ok {
 			ex.SetIfChanged(2, result)
-			goto L159
+			ex.DebugEndCondition(&definition, true)
+			goto L169
 		}
 	}
-	goto L157
-L159:
+	ex.DebugEndCondition(&definition, false)
+	goto L167
+L169:
 	// (= ?size (call list_size ?added))
-	cp161_3 = ex.V[3]
+	cp171_3 = ex.V[3]
 	// (= ?size (call list_size ?added))
+	ex.DebugBeginCondition(&definition, 30)
 	if !ex.V[3].IsBound() {
 		if result, ok := ex.Invoke(3, []atom.Atom{ex.V[0]}, &cs9, factSymbols); ok {
 			ex.SetIfChanged(3, result)
-			goto L162
+			ex.DebugEndCondition(&definition, true)
+			goto L172
 		}
 	}
-	goto L160
-L162:
+	ex.DebugEndCondition(&definition, false)
+	goto L170
+L172:
 	// (= ?cleared (call list_clear ?removed))
-	cp164_4 = ex.V[4]
+	cp174_4 = ex.V[4]
 	// (= ?cleared (call list_clear ?removed))
+	ex.DebugBeginCondition(&definition, 31)
 	if !ex.V[4].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{ex.V[1]}, &cs10, factSymbols); ok {
 			ex.SetIfChanged(4, result)
-			goto L165
+			ex.DebugEndCondition(&definition, true)
+			goto L175
 		}
 	}
-	goto L163
-L165:
-	goto L147
-L163:
-	ex.V[4] = cp164_4
-	goto L160
-L160:
-	ex.V[3] = cp161_3
+	ex.DebugEndCondition(&definition, false)
+	goto L173
+L175:
+	ex.DebugEndCondition(&definition, true)
 	goto L157
-L157:
-	ex.V[2] = cp158_2
+L173:
+	ex.V[4] = cp174_4
+	goto L170
+L170:
+	ex.V[3] = cp171_3
+	goto L167
+L167:
+	ex.V[2] = cp168_2
+	goto L164
+L164:
+	ex.V[1] = cp165_1
+	goto L161
+L161:
+	ex.V[0] = cp162_0
+	goto L159
+L159:
+	ex.V[0] = cp160_0
+	ex.V[1] = cp160_1
+	ex.V[2] = cp160_2
+	ex.V[3] = cp160_3
+	ex.V[4] = cp160_4
+	ex.DebugEndCondition(&definition, false)
+	goto L158
+L158:
+	ex.DebugEndBranch(&definition, false)
 	goto L154
-L154:
-	ex.V[1] = cp155_1
-	goto L151
-L151:
-	ex.V[0] = cp152_0
-	goto L149
-L149:
-	ex.V[0] = cp150_0
-	ex.V[1] = cp150_1
-	ex.V[2] = cp150_2
-	ex.V[3] = cp150_3
-	ex.V[4] = cp150_4
-	goto L148
-L148:
-	goto L144
-L147:
+L157:
 	if !ex.PushBranch(&bc11) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L166:
+	ex.DebugCapturePendingTask(21)
+	ex.DebugCapturePendingTask(20)
+	ex.DebugCapturePendingTask(19)
+	ex.DebugCapturePendingTask(18)
+	ex.DebugCapturePendingTask(17)
+	ex.DebugCapturePendingTask(16)
+L177:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1624,17 +2732,22 @@ L166:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L146
+		goto L156
 	}
-	goto L167
-L146:
+	goto L178
+L156:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L166
-L167:
+	goto L177
+L178:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L144:
+L154:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1642,28 +2755,32 @@ L144:
 func method10(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp174_5 atom.Atom
-	var cp174_6 atom.Atom
-	var cp176_5 atom.Atom
-	var cp176_6 atom.Atom
-	_ = cp174_5
-	_ = cp174_6
-	_ = cp176_5
-	_ = cp176_6
+	var cp185_5 atom.Atom
+	var cp185_6 atom.Atom
+	var cp187_5 atom.Atom
+	var cp187_6 atom.Atom
+	_ = cp185_5
+	_ = cp185_6
+	_ = cp187_5
+	_ = cp187_6
 	switch frame.Resume {
 	case 1:
-		goto L170
+		goto L181
 	}
-	goto L169
-L169:
+	ex.DebugBeginMethod(&definition, 10)
+	goto L180
+L180:
 	// branch split
+	ex.DebugBeginBranch(&definition, 12)
 	// (and (split_list @split_list_input ?head ?tail))
-	cp174_5 = ex.V[5]
-	cp174_6 = ex.V[6]
+	cp185_5 = ex.V[5]
+	cp185_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 32)
 	// (split_list @split_list_input ?head ?tail)
-	cp176_5 = ex.V[5]
-	cp176_6 = ex.V[6]
+	cp187_5 = ex.V[5]
+	cp187_6 = ex.V[6]
 	// (split_list @split_list_input ?head ?tail)
+	ex.DebugBeginCondition(&definition, 33)
 	{
 		valid := false
 		if element, remainder, ok := sv27.SplitList(atom.SplitFront); ok {
@@ -1683,28 +2800,35 @@ L169:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L177
+			goto L188
 		}
-		goto L175
+		goto L186
 	}
-L177:
-	goto L171
-L175:
-	ex.V[5] = cp176_5
-	ex.V[6] = cp176_6
-	goto L173
-L173:
-	ex.V[5] = cp174_5
-	ex.V[6] = cp174_6
-	goto L172
-L172:
-	goto L168
-L171:
+L188:
+	ex.DebugEndCondition(&definition, true)
+	goto L182
+L186:
+	ex.V[5] = cp187_5
+	ex.V[6] = cp187_6
+	goto L184
+L184:
+	ex.V[5] = cp185_5
+	ex.V[6] = cp185_6
+	ex.DebugEndCondition(&definition, false)
+	goto L183
+L183:
+	ex.DebugEndBranch(&definition, false)
+	goto L179
+L182:
 	if !ex.PushBranch(&bc12) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L178:
+	ex.DebugCapturePendingTask(22)
+L190:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1712,17 +2836,22 @@ L178:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L170
+		goto L181
 	}
-	goto L179
-L170:
+	goto L191
+L181:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L178
-L179:
+	goto L190
+L191:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L168:
+L179:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1730,28 +2859,32 @@ L168:
 func method11(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp186_5 atom.Atom
-	var cp186_6 atom.Atom
-	var cp188_5 atom.Atom
-	var cp188_6 atom.Atom
-	_ = cp186_5
-	_ = cp186_6
-	_ = cp188_5
-	_ = cp188_6
+	var cp198_5 atom.Atom
+	var cp198_6 atom.Atom
+	var cp200_5 atom.Atom
+	var cp200_6 atom.Atom
+	_ = cp198_5
+	_ = cp198_6
+	_ = cp200_5
+	_ = cp200_6
 	switch frame.Resume {
 	case 1:
-		goto L182
+		goto L194
 	}
-	goto L181
-L181:
+	ex.DebugBeginMethod(&definition, 11)
+	goto L193
+L193:
 	// branch split
+	ex.DebugBeginBranch(&definition, 13)
 	// (and (split_list @split_list_single ?head ?tail))
-	cp186_5 = ex.V[5]
-	cp186_6 = ex.V[6]
+	cp198_5 = ex.V[5]
+	cp198_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 34)
 	// (split_list @split_list_single ?head ?tail)
-	cp188_5 = ex.V[5]
-	cp188_6 = ex.V[6]
+	cp200_5 = ex.V[5]
+	cp200_6 = ex.V[6]
 	// (split_list @split_list_single ?head ?tail)
+	ex.DebugBeginCondition(&definition, 35)
 	{
 		valid := false
 		if element, remainder, ok := sv28.SplitList(atom.SplitFront); ok {
@@ -1771,28 +2904,35 @@ L181:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L189
+			goto L201
 		}
-		goto L187
+		goto L199
 	}
-L189:
-	goto L183
-L187:
-	ex.V[5] = cp188_5
-	ex.V[6] = cp188_6
-	goto L185
-L185:
-	ex.V[5] = cp186_5
-	ex.V[6] = cp186_6
-	goto L184
-L184:
-	goto L180
-L183:
+L201:
+	ex.DebugEndCondition(&definition, true)
+	goto L195
+L199:
+	ex.V[5] = cp200_5
+	ex.V[6] = cp200_6
+	goto L197
+L197:
+	ex.V[5] = cp198_5
+	ex.V[6] = cp198_6
+	ex.DebugEndCondition(&definition, false)
+	goto L196
+L196:
+	ex.DebugEndBranch(&definition, false)
+	goto L192
+L195:
 	if !ex.PushBranch(&bc13) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L190:
+	ex.DebugCapturePendingTask(23)
+L203:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1800,17 +2940,22 @@ L190:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L182
+		goto L194
 	}
-	goto L191
-L182:
+	goto L204
+L194:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L190
-L191:
+	goto L203
+L204:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L180:
+L192:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1818,47 +2963,54 @@ L180:
 func method12(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp200_5 atom.Atom
-	var cp200_6 atom.Atom
-	var cp200_7 atom.Atom
-	var cp202_7 atom.Atom
-	var cp205_5 atom.Atom
-	var cp205_6 atom.Atom
-	_ = cp200_5
-	_ = cp200_6
-	_ = cp200_7
-	_ = cp202_7
-	_ = cp205_5
-	_ = cp205_6
+	var cp213_5 atom.Atom
+	var cp213_6 atom.Atom
+	var cp213_7 atom.Atom
+	var cp215_7 atom.Atom
+	var cp218_5 atom.Atom
+	var cp218_6 atom.Atom
+	_ = cp213_5
+	_ = cp213_6
+	_ = cp213_7
+	_ = cp215_7
+	_ = cp218_5
+	_ = cp218_6
 	switch frame.Resume {
 	case 1:
-		goto L195
+		goto L208
 	case 2:
-		goto L196
+		goto L209
 	}
-	goto L193
-L193:
+	ex.DebugBeginMethod(&definition, 12)
+	goto L206
+L206:
 	// branch unexpected
 	ex.SaveRetry(frame, ms12)
+	ex.DebugBeginBranch(&definition, 14)
 	// (and (= ?empty (call list_clear @split_list_single)) (split_list ?empty ?head ?tail))
-	cp200_5 = ex.V[5]
-	cp200_6 = ex.V[6]
-	cp200_7 = ex.V[7]
+	cp213_5 = ex.V[5]
+	cp213_6 = ex.V[6]
+	cp213_7 = ex.V[7]
+	ex.DebugBeginCondition(&definition, 36)
 	// (= ?empty (call list_clear @split_list_single))
-	cp202_7 = ex.V[7]
+	cp215_7 = ex.V[7]
 	// (= ?empty (call list_clear @split_list_single))
+	ex.DebugBeginCondition(&definition, 37)
 	if !ex.V[7].IsBound() {
 		if result, ok := ex.Invoke(4, []atom.Atom{sv29}, &cs11, factSymbols); ok {
 			ex.SetIfChanged(7, result)
-			goto L203
+			ex.DebugEndCondition(&definition, true)
+			goto L216
 		}
 	}
-	goto L201
-L203:
+	ex.DebugEndCondition(&definition, false)
+	goto L214
+L216:
 	// (split_list ?empty ?head ?tail)
-	cp205_5 = ex.V[5]
-	cp205_6 = ex.V[6]
+	cp218_5 = ex.V[5]
+	cp218_6 = ex.V[6]
 	// (split_list ?empty ?head ?tail)
+	ex.DebugBeginCondition(&definition, 38)
 	{
 		valid := false
 		if element, remainder, ok := ex.V[7].SplitList(atom.SplitFront); ok {
@@ -1878,34 +3030,41 @@ L203:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L206
+			goto L219
 		}
-		goto L204
+		goto L217
 	}
-L206:
-	goto L197
-L204:
-	ex.V[5] = cp205_5
-	ex.V[6] = cp205_6
-	goto L201
-L201:
-	ex.V[7] = cp202_7
-	goto L199
-L199:
-	ex.V[5] = cp200_5
-	ex.V[6] = cp200_6
-	ex.V[7] = cp200_7
-	goto L198
-L198:
+L219:
+	ex.DebugEndCondition(&definition, true)
+	goto L210
+L217:
+	ex.V[5] = cp218_5
+	ex.V[6] = cp218_6
+	goto L214
+L214:
+	ex.V[7] = cp215_7
+	goto L212
+L212:
+	ex.V[5] = cp213_5
+	ex.V[6] = cp213_6
+	ex.V[7] = cp213_7
+	ex.DebugEndCondition(&definition, false)
+	goto L211
+L211:
 	ex.ReleaseRetry(frame)
-	goto L194
-L197:
+	ex.DebugEndBranch(&definition, false)
+	goto L207
+L210:
 	if !ex.PushBranch(&bc14) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L207:
+	ex.DebugCapturePendingTask(24)
+L221:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -1913,34 +3072,45 @@ L207:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L195
+		goto L208
 	}
-	goto L208
-L195:
+	goto L222
+L208:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms12)
-		goto L194
+		ex.DebugEndBranch(&definition, false)
+		goto L207
 	}
-	goto L207
-L208:
+	goto L221
+L222:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L194:
+L207:
 	// branch expected
-	goto L209
-L209:
+	ex.DebugBeginBranch(&definition, 15)
+	goto L223
+L223:
 	if !ex.PushBranch(&bc15) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L211:
+	ex.DebugCapturePendingTask(25)
+L225:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -1948,15 +3118,19 @@ L211:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L196
+		goto L209
 	}
-	goto L212
-L196:
+	goto L226
+L209:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L211
-L212:
+	goto L225
+L226:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -1966,14 +3140,18 @@ func method13(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L215
+		goto L229
 	}
-	goto L214
-L214:
+	ex.DebugBeginMethod(&definition, 13)
+	goto L228
+L228:
 	// branch compatible
+	ex.DebugBeginBranch(&definition, 16)
 	// (and (split_list @split_list_input "one" ("two" "three")))
+	ex.DebugBeginCondition(&definition, 39)
 	// (split_list @split_list_input "one" ("two" "three"))
 	// (split_list @split_list_input "one" ("two" "three"))
+	ex.DebugBeginCondition(&definition, 40)
 	{
 		valid := false
 		if element, remainder, ok := sv30.SplitList(atom.SplitFront); ok {
@@ -1987,24 +3165,31 @@ L214:
 			if valid {
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L222
+			goto L236
 		}
-		goto L220
+		goto L234
 	}
-L222:
-	goto L216
-L220:
-	goto L218
-L218:
-	goto L217
-L217:
-	goto L213
-L216:
+L236:
+	ex.DebugEndCondition(&definition, true)
+	goto L230
+L234:
+	goto L232
+L232:
+	ex.DebugEndCondition(&definition, false)
+	goto L231
+L231:
+	ex.DebugEndBranch(&definition, false)
+	goto L227
+L230:
 	if !ex.PushBranch(&bc16) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L223:
+	ex.DebugCapturePendingTask(26)
+L238:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2012,17 +3197,22 @@ L223:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L215
+		goto L229
 	}
-	goto L224
-L215:
+	goto L239
+L229:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L223
-L224:
+	goto L238
+L239:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L213:
+L227:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2030,39 +3220,43 @@ L213:
 func method14(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp233_5 atom.Atom
-	var cp233_6 atom.Atom
-	var cp235_5 atom.Atom
-	var cp235_6 atom.Atom
-	var cp245_5 atom.Atom
-	var cp245_6 atom.Atom
-	var cp247_5 atom.Atom
-	var cp247_6 atom.Atom
-	_ = cp233_5
-	_ = cp233_6
-	_ = cp235_5
-	_ = cp235_6
-	_ = cp245_5
-	_ = cp245_6
-	_ = cp247_5
-	_ = cp247_6
+	var cp248_5 atom.Atom
+	var cp248_6 atom.Atom
+	var cp250_5 atom.Atom
+	var cp250_6 atom.Atom
+	var cp261_5 atom.Atom
+	var cp261_6 atom.Atom
+	var cp263_5 atom.Atom
+	var cp263_6 atom.Atom
+	_ = cp248_5
+	_ = cp248_6
+	_ = cp250_5
+	_ = cp250_6
+	_ = cp261_5
+	_ = cp261_6
+	_ = cp263_5
+	_ = cp263_6
 	switch frame.Resume {
 	case 1:
-		goto L228
+		goto L243
 	case 2:
-		goto L229
+		goto L244
 	}
-	goto L226
-L226:
+	ex.DebugBeginMethod(&definition, 14)
+	goto L241
+L241:
 	// branch fails_after_binding
 	ex.SaveRetry(frame, ms14)
+	ex.DebugBeginBranch(&definition, 17)
 	// (and (split_list @split_list_input ?head ?tail) (== ?head "wrong"))
-	cp233_5 = ex.V[5]
-	cp233_6 = ex.V[6]
+	cp248_5 = ex.V[5]
+	cp248_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 41)
 	// (split_list @split_list_input ?head ?tail)
-	cp235_5 = ex.V[5]
-	cp235_6 = ex.V[6]
+	cp250_5 = ex.V[5]
+	cp250_6 = ex.V[6]
 	// (split_list @split_list_input ?head ?tail)
+	ex.DebugBeginCondition(&definition, 42)
 	{
 		valid := false
 		if element, remainder, ok := sv33.SplitList(atom.SplitFront); ok {
@@ -2082,39 +3276,49 @@ L226:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L236
+			goto L251
 		}
-		goto L234
+		goto L249
 	}
-L236:
+L251:
 	// (== ?head "wrong")
 	// (== ?head "wrong")
+	ex.DebugBeginCondition(&definition, 43)
 	if planner.Compare(ex.V[5], sv34, 0) {
-		goto L239
+		ex.DebugEndCondition(&definition, true)
+		goto L254
 	}
-	goto L237
-L239:
-	goto L230
-L237:
-	goto L234
-L234:
-	ex.V[5] = cp235_5
-	ex.V[6] = cp235_6
-	goto L232
-L232:
-	ex.V[5] = cp233_5
-	ex.V[6] = cp233_6
-	goto L231
-L231:
+	ex.DebugEndCondition(&definition, false)
+	goto L252
+L254:
+	ex.DebugEndCondition(&definition, true)
+	goto L245
+L252:
+	goto L249
+L249:
+	ex.V[5] = cp250_5
+	ex.V[6] = cp250_6
+	goto L247
+L247:
+	ex.V[5] = cp248_5
+	ex.V[6] = cp248_6
+	ex.DebugEndCondition(&definition, false)
+	goto L246
+L246:
 	ex.ReleaseRetry(frame)
-	goto L227
-L230:
+	ex.DebugEndBranch(&definition, false)
+	goto L242
+L245:
 	if !ex.PushBranch(&bc17) {
 		ex.ReleaseRetry(frame)
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L240:
+	ex.DebugCapturePendingTask(27)
+L256:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2122,35 +3326,45 @@ L240:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L228
+		goto L243
 	}
-	goto L241
-L228:
+	goto L257
+L243:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms14)
-		goto L227
+		ex.DebugEndBranch(&definition, false)
+		goto L242
 	}
-	goto L240
-L241:
+	goto L256
+L257:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L227:
+L242:
 	// branch reuses_same_variables
+	ex.DebugBeginBranch(&definition, 18)
 	// (and (split_list @split_list_single ?head ?tail))
-	cp245_5 = ex.V[5]
-	cp245_6 = ex.V[6]
+	cp261_5 = ex.V[5]
+	cp261_6 = ex.V[6]
+	ex.DebugBeginCondition(&definition, 44)
 	// (split_list @split_list_single ?head ?tail)
-	cp247_5 = ex.V[5]
-	cp247_6 = ex.V[6]
+	cp263_5 = ex.V[5]
+	cp263_6 = ex.V[6]
 	// (split_list @split_list_single ?head ?tail)
+	ex.DebugBeginCondition(&definition, 45)
 	{
 		valid := false
 		if element, remainder, ok := sv35.SplitList(atom.SplitFront); ok {
@@ -2170,28 +3384,35 @@ L227:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L248
+			goto L264
 		}
-		goto L246
+		goto L262
 	}
-L248:
-	goto L242
-L246:
-	ex.V[5] = cp247_5
-	ex.V[6] = cp247_6
-	goto L244
-L244:
-	ex.V[5] = cp245_5
-	ex.V[6] = cp245_6
-	goto L243
-L243:
-	goto L225
-L242:
+L264:
+	ex.DebugEndCondition(&definition, true)
+	goto L258
+L262:
+	ex.V[5] = cp263_5
+	ex.V[6] = cp263_6
+	goto L260
+L260:
+	ex.V[5] = cp261_5
+	ex.V[6] = cp261_6
+	ex.DebugEndCondition(&definition, false)
+	goto L259
+L259:
+	ex.DebugEndBranch(&definition, false)
+	goto L240
+L258:
 	if !ex.PushBranch(&bc18) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L249:
+	ex.DebugCapturePendingTask(28)
+L266:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -2199,17 +3420,22 @@ L249:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L229
+		goto L244
 	}
-	goto L250
-L229:
+	goto L267
+L244:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L249
-L250:
+	goto L266
+L267:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L225:
+L240:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2217,28 +3443,32 @@ L225:
 func method15(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp257_2 atom.Atom
-	var cp257_8 atom.Atom
-	var cp259_2 atom.Atom
-	var cp259_8 atom.Atom
-	_ = cp257_2
-	_ = cp257_8
-	_ = cp259_2
-	_ = cp259_8
+	var cp274_2 atom.Atom
+	var cp274_8 atom.Atom
+	var cp276_2 atom.Atom
+	var cp276_8 atom.Atom
+	_ = cp274_2
+	_ = cp274_8
+	_ = cp276_2
+	_ = cp276_8
 	switch frame.Resume {
 	case 1:
-		goto L253
+		goto L270
 	}
-	goto L252
-L252:
+	ex.DebugBeginMethod(&definition, 15)
+	goto L269
+L269:
 	// branch split
+	ex.DebugBeginBranch(&definition, 19)
 	// (and (split_list_front @split_list_input ?element ?remainder))
-	cp257_2 = ex.V[2]
-	cp257_8 = ex.V[8]
+	cp274_2 = ex.V[2]
+	cp274_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 46)
 	// (split_list_front @split_list_input ?element ?remainder)
-	cp259_2 = ex.V[2]
-	cp259_8 = ex.V[8]
+	cp276_2 = ex.V[2]
+	cp276_8 = ex.V[8]
 	// (split_list_front @split_list_input ?element ?remainder)
+	ex.DebugBeginCondition(&definition, 47)
 	{
 		valid := false
 		if element, remainder, ok := sv36.SplitList(atom.SplitFront); ok {
@@ -2258,28 +3488,35 @@ L252:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L260
+			goto L277
 		}
-		goto L258
+		goto L275
 	}
-L260:
-	goto L254
-L258:
-	ex.V[2] = cp259_2
-	ex.V[8] = cp259_8
-	goto L256
-L256:
-	ex.V[2] = cp257_2
-	ex.V[8] = cp257_8
-	goto L255
-L255:
-	goto L251
-L254:
+L277:
+	ex.DebugEndCondition(&definition, true)
+	goto L271
+L275:
+	ex.V[2] = cp276_2
+	ex.V[8] = cp276_8
+	goto L273
+L273:
+	ex.V[2] = cp274_2
+	ex.V[8] = cp274_8
+	ex.DebugEndCondition(&definition, false)
+	goto L272
+L272:
+	ex.DebugEndBranch(&definition, false)
+	goto L268
+L271:
 	if !ex.PushBranch(&bc19) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L261:
+	ex.DebugCapturePendingTask(29)
+L279:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2287,17 +3524,22 @@ L261:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L253
+		goto L270
 	}
-	goto L262
-L253:
+	goto L280
+L270:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L261
-L262:
+	goto L279
+L280:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L251:
+L268:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2305,28 +3547,32 @@ L251:
 func method16(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp269_2 atom.Atom
-	var cp269_8 atom.Atom
-	var cp271_2 atom.Atom
-	var cp271_8 atom.Atom
-	_ = cp269_2
-	_ = cp269_8
-	_ = cp271_2
-	_ = cp271_8
+	var cp287_2 atom.Atom
+	var cp287_8 atom.Atom
+	var cp289_2 atom.Atom
+	var cp289_8 atom.Atom
+	_ = cp287_2
+	_ = cp287_8
+	_ = cp289_2
+	_ = cp289_8
 	switch frame.Resume {
 	case 1:
-		goto L265
+		goto L283
 	}
-	goto L264
-L264:
+	ex.DebugBeginMethod(&definition, 16)
+	goto L282
+L282:
 	// branch split
+	ex.DebugBeginBranch(&definition, 20)
 	// (and (split_list_back @split_list_input ?remainder ?element))
-	cp269_2 = ex.V[2]
-	cp269_8 = ex.V[8]
+	cp287_2 = ex.V[2]
+	cp287_8 = ex.V[8]
+	ex.DebugBeginCondition(&definition, 48)
 	// (split_list_back @split_list_input ?remainder ?element)
-	cp271_2 = ex.V[2]
-	cp271_8 = ex.V[8]
+	cp289_2 = ex.V[2]
+	cp289_8 = ex.V[8]
 	// (split_list_back @split_list_input ?remainder ?element)
+	ex.DebugBeginCondition(&definition, 49)
 	{
 		valid := false
 		if element, remainder, ok := sv37.SplitList(atom.SplitBack); ok {
@@ -2346,28 +3592,35 @@ L264:
 				}
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L272
+			goto L290
 		}
-		goto L270
+		goto L288
 	}
-L272:
-	goto L266
-L270:
-	ex.V[2] = cp271_2
-	ex.V[8] = cp271_8
-	goto L268
-L268:
-	ex.V[2] = cp269_2
-	ex.V[8] = cp269_8
-	goto L267
-L267:
-	goto L263
-L266:
+L290:
+	ex.DebugEndCondition(&definition, true)
+	goto L284
+L288:
+	ex.V[2] = cp289_2
+	ex.V[8] = cp289_8
+	goto L286
+L286:
+	ex.V[2] = cp287_2
+	ex.V[8] = cp287_8
+	ex.DebugEndCondition(&definition, false)
+	goto L285
+L285:
+	ex.DebugEndBranch(&definition, false)
+	goto L281
+L284:
 	if !ex.PushBranch(&bc20) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L273:
+	ex.DebugCapturePendingTask(30)
+L292:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2375,17 +3628,22 @@ L273:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L265
+		goto L283
 	}
-	goto L274
-L265:
+	goto L293
+L283:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L273
-L274:
+	goto L292
+L293:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L263:
+L281:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2395,14 +3653,18 @@ func method17(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L277
+		goto L296
 	}
-	goto L276
-L276:
+	ex.DebugBeginMethod(&definition, 17)
+	goto L295
+L295:
 	// branch compatible
+	ex.DebugBeginBranch(&definition, 21)
 	// (and (split_list_back @split_list_input ("one" "two") "three"))
+	ex.DebugBeginCondition(&definition, 50)
 	// (split_list_back @split_list_input ("one" "two") "three")
 	// (split_list_back @split_list_input ("one" "two") "three")
+	ex.DebugBeginCondition(&definition, 51)
 	{
 		valid := false
 		if element, remainder, ok := sv38.SplitList(atom.SplitBack); ok {
@@ -2416,24 +3678,31 @@ L276:
 			if valid {
 			}
 		}
+		ex.DebugEndCondition(&definition, valid)
 		if valid {
-			goto L284
+			goto L303
 		}
-		goto L282
+		goto L301
 	}
-L284:
-	goto L278
-L282:
-	goto L280
-L280:
-	goto L279
-L279:
-	goto L275
-L278:
+L303:
+	ex.DebugEndCondition(&definition, true)
+	goto L297
+L301:
+	goto L299
+L299:
+	ex.DebugEndCondition(&definition, false)
+	goto L298
+L298:
+	ex.DebugEndBranch(&definition, false)
+	goto L294
+L297:
 	if !ex.PushBranch(&bc21) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L285:
+	ex.DebugCapturePendingTask(31)
+L305:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -2441,17 +3710,22 @@ L285:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L277
+		goto L296
 	}
-	goto L286
-L277:
+	goto L306
+L296:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L285
-L286:
+	goto L305
+L306:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L275:
+L294:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -2506,6 +3780,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 9:
@@ -2528,6 +3803,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 		result = ex.Run(method17)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -2536,8 +3812,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

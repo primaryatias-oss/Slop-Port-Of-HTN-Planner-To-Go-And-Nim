@@ -137,10 +137,12 @@ func (h *PlannerHook) Decompose(ctx *ExecutionContext, requireTopLevel bool) (at
 		CallTermErrorCallback: ctx.CallTermErrorCallback,
 		Debugger:              ctx.Debugger,
 	}
-	if ctx.Debugger != nil {
-		if resetter, ok := ctx.Debugger.(interface{ Reset(sourceFile string) }); ok {
-			resetter.Reset(h.definition.SourceFile)
+	if planner.DebugEnabled && ctx.Debugger != nil {
+		domainPath := ""
+		if h.definition.DebugMetadata != nil {
+			domainPath = h.definition.DebugMetadata.SourceFile
 		}
+		ctx.Debugger.Reset(domainPath)
 	}
 	plan, status := h.definition.DecomposeCall(&generated, ctx.Call, requireTopLevel)
 	if status == planner.CallFrameCapacityExceeded && LogError != nil && ctx.Execution != nil &&
@@ -198,6 +200,15 @@ func (u *PlanningUnit) SetBacktrackingMode(mode planner.BacktrackingMode) {
 
 // BacktrackingMode returns the runtime backtracking mode.
 func (u *PlanningUnit) BacktrackingMode() planner.BacktrackingMode { return u.options.BacktrackingMode }
+
+// SetGeneratedDebugger installs an optional event debugger for generated
+// execution (nil disables it); the caller keeps ownership. The debugger is
+// reset at the start of every decomposition. Events are only produced by
+// builds with the "htndebug" tag (HTN_DEBUG_DECOMPOSITION of the original).
+func (u *PlanningUnit) SetGeneratedDebugger(debugger planner.Debugger) { u.options.Debugger = debugger }
+
+// GeneratedDebugger returns the installed event debugger.
+func (u *PlanningUnit) GeneratedDebugger() planner.Debugger { return u.options.Debugger }
 
 // SetClientContext sets the borrowed client services passed to converters and
 // callbacks.

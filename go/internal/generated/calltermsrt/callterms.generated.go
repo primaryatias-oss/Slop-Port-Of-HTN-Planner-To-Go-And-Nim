@@ -107,6 +107,337 @@ func init() {
 			{Name: "add_target_available", Source: callterm.Source{Domain: "CallTermsDemo", File: "Domains/Test/callterms.domain", Line: 45, Column: 17}},
 		},
 	}
+	if planner.DebugEnabled {
+		definition.DebugMetadata = newDebugMetadata()
+	}
+}
+
+func newDebugMetadata() *planner.DebugMetadata {
+	return planner.NewDebugMetadata(&planner.DebugTables{
+		SourceFile: "Domains/Test/callterms.domain",
+		Strings: []string{
+			"CallTermsDemo::test_callterms",
+			"branch_callterms",
+			"binded_function_with_args",
+			"we are doing nothing",
+			"\"we are doing nothing\"",
+			"health",
+			"?health",
+			"get_health",
+			"7",
+			"max_speed",
+			"?max_speed",
+			"get_max_speed",
+			"log",
+			"!log",
+			"callterms succeeded",
+			"\"callterms succeeded\"",
+			"CallTermsDemo::echo_top_level",
+			"inp_value",
+			"?inp_value",
+			"inp_role",
+			"?inp_role",
+			"inp_context",
+			"?inp_context",
+			"branch_top_level_arguments",
+			"top_level_args",
+			"!top_level_args",
+			"CallTermsDemo::callterm_creates_fact_visible_immediately",
+			"branch_callterm_creates_fact",
+			"add_target_available",
+			"target_available",
+			"target",
+			"?target",
+			"target_available_visible",
+			"!target_available_visible",
+			"CallTermsDemo::callterm_world_state_mutation_survives_backtracking",
+			"branch_mutate_then_fail",
+			"1",
+			"2",
+			"should_not_execute",
+			"!should_not_execute",
+			"branch_observe_persisted_mutation",
+			"persisted_target_available",
+			"!persisted_target_available",
+			"test_callterms",
+			"echo_top_level",
+			"callterm_creates_fact_visible_immediately",
+			"callterm_world_state_mutation_survives_backtracking",
+		},
+		Values: []uint32{
+			2, 4, 3, 7, planner.NoIndex,
+			1, 6, 5, 8, 0,
+			0, 8, 8, 8, planner.NoIndex,
+			1, 10, 9, 9, 1,
+			0, 8, 8, 9, planner.NoIndex,
+			2, 15, 14, 12, planner.NoIndex,
+			1, 6, 5, 13, 0,
+			1, 10, 9, 14, 1,
+			1, 18, 17, 19, 2,
+			1, 20, 19, 19, 3,
+			1, 22, 21, 19, 4,
+			1, 18, 17, 23, 2,
+			1, 20, 19, 23, 3,
+			1, 22, 21, 23, 4,
+			1, 31, 30, 33, 5,
+			1, 31, 30, 36, 5,
+			0, 36, 36, 46, planner.NoIndex,
+			0, 37, 37, 46, planner.NoIndex,
+			1, 31, 30, 55, 5,
+			1, 31, 30, 58, 5,
+			2, 4, 3, 7, planner.NoIndex,
+			1, 6, 5, 8, 0,
+			0, 8, 8, 8, planner.NoIndex,
+			1, 10, 9, 9, 1,
+			0, 8, 8, 9, planner.NoIndex,
+			2, 15, 14, 12, planner.NoIndex,
+			1, 6, 5, 13, 0,
+			1, 10, 9, 14, 1,
+			1, 18, 17, 19, 2,
+			1, 20, 19, 19, 3,
+			1, 22, 21, 19, 4,
+			1, 18, 17, 23, 2,
+			1, 20, 19, 23, 3,
+			1, 22, 21, 23, 4,
+			1, 31, 30, 33, 5,
+			1, 31, 30, 36, 5,
+			0, 36, 36, 46, planner.NoIndex,
+			0, 37, 37, 46, planner.NoIndex,
+			1, 31, 30, 55, 5,
+			1, 31, 30, 58, 5,
+		},
+		VariableStringIDs: []uint32{
+			5,
+			9,
+			17,
+			19,
+			21,
+			30,
+		},
+		Conditions: []uint32{
+			2, planner.NoIndex, 0, 0, 0, 3, planner.NoIndex, planner.NoIndex, 6, 0,
+			6, 2, 0, 1, 0, 0, planner.NoIndex, 0, 7, 0,
+			7, 7, 2, 1, 0, 0, 1, 1, 8, 0,
+			7, 11, 4, 1, 0, 0, 3, 2, 9, 0,
+			2, planner.NoIndex, 0, 0, 3, 2, planner.NoIndex, planner.NoIndex, 31, 0,
+			6, 28, 14, 0, 3, 0, planner.NoIndex, 3, 32, 0,
+			0, 29, 14, 1, 3, 0, planner.NoIndex, 0, 33, 0,
+			2, planner.NoIndex, 0, 0, 5, 2, planner.NoIndex, planner.NoIndex, 44, 0,
+			6, 28, 16, 0, 5, 0, planner.NoIndex, 3, 45, 0,
+			8, 0, 16, 2, 5, 0, planner.NoIndex, planner.NoIndex, 46, 0,
+			2, planner.NoIndex, 0, 0, 7, 1, planner.NoIndex, planner.NoIndex, 54, 0,
+			0, 29, 18, 1, 7, 0, planner.NoIndex, 0, 55, 0,
+			2, planner.NoIndex, 0, 0, 8, 3, planner.NoIndex, planner.NoIndex, 6, 0,
+			6, 2, 20, 1, 8, 0, planner.NoIndex, 0, 7, 0,
+			7, 7, 22, 1, 8, 0, 21, 1, 8, 0,
+			7, 11, 24, 1, 8, 0, 23, 2, 9, 0,
+			2, planner.NoIndex, 0, 0, 11, 2, planner.NoIndex, planner.NoIndex, 31, 0,
+			6, 28, 34, 0, 11, 0, planner.NoIndex, 3, 32, 0,
+			0, 29, 34, 1, 11, 0, planner.NoIndex, 0, 33, 0,
+			2, planner.NoIndex, 0, 0, 13, 2, planner.NoIndex, planner.NoIndex, 44, 0,
+			6, 28, 36, 0, 13, 0, planner.NoIndex, 3, 45, 0,
+			8, 0, 36, 2, 13, 0, planner.NoIndex, planner.NoIndex, 46, 0,
+			2, planner.NoIndex, 0, 0, 15, 1, planner.NoIndex, planner.NoIndex, 54, 0,
+			0, 29, 38, 1, 15, 0, planner.NoIndex, 0, 55, 0,
+		},
+		ConditionExpressions: []string{
+			"(and ...)",
+			"(call binded_function_with_args \"we are doing nothing\")",
+			"(= ?health (call get_health 7))",
+			"(= ?max_speed (call get_max_speed 7))",
+			"(and ...)",
+			"(call add_target_available)",
+			"(target_available ?target)",
+			"(and ...)",
+			"(call add_target_available)",
+			"(== 1 2)",
+			"(and ...)",
+			"(target_available ?target)",
+			"(and ...)",
+			"(call binded_function_with_args \"we are doing nothing\")",
+			"(= ?health (call get_health 7))",
+			"(= ?max_speed (call get_max_speed 7))",
+			"(and ...)",
+			"(call add_target_available)",
+			"(target_available ?target)",
+			"(and ...)",
+			"(call add_target_available)",
+			"(== 1 2)",
+			"(and ...)",
+			"(target_available ?target)",
+		},
+		ConditionChildRefs: []uint32{
+			1,
+			2,
+			3,
+			5,
+			6,
+			8,
+			9,
+			11,
+			13,
+			14,
+			15,
+			17,
+			18,
+			20,
+			21,
+			23,
+		},
+		Tasks: []uint32{
+			1, 12, 5, 1, 12, 13,
+			1, 12, 6, 1, 13, 13,
+			1, 12, 7, 1, 14, 13,
+			1, 24, 11, 3, 23, 25,
+			1, 32, 15, 1, 36, 33,
+			1, 38, 18, 0, 49, 39,
+			1, 41, 19, 1, 58, 42,
+			1, 12, 25, 1, 12, 13,
+			1, 12, 26, 1, 13, 13,
+			1, 12, 27, 1, 14, 13,
+			1, 24, 31, 3, 23, 25,
+			1, 32, 35, 1, 36, 33,
+			1, 38, 38, 0, 49, 39,
+			1, 41, 39, 1, 58, 42,
+		},
+		Branches: []uint32{
+			1, 0, 0, 3, 5,
+			23, planner.NoIndex, 3, 1, 20,
+			27, 4, 4, 1, 30,
+			35, 7, 5, 1, 43,
+			40, 10, 6, 1, 53,
+			1, 12, 7, 3, 5,
+			23, planner.NoIndex, 10, 1, 20,
+			27, 16, 11, 1, 30,
+			35, 19, 12, 1, 43,
+			40, 22, 13, 1, 53,
+		},
+		Methods: []uint64{
+			0, 0, 0, 0, 1, 3, 0x3, 0x0, 0x0, 0x0,
+			16, 8, 3, 1, 1, 19, 0x1c, 0x0, 0x0, 0x0,
+			26, 14, 0, 2, 1, 28, 0x20, 0x0, 0x0, 0x0,
+			34, 16, 0, 3, 2, 41, 0x20, 0x0, 0x0, 0x0,
+			43, 20, 0, 5, 1, 3, 0x3, 0x0, 0x0, 0x0,
+			44, 28, 3, 6, 1, 19, 0x1c, 0x0, 0x0, 0x0,
+			45, 34, 0, 7, 1, 28, 0x20, 0x0, 0x0, 0x0,
+			46, 36, 0, 8, 2, 41, 0x20, 0x0, 0x0, 0x0,
+		},
+		Axioms:            []uint64{},
+		Constants:         []uint32{},
+		CallTermSlotCount: 4,
+		FactSlotCount:     1,
+		SourceFiles: []string{
+			"Domains/Test/callterms.domain",
+		},
+		ValueSources: []uint32{
+			0, 7, 49, 7, 71,
+			0, 8, 20, 8, 27,
+			0, 8, 45, 8, 46,
+			0, 9, 20, 9, 30,
+			0, 9, 51, 9, 52,
+			0, 12, 23, 12, 44,
+			0, 13, 23, 13, 30,
+			0, 14, 23, 14, 33,
+			0, 19, 30, 19, 40,
+			0, 19, 41, 19, 50,
+			0, 19, 51, 19, 63,
+			0, 23, 34, 23, 44,
+			0, 23, 45, 23, 54,
+			0, 23, 55, 23, 67,
+			0, 33, 35, 33, 42,
+			0, 36, 44, 36, 51,
+			0, 46, 21, 46, 22,
+			0, 46, 23, 46, 24,
+			0, 55, 35, 55, 42,
+			0, 58, 46, 58, 53,
+			0, 7, 49, 7, 71,
+			0, 8, 20, 8, 27,
+			0, 8, 45, 8, 46,
+			0, 9, 20, 9, 30,
+			0, 9, 51, 9, 52,
+			0, 12, 23, 12, 44,
+			0, 13, 23, 13, 30,
+			0, 14, 23, 14, 33,
+			0, 19, 30, 19, 40,
+			0, 19, 41, 19, 50,
+			0, 19, 51, 19, 63,
+			0, 23, 34, 23, 44,
+			0, 23, 45, 23, 54,
+			0, 23, 55, 23, 67,
+			0, 33, 35, 33, 42,
+			0, 36, 44, 36, 51,
+			0, 46, 21, 46, 22,
+			0, 46, 23, 46, 24,
+			0, 55, 35, 55, 42,
+			0, 58, 46, 58, 53,
+		},
+		ConditionSources: []uint32{
+			0, 6, 14, 9, 53,
+			0, 7, 17, 7, 71,
+			0, 8, 17, 8, 46,
+			0, 9, 17, 9, 52,
+			0, 31, 14, 33, 42,
+			0, 32, 17, 32, 43,
+			0, 33, 17, 33, 42,
+			0, 44, 14, 46, 24,
+			0, 45, 17, 45, 43,
+			0, 46, 18, 46, 24,
+			0, 54, 14, 55, 42,
+			0, 55, 17, 55, 42,
+			0, 6, 14, 9, 53,
+			0, 7, 17, 7, 71,
+			0, 8, 17, 8, 46,
+			0, 9, 17, 9, 52,
+			0, 31, 14, 33, 42,
+			0, 32, 17, 32, 43,
+			0, 33, 17, 33, 42,
+			0, 44, 14, 46, 24,
+			0, 45, 17, 45, 43,
+			0, 46, 18, 46, 24,
+			0, 54, 14, 55, 42,
+			0, 55, 17, 55, 42,
+		},
+		TaskSources: []uint32{
+			0, 12, 17, 12, 44,
+			0, 13, 17, 13, 30,
+			0, 14, 17, 14, 33,
+			0, 23, 17, 23, 67,
+			0, 36, 17, 36, 51,
+			0, 49, 17, 49, 37,
+			0, 58, 17, 58, 53,
+			0, 12, 17, 12, 44,
+			0, 13, 17, 13, 30,
+			0, 14, 17, 14, 33,
+			0, 23, 17, 23, 67,
+			0, 36, 17, 36, 51,
+			0, 49, 17, 49, 37,
+			0, 58, 17, 58, 53,
+		},
+		BranchSources: []uint32{
+			0, 5, 9, 16, 9,
+			0, 20, 9, 25, 9,
+			0, 30, 9, 38, 9,
+			0, 43, 9, 51, 9,
+			0, 53, 9, 60, 9,
+			0, 5, 9, 16, 9,
+			0, 20, 9, 25, 9,
+			0, 30, 9, 38, 9,
+			0, 43, 9, 51, 9,
+			0, 53, 9, 60, 9,
+		},
+		MethodSources: []uint32{
+			0, 3, 5, 17, 5,
+			0, 19, 5, 26, 5,
+			0, 28, 5, 39, 5,
+			0, 41, 5, 61, 5,
+			0, 3, 5, 17, 5,
+			0, 19, 5, 26, 5,
+			0, 28, 5, 39, 5,
+			0, 41, 5, 61, 5,
+		},
+		AxiomSources:    []uint32{},
+		ConstantSources: []uint32{},
+	})
 }
 
 func factChoice6(ex *planner.Exec, target uint32) bool {
@@ -191,155 +522,211 @@ func factChoice23(ex *planner.Exec, target uint32) bool {
 
 func task0(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 0)
 	// (!log "callterms succeeded")
 	if !ex.AppendPlanStep(sym1, []atom.Atom{sv3}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task1(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 1)
 	// (!log ?health)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task2(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 2)
 	// (!log ?max_speed)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task3(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 3)
 	// (!top_level_args ?inp_value ?inp_role ?inp_context)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[2], ex.V[3], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task4(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 4)
 	// (!target_available_visible ?target)
 	if !ex.AppendPlanStep(sym3, []atom.Atom{ex.V[5]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task5(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 5)
 	// (!should_not_execute)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task6(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 6)
 	// (!persisted_target_available ?target)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[5]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task7(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 7)
 	// (!log "callterms succeeded")
 	if !ex.AppendPlanStep(sym1, []atom.Atom{sv9}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task8(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 8)
 	// (!log ?health)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[0]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task9(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 9)
 	// (!log ?max_speed)
 	if !ex.AppendPlanStep(sym1, []atom.Atom{ex.V[1]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task10(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 10)
 	// (!top_level_args ?inp_value ?inp_role ?inp_context)
 	if !ex.AppendPlanStep(sym2, []atom.Atom{ex.V[2], ex.V[3], ex.V[4]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task11(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 11)
 	// (!target_available_visible ?target)
 	if !ex.AppendPlanStep(sym3, []atom.Atom{ex.V[5]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task12(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 12)
 	// (!should_not_execute)
 	if !ex.AppendPlanStep(sym4, nil) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
 func task13(ex *planner.Exec) int {
 	if frame := ex.Frame(); frame.Resume != 0 {
+		ex.DebugEndTask(&definition, frame.ChildResult != 0)
 		return frame.ChildResult
 	}
+	ex.DebugBeginTask(&definition, 13)
 	// (!persisted_target_available ?target)
 	if !ex.AppendPlanStep(sym5, []atom.Atom{ex.V[5]}) {
+		ex.DebugEndTask(&definition, false)
 		return 0
 	}
+	ex.DebugEndTask(&definition, true)
 	return 1
 }
 
@@ -359,41 +746,54 @@ func method0(ex *planner.Exec) int {
 	case 1:
 		goto L3
 	}
+	ex.DebugBeginMethod(&definition, 0)
 	goto L2
 L2:
 	// branch branch_callterms
+	ex.DebugBeginBranch(&definition, 0)
 	// (and (call binded_function_with_args "we are doing nothing") (= ?health (call get_health 7)) (= ?max_speed (call get_max_speed 7)))
 	cp7_0 = ex.V[0]
 	cp7_1 = ex.V[1]
+	ex.DebugBeginCondition(&definition, 0)
 	// (call binded_function_with_args "we are doing nothing")
 	// (call binded_function_with_args "we are doing nothing")
+	ex.DebugBeginCondition(&definition, 1)
 	if result, ok := ex.Invoke(0, []atom.Atom{sv0}, &cs0, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
+		ex.DebugEndCondition(&definition, true)
 		goto L10
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L8
 L10:
 	// (= ?health (call get_health 7))
 	cp12_0 = ex.V[0]
 	// (= ?health (call get_health 7))
+	ex.DebugBeginCondition(&definition, 2)
 	if !ex.V[0].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{sv1}, &cs1, factSymbols); ok {
 			ex.SetIfChanged(0, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L13
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L11
 L13:
 	// (= ?max_speed (call get_max_speed 7))
 	cp15_1 = ex.V[1]
 	// (= ?max_speed (call get_max_speed 7))
+	ex.DebugBeginCondition(&definition, 3)
 	if !ex.V[1].IsBound() {
 		if result, ok := ex.Invoke(2, []atom.Atom{sv2}, &cs2, factSymbols); ok {
 			ex.SetIfChanged(1, result)
+			ex.DebugEndCondition(&definition, true)
 			goto L16
 		}
 	}
+	ex.DebugEndCondition(&definition, false)
 	goto L14
 L16:
+	ex.DebugEndCondition(&definition, true)
 	goto L4
 L14:
 	ex.V[1] = cp15_1
@@ -406,14 +806,21 @@ L8:
 L6:
 	ex.V[0] = cp7_0
 	ex.V[1] = cp7_1
+	ex.DebugEndCondition(&definition, false)
 	goto L5
 L5:
+	ex.DebugEndBranch(&definition, false)
 	goto L1
 L4:
 	if !ex.PushBranch(&bc0) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L17:
+	ex.DebugCapturePendingTask(2)
+	ex.DebugCapturePendingTask(1)
+	ex.DebugCapturePendingTask(0)
+L18:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -423,15 +830,20 @@ L17:
 		frame.ChildResult = 0
 		goto L3
 	}
-	goto L18
+	goto L19
 L3:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L17
-L18:
+	goto L18
+L19:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 L1:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -441,17 +853,22 @@ func method1(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L21
+		goto L22
 	}
-	goto L20
-L20:
+	ex.DebugBeginMethod(&definition, 1)
+	goto L21
+L21:
 	// branch branch_top_level_arguments
-	goto L22
-L22:
+	ex.DebugBeginBranch(&definition, 1)
+	goto L23
+L23:
 	if !ex.PushBranch(&bc1) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L24:
+	ex.DebugCapturePendingTask(3)
+L25:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -459,15 +876,19 @@ L24:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L21
+		goto L22
 	}
-	goto L25
-L21:
+	goto L26
+L22:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L24
-L25:
+	goto L25
+L26:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -475,51 +896,66 @@ L25:
 func method2(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp32_5 atom.Atom
-	var cp37_5 atom.Atom
-	var fc38 uint32
-	_ = cp32_5
-	_ = cp37_5
-	_ = fc38
+	var cp33_5 atom.Atom
+	var cp38_5 atom.Atom
+	var fc39 uint32
+	_ = cp33_5
+	_ = cp38_5
+	_ = fc39
 	switch frame.Resume {
 	case 1:
-		goto L28
+		goto L29
 	}
-	goto L27
-L27:
+	ex.DebugBeginMethod(&definition, 2)
+	goto L28
+L28:
 	// branch branch_callterm_creates_fact
+	ex.DebugBeginBranch(&definition, 2)
 	// (and (call add_target_available) (target_available ?target))
-	cp32_5 = ex.V[5]
+	cp33_5 = ex.V[5]
+	ex.DebugBeginCondition(&definition, 4)
 	// (call add_target_available)
 	// (call add_target_available)
+	ex.DebugBeginCondition(&definition, 5)
 	if result, ok := ex.Invoke(3, nil, &cs3, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L35
-	}
-	goto L33
-L35:
-	// (target_available ?target)
-	cp37_5 = ex.V[5]
-	fc38 = 0
-	fc38++
-	if !factChoice6(ex, fc38-1) {
+		ex.DebugEndCondition(&definition, true)
 		goto L36
 	}
-	goto L29
+	ex.DebugEndCondition(&definition, false)
+	goto L34
 L36:
-	ex.V[5] = cp37_5
-	goto L33
-L33:
+	// (target_available ?target)
+	cp38_5 = ex.V[5]
+	fc39 = 0
+	ex.DebugBeginCondition(&definition, 6)
+	fc39++
+	if !factChoice6(ex, fc39-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L37
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L30
+L37:
+	ex.V[5] = cp38_5
+	goto L34
+L34:
+	goto L32
+L32:
+	ex.V[5] = cp33_5
+	ex.DebugEndCondition(&definition, false)
 	goto L31
 L31:
-	ex.V[5] = cp32_5
-	goto L30
+	ex.DebugEndBranch(&definition, false)
+	goto L27
 L30:
-	goto L26
-L29:
 	if !ex.PushBranch(&bc2) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L40:
+	ex.DebugCapturePendingTask(4)
+L42:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -527,17 +963,22 @@ L40:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L28
+		goto L29
 	}
-	goto L41
-L28:
+	goto L43
+L29:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L40
-L41:
+	goto L42
+L43:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L26:
+L27:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -545,43 +986,53 @@ L26:
 func method3(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp62_5 atom.Atom
-	var cp64_5 atom.Atom
-	var fc65 uint32
-	_ = cp62_5
-	_ = cp64_5
-	_ = fc65
+	var cp65_5 atom.Atom
+	var cp67_5 atom.Atom
+	var fc68 uint32
+	_ = cp65_5
+	_ = cp67_5
+	_ = fc68
 	switch frame.Resume {
 	case 1:
-		goto L45
+		goto L47
 	case 2:
-		goto L46
+		goto L48
 	}
-	goto L43
-L43:
+	ex.DebugBeginMethod(&definition, 3)
+	goto L45
+L45:
 	// branch branch_mutate_then_fail
 	ex.SaveRetry(frame, ms3)
+	ex.DebugBeginBranch(&definition, 3)
 	// (and (call add_target_available) (== 1 2))
+	ex.DebugBeginCondition(&definition, 7)
 	// (call add_target_available)
 	// (call add_target_available)
+	ex.DebugBeginCondition(&definition, 8)
 	if result, ok := ex.Invoke(3, nil, &cs4, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L53
+		ex.DebugEndCondition(&definition, true)
+		goto L55
 	}
-	goto L51
+	ex.DebugEndCondition(&definition, false)
+	goto L53
+L55:
+	// (== 1 2)
+	// (== 1 2)
+	ex.DebugBeginCondition(&definition, 9)
+	ex.DebugEndCondition(&definition, false)
+	goto L56
+L56:
+	goto L53
 L53:
-	// (== 1 2)
-	// (== 1 2)
-	goto L54
-L54:
 	goto L51
 L51:
-	goto L49
-L49:
-	goto L48
-L48:
+	ex.DebugEndCondition(&definition, false)
+	goto L50
+L50:
 	ex.ReleaseRetry(frame)
-	goto L44
-L57:
+	ex.DebugEndBranch(&definition, false)
+	goto L46
+L60:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -589,51 +1040,69 @@ L57:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L45
+		goto L47
 	}
-	goto L58
-L45:
+	goto L61
+L47:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms3)
-		goto L44
+		ex.DebugEndBranch(&definition, false)
+		goto L46
 	}
-	goto L57
-L58:
-	ex.ReleaseRetry(frame)
-	return 1
-L44:
-	// branch branch_observe_persisted_mutation
-	// (and (target_available ?target))
-	cp62_5 = ex.V[5]
-	// (target_available ?target)
-	cp64_5 = ex.V[5]
-	fc65 = 0
-	fc65++
-	if !factChoice11(ex, fc65-1) {
-		goto L63
-	}
-	goto L59
-L63:
-	ex.V[5] = cp64_5
-	goto L61
-L61:
-	ex.V[5] = cp62_5
 	goto L60
-L60:
-	goto L42
-L59:
+L61:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
+	return 1
+L46:
+	// branch branch_observe_persisted_mutation
+	ex.DebugBeginBranch(&definition, 4)
+	// (and (target_available ?target))
+	cp65_5 = ex.V[5]
+	ex.DebugBeginCondition(&definition, 10)
+	// (target_available ?target)
+	cp67_5 = ex.V[5]
+	fc68 = 0
+	ex.DebugBeginCondition(&definition, 11)
+	fc68++
+	if !factChoice11(ex, fc68-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L66
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L62
+L66:
+	ex.V[5] = cp67_5
+	goto L64
+L64:
+	ex.V[5] = cp65_5
+	ex.DebugEndCondition(&definition, false)
+	goto L63
+L63:
+	ex.DebugEndBranch(&definition, false)
+	goto L44
+L62:
 	if !ex.PushBranch(&bc4) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L67:
+	ex.DebugCapturePendingTask(6)
+L71:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -641,17 +1110,22 @@ L67:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L46
+		goto L48
 	}
-	goto L68
-L46:
+	goto L72
+L48:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L67
-L68:
+	goto L71
+L72:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L42:
+L44:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -659,73 +1133,93 @@ L42:
 func method4(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp75_0 atom.Atom
-	var cp75_1 atom.Atom
-	var cp80_0 atom.Atom
-	var cp83_1 atom.Atom
-	_ = cp75_0
-	_ = cp75_1
-	_ = cp80_0
-	_ = cp83_1
+	var cp79_0 atom.Atom
+	var cp79_1 atom.Atom
+	var cp84_0 atom.Atom
+	var cp87_1 atom.Atom
+	_ = cp79_0
+	_ = cp79_1
+	_ = cp84_0
+	_ = cp87_1
 	switch frame.Resume {
 	case 1:
-		goto L71
+		goto L75
 	}
-	goto L70
-L70:
+	ex.DebugBeginMethod(&definition, 4)
+	goto L74
+L74:
 	// branch branch_callterms
+	ex.DebugBeginBranch(&definition, 5)
 	// (and (call binded_function_with_args "we are doing nothing") (= ?health (call get_health 7)) (= ?max_speed (call get_max_speed 7)))
-	cp75_0 = ex.V[0]
-	cp75_1 = ex.V[1]
+	cp79_0 = ex.V[0]
+	cp79_1 = ex.V[1]
+	ex.DebugBeginCondition(&definition, 12)
 	// (call binded_function_with_args "we are doing nothing")
 	// (call binded_function_with_args "we are doing nothing")
+	ex.DebugBeginCondition(&definition, 13)
 	if result, ok := ex.Invoke(0, []atom.Atom{sv6}, &cs5, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L78
+		ex.DebugEndCondition(&definition, true)
+		goto L82
 	}
-	goto L76
-L78:
+	ex.DebugEndCondition(&definition, false)
+	goto L80
+L82:
 	// (= ?health (call get_health 7))
-	cp80_0 = ex.V[0]
+	cp84_0 = ex.V[0]
 	// (= ?health (call get_health 7))
+	ex.DebugBeginCondition(&definition, 14)
 	if !ex.V[0].IsBound() {
 		if result, ok := ex.Invoke(1, []atom.Atom{sv7}, &cs6, factSymbols); ok {
 			ex.SetIfChanged(0, result)
-			goto L81
+			ex.DebugEndCondition(&definition, true)
+			goto L85
 		}
 	}
-	goto L79
-L81:
+	ex.DebugEndCondition(&definition, false)
+	goto L83
+L85:
 	// (= ?max_speed (call get_max_speed 7))
-	cp83_1 = ex.V[1]
+	cp87_1 = ex.V[1]
 	// (= ?max_speed (call get_max_speed 7))
+	ex.DebugBeginCondition(&definition, 15)
 	if !ex.V[1].IsBound() {
 		if result, ok := ex.Invoke(2, []atom.Atom{sv8}, &cs7, factSymbols); ok {
 			ex.SetIfChanged(1, result)
-			goto L84
+			ex.DebugEndCondition(&definition, true)
+			goto L88
 		}
 	}
-	goto L82
-L84:
-	goto L72
-L82:
-	ex.V[1] = cp83_1
-	goto L79
-L79:
-	ex.V[0] = cp80_0
+	ex.DebugEndCondition(&definition, false)
+	goto L86
+L88:
+	ex.DebugEndCondition(&definition, true)
 	goto L76
-L76:
-	goto L74
-L74:
-	ex.V[0] = cp75_0
-	ex.V[1] = cp75_1
+L86:
+	ex.V[1] = cp87_1
+	goto L83
+L83:
+	ex.V[0] = cp84_0
+	goto L80
+L80:
+	goto L78
+L78:
+	ex.V[0] = cp79_0
+	ex.V[1] = cp79_1
+	ex.DebugEndCondition(&definition, false)
+	goto L77
+L77:
+	ex.DebugEndBranch(&definition, false)
 	goto L73
-L73:
-	goto L69
-L72:
+L76:
 	if !ex.PushBranch(&bc5) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L85:
+	ex.DebugCapturePendingTask(9)
+	ex.DebugCapturePendingTask(8)
+	ex.DebugCapturePendingTask(7)
+L90:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -733,17 +1227,22 @@ L85:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L71
+		goto L75
 	}
-	goto L86
-L71:
+	goto L91
+L75:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L85
-L86:
+	goto L90
+L91:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L69:
+L73:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -753,17 +1252,22 @@ func method5(ex *planner.Exec) int {
 	_ = frame
 	switch frame.Resume {
 	case 1:
-		goto L89
+		goto L94
 	}
-	goto L88
-L88:
+	ex.DebugBeginMethod(&definition, 5)
+	goto L93
+L93:
 	// branch branch_top_level_arguments
-	goto L90
-L90:
+	ex.DebugBeginBranch(&definition, 6)
+	goto L95
+L95:
 	if !ex.PushBranch(&bc6) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L92:
+	ex.DebugCapturePendingTask(10)
+L97:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -771,15 +1275,19 @@ L92:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L89
+		goto L94
 	}
-	goto L93
-L89:
+	goto L98
+L94:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L92
-L93:
+	goto L97
+L98:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
 }
 
@@ -787,51 +1295,66 @@ L93:
 func method6(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp100_5 atom.Atom
 	var cp105_5 atom.Atom
-	var fc106 uint32
-	_ = cp100_5
+	var cp110_5 atom.Atom
+	var fc111 uint32
 	_ = cp105_5
-	_ = fc106
+	_ = cp110_5
+	_ = fc111
 	switch frame.Resume {
 	case 1:
-		goto L96
+		goto L101
 	}
-	goto L95
-L95:
+	ex.DebugBeginMethod(&definition, 6)
+	goto L100
+L100:
 	// branch branch_callterm_creates_fact
+	ex.DebugBeginBranch(&definition, 7)
 	// (and (call add_target_available) (target_available ?target))
-	cp100_5 = ex.V[5]
-	// (call add_target_available)
-	// (call add_target_available)
-	if result, ok := ex.Invoke(3, nil, &cs8, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L103
-	}
-	goto L101
-L103:
-	// (target_available ?target)
 	cp105_5 = ex.V[5]
-	fc106 = 0
-	fc106++
-	if !factChoice18(ex, fc106-1) {
-		goto L104
+	ex.DebugBeginCondition(&definition, 16)
+	// (call add_target_available)
+	// (call add_target_available)
+	ex.DebugBeginCondition(&definition, 17)
+	if result, ok := ex.Invoke(3, nil, &cs8, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
+		ex.DebugEndCondition(&definition, true)
+		goto L108
 	}
-	goto L97
+	ex.DebugEndCondition(&definition, false)
+	goto L106
+L108:
+	// (target_available ?target)
+	cp110_5 = ex.V[5]
+	fc111 = 0
+	ex.DebugBeginCondition(&definition, 18)
+	fc111++
+	if !factChoice18(ex, fc111-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L109
+	}
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L102
+L109:
+	ex.V[5] = cp110_5
+	goto L106
+L106:
+	goto L104
 L104:
 	ex.V[5] = cp105_5
-	goto L101
-L101:
+	ex.DebugEndCondition(&definition, false)
+	goto L103
+L103:
+	ex.DebugEndBranch(&definition, false)
 	goto L99
-L99:
-	ex.V[5] = cp100_5
-	goto L98
-L98:
-	goto L94
-L97:
+L102:
 	if !ex.PushBranch(&bc7) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L108:
+	ex.DebugCapturePendingTask(11)
+L114:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -839,17 +1362,22 @@ L108:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L96
+		goto L101
 	}
-	goto L109
-L96:
+	goto L115
+L101:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L108
-L109:
+	goto L114
+L115:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L94:
+L99:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -857,43 +1385,53 @@ L94:
 func method7(ex *planner.Exec) int {
 	frame := ex.Frame()
 	_ = frame
-	var cp130_5 atom.Atom
-	var cp132_5 atom.Atom
-	var fc133 uint32
-	_ = cp130_5
-	_ = cp132_5
-	_ = fc133
+	var cp137_5 atom.Atom
+	var cp139_5 atom.Atom
+	var fc140 uint32
+	_ = cp137_5
+	_ = cp139_5
+	_ = fc140
 	switch frame.Resume {
 	case 1:
-		goto L113
+		goto L119
 	case 2:
-		goto L114
+		goto L120
 	}
-	goto L111
-L111:
-	// branch branch_mutate_then_fail
-	ex.SaveRetry(frame, ms7)
-	// (and (call add_target_available) (== 1 2))
-	// (call add_target_available)
-	// (call add_target_available)
-	if result, ok := ex.Invoke(3, nil, &cs9, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
-		goto L121
-	}
-	goto L119
-L121:
-	// (== 1 2)
-	// (== 1 2)
-	goto L122
-L122:
-	goto L119
-L119:
+	ex.DebugBeginMethod(&definition, 7)
 	goto L117
 L117:
-	goto L116
-L116:
-	ex.ReleaseRetry(frame)
-	goto L112
+	// branch branch_mutate_then_fail
+	ex.SaveRetry(frame, ms7)
+	ex.DebugBeginBranch(&definition, 8)
+	// (and (call add_target_available) (== 1 2))
+	ex.DebugBeginCondition(&definition, 19)
+	// (call add_target_available)
+	// (call add_target_available)
+	ex.DebugBeginCondition(&definition, 20)
+	if result, ok := ex.Invoke(3, nil, &cs9, factSymbols); ok && result.Is(atom.KindBool) && result.Bool() {
+		ex.DebugEndCondition(&definition, true)
+		goto L127
+	}
+	ex.DebugEndCondition(&definition, false)
+	goto L125
+L127:
+	// (== 1 2)
+	// (== 1 2)
+	ex.DebugBeginCondition(&definition, 21)
+	ex.DebugEndCondition(&definition, false)
+	goto L128
+L128:
+	goto L125
 L125:
+	goto L123
+L123:
+	ex.DebugEndCondition(&definition, false)
+	goto L122
+L122:
+	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, false)
+	goto L118
+L132:
 	if ex.PendingCount() > frame.RetryPendingBase {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 1
@@ -901,51 +1439,69 @@ L125:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L113
+		goto L119
 	}
-	goto L126
-L113:
+	goto L133
+L119:
 	if frame.ChildResult == 0 {
 		if ex.FailureState != planner.NoPlan {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		if ex.Ctx.BacktrackingMode&planner.BacktrackingBranches == 0 {
 			ex.ReleaseRetry(frame)
+			ex.DebugEndBranch(&definition, false)
+			ex.DebugEndMethod(&definition, false)
 			return 0
 		}
 		ex.RestoreRetry(frame, ms7)
-		goto L112
+		ex.DebugEndBranch(&definition, false)
+		goto L118
 	}
-	goto L125
-L126:
+	goto L132
+L133:
 	ex.ReleaseRetry(frame)
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L112:
+L118:
 	// branch branch_observe_persisted_mutation
+	ex.DebugBeginBranch(&definition, 9)
 	// (and (target_available ?target))
-	cp130_5 = ex.V[5]
+	cp137_5 = ex.V[5]
+	ex.DebugBeginCondition(&definition, 22)
 	// (target_available ?target)
-	cp132_5 = ex.V[5]
-	fc133 = 0
-	fc133++
-	if !factChoice23(ex, fc133-1) {
-		goto L131
+	cp139_5 = ex.V[5]
+	fc140 = 0
+	ex.DebugBeginCondition(&definition, 23)
+	fc140++
+	if !factChoice23(ex, fc140-1) {
+		ex.DebugEndCondition(&definition, false)
+		goto L138
 	}
-	goto L127
-L131:
-	ex.V[5] = cp132_5
-	goto L129
-L129:
-	ex.V[5] = cp130_5
-	goto L128
-L128:
-	goto L110
-L127:
+	ex.DebugEndCondition(&definition, true)
+	ex.DebugEndCondition(&definition, true)
+	goto L134
+L138:
+	ex.V[5] = cp139_5
+	goto L136
+L136:
+	ex.V[5] = cp137_5
+	ex.DebugEndCondition(&definition, false)
+	goto L135
+L135:
+	ex.DebugEndBranch(&definition, false)
+	goto L116
+L134:
 	if !ex.PushBranch(&bc9) {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-L135:
+	ex.DebugCapturePendingTask(13)
+L143:
 	if ex.PendingCount() > 0 {
 		if next := ex.PopPending(); next != nil {
 			frame.Resume = 2
@@ -953,17 +1509,22 @@ L135:
 			return 2
 		}
 		frame.ChildResult = 0
-		goto L114
+		goto L120
 	}
-	goto L136
-L114:
+	goto L144
+L120:
 	if frame.ChildResult == 0 {
+		ex.DebugEndBranch(&definition, false)
+		ex.DebugEndMethod(&definition, false)
 		return 0
 	}
-	goto L135
-L136:
+	goto L143
+L144:
+	ex.DebugEndBranch(&definition, true)
+	ex.DebugEndMethod(&definition, true)
 	return 1
-L110:
+L116:
+	ex.DebugEndMethod(&definition, false)
 	return 0
 }
 
@@ -1003,6 +1564,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 	if entry < 0 {
 		return empty, planner.InvalidCall
 	}
+	ex.DebugBeginPlan(&definition, uint32(entry))
 	result := 0
 	switch entry {
 	case 4:
@@ -1030,6 +1592,7 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 		result = ex.Run(method7)
 	}
 	if result == 0 {
+		ex.DebugEndPlan(&definition, false)
 		return empty, ex.FailureState
 	}
 	for ex.PendingCount() != 0 {
@@ -1038,8 +1601,10 @@ func decomposeCall(ctx *planner.Context, call atom.Atom, requireTopLevel bool) (
 			break
 		}
 		if ex.Run(next) == 0 {
+			ex.DebugEndPlan(&definition, false)
 			return empty, ex.FailureState
 		}
 	}
+	ex.DebugEndPlan(&definition, true)
 	return ex.PlanAtom(), planner.Succeeded
 }

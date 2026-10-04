@@ -6,7 +6,9 @@
 # links them into htn-oracle, a scenario runner whose output is the golden
 # reference for the Go and Nim ports (testdata/scenarios/*.golden). The
 # original HTNLanguageServer is built too, as the reference for the ports'
-# language servers (tools/fuzz/lsp_fuzz.py).
+# language servers (tools/fuzz/lsp_fuzz.py). htn-oracle-debug is the same
+# scenario runner built with HTN_DEBUG_DECOMPOSITION: its "debugger" command
+# dumps the generated event debugger (the reference for the ports' debuggers).
 #
 #   cmake -S tools/oracle -B build/oracle -G Ninja -DCMAKE_BUILD_TYPE=Release \
 #         -DHTN_ORIGINAL_ROOT=/path/to/htn_planner
@@ -110,3 +112,23 @@ add_executable(htn-demo-oracle "${CMAKE_CURRENT_LIST_DIR}/demo_oracle.cpp" ${HTN
 target_include_directories(htn-demo-oracle PRIVATE "${HTN_ORIGINAL_ROOT}/HTNDemo/src")
 target_link_libraries(htn-demo-oracle PRIVATE HTNIntegration HTNFramework)
 target_compile_definitions(htn-demo-oracle PRIVATE HTN_PORT_ROOT="${PORT_ROOT}")
+
+# Debugger-instrumented flavour (HTN_DEBUG_DECOMPOSITION changes the generated
+# planner ABI, so the framework, integration layer and generated planners are
+# compiled again).
+option(HTN_ORACLE_DEBUGGER "Build htn-oracle-debug (HTN_DEBUG_DECOMPOSITION)" ON)
+if(HTN_ORACLE_DEBUGGER)
+    add_library(HTNFrameworkDebug STATIC ${HTN_SOURCES})
+    target_include_directories(HTNFrameworkDebug PUBLIC "${HTN_ORIGINAL_ROOT}/HTNFramework/src"
+        PRIVATE "${HTN_ORIGINAL_ROOT}/ThirdParty/optick/src")
+    target_compile_definitions(HTNFrameworkDebug PUBLIC HTN_RELEASE HTN_DEBUG_DECOMPOSITION PRIVATE USE_OPTICK=0)
+    target_precompile_headers(HTNFrameworkDebug PRIVATE "${HTN_ORIGINAL_ROOT}/HTNFramework/src/pch.h")
+    target_link_libraries(HTNFrameworkDebug PUBLIC Threads::Threads ${CMAKE_DL_LIBS})
+    add_library(HTNIntegrationDebug STATIC ${HTN_INTEGRATION_SOURCES})
+    target_include_directories(HTNIntegrationDebug PUBLIC "${HTN_ORIGINAL_ROOT}/HTNIntegration/src")
+    target_link_libraries(HTNIntegrationDebug PUBLIC HTNFrameworkDebug)
+    add_executable(htn-oracle-debug "${CMAKE_CURRENT_LIST_DIR}/oracle.cpp" ${GENERATED_SOURCES})
+    target_include_directories(htn-oracle-debug PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
+    target_link_libraries(htn-oracle-debug PRIVATE HTNIntegrationDebug HTNFrameworkDebug)
+    target_compile_definitions(htn-oracle-debug PRIVATE HTN_PORT_ROOT="${PORT_ROOT}")
+endif()

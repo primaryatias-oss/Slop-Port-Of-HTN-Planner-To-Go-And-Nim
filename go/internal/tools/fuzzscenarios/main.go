@@ -3,6 +3,9 @@
 // literals of each domain, random entry calls and backtracking modes.
 //
 //	go run ./internal/tools/fuzzscenarios -seed 1 -per-variant 4 > fuzz.scn
+//
+// With -debugger every scenario enables the generated event debugger, whose
+// node dumps are then compared too.
 package main
 
 import (
@@ -253,6 +256,8 @@ func main() {
 	perVariant := flag.Int("per-variant", 3, "scenarios per planner variant")
 	root := flag.String("root", "..", "repository root")
 	only := flag.String("only", "", "comma-separated variant names (default: all)")
+	debugger := flag.Bool("debugger", false,
+		"enable the generated event debugger in every scenario (htn-oracle-debug and -tags htndebug runners)")
 	flag.Parse()
 	r := rand.New(rand.NewSource(*seed))
 	loadWorldStates(*root)
@@ -298,6 +303,9 @@ func main() {
 		for i := 0; i < *perVariant; i++ {
 			fmt.Fprintf(out, "\nscenario fuzz/%s/%d\n", variant, i)
 			fmt.Fprintf(out, "planner %s\npolicy report\n", variant)
+			if *debugger {
+				fmt.Fprintf(out, "debugger on\n")
+			}
 			for _, f := range info.facts {
 				rows := r.Intn(4)
 				if r.Intn(3) == 0 {
