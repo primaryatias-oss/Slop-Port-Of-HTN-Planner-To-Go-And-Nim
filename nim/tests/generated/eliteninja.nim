@@ -81,9 +81,11 @@ proc axiomBegin1(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 0)
 
 proc axiomEnd1(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -96,9 +98,11 @@ proc axiomBegin4(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 0)
 
 proc axiomEnd4(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -111,9 +115,11 @@ proc axiomBegin7(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd7(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -126,9 +132,11 @@ proc axiomBegin11(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd11(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -141,30 +149,49 @@ proc axiomBegin13(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd13(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!attack @combat_attack ?inp_threat)
-  if not ex.appendPlanStep(sym2, [sv1, ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [sv1, ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!attack @combat_attack ?inp_threat)
-  if not ex.appendPlanStep(sym2, [sv2, ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [sv2, ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (EnemyBase::do_combat ?inp_threat)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -173,16 +200,27 @@ proc task2(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!attack @combat_attack ?inp_threat)
-  if not ex.appendPlanStep(sym2, [sv3, ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [sv3, ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (Ninja::do_combat ?inp_threat)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -191,10 +229,15 @@ proc task4(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (do_combat 1)
   let arg0 = sv4
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -203,16 +246,27 @@ proc task5(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (!attack @combat_attack ?inp_threat)
-  if not ex.appendPlanStep(sym2, [sv5, ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [sv5, ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (Ninja::do_combat ?inp_threat)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -221,10 +275,15 @@ proc task7(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (do_combat 1)
   let arg0 = sv6
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -241,9 +300,9 @@ proc method0(ex: Exec): int {.nimcall.} =
   var as4_14Frame: uint64
   var cp17_0: Atom
   var as4_14Copy: AxiomScope
-  var cp19_0: Atom
+  var cp21_0: Atom
   var as7_8Copy: AxiomScope
-  var cp25_0: Atom
+  var cp30_0: Atom
   var state = 0
   case fr.resume
   of 1: state = 3
@@ -251,18 +310,24 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch branch_base_attack
+      ex.debugBeginBranch(definition, 0)
       # (and (#can_use_special_attack ?inp_threat))
+      ex.debugBeginCondition(definition, 6)
       # (#can_use_special_attack ?inp_threat)
+      ex.debugBeginCondition(definition, 7)
       as7_8.saved.setLen(1)
       as7_8.args.setLen(1)
       axiomBegin7(ex, as7_8)
       as7_8Frame = ex.currentFrameID
       # (or (#EnemyBase::can_use_special_attack ?inp_threat) (elite_move_available))
+      ex.debugBeginCondition(definition, 3)
       # (#EnemyBase::can_use_special_attack ?inp_threat)
+      ex.debugBeginCondition(definition, 4)
       as4_14.saved.setLen(1)
       as4_14.args.setLen(1)
       axiomBegin4(ex, as4_14)
@@ -272,21 +337,31 @@ proc method0(ex: Exec): int {.nimcall.} =
       if not axiomEnd4(ex, true, as4_14Copy):
         state = 18
         continue
-      cp19_0 = ex.v[0]
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp21_0 = ex.v[0]
       as7_8Copy = as7_8
       if not axiomEnd7(ex, true, as7_8Copy):
-        state = 20
+        state = 22
         continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 4
       continue
-    of 20:
-      ex.v[0] = cp19_0
+    of 22:
+      ex.v[0] = cp21_0
       ex.currentFrameID = as7_8Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 20
+      continue
+    of 20:
+      ex.debugBeginCondition(definition, 3)
       state = 11
       continue
     of 18:
       ex.v[0] = cp17_0
       ex.currentFrameID = as4_14Frame
+      ex.debugBeginAxiom(definition, 0)
       state = 16
       continue
     of 16:
@@ -294,44 +369,56 @@ proc method0(ex: Exec): int {.nimcall.} =
       state = 14
       continue
     of 14:
+      ex.debugEndCondition(definition, false)
       state = 13
       continue
     of 13:
       # (elite_move_available)
       # (elite_move_available)
       block:
+        ex.debugBeginCondition(definition, 5)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 24
+          state = 28
           continue
-        state = 22
-        continue
-      state = 24
-      continue
-    of 24:
-      cp25_0 = ex.v[0]
-      as7_8Copy = as7_8
-      if not axiomEnd7(ex, true, as7_8Copy):
         state = 26
         continue
+      state = 28
+      continue
+    of 28:
+      ex.debugEndCondition(definition, true)
+      cp30_0 = ex.v[0]
+      as7_8Copy = as7_8
+      if not axiomEnd7(ex, true, as7_8Copy):
+        state = 31
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 4
       continue
-    of 26:
-      ex.v[0] = cp25_0
+    of 31:
+      ex.v[0] = cp30_0
       ex.currentFrameID = as7_8Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 29
+      continue
+    of 29:
+      ex.debugBeginCondition(definition, 3)
       state = 11
       continue
-    of 22:
-      state = 21
+    of 26:
+      state = 25
       continue
-    of 21:
+    of 25:
       state = 11
       continue
     of 11:
+      ex.debugEndCondition(definition, false)
       state = 10
       continue
     of 10:
@@ -339,20 +426,26 @@ proc method0(ex: Exec): int {.nimcall.} =
       state = 8
       continue
     of 8:
+      ex.debugEndCondition(definition, false)
       state = 6
       continue
     of 6:
+      ex.debugEndCondition(definition, false)
       state = 5
       continue
     of 5:
+      ex.debugEndBranch(definition, false)
       state = 1
       continue
     of 4:
       if not ex.pushBranch(addr bc0):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 27
+      ex.debugCapturePendingTask(0)
+      state = 34
       continue
-    of 27:
+    of 34:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -362,16 +455,21 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 3
         continue
-      state = 28
+      state = 35
       continue
     of 3:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 27
+      state = 34
       continue
-    of 28:
+    of 35:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 1:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -381,53 +479,64 @@ proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 32
-  of 2: state = 33
+  of 1: state = 39
+  of 2: state = 40
   else: discard
   while true:
     case state
     of 0:
-      state = 30
+      ex.debugBeginMethod(definition, 1)
+      state = 37
       continue
-    of 30:
+    of 37:
       # branch branch_ninja_special_attack
       ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 1)
       # (and (ninja_move_available))
+      ex.debugBeginCondition(definition, 8)
       # (ninja_move_available)
       # (ninja_move_available)
       block:
+        ex.debugBeginCondition(definition, 9)
         let ft = ex.factTables[1]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 40
+          state = 47
           continue
-        state = 38
+        state = 45
         continue
-      state = 40
+      state = 47
       continue
-    of 40:
-      state = 34
-      continue
-    of 38:
-      state = 36
-      continue
-    of 36:
-      state = 35
-      continue
-    of 35:
-      ex.releaseRetry(fr)
-      state = 31
-      continue
-    of 34:
-      if not ex.pushBranch(addr bc1):
-        ex.releaseRetry(fr)
-        return 0
+    of 47:
+      ex.debugEndCondition(definition, true)
       state = 41
       continue
+    of 45:
+      state = 43
+      continue
+    of 43:
+      ex.debugEndCondition(definition, false)
+      state = 42
+      continue
+    of 42:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 38
+      continue
     of 41:
+      if not ex.pushBranch(addr bc1):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(1)
+      state = 49
+      continue
+    of 49:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -435,33 +544,42 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 32
+        state = 39
         continue
-      state = 42
+      state = 50
       continue
-    of 32:
+    of 39:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms1)
-        state = 31
+        ex.debugEndBranch(definition, false)
+        state = 38
         continue
-      state = 41
+      state = 49
       continue
-    of 42:
+    of 50:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 31:
+    of 38:
       # branch branch_base
-      state = 43
+      ex.debugBeginBranch(definition, 2)
+      state = 51
       continue
-    of 43:
+    of 51:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 45
+      ex.debugCapturePendingTask(2)
+      state = 53
       continue
-    of 45:
+    of 53:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -469,16 +587,20 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 33
+        state = 40
         continue
-      state = 46
+      state = 54
       continue
-    of 33:
+    of 40:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 45
+      state = 53
       continue
-    of 46:
+    of 54:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -486,128 +608,162 @@ proc method1(ex: Exec): int {.nimcall.} =
 # method2: EliteNinja::do_combat/1
 proc method2(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as11_56: AxiomScope
-  var as11_56Frame: uint64
-  var as4_62: AxiomScope
-  var as4_62Frame: uint64
-  var cp65_0: Atom
-  var as4_62Copy: AxiomScope
-  var cp67_0: Atom
-  var as11_56Copy: AxiomScope
+  var as11_64: AxiomScope
+  var as11_64Frame: uint64
+  var as4_70: AxiomScope
+  var as4_70Frame: uint64
   var cp73_0: Atom
+  var as4_70Copy: AxiomScope
+  var cp77_0: Atom
+  var as11_64Copy: AxiomScope
+  var cp86_0: Atom
   var state = 0
   case fr.resume
-  of 1: state = 50
-  of 2: state = 51
+  of 1: state = 58
+  of 2: state = 59
   else: discard
   while true:
     case state
     of 0:
-      state = 48
+      ex.debugBeginMethod(definition, 2)
+      state = 56
       continue
-    of 48:
+    of 56:
       # branch branch_elite_attack
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 3)
       # (and (#can_use_special_attack ?inp_threat))
+      ex.debugBeginCondition(definition, 10)
       # (#can_use_special_attack ?inp_threat)
-      as11_56.saved.setLen(1)
-      as11_56.args.setLen(1)
-      axiomBegin11(ex, as11_56)
-      as11_56Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 11)
+      as11_64.saved.setLen(1)
+      as11_64.args.setLen(1)
+      axiomBegin11(ex, as11_64)
+      as11_64Frame = ex.currentFrameID
       # (or (#EnemyBase::can_use_special_attack ?inp_threat) (elite_move_available))
+      ex.debugBeginCondition(definition, 3)
       # (#EnemyBase::can_use_special_attack ?inp_threat)
-      as4_62.saved.setLen(1)
-      as4_62.args.setLen(1)
-      axiomBegin4(ex, as4_62)
-      as4_62Frame = ex.currentFrameID
-      cp65_0 = ex.v[0]
-      as4_62Copy = as4_62
-      if not axiomEnd4(ex, true, as4_62Copy):
-        state = 66
+      ex.debugBeginCondition(definition, 4)
+      as4_70.saved.setLen(1)
+      as4_70.args.setLen(1)
+      axiomBegin4(ex, as4_70)
+      as4_70Frame = ex.currentFrameID
+      cp73_0 = ex.v[0]
+      as4_70Copy = as4_70
+      if not axiomEnd4(ex, true, as4_70Copy):
+        state = 74
         continue
-      cp67_0 = ex.v[0]
-      as11_56Copy = as11_56
-      if not axiomEnd11(ex, true, as11_56Copy):
-        state = 68
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp77_0 = ex.v[0]
+      as11_64Copy = as11_64
+      if not axiomEnd11(ex, true, as11_64Copy):
+        state = 78
         continue
-      state = 52
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 60
       continue
-    of 68:
-      ex.v[0] = cp67_0
-      ex.currentFrameID = as11_56Frame
-      state = 59
+    of 78:
+      ex.v[0] = cp77_0
+      ex.currentFrameID = as11_64Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 76
       continue
-    of 66:
-      ex.v[0] = cp65_0
-      ex.currentFrameID = as4_62Frame
-      state = 64
+    of 76:
+      ex.debugBeginCondition(definition, 3)
+      state = 67
       continue
-    of 64:
-      axiomEnd4(ex, false, as4_62)
-      state = 62
+    of 74:
+      ex.v[0] = cp73_0
+      ex.currentFrameID = as4_70Frame
+      ex.debugBeginAxiom(definition, 0)
+      state = 72
       continue
-    of 62:
-      state = 61
+    of 72:
+      axiomEnd4(ex, false, as4_70)
+      state = 70
       continue
-    of 61:
+    of 70:
+      ex.debugEndCondition(definition, false)
+      state = 69
+      continue
+    of 69:
       # (elite_move_available)
       # (elite_move_available)
       block:
+        ex.debugBeginCondition(definition, 5)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 72
+          state = 84
           continue
-        state = 70
+        state = 82
         continue
-      state = 72
+      state = 84
       continue
-    of 72:
-      cp73_0 = ex.v[0]
-      as11_56Copy = as11_56
-      if not axiomEnd11(ex, true, as11_56Copy):
-        state = 74
+    of 84:
+      ex.debugEndCondition(definition, true)
+      cp86_0 = ex.v[0]
+      as11_64Copy = as11_64
+      if not axiomEnd11(ex, true, as11_64Copy):
+        state = 87
         continue
-      state = 52
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 60
       continue
-    of 74:
-      ex.v[0] = cp73_0
-      ex.currentFrameID = as11_56Frame
-      state = 59
+    of 87:
+      ex.v[0] = cp86_0
+      ex.currentFrameID = as11_64Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 85
       continue
-    of 70:
-      state = 69
+    of 85:
+      ex.debugBeginCondition(definition, 3)
+      state = 67
       continue
-    of 69:
-      state = 59
+    of 82:
+      state = 81
       continue
-    of 59:
-      state = 58
+    of 81:
+      state = 67
       continue
-    of 58:
-      axiomEnd11(ex, false, as11_56)
-      state = 56
+    of 67:
+      ex.debugEndCondition(definition, false)
+      state = 66
       continue
-    of 56:
-      state = 54
+    of 66:
+      axiomEnd11(ex, false, as11_64)
+      state = 64
       continue
-    of 54:
-      state = 53
+    of 64:
+      ex.debugEndCondition(definition, false)
+      state = 62
       continue
-    of 53:
+    of 62:
+      ex.debugEndCondition(definition, false)
+      state = 61
+      continue
+    of 61:
       ex.releaseRetry(fr)
-      state = 49
+      ex.debugEndBranch(definition, false)
+      state = 57
       continue
-    of 52:
+    of 60:
       if not ex.pushBranch(addr bc3):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 75
+      ex.debugCapturePendingTask(3)
+      state = 90
       continue
-    of 75:
+    of 90:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -615,33 +771,42 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 50
+        state = 58
         continue
-      state = 76
+      state = 91
       continue
-    of 50:
+    of 58:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 49
+        ex.debugEndBranch(definition, false)
+        state = 57
         continue
-      state = 75
+      state = 90
       continue
-    of 76:
+    of 91:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 49:
+    of 57:
       # branch branch_normal_ninja
-      state = 77
+      ex.debugBeginBranch(definition, 4)
+      state = 92
       continue
-    of 77:
+    of 92:
       if not ex.pushBranch(addr bc4):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 79
+      ex.debugCapturePendingTask(4)
+      state = 94
       continue
-    of 79:
+    of 94:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -649,16 +814,20 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 51
+        state = 59
         continue
-      state = 80
+      state = 95
       continue
-    of 51:
+    of 59:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 79
+      state = 94
       continue
-    of 80:
+    of 95:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -668,23 +837,28 @@ proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 83
+  of 1: state = 98
   else: discard
   while true:
     case state
     of 0:
-      state = 82
+      ex.debugBeginMethod(definition, 3)
+      state = 97
       continue
-    of 82:
+    of 97:
       # branch branch_run
-      state = 84
+      ex.debugBeginBranch(definition, 5)
+      state = 99
       continue
-    of 84:
+    of 99:
       if not ex.pushBranch(addr bc5):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 86
+      ex.debugCapturePendingTask(5)
+      state = 101
       continue
-    of 86:
+    of 101:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -692,16 +866,20 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 83
+        state = 98
         continue
-      state = 87
+      state = 102
       continue
-    of 83:
+    of 98:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 86
+      state = 101
       continue
-    of 87:
+    of 102:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -709,128 +887,162 @@ proc method3(ex: Exec): int {.nimcall.} =
 # method4: do_combat/1
 proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as13_97: AxiomScope
-  var as13_97Frame: uint64
-  var as4_103: AxiomScope
-  var as4_103Frame: uint64
-  var cp106_0: Atom
-  var as4_103Copy: AxiomScope
-  var cp108_0: Atom
-  var as13_97Copy: AxiomScope
-  var cp114_0: Atom
+  var as13_112: AxiomScope
+  var as13_112Frame: uint64
+  var as4_118: AxiomScope
+  var as4_118Frame: uint64
+  var cp121_0: Atom
+  var as4_118Copy: AxiomScope
+  var cp125_0: Atom
+  var as13_112Copy: AxiomScope
+  var cp134_0: Atom
   var state = 0
   case fr.resume
-  of 1: state = 91
-  of 2: state = 92
+  of 1: state = 106
+  of 2: state = 107
   else: discard
   while true:
     case state
     of 0:
-      state = 89
+      ex.debugBeginMethod(definition, 4)
+      state = 104
       continue
-    of 89:
+    of 104:
       # branch branch_elite_attack
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 6)
       # (and (#can_use_special_attack ?inp_threat))
+      ex.debugBeginCondition(definition, 12)
       # (#can_use_special_attack ?inp_threat)
-      as13_97.saved.setLen(1)
-      as13_97.args.setLen(1)
-      axiomBegin13(ex, as13_97)
-      as13_97Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 13)
+      as13_112.saved.setLen(1)
+      as13_112.args.setLen(1)
+      axiomBegin13(ex, as13_112)
+      as13_112Frame = ex.currentFrameID
       # (or (#EnemyBase::can_use_special_attack ?inp_threat) (elite_move_available))
+      ex.debugBeginCondition(definition, 3)
       # (#EnemyBase::can_use_special_attack ?inp_threat)
-      as4_103.saved.setLen(1)
-      as4_103.args.setLen(1)
-      axiomBegin4(ex, as4_103)
-      as4_103Frame = ex.currentFrameID
-      cp106_0 = ex.v[0]
-      as4_103Copy = as4_103
-      if not axiomEnd4(ex, true, as4_103Copy):
-        state = 107
+      ex.debugBeginCondition(definition, 4)
+      as4_118.saved.setLen(1)
+      as4_118.args.setLen(1)
+      axiomBegin4(ex, as4_118)
+      as4_118Frame = ex.currentFrameID
+      cp121_0 = ex.v[0]
+      as4_118Copy = as4_118
+      if not axiomEnd4(ex, true, as4_118Copy):
+        state = 122
         continue
-      cp108_0 = ex.v[0]
-      as13_97Copy = as13_97
-      if not axiomEnd13(ex, true, as13_97Copy):
-        state = 109
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp125_0 = ex.v[0]
+      as13_112Copy = as13_112
+      if not axiomEnd13(ex, true, as13_112Copy):
+        state = 126
         continue
-      state = 93
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 108
       continue
-    of 109:
-      ex.v[0] = cp108_0
-      ex.currentFrameID = as13_97Frame
-      state = 100
+    of 126:
+      ex.v[0] = cp125_0
+      ex.currentFrameID = as13_112Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 124
       continue
-    of 107:
-      ex.v[0] = cp106_0
-      ex.currentFrameID = as4_103Frame
-      state = 105
+    of 124:
+      ex.debugBeginCondition(definition, 3)
+      state = 115
       continue
-    of 105:
-      axiomEnd4(ex, false, as4_103)
-      state = 103
+    of 122:
+      ex.v[0] = cp121_0
+      ex.currentFrameID = as4_118Frame
+      ex.debugBeginAxiom(definition, 0)
+      state = 120
       continue
-    of 103:
-      state = 102
+    of 120:
+      axiomEnd4(ex, false, as4_118)
+      state = 118
       continue
-    of 102:
+    of 118:
+      ex.debugEndCondition(definition, false)
+      state = 117
+      continue
+    of 117:
       # (elite_move_available)
       # (elite_move_available)
       block:
+        ex.debugBeginCondition(definition, 5)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 113
+          state = 132
           continue
-        state = 111
+        state = 130
         continue
-      state = 113
+      state = 132
       continue
-    of 113:
-      cp114_0 = ex.v[0]
-      as13_97Copy = as13_97
-      if not axiomEnd13(ex, true, as13_97Copy):
-        state = 115
+    of 132:
+      ex.debugEndCondition(definition, true)
+      cp134_0 = ex.v[0]
+      as13_112Copy = as13_112
+      if not axiomEnd13(ex, true, as13_112Copy):
+        state = 135
         continue
-      state = 93
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 108
+      continue
+    of 135:
+      ex.v[0] = cp134_0
+      ex.currentFrameID = as13_112Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 133
+      continue
+    of 133:
+      ex.debugBeginCondition(definition, 3)
+      state = 115
+      continue
+    of 130:
+      state = 129
+      continue
+    of 129:
+      state = 115
       continue
     of 115:
-      ex.v[0] = cp114_0
-      ex.currentFrameID = as13_97Frame
-      state = 100
+      ex.debugEndCondition(definition, false)
+      state = 114
       continue
-    of 111:
+    of 114:
+      axiomEnd13(ex, false, as13_112)
+      state = 112
+      continue
+    of 112:
+      ex.debugEndCondition(definition, false)
       state = 110
       continue
     of 110:
-      state = 100
+      ex.debugEndCondition(definition, false)
+      state = 109
       continue
-    of 100:
-      state = 99
-      continue
-    of 99:
-      axiomEnd13(ex, false, as13_97)
-      state = 97
-      continue
-    of 97:
-      state = 95
-      continue
-    of 95:
-      state = 94
-      continue
-    of 94:
+    of 109:
       ex.releaseRetry(fr)
-      state = 90
+      ex.debugEndBranch(definition, false)
+      state = 105
       continue
-    of 93:
+    of 108:
       if not ex.pushBranch(addr bc6):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 116
+      ex.debugCapturePendingTask(6)
+      state = 138
       continue
-    of 116:
+    of 138:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -838,33 +1050,42 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 91
+        state = 106
         continue
-      state = 117
+      state = 139
       continue
-    of 91:
+    of 106:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 90
+        ex.debugEndBranch(definition, false)
+        state = 105
         continue
-      state = 116
+      state = 138
       continue
-    of 117:
+    of 139:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 90:
+    of 105:
       # branch branch_normal_ninja
-      state = 118
+      ex.debugBeginBranch(definition, 7)
+      state = 140
       continue
-    of 118:
+    of 140:
       if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 120
+      ex.debugCapturePendingTask(7)
+      state = 142
       continue
-    of 120:
+    of 142:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -872,16 +1093,20 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 92
+        state = 107
         continue
-      state = 121
+      state = 143
       continue
-    of 92:
+    of 107:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 120
+      state = 142
       continue
-    of 121:
+    of 143:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -891,23 +1116,28 @@ proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 124
+  of 1: state = 146
   else: discard
   while true:
     case state
     of 0:
-      state = 123
+      ex.debugBeginMethod(definition, 5)
+      state = 145
       continue
-    of 123:
+    of 145:
       # branch branch_run
-      state = 125
+      ex.debugBeginBranch(definition, 8)
+      state = 147
       continue
-    of 125:
+    of 147:
       if not ex.pushBranch(addr bc8):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 127
+      ex.debugCapturePendingTask(8)
+      state = 149
       continue
-    of 127:
+    of 149:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -915,16 +1145,20 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 124
+        state = 146
         continue
-      state = 128
+      state = 150
       continue
-    of 124:
+    of 146:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 127
+      state = 149
       continue
-    of 128:
+    of 150:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -944,16 +1178,22 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym3 and argumentCount == 0:
     entry = 5
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 5:
     runResult = ex.run(method5)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task0)], totalRestore: 0)
@@ -969,3 +1209,220 @@ definition = Definition(abiVersion: ABIVersion, features: featureNone, domainID:
   newPreparedStorage: newPrepared, newExecutionStorage: newExecution, decomposeCall: decomposeCall,
   factNames: @["elite_move_available", "ninja_move_available"],
   callTermRequirements: @[])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/EliteNinja.domain",
+      strings: @[
+        "EliteNinjaConstants",
+        "combat_attack",
+        "elite_ninja_attack",
+        "\"elite_ninja_attack\"",
+        "EnemyBase::can_use_special_attack",
+        "inp_threat",
+        "?inp_threat",
+        "EliteNinja::can_use_special_attack",
+        "elite_move_available",
+        "can_use_special_attack",
+        "EnemyBase::do_combat",
+        "branch_base_attack",
+        "attack",
+        "!attack",
+        "@combat_attack",
+        "Ninja::do_combat",
+        "branch_ninja_special_attack",
+        "ninja_move_available",
+        "branch_base",
+        "EliteNinja::do_combat",
+        "branch_elite_attack",
+        "branch_normal_ninja",
+        "EliteNinja::run",
+        "branch_run",
+        "do_combat",
+        "1",
+        "run"],
+      values: @[
+        2'u32, 3, 2, 5, NoIndex,
+        1, 6, 5, 8, 0,
+        1, 6, 5, 11, 0,
+        1, 6, 5, 13, 0,
+        1, 6, 5, 11, 0,
+        1, 6, 5, 13, 0,
+        1, 6, 5, 13, 0,
+        1, 6, 5, 16, 0,
+        2, 14, 2, 19, NoIndex,
+        1, 6, 5, 19, 0,
+        1, 6, 5, 8, 0,
+        2, 14, 2, 14, NoIndex,
+        1, 6, 5, 14, 0,
+        1, 6, 5, 22, 0,
+        1, 6, 5, 18, 0,
+        1, 6, 5, 21, 0,
+        2, 14, 2, 24, NoIndex,
+        1, 6, 5, 24, 0,
+        1, 6, 5, 32, 0,
+        0, 25, 25, 42, NoIndex,
+        1, 6, 5, 18, 0,
+        1, 6, 5, 21, 0,
+        2, 14, 2, 24, NoIndex,
+        1, 6, 5, 24, 0,
+        1, 6, 5, 32, 0,
+        0, 25, 25, 42, NoIndex],
+      variableStringIDs: @[
+        5'u32],
+      conditions: @[
+        3'u32, NoIndex, 0, 0, 0, 2, NoIndex, NoIndex, 12, 0,
+        1, 4, 3, 1, 0, 0, NoIndex, 0, 13, 0,
+        0, 8, 4, 0, 0, 0, NoIndex, 0, 14, 0,
+        3, NoIndex, 0, 0, 2, 2, NoIndex, NoIndex, 12, 0,
+        1, 4, 5, 1, 2, 0, NoIndex, 0, 13, 0,
+        0, 8, 6, 0, 2, 0, NoIndex, 0, 14, 0,
+        2, NoIndex, 0, 0, 4, 1, NoIndex, NoIndex, 15, 0,
+        1, 9, 7, 1, 4, 0, NoIndex, 2, 16, 0,
+        2, NoIndex, 0, 0, 5, 1, NoIndex, NoIndex, 10, 0,
+        0, 17, 11, 0, 5, 0, NoIndex, 1, 11, 0,
+        2, NoIndex, 0, 0, 6, 1, NoIndex, NoIndex, 20, 0,
+        1, 9, 15, 1, 6, 0, NoIndex, 2, 21, 0,
+        2, NoIndex, 0, 0, 7, 1, NoIndex, NoIndex, 20, 0,
+        1, 9, 21, 1, 7, 0, NoIndex, 2, 21, 0],
+      conditionExpressions: @[
+        "(or ...)",
+        "(#EnemyBase::can_use_special_attack ?inp_threat)",
+        "(elite_move_available)",
+        "(or ...)",
+        "(#EnemyBase::can_use_special_attack ?inp_threat)",
+        "(elite_move_available)",
+        "(and ...)",
+        "(#can_use_special_attack ?inp_threat)",
+        "(and ...)",
+        "(ninja_move_available)",
+        "(and ...)",
+        "(#can_use_special_attack ?inp_threat)",
+        "(and ...)",
+        "(#can_use_special_attack ?inp_threat)"],
+      conditionChildRefs: @[
+        1'u32,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11,
+        13],
+      tasks: @[
+        1'u32, 12, 8, 2, 19, 13,
+        1, 12, 11, 2, 14, 13,
+        0, 10, 13, 1, 22, NoIndex,
+        1, 12, 16, 2, 24, 13,
+        0, 15, 18, 1, 32, NoIndex,
+        0, 24, 19, 1, 42, NoIndex,
+        1, 12, 22, 2, 24, 13,
+        0, 15, 24, 1, 32, NoIndex,
+        0, 24, 25, 1, 42, NoIndex],
+      branches: @[
+        11'u32, 6, 0, 1, 14,
+        16, 8, 1, 1, 9,
+        18, NoIndex, 2, 1, 18,
+        20, 10, 3, 1, 19,
+        21, NoIndex, 4, 1, 28,
+        23, NoIndex, 5, 1, 38,
+        20, 12, 6, 1, 19,
+        21, NoIndex, 7, 1, 28,
+        23, NoIndex, 8, 1, 38],
+      methods: @[
+        10'u64, 6, 1, 0, 1, 13, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        15, 10, 1, 1, 2, 8, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        19, 14, 1, 3, 2, 18, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        22, 19, 0, 5, 1, 37, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        24, 20, 1, 6, 2, 18, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 25, 0, 8, 1, 37, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: @[
+        4'u64, 1, 1, uint64(NoIndex), 8, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        7, 2, 1, 0, 11, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        9, 4, 1, 3, 11, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      constants: @[
+        0'u32, 1, 0, 5],
+      callTermSlotCount: 0, factSlotCount: 2,
+      sourceFiles: @[
+        "Domains/Includes/EnemyBase.domain",
+        "Domains/Includes/Ninja.domain",
+        "Domains/EliteNinja.domain"],
+      valueSources: @[
+        2'u32, 5, 24, 5, 44,
+        0, 8, 37, 8, 48,
+        2, 11, 37, 11, 48,
+        2, 13, 49, 13, 60,
+        2, 11, 37, 11, 48,
+        2, 13, 49, 13, 60,
+        0, 13, 25, 13, 36,
+        0, 16, 42, 16, 53,
+        0, 19, 26, 19, 40,
+        0, 19, 41, 19, 52,
+        1, 8, 25, 8, 36,
+        1, 14, 26, 14, 40,
+        1, 14, 41, 14, 52,
+        1, 22, 39, 22, 50,
+        2, 18, 25, 18, 36,
+        2, 21, 42, 21, 53,
+        2, 24, 26, 24, 40,
+        2, 24, 41, 24, 52,
+        2, 32, 35, 32, 46,
+        2, 42, 28, 42, 29,
+        2, 18, 25, 18, 36,
+        2, 21, 42, 21, 53,
+        2, 24, 26, 24, 40,
+        2, 24, 41, 24, 52,
+        2, 32, 35, 32, 46,
+        2, 42, 28, 42, 29],
+      conditionSources: @[
+        2'u32, 12, 10, 14, 34,
+        2, 13, 13, 13, 60,
+        2, 14, 13, 14, 34,
+        2, 12, 10, 14, 34,
+        2, 13, 13, 13, 60,
+        2, 14, 13, 14, 34,
+        0, 15, 14, 16, 53,
+        0, 16, 17, 16, 53,
+        1, 10, 14, 11, 38,
+        1, 11, 17, 11, 38,
+        2, 20, 14, 21, 53,
+        2, 21, 17, 21, 53,
+        2, 20, 14, 21, 53,
+        2, 21, 17, 21, 53],
+      taskSources: @[
+        0'u32, 19, 17, 19, 52,
+        1, 14, 17, 14, 52,
+        1, 22, 17, 22, 50,
+        2, 24, 17, 24, 52,
+        2, 32, 17, 32, 46,
+        2, 42, 17, 42, 29,
+        2, 24, 17, 24, 52,
+        2, 32, 17, 32, 46,
+        2, 42, 17, 42, 29],
+      branchSources: @[
+        0'u32, 14, 9, 21, 9,
+        1, 9, 9, 16, 9,
+        1, 18, 9, 24, 9,
+        2, 19, 9, 26, 9,
+        2, 28, 9, 34, 9,
+        2, 38, 9, 44, 9,
+        2, 19, 9, 26, 9,
+        2, 28, 9, 34, 9,
+        2, 38, 9, 44, 9],
+      methodSources: @[
+        0'u32, 13, 5, 22, 5,
+        1, 8, 5, 25, 5,
+        2, 18, 5, 35, 5,
+        2, 37, 5, 45, 5,
+        2, 18, 5, 35, 5,
+        2, 37, 5, 45, 5],
+      axiomSources: @[
+        0'u32, 8, 5, 11, 5,
+        2, 11, 5, 16, 5,
+        2, 11, 5, 16, 5],
+      constantSources: @[
+        2'u32, 5, 9, 5, 44])
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

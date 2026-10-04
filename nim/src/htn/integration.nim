@@ -3,7 +3,7 @@
 ## planner definition, and `PlanningUnit`s that own execution storage, the
 ## active plan and deferred-step expansion.
 
-import atom, callterm, planner, worldstate
+import atom, callterm, debugger, planner, worldstate
 
 type
   DatabaseHook* = ref object
@@ -21,6 +21,8 @@ type
     clientContext*: RootRef
     callTermErrorPolicy*: ErrorPolicy
     callTermErrorCallback*: ErrorCallback
+    generatedDebugger*: GeneratedDebugger
+      ## Optional event debugger; the caller keeps ownership.
 
   PlannerHook* = ref object
     ## Per-entity planner facade. The referenced world state must outlive it.
@@ -111,7 +113,11 @@ proc decompose*(h: PlannerHook, ctx: ExecutionContext, requireTopLevel: bool): (
   var generated = Context(worldState: ctx.worldState, bindings: ctx.bindings,
     backtrackingMode: ctx.backtrackingMode, execution: ctx.execution, prepared: h.prepared,
     clientContext: ctx.clientContext, callTermErrorPolicy: ctx.callTermErrorPolicy,
-    callTermErrorCallback: ctx.callTermErrorCallback)
+    callTermErrorCallback: ctx.callTermErrorCallback, debugger: ctx.generatedDebugger)
+  when htnDebugEnabled:
+    if ctx.generatedDebugger != nil:
+      let metadata = h.definition.debugMetadata
+      ctx.generatedDebugger.reset(if metadata == nil: "" else: metadata.sourceFile)
   let (plan, status) = h.definition.decomposeCall(generated, ctx.call, requireTopLevel)
   if status == dsCallFrameCapacityExceeded and logError != nil and ctx.execution != nil and
       ctx.execution.info.lastError.len > 0:
@@ -132,6 +138,12 @@ proc executionContext*(u: PlanningUnit): var ExecutionContext = u.options
   ## policy/callback). Configure them while idle.
 
 proc setBacktrackingMode*(u: PlanningUnit, mode: BacktrackingMode) = u.options.backtrackingMode = mode
+proc setGeneratedDebugger*(u: PlanningUnit, debugger: GeneratedDebugger) = u.options.generatedDebugger = debugger
+  ## Installs an optional event debugger for generated execution (nil
+  ## disables it); the caller keeps ownership. It is reset at the start of
+  ## every decomposition. Events are only produced by `-d:htnDebug` builds
+  ## (HTN_DEBUG_DECOMPOSITION of the original).
+proc generatedDebugger*(u: PlanningUnit): GeneratedDebugger = u.options.generatedDebugger
 proc backtrackingMode*(u: PlanningUnit): BacktrackingMode = u.options.backtrackingMode
 proc setClientContext*(u: PlanningUnit, clientContext: RootRef) = u.options.clientContext = clientContext
 proc databaseHook*(u: PlanningUnit): DatabaseHook = u.database

@@ -2877,149 +2877,292 @@ proc factChoice323(ex: Exec, target: uint32): bool {.nimcall.} =
   false
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!deploy_smoke ?inp_npc)
-  if not ex.appendPlanStep(sym59, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym59, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (!face_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym62, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym62, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (!hold_position ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym63, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym63, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (!follow_escort_route ?inp_npc ?inp_target ?route)
-  if not ex.appendPlanStep(sym64, [ex.v[0], ex.v[2], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym64, [ex.v[0], ex.v[2], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (!guard_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym65, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym65, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (!interact_with ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym66, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym66, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!report_invalid_order ?inp_npc ?inp_order ?inp_target)
-  if not ex.appendPlanStep(sym67, [ex.v[0], ex.v[1], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym67, [ex.v[0], ex.v[1], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (!remember_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym68, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym68, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!throw_smoke ?inp_npc)
-  if not ex.appendPlanStep(sym69, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym69, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (!retreat_via ?inp_npc ?route)
-  if not ex.appendPlanStep(sym70, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym70, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (melee_tick ?inp_npc ?inp_enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[4]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[4] = Atom()
   ex.v[7] = Atom()
@@ -3031,12 +3174,17 @@ proc task23(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (ranged_tick ?inp_npc ?inp_enemy ?inp_distance)
   let arg0 = ex.v[0]
   let arg1 = ex.v[4]
   let arg2 = ex.v[5]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -3052,534 +3200,1061 @@ proc task24(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (!face_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (!parry_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym72, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym72, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (!counter_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym73, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym73, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (!heavy_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym74, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym74, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (!face_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (!quick_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (!switch_weapon ?inp_npc melee)
-  if not ex.appendPlanStep(sym76, [ex.v[0], sv16]): return 0
+  if not ex.appendPlanStep(sym76, [ex.v[0], sv16]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task32(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 32)
   # (!quick_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task33(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 33)
   # (!dodge_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym77, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym77, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task34(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 34)
   # (!improvised_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym78, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym78, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task35(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 35)
   # (!follow_flank_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym79, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym79, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task36(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 36)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task37(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 37)
   # (!fire_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym81, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym81, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task38(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 38)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task39(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 39)
   # (!peek_from_cover ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym83, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym83, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task40(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 40)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task41(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 41)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task42(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 42)
   # (!reload_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym85, [ex.v[0], sv24]): return 0
+  if not ex.appendPlanStep(sym85, [ex.v[0], sv24]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task43(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 43)
   # (!reload_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym85, [ex.v[0], sv28]): return 0
+  if not ex.appendPlanStep(sym85, [ex.v[0], sv28]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task44(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 44)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task45(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 45)
   # (!fire_precision_shot ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym86, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym86, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task46(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 46)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task47(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 47)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task48(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 48)
   # (!switch_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym76, [ex.v[0], sv36]): return 0
+  if not ex.appendPlanStep(sym76, [ex.v[0], sv36]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task49(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 49)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task50(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 50)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task51(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 51)
   # (!advance_under_cover ?inp_npc ?route)
-  if not ex.appendPlanStep(sym87, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym87, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task52(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 52)
   # (!suppress_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym88, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym88, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task53(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 53)
   # (!track_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym89, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym89, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task54(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 54)
   # (!seek_cover ?inp_npc)
-  if not ex.appendPlanStep(sym90, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym90, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task55(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 55)
   # (!acknowledge_radio_alert ?inp_npc ?report)
-  if not ex.appendPlanStep(sym91, [ex.v[0], ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym91, [ex.v[0], ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task56(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 56)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task57(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 57)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task58(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 58)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task59(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 59)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task60(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 60)
   # (!report_suspicious_sound ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym95, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym95, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task61(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 61)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task62(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 62)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task63(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 63)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task64(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 64)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task65(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 65)
   # (!inspect_tracks ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym96, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym96, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task66(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 66)
   # (!follow_track_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym97, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym97, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task67(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 67)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task68(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 68)
   # (!focus_attention ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym98, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym98, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task69(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 69)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task70(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 70)
   # (!inspect_anomaly ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym99, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym99, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task71(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 71)
   # (!follow_investigation_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym100, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym100, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task72(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 72)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task73(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 73)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task74(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 74)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task75(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 75)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task76(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 76)
   # (!report_investigation_result ?inp_npc ?inp_stimulus ?inp_location)
-  if not ex.appendPlanStep(sym101, [ex.v[0], ex.v[10], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym101, [ex.v[0], ex.v[10], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task77(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 77)
   # (!announce_lost_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task78(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 78)
   # (!follow_enemy_tracks ?inp_npc ?route)
-  if not ex.appendPlanStep(sym103, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym103, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task79(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 79)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task80(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 80)
   # (!announce_lost_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task81(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 81)
   # (!move_to_search_point ?inp_npc ?location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[14]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[14]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task82(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 82)
   # (!scan_sector ?inp_npc ?location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[14]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[14]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task83(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 83)
   # (!coordinate_squad_search ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym105, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym105, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task84(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 84)
   # (!follow_search_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task85(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 85)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task86(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 86)
   # (!move_to_search_point ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task87(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 87)
   # (!clear_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym107, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym107, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task88(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 88)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task89(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 89)
   # (!follow_search_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task90(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 90)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task91(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 91)
   # (!move_to_search_point ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task92(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 92)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task93(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 93)
   # (!report_search_progress ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym108, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym108, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task94(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 94)
   # (!use_medkit ?inp_npc)
-  if not ex.appendPlanStep(sym109, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym109, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task95(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 95)
   # (!check_equipment ?inp_npc)
-  if not ex.appendPlanStep(sym110, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym110, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task96(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 96)
   # (!move_to_supply ?inp_npc ?cache)
-  if not ex.appendPlanStep(sym111, [ex.v[0], ex.v[15]]): return 0
+  if not ex.appendPlanStep(sym111, [ex.v[0], ex.v[15]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task97(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 97)
   # (!resupply_ammo ?inp_npc ?cache)
-  if not ex.appendPlanStep(sym112, [ex.v[0], ex.v[15]]): return 0
+  if not ex.appendPlanStep(sym112, [ex.v[0], ex.v[15]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task98(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 98)
   # (!clear_weapon_jam ?inp_npc ?weapon)
-  if not ex.appendPlanStep(sym113, [ex.v[0], ex.v[16]]): return 0
+  if not ex.appendPlanStep(sym113, [ex.v[0], ex.v[16]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task99(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 99)
   # (!check_equipment ?inp_npc)
-  if not ex.appendPlanStep(sym110, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym110, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task100(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 100)
   # (!follow_patrol_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym114, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym114, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task101(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 101)
   # (!inspect_checkpoint ?inp_npc ?point)
-  if not ex.appendPlanStep(sym115, [ex.v[0], ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym115, [ex.v[0], ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task102(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 102)
   # (!report_patrol_progress ?inp_npc ?point)
-  if not ex.appendPlanStep(sym116, [ex.v[0], ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym116, [ex.v[0], ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task103(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 103)
   # (!greet_ally ?inp_npc ?ally)
-  if not ex.appendPlanStep(sym117, [ex.v[0], ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym117, [ex.v[0], ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task104(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 104)
   # (!exchange_status ?inp_npc ?ally)
-  if not ex.appendPlanStep(sym118, [ex.v[0], ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym118, [ex.v[0], ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task105(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 105)
   # (!move_to_guard_post ?inp_npc ?post)
-  if not ex.appendPlanStep(sym119, [ex.v[0], ex.v[19]]): return 0
+  if not ex.appendPlanStep(sym119, [ex.v[0], ex.v[19]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task106(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 106)
   # (!watch_post ?inp_npc ?post)
-  if not ex.appendPlanStep(sym120, [ex.v[0], ex.v[19]]): return 0
+  if not ex.appendPlanStep(sym120, [ex.v[0], ex.v[19]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task107(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 107)
   # (!rest_briefly ?inp_npc)
-  if not ex.appendPlanStep(sym121, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym121, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task108(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 108)
   # (!check_surroundings ?inp_npc)
-  if not ex.appendPlanStep(sym122, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym122, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task109(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 109)
   # (!play_idle_animation ?inp_npc)
-  if not ex.appendPlanStep(sym123, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym123, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task110(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 110)
   # (!check_surroundings ?inp_npc)
-  if not ex.appendPlanStep(sym122, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym122, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task111(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 111)
   # (!announce_state "high_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv46, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv46, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task112(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 112)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -3593,18 +4268,29 @@ proc task112(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task113(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 113)
   # (!announce_state "combat" ?npc)
-  if not ex.appendPlanStep(sym124, [sv47, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv47, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task114(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 114)
   # (combat_tick ?npc ?enemy ?distance)
   let arg0 = ex.v[20]
   let arg1 = ex.v[23]
   let arg2 = ex.v[24]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -3619,18 +4305,29 @@ proc task114(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task115(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 115)
   # (!announce_state "medium_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv49, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv49, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task116(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 116)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -3644,18 +4341,29 @@ proc task116(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task117(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 117)
   # (!announce_state "investigation" ?npc)
-  if not ex.appendPlanStep(sym124, [sv50, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv50, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task118(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 118)
   # (investigation_tick ?npc ?stimulus ?location)
   let arg0 = ex.v[20]
   let arg1 = ex.v[27]
   let arg2 = ex.v[14]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[9] = Atom()
@@ -3671,18 +4379,29 @@ proc task118(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task119(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 119)
   # (!announce_state "search" ?npc)
-  if not ex.appendPlanStep(sym124, [sv51, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv51, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task120(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 120)
   # (search_tick ?npc ?enemy ?last_location)
   let arg0 = ex.v[20]
   let arg1 = ex.v[23]
   let arg2 = ex.v[29]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -3698,18 +4417,29 @@ proc task120(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task121(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 121)
   # (!announce_state "low_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv53, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv53, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task122(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 122)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -3723,16 +4453,27 @@ proc task122(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task123(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 123)
   # (!announce_state "idle" ?npc)
-  if not ex.appendPlanStep(sym124, [sv54, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv54, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task124(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 124)
   # (idle_tick ?npc)
   let arg0 = ex.v[20]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[6] = Atom()
@@ -3750,155 +4491,304 @@ proc task124(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task125(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 125)
   # (!announce_state "no_controlled_npc")
-  if not ex.appendPlanStep(sym124, [sv55]): return 0
+  if not ex.appendPlanStep(sym124, [sv55]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task126(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 126)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task127(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 127)
   # (!deploy_smoke ?inp_npc)
-  if not ex.appendPlanStep(sym59, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym59, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task128(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 128)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task129(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 129)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task130(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 130)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task131(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 131)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task132(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 132)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task133(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 133)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task134(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 134)
   # (!face_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym62, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym62, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task135(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 135)
   # (!hold_position ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym63, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym63, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task136(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 136)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task137(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 137)
   # (!follow_escort_route ?inp_npc ?inp_target ?route)
-  if not ex.appendPlanStep(sym64, [ex.v[0], ex.v[2], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym64, [ex.v[0], ex.v[2], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task138(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 138)
   # (!mark_order_started ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym58, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task139(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 139)
   # (!guard_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym65, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym65, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task140(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 140)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task141(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 141)
   # (!interact_with ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym66, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym66, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task142(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 142)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task143(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 143)
   # (!move_to_order_target ?inp_npc ?inp_target)
-  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym60, [ex.v[0], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task144(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 144)
   # (!mark_order_complete ?inp_npc ?inp_order)
-  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym61, [ex.v[0], ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task145(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 145)
   # (!report_invalid_order ?inp_npc ?inp_order ?inp_target)
-  if not ex.appendPlanStep(sym67, [ex.v[0], ex.v[1], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym67, [ex.v[0], ex.v[1], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task146(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 146)
   # (!remember_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym68, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym68, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task147(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 147)
   # (!throw_smoke ?inp_npc)
-  if not ex.appendPlanStep(sym69, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym69, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task148(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 148)
   # (!retreat_via ?inp_npc ?route)
-  if not ex.appendPlanStep(sym70, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym70, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task149(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 149)
   # (melee_tick ?inp_npc ?inp_enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[4]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[4] = Atom()
   ex.v[7] = Atom()
@@ -3910,12 +4800,17 @@ proc task149(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task150(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 150)
   # (ranged_tick ?inp_npc ?inp_enemy ?inp_distance)
   let arg0 = ex.v[0]
   let arg1 = ex.v[4]
   let arg2 = ex.v[5]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -3931,534 +4826,1061 @@ proc task150(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task151(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 151)
   # (!face_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task152(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 152)
   # (!parry_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym72, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym72, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task153(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 153)
   # (!counter_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym73, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym73, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task154(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 154)
   # (!heavy_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym74, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym74, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task155(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 155)
   # (!face_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym71, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task156(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 156)
   # (!quick_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task157(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 157)
   # (!switch_weapon ?inp_npc melee)
-  if not ex.appendPlanStep(sym76, [ex.v[0], sv72]): return 0
+  if not ex.appendPlanStep(sym76, [ex.v[0], sv72]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task158(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 158)
   # (!quick_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym75, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task159(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 159)
   # (!dodge_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym77, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym77, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task160(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 160)
   # (!improvised_melee_attack ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym78, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym78, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task161(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 161)
   # (!follow_flank_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym79, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym79, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task162(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 162)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task163(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 163)
   # (!fire_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym81, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym81, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task164(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 164)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task165(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 165)
   # (!peek_from_cover ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym83, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym83, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task166(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 166)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task167(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 167)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task168(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 168)
   # (!reload_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym85, [ex.v[0], sv80]): return 0
+  if not ex.appendPlanStep(sym85, [ex.v[0], sv80]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task169(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 169)
   # (!reload_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym85, [ex.v[0], sv84]): return 0
+  if not ex.appendPlanStep(sym85, [ex.v[0], sv84]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task170(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 170)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task171(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 171)
   # (!fire_precision_shot ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym86, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym86, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task172(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 172)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task173(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 173)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task174(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 174)
   # (!switch_weapon ?inp_npc ranged)
-  if not ex.appendPlanStep(sym76, [ex.v[0], sv92]): return 0
+  if not ex.appendPlanStep(sym76, [ex.v[0], sv92]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task175(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 175)
   # (!aim_at ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym80, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task176(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 176)
   # (!fire_controlled_burst ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym84, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task177(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 177)
   # (!advance_under_cover ?inp_npc ?route)
-  if not ex.appendPlanStep(sym87, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym87, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task178(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 178)
   # (!suppress_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym88, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym88, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task179(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 179)
   # (!track_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym89, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym89, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task180(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 180)
   # (!seek_cover ?inp_npc)
-  if not ex.appendPlanStep(sym90, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym90, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task181(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 181)
   # (!acknowledge_radio_alert ?inp_npc ?report)
-  if not ex.appendPlanStep(sym91, [ex.v[0], ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym91, [ex.v[0], ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task182(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 182)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task183(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 183)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task184(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 184)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task185(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 185)
   # (!move_to_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym82, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task186(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 186)
   # (!report_suspicious_sound ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym95, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym95, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task187(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 187)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task188(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 188)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task189(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 189)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task190(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 190)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task191(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 191)
   # (!inspect_tracks ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym96, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym96, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task192(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 192)
   # (!follow_track_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym97, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym97, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task193(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 193)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task194(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 194)
   # (!focus_attention ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym98, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym98, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task195(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 195)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task196(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 196)
   # (!inspect_anomaly ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym99, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym99, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task197(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 197)
   # (!follow_investigation_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym100, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym100, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task198(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 198)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task199(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 199)
   # (!set_cautious_stance ?inp_npc)
-  if not ex.appendPlanStep(sym92, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym92, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task200(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 200)
   # (!move_to_investigation_point ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym93, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task201(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 201)
   # (!scan_sector ?inp_npc ?inp_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task202(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 202)
   # (!report_investigation_result ?inp_npc ?inp_stimulus ?inp_location)
-  if not ex.appendPlanStep(sym101, [ex.v[0], ex.v[10], ex.v[11]]): return 0
+  if not ex.appendPlanStep(sym101, [ex.v[0], ex.v[10], ex.v[11]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task203(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 203)
   # (!announce_lost_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task204(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 204)
   # (!follow_enemy_tracks ?inp_npc ?route)
-  if not ex.appendPlanStep(sym103, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym103, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task205(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 205)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task206(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 206)
   # (!announce_lost_enemy ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym102, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task207(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 207)
   # (!move_to_search_point ?inp_npc ?location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[14]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[14]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task208(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 208)
   # (!scan_sector ?inp_npc ?location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[14]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[14]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task209(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 209)
   # (!coordinate_squad_search ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym105, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym105, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task210(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 210)
   # (!follow_search_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task211(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 211)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task212(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 212)
   # (!move_to_search_point ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task213(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 213)
   # (!clear_cover ?inp_npc ?cover)
-  if not ex.appendPlanStep(sym107, [ex.v[0], ex.v[9]]): return 0
+  if not ex.appendPlanStep(sym107, [ex.v[0], ex.v[9]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task214(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 214)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task215(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 215)
   # (!follow_search_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym106, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task216(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 216)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task217(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 217)
   # (!move_to_search_point ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym104, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task218(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 218)
   # (!scan_sector ?inp_npc ?inp_last_location)
-  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]): return 0
+  if not ex.appendPlanStep(sym94, [ex.v[0], ex.v[13]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task219(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 219)
   # (!report_search_progress ?inp_npc ?inp_enemy)
-  if not ex.appendPlanStep(sym108, [ex.v[0], ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym108, [ex.v[0], ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task220(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 220)
   # (!use_medkit ?inp_npc)
-  if not ex.appendPlanStep(sym109, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym109, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task221(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 221)
   # (!check_equipment ?inp_npc)
-  if not ex.appendPlanStep(sym110, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym110, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task222(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 222)
   # (!move_to_supply ?inp_npc ?cache)
-  if not ex.appendPlanStep(sym111, [ex.v[0], ex.v[15]]): return 0
+  if not ex.appendPlanStep(sym111, [ex.v[0], ex.v[15]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task223(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 223)
   # (!resupply_ammo ?inp_npc ?cache)
-  if not ex.appendPlanStep(sym112, [ex.v[0], ex.v[15]]): return 0
+  if not ex.appendPlanStep(sym112, [ex.v[0], ex.v[15]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task224(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 224)
   # (!clear_weapon_jam ?inp_npc ?weapon)
-  if not ex.appendPlanStep(sym113, [ex.v[0], ex.v[16]]): return 0
+  if not ex.appendPlanStep(sym113, [ex.v[0], ex.v[16]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task225(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 225)
   # (!check_equipment ?inp_npc)
-  if not ex.appendPlanStep(sym110, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym110, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task226(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 226)
   # (!follow_patrol_route ?inp_npc ?route)
-  if not ex.appendPlanStep(sym114, [ex.v[0], ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym114, [ex.v[0], ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task227(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 227)
   # (!inspect_checkpoint ?inp_npc ?point)
-  if not ex.appendPlanStep(sym115, [ex.v[0], ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym115, [ex.v[0], ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task228(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 228)
   # (!report_patrol_progress ?inp_npc ?point)
-  if not ex.appendPlanStep(sym116, [ex.v[0], ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym116, [ex.v[0], ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task229(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 229)
   # (!greet_ally ?inp_npc ?ally)
-  if not ex.appendPlanStep(sym117, [ex.v[0], ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym117, [ex.v[0], ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task230(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 230)
   # (!exchange_status ?inp_npc ?ally)
-  if not ex.appendPlanStep(sym118, [ex.v[0], ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym118, [ex.v[0], ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task231(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 231)
   # (!move_to_guard_post ?inp_npc ?post)
-  if not ex.appendPlanStep(sym119, [ex.v[0], ex.v[19]]): return 0
+  if not ex.appendPlanStep(sym119, [ex.v[0], ex.v[19]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task232(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 232)
   # (!watch_post ?inp_npc ?post)
-  if not ex.appendPlanStep(sym120, [ex.v[0], ex.v[19]]): return 0
+  if not ex.appendPlanStep(sym120, [ex.v[0], ex.v[19]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task233(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 233)
   # (!rest_briefly ?inp_npc)
-  if not ex.appendPlanStep(sym121, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym121, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task234(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 234)
   # (!check_surroundings ?inp_npc)
-  if not ex.appendPlanStep(sym122, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym122, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task235(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 235)
   # (!play_idle_animation ?inp_npc)
-  if not ex.appendPlanStep(sym123, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym123, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task236(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 236)
   # (!check_surroundings ?inp_npc)
-  if not ex.appendPlanStep(sym122, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym122, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task237(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 237)
   # (!announce_state "high_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv102, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv102, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task238(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 238)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -4472,18 +5894,29 @@ proc task238(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task239(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 239)
   # (!announce_state "combat" ?npc)
-  if not ex.appendPlanStep(sym124, [sv103, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv103, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task240(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 240)
   # (combat_tick ?npc ?enemy ?distance)
   let arg0 = ex.v[20]
   let arg1 = ex.v[23]
   let arg2 = ex.v[24]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -4498,18 +5931,29 @@ proc task240(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task241(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 241)
   # (!announce_state "medium_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv105, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv105, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task242(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 242)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -4523,18 +5967,29 @@ proc task242(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task243(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 243)
   # (!announce_state "investigation" ?npc)
-  if not ex.appendPlanStep(sym124, [sv106, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv106, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task244(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 244)
   # (investigation_tick ?npc ?stimulus ?location)
   let arg0 = ex.v[20]
   let arg1 = ex.v[27]
   let arg2 = ex.v[14]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[9] = Atom()
@@ -4550,18 +6005,29 @@ proc task244(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task245(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 245)
   # (!announce_state "search" ?npc)
-  if not ex.appendPlanStep(sym124, [sv107, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv107, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task246(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 246)
   # (search_tick ?npc ?enemy ?last_location)
   let arg0 = ex.v[20]
   let arg1 = ex.v[23]
   let arg2 = ex.v[29]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[4] = Atom()
@@ -4577,18 +6043,29 @@ proc task246(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task247(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 247)
   # (!announce_state "low_order" ?npc)
-  if not ex.appendPlanStep(sym124, [sv109, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv109, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task248(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 248)
   # (execute_scripted_order ?npc ?order ?target)
   let arg0 = ex.v[20]
   let arg1 = ex.v[21]
   let arg2 = ex.v[22]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -4602,16 +6079,27 @@ proc task248(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task249(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 249)
   # (!announce_state "idle" ?npc)
-  if not ex.appendPlanStep(sym124, [sv110, ex.v[20]]): return 0
+  if not ex.appendPlanStep(sym124, [sv110, ex.v[20]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task250(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 250)
   # (idle_tick ?npc)
   let arg0 = ex.v[20]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[3] = Atom()
   ex.v[6] = Atom()
@@ -4629,17 +6117,23 @@ proc task250(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task251(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 251)
   # (!announce_state "no_controlled_npc")
-  if not ex.appendPlanStep(sym124, [sv111]): return 0
+  if not ex.appendPlanStep(sym124, [sv111]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: aaa_orders::execute_scripted_order/3
 proc method0(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp51_3: Atom
-  var cp56_3: Atom
-  var fc57: uint32
+  var cp54_3: Atom
+  var cp59_3: Atom
+  var fc60: uint32
   var state = 0
   case fr.resume
   of 1: state = 10
@@ -4654,29 +6148,37 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch evacuate_under_fire
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 0)
       # (and (== ?inp_order evacuate) (under_fire ?inp_npc))
+      ex.debugBeginCondition(definition, 0)
       # (== ?inp_order evacuate)
       # (== ?inp_order evacuate)
+      ex.debugBeginCondition(definition, 1)
       if compare(ex.v[1], sv0, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 24
         continue
+      ex.debugEndCondition(definition, false)
       state = 22
       continue
     of 24:
       # (under_fire ?inp_npc)
       # (under_fire ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 2)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 27
           continue
@@ -4685,6 +6187,7 @@ proc method0(ex: Exec): int {.nimcall.} =
       state = 27
       continue
     of 27:
+      ex.debugEndCondition(definition, true)
       state = 18
       continue
     of 25:
@@ -4694,19 +6197,27 @@ proc method0(ex: Exec): int {.nimcall.} =
       state = 20
       continue
     of 20:
+      ex.debugEndCondition(definition, false)
       state = 19
       continue
     of 19:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 3
       continue
     of 18:
       if not ex.pushBranch(addr bc0):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 28
+      ex.debugCapturePendingTask(3)
+      ex.debugCapturePendingTask(2)
+      ex.debugCapturePendingTask(1)
+      ex.debugCapturePendingTask(0)
+      state = 29
       continue
-    of 28:
+    of 29:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4716,55 +6227,75 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 10
         continue
-      state = 29
+      state = 30
       continue
     of 10:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 3
         continue
-      state = 28
+      state = 29
       continue
-    of 29:
+    of 30:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 3:
       # branch evacuate
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 1)
       # (and (== ?inp_order evacuate))
+      ex.debugBeginCondition(definition, 3)
       # (== ?inp_order evacuate)
       # (== ?inp_order evacuate)
+      ex.debugBeginCondition(definition, 4)
       if compare(ex.v[1], sv1, 0'u32):
-        state = 36
+        ex.debugEndCondition(definition, true)
+        state = 37
         continue
-      state = 34
+      ex.debugEndCondition(definition, false)
+      state = 35
       continue
-    of 36:
-      state = 30
+    of 37:
+      ex.debugEndCondition(definition, true)
+      state = 31
       continue
-    of 34:
+    of 35:
+      state = 33
+      continue
+    of 33:
+      ex.debugEndCondition(definition, false)
       state = 32
       continue
     of 32:
-      state = 31
-      continue
-    of 31:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 4
       continue
-    of 30:
+    of 31:
       if not ex.pushBranch(addr bc1):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 37
+      ex.debugCapturePendingTask(6)
+      ex.debugCapturePendingTask(5)
+      ex.debugCapturePendingTask(4)
+      state = 39
       continue
-    of 37:
+    of 39:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4774,55 +6305,75 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 11
         continue
-      state = 38
+      state = 40
       continue
     of 11:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 4
         continue
-      state = 37
+      state = 39
       continue
-    of 38:
+    of 40:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 4:
       # branch hold_position
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 2)
       # (and (== ?inp_order hold))
+      ex.debugBeginCondition(definition, 5)
       # (== ?inp_order hold)
       # (== ?inp_order hold)
+      ex.debugBeginCondition(definition, 6)
       if compare(ex.v[1], sv2, 0'u32):
-        state = 45
+        ex.debugEndCondition(definition, true)
+        state = 47
         continue
-      state = 43
+      ex.debugEndCondition(definition, false)
+      state = 45
       continue
-    of 45:
-      state = 39
-      continue
-    of 43:
+    of 47:
+      ex.debugEndCondition(definition, true)
       state = 41
       continue
-    of 41:
-      state = 40
+    of 45:
+      state = 43
       continue
-    of 40:
+    of 43:
+      ex.debugEndCondition(definition, false)
+      state = 42
+      continue
+    of 42:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 5
       continue
-    of 39:
+    of 41:
       if not ex.pushBranch(addr bc2):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 46
+      ex.debugCapturePendingTask(9)
+      ex.debugCapturePendingTask(8)
+      ex.debugCapturePendingTask(7)
+      state = 49
       continue
-    of 46:
+    of 49:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4832,68 +6383,90 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 12
         continue
-      state = 47
+      state = 50
       continue
     of 12:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 5
         continue
-      state = 46
+      state = 49
       continue
-    of 47:
+    of 50:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 5:
       # branch escort
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 3)
       # (and (== ?inp_order escort) (escort_route ?inp_npc ?inp_target ?route))
-      cp51_3 = ex.v[3]
+      cp54_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 7)
       # (== ?inp_order escort)
       # (== ?inp_order escort)
+      ex.debugBeginCondition(definition, 8)
       if compare(ex.v[1], sv3, 0'u32):
-        state = 54
+        ex.debugEndCondition(definition, true)
+        state = 57
         continue
-      state = 52
+      ex.debugEndCondition(definition, false)
+      state = 55
       continue
-    of 54:
+    of 57:
       # (escort_route ?inp_npc ?inp_target ?route)
-      cp56_3 = ex.v[3]
-      fc57 = 0
-      inc fc57
-      if not factChoice9(ex, fc57 - 1):
-        state = 55
+      cp59_3 = ex.v[3]
+      fc60 = 0
+      ex.debugBeginCondition(definition, 9)
+      inc fc60
+      if not factChoice9(ex, fc60 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 58
         continue
-      state = 48
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 51
+      continue
+    of 58:
+      ex.v[3] = cp59_3
+      state = 55
       continue
     of 55:
-      ex.v[3] = cp56_3
+      state = 53
+      continue
+    of 53:
+      ex.v[3] = cp54_3
+      ex.debugEndCondition(definition, false)
       state = 52
       continue
     of 52:
-      state = 50
-      continue
-    of 50:
-      ex.v[3] = cp51_3
-      state = 49
-      continue
-    of 49:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 6
       continue
-    of 48:
+    of 51:
       if not ex.pushBranch(addr bc3):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 59
+      ex.debugCapturePendingTask(11)
+      ex.debugCapturePendingTask(10)
+      state = 63
       continue
-    of 59:
+    of 63:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4903,55 +6476,74 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 13
         continue
-      state = 60
+      state = 64
       continue
     of 13:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 6
         continue
-      state = 59
+      state = 63
       continue
-    of 60:
+    of 64:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 6:
       # branch guard
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 4)
       # (and (== ?inp_order guard))
+      ex.debugBeginCondition(definition, 10)
       # (== ?inp_order guard)
       # (== ?inp_order guard)
+      ex.debugBeginCondition(definition, 11)
       if compare(ex.v[1], sv4, 0'u32):
-        state = 67
+        ex.debugEndCondition(definition, true)
+        state = 71
         continue
+      ex.debugEndCondition(definition, false)
+      state = 69
+      continue
+    of 71:
+      ex.debugEndCondition(definition, true)
       state = 65
       continue
+    of 69:
+      state = 67
+      continue
     of 67:
-      state = 61
+      ex.debugEndCondition(definition, false)
+      state = 66
       continue
-    of 65:
-      state = 63
-      continue
-    of 63:
-      state = 62
-      continue
-    of 62:
+    of 66:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 7
       continue
-    of 61:
+    of 65:
       if not ex.pushBranch(addr bc4):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 68
+      ex.debugCapturePendingTask(13)
+      ex.debugCapturePendingTask(12)
+      state = 73
       continue
-    of 68:
+    of 73:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4961,75 +6553,97 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 14
         continue
-      state = 69
+      state = 74
       continue
     of 14:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 7
         continue
-      state = 68
+      state = 73
       continue
-    of 69:
+    of 74:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 7:
       # branch interact
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 5)
       # (and (== ?inp_order interact) (interaction_ready ?inp_target))
+      ex.debugBeginCondition(definition, 12)
       # (== ?inp_order interact)
       # (== ?inp_order interact)
+      ex.debugBeginCondition(definition, 13)
       if compare(ex.v[1], sv5, 0'u32):
-        state = 76
+        ex.debugEndCondition(definition, true)
+        state = 81
         continue
-      state = 74
+      ex.debugEndCondition(definition, false)
+      state = 79
       continue
-    of 76:
+    of 81:
       # (interaction_ready ?inp_target)
       # (interaction_ready ?inp_target)
       block:
+        ex.debugBeginCondition(definition, 14)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 79
+          state = 84
           continue
-        state = 77
+        state = 82
         continue
+      state = 84
+      continue
+    of 84:
+      ex.debugEndCondition(definition, true)
+      state = 75
+      continue
+    of 82:
       state = 79
       continue
     of 79:
-      state = 70
+      state = 77
       continue
     of 77:
-      state = 74
+      ex.debugEndCondition(definition, false)
+      state = 76
       continue
-    of 74:
-      state = 72
-      continue
-    of 72:
-      state = 71
-      continue
-    of 71:
+    of 76:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 8
       continue
-    of 70:
+    of 75:
       if not ex.pushBranch(addr bc5):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      ex.debugCapturePendingTask(16)
+      ex.debugCapturePendingTask(15)
+      ex.debugCapturePendingTask(14)
+      state = 86
       continue
-    of 80:
+    of 86:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5039,55 +6653,74 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 15
         continue
-      state = 81
+      state = 87
       continue
     of 15:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 8
         continue
-      state = 80
+      state = 86
       continue
-    of 81:
+    of 87:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 8:
       # branch move
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 6)
       # (and (== ?inp_order move))
+      ex.debugBeginCondition(definition, 15)
       # (== ?inp_order move)
       # (== ?inp_order move)
+      ex.debugBeginCondition(definition, 16)
       if compare(ex.v[1], sv6, 0'u32):
-        state = 88
+        ex.debugEndCondition(definition, true)
+        state = 94
         continue
-      state = 86
+      ex.debugEndCondition(definition, false)
+      state = 92
       continue
-    of 88:
-      state = 82
+    of 94:
+      ex.debugEndCondition(definition, true)
+      state = 88
       continue
-    of 86:
-      state = 84
+    of 92:
+      state = 90
       continue
-    of 84:
-      state = 83
-      continue
-    of 83:
-      ex.releaseRetry(fr)
-      state = 9
-      continue
-    of 82:
-      if not ex.pushBranch(addr bc6):
-        ex.releaseRetry(fr)
-        return 0
+    of 90:
+      ex.debugEndCondition(definition, false)
       state = 89
       continue
     of 89:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 9
+      continue
+    of 88:
+      if not ex.pushBranch(addr bc6):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(18)
+      ex.debugCapturePendingTask(17)
+      state = 96
+      continue
+    of 96:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5097,34 +6730,45 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 16
         continue
-      state = 90
+      state = 97
       continue
     of 16:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 9
         continue
-      state = 89
+      state = 96
       continue
-    of 90:
+    of 97:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 9:
       # branch unknown_order
-      state = 91
+      ex.debugBeginBranch(definition, 7)
+      state = 98
       continue
-    of 91:
+    of 98:
       if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 93
+      ex.debugCapturePendingTask(19)
+      state = 100
       continue
-    of 93:
+    of 100:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5134,14 +6778,18 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 17
         continue
-      state = 94
+      state = 101
       continue
     of 17:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 93
+      state = 100
       continue
-    of 94:
+    of 101:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5149,91 +6797,111 @@ proc method0(ex: Exec): int {.nimcall.} =
 # method1: aaa_combat::combat_tick/3
 proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp105_3: Atom
-  var cp105_6: Atom
-  var cp107_6: Atom
-  var fc108: uint32
-  var cp114_3: Atom
+  var cp112_3: Atom
+  var cp112_6: Atom
+  var cp114_6: Atom
   var fc115: uint32
+  var cp121_3: Atom
+  var fc122: uint32
   var state = 0
   case fr.resume
-  of 1: state = 99
-  of 2: state = 100
-  of 3: state = 101
+  of 1: state = 106
+  of 2: state = 107
+  of 3: state = 108
   else: discard
   while true:
     case state
     of 0:
-      state = 96
-      continue
-    of 96:
-      # branch critical_retreat
-      ex.saveRetry(fr, ms1)
-      # (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
-      cp105_3 = ex.v[3]
-      cp105_6 = ex.v[6]
-      # (health ?inp_npc ?hp)
-      cp107_6 = ex.v[6]
-      fc108 = 0
-      state = 109
-      continue
-    of 109:
-      inc fc108
-      if not factChoice18(ex, fc108 - 1):
-        state = 106
-        continue
-      # (<= ?hp 20)
-      # (<= ?hp 20)
-      if compare(ex.v[6], sv7, 3'u32):
-        state = 112
-        continue
-      state = 110
-      continue
-    of 112:
-      # (retreat_route ?inp_npc ?route)
-      cp114_3 = ex.v[3]
-      fc115 = 0
-      inc fc115
-      if not factChoice20(ex, fc115 - 1):
-        state = 113
-        continue
-      state = 102
-      continue
-    of 113:
-      ex.v[3] = cp114_3
-      state = 110
-      continue
-    of 110:
-      state = 108
-      continue
-    of 108:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 106
-        continue
-      ex.v[6] = cp107_6
-      cp107_6 = ex.v[6]
-      state = 109
-      continue
-    of 106:
-      ex.v[6] = cp107_6
-      state = 104
-      continue
-    of 104:
-      ex.v[3] = cp105_3
-      ex.v[6] = cp105_6
+      ex.debugBeginMethod(definition, 1)
       state = 103
       continue
     of 103:
-      ex.releaseRetry(fr)
-      state = 97
+      # branch critical_retreat
+      ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 8)
+      # (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
+      cp112_3 = ex.v[3]
+      cp112_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 17)
+      # (health ?inp_npc ?hp)
+      cp114_6 = ex.v[6]
+      fc115 = 0
+      state = 116
       continue
-    of 102:
-      if not ex.pushBranch(addr bc8):
-        ex.releaseRetry(fr)
-        return 0
+    of 116:
+      ex.debugBeginCondition(definition, 18)
+      inc fc115
+      if not factChoice18(ex, fc115 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 113
+        continue
+      ex.debugEndCondition(definition, true)
+      # (<= ?hp 20)
+      # (<= ?hp 20)
+      ex.debugBeginCondition(definition, 19)
+      if compare(ex.v[6], sv7, 3'u32):
+        ex.debugEndCondition(definition, true)
+        state = 119
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 117
+      continue
+    of 119:
+      # (retreat_route ?inp_npc ?route)
+      cp121_3 = ex.v[3]
+      fc122 = 0
+      ex.debugBeginCondition(definition, 20)
+      inc fc122
+      if not factChoice20(ex, fc122 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 120
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 109
+      continue
+    of 120:
+      ex.v[3] = cp121_3
       state = 117
       continue
     of 117:
+      state = 115
+      continue
+    of 115:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 113
+        continue
+      ex.v[6] = cp114_6
+      cp114_6 = ex.v[6]
+      state = 116
+      continue
+    of 113:
+      ex.v[6] = cp114_6
+      state = 111
+      continue
+    of 111:
+      ex.v[3] = cp112_3
+      ex.v[6] = cp112_6
+      ex.debugEndCondition(definition, false)
+      state = 110
+      continue
+    of 110:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 104
+      continue
+    of 109:
+      if not ex.pushBranch(addr bc8):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(22)
+      ex.debugCapturePendingTask(21)
+      ex.debugCapturePendingTask(20)
+      state = 125
+      continue
+    of 125:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5241,57 +6909,75 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 99
+        state = 106
         continue
-      state = 118
+      state = 126
       continue
-    of 99:
+    of 106:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms1)
-        state = 97
+        ex.debugEndBranch(definition, false)
+        state = 104
         continue
-      state = 117
-      continue
-    of 118:
-      ex.releaseRetry(fr)
-      return 1
-    of 97:
-      # branch melee
-      ex.saveRetry(fr, ms1)
-      # (and (< ?inp_distance 8))
-      # (< ?inp_distance 8)
-      # (< ?inp_distance 8)
-      if compare(ex.v[5], sv8, 2'u32):
-        state = 125
-        continue
-      state = 123
-      continue
-    of 125:
-      state = 119
-      continue
-    of 123:
-      state = 121
-      continue
-    of 121:
-      state = 120
-      continue
-    of 120:
-      ex.releaseRetry(fr)
-      state = 98
-      continue
-    of 119:
-      if not ex.pushBranch(addr bc9):
-        ex.releaseRetry(fr)
-        return 0
-      state = 126
+      state = 125
       continue
     of 126:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 104:
+      # branch melee
+      ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 9)
+      # (and (< ?inp_distance 8))
+      ex.debugBeginCondition(definition, 21)
+      # (< ?inp_distance 8)
+      # (< ?inp_distance 8)
+      ex.debugBeginCondition(definition, 22)
+      if compare(ex.v[5], sv8, 2'u32):
+        ex.debugEndCondition(definition, true)
+        state = 133
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 131
+      continue
+    of 133:
+      ex.debugEndCondition(definition, true)
+      state = 127
+      continue
+    of 131:
+      state = 129
+      continue
+    of 129:
+      ex.debugEndCondition(definition, false)
+      state = 128
+      continue
+    of 128:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 105
+      continue
+    of 127:
+      if not ex.pushBranch(addr bc9):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(23)
+      state = 135
+      continue
+    of 135:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5299,54 +6985,72 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 100
+        state = 107
         continue
-      state = 127
+      state = 136
       continue
-    of 100:
+    of 107:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms1)
-        state = 98
+        ex.debugEndBranch(definition, false)
+        state = 105
         continue
-      state = 126
-      continue
-    of 127:
-      ex.releaseRetry(fr)
-      return 1
-    of 98:
-      # branch ranged
-      # (and (>= ?inp_distance 8))
-      # (>= ?inp_distance 8)
-      # (>= ?inp_distance 8)
-      if compare(ex.v[5], sv9, 5'u32):
-        state = 134
-        continue
-      state = 132
-      continue
-    of 134:
-      state = 128
-      continue
-    of 132:
-      state = 130
-      continue
-    of 130:
-      state = 129
-      continue
-    of 129:
-      state = 95
-      continue
-    of 128:
-      if not ex.pushBranch(addr bc10):
-        return 0
       state = 135
       continue
-    of 135:
+    of 136:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 105:
+      # branch ranged
+      ex.debugBeginBranch(definition, 10)
+      # (and (>= ?inp_distance 8))
+      ex.debugBeginCondition(definition, 23)
+      # (>= ?inp_distance 8)
+      # (>= ?inp_distance 8)
+      ex.debugBeginCondition(definition, 24)
+      if compare(ex.v[5], sv9, 5'u32):
+        ex.debugEndCondition(definition, true)
+        state = 143
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 141
+      continue
+    of 143:
+      ex.debugEndCondition(definition, true)
+      state = 137
+      continue
+    of 141:
+      state = 139
+      continue
+    of 139:
+      ex.debugEndCondition(definition, false)
+      state = 138
+      continue
+    of 138:
+      ex.debugEndBranch(definition, false)
+      state = 102
+      continue
+    of 137:
+      if not ex.pushBranch(addr bc10):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(24)
+      state = 145
+      continue
+    of 145:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5354,18 +7058,23 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 101
+        state = 108
         continue
-      state = 136
+      state = 146
       continue
-    of 101:
+    of 108:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 135
+      state = 145
       continue
-    of 136:
+    of 146:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 95:
+    of 102:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5373,75 +7082,44 @@ proc method1(ex: Exec): int {.nimcall.} =
 # method2: aaa_combat::melee_tick/2
 proc method2(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp151_7: Atom
-  var cp156_7: Atom
-  var fc157: uint32
-  var cp170_7: Atom
-  var cp175_7: Atom
-  var fc176: uint32
+  var cp161_7: Atom
+  var cp166_7: Atom
+  var fc167: uint32
+  var cp181_7: Atom
+  var cp186_7: Atom
+  var fc187: uint32
   var state = 0
   case fr.resume
-  of 1: state = 143
-  of 2: state = 144
-  of 3: state = 145
-  of 4: state = 146
-  of 5: state = 147
+  of 1: state = 153
+  of 2: state = 154
+  of 3: state = 155
+  of 4: state = 156
+  of 5: state = 157
   else: discard
   while true:
     case state
     of 0:
-      state = 138
+      ex.debugBeginMethod(definition, 2)
+      state = 148
       continue
-    of 138:
+    of 148:
       # branch parry_counter
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 11)
       # (and (enemy_attacking ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 30) (weapon_equipped ?inp_npc melee))
-      cp151_7 = ex.v[7]
+      cp161_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 25)
       # (enemy_attacking ?inp_enemy)
       # (enemy_attacking ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 26)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
-        if matched:
-          state = 154
-          continue
-        state = 152
-        continue
-      state = 154
-      continue
-    of 154:
-      # (stamina ?inp_npc ?amount)
-      cp156_7 = ex.v[7]
-      fc157 = 0
-      state = 158
-      continue
-    of 158:
-      inc fc157
-      if not factChoice27(ex, fc157 - 1):
-        state = 155
-        continue
-      # (>= ?amount 30)
-      # (>= ?amount 30)
-      if compare(ex.v[7], sv10, 5'u32):
-        state = 161
-        continue
-      state = 159
-      continue
-    of 161:
-      # (weapon_equipped ?inp_npc melee)
-      # (weapon_equipped ?inp_npc melee)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
-          if not equal(ft.tables[2].rows[row][1], sv11): continue
-          matched = true
-          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 164
           continue
@@ -5450,44 +7128,96 @@ proc method2(ex: Exec): int {.nimcall.} =
       state = 164
       continue
     of 164:
-      state = 148
+      # (stamina ?inp_npc ?amount)
+      cp166_7 = ex.v[7]
+      fc167 = 0
+      state = 168
+      continue
+    of 168:
+      ex.debugBeginCondition(definition, 27)
+      inc fc167
+      if not factChoice27(ex, fc167 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 165
+        continue
+      ex.debugEndCondition(definition, true)
+      # (>= ?amount 30)
+      # (>= ?amount 30)
+      ex.debugBeginCondition(definition, 28)
+      if compare(ex.v[7], sv10, 5'u32):
+        ex.debugEndCondition(definition, true)
+        state = 171
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 169
+      continue
+    of 171:
+      # (weapon_equipped ?inp_npc melee)
+      # (weapon_equipped ?inp_npc melee)
+      block:
+        ex.debugBeginCondition(definition, 29)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[2].rows[row][1], sv11): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 174
+          continue
+        state = 172
+        continue
+      state = 174
+      continue
+    of 174:
+      ex.debugEndCondition(definition, true)
+      state = 158
+      continue
+    of 172:
+      state = 169
+      continue
+    of 169:
+      state = 167
+      continue
+    of 167:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 165
+        continue
+      ex.v[7] = cp166_7
+      cp166_7 = ex.v[7]
+      state = 168
+      continue
+    of 165:
+      ex.v[7] = cp166_7
+      state = 162
       continue
     of 162:
+      state = 160
+      continue
+    of 160:
+      ex.v[7] = cp161_7
+      ex.debugEndCondition(definition, false)
       state = 159
       continue
     of 159:
-      state = 157
-      continue
-    of 157:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 155
-        continue
-      ex.v[7] = cp156_7
-      cp156_7 = ex.v[7]
-      state = 158
-      continue
-    of 155:
-      ex.v[7] = cp156_7
-      state = 152
-      continue
-    of 152:
-      state = 150
-      continue
-    of 150:
-      ex.v[7] = cp151_7
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 149
       continue
-    of 149:
-      ex.releaseRetry(fr)
-      state = 139
-      continue
-    of 148:
+    of 158:
       if not ex.pushBranch(addr bc11):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 165
+      ex.debugCapturePendingTask(27)
+      ex.debugCapturePendingTask(26)
+      ex.debugCapturePendingTask(25)
+      state = 176
       continue
-    of 165:
+    of 176:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5495,69 +7225,87 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 143
+        state = 153
         continue
-      state = 166
+      state = 177
       continue
-    of 143:
+    of 153:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 139
+        ex.debugEndBranch(definition, false)
+        state = 149
         continue
-      state = 165
+      state = 176
       continue
-    of 166:
+    of 177:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 139:
+    of 149:
       # branch heavy_strike
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 12)
       # (and (enemy_staggered ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 45) (weapon_equipped ?inp_npc melee))
-      cp170_7 = ex.v[7]
+      cp181_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 30)
       # (enemy_staggered ?inp_enemy)
       # (enemy_staggered ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 31)
         let ft = ex.factTables[8]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 173
+          state = 184
           continue
-        state = 171
+        state = 182
         continue
-      state = 173
+      state = 184
       continue
-    of 173:
+    of 184:
       # (stamina ?inp_npc ?amount)
-      cp175_7 = ex.v[7]
-      fc176 = 0
-      state = 177
+      cp186_7 = ex.v[7]
+      fc187 = 0
+      state = 188
       continue
-    of 177:
-      inc fc176
-      if not factChoice32(ex, fc176 - 1):
-        state = 174
+    of 188:
+      ex.debugBeginCondition(definition, 32)
+      inc fc187
+      if not factChoice32(ex, fc187 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 185
         continue
+      ex.debugEndCondition(definition, true)
       # (>= ?amount 45)
       # (>= ?amount 45)
+      ex.debugBeginCondition(definition, 33)
       if compare(ex.v[7], sv12, 5'u32):
-        state = 180
+        ex.debugEndCondition(definition, true)
+        state = 191
         continue
-      state = 178
+      ex.debugEndCondition(definition, false)
+      state = 189
       continue
-    of 180:
+    of 191:
       # (weapon_equipped ?inp_npc melee)
       # (weapon_equipped ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 34)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -5565,52 +7313,59 @@ proc method2(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv13): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 183
+          state = 194
           continue
-        state = 181
+        state = 192
         continue
-      state = 183
+      state = 194
       continue
-    of 183:
-      state = 167
-      continue
-    of 181:
+    of 194:
+      ex.debugEndCondition(definition, true)
       state = 178
       continue
-    of 178:
-      state = 176
+    of 192:
+      state = 189
       continue
-    of 176:
+    of 189:
+      state = 187
+      continue
+    of 187:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 174
+        state = 185
         continue
-      ex.v[7] = cp175_7
-      cp175_7 = ex.v[7]
-      state = 177
+      ex.v[7] = cp186_7
+      cp186_7 = ex.v[7]
+      state = 188
       continue
-    of 174:
-      ex.v[7] = cp175_7
-      state = 171
+    of 185:
+      ex.v[7] = cp186_7
+      state = 182
       continue
-    of 171:
-      state = 169
+    of 182:
+      state = 180
       continue
-    of 169:
-      ex.v[7] = cp170_7
-      state = 168
+    of 180:
+      ex.v[7] = cp181_7
+      ex.debugEndCondition(definition, false)
+      state = 179
       continue
-    of 168:
+    of 179:
       ex.releaseRetry(fr)
-      state = 140
+      ex.debugEndBranch(definition, false)
+      state = 150
       continue
-    of 167:
+    of 178:
       if not ex.pushBranch(addr bc12):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 184
+      ex.debugCapturePendingTask(28)
+      state = 196
       continue
-    of 184:
+    of 196:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5618,33 +7373,43 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 144
+        state = 154
         continue
-      state = 185
+      state = 197
       continue
-    of 144:
+    of 154:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 140
+        ex.debugEndBranch(definition, false)
+        state = 150
         continue
-      state = 184
+      state = 196
       continue
-    of 185:
+    of 197:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 140:
+    of 150:
       # branch quick_strike
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 13)
       # (and (weapon_equipped ?inp_npc melee))
+      ex.debugBeginCondition(definition, 35)
       # (weapon_equipped ?inp_npc melee)
       # (weapon_equipped ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 36)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -5652,33 +7417,41 @@ proc method2(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv14): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 192
+          state = 204
           continue
-        state = 190
+        state = 202
         continue
-      state = 192
+      state = 204
       continue
-    of 192:
-      state = 186
+    of 204:
+      ex.debugEndCondition(definition, true)
+      state = 198
       continue
-    of 190:
-      state = 188
+    of 202:
+      state = 200
       continue
-    of 188:
-      state = 187
+    of 200:
+      ex.debugEndCondition(definition, false)
+      state = 199
       continue
-    of 187:
+    of 199:
       ex.releaseRetry(fr)
-      state = 141
+      ex.debugEndBranch(definition, false)
+      state = 151
       continue
-    of 186:
+    of 198:
       if not ex.pushBranch(addr bc13):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 193
+      ex.debugCapturePendingTask(30)
+      ex.debugCapturePendingTask(29)
+      state = 206
       continue
-    of 193:
+    of 206:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5686,33 +7459,43 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 145
+        state = 155
         continue
-      state = 194
+      state = 207
       continue
-    of 145:
+    of 155:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 141
+        ex.debugEndBranch(definition, false)
+        state = 151
         continue
-      state = 193
+      state = 206
       continue
-    of 194:
+    of 207:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 141:
+    of 151:
       # branch draw_melee
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 14)
       # (and (weapon_available ?inp_npc melee))
+      ex.debugBeginCondition(definition, 37)
       # (weapon_available ?inp_npc melee)
       # (weapon_available ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 38)
         let ft = ex.factTables[9]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -5720,33 +7503,41 @@ proc method2(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv15): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 201
+          state = 214
           continue
-        state = 199
+        state = 212
         continue
-      state = 201
+      state = 214
       continue
-    of 201:
-      state = 195
+    of 214:
+      ex.debugEndCondition(definition, true)
+      state = 208
       continue
-    of 199:
-      state = 197
+    of 212:
+      state = 210
       continue
-    of 197:
-      state = 196
+    of 210:
+      ex.debugEndCondition(definition, false)
+      state = 209
       continue
-    of 196:
+    of 209:
       ex.releaseRetry(fr)
-      state = 142
+      ex.debugEndBranch(definition, false)
+      state = 152
       continue
-    of 195:
+    of 208:
       if not ex.pushBranch(addr bc14):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 202
+      ex.debugCapturePendingTask(32)
+      ex.debugCapturePendingTask(31)
+      state = 216
       continue
-    of 202:
+    of 216:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5754,36 +7545,48 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 146
+        state = 156
         continue
-      state = 203
+      state = 217
       continue
-    of 146:
+    of 156:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 142
+        ex.debugEndBranch(definition, false)
+        state = 152
         continue
-      state = 202
+      state = 216
       continue
-    of 203:
+    of 217:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 142:
+    of 152:
       # branch improvised_defense
-      state = 204
+      ex.debugBeginBranch(definition, 15)
+      state = 218
       continue
-    of 204:
+    of 218:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 206
+      ex.debugCapturePendingTask(34)
+      ex.debugCapturePendingTask(33)
+      state = 220
       continue
-    of 206:
+    of 220:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5791,16 +7594,20 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 147
+        state = 157
         continue
-      state = 207
+      state = 221
       continue
-    of 147:
+    of 157:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 206
+      state = 220
       continue
-    of 207:
+    of 221:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5808,92 +7615,101 @@ proc method2(ex: Exec): int {.nimcall.} =
 # method3: aaa_combat::ranged_tick/3
 proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp230_3: Atom
-  var cp230_8: Atom
-  var cp235_3: Atom
-  var fc236: uint32
-  var cp242_8: Atom
-  var fc243: uint32
-  var cp253_8: Atom
-  var cp253_9: Atom
-  var cp258_9: Atom
-  var fc259: uint32
-  var cp271_8: Atom
-  var fc272: uint32
-  var cp282_8: Atom
-  var cp282_9: Atom
-  var cp290_8: Atom
-  var fc291: uint32
-  var cp297_9: Atom
-  var fc298: uint32
-  var cp305_8: Atom
-  var cp313_8: Atom
-  var fc314: uint32
-  var cp324_8: Atom
-  var cp329_8: Atom
-  var fc330: uint32
-  var cp346_8: Atom
-  var cp351_8: Atom
-  var fc352: uint32
-  var cp365_8: Atom
-  var cp370_8: Atom
-  var fc371: uint32
-  var cp381_3: Atom
-  var cp383_3: Atom
-  var fc384: uint32
+  var cp244_3: Atom
+  var cp244_8: Atom
+  var cp249_3: Atom
+  var fc250: uint32
+  var cp256_8: Atom
+  var fc257: uint32
+  var cp268_8: Atom
+  var cp268_9: Atom
+  var cp273_9: Atom
+  var fc274: uint32
+  var cp287_8: Atom
+  var fc288: uint32
+  var cp299_8: Atom
+  var cp299_9: Atom
+  var cp307_8: Atom
+  var fc308: uint32
+  var cp314_9: Atom
+  var fc315: uint32
+  var cp323_8: Atom
+  var cp331_8: Atom
+  var fc332: uint32
+  var cp343_8: Atom
+  var cp348_8: Atom
+  var fc349: uint32
+  var cp366_8: Atom
+  var cp371_8: Atom
+  var fc372: uint32
+  var cp386_8: Atom
+  var cp391_8: Atom
+  var fc392: uint32
+  var cp403_3: Atom
+  var cp405_3: Atom
+  var fc406: uint32
   var state = 0
   case fr.resume
-  of 1: state = 218
-  of 2: state = 219
-  of 3: state = 220
-  of 4: state = 221
-  of 5: state = 222
-  of 6: state = 223
-  of 7: state = 224
-  of 8: state = 225
-  of 9: state = 226
+  of 1: state = 232
+  of 2: state = 233
+  of 3: state = 234
+  of 4: state = 235
+  of 5: state = 236
+  of 6: state = 237
+  of 7: state = 238
+  of 8: state = 239
+  of 9: state = 240
   else: discard
   while true:
     case state
     of 0:
-      state = 209
+      ex.debugBeginMethod(definition, 3)
+      state = 223
       continue
-    of 209:
+    of 223:
       # branch flank_suppressed_target
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 16)
       # (and (enemy_suppressed ?inp_enemy) (flank_route ?inp_npc ?inp_enemy ?route) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp230_3 = ex.v[3]
-      cp230_8 = ex.v[8]
+      cp244_3 = ex.v[3]
+      cp244_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 39)
       # (enemy_suppressed ?inp_enemy)
       # (enemy_suppressed ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 40)
         let ft = ex.factTables[10]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 233
+          state = 247
           continue
-        state = 231
+        state = 245
         continue
-      state = 233
+      state = 247
       continue
-    of 233:
+    of 247:
       # (flank_route ?inp_npc ?inp_enemy ?route)
-      cp235_3 = ex.v[3]
-      fc236 = 0
-      state = 237
+      cp249_3 = ex.v[3]
+      fc250 = 0
+      state = 251
       continue
-    of 237:
-      inc fc236
-      if not factChoice41(ex, fc236 - 1):
-        state = 234
+    of 251:
+      ex.debugBeginCondition(definition, 41)
+      inc fc250
+      if not factChoice41(ex, fc250 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 248
         continue
+      ex.debugEndCondition(definition, true)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 42)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -5901,83 +7717,98 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv17): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 240
+          state = 254
           continue
-        state = 238
+        state = 252
         continue
-      state = 240
+      state = 254
       continue
-    of 240:
+    of 254:
       # (ammo ?inp_npc ?count)
-      cp242_8 = ex.v[8]
-      fc243 = 0
-      state = 244
+      cp256_8 = ex.v[8]
+      fc257 = 0
+      state = 258
       continue
-    of 244:
-      inc fc243
-      if not factChoice43(ex, fc243 - 1):
-        state = 241
+    of 258:
+      ex.debugBeginCondition(definition, 43)
+      inc fc257
+      if not factChoice43(ex, fc257 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 255
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 44)
       if compare(ex.v[8], sv18, 4'u32):
-        state = 247
+        ex.debugEndCondition(definition, true)
+        state = 261
         continue
-      state = 245
+      ex.debugEndCondition(definition, false)
+      state = 259
       continue
-    of 247:
-      state = 227
+    of 261:
+      ex.debugEndCondition(definition, true)
+      state = 241
+      continue
+    of 259:
+      state = 257
+      continue
+    of 257:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 255
+        continue
+      ex.v[8] = cp256_8
+      cp256_8 = ex.v[8]
+      state = 258
+      continue
+    of 255:
+      ex.v[8] = cp256_8
+      state = 252
+      continue
+    of 252:
+      state = 250
+      continue
+    of 250:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 248
+        continue
+      ex.v[3] = cp249_3
+      cp249_3 = ex.v[3]
+      state = 251
+      continue
+    of 248:
+      ex.v[3] = cp249_3
+      state = 245
       continue
     of 245:
       state = 243
       continue
     of 243:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 241
-        continue
-      ex.v[8] = cp242_8
-      cp242_8 = ex.v[8]
-      state = 244
+      ex.v[3] = cp244_3
+      ex.v[8] = cp244_8
+      ex.debugEndCondition(definition, false)
+      state = 242
+      continue
+    of 242:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 224
       continue
     of 241:
-      ex.v[8] = cp242_8
-      state = 238
-      continue
-    of 238:
-      state = 236
-      continue
-    of 236:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 234
-        continue
-      ex.v[3] = cp235_3
-      cp235_3 = ex.v[3]
-      state = 237
-      continue
-    of 234:
-      ex.v[3] = cp235_3
-      state = 231
-      continue
-    of 231:
-      state = 229
-      continue
-    of 229:
-      ex.v[3] = cp230_3
-      ex.v[8] = cp230_8
-      state = 228
-      continue
-    of 228:
-      ex.releaseRetry(fr)
-      state = 210
-      continue
-    of 227:
       if not ex.pushBranch(addr bc16):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 248
+      ex.debugCapturePendingTask(37)
+      ex.debugCapturePendingTask(36)
+      ex.debugCapturePendingTask(35)
+      state = 263
       continue
-    of 248:
+    of 263:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5985,86 +7816,105 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 218
+        state = 232
         continue
-      state = 249
+      state = 264
       continue
-    of 218:
+    of 232:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 210
+        ex.debugEndBranch(definition, false)
+        state = 224
         continue
-      state = 248
+      state = 263
       continue
-    of 249:
+    of 264:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 210:
+    of 224:
       # branch take_cover_and_fire
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 17)
       # (and (under_fire ?inp_npc) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp253_8 = ex.v[8]
-      cp253_9 = ex.v[9]
+      cp268_8 = ex.v[8]
+      cp268_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 45)
       # (under_fire ?inp_npc)
       # (under_fire ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 46)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 256
+          state = 271
           continue
-        state = 254
+        state = 269
         continue
-      state = 256
+      state = 271
       continue
-    of 256:
+    of 271:
       # (cover_available ?inp_npc ?cover)
-      cp258_9 = ex.v[9]
-      fc259 = 0
-      state = 260
+      cp273_9 = ex.v[9]
+      fc274 = 0
+      state = 275
       continue
-    of 260:
-      inc fc259
-      if not factChoice47(ex, fc259 - 1):
-        state = 257
+    of 275:
+      ex.debugBeginCondition(definition, 47)
+      inc fc274
+      if not factChoice47(ex, fc274 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 272
         continue
+      ex.debugEndCondition(definition, true)
       # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 48)
       # (cover_compromised ?cover)
       # (cover_compromised ?cover)
       block:
+        ex.debugBeginCondition(definition, 49)
         let ft = ex.factTables[14]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[9]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 266
+          state = 281
           continue
-        state = 264
+        state = 279
         continue
-      state = 266
+      state = 281
       continue
-    of 266:
-      state = 261
+    of 281:
+      state = 276
       continue
-    of 264:
-      state = 263
+    of 279:
+      state = 278
       continue
-    of 263:
+    of 278:
+      ex.debugEndCondition(definition, true)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 50)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6072,129 +7922,7 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv19): continue
           matched = true
           break
-        if matched:
-          state = 269
-          continue
-        state = 267
-        continue
-      state = 269
-      continue
-    of 269:
-      # (ammo ?inp_npc ?count)
-      cp271_8 = ex.v[8]
-      fc272 = 0
-      state = 273
-      continue
-    of 273:
-      inc fc272
-      if not factChoice51(ex, fc272 - 1):
-        state = 270
-        continue
-      # (> ?count 0)
-      # (> ?count 0)
-      if compare(ex.v[8], sv20, 4'u32):
-        state = 276
-        continue
-      state = 274
-      continue
-    of 276:
-      state = 250
-      continue
-    of 274:
-      state = 272
-      continue
-    of 272:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 270
-        continue
-      ex.v[8] = cp271_8
-      cp271_8 = ex.v[8]
-      state = 273
-      continue
-    of 270:
-      ex.v[8] = cp271_8
-      state = 267
-      continue
-    of 267:
-      state = 261
-      continue
-    of 261:
-      state = 259
-      continue
-    of 259:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 257
-        continue
-      ex.v[9] = cp258_9
-      cp258_9 = ex.v[9]
-      state = 260
-      continue
-    of 257:
-      ex.v[9] = cp258_9
-      state = 254
-      continue
-    of 254:
-      state = 252
-      continue
-    of 252:
-      ex.v[8] = cp253_8
-      ex.v[9] = cp253_9
-      state = 251
-      continue
-    of 251:
-      ex.releaseRetry(fr)
-      state = 211
-      continue
-    of 250:
-      if not ex.pushBranch(addr bc17):
-        ex.releaseRetry(fr)
-        return 0
-      state = 277
-      continue
-    of 277:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 219
-        continue
-      state = 278
-      continue
-    of 219:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms3)
-        state = 211
-        continue
-      state = 277
-      continue
-    of 278:
-      ex.releaseRetry(fr)
-      return 1
-    of 211:
-      # branch reload_in_cover
-      ex.saveRetry(fr, ms3)
-      # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0) (cover_available ?inp_npc ?cover))
-      cp282_8 = ex.v[8]
-      cp282_9 = ex.v[9]
-      # (weapon_equipped ?inp_npc ranged)
-      # (weapon_equipped ?inp_npc ranged)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
-          if not equal(ft.tables[2].rows[row][1], sv21): continue
-          matched = true
-          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 285
           continue
@@ -6203,9 +7931,163 @@ proc method3(ex: Exec): int {.nimcall.} =
       state = 285
       continue
     of 285:
+      # (ammo ?inp_npc ?count)
+      cp287_8 = ex.v[8]
+      fc288 = 0
+      state = 289
+      continue
+    of 289:
+      ex.debugBeginCondition(definition, 51)
+      inc fc288
+      if not factChoice51(ex, fc288 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 286
+        continue
+      ex.debugEndCondition(definition, true)
+      # (> ?count 0)
+      # (> ?count 0)
+      ex.debugBeginCondition(definition, 52)
+      if compare(ex.v[8], sv20, 4'u32):
+        ex.debugEndCondition(definition, true)
+        state = 292
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 290
+      continue
+    of 292:
+      ex.debugEndCondition(definition, true)
+      state = 265
+      continue
+    of 290:
+      state = 288
+      continue
+    of 288:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 286
+        continue
+      ex.v[8] = cp287_8
+      cp287_8 = ex.v[8]
+      state = 289
+      continue
+    of 286:
+      ex.v[8] = cp287_8
+      state = 283
+      continue
+    of 283:
+      state = 282
+      continue
+    of 282:
+      ex.debugBeginCondition(definition, 48)
+      state = 276
+      continue
+    of 276:
+      ex.debugEndCondition(definition, false)
+      state = 274
+      continue
+    of 274:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 272
+        continue
+      ex.v[9] = cp273_9
+      cp273_9 = ex.v[9]
+      state = 275
+      continue
+    of 272:
+      ex.v[9] = cp273_9
+      state = 269
+      continue
+    of 269:
+      state = 267
+      continue
+    of 267:
+      ex.v[8] = cp268_8
+      ex.v[9] = cp268_9
+      ex.debugEndCondition(definition, false)
+      state = 266
+      continue
+    of 266:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 225
+      continue
+    of 265:
+      if not ex.pushBranch(addr bc17):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(40)
+      ex.debugCapturePendingTask(39)
+      ex.debugCapturePendingTask(38)
+      state = 294
+      continue
+    of 294:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 233
+        continue
+      state = 295
+      continue
+    of 233:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms3)
+        ex.debugEndBranch(definition, false)
+        state = 225
+        continue
+      state = 294
+      continue
+    of 295:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 225:
+      # branch reload_in_cover
+      ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 18)
+      # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0) (cover_available ?inp_npc ?cover))
+      cp299_8 = ex.v[8]
+      cp299_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 53)
+      # (weapon_equipped ?inp_npc ranged)
+      # (weapon_equipped ?inp_npc ranged)
+      block:
+        ex.debugBeginCondition(definition, 54)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[2].rows[row][1], sv21): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 302
+          continue
+        state = 300
+        continue
+      state = 302
+      continue
+    of 302:
       # (ammo ?inp_npc 0)
       # (ammo ?inp_npc 0)
       block:
+        ex.debugBeginCondition(definition, 55)
         let ft = ex.factTables[12]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6213,82 +8095,99 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv22): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 288
+          state = 305
           continue
-        state = 286
+        state = 303
         continue
-      state = 288
+      state = 305
       continue
-    of 288:
+    of 305:
       # (reserve_ammo ?inp_npc ?count)
-      cp290_8 = ex.v[8]
-      fc291 = 0
-      state = 292
+      cp307_8 = ex.v[8]
+      fc308 = 0
+      state = 309
       continue
-    of 292:
-      inc fc291
-      if not factChoice56(ex, fc291 - 1):
-        state = 289
+    of 309:
+      ex.debugBeginCondition(definition, 56)
+      inc fc308
+      if not factChoice56(ex, fc308 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 306
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 57)
       if compare(ex.v[8], sv23, 4'u32):
-        state = 295
+        ex.debugEndCondition(definition, true)
+        state = 312
         continue
-      state = 293
+      ex.debugEndCondition(definition, false)
+      state = 310
       continue
-    of 295:
+    of 312:
       # (cover_available ?inp_npc ?cover)
-      cp297_9 = ex.v[9]
-      fc298 = 0
-      inc fc298
-      if not factChoice58(ex, fc298 - 1):
-        state = 296
+      cp314_9 = ex.v[9]
+      fc315 = 0
+      ex.debugBeginCondition(definition, 58)
+      inc fc315
+      if not factChoice58(ex, fc315 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 313
         continue
-      state = 279
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 296
       continue
-    of 296:
-      ex.v[9] = cp297_9
-      state = 293
+    of 313:
+      ex.v[9] = cp314_9
+      state = 310
       continue
-    of 293:
-      state = 291
+    of 310:
+      state = 308
       continue
-    of 291:
+    of 308:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 289
+        state = 306
         continue
-      ex.v[8] = cp290_8
-      cp290_8 = ex.v[8]
-      state = 292
+      ex.v[8] = cp307_8
+      cp307_8 = ex.v[8]
+      state = 309
       continue
-    of 289:
-      ex.v[8] = cp290_8
-      state = 286
+    of 306:
+      ex.v[8] = cp307_8
+      state = 303
       continue
-    of 286:
-      state = 283
-      continue
-    of 283:
-      state = 281
-      continue
-    of 281:
-      ex.v[8] = cp282_8
-      ex.v[9] = cp282_9
-      state = 280
-      continue
-    of 280:
-      ex.releaseRetry(fr)
-      state = 212
-      continue
-    of 279:
-      if not ex.pushBranch(addr bc18):
-        ex.releaseRetry(fr)
-        return 0
+    of 303:
       state = 300
       continue
     of 300:
+      state = 298
+      continue
+    of 298:
+      ex.v[8] = cp299_8
+      ex.v[9] = cp299_9
+      ex.debugEndCondition(definition, false)
+      state = 297
+      continue
+    of 297:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 226
+      continue
+    of 296:
+      if not ex.pushBranch(addr bc18):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(42)
+      ex.debugCapturePendingTask(41)
+      state = 318
+      continue
+    of 318:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6296,34 +8195,44 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 220
+        state = 234
         continue
-      state = 301
+      state = 319
       continue
-    of 220:
+    of 234:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 212
+        ex.debugEndBranch(definition, false)
+        state = 226
         continue
-      state = 300
+      state = 318
       continue
-    of 301:
+    of 319:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 212:
+    of 226:
       # branch reload
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 19)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0))
-      cp305_8 = ex.v[8]
+      cp323_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 59)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 60)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6331,17 +8240,19 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv25): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 308
+          state = 326
           continue
-        state = 306
+        state = 324
         continue
-      state = 308
+      state = 326
       continue
-    of 308:
+    of 326:
       # (ammo ?inp_npc 0)
       # (ammo ?inp_npc 0)
       block:
+        ex.debugBeginCondition(definition, 61)
         let ft = ex.factTables[12]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6349,70 +8260,83 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv26): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 311
+          state = 329
           continue
-        state = 309
+        state = 327
         continue
-      state = 311
+      state = 329
       continue
-    of 311:
+    of 329:
       # (reserve_ammo ?inp_npc ?count)
-      cp313_8 = ex.v[8]
-      fc314 = 0
-      state = 315
+      cp331_8 = ex.v[8]
+      fc332 = 0
+      state = 333
       continue
-    of 315:
-      inc fc314
-      if not factChoice62(ex, fc314 - 1):
-        state = 312
+    of 333:
+      ex.debugBeginCondition(definition, 62)
+      inc fc332
+      if not factChoice62(ex, fc332 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 330
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 63)
       if compare(ex.v[8], sv27, 4'u32):
-        state = 318
+        ex.debugEndCondition(definition, true)
+        state = 336
         continue
-      state = 316
+      ex.debugEndCondition(definition, false)
+      state = 334
       continue
-    of 318:
-      state = 302
+    of 336:
+      ex.debugEndCondition(definition, true)
+      state = 320
       continue
-    of 316:
-      state = 314
+    of 334:
+      state = 332
       continue
-    of 314:
+    of 332:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 312
+        state = 330
         continue
-      ex.v[8] = cp313_8
-      cp313_8 = ex.v[8]
-      state = 315
+      ex.v[8] = cp331_8
+      cp331_8 = ex.v[8]
+      state = 333
       continue
-    of 312:
-      ex.v[8] = cp313_8
-      state = 309
+    of 330:
+      ex.v[8] = cp331_8
+      state = 327
       continue
-    of 309:
-      state = 306
+    of 327:
+      state = 324
       continue
-    of 306:
-      state = 304
+    of 324:
+      state = 322
       continue
-    of 304:
-      ex.v[8] = cp305_8
-      state = 303
+    of 322:
+      ex.v[8] = cp323_8
+      ex.debugEndCondition(definition, false)
+      state = 321
       continue
-    of 303:
+    of 321:
       ex.releaseRetry(fr)
-      state = 213
+      ex.debugEndBranch(definition, false)
+      state = 227
       continue
-    of 302:
+    of 320:
       if not ex.pushBranch(addr bc19):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 319
+      ex.debugCapturePendingTask(43)
+      state = 338
       continue
-    of 319:
+    of 338:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6420,34 +8344,44 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 221
+        state = 235
         continue
-      state = 320
+      state = 339
       continue
-    of 221:
+    of 235:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 213
+        ex.debugEndBranch(definition, false)
+        state = 227
         continue
-      state = 319
+      state = 338
       continue
-    of 320:
+    of 339:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 213:
+    of 227:
       # branch precision_shot
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 20)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (>= ?inp_distance 30) (clear_shot ?inp_npc ?inp_enemy))
-      cp324_8 = ex.v[8]
+      cp343_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 64)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 65)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6455,170 +8389,54 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv29): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 327
+          state = 346
           continue
-        state = 325
+        state = 344
         continue
-      state = 327
+      state = 346
       continue
-    of 327:
+    of 346:
       # (ammo ?inp_npc ?count)
-      cp329_8 = ex.v[8]
-      fc330 = 0
-      state = 331
+      cp348_8 = ex.v[8]
+      fc349 = 0
+      state = 350
       continue
-    of 331:
-      inc fc330
-      if not factChoice66(ex, fc330 - 1):
-        state = 328
-        continue
-      # (> ?count 0)
-      # (> ?count 0)
-      if compare(ex.v[8], sv30, 4'u32):
-        state = 334
-        continue
-      state = 332
-      continue
-    of 334:
-      # (>= ?inp_distance 30)
-      # (>= ?inp_distance 30)
-      if compare(ex.v[5], sv31, 5'u32):
-        state = 337
-        continue
-      state = 335
-      continue
-    of 337:
-      # (clear_shot ?inp_npc ?inp_enemy)
-      # (clear_shot ?inp_npc ?inp_enemy)
-      block:
-        let ft = ex.factTables[16]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[4]): continue
-          matched = true
-          break
-        if matched:
-          state = 340
-          continue
-        state = 338
-        continue
-      state = 340
-      continue
-    of 340:
-      state = 321
-      continue
-    of 338:
-      state = 335
-      continue
-    of 335:
-      state = 332
-      continue
-    of 332:
-      state = 330
-      continue
-    of 330:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 328
-        continue
-      ex.v[8] = cp329_8
-      cp329_8 = ex.v[8]
-      state = 331
-      continue
-    of 328:
-      ex.v[8] = cp329_8
-      state = 325
-      continue
-    of 325:
-      state = 323
-      continue
-    of 323:
-      ex.v[8] = cp324_8
-      state = 322
-      continue
-    of 322:
-      ex.releaseRetry(fr)
-      state = 214
-      continue
-    of 321:
-      if not ex.pushBranch(addr bc20):
-        ex.releaseRetry(fr)
-        return 0
-      state = 341
-      continue
-    of 341:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 5
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 222
-        continue
-      state = 342
-      continue
-    of 222:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms3)
-        state = 214
-        continue
-      state = 341
-      continue
-    of 342:
-      ex.releaseRetry(fr)
-      return 1
-    of 214:
-      # branch controlled_burst
-      ex.saveRetry(fr, ms3)
-      # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (clear_shot ?inp_npc ?inp_enemy))
-      cp346_8 = ex.v[8]
-      # (weapon_equipped ?inp_npc ranged)
-      # (weapon_equipped ?inp_npc ranged)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
-          if not equal(ft.tables[2].rows[row][1], sv32): continue
-          matched = true
-          break
-        if matched:
-          state = 349
-          continue
+    of 350:
+      ex.debugBeginCondition(definition, 66)
+      inc fc349
+      if not factChoice66(ex, fc349 - 1):
+        ex.debugEndCondition(definition, false)
         state = 347
         continue
-      state = 349
-      continue
-    of 349:
-      # (ammo ?inp_npc ?count)
-      cp351_8 = ex.v[8]
-      fc352 = 0
-      state = 353
+      ex.debugEndCondition(definition, true)
+      # (> ?count 0)
+      # (> ?count 0)
+      ex.debugBeginCondition(definition, 67)
+      if compare(ex.v[8], sv30, 4'u32):
+        ex.debugEndCondition(definition, true)
+        state = 353
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 351
       continue
     of 353:
-      inc fc352
-      if not factChoice72(ex, fc352 - 1):
-        state = 350
-        continue
-      # (> ?count 0)
-      # (> ?count 0)
-      if compare(ex.v[8], sv33, 4'u32):
+      # (>= ?inp_distance 30)
+      # (>= ?inp_distance 30)
+      ex.debugBeginCondition(definition, 68)
+      if compare(ex.v[5], sv31, 5'u32):
+        ex.debugEndCondition(definition, true)
         state = 356
         continue
+      ex.debugEndCondition(definition, false)
       state = 354
       continue
     of 356:
       # (clear_shot ?inp_npc ?inp_enemy)
       # (clear_shot ?inp_npc ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 69)
         let ft = ex.factTables[16]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6626,6 +8444,7 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 359
           continue
@@ -6634,44 +8453,204 @@ proc method3(ex: Exec): int {.nimcall.} =
       state = 359
       continue
     of 359:
-      state = 343
+      ex.debugEndCondition(definition, true)
+      state = 340
       continue
     of 357:
       state = 354
       continue
     of 354:
-      state = 352
+      state = 351
       continue
-    of 352:
+    of 351:
+      state = 349
+      continue
+    of 349:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 350
+        state = 347
         continue
-      ex.v[8] = cp351_8
-      cp351_8 = ex.v[8]
-      state = 353
-      continue
-    of 350:
-      ex.v[8] = cp351_8
-      state = 347
+      ex.v[8] = cp348_8
+      cp348_8 = ex.v[8]
+      state = 350
       continue
     of 347:
-      state = 345
-      continue
-    of 345:
-      ex.v[8] = cp346_8
+      ex.v[8] = cp348_8
       state = 344
       continue
     of 344:
-      ex.releaseRetry(fr)
-      state = 215
+      state = 342
       continue
-    of 343:
+    of 342:
+      ex.v[8] = cp343_8
+      ex.debugEndCondition(definition, false)
+      state = 341
+      continue
+    of 341:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 228
+      continue
+    of 340:
+      if not ex.pushBranch(addr bc20):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(45)
+      ex.debugCapturePendingTask(44)
+      state = 361
+      continue
+    of 361:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 5
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 236
+        continue
+      state = 362
+      continue
+    of 236:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms3)
+        ex.debugEndBranch(definition, false)
+        state = 228
+        continue
+      state = 361
+      continue
+    of 362:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 228:
+      # branch controlled_burst
+      ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 21)
+      # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (clear_shot ?inp_npc ?inp_enemy))
+      cp366_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 70)
+      # (weapon_equipped ?inp_npc ranged)
+      # (weapon_equipped ?inp_npc ranged)
+      block:
+        ex.debugBeginCondition(definition, 71)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[2].rows[row][1], sv32): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 369
+          continue
+        state = 367
+        continue
+      state = 369
+      continue
+    of 369:
+      # (ammo ?inp_npc ?count)
+      cp371_8 = ex.v[8]
+      fc372 = 0
+      state = 373
+      continue
+    of 373:
+      ex.debugBeginCondition(definition, 72)
+      inc fc372
+      if not factChoice72(ex, fc372 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 370
+        continue
+      ex.debugEndCondition(definition, true)
+      # (> ?count 0)
+      # (> ?count 0)
+      ex.debugBeginCondition(definition, 73)
+      if compare(ex.v[8], sv33, 4'u32):
+        ex.debugEndCondition(definition, true)
+        state = 376
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 374
+      continue
+    of 376:
+      # (clear_shot ?inp_npc ?inp_enemy)
+      # (clear_shot ?inp_npc ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 74)
+        let ft = ex.factTables[16]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[4]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 379
+          continue
+        state = 377
+        continue
+      state = 379
+      continue
+    of 379:
+      ex.debugEndCondition(definition, true)
+      state = 363
+      continue
+    of 377:
+      state = 374
+      continue
+    of 374:
+      state = 372
+      continue
+    of 372:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 370
+        continue
+      ex.v[8] = cp371_8
+      cp371_8 = ex.v[8]
+      state = 373
+      continue
+    of 370:
+      ex.v[8] = cp371_8
+      state = 367
+      continue
+    of 367:
+      state = 365
+      continue
+    of 365:
+      ex.v[8] = cp366_8
+      ex.debugEndCondition(definition, false)
+      state = 364
+      continue
+    of 364:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 229
+      continue
+    of 363:
       if not ex.pushBranch(addr bc21):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 360
+      ex.debugCapturePendingTask(47)
+      ex.debugCapturePendingTask(46)
+      state = 381
       continue
-    of 360:
+    of 381:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6679,34 +8658,44 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 223
+        state = 237
         continue
-      state = 361
+      state = 382
       continue
-    of 223:
+    of 237:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 215
+        ex.debugEndBranch(definition, false)
+        state = 229
         continue
-      state = 360
+      state = 381
       continue
-    of 361:
+    of 382:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 215:
+    of 229:
       # branch switch_to_ranged
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 22)
       # (and (weapon_available ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp365_8 = ex.v[8]
+      cp386_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 75)
       # (weapon_available ?inp_npc ranged)
       # (weapon_available ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 76)
         let ft = ex.factTables[9]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -6714,67 +8703,82 @@ proc method3(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv34): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 368
+          state = 389
           continue
-        state = 366
+        state = 387
         continue
-      state = 368
+      state = 389
       continue
-    of 368:
+    of 389:
       # (ammo ?inp_npc ?count)
-      cp370_8 = ex.v[8]
-      fc371 = 0
-      state = 372
+      cp391_8 = ex.v[8]
+      fc392 = 0
+      state = 393
       continue
-    of 372:
-      inc fc371
-      if not factChoice77(ex, fc371 - 1):
-        state = 369
+    of 393:
+      ex.debugBeginCondition(definition, 77)
+      inc fc392
+      if not factChoice77(ex, fc392 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 390
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 78)
       if compare(ex.v[8], sv35, 4'u32):
-        state = 375
+        ex.debugEndCondition(definition, true)
+        state = 396
         continue
-      state = 373
+      ex.debugEndCondition(definition, false)
+      state = 394
       continue
-    of 375:
-      state = 362
+    of 396:
+      ex.debugEndCondition(definition, true)
+      state = 383
       continue
-    of 373:
-      state = 371
+    of 394:
+      state = 392
       continue
-    of 371:
+    of 392:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 369
+        state = 390
         continue
-      ex.v[8] = cp370_8
-      cp370_8 = ex.v[8]
-      state = 372
+      ex.v[8] = cp391_8
+      cp391_8 = ex.v[8]
+      state = 393
       continue
-    of 369:
-      ex.v[8] = cp370_8
-      state = 366
+    of 390:
+      ex.v[8] = cp391_8
+      state = 387
       continue
-    of 366:
-      state = 364
+    of 387:
+      state = 385
       continue
-    of 364:
-      ex.v[8] = cp365_8
-      state = 363
+    of 385:
+      ex.v[8] = cp386_8
+      ex.debugEndCondition(definition, false)
+      state = 384
       continue
-    of 363:
+    of 384:
       ex.releaseRetry(fr)
-      state = 216
+      ex.debugEndBranch(definition, false)
+      state = 230
       continue
-    of 362:
+    of 383:
       if not ex.pushBranch(addr bc22):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 376
+      ex.debugCapturePendingTask(50)
+      ex.debugCapturePendingTask(49)
+      ex.debugCapturePendingTask(48)
+      state = 398
       continue
-    of 376:
+    of 398:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6782,59 +8786,78 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 224
+        state = 238
         continue
-      state = 377
+      state = 399
       continue
-    of 224:
+    of 238:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 216
+        ex.debugEndBranch(definition, false)
+        state = 230
         continue
-      state = 376
+      state = 398
       continue
-    of 377:
+    of 399:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 216:
+    of 230:
       # branch close_distance
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 23)
       # (and (advance_route ?inp_npc ?inp_enemy ?route))
-      cp381_3 = ex.v[3]
+      cp403_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 79)
       # (advance_route ?inp_npc ?inp_enemy ?route)
-      cp383_3 = ex.v[3]
-      fc384 = 0
-      inc fc384
-      if not factChoice80(ex, fc384 - 1):
-        state = 382
+      cp405_3 = ex.v[3]
+      fc406 = 0
+      ex.debugBeginCondition(definition, 80)
+      inc fc406
+      if not factChoice80(ex, fc406 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 404
         continue
-      state = 378
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 400
       continue
-    of 382:
-      ex.v[3] = cp383_3
-      state = 380
+    of 404:
+      ex.v[3] = cp405_3
+      state = 402
       continue
-    of 380:
-      ex.v[3] = cp381_3
-      state = 379
+    of 402:
+      ex.v[3] = cp403_3
+      ex.debugEndCondition(definition, false)
+      state = 401
       continue
-    of 379:
+    of 401:
       ex.releaseRetry(fr)
-      state = 217
+      ex.debugEndBranch(definition, false)
+      state = 231
       continue
-    of 378:
+    of 400:
       if not ex.pushBranch(addr bc23):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 386
+      ex.debugCapturePendingTask(52)
+      ex.debugCapturePendingTask(51)
+      state = 409
       continue
-    of 386:
+    of 409:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6842,36 +8865,48 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 225
+        state = 239
         continue
-      state = 387
+      state = 410
       continue
-    of 225:
+    of 239:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 217
+        ex.debugEndBranch(definition, false)
+        state = 231
         continue
-      state = 386
+      state = 409
       continue
-    of 387:
+    of 410:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 217:
+    of 231:
       # branch defensive_fallback
-      state = 388
+      ex.debugBeginBranch(definition, 24)
+      state = 411
       continue
-    of 388:
+    of 411:
       if not ex.pushBranch(addr bc24):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 390
+      ex.debugCapturePendingTask(54)
+      ex.debugCapturePendingTask(53)
+      state = 413
       continue
-    of 390:
+    of 413:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6879,16 +8914,20 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 226
+        state = 240
         continue
-      state = 391
+      state = 414
       continue
-    of 226:
+    of 240:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 390
+      state = 413
       continue
-    of 391:
+    of 414:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -6896,77 +8935,95 @@ proc method3(ex: Exec): int {.nimcall.} =
 # method4: aaa_investigation::investigation_tick/3
 proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp410_12: Atom
-  var cp415_12: Atom
-  var fc416: uint32
-  var cp423_9: Atom
-  var cp428_9: Atom
-  var fc429: uint32
-  var cp451_3: Atom
-  var cp456_3: Atom
-  var fc457: uint32
-  var cp473_3: Atom
+  var cp433_12: Atom
+  var cp438_12: Atom
+  var fc439: uint32
+  var cp447_9: Atom
+  var cp452_9: Atom
+  var fc453: uint32
   var cp478_3: Atom
-  var fc479: uint32
+  var cp483_3: Atom
+  var fc484: uint32
+  var cp502_3: Atom
+  var cp507_3: Atom
+  var fc508: uint32
   var state = 0
   case fr.resume
-  of 1: state = 400
-  of 2: state = 401
-  of 3: state = 402
-  of 4: state = 403
-  of 5: state = 404
-  of 6: state = 405
-  of 7: state = 406
+  of 1: state = 423
+  of 2: state = 424
+  of 3: state = 425
+  of 4: state = 426
+  of 5: state = 427
+  of 6: state = 428
+  of 7: state = 429
   else: discard
   while true:
     case state
     of 0:
-      state = 393
+      ex.debugBeginMethod(definition, 4)
+      state = 416
       continue
-    of 393:
+    of 416:
       # branch radio_contact
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 25)
       # (and (== ?inp_stimulus radio) (squad_alert ?inp_npc ?report))
-      cp410_12 = ex.v[12]
+      cp433_12 = ex.v[12]
+      ex.debugBeginCondition(definition, 81)
       # (== ?inp_stimulus radio)
       # (== ?inp_stimulus radio)
+      ex.debugBeginCondition(definition, 82)
       if compare(ex.v[10], sv37, 0'u32):
-        state = 413
+        ex.debugEndCondition(definition, true)
+        state = 436
         continue
-      state = 411
+      ex.debugEndCondition(definition, false)
+      state = 434
       continue
-    of 413:
+    of 436:
       # (squad_alert ?inp_npc ?report)
-      cp415_12 = ex.v[12]
-      fc416 = 0
-      inc fc416
-      if not factChoice83(ex, fc416 - 1):
-        state = 414
+      cp438_12 = ex.v[12]
+      fc439 = 0
+      ex.debugBeginCondition(definition, 83)
+      inc fc439
+      if not factChoice83(ex, fc439 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 437
         continue
-      state = 407
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 430
       continue
-    of 414:
-      ex.v[12] = cp415_12
-      state = 411
+    of 437:
+      ex.v[12] = cp438_12
+      state = 434
       continue
-    of 411:
-      state = 409
+    of 434:
+      state = 432
       continue
-    of 409:
-      ex.v[12] = cp410_12
-      state = 408
+    of 432:
+      ex.v[12] = cp433_12
+      ex.debugEndCondition(definition, false)
+      state = 431
       continue
-    of 408:
+    of 431:
       ex.releaseRetry(fr)
-      state = 394
+      ex.debugEndBranch(definition, false)
+      state = 417
       continue
-    of 407:
+    of 430:
       if not ex.pushBranch(addr bc25):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 418
+      ex.debugCapturePendingTask(58)
+      ex.debugCapturePendingTask(57)
+      ex.debugCapturePendingTask(56)
+      ex.debugCapturePendingTask(55)
+      state = 442
       continue
-    of 418:
+    of 442:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6974,108 +9031,136 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 400
+        state = 423
         continue
-      state = 419
+      state = 443
       continue
-    of 400:
+    of 423:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 394
+        ex.debugEndBranch(definition, false)
+        state = 417
         continue
-      state = 418
+      state = 442
       continue
-    of 419:
+    of 443:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 394:
+    of 417:
       # branch gunshot_with_cover
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 26)
       # (and (== ?inp_stimulus gunshot) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)))
-      cp423_9 = ex.v[9]
+      cp447_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 84)
       # (== ?inp_stimulus gunshot)
       # (== ?inp_stimulus gunshot)
+      ex.debugBeginCondition(definition, 85)
       if compare(ex.v[10], sv38, 0'u32):
-        state = 426
+        ex.debugEndCondition(definition, true)
+        state = 450
         continue
-      state = 424
+      ex.debugEndCondition(definition, false)
+      state = 448
       continue
-    of 426:
+    of 450:
       # (cover_available ?inp_npc ?cover)
-      cp428_9 = ex.v[9]
-      fc429 = 0
-      state = 430
+      cp452_9 = ex.v[9]
+      fc453 = 0
+      state = 454
       continue
-    of 430:
-      inc fc429
-      if not factChoice86(ex, fc429 - 1):
-        state = 427
+    of 454:
+      ex.debugBeginCondition(definition, 86)
+      inc fc453
+      if not factChoice86(ex, fc453 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 451
         continue
+      ex.debugEndCondition(definition, true)
       # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 87)
       # (cover_compromised ?cover)
       # (cover_compromised ?cover)
       block:
+        ex.debugBeginCondition(definition, 88)
         let ft = ex.factTables[14]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[9]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 436
+          state = 460
           continue
-        state = 434
+        state = 458
         continue
-      state = 436
+      state = 460
       continue
-    of 436:
-      state = 431
+    of 460:
+      state = 455
       continue
-    of 434:
-      state = 433
+    of 458:
+      state = 457
       continue
-    of 433:
-      state = 420
+    of 457:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 444
       continue
-    of 431:
-      state = 429
+    of 455:
+      ex.debugEndCondition(definition, false)
+      state = 453
       continue
-    of 429:
+    of 453:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 427
+        state = 451
         continue
-      ex.v[9] = cp428_9
-      cp428_9 = ex.v[9]
-      state = 430
+      ex.v[9] = cp452_9
+      cp452_9 = ex.v[9]
+      state = 454
       continue
-    of 427:
-      ex.v[9] = cp428_9
-      state = 424
+    of 451:
+      ex.v[9] = cp452_9
+      state = 448
       continue
-    of 424:
-      state = 422
+    of 448:
+      state = 446
       continue
-    of 422:
-      ex.v[9] = cp423_9
-      state = 421
+    of 446:
+      ex.v[9] = cp447_9
+      ex.debugEndCondition(definition, false)
+      state = 445
       continue
-    of 421:
+    of 445:
       ex.releaseRetry(fr)
-      state = 395
+      ex.debugEndBranch(definition, false)
+      state = 418
       continue
-    of 420:
+    of 444:
       if not ex.pushBranch(addr bc26):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 437
+      ex.debugCapturePendingTask(61)
+      ex.debugCapturePendingTask(60)
+      ex.debugCapturePendingTask(59)
+      state = 463
       continue
-    of 437:
+    of 463:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7083,57 +9168,77 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 401
+        state = 424
         continue
-      state = 438
+      state = 464
       continue
-    of 401:
+    of 424:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 395
+        ex.debugEndBranch(definition, false)
+        state = 418
         continue
-      state = 437
+      state = 463
       continue
-    of 438:
+    of 464:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 395:
+    of 418:
       # branch gunshot
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 27)
       # (and (== ?inp_stimulus gunshot))
+      ex.debugBeginCondition(definition, 89)
       # (== ?inp_stimulus gunshot)
       # (== ?inp_stimulus gunshot)
+      ex.debugBeginCondition(definition, 90)
       if compare(ex.v[10], sv39, 0'u32):
-        state = 445
+        ex.debugEndCondition(definition, true)
+        state = 471
         continue
-      state = 443
+      ex.debugEndCondition(definition, false)
+      state = 469
       continue
-    of 445:
-      state = 439
+    of 471:
+      ex.debugEndCondition(definition, true)
+      state = 465
       continue
-    of 443:
-      state = 441
+    of 469:
+      state = 467
       continue
-    of 441:
-      state = 440
+    of 467:
+      ex.debugEndCondition(definition, false)
+      state = 466
       continue
-    of 440:
+    of 466:
       ex.releaseRetry(fr)
-      state = 396
+      ex.debugEndBranch(definition, false)
+      state = 419
       continue
-    of 439:
+    of 465:
       if not ex.pushBranch(addr bc27):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 446
+      ex.debugCapturePendingTask(64)
+      ex.debugCapturePendingTask(63)
+      ex.debugCapturePendingTask(62)
+      state = 473
       continue
-    of 446:
+    of 473:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7141,70 +9246,93 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 402
+        state = 425
         continue
-      state = 447
+      state = 474
       continue
-    of 402:
+    of 425:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 396
+        ex.debugEndBranch(definition, false)
+        state = 419
         continue
-      state = 446
+      state = 473
       continue
-    of 447:
+    of 474:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 396:
+    of 419:
       # branch footprints
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 28)
       # (and (== ?inp_stimulus footprints) (track_route ?inp_npc ?inp_location ?route))
-      cp451_3 = ex.v[3]
+      cp478_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 91)
       # (== ?inp_stimulus footprints)
       # (== ?inp_stimulus footprints)
+      ex.debugBeginCondition(definition, 92)
       if compare(ex.v[10], sv40, 0'u32):
-        state = 454
+        ex.debugEndCondition(definition, true)
+        state = 481
         continue
-      state = 452
+      ex.debugEndCondition(definition, false)
+      state = 479
       continue
-    of 454:
+    of 481:
       # (track_route ?inp_npc ?inp_location ?route)
-      cp456_3 = ex.v[3]
-      fc457 = 0
-      inc fc457
-      if not factChoice93(ex, fc457 - 1):
-        state = 455
+      cp483_3 = ex.v[3]
+      fc484 = 0
+      ex.debugBeginCondition(definition, 93)
+      inc fc484
+      if not factChoice93(ex, fc484 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 482
         continue
-      state = 448
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 475
       continue
-    of 455:
-      ex.v[3] = cp456_3
-      state = 452
+    of 482:
+      ex.v[3] = cp483_3
+      state = 479
       continue
-    of 452:
-      state = 450
+    of 479:
+      state = 477
       continue
-    of 450:
-      ex.v[3] = cp451_3
-      state = 449
+    of 477:
+      ex.v[3] = cp478_3
+      ex.debugEndCondition(definition, false)
+      state = 476
       continue
-    of 449:
+    of 476:
       ex.releaseRetry(fr)
-      state = 397
+      ex.debugEndBranch(definition, false)
+      state = 420
       continue
-    of 448:
+    of 475:
       if not ex.pushBranch(addr bc28):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 459
+      ex.debugCapturePendingTask(67)
+      ex.debugCapturePendingTask(66)
+      ex.debugCapturePendingTask(65)
+      state = 487
       continue
-    of 459:
+    of 487:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7212,57 +9340,77 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 403
+        state = 426
         continue
-      state = 460
+      state = 488
       continue
-    of 403:
+    of 426:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 397
+        ex.debugEndBranch(definition, false)
+        state = 420
         continue
-      state = 459
+      state = 487
       continue
-    of 460:
+    of 488:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 397:
+    of 420:
       # branch visual_anomaly
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 29)
       # (and (== ?inp_stimulus anomaly))
+      ex.debugBeginCondition(definition, 94)
       # (== ?inp_stimulus anomaly)
       # (== ?inp_stimulus anomaly)
+      ex.debugBeginCondition(definition, 95)
       if compare(ex.v[10], sv41, 0'u32):
-        state = 467
+        ex.debugEndCondition(definition, true)
+        state = 495
         continue
-      state = 465
+      ex.debugEndCondition(definition, false)
+      state = 493
       continue
-    of 467:
-      state = 461
+    of 495:
+      ex.debugEndCondition(definition, true)
+      state = 489
       continue
-    of 465:
-      state = 463
+    of 493:
+      state = 491
       continue
-    of 463:
-      state = 462
+    of 491:
+      ex.debugEndCondition(definition, false)
+      state = 490
       continue
-    of 462:
+    of 490:
       ex.releaseRetry(fr)
-      state = 398
+      ex.debugEndBranch(definition, false)
+      state = 421
       continue
-    of 461:
+    of 489:
       if not ex.pushBranch(addr bc29):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 468
+      ex.debugCapturePendingTask(70)
+      ex.debugCapturePendingTask(69)
+      ex.debugCapturePendingTask(68)
+      state = 497
       continue
-    of 468:
+    of 497:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7270,34 +9418,44 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 404
+        state = 427
         continue
-      state = 469
+      state = 498
       continue
-    of 404:
+    of 427:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 398
+        ex.debugEndBranch(definition, false)
+        state = 421
         continue
-      state = 468
+      state = 497
       continue
-    of 469:
+    of 498:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 398:
+    of 421:
       # branch blocked_route
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 30)
       # (and (route_blocked_to ?inp_npc ?inp_location) (alternate_investigation_route ?inp_npc ?inp_location ?route))
-      cp473_3 = ex.v[3]
+      cp502_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 96)
       # (route_blocked_to ?inp_npc ?inp_location)
       # (route_blocked_to ?inp_npc ?inp_location)
       block:
+        ex.debugBeginCondition(definition, 97)
         let ft = ex.factTables[20]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -7305,45 +9463,56 @@ proc method4(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[11]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 476
+          state = 505
           continue
-        state = 474
+        state = 503
         continue
-      state = 476
+      state = 505
       continue
-    of 476:
+    of 505:
       # (alternate_investigation_route ?inp_npc ?inp_location ?route)
-      cp478_3 = ex.v[3]
-      fc479 = 0
-      inc fc479
-      if not factChoice98(ex, fc479 - 1):
-        state = 477
+      cp507_3 = ex.v[3]
+      fc508 = 0
+      ex.debugBeginCondition(definition, 98)
+      inc fc508
+      if not factChoice98(ex, fc508 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 506
         continue
-      state = 470
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 499
       continue
-    of 477:
-      ex.v[3] = cp478_3
-      state = 474
+    of 506:
+      ex.v[3] = cp507_3
+      state = 503
       continue
-    of 474:
-      state = 472
+    of 503:
+      state = 501
       continue
-    of 472:
-      ex.v[3] = cp473_3
-      state = 471
+    of 501:
+      ex.v[3] = cp502_3
+      ex.debugEndCondition(definition, false)
+      state = 500
       continue
-    of 471:
+    of 500:
       ex.releaseRetry(fr)
-      state = 399
+      ex.debugEndBranch(definition, false)
+      state = 422
       continue
-    of 470:
+    of 499:
       if not ex.pushBranch(addr bc30):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 481
+      ex.debugCapturePendingTask(72)
+      ex.debugCapturePendingTask(71)
+      state = 511
       continue
-    of 481:
+    of 511:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7351,36 +9520,50 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 405
+        state = 428
         continue
-      state = 482
+      state = 512
       continue
-    of 405:
+    of 428:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 399
+        ex.debugEndBranch(definition, false)
+        state = 422
         continue
-      state = 481
+      state = 511
       continue
-    of 482:
+    of 512:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 399:
+    of 422:
       # branch generic
-      state = 483
+      ex.debugBeginBranch(definition, 31)
+      state = 513
       continue
-    of 483:
+    of 513:
       if not ex.pushBranch(addr bc31):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 485
+      ex.debugCapturePendingTask(76)
+      ex.debugCapturePendingTask(75)
+      ex.debugCapturePendingTask(74)
+      ex.debugCapturePendingTask(73)
+      state = 515
       continue
-    of 485:
+    of 515:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -7388,16 +9571,20 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 406
+        state = 429
         continue
-      state = 486
+      state = 516
       continue
-    of 406:
+    of 429:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 485
+      state = 515
       continue
-    of 486:
+    of 516:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -7405,68 +9592,82 @@ proc method4(ex: Exec): int {.nimcall.} =
 # method5: aaa_search::search_tick/3
 proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp503_3: Atom
-  var cp505_3: Atom
-  var fc506: uint32
-  var cp513_14: Atom
-  var cp515_14: Atom
-  var fc516: uint32
-  var cp523_3: Atom
-  var cp525_3: Atom
-  var fc526: uint32
-  var cp533_9: Atom
-  var cp535_9: Atom
+  var cp533_3: Atom
+  var cp535_3: Atom
   var fc536: uint32
-  var cp543_3: Atom
-  var cp545_3: Atom
-  var fc546: uint32
+  var cp544_14: Atom
+  var cp546_14: Atom
+  var fc547: uint32
+  var cp555_3: Atom
+  var cp557_3: Atom
+  var fc558: uint32
+  var cp566_9: Atom
+  var cp568_9: Atom
+  var fc569: uint32
+  var cp577_3: Atom
+  var cp579_3: Atom
+  var fc580: uint32
   var state = 0
   case fr.resume
-  of 1: state = 494
-  of 2: state = 495
-  of 3: state = 496
-  of 4: state = 497
-  of 5: state = 498
-  of 6: state = 499
+  of 1: state = 524
+  of 2: state = 525
+  of 3: state = 526
+  of 4: state = 527
+  of 5: state = 528
+  of 6: state = 529
   else: discard
   while true:
     case state
     of 0:
-      state = 488
+      ex.debugBeginMethod(definition, 5)
+      state = 518
       continue
-    of 488:
+    of 518:
       # branch fresh_tracks
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 32)
       # (and (enemy_tracks ?inp_npc ?inp_enemy ?route))
-      cp503_3 = ex.v[3]
+      cp533_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 99)
       # (enemy_tracks ?inp_npc ?inp_enemy ?route)
-      cp505_3 = ex.v[3]
-      fc506 = 0
-      inc fc506
-      if not factChoice100(ex, fc506 - 1):
-        state = 504
+      cp535_3 = ex.v[3]
+      fc536 = 0
+      ex.debugBeginCondition(definition, 100)
+      inc fc536
+      if not factChoice100(ex, fc536 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 534
         continue
-      state = 500
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 530
       continue
-    of 504:
-      ex.v[3] = cp505_3
-      state = 502
+    of 534:
+      ex.v[3] = cp535_3
+      state = 532
       continue
-    of 502:
-      ex.v[3] = cp503_3
-      state = 501
+    of 532:
+      ex.v[3] = cp533_3
+      ex.debugEndCondition(definition, false)
+      state = 531
       continue
-    of 501:
+    of 531:
       ex.releaseRetry(fr)
-      state = 489
+      ex.debugEndBranch(definition, false)
+      state = 519
       continue
-    of 500:
+    of 530:
       if not ex.pushBranch(addr bc32):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 508
+      ex.debugCapturePendingTask(79)
+      ex.debugCapturePendingTask(78)
+      ex.debugCapturePendingTask(77)
+      state = 539
       continue
-    of 508:
+    of 539:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7474,59 +9675,79 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 494
+        state = 524
         continue
-      state = 509
+      state = 540
       continue
-    of 494:
+    of 524:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 489
+        ex.debugEndBranch(definition, false)
+        state = 519
         continue
-      state = 508
+      state = 539
       continue
-    of 509:
+    of 540:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 489:
+    of 519:
       # branch heard_escape
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 33)
       # (and (escape_sound ?inp_npc ?inp_enemy ?location))
-      cp513_14 = ex.v[14]
+      cp544_14 = ex.v[14]
+      ex.debugBeginCondition(definition, 101)
       # (escape_sound ?inp_npc ?inp_enemy ?location)
-      cp515_14 = ex.v[14]
-      fc516 = 0
-      inc fc516
-      if not factChoice102(ex, fc516 - 1):
-        state = 514
+      cp546_14 = ex.v[14]
+      fc547 = 0
+      ex.debugBeginCondition(definition, 102)
+      inc fc547
+      if not factChoice102(ex, fc547 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 545
         continue
-      state = 510
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 541
       continue
-    of 514:
-      ex.v[14] = cp515_14
-      state = 512
+    of 545:
+      ex.v[14] = cp546_14
+      state = 543
       continue
-    of 512:
-      ex.v[14] = cp513_14
-      state = 511
+    of 543:
+      ex.v[14] = cp544_14
+      ex.debugEndCondition(definition, false)
+      state = 542
       continue
-    of 511:
+    of 542:
       ex.releaseRetry(fr)
-      state = 490
+      ex.debugEndBranch(definition, false)
+      state = 520
       continue
-    of 510:
+    of 541:
       if not ex.pushBranch(addr bc33):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 518
+      ex.debugCapturePendingTask(82)
+      ex.debugCapturePendingTask(81)
+      ex.debugCapturePendingTask(80)
+      state = 550
       continue
-    of 518:
+    of 550:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7534,59 +9755,79 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 495
+        state = 525
         continue
-      state = 519
+      state = 551
       continue
-    of 495:
+    of 525:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 490
+        ex.debugEndBranch(definition, false)
+        state = 520
         continue
-      state = 518
+      state = 550
       continue
-    of 519:
+    of 551:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 490:
+    of 520:
       # branch search_with_squad
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 34)
       # (and (squad_search_route ?inp_npc ?inp_enemy ?route))
-      cp523_3 = ex.v[3]
+      cp555_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 103)
       # (squad_search_route ?inp_npc ?inp_enemy ?route)
-      cp525_3 = ex.v[3]
-      fc526 = 0
-      inc fc526
-      if not factChoice104(ex, fc526 - 1):
-        state = 524
+      cp557_3 = ex.v[3]
+      fc558 = 0
+      ex.debugBeginCondition(definition, 104)
+      inc fc558
+      if not factChoice104(ex, fc558 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 556
         continue
-      state = 520
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 552
       continue
-    of 524:
-      ex.v[3] = cp525_3
-      state = 522
+    of 556:
+      ex.v[3] = cp557_3
+      state = 554
       continue
-    of 522:
-      ex.v[3] = cp523_3
+    of 554:
+      ex.v[3] = cp555_3
+      ex.debugEndCondition(definition, false)
+      state = 553
+      continue
+    of 553:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 521
       continue
-    of 521:
-      ex.releaseRetry(fr)
-      state = 491
-      continue
-    of 520:
+    of 552:
       if not ex.pushBranch(addr bc34):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 528
+      ex.debugCapturePendingTask(85)
+      ex.debugCapturePendingTask(84)
+      ex.debugCapturePendingTask(83)
+      state = 561
       continue
-    of 528:
+    of 561:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7594,59 +9835,79 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 496
+        state = 526
         continue
-      state = 529
+      state = 562
       continue
-    of 496:
+    of 526:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 491
+        ex.debugEndBranch(definition, false)
+        state = 521
         continue
-      state = 528
+      state = 561
       continue
-    of 529:
+    of 562:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 491:
+    of 521:
       # branch last_known_cover
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 35)
       # (and (cover_at ?inp_last_location ?cover))
-      cp533_9 = ex.v[9]
+      cp566_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 105)
       # (cover_at ?inp_last_location ?cover)
-      cp535_9 = ex.v[9]
-      fc536 = 0
-      inc fc536
-      if not factChoice106(ex, fc536 - 1):
-        state = 534
+      cp568_9 = ex.v[9]
+      fc569 = 0
+      ex.debugBeginCondition(definition, 106)
+      inc fc569
+      if not factChoice106(ex, fc569 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 567
         continue
-      state = 530
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 563
       continue
-    of 534:
-      ex.v[9] = cp535_9
-      state = 532
+    of 567:
+      ex.v[9] = cp568_9
+      state = 565
       continue
-    of 532:
-      ex.v[9] = cp533_9
-      state = 531
+    of 565:
+      ex.v[9] = cp566_9
+      ex.debugEndCondition(definition, false)
+      state = 564
       continue
-    of 531:
+    of 564:
       ex.releaseRetry(fr)
-      state = 492
+      ex.debugEndBranch(definition, false)
+      state = 522
       continue
-    of 530:
+    of 563:
       if not ex.pushBranch(addr bc35):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 538
+      ex.debugCapturePendingTask(88)
+      ex.debugCapturePendingTask(87)
+      ex.debugCapturePendingTask(86)
+      state = 572
       continue
-    of 538:
+    of 572:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7654,59 +9915,78 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 497
+        state = 527
         continue
-      state = 539
+      state = 573
       continue
-    of 497:
+    of 527:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 492
+        ex.debugEndBranch(definition, false)
+        state = 522
         continue
-      state = 538
+      state = 572
       continue
-    of 539:
+    of 573:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 492:
+    of 522:
       # branch search_perimeter
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 36)
       # (and (search_perimeter ?inp_npc ?inp_last_location ?route))
-      cp543_3 = ex.v[3]
+      cp577_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 107)
       # (search_perimeter ?inp_npc ?inp_last_location ?route)
-      cp545_3 = ex.v[3]
-      fc546 = 0
-      inc fc546
-      if not factChoice108(ex, fc546 - 1):
-        state = 544
+      cp579_3 = ex.v[3]
+      fc580 = 0
+      ex.debugBeginCondition(definition, 108)
+      inc fc580
+      if not factChoice108(ex, fc580 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 578
         continue
-      state = 540
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 574
       continue
-    of 544:
-      ex.v[3] = cp545_3
-      state = 542
+    of 578:
+      ex.v[3] = cp579_3
+      state = 576
       continue
-    of 542:
-      ex.v[3] = cp543_3
-      state = 541
+    of 576:
+      ex.v[3] = cp577_3
+      ex.debugEndCondition(definition, false)
+      state = 575
       continue
-    of 541:
+    of 575:
       ex.releaseRetry(fr)
-      state = 493
+      ex.debugEndBranch(definition, false)
+      state = 523
       continue
-    of 540:
+    of 574:
       if not ex.pushBranch(addr bc36):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 548
+      ex.debugCapturePendingTask(90)
+      ex.debugCapturePendingTask(89)
+      state = 583
       continue
-    of 548:
+    of 583:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7714,36 +9994,49 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 498
+        state = 528
         continue
-      state = 549
+      state = 584
       continue
-    of 498:
+    of 528:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 493
+        ex.debugEndBranch(definition, false)
+        state = 523
         continue
-      state = 548
+      state = 583
       continue
-    of 549:
+    of 584:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 493:
+    of 523:
       # branch last_known_position
-      state = 550
+      ex.debugBeginBranch(definition, 37)
+      state = 585
       continue
-    of 550:
+    of 585:
       if not ex.pushBranch(addr bc37):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 552
+      ex.debugCapturePendingTask(93)
+      ex.debugCapturePendingTask(92)
+      ex.debugCapturePendingTask(91)
+      state = 587
       continue
-    of 552:
+    of 587:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -7751,16 +10044,20 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 499
+        state = 529
         continue
-      state = 553
+      state = 588
       continue
-    of 499:
+    of 529:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 552
+      state = 587
       continue
-    of 553:
+    of 588:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -7768,124 +10065,142 @@ proc method5(ex: Exec): int {.nimcall.} =
 # method6: aaa_idle::idle_tick/1
 proc method6(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp574_6: Atom
-  var cp576_6: Atom
-  var fc577: uint32
-  var cp590_8: Atom
-  var cp590_15: Atom
-  var cp592_8: Atom
-  var fc593: uint32
-  var cp599_15: Atom
-  var fc600: uint32
-  var cp607_16: Atom
-  var cp609_16: Atom
-  var fc610: uint32
-  var cp617_3: Atom
-  var cp617_17: Atom
-  var cp619_3: Atom
-  var fc620: uint32
-  var cp623_17: Atom
-  var fc624: uint32
-  var cp631_18: Atom
-  var cp633_18: Atom
-  var fc634: uint32
-  var cp644_19: Atom
-  var cp646_19: Atom
+  var cp609_6: Atom
+  var cp611_6: Atom
+  var fc612: uint32
+  var cp626_8: Atom
+  var cp626_15: Atom
+  var cp628_8: Atom
+  var fc629: uint32
+  var cp635_15: Atom
+  var fc636: uint32
+  var cp644_16: Atom
+  var cp646_16: Atom
   var fc647: uint32
-  var cp654_7: Atom
-  var cp656_7: Atom
-  var fc657: uint32
+  var cp655_3: Atom
+  var cp655_17: Atom
+  var cp657_3: Atom
+  var fc658: uint32
+  var cp661_17: Atom
+  var fc662: uint32
+  var cp670_18: Atom
+  var cp672_18: Atom
+  var fc673: uint32
+  var cp684_19: Atom
+  var cp686_19: Atom
+  var fc687: uint32
+  var cp695_7: Atom
+  var cp697_7: Atom
+  var fc698: uint32
   var state = 0
   case fr.resume
-  of 1: state = 563
-  of 2: state = 564
-  of 3: state = 565
-  of 4: state = 566
-  of 5: state = 567
-  of 6: state = 568
-  of 7: state = 569
-  of 8: state = 570
+  of 1: state = 598
+  of 2: state = 599
+  of 3: state = 600
+  of 4: state = 601
+  of 5: state = 602
+  of 6: state = 603
+  of 7: state = 604
+  of 8: state = 605
   else: discard
   while true:
     case state
     of 0:
-      state = 555
+      ex.debugBeginMethod(definition, 6)
+      state = 590
       continue
-    of 555:
+    of 590:
       # branch injury_care
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 38)
       # (and (health ?inp_npc ?hp) (<= ?hp 45) (medkit_available ?inp_npc))
-      cp574_6 = ex.v[6]
+      cp609_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 109)
       # (health ?inp_npc ?hp)
-      cp576_6 = ex.v[6]
-      fc577 = 0
-      state = 578
+      cp611_6 = ex.v[6]
+      fc612 = 0
+      state = 613
       continue
-    of 578:
-      inc fc577
-      if not factChoice110(ex, fc577 - 1):
-        state = 575
+    of 613:
+      ex.debugBeginCondition(definition, 110)
+      inc fc612
+      if not factChoice110(ex, fc612 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 610
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?hp 45)
       # (<= ?hp 45)
+      ex.debugBeginCondition(definition, 111)
       if compare(ex.v[6], sv42, 3'u32):
-        state = 581
+        ex.debugEndCondition(definition, true)
+        state = 616
         continue
-      state = 579
+      ex.debugEndCondition(definition, false)
+      state = 614
       continue
-    of 581:
+    of 616:
       # (medkit_available ?inp_npc)
       # (medkit_available ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 112)
         let ft = ex.factTables[27]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 584
+          state = 619
           continue
-        state = 582
+        state = 617
         continue
-      state = 584
+      state = 619
       continue
-    of 584:
-      state = 571
+    of 619:
+      ex.debugEndCondition(definition, true)
+      state = 606
       continue
-    of 582:
-      state = 579
+    of 617:
+      state = 614
       continue
-    of 579:
-      state = 577
+    of 614:
+      state = 612
       continue
-    of 577:
+    of 612:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 575
+        state = 610
         continue
-      ex.v[6] = cp576_6
-      cp576_6 = ex.v[6]
-      state = 578
+      ex.v[6] = cp611_6
+      cp611_6 = ex.v[6]
+      state = 613
       continue
-    of 575:
-      ex.v[6] = cp576_6
-      state = 573
+    of 610:
+      ex.v[6] = cp611_6
+      state = 608
       continue
-    of 573:
-      ex.v[6] = cp574_6
-      state = 572
+    of 608:
+      ex.v[6] = cp609_6
+      ex.debugEndCondition(definition, false)
+      state = 607
       continue
-    of 572:
+    of 607:
       ex.releaseRetry(fr)
-      state = 556
+      ex.debugEndBranch(definition, false)
+      state = 591
       continue
-    of 571:
+    of 606:
       if not ex.pushBranch(addr bc38):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 585
+      ex.debugCapturePendingTask(95)
+      ex.debugCapturePendingTask(94)
+      state = 621
       continue
-    of 585:
+    of 621:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7893,94 +10208,119 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 563
+        state = 598
         continue
-      state = 586
+      state = 622
       continue
-    of 563:
+    of 598:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 556
+        ex.debugEndBranch(definition, false)
+        state = 591
         continue
-      state = 585
+      state = 621
       continue
-    of 586:
+    of 622:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 556:
+    of 591:
       # branch resupply_ammo
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 39)
       # (and (ammo ?inp_npc ?count) (<= ?count 5) (ammo_cache ?inp_npc ?cache))
-      cp590_8 = ex.v[8]
-      cp590_15 = ex.v[15]
+      cp626_8 = ex.v[8]
+      cp626_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 113)
       # (ammo ?inp_npc ?count)
-      cp592_8 = ex.v[8]
-      fc593 = 0
-      state = 594
+      cp628_8 = ex.v[8]
+      fc629 = 0
+      state = 630
       continue
-    of 594:
-      inc fc593
-      if not factChoice114(ex, fc593 - 1):
-        state = 591
+    of 630:
+      ex.debugBeginCondition(definition, 114)
+      inc fc629
+      if not factChoice114(ex, fc629 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 627
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?count 5)
       # (<= ?count 5)
+      ex.debugBeginCondition(definition, 115)
       if compare(ex.v[8], sv43, 3'u32):
-        state = 597
+        ex.debugEndCondition(definition, true)
+        state = 633
         continue
-      state = 595
+      ex.debugEndCondition(definition, false)
+      state = 631
       continue
-    of 597:
+    of 633:
       # (ammo_cache ?inp_npc ?cache)
-      cp599_15 = ex.v[15]
-      fc600 = 0
-      inc fc600
-      if not factChoice116(ex, fc600 - 1):
-        state = 598
+      cp635_15 = ex.v[15]
+      fc636 = 0
+      ex.debugBeginCondition(definition, 116)
+      inc fc636
+      if not factChoice116(ex, fc636 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 634
         continue
-      state = 587
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 623
       continue
-    of 598:
-      ex.v[15] = cp599_15
-      state = 595
+    of 634:
+      ex.v[15] = cp635_15
+      state = 631
       continue
-    of 595:
-      state = 593
+    of 631:
+      state = 629
       continue
-    of 593:
+    of 629:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 591
+        state = 627
         continue
-      ex.v[8] = cp592_8
-      cp592_8 = ex.v[8]
-      state = 594
+      ex.v[8] = cp628_8
+      cp628_8 = ex.v[8]
+      state = 630
       continue
-    of 591:
-      ex.v[8] = cp592_8
-      state = 589
+    of 627:
+      ex.v[8] = cp628_8
+      state = 625
       continue
-    of 589:
-      ex.v[8] = cp590_8
-      ex.v[15] = cp590_15
-      state = 588
+    of 625:
+      ex.v[8] = cp626_8
+      ex.v[15] = cp626_15
+      ex.debugEndCondition(definition, false)
+      state = 624
       continue
-    of 588:
+    of 624:
       ex.releaseRetry(fr)
-      state = 557
+      ex.debugEndBranch(definition, false)
+      state = 592
       continue
-    of 587:
+    of 623:
       if not ex.pushBranch(addr bc39):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 602
+      ex.debugCapturePendingTask(97)
+      ex.debugCapturePendingTask(96)
+      state = 639
       continue
-    of 602:
+    of 639:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7988,59 +10328,78 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 564
+        state = 599
         continue
-      state = 603
+      state = 640
       continue
-    of 564:
+    of 599:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 557
+        ex.debugEndBranch(definition, false)
+        state = 592
         continue
-      state = 602
+      state = 639
       continue
-    of 603:
+    of 640:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 557:
+    of 592:
       # branch repair_weapon
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 40)
       # (and (weapon_jammed ?inp_npc ?weapon))
-      cp607_16 = ex.v[16]
+      cp644_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 117)
       # (weapon_jammed ?inp_npc ?weapon)
-      cp609_16 = ex.v[16]
-      fc610 = 0
-      inc fc610
-      if not factChoice118(ex, fc610 - 1):
-        state = 608
+      cp646_16 = ex.v[16]
+      fc647 = 0
+      ex.debugBeginCondition(definition, 118)
+      inc fc647
+      if not factChoice118(ex, fc647 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 645
         continue
-      state = 604
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 641
       continue
-    of 608:
-      ex.v[16] = cp609_16
-      state = 606
+    of 645:
+      ex.v[16] = cp646_16
+      state = 643
       continue
-    of 606:
-      ex.v[16] = cp607_16
-      state = 605
+    of 643:
+      ex.v[16] = cp644_16
+      ex.debugEndCondition(definition, false)
+      state = 642
       continue
-    of 605:
+    of 642:
       ex.releaseRetry(fr)
-      state = 558
+      ex.debugEndBranch(definition, false)
+      state = 593
       continue
-    of 604:
+    of 641:
       if not ex.pushBranch(addr bc40):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 612
+      ex.debugCapturePendingTask(99)
+      ex.debugCapturePendingTask(98)
+      state = 650
       continue
-    of 612:
+    of 650:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8048,83 +10407,106 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 565
+        state = 600
         continue
-      state = 613
+      state = 651
       continue
-    of 565:
+    of 600:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 558
+        ex.debugEndBranch(definition, false)
+        state = 593
         continue
-      state = 612
+      state = 650
       continue
-    of 613:
+    of 651:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 558:
+    of 593:
       # branch patrol
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 41)
       # (and (patrol_route ?inp_npc ?route) (patrol_checkpoint ?inp_npc ?point))
-      cp617_3 = ex.v[3]
-      cp617_17 = ex.v[17]
+      cp655_3 = ex.v[3]
+      cp655_17 = ex.v[17]
+      ex.debugBeginCondition(definition, 119)
       # (patrol_route ?inp_npc ?route)
-      cp619_3 = ex.v[3]
-      fc620 = 0
-      state = 621
+      cp657_3 = ex.v[3]
+      fc658 = 0
+      state = 659
       continue
-    of 621:
-      inc fc620
-      if not factChoice120(ex, fc620 - 1):
-        state = 618
+    of 659:
+      ex.debugBeginCondition(definition, 120)
+      inc fc658
+      if not factChoice120(ex, fc658 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 656
         continue
+      ex.debugEndCondition(definition, true)
       # (patrol_checkpoint ?inp_npc ?point)
-      cp623_17 = ex.v[17]
-      fc624 = 0
-      inc fc624
-      if not factChoice121(ex, fc624 - 1):
-        state = 622
+      cp661_17 = ex.v[17]
+      fc662 = 0
+      ex.debugBeginCondition(definition, 121)
+      inc fc662
+      if not factChoice121(ex, fc662 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 660
         continue
-      state = 614
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 652
       continue
-    of 622:
-      ex.v[17] = cp623_17
-      state = 620
+    of 660:
+      ex.v[17] = cp661_17
+      state = 658
       continue
-    of 620:
+    of 658:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 618
+        state = 656
         continue
-      ex.v[3] = cp619_3
-      cp619_3 = ex.v[3]
-      state = 621
+      ex.v[3] = cp657_3
+      cp657_3 = ex.v[3]
+      state = 659
       continue
-    of 618:
-      ex.v[3] = cp619_3
-      state = 616
+    of 656:
+      ex.v[3] = cp657_3
+      state = 654
       continue
-    of 616:
-      ex.v[3] = cp617_3
-      ex.v[17] = cp617_17
-      state = 615
+    of 654:
+      ex.v[3] = cp655_3
+      ex.v[17] = cp655_17
+      ex.debugEndCondition(definition, false)
+      state = 653
       continue
-    of 615:
+    of 653:
       ex.releaseRetry(fr)
-      state = 559
+      ex.debugEndBranch(definition, false)
+      state = 594
       continue
-    of 614:
+    of 652:
       if not ex.pushBranch(addr bc41):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 626
+      ex.debugCapturePendingTask(102)
+      ex.debugCapturePendingTask(101)
+      ex.debugCapturePendingTask(100)
+      state = 665
       continue
-    of 626:
+    of 665:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8132,90 +10514,111 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 566
+        state = 601
         continue
-      state = 627
+      state = 666
       continue
-    of 566:
+    of 601:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 559
+        ex.debugEndBranch(definition, false)
+        state = 594
         continue
-      state = 626
+      state = 665
       continue
-    of 627:
+    of 666:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 559:
+    of 594:
       # branch socialize
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 42)
       # (and (nearby_ally ?inp_npc ?ally) (social_cooldown_ready ?inp_npc))
-      cp631_18 = ex.v[18]
+      cp670_18 = ex.v[18]
+      ex.debugBeginCondition(definition, 122)
       # (nearby_ally ?inp_npc ?ally)
-      cp633_18 = ex.v[18]
-      fc634 = 0
-      state = 635
+      cp672_18 = ex.v[18]
+      fc673 = 0
+      state = 674
       continue
-    of 635:
-      inc fc634
-      if not factChoice123(ex, fc634 - 1):
-        state = 632
+    of 674:
+      ex.debugBeginCondition(definition, 123)
+      inc fc673
+      if not factChoice123(ex, fc673 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 671
         continue
+      ex.debugEndCondition(definition, true)
       # (social_cooldown_ready ?inp_npc)
       # (social_cooldown_ready ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 124)
         let ft = ex.factTables[33]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 638
+          state = 677
           continue
-        state = 636
+        state = 675
         continue
-      state = 638
+      state = 677
       continue
-    of 638:
-      state = 628
+    of 677:
+      ex.debugEndCondition(definition, true)
+      state = 667
       continue
-    of 636:
-      state = 634
+    of 675:
+      state = 673
       continue
-    of 634:
+    of 673:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 632
+        state = 671
         continue
-      ex.v[18] = cp633_18
-      cp633_18 = ex.v[18]
-      state = 635
+      ex.v[18] = cp672_18
+      cp672_18 = ex.v[18]
+      state = 674
       continue
-    of 632:
-      ex.v[18] = cp633_18
-      state = 630
+    of 671:
+      ex.v[18] = cp672_18
+      state = 669
       continue
-    of 630:
-      ex.v[18] = cp631_18
-      state = 629
+    of 669:
+      ex.v[18] = cp670_18
+      ex.debugEndCondition(definition, false)
+      state = 668
       continue
-    of 629:
+    of 668:
       ex.releaseRetry(fr)
-      state = 560
+      ex.debugEndBranch(definition, false)
+      state = 595
       continue
-    of 628:
+    of 667:
       if not ex.pushBranch(addr bc42):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 639
+      ex.debugCapturePendingTask(104)
+      ex.debugCapturePendingTask(103)
+      state = 679
       continue
-    of 639:
+    of 679:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8223,59 +10626,78 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 567
+        state = 602
         continue
-      state = 640
+      state = 680
       continue
-    of 567:
+    of 602:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 560
+        ex.debugEndBranch(definition, false)
+        state = 595
         continue
-      state = 639
+      state = 679
       continue
-    of 640:
+    of 680:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 560:
+    of 595:
       # branch guard_post
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 43)
       # (and (assigned_post ?inp_npc ?post))
-      cp644_19 = ex.v[19]
+      cp684_19 = ex.v[19]
+      ex.debugBeginCondition(definition, 125)
       # (assigned_post ?inp_npc ?post)
-      cp646_19 = ex.v[19]
-      fc647 = 0
-      inc fc647
-      if not factChoice126(ex, fc647 - 1):
-        state = 645
+      cp686_19 = ex.v[19]
+      fc687 = 0
+      ex.debugBeginCondition(definition, 126)
+      inc fc687
+      if not factChoice126(ex, fc687 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 685
         continue
-      state = 641
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 681
       continue
-    of 645:
-      ex.v[19] = cp646_19
-      state = 643
+    of 685:
+      ex.v[19] = cp686_19
+      state = 683
       continue
-    of 643:
-      ex.v[19] = cp644_19
-      state = 642
+    of 683:
+      ex.v[19] = cp684_19
+      ex.debugEndCondition(definition, false)
+      state = 682
       continue
-    of 642:
+    of 682:
       ex.releaseRetry(fr)
-      state = 561
+      ex.debugEndBranch(definition, false)
+      state = 596
       continue
-    of 641:
+    of 681:
       if not ex.pushBranch(addr bc43):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 649
+      ex.debugCapturePendingTask(106)
+      ex.debugCapturePendingTask(105)
+      state = 690
       continue
-    of 649:
+    of 690:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8283,81 +10705,103 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 568
+        state = 603
         continue
-      state = 650
+      state = 691
       continue
-    of 568:
+    of 603:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 561
+        ex.debugEndBranch(definition, false)
+        state = 596
         continue
-      state = 649
+      state = 690
       continue
-    of 650:
+    of 691:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 561:
+    of 596:
       # branch rest
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 44)
       # (and (stamina ?inp_npc ?amount) (<= ?amount 25))
-      cp654_7 = ex.v[7]
+      cp695_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 127)
       # (stamina ?inp_npc ?amount)
-      cp656_7 = ex.v[7]
-      fc657 = 0
-      state = 658
+      cp697_7 = ex.v[7]
+      fc698 = 0
+      state = 699
       continue
-    of 658:
-      inc fc657
-      if not factChoice128(ex, fc657 - 1):
-        state = 655
+    of 699:
+      ex.debugBeginCondition(definition, 128)
+      inc fc698
+      if not factChoice128(ex, fc698 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 696
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?amount 25)
       # (<= ?amount 25)
+      ex.debugBeginCondition(definition, 129)
       if compare(ex.v[7], sv44, 3'u32):
-        state = 661
+        ex.debugEndCondition(definition, true)
+        state = 702
         continue
-      state = 659
+      ex.debugEndCondition(definition, false)
+      state = 700
       continue
-    of 661:
-      state = 651
+    of 702:
+      ex.debugEndCondition(definition, true)
+      state = 692
       continue
-    of 659:
-      state = 657
+    of 700:
+      state = 698
       continue
-    of 657:
+    of 698:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 655
+        state = 696
         continue
-      ex.v[7] = cp656_7
-      cp656_7 = ex.v[7]
-      state = 658
+      ex.v[7] = cp697_7
+      cp697_7 = ex.v[7]
+      state = 699
       continue
-    of 655:
-      ex.v[7] = cp656_7
-      state = 653
+    of 696:
+      ex.v[7] = cp697_7
+      state = 694
       continue
-    of 653:
-      ex.v[7] = cp654_7
-      state = 652
+    of 694:
+      ex.v[7] = cp695_7
+      ex.debugEndCondition(definition, false)
+      state = 693
       continue
-    of 652:
+    of 693:
       ex.releaseRetry(fr)
-      state = 562
+      ex.debugEndBranch(definition, false)
+      state = 597
       continue
-    of 651:
+    of 692:
       if not ex.pushBranch(addr bc44):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 662
+      ex.debugCapturePendingTask(108)
+      ex.debugCapturePendingTask(107)
+      state = 704
       continue
-    of 662:
+    of 704:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8365,36 +10809,48 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 569
+        state = 604
         continue
-      state = 663
+      state = 705
       continue
-    of 569:
+    of 604:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
-        state = 562
+        ex.debugEndBranch(definition, false)
+        state = 597
         continue
-      state = 662
+      state = 704
       continue
-    of 663:
+    of 705:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 562:
+    of 597:
       # branch ambient_idle
-      state = 664
+      ex.debugBeginBranch(definition, 45)
+      state = 706
       continue
-    of 664:
+    of 706:
       if not ex.pushBranch(addr bc45):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 666
+      ex.debugCapturePendingTask(110)
+      ex.debugCapturePendingTask(109)
+      state = 708
       continue
-    of 666:
+    of 708:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8402,16 +10858,20 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 570
+        state = 605
         continue
-      state = 667
+      state = 709
       continue
-    of 570:
+    of 605:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 666
+      state = 708
       continue
-    of 667:
+    of 709:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -8419,152 +10879,168 @@ proc method6(ex: Exec): int {.nimcall.} =
 # method7: AAACombatNPC::run/0
 proc method7(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp688_20: Atom
-  var cp688_21: Atom
-  var cp688_22: Atom
-  var cp690_20: Atom
-  var fc691: uint32
-  var cp694_21: Atom
-  var cp694_22: Atom
-  var fc695: uint32
-  var cp702_20: Atom
-  var cp702_23: Atom
-  var cp702_24: Atom
-  var cp702_25: Atom
-  var cp702_26: Atom
-  var cp704_20: Atom
-  var fc705: uint32
-  var cp708_23: Atom
-  var fc709: uint32
-  var cp715_24: Atom
-  var fc716: uint32
-  var cp725_25: Atom
-  var cp725_26: Atom
-  var cp728_25: Atom
-  var cp728_26: Atom
-  var cp730_25: Atom
-  var fc731: uint32
-  var cp737_26: Atom
-  var fc738: uint32
-  var cp748_20: Atom
-  var cp748_21: Atom
-  var cp748_22: Atom
-  var cp750_20: Atom
-  var fc751: uint32
-  var cp754_21: Atom
-  var cp754_22: Atom
-  var fc755: uint32
-  var cp762_14: Atom
-  var cp762_20: Atom
-  var cp762_27: Atom
-  var cp762_28: Atom
-  var cp762_29: Atom
-  var cp764_20: Atom
-  var fc765: uint32
-  var cp768_14: Atom
-  var cp768_27: Atom
-  var fc769: uint32
-  var cp772_28: Atom
-  var cp772_29: Atom
-  var cp775_28: Atom
-  var cp775_29: Atom
-  var fc776: uint32
-  var cp783_20: Atom
-  var cp783_23: Atom
-  var cp783_29: Atom
-  var cp785_20: Atom
-  var fc786: uint32
-  var cp789_23: Atom
-  var cp789_29: Atom
-  var fc790: uint32
+  var cp730_20: Atom
+  var cp730_21: Atom
+  var cp730_22: Atom
+  var cp732_20: Atom
+  var fc733: uint32
+  var cp736_21: Atom
+  var cp736_22: Atom
+  var fc737: uint32
+  var cp745_20: Atom
+  var cp745_23: Atom
+  var cp745_24: Atom
+  var cp745_25: Atom
+  var cp745_26: Atom
+  var cp747_20: Atom
+  var fc748: uint32
+  var cp751_23: Atom
+  var fc752: uint32
+  var cp758_24: Atom
+  var fc759: uint32
+  var cp769_25: Atom
+  var cp769_26: Atom
+  var cp772_25: Atom
+  var cp772_26: Atom
+  var cp774_25: Atom
+  var fc775: uint32
+  var cp781_26: Atom
+  var fc782: uint32
+  var cp795_20: Atom
+  var cp795_21: Atom
+  var cp795_22: Atom
   var cp797_20: Atom
-  var cp797_21: Atom
-  var cp797_22: Atom
-  var cp799_20: Atom
-  var fc800: uint32
-  var cp803_21: Atom
-  var cp803_22: Atom
-  var fc804: uint32
-  var cp811_20: Atom
-  var cp813_20: Atom
-  var fc814: uint32
+  var fc798: uint32
+  var cp801_21: Atom
+  var cp801_22: Atom
+  var fc802: uint32
+  var cp810_14: Atom
+  var cp810_20: Atom
+  var cp810_27: Atom
+  var cp810_28: Atom
+  var cp810_29: Atom
+  var cp812_20: Atom
+  var fc813: uint32
+  var cp816_14: Atom
+  var cp816_27: Atom
+  var fc817: uint32
+  var cp820_28: Atom
+  var cp820_29: Atom
+  var cp823_28: Atom
+  var cp823_29: Atom
+  var fc824: uint32
+  var cp833_20: Atom
+  var cp833_23: Atom
+  var cp833_29: Atom
+  var cp835_20: Atom
+  var fc836: uint32
+  var cp839_23: Atom
+  var cp839_29: Atom
+  var fc840: uint32
+  var cp848_20: Atom
+  var cp848_21: Atom
+  var cp848_22: Atom
+  var cp850_20: Atom
+  var fc851: uint32
+  var cp854_21: Atom
+  var cp854_22: Atom
+  var fc855: uint32
+  var cp863_20: Atom
+  var cp865_20: Atom
+  var fc866: uint32
   var state = 0
   case fr.resume
-  of 1: state = 677
-  of 2: state = 678
-  of 3: state = 679
-  of 4: state = 680
-  of 5: state = 681
-  of 6: state = 682
-  of 7: state = 683
-  of 8: state = 684
+  of 1: state = 719
+  of 2: state = 720
+  of 3: state = 721
+  of 4: state = 722
+  of 5: state = 723
+  of 6: state = 724
+  of 7: state = 725
+  of 8: state = 726
   else: discard
   while true:
     case state
     of 0:
-      state = 669
+      ex.debugBeginMethod(definition, 7)
+      state = 711
       continue
-    of 669:
+    of 711:
       # branch high_priority_script
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 46)
       # (and (controlled_npc ?npc) (scripted_order ?npc high ?order ?target))
-      cp688_20 = ex.v[20]
-      cp688_21 = ex.v[21]
-      cp688_22 = ex.v[22]
+      cp730_20 = ex.v[20]
+      cp730_21 = ex.v[21]
+      cp730_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 130)
       # (controlled_npc ?npc)
-      cp690_20 = ex.v[20]
-      fc691 = 0
-      state = 692
+      cp732_20 = ex.v[20]
+      fc733 = 0
+      state = 734
       continue
-    of 692:
-      inc fc691
-      if not factChoice131(ex, fc691 - 1):
-        state = 689
+    of 734:
+      ex.debugBeginCondition(definition, 131)
+      inc fc733
+      if not factChoice131(ex, fc733 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 731
         continue
+      ex.debugEndCondition(definition, true)
       # (scripted_order ?npc high ?order ?target)
-      cp694_21 = ex.v[21]
-      cp694_22 = ex.v[22]
-      fc695 = 0
-      inc fc695
-      if not factChoice132(ex, fc695 - 1):
-        state = 693
+      cp736_21 = ex.v[21]
+      cp736_22 = ex.v[22]
+      fc737 = 0
+      ex.debugBeginCondition(definition, 132)
+      inc fc737
+      if not factChoice132(ex, fc737 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 735
         continue
-      state = 685
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 727
       continue
-    of 693:
-      ex.v[21] = cp694_21
-      ex.v[22] = cp694_22
-      state = 691
+    of 735:
+      ex.v[21] = cp736_21
+      ex.v[22] = cp736_22
+      state = 733
       continue
-    of 691:
+    of 733:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 689
+        state = 731
         continue
-      ex.v[20] = cp690_20
-      cp690_20 = ex.v[20]
-      state = 692
+      ex.v[20] = cp732_20
+      cp732_20 = ex.v[20]
+      state = 734
       continue
-    of 689:
-      ex.v[20] = cp690_20
-      state = 687
+    of 731:
+      ex.v[20] = cp732_20
+      state = 729
       continue
-    of 687:
-      ex.v[20] = cp688_20
-      ex.v[21] = cp688_21
-      ex.v[22] = cp688_22
-      state = 686
+    of 729:
+      ex.v[20] = cp730_20
+      ex.v[21] = cp730_21
+      ex.v[22] = cp730_22
+      ex.debugEndCondition(definition, false)
+      state = 728
       continue
-    of 686:
+    of 728:
       ex.releaseRetry(fr)
-      state = 670
+      ex.debugEndBranch(definition, false)
+      state = 712
       continue
-    of 685:
+    of 727:
       if not ex.pushBranch(addr bc46):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 697
+      ex.debugCapturePendingTask(112)
+      ex.debugCapturePendingTask(111)
+      state = 740
       continue
-    of 697:
+    of 740:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8572,263 +11048,316 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 677
+        state = 719
         continue
-      state = 698
+      state = 741
       continue
-    of 677:
+    of 719:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 670
+        ex.debugEndBranch(definition, false)
+        state = 712
         continue
-      state = 697
+      state = 740
       continue
-    of 698:
+    of 741:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 670:
+    of 712:
       # branch visible_combat
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 47)
       # (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
-      cp702_20 = ex.v[20]
-      cp702_23 = ex.v[23]
-      cp702_24 = ex.v[24]
-      cp702_25 = ex.v[25]
-      cp702_26 = ex.v[26]
+      cp745_20 = ex.v[20]
+      cp745_23 = ex.v[23]
+      cp745_24 = ex.v[24]
+      cp745_25 = ex.v[25]
+      cp745_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 133)
       # (controlled_npc ?npc)
-      cp704_20 = ex.v[20]
-      fc705 = 0
-      state = 706
+      cp747_20 = ex.v[20]
+      fc748 = 0
+      state = 749
       continue
-    of 706:
-      inc fc705
-      if not factChoice134(ex, fc705 - 1):
-        state = 703
+    of 749:
+      ex.debugBeginCondition(definition, 134)
+      inc fc748
+      if not factChoice134(ex, fc748 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 746
         continue
+      ex.debugEndCondition(definition, true)
       # (visible_enemy ?npc ?enemy)
-      cp708_23 = ex.v[23]
-      fc709 = 0
-      state = 710
+      cp751_23 = ex.v[23]
+      fc752 = 0
+      state = 753
       continue
-    of 710:
-      inc fc709
-      if not factChoice135(ex, fc709 - 1):
-        state = 707
+    of 753:
+      ex.debugBeginCondition(definition, 135)
+      inc fc752
+      if not factChoice135(ex, fc752 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 750
         continue
+      ex.debugEndCondition(definition, true)
       # (hostile_enemy ?enemy)
       # (hostile_enemy ?enemy)
       block:
+        ex.debugBeginCondition(definition, 136)
         let ft = ex.factTables[38]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 713
+          state = 756
           continue
-        state = 711
+        state = 754
         continue
-      state = 713
+      state = 756
       continue
-    of 713:
+    of 756:
       # (enemy_distance ?npc ?enemy ?distance)
-      cp715_24 = ex.v[24]
-      fc716 = 0
-      state = 717
+      cp758_24 = ex.v[24]
+      fc759 = 0
+      state = 760
       continue
-    of 717:
-      inc fc716
-      if not factChoice137(ex, fc716 - 1):
-        state = 714
+    of 760:
+      ex.debugBeginCondition(definition, 137)
+      inc fc759
+      if not factChoice137(ex, fc759 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 757
         continue
+      ex.debugEndCondition(definition, true)
       # (not (enemy_dead ?enemy))
+      ex.debugBeginCondition(definition, 138)
       # (enemy_dead ?enemy)
       # (enemy_dead ?enemy)
       block:
+        ex.debugBeginCondition(definition, 139)
         let ft = ex.factTables[40]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 723
+          state = 766
           continue
-        state = 721
+        state = 764
         continue
-      state = 723
+      state = 766
       continue
-    of 723:
-      state = 718
+    of 766:
+      state = 761
       continue
-    of 721:
-      state = 720
+    of 764:
+      state = 763
       continue
-    of 720:
+    of 763:
+      ex.debugEndCondition(definition, true)
       # (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
-      cp725_25 = ex.v[25]
-      cp725_26 = ex.v[26]
+      cp769_25 = ex.v[25]
+      cp769_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 140)
       # (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
-      cp728_25 = ex.v[25]
-      cp728_26 = ex.v[26]
+      cp772_25 = ex.v[25]
+      cp772_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 141)
       # (visible_enemy ?npc ?other)
-      cp730_25 = ex.v[25]
-      fc731 = 0
-      state = 732
+      cp774_25 = ex.v[25]
+      fc775 = 0
+      state = 776
       continue
-    of 732:
-      inc fc731
-      if not factChoice142(ex, fc731 - 1):
-        state = 729
+    of 776:
+      ex.debugBeginCondition(definition, 142)
+      inc fc775
+      if not factChoice142(ex, fc775 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 773
         continue
+      ex.debugEndCondition(definition, true)
       # (hostile_enemy ?other)
       # (hostile_enemy ?other)
       block:
+        ex.debugBeginCondition(definition, 143)
         let ft = ex.factTables[38]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[25]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 735
+          state = 779
           continue
-        state = 733
+        state = 777
         continue
-      state = 735
+      state = 779
       continue
-    of 735:
+    of 779:
       # (enemy_distance ?npc ?other ?other_distance)
-      cp737_26 = ex.v[26]
-      fc738 = 0
-      state = 739
+      cp781_26 = ex.v[26]
+      fc782 = 0
+      state = 783
       continue
-    of 739:
-      inc fc738
-      if not factChoice144(ex, fc738 - 1):
-        state = 736
+    of 783:
+      ex.debugBeginCondition(definition, 144)
+      inc fc782
+      if not factChoice144(ex, fc782 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 780
         continue
+      ex.debugEndCondition(definition, true)
       # (< ?other_distance ?distance)
       # (< ?other_distance ?distance)
+      ex.debugBeginCondition(definition, 145)
       if compare(ex.v[26], ex.v[24], 2'u32):
-        state = 742
+        ex.debugEndCondition(definition, true)
+        state = 786
         continue
-      state = 740
+      ex.debugEndCondition(definition, false)
+      state = 784
       continue
-    of 742:
-      state = 724
+    of 786:
+      ex.debugEndCondition(definition, true)
+      state = 768
       continue
-    of 740:
-      state = 738
+    of 784:
+      state = 782
       continue
-    of 738:
+    of 782:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 736
+        state = 780
         continue
-      ex.v[26] = cp737_26
-      cp737_26 = ex.v[26]
-      state = 739
+      ex.v[26] = cp781_26
+      cp781_26 = ex.v[26]
+      state = 783
       continue
-    of 736:
-      ex.v[26] = cp737_26
-      state = 733
+    of 780:
+      ex.v[26] = cp781_26
+      state = 777
       continue
-    of 733:
-      state = 731
+    of 777:
+      state = 775
       continue
-    of 731:
+    of 775:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 729
+        state = 773
         continue
-      ex.v[25] = cp730_25
-      cp730_25 = ex.v[25]
-      state = 732
+      ex.v[25] = cp774_25
+      cp774_25 = ex.v[25]
+      state = 776
       continue
-    of 729:
-      ex.v[25] = cp730_25
-      state = 727
+    of 773:
+      ex.v[25] = cp774_25
+      state = 771
       continue
-    of 727:
-      ex.v[25] = cp728_25
-      ex.v[26] = cp728_26
-      state = 726
+    of 771:
+      ex.v[25] = cp772_25
+      ex.v[26] = cp772_26
+      ex.debugEndCondition(definition, false)
+      state = 770
       continue
-    of 726:
-      state = 699
+    of 770:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 742
       continue
-    of 724:
-      ex.v[25] = cp725_25
-      ex.v[26] = cp725_26
-      state = 718
+    of 768:
+      ex.v[25] = cp769_25
+      ex.v[26] = cp769_26
+      ex.debugEndCondition(definition, false)
+      state = 767
       continue
-    of 718:
-      state = 716
+    of 767:
+      ex.debugBeginCondition(definition, 138)
+      state = 761
       continue
-    of 716:
+    of 761:
+      ex.debugEndCondition(definition, false)
+      state = 759
+      continue
+    of 759:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 714
+        state = 757
         continue
-      ex.v[24] = cp715_24
-      cp715_24 = ex.v[24]
-      state = 717
+      ex.v[24] = cp758_24
+      cp758_24 = ex.v[24]
+      state = 760
       continue
-    of 714:
-      ex.v[24] = cp715_24
-      state = 711
+    of 757:
+      ex.v[24] = cp758_24
+      state = 754
       continue
-    of 711:
-      state = 709
+    of 754:
+      state = 752
       continue
-    of 709:
+    of 752:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 707
+        state = 750
         continue
-      ex.v[23] = cp708_23
-      cp708_23 = ex.v[23]
-      state = 710
+      ex.v[23] = cp751_23
+      cp751_23 = ex.v[23]
+      state = 753
       continue
-    of 707:
-      ex.v[23] = cp708_23
-      state = 705
+    of 750:
+      ex.v[23] = cp751_23
+      state = 748
       continue
-    of 705:
+    of 748:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 703
+        state = 746
         continue
-      ex.v[20] = cp704_20
-      cp704_20 = ex.v[20]
-      state = 706
+      ex.v[20] = cp747_20
+      cp747_20 = ex.v[20]
+      state = 749
       continue
-    of 703:
-      ex.v[20] = cp704_20
-      state = 701
+    of 746:
+      ex.v[20] = cp747_20
+      state = 744
       continue
-    of 701:
-      ex.v[20] = cp702_20
-      ex.v[23] = cp702_23
-      ex.v[24] = cp702_24
-      ex.v[25] = cp702_25
-      ex.v[26] = cp702_26
-      state = 700
-      continue
-    of 700:
-      ex.releaseRetry(fr)
-      state = 671
-      continue
-    of 699:
-      if not ex.pushBranch(addr bc47):
-        ex.releaseRetry(fr)
-        return 0
+    of 744:
+      ex.v[20] = cp745_20
+      ex.v[23] = cp745_23
+      ex.v[24] = cp745_24
+      ex.v[25] = cp745_25
+      ex.v[26] = cp745_26
+      ex.debugEndCondition(definition, false)
       state = 743
       continue
     of 743:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 713
+      continue
+    of 742:
+      if not ex.pushBranch(addr bc47):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(114)
+      ex.debugCapturePendingTask(113)
+      state = 790
+      continue
+    of 790:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8836,87 +11365,109 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 678
+        state = 720
         continue
-      state = 744
+      state = 791
       continue
-    of 678:
+    of 720:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 671
+        ex.debugEndBranch(definition, false)
+        state = 713
         continue
-      state = 743
+      state = 790
       continue
-    of 744:
+    of 791:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 671:
+    of 713:
       # branch medium_priority_script
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 48)
       # (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
-      cp748_20 = ex.v[20]
-      cp748_21 = ex.v[21]
-      cp748_22 = ex.v[22]
+      cp795_20 = ex.v[20]
+      cp795_21 = ex.v[21]
+      cp795_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 146)
       # (controlled_npc ?npc)
-      cp750_20 = ex.v[20]
-      fc751 = 0
-      state = 752
+      cp797_20 = ex.v[20]
+      fc798 = 0
+      state = 799
       continue
-    of 752:
-      inc fc751
-      if not factChoice147(ex, fc751 - 1):
-        state = 749
+    of 799:
+      ex.debugBeginCondition(definition, 147)
+      inc fc798
+      if not factChoice147(ex, fc798 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 796
         continue
+      ex.debugEndCondition(definition, true)
       # (scripted_order ?npc medium ?order ?target)
-      cp754_21 = ex.v[21]
-      cp754_22 = ex.v[22]
-      fc755 = 0
-      inc fc755
-      if not factChoice148(ex, fc755 - 1):
-        state = 753
+      cp801_21 = ex.v[21]
+      cp801_22 = ex.v[22]
+      fc802 = 0
+      ex.debugBeginCondition(definition, 148)
+      inc fc802
+      if not factChoice148(ex, fc802 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 800
         continue
-      state = 745
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 792
       continue
-    of 753:
-      ex.v[21] = cp754_21
-      ex.v[22] = cp754_22
-      state = 751
+    of 800:
+      ex.v[21] = cp801_21
+      ex.v[22] = cp801_22
+      state = 798
       continue
-    of 751:
+    of 798:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 749
+        state = 796
         continue
-      ex.v[20] = cp750_20
-      cp750_20 = ex.v[20]
-      state = 752
+      ex.v[20] = cp797_20
+      cp797_20 = ex.v[20]
+      state = 799
       continue
-    of 749:
-      ex.v[20] = cp750_20
-      state = 747
+    of 796:
+      ex.v[20] = cp797_20
+      state = 794
       continue
-    of 747:
-      ex.v[20] = cp748_20
-      ex.v[21] = cp748_21
-      ex.v[22] = cp748_22
-      state = 746
+    of 794:
+      ex.v[20] = cp795_20
+      ex.v[21] = cp795_21
+      ex.v[22] = cp795_22
+      ex.debugEndCondition(definition, false)
+      state = 793
       continue
-    of 746:
+    of 793:
       ex.releaseRetry(fr)
-      state = 672
+      ex.debugEndBranch(definition, false)
+      state = 714
       continue
-    of 745:
+    of 792:
       if not ex.pushBranch(addr bc48):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 757
+      ex.debugCapturePendingTask(116)
+      ex.debugCapturePendingTask(115)
+      state = 805
       continue
-    of 757:
+    of 805:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8924,128 +11475,156 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 679
+        state = 721
         continue
-      state = 758
+      state = 806
       continue
-    of 679:
+    of 721:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 672
+        ex.debugEndBranch(definition, false)
+        state = 714
         continue
-      state = 757
+      state = 805
       continue
-    of 758:
+    of 806:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 672:
+    of 714:
       # branch investigate_precombat
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 49)
       # (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
-      cp762_14 = ex.v[14]
-      cp762_20 = ex.v[20]
-      cp762_27 = ex.v[27]
-      cp762_28 = ex.v[28]
-      cp762_29 = ex.v[29]
+      cp810_14 = ex.v[14]
+      cp810_20 = ex.v[20]
+      cp810_27 = ex.v[27]
+      cp810_28 = ex.v[28]
+      cp810_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 149)
       # (controlled_npc ?npc)
-      cp764_20 = ex.v[20]
-      fc765 = 0
-      state = 766
+      cp812_20 = ex.v[20]
+      fc813 = 0
+      state = 814
       continue
-    of 766:
-      inc fc765
-      if not factChoice150(ex, fc765 - 1):
-        state = 763
+    of 814:
+      ex.debugBeginCondition(definition, 150)
+      inc fc813
+      if not factChoice150(ex, fc813 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 811
         continue
+      ex.debugEndCondition(definition, true)
       # (suspicious_stimulus ?npc ?stimulus ?location)
-      cp768_14 = ex.v[14]
-      cp768_27 = ex.v[27]
-      fc769 = 0
-      state = 770
+      cp816_14 = ex.v[14]
+      cp816_27 = ex.v[27]
+      fc817 = 0
+      state = 818
       continue
-    of 770:
-      inc fc769
-      if not factChoice151(ex, fc769 - 1):
-        state = 767
+    of 818:
+      ex.debugBeginCondition(definition, 151)
+      inc fc817
+      if not factChoice151(ex, fc817 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 815
         continue
+      ex.debugEndCondition(definition, true)
       # (not (combat_memory ?npc ?lost_enemy ?last_location))
-      cp772_28 = ex.v[28]
-      cp772_29 = ex.v[29]
+      cp820_28 = ex.v[28]
+      cp820_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 152)
       # (combat_memory ?npc ?lost_enemy ?last_location)
-      cp775_28 = ex.v[28]
-      cp775_29 = ex.v[29]
-      fc776 = 0
-      inc fc776
-      if not factChoice153(ex, fc776 - 1):
-        state = 774
+      cp823_28 = ex.v[28]
+      cp823_29 = ex.v[29]
+      fc824 = 0
+      ex.debugBeginCondition(definition, 153)
+      inc fc824
+      if not factChoice153(ex, fc824 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 822
         continue
-      state = 771
+      ex.debugEndCondition(definition, true)
+      state = 819
       continue
-    of 774:
-      ex.v[28] = cp775_28
-      ex.v[29] = cp775_29
-      state = 773
+    of 822:
+      ex.v[28] = cp823_28
+      ex.v[29] = cp823_29
+      state = 821
       continue
-    of 773:
-      state = 759
+    of 821:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 807
       continue
-    of 771:
-      ex.v[28] = cp772_28
-      ex.v[29] = cp772_29
-      state = 769
+    of 819:
+      ex.v[28] = cp820_28
+      ex.v[29] = cp820_29
+      ex.debugEndCondition(definition, false)
+      state = 817
       continue
-    of 769:
+    of 817:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 767
+        state = 815
         continue
-      ex.v[14] = cp768_14
-      ex.v[27] = cp768_27
-      cp768_14 = ex.v[14]
-      cp768_27 = ex.v[27]
-      state = 770
+      ex.v[14] = cp816_14
+      ex.v[27] = cp816_27
+      cp816_14 = ex.v[14]
+      cp816_27 = ex.v[27]
+      state = 818
       continue
-    of 767:
-      ex.v[14] = cp768_14
-      ex.v[27] = cp768_27
-      state = 765
+    of 815:
+      ex.v[14] = cp816_14
+      ex.v[27] = cp816_27
+      state = 813
       continue
-    of 765:
+    of 813:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 763
+        state = 811
         continue
-      ex.v[20] = cp764_20
-      cp764_20 = ex.v[20]
-      state = 766
+      ex.v[20] = cp812_20
+      cp812_20 = ex.v[20]
+      state = 814
       continue
-    of 763:
-      ex.v[20] = cp764_20
-      state = 761
+    of 811:
+      ex.v[20] = cp812_20
+      state = 809
       continue
-    of 761:
-      ex.v[14] = cp762_14
-      ex.v[20] = cp762_20
-      ex.v[27] = cp762_27
-      ex.v[28] = cp762_28
-      ex.v[29] = cp762_29
-      state = 760
+    of 809:
+      ex.v[14] = cp810_14
+      ex.v[20] = cp810_20
+      ex.v[27] = cp810_27
+      ex.v[28] = cp810_28
+      ex.v[29] = cp810_29
+      ex.debugEndCondition(definition, false)
+      state = 808
       continue
-    of 760:
+    of 808:
       ex.releaseRetry(fr)
-      state = 673
+      ex.debugEndBranch(definition, false)
+      state = 715
       continue
-    of 759:
+    of 807:
       if not ex.pushBranch(addr bc49):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 778
+      ex.debugCapturePendingTask(118)
+      ex.debugCapturePendingTask(117)
+      state = 828
       continue
-    of 778:
+    of 828:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9053,87 +11632,109 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 680
+        state = 722
         continue
-      state = 779
+      state = 829
       continue
-    of 680:
+    of 722:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 673
+        ex.debugEndBranch(definition, false)
+        state = 715
         continue
-      state = 778
+      state = 828
       continue
-    of 779:
+    of 829:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 673:
+    of 715:
       # branch search_lost_enemy
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 50)
       # (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
-      cp783_20 = ex.v[20]
-      cp783_23 = ex.v[23]
-      cp783_29 = ex.v[29]
+      cp833_20 = ex.v[20]
+      cp833_23 = ex.v[23]
+      cp833_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 154)
       # (controlled_npc ?npc)
-      cp785_20 = ex.v[20]
-      fc786 = 0
-      state = 787
+      cp835_20 = ex.v[20]
+      fc836 = 0
+      state = 837
       continue
-    of 787:
-      inc fc786
-      if not factChoice155(ex, fc786 - 1):
-        state = 784
+    of 837:
+      ex.debugBeginCondition(definition, 155)
+      inc fc836
+      if not factChoice155(ex, fc836 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 834
         continue
+      ex.debugEndCondition(definition, true)
       # (combat_memory ?npc ?enemy ?last_location)
-      cp789_23 = ex.v[23]
-      cp789_29 = ex.v[29]
-      fc790 = 0
-      inc fc790
-      if not factChoice156(ex, fc790 - 1):
-        state = 788
+      cp839_23 = ex.v[23]
+      cp839_29 = ex.v[29]
+      fc840 = 0
+      ex.debugBeginCondition(definition, 156)
+      inc fc840
+      if not factChoice156(ex, fc840 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 838
         continue
-      state = 780
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 830
       continue
-    of 788:
-      ex.v[23] = cp789_23
-      ex.v[29] = cp789_29
-      state = 786
+    of 838:
+      ex.v[23] = cp839_23
+      ex.v[29] = cp839_29
+      state = 836
       continue
-    of 786:
+    of 836:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 784
+        state = 834
         continue
-      ex.v[20] = cp785_20
-      cp785_20 = ex.v[20]
-      state = 787
+      ex.v[20] = cp835_20
+      cp835_20 = ex.v[20]
+      state = 837
       continue
-    of 784:
-      ex.v[20] = cp785_20
-      state = 782
+    of 834:
+      ex.v[20] = cp835_20
+      state = 832
       continue
-    of 782:
-      ex.v[20] = cp783_20
-      ex.v[23] = cp783_23
-      ex.v[29] = cp783_29
-      state = 781
+    of 832:
+      ex.v[20] = cp833_20
+      ex.v[23] = cp833_23
+      ex.v[29] = cp833_29
+      ex.debugEndCondition(definition, false)
+      state = 831
       continue
-    of 781:
+    of 831:
       ex.releaseRetry(fr)
-      state = 674
+      ex.debugEndBranch(definition, false)
+      state = 716
       continue
-    of 780:
+    of 830:
       if not ex.pushBranch(addr bc50):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 792
+      ex.debugCapturePendingTask(120)
+      ex.debugCapturePendingTask(119)
+      state = 843
       continue
-    of 792:
+    of 843:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9141,87 +11742,109 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 681
+        state = 723
         continue
-      state = 793
+      state = 844
       continue
-    of 681:
+    of 723:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 674
+        ex.debugEndBranch(definition, false)
+        state = 716
         continue
-      state = 792
+      state = 843
       continue
-    of 793:
+    of 844:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 674:
+    of 716:
       # branch low_priority_script
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 51)
       # (and (controlled_npc ?npc) (scripted_order ?npc low ?order ?target))
-      cp797_20 = ex.v[20]
-      cp797_21 = ex.v[21]
-      cp797_22 = ex.v[22]
+      cp848_20 = ex.v[20]
+      cp848_21 = ex.v[21]
+      cp848_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 157)
       # (controlled_npc ?npc)
-      cp799_20 = ex.v[20]
-      fc800 = 0
-      state = 801
+      cp850_20 = ex.v[20]
+      fc851 = 0
+      state = 852
       continue
-    of 801:
-      inc fc800
-      if not factChoice158(ex, fc800 - 1):
-        state = 798
+    of 852:
+      ex.debugBeginCondition(definition, 158)
+      inc fc851
+      if not factChoice158(ex, fc851 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 849
         continue
+      ex.debugEndCondition(definition, true)
       # (scripted_order ?npc low ?order ?target)
-      cp803_21 = ex.v[21]
-      cp803_22 = ex.v[22]
-      fc804 = 0
-      inc fc804
-      if not factChoice159(ex, fc804 - 1):
-        state = 802
+      cp854_21 = ex.v[21]
+      cp854_22 = ex.v[22]
+      fc855 = 0
+      ex.debugBeginCondition(definition, 159)
+      inc fc855
+      if not factChoice159(ex, fc855 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 853
         continue
-      state = 794
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 845
       continue
-    of 802:
-      ex.v[21] = cp803_21
-      ex.v[22] = cp803_22
-      state = 800
+    of 853:
+      ex.v[21] = cp854_21
+      ex.v[22] = cp854_22
+      state = 851
       continue
-    of 800:
+    of 851:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 798
+        state = 849
         continue
-      ex.v[20] = cp799_20
-      cp799_20 = ex.v[20]
-      state = 801
+      ex.v[20] = cp850_20
+      cp850_20 = ex.v[20]
+      state = 852
       continue
-    of 798:
-      ex.v[20] = cp799_20
-      state = 796
+    of 849:
+      ex.v[20] = cp850_20
+      state = 847
       continue
-    of 796:
-      ex.v[20] = cp797_20
-      ex.v[21] = cp797_21
-      ex.v[22] = cp797_22
-      state = 795
+    of 847:
+      ex.v[20] = cp848_20
+      ex.v[21] = cp848_21
+      ex.v[22] = cp848_22
+      ex.debugEndCondition(definition, false)
+      state = 846
       continue
-    of 795:
+    of 846:
       ex.releaseRetry(fr)
-      state = 675
+      ex.debugEndBranch(definition, false)
+      state = 717
       continue
-    of 794:
+    of 845:
       if not ex.pushBranch(addr bc51):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 806
+      ex.debugCapturePendingTask(122)
+      ex.debugCapturePendingTask(121)
+      state = 858
       continue
-    of 806:
+    of 858:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9229,59 +11852,78 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 682
+        state = 724
         continue
-      state = 807
+      state = 859
       continue
-    of 682:
+    of 724:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 675
+        ex.debugEndBranch(definition, false)
+        state = 717
         continue
-      state = 806
+      state = 858
       continue
-    of 807:
+    of 859:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 675:
+    of 717:
       # branch idle
       ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 52)
       # (and (controlled_npc ?npc))
-      cp811_20 = ex.v[20]
+      cp863_20 = ex.v[20]
+      ex.debugBeginCondition(definition, 160)
       # (controlled_npc ?npc)
-      cp813_20 = ex.v[20]
-      fc814 = 0
-      inc fc814
-      if not factChoice161(ex, fc814 - 1):
-        state = 812
+      cp865_20 = ex.v[20]
+      fc866 = 0
+      ex.debugBeginCondition(definition, 161)
+      inc fc866
+      if not factChoice161(ex, fc866 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 864
         continue
-      state = 808
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 860
       continue
-    of 812:
-      ex.v[20] = cp813_20
-      state = 810
+    of 864:
+      ex.v[20] = cp865_20
+      state = 862
       continue
-    of 810:
-      ex.v[20] = cp811_20
-      state = 809
+    of 862:
+      ex.v[20] = cp863_20
+      ex.debugEndCondition(definition, false)
+      state = 861
       continue
-    of 809:
+    of 861:
       ex.releaseRetry(fr)
-      state = 676
+      ex.debugEndBranch(definition, false)
+      state = 718
       continue
-    of 808:
+    of 860:
       if not ex.pushBranch(addr bc52):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 816
+      ex.debugCapturePendingTask(124)
+      ex.debugCapturePendingTask(123)
+      state = 869
       continue
-    of 816:
+    of 869:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9289,36 +11931,47 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 683
+        state = 725
         continue
-      state = 817
+      state = 870
       continue
-    of 683:
+    of 725:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms7)
-        state = 676
+        ex.debugEndBranch(definition, false)
+        state = 718
         continue
-      state = 816
+      state = 869
       continue
-    of 817:
+    of 870:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 676:
+    of 718:
       # branch no_npc
-      state = 818
+      ex.debugBeginBranch(definition, 53)
+      state = 871
       continue
-    of 818:
+    of 871:
       if not ex.pushBranch(addr bc53):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 820
+      ex.debugCapturePendingTask(125)
+      state = 873
       continue
-    of 820:
+    of 873:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9326,16 +11979,20 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 684
+        state = 726
         continue
-      state = 821
+      state = 874
       continue
-    of 684:
+    of 726:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 820
+      state = 873
       continue
-    of 821:
+    of 874:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -9343,76 +12000,93 @@ proc method7(ex: Exec): int {.nimcall.} =
 # method8: execute_scripted_order/3
 proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp872_3: Atom
-  var cp877_3: Atom
-  var fc878: uint32
+  var cp928_3: Atom
+  var cp933_3: Atom
+  var fc934: uint32
   var state = 0
   case fr.resume
-  of 1: state = 831
-  of 2: state = 832
-  of 3: state = 833
-  of 4: state = 834
-  of 5: state = 835
-  of 6: state = 836
-  of 7: state = 837
-  of 8: state = 838
+  of 1: state = 884
+  of 2: state = 885
+  of 3: state = 886
+  of 4: state = 887
+  of 5: state = 888
+  of 6: state = 889
+  of 7: state = 890
+  of 8: state = 891
   else: discard
   while true:
     case state
     of 0:
-      state = 823
+      ex.debugBeginMethod(definition, 8)
+      state = 876
       continue
-    of 823:
+    of 876:
       # branch evacuate_under_fire
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 54)
       # (and (== ?inp_order evacuate) (under_fire ?inp_npc))
+      ex.debugBeginCondition(definition, 162)
       # (== ?inp_order evacuate)
       # (== ?inp_order evacuate)
+      ex.debugBeginCondition(definition, 163)
       if compare(ex.v[1], sv56, 0'u32):
-        state = 845
+        ex.debugEndCondition(definition, true)
+        state = 898
         continue
-      state = 843
+      ex.debugEndCondition(definition, false)
+      state = 896
       continue
-    of 845:
+    of 898:
       # (under_fire ?inp_npc)
       # (under_fire ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 164)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 848
+          state = 901
           continue
-        state = 846
+        state = 899
         continue
-      state = 848
+      state = 901
       continue
-    of 848:
-      state = 839
+    of 901:
+      ex.debugEndCondition(definition, true)
+      state = 892
       continue
-    of 846:
-      state = 843
+    of 899:
+      state = 896
       continue
-    of 843:
-      state = 841
+    of 896:
+      state = 894
       continue
-    of 841:
-      state = 840
+    of 894:
+      ex.debugEndCondition(definition, false)
+      state = 893
       continue
-    of 840:
+    of 893:
       ex.releaseRetry(fr)
-      state = 824
+      ex.debugEndBranch(definition, false)
+      state = 877
       continue
-    of 839:
+    of 892:
       if not ex.pushBranch(addr bc54):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 849
+      ex.debugCapturePendingTask(129)
+      ex.debugCapturePendingTask(128)
+      ex.debugCapturePendingTask(127)
+      ex.debugCapturePendingTask(126)
+      state = 903
       continue
-    of 849:
+    of 903:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9420,57 +12094,77 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 831
+        state = 884
         continue
-      state = 850
+      state = 904
       continue
-    of 831:
+    of 884:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 824
+        ex.debugEndBranch(definition, false)
+        state = 877
         continue
-      state = 849
+      state = 903
       continue
-    of 850:
+    of 904:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 824:
+    of 877:
       # branch evacuate
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 55)
       # (and (== ?inp_order evacuate))
+      ex.debugBeginCondition(definition, 165)
       # (== ?inp_order evacuate)
       # (== ?inp_order evacuate)
+      ex.debugBeginCondition(definition, 166)
       if compare(ex.v[1], sv57, 0'u32):
-        state = 857
+        ex.debugEndCondition(definition, true)
+        state = 911
         continue
-      state = 855
+      ex.debugEndCondition(definition, false)
+      state = 909
       continue
-    of 857:
-      state = 851
+    of 911:
+      ex.debugEndCondition(definition, true)
+      state = 905
       continue
-    of 855:
-      state = 853
+    of 909:
+      state = 907
       continue
-    of 853:
-      state = 852
+    of 907:
+      ex.debugEndCondition(definition, false)
+      state = 906
       continue
-    of 852:
+    of 906:
       ex.releaseRetry(fr)
-      state = 825
+      ex.debugEndBranch(definition, false)
+      state = 878
       continue
-    of 851:
+    of 905:
       if not ex.pushBranch(addr bc55):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 858
+      ex.debugCapturePendingTask(132)
+      ex.debugCapturePendingTask(131)
+      ex.debugCapturePendingTask(130)
+      state = 913
       continue
-    of 858:
+    of 913:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9478,57 +12172,77 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 832
+        state = 885
         continue
-      state = 859
+      state = 914
       continue
-    of 832:
+    of 885:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 825
+        ex.debugEndBranch(definition, false)
+        state = 878
         continue
-      state = 858
+      state = 913
       continue
-    of 859:
+    of 914:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 825:
+    of 878:
       # branch hold_position
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 56)
       # (and (== ?inp_order hold))
+      ex.debugBeginCondition(definition, 167)
       # (== ?inp_order hold)
       # (== ?inp_order hold)
+      ex.debugBeginCondition(definition, 168)
       if compare(ex.v[1], sv58, 0'u32):
-        state = 866
+        ex.debugEndCondition(definition, true)
+        state = 921
         continue
-      state = 864
+      ex.debugEndCondition(definition, false)
+      state = 919
       continue
-    of 866:
-      state = 860
+    of 921:
+      ex.debugEndCondition(definition, true)
+      state = 915
       continue
-    of 864:
-      state = 862
+    of 919:
+      state = 917
       continue
-    of 862:
-      state = 861
+    of 917:
+      ex.debugEndCondition(definition, false)
+      state = 916
       continue
-    of 861:
+    of 916:
       ex.releaseRetry(fr)
-      state = 826
+      ex.debugEndBranch(definition, false)
+      state = 879
       continue
-    of 860:
+    of 915:
       if not ex.pushBranch(addr bc56):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 867
+      ex.debugCapturePendingTask(135)
+      ex.debugCapturePendingTask(134)
+      ex.debugCapturePendingTask(133)
+      state = 923
       continue
-    of 867:
+    of 923:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9536,70 +12250,92 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 833
+        state = 886
         continue
-      state = 868
+      state = 924
       continue
-    of 833:
+    of 886:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 826
+        ex.debugEndBranch(definition, false)
+        state = 879
         continue
-      state = 867
+      state = 923
       continue
-    of 868:
+    of 924:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 826:
+    of 879:
       # branch escort
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 57)
       # (and (== ?inp_order escort) (escort_route ?inp_npc ?inp_target ?route))
-      cp872_3 = ex.v[3]
+      cp928_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 169)
       # (== ?inp_order escort)
       # (== ?inp_order escort)
+      ex.debugBeginCondition(definition, 170)
       if compare(ex.v[1], sv59, 0'u32):
-        state = 875
+        ex.debugEndCondition(definition, true)
+        state = 931
         continue
-      state = 873
+      ex.debugEndCondition(definition, false)
+      state = 929
       continue
-    of 875:
+    of 931:
       # (escort_route ?inp_npc ?inp_target ?route)
-      cp877_3 = ex.v[3]
-      fc878 = 0
-      inc fc878
-      if not factChoice171(ex, fc878 - 1):
-        state = 876
+      cp933_3 = ex.v[3]
+      fc934 = 0
+      ex.debugBeginCondition(definition, 171)
+      inc fc934
+      if not factChoice171(ex, fc934 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 932
         continue
-      state = 869
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 925
       continue
-    of 876:
-      ex.v[3] = cp877_3
-      state = 873
+    of 932:
+      ex.v[3] = cp933_3
+      state = 929
       continue
-    of 873:
-      state = 871
+    of 929:
+      state = 927
       continue
-    of 871:
-      ex.v[3] = cp872_3
-      state = 870
+    of 927:
+      ex.v[3] = cp928_3
+      ex.debugEndCondition(definition, false)
+      state = 926
       continue
-    of 870:
+    of 926:
       ex.releaseRetry(fr)
-      state = 827
-      continue
-    of 869:
-      if not ex.pushBranch(addr bc57):
-        ex.releaseRetry(fr)
-        return 0
+      ex.debugEndBranch(definition, false)
       state = 880
       continue
-    of 880:
+    of 925:
+      if not ex.pushBranch(addr bc57):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(137)
+      ex.debugCapturePendingTask(136)
+      state = 937
+      continue
+    of 937:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9607,57 +12343,76 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 834
+        state = 887
         continue
-      state = 881
+      state = 938
       continue
-    of 834:
+    of 887:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 827
+        ex.debugEndBranch(definition, false)
+        state = 880
         continue
-      state = 880
+      state = 937
       continue
-    of 881:
+    of 938:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 827:
+    of 880:
       # branch guard
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 58)
       # (and (== ?inp_order guard))
+      ex.debugBeginCondition(definition, 172)
       # (== ?inp_order guard)
       # (== ?inp_order guard)
+      ex.debugBeginCondition(definition, 173)
       if compare(ex.v[1], sv60, 0'u32):
-        state = 888
+        ex.debugEndCondition(definition, true)
+        state = 945
         continue
-      state = 886
+      ex.debugEndCondition(definition, false)
+      state = 943
       continue
-    of 888:
-      state = 882
+    of 945:
+      ex.debugEndCondition(definition, true)
+      state = 939
       continue
-    of 886:
-      state = 884
+    of 943:
+      state = 941
       continue
-    of 884:
-      state = 883
+    of 941:
+      ex.debugEndCondition(definition, false)
+      state = 940
       continue
-    of 883:
+    of 940:
       ex.releaseRetry(fr)
-      state = 828
+      ex.debugEndBranch(definition, false)
+      state = 881
       continue
-    of 882:
+    of 939:
       if not ex.pushBranch(addr bc58):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 889
+      ex.debugCapturePendingTask(139)
+      ex.debugCapturePendingTask(138)
+      state = 947
       continue
-    of 889:
+    of 947:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9665,77 +12420,99 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 835
+        state = 888
         continue
-      state = 890
+      state = 948
       continue
-    of 835:
+    of 888:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 828
+        ex.debugEndBranch(definition, false)
+        state = 881
         continue
-      state = 889
+      state = 947
       continue
-    of 890:
+    of 948:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 828:
+    of 881:
       # branch interact
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 59)
       # (and (== ?inp_order interact) (interaction_ready ?inp_target))
+      ex.debugBeginCondition(definition, 174)
       # (== ?inp_order interact)
       # (== ?inp_order interact)
+      ex.debugBeginCondition(definition, 175)
       if compare(ex.v[1], sv61, 0'u32):
-        state = 897
+        ex.debugEndCondition(definition, true)
+        state = 955
         continue
-      state = 895
+      ex.debugEndCondition(definition, false)
+      state = 953
       continue
-    of 897:
+    of 955:
       # (interaction_ready ?inp_target)
       # (interaction_ready ?inp_target)
       block:
+        ex.debugBeginCondition(definition, 176)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 900
+          state = 958
           continue
-        state = 898
+        state = 956
         continue
-      state = 900
+      state = 958
       continue
-    of 900:
-      state = 891
+    of 958:
+      ex.debugEndCondition(definition, true)
+      state = 949
       continue
-    of 898:
-      state = 895
+    of 956:
+      state = 953
       continue
-    of 895:
-      state = 893
+    of 953:
+      state = 951
       continue
-    of 893:
-      state = 892
+    of 951:
+      ex.debugEndCondition(definition, false)
+      state = 950
       continue
-    of 892:
+    of 950:
       ex.releaseRetry(fr)
-      state = 829
+      ex.debugEndBranch(definition, false)
+      state = 882
       continue
-    of 891:
+    of 949:
       if not ex.pushBranch(addr bc59):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 901
+      ex.debugCapturePendingTask(142)
+      ex.debugCapturePendingTask(141)
+      ex.debugCapturePendingTask(140)
+      state = 960
       continue
-    of 901:
+    of 960:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9743,57 +12520,76 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 836
+        state = 889
         continue
-      state = 902
+      state = 961
       continue
-    of 836:
+    of 889:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 829
+        ex.debugEndBranch(definition, false)
+        state = 882
         continue
-      state = 901
+      state = 960
       continue
-    of 902:
+    of 961:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 829:
+    of 882:
       # branch move
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 60)
       # (and (== ?inp_order move))
+      ex.debugBeginCondition(definition, 177)
       # (== ?inp_order move)
       # (== ?inp_order move)
+      ex.debugBeginCondition(definition, 178)
       if compare(ex.v[1], sv62, 0'u32):
-        state = 909
+        ex.debugEndCondition(definition, true)
+        state = 968
         continue
-      state = 907
+      ex.debugEndCondition(definition, false)
+      state = 966
       continue
-    of 909:
-      state = 903
+    of 968:
+      ex.debugEndCondition(definition, true)
+      state = 962
       continue
-    of 907:
-      state = 905
+    of 966:
+      state = 964
       continue
-    of 905:
-      state = 904
+    of 964:
+      ex.debugEndCondition(definition, false)
+      state = 963
       continue
-    of 904:
+    of 963:
       ex.releaseRetry(fr)
-      state = 830
+      ex.debugEndBranch(definition, false)
+      state = 883
       continue
-    of 903:
+    of 962:
       if not ex.pushBranch(addr bc60):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 910
+      ex.debugCapturePendingTask(144)
+      ex.debugCapturePendingTask(143)
+      state = 970
       continue
-    of 910:
+    of 970:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9801,36 +12597,47 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 837
+        state = 890
         continue
-      state = 911
+      state = 971
       continue
-    of 837:
+    of 890:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 830
+        ex.debugEndBranch(definition, false)
+        state = 883
         continue
-      state = 910
+      state = 970
       continue
-    of 911:
+    of 971:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 830:
+    of 883:
       # branch unknown_order
-      state = 912
+      ex.debugBeginBranch(definition, 61)
+      state = 972
       continue
-    of 912:
+    of 972:
       if not ex.pushBranch(addr bc61):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 914
+      ex.debugCapturePendingTask(145)
+      state = 974
       continue
-    of 914:
+    of 974:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9838,16 +12645,20 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 838
+        state = 891
         continue
-      state = 915
+      state = 975
       continue
-    of 838:
+    of 891:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 914
+      state = 974
       continue
-    of 915:
+    of 975:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -9855,91 +12666,111 @@ proc method8(ex: Exec): int {.nimcall.} =
 # method9: combat_tick/3
 proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp926_3: Atom
-  var cp926_6: Atom
-  var cp928_6: Atom
-  var fc929: uint32
-  var cp935_3: Atom
-  var fc936: uint32
+  var cp986_3: Atom
+  var cp986_6: Atom
+  var cp988_6: Atom
+  var fc989: uint32
+  var cp995_3: Atom
+  var fc996: uint32
   var state = 0
   case fr.resume
-  of 1: state = 920
-  of 2: state = 921
-  of 3: state = 922
+  of 1: state = 980
+  of 2: state = 981
+  of 3: state = 982
   else: discard
   while true:
     case state
     of 0:
-      state = 917
+      ex.debugBeginMethod(definition, 9)
+      state = 977
       continue
-    of 917:
+    of 977:
       # branch critical_retreat
       ex.saveRetry(fr, ms9)
+      ex.debugBeginBranch(definition, 62)
       # (and (health ?inp_npc ?hp) (<= ?hp 20) (retreat_route ?inp_npc ?route))
-      cp926_3 = ex.v[3]
-      cp926_6 = ex.v[6]
+      cp986_3 = ex.v[3]
+      cp986_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 179)
       # (health ?inp_npc ?hp)
-      cp928_6 = ex.v[6]
-      fc929 = 0
-      state = 930
+      cp988_6 = ex.v[6]
+      fc989 = 0
+      state = 990
       continue
-    of 930:
-      inc fc929
-      if not factChoice180(ex, fc929 - 1):
-        state = 927
+    of 990:
+      ex.debugBeginCondition(definition, 180)
+      inc fc989
+      if not factChoice180(ex, fc989 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 987
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?hp 20)
       # (<= ?hp 20)
+      ex.debugBeginCondition(definition, 181)
       if compare(ex.v[6], sv63, 3'u32):
-        state = 933
+        ex.debugEndCondition(definition, true)
+        state = 993
         continue
-      state = 931
+      ex.debugEndCondition(definition, false)
+      state = 991
       continue
-    of 933:
+    of 993:
       # (retreat_route ?inp_npc ?route)
-      cp935_3 = ex.v[3]
-      fc936 = 0
-      inc fc936
-      if not factChoice182(ex, fc936 - 1):
-        state = 934
+      cp995_3 = ex.v[3]
+      fc996 = 0
+      ex.debugBeginCondition(definition, 182)
+      inc fc996
+      if not factChoice182(ex, fc996 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 994
         continue
-      state = 923
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 983
       continue
-    of 934:
-      ex.v[3] = cp935_3
-      state = 931
+    of 994:
+      ex.v[3] = cp995_3
+      state = 991
       continue
-    of 931:
-      state = 929
+    of 991:
+      state = 989
       continue
-    of 929:
+    of 989:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 927
+        state = 987
         continue
-      ex.v[6] = cp928_6
-      cp928_6 = ex.v[6]
-      state = 930
+      ex.v[6] = cp988_6
+      cp988_6 = ex.v[6]
+      state = 990
       continue
-    of 927:
-      ex.v[6] = cp928_6
-      state = 925
+    of 987:
+      ex.v[6] = cp988_6
+      state = 985
       continue
-    of 925:
-      ex.v[3] = cp926_3
-      ex.v[6] = cp926_6
-      state = 924
+    of 985:
+      ex.v[3] = cp986_3
+      ex.v[6] = cp986_6
+      ex.debugEndCondition(definition, false)
+      state = 984
       continue
-    of 924:
+    of 984:
       ex.releaseRetry(fr)
-      state = 918
+      ex.debugEndBranch(definition, false)
+      state = 978
       continue
-    of 923:
+    of 983:
       if not ex.pushBranch(addr bc62):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 938
+      ex.debugCapturePendingTask(148)
+      ex.debugCapturePendingTask(147)
+      ex.debugCapturePendingTask(146)
+      state = 999
       continue
-    of 938:
+    of 999:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9947,57 +12778,75 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 920
+        state = 980
         continue
-      state = 939
+      state = 1000
       continue
-    of 920:
+    of 980:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms9)
-        state = 918
+        ex.debugEndBranch(definition, false)
+        state = 978
         continue
-      state = 938
+      state = 999
       continue
-    of 939:
+    of 1000:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 918:
+    of 978:
       # branch melee
       ex.saveRetry(fr, ms9)
+      ex.debugBeginBranch(definition, 63)
       # (and (< ?inp_distance 8))
+      ex.debugBeginCondition(definition, 183)
       # (< ?inp_distance 8)
       # (< ?inp_distance 8)
+      ex.debugBeginCondition(definition, 184)
       if compare(ex.v[5], sv64, 2'u32):
-        state = 946
+        ex.debugEndCondition(definition, true)
+        state = 1007
         continue
-      state = 944
+      ex.debugEndCondition(definition, false)
+      state = 1005
       continue
-    of 946:
-      state = 940
+    of 1007:
+      ex.debugEndCondition(definition, true)
+      state = 1001
       continue
-    of 944:
-      state = 942
+    of 1005:
+      state = 1003
       continue
-    of 942:
-      state = 941
+    of 1003:
+      ex.debugEndCondition(definition, false)
+      state = 1002
       continue
-    of 941:
+    of 1002:
       ex.releaseRetry(fr)
-      state = 919
+      ex.debugEndBranch(definition, false)
+      state = 979
       continue
-    of 940:
+    of 1001:
       if not ex.pushBranch(addr bc63):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 947
+      ex.debugCapturePendingTask(149)
+      state = 1009
       continue
-    of 947:
+    of 1009:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10005,54 +12854,72 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 921
+        state = 981
         continue
-      state = 948
+      state = 1010
       continue
-    of 921:
+    of 981:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms9)
-        state = 919
+        ex.debugEndBranch(definition, false)
+        state = 979
         continue
-      state = 947
+      state = 1009
       continue
-    of 948:
+    of 1010:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 919:
+    of 979:
       # branch ranged
+      ex.debugBeginBranch(definition, 64)
       # (and (>= ?inp_distance 8))
+      ex.debugBeginCondition(definition, 185)
       # (>= ?inp_distance 8)
       # (>= ?inp_distance 8)
+      ex.debugBeginCondition(definition, 186)
       if compare(ex.v[5], sv65, 5'u32):
-        state = 955
+        ex.debugEndCondition(definition, true)
+        state = 1017
         continue
-      state = 953
+      ex.debugEndCondition(definition, false)
+      state = 1015
       continue
-    of 955:
-      state = 949
+    of 1017:
+      ex.debugEndCondition(definition, true)
+      state = 1011
       continue
-    of 953:
-      state = 951
+    of 1015:
+      state = 1013
       continue
-    of 951:
-      state = 950
+    of 1013:
+      ex.debugEndCondition(definition, false)
+      state = 1012
       continue
-    of 950:
-      state = 916
+    of 1012:
+      ex.debugEndBranch(definition, false)
+      state = 976
       continue
-    of 949:
+    of 1011:
       if not ex.pushBranch(addr bc64):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 956
+      ex.debugCapturePendingTask(150)
+      state = 1019
       continue
-    of 956:
+    of 1019:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -10060,18 +12927,23 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 922
+        state = 982
         continue
-      state = 957
+      state = 1020
       continue
-    of 922:
+    of 982:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 956
+      state = 1019
       continue
-    of 957:
+    of 1020:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 916:
+    of 976:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -10079,68 +12951,80 @@ proc method9(ex: Exec): int {.nimcall.} =
 # method10: melee_tick/2
 proc method10(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp972_7: Atom
-  var cp977_7: Atom
-  var fc978: uint32
-  var cp991_7: Atom
-  var cp996_7: Atom
-  var fc997: uint32
+  var cp1035_7: Atom
+  var cp1040_7: Atom
+  var fc1041: uint32
+  var cp1055_7: Atom
+  var cp1060_7: Atom
+  var fc1061: uint32
   var state = 0
   case fr.resume
-  of 1: state = 964
-  of 2: state = 965
-  of 3: state = 966
-  of 4: state = 967
-  of 5: state = 968
+  of 1: state = 1027
+  of 2: state = 1028
+  of 3: state = 1029
+  of 4: state = 1030
+  of 5: state = 1031
   else: discard
   while true:
     case state
     of 0:
-      state = 959
+      ex.debugBeginMethod(definition, 10)
+      state = 1022
       continue
-    of 959:
+    of 1022:
       # branch parry_counter
       ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 65)
       # (and (enemy_attacking ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 30) (weapon_equipped ?inp_npc melee))
-      cp972_7 = ex.v[7]
+      cp1035_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 187)
       # (enemy_attacking ?inp_enemy)
       # (enemy_attacking ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 188)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 975
+          state = 1038
           continue
-        state = 973
+        state = 1036
         continue
-      state = 975
+      state = 1038
       continue
-    of 975:
+    of 1038:
       # (stamina ?inp_npc ?amount)
-      cp977_7 = ex.v[7]
-      fc978 = 0
-      state = 979
+      cp1040_7 = ex.v[7]
+      fc1041 = 0
+      state = 1042
       continue
-    of 979:
-      inc fc978
-      if not factChoice189(ex, fc978 - 1):
-        state = 976
+    of 1042:
+      ex.debugBeginCondition(definition, 189)
+      inc fc1041
+      if not factChoice189(ex, fc1041 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1039
         continue
+      ex.debugEndCondition(definition, true)
       # (>= ?amount 30)
       # (>= ?amount 30)
+      ex.debugBeginCondition(definition, 190)
       if compare(ex.v[7], sv66, 5'u32):
-        state = 982
+        ex.debugEndCondition(definition, true)
+        state = 1045
         continue
-      state = 980
+      ex.debugEndCondition(definition, false)
+      state = 1043
       continue
-    of 982:
+    of 1045:
       # (weapon_equipped ?inp_npc melee)
       # (weapon_equipped ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 191)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10148,52 +13032,61 @@ proc method10(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv67): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 985
+          state = 1048
           continue
-        state = 983
+        state = 1046
         continue
-      state = 985
+      state = 1048
       continue
-    of 985:
-      state = 969
+    of 1048:
+      ex.debugEndCondition(definition, true)
+      state = 1032
       continue
-    of 983:
-      state = 980
+    of 1046:
+      state = 1043
       continue
-    of 980:
-      state = 978
+    of 1043:
+      state = 1041
       continue
-    of 978:
+    of 1041:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 976
+        state = 1039
         continue
-      ex.v[7] = cp977_7
-      cp977_7 = ex.v[7]
-      state = 979
+      ex.v[7] = cp1040_7
+      cp1040_7 = ex.v[7]
+      state = 1042
       continue
-    of 976:
-      ex.v[7] = cp977_7
-      state = 973
+    of 1039:
+      ex.v[7] = cp1040_7
+      state = 1036
       continue
-    of 973:
-      state = 971
+    of 1036:
+      state = 1034
       continue
-    of 971:
-      ex.v[7] = cp972_7
-      state = 970
+    of 1034:
+      ex.v[7] = cp1035_7
+      ex.debugEndCondition(definition, false)
+      state = 1033
       continue
-    of 970:
+    of 1033:
       ex.releaseRetry(fr)
-      state = 960
+      ex.debugEndBranch(definition, false)
+      state = 1023
       continue
-    of 969:
+    of 1032:
       if not ex.pushBranch(addr bc65):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 986
+      ex.debugCapturePendingTask(153)
+      ex.debugCapturePendingTask(152)
+      ex.debugCapturePendingTask(151)
+      state = 1050
       continue
-    of 986:
+    of 1050:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10201,69 +13094,87 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 964
+        state = 1027
         continue
-      state = 987
+      state = 1051
       continue
-    of 964:
+    of 1027:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms10)
-        state = 960
+        ex.debugEndBranch(definition, false)
+        state = 1023
         continue
-      state = 986
+      state = 1050
       continue
-    of 987:
+    of 1051:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 960:
+    of 1023:
       # branch heavy_strike
       ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 66)
       # (and (enemy_staggered ?inp_enemy) (stamina ?inp_npc ?amount) (>= ?amount 45) (weapon_equipped ?inp_npc melee))
-      cp991_7 = ex.v[7]
+      cp1055_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 192)
       # (enemy_staggered ?inp_enemy)
       # (enemy_staggered ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 193)
         let ft = ex.factTables[8]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 994
+          state = 1058
           continue
-        state = 992
+        state = 1056
         continue
-      state = 994
+      state = 1058
       continue
-    of 994:
+    of 1058:
       # (stamina ?inp_npc ?amount)
-      cp996_7 = ex.v[7]
-      fc997 = 0
-      state = 998
+      cp1060_7 = ex.v[7]
+      fc1061 = 0
+      state = 1062
       continue
-    of 998:
-      inc fc997
-      if not factChoice194(ex, fc997 - 1):
-        state = 995
+    of 1062:
+      ex.debugBeginCondition(definition, 194)
+      inc fc1061
+      if not factChoice194(ex, fc1061 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1059
         continue
+      ex.debugEndCondition(definition, true)
       # (>= ?amount 45)
       # (>= ?amount 45)
+      ex.debugBeginCondition(definition, 195)
       if compare(ex.v[7], sv68, 5'u32):
-        state = 1001
+        ex.debugEndCondition(definition, true)
+        state = 1065
         continue
-      state = 999
+      ex.debugEndCondition(definition, false)
+      state = 1063
       continue
-    of 1001:
+    of 1065:
       # (weapon_equipped ?inp_npc melee)
       # (weapon_equipped ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 196)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10271,52 +13182,59 @@ proc method10(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv69): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1004
+          state = 1068
           continue
-        state = 1002
+        state = 1066
         continue
-      state = 1004
+      state = 1068
       continue
-    of 1004:
-      state = 988
+    of 1068:
+      ex.debugEndCondition(definition, true)
+      state = 1052
       continue
-    of 1002:
-      state = 999
+    of 1066:
+      state = 1063
       continue
-    of 999:
-      state = 997
+    of 1063:
+      state = 1061
       continue
-    of 997:
+    of 1061:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 995
+        state = 1059
         continue
-      ex.v[7] = cp996_7
-      cp996_7 = ex.v[7]
-      state = 998
+      ex.v[7] = cp1060_7
+      cp1060_7 = ex.v[7]
+      state = 1062
       continue
-    of 995:
-      ex.v[7] = cp996_7
-      state = 992
+    of 1059:
+      ex.v[7] = cp1060_7
+      state = 1056
       continue
-    of 992:
-      state = 990
+    of 1056:
+      state = 1054
       continue
-    of 990:
-      ex.v[7] = cp991_7
-      state = 989
+    of 1054:
+      ex.v[7] = cp1055_7
+      ex.debugEndCondition(definition, false)
+      state = 1053
       continue
-    of 989:
+    of 1053:
       ex.releaseRetry(fr)
-      state = 961
+      ex.debugEndBranch(definition, false)
+      state = 1024
       continue
-    of 988:
+    of 1052:
       if not ex.pushBranch(addr bc66):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1005
+      ex.debugCapturePendingTask(154)
+      state = 1070
       continue
-    of 1005:
+    of 1070:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10324,33 +13242,43 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 965
+        state = 1028
         continue
-      state = 1006
+      state = 1071
       continue
-    of 965:
+    of 1028:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms10)
-        state = 961
+        ex.debugEndBranch(definition, false)
+        state = 1024
         continue
-      state = 1005
+      state = 1070
       continue
-    of 1006:
+    of 1071:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 961:
+    of 1024:
       # branch quick_strike
       ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 67)
       # (and (weapon_equipped ?inp_npc melee))
+      ex.debugBeginCondition(definition, 197)
       # (weapon_equipped ?inp_npc melee)
       # (weapon_equipped ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 198)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10358,33 +13286,41 @@ proc method10(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv70): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1013
+          state = 1078
           continue
-        state = 1011
+        state = 1076
         continue
-      state = 1013
+      state = 1078
       continue
-    of 1013:
-      state = 1007
+    of 1078:
+      ex.debugEndCondition(definition, true)
+      state = 1072
       continue
-    of 1011:
-      state = 1009
+    of 1076:
+      state = 1074
       continue
-    of 1009:
-      state = 1008
+    of 1074:
+      ex.debugEndCondition(definition, false)
+      state = 1073
       continue
-    of 1008:
+    of 1073:
       ex.releaseRetry(fr)
-      state = 962
+      ex.debugEndBranch(definition, false)
+      state = 1025
       continue
-    of 1007:
+    of 1072:
       if not ex.pushBranch(addr bc67):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1014
+      ex.debugCapturePendingTask(156)
+      ex.debugCapturePendingTask(155)
+      state = 1080
       continue
-    of 1014:
+    of 1080:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10392,33 +13328,43 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 966
+        state = 1029
         continue
-      state = 1015
+      state = 1081
       continue
-    of 966:
+    of 1029:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms10)
-        state = 962
+        ex.debugEndBranch(definition, false)
+        state = 1025
         continue
-      state = 1014
+      state = 1080
       continue
-    of 1015:
+    of 1081:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 962:
+    of 1025:
       # branch draw_melee
       ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 68)
       # (and (weapon_available ?inp_npc melee))
+      ex.debugBeginCondition(definition, 199)
       # (weapon_available ?inp_npc melee)
       # (weapon_available ?inp_npc melee)
       block:
+        ex.debugBeginCondition(definition, 200)
         let ft = ex.factTables[9]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10426,33 +13372,41 @@ proc method10(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv71): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1022
+          state = 1088
           continue
-        state = 1020
+        state = 1086
         continue
-      state = 1022
+      state = 1088
       continue
-    of 1022:
-      state = 1016
+    of 1088:
+      ex.debugEndCondition(definition, true)
+      state = 1082
       continue
-    of 1020:
-      state = 1018
+    of 1086:
+      state = 1084
       continue
-    of 1018:
-      state = 1017
+    of 1084:
+      ex.debugEndCondition(definition, false)
+      state = 1083
       continue
-    of 1017:
+    of 1083:
       ex.releaseRetry(fr)
-      state = 963
+      ex.debugEndBranch(definition, false)
+      state = 1026
       continue
-    of 1016:
+    of 1082:
       if not ex.pushBranch(addr bc68):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1023
+      ex.debugCapturePendingTask(158)
+      ex.debugCapturePendingTask(157)
+      state = 1090
       continue
-    of 1023:
+    of 1090:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10460,36 +13414,48 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 967
+        state = 1030
         continue
-      state = 1024
+      state = 1091
       continue
-    of 967:
+    of 1030:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms10)
-        state = 963
+        ex.debugEndBranch(definition, false)
+        state = 1026
         continue
-      state = 1023
+      state = 1090
       continue
-    of 1024:
+    of 1091:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 963:
+    of 1026:
       # branch improvised_defense
-      state = 1025
+      ex.debugBeginBranch(definition, 69)
+      state = 1092
       continue
-    of 1025:
+    of 1092:
       if not ex.pushBranch(addr bc69):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1027
+      ex.debugCapturePendingTask(160)
+      ex.debugCapturePendingTask(159)
+      state = 1094
       continue
-    of 1027:
+    of 1094:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -10497,16 +13463,20 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 968
+        state = 1031
         continue
-      state = 1028
+      state = 1095
       continue
-    of 968:
+    of 1031:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1027
+      state = 1094
       continue
-    of 1028:
+    of 1095:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -10514,92 +13484,101 @@ proc method10(ex: Exec): int {.nimcall.} =
 # method11: ranged_tick/3
 proc method11(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1051_3: Atom
-  var cp1051_8: Atom
-  var cp1056_3: Atom
-  var fc1057: uint32
-  var cp1063_8: Atom
-  var fc1064: uint32
-  var cp1074_8: Atom
-  var cp1074_9: Atom
-  var cp1079_9: Atom
-  var fc1080: uint32
-  var cp1092_8: Atom
-  var fc1093: uint32
-  var cp1103_8: Atom
-  var cp1103_9: Atom
-  var cp1111_8: Atom
-  var fc1112: uint32
-  var cp1118_9: Atom
-  var fc1119: uint32
-  var cp1126_8: Atom
-  var cp1134_8: Atom
-  var fc1135: uint32
-  var cp1145_8: Atom
-  var cp1150_8: Atom
-  var fc1151: uint32
-  var cp1167_8: Atom
-  var cp1172_8: Atom
-  var fc1173: uint32
-  var cp1186_8: Atom
-  var cp1191_8: Atom
-  var fc1192: uint32
-  var cp1202_3: Atom
-  var cp1204_3: Atom
-  var fc1205: uint32
+  var cp1118_3: Atom
+  var cp1118_8: Atom
+  var cp1123_3: Atom
+  var fc1124: uint32
+  var cp1130_8: Atom
+  var fc1131: uint32
+  var cp1142_8: Atom
+  var cp1142_9: Atom
+  var cp1147_9: Atom
+  var fc1148: uint32
+  var cp1161_8: Atom
+  var fc1162: uint32
+  var cp1173_8: Atom
+  var cp1173_9: Atom
+  var cp1181_8: Atom
+  var fc1182: uint32
+  var cp1188_9: Atom
+  var fc1189: uint32
+  var cp1197_8: Atom
+  var cp1205_8: Atom
+  var fc1206: uint32
+  var cp1217_8: Atom
+  var cp1222_8: Atom
+  var fc1223: uint32
+  var cp1240_8: Atom
+  var cp1245_8: Atom
+  var fc1246: uint32
+  var cp1260_8: Atom
+  var cp1265_8: Atom
+  var fc1266: uint32
+  var cp1277_3: Atom
+  var cp1279_3: Atom
+  var fc1280: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1039
-  of 2: state = 1040
-  of 3: state = 1041
-  of 4: state = 1042
-  of 5: state = 1043
-  of 6: state = 1044
-  of 7: state = 1045
-  of 8: state = 1046
-  of 9: state = 1047
+  of 1: state = 1106
+  of 2: state = 1107
+  of 3: state = 1108
+  of 4: state = 1109
+  of 5: state = 1110
+  of 6: state = 1111
+  of 7: state = 1112
+  of 8: state = 1113
+  of 9: state = 1114
   else: discard
   while true:
     case state
     of 0:
-      state = 1030
+      ex.debugBeginMethod(definition, 11)
+      state = 1097
       continue
-    of 1030:
+    of 1097:
       # branch flank_suppressed_target
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 70)
       # (and (enemy_suppressed ?inp_enemy) (flank_route ?inp_npc ?inp_enemy ?route) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp1051_3 = ex.v[3]
-      cp1051_8 = ex.v[8]
+      cp1118_3 = ex.v[3]
+      cp1118_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 201)
       # (enemy_suppressed ?inp_enemy)
       # (enemy_suppressed ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 202)
         let ft = ex.factTables[10]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1054
+          state = 1121
           continue
-        state = 1052
+        state = 1119
         continue
-      state = 1054
+      state = 1121
       continue
-    of 1054:
+    of 1121:
       # (flank_route ?inp_npc ?inp_enemy ?route)
-      cp1056_3 = ex.v[3]
-      fc1057 = 0
-      state = 1058
+      cp1123_3 = ex.v[3]
+      fc1124 = 0
+      state = 1125
       continue
-    of 1058:
-      inc fc1057
-      if not factChoice203(ex, fc1057 - 1):
-        state = 1055
+    of 1125:
+      ex.debugBeginCondition(definition, 203)
+      inc fc1124
+      if not factChoice203(ex, fc1124 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1122
         continue
+      ex.debugEndCondition(definition, true)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 204)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10607,83 +13586,98 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv73): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1061
+          state = 1128
           continue
-        state = 1059
+        state = 1126
         continue
-      state = 1061
+      state = 1128
       continue
-    of 1061:
+    of 1128:
       # (ammo ?inp_npc ?count)
-      cp1063_8 = ex.v[8]
-      fc1064 = 0
-      state = 1065
+      cp1130_8 = ex.v[8]
+      fc1131 = 0
+      state = 1132
       continue
-    of 1065:
-      inc fc1064
-      if not factChoice205(ex, fc1064 - 1):
-        state = 1062
+    of 1132:
+      ex.debugBeginCondition(definition, 205)
+      inc fc1131
+      if not factChoice205(ex, fc1131 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1129
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 206)
       if compare(ex.v[8], sv74, 4'u32):
-        state = 1068
+        ex.debugEndCondition(definition, true)
+        state = 1135
         continue
-      state = 1066
+      ex.debugEndCondition(definition, false)
+      state = 1133
       continue
-    of 1068:
-      state = 1048
+    of 1135:
+      ex.debugEndCondition(definition, true)
+      state = 1115
       continue
-    of 1066:
-      state = 1064
+    of 1133:
+      state = 1131
       continue
-    of 1064:
+    of 1131:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1062
+        state = 1129
         continue
-      ex.v[8] = cp1063_8
-      cp1063_8 = ex.v[8]
-      state = 1065
+      ex.v[8] = cp1130_8
+      cp1130_8 = ex.v[8]
+      state = 1132
       continue
-    of 1062:
-      ex.v[8] = cp1063_8
-      state = 1059
+    of 1129:
+      ex.v[8] = cp1130_8
+      state = 1126
       continue
-    of 1059:
-      state = 1057
+    of 1126:
+      state = 1124
       continue
-    of 1057:
+    of 1124:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1055
+        state = 1122
         continue
-      ex.v[3] = cp1056_3
-      cp1056_3 = ex.v[3]
-      state = 1058
+      ex.v[3] = cp1123_3
+      cp1123_3 = ex.v[3]
+      state = 1125
       continue
-    of 1055:
-      ex.v[3] = cp1056_3
-      state = 1052
+    of 1122:
+      ex.v[3] = cp1123_3
+      state = 1119
       continue
-    of 1052:
-      state = 1050
+    of 1119:
+      state = 1117
       continue
-    of 1050:
-      ex.v[3] = cp1051_3
-      ex.v[8] = cp1051_8
-      state = 1049
+    of 1117:
+      ex.v[3] = cp1118_3
+      ex.v[8] = cp1118_8
+      ex.debugEndCondition(definition, false)
+      state = 1116
       continue
-    of 1049:
+    of 1116:
       ex.releaseRetry(fr)
-      state = 1031
+      ex.debugEndBranch(definition, false)
+      state = 1098
       continue
-    of 1048:
+    of 1115:
       if not ex.pushBranch(addr bc70):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1069
+      ex.debugCapturePendingTask(163)
+      ex.debugCapturePendingTask(162)
+      ex.debugCapturePendingTask(161)
+      state = 1137
       continue
-    of 1069:
+    of 1137:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10691,86 +13685,105 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1039
+        state = 1106
         continue
-      state = 1070
+      state = 1138
       continue
-    of 1039:
+    of 1106:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1031
+        ex.debugEndBranch(definition, false)
+        state = 1098
         continue
-      state = 1069
+      state = 1137
       continue
-    of 1070:
+    of 1138:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1031:
+    of 1098:
       # branch take_cover_and_fire
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 71)
       # (and (under_fire ?inp_npc) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)) (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp1074_8 = ex.v[8]
-      cp1074_9 = ex.v[9]
+      cp1142_8 = ex.v[8]
+      cp1142_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 207)
       # (under_fire ?inp_npc)
       # (under_fire ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 208)
         let ft = ex.factTables[0]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1077
+          state = 1145
           continue
-        state = 1075
+        state = 1143
         continue
-      state = 1077
+      state = 1145
       continue
-    of 1077:
+    of 1145:
       # (cover_available ?inp_npc ?cover)
-      cp1079_9 = ex.v[9]
-      fc1080 = 0
-      state = 1081
+      cp1147_9 = ex.v[9]
+      fc1148 = 0
+      state = 1149
       continue
-    of 1081:
-      inc fc1080
-      if not factChoice209(ex, fc1080 - 1):
-        state = 1078
+    of 1149:
+      ex.debugBeginCondition(definition, 209)
+      inc fc1148
+      if not factChoice209(ex, fc1148 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1146
         continue
+      ex.debugEndCondition(definition, true)
       # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 210)
       # (cover_compromised ?cover)
       # (cover_compromised ?cover)
       block:
+        ex.debugBeginCondition(definition, 211)
         let ft = ex.factTables[14]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[9]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1087
+          state = 1155
           continue
-        state = 1085
+        state = 1153
         continue
-      state = 1087
+      state = 1155
       continue
-    of 1087:
-      state = 1082
+    of 1155:
+      state = 1150
       continue
-    of 1085:
-      state = 1084
+    of 1153:
+      state = 1152
       continue
-    of 1084:
+    of 1152:
+      ex.debugEndCondition(definition, true)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 212)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10778,86 +13791,106 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv75): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1090
+          state = 1159
           continue
-        state = 1088
+        state = 1157
         continue
-      state = 1090
+      state = 1159
       continue
-    of 1090:
+    of 1159:
       # (ammo ?inp_npc ?count)
-      cp1092_8 = ex.v[8]
-      fc1093 = 0
-      state = 1094
+      cp1161_8 = ex.v[8]
+      fc1162 = 0
+      state = 1163
       continue
-    of 1094:
-      inc fc1093
-      if not factChoice213(ex, fc1093 - 1):
-        state = 1091
+    of 1163:
+      ex.debugBeginCondition(definition, 213)
+      inc fc1162
+      if not factChoice213(ex, fc1162 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1160
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 214)
       if compare(ex.v[8], sv76, 4'u32):
-        state = 1097
+        ex.debugEndCondition(definition, true)
+        state = 1166
         continue
-      state = 1095
+      ex.debugEndCondition(definition, false)
+      state = 1164
       continue
-    of 1097:
-      state = 1071
+    of 1166:
+      ex.debugEndCondition(definition, true)
+      state = 1139
       continue
-    of 1095:
-      state = 1093
+    of 1164:
+      state = 1162
       continue
-    of 1093:
+    of 1162:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1091
+        state = 1160
         continue
-      ex.v[8] = cp1092_8
-      cp1092_8 = ex.v[8]
-      state = 1094
+      ex.v[8] = cp1161_8
+      cp1161_8 = ex.v[8]
+      state = 1163
       continue
-    of 1091:
-      ex.v[8] = cp1092_8
-      state = 1088
+    of 1160:
+      ex.v[8] = cp1161_8
+      state = 1157
       continue
-    of 1088:
-      state = 1082
+    of 1157:
+      state = 1156
       continue
-    of 1082:
-      state = 1080
+    of 1156:
+      ex.debugBeginCondition(definition, 210)
+      state = 1150
       continue
-    of 1080:
+    of 1150:
+      ex.debugEndCondition(definition, false)
+      state = 1148
+      continue
+    of 1148:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1078
+        state = 1146
         continue
-      ex.v[9] = cp1079_9
-      cp1079_9 = ex.v[9]
-      state = 1081
+      ex.v[9] = cp1147_9
+      cp1147_9 = ex.v[9]
+      state = 1149
       continue
-    of 1078:
-      ex.v[9] = cp1079_9
-      state = 1075
+    of 1146:
+      ex.v[9] = cp1147_9
+      state = 1143
       continue
-    of 1075:
-      state = 1073
+    of 1143:
+      state = 1141
       continue
-    of 1073:
-      ex.v[8] = cp1074_8
-      ex.v[9] = cp1074_9
-      state = 1072
+    of 1141:
+      ex.v[8] = cp1142_8
+      ex.v[9] = cp1142_9
+      ex.debugEndCondition(definition, false)
+      state = 1140
       continue
-    of 1072:
+    of 1140:
       ex.releaseRetry(fr)
-      state = 1032
+      ex.debugEndBranch(definition, false)
+      state = 1099
       continue
-    of 1071:
+    of 1139:
       if not ex.pushBranch(addr bc71):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1098
+      ex.debugCapturePendingTask(166)
+      ex.debugCapturePendingTask(165)
+      ex.debugCapturePendingTask(164)
+      state = 1168
       continue
-    of 1098:
+    of 1168:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -10865,35 +13898,45 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1040
+        state = 1107
         continue
-      state = 1099
+      state = 1169
       continue
-    of 1040:
+    of 1107:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1032
+        ex.debugEndBranch(definition, false)
+        state = 1099
         continue
-      state = 1098
+      state = 1168
       continue
-    of 1099:
+    of 1169:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1032:
+    of 1099:
       # branch reload_in_cover
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 72)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0) (cover_available ?inp_npc ?cover))
-      cp1103_8 = ex.v[8]
-      cp1103_9 = ex.v[9]
+      cp1173_8 = ex.v[8]
+      cp1173_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 215)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 216)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10901,17 +13944,19 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv77): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1106
+          state = 1176
           continue
-        state = 1104
+        state = 1174
         continue
-      state = 1106
+      state = 1176
       continue
-    of 1106:
+    of 1176:
       # (ammo ?inp_npc 0)
       # (ammo ?inp_npc 0)
       block:
+        ex.debugBeginCondition(definition, 217)
         let ft = ex.factTables[12]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -10919,82 +13964,99 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv78): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1109
+          state = 1179
           continue
-        state = 1107
+        state = 1177
         continue
-      state = 1109
+      state = 1179
       continue
-    of 1109:
+    of 1179:
       # (reserve_ammo ?inp_npc ?count)
-      cp1111_8 = ex.v[8]
-      fc1112 = 0
-      state = 1113
+      cp1181_8 = ex.v[8]
+      fc1182 = 0
+      state = 1183
       continue
-    of 1113:
-      inc fc1112
-      if not factChoice218(ex, fc1112 - 1):
-        state = 1110
+    of 1183:
+      ex.debugBeginCondition(definition, 218)
+      inc fc1182
+      if not factChoice218(ex, fc1182 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1180
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 219)
       if compare(ex.v[8], sv79, 4'u32):
-        state = 1116
+        ex.debugEndCondition(definition, true)
+        state = 1186
         continue
-      state = 1114
+      ex.debugEndCondition(definition, false)
+      state = 1184
       continue
-    of 1116:
+    of 1186:
       # (cover_available ?inp_npc ?cover)
-      cp1118_9 = ex.v[9]
-      fc1119 = 0
-      inc fc1119
-      if not factChoice220(ex, fc1119 - 1):
-        state = 1117
+      cp1188_9 = ex.v[9]
+      fc1189 = 0
+      ex.debugBeginCondition(definition, 220)
+      inc fc1189
+      if not factChoice220(ex, fc1189 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1187
         continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1170
+      continue
+    of 1187:
+      ex.v[9] = cp1188_9
+      state = 1184
+      continue
+    of 1184:
+      state = 1182
+      continue
+    of 1182:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1180
+        continue
+      ex.v[8] = cp1181_8
+      cp1181_8 = ex.v[8]
+      state = 1183
+      continue
+    of 1180:
+      ex.v[8] = cp1181_8
+      state = 1177
+      continue
+    of 1177:
+      state = 1174
+      continue
+    of 1174:
+      state = 1172
+      continue
+    of 1172:
+      ex.v[8] = cp1173_8
+      ex.v[9] = cp1173_9
+      ex.debugEndCondition(definition, false)
+      state = 1171
+      continue
+    of 1171:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 1100
       continue
-    of 1117:
-      ex.v[9] = cp1118_9
-      state = 1114
-      continue
-    of 1114:
-      state = 1112
-      continue
-    of 1112:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1110
-        continue
-      ex.v[8] = cp1111_8
-      cp1111_8 = ex.v[8]
-      state = 1113
-      continue
-    of 1110:
-      ex.v[8] = cp1111_8
-      state = 1107
-      continue
-    of 1107:
-      state = 1104
-      continue
-    of 1104:
-      state = 1102
-      continue
-    of 1102:
-      ex.v[8] = cp1103_8
-      ex.v[9] = cp1103_9
-      state = 1101
-      continue
-    of 1101:
-      ex.releaseRetry(fr)
-      state = 1033
-      continue
-    of 1100:
+    of 1170:
       if not ex.pushBranch(addr bc72):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1121
+      ex.debugCapturePendingTask(168)
+      ex.debugCapturePendingTask(167)
+      state = 1192
       continue
-    of 1121:
+    of 1192:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11002,34 +14064,44 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1041
+        state = 1108
         continue
-      state = 1122
+      state = 1193
       continue
-    of 1041:
+    of 1108:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1033
+        ex.debugEndBranch(definition, false)
+        state = 1100
         continue
-      state = 1121
+      state = 1192
       continue
-    of 1122:
+    of 1193:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1033:
+    of 1100:
       # branch reload
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 73)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc 0) (reserve_ammo ?inp_npc ?count) (> ?count 0))
-      cp1126_8 = ex.v[8]
+      cp1197_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 221)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 222)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11037,17 +14109,19 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv81): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1129
+          state = 1200
           continue
-        state = 1127
+        state = 1198
         continue
-      state = 1129
+      state = 1200
       continue
-    of 1129:
+    of 1200:
       # (ammo ?inp_npc 0)
       # (ammo ?inp_npc 0)
       block:
+        ex.debugBeginCondition(definition, 223)
         let ft = ex.factTables[12]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11055,70 +14129,83 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv82): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1132
+          state = 1203
           continue
-        state = 1130
+        state = 1201
         continue
-      state = 1132
+      state = 1203
       continue
-    of 1132:
+    of 1203:
       # (reserve_ammo ?inp_npc ?count)
-      cp1134_8 = ex.v[8]
-      fc1135 = 0
-      state = 1136
+      cp1205_8 = ex.v[8]
+      fc1206 = 0
+      state = 1207
       continue
-    of 1136:
-      inc fc1135
-      if not factChoice224(ex, fc1135 - 1):
-        state = 1133
+    of 1207:
+      ex.debugBeginCondition(definition, 224)
+      inc fc1206
+      if not factChoice224(ex, fc1206 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1204
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 225)
       if compare(ex.v[8], sv83, 4'u32):
-        state = 1139
+        ex.debugEndCondition(definition, true)
+        state = 1210
         continue
-      state = 1137
+      ex.debugEndCondition(definition, false)
+      state = 1208
       continue
-    of 1139:
-      state = 1123
+    of 1210:
+      ex.debugEndCondition(definition, true)
+      state = 1194
       continue
-    of 1137:
-      state = 1135
+    of 1208:
+      state = 1206
       continue
-    of 1135:
+    of 1206:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1133
+        state = 1204
         continue
-      ex.v[8] = cp1134_8
-      cp1134_8 = ex.v[8]
-      state = 1136
+      ex.v[8] = cp1205_8
+      cp1205_8 = ex.v[8]
+      state = 1207
       continue
-    of 1133:
-      ex.v[8] = cp1134_8
-      state = 1130
+    of 1204:
+      ex.v[8] = cp1205_8
+      state = 1201
       continue
-    of 1130:
-      state = 1127
+    of 1201:
+      state = 1198
       continue
-    of 1127:
-      state = 1125
+    of 1198:
+      state = 1196
       continue
-    of 1125:
-      ex.v[8] = cp1126_8
-      state = 1124
+    of 1196:
+      ex.v[8] = cp1197_8
+      ex.debugEndCondition(definition, false)
+      state = 1195
       continue
-    of 1124:
+    of 1195:
       ex.releaseRetry(fr)
-      state = 1034
+      ex.debugEndBranch(definition, false)
+      state = 1101
       continue
-    of 1123:
+    of 1194:
       if not ex.pushBranch(addr bc73):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1140
+      ex.debugCapturePendingTask(169)
+      state = 1212
       continue
-    of 1140:
+    of 1212:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11126,34 +14213,44 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1042
+        state = 1109
         continue
-      state = 1141
+      state = 1213
       continue
-    of 1042:
+    of 1109:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1034
+        ex.debugEndBranch(definition, false)
+        state = 1101
         continue
-      state = 1140
+      state = 1212
       continue
-    of 1141:
+    of 1213:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1034:
+    of 1101:
       # branch precision_shot
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 74)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (>= ?inp_distance 30) (clear_shot ?inp_npc ?inp_enemy))
-      cp1145_8 = ex.v[8]
+      cp1217_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 226)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 227)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11161,43 +14258,54 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv85): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1148
+          state = 1220
           continue
-        state = 1146
+        state = 1218
         continue
-      state = 1148
+      state = 1220
       continue
-    of 1148:
+    of 1220:
       # (ammo ?inp_npc ?count)
-      cp1150_8 = ex.v[8]
-      fc1151 = 0
-      state = 1152
+      cp1222_8 = ex.v[8]
+      fc1223 = 0
+      state = 1224
       continue
-    of 1152:
-      inc fc1151
-      if not factChoice228(ex, fc1151 - 1):
-        state = 1149
+    of 1224:
+      ex.debugBeginCondition(definition, 228)
+      inc fc1223
+      if not factChoice228(ex, fc1223 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1221
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 229)
       if compare(ex.v[8], sv86, 4'u32):
-        state = 1155
+        ex.debugEndCondition(definition, true)
+        state = 1227
         continue
-      state = 1153
+      ex.debugEndCondition(definition, false)
+      state = 1225
       continue
-    of 1155:
+    of 1227:
       # (>= ?inp_distance 30)
       # (>= ?inp_distance 30)
+      ex.debugBeginCondition(definition, 230)
       if compare(ex.v[5], sv87, 5'u32):
-        state = 1158
+        ex.debugEndCondition(definition, true)
+        state = 1230
         continue
-      state = 1156
+      ex.debugEndCondition(definition, false)
+      state = 1228
       continue
-    of 1158:
+    of 1230:
       # (clear_shot ?inp_npc ?inp_enemy)
       # (clear_shot ?inp_npc ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 231)
         let ft = ex.factTables[16]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11205,55 +14313,63 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1161
+          state = 1233
           continue
-        state = 1159
+        state = 1231
         continue
-      state = 1161
+      state = 1233
       continue
-    of 1161:
-      state = 1142
+    of 1233:
+      ex.debugEndCondition(definition, true)
+      state = 1214
       continue
-    of 1159:
-      state = 1156
+    of 1231:
+      state = 1228
       continue
-    of 1156:
-      state = 1153
+    of 1228:
+      state = 1225
       continue
-    of 1153:
-      state = 1151
+    of 1225:
+      state = 1223
       continue
-    of 1151:
+    of 1223:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1149
+        state = 1221
         continue
-      ex.v[8] = cp1150_8
-      cp1150_8 = ex.v[8]
-      state = 1152
+      ex.v[8] = cp1222_8
+      cp1222_8 = ex.v[8]
+      state = 1224
       continue
-    of 1149:
-      ex.v[8] = cp1150_8
-      state = 1146
+    of 1221:
+      ex.v[8] = cp1222_8
+      state = 1218
       continue
-    of 1146:
-      state = 1144
+    of 1218:
+      state = 1216
       continue
-    of 1144:
-      ex.v[8] = cp1145_8
-      state = 1143
+    of 1216:
+      ex.v[8] = cp1217_8
+      ex.debugEndCondition(definition, false)
+      state = 1215
       continue
-    of 1143:
+    of 1215:
       ex.releaseRetry(fr)
-      state = 1035
+      ex.debugEndBranch(definition, false)
+      state = 1102
       continue
-    of 1142:
+    of 1214:
       if not ex.pushBranch(addr bc74):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1162
+      ex.debugCapturePendingTask(171)
+      ex.debugCapturePendingTask(170)
+      state = 1235
       continue
-    of 1162:
+    of 1235:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11261,34 +14377,44 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1043
+        state = 1110
         continue
-      state = 1163
+      state = 1236
       continue
-    of 1043:
+    of 1110:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1035
+        ex.debugEndBranch(definition, false)
+        state = 1102
         continue
-      state = 1162
+      state = 1235
       continue
-    of 1163:
+    of 1236:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1035:
+    of 1102:
       # branch controlled_burst
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 75)
       # (and (weapon_equipped ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0) (clear_shot ?inp_npc ?inp_enemy))
-      cp1167_8 = ex.v[8]
+      cp1240_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 232)
       # (weapon_equipped ?inp_npc ranged)
       # (weapon_equipped ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 233)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11296,35 +14422,43 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv88): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1170
+          state = 1243
           continue
-        state = 1168
+        state = 1241
         continue
-      state = 1170
+      state = 1243
       continue
-    of 1170:
+    of 1243:
       # (ammo ?inp_npc ?count)
-      cp1172_8 = ex.v[8]
-      fc1173 = 0
-      state = 1174
+      cp1245_8 = ex.v[8]
+      fc1246 = 0
+      state = 1247
       continue
-    of 1174:
-      inc fc1173
-      if not factChoice234(ex, fc1173 - 1):
-        state = 1171
+    of 1247:
+      ex.debugBeginCondition(definition, 234)
+      inc fc1246
+      if not factChoice234(ex, fc1246 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1244
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 235)
       if compare(ex.v[8], sv89, 4'u32):
-        state = 1177
+        ex.debugEndCondition(definition, true)
+        state = 1250
         continue
-      state = 1175
+      ex.debugEndCondition(definition, false)
+      state = 1248
       continue
-    of 1177:
+    of 1250:
       # (clear_shot ?inp_npc ?inp_enemy)
       # (clear_shot ?inp_npc ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 236)
         let ft = ex.factTables[16]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11332,52 +14466,60 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1180
+          state = 1253
           continue
-        state = 1178
+        state = 1251
         continue
-      state = 1180
+      state = 1253
       continue
-    of 1180:
-      state = 1164
+    of 1253:
+      ex.debugEndCondition(definition, true)
+      state = 1237
       continue
-    of 1178:
-      state = 1175
+    of 1251:
+      state = 1248
       continue
-    of 1175:
-      state = 1173
+    of 1248:
+      state = 1246
       continue
-    of 1173:
+    of 1246:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1171
+        state = 1244
         continue
-      ex.v[8] = cp1172_8
-      cp1172_8 = ex.v[8]
-      state = 1174
+      ex.v[8] = cp1245_8
+      cp1245_8 = ex.v[8]
+      state = 1247
       continue
-    of 1171:
-      ex.v[8] = cp1172_8
-      state = 1168
+    of 1244:
+      ex.v[8] = cp1245_8
+      state = 1241
       continue
-    of 1168:
-      state = 1166
+    of 1241:
+      state = 1239
       continue
-    of 1166:
-      ex.v[8] = cp1167_8
-      state = 1165
+    of 1239:
+      ex.v[8] = cp1240_8
+      ex.debugEndCondition(definition, false)
+      state = 1238
       continue
-    of 1165:
+    of 1238:
       ex.releaseRetry(fr)
-      state = 1036
+      ex.debugEndBranch(definition, false)
+      state = 1103
       continue
-    of 1164:
+    of 1237:
       if not ex.pushBranch(addr bc75):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1181
+      ex.debugCapturePendingTask(173)
+      ex.debugCapturePendingTask(172)
+      state = 1255
       continue
-    of 1181:
+    of 1255:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11385,34 +14527,44 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1044
+        state = 1111
         continue
-      state = 1182
+      state = 1256
       continue
-    of 1044:
+    of 1111:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1036
+        ex.debugEndBranch(definition, false)
+        state = 1103
         continue
-      state = 1181
+      state = 1255
       continue
-    of 1182:
+    of 1256:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1036:
+    of 1103:
       # branch switch_to_ranged
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 76)
       # (and (weapon_available ?inp_npc ranged) (ammo ?inp_npc ?count) (> ?count 0))
-      cp1186_8 = ex.v[8]
+      cp1260_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 237)
       # (weapon_available ?inp_npc ranged)
       # (weapon_available ?inp_npc ranged)
       block:
+        ex.debugBeginCondition(definition, 238)
         let ft = ex.factTables[9]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -11420,67 +14572,82 @@ proc method11(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], sv90): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1189
+          state = 1263
           continue
-        state = 1187
+        state = 1261
         continue
-      state = 1189
+      state = 1263
       continue
-    of 1189:
+    of 1263:
       # (ammo ?inp_npc ?count)
-      cp1191_8 = ex.v[8]
-      fc1192 = 0
-      state = 1193
+      cp1265_8 = ex.v[8]
+      fc1266 = 0
+      state = 1267
       continue
-    of 1193:
-      inc fc1192
-      if not factChoice239(ex, fc1192 - 1):
-        state = 1190
+    of 1267:
+      ex.debugBeginCondition(definition, 239)
+      inc fc1266
+      if not factChoice239(ex, fc1266 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1264
         continue
+      ex.debugEndCondition(definition, true)
       # (> ?count 0)
       # (> ?count 0)
+      ex.debugBeginCondition(definition, 240)
       if compare(ex.v[8], sv91, 4'u32):
-        state = 1196
+        ex.debugEndCondition(definition, true)
+        state = 1270
         continue
-      state = 1194
+      ex.debugEndCondition(definition, false)
+      state = 1268
       continue
-    of 1196:
-      state = 1183
+    of 1270:
+      ex.debugEndCondition(definition, true)
+      state = 1257
       continue
-    of 1194:
-      state = 1192
+    of 1268:
+      state = 1266
       continue
-    of 1192:
+    of 1266:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1190
+        state = 1264
         continue
-      ex.v[8] = cp1191_8
-      cp1191_8 = ex.v[8]
-      state = 1193
+      ex.v[8] = cp1265_8
+      cp1265_8 = ex.v[8]
+      state = 1267
       continue
-    of 1190:
-      ex.v[8] = cp1191_8
-      state = 1187
+    of 1264:
+      ex.v[8] = cp1265_8
+      state = 1261
       continue
-    of 1187:
-      state = 1185
+    of 1261:
+      state = 1259
       continue
-    of 1185:
-      ex.v[8] = cp1186_8
-      state = 1184
+    of 1259:
+      ex.v[8] = cp1260_8
+      ex.debugEndCondition(definition, false)
+      state = 1258
       continue
-    of 1184:
+    of 1258:
       ex.releaseRetry(fr)
-      state = 1037
+      ex.debugEndBranch(definition, false)
+      state = 1104
       continue
-    of 1183:
+    of 1257:
       if not ex.pushBranch(addr bc76):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1197
+      ex.debugCapturePendingTask(176)
+      ex.debugCapturePendingTask(175)
+      ex.debugCapturePendingTask(174)
+      state = 1272
       continue
-    of 1197:
+    of 1272:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11488,59 +14655,78 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1045
+        state = 1112
         continue
-      state = 1198
+      state = 1273
       continue
-    of 1045:
+    of 1112:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1037
+        ex.debugEndBranch(definition, false)
+        state = 1104
         continue
-      state = 1197
+      state = 1272
       continue
-    of 1198:
+    of 1273:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1037:
+    of 1104:
       # branch close_distance
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 77)
       # (and (advance_route ?inp_npc ?inp_enemy ?route))
-      cp1202_3 = ex.v[3]
+      cp1277_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 241)
       # (advance_route ?inp_npc ?inp_enemy ?route)
-      cp1204_3 = ex.v[3]
-      fc1205 = 0
-      inc fc1205
-      if not factChoice242(ex, fc1205 - 1):
-        state = 1203
+      cp1279_3 = ex.v[3]
+      fc1280 = 0
+      ex.debugBeginCondition(definition, 242)
+      inc fc1280
+      if not factChoice242(ex, fc1280 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1278
         continue
-      state = 1199
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1274
       continue
-    of 1203:
-      ex.v[3] = cp1204_3
-      state = 1201
+    of 1278:
+      ex.v[3] = cp1279_3
+      state = 1276
       continue
-    of 1201:
-      ex.v[3] = cp1202_3
-      state = 1200
+    of 1276:
+      ex.v[3] = cp1277_3
+      ex.debugEndCondition(definition, false)
+      state = 1275
       continue
-    of 1200:
+    of 1275:
       ex.releaseRetry(fr)
-      state = 1038
+      ex.debugEndBranch(definition, false)
+      state = 1105
       continue
-    of 1199:
+    of 1274:
       if not ex.pushBranch(addr bc77):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1207
+      ex.debugCapturePendingTask(178)
+      ex.debugCapturePendingTask(177)
+      state = 1283
       continue
-    of 1207:
+    of 1283:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11548,36 +14734,48 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1046
+        state = 1113
         continue
-      state = 1208
+      state = 1284
       continue
-    of 1046:
+    of 1113:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 1038
+        ex.debugEndBranch(definition, false)
+        state = 1105
         continue
-      state = 1207
+      state = 1283
       continue
-    of 1208:
+    of 1284:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1038:
+    of 1105:
       # branch defensive_fallback
-      state = 1209
+      ex.debugBeginBranch(definition, 78)
+      state = 1285
       continue
-    of 1209:
+    of 1285:
       if not ex.pushBranch(addr bc78):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1211
+      ex.debugCapturePendingTask(180)
+      ex.debugCapturePendingTask(179)
+      state = 1287
       continue
-    of 1211:
+    of 1287:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -11585,16 +14783,20 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1047
+        state = 1114
         continue
-      state = 1212
+      state = 1288
       continue
-    of 1047:
+    of 1114:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1211
+      state = 1287
       continue
-    of 1212:
+    of 1288:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -11602,77 +14804,95 @@ proc method11(ex: Exec): int {.nimcall.} =
 # method12: investigation_tick/3
 proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1231_12: Atom
-  var cp1236_12: Atom
-  var fc1237: uint32
-  var cp1244_9: Atom
-  var cp1249_9: Atom
-  var fc1250: uint32
-  var cp1272_3: Atom
-  var cp1277_3: Atom
-  var fc1278: uint32
-  var cp1294_3: Atom
-  var cp1299_3: Atom
-  var fc1300: uint32
+  var cp1307_12: Atom
+  var cp1312_12: Atom
+  var fc1313: uint32
+  var cp1321_9: Atom
+  var cp1326_9: Atom
+  var fc1327: uint32
+  var cp1352_3: Atom
+  var cp1357_3: Atom
+  var fc1358: uint32
+  var cp1376_3: Atom
+  var cp1381_3: Atom
+  var fc1382: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1221
-  of 2: state = 1222
-  of 3: state = 1223
-  of 4: state = 1224
-  of 5: state = 1225
-  of 6: state = 1226
-  of 7: state = 1227
+  of 1: state = 1297
+  of 2: state = 1298
+  of 3: state = 1299
+  of 4: state = 1300
+  of 5: state = 1301
+  of 6: state = 1302
+  of 7: state = 1303
   else: discard
   while true:
     case state
     of 0:
-      state = 1214
+      ex.debugBeginMethod(definition, 12)
+      state = 1290
       continue
-    of 1214:
+    of 1290:
       # branch radio_contact
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 79)
       # (and (== ?inp_stimulus radio) (squad_alert ?inp_npc ?report))
-      cp1231_12 = ex.v[12]
+      cp1307_12 = ex.v[12]
+      ex.debugBeginCondition(definition, 243)
       # (== ?inp_stimulus radio)
       # (== ?inp_stimulus radio)
+      ex.debugBeginCondition(definition, 244)
       if compare(ex.v[10], sv93, 0'u32):
-        state = 1234
+        ex.debugEndCondition(definition, true)
+        state = 1310
         continue
-      state = 1232
+      ex.debugEndCondition(definition, false)
+      state = 1308
       continue
-    of 1234:
+    of 1310:
       # (squad_alert ?inp_npc ?report)
-      cp1236_12 = ex.v[12]
-      fc1237 = 0
-      inc fc1237
-      if not factChoice245(ex, fc1237 - 1):
-        state = 1235
+      cp1312_12 = ex.v[12]
+      fc1313 = 0
+      ex.debugBeginCondition(definition, 245)
+      inc fc1313
+      if not factChoice245(ex, fc1313 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1311
         continue
-      state = 1228
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1304
       continue
-    of 1235:
-      ex.v[12] = cp1236_12
-      state = 1232
+    of 1311:
+      ex.v[12] = cp1312_12
+      state = 1308
       continue
-    of 1232:
-      state = 1230
+    of 1308:
+      state = 1306
       continue
-    of 1230:
-      ex.v[12] = cp1231_12
-      state = 1229
+    of 1306:
+      ex.v[12] = cp1307_12
+      ex.debugEndCondition(definition, false)
+      state = 1305
       continue
-    of 1229:
+    of 1305:
       ex.releaseRetry(fr)
-      state = 1215
+      ex.debugEndBranch(definition, false)
+      state = 1291
       continue
-    of 1228:
+    of 1304:
       if not ex.pushBranch(addr bc79):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1239
+      ex.debugCapturePendingTask(184)
+      ex.debugCapturePendingTask(183)
+      ex.debugCapturePendingTask(182)
+      ex.debugCapturePendingTask(181)
+      state = 1316
       continue
-    of 1239:
+    of 1316:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11680,108 +14900,136 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1221
+        state = 1297
         continue
-      state = 1240
+      state = 1317
       continue
-    of 1221:
+    of 1297:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1215
+        ex.debugEndBranch(definition, false)
+        state = 1291
         continue
-      state = 1239
+      state = 1316
       continue
-    of 1240:
+    of 1317:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1215:
+    of 1291:
       # branch gunshot_with_cover
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 80)
       # (and (== ?inp_stimulus gunshot) (cover_available ?inp_npc ?cover) (not (cover_compromised ?cover)))
-      cp1244_9 = ex.v[9]
+      cp1321_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 246)
       # (== ?inp_stimulus gunshot)
       # (== ?inp_stimulus gunshot)
+      ex.debugBeginCondition(definition, 247)
       if compare(ex.v[10], sv94, 0'u32):
-        state = 1247
+        ex.debugEndCondition(definition, true)
+        state = 1324
         continue
-      state = 1245
+      ex.debugEndCondition(definition, false)
+      state = 1322
       continue
-    of 1247:
+    of 1324:
       # (cover_available ?inp_npc ?cover)
-      cp1249_9 = ex.v[9]
-      fc1250 = 0
-      state = 1251
+      cp1326_9 = ex.v[9]
+      fc1327 = 0
+      state = 1328
       continue
-    of 1251:
-      inc fc1250
-      if not factChoice248(ex, fc1250 - 1):
-        state = 1248
+    of 1328:
+      ex.debugBeginCondition(definition, 248)
+      inc fc1327
+      if not factChoice248(ex, fc1327 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1325
         continue
+      ex.debugEndCondition(definition, true)
       # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 249)
       # (cover_compromised ?cover)
       # (cover_compromised ?cover)
       block:
+        ex.debugBeginCondition(definition, 250)
         let ft = ex.factTables[14]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[9]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1257
+          state = 1334
           continue
-        state = 1255
+        state = 1332
         continue
-      state = 1257
+      state = 1334
       continue
-    of 1257:
-      state = 1252
+    of 1334:
+      state = 1329
       continue
-    of 1255:
-      state = 1254
+    of 1332:
+      state = 1331
       continue
-    of 1254:
-      state = 1241
+    of 1331:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1318
       continue
-    of 1252:
-      state = 1250
+    of 1329:
+      ex.debugEndCondition(definition, false)
+      state = 1327
       continue
-    of 1250:
+    of 1327:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1248
+        state = 1325
         continue
-      ex.v[9] = cp1249_9
-      cp1249_9 = ex.v[9]
-      state = 1251
+      ex.v[9] = cp1326_9
+      cp1326_9 = ex.v[9]
+      state = 1328
       continue
-    of 1248:
-      ex.v[9] = cp1249_9
-      state = 1245
+    of 1325:
+      ex.v[9] = cp1326_9
+      state = 1322
       continue
-    of 1245:
-      state = 1243
+    of 1322:
+      state = 1320
       continue
-    of 1243:
-      ex.v[9] = cp1244_9
-      state = 1242
+    of 1320:
+      ex.v[9] = cp1321_9
+      ex.debugEndCondition(definition, false)
+      state = 1319
       continue
-    of 1242:
+    of 1319:
       ex.releaseRetry(fr)
-      state = 1216
+      ex.debugEndBranch(definition, false)
+      state = 1292
       continue
-    of 1241:
+    of 1318:
       if not ex.pushBranch(addr bc80):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1258
+      ex.debugCapturePendingTask(187)
+      ex.debugCapturePendingTask(186)
+      ex.debugCapturePendingTask(185)
+      state = 1337
       continue
-    of 1258:
+    of 1337:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11789,57 +15037,77 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1222
+        state = 1298
         continue
-      state = 1259
+      state = 1338
       continue
-    of 1222:
+    of 1298:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1216
+        ex.debugEndBranch(definition, false)
+        state = 1292
         continue
-      state = 1258
+      state = 1337
       continue
-    of 1259:
+    of 1338:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1216:
+    of 1292:
       # branch gunshot
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 81)
       # (and (== ?inp_stimulus gunshot))
+      ex.debugBeginCondition(definition, 251)
       # (== ?inp_stimulus gunshot)
       # (== ?inp_stimulus gunshot)
+      ex.debugBeginCondition(definition, 252)
       if compare(ex.v[10], sv95, 0'u32):
-        state = 1266
+        ex.debugEndCondition(definition, true)
+        state = 1345
         continue
-      state = 1264
+      ex.debugEndCondition(definition, false)
+      state = 1343
       continue
-    of 1266:
-      state = 1260
+    of 1345:
+      ex.debugEndCondition(definition, true)
+      state = 1339
       continue
-    of 1264:
-      state = 1262
+    of 1343:
+      state = 1341
       continue
-    of 1262:
-      state = 1261
+    of 1341:
+      ex.debugEndCondition(definition, false)
+      state = 1340
       continue
-    of 1261:
+    of 1340:
       ex.releaseRetry(fr)
-      state = 1217
+      ex.debugEndBranch(definition, false)
+      state = 1293
       continue
-    of 1260:
+    of 1339:
       if not ex.pushBranch(addr bc81):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1267
+      ex.debugCapturePendingTask(190)
+      ex.debugCapturePendingTask(189)
+      ex.debugCapturePendingTask(188)
+      state = 1347
       continue
-    of 1267:
+    of 1347:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11847,70 +15115,93 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1223
+        state = 1299
         continue
-      state = 1268
+      state = 1348
       continue
-    of 1223:
+    of 1299:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1217
+        ex.debugEndBranch(definition, false)
+        state = 1293
         continue
-      state = 1267
+      state = 1347
       continue
-    of 1268:
+    of 1348:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1217:
+    of 1293:
       # branch footprints
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 82)
       # (and (== ?inp_stimulus footprints) (track_route ?inp_npc ?inp_location ?route))
-      cp1272_3 = ex.v[3]
+      cp1352_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 253)
       # (== ?inp_stimulus footprints)
       # (== ?inp_stimulus footprints)
+      ex.debugBeginCondition(definition, 254)
       if compare(ex.v[10], sv96, 0'u32):
-        state = 1275
+        ex.debugEndCondition(definition, true)
+        state = 1355
         continue
-      state = 1273
+      ex.debugEndCondition(definition, false)
+      state = 1353
       continue
-    of 1275:
+    of 1355:
       # (track_route ?inp_npc ?inp_location ?route)
-      cp1277_3 = ex.v[3]
-      fc1278 = 0
-      inc fc1278
-      if not factChoice255(ex, fc1278 - 1):
-        state = 1276
+      cp1357_3 = ex.v[3]
+      fc1358 = 0
+      ex.debugBeginCondition(definition, 255)
+      inc fc1358
+      if not factChoice255(ex, fc1358 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1356
         continue
-      state = 1269
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1349
       continue
-    of 1276:
-      ex.v[3] = cp1277_3
-      state = 1273
+    of 1356:
+      ex.v[3] = cp1357_3
+      state = 1353
       continue
-    of 1273:
-      state = 1271
+    of 1353:
+      state = 1351
       continue
-    of 1271:
-      ex.v[3] = cp1272_3
-      state = 1270
+    of 1351:
+      ex.v[3] = cp1352_3
+      ex.debugEndCondition(definition, false)
+      state = 1350
       continue
-    of 1270:
+    of 1350:
       ex.releaseRetry(fr)
-      state = 1218
+      ex.debugEndBranch(definition, false)
+      state = 1294
       continue
-    of 1269:
+    of 1349:
       if not ex.pushBranch(addr bc82):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1280
+      ex.debugCapturePendingTask(193)
+      ex.debugCapturePendingTask(192)
+      ex.debugCapturePendingTask(191)
+      state = 1361
       continue
-    of 1280:
+    of 1361:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11918,57 +15209,77 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1224
+        state = 1300
         continue
-      state = 1281
+      state = 1362
       continue
-    of 1224:
+    of 1300:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1218
+        ex.debugEndBranch(definition, false)
+        state = 1294
         continue
-      state = 1280
+      state = 1361
       continue
-    of 1281:
+    of 1362:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1218:
+    of 1294:
       # branch visual_anomaly
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 83)
       # (and (== ?inp_stimulus anomaly))
+      ex.debugBeginCondition(definition, 256)
       # (== ?inp_stimulus anomaly)
       # (== ?inp_stimulus anomaly)
+      ex.debugBeginCondition(definition, 257)
       if compare(ex.v[10], sv97, 0'u32):
-        state = 1288
+        ex.debugEndCondition(definition, true)
+        state = 1369
         continue
-      state = 1286
+      ex.debugEndCondition(definition, false)
+      state = 1367
       continue
-    of 1288:
-      state = 1282
+    of 1369:
+      ex.debugEndCondition(definition, true)
+      state = 1363
       continue
-    of 1286:
-      state = 1284
+    of 1367:
+      state = 1365
       continue
-    of 1284:
-      state = 1283
+    of 1365:
+      ex.debugEndCondition(definition, false)
+      state = 1364
       continue
-    of 1283:
+    of 1364:
       ex.releaseRetry(fr)
-      state = 1219
+      ex.debugEndBranch(definition, false)
+      state = 1295
       continue
-    of 1282:
+    of 1363:
       if not ex.pushBranch(addr bc83):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1289
+      ex.debugCapturePendingTask(196)
+      ex.debugCapturePendingTask(195)
+      ex.debugCapturePendingTask(194)
+      state = 1371
       continue
-    of 1289:
+    of 1371:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -11976,34 +15287,44 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1225
+        state = 1301
         continue
-      state = 1290
+      state = 1372
       continue
-    of 1225:
+    of 1301:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1219
+        ex.debugEndBranch(definition, false)
+        state = 1295
         continue
-      state = 1289
+      state = 1371
       continue
-    of 1290:
+    of 1372:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1219:
+    of 1295:
       # branch blocked_route
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 84)
       # (and (route_blocked_to ?inp_npc ?inp_location) (alternate_investigation_route ?inp_npc ?inp_location ?route))
-      cp1294_3 = ex.v[3]
+      cp1376_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 258)
       # (route_blocked_to ?inp_npc ?inp_location)
       # (route_blocked_to ?inp_npc ?inp_location)
       block:
+        ex.debugBeginCondition(definition, 259)
         let ft = ex.factTables[20]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -12011,45 +15332,56 @@ proc method12(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[11]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1297
+          state = 1379
           continue
-        state = 1295
+        state = 1377
         continue
-      state = 1297
+      state = 1379
       continue
-    of 1297:
+    of 1379:
       # (alternate_investigation_route ?inp_npc ?inp_location ?route)
-      cp1299_3 = ex.v[3]
-      fc1300 = 0
-      inc fc1300
-      if not factChoice260(ex, fc1300 - 1):
-        state = 1298
+      cp1381_3 = ex.v[3]
+      fc1382 = 0
+      ex.debugBeginCondition(definition, 260)
+      inc fc1382
+      if not factChoice260(ex, fc1382 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1380
         continue
-      state = 1291
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1373
       continue
-    of 1298:
-      ex.v[3] = cp1299_3
-      state = 1295
+    of 1380:
+      ex.v[3] = cp1381_3
+      state = 1377
       continue
-    of 1295:
-      state = 1293
+    of 1377:
+      state = 1375
       continue
-    of 1293:
-      ex.v[3] = cp1294_3
-      state = 1292
+    of 1375:
+      ex.v[3] = cp1376_3
+      ex.debugEndCondition(definition, false)
+      state = 1374
       continue
-    of 1292:
+    of 1374:
       ex.releaseRetry(fr)
-      state = 1220
+      ex.debugEndBranch(definition, false)
+      state = 1296
       continue
-    of 1291:
+    of 1373:
       if not ex.pushBranch(addr bc84):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1302
+      ex.debugCapturePendingTask(198)
+      ex.debugCapturePendingTask(197)
+      state = 1385
       continue
-    of 1302:
+    of 1385:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12057,36 +15389,50 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1226
+        state = 1302
         continue
-      state = 1303
+      state = 1386
       continue
-    of 1226:
+    of 1302:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1220
+        ex.debugEndBranch(definition, false)
+        state = 1296
         continue
-      state = 1302
+      state = 1385
       continue
-    of 1303:
+    of 1386:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1220:
+    of 1296:
       # branch generic
-      state = 1304
+      ex.debugBeginBranch(definition, 85)
+      state = 1387
       continue
-    of 1304:
+    of 1387:
       if not ex.pushBranch(addr bc85):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1306
+      ex.debugCapturePendingTask(202)
+      ex.debugCapturePendingTask(201)
+      ex.debugCapturePendingTask(200)
+      ex.debugCapturePendingTask(199)
+      state = 1389
       continue
-    of 1306:
+    of 1389:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -12094,16 +15440,20 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1227
+        state = 1303
         continue
-      state = 1307
+      state = 1390
       continue
-    of 1227:
+    of 1303:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1306
+      state = 1389
       continue
-    of 1307:
+    of 1390:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -12111,68 +15461,82 @@ proc method12(ex: Exec): int {.nimcall.} =
 # method13: search_tick/3
 proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1324_3: Atom
-  var cp1326_3: Atom
-  var fc1327: uint32
-  var cp1334_14: Atom
-  var cp1336_14: Atom
-  var fc1337: uint32
-  var cp1344_3: Atom
-  var cp1346_3: Atom
-  var fc1347: uint32
-  var cp1354_9: Atom
-  var cp1356_9: Atom
-  var fc1357: uint32
-  var cp1364_3: Atom
-  var cp1366_3: Atom
-  var fc1367: uint32
+  var cp1407_3: Atom
+  var cp1409_3: Atom
+  var fc1410: uint32
+  var cp1418_14: Atom
+  var cp1420_14: Atom
+  var fc1421: uint32
+  var cp1429_3: Atom
+  var cp1431_3: Atom
+  var fc1432: uint32
+  var cp1440_9: Atom
+  var cp1442_9: Atom
+  var fc1443: uint32
+  var cp1451_3: Atom
+  var cp1453_3: Atom
+  var fc1454: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1315
-  of 2: state = 1316
-  of 3: state = 1317
-  of 4: state = 1318
-  of 5: state = 1319
-  of 6: state = 1320
+  of 1: state = 1398
+  of 2: state = 1399
+  of 3: state = 1400
+  of 4: state = 1401
+  of 5: state = 1402
+  of 6: state = 1403
   else: discard
   while true:
     case state
     of 0:
-      state = 1309
+      ex.debugBeginMethod(definition, 13)
+      state = 1392
       continue
-    of 1309:
+    of 1392:
       # branch fresh_tracks
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 86)
       # (and (enemy_tracks ?inp_npc ?inp_enemy ?route))
-      cp1324_3 = ex.v[3]
+      cp1407_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 261)
       # (enemy_tracks ?inp_npc ?inp_enemy ?route)
-      cp1326_3 = ex.v[3]
-      fc1327 = 0
-      inc fc1327
-      if not factChoice262(ex, fc1327 - 1):
-        state = 1325
+      cp1409_3 = ex.v[3]
+      fc1410 = 0
+      ex.debugBeginCondition(definition, 262)
+      inc fc1410
+      if not factChoice262(ex, fc1410 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1408
         continue
-      state = 1321
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1404
       continue
-    of 1325:
-      ex.v[3] = cp1326_3
-      state = 1323
+    of 1408:
+      ex.v[3] = cp1409_3
+      state = 1406
       continue
-    of 1323:
-      ex.v[3] = cp1324_3
-      state = 1322
+    of 1406:
+      ex.v[3] = cp1407_3
+      ex.debugEndCondition(definition, false)
+      state = 1405
       continue
-    of 1322:
+    of 1405:
       ex.releaseRetry(fr)
-      state = 1310
+      ex.debugEndBranch(definition, false)
+      state = 1393
       continue
-    of 1321:
+    of 1404:
       if not ex.pushBranch(addr bc86):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1329
+      ex.debugCapturePendingTask(205)
+      ex.debugCapturePendingTask(204)
+      ex.debugCapturePendingTask(203)
+      state = 1413
       continue
-    of 1329:
+    of 1413:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12180,59 +15544,79 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1315
+        state = 1398
         continue
-      state = 1330
+      state = 1414
       continue
-    of 1315:
+    of 1398:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1310
+        ex.debugEndBranch(definition, false)
+        state = 1393
         continue
-      state = 1329
+      state = 1413
       continue
-    of 1330:
+    of 1414:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1310:
+    of 1393:
       # branch heard_escape
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 87)
       # (and (escape_sound ?inp_npc ?inp_enemy ?location))
-      cp1334_14 = ex.v[14]
+      cp1418_14 = ex.v[14]
+      ex.debugBeginCondition(definition, 263)
       # (escape_sound ?inp_npc ?inp_enemy ?location)
-      cp1336_14 = ex.v[14]
-      fc1337 = 0
-      inc fc1337
-      if not factChoice264(ex, fc1337 - 1):
-        state = 1335
+      cp1420_14 = ex.v[14]
+      fc1421 = 0
+      ex.debugBeginCondition(definition, 264)
+      inc fc1421
+      if not factChoice264(ex, fc1421 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1419
         continue
-      state = 1331
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1415
       continue
-    of 1335:
-      ex.v[14] = cp1336_14
-      state = 1333
+    of 1419:
+      ex.v[14] = cp1420_14
+      state = 1417
       continue
-    of 1333:
-      ex.v[14] = cp1334_14
-      state = 1332
+    of 1417:
+      ex.v[14] = cp1418_14
+      ex.debugEndCondition(definition, false)
+      state = 1416
       continue
-    of 1332:
+    of 1416:
       ex.releaseRetry(fr)
-      state = 1311
+      ex.debugEndBranch(definition, false)
+      state = 1394
       continue
-    of 1331:
+    of 1415:
       if not ex.pushBranch(addr bc87):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1339
+      ex.debugCapturePendingTask(208)
+      ex.debugCapturePendingTask(207)
+      ex.debugCapturePendingTask(206)
+      state = 1424
       continue
-    of 1339:
+    of 1424:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12240,59 +15624,79 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1316
+        state = 1399
         continue
-      state = 1340
+      state = 1425
       continue
-    of 1316:
+    of 1399:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1311
+        ex.debugEndBranch(definition, false)
+        state = 1394
         continue
-      state = 1339
+      state = 1424
       continue
-    of 1340:
+    of 1425:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1311:
+    of 1394:
       # branch search_with_squad
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 88)
       # (and (squad_search_route ?inp_npc ?inp_enemy ?route))
-      cp1344_3 = ex.v[3]
+      cp1429_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 265)
       # (squad_search_route ?inp_npc ?inp_enemy ?route)
-      cp1346_3 = ex.v[3]
-      fc1347 = 0
-      inc fc1347
-      if not factChoice266(ex, fc1347 - 1):
-        state = 1345
+      cp1431_3 = ex.v[3]
+      fc1432 = 0
+      ex.debugBeginCondition(definition, 266)
+      inc fc1432
+      if not factChoice266(ex, fc1432 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1430
         continue
-      state = 1341
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1426
       continue
-    of 1345:
-      ex.v[3] = cp1346_3
-      state = 1343
+    of 1430:
+      ex.v[3] = cp1431_3
+      state = 1428
       continue
-    of 1343:
-      ex.v[3] = cp1344_3
-      state = 1342
+    of 1428:
+      ex.v[3] = cp1429_3
+      ex.debugEndCondition(definition, false)
+      state = 1427
       continue
-    of 1342:
+    of 1427:
       ex.releaseRetry(fr)
-      state = 1312
+      ex.debugEndBranch(definition, false)
+      state = 1395
       continue
-    of 1341:
+    of 1426:
       if not ex.pushBranch(addr bc88):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1349
+      ex.debugCapturePendingTask(211)
+      ex.debugCapturePendingTask(210)
+      ex.debugCapturePendingTask(209)
+      state = 1435
       continue
-    of 1349:
+    of 1435:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12300,59 +15704,79 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1317
+        state = 1400
         continue
-      state = 1350
+      state = 1436
       continue
-    of 1317:
+    of 1400:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1312
+        ex.debugEndBranch(definition, false)
+        state = 1395
         continue
-      state = 1349
+      state = 1435
       continue
-    of 1350:
+    of 1436:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1312:
+    of 1395:
       # branch last_known_cover
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 89)
       # (and (cover_at ?inp_last_location ?cover))
-      cp1354_9 = ex.v[9]
+      cp1440_9 = ex.v[9]
+      ex.debugBeginCondition(definition, 267)
       # (cover_at ?inp_last_location ?cover)
-      cp1356_9 = ex.v[9]
-      fc1357 = 0
-      inc fc1357
-      if not factChoice268(ex, fc1357 - 1):
-        state = 1355
+      cp1442_9 = ex.v[9]
+      fc1443 = 0
+      ex.debugBeginCondition(definition, 268)
+      inc fc1443
+      if not factChoice268(ex, fc1443 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1441
         continue
-      state = 1351
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1437
       continue
-    of 1355:
-      ex.v[9] = cp1356_9
-      state = 1353
+    of 1441:
+      ex.v[9] = cp1442_9
+      state = 1439
       continue
-    of 1353:
-      ex.v[9] = cp1354_9
-      state = 1352
+    of 1439:
+      ex.v[9] = cp1440_9
+      ex.debugEndCondition(definition, false)
+      state = 1438
       continue
-    of 1352:
+    of 1438:
       ex.releaseRetry(fr)
-      state = 1313
+      ex.debugEndBranch(definition, false)
+      state = 1396
       continue
-    of 1351:
+    of 1437:
       if not ex.pushBranch(addr bc89):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1359
+      ex.debugCapturePendingTask(214)
+      ex.debugCapturePendingTask(213)
+      ex.debugCapturePendingTask(212)
+      state = 1446
       continue
-    of 1359:
+    of 1446:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12360,59 +15784,78 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1318
+        state = 1401
         continue
-      state = 1360
+      state = 1447
       continue
-    of 1318:
+    of 1401:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1313
+        ex.debugEndBranch(definition, false)
+        state = 1396
         continue
-      state = 1359
+      state = 1446
       continue
-    of 1360:
+    of 1447:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1313:
+    of 1396:
       # branch search_perimeter
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 90)
       # (and (search_perimeter ?inp_npc ?inp_last_location ?route))
-      cp1364_3 = ex.v[3]
+      cp1451_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 269)
       # (search_perimeter ?inp_npc ?inp_last_location ?route)
-      cp1366_3 = ex.v[3]
-      fc1367 = 0
-      inc fc1367
-      if not factChoice270(ex, fc1367 - 1):
-        state = 1365
+      cp1453_3 = ex.v[3]
+      fc1454 = 0
+      ex.debugBeginCondition(definition, 270)
+      inc fc1454
+      if not factChoice270(ex, fc1454 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1452
         continue
-      state = 1361
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1448
       continue
-    of 1365:
-      ex.v[3] = cp1366_3
-      state = 1363
+    of 1452:
+      ex.v[3] = cp1453_3
+      state = 1450
       continue
-    of 1363:
-      ex.v[3] = cp1364_3
-      state = 1362
+    of 1450:
+      ex.v[3] = cp1451_3
+      ex.debugEndCondition(definition, false)
+      state = 1449
       continue
-    of 1362:
+    of 1449:
       ex.releaseRetry(fr)
-      state = 1314
+      ex.debugEndBranch(definition, false)
+      state = 1397
       continue
-    of 1361:
+    of 1448:
       if not ex.pushBranch(addr bc90):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1369
+      ex.debugCapturePendingTask(216)
+      ex.debugCapturePendingTask(215)
+      state = 1457
       continue
-    of 1369:
+    of 1457:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12420,36 +15863,49 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1319
+        state = 1402
         continue
-      state = 1370
+      state = 1458
       continue
-    of 1319:
+    of 1402:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1314
+        ex.debugEndBranch(definition, false)
+        state = 1397
         continue
-      state = 1369
+      state = 1457
       continue
-    of 1370:
+    of 1458:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1314:
+    of 1397:
       # branch last_known_position
-      state = 1371
+      ex.debugBeginBranch(definition, 91)
+      state = 1459
       continue
-    of 1371:
+    of 1459:
       if not ex.pushBranch(addr bc91):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1373
+      ex.debugCapturePendingTask(219)
+      ex.debugCapturePendingTask(218)
+      ex.debugCapturePendingTask(217)
+      state = 1461
       continue
-    of 1373:
+    of 1461:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -12457,16 +15913,20 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1320
+        state = 1403
         continue
-      state = 1374
+      state = 1462
       continue
-    of 1320:
+    of 1403:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1373
+      state = 1461
       continue
-    of 1374:
+    of 1462:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -12474,124 +15934,142 @@ proc method13(ex: Exec): int {.nimcall.} =
 # method14: idle_tick/1
 proc method14(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1395_6: Atom
-  var cp1397_6: Atom
-  var fc1398: uint32
-  var cp1411_8: Atom
-  var cp1411_15: Atom
-  var cp1413_8: Atom
-  var fc1414: uint32
-  var cp1420_15: Atom
-  var fc1421: uint32
-  var cp1428_16: Atom
-  var cp1430_16: Atom
-  var fc1431: uint32
-  var cp1438_3: Atom
-  var cp1438_17: Atom
-  var cp1440_3: Atom
-  var fc1441: uint32
-  var cp1444_17: Atom
-  var fc1445: uint32
-  var cp1452_18: Atom
-  var cp1454_18: Atom
-  var fc1455: uint32
-  var cp1465_19: Atom
-  var cp1467_19: Atom
-  var fc1468: uint32
-  var cp1475_7: Atom
-  var cp1477_7: Atom
-  var fc1478: uint32
+  var cp1483_6: Atom
+  var cp1485_6: Atom
+  var fc1486: uint32
+  var cp1500_8: Atom
+  var cp1500_15: Atom
+  var cp1502_8: Atom
+  var fc1503: uint32
+  var cp1509_15: Atom
+  var fc1510: uint32
+  var cp1518_16: Atom
+  var cp1520_16: Atom
+  var fc1521: uint32
+  var cp1529_3: Atom
+  var cp1529_17: Atom
+  var cp1531_3: Atom
+  var fc1532: uint32
+  var cp1535_17: Atom
+  var fc1536: uint32
+  var cp1544_18: Atom
+  var cp1546_18: Atom
+  var fc1547: uint32
+  var cp1558_19: Atom
+  var cp1560_19: Atom
+  var fc1561: uint32
+  var cp1569_7: Atom
+  var cp1571_7: Atom
+  var fc1572: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1384
-  of 2: state = 1385
-  of 3: state = 1386
-  of 4: state = 1387
-  of 5: state = 1388
-  of 6: state = 1389
-  of 7: state = 1390
-  of 8: state = 1391
+  of 1: state = 1472
+  of 2: state = 1473
+  of 3: state = 1474
+  of 4: state = 1475
+  of 5: state = 1476
+  of 6: state = 1477
+  of 7: state = 1478
+  of 8: state = 1479
   else: discard
   while true:
     case state
     of 0:
-      state = 1376
+      ex.debugBeginMethod(definition, 14)
+      state = 1464
       continue
-    of 1376:
+    of 1464:
       # branch injury_care
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 92)
       # (and (health ?inp_npc ?hp) (<= ?hp 45) (medkit_available ?inp_npc))
-      cp1395_6 = ex.v[6]
+      cp1483_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 271)
       # (health ?inp_npc ?hp)
-      cp1397_6 = ex.v[6]
-      fc1398 = 0
-      state = 1399
+      cp1485_6 = ex.v[6]
+      fc1486 = 0
+      state = 1487
       continue
-    of 1399:
-      inc fc1398
-      if not factChoice272(ex, fc1398 - 1):
-        state = 1396
+    of 1487:
+      ex.debugBeginCondition(definition, 272)
+      inc fc1486
+      if not factChoice272(ex, fc1486 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1484
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?hp 45)
       # (<= ?hp 45)
+      ex.debugBeginCondition(definition, 273)
       if compare(ex.v[6], sv98, 3'u32):
-        state = 1402
+        ex.debugEndCondition(definition, true)
+        state = 1490
         continue
-      state = 1400
+      ex.debugEndCondition(definition, false)
+      state = 1488
       continue
-    of 1402:
+    of 1490:
       # (medkit_available ?inp_npc)
       # (medkit_available ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 274)
         let ft = ex.factTables[27]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1405
+          state = 1493
           continue
-        state = 1403
+        state = 1491
         continue
-      state = 1405
+      state = 1493
       continue
-    of 1405:
-      state = 1392
+    of 1493:
+      ex.debugEndCondition(definition, true)
+      state = 1480
       continue
-    of 1403:
-      state = 1400
+    of 1491:
+      state = 1488
       continue
-    of 1400:
-      state = 1398
+    of 1488:
+      state = 1486
       continue
-    of 1398:
+    of 1486:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1396
+        state = 1484
         continue
-      ex.v[6] = cp1397_6
-      cp1397_6 = ex.v[6]
-      state = 1399
+      ex.v[6] = cp1485_6
+      cp1485_6 = ex.v[6]
+      state = 1487
       continue
-    of 1396:
-      ex.v[6] = cp1397_6
-      state = 1394
+    of 1484:
+      ex.v[6] = cp1485_6
+      state = 1482
       continue
-    of 1394:
-      ex.v[6] = cp1395_6
-      state = 1393
+    of 1482:
+      ex.v[6] = cp1483_6
+      ex.debugEndCondition(definition, false)
+      state = 1481
       continue
-    of 1393:
+    of 1481:
       ex.releaseRetry(fr)
-      state = 1377
+      ex.debugEndBranch(definition, false)
+      state = 1465
       continue
-    of 1392:
+    of 1480:
       if not ex.pushBranch(addr bc92):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1406
+      ex.debugCapturePendingTask(221)
+      ex.debugCapturePendingTask(220)
+      state = 1495
       continue
-    of 1406:
+    of 1495:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12599,94 +16077,119 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1384
+        state = 1472
         continue
-      state = 1407
+      state = 1496
       continue
-    of 1384:
+    of 1472:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1377
+        ex.debugEndBranch(definition, false)
+        state = 1465
         continue
-      state = 1406
+      state = 1495
       continue
-    of 1407:
+    of 1496:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1377:
+    of 1465:
       # branch resupply_ammo
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 93)
       # (and (ammo ?inp_npc ?count) (<= ?count 5) (ammo_cache ?inp_npc ?cache))
-      cp1411_8 = ex.v[8]
-      cp1411_15 = ex.v[15]
+      cp1500_8 = ex.v[8]
+      cp1500_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 275)
       # (ammo ?inp_npc ?count)
-      cp1413_8 = ex.v[8]
-      fc1414 = 0
-      state = 1415
+      cp1502_8 = ex.v[8]
+      fc1503 = 0
+      state = 1504
       continue
-    of 1415:
-      inc fc1414
-      if not factChoice276(ex, fc1414 - 1):
-        state = 1412
+    of 1504:
+      ex.debugBeginCondition(definition, 276)
+      inc fc1503
+      if not factChoice276(ex, fc1503 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1501
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?count 5)
       # (<= ?count 5)
+      ex.debugBeginCondition(definition, 277)
       if compare(ex.v[8], sv99, 3'u32):
-        state = 1418
+        ex.debugEndCondition(definition, true)
+        state = 1507
         continue
-      state = 1416
+      ex.debugEndCondition(definition, false)
+      state = 1505
       continue
-    of 1418:
+    of 1507:
       # (ammo_cache ?inp_npc ?cache)
-      cp1420_15 = ex.v[15]
-      fc1421 = 0
-      inc fc1421
-      if not factChoice278(ex, fc1421 - 1):
-        state = 1419
+      cp1509_15 = ex.v[15]
+      fc1510 = 0
+      ex.debugBeginCondition(definition, 278)
+      inc fc1510
+      if not factChoice278(ex, fc1510 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1508
         continue
-      state = 1408
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1497
       continue
-    of 1419:
-      ex.v[15] = cp1420_15
-      state = 1416
+    of 1508:
+      ex.v[15] = cp1509_15
+      state = 1505
       continue
-    of 1416:
-      state = 1414
+    of 1505:
+      state = 1503
       continue
-    of 1414:
+    of 1503:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1412
+        state = 1501
         continue
-      ex.v[8] = cp1413_8
-      cp1413_8 = ex.v[8]
-      state = 1415
+      ex.v[8] = cp1502_8
+      cp1502_8 = ex.v[8]
+      state = 1504
       continue
-    of 1412:
-      ex.v[8] = cp1413_8
-      state = 1410
+    of 1501:
+      ex.v[8] = cp1502_8
+      state = 1499
       continue
-    of 1410:
-      ex.v[8] = cp1411_8
-      ex.v[15] = cp1411_15
-      state = 1409
+    of 1499:
+      ex.v[8] = cp1500_8
+      ex.v[15] = cp1500_15
+      ex.debugEndCondition(definition, false)
+      state = 1498
       continue
-    of 1409:
+    of 1498:
       ex.releaseRetry(fr)
-      state = 1378
+      ex.debugEndBranch(definition, false)
+      state = 1466
       continue
-    of 1408:
+    of 1497:
       if not ex.pushBranch(addr bc93):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1423
+      ex.debugCapturePendingTask(223)
+      ex.debugCapturePendingTask(222)
+      state = 1513
       continue
-    of 1423:
+    of 1513:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12694,59 +16197,78 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1385
+        state = 1473
         continue
-      state = 1424
+      state = 1514
       continue
-    of 1385:
+    of 1473:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1378
+        ex.debugEndBranch(definition, false)
+        state = 1466
         continue
-      state = 1423
+      state = 1513
       continue
-    of 1424:
+    of 1514:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1378:
+    of 1466:
       # branch repair_weapon
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 94)
       # (and (weapon_jammed ?inp_npc ?weapon))
-      cp1428_16 = ex.v[16]
+      cp1518_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 279)
       # (weapon_jammed ?inp_npc ?weapon)
-      cp1430_16 = ex.v[16]
-      fc1431 = 0
-      inc fc1431
-      if not factChoice280(ex, fc1431 - 1):
-        state = 1429
+      cp1520_16 = ex.v[16]
+      fc1521 = 0
+      ex.debugBeginCondition(definition, 280)
+      inc fc1521
+      if not factChoice280(ex, fc1521 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1519
         continue
-      state = 1425
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1515
       continue
-    of 1429:
-      ex.v[16] = cp1430_16
-      state = 1427
+    of 1519:
+      ex.v[16] = cp1520_16
+      state = 1517
       continue
-    of 1427:
-      ex.v[16] = cp1428_16
-      state = 1426
+    of 1517:
+      ex.v[16] = cp1518_16
+      ex.debugEndCondition(definition, false)
+      state = 1516
       continue
-    of 1426:
+    of 1516:
       ex.releaseRetry(fr)
-      state = 1379
+      ex.debugEndBranch(definition, false)
+      state = 1467
       continue
-    of 1425:
+    of 1515:
       if not ex.pushBranch(addr bc94):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1433
+      ex.debugCapturePendingTask(225)
+      ex.debugCapturePendingTask(224)
+      state = 1524
       continue
-    of 1433:
+    of 1524:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12754,83 +16276,106 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1386
+        state = 1474
         continue
-      state = 1434
+      state = 1525
       continue
-    of 1386:
+    of 1474:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1379
+        ex.debugEndBranch(definition, false)
+        state = 1467
         continue
-      state = 1433
+      state = 1524
       continue
-    of 1434:
+    of 1525:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1379:
+    of 1467:
       # branch patrol
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 95)
       # (and (patrol_route ?inp_npc ?route) (patrol_checkpoint ?inp_npc ?point))
-      cp1438_3 = ex.v[3]
-      cp1438_17 = ex.v[17]
+      cp1529_3 = ex.v[3]
+      cp1529_17 = ex.v[17]
+      ex.debugBeginCondition(definition, 281)
       # (patrol_route ?inp_npc ?route)
-      cp1440_3 = ex.v[3]
-      fc1441 = 0
-      state = 1442
+      cp1531_3 = ex.v[3]
+      fc1532 = 0
+      state = 1533
       continue
-    of 1442:
-      inc fc1441
-      if not factChoice282(ex, fc1441 - 1):
-        state = 1439
+    of 1533:
+      ex.debugBeginCondition(definition, 282)
+      inc fc1532
+      if not factChoice282(ex, fc1532 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1530
         continue
+      ex.debugEndCondition(definition, true)
       # (patrol_checkpoint ?inp_npc ?point)
-      cp1444_17 = ex.v[17]
-      fc1445 = 0
-      inc fc1445
-      if not factChoice283(ex, fc1445 - 1):
-        state = 1443
+      cp1535_17 = ex.v[17]
+      fc1536 = 0
+      ex.debugBeginCondition(definition, 283)
+      inc fc1536
+      if not factChoice283(ex, fc1536 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1534
         continue
-      state = 1435
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1526
       continue
-    of 1443:
-      ex.v[17] = cp1444_17
-      state = 1441
+    of 1534:
+      ex.v[17] = cp1535_17
+      state = 1532
       continue
-    of 1441:
+    of 1532:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1439
+        state = 1530
         continue
-      ex.v[3] = cp1440_3
-      cp1440_3 = ex.v[3]
-      state = 1442
+      ex.v[3] = cp1531_3
+      cp1531_3 = ex.v[3]
+      state = 1533
       continue
-    of 1439:
-      ex.v[3] = cp1440_3
-      state = 1437
+    of 1530:
+      ex.v[3] = cp1531_3
+      state = 1528
       continue
-    of 1437:
-      ex.v[3] = cp1438_3
-      ex.v[17] = cp1438_17
-      state = 1436
+    of 1528:
+      ex.v[3] = cp1529_3
+      ex.v[17] = cp1529_17
+      ex.debugEndCondition(definition, false)
+      state = 1527
       continue
-    of 1436:
+    of 1527:
       ex.releaseRetry(fr)
-      state = 1380
+      ex.debugEndBranch(definition, false)
+      state = 1468
       continue
-    of 1435:
+    of 1526:
       if not ex.pushBranch(addr bc95):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1447
+      ex.debugCapturePendingTask(228)
+      ex.debugCapturePendingTask(227)
+      ex.debugCapturePendingTask(226)
+      state = 1539
       continue
-    of 1447:
+    of 1539:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12838,90 +16383,111 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1387
+        state = 1475
         continue
-      state = 1448
+      state = 1540
       continue
-    of 1387:
+    of 1475:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1380
+        ex.debugEndBranch(definition, false)
+        state = 1468
         continue
-      state = 1447
+      state = 1539
       continue
-    of 1448:
+    of 1540:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1380:
+    of 1468:
       # branch socialize
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 96)
       # (and (nearby_ally ?inp_npc ?ally) (social_cooldown_ready ?inp_npc))
-      cp1452_18 = ex.v[18]
+      cp1544_18 = ex.v[18]
+      ex.debugBeginCondition(definition, 284)
       # (nearby_ally ?inp_npc ?ally)
-      cp1454_18 = ex.v[18]
-      fc1455 = 0
-      state = 1456
+      cp1546_18 = ex.v[18]
+      fc1547 = 0
+      state = 1548
       continue
-    of 1456:
-      inc fc1455
-      if not factChoice285(ex, fc1455 - 1):
-        state = 1453
+    of 1548:
+      ex.debugBeginCondition(definition, 285)
+      inc fc1547
+      if not factChoice285(ex, fc1547 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1545
         continue
+      ex.debugEndCondition(definition, true)
       # (social_cooldown_ready ?inp_npc)
       # (social_cooldown_ready ?inp_npc)
       block:
+        ex.debugBeginCondition(definition, 286)
         let ft = ex.factTables[33]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1459
+          state = 1551
           continue
-        state = 1457
+        state = 1549
         continue
-      state = 1459
+      state = 1551
       continue
-    of 1459:
-      state = 1449
+    of 1551:
+      ex.debugEndCondition(definition, true)
+      state = 1541
       continue
-    of 1457:
-      state = 1455
+    of 1549:
+      state = 1547
       continue
-    of 1455:
+    of 1547:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1453
+        state = 1545
         continue
-      ex.v[18] = cp1454_18
-      cp1454_18 = ex.v[18]
-      state = 1456
+      ex.v[18] = cp1546_18
+      cp1546_18 = ex.v[18]
+      state = 1548
       continue
-    of 1453:
-      ex.v[18] = cp1454_18
-      state = 1451
+    of 1545:
+      ex.v[18] = cp1546_18
+      state = 1543
       continue
-    of 1451:
-      ex.v[18] = cp1452_18
-      state = 1450
+    of 1543:
+      ex.v[18] = cp1544_18
+      ex.debugEndCondition(definition, false)
+      state = 1542
       continue
-    of 1450:
+    of 1542:
       ex.releaseRetry(fr)
-      state = 1381
+      ex.debugEndBranch(definition, false)
+      state = 1469
       continue
-    of 1449:
+    of 1541:
       if not ex.pushBranch(addr bc96):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1460
+      ex.debugCapturePendingTask(230)
+      ex.debugCapturePendingTask(229)
+      state = 1553
       continue
-    of 1460:
+    of 1553:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12929,59 +16495,78 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1388
+        state = 1476
         continue
-      state = 1461
+      state = 1554
       continue
-    of 1388:
+    of 1476:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1381
+        ex.debugEndBranch(definition, false)
+        state = 1469
         continue
-      state = 1460
+      state = 1553
       continue
-    of 1461:
+    of 1554:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1381:
+    of 1469:
       # branch guard_post
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 97)
       # (and (assigned_post ?inp_npc ?post))
-      cp1465_19 = ex.v[19]
+      cp1558_19 = ex.v[19]
+      ex.debugBeginCondition(definition, 287)
       # (assigned_post ?inp_npc ?post)
-      cp1467_19 = ex.v[19]
-      fc1468 = 0
-      inc fc1468
-      if not factChoice288(ex, fc1468 - 1):
-        state = 1466
+      cp1560_19 = ex.v[19]
+      fc1561 = 0
+      ex.debugBeginCondition(definition, 288)
+      inc fc1561
+      if not factChoice288(ex, fc1561 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1559
         continue
-      state = 1462
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1555
       continue
-    of 1466:
-      ex.v[19] = cp1467_19
-      state = 1464
+    of 1559:
+      ex.v[19] = cp1560_19
+      state = 1557
       continue
-    of 1464:
-      ex.v[19] = cp1465_19
-      state = 1463
+    of 1557:
+      ex.v[19] = cp1558_19
+      ex.debugEndCondition(definition, false)
+      state = 1556
       continue
-    of 1463:
+    of 1556:
       ex.releaseRetry(fr)
-      state = 1382
-      continue
-    of 1462:
-      if not ex.pushBranch(addr bc97):
-        ex.releaseRetry(fr)
-        return 0
+      ex.debugEndBranch(definition, false)
       state = 1470
       continue
-    of 1470:
+    of 1555:
+      if not ex.pushBranch(addr bc97):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(232)
+      ex.debugCapturePendingTask(231)
+      state = 1564
+      continue
+    of 1564:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -12989,81 +16574,103 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1389
+        state = 1477
         continue
-      state = 1471
+      state = 1565
       continue
-    of 1389:
+    of 1477:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1382
+        ex.debugEndBranch(definition, false)
+        state = 1470
         continue
-      state = 1470
+      state = 1564
       continue
-    of 1471:
+    of 1565:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1382:
+    of 1470:
       # branch rest
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 98)
       # (and (stamina ?inp_npc ?amount) (<= ?amount 25))
-      cp1475_7 = ex.v[7]
+      cp1569_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 289)
       # (stamina ?inp_npc ?amount)
-      cp1477_7 = ex.v[7]
-      fc1478 = 0
-      state = 1479
+      cp1571_7 = ex.v[7]
+      fc1572 = 0
+      state = 1573
       continue
-    of 1479:
-      inc fc1478
-      if not factChoice290(ex, fc1478 - 1):
-        state = 1476
+    of 1573:
+      ex.debugBeginCondition(definition, 290)
+      inc fc1572
+      if not factChoice290(ex, fc1572 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1570
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?amount 25)
       # (<= ?amount 25)
+      ex.debugBeginCondition(definition, 291)
       if compare(ex.v[7], sv100, 3'u32):
-        state = 1482
+        ex.debugEndCondition(definition, true)
+        state = 1576
         continue
-      state = 1480
+      ex.debugEndCondition(definition, false)
+      state = 1574
       continue
-    of 1482:
-      state = 1472
+    of 1576:
+      ex.debugEndCondition(definition, true)
+      state = 1566
       continue
-    of 1480:
-      state = 1478
+    of 1574:
+      state = 1572
       continue
-    of 1478:
+    of 1572:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1476
+        state = 1570
         continue
-      ex.v[7] = cp1477_7
-      cp1477_7 = ex.v[7]
-      state = 1479
+      ex.v[7] = cp1571_7
+      cp1571_7 = ex.v[7]
+      state = 1573
       continue
-    of 1476:
-      ex.v[7] = cp1477_7
-      state = 1474
+    of 1570:
+      ex.v[7] = cp1571_7
+      state = 1568
       continue
-    of 1474:
-      ex.v[7] = cp1475_7
-      state = 1473
+    of 1568:
+      ex.v[7] = cp1569_7
+      ex.debugEndCondition(definition, false)
+      state = 1567
       continue
-    of 1473:
+    of 1567:
       ex.releaseRetry(fr)
-      state = 1383
+      ex.debugEndBranch(definition, false)
+      state = 1471
       continue
-    of 1472:
+    of 1566:
       if not ex.pushBranch(addr bc98):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1483
+      ex.debugCapturePendingTask(234)
+      ex.debugCapturePendingTask(233)
+      state = 1578
       continue
-    of 1483:
+    of 1578:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -13071,36 +16678,48 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1390
+        state = 1478
         continue
-      state = 1484
+      state = 1579
       continue
-    of 1390:
+    of 1478:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 1383
+        ex.debugEndBranch(definition, false)
+        state = 1471
         continue
-      state = 1483
+      state = 1578
       continue
-    of 1484:
+    of 1579:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1383:
+    of 1471:
       # branch ambient_idle
-      state = 1485
+      ex.debugBeginBranch(definition, 99)
+      state = 1580
       continue
-    of 1485:
+    of 1580:
       if not ex.pushBranch(addr bc99):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1487
+      ex.debugCapturePendingTask(236)
+      ex.debugCapturePendingTask(235)
+      state = 1582
       continue
-    of 1487:
+    of 1582:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -13108,16 +16727,20 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1391
+        state = 1479
         continue
-      state = 1488
+      state = 1583
       continue
-    of 1391:
+    of 1479:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1487
+      state = 1582
       continue
-    of 1488:
+    of 1583:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -13125,690 +16748,131 @@ proc method14(ex: Exec): int {.nimcall.} =
 # method15: run/0
 proc method15(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1509_20: Atom
-  var cp1509_21: Atom
-  var cp1509_22: Atom
-  var cp1511_20: Atom
-  var fc1512: uint32
-  var cp1515_21: Atom
-  var cp1515_22: Atom
-  var fc1516: uint32
-  var cp1523_20: Atom
-  var cp1523_23: Atom
-  var cp1523_24: Atom
-  var cp1523_25: Atom
-  var cp1523_26: Atom
-  var cp1525_20: Atom
-  var fc1526: uint32
-  var cp1529_23: Atom
-  var fc1530: uint32
-  var cp1536_24: Atom
-  var fc1537: uint32
-  var cp1546_25: Atom
-  var cp1546_26: Atom
-  var cp1549_25: Atom
-  var cp1549_26: Atom
-  var cp1551_25: Atom
-  var fc1552: uint32
-  var cp1558_26: Atom
-  var fc1559: uint32
-  var cp1569_20: Atom
-  var cp1569_21: Atom
-  var cp1569_22: Atom
-  var cp1571_20: Atom
-  var fc1572: uint32
-  var cp1575_21: Atom
-  var cp1575_22: Atom
-  var fc1576: uint32
-  var cp1583_14: Atom
-  var cp1583_20: Atom
-  var cp1583_27: Atom
-  var cp1583_28: Atom
-  var cp1583_29: Atom
-  var cp1585_20: Atom
-  var fc1586: uint32
-  var cp1589_14: Atom
-  var cp1589_27: Atom
-  var fc1590: uint32
-  var cp1593_28: Atom
-  var cp1593_29: Atom
-  var cp1596_28: Atom
-  var cp1596_29: Atom
-  var fc1597: uint32
   var cp1604_20: Atom
-  var cp1604_23: Atom
-  var cp1604_29: Atom
+  var cp1604_21: Atom
+  var cp1604_22: Atom
   var cp1606_20: Atom
   var fc1607: uint32
-  var cp1610_23: Atom
-  var cp1610_29: Atom
+  var cp1610_21: Atom
+  var cp1610_22: Atom
   var fc1611: uint32
-  var cp1618_20: Atom
-  var cp1618_21: Atom
-  var cp1618_22: Atom
-  var cp1620_20: Atom
-  var fc1621: uint32
-  var cp1624_21: Atom
-  var cp1624_22: Atom
-  var fc1625: uint32
-  var cp1632_20: Atom
-  var cp1634_20: Atom
-  var fc1635: uint32
+  var cp1619_20: Atom
+  var cp1619_23: Atom
+  var cp1619_24: Atom
+  var cp1619_25: Atom
+  var cp1619_26: Atom
+  var cp1621_20: Atom
+  var fc1622: uint32
+  var cp1625_23: Atom
+  var fc1626: uint32
+  var cp1632_24: Atom
+  var fc1633: uint32
+  var cp1643_25: Atom
+  var cp1643_26: Atom
+  var cp1646_25: Atom
+  var cp1646_26: Atom
+  var cp1648_25: Atom
+  var fc1649: uint32
+  var cp1655_26: Atom
+  var fc1656: uint32
+  var cp1669_20: Atom
+  var cp1669_21: Atom
+  var cp1669_22: Atom
+  var cp1671_20: Atom
+  var fc1672: uint32
+  var cp1675_21: Atom
+  var cp1675_22: Atom
+  var fc1676: uint32
+  var cp1684_14: Atom
+  var cp1684_20: Atom
+  var cp1684_27: Atom
+  var cp1684_28: Atom
+  var cp1684_29: Atom
+  var cp1686_20: Atom
+  var fc1687: uint32
+  var cp1690_14: Atom
+  var cp1690_27: Atom
+  var fc1691: uint32
+  var cp1694_28: Atom
+  var cp1694_29: Atom
+  var cp1697_28: Atom
+  var cp1697_29: Atom
+  var fc1698: uint32
+  var cp1707_20: Atom
+  var cp1707_23: Atom
+  var cp1707_29: Atom
+  var cp1709_20: Atom
+  var fc1710: uint32
+  var cp1713_23: Atom
+  var cp1713_29: Atom
+  var fc1714: uint32
+  var cp1722_20: Atom
+  var cp1722_21: Atom
+  var cp1722_22: Atom
+  var cp1724_20: Atom
+  var fc1725: uint32
+  var cp1728_21: Atom
+  var cp1728_22: Atom
+  var fc1729: uint32
+  var cp1737_20: Atom
+  var cp1739_20: Atom
+  var fc1740: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1498
-  of 2: state = 1499
-  of 3: state = 1500
-  of 4: state = 1501
-  of 5: state = 1502
-  of 6: state = 1503
-  of 7: state = 1504
-  of 8: state = 1505
+  of 1: state = 1593
+  of 2: state = 1594
+  of 3: state = 1595
+  of 4: state = 1596
+  of 5: state = 1597
+  of 6: state = 1598
+  of 7: state = 1599
+  of 8: state = 1600
   else: discard
   while true:
     case state
     of 0:
-      state = 1490
+      ex.debugBeginMethod(definition, 15)
+      state = 1585
       continue
-    of 1490:
+    of 1585:
       # branch high_priority_script
       ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 100)
       # (and (controlled_npc ?npc) (scripted_order ?npc high ?order ?target))
-      cp1509_20 = ex.v[20]
-      cp1509_21 = ex.v[21]
-      cp1509_22 = ex.v[22]
-      # (controlled_npc ?npc)
-      cp1511_20 = ex.v[20]
-      fc1512 = 0
-      state = 1513
-      continue
-    of 1513:
-      inc fc1512
-      if not factChoice293(ex, fc1512 - 1):
-        state = 1510
-        continue
-      # (scripted_order ?npc high ?order ?target)
-      cp1515_21 = ex.v[21]
-      cp1515_22 = ex.v[22]
-      fc1516 = 0
-      inc fc1516
-      if not factChoice294(ex, fc1516 - 1):
-        state = 1514
-        continue
-      state = 1506
-      continue
-    of 1514:
-      ex.v[21] = cp1515_21
-      ex.v[22] = cp1515_22
-      state = 1512
-      continue
-    of 1512:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1510
-        continue
-      ex.v[20] = cp1511_20
-      cp1511_20 = ex.v[20]
-      state = 1513
-      continue
-    of 1510:
-      ex.v[20] = cp1511_20
-      state = 1508
-      continue
-    of 1508:
-      ex.v[20] = cp1509_20
-      ex.v[21] = cp1509_21
-      ex.v[22] = cp1509_22
-      state = 1507
-      continue
-    of 1507:
-      ex.releaseRetry(fr)
-      state = 1491
-      continue
-    of 1506:
-      if not ex.pushBranch(addr bc100):
-        ex.releaseRetry(fr)
-        return 0
-      state = 1518
-      continue
-    of 1518:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 1498
-        continue
-      state = 1519
-      continue
-    of 1498:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms15)
-        state = 1491
-        continue
-      state = 1518
-      continue
-    of 1519:
-      ex.releaseRetry(fr)
-      return 1
-    of 1491:
-      # branch visible_combat
-      ex.saveRetry(fr, ms15)
-      # (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
-      cp1523_20 = ex.v[20]
-      cp1523_23 = ex.v[23]
-      cp1523_24 = ex.v[24]
-      cp1523_25 = ex.v[25]
-      cp1523_26 = ex.v[26]
-      # (controlled_npc ?npc)
-      cp1525_20 = ex.v[20]
-      fc1526 = 0
-      state = 1527
-      continue
-    of 1527:
-      inc fc1526
-      if not factChoice296(ex, fc1526 - 1):
-        state = 1524
-        continue
-      # (visible_enemy ?npc ?enemy)
-      cp1529_23 = ex.v[23]
-      fc1530 = 0
-      state = 1531
-      continue
-    of 1531:
-      inc fc1530
-      if not factChoice297(ex, fc1530 - 1):
-        state = 1528
-        continue
-      # (hostile_enemy ?enemy)
-      # (hostile_enemy ?enemy)
-      block:
-        let ft = ex.factTables[38]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
-          matched = true
-          break
-        if matched:
-          state = 1534
-          continue
-        state = 1532
-        continue
-      state = 1534
-      continue
-    of 1534:
-      # (enemy_distance ?npc ?enemy ?distance)
-      cp1536_24 = ex.v[24]
-      fc1537 = 0
-      state = 1538
-      continue
-    of 1538:
-      inc fc1537
-      if not factChoice299(ex, fc1537 - 1):
-        state = 1535
-        continue
-      # (not (enemy_dead ?enemy))
-      # (enemy_dead ?enemy)
-      # (enemy_dead ?enemy)
-      block:
-        let ft = ex.factTables[40]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
-          matched = true
-          break
-        if matched:
-          state = 1544
-          continue
-        state = 1542
-        continue
-      state = 1544
-      continue
-    of 1544:
-      state = 1539
-      continue
-    of 1542:
-      state = 1541
-      continue
-    of 1541:
-      # (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
-      cp1546_25 = ex.v[25]
-      cp1546_26 = ex.v[26]
-      # (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
-      cp1549_25 = ex.v[25]
-      cp1549_26 = ex.v[26]
-      # (visible_enemy ?npc ?other)
-      cp1551_25 = ex.v[25]
-      fc1552 = 0
-      state = 1553
-      continue
-    of 1553:
-      inc fc1552
-      if not factChoice304(ex, fc1552 - 1):
-        state = 1550
-        continue
-      # (hostile_enemy ?other)
-      # (hostile_enemy ?other)
-      block:
-        let ft = ex.factTables[38]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[25]): continue
-          matched = true
-          break
-        if matched:
-          state = 1556
-          continue
-        state = 1554
-        continue
-      state = 1556
-      continue
-    of 1556:
-      # (enemy_distance ?npc ?other ?other_distance)
-      cp1558_26 = ex.v[26]
-      fc1559 = 0
-      state = 1560
-      continue
-    of 1560:
-      inc fc1559
-      if not factChoice306(ex, fc1559 - 1):
-        state = 1557
-        continue
-      # (< ?other_distance ?distance)
-      # (< ?other_distance ?distance)
-      if compare(ex.v[26], ex.v[24], 2'u32):
-        state = 1563
-        continue
-      state = 1561
-      continue
-    of 1563:
-      state = 1545
-      continue
-    of 1561:
-      state = 1559
-      continue
-    of 1559:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1557
-        continue
-      ex.v[26] = cp1558_26
-      cp1558_26 = ex.v[26]
-      state = 1560
-      continue
-    of 1557:
-      ex.v[26] = cp1558_26
-      state = 1554
-      continue
-    of 1554:
-      state = 1552
-      continue
-    of 1552:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1550
-        continue
-      ex.v[25] = cp1551_25
-      cp1551_25 = ex.v[25]
-      state = 1553
-      continue
-    of 1550:
-      ex.v[25] = cp1551_25
-      state = 1548
-      continue
-    of 1548:
-      ex.v[25] = cp1549_25
-      ex.v[26] = cp1549_26
-      state = 1547
-      continue
-    of 1547:
-      state = 1520
-      continue
-    of 1545:
-      ex.v[25] = cp1546_25
-      ex.v[26] = cp1546_26
-      state = 1539
-      continue
-    of 1539:
-      state = 1537
-      continue
-    of 1537:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1535
-        continue
-      ex.v[24] = cp1536_24
-      cp1536_24 = ex.v[24]
-      state = 1538
-      continue
-    of 1535:
-      ex.v[24] = cp1536_24
-      state = 1532
-      continue
-    of 1532:
-      state = 1530
-      continue
-    of 1530:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1528
-        continue
-      ex.v[23] = cp1529_23
-      cp1529_23 = ex.v[23]
-      state = 1531
-      continue
-    of 1528:
-      ex.v[23] = cp1529_23
-      state = 1526
-      continue
-    of 1526:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1524
-        continue
-      ex.v[20] = cp1525_20
-      cp1525_20 = ex.v[20]
-      state = 1527
-      continue
-    of 1524:
-      ex.v[20] = cp1525_20
-      state = 1522
-      continue
-    of 1522:
-      ex.v[20] = cp1523_20
-      ex.v[23] = cp1523_23
-      ex.v[24] = cp1523_24
-      ex.v[25] = cp1523_25
-      ex.v[26] = cp1523_26
-      state = 1521
-      continue
-    of 1521:
-      ex.releaseRetry(fr)
-      state = 1492
-      continue
-    of 1520:
-      if not ex.pushBranch(addr bc101):
-        ex.releaseRetry(fr)
-        return 0
-      state = 1564
-      continue
-    of 1564:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 1499
-        continue
-      state = 1565
-      continue
-    of 1499:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms15)
-        state = 1492
-        continue
-      state = 1564
-      continue
-    of 1565:
-      ex.releaseRetry(fr)
-      return 1
-    of 1492:
-      # branch medium_priority_script
-      ex.saveRetry(fr, ms15)
-      # (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
-      cp1569_20 = ex.v[20]
-      cp1569_21 = ex.v[21]
-      cp1569_22 = ex.v[22]
-      # (controlled_npc ?npc)
-      cp1571_20 = ex.v[20]
-      fc1572 = 0
-      state = 1573
-      continue
-    of 1573:
-      inc fc1572
-      if not factChoice309(ex, fc1572 - 1):
-        state = 1570
-        continue
-      # (scripted_order ?npc medium ?order ?target)
-      cp1575_21 = ex.v[21]
-      cp1575_22 = ex.v[22]
-      fc1576 = 0
-      inc fc1576
-      if not factChoice310(ex, fc1576 - 1):
-        state = 1574
-        continue
-      state = 1566
-      continue
-    of 1574:
-      ex.v[21] = cp1575_21
-      ex.v[22] = cp1575_22
-      state = 1572
-      continue
-    of 1572:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1570
-        continue
-      ex.v[20] = cp1571_20
-      cp1571_20 = ex.v[20]
-      state = 1573
-      continue
-    of 1570:
-      ex.v[20] = cp1571_20
-      state = 1568
-      continue
-    of 1568:
-      ex.v[20] = cp1569_20
-      ex.v[21] = cp1569_21
-      ex.v[22] = cp1569_22
-      state = 1567
-      continue
-    of 1567:
-      ex.releaseRetry(fr)
-      state = 1493
-      continue
-    of 1566:
-      if not ex.pushBranch(addr bc102):
-        ex.releaseRetry(fr)
-        return 0
-      state = 1578
-      continue
-    of 1578:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 1500
-        continue
-      state = 1579
-      continue
-    of 1500:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms15)
-        state = 1493
-        continue
-      state = 1578
-      continue
-    of 1579:
-      ex.releaseRetry(fr)
-      return 1
-    of 1493:
-      # branch investigate_precombat
-      ex.saveRetry(fr, ms15)
-      # (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
-      cp1583_14 = ex.v[14]
-      cp1583_20 = ex.v[20]
-      cp1583_27 = ex.v[27]
-      cp1583_28 = ex.v[28]
-      cp1583_29 = ex.v[29]
-      # (controlled_npc ?npc)
-      cp1585_20 = ex.v[20]
-      fc1586 = 0
-      state = 1587
-      continue
-    of 1587:
-      inc fc1586
-      if not factChoice312(ex, fc1586 - 1):
-        state = 1584
-        continue
-      # (suspicious_stimulus ?npc ?stimulus ?location)
-      cp1589_14 = ex.v[14]
-      cp1589_27 = ex.v[27]
-      fc1590 = 0
-      state = 1591
-      continue
-    of 1591:
-      inc fc1590
-      if not factChoice313(ex, fc1590 - 1):
-        state = 1588
-        continue
-      # (not (combat_memory ?npc ?lost_enemy ?last_location))
-      cp1593_28 = ex.v[28]
-      cp1593_29 = ex.v[29]
-      # (combat_memory ?npc ?lost_enemy ?last_location)
-      cp1596_28 = ex.v[28]
-      cp1596_29 = ex.v[29]
-      fc1597 = 0
-      inc fc1597
-      if not factChoice315(ex, fc1597 - 1):
-        state = 1595
-        continue
-      state = 1592
-      continue
-    of 1595:
-      ex.v[28] = cp1596_28
-      ex.v[29] = cp1596_29
-      state = 1594
-      continue
-    of 1594:
-      state = 1580
-      continue
-    of 1592:
-      ex.v[28] = cp1593_28
-      ex.v[29] = cp1593_29
-      state = 1590
-      continue
-    of 1590:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1588
-        continue
-      ex.v[14] = cp1589_14
-      ex.v[27] = cp1589_27
-      cp1589_14 = ex.v[14]
-      cp1589_27 = ex.v[27]
-      state = 1591
-      continue
-    of 1588:
-      ex.v[14] = cp1589_14
-      ex.v[27] = cp1589_27
-      state = 1586
-      continue
-    of 1586:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1584
-        continue
-      ex.v[20] = cp1585_20
-      cp1585_20 = ex.v[20]
-      state = 1587
-      continue
-    of 1584:
-      ex.v[20] = cp1585_20
-      state = 1582
-      continue
-    of 1582:
-      ex.v[14] = cp1583_14
-      ex.v[20] = cp1583_20
-      ex.v[27] = cp1583_27
-      ex.v[28] = cp1583_28
-      ex.v[29] = cp1583_29
-      state = 1581
-      continue
-    of 1581:
-      ex.releaseRetry(fr)
-      state = 1494
-      continue
-    of 1580:
-      if not ex.pushBranch(addr bc103):
-        ex.releaseRetry(fr)
-        return 0
-      state = 1599
-      continue
-    of 1599:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 4
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 1501
-        continue
-      state = 1600
-      continue
-    of 1501:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms15)
-        state = 1494
-        continue
-      state = 1599
-      continue
-    of 1600:
-      ex.releaseRetry(fr)
-      return 1
-    of 1494:
-      # branch search_lost_enemy
-      ex.saveRetry(fr, ms15)
-      # (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
       cp1604_20 = ex.v[20]
-      cp1604_23 = ex.v[23]
-      cp1604_29 = ex.v[29]
+      cp1604_21 = ex.v[21]
+      cp1604_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 292)
       # (controlled_npc ?npc)
       cp1606_20 = ex.v[20]
       fc1607 = 0
       state = 1608
       continue
     of 1608:
+      ex.debugBeginCondition(definition, 293)
       inc fc1607
-      if not factChoice317(ex, fc1607 - 1):
+      if not factChoice293(ex, fc1607 - 1):
+        ex.debugEndCondition(definition, false)
         state = 1605
         continue
-      # (combat_memory ?npc ?enemy ?last_location)
-      cp1610_23 = ex.v[23]
-      cp1610_29 = ex.v[29]
+      ex.debugEndCondition(definition, true)
+      # (scripted_order ?npc high ?order ?target)
+      cp1610_21 = ex.v[21]
+      cp1610_22 = ex.v[22]
       fc1611 = 0
+      ex.debugBeginCondition(definition, 294)
       inc fc1611
-      if not factChoice318(ex, fc1611 - 1):
+      if not factChoice294(ex, fc1611 - 1):
+        ex.debugEndCondition(definition, false)
         state = 1609
         continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 1601
       continue
     of 1609:
-      ex.v[23] = cp1610_23
-      ex.v[29] = cp1610_29
+      ex.v[21] = cp1610_21
+      ex.v[22] = cp1610_22
       state = 1607
       continue
     of 1607:
@@ -13825,21 +16889,721 @@ proc method15(ex: Exec): int {.nimcall.} =
       continue
     of 1603:
       ex.v[20] = cp1604_20
-      ex.v[23] = cp1604_23
-      ex.v[29] = cp1604_29
+      ex.v[21] = cp1604_21
+      ex.v[22] = cp1604_22
+      ex.debugEndCondition(definition, false)
       state = 1602
       continue
     of 1602:
       ex.releaseRetry(fr)
-      state = 1495
+      ex.debugEndBranch(definition, false)
+      state = 1586
       continue
     of 1601:
+      if not ex.pushBranch(addr bc100):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(238)
+      ex.debugCapturePendingTask(237)
+      state = 1614
+      continue
+    of 1614:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1593
+        continue
+      state = 1615
+      continue
+    of 1593:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms15)
+        ex.debugEndBranch(definition, false)
+        state = 1586
+        continue
+      state = 1614
+      continue
+    of 1615:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1586:
+      # branch visible_combat
+      ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 101)
+      # (and (controlled_npc ?npc) (visible_enemy ?npc ?enemy) (hostile_enemy ?enemy) (enemy_distance ?npc ?enemy ?distance) (not (enemy_dead ?enemy)) (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))))
+      cp1619_20 = ex.v[20]
+      cp1619_23 = ex.v[23]
+      cp1619_24 = ex.v[24]
+      cp1619_25 = ex.v[25]
+      cp1619_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 295)
+      # (controlled_npc ?npc)
+      cp1621_20 = ex.v[20]
+      fc1622 = 0
+      state = 1623
+      continue
+    of 1623:
+      ex.debugBeginCondition(definition, 296)
+      inc fc1622
+      if not factChoice296(ex, fc1622 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1620
+        continue
+      ex.debugEndCondition(definition, true)
+      # (visible_enemy ?npc ?enemy)
+      cp1625_23 = ex.v[23]
+      fc1626 = 0
+      state = 1627
+      continue
+    of 1627:
+      ex.debugBeginCondition(definition, 297)
+      inc fc1626
+      if not factChoice297(ex, fc1626 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1624
+        continue
+      ex.debugEndCondition(definition, true)
+      # (hostile_enemy ?enemy)
+      # (hostile_enemy ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 298)
+        let ft = ex.factTables[38]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1630
+          continue
+        state = 1628
+        continue
+      state = 1630
+      continue
+    of 1630:
+      # (enemy_distance ?npc ?enemy ?distance)
+      cp1632_24 = ex.v[24]
+      fc1633 = 0
+      state = 1634
+      continue
+    of 1634:
+      ex.debugBeginCondition(definition, 299)
+      inc fc1633
+      if not factChoice299(ex, fc1633 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1631
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_dead ?enemy))
+      ex.debugBeginCondition(definition, 300)
+      # (enemy_dead ?enemy)
+      # (enemy_dead ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 301)
+        let ft = ex.factTables[40]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[23]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1640
+          continue
+        state = 1638
+        continue
+      state = 1640
+      continue
+    of 1640:
+      state = 1635
+      continue
+    of 1638:
+      state = 1637
+      continue
+    of 1637:
+      ex.debugEndCondition(definition, true)
+      # (not (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance)))
+      cp1643_25 = ex.v[25]
+      cp1643_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 302)
+      # (and (visible_enemy ?npc ?other) (hostile_enemy ?other) (enemy_distance ?npc ?other ?other_distance) (< ?other_distance ?distance))
+      cp1646_25 = ex.v[25]
+      cp1646_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 303)
+      # (visible_enemy ?npc ?other)
+      cp1648_25 = ex.v[25]
+      fc1649 = 0
+      state = 1650
+      continue
+    of 1650:
+      ex.debugBeginCondition(definition, 304)
+      inc fc1649
+      if not factChoice304(ex, fc1649 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1647
+        continue
+      ex.debugEndCondition(definition, true)
+      # (hostile_enemy ?other)
+      # (hostile_enemy ?other)
+      block:
+        ex.debugBeginCondition(definition, 305)
+        let ft = ex.factTables[38]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[25]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1653
+          continue
+        state = 1651
+        continue
+      state = 1653
+      continue
+    of 1653:
+      # (enemy_distance ?npc ?other ?other_distance)
+      cp1655_26 = ex.v[26]
+      fc1656 = 0
+      state = 1657
+      continue
+    of 1657:
+      ex.debugBeginCondition(definition, 306)
+      inc fc1656
+      if not factChoice306(ex, fc1656 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1654
+        continue
+      ex.debugEndCondition(definition, true)
+      # (< ?other_distance ?distance)
+      # (< ?other_distance ?distance)
+      ex.debugBeginCondition(definition, 307)
+      if compare(ex.v[26], ex.v[24], 2'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1660
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1658
+      continue
+    of 1660:
+      ex.debugEndCondition(definition, true)
+      state = 1642
+      continue
+    of 1658:
+      state = 1656
+      continue
+    of 1656:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1654
+        continue
+      ex.v[26] = cp1655_26
+      cp1655_26 = ex.v[26]
+      state = 1657
+      continue
+    of 1654:
+      ex.v[26] = cp1655_26
+      state = 1651
+      continue
+    of 1651:
+      state = 1649
+      continue
+    of 1649:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1647
+        continue
+      ex.v[25] = cp1648_25
+      cp1648_25 = ex.v[25]
+      state = 1650
+      continue
+    of 1647:
+      ex.v[25] = cp1648_25
+      state = 1645
+      continue
+    of 1645:
+      ex.v[25] = cp1646_25
+      ex.v[26] = cp1646_26
+      ex.debugEndCondition(definition, false)
+      state = 1644
+      continue
+    of 1644:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1616
+      continue
+    of 1642:
+      ex.v[25] = cp1643_25
+      ex.v[26] = cp1643_26
+      ex.debugEndCondition(definition, false)
+      state = 1641
+      continue
+    of 1641:
+      ex.debugBeginCondition(definition, 300)
+      state = 1635
+      continue
+    of 1635:
+      ex.debugEndCondition(definition, false)
+      state = 1633
+      continue
+    of 1633:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1631
+        continue
+      ex.v[24] = cp1632_24
+      cp1632_24 = ex.v[24]
+      state = 1634
+      continue
+    of 1631:
+      ex.v[24] = cp1632_24
+      state = 1628
+      continue
+    of 1628:
+      state = 1626
+      continue
+    of 1626:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1624
+        continue
+      ex.v[23] = cp1625_23
+      cp1625_23 = ex.v[23]
+      state = 1627
+      continue
+    of 1624:
+      ex.v[23] = cp1625_23
+      state = 1622
+      continue
+    of 1622:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1620
+        continue
+      ex.v[20] = cp1621_20
+      cp1621_20 = ex.v[20]
+      state = 1623
+      continue
+    of 1620:
+      ex.v[20] = cp1621_20
+      state = 1618
+      continue
+    of 1618:
+      ex.v[20] = cp1619_20
+      ex.v[23] = cp1619_23
+      ex.v[24] = cp1619_24
+      ex.v[25] = cp1619_25
+      ex.v[26] = cp1619_26
+      ex.debugEndCondition(definition, false)
+      state = 1617
+      continue
+    of 1617:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1587
+      continue
+    of 1616:
+      if not ex.pushBranch(addr bc101):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(240)
+      ex.debugCapturePendingTask(239)
+      state = 1664
+      continue
+    of 1664:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1594
+        continue
+      state = 1665
+      continue
+    of 1594:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms15)
+        ex.debugEndBranch(definition, false)
+        state = 1587
+        continue
+      state = 1664
+      continue
+    of 1665:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1587:
+      # branch medium_priority_script
+      ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 102)
+      # (and (controlled_npc ?npc) (scripted_order ?npc medium ?order ?target))
+      cp1669_20 = ex.v[20]
+      cp1669_21 = ex.v[21]
+      cp1669_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 308)
+      # (controlled_npc ?npc)
+      cp1671_20 = ex.v[20]
+      fc1672 = 0
+      state = 1673
+      continue
+    of 1673:
+      ex.debugBeginCondition(definition, 309)
+      inc fc1672
+      if not factChoice309(ex, fc1672 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1670
+        continue
+      ex.debugEndCondition(definition, true)
+      # (scripted_order ?npc medium ?order ?target)
+      cp1675_21 = ex.v[21]
+      cp1675_22 = ex.v[22]
+      fc1676 = 0
+      ex.debugBeginCondition(definition, 310)
+      inc fc1676
+      if not factChoice310(ex, fc1676 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1674
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1666
+      continue
+    of 1674:
+      ex.v[21] = cp1675_21
+      ex.v[22] = cp1675_22
+      state = 1672
+      continue
+    of 1672:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1670
+        continue
+      ex.v[20] = cp1671_20
+      cp1671_20 = ex.v[20]
+      state = 1673
+      continue
+    of 1670:
+      ex.v[20] = cp1671_20
+      state = 1668
+      continue
+    of 1668:
+      ex.v[20] = cp1669_20
+      ex.v[21] = cp1669_21
+      ex.v[22] = cp1669_22
+      ex.debugEndCondition(definition, false)
+      state = 1667
+      continue
+    of 1667:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1588
+      continue
+    of 1666:
+      if not ex.pushBranch(addr bc102):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(242)
+      ex.debugCapturePendingTask(241)
+      state = 1679
+      continue
+    of 1679:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1595
+        continue
+      state = 1680
+      continue
+    of 1595:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms15)
+        ex.debugEndBranch(definition, false)
+        state = 1588
+        continue
+      state = 1679
+      continue
+    of 1680:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1588:
+      # branch investigate_precombat
+      ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 103)
+      # (and (controlled_npc ?npc) (suspicious_stimulus ?npc ?stimulus ?location) (not (combat_memory ?npc ?lost_enemy ?last_location)))
+      cp1684_14 = ex.v[14]
+      cp1684_20 = ex.v[20]
+      cp1684_27 = ex.v[27]
+      cp1684_28 = ex.v[28]
+      cp1684_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 311)
+      # (controlled_npc ?npc)
+      cp1686_20 = ex.v[20]
+      fc1687 = 0
+      state = 1688
+      continue
+    of 1688:
+      ex.debugBeginCondition(definition, 312)
+      inc fc1687
+      if not factChoice312(ex, fc1687 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1685
+        continue
+      ex.debugEndCondition(definition, true)
+      # (suspicious_stimulus ?npc ?stimulus ?location)
+      cp1690_14 = ex.v[14]
+      cp1690_27 = ex.v[27]
+      fc1691 = 0
+      state = 1692
+      continue
+    of 1692:
+      ex.debugBeginCondition(definition, 313)
+      inc fc1691
+      if not factChoice313(ex, fc1691 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1689
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (combat_memory ?npc ?lost_enemy ?last_location))
+      cp1694_28 = ex.v[28]
+      cp1694_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 314)
+      # (combat_memory ?npc ?lost_enemy ?last_location)
+      cp1697_28 = ex.v[28]
+      cp1697_29 = ex.v[29]
+      fc1698 = 0
+      ex.debugBeginCondition(definition, 315)
+      inc fc1698
+      if not factChoice315(ex, fc1698 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1696
+        continue
+      ex.debugEndCondition(definition, true)
+      state = 1693
+      continue
+    of 1696:
+      ex.v[28] = cp1697_28
+      ex.v[29] = cp1697_29
+      state = 1695
+      continue
+    of 1695:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1681
+      continue
+    of 1693:
+      ex.v[28] = cp1694_28
+      ex.v[29] = cp1694_29
+      ex.debugEndCondition(definition, false)
+      state = 1691
+      continue
+    of 1691:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1689
+        continue
+      ex.v[14] = cp1690_14
+      ex.v[27] = cp1690_27
+      cp1690_14 = ex.v[14]
+      cp1690_27 = ex.v[27]
+      state = 1692
+      continue
+    of 1689:
+      ex.v[14] = cp1690_14
+      ex.v[27] = cp1690_27
+      state = 1687
+      continue
+    of 1687:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1685
+        continue
+      ex.v[20] = cp1686_20
+      cp1686_20 = ex.v[20]
+      state = 1688
+      continue
+    of 1685:
+      ex.v[20] = cp1686_20
+      state = 1683
+      continue
+    of 1683:
+      ex.v[14] = cp1684_14
+      ex.v[20] = cp1684_20
+      ex.v[27] = cp1684_27
+      ex.v[28] = cp1684_28
+      ex.v[29] = cp1684_29
+      ex.debugEndCondition(definition, false)
+      state = 1682
+      continue
+    of 1682:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1589
+      continue
+    of 1681:
+      if not ex.pushBranch(addr bc103):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(244)
+      ex.debugCapturePendingTask(243)
+      state = 1702
+      continue
+    of 1702:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 4
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1596
+        continue
+      state = 1703
+      continue
+    of 1596:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms15)
+        ex.debugEndBranch(definition, false)
+        state = 1589
+        continue
+      state = 1702
+      continue
+    of 1703:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1589:
+      # branch search_lost_enemy
+      ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 104)
+      # (and (controlled_npc ?npc) (combat_memory ?npc ?enemy ?last_location))
+      cp1707_20 = ex.v[20]
+      cp1707_23 = ex.v[23]
+      cp1707_29 = ex.v[29]
+      ex.debugBeginCondition(definition, 316)
+      # (controlled_npc ?npc)
+      cp1709_20 = ex.v[20]
+      fc1710 = 0
+      state = 1711
+      continue
+    of 1711:
+      ex.debugBeginCondition(definition, 317)
+      inc fc1710
+      if not factChoice317(ex, fc1710 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1708
+        continue
+      ex.debugEndCondition(definition, true)
+      # (combat_memory ?npc ?enemy ?last_location)
+      cp1713_23 = ex.v[23]
+      cp1713_29 = ex.v[29]
+      fc1714 = 0
+      ex.debugBeginCondition(definition, 318)
+      inc fc1714
+      if not factChoice318(ex, fc1714 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1712
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1704
+      continue
+    of 1712:
+      ex.v[23] = cp1713_23
+      ex.v[29] = cp1713_29
+      state = 1710
+      continue
+    of 1710:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1708
+        continue
+      ex.v[20] = cp1709_20
+      cp1709_20 = ex.v[20]
+      state = 1711
+      continue
+    of 1708:
+      ex.v[20] = cp1709_20
+      state = 1706
+      continue
+    of 1706:
+      ex.v[20] = cp1707_20
+      ex.v[23] = cp1707_23
+      ex.v[29] = cp1707_29
+      ex.debugEndCondition(definition, false)
+      state = 1705
+      continue
+    of 1705:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1590
+      continue
+    of 1704:
       if not ex.pushBranch(addr bc104):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1613
+      ex.debugCapturePendingTask(246)
+      ex.debugCapturePendingTask(245)
+      state = 1717
       continue
-    of 1613:
+    of 1717:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -13847,87 +17611,109 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1502
+        state = 1597
         continue
-      state = 1614
+      state = 1718
       continue
-    of 1502:
+    of 1597:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms15)
-        state = 1495
+        ex.debugEndBranch(definition, false)
+        state = 1590
         continue
-      state = 1613
+      state = 1717
       continue
-    of 1614:
+    of 1718:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1495:
+    of 1590:
       # branch low_priority_script
       ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 105)
       # (and (controlled_npc ?npc) (scripted_order ?npc low ?order ?target))
-      cp1618_20 = ex.v[20]
-      cp1618_21 = ex.v[21]
-      cp1618_22 = ex.v[22]
+      cp1722_20 = ex.v[20]
+      cp1722_21 = ex.v[21]
+      cp1722_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 319)
       # (controlled_npc ?npc)
-      cp1620_20 = ex.v[20]
-      fc1621 = 0
-      state = 1622
+      cp1724_20 = ex.v[20]
+      fc1725 = 0
+      state = 1726
       continue
-    of 1622:
-      inc fc1621
-      if not factChoice320(ex, fc1621 - 1):
-        state = 1619
+    of 1726:
+      ex.debugBeginCondition(definition, 320)
+      inc fc1725
+      if not factChoice320(ex, fc1725 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1723
         continue
+      ex.debugEndCondition(definition, true)
       # (scripted_order ?npc low ?order ?target)
-      cp1624_21 = ex.v[21]
-      cp1624_22 = ex.v[22]
-      fc1625 = 0
-      inc fc1625
-      if not factChoice321(ex, fc1625 - 1):
-        state = 1623
+      cp1728_21 = ex.v[21]
+      cp1728_22 = ex.v[22]
+      fc1729 = 0
+      ex.debugBeginCondition(definition, 321)
+      inc fc1729
+      if not factChoice321(ex, fc1729 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1727
         continue
-      state = 1615
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1719
       continue
-    of 1623:
-      ex.v[21] = cp1624_21
-      ex.v[22] = cp1624_22
-      state = 1621
+    of 1727:
+      ex.v[21] = cp1728_21
+      ex.v[22] = cp1728_22
+      state = 1725
       continue
-    of 1621:
+    of 1725:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1619
+        state = 1723
         continue
-      ex.v[20] = cp1620_20
-      cp1620_20 = ex.v[20]
-      state = 1622
+      ex.v[20] = cp1724_20
+      cp1724_20 = ex.v[20]
+      state = 1726
       continue
-    of 1619:
-      ex.v[20] = cp1620_20
-      state = 1617
+    of 1723:
+      ex.v[20] = cp1724_20
+      state = 1721
       continue
-    of 1617:
-      ex.v[20] = cp1618_20
-      ex.v[21] = cp1618_21
-      ex.v[22] = cp1618_22
-      state = 1616
+    of 1721:
+      ex.v[20] = cp1722_20
+      ex.v[21] = cp1722_21
+      ex.v[22] = cp1722_22
+      ex.debugEndCondition(definition, false)
+      state = 1720
       continue
-    of 1616:
+    of 1720:
       ex.releaseRetry(fr)
-      state = 1496
+      ex.debugEndBranch(definition, false)
+      state = 1591
       continue
-    of 1615:
+    of 1719:
       if not ex.pushBranch(addr bc105):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1627
+      ex.debugCapturePendingTask(248)
+      ex.debugCapturePendingTask(247)
+      state = 1732
       continue
-    of 1627:
+    of 1732:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -13935,59 +17721,78 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1503
+        state = 1598
         continue
-      state = 1628
+      state = 1733
       continue
-    of 1503:
+    of 1598:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms15)
-        state = 1496
+        ex.debugEndBranch(definition, false)
+        state = 1591
         continue
-      state = 1627
+      state = 1732
       continue
-    of 1628:
+    of 1733:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1496:
+    of 1591:
       # branch idle
       ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 106)
       # (and (controlled_npc ?npc))
-      cp1632_20 = ex.v[20]
+      cp1737_20 = ex.v[20]
+      ex.debugBeginCondition(definition, 322)
       # (controlled_npc ?npc)
-      cp1634_20 = ex.v[20]
-      fc1635 = 0
-      inc fc1635
-      if not factChoice323(ex, fc1635 - 1):
-        state = 1633
+      cp1739_20 = ex.v[20]
+      fc1740 = 0
+      ex.debugBeginCondition(definition, 323)
+      inc fc1740
+      if not factChoice323(ex, fc1740 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1738
         continue
-      state = 1629
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1734
       continue
-    of 1633:
-      ex.v[20] = cp1634_20
-      state = 1631
+    of 1738:
+      ex.v[20] = cp1739_20
+      state = 1736
       continue
-    of 1631:
-      ex.v[20] = cp1632_20
-      state = 1630
+    of 1736:
+      ex.v[20] = cp1737_20
+      ex.debugEndCondition(definition, false)
+      state = 1735
       continue
-    of 1630:
+    of 1735:
       ex.releaseRetry(fr)
-      state = 1497
+      ex.debugEndBranch(definition, false)
+      state = 1592
       continue
-    of 1629:
+    of 1734:
       if not ex.pushBranch(addr bc106):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1637
+      ex.debugCapturePendingTask(250)
+      ex.debugCapturePendingTask(249)
+      state = 1743
       continue
-    of 1637:
+    of 1743:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -13995,36 +17800,47 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1504
+        state = 1599
         continue
-      state = 1638
+      state = 1744
       continue
-    of 1504:
+    of 1599:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms15)
-        state = 1497
+        ex.debugEndBranch(definition, false)
+        state = 1592
         continue
-      state = 1637
+      state = 1743
       continue
-    of 1638:
+    of 1744:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1497:
+    of 1592:
       # branch no_npc
-      state = 1639
+      ex.debugBeginBranch(definition, 107)
+      state = 1745
       continue
-    of 1639:
+    of 1745:
       if not ex.pushBranch(addr bc107):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1641
+      ex.debugCapturePendingTask(251)
+      state = 1747
       continue
-    of 1641:
+    of 1747:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -14032,16 +17848,20 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1505
+        state = 1600
         continue
-      state = 1642
+      state = 1748
       continue
-    of 1505:
+    of 1600:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1641
+      state = 1747
       continue
-    of 1642:
+    of 1748:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -14061,16 +17881,22 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym125 and argumentCount == 0:
     entry = 15
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 15:
     runResult = ex.run(method15)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task3), PendingTask(fn: task2), PendingTask(fn: task1), PendingTask(fn: task0)], totalRestore: 0)
@@ -14185,3 +18011,4285 @@ definition = Definition(abiVersion: ABIVersion, features: featureRuntimeBacktrac
   newPreparedStorage: newPrepared, newExecutionStorage: newExecution, decomposeCall: decomposeCall,
   factNames: @["under_fire", "escort_route", "interaction_ready", "health", "retreat_route", "enemy_attacking", "stamina", "weapon_equipped", "enemy_staggered", "weapon_available", "enemy_suppressed", "flank_route", "ammo", "cover_available", "cover_compromised", "reserve_ammo", "clear_shot", "advance_route", "squad_alert", "track_route", "route_blocked_to", "alternate_investigation_route", "enemy_tracks", "escape_sound", "squad_search_route", "cover_at", "search_perimeter", "medkit_available", "ammo_cache", "weapon_jammed", "patrol_route", "patrol_checkpoint", "nearby_ally", "social_cooldown_ready", "assigned_post", "controlled_npc", "scripted_order", "visible_enemy", "hostile_enemy", "enemy_distance", "enemy_dead", "suspicious_stimulus", "combat_memory"],
   callTermRequirements: @[])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/AAACombatNPC.domain",
+      strings: @[
+        "aaa_orders::execute_scripted_order",
+        "inp_npc",
+        "?inp_npc",
+        "inp_order",
+        "?inp_order",
+        "inp_target",
+        "?inp_target",
+        "evacuate_under_fire",
+        "evacuate",
+        "under_fire",
+        "mark_order_started",
+        "!mark_order_started",
+        "deploy_smoke",
+        "!deploy_smoke",
+        "move_to_order_target",
+        "!move_to_order_target",
+        "mark_order_complete",
+        "!mark_order_complete",
+        "hold_position",
+        "hold",
+        "face_order_target",
+        "!face_order_target",
+        "!hold_position",
+        "escort",
+        "escort_route",
+        "route",
+        "?route",
+        "follow_escort_route",
+        "!follow_escort_route",
+        "guard",
+        "guard_target",
+        "!guard_target",
+        "interact",
+        "interaction_ready",
+        "interact_with",
+        "!interact_with",
+        "move",
+        "unknown_order",
+        "report_invalid_order",
+        "!report_invalid_order",
+        "aaa_combat::combat_tick",
+        "inp_enemy",
+        "?inp_enemy",
+        "inp_distance",
+        "?inp_distance",
+        "critical_retreat",
+        "health",
+        "hp",
+        "?hp",
+        "20",
+        "retreat_route",
+        "remember_enemy",
+        "!remember_enemy",
+        "throw_smoke",
+        "!throw_smoke",
+        "retreat_via",
+        "!retreat_via",
+        "melee",
+        "8",
+        "melee_tick",
+        "ranged",
+        "ranged_tick",
+        "aaa_combat::melee_tick",
+        "parry_counter",
+        "enemy_attacking",
+        "stamina",
+        "amount",
+        "?amount",
+        "30",
+        "weapon_equipped",
+        "face_enemy",
+        "!face_enemy",
+        "parry_attack",
+        "!parry_attack",
+        "counter_attack",
+        "!counter_attack",
+        "heavy_strike",
+        "enemy_staggered",
+        "45",
+        "heavy_melee_attack",
+        "!heavy_melee_attack",
+        "quick_strike",
+        "quick_melee_attack",
+        "!quick_melee_attack",
+        "draw_melee",
+        "weapon_available",
+        "switch_weapon",
+        "!switch_weapon",
+        "improvised_defense",
+        "dodge_enemy",
+        "!dodge_enemy",
+        "improvised_melee_attack",
+        "!improvised_melee_attack",
+        "aaa_combat::ranged_tick",
+        "flank_suppressed_target",
+        "enemy_suppressed",
+        "flank_route",
+        "ammo",
+        "count",
+        "?count",
+        "0",
+        "follow_flank_route",
+        "!follow_flank_route",
+        "aim_at",
+        "!aim_at",
+        "fire_burst",
+        "!fire_burst",
+        "take_cover_and_fire",
+        "cover_available",
+        "cover",
+        "?cover",
+        "cover_compromised",
+        "move_to_cover",
+        "!move_to_cover",
+        "peek_from_cover",
+        "!peek_from_cover",
+        "fire_controlled_burst",
+        "!fire_controlled_burst",
+        "reload_in_cover",
+        "reserve_ammo",
+        "reload_weapon",
+        "!reload_weapon",
+        "reload",
+        "precision_shot",
+        "clear_shot",
+        "fire_precision_shot",
+        "!fire_precision_shot",
+        "controlled_burst",
+        "switch_to_ranged",
+        "close_distance",
+        "advance_route",
+        "advance_under_cover",
+        "!advance_under_cover",
+        "suppress_enemy",
+        "!suppress_enemy",
+        "defensive_fallback",
+        "track_enemy",
+        "!track_enemy",
+        "seek_cover",
+        "!seek_cover",
+        "aaa_investigation::investigation_tick",
+        "inp_stimulus",
+        "?inp_stimulus",
+        "inp_location",
+        "?inp_location",
+        "radio_contact",
+        "radio",
+        "squad_alert",
+        "report",
+        "?report",
+        "acknowledge_radio_alert",
+        "!acknowledge_radio_alert",
+        "set_cautious_stance",
+        "!set_cautious_stance",
+        "move_to_investigation_point",
+        "!move_to_investigation_point",
+        "scan_sector",
+        "!scan_sector",
+        "gunshot_with_cover",
+        "gunshot",
+        "report_suspicious_sound",
+        "!report_suspicious_sound",
+        "footprints",
+        "track_route",
+        "inspect_tracks",
+        "!inspect_tracks",
+        "follow_track_route",
+        "!follow_track_route",
+        "visual_anomaly",
+        "anomaly",
+        "focus_attention",
+        "!focus_attention",
+        "inspect_anomaly",
+        "!inspect_anomaly",
+        "blocked_route",
+        "route_blocked_to",
+        "alternate_investigation_route",
+        "follow_investigation_route",
+        "!follow_investigation_route",
+        "generic",
+        "report_investigation_result",
+        "!report_investigation_result",
+        "aaa_search::search_tick",
+        "inp_last_location",
+        "?inp_last_location",
+        "fresh_tracks",
+        "enemy_tracks",
+        "announce_lost_enemy",
+        "!announce_lost_enemy",
+        "follow_enemy_tracks",
+        "!follow_enemy_tracks",
+        "heard_escape",
+        "escape_sound",
+        "location",
+        "?location",
+        "move_to_search_point",
+        "!move_to_search_point",
+        "search_with_squad",
+        "squad_search_route",
+        "coordinate_squad_search",
+        "!coordinate_squad_search",
+        "follow_search_route",
+        "!follow_search_route",
+        "last_known_cover",
+        "cover_at",
+        "clear_cover",
+        "!clear_cover",
+        "search_perimeter",
+        "last_known_position",
+        "report_search_progress",
+        "!report_search_progress",
+        "aaa_idle::idle_tick",
+        "injury_care",
+        "medkit_available",
+        "use_medkit",
+        "!use_medkit",
+        "check_equipment",
+        "!check_equipment",
+        "resupply_ammo",
+        "5",
+        "ammo_cache",
+        "cache",
+        "?cache",
+        "move_to_supply",
+        "!move_to_supply",
+        "!resupply_ammo",
+        "repair_weapon",
+        "weapon_jammed",
+        "weapon",
+        "?weapon",
+        "clear_weapon_jam",
+        "!clear_weapon_jam",
+        "patrol",
+        "patrol_route",
+        "patrol_checkpoint",
+        "point",
+        "?point",
+        "follow_patrol_route",
+        "!follow_patrol_route",
+        "inspect_checkpoint",
+        "!inspect_checkpoint",
+        "report_patrol_progress",
+        "!report_patrol_progress",
+        "socialize",
+        "nearby_ally",
+        "ally",
+        "?ally",
+        "social_cooldown_ready",
+        "greet_ally",
+        "!greet_ally",
+        "exchange_status",
+        "!exchange_status",
+        "guard_post",
+        "assigned_post",
+        "post",
+        "?post",
+        "move_to_guard_post",
+        "!move_to_guard_post",
+        "watch_post",
+        "!watch_post",
+        "rest",
+        "25",
+        "rest_briefly",
+        "!rest_briefly",
+        "check_surroundings",
+        "!check_surroundings",
+        "ambient_idle",
+        "play_idle_animation",
+        "!play_idle_animation",
+        "AAACombatNPC::run",
+        "high_priority_script",
+        "controlled_npc",
+        "npc",
+        "?npc",
+        "scripted_order",
+        "high",
+        "order",
+        "?order",
+        "target",
+        "?target",
+        "announce_state",
+        "!announce_state",
+        "high_order",
+        "\"high_order\"",
+        "execute_scripted_order",
+        "visible_combat",
+        "visible_enemy",
+        "enemy",
+        "?enemy",
+        "hostile_enemy",
+        "enemy_distance",
+        "distance",
+        "?distance",
+        "enemy_dead",
+        "other",
+        "?other",
+        "other_distance",
+        "?other_distance",
+        "combat",
+        "\"combat\"",
+        "combat_tick",
+        "medium_priority_script",
+        "medium",
+        "medium_order",
+        "\"medium_order\"",
+        "investigate_precombat",
+        "suspicious_stimulus",
+        "stimulus",
+        "?stimulus",
+        "combat_memory",
+        "lost_enemy",
+        "?lost_enemy",
+        "last_location",
+        "?last_location",
+        "investigation",
+        "\"investigation\"",
+        "investigation_tick",
+        "search_lost_enemy",
+        "search",
+        "\"search\"",
+        "search_tick",
+        "low_priority_script",
+        "low",
+        "low_order",
+        "\"low_order\"",
+        "idle",
+        "\"idle\"",
+        "idle_tick",
+        "no_npc",
+        "no_controlled_npc",
+        "\"no_controlled_npc\"",
+        "run"],
+      values: @[
+        1'u32, 2, 1, 3, 0,
+        1, 4, 3, 3, 1,
+        1, 6, 5, 3, 2,
+        1, 4, 3, 5, 1,
+        0, 8, 8, 5, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 2, 1, 6, 0,
+        1, 4, 3, 6, 1,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 8, 0,
+        1, 6, 5, 8, 2,
+        1, 2, 1, 9, 0,
+        1, 4, 3, 9, 1,
+        1, 4, 3, 12, 1,
+        0, 8, 8, 12, NoIndex,
+        1, 2, 1, 13, 0,
+        1, 4, 3, 13, 1,
+        1, 2, 1, 14, 0,
+        1, 6, 5, 14, 2,
+        1, 2, 1, 15, 0,
+        1, 4, 3, 15, 1,
+        1, 4, 3, 18, 1,
+        0, 19, 19, 18, NoIndex,
+        1, 2, 1, 19, 0,
+        1, 4, 3, 19, 1,
+        1, 2, 1, 20, 0,
+        1, 6, 5, 20, 2,
+        1, 2, 1, 21, 0,
+        1, 6, 5, 21, 2,
+        1, 4, 3, 24, 1,
+        0, 23, 23, 24, NoIndex,
+        1, 2, 1, 24, 0,
+        1, 6, 5, 24, 2,
+        1, 26, 25, 24, 3,
+        1, 2, 1, 25, 0,
+        1, 4, 3, 25, 1,
+        1, 2, 1, 26, 0,
+        1, 6, 5, 26, 2,
+        1, 26, 25, 26, 3,
+        1, 4, 3, 29, 1,
+        0, 29, 29, 29, NoIndex,
+        1, 2, 1, 30, 0,
+        1, 4, 3, 30, 1,
+        1, 2, 1, 31, 0,
+        1, 6, 5, 31, 2,
+        1, 4, 3, 34, 1,
+        0, 32, 32, 34, NoIndex,
+        1, 6, 5, 34, 2,
+        1, 2, 1, 35, 0,
+        1, 6, 5, 35, 2,
+        1, 2, 1, 36, 0,
+        1, 6, 5, 36, 2,
+        1, 2, 1, 37, 0,
+        1, 4, 3, 37, 1,
+        1, 4, 3, 40, 1,
+        0, 36, 36, 40, NoIndex,
+        1, 2, 1, 41, 0,
+        1, 6, 5, 41, 2,
+        1, 2, 1, 42, 0,
+        1, 4, 3, 42, 1,
+        1, 2, 1, 46, 0,
+        1, 4, 3, 46, 1,
+        1, 6, 5, 46, 2,
+        1, 2, 1, 2, 0,
+        1, 42, 41, 2, 4,
+        1, 44, 43, 2, 5,
+        1, 2, 1, 4, 0,
+        1, 48, 47, 4, 6,
+        1, 48, 47, 4, 6,
+        0, 49, 49, 4, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 26, 25, 5, 3,
+        1, 2, 1, 6, 0,
+        1, 42, 41, 6, 4,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 8, 0,
+        1, 26, 25, 8, 3,
+        1, 44, 43, 11, 5,
+        0, 58, 58, 11, NoIndex,
+        1, 2, 1, 12, 0,
+        1, 42, 41, 12, 4,
+        1, 44, 43, 15, 5,
+        0, 58, 58, 15, NoIndex,
+        1, 2, 1, 16, 0,
+        1, 42, 41, 16, 4,
+        1, 44, 43, 16, 5,
+        1, 2, 1, 20, 0,
+        1, 42, 41, 20, 4,
+        1, 42, 41, 22, 4,
+        1, 2, 1, 22, 0,
+        1, 67, 66, 22, 7,
+        1, 67, 66, 23, 7,
+        0, 68, 68, 23, NoIndex,
+        1, 2, 1, 23, 0,
+        0, 57, 57, 23, NoIndex,
+        1, 2, 1, 24, 0,
+        1, 42, 41, 24, 4,
+        1, 2, 1, 25, 0,
+        1, 42, 41, 25, 4,
+        1, 2, 1, 26, 0,
+        1, 42, 41, 26, 4,
+        1, 42, 41, 29, 4,
+        1, 2, 1, 29, 0,
+        1, 67, 66, 29, 7,
+        1, 67, 66, 30, 7,
+        0, 78, 78, 30, NoIndex,
+        1, 2, 1, 30, 0,
+        0, 57, 57, 30, NoIndex,
+        1, 2, 1, 31, 0,
+        1, 42, 41, 31, 4,
+        1, 2, 1, 34, 0,
+        0, 57, 57, 34, NoIndex,
+        1, 2, 1, 35, 0,
+        1, 42, 41, 35, 4,
+        1, 2, 1, 36, 0,
+        1, 42, 41, 36, 4,
+        1, 2, 1, 39, 0,
+        0, 57, 57, 39, NoIndex,
+        1, 2, 1, 40, 0,
+        0, 57, 57, 40, NoIndex,
+        1, 2, 1, 41, 0,
+        1, 42, 41, 41, 4,
+        1, 2, 1, 45, 0,
+        1, 42, 41, 45, 4,
+        1, 2, 1, 46, 0,
+        1, 42, 41, 46, 4,
+        1, 2, 1, 50, 0,
+        1, 42, 41, 50, 4,
+        1, 44, 43, 50, 5,
+        1, 42, 41, 52, 4,
+        1, 2, 1, 52, 0,
+        1, 42, 41, 52, 4,
+        1, 26, 25, 52, 3,
+        1, 2, 1, 53, 0,
+        0, 60, 60, 53, NoIndex,
+        1, 2, 1, 53, 0,
+        1, 99, 98, 53, 8,
+        1, 99, 98, 54, 8,
+        0, 100, 100, 54, NoIndex,
+        1, 2, 1, 55, 0,
+        1, 26, 25, 55, 3,
+        1, 2, 1, 56, 0,
+        1, 42, 41, 56, 4,
+        1, 2, 1, 57, 0,
+        1, 42, 41, 57, 4,
+        1, 2, 1, 60, 0,
+        1, 2, 1, 60, 0,
+        1, 110, 109, 60, 9,
+        1, 110, 109, 61, 9,
+        1, 2, 1, 62, 0,
+        0, 60, 60, 62, NoIndex,
+        1, 2, 1, 62, 0,
+        1, 99, 98, 62, 8,
+        1, 99, 98, 63, 8,
+        0, 100, 100, 63, NoIndex,
+        1, 2, 1, 64, 0,
+        1, 110, 109, 64, 9,
+        1, 2, 1, 65, 0,
+        1, 42, 41, 65, 4,
+        1, 2, 1, 66, 0,
+        1, 42, 41, 66, 4,
+        1, 2, 1, 69, 0,
+        0, 60, 60, 69, NoIndex,
+        1, 2, 1, 69, 0,
+        0, 100, 100, 69, NoIndex,
+        1, 2, 1, 70, 0,
+        1, 99, 98, 70, 8,
+        1, 99, 98, 70, 8,
+        0, 100, 100, 70, NoIndex,
+        1, 2, 1, 71, 0,
+        1, 110, 109, 71, 9,
+        1, 2, 1, 72, 0,
+        1, 110, 109, 72, 9,
+        1, 2, 1, 73, 0,
+        0, 60, 60, 73, NoIndex,
+        1, 2, 1, 76, 0,
+        0, 60, 60, 76, NoIndex,
+        1, 2, 1, 76, 0,
+        0, 100, 100, 76, NoIndex,
+        1, 2, 1, 77, 0,
+        1, 99, 98, 77, 8,
+        1, 99, 98, 77, 8,
+        0, 100, 100, 77, NoIndex,
+        1, 2, 1, 78, 0,
+        0, 60, 60, 78, NoIndex,
+        1, 2, 1, 81, 0,
+        0, 60, 60, 81, NoIndex,
+        1, 2, 1, 81, 0,
+        1, 99, 98, 81, 8,
+        1, 99, 98, 82, 8,
+        0, 100, 100, 82, NoIndex,
+        1, 44, 43, 82, 5,
+        0, 68, 68, 82, NoIndex,
+        1, 2, 1, 82, 0,
+        1, 42, 41, 82, 4,
+        1, 2, 1, 83, 0,
+        1, 42, 41, 83, 4,
+        1, 2, 1, 84, 0,
+        1, 42, 41, 84, 4,
+        1, 2, 1, 87, 0,
+        0, 60, 60, 87, NoIndex,
+        1, 2, 1, 87, 0,
+        1, 99, 98, 87, 8,
+        1, 99, 98, 88, 8,
+        0, 100, 100, 88, NoIndex,
+        1, 2, 1, 88, 0,
+        1, 42, 41, 88, 4,
+        1, 2, 1, 89, 0,
+        1, 42, 41, 89, 4,
+        1, 2, 1, 90, 0,
+        1, 42, 41, 90, 4,
+        1, 2, 1, 93, 0,
+        0, 60, 60, 93, NoIndex,
+        1, 2, 1, 93, 0,
+        1, 99, 98, 93, 8,
+        1, 99, 98, 94, 8,
+        0, 100, 100, 94, NoIndex,
+        1, 2, 1, 95, 0,
+        0, 60, 60, 95, NoIndex,
+        1, 2, 1, 96, 0,
+        1, 42, 41, 96, 4,
+        1, 2, 1, 97, 0,
+        1, 42, 41, 97, 4,
+        1, 2, 1, 100, 0,
+        1, 42, 41, 100, 4,
+        1, 26, 25, 100, 3,
+        1, 2, 1, 101, 0,
+        1, 26, 25, 101, 3,
+        1, 2, 1, 102, 0,
+        1, 42, 41, 102, 4,
+        1, 2, 1, 106, 0,
+        1, 42, 41, 106, 4,
+        1, 2, 1, 107, 0,
+        1, 2, 1, 4, 0,
+        1, 142, 141, 4, 10,
+        1, 144, 143, 4, 11,
+        1, 142, 141, 6, 10,
+        0, 146, 146, 6, NoIndex,
+        1, 2, 1, 6, 0,
+        1, 149, 148, 6, 12,
+        1, 2, 1, 7, 0,
+        1, 149, 148, 7, 12,
+        1, 2, 1, 8, 0,
+        1, 2, 1, 9, 0,
+        1, 144, 143, 9, 11,
+        1, 2, 1, 10, 0,
+        1, 144, 143, 10, 11,
+        1, 142, 141, 13, 10,
+        0, 159, 159, 13, NoIndex,
+        1, 2, 1, 13, 0,
+        1, 110, 109, 13, 9,
+        1, 110, 109, 14, 9,
+        1, 2, 1, 15, 0,
+        1, 110, 109, 15, 9,
+        1, 2, 1, 16, 0,
+        1, 144, 143, 16, 11,
+        1, 2, 1, 17, 0,
+        1, 144, 143, 17, 11,
+        1, 142, 141, 20, 10,
+        0, 159, 159, 20, NoIndex,
+        1, 2, 1, 21, 0,
+        1, 2, 1, 22, 0,
+        1, 144, 143, 22, 11,
+        1, 2, 1, 23, 0,
+        1, 144, 143, 23, 11,
+        1, 142, 141, 26, 10,
+        0, 162, 162, 26, NoIndex,
+        1, 2, 1, 26, 0,
+        1, 144, 143, 26, 11,
+        1, 26, 25, 26, 3,
+        1, 2, 1, 27, 0,
+        1, 144, 143, 27, 11,
+        1, 2, 1, 28, 0,
+        1, 26, 25, 28, 3,
+        1, 2, 1, 29, 0,
+        1, 144, 143, 29, 11,
+        1, 142, 141, 32, 10,
+        0, 169, 169, 32, NoIndex,
+        1, 2, 1, 33, 0,
+        1, 144, 143, 33, 11,
+        1, 2, 1, 34, 0,
+        1, 144, 143, 34, 11,
+        1, 2, 1, 35, 0,
+        1, 144, 143, 35, 11,
+        1, 2, 1, 38, 0,
+        1, 144, 143, 38, 11,
+        1, 2, 1, 39, 0,
+        1, 144, 143, 39, 11,
+        1, 26, 25, 39, 3,
+        1, 2, 1, 40, 0,
+        1, 26, 25, 40, 3,
+        1, 2, 1, 41, 0,
+        1, 144, 143, 41, 11,
+        1, 2, 1, 45, 0,
+        1, 2, 1, 46, 0,
+        1, 144, 143, 46, 11,
+        1, 2, 1, 47, 0,
+        1, 144, 143, 47, 11,
+        1, 2, 1, 48, 0,
+        1, 142, 141, 48, 10,
+        1, 144, 143, 48, 11,
+        1, 2, 1, 4, 0,
+        1, 42, 41, 4, 4,
+        1, 184, 183, 4, 13,
+        1, 2, 1, 6, 0,
+        1, 42, 41, 6, 4,
+        1, 26, 25, 6, 3,
+        1, 2, 1, 7, 0,
+        1, 42, 41, 7, 4,
+        1, 2, 1, 8, 0,
+        1, 26, 25, 8, 3,
+        1, 2, 1, 9, 0,
+        1, 184, 183, 9, 13,
+        1, 2, 1, 12, 0,
+        1, 42, 41, 12, 4,
+        1, 194, 193, 12, 14,
+        1, 2, 1, 13, 0,
+        1, 42, 41, 13, 4,
+        1, 2, 1, 14, 0,
+        1, 194, 193, 14, 14,
+        1, 2, 1, 15, 0,
+        1, 194, 193, 15, 14,
+        1, 2, 1, 18, 0,
+        1, 42, 41, 18, 4,
+        1, 26, 25, 18, 3,
+        1, 2, 1, 19, 0,
+        1, 42, 41, 19, 4,
+        1, 2, 1, 20, 0,
+        1, 26, 25, 20, 3,
+        1, 2, 1, 21, 0,
+        1, 184, 183, 21, 13,
+        1, 184, 183, 24, 13,
+        1, 110, 109, 24, 9,
+        1, 2, 1, 25, 0,
+        1, 184, 183, 25, 13,
+        1, 2, 1, 26, 0,
+        1, 110, 109, 26, 9,
+        1, 2, 1, 27, 0,
+        1, 184, 183, 27, 13,
+        1, 2, 1, 30, 0,
+        1, 184, 183, 30, 13,
+        1, 26, 25, 30, 3,
+        1, 2, 1, 31, 0,
+        1, 26, 25, 31, 3,
+        1, 2, 1, 32, 0,
+        1, 184, 183, 32, 13,
+        1, 2, 1, 36, 0,
+        1, 184, 183, 36, 13,
+        1, 2, 1, 37, 0,
+        1, 184, 183, 37, 13,
+        1, 2, 1, 38, 0,
+        1, 42, 41, 38, 4,
+        1, 2, 1, 2, 0,
+        1, 2, 1, 4, 0,
+        1, 48, 47, 4, 6,
+        1, 48, 47, 4, 6,
+        0, 78, 78, 4, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 2, 1, 6, 0,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 10, 0,
+        1, 99, 98, 10, 8,
+        1, 99, 98, 10, 8,
+        0, 219, 219, 10, NoIndex,
+        1, 2, 1, 11, 0,
+        1, 222, 221, 11, 15,
+        1, 2, 1, 12, 0,
+        1, 222, 221, 12, 15,
+        1, 2, 1, 13, 0,
+        1, 222, 221, 13, 15,
+        1, 2, 1, 16, 0,
+        1, 229, 228, 16, 16,
+        1, 2, 1, 17, 0,
+        1, 229, 228, 17, 16,
+        1, 2, 1, 18, 0,
+        1, 2, 1, 21, 0,
+        1, 26, 25, 21, 3,
+        1, 2, 1, 21, 0,
+        1, 236, 235, 21, 17,
+        1, 2, 1, 22, 0,
+        1, 26, 25, 22, 3,
+        1, 2, 1, 23, 0,
+        1, 236, 235, 23, 17,
+        1, 2, 1, 24, 0,
+        1, 236, 235, 24, 17,
+        1, 2, 1, 27, 0,
+        1, 246, 245, 27, 18,
+        1, 2, 1, 27, 0,
+        1, 2, 1, 28, 0,
+        1, 246, 245, 28, 18,
+        1, 2, 1, 29, 0,
+        1, 246, 245, 29, 18,
+        1, 2, 1, 32, 0,
+        1, 255, 254, 32, 19,
+        1, 2, 1, 33, 0,
+        1, 255, 254, 33, 19,
+        1, 2, 1, 34, 0,
+        1, 255, 254, 34, 19,
+        1, 2, 1, 37, 0,
+        1, 67, 66, 37, 7,
+        1, 67, 66, 37, 7,
+        0, 261, 261, 37, NoIndex,
+        1, 2, 1, 38, 0,
+        1, 2, 1, 39, 0,
+        1, 2, 1, 43, 0,
+        1, 2, 1, 44, 0,
+        1, 273, 272, 13, 20,
+        1, 273, 272, 14, 20,
+        0, 275, 275, 14, NoIndex,
+        1, 277, 276, 14, 21,
+        1, 279, 278, 14, 22,
+        2, 283, 282, 17, NoIndex,
+        1, 273, 272, 17, 20,
+        1, 273, 272, 18, 20,
+        1, 277, 276, 18, 21,
+        1, 279, 278, 18, 22,
+        1, 273, 272, 23, 20,
+        1, 273, 272, 24, 20,
+        1, 288, 287, 24, 23,
+        1, 288, 287, 25, 23,
+        1, 273, 272, 26, 20,
+        1, 288, 287, 26, 23,
+        1, 292, 291, 26, 24,
+        1, 288, 287, 27, 23,
+        1, 273, 272, 30, 20,
+        1, 295, 294, 30, 25,
+        1, 295, 294, 31, 25,
+        1, 273, 272, 32, 20,
+        1, 295, 294, 32, 25,
+        1, 297, 296, 32, 26,
+        1, 297, 296, 33, 26,
+        1, 292, 291, 33, 24,
+        2, 299, 298, 38, NoIndex,
+        1, 273, 272, 38, 20,
+        1, 273, 272, 39, 20,
+        1, 288, 287, 39, 23,
+        1, 292, 291, 39, 24,
+        1, 273, 272, 44, 20,
+        1, 273, 272, 45, 20,
+        0, 302, 302, 45, NoIndex,
+        1, 277, 276, 45, 21,
+        1, 279, 278, 45, 22,
+        2, 304, 303, 48, NoIndex,
+        1, 273, 272, 48, 20,
+        1, 273, 272, 49, 20,
+        1, 277, 276, 49, 21,
+        1, 279, 278, 49, 22,
+        1, 273, 272, 54, 20,
+        1, 273, 272, 55, 20,
+        1, 308, 307, 55, 27,
+        1, 194, 193, 55, 14,
+        1, 273, 272, 56, 20,
+        1, 311, 310, 56, 28,
+        1, 313, 312, 56, 29,
+        2, 315, 314, 59, NoIndex,
+        1, 273, 272, 59, 20,
+        1, 273, 272, 60, 20,
+        1, 308, 307, 60, 27,
+        1, 194, 193, 60, 14,
+        1, 273, 272, 65, 20,
+        1, 273, 272, 66, 20,
+        1, 288, 287, 66, 23,
+        1, 313, 312, 66, 29,
+        2, 319, 318, 69, NoIndex,
+        1, 273, 272, 69, 20,
+        1, 273, 272, 70, 20,
+        1, 288, 287, 70, 23,
+        1, 313, 312, 70, 29,
+        1, 273, 272, 75, 20,
+        1, 273, 272, 76, 20,
+        0, 322, 322, 76, NoIndex,
+        1, 277, 276, 76, 21,
+        1, 279, 278, 76, 22,
+        2, 324, 323, 79, NoIndex,
+        1, 273, 272, 79, 20,
+        1, 273, 272, 80, 20,
+        1, 277, 276, 80, 21,
+        1, 279, 278, 80, 22,
+        1, 273, 272, 84, 20,
+        2, 326, 325, 86, NoIndex,
+        1, 273, 272, 86, 20,
+        1, 273, 272, 87, 20,
+        2, 330, 329, 92, NoIndex,
+        1, 2, 1, 3, 0,
+        1, 4, 3, 3, 1,
+        1, 6, 5, 3, 2,
+        1, 4, 3, 5, 1,
+        0, 8, 8, 5, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 2, 1, 6, 0,
+        1, 4, 3, 6, 1,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 8, 0,
+        1, 6, 5, 8, 2,
+        1, 2, 1, 9, 0,
+        1, 4, 3, 9, 1,
+        1, 4, 3, 12, 1,
+        0, 8, 8, 12, NoIndex,
+        1, 2, 1, 13, 0,
+        1, 4, 3, 13, 1,
+        1, 2, 1, 14, 0,
+        1, 6, 5, 14, 2,
+        1, 2, 1, 15, 0,
+        1, 4, 3, 15, 1,
+        1, 4, 3, 18, 1,
+        0, 19, 19, 18, NoIndex,
+        1, 2, 1, 19, 0,
+        1, 4, 3, 19, 1,
+        1, 2, 1, 20, 0,
+        1, 6, 5, 20, 2,
+        1, 2, 1, 21, 0,
+        1, 6, 5, 21, 2,
+        1, 4, 3, 24, 1,
+        0, 23, 23, 24, NoIndex,
+        1, 2, 1, 24, 0,
+        1, 6, 5, 24, 2,
+        1, 26, 25, 24, 3,
+        1, 2, 1, 25, 0,
+        1, 4, 3, 25, 1,
+        1, 2, 1, 26, 0,
+        1, 6, 5, 26, 2,
+        1, 26, 25, 26, 3,
+        1, 4, 3, 29, 1,
+        0, 29, 29, 29, NoIndex,
+        1, 2, 1, 30, 0,
+        1, 4, 3, 30, 1,
+        1, 2, 1, 31, 0,
+        1, 6, 5, 31, 2,
+        1, 4, 3, 34, 1,
+        0, 32, 32, 34, NoIndex,
+        1, 6, 5, 34, 2,
+        1, 2, 1, 35, 0,
+        1, 6, 5, 35, 2,
+        1, 2, 1, 36, 0,
+        1, 6, 5, 36, 2,
+        1, 2, 1, 37, 0,
+        1, 4, 3, 37, 1,
+        1, 4, 3, 40, 1,
+        0, 36, 36, 40, NoIndex,
+        1, 2, 1, 41, 0,
+        1, 6, 5, 41, 2,
+        1, 2, 1, 42, 0,
+        1, 4, 3, 42, 1,
+        1, 2, 1, 46, 0,
+        1, 4, 3, 46, 1,
+        1, 6, 5, 46, 2,
+        1, 2, 1, 2, 0,
+        1, 42, 41, 2, 4,
+        1, 44, 43, 2, 5,
+        1, 2, 1, 4, 0,
+        1, 48, 47, 4, 6,
+        1, 48, 47, 4, 6,
+        0, 49, 49, 4, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 26, 25, 5, 3,
+        1, 2, 1, 6, 0,
+        1, 42, 41, 6, 4,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 8, 0,
+        1, 26, 25, 8, 3,
+        1, 44, 43, 11, 5,
+        0, 58, 58, 11, NoIndex,
+        1, 2, 1, 12, 0,
+        1, 42, 41, 12, 4,
+        1, 44, 43, 15, 5,
+        0, 58, 58, 15, NoIndex,
+        1, 2, 1, 16, 0,
+        1, 42, 41, 16, 4,
+        1, 44, 43, 16, 5,
+        1, 2, 1, 20, 0,
+        1, 42, 41, 20, 4,
+        1, 42, 41, 22, 4,
+        1, 2, 1, 22, 0,
+        1, 67, 66, 22, 7,
+        1, 67, 66, 23, 7,
+        0, 68, 68, 23, NoIndex,
+        1, 2, 1, 23, 0,
+        0, 57, 57, 23, NoIndex,
+        1, 2, 1, 24, 0,
+        1, 42, 41, 24, 4,
+        1, 2, 1, 25, 0,
+        1, 42, 41, 25, 4,
+        1, 2, 1, 26, 0,
+        1, 42, 41, 26, 4,
+        1, 42, 41, 29, 4,
+        1, 2, 1, 29, 0,
+        1, 67, 66, 29, 7,
+        1, 67, 66, 30, 7,
+        0, 78, 78, 30, NoIndex,
+        1, 2, 1, 30, 0,
+        0, 57, 57, 30, NoIndex,
+        1, 2, 1, 31, 0,
+        1, 42, 41, 31, 4,
+        1, 2, 1, 34, 0,
+        0, 57, 57, 34, NoIndex,
+        1, 2, 1, 35, 0,
+        1, 42, 41, 35, 4,
+        1, 2, 1, 36, 0,
+        1, 42, 41, 36, 4,
+        1, 2, 1, 39, 0,
+        0, 57, 57, 39, NoIndex,
+        1, 2, 1, 40, 0,
+        0, 57, 57, 40, NoIndex,
+        1, 2, 1, 41, 0,
+        1, 42, 41, 41, 4,
+        1, 2, 1, 45, 0,
+        1, 42, 41, 45, 4,
+        1, 2, 1, 46, 0,
+        1, 42, 41, 46, 4,
+        1, 2, 1, 50, 0,
+        1, 42, 41, 50, 4,
+        1, 44, 43, 50, 5,
+        1, 42, 41, 52, 4,
+        1, 2, 1, 52, 0,
+        1, 42, 41, 52, 4,
+        1, 26, 25, 52, 3,
+        1, 2, 1, 53, 0,
+        0, 60, 60, 53, NoIndex,
+        1, 2, 1, 53, 0,
+        1, 99, 98, 53, 8,
+        1, 99, 98, 54, 8,
+        0, 100, 100, 54, NoIndex,
+        1, 2, 1, 55, 0,
+        1, 26, 25, 55, 3,
+        1, 2, 1, 56, 0,
+        1, 42, 41, 56, 4,
+        1, 2, 1, 57, 0,
+        1, 42, 41, 57, 4,
+        1, 2, 1, 60, 0,
+        1, 2, 1, 60, 0,
+        1, 110, 109, 60, 9,
+        1, 110, 109, 61, 9,
+        1, 2, 1, 62, 0,
+        0, 60, 60, 62, NoIndex,
+        1, 2, 1, 62, 0,
+        1, 99, 98, 62, 8,
+        1, 99, 98, 63, 8,
+        0, 100, 100, 63, NoIndex,
+        1, 2, 1, 64, 0,
+        1, 110, 109, 64, 9,
+        1, 2, 1, 65, 0,
+        1, 42, 41, 65, 4,
+        1, 2, 1, 66, 0,
+        1, 42, 41, 66, 4,
+        1, 2, 1, 69, 0,
+        0, 60, 60, 69, NoIndex,
+        1, 2, 1, 69, 0,
+        0, 100, 100, 69, NoIndex,
+        1, 2, 1, 70, 0,
+        1, 99, 98, 70, 8,
+        1, 99, 98, 70, 8,
+        0, 100, 100, 70, NoIndex,
+        1, 2, 1, 71, 0,
+        1, 110, 109, 71, 9,
+        1, 2, 1, 72, 0,
+        1, 110, 109, 72, 9,
+        1, 2, 1, 73, 0,
+        0, 60, 60, 73, NoIndex,
+        1, 2, 1, 76, 0,
+        0, 60, 60, 76, NoIndex,
+        1, 2, 1, 76, 0,
+        0, 100, 100, 76, NoIndex,
+        1, 2, 1, 77, 0,
+        1, 99, 98, 77, 8,
+        1, 99, 98, 77, 8,
+        0, 100, 100, 77, NoIndex,
+        1, 2, 1, 78, 0,
+        0, 60, 60, 78, NoIndex,
+        1, 2, 1, 81, 0,
+        0, 60, 60, 81, NoIndex,
+        1, 2, 1, 81, 0,
+        1, 99, 98, 81, 8,
+        1, 99, 98, 82, 8,
+        0, 100, 100, 82, NoIndex,
+        1, 44, 43, 82, 5,
+        0, 68, 68, 82, NoIndex,
+        1, 2, 1, 82, 0,
+        1, 42, 41, 82, 4,
+        1, 2, 1, 83, 0,
+        1, 42, 41, 83, 4,
+        1, 2, 1, 84, 0,
+        1, 42, 41, 84, 4,
+        1, 2, 1, 87, 0,
+        0, 60, 60, 87, NoIndex,
+        1, 2, 1, 87, 0,
+        1, 99, 98, 87, 8,
+        1, 99, 98, 88, 8,
+        0, 100, 100, 88, NoIndex,
+        1, 2, 1, 88, 0,
+        1, 42, 41, 88, 4,
+        1, 2, 1, 89, 0,
+        1, 42, 41, 89, 4,
+        1, 2, 1, 90, 0,
+        1, 42, 41, 90, 4,
+        1, 2, 1, 93, 0,
+        0, 60, 60, 93, NoIndex,
+        1, 2, 1, 93, 0,
+        1, 99, 98, 93, 8,
+        1, 99, 98, 94, 8,
+        0, 100, 100, 94, NoIndex,
+        1, 2, 1, 95, 0,
+        0, 60, 60, 95, NoIndex,
+        1, 2, 1, 96, 0,
+        1, 42, 41, 96, 4,
+        1, 2, 1, 97, 0,
+        1, 42, 41, 97, 4,
+        1, 2, 1, 100, 0,
+        1, 42, 41, 100, 4,
+        1, 26, 25, 100, 3,
+        1, 2, 1, 101, 0,
+        1, 26, 25, 101, 3,
+        1, 2, 1, 102, 0,
+        1, 42, 41, 102, 4,
+        1, 2, 1, 106, 0,
+        1, 42, 41, 106, 4,
+        1, 2, 1, 107, 0,
+        1, 2, 1, 4, 0,
+        1, 142, 141, 4, 10,
+        1, 144, 143, 4, 11,
+        1, 142, 141, 6, 10,
+        0, 146, 146, 6, NoIndex,
+        1, 2, 1, 6, 0,
+        1, 149, 148, 6, 12,
+        1, 2, 1, 7, 0,
+        1, 149, 148, 7, 12,
+        1, 2, 1, 8, 0,
+        1, 2, 1, 9, 0,
+        1, 144, 143, 9, 11,
+        1, 2, 1, 10, 0,
+        1, 144, 143, 10, 11,
+        1, 142, 141, 13, 10,
+        0, 159, 159, 13, NoIndex,
+        1, 2, 1, 13, 0,
+        1, 110, 109, 13, 9,
+        1, 110, 109, 14, 9,
+        1, 2, 1, 15, 0,
+        1, 110, 109, 15, 9,
+        1, 2, 1, 16, 0,
+        1, 144, 143, 16, 11,
+        1, 2, 1, 17, 0,
+        1, 144, 143, 17, 11,
+        1, 142, 141, 20, 10,
+        0, 159, 159, 20, NoIndex,
+        1, 2, 1, 21, 0,
+        1, 2, 1, 22, 0,
+        1, 144, 143, 22, 11,
+        1, 2, 1, 23, 0,
+        1, 144, 143, 23, 11,
+        1, 142, 141, 26, 10,
+        0, 162, 162, 26, NoIndex,
+        1, 2, 1, 26, 0,
+        1, 144, 143, 26, 11,
+        1, 26, 25, 26, 3,
+        1, 2, 1, 27, 0,
+        1, 144, 143, 27, 11,
+        1, 2, 1, 28, 0,
+        1, 26, 25, 28, 3,
+        1, 2, 1, 29, 0,
+        1, 144, 143, 29, 11,
+        1, 142, 141, 32, 10,
+        0, 169, 169, 32, NoIndex,
+        1, 2, 1, 33, 0,
+        1, 144, 143, 33, 11,
+        1, 2, 1, 34, 0,
+        1, 144, 143, 34, 11,
+        1, 2, 1, 35, 0,
+        1, 144, 143, 35, 11,
+        1, 2, 1, 38, 0,
+        1, 144, 143, 38, 11,
+        1, 2, 1, 39, 0,
+        1, 144, 143, 39, 11,
+        1, 26, 25, 39, 3,
+        1, 2, 1, 40, 0,
+        1, 26, 25, 40, 3,
+        1, 2, 1, 41, 0,
+        1, 144, 143, 41, 11,
+        1, 2, 1, 45, 0,
+        1, 2, 1, 46, 0,
+        1, 144, 143, 46, 11,
+        1, 2, 1, 47, 0,
+        1, 144, 143, 47, 11,
+        1, 2, 1, 48, 0,
+        1, 142, 141, 48, 10,
+        1, 144, 143, 48, 11,
+        1, 2, 1, 4, 0,
+        1, 42, 41, 4, 4,
+        1, 184, 183, 4, 13,
+        1, 2, 1, 6, 0,
+        1, 42, 41, 6, 4,
+        1, 26, 25, 6, 3,
+        1, 2, 1, 7, 0,
+        1, 42, 41, 7, 4,
+        1, 2, 1, 8, 0,
+        1, 26, 25, 8, 3,
+        1, 2, 1, 9, 0,
+        1, 184, 183, 9, 13,
+        1, 2, 1, 12, 0,
+        1, 42, 41, 12, 4,
+        1, 194, 193, 12, 14,
+        1, 2, 1, 13, 0,
+        1, 42, 41, 13, 4,
+        1, 2, 1, 14, 0,
+        1, 194, 193, 14, 14,
+        1, 2, 1, 15, 0,
+        1, 194, 193, 15, 14,
+        1, 2, 1, 18, 0,
+        1, 42, 41, 18, 4,
+        1, 26, 25, 18, 3,
+        1, 2, 1, 19, 0,
+        1, 42, 41, 19, 4,
+        1, 2, 1, 20, 0,
+        1, 26, 25, 20, 3,
+        1, 2, 1, 21, 0,
+        1, 184, 183, 21, 13,
+        1, 184, 183, 24, 13,
+        1, 110, 109, 24, 9,
+        1, 2, 1, 25, 0,
+        1, 184, 183, 25, 13,
+        1, 2, 1, 26, 0,
+        1, 110, 109, 26, 9,
+        1, 2, 1, 27, 0,
+        1, 184, 183, 27, 13,
+        1, 2, 1, 30, 0,
+        1, 184, 183, 30, 13,
+        1, 26, 25, 30, 3,
+        1, 2, 1, 31, 0,
+        1, 26, 25, 31, 3,
+        1, 2, 1, 32, 0,
+        1, 184, 183, 32, 13,
+        1, 2, 1, 36, 0,
+        1, 184, 183, 36, 13,
+        1, 2, 1, 37, 0,
+        1, 184, 183, 37, 13,
+        1, 2, 1, 38, 0,
+        1, 42, 41, 38, 4,
+        1, 2, 1, 2, 0,
+        1, 2, 1, 4, 0,
+        1, 48, 47, 4, 6,
+        1, 48, 47, 4, 6,
+        0, 78, 78, 4, NoIndex,
+        1, 2, 1, 5, 0,
+        1, 2, 1, 6, 0,
+        1, 2, 1, 7, 0,
+        1, 2, 1, 10, 0,
+        1, 99, 98, 10, 8,
+        1, 99, 98, 10, 8,
+        0, 219, 219, 10, NoIndex,
+        1, 2, 1, 11, 0,
+        1, 222, 221, 11, 15,
+        1, 2, 1, 12, 0,
+        1, 222, 221, 12, 15,
+        1, 2, 1, 13, 0,
+        1, 222, 221, 13, 15,
+        1, 2, 1, 16, 0,
+        1, 229, 228, 16, 16,
+        1, 2, 1, 17, 0,
+        1, 229, 228, 17, 16,
+        1, 2, 1, 18, 0,
+        1, 2, 1, 21, 0,
+        1, 26, 25, 21, 3,
+        1, 2, 1, 21, 0,
+        1, 236, 235, 21, 17,
+        1, 2, 1, 22, 0,
+        1, 26, 25, 22, 3,
+        1, 2, 1, 23, 0,
+        1, 236, 235, 23, 17,
+        1, 2, 1, 24, 0,
+        1, 236, 235, 24, 17,
+        1, 2, 1, 27, 0,
+        1, 246, 245, 27, 18,
+        1, 2, 1, 27, 0,
+        1, 2, 1, 28, 0,
+        1, 246, 245, 28, 18,
+        1, 2, 1, 29, 0,
+        1, 246, 245, 29, 18,
+        1, 2, 1, 32, 0,
+        1, 255, 254, 32, 19,
+        1, 2, 1, 33, 0,
+        1, 255, 254, 33, 19,
+        1, 2, 1, 34, 0,
+        1, 255, 254, 34, 19,
+        1, 2, 1, 37, 0,
+        1, 67, 66, 37, 7,
+        1, 67, 66, 37, 7,
+        0, 261, 261, 37, NoIndex,
+        1, 2, 1, 38, 0,
+        1, 2, 1, 39, 0,
+        1, 2, 1, 43, 0,
+        1, 2, 1, 44, 0,
+        1, 273, 272, 13, 20,
+        1, 273, 272, 14, 20,
+        0, 275, 275, 14, NoIndex,
+        1, 277, 276, 14, 21,
+        1, 279, 278, 14, 22,
+        2, 283, 282, 17, NoIndex,
+        1, 273, 272, 17, 20,
+        1, 273, 272, 18, 20,
+        1, 277, 276, 18, 21,
+        1, 279, 278, 18, 22,
+        1, 273, 272, 23, 20,
+        1, 273, 272, 24, 20,
+        1, 288, 287, 24, 23,
+        1, 288, 287, 25, 23,
+        1, 273, 272, 26, 20,
+        1, 288, 287, 26, 23,
+        1, 292, 291, 26, 24,
+        1, 288, 287, 27, 23,
+        1, 273, 272, 30, 20,
+        1, 295, 294, 30, 25,
+        1, 295, 294, 31, 25,
+        1, 273, 272, 32, 20,
+        1, 295, 294, 32, 25,
+        1, 297, 296, 32, 26,
+        1, 297, 296, 33, 26,
+        1, 292, 291, 33, 24,
+        2, 299, 298, 38, NoIndex,
+        1, 273, 272, 38, 20,
+        1, 273, 272, 39, 20,
+        1, 288, 287, 39, 23,
+        1, 292, 291, 39, 24,
+        1, 273, 272, 44, 20,
+        1, 273, 272, 45, 20,
+        0, 302, 302, 45, NoIndex,
+        1, 277, 276, 45, 21,
+        1, 279, 278, 45, 22,
+        2, 304, 303, 48, NoIndex,
+        1, 273, 272, 48, 20,
+        1, 273, 272, 49, 20,
+        1, 277, 276, 49, 21,
+        1, 279, 278, 49, 22,
+        1, 273, 272, 54, 20,
+        1, 273, 272, 55, 20,
+        1, 308, 307, 55, 27,
+        1, 194, 193, 55, 14,
+        1, 273, 272, 56, 20,
+        1, 311, 310, 56, 28,
+        1, 313, 312, 56, 29,
+        2, 315, 314, 59, NoIndex,
+        1, 273, 272, 59, 20,
+        1, 273, 272, 60, 20,
+        1, 308, 307, 60, 27,
+        1, 194, 193, 60, 14,
+        1, 273, 272, 65, 20,
+        1, 273, 272, 66, 20,
+        1, 288, 287, 66, 23,
+        1, 313, 312, 66, 29,
+        2, 319, 318, 69, NoIndex,
+        1, 273, 272, 69, 20,
+        1, 273, 272, 70, 20,
+        1, 288, 287, 70, 23,
+        1, 313, 312, 70, 29,
+        1, 273, 272, 75, 20,
+        1, 273, 272, 76, 20,
+        0, 322, 322, 76, NoIndex,
+        1, 277, 276, 76, 21,
+        1, 279, 278, 76, 22,
+        2, 324, 323, 79, NoIndex,
+        1, 273, 272, 79, 20,
+        1, 273, 272, 80, 20,
+        1, 277, 276, 80, 21,
+        1, 279, 278, 80, 22,
+        1, 273, 272, 84, 20,
+        2, 326, 325, 86, NoIndex,
+        1, 273, 272, 86, 20,
+        1, 273, 272, 87, 20,
+        2, 330, 329, 92, NoIndex],
+      variableStringIDs: @[
+        1'u32,
+        3,
+        5,
+        25,
+        41,
+        43,
+        47,
+        66,
+        98,
+        109,
+        141,
+        143,
+        148,
+        183,
+        193,
+        221,
+        228,
+        235,
+        245,
+        254,
+        272,
+        276,
+        278,
+        287,
+        291,
+        294,
+        296,
+        307,
+        310,
+        312],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 0, 2, NoIndex, NoIndex, 5, 0,
+        8, 0, 3, 2, 0, 0, NoIndex, NoIndex, 5, 0,
+        0, 9, 5, 1, 0, 0, NoIndex, 0, 5, 0,
+        2, NoIndex, 0, 0, 2, 1, NoIndex, NoIndex, 12, 0,
+        8, 0, 13, 2, 2, 0, NoIndex, NoIndex, 12, 0,
+        2, NoIndex, 0, 0, 3, 1, NoIndex, NoIndex, 18, 0,
+        8, 0, 21, 2, 3, 0, NoIndex, NoIndex, 18, 0,
+        2, NoIndex, 0, 0, 4, 2, NoIndex, NoIndex, 24, 0,
+        8, 0, 29, 2, 4, 0, NoIndex, NoIndex, 24, 0,
+        0, 24, 31, 3, 4, 0, NoIndex, 1, 24, 0,
+        2, NoIndex, 0, 0, 6, 1, NoIndex, NoIndex, 29, 0,
+        8, 0, 39, 2, 6, 0, NoIndex, NoIndex, 29, 0,
+        2, NoIndex, 0, 0, 7, 2, NoIndex, NoIndex, 34, 0,
+        8, 0, 45, 2, 7, 0, NoIndex, NoIndex, 34, 0,
+        0, 33, 47, 1, 7, 0, NoIndex, 2, 34, 0,
+        2, NoIndex, 0, 0, 9, 1, NoIndex, NoIndex, 40, 0,
+        8, 0, 54, 2, 9, 0, NoIndex, NoIndex, 40, 0,
+        2, NoIndex, 0, 0, 10, 3, NoIndex, NoIndex, 4, 0,
+        0, 46, 66, 2, 10, 0, NoIndex, 3, 4, 0,
+        8, 3, 68, 2, 10, 0, NoIndex, NoIndex, 4, 0,
+        0, 50, 70, 2, 10, 0, NoIndex, 4, 5, 0,
+        2, NoIndex, 0, 0, 13, 1, NoIndex, NoIndex, 11, 0,
+        8, 2, 77, 2, 13, 0, NoIndex, NoIndex, 11, 0,
+        2, NoIndex, 0, 0, 14, 1, NoIndex, NoIndex, 15, 0,
+        8, 5, 81, 2, 14, 0, NoIndex, NoIndex, 15, 0,
+        2, NoIndex, 0, 0, 15, 4, NoIndex, NoIndex, 22, 0,
+        0, 64, 88, 1, 15, 0, NoIndex, 5, 22, 0,
+        0, 65, 89, 2, 15, 0, NoIndex, 6, 22, 0,
+        8, 5, 91, 2, 15, 0, NoIndex, NoIndex, 23, 0,
+        0, 69, 93, 2, 15, 0, NoIndex, 7, 23, 0,
+        2, NoIndex, 0, 0, 19, 4, NoIndex, NoIndex, 29, 0,
+        0, 77, 101, 1, 19, 0, NoIndex, 8, 29, 0,
+        0, 65, 102, 2, 19, 0, NoIndex, 6, 29, 0,
+        8, 5, 104, 2, 19, 0, NoIndex, NoIndex, 30, 0,
+        0, 69, 106, 2, 19, 0, NoIndex, 7, 30, 0,
+        2, NoIndex, 0, 0, 23, 1, NoIndex, NoIndex, 34, 0,
+        0, 69, 110, 2, 23, 0, NoIndex, 7, 34, 0,
+        2, NoIndex, 0, 0, 24, 1, NoIndex, NoIndex, 39, 0,
+        0, 85, 116, 2, 24, 0, NoIndex, 9, 39, 0,
+        2, NoIndex, 0, 0, 25, 5, NoIndex, NoIndex, 52, 0,
+        0, 95, 129, 1, 25, 0, NoIndex, 10, 52, 0,
+        0, 96, 130, 3, 25, 0, NoIndex, 11, 52, 0,
+        0, 69, 133, 2, 25, 0, NoIndex, 7, 53, 0,
+        0, 97, 135, 2, 25, 0, NoIndex, 12, 53, 0,
+        8, 4, 137, 2, 25, 0, NoIndex, NoIndex, 54, 0,
+        2, NoIndex, 0, 0, 31, 6, NoIndex, NoIndex, 60, 0,
+        0, 9, 145, 1, 30, 0, NoIndex, 0, 60, 0,
+        0, 108, 146, 2, 30, 0, NoIndex, 13, 60, 0,
+        5, NoIndex, 0, 0, 30, 1, NoIndex, NoIndex, 61, 0,
+        0, 111, 148, 1, 30, 0, NoIndex, 14, 61, 0,
+        0, 69, 149, 2, 31, 0, NoIndex, 7, 62, 0,
+        0, 97, 151, 2, 31, 0, NoIndex, 12, 62, 0,
+        8, 4, 153, 2, 31, 0, NoIndex, NoIndex, 63, 0,
+        2, NoIndex, 0, 0, 37, 5, NoIndex, NoIndex, 69, 0,
+        0, 69, 161, 2, 37, 0, NoIndex, 7, 69, 0,
+        0, 97, 163, 2, 37, 0, NoIndex, 12, 69, 0,
+        0, 119, 165, 2, 37, 0, NoIndex, 15, 70, 0,
+        8, 4, 167, 2, 37, 0, NoIndex, NoIndex, 70, 0,
+        0, 108, 169, 2, 37, 0, NoIndex, 13, 71, 0,
+        2, NoIndex, 0, 0, 42, 4, NoIndex, NoIndex, 76, 0,
+        0, 69, 175, 2, 42, 0, NoIndex, 7, 76, 0,
+        0, 97, 177, 2, 42, 0, NoIndex, 12, 76, 0,
+        0, 119, 179, 2, 42, 0, NoIndex, 15, 77, 0,
+        8, 4, 181, 2, 42, 0, NoIndex, NoIndex, 77, 0,
+        2, NoIndex, 0, 0, 46, 5, NoIndex, NoIndex, 81, 0,
+        0, 69, 185, 2, 46, 0, NoIndex, 7, 81, 0,
+        0, 97, 187, 2, 46, 0, NoIndex, 12, 81, 0,
+        8, 4, 189, 2, 46, 0, NoIndex, NoIndex, 82, 0,
+        8, 5, 191, 2, 46, 0, NoIndex, NoIndex, 82, 0,
+        0, 124, 193, 2, 46, 0, NoIndex, 16, 82, 0,
+        2, NoIndex, 0, 0, 51, 4, NoIndex, NoIndex, 87, 0,
+        0, 69, 199, 2, 51, 0, NoIndex, 7, 87, 0,
+        0, 97, 201, 2, 51, 0, NoIndex, 12, 87, 0,
+        8, 4, 203, 2, 51, 0, NoIndex, NoIndex, 88, 0,
+        0, 124, 205, 2, 51, 0, NoIndex, 16, 88, 0,
+        2, NoIndex, 0, 0, 55, 3, NoIndex, NoIndex, 93, 0,
+        0, 85, 211, 2, 55, 0, NoIndex, 9, 93, 0,
+        0, 97, 213, 2, 55, 0, NoIndex, 12, 93, 0,
+        8, 4, 215, 2, 55, 0, NoIndex, NoIndex, 94, 0,
+        2, NoIndex, 0, 0, 58, 1, NoIndex, NoIndex, 100, 0,
+        0, 130, 223, 3, 58, 0, NoIndex, 17, 100, 0,
+        2, NoIndex, 0, 0, 59, 2, NoIndex, NoIndex, 6, 0,
+        8, 0, 236, 2, 59, 0, NoIndex, NoIndex, 6, 0,
+        0, 147, 238, 2, 59, 0, NoIndex, 18, 6, 0,
+        2, NoIndex, 0, 0, 62, 3, NoIndex, NoIndex, 13, 0,
+        8, 0, 247, 2, 61, 0, NoIndex, NoIndex, 13, 0,
+        0, 108, 249, 2, 61, 0, NoIndex, 13, 13, 0,
+        5, NoIndex, 0, 0, 61, 1, NoIndex, NoIndex, 14, 0,
+        0, 111, 251, 1, 61, 0, NoIndex, 14, 14, 0,
+        2, NoIndex, 0, 0, 65, 1, NoIndex, NoIndex, 20, 0,
+        8, 0, 258, 2, 65, 0, NoIndex, NoIndex, 20, 0,
+        2, NoIndex, 0, 0, 66, 2, NoIndex, NoIndex, 26, 0,
+        8, 0, 265, 2, 66, 0, NoIndex, NoIndex, 26, 0,
+        0, 163, 267, 3, 66, 0, NoIndex, 19, 26, 0,
+        2, NoIndex, 0, 0, 68, 1, NoIndex, NoIndex, 32, 0,
+        8, 0, 276, 2, 68, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 69, 2, NoIndex, NoIndex, 38, 0,
+        0, 175, 284, 2, 69, 0, NoIndex, 20, 38, 0,
+        0, 176, 286, 3, 69, 0, NoIndex, 21, 39, 0,
+        2, NoIndex, 0, 0, 71, 1, NoIndex, NoIndex, 6, 0,
+        0, 186, 304, 3, 71, 0, NoIndex, 22, 6, 0,
+        2, NoIndex, 0, 0, 72, 1, NoIndex, NoIndex, 12, 0,
+        0, 192, 313, 3, 72, 0, NoIndex, 23, 12, 0,
+        2, NoIndex, 0, 0, 73, 1, NoIndex, NoIndex, 18, 0,
+        0, 198, 322, 3, 73, 0, NoIndex, 24, 18, 0,
+        2, NoIndex, 0, 0, 74, 1, NoIndex, NoIndex, 24, 0,
+        0, 204, 331, 2, 74, 0, NoIndex, 25, 24, 0,
+        2, NoIndex, 0, 0, 75, 1, NoIndex, NoIndex, 30, 0,
+        0, 207, 339, 3, 75, 0, NoIndex, 26, 30, 0,
+        2, NoIndex, 0, 0, 76, 3, NoIndex, NoIndex, 4, 0,
+        0, 46, 353, 2, 76, 0, NoIndex, 3, 4, 0,
+        8, 3, 355, 2, 76, 0, NoIndex, NoIndex, 4, 0,
+        0, 213, 357, 1, 76, 0, NoIndex, 27, 5, 0,
+        2, NoIndex, 0, 0, 79, 3, NoIndex, NoIndex, 10, 0,
+        0, 97, 360, 2, 79, 0, NoIndex, 12, 10, 0,
+        8, 3, 362, 2, 79, 0, NoIndex, NoIndex, 10, 0,
+        0, 220, 364, 2, 79, 0, NoIndex, 28, 11, 0,
+        2, NoIndex, 0, 0, 82, 1, NoIndex, NoIndex, 16, 0,
+        0, 227, 370, 2, 82, 0, NoIndex, 29, 16, 0,
+        2, NoIndex, 0, 0, 83, 2, NoIndex, NoIndex, 21, 0,
+        0, 233, 375, 2, 83, 0, NoIndex, 30, 21, 0,
+        0, 234, 377, 2, 83, 0, NoIndex, 31, 21, 0,
+        2, NoIndex, 0, 0, 85, 2, NoIndex, NoIndex, 27, 0,
+        0, 244, 385, 2, 85, 0, NoIndex, 32, 27, 0,
+        0, 247, 387, 1, 85, 0, NoIndex, 33, 27, 0,
+        2, NoIndex, 0, 0, 87, 1, NoIndex, NoIndex, 32, 0,
+        0, 253, 392, 2, 87, 0, NoIndex, 34, 32, 0,
+        2, NoIndex, 0, 0, 88, 2, NoIndex, NoIndex, 37, 0,
+        0, 65, 398, 2, 88, 0, NoIndex, 6, 37, 0,
+        8, 3, 400, 2, 88, 0, NoIndex, NoIndex, 37, 0,
+        2, NoIndex, 0, 0, 90, 2, NoIndex, NoIndex, 12, 0,
+        0, 271, 406, 1, 90, 0, NoIndex, 35, 13, 0,
+        0, 274, 407, 4, 90, 0, NoIndex, 36, 14, 0,
+        2, NoIndex, 0, 0, 98, 6, NoIndex, NoIndex, 22, 0,
+        0, 271, 416, 1, 92, 0, NoIndex, 35, 23, 0,
+        0, 286, 417, 2, 92, 0, NoIndex, 37, 24, 0,
+        0, 289, 419, 1, 92, 0, NoIndex, 38, 25, 0,
+        0, 290, 420, 3, 92, 0, NoIndex, 39, 26, 0,
+        5, NoIndex, 0, 0, 92, 1, NoIndex, NoIndex, 27, 0,
+        0, 293, 423, 1, 92, 0, NoIndex, 40, 27, 0,
+        5, NoIndex, 0, 0, 97, 1, NoIndex, NoIndex, 28, 0,
+        2, NoIndex, 0, 0, 93, 4, NoIndex, NoIndex, 29, 0,
+        0, 286, 424, 2, 93, 0, NoIndex, 37, 30, 0,
+        0, 289, 426, 1, 93, 0, NoIndex, 38, 31, 0,
+        0, 290, 427, 3, 93, 0, NoIndex, 39, 32, 0,
+        8, 2, 430, 2, 93, 0, NoIndex, NoIndex, 33, 0,
+        2, NoIndex, 0, 0, 104, 2, NoIndex, NoIndex, 43, 0,
+        0, 271, 437, 1, 104, 0, NoIndex, 35, 44, 0,
+        0, 274, 438, 4, 104, 0, NoIndex, 36, 45, 0,
+        2, NoIndex, 0, 0, 107, 3, NoIndex, NoIndex, 53, 0,
+        0, 271, 447, 1, 106, 0, NoIndex, 35, 54, 0,
+        0, 306, 448, 3, 106, 0, NoIndex, 41, 55, 0,
+        5, NoIndex, 0, 0, 106, 1, NoIndex, NoIndex, 56, 0,
+        0, 309, 451, 3, 106, 0, NoIndex, 42, 56, 0,
+        2, NoIndex, 0, 0, 110, 2, NoIndex, NoIndex, 64, 0,
+        0, 271, 459, 1, 110, 0, NoIndex, 35, 65, 0,
+        0, 309, 460, 3, 110, 0, NoIndex, 42, 66, 0,
+        2, NoIndex, 0, 0, 112, 2, NoIndex, NoIndex, 74, 0,
+        0, 271, 468, 1, 112, 0, NoIndex, 35, 75, 0,
+        0, 274, 469, 4, 112, 0, NoIndex, 36, 76, 0,
+        2, NoIndex, 0, 0, 114, 1, NoIndex, NoIndex, 84, 0,
+        0, 271, 478, 1, 114, 0, NoIndex, 35, 84, 0,
+        2, NoIndex, 0, 0, 115, 2, NoIndex, NoIndex, 5, 0,
+        8, 0, 486, 2, 115, 0, NoIndex, NoIndex, 5, 0,
+        0, 9, 488, 1, 115, 0, NoIndex, 0, 5, 0,
+        2, NoIndex, 0, 0, 117, 1, NoIndex, NoIndex, 12, 0,
+        8, 0, 496, 2, 117, 0, NoIndex, NoIndex, 12, 0,
+        2, NoIndex, 0, 0, 118, 1, NoIndex, NoIndex, 18, 0,
+        8, 0, 504, 2, 118, 0, NoIndex, NoIndex, 18, 0,
+        2, NoIndex, 0, 0, 119, 2, NoIndex, NoIndex, 24, 0,
+        8, 0, 512, 2, 119, 0, NoIndex, NoIndex, 24, 0,
+        0, 24, 514, 3, 119, 0, NoIndex, 1, 24, 0,
+        2, NoIndex, 0, 0, 121, 1, NoIndex, NoIndex, 29, 0,
+        8, 0, 522, 2, 121, 0, NoIndex, NoIndex, 29, 0,
+        2, NoIndex, 0, 0, 122, 2, NoIndex, NoIndex, 34, 0,
+        8, 0, 528, 2, 122, 0, NoIndex, NoIndex, 34, 0,
+        0, 33, 530, 1, 122, 0, NoIndex, 2, 34, 0,
+        2, NoIndex, 0, 0, 124, 1, NoIndex, NoIndex, 40, 0,
+        8, 0, 537, 2, 124, 0, NoIndex, NoIndex, 40, 0,
+        2, NoIndex, 0, 0, 125, 3, NoIndex, NoIndex, 4, 0,
+        0, 46, 549, 2, 125, 0, NoIndex, 3, 4, 0,
+        8, 3, 551, 2, 125, 0, NoIndex, NoIndex, 4, 0,
+        0, 50, 553, 2, 125, 0, NoIndex, 4, 5, 0,
+        2, NoIndex, 0, 0, 128, 1, NoIndex, NoIndex, 11, 0,
+        8, 2, 560, 2, 128, 0, NoIndex, NoIndex, 11, 0,
+        2, NoIndex, 0, 0, 129, 1, NoIndex, NoIndex, 15, 0,
+        8, 5, 564, 2, 129, 0, NoIndex, NoIndex, 15, 0,
+        2, NoIndex, 0, 0, 130, 4, NoIndex, NoIndex, 22, 0,
+        0, 64, 571, 1, 130, 0, NoIndex, 5, 22, 0,
+        0, 65, 572, 2, 130, 0, NoIndex, 6, 22, 0,
+        8, 5, 574, 2, 130, 0, NoIndex, NoIndex, 23, 0,
+        0, 69, 576, 2, 130, 0, NoIndex, 7, 23, 0,
+        2, NoIndex, 0, 0, 134, 4, NoIndex, NoIndex, 29, 0,
+        0, 77, 584, 1, 134, 0, NoIndex, 8, 29, 0,
+        0, 65, 585, 2, 134, 0, NoIndex, 6, 29, 0,
+        8, 5, 587, 2, 134, 0, NoIndex, NoIndex, 30, 0,
+        0, 69, 589, 2, 134, 0, NoIndex, 7, 30, 0,
+        2, NoIndex, 0, 0, 138, 1, NoIndex, NoIndex, 34, 0,
+        0, 69, 593, 2, 138, 0, NoIndex, 7, 34, 0,
+        2, NoIndex, 0, 0, 139, 1, NoIndex, NoIndex, 39, 0,
+        0, 85, 599, 2, 139, 0, NoIndex, 9, 39, 0,
+        2, NoIndex, 0, 0, 140, 5, NoIndex, NoIndex, 52, 0,
+        0, 95, 612, 1, 140, 0, NoIndex, 10, 52, 0,
+        0, 96, 613, 3, 140, 0, NoIndex, 11, 52, 0,
+        0, 69, 616, 2, 140, 0, NoIndex, 7, 53, 0,
+        0, 97, 618, 2, 140, 0, NoIndex, 12, 53, 0,
+        8, 4, 620, 2, 140, 0, NoIndex, NoIndex, 54, 0,
+        2, NoIndex, 0, 0, 146, 6, NoIndex, NoIndex, 60, 0,
+        0, 9, 628, 1, 145, 0, NoIndex, 0, 60, 0,
+        0, 108, 629, 2, 145, 0, NoIndex, 13, 60, 0,
+        5, NoIndex, 0, 0, 145, 1, NoIndex, NoIndex, 61, 0,
+        0, 111, 631, 1, 145, 0, NoIndex, 14, 61, 0,
+        0, 69, 632, 2, 146, 0, NoIndex, 7, 62, 0,
+        0, 97, 634, 2, 146, 0, NoIndex, 12, 62, 0,
+        8, 4, 636, 2, 146, 0, NoIndex, NoIndex, 63, 0,
+        2, NoIndex, 0, 0, 152, 5, NoIndex, NoIndex, 69, 0,
+        0, 69, 644, 2, 152, 0, NoIndex, 7, 69, 0,
+        0, 97, 646, 2, 152, 0, NoIndex, 12, 69, 0,
+        0, 119, 648, 2, 152, 0, NoIndex, 15, 70, 0,
+        8, 4, 650, 2, 152, 0, NoIndex, NoIndex, 70, 0,
+        0, 108, 652, 2, 152, 0, NoIndex, 13, 71, 0,
+        2, NoIndex, 0, 0, 157, 4, NoIndex, NoIndex, 76, 0,
+        0, 69, 658, 2, 157, 0, NoIndex, 7, 76, 0,
+        0, 97, 660, 2, 157, 0, NoIndex, 12, 76, 0,
+        0, 119, 662, 2, 157, 0, NoIndex, 15, 77, 0,
+        8, 4, 664, 2, 157, 0, NoIndex, NoIndex, 77, 0,
+        2, NoIndex, 0, 0, 161, 5, NoIndex, NoIndex, 81, 0,
+        0, 69, 668, 2, 161, 0, NoIndex, 7, 81, 0,
+        0, 97, 670, 2, 161, 0, NoIndex, 12, 81, 0,
+        8, 4, 672, 2, 161, 0, NoIndex, NoIndex, 82, 0,
+        8, 5, 674, 2, 161, 0, NoIndex, NoIndex, 82, 0,
+        0, 124, 676, 2, 161, 0, NoIndex, 16, 82, 0,
+        2, NoIndex, 0, 0, 166, 4, NoIndex, NoIndex, 87, 0,
+        0, 69, 682, 2, 166, 0, NoIndex, 7, 87, 0,
+        0, 97, 684, 2, 166, 0, NoIndex, 12, 87, 0,
+        8, 4, 686, 2, 166, 0, NoIndex, NoIndex, 88, 0,
+        0, 124, 688, 2, 166, 0, NoIndex, 16, 88, 0,
+        2, NoIndex, 0, 0, 170, 3, NoIndex, NoIndex, 93, 0,
+        0, 85, 694, 2, 170, 0, NoIndex, 9, 93, 0,
+        0, 97, 696, 2, 170, 0, NoIndex, 12, 93, 0,
+        8, 4, 698, 2, 170, 0, NoIndex, NoIndex, 94, 0,
+        2, NoIndex, 0, 0, 173, 1, NoIndex, NoIndex, 100, 0,
+        0, 130, 706, 3, 173, 0, NoIndex, 17, 100, 0,
+        2, NoIndex, 0, 0, 174, 2, NoIndex, NoIndex, 6, 0,
+        8, 0, 719, 2, 174, 0, NoIndex, NoIndex, 6, 0,
+        0, 147, 721, 2, 174, 0, NoIndex, 18, 6, 0,
+        2, NoIndex, 0, 0, 177, 3, NoIndex, NoIndex, 13, 0,
+        8, 0, 730, 2, 176, 0, NoIndex, NoIndex, 13, 0,
+        0, 108, 732, 2, 176, 0, NoIndex, 13, 13, 0,
+        5, NoIndex, 0, 0, 176, 1, NoIndex, NoIndex, 14, 0,
+        0, 111, 734, 1, 176, 0, NoIndex, 14, 14, 0,
+        2, NoIndex, 0, 0, 180, 1, NoIndex, NoIndex, 20, 0,
+        8, 0, 741, 2, 180, 0, NoIndex, NoIndex, 20, 0,
+        2, NoIndex, 0, 0, 181, 2, NoIndex, NoIndex, 26, 0,
+        8, 0, 748, 2, 181, 0, NoIndex, NoIndex, 26, 0,
+        0, 163, 750, 3, 181, 0, NoIndex, 19, 26, 0,
+        2, NoIndex, 0, 0, 183, 1, NoIndex, NoIndex, 32, 0,
+        8, 0, 759, 2, 183, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 184, 2, NoIndex, NoIndex, 38, 0,
+        0, 175, 767, 2, 184, 0, NoIndex, 20, 38, 0,
+        0, 176, 769, 3, 184, 0, NoIndex, 21, 39, 0,
+        2, NoIndex, 0, 0, 186, 1, NoIndex, NoIndex, 6, 0,
+        0, 186, 787, 3, 186, 0, NoIndex, 22, 6, 0,
+        2, NoIndex, 0, 0, 187, 1, NoIndex, NoIndex, 12, 0,
+        0, 192, 796, 3, 187, 0, NoIndex, 23, 12, 0,
+        2, NoIndex, 0, 0, 188, 1, NoIndex, NoIndex, 18, 0,
+        0, 198, 805, 3, 188, 0, NoIndex, 24, 18, 0,
+        2, NoIndex, 0, 0, 189, 1, NoIndex, NoIndex, 24, 0,
+        0, 204, 814, 2, 189, 0, NoIndex, 25, 24, 0,
+        2, NoIndex, 0, 0, 190, 1, NoIndex, NoIndex, 30, 0,
+        0, 207, 822, 3, 190, 0, NoIndex, 26, 30, 0,
+        2, NoIndex, 0, 0, 191, 3, NoIndex, NoIndex, 4, 0,
+        0, 46, 836, 2, 191, 0, NoIndex, 3, 4, 0,
+        8, 3, 838, 2, 191, 0, NoIndex, NoIndex, 4, 0,
+        0, 213, 840, 1, 191, 0, NoIndex, 27, 5, 0,
+        2, NoIndex, 0, 0, 194, 3, NoIndex, NoIndex, 10, 0,
+        0, 97, 843, 2, 194, 0, NoIndex, 12, 10, 0,
+        8, 3, 845, 2, 194, 0, NoIndex, NoIndex, 10, 0,
+        0, 220, 847, 2, 194, 0, NoIndex, 28, 11, 0,
+        2, NoIndex, 0, 0, 197, 1, NoIndex, NoIndex, 16, 0,
+        0, 227, 853, 2, 197, 0, NoIndex, 29, 16, 0,
+        2, NoIndex, 0, 0, 198, 2, NoIndex, NoIndex, 21, 0,
+        0, 233, 858, 2, 198, 0, NoIndex, 30, 21, 0,
+        0, 234, 860, 2, 198, 0, NoIndex, 31, 21, 0,
+        2, NoIndex, 0, 0, 200, 2, NoIndex, NoIndex, 27, 0,
+        0, 244, 868, 2, 200, 0, NoIndex, 32, 27, 0,
+        0, 247, 870, 1, 200, 0, NoIndex, 33, 27, 0,
+        2, NoIndex, 0, 0, 202, 1, NoIndex, NoIndex, 32, 0,
+        0, 253, 875, 2, 202, 0, NoIndex, 34, 32, 0,
+        2, NoIndex, 0, 0, 203, 2, NoIndex, NoIndex, 37, 0,
+        0, 65, 881, 2, 203, 0, NoIndex, 6, 37, 0,
+        8, 3, 883, 2, 203, 0, NoIndex, NoIndex, 37, 0,
+        2, NoIndex, 0, 0, 205, 2, NoIndex, NoIndex, 12, 0,
+        0, 271, 889, 1, 205, 0, NoIndex, 35, 13, 0,
+        0, 274, 890, 4, 205, 0, NoIndex, 36, 14, 0,
+        2, NoIndex, 0, 0, 213, 6, NoIndex, NoIndex, 22, 0,
+        0, 271, 899, 1, 207, 0, NoIndex, 35, 23, 0,
+        0, 286, 900, 2, 207, 0, NoIndex, 37, 24, 0,
+        0, 289, 902, 1, 207, 0, NoIndex, 38, 25, 0,
+        0, 290, 903, 3, 207, 0, NoIndex, 39, 26, 0,
+        5, NoIndex, 0, 0, 207, 1, NoIndex, NoIndex, 27, 0,
+        0, 293, 906, 1, 207, 0, NoIndex, 40, 27, 0,
+        5, NoIndex, 0, 0, 212, 1, NoIndex, NoIndex, 28, 0,
+        2, NoIndex, 0, 0, 208, 4, NoIndex, NoIndex, 29, 0,
+        0, 286, 907, 2, 208, 0, NoIndex, 37, 30, 0,
+        0, 289, 909, 1, 208, 0, NoIndex, 38, 31, 0,
+        0, 290, 910, 3, 208, 0, NoIndex, 39, 32, 0,
+        8, 2, 913, 2, 208, 0, NoIndex, NoIndex, 33, 0,
+        2, NoIndex, 0, 0, 219, 2, NoIndex, NoIndex, 43, 0,
+        0, 271, 920, 1, 219, 0, NoIndex, 35, 44, 0,
+        0, 274, 921, 4, 219, 0, NoIndex, 36, 45, 0,
+        2, NoIndex, 0, 0, 222, 3, NoIndex, NoIndex, 53, 0,
+        0, 271, 930, 1, 221, 0, NoIndex, 35, 54, 0,
+        0, 306, 931, 3, 221, 0, NoIndex, 41, 55, 0,
+        5, NoIndex, 0, 0, 221, 1, NoIndex, NoIndex, 56, 0,
+        0, 309, 934, 3, 221, 0, NoIndex, 42, 56, 0,
+        2, NoIndex, 0, 0, 225, 2, NoIndex, NoIndex, 64, 0,
+        0, 271, 942, 1, 225, 0, NoIndex, 35, 65, 0,
+        0, 309, 943, 3, 225, 0, NoIndex, 42, 66, 0,
+        2, NoIndex, 0, 0, 227, 2, NoIndex, NoIndex, 74, 0,
+        0, 271, 951, 1, 227, 0, NoIndex, 35, 75, 0,
+        0, 274, 952, 4, 227, 0, NoIndex, 36, 76, 0,
+        2, NoIndex, 0, 0, 229, 1, NoIndex, NoIndex, 84, 0,
+        0, 271, 961, 1, 229, 0, NoIndex, 35, 84, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(== ?inp_order evacuate)",
+        "(under_fire ?inp_npc)",
+        "(and ...)",
+        "(== ?inp_order evacuate)",
+        "(and ...)",
+        "(== ?inp_order hold)",
+        "(and ...)",
+        "(== ?inp_order escort)",
+        "(escort_route ?inp_npc ?inp_target ?route)",
+        "(and ...)",
+        "(== ?inp_order guard)",
+        "(and ...)",
+        "(== ?inp_order interact)",
+        "(interaction_ready ?inp_target)",
+        "(and ...)",
+        "(== ?inp_order move)",
+        "(and ...)",
+        "(health ?inp_npc ?hp)",
+        "(<= ?hp 20)",
+        "(retreat_route ?inp_npc ?route)",
+        "(and ...)",
+        "(< ?inp_distance 8)",
+        "(and ...)",
+        "(>= ?inp_distance 8)",
+        "(and ...)",
+        "(enemy_attacking ?inp_enemy)",
+        "(stamina ?inp_npc ?amount)",
+        "(>= ?amount 30)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(enemy_staggered ?inp_enemy)",
+        "(stamina ?inp_npc ?amount)",
+        "(>= ?amount 45)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(weapon_available ?inp_npc melee)",
+        "(and ...)",
+        "(enemy_suppressed ?inp_enemy)",
+        "(flank_route ?inp_npc ?inp_enemy ?route)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(under_fire ?inp_npc)",
+        "(cover_available ?inp_npc ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc 0)",
+        "(reserve_ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(cover_available ?inp_npc ?cover)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc 0)",
+        "(reserve_ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(>= ?inp_distance 30)",
+        "(clear_shot ?inp_npc ?inp_enemy)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(clear_shot ?inp_npc ?inp_enemy)",
+        "(and ...)",
+        "(weapon_available ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(advance_route ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(== ?inp_stimulus radio)",
+        "(squad_alert ?inp_npc ?report)",
+        "(and ...)",
+        "(== ?inp_stimulus gunshot)",
+        "(cover_available ?inp_npc ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(and ...)",
+        "(== ?inp_stimulus gunshot)",
+        "(and ...)",
+        "(== ?inp_stimulus footprints)",
+        "(track_route ?inp_npc ?inp_location ?route)",
+        "(and ...)",
+        "(== ?inp_stimulus anomaly)",
+        "(and ...)",
+        "(route_blocked_to ?inp_npc ?inp_location)",
+        "(alternate_investigation_route ?inp_npc ?inp_location ?route)",
+        "(and ...)",
+        "(enemy_tracks ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(escape_sound ?inp_npc ?inp_enemy ?location)",
+        "(and ...)",
+        "(squad_search_route ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(cover_at ?inp_last_location ?cover)",
+        "(and ...)",
+        "(search_perimeter ?inp_npc ?inp_last_location ?route)",
+        "(and ...)",
+        "(health ?inp_npc ?hp)",
+        "(<= ?hp 45)",
+        "(medkit_available ?inp_npc)",
+        "(and ...)",
+        "(ammo ?inp_npc ?count)",
+        "(<= ?count 5)",
+        "(ammo_cache ?inp_npc ?cache)",
+        "(and ...)",
+        "(weapon_jammed ?inp_npc ?weapon)",
+        "(and ...)",
+        "(patrol_route ?inp_npc ?route)",
+        "(patrol_checkpoint ?inp_npc ?point)",
+        "(and ...)",
+        "(nearby_ally ?inp_npc ?ally)",
+        "(social_cooldown_ready ?inp_npc)",
+        "(and ...)",
+        "(assigned_post ?inp_npc ?post)",
+        "(and ...)",
+        "(stamina ?inp_npc ?amount)",
+        "(<= ?amount 25)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc high ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(visible_enemy ?npc ?enemy)",
+        "(hostile_enemy ?enemy)",
+        "(enemy_distance ?npc ?enemy ?distance)",
+        "(not ...)",
+        "(enemy_dead ?enemy)",
+        "(not ...)",
+        "(and ...)",
+        "(visible_enemy ?npc ?other)",
+        "(hostile_enemy ?other)",
+        "(enemy_distance ?npc ?other ?other_distance)",
+        "(< ?other_distance ?distance)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc medium ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(suspicious_stimulus ?npc ?stimulus ?location)",
+        "(not ...)",
+        "(combat_memory ?npc ?lost_enemy ?last_location)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(combat_memory ?npc ?enemy ?last_location)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc low ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(and ...)",
+        "(== ?inp_order evacuate)",
+        "(under_fire ?inp_npc)",
+        "(and ...)",
+        "(== ?inp_order evacuate)",
+        "(and ...)",
+        "(== ?inp_order hold)",
+        "(and ...)",
+        "(== ?inp_order escort)",
+        "(escort_route ?inp_npc ?inp_target ?route)",
+        "(and ...)",
+        "(== ?inp_order guard)",
+        "(and ...)",
+        "(== ?inp_order interact)",
+        "(interaction_ready ?inp_target)",
+        "(and ...)",
+        "(== ?inp_order move)",
+        "(and ...)",
+        "(health ?inp_npc ?hp)",
+        "(<= ?hp 20)",
+        "(retreat_route ?inp_npc ?route)",
+        "(and ...)",
+        "(< ?inp_distance 8)",
+        "(and ...)",
+        "(>= ?inp_distance 8)",
+        "(and ...)",
+        "(enemy_attacking ?inp_enemy)",
+        "(stamina ?inp_npc ?amount)",
+        "(>= ?amount 30)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(enemy_staggered ?inp_enemy)",
+        "(stamina ?inp_npc ?amount)",
+        "(>= ?amount 45)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc melee)",
+        "(and ...)",
+        "(weapon_available ?inp_npc melee)",
+        "(and ...)",
+        "(enemy_suppressed ?inp_enemy)",
+        "(flank_route ?inp_npc ?inp_enemy ?route)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(under_fire ?inp_npc)",
+        "(cover_available ?inp_npc ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc 0)",
+        "(reserve_ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(cover_available ?inp_npc ?cover)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc 0)",
+        "(reserve_ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(>= ?inp_distance 30)",
+        "(clear_shot ?inp_npc ?inp_enemy)",
+        "(and ...)",
+        "(weapon_equipped ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(clear_shot ?inp_npc ?inp_enemy)",
+        "(and ...)",
+        "(weapon_available ?inp_npc ranged)",
+        "(ammo ?inp_npc ?count)",
+        "(> ?count 0)",
+        "(and ...)",
+        "(advance_route ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(== ?inp_stimulus radio)",
+        "(squad_alert ?inp_npc ?report)",
+        "(and ...)",
+        "(== ?inp_stimulus gunshot)",
+        "(cover_available ?inp_npc ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(and ...)",
+        "(== ?inp_stimulus gunshot)",
+        "(and ...)",
+        "(== ?inp_stimulus footprints)",
+        "(track_route ?inp_npc ?inp_location ?route)",
+        "(and ...)",
+        "(== ?inp_stimulus anomaly)",
+        "(and ...)",
+        "(route_blocked_to ?inp_npc ?inp_location)",
+        "(alternate_investigation_route ?inp_npc ?inp_location ?route)",
+        "(and ...)",
+        "(enemy_tracks ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(escape_sound ?inp_npc ?inp_enemy ?location)",
+        "(and ...)",
+        "(squad_search_route ?inp_npc ?inp_enemy ?route)",
+        "(and ...)",
+        "(cover_at ?inp_last_location ?cover)",
+        "(and ...)",
+        "(search_perimeter ?inp_npc ?inp_last_location ?route)",
+        "(and ...)",
+        "(health ?inp_npc ?hp)",
+        "(<= ?hp 45)",
+        "(medkit_available ?inp_npc)",
+        "(and ...)",
+        "(ammo ?inp_npc ?count)",
+        "(<= ?count 5)",
+        "(ammo_cache ?inp_npc ?cache)",
+        "(and ...)",
+        "(weapon_jammed ?inp_npc ?weapon)",
+        "(and ...)",
+        "(patrol_route ?inp_npc ?route)",
+        "(patrol_checkpoint ?inp_npc ?point)",
+        "(and ...)",
+        "(nearby_ally ?inp_npc ?ally)",
+        "(social_cooldown_ready ?inp_npc)",
+        "(and ...)",
+        "(assigned_post ?inp_npc ?post)",
+        "(and ...)",
+        "(stamina ?inp_npc ?amount)",
+        "(<= ?amount 25)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc high ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(visible_enemy ?npc ?enemy)",
+        "(hostile_enemy ?enemy)",
+        "(enemy_distance ?npc ?enemy ?distance)",
+        "(not ...)",
+        "(enemy_dead ?enemy)",
+        "(not ...)",
+        "(and ...)",
+        "(visible_enemy ?npc ?other)",
+        "(hostile_enemy ?other)",
+        "(enemy_distance ?npc ?other ?other_distance)",
+        "(< ?other_distance ?distance)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc medium ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(suspicious_stimulus ?npc ?stimulus ?location)",
+        "(not ...)",
+        "(combat_memory ?npc ?lost_enemy ?last_location)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(combat_memory ?npc ?enemy ?last_location)",
+        "(and ...)",
+        "(controlled_npc ?npc)",
+        "(scripted_order ?npc low ?order ?target)",
+        "(and ...)",
+        "(controlled_npc ?npc)"],
+      conditionChildRefs: @[
+        1'u32,
+        2,
+        4,
+        6,
+        8,
+        9,
+        11,
+        13,
+        14,
+        16,
+        18,
+        19,
+        20,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        33,
+        34,
+        36,
+        38,
+        40,
+        41,
+        42,
+        43,
+        44,
+        49,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        57,
+        58,
+        60,
+        61,
+        62,
+        63,
+        65,
+        66,
+        67,
+        68,
+        69,
+        71,
+        72,
+        73,
+        74,
+        76,
+        77,
+        78,
+        80,
+        82,
+        83,
+        88,
+        85,
+        86,
+        87,
+        90,
+        92,
+        93,
+        95,
+        97,
+        98,
+        100,
+        102,
+        104,
+        106,
+        108,
+        110,
+        111,
+        112,
+        114,
+        115,
+        116,
+        118,
+        120,
+        121,
+        123,
+        124,
+        126,
+        128,
+        129,
+        131,
+        132,
+        139,
+        142,
+        143,
+        144,
+        145,
+        141,
+        134,
+        135,
+        136,
+        137,
+        138,
+        140,
+        147,
+        148,
+        153,
+        150,
+        151,
+        152,
+        155,
+        156,
+        158,
+        159,
+        161,
+        163,
+        164,
+        166,
+        168,
+        170,
+        171,
+        173,
+        175,
+        176,
+        178,
+        180,
+        181,
+        182,
+        184,
+        186,
+        188,
+        189,
+        190,
+        191,
+        193,
+        194,
+        195,
+        196,
+        198,
+        200,
+        202,
+        203,
+        204,
+        205,
+        206,
+        211,
+        208,
+        209,
+        210,
+        212,
+        213,
+        214,
+        216,
+        217,
+        218,
+        219,
+        220,
+        222,
+        223,
+        224,
+        225,
+        227,
+        228,
+        229,
+        230,
+        231,
+        233,
+        234,
+        235,
+        236,
+        238,
+        239,
+        240,
+        242,
+        244,
+        245,
+        250,
+        247,
+        248,
+        249,
+        252,
+        254,
+        255,
+        257,
+        259,
+        260,
+        262,
+        264,
+        266,
+        268,
+        270,
+        272,
+        273,
+        274,
+        276,
+        277,
+        278,
+        280,
+        282,
+        283,
+        285,
+        286,
+        288,
+        290,
+        291,
+        293,
+        294,
+        301,
+        304,
+        305,
+        306,
+        307,
+        303,
+        296,
+        297,
+        298,
+        299,
+        300,
+        302,
+        309,
+        310,
+        315,
+        312,
+        313,
+        314,
+        317,
+        318,
+        320,
+        321,
+        323],
+      tasks: @[
+        1'u32, 10, 6, 2, 6, 11,
+        1, 12, 8, 1, 7, 13,
+        1, 14, 9, 2, 8, 15,
+        1, 16, 11, 2, 9, 17,
+        1, 10, 15, 2, 13, 11,
+        1, 14, 17, 2, 14, 15,
+        1, 16, 19, 2, 15, 17,
+        1, 10, 23, 2, 19, 11,
+        1, 20, 25, 2, 20, 21,
+        1, 18, 27, 2, 21, 22,
+        1, 10, 34, 2, 25, 11,
+        1, 27, 36, 3, 26, 28,
+        1, 10, 41, 2, 30, 11,
+        1, 30, 43, 2, 31, 31,
+        1, 14, 48, 2, 35, 15,
+        1, 34, 50, 2, 36, 35,
+        1, 16, 52, 2, 37, 17,
+        1, 14, 56, 2, 41, 15,
+        1, 16, 58, 2, 42, 17,
+        1, 38, 60, 3, 46, 39,
+        1, 51, 72, 2, 6, 52,
+        1, 53, 74, 1, 7, 54,
+        1, 55, 75, 2, 8, 56,
+        0, 59, 79, 2, 12, NoIndex,
+        0, 61, 83, 3, 16, NoIndex,
+        1, 70, 95, 2, 24, 71,
+        1, 72, 97, 2, 25, 73,
+        1, 74, 99, 2, 26, 75,
+        1, 79, 108, 2, 31, 80,
+        1, 70, 112, 2, 35, 71,
+        1, 82, 114, 2, 36, 83,
+        1, 86, 118, 2, 40, 87,
+        1, 82, 120, 2, 41, 83,
+        1, 89, 122, 2, 45, 90,
+        1, 91, 124, 2, 46, 92,
+        1, 101, 139, 2, 55, 102,
+        1, 103, 141, 2, 56, 104,
+        1, 105, 143, 2, 57, 106,
+        1, 112, 155, 2, 64, 113,
+        1, 114, 157, 2, 65, 115,
+        1, 116, 159, 2, 66, 117,
+        1, 112, 171, 2, 72, 113,
+        1, 120, 173, 2, 73, 121,
+        1, 120, 183, 2, 78, 121,
+        1, 103, 195, 2, 83, 104,
+        1, 125, 197, 2, 84, 126,
+        1, 103, 207, 2, 89, 104,
+        1, 116, 209, 2, 90, 117,
+        1, 86, 217, 2, 95, 87,
+        1, 103, 219, 2, 96, 104,
+        1, 116, 221, 2, 97, 117,
+        1, 131, 226, 2, 101, 132,
+        1, 133, 228, 2, 102, 134,
+        1, 136, 230, 2, 106, 137,
+        1, 138, 232, 1, 107, 139,
+        1, 150, 240, 2, 7, 151,
+        1, 152, 242, 1, 8, 153,
+        1, 154, 243, 2, 9, 155,
+        1, 156, 245, 2, 10, 157,
+        1, 112, 252, 2, 15, 113,
+        1, 160, 254, 2, 16, 161,
+        1, 156, 256, 2, 17, 157,
+        1, 152, 260, 1, 21, 153,
+        1, 154, 261, 2, 22, 155,
+        1, 156, 263, 2, 23, 157,
+        1, 164, 270, 2, 27, 165,
+        1, 166, 272, 2, 28, 167,
+        1, 156, 274, 2, 29, 157,
+        1, 170, 278, 2, 33, 171,
+        1, 154, 280, 2, 34, 155,
+        1, 172, 282, 2, 35, 173,
+        1, 177, 289, 2, 40, 178,
+        1, 156, 291, 2, 41, 157,
+        1, 152, 293, 1, 45, 153,
+        1, 154, 294, 2, 46, 155,
+        1, 156, 296, 2, 47, 157,
+        1, 180, 298, 3, 48, 181,
+        1, 187, 307, 2, 7, 188,
+        1, 189, 309, 2, 8, 190,
+        1, 156, 311, 2, 9, 157,
+        1, 187, 316, 2, 13, 188,
+        1, 195, 318, 2, 14, 196,
+        1, 156, 320, 2, 15, 157,
+        1, 199, 325, 2, 19, 200,
+        1, 201, 327, 2, 20, 202,
+        1, 156, 329, 2, 21, 157,
+        1, 195, 333, 2, 25, 196,
+        1, 205, 335, 2, 26, 206,
+        1, 156, 337, 2, 27, 157,
+        1, 201, 342, 2, 31, 202,
+        1, 156, 344, 2, 32, 157,
+        1, 195, 346, 2, 36, 196,
+        1, 156, 348, 2, 37, 157,
+        1, 209, 350, 2, 38, 210,
+        1, 214, 358, 1, 6, 215,
+        1, 216, 359, 1, 7, 217,
+        1, 223, 366, 2, 12, 224,
+        1, 218, 368, 2, 13, 225,
+        1, 230, 372, 2, 17, 231,
+        1, 216, 374, 1, 18, 217,
+        1, 237, 379, 2, 22, 238,
+        1, 239, 381, 2, 23, 240,
+        1, 241, 383, 2, 24, 242,
+        1, 248, 388, 2, 28, 249,
+        1, 250, 390, 2, 29, 251,
+        1, 256, 394, 2, 33, 257,
+        1, 258, 396, 2, 34, 259,
+        1, 262, 402, 1, 38, 263,
+        1, 264, 403, 1, 39, 265,
+        1, 267, 404, 1, 43, 268,
+        1, 264, 405, 1, 44, 265,
+        1, 280, 411, 2, 17, 281,
+        0, 284, 413, 3, 18, NoIndex,
+        1, 280, 432, 2, 38, 281,
+        0, 300, 434, 3, 39, NoIndex,
+        1, 280, 442, 2, 48, 281,
+        0, 284, 444, 3, 49, NoIndex,
+        1, 280, 454, 2, 59, 281,
+        0, 316, 456, 3, 60, NoIndex,
+        1, 280, 463, 2, 69, 281,
+        0, 320, 465, 3, 70, NoIndex,
+        1, 280, 473, 2, 79, 281,
+        0, 284, 475, 3, 80, NoIndex,
+        1, 280, 479, 2, 86, 281,
+        0, 327, 481, 1, 87, NoIndex,
+        1, 280, 482, 1, 92, 281,
+        1, 10, 489, 2, 6, 11,
+        1, 12, 491, 1, 7, 13,
+        1, 14, 492, 2, 8, 15,
+        1, 16, 494, 2, 9, 17,
+        1, 10, 498, 2, 13, 11,
+        1, 14, 500, 2, 14, 15,
+        1, 16, 502, 2, 15, 17,
+        1, 10, 506, 2, 19, 11,
+        1, 20, 508, 2, 20, 21,
+        1, 18, 510, 2, 21, 22,
+        1, 10, 517, 2, 25, 11,
+        1, 27, 519, 3, 26, 28,
+        1, 10, 524, 2, 30, 11,
+        1, 30, 526, 2, 31, 31,
+        1, 14, 531, 2, 35, 15,
+        1, 34, 533, 2, 36, 35,
+        1, 16, 535, 2, 37, 17,
+        1, 14, 539, 2, 41, 15,
+        1, 16, 541, 2, 42, 17,
+        1, 38, 543, 3, 46, 39,
+        1, 51, 555, 2, 6, 52,
+        1, 53, 557, 1, 7, 54,
+        1, 55, 558, 2, 8, 56,
+        0, 59, 562, 2, 12, NoIndex,
+        0, 61, 566, 3, 16, NoIndex,
+        1, 70, 578, 2, 24, 71,
+        1, 72, 580, 2, 25, 73,
+        1, 74, 582, 2, 26, 75,
+        1, 79, 591, 2, 31, 80,
+        1, 70, 595, 2, 35, 71,
+        1, 82, 597, 2, 36, 83,
+        1, 86, 601, 2, 40, 87,
+        1, 82, 603, 2, 41, 83,
+        1, 89, 605, 2, 45, 90,
+        1, 91, 607, 2, 46, 92,
+        1, 101, 622, 2, 55, 102,
+        1, 103, 624, 2, 56, 104,
+        1, 105, 626, 2, 57, 106,
+        1, 112, 638, 2, 64, 113,
+        1, 114, 640, 2, 65, 115,
+        1, 116, 642, 2, 66, 117,
+        1, 112, 654, 2, 72, 113,
+        1, 120, 656, 2, 73, 121,
+        1, 120, 666, 2, 78, 121,
+        1, 103, 678, 2, 83, 104,
+        1, 125, 680, 2, 84, 126,
+        1, 103, 690, 2, 89, 104,
+        1, 116, 692, 2, 90, 117,
+        1, 86, 700, 2, 95, 87,
+        1, 103, 702, 2, 96, 104,
+        1, 116, 704, 2, 97, 117,
+        1, 131, 709, 2, 101, 132,
+        1, 133, 711, 2, 102, 134,
+        1, 136, 713, 2, 106, 137,
+        1, 138, 715, 1, 107, 139,
+        1, 150, 723, 2, 7, 151,
+        1, 152, 725, 1, 8, 153,
+        1, 154, 726, 2, 9, 155,
+        1, 156, 728, 2, 10, 157,
+        1, 112, 735, 2, 15, 113,
+        1, 160, 737, 2, 16, 161,
+        1, 156, 739, 2, 17, 157,
+        1, 152, 743, 1, 21, 153,
+        1, 154, 744, 2, 22, 155,
+        1, 156, 746, 2, 23, 157,
+        1, 164, 753, 2, 27, 165,
+        1, 166, 755, 2, 28, 167,
+        1, 156, 757, 2, 29, 157,
+        1, 170, 761, 2, 33, 171,
+        1, 154, 763, 2, 34, 155,
+        1, 172, 765, 2, 35, 173,
+        1, 177, 772, 2, 40, 178,
+        1, 156, 774, 2, 41, 157,
+        1, 152, 776, 1, 45, 153,
+        1, 154, 777, 2, 46, 155,
+        1, 156, 779, 2, 47, 157,
+        1, 180, 781, 3, 48, 181,
+        1, 187, 790, 2, 7, 188,
+        1, 189, 792, 2, 8, 190,
+        1, 156, 794, 2, 9, 157,
+        1, 187, 799, 2, 13, 188,
+        1, 195, 801, 2, 14, 196,
+        1, 156, 803, 2, 15, 157,
+        1, 199, 808, 2, 19, 200,
+        1, 201, 810, 2, 20, 202,
+        1, 156, 812, 2, 21, 157,
+        1, 195, 816, 2, 25, 196,
+        1, 205, 818, 2, 26, 206,
+        1, 156, 820, 2, 27, 157,
+        1, 201, 825, 2, 31, 202,
+        1, 156, 827, 2, 32, 157,
+        1, 195, 829, 2, 36, 196,
+        1, 156, 831, 2, 37, 157,
+        1, 209, 833, 2, 38, 210,
+        1, 214, 841, 1, 6, 215,
+        1, 216, 842, 1, 7, 217,
+        1, 223, 849, 2, 12, 224,
+        1, 218, 851, 2, 13, 225,
+        1, 230, 855, 2, 17, 231,
+        1, 216, 857, 1, 18, 217,
+        1, 237, 862, 2, 22, 238,
+        1, 239, 864, 2, 23, 240,
+        1, 241, 866, 2, 24, 242,
+        1, 248, 871, 2, 28, 249,
+        1, 250, 873, 2, 29, 251,
+        1, 256, 877, 2, 33, 257,
+        1, 258, 879, 2, 34, 259,
+        1, 262, 885, 1, 38, 263,
+        1, 264, 886, 1, 39, 265,
+        1, 267, 887, 1, 43, 268,
+        1, 264, 888, 1, 44, 265,
+        1, 280, 894, 2, 17, 281,
+        0, 284, 896, 3, 18, NoIndex,
+        1, 280, 915, 2, 38, 281,
+        0, 300, 917, 3, 39, NoIndex,
+        1, 280, 925, 2, 48, 281,
+        0, 284, 927, 3, 49, NoIndex,
+        1, 280, 937, 2, 59, 281,
+        0, 316, 939, 3, 60, NoIndex,
+        1, 280, 946, 2, 69, 281,
+        0, 320, 948, 3, 70, NoIndex,
+        1, 280, 956, 2, 79, 281,
+        0, 284, 958, 3, 80, NoIndex,
+        1, 280, 962, 2, 86, 281,
+        0, 327, 964, 1, 87, NoIndex,
+        1, 280, 965, 1, 92, 281],
+      branches: @[
+        7'u32, 0, 0, 4, 4,
+        8, 3, 4, 3, 11,
+        18, 5, 7, 3, 17,
+        23, 7, 10, 2, 23,
+        29, 10, 12, 2, 28,
+        32, 12, 14, 3, 33,
+        36, 15, 17, 2, 39,
+        37, NoIndex, 19, 1, 44,
+        45, 17, 20, 3, 3,
+        57, 21, 23, 1, 10,
+        60, 23, 24, 1, 14,
+        63, 25, 25, 3, 21,
+        76, 30, 28, 1, 28,
+        81, 35, 29, 2, 33,
+        84, 37, 31, 2, 38,
+        88, NoIndex, 33, 2, 43,
+        94, 39, 35, 3, 51,
+        107, 45, 38, 3, 59,
+        118, 53, 41, 2, 68,
+        122, 59, 43, 1, 75,
+        123, 64, 44, 2, 80,
+        127, 70, 46, 2, 86,
+        128, 75, 48, 3, 92,
+        129, 79, 51, 2, 99,
+        135, NoIndex, 53, 2, 104,
+        145, 81, 55, 4, 5,
+        158, 84, 59, 3, 12,
+        159, 89, 62, 3, 19,
+        162, 91, 65, 3, 25,
+        168, 94, 68, 3, 31,
+        174, 96, 71, 2, 37,
+        179, NoIndex, 73, 4, 43,
+        185, 99, 77, 3, 5,
+        191, 101, 80, 3, 11,
+        197, 103, 83, 3, 17,
+        203, 105, 86, 3, 23,
+        207, 107, 89, 2, 29,
+        208, NoIndex, 91, 3, 34,
+        212, 109, 94, 2, 3,
+        218, 113, 96, 2, 9,
+        226, 117, 98, 2, 15,
+        232, 119, 100, 3, 20,
+        243, 122, 103, 2, 26,
+        252, 125, 105, 2, 31,
+        260, 127, 107, 2, 36,
+        266, NoIndex, 109, 2, 41,
+        270, 130, 111, 2, 11,
+        285, 133, 113, 2, 21,
+        301, 146, 115, 2, 42,
+        305, 149, 117, 2, 52,
+        317, 154, 119, 2, 63,
+        321, 157, 121, 2, 73,
+        325, 160, 123, 2, 83,
+        328, NoIndex, 125, 1, 90,
+        7, 162, 126, 4, 4,
+        8, 165, 130, 3, 11,
+        18, 167, 133, 3, 17,
+        23, 169, 136, 2, 23,
+        29, 172, 138, 2, 28,
+        32, 174, 140, 3, 33,
+        36, 177, 143, 2, 39,
+        37, NoIndex, 145, 1, 44,
+        45, 179, 146, 3, 3,
+        57, 183, 149, 1, 10,
+        60, 185, 150, 1, 14,
+        63, 187, 151, 3, 21,
+        76, 192, 154, 1, 28,
+        81, 197, 155, 2, 33,
+        84, 199, 157, 2, 38,
+        88, NoIndex, 159, 2, 43,
+        94, 201, 161, 3, 51,
+        107, 207, 164, 3, 59,
+        118, 215, 167, 2, 68,
+        122, 221, 169, 1, 75,
+        123, 226, 170, 2, 80,
+        127, 232, 172, 2, 86,
+        128, 237, 174, 3, 92,
+        129, 241, 177, 2, 99,
+        135, NoIndex, 179, 2, 104,
+        145, 243, 181, 4, 5,
+        158, 246, 185, 3, 12,
+        159, 251, 188, 3, 19,
+        162, 253, 191, 3, 25,
+        168, 256, 194, 3, 31,
+        174, 258, 197, 2, 37,
+        179, NoIndex, 199, 4, 43,
+        185, 261, 203, 3, 5,
+        191, 263, 206, 3, 11,
+        197, 265, 209, 3, 17,
+        203, 267, 212, 3, 23,
+        207, 269, 215, 2, 29,
+        208, NoIndex, 217, 3, 34,
+        212, 271, 220, 2, 3,
+        218, 275, 222, 2, 9,
+        226, 279, 224, 2, 15,
+        232, 281, 226, 3, 20,
+        243, 284, 229, 2, 26,
+        252, 287, 231, 2, 31,
+        260, 289, 233, 2, 36,
+        266, NoIndex, 235, 2, 41,
+        270, 292, 237, 2, 11,
+        285, 295, 239, 2, 21,
+        301, 308, 241, 2, 42,
+        305, 311, 243, 2, 52,
+        317, 316, 245, 2, 63,
+        321, 319, 247, 2, 73,
+        325, 322, 249, 2, 83,
+        328, NoIndex, 251, 1, 90],
+      methods: @[
+        0'u64, 0, 3, 0, 8, 3, 0x000000000000000f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        40, 63, 3, 8, 3, 2, 0x0000000000000079'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        62, 86, 2, 11, 5, 20, 0x0000000000000091'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        93, 126, 3, 16, 9, 50, 0x0000000000000339'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        140, 233, 3, 25, 7, 4, 0x0000000000001e09'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        182, 301, 3, 32, 6, 4, 0x0000000000006219'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        211, 352, 1, 38, 8, 2, 0x00000000000f81c9'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        269, 406, 0, 46, 8, 10, 0x000000003ff04000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        284, 483, 3, 54, 8, 3, 0x000000000000000f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        300, 546, 3, 62, 3, 2, 0x0000000000000079'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        59, 569, 2, 65, 5, 20, 0x0000000000000091'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        61, 609, 3, 70, 9, 50, 0x0000000000000339'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        316, 716, 3, 79, 7, 4, 0x0000000000001e09'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        320, 784, 3, 86, 6, 4, 0x0000000000006219'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        327, 835, 1, 92, 8, 2, 0x00000000000f81c9'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        331, 889, 0, 100, 8, 10, 0x000000003ff04000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: newSeq[uint64](),
+      constants: newSeq[uint32](),
+      callTermSlotCount: 0, factSlotCount: 43,
+      sourceFiles: @[
+        "Domains/Includes/aaa_orders.domain",
+        "Domains/Includes/aaa_combat.domain",
+        "Domains/Includes/aaa_investigation.domain",
+        "Domains/Includes/aaa_search.domain",
+        "Domains/Includes/aaa_idle.domain",
+        "Domains/AAACombatNPC.domain"],
+      valueSources: @[
+        0'u32, 3, 38, 3, 46,
+        0, 3, 47, 3, 57,
+        0, 3, 58, 3, 69,
+        0, 5, 22, 5, 32,
+        0, 5, 33, 5, 41,
+        0, 5, 55, 5, 63,
+        0, 6, 35, 6, 43,
+        0, 6, 44, 6, 54,
+        0, 7, 29, 7, 37,
+        0, 8, 37, 8, 45,
+        0, 8, 46, 8, 57,
+        0, 9, 36, 9, 44,
+        0, 9, 45, 9, 55,
+        0, 12, 22, 12, 32,
+        0, 12, 33, 12, 41,
+        0, 13, 35, 13, 43,
+        0, 13, 44, 13, 54,
+        0, 14, 37, 14, 45,
+        0, 14, 46, 14, 57,
+        0, 15, 36, 15, 44,
+        0, 15, 45, 15, 55,
+        0, 18, 22, 18, 32,
+        0, 18, 33, 18, 37,
+        0, 19, 35, 19, 43,
+        0, 19, 44, 19, 54,
+        0, 20, 34, 20, 42,
+        0, 20, 43, 20, 54,
+        0, 21, 30, 21, 38,
+        0, 21, 39, 21, 50,
+        0, 24, 22, 24, 32,
+        0, 24, 33, 24, 39,
+        0, 24, 55, 24, 63,
+        0, 24, 64, 24, 75,
+        0, 24, 76, 24, 82,
+        0, 25, 35, 25, 43,
+        0, 25, 44, 25, 54,
+        0, 26, 36, 26, 44,
+        0, 26, 45, 26, 56,
+        0, 26, 57, 26, 63,
+        0, 29, 22, 29, 32,
+        0, 29, 33, 29, 38,
+        0, 30, 35, 30, 43,
+        0, 30, 44, 30, 54,
+        0, 31, 29, 31, 37,
+        0, 31, 38, 31, 49,
+        0, 34, 22, 34, 32,
+        0, 34, 33, 34, 41,
+        0, 34, 62, 34, 73,
+        0, 35, 37, 35, 45,
+        0, 35, 46, 35, 57,
+        0, 36, 30, 36, 38,
+        0, 36, 39, 36, 50,
+        0, 37, 36, 37, 44,
+        0, 37, 45, 37, 55,
+        0, 40, 22, 40, 32,
+        0, 40, 33, 40, 37,
+        0, 41, 37, 41, 45,
+        0, 41, 46, 41, 57,
+        0, 42, 36, 42, 44,
+        0, 42, 45, 42, 55,
+        0, 46, 37, 46, 45,
+        0, 46, 46, 46, 56,
+        0, 46, 57, 46, 68,
+        1, 2, 27, 2, 35,
+        1, 2, 36, 2, 46,
+        1, 2, 47, 2, 60,
+        1, 4, 26, 4, 34,
+        1, 4, 35, 4, 38,
+        1, 4, 44, 4, 47,
+        1, 4, 48, 4, 50,
+        1, 5, 33, 5, 41,
+        1, 5, 42, 5, 48,
+        1, 6, 31, 6, 39,
+        1, 6, 40, 6, 50,
+        1, 7, 28, 7, 36,
+        1, 8, 28, 8, 36,
+        1, 8, 37, 8, 43,
+        1, 11, 21, 11, 34,
+        1, 11, 35, 11, 36,
+        1, 12, 26, 12, 34,
+        1, 12, 35, 12, 45,
+        1, 15, 22, 15, 35,
+        1, 15, 36, 15, 37,
+        1, 16, 27, 16, 35,
+        1, 16, 36, 16, 46,
+        1, 16, 47, 16, 60,
+        1, 20, 26, 20, 34,
+        1, 20, 35, 20, 45,
+        1, 22, 35, 22, 45,
+        1, 22, 56, 22, 64,
+        1, 22, 65, 22, 72,
+        1, 23, 22, 23, 29,
+        1, 23, 30, 23, 32,
+        1, 23, 51, 23, 59,
+        1, 23, 60, 23, 65,
+        1, 24, 27, 24, 35,
+        1, 24, 36, 24, 46,
+        1, 25, 29, 25, 37,
+        1, 25, 38, 25, 48,
+        1, 26, 31, 26, 39,
+        1, 26, 40, 26, 50,
+        1, 29, 35, 29, 45,
+        1, 29, 56, 29, 64,
+        1, 29, 65, 29, 72,
+        1, 30, 22, 30, 29,
+        1, 30, 30, 30, 32,
+        1, 30, 51, 30, 59,
+        1, 30, 60, 30, 65,
+        1, 31, 35, 31, 43,
+        1, 31, 44, 31, 54,
+        1, 34, 35, 34, 43,
+        1, 34, 44, 34, 49,
+        1, 35, 27, 35, 35,
+        1, 35, 36, 35, 46,
+        1, 36, 35, 36, 43,
+        1, 36, 44, 36, 54,
+        1, 39, 36, 39, 44,
+        1, 39, 45, 39, 50,
+        1, 40, 30, 40, 38,
+        1, 40, 39, 40, 44,
+        1, 41, 35, 41, 43,
+        1, 41, 44, 41, 54,
+        1, 45, 28, 45, 36,
+        1, 45, 37, 45, 47,
+        1, 46, 40, 46, 48,
+        1, 46, 49, 46, 59,
+        1, 50, 27, 50, 35,
+        1, 50, 36, 50, 46,
+        1, 50, 47, 50, 60,
+        1, 52, 36, 52, 46,
+        1, 52, 61, 52, 69,
+        1, 52, 70, 52, 80,
+        1, 52, 81, 52, 87,
+        1, 53, 35, 53, 43,
+        1, 53, 44, 53, 50,
+        1, 53, 58, 53, 66,
+        1, 53, 67, 53, 73,
+        1, 54, 21, 54, 27,
+        1, 54, 28, 54, 29,
+        1, 55, 35, 55, 43,
+        1, 55, 44, 55, 50,
+        1, 56, 23, 56, 31,
+        1, 56, 32, 56, 42,
+        1, 57, 27, 57, 35,
+        1, 57, 36, 57, 46,
+        1, 60, 30, 60, 38,
+        1, 60, 57, 60, 65,
+        1, 60, 66, 60, 72,
+        1, 61, 42, 61, 48,
+        1, 62, 35, 62, 43,
+        1, 62, 44, 62, 50,
+        1, 62, 58, 62, 66,
+        1, 62, 67, 62, 73,
+        1, 63, 21, 63, 27,
+        1, 63, 28, 63, 29,
+        1, 64, 30, 64, 38,
+        1, 64, 39, 64, 45,
+        1, 65, 32, 65, 40,
+        1, 65, 41, 65, 51,
+        1, 66, 38, 66, 46,
+        1, 66, 47, 66, 57,
+        1, 69, 35, 69, 43,
+        1, 69, 44, 69, 50,
+        1, 69, 58, 69, 66,
+        1, 69, 67, 69, 68,
+        1, 70, 32, 70, 40,
+        1, 70, 41, 70, 47,
+        1, 70, 52, 70, 58,
+        1, 70, 59, 70, 60,
+        1, 71, 35, 71, 43,
+        1, 71, 44, 71, 50,
+        1, 72, 30, 72, 38,
+        1, 72, 39, 72, 45,
+        1, 73, 30, 73, 38,
+        1, 73, 39, 73, 45,
+        1, 76, 35, 76, 43,
+        1, 76, 44, 76, 50,
+        1, 76, 58, 76, 66,
+        1, 76, 67, 76, 68,
+        1, 77, 32, 77, 40,
+        1, 77, 41, 77, 47,
+        1, 77, 52, 77, 58,
+        1, 77, 59, 77, 60,
+        1, 78, 30, 78, 38,
+        1, 78, 39, 78, 45,
+        1, 81, 35, 81, 43,
+        1, 81, 44, 81, 50,
+        1, 81, 58, 81, 66,
+        1, 81, 67, 81, 73,
+        1, 82, 21, 82, 27,
+        1, 82, 28, 82, 29,
+        1, 82, 35, 82, 48,
+        1, 82, 49, 82, 51,
+        1, 82, 65, 82, 73,
+        1, 82, 74, 82, 84,
+        1, 83, 23, 83, 31,
+        1, 83, 32, 83, 42,
+        1, 84, 36, 84, 44,
+        1, 84, 45, 84, 55,
+        1, 87, 35, 87, 43,
+        1, 87, 44, 87, 50,
+        1, 87, 58, 87, 66,
+        1, 87, 67, 87, 73,
+        1, 88, 21, 88, 27,
+        1, 88, 28, 88, 29,
+        1, 88, 43, 88, 51,
+        1, 88, 52, 88, 62,
+        1, 89, 23, 89, 31,
+        1, 89, 32, 89, 42,
+        1, 90, 38, 90, 46,
+        1, 90, 47, 90, 57,
+        1, 93, 36, 93, 44,
+        1, 93, 45, 93, 51,
+        1, 93, 59, 93, 67,
+        1, 93, 68, 93, 74,
+        1, 94, 21, 94, 27,
+        1, 94, 28, 94, 29,
+        1, 95, 30, 95, 38,
+        1, 95, 39, 95, 45,
+        1, 96, 23, 96, 31,
+        1, 96, 32, 96, 42,
+        1, 97, 38, 97, 46,
+        1, 97, 47, 97, 57,
+        1, 100, 33, 100, 41,
+        1, 100, 42, 100, 52,
+        1, 100, 53, 100, 59,
+        1, 101, 36, 101, 44,
+        1, 101, 45, 101, 51,
+        1, 102, 31, 102, 39,
+        1, 102, 40, 102, 50,
+        1, 106, 28, 106, 36,
+        1, 106, 37, 106, 47,
+        1, 107, 27, 107, 35,
+        2, 4, 34, 4, 42,
+        2, 4, 43, 4, 56,
+        2, 4, 57, 4, 70,
+        2, 6, 22, 6, 35,
+        2, 6, 36, 6, 41,
+        2, 6, 56, 6, 64,
+        2, 6, 65, 6, 72,
+        2, 7, 40, 7, 48,
+        2, 7, 49, 7, 56,
+        2, 8, 36, 8, 44,
+        2, 9, 44, 9, 52,
+        2, 9, 53, 9, 66,
+        2, 10, 28, 10, 36,
+        2, 10, 37, 10, 50,
+        2, 13, 22, 13, 35,
+        2, 13, 36, 13, 43,
+        2, 13, 62, 13, 70,
+        2, 13, 71, 13, 77,
+        2, 14, 42, 14, 48,
+        2, 15, 30, 15, 38,
+        2, 15, 39, 15, 45,
+        2, 16, 40, 16, 48,
+        2, 16, 49, 16, 62,
+        2, 17, 28, 17, 36,
+        2, 17, 37, 17, 50,
+        2, 20, 22, 20, 35,
+        2, 20, 36, 20, 43,
+        2, 21, 36, 21, 44,
+        2, 22, 44, 22, 52,
+        2, 22, 53, 22, 66,
+        2, 23, 28, 23, 36,
+        2, 23, 37, 23, 50,
+        2, 26, 22, 26, 35,
+        2, 26, 36, 26, 46,
+        2, 26, 61, 26, 69,
+        2, 26, 70, 26, 83,
+        2, 26, 84, 26, 90,
+        2, 27, 31, 27, 39,
+        2, 27, 40, 27, 53,
+        2, 28, 35, 28, 43,
+        2, 28, 44, 28, 50,
+        2, 29, 28, 29, 36,
+        2, 29, 37, 29, 50,
+        2, 32, 22, 32, 35,
+        2, 32, 36, 32, 43,
+        2, 33, 32, 33, 40,
+        2, 33, 41, 33, 54,
+        2, 34, 44, 34, 52,
+        2, 34, 53, 34, 66,
+        2, 35, 32, 35, 40,
+        2, 35, 41, 35, 54,
+        2, 38, 36, 38, 44,
+        2, 38, 45, 38, 58,
+        2, 39, 49, 39, 57,
+        2, 39, 58, 39, 71,
+        2, 39, 72, 39, 78,
+        2, 40, 43, 40, 51,
+        2, 40, 52, 40, 58,
+        2, 41, 28, 41, 36,
+        2, 41, 37, 41, 50,
+        2, 45, 36, 45, 44,
+        2, 46, 44, 46, 52,
+        2, 46, 53, 46, 66,
+        2, 47, 28, 47, 36,
+        2, 47, 37, 47, 50,
+        2, 48, 44, 48, 52,
+        2, 48, 53, 48, 66,
+        2, 48, 67, 48, 80,
+        3, 4, 27, 4, 35,
+        3, 4, 36, 4, 46,
+        3, 4, 47, 4, 65,
+        3, 6, 32, 6, 40,
+        3, 6, 41, 6, 51,
+        3, 6, 52, 6, 58,
+        3, 7, 36, 7, 44,
+        3, 7, 45, 7, 55,
+        3, 8, 36, 8, 44,
+        3, 8, 45, 8, 51,
+        3, 9, 28, 9, 36,
+        3, 9, 37, 9, 55,
+        3, 12, 32, 12, 40,
+        3, 12, 41, 12, 51,
+        3, 12, 52, 12, 61,
+        3, 13, 36, 13, 44,
+        3, 13, 45, 13, 55,
+        3, 14, 37, 14, 45,
+        3, 14, 46, 14, 55,
+        3, 15, 28, 15, 36,
+        3, 15, 37, 15, 46,
+        3, 18, 38, 18, 46,
+        3, 18, 47, 18, 57,
+        3, 18, 58, 18, 64,
+        3, 19, 40, 19, 48,
+        3, 19, 49, 19, 59,
+        3, 20, 36, 20, 44,
+        3, 20, 45, 20, 51,
+        3, 21, 28, 21, 36,
+        3, 21, 37, 21, 55,
+        3, 24, 28, 24, 46,
+        3, 24, 47, 24, 53,
+        3, 25, 37, 25, 45,
+        3, 25, 46, 25, 64,
+        3, 26, 28, 26, 36,
+        3, 26, 37, 26, 43,
+        3, 27, 28, 27, 36,
+        3, 27, 37, 27, 55,
+        3, 30, 36, 30, 44,
+        3, 30, 45, 30, 63,
+        3, 30, 64, 30, 70,
+        3, 31, 36, 31, 44,
+        3, 31, 45, 31, 51,
+        3, 32, 28, 32, 36,
+        3, 32, 37, 32, 55,
+        3, 36, 37, 36, 45,
+        3, 36, 46, 36, 64,
+        3, 37, 28, 37, 36,
+        3, 37, 37, 37, 55,
+        3, 38, 39, 38, 47,
+        3, 38, 48, 38, 58,
+        4, 2, 25, 2, 33,
+        4, 4, 26, 4, 34,
+        4, 4, 35, 4, 38,
+        4, 4, 44, 4, 47,
+        4, 4, 48, 4, 50,
+        4, 5, 36, 5, 44,
+        4, 6, 27, 6, 35,
+        4, 7, 32, 7, 40,
+        4, 10, 24, 10, 32,
+        4, 10, 33, 10, 39,
+        4, 10, 45, 10, 51,
+        4, 10, 52, 10, 53,
+        4, 11, 30, 11, 38,
+        4, 11, 39, 11, 45,
+        4, 12, 31, 12, 39,
+        4, 12, 40, 12, 46,
+        4, 13, 30, 13, 38,
+        4, 13, 39, 13, 45,
+        4, 16, 33, 16, 41,
+        4, 16, 42, 16, 49,
+        4, 17, 33, 17, 41,
+        4, 17, 42, 17, 49,
+        4, 18, 32, 18, 40,
+        4, 21, 32, 21, 40,
+        4, 21, 41, 21, 47,
+        4, 21, 68, 21, 76,
+        4, 21, 77, 21, 83,
+        4, 22, 36, 22, 44,
+        4, 22, 45, 22, 51,
+        4, 23, 35, 23, 43,
+        4, 23, 44, 23, 50,
+        4, 24, 39, 24, 47,
+        4, 24, 48, 24, 54,
+        4, 27, 31, 27, 39,
+        4, 27, 40, 27, 45,
+        4, 27, 70, 27, 78,
+        4, 28, 27, 28, 35,
+        4, 28, 36, 28, 41,
+        4, 29, 32, 29, 40,
+        4, 29, 41, 29, 46,
+        4, 32, 33, 32, 41,
+        4, 32, 42, 32, 47,
+        4, 33, 35, 33, 43,
+        4, 33, 44, 33, 49,
+        4, 34, 27, 34, 35,
+        4, 34, 36, 34, 41,
+        4, 37, 27, 37, 35,
+        4, 37, 36, 37, 43,
+        4, 37, 49, 37, 56,
+        4, 37, 57, 37, 59,
+        4, 38, 29, 38, 37,
+        4, 39, 35, 39, 43,
+        4, 43, 36, 43, 44,
+        4, 44, 35, 44, 43,
+        5, 13, 33, 13, 37,
+        5, 14, 33, 14, 37,
+        5, 14, 38, 14, 42,
+        5, 14, 43, 14, 49,
+        5, 14, 50, 14, 57,
+        5, 17, 34, 17, 46,
+        5, 17, 47, 17, 51,
+        5, 18, 41, 18, 45,
+        5, 18, 46, 18, 52,
+        5, 18, 53, 18, 60,
+        5, 23, 33, 23, 37,
+        5, 24, 32, 24, 36,
+        5, 24, 37, 24, 43,
+        5, 25, 32, 25, 38,
+        5, 26, 33, 26, 37,
+        5, 26, 38, 26, 44,
+        5, 26, 45, 26, 54,
+        5, 27, 34, 27, 40,
+        5, 30, 40, 30, 44,
+        5, 30, 45, 30, 51,
+        5, 31, 40, 31, 46,
+        5, 32, 41, 32, 45,
+        5, 32, 46, 32, 52,
+        5, 32, 53, 32, 68,
+        5, 33, 28, 33, 43,
+        5, 33, 44, 33, 53,
+        5, 38, 34, 38, 42,
+        5, 38, 43, 38, 47,
+        5, 39, 30, 39, 34,
+        5, 39, 35, 39, 41,
+        5, 39, 42, 39, 51,
+        5, 44, 33, 44, 37,
+        5, 45, 33, 45, 37,
+        5, 45, 38, 45, 44,
+        5, 45, 45, 45, 51,
+        5, 45, 52, 45, 59,
+        5, 48, 34, 48, 48,
+        5, 48, 49, 48, 53,
+        5, 49, 41, 49, 45,
+        5, 49, 46, 49, 52,
+        5, 49, 53, 49, 60,
+        5, 54, 33, 54, 37,
+        5, 55, 38, 55, 42,
+        5, 55, 43, 55, 52,
+        5, 55, 53, 55, 62,
+        5, 56, 37, 56, 41,
+        5, 56, 42, 56, 53,
+        5, 56, 54, 56, 68,
+        5, 59, 34, 59, 49,
+        5, 59, 50, 59, 54,
+        5, 60, 37, 60, 41,
+        5, 60, 42, 60, 51,
+        5, 60, 52, 60, 61,
+        5, 65, 33, 65, 37,
+        5, 66, 32, 66, 36,
+        5, 66, 37, 66, 43,
+        5, 66, 44, 66, 58,
+        5, 69, 34, 69, 42,
+        5, 69, 43, 69, 47,
+        5, 70, 30, 70, 34,
+        5, 70, 35, 70, 41,
+        5, 70, 42, 70, 56,
+        5, 75, 33, 75, 37,
+        5, 76, 33, 76, 37,
+        5, 76, 38, 76, 41,
+        5, 76, 42, 76, 48,
+        5, 76, 49, 76, 56,
+        5, 79, 34, 79, 45,
+        5, 79, 46, 79, 50,
+        5, 80, 41, 80, 45,
+        5, 80, 46, 80, 52,
+        5, 80, 53, 80, 60,
+        5, 84, 34, 84, 38,
+        5, 86, 34, 86, 40,
+        5, 86, 41, 86, 45,
+        5, 87, 28, 87, 32,
+        5, 92, 31, 92, 50,
+        0, 3, 38, 3, 46,
+        0, 3, 47, 3, 57,
+        0, 3, 58, 3, 69,
+        0, 5, 22, 5, 32,
+        0, 5, 33, 5, 41,
+        0, 5, 55, 5, 63,
+        0, 6, 35, 6, 43,
+        0, 6, 44, 6, 54,
+        0, 7, 29, 7, 37,
+        0, 8, 37, 8, 45,
+        0, 8, 46, 8, 57,
+        0, 9, 36, 9, 44,
+        0, 9, 45, 9, 55,
+        0, 12, 22, 12, 32,
+        0, 12, 33, 12, 41,
+        0, 13, 35, 13, 43,
+        0, 13, 44, 13, 54,
+        0, 14, 37, 14, 45,
+        0, 14, 46, 14, 57,
+        0, 15, 36, 15, 44,
+        0, 15, 45, 15, 55,
+        0, 18, 22, 18, 32,
+        0, 18, 33, 18, 37,
+        0, 19, 35, 19, 43,
+        0, 19, 44, 19, 54,
+        0, 20, 34, 20, 42,
+        0, 20, 43, 20, 54,
+        0, 21, 30, 21, 38,
+        0, 21, 39, 21, 50,
+        0, 24, 22, 24, 32,
+        0, 24, 33, 24, 39,
+        0, 24, 55, 24, 63,
+        0, 24, 64, 24, 75,
+        0, 24, 76, 24, 82,
+        0, 25, 35, 25, 43,
+        0, 25, 44, 25, 54,
+        0, 26, 36, 26, 44,
+        0, 26, 45, 26, 56,
+        0, 26, 57, 26, 63,
+        0, 29, 22, 29, 32,
+        0, 29, 33, 29, 38,
+        0, 30, 35, 30, 43,
+        0, 30, 44, 30, 54,
+        0, 31, 29, 31, 37,
+        0, 31, 38, 31, 49,
+        0, 34, 22, 34, 32,
+        0, 34, 33, 34, 41,
+        0, 34, 62, 34, 73,
+        0, 35, 37, 35, 45,
+        0, 35, 46, 35, 57,
+        0, 36, 30, 36, 38,
+        0, 36, 39, 36, 50,
+        0, 37, 36, 37, 44,
+        0, 37, 45, 37, 55,
+        0, 40, 22, 40, 32,
+        0, 40, 33, 40, 37,
+        0, 41, 37, 41, 45,
+        0, 41, 46, 41, 57,
+        0, 42, 36, 42, 44,
+        0, 42, 45, 42, 55,
+        0, 46, 37, 46, 45,
+        0, 46, 46, 46, 56,
+        0, 46, 57, 46, 68,
+        1, 2, 27, 2, 35,
+        1, 2, 36, 2, 46,
+        1, 2, 47, 2, 60,
+        1, 4, 26, 4, 34,
+        1, 4, 35, 4, 38,
+        1, 4, 44, 4, 47,
+        1, 4, 48, 4, 50,
+        1, 5, 33, 5, 41,
+        1, 5, 42, 5, 48,
+        1, 6, 31, 6, 39,
+        1, 6, 40, 6, 50,
+        1, 7, 28, 7, 36,
+        1, 8, 28, 8, 36,
+        1, 8, 37, 8, 43,
+        1, 11, 21, 11, 34,
+        1, 11, 35, 11, 36,
+        1, 12, 26, 12, 34,
+        1, 12, 35, 12, 45,
+        1, 15, 22, 15, 35,
+        1, 15, 36, 15, 37,
+        1, 16, 27, 16, 35,
+        1, 16, 36, 16, 46,
+        1, 16, 47, 16, 60,
+        1, 20, 26, 20, 34,
+        1, 20, 35, 20, 45,
+        1, 22, 35, 22, 45,
+        1, 22, 56, 22, 64,
+        1, 22, 65, 22, 72,
+        1, 23, 22, 23, 29,
+        1, 23, 30, 23, 32,
+        1, 23, 51, 23, 59,
+        1, 23, 60, 23, 65,
+        1, 24, 27, 24, 35,
+        1, 24, 36, 24, 46,
+        1, 25, 29, 25, 37,
+        1, 25, 38, 25, 48,
+        1, 26, 31, 26, 39,
+        1, 26, 40, 26, 50,
+        1, 29, 35, 29, 45,
+        1, 29, 56, 29, 64,
+        1, 29, 65, 29, 72,
+        1, 30, 22, 30, 29,
+        1, 30, 30, 30, 32,
+        1, 30, 51, 30, 59,
+        1, 30, 60, 30, 65,
+        1, 31, 35, 31, 43,
+        1, 31, 44, 31, 54,
+        1, 34, 35, 34, 43,
+        1, 34, 44, 34, 49,
+        1, 35, 27, 35, 35,
+        1, 35, 36, 35, 46,
+        1, 36, 35, 36, 43,
+        1, 36, 44, 36, 54,
+        1, 39, 36, 39, 44,
+        1, 39, 45, 39, 50,
+        1, 40, 30, 40, 38,
+        1, 40, 39, 40, 44,
+        1, 41, 35, 41, 43,
+        1, 41, 44, 41, 54,
+        1, 45, 28, 45, 36,
+        1, 45, 37, 45, 47,
+        1, 46, 40, 46, 48,
+        1, 46, 49, 46, 59,
+        1, 50, 27, 50, 35,
+        1, 50, 36, 50, 46,
+        1, 50, 47, 50, 60,
+        1, 52, 36, 52, 46,
+        1, 52, 61, 52, 69,
+        1, 52, 70, 52, 80,
+        1, 52, 81, 52, 87,
+        1, 53, 35, 53, 43,
+        1, 53, 44, 53, 50,
+        1, 53, 58, 53, 66,
+        1, 53, 67, 53, 73,
+        1, 54, 21, 54, 27,
+        1, 54, 28, 54, 29,
+        1, 55, 35, 55, 43,
+        1, 55, 44, 55, 50,
+        1, 56, 23, 56, 31,
+        1, 56, 32, 56, 42,
+        1, 57, 27, 57, 35,
+        1, 57, 36, 57, 46,
+        1, 60, 30, 60, 38,
+        1, 60, 57, 60, 65,
+        1, 60, 66, 60, 72,
+        1, 61, 42, 61, 48,
+        1, 62, 35, 62, 43,
+        1, 62, 44, 62, 50,
+        1, 62, 58, 62, 66,
+        1, 62, 67, 62, 73,
+        1, 63, 21, 63, 27,
+        1, 63, 28, 63, 29,
+        1, 64, 30, 64, 38,
+        1, 64, 39, 64, 45,
+        1, 65, 32, 65, 40,
+        1, 65, 41, 65, 51,
+        1, 66, 38, 66, 46,
+        1, 66, 47, 66, 57,
+        1, 69, 35, 69, 43,
+        1, 69, 44, 69, 50,
+        1, 69, 58, 69, 66,
+        1, 69, 67, 69, 68,
+        1, 70, 32, 70, 40,
+        1, 70, 41, 70, 47,
+        1, 70, 52, 70, 58,
+        1, 70, 59, 70, 60,
+        1, 71, 35, 71, 43,
+        1, 71, 44, 71, 50,
+        1, 72, 30, 72, 38,
+        1, 72, 39, 72, 45,
+        1, 73, 30, 73, 38,
+        1, 73, 39, 73, 45,
+        1, 76, 35, 76, 43,
+        1, 76, 44, 76, 50,
+        1, 76, 58, 76, 66,
+        1, 76, 67, 76, 68,
+        1, 77, 32, 77, 40,
+        1, 77, 41, 77, 47,
+        1, 77, 52, 77, 58,
+        1, 77, 59, 77, 60,
+        1, 78, 30, 78, 38,
+        1, 78, 39, 78, 45,
+        1, 81, 35, 81, 43,
+        1, 81, 44, 81, 50,
+        1, 81, 58, 81, 66,
+        1, 81, 67, 81, 73,
+        1, 82, 21, 82, 27,
+        1, 82, 28, 82, 29,
+        1, 82, 35, 82, 48,
+        1, 82, 49, 82, 51,
+        1, 82, 65, 82, 73,
+        1, 82, 74, 82, 84,
+        1, 83, 23, 83, 31,
+        1, 83, 32, 83, 42,
+        1, 84, 36, 84, 44,
+        1, 84, 45, 84, 55,
+        1, 87, 35, 87, 43,
+        1, 87, 44, 87, 50,
+        1, 87, 58, 87, 66,
+        1, 87, 67, 87, 73,
+        1, 88, 21, 88, 27,
+        1, 88, 28, 88, 29,
+        1, 88, 43, 88, 51,
+        1, 88, 52, 88, 62,
+        1, 89, 23, 89, 31,
+        1, 89, 32, 89, 42,
+        1, 90, 38, 90, 46,
+        1, 90, 47, 90, 57,
+        1, 93, 36, 93, 44,
+        1, 93, 45, 93, 51,
+        1, 93, 59, 93, 67,
+        1, 93, 68, 93, 74,
+        1, 94, 21, 94, 27,
+        1, 94, 28, 94, 29,
+        1, 95, 30, 95, 38,
+        1, 95, 39, 95, 45,
+        1, 96, 23, 96, 31,
+        1, 96, 32, 96, 42,
+        1, 97, 38, 97, 46,
+        1, 97, 47, 97, 57,
+        1, 100, 33, 100, 41,
+        1, 100, 42, 100, 52,
+        1, 100, 53, 100, 59,
+        1, 101, 36, 101, 44,
+        1, 101, 45, 101, 51,
+        1, 102, 31, 102, 39,
+        1, 102, 40, 102, 50,
+        1, 106, 28, 106, 36,
+        1, 106, 37, 106, 47,
+        1, 107, 27, 107, 35,
+        2, 4, 34, 4, 42,
+        2, 4, 43, 4, 56,
+        2, 4, 57, 4, 70,
+        2, 6, 22, 6, 35,
+        2, 6, 36, 6, 41,
+        2, 6, 56, 6, 64,
+        2, 6, 65, 6, 72,
+        2, 7, 40, 7, 48,
+        2, 7, 49, 7, 56,
+        2, 8, 36, 8, 44,
+        2, 9, 44, 9, 52,
+        2, 9, 53, 9, 66,
+        2, 10, 28, 10, 36,
+        2, 10, 37, 10, 50,
+        2, 13, 22, 13, 35,
+        2, 13, 36, 13, 43,
+        2, 13, 62, 13, 70,
+        2, 13, 71, 13, 77,
+        2, 14, 42, 14, 48,
+        2, 15, 30, 15, 38,
+        2, 15, 39, 15, 45,
+        2, 16, 40, 16, 48,
+        2, 16, 49, 16, 62,
+        2, 17, 28, 17, 36,
+        2, 17, 37, 17, 50,
+        2, 20, 22, 20, 35,
+        2, 20, 36, 20, 43,
+        2, 21, 36, 21, 44,
+        2, 22, 44, 22, 52,
+        2, 22, 53, 22, 66,
+        2, 23, 28, 23, 36,
+        2, 23, 37, 23, 50,
+        2, 26, 22, 26, 35,
+        2, 26, 36, 26, 46,
+        2, 26, 61, 26, 69,
+        2, 26, 70, 26, 83,
+        2, 26, 84, 26, 90,
+        2, 27, 31, 27, 39,
+        2, 27, 40, 27, 53,
+        2, 28, 35, 28, 43,
+        2, 28, 44, 28, 50,
+        2, 29, 28, 29, 36,
+        2, 29, 37, 29, 50,
+        2, 32, 22, 32, 35,
+        2, 32, 36, 32, 43,
+        2, 33, 32, 33, 40,
+        2, 33, 41, 33, 54,
+        2, 34, 44, 34, 52,
+        2, 34, 53, 34, 66,
+        2, 35, 32, 35, 40,
+        2, 35, 41, 35, 54,
+        2, 38, 36, 38, 44,
+        2, 38, 45, 38, 58,
+        2, 39, 49, 39, 57,
+        2, 39, 58, 39, 71,
+        2, 39, 72, 39, 78,
+        2, 40, 43, 40, 51,
+        2, 40, 52, 40, 58,
+        2, 41, 28, 41, 36,
+        2, 41, 37, 41, 50,
+        2, 45, 36, 45, 44,
+        2, 46, 44, 46, 52,
+        2, 46, 53, 46, 66,
+        2, 47, 28, 47, 36,
+        2, 47, 37, 47, 50,
+        2, 48, 44, 48, 52,
+        2, 48, 53, 48, 66,
+        2, 48, 67, 48, 80,
+        3, 4, 27, 4, 35,
+        3, 4, 36, 4, 46,
+        3, 4, 47, 4, 65,
+        3, 6, 32, 6, 40,
+        3, 6, 41, 6, 51,
+        3, 6, 52, 6, 58,
+        3, 7, 36, 7, 44,
+        3, 7, 45, 7, 55,
+        3, 8, 36, 8, 44,
+        3, 8, 45, 8, 51,
+        3, 9, 28, 9, 36,
+        3, 9, 37, 9, 55,
+        3, 12, 32, 12, 40,
+        3, 12, 41, 12, 51,
+        3, 12, 52, 12, 61,
+        3, 13, 36, 13, 44,
+        3, 13, 45, 13, 55,
+        3, 14, 37, 14, 45,
+        3, 14, 46, 14, 55,
+        3, 15, 28, 15, 36,
+        3, 15, 37, 15, 46,
+        3, 18, 38, 18, 46,
+        3, 18, 47, 18, 57,
+        3, 18, 58, 18, 64,
+        3, 19, 40, 19, 48,
+        3, 19, 49, 19, 59,
+        3, 20, 36, 20, 44,
+        3, 20, 45, 20, 51,
+        3, 21, 28, 21, 36,
+        3, 21, 37, 21, 55,
+        3, 24, 28, 24, 46,
+        3, 24, 47, 24, 53,
+        3, 25, 37, 25, 45,
+        3, 25, 46, 25, 64,
+        3, 26, 28, 26, 36,
+        3, 26, 37, 26, 43,
+        3, 27, 28, 27, 36,
+        3, 27, 37, 27, 55,
+        3, 30, 36, 30, 44,
+        3, 30, 45, 30, 63,
+        3, 30, 64, 30, 70,
+        3, 31, 36, 31, 44,
+        3, 31, 45, 31, 51,
+        3, 32, 28, 32, 36,
+        3, 32, 37, 32, 55,
+        3, 36, 37, 36, 45,
+        3, 36, 46, 36, 64,
+        3, 37, 28, 37, 36,
+        3, 37, 37, 37, 55,
+        3, 38, 39, 38, 47,
+        3, 38, 48, 38, 58,
+        4, 2, 25, 2, 33,
+        4, 4, 26, 4, 34,
+        4, 4, 35, 4, 38,
+        4, 4, 44, 4, 47,
+        4, 4, 48, 4, 50,
+        4, 5, 36, 5, 44,
+        4, 6, 27, 6, 35,
+        4, 7, 32, 7, 40,
+        4, 10, 24, 10, 32,
+        4, 10, 33, 10, 39,
+        4, 10, 45, 10, 51,
+        4, 10, 52, 10, 53,
+        4, 11, 30, 11, 38,
+        4, 11, 39, 11, 45,
+        4, 12, 31, 12, 39,
+        4, 12, 40, 12, 46,
+        4, 13, 30, 13, 38,
+        4, 13, 39, 13, 45,
+        4, 16, 33, 16, 41,
+        4, 16, 42, 16, 49,
+        4, 17, 33, 17, 41,
+        4, 17, 42, 17, 49,
+        4, 18, 32, 18, 40,
+        4, 21, 32, 21, 40,
+        4, 21, 41, 21, 47,
+        4, 21, 68, 21, 76,
+        4, 21, 77, 21, 83,
+        4, 22, 36, 22, 44,
+        4, 22, 45, 22, 51,
+        4, 23, 35, 23, 43,
+        4, 23, 44, 23, 50,
+        4, 24, 39, 24, 47,
+        4, 24, 48, 24, 54,
+        4, 27, 31, 27, 39,
+        4, 27, 40, 27, 45,
+        4, 27, 70, 27, 78,
+        4, 28, 27, 28, 35,
+        4, 28, 36, 28, 41,
+        4, 29, 32, 29, 40,
+        4, 29, 41, 29, 46,
+        4, 32, 33, 32, 41,
+        4, 32, 42, 32, 47,
+        4, 33, 35, 33, 43,
+        4, 33, 44, 33, 49,
+        4, 34, 27, 34, 35,
+        4, 34, 36, 34, 41,
+        4, 37, 27, 37, 35,
+        4, 37, 36, 37, 43,
+        4, 37, 49, 37, 56,
+        4, 37, 57, 37, 59,
+        4, 38, 29, 38, 37,
+        4, 39, 35, 39, 43,
+        4, 43, 36, 43, 44,
+        4, 44, 35, 44, 43,
+        5, 13, 33, 13, 37,
+        5, 14, 33, 14, 37,
+        5, 14, 38, 14, 42,
+        5, 14, 43, 14, 49,
+        5, 14, 50, 14, 57,
+        5, 17, 34, 17, 46,
+        5, 17, 47, 17, 51,
+        5, 18, 41, 18, 45,
+        5, 18, 46, 18, 52,
+        5, 18, 53, 18, 60,
+        5, 23, 33, 23, 37,
+        5, 24, 32, 24, 36,
+        5, 24, 37, 24, 43,
+        5, 25, 32, 25, 38,
+        5, 26, 33, 26, 37,
+        5, 26, 38, 26, 44,
+        5, 26, 45, 26, 54,
+        5, 27, 34, 27, 40,
+        5, 30, 40, 30, 44,
+        5, 30, 45, 30, 51,
+        5, 31, 40, 31, 46,
+        5, 32, 41, 32, 45,
+        5, 32, 46, 32, 52,
+        5, 32, 53, 32, 68,
+        5, 33, 28, 33, 43,
+        5, 33, 44, 33, 53,
+        5, 38, 34, 38, 42,
+        5, 38, 43, 38, 47,
+        5, 39, 30, 39, 34,
+        5, 39, 35, 39, 41,
+        5, 39, 42, 39, 51,
+        5, 44, 33, 44, 37,
+        5, 45, 33, 45, 37,
+        5, 45, 38, 45, 44,
+        5, 45, 45, 45, 51,
+        5, 45, 52, 45, 59,
+        5, 48, 34, 48, 48,
+        5, 48, 49, 48, 53,
+        5, 49, 41, 49, 45,
+        5, 49, 46, 49, 52,
+        5, 49, 53, 49, 60,
+        5, 54, 33, 54, 37,
+        5, 55, 38, 55, 42,
+        5, 55, 43, 55, 52,
+        5, 55, 53, 55, 62,
+        5, 56, 37, 56, 41,
+        5, 56, 42, 56, 53,
+        5, 56, 54, 56, 68,
+        5, 59, 34, 59, 49,
+        5, 59, 50, 59, 54,
+        5, 60, 37, 60, 41,
+        5, 60, 42, 60, 51,
+        5, 60, 52, 60, 61,
+        5, 65, 33, 65, 37,
+        5, 66, 32, 66, 36,
+        5, 66, 37, 66, 43,
+        5, 66, 44, 66, 58,
+        5, 69, 34, 69, 42,
+        5, 69, 43, 69, 47,
+        5, 70, 30, 70, 34,
+        5, 70, 35, 70, 41,
+        5, 70, 42, 70, 56,
+        5, 75, 33, 75, 37,
+        5, 76, 33, 76, 37,
+        5, 76, 38, 76, 41,
+        5, 76, 42, 76, 48,
+        5, 76, 49, 76, 56,
+        5, 79, 34, 79, 45,
+        5, 79, 46, 79, 50,
+        5, 80, 41, 80, 45,
+        5, 80, 46, 80, 52,
+        5, 80, 53, 80, 60,
+        5, 84, 34, 84, 38,
+        5, 86, 34, 86, 40,
+        5, 86, 41, 86, 45,
+        5, 87, 28, 87, 32,
+        5, 92, 31, 92, 50],
+      conditionSources: @[
+        0'u32, 5, 14, 5, 63,
+        0, 5, 19, 5, 41,
+        0, 5, 43, 5, 63,
+        0, 12, 14, 12, 41,
+        0, 12, 19, 12, 41,
+        0, 18, 14, 18, 37,
+        0, 18, 19, 18, 37,
+        0, 24, 14, 24, 82,
+        0, 24, 19, 24, 39,
+        0, 24, 41, 24, 82,
+        0, 29, 14, 29, 38,
+        0, 29, 19, 29, 38,
+        0, 34, 14, 34, 73,
+        0, 34, 19, 34, 41,
+        0, 34, 43, 34, 73,
+        0, 40, 14, 40, 37,
+        0, 40, 19, 40, 37,
+        1, 4, 14, 5, 48,
+        1, 4, 18, 4, 38,
+        1, 4, 41, 4, 50,
+        1, 5, 18, 5, 48,
+        1, 11, 14, 11, 36,
+        1, 11, 19, 11, 36,
+        1, 15, 14, 15, 37,
+        1, 15, 19, 15, 37,
+        1, 22, 14, 23, 65,
+        1, 22, 18, 22, 45,
+        1, 22, 47, 22, 72,
+        1, 23, 19, 23, 32,
+        1, 23, 34, 23, 65,
+        1, 29, 14, 30, 65,
+        1, 29, 18, 29, 45,
+        1, 29, 47, 29, 72,
+        1, 30, 19, 30, 32,
+        1, 30, 34, 30, 65,
+        1, 34, 14, 34, 49,
+        1, 34, 18, 34, 49,
+        1, 39, 14, 39, 50,
+        1, 39, 18, 39, 50,
+        1, 52, 14, 54, 29,
+        1, 52, 18, 52, 46,
+        1, 52, 48, 52, 87,
+        1, 53, 18, 53, 50,
+        1, 53, 52, 53, 73,
+        1, 54, 19, 54, 29,
+        1, 60, 14, 63, 29,
+        1, 60, 18, 60, 38,
+        1, 60, 40, 60, 72,
+        1, 61, 18, 61, 48,
+        1, 61, 23, 61, 48,
+        1, 62, 18, 62, 50,
+        1, 62, 52, 62, 73,
+        1, 63, 19, 63, 29,
+        1, 69, 14, 71, 50,
+        1, 69, 18, 69, 50,
+        1, 69, 52, 69, 68,
+        1, 70, 18, 70, 47,
+        1, 70, 50, 70, 60,
+        1, 71, 18, 71, 50,
+        1, 76, 14, 77, 60,
+        1, 76, 18, 76, 50,
+        1, 76, 52, 76, 68,
+        1, 77, 18, 77, 47,
+        1, 77, 50, 77, 60,
+        1, 81, 14, 82, 84,
+        1, 81, 18, 81, 50,
+        1, 81, 52, 81, 73,
+        1, 82, 19, 82, 29,
+        1, 82, 32, 82, 51,
+        1, 82, 53, 82, 84,
+        1, 87, 14, 88, 62,
+        1, 87, 18, 87, 50,
+        1, 87, 52, 87, 73,
+        1, 88, 19, 88, 29,
+        1, 88, 31, 88, 62,
+        1, 93, 14, 94, 29,
+        1, 93, 18, 93, 51,
+        1, 93, 53, 93, 74,
+        1, 94, 19, 94, 29,
+        1, 100, 14, 100, 59,
+        1, 100, 18, 100, 59,
+        2, 6, 14, 6, 72,
+        2, 6, 19, 6, 41,
+        2, 6, 43, 6, 72,
+        2, 13, 14, 14, 49,
+        2, 13, 19, 13, 43,
+        2, 13, 45, 13, 77,
+        2, 14, 18, 14, 48,
+        2, 14, 23, 14, 48,
+        2, 20, 14, 20, 43,
+        2, 20, 19, 20, 43,
+        2, 26, 14, 26, 90,
+        2, 26, 19, 26, 46,
+        2, 26, 48, 26, 90,
+        2, 32, 14, 32, 43,
+        2, 32, 19, 32, 43,
+        2, 38, 14, 39, 78,
+        2, 38, 18, 38, 58,
+        2, 39, 18, 39, 78,
+        3, 6, 14, 6, 58,
+        3, 6, 18, 6, 58,
+        3, 12, 14, 12, 61,
+        3, 12, 18, 12, 61,
+        3, 18, 14, 18, 64,
+        3, 18, 18, 18, 64,
+        3, 24, 14, 24, 53,
+        3, 24, 18, 24, 53,
+        3, 30, 14, 30, 70,
+        3, 30, 18, 30, 70,
+        4, 4, 14, 5, 44,
+        4, 4, 18, 4, 38,
+        4, 4, 41, 4, 50,
+        4, 5, 18, 5, 44,
+        4, 10, 14, 11, 45,
+        4, 10, 18, 10, 39,
+        4, 10, 42, 10, 53,
+        4, 11, 18, 11, 45,
+        4, 16, 14, 16, 49,
+        4, 16, 18, 16, 49,
+        4, 21, 14, 21, 83,
+        4, 21, 18, 21, 47,
+        4, 21, 49, 21, 83,
+        4, 27, 14, 27, 78,
+        4, 27, 18, 27, 45,
+        4, 27, 47, 27, 78,
+        4, 32, 14, 32, 47,
+        4, 32, 18, 32, 47,
+        4, 37, 14, 37, 59,
+        4, 37, 18, 37, 43,
+        4, 37, 46, 37, 59,
+        5, 12, 14, 14, 57,
+        5, 13, 17, 13, 37,
+        5, 14, 17, 14, 57,
+        5, 22, 14, 35, 17,
+        5, 23, 17, 23, 37,
+        5, 24, 17, 24, 43,
+        5, 25, 17, 25, 38,
+        5, 26, 17, 26, 54,
+        5, 27, 17, 27, 40,
+        5, 27, 22, 27, 40,
+        5, 28, 17, 34, 21,
+        5, 29, 22, 33, 53,
+        5, 30, 25, 30, 51,
+        5, 31, 25, 31, 46,
+        5, 32, 25, 32, 68,
+        5, 33, 26, 33, 53,
+        5, 43, 14, 45, 59,
+        5, 44, 17, 44, 37,
+        5, 45, 17, 45, 59,
+        5, 53, 14, 56, 69,
+        5, 54, 17, 54, 37,
+        5, 55, 17, 55, 62,
+        5, 56, 17, 56, 68,
+        5, 56, 22, 56, 68,
+        5, 64, 14, 66, 58,
+        5, 65, 17, 65, 37,
+        5, 66, 17, 66, 58,
+        5, 74, 14, 76, 56,
+        5, 75, 17, 75, 37,
+        5, 76, 17, 76, 56,
+        5, 84, 14, 84, 38,
+        5, 84, 18, 84, 38,
+        0, 5, 14, 5, 63,
+        0, 5, 19, 5, 41,
+        0, 5, 43, 5, 63,
+        0, 12, 14, 12, 41,
+        0, 12, 19, 12, 41,
+        0, 18, 14, 18, 37,
+        0, 18, 19, 18, 37,
+        0, 24, 14, 24, 82,
+        0, 24, 19, 24, 39,
+        0, 24, 41, 24, 82,
+        0, 29, 14, 29, 38,
+        0, 29, 19, 29, 38,
+        0, 34, 14, 34, 73,
+        0, 34, 19, 34, 41,
+        0, 34, 43, 34, 73,
+        0, 40, 14, 40, 37,
+        0, 40, 19, 40, 37,
+        1, 4, 14, 5, 48,
+        1, 4, 18, 4, 38,
+        1, 4, 41, 4, 50,
+        1, 5, 18, 5, 48,
+        1, 11, 14, 11, 36,
+        1, 11, 19, 11, 36,
+        1, 15, 14, 15, 37,
+        1, 15, 19, 15, 37,
+        1, 22, 14, 23, 65,
+        1, 22, 18, 22, 45,
+        1, 22, 47, 22, 72,
+        1, 23, 19, 23, 32,
+        1, 23, 34, 23, 65,
+        1, 29, 14, 30, 65,
+        1, 29, 18, 29, 45,
+        1, 29, 47, 29, 72,
+        1, 30, 19, 30, 32,
+        1, 30, 34, 30, 65,
+        1, 34, 14, 34, 49,
+        1, 34, 18, 34, 49,
+        1, 39, 14, 39, 50,
+        1, 39, 18, 39, 50,
+        1, 52, 14, 54, 29,
+        1, 52, 18, 52, 46,
+        1, 52, 48, 52, 87,
+        1, 53, 18, 53, 50,
+        1, 53, 52, 53, 73,
+        1, 54, 19, 54, 29,
+        1, 60, 14, 63, 29,
+        1, 60, 18, 60, 38,
+        1, 60, 40, 60, 72,
+        1, 61, 18, 61, 48,
+        1, 61, 23, 61, 48,
+        1, 62, 18, 62, 50,
+        1, 62, 52, 62, 73,
+        1, 63, 19, 63, 29,
+        1, 69, 14, 71, 50,
+        1, 69, 18, 69, 50,
+        1, 69, 52, 69, 68,
+        1, 70, 18, 70, 47,
+        1, 70, 50, 70, 60,
+        1, 71, 18, 71, 50,
+        1, 76, 14, 77, 60,
+        1, 76, 18, 76, 50,
+        1, 76, 52, 76, 68,
+        1, 77, 18, 77, 47,
+        1, 77, 50, 77, 60,
+        1, 81, 14, 82, 84,
+        1, 81, 18, 81, 50,
+        1, 81, 52, 81, 73,
+        1, 82, 19, 82, 29,
+        1, 82, 32, 82, 51,
+        1, 82, 53, 82, 84,
+        1, 87, 14, 88, 62,
+        1, 87, 18, 87, 50,
+        1, 87, 52, 87, 73,
+        1, 88, 19, 88, 29,
+        1, 88, 31, 88, 62,
+        1, 93, 14, 94, 29,
+        1, 93, 18, 93, 51,
+        1, 93, 53, 93, 74,
+        1, 94, 19, 94, 29,
+        1, 100, 14, 100, 59,
+        1, 100, 18, 100, 59,
+        2, 6, 14, 6, 72,
+        2, 6, 19, 6, 41,
+        2, 6, 43, 6, 72,
+        2, 13, 14, 14, 49,
+        2, 13, 19, 13, 43,
+        2, 13, 45, 13, 77,
+        2, 14, 18, 14, 48,
+        2, 14, 23, 14, 48,
+        2, 20, 14, 20, 43,
+        2, 20, 19, 20, 43,
+        2, 26, 14, 26, 90,
+        2, 26, 19, 26, 46,
+        2, 26, 48, 26, 90,
+        2, 32, 14, 32, 43,
+        2, 32, 19, 32, 43,
+        2, 38, 14, 39, 78,
+        2, 38, 18, 38, 58,
+        2, 39, 18, 39, 78,
+        3, 6, 14, 6, 58,
+        3, 6, 18, 6, 58,
+        3, 12, 14, 12, 61,
+        3, 12, 18, 12, 61,
+        3, 18, 14, 18, 64,
+        3, 18, 18, 18, 64,
+        3, 24, 14, 24, 53,
+        3, 24, 18, 24, 53,
+        3, 30, 14, 30, 70,
+        3, 30, 18, 30, 70,
+        4, 4, 14, 5, 44,
+        4, 4, 18, 4, 38,
+        4, 4, 41, 4, 50,
+        4, 5, 18, 5, 44,
+        4, 10, 14, 11, 45,
+        4, 10, 18, 10, 39,
+        4, 10, 42, 10, 53,
+        4, 11, 18, 11, 45,
+        4, 16, 14, 16, 49,
+        4, 16, 18, 16, 49,
+        4, 21, 14, 21, 83,
+        4, 21, 18, 21, 47,
+        4, 21, 49, 21, 83,
+        4, 27, 14, 27, 78,
+        4, 27, 18, 27, 45,
+        4, 27, 47, 27, 78,
+        4, 32, 14, 32, 47,
+        4, 32, 18, 32, 47,
+        4, 37, 14, 37, 59,
+        4, 37, 18, 37, 43,
+        4, 37, 46, 37, 59,
+        5, 12, 14, 14, 57,
+        5, 13, 17, 13, 37,
+        5, 14, 17, 14, 57,
+        5, 22, 14, 35, 17,
+        5, 23, 17, 23, 37,
+        5, 24, 17, 24, 43,
+        5, 25, 17, 25, 38,
+        5, 26, 17, 26, 54,
+        5, 27, 17, 27, 40,
+        5, 27, 22, 27, 40,
+        5, 28, 17, 34, 21,
+        5, 29, 22, 33, 53,
+        5, 30, 25, 30, 51,
+        5, 31, 25, 31, 46,
+        5, 32, 25, 32, 68,
+        5, 33, 26, 33, 53,
+        5, 43, 14, 45, 59,
+        5, 44, 17, 44, 37,
+        5, 45, 17, 45, 59,
+        5, 53, 14, 56, 69,
+        5, 54, 17, 54, 37,
+        5, 55, 17, 55, 62,
+        5, 56, 17, 56, 68,
+        5, 56, 22, 56, 68,
+        5, 64, 14, 66, 58,
+        5, 65, 17, 65, 37,
+        5, 66, 17, 66, 58,
+        5, 74, 14, 76, 56,
+        5, 75, 17, 75, 37,
+        5, 76, 17, 76, 56,
+        5, 84, 14, 84, 38,
+        5, 84, 18, 84, 38],
+      taskSources: @[
+        0'u32, 6, 14, 6, 54,
+        0, 7, 14, 7, 37,
+        0, 8, 14, 8, 57,
+        0, 9, 14, 9, 55,
+        0, 13, 14, 13, 54,
+        0, 14, 14, 14, 57,
+        0, 15, 14, 15, 55,
+        0, 19, 14, 19, 54,
+        0, 20, 14, 20, 54,
+        0, 21, 14, 21, 50,
+        0, 25, 14, 25, 54,
+        0, 26, 14, 26, 63,
+        0, 30, 14, 30, 54,
+        0, 31, 14, 31, 49,
+        0, 35, 14, 35, 57,
+        0, 36, 14, 36, 50,
+        0, 37, 14, 37, 55,
+        0, 41, 14, 41, 57,
+        0, 42, 14, 42, 55,
+        0, 46, 14, 46, 68,
+        1, 6, 14, 6, 50,
+        1, 7, 14, 7, 36,
+        1, 8, 14, 8, 43,
+        1, 12, 14, 12, 45,
+        1, 16, 14, 16, 60,
+        1, 24, 14, 24, 46,
+        1, 25, 14, 25, 48,
+        1, 26, 14, 26, 50,
+        1, 31, 14, 31, 54,
+        1, 35, 14, 35, 46,
+        1, 36, 14, 36, 54,
+        1, 40, 14, 40, 44,
+        1, 41, 14, 41, 54,
+        1, 45, 14, 45, 47,
+        1, 46, 14, 46, 59,
+        1, 55, 14, 55, 50,
+        1, 56, 14, 56, 42,
+        1, 57, 14, 57, 46,
+        1, 64, 14, 64, 45,
+        1, 65, 14, 65, 51,
+        1, 66, 14, 66, 57,
+        1, 72, 14, 72, 45,
+        1, 73, 14, 73, 45,
+        1, 78, 14, 78, 45,
+        1, 83, 14, 83, 42,
+        1, 84, 14, 84, 55,
+        1, 89, 14, 89, 42,
+        1, 90, 14, 90, 57,
+        1, 95, 14, 95, 45,
+        1, 96, 14, 96, 42,
+        1, 97, 14, 97, 57,
+        1, 101, 14, 101, 51,
+        1, 102, 14, 102, 50,
+        1, 106, 14, 106, 47,
+        1, 107, 14, 107, 35,
+        2, 7, 14, 7, 56,
+        2, 8, 14, 8, 44,
+        2, 9, 14, 9, 66,
+        2, 10, 14, 10, 50,
+        2, 15, 14, 15, 45,
+        2, 16, 14, 16, 62,
+        2, 17, 14, 17, 50,
+        2, 21, 14, 21, 44,
+        2, 22, 14, 22, 66,
+        2, 23, 14, 23, 50,
+        2, 27, 14, 27, 53,
+        2, 28, 14, 28, 50,
+        2, 29, 14, 29, 50,
+        2, 33, 14, 33, 54,
+        2, 34, 14, 34, 66,
+        2, 35, 14, 35, 54,
+        2, 40, 14, 40, 58,
+        2, 41, 14, 41, 50,
+        2, 45, 14, 45, 44,
+        2, 46, 14, 46, 66,
+        2, 47, 14, 47, 50,
+        2, 48, 14, 48, 80,
+        3, 7, 14, 7, 55,
+        3, 8, 14, 8, 51,
+        3, 9, 14, 9, 55,
+        3, 13, 14, 13, 55,
+        3, 14, 14, 14, 55,
+        3, 15, 14, 15, 46,
+        3, 19, 14, 19, 59,
+        3, 20, 14, 20, 51,
+        3, 21, 14, 21, 55,
+        3, 25, 14, 25, 64,
+        3, 26, 14, 26, 43,
+        3, 27, 14, 27, 55,
+        3, 31, 14, 31, 51,
+        3, 32, 14, 32, 55,
+        3, 36, 14, 36, 64,
+        3, 37, 14, 37, 55,
+        3, 38, 14, 38, 58,
+        4, 6, 14, 6, 35,
+        4, 7, 14, 7, 40,
+        4, 12, 14, 12, 46,
+        4, 13, 14, 13, 45,
+        4, 17, 14, 17, 49,
+        4, 18, 14, 18, 40,
+        4, 22, 14, 22, 51,
+        4, 23, 14, 23, 50,
+        4, 24, 14, 24, 54,
+        4, 28, 14, 28, 41,
+        4, 29, 14, 29, 46,
+        4, 33, 14, 33, 49,
+        4, 34, 14, 34, 41,
+        4, 38, 14, 38, 37,
+        4, 39, 14, 39, 43,
+        4, 43, 14, 43, 44,
+        4, 44, 14, 44, 43,
+        5, 17, 17, 17, 51,
+        5, 18, 17, 18, 60,
+        5, 38, 17, 38, 47,
+        5, 39, 17, 39, 51,
+        5, 48, 17, 48, 53,
+        5, 49, 17, 49, 60,
+        5, 59, 17, 59, 54,
+        5, 60, 17, 60, 61,
+        5, 69, 17, 69, 47,
+        5, 70, 17, 70, 56,
+        5, 79, 17, 79, 50,
+        5, 80, 17, 80, 60,
+        5, 86, 17, 86, 45,
+        5, 87, 17, 87, 32,
+        5, 92, 14, 92, 50,
+        0, 6, 14, 6, 54,
+        0, 7, 14, 7, 37,
+        0, 8, 14, 8, 57,
+        0, 9, 14, 9, 55,
+        0, 13, 14, 13, 54,
+        0, 14, 14, 14, 57,
+        0, 15, 14, 15, 55,
+        0, 19, 14, 19, 54,
+        0, 20, 14, 20, 54,
+        0, 21, 14, 21, 50,
+        0, 25, 14, 25, 54,
+        0, 26, 14, 26, 63,
+        0, 30, 14, 30, 54,
+        0, 31, 14, 31, 49,
+        0, 35, 14, 35, 57,
+        0, 36, 14, 36, 50,
+        0, 37, 14, 37, 55,
+        0, 41, 14, 41, 57,
+        0, 42, 14, 42, 55,
+        0, 46, 14, 46, 68,
+        1, 6, 14, 6, 50,
+        1, 7, 14, 7, 36,
+        1, 8, 14, 8, 43,
+        1, 12, 14, 12, 45,
+        1, 16, 14, 16, 60,
+        1, 24, 14, 24, 46,
+        1, 25, 14, 25, 48,
+        1, 26, 14, 26, 50,
+        1, 31, 14, 31, 54,
+        1, 35, 14, 35, 46,
+        1, 36, 14, 36, 54,
+        1, 40, 14, 40, 44,
+        1, 41, 14, 41, 54,
+        1, 45, 14, 45, 47,
+        1, 46, 14, 46, 59,
+        1, 55, 14, 55, 50,
+        1, 56, 14, 56, 42,
+        1, 57, 14, 57, 46,
+        1, 64, 14, 64, 45,
+        1, 65, 14, 65, 51,
+        1, 66, 14, 66, 57,
+        1, 72, 14, 72, 45,
+        1, 73, 14, 73, 45,
+        1, 78, 14, 78, 45,
+        1, 83, 14, 83, 42,
+        1, 84, 14, 84, 55,
+        1, 89, 14, 89, 42,
+        1, 90, 14, 90, 57,
+        1, 95, 14, 95, 45,
+        1, 96, 14, 96, 42,
+        1, 97, 14, 97, 57,
+        1, 101, 14, 101, 51,
+        1, 102, 14, 102, 50,
+        1, 106, 14, 106, 47,
+        1, 107, 14, 107, 35,
+        2, 7, 14, 7, 56,
+        2, 8, 14, 8, 44,
+        2, 9, 14, 9, 66,
+        2, 10, 14, 10, 50,
+        2, 15, 14, 15, 45,
+        2, 16, 14, 16, 62,
+        2, 17, 14, 17, 50,
+        2, 21, 14, 21, 44,
+        2, 22, 14, 22, 66,
+        2, 23, 14, 23, 50,
+        2, 27, 14, 27, 53,
+        2, 28, 14, 28, 50,
+        2, 29, 14, 29, 50,
+        2, 33, 14, 33, 54,
+        2, 34, 14, 34, 66,
+        2, 35, 14, 35, 54,
+        2, 40, 14, 40, 58,
+        2, 41, 14, 41, 50,
+        2, 45, 14, 45, 44,
+        2, 46, 14, 46, 66,
+        2, 47, 14, 47, 50,
+        2, 48, 14, 48, 80,
+        3, 7, 14, 7, 55,
+        3, 8, 14, 8, 51,
+        3, 9, 14, 9, 55,
+        3, 13, 14, 13, 55,
+        3, 14, 14, 14, 55,
+        3, 15, 14, 15, 46,
+        3, 19, 14, 19, 59,
+        3, 20, 14, 20, 51,
+        3, 21, 14, 21, 55,
+        3, 25, 14, 25, 64,
+        3, 26, 14, 26, 43,
+        3, 27, 14, 27, 55,
+        3, 31, 14, 31, 51,
+        3, 32, 14, 32, 55,
+        3, 36, 14, 36, 64,
+        3, 37, 14, 37, 55,
+        3, 38, 14, 38, 58,
+        4, 6, 14, 6, 35,
+        4, 7, 14, 7, 40,
+        4, 12, 14, 12, 46,
+        4, 13, 14, 13, 45,
+        4, 17, 14, 17, 49,
+        4, 18, 14, 18, 40,
+        4, 22, 14, 22, 51,
+        4, 23, 14, 23, 50,
+        4, 24, 14, 24, 54,
+        4, 28, 14, 28, 41,
+        4, 29, 14, 29, 46,
+        4, 33, 14, 33, 49,
+        4, 34, 14, 34, 41,
+        4, 38, 14, 38, 37,
+        4, 39, 14, 39, 43,
+        4, 43, 14, 43, 44,
+        4, 44, 14, 44, 43,
+        5, 17, 17, 17, 51,
+        5, 18, 17, 18, 60,
+        5, 38, 17, 38, 47,
+        5, 39, 17, 39, 51,
+        5, 48, 17, 48, 53,
+        5, 49, 17, 49, 60,
+        5, 59, 17, 59, 54,
+        5, 60, 17, 60, 61,
+        5, 69, 17, 69, 47,
+        5, 70, 17, 70, 56,
+        5, 79, 17, 79, 50,
+        5, 80, 17, 80, 60,
+        5, 86, 17, 86, 45,
+        5, 87, 17, 87, 32,
+        5, 92, 14, 92, 50],
+      branchSources: @[
+        0'u32, 4, 9, 10, 9,
+        0, 11, 9, 16, 9,
+        0, 17, 9, 22, 9,
+        0, 23, 9, 27, 9,
+        0, 28, 9, 32, 9,
+        0, 33, 9, 38, 9,
+        0, 39, 9, 43, 9,
+        0, 44, 9, 47, 9,
+        1, 3, 9, 9, 9,
+        1, 10, 9, 13, 9,
+        1, 14, 9, 17, 9,
+        1, 21, 9, 27, 9,
+        1, 28, 9, 32, 9,
+        1, 33, 9, 37, 9,
+        1, 38, 9, 42, 9,
+        1, 43, 9, 47, 9,
+        1, 51, 9, 58, 9,
+        1, 59, 9, 67, 9,
+        1, 68, 9, 74, 9,
+        1, 75, 9, 79, 9,
+        1, 80, 9, 85, 9,
+        1, 86, 9, 91, 9,
+        1, 92, 9, 98, 9,
+        1, 99, 9, 103, 9,
+        1, 104, 9, 108, 9,
+        2, 5, 9, 11, 9,
+        2, 12, 9, 18, 9,
+        2, 19, 9, 24, 9,
+        2, 25, 9, 30, 9,
+        2, 31, 9, 36, 9,
+        2, 37, 9, 42, 9,
+        2, 43, 9, 49, 9,
+        3, 5, 9, 10, 9,
+        3, 11, 9, 16, 9,
+        3, 17, 9, 22, 9,
+        3, 23, 9, 28, 9,
+        3, 29, 9, 33, 9,
+        3, 34, 9, 39, 9,
+        4, 3, 9, 8, 9,
+        4, 9, 9, 14, 9,
+        4, 15, 9, 19, 9,
+        4, 20, 9, 25, 9,
+        4, 26, 9, 30, 9,
+        4, 31, 9, 35, 9,
+        4, 36, 9, 40, 9,
+        4, 41, 9, 45, 9,
+        5, 11, 9, 20, 9,
+        5, 21, 9, 41, 9,
+        5, 42, 9, 51, 9,
+        5, 52, 9, 62, 9,
+        5, 63, 9, 72, 9,
+        5, 73, 9, 82, 9,
+        5, 83, 9, 89, 9,
+        5, 90, 9, 93, 9,
+        0, 4, 9, 10, 9,
+        0, 11, 9, 16, 9,
+        0, 17, 9, 22, 9,
+        0, 23, 9, 27, 9,
+        0, 28, 9, 32, 9,
+        0, 33, 9, 38, 9,
+        0, 39, 9, 43, 9,
+        0, 44, 9, 47, 9,
+        1, 3, 9, 9, 9,
+        1, 10, 9, 13, 9,
+        1, 14, 9, 17, 9,
+        1, 21, 9, 27, 9,
+        1, 28, 9, 32, 9,
+        1, 33, 9, 37, 9,
+        1, 38, 9, 42, 9,
+        1, 43, 9, 47, 9,
+        1, 51, 9, 58, 9,
+        1, 59, 9, 67, 9,
+        1, 68, 9, 74, 9,
+        1, 75, 9, 79, 9,
+        1, 80, 9, 85, 9,
+        1, 86, 9, 91, 9,
+        1, 92, 9, 98, 9,
+        1, 99, 9, 103, 9,
+        1, 104, 9, 108, 9,
+        2, 5, 9, 11, 9,
+        2, 12, 9, 18, 9,
+        2, 19, 9, 24, 9,
+        2, 25, 9, 30, 9,
+        2, 31, 9, 36, 9,
+        2, 37, 9, 42, 9,
+        2, 43, 9, 49, 9,
+        3, 5, 9, 10, 9,
+        3, 11, 9, 16, 9,
+        3, 17, 9, 22, 9,
+        3, 23, 9, 28, 9,
+        3, 29, 9, 33, 9,
+        3, 34, 9, 39, 9,
+        4, 3, 9, 8, 9,
+        4, 9, 9, 14, 9,
+        4, 15, 9, 19, 9,
+        4, 20, 9, 25, 9,
+        4, 26, 9, 30, 9,
+        4, 31, 9, 35, 9,
+        4, 36, 9, 40, 9,
+        4, 41, 9, 45, 9,
+        5, 11, 9, 20, 9,
+        5, 21, 9, 41, 9,
+        5, 42, 9, 51, 9,
+        5, 52, 9, 62, 9,
+        5, 63, 9, 72, 9,
+        5, 73, 9, 82, 9,
+        5, 83, 9, 89, 9,
+        5, 90, 9, 93, 9],
+      methodSources: @[
+        0'u32, 3, 5, 48, 5,
+        1, 2, 5, 18, 5,
+        1, 20, 5, 48, 5,
+        1, 50, 5, 109, 5,
+        2, 4, 5, 50, 5,
+        3, 4, 5, 40, 5,
+        4, 2, 5, 46, 5,
+        5, 10, 5, 94, 5,
+        0, 3, 5, 48, 5,
+        1, 2, 5, 18, 5,
+        1, 20, 5, 48, 5,
+        1, 50, 5, 109, 5,
+        2, 4, 5, 50, 5,
+        3, 4, 5, 40, 5,
+        4, 2, 5, 46, 5,
+        5, 10, 5, 94, 5],
+      axiomSources: newSeq[uint32](),
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

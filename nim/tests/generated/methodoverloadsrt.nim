@@ -166,31 +166,58 @@ proc CreateMethodOverloadsRTHTN_GetDefinition*(): Definition =
   definition
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!base_zero)
-  if not ex.appendPlanStep(sym0, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym0, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!base_one ?inp_value)
-  if not ex.appendPlanStep(sym1, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym1, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!override_one ?inp_value)
-  if not ex.appendPlanStep(sym2, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!local_two ?inp_left ?inp_right)
-  if not ex.appendPlanStep(sym3, [ex.v[1], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym3, [ex.v[1], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (select)
   ex.enterFrame()
   ex.frame().resume = 1
@@ -198,10 +225,15 @@ proc task4(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (select 7)
   let arg0 = sv0
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -210,11 +242,16 @@ proc task5(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (select 8 9)
   let arg0 = sv1
   let arg1 = sv2
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[1] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -225,7 +262,10 @@ proc task6(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (OverloadBase::select)
   ex.enterFrame()
   ex.frame().resume = 1
@@ -233,10 +273,15 @@ proc task7(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (OverloadBase::select 10)
   let arg0 = sv3
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -245,11 +290,16 @@ proc task8(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (walk 0 2)
   let arg0 = sv4
   let arg1 = sv5
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[3] = Atom()
   ex.v[4] = Atom()
   ex.enterFrame()
@@ -260,10 +310,15 @@ proc task9(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (select ?inp_value)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -272,11 +327,16 @@ proc task10(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (walk (++ ?inp_index) ?inp_count)
   let arg0 = arith(5'u32, [ex.v[3]])
   let arg1 = ex.v[4]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[3] = Atom()
   ex.v[4] = Atom()
   ex.enterFrame()
@@ -287,10 +347,15 @@ proc task11(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (walk ?inp_index)
   let arg0 = ex.v[3]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -299,73 +364,142 @@ proc task12(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (!walk_done ?inp_value)
-  if not ex.appendPlanStep(sym4, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (&later)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (&later ?inp_value)
-  if not ex.appendPlanStep(sym5, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym5, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (!later_zero)
-  if not ex.appendPlanStep(sym6, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym6, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!later_one ?inp_value)
-  if not ex.appendPlanStep(sym7, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym7, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (!private_zero)
-  if not ex.appendPlanStep(sym8, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym8, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!public_one ?inp_value)
-  if not ex.appendPlanStep(sym9, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (&mixed)
-  if not ex.appendPlanStep(sym10, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym10, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!base_zero)
-  if not ex.appendPlanStep(sym0, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym0, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (!override_one ?inp_value)
-  if not ex.appendPlanStep(sym2, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (!local_two ?inp_left ?inp_right)
-  if not ex.appendPlanStep(sym3, [ex.v[1], ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym3, [ex.v[1], ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (select)
   ex.enterFrame()
   ex.frame().resume = 1
@@ -373,10 +507,15 @@ proc task24(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (select 7)
   let arg0 = sv6
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -385,11 +524,16 @@ proc task25(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (select 8 9)
   let arg0 = sv7
   let arg1 = sv8
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[1] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -400,7 +544,10 @@ proc task26(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (OverloadBase::select)
   ex.enterFrame()
   ex.frame().resume = 1
@@ -408,10 +555,15 @@ proc task27(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (OverloadBase::select 10)
   let arg0 = sv9
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -420,11 +572,16 @@ proc task28(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (walk 0 2)
   let arg0 = sv10
   let arg1 = sv11
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[3] = Atom()
   ex.v[4] = Atom()
   ex.enterFrame()
@@ -435,10 +592,15 @@ proc task29(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (select ?inp_value)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -447,11 +609,16 @@ proc task30(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (walk (++ ?inp_index) ?inp_count)
   let arg0 = arith(5'u32, [ex.v[3]])
   let arg1 = ex.v[4]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[3] = Atom()
   ex.v[4] = Atom()
   ex.enterFrame()
@@ -462,10 +629,15 @@ proc task31(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task32(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 32)
   # (walk ?inp_index)
   let arg0 = ex.v[3]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.enterFrame()
   ex.setIfChanged(0, arg0)
@@ -474,51 +646,99 @@ proc task32(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task33(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 33)
   # (!walk_done ?inp_value)
-  if not ex.appendPlanStep(sym4, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task34(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 34)
   # (&later)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task35(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 35)
   # (&later ?inp_value)
-  if not ex.appendPlanStep(sym5, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym5, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task36(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 36)
   # (!later_zero)
-  if not ex.appendPlanStep(sym6, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym6, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task37(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 37)
   # (!later_one ?inp_value)
-  if not ex.appendPlanStep(sym7, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym7, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task38(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 38)
   # (!private_zero)
-  if not ex.appendPlanStep(sym8, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym8, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task39(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 39)
   # (!public_one ?inp_value)
-  if not ex.appendPlanStep(sym9, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task40(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 40)
   # (&mixed)
-  if not ex.appendPlanStep(sym10, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym10, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: OverloadBase::select/0
@@ -531,15 +751,20 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch empty
+      ex.debugBeginBranch(definition, 0)
       state = 4
       continue
     of 4:
       if not ex.pushBranch(addr bc0):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(0)
       state = 6
       continue
     of 6:
@@ -556,10 +781,14 @@ proc method0(ex: Exec): int {.nimcall.} =
       continue
     of 3:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 6
       continue
     of 7:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -574,15 +803,20 @@ proc method1(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 1)
       state = 9
       continue
     of 9:
       # branch one
+      ex.debugBeginBranch(definition, 1)
       state = 11
       continue
     of 11:
       if not ex.pushBranch(addr bc1):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(1)
       state = 13
       continue
     of 13:
@@ -599,10 +833,14 @@ proc method1(ex: Exec): int {.nimcall.} =
       continue
     of 10:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 13
       continue
     of 14:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -617,15 +855,20 @@ proc method2(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 2)
       state = 16
       continue
     of 16:
       # branch one
+      ex.debugBeginBranch(definition, 2)
       state = 18
       continue
     of 18:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(2)
       state = 20
       continue
     of 20:
@@ -642,10 +885,14 @@ proc method2(ex: Exec): int {.nimcall.} =
       continue
     of 17:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 20
       continue
     of 21:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -660,15 +907,20 @@ proc method3(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 3)
       state = 23
       continue
     of 23:
       # branch two
+      ex.debugBeginBranch(definition, 3)
       state = 25
       continue
     of 25:
       if not ex.pushBranch(addr bc3):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(3)
       state = 27
       continue
     of 27:
@@ -685,10 +937,14 @@ proc method3(ex: Exec): int {.nimcall.} =
       continue
     of 24:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 27
       continue
     of 28:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -703,15 +959,25 @@ proc method4(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 4)
       state = 30
       continue
     of 30:
       # branch all
+      ex.debugBeginBranch(definition, 4)
       state = 32
       continue
     of 32:
       if not ex.pushBranch(addr bc4):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(9)
+      ex.debugCapturePendingTask(8)
+      ex.debugCapturePendingTask(7)
+      ex.debugCapturePendingTask(6)
+      ex.debugCapturePendingTask(5)
+      ex.debugCapturePendingTask(4)
       state = 34
       continue
     of 34:
@@ -728,10 +994,14 @@ proc method4(ex: Exec): int {.nimcall.} =
       continue
     of 31:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 34
       continue
     of 35:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -746,15 +1016,20 @@ proc method5(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 5)
       state = 37
       continue
     of 37:
       # branch one
+      ex.debugBeginBranch(definition, 5)
       state = 39
       continue
     of 39:
       if not ex.pushBranch(addr bc5):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(10)
       state = 41
       continue
     of 41:
@@ -771,10 +1046,14 @@ proc method5(ex: Exec): int {.nimcall.} =
       continue
     of 38:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 41
       continue
     of 42:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -790,39 +1069,51 @@ proc method6(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 6)
       state = 44
       continue
     of 44:
       # branch continue
       ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 6)
       # (and (< ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 0)
       # (< ?inp_index ?inp_count)
       # (< ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 1)
       if compare(ex.v[3], ex.v[4], 2'u32):
+        ex.debugEndCondition(definition, true)
         state = 54
         continue
+      ex.debugEndCondition(definition, false)
       state = 52
       continue
     of 54:
+      ex.debugEndCondition(definition, true)
       state = 48
       continue
     of 52:
       state = 50
       continue
     of 50:
+      ex.debugEndCondition(definition, false)
       state = 49
       continue
     of 49:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 45
       continue
     of 48:
       if not ex.pushBranch(addr bc6):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 55
+      ex.debugCapturePendingTask(11)
+      state = 56
       continue
-    of 55:
+    of 56:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -832,34 +1123,45 @@ proc method6(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 46
         continue
-      state = 56
+      state = 57
       continue
     of 46:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms6)
+        ex.debugEndBranch(definition, false)
         state = 45
         continue
-      state = 55
+      state = 56
       continue
-    of 56:
+    of 57:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 45:
       # branch finished
-      state = 57
+      ex.debugBeginBranch(definition, 7)
+      state = 58
       continue
-    of 57:
+    of 58:
       if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 59
+      ex.debugCapturePendingTask(12)
+      state = 60
       continue
-    of 59:
+    of 60:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -869,14 +1171,18 @@ proc method6(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 47
         continue
-      state = 60
+      state = 61
       continue
     of 47:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 59
+      state = 60
       continue
-    of 60:
+    of 61:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -886,23 +1192,28 @@ proc method7(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 63
+  of 1: state = 64
   else: discard
   while true:
     case state
     of 0:
-      state = 62
+      ex.debugBeginMethod(definition, 7)
+      state = 63
       continue
-    of 62:
+    of 63:
       # branch finish
-      state = 64
+      ex.debugBeginBranch(definition, 8)
+      state = 65
       continue
-    of 64:
+    of 65:
       if not ex.pushBranch(addr bc8):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 66
+      ex.debugCapturePendingTask(13)
+      state = 67
       continue
-    of 66:
+    of 67:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -910,16 +1221,20 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 63
+        state = 64
         continue
+      state = 68
+      continue
+    of 64:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 67
       continue
-    of 63:
-      if fr.childResult == 0:
-        return 0
-      state = 66
-      continue
-    of 67:
+    of 68:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -929,23 +1244,28 @@ proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 70
+  of 1: state = 71
   else: discard
   while true:
     case state
     of 0:
-      state = 69
+      ex.debugBeginMethod(definition, 8)
+      state = 70
       continue
-    of 69:
+    of 70:
       # branch empty
-      state = 71
+      ex.debugBeginBranch(definition, 9)
+      state = 72
       continue
-    of 71:
+    of 72:
       if not ex.pushBranch(addr bc9):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 73
+      ex.debugCapturePendingTask(14)
+      state = 74
       continue
-    of 73:
+    of 74:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -953,16 +1273,20 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 70
+        state = 71
         continue
+      state = 75
+      continue
+    of 71:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 74
       continue
-    of 70:
-      if fr.childResult == 0:
-        return 0
-      state = 73
-      continue
-    of 74:
+    of 75:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -972,23 +1296,28 @@ proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 77
+  of 1: state = 78
   else: discard
   while true:
     case state
     of 0:
-      state = 76
+      ex.debugBeginMethod(definition, 9)
+      state = 77
       continue
-    of 76:
+    of 77:
       # branch one
-      state = 78
+      ex.debugBeginBranch(definition, 10)
+      state = 79
       continue
-    of 78:
+    of 79:
       if not ex.pushBranch(addr bc10):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      ex.debugCapturePendingTask(15)
+      state = 81
       continue
-    of 80:
+    of 81:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -996,16 +1325,20 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 77
+        state = 78
         continue
+      state = 82
+      continue
+    of 78:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 81
       continue
-    of 77:
-      if fr.childResult == 0:
-        return 0
-      state = 80
-      continue
-    of 81:
+    of 82:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1015,23 +1348,28 @@ proc method10(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 84
+  of 1: state = 85
   else: discard
   while true:
     case state
     of 0:
-      state = 83
+      ex.debugBeginMethod(definition, 10)
+      state = 84
       continue
-    of 83:
+    of 84:
       # branch empty
-      state = 85
+      ex.debugBeginBranch(definition, 11)
+      state = 86
       continue
-    of 85:
+    of 86:
       if not ex.pushBranch(addr bc11):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 87
+      ex.debugCapturePendingTask(16)
+      state = 88
       continue
-    of 87:
+    of 88:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1039,16 +1377,20 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 84
+        state = 85
         continue
+      state = 89
+      continue
+    of 85:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 88
       continue
-    of 84:
-      if fr.childResult == 0:
-        return 0
-      state = 87
-      continue
-    of 88:
+    of 89:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1058,23 +1400,28 @@ proc method11(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 91
+  of 1: state = 92
   else: discard
   while true:
     case state
     of 0:
-      state = 90
+      ex.debugBeginMethod(definition, 11)
+      state = 91
       continue
-    of 90:
+    of 91:
       # branch one
-      state = 92
+      ex.debugBeginBranch(definition, 12)
+      state = 93
       continue
-    of 92:
+    of 93:
       if not ex.pushBranch(addr bc12):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 94
+      ex.debugCapturePendingTask(17)
+      state = 95
       continue
-    of 94:
+    of 95:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1082,16 +1429,20 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 91
+        state = 92
         continue
+      state = 96
+      continue
+    of 92:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 95
       continue
-    of 91:
-      if fr.childResult == 0:
-        return 0
-      state = 94
-      continue
-    of 95:
+    of 96:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1101,23 +1452,28 @@ proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 98
+  of 1: state = 99
   else: discard
   while true:
     case state
     of 0:
-      state = 97
+      ex.debugBeginMethod(definition, 12)
+      state = 98
       continue
-    of 97:
+    of 98:
       # branch private
-      state = 99
+      ex.debugBeginBranch(definition, 13)
+      state = 100
       continue
-    of 99:
+    of 100:
       if not ex.pushBranch(addr bc13):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 101
+      ex.debugCapturePendingTask(18)
+      state = 102
       continue
-    of 101:
+    of 102:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1125,16 +1481,20 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 98
+        state = 99
         continue
+      state = 103
+      continue
+    of 99:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 102
       continue
-    of 98:
-      if fr.childResult == 0:
-        return 0
-      state = 101
-      continue
-    of 102:
+    of 103:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1144,23 +1504,28 @@ proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 105
+  of 1: state = 106
   else: discard
   while true:
     case state
     of 0:
-      state = 104
+      ex.debugBeginMethod(definition, 13)
+      state = 105
       continue
-    of 104:
+    of 105:
       # branch public
-      state = 106
+      ex.debugBeginBranch(definition, 14)
+      state = 107
       continue
-    of 106:
+    of 107:
       if not ex.pushBranch(addr bc14):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 108
+      ex.debugCapturePendingTask(19)
+      state = 109
       continue
-    of 108:
+    of 109:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1168,16 +1533,20 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 105
+        state = 106
         continue
+      state = 110
+      continue
+    of 106:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 109
       continue
-    of 105:
-      if fr.childResult == 0:
-        return 0
-      state = 108
-      continue
-    of 109:
+    of 110:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1187,23 +1556,28 @@ proc method14(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 112
+  of 1: state = 113
   else: discard
   while true:
     case state
     of 0:
-      state = 111
+      ex.debugBeginMethod(definition, 14)
+      state = 112
       continue
-    of 111:
+    of 112:
       # branch private_call
-      state = 113
+      ex.debugBeginBranch(definition, 15)
+      state = 114
       continue
-    of 113:
+    of 114:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 115
+      ex.debugCapturePendingTask(20)
+      state = 116
       continue
-    of 115:
+    of 116:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1211,16 +1585,20 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 112
+        state = 113
         continue
+      state = 117
+      continue
+    of 113:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 116
       continue
-    of 112:
-      if fr.childResult == 0:
-        return 0
-      state = 115
-      continue
-    of 116:
+    of 117:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1230,23 +1608,28 @@ proc method15(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 119
+  of 1: state = 120
   else: discard
   while true:
     case state
     of 0:
-      state = 118
+      ex.debugBeginMethod(definition, 15)
+      state = 119
       continue
-    of 118:
+    of 119:
       # branch empty
-      state = 120
+      ex.debugBeginBranch(definition, 16)
+      state = 121
       continue
-    of 120:
+    of 121:
       if not ex.pushBranch(addr bc16):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 122
+      ex.debugCapturePendingTask(21)
+      state = 123
       continue
-    of 122:
+    of 123:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1254,16 +1637,20 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 119
+        state = 120
         continue
+      state = 124
+      continue
+    of 120:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 123
       continue
-    of 119:
-      if fr.childResult == 0:
-        return 0
-      state = 122
-      continue
-    of 123:
+    of 124:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1273,23 +1660,28 @@ proc method16(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 126
+  of 1: state = 127
   else: discard
   while true:
     case state
     of 0:
-      state = 125
+      ex.debugBeginMethod(definition, 16)
+      state = 126
       continue
-    of 125:
+    of 126:
       # branch one
-      state = 127
+      ex.debugBeginBranch(definition, 17)
+      state = 128
       continue
-    of 127:
+    of 128:
       if not ex.pushBranch(addr bc17):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 129
+      ex.debugCapturePendingTask(22)
+      state = 130
       continue
-    of 129:
+    of 130:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1297,16 +1689,20 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 126
+        state = 127
         continue
+      state = 131
+      continue
+    of 127:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 130
       continue
-    of 126:
-      if fr.childResult == 0:
-        return 0
-      state = 129
-      continue
-    of 130:
+    of 131:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1316,23 +1712,28 @@ proc method17(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 133
+  of 1: state = 134
   else: discard
   while true:
     case state
     of 0:
-      state = 132
+      ex.debugBeginMethod(definition, 17)
+      state = 133
       continue
-    of 132:
+    of 133:
       # branch two
-      state = 134
+      ex.debugBeginBranch(definition, 18)
+      state = 135
       continue
-    of 134:
+    of 135:
       if not ex.pushBranch(addr bc18):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 136
+      ex.debugCapturePendingTask(23)
+      state = 137
       continue
-    of 136:
+    of 137:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1340,16 +1741,20 @@ proc method17(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 133
+        state = 134
         continue
+      state = 138
+      continue
+    of 134:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 137
       continue
-    of 133:
-      if fr.childResult == 0:
-        return 0
-      state = 136
-      continue
-    of 137:
+    of 138:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1359,23 +1764,33 @@ proc method18(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 140
+  of 1: state = 141
   else: discard
   while true:
     case state
     of 0:
-      state = 139
+      ex.debugBeginMethod(definition, 18)
+      state = 140
       continue
-    of 139:
+    of 140:
       # branch all
-      state = 141
+      ex.debugBeginBranch(definition, 19)
+      state = 142
       continue
-    of 141:
+    of 142:
       if not ex.pushBranch(addr bc19):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 143
+      ex.debugCapturePendingTask(29)
+      ex.debugCapturePendingTask(28)
+      ex.debugCapturePendingTask(27)
+      ex.debugCapturePendingTask(26)
+      ex.debugCapturePendingTask(25)
+      ex.debugCapturePendingTask(24)
+      state = 144
       continue
-    of 143:
+    of 144:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1383,16 +1798,20 @@ proc method18(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 140
+        state = 141
         continue
+      state = 145
+      continue
+    of 141:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 144
       continue
-    of 140:
-      if fr.childResult == 0:
-        return 0
-      state = 143
-      continue
-    of 144:
+    of 145:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1402,23 +1821,28 @@ proc method19(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 147
+  of 1: state = 148
   else: discard
   while true:
     case state
     of 0:
-      state = 146
+      ex.debugBeginMethod(definition, 19)
+      state = 147
       continue
-    of 146:
+    of 147:
       # branch one
-      state = 148
+      ex.debugBeginBranch(definition, 20)
+      state = 149
       continue
-    of 148:
+    of 149:
       if not ex.pushBranch(addr bc20):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 150
+      ex.debugCapturePendingTask(30)
+      state = 151
       continue
-    of 150:
+    of 151:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1426,16 +1850,20 @@ proc method19(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 147
+        state = 148
         continue
+      state = 152
+      continue
+    of 148:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
       state = 151
       continue
-    of 147:
-      if fr.childResult == 0:
-        return 0
-      state = 150
-      continue
-    of 151:
+    of 152:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1445,45 +1873,57 @@ proc method20(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 155
-  of 2: state = 156
+  of 1: state = 156
+  of 2: state = 157
   else: discard
   while true:
     case state
     of 0:
-      state = 153
+      ex.debugBeginMethod(definition, 20)
+      state = 154
       continue
-    of 153:
+    of 154:
       # branch continue
       ex.saveRetry(fr, ms20)
+      ex.debugBeginBranch(definition, 21)
       # (and (< ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 2)
       # (< ?inp_index ?inp_count)
       # (< ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 3)
       if compare(ex.v[3], ex.v[4], 2'u32):
-        state = 163
+        ex.debugEndCondition(definition, true)
+        state = 164
         continue
-      state = 161
+      ex.debugEndCondition(definition, false)
+      state = 162
       continue
-    of 163:
-      state = 157
+    of 164:
+      ex.debugEndCondition(definition, true)
+      state = 158
       continue
-    of 161:
+    of 162:
+      state = 160
+      continue
+    of 160:
+      ex.debugEndCondition(definition, false)
       state = 159
       continue
     of 159:
-      state = 158
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 155
       continue
     of 158:
-      ex.releaseRetry(fr)
-      state = 154
-      continue
-    of 157:
       if not ex.pushBranch(addr bc21):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 164
+      ex.debugCapturePendingTask(31)
+      state = 166
       continue
-    of 164:
+    of 166:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1491,36 +1931,47 @@ proc method20(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 155
+        state = 156
         continue
-      state = 165
+      state = 167
       continue
-    of 155:
+    of 156:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms20)
-        state = 154
+        ex.debugEndBranch(definition, false)
+        state = 155
         continue
-      state = 164
-      continue
-    of 165:
-      ex.releaseRetry(fr)
-      return 1
-    of 154:
-      # branch finished
       state = 166
       continue
-    of 166:
-      if not ex.pushBranch(addr bc22):
-        return 0
+    of 167:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 155:
+      # branch finished
+      ex.debugBeginBranch(definition, 22)
       state = 168
       continue
     of 168:
+      if not ex.pushBranch(addr bc22):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(32)
+      state = 170
+      continue
+    of 170:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1528,16 +1979,20 @@ proc method20(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 156
+        state = 157
         continue
-      state = 169
+      state = 171
       continue
-    of 156:
+    of 157:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 168
+      state = 170
       continue
-    of 169:
+    of 171:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1547,23 +2002,28 @@ proc method21(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 172
+  of 1: state = 174
   else: discard
   while true:
     case state
     of 0:
-      state = 171
-      continue
-    of 171:
-      # branch finish
+      ex.debugBeginMethod(definition, 21)
       state = 173
       continue
     of 173:
-      if not ex.pushBranch(addr bc23):
-        return 0
+      # branch finish
+      ex.debugBeginBranch(definition, 23)
       state = 175
       continue
     of 175:
+      if not ex.pushBranch(addr bc23):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(33)
+      state = 177
+      continue
+    of 177:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1571,16 +2031,20 @@ proc method21(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 172
+        state = 174
         continue
-      state = 176
+      state = 178
       continue
-    of 172:
+    of 174:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 175
+      state = 177
       continue
-    of 176:
+    of 178:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1590,23 +2054,28 @@ proc method22(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 179
+  of 1: state = 181
   else: discard
   while true:
     case state
     of 0:
-      state = 178
-      continue
-    of 178:
-      # branch empty
+      ex.debugBeginMethod(definition, 22)
       state = 180
       continue
     of 180:
-      if not ex.pushBranch(addr bc24):
-        return 0
+      # branch empty
+      ex.debugBeginBranch(definition, 24)
       state = 182
       continue
     of 182:
+      if not ex.pushBranch(addr bc24):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(34)
+      state = 184
+      continue
+    of 184:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1614,16 +2083,20 @@ proc method22(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 179
+        state = 181
         continue
-      state = 183
+      state = 185
       continue
-    of 179:
+    of 181:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 182
+      state = 184
       continue
-    of 183:
+    of 185:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1633,23 +2106,28 @@ proc method23(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 186
+  of 1: state = 188
   else: discard
   while true:
     case state
     of 0:
-      state = 185
-      continue
-    of 185:
-      # branch one
+      ex.debugBeginMethod(definition, 23)
       state = 187
       continue
     of 187:
-      if not ex.pushBranch(addr bc25):
-        return 0
+      # branch one
+      ex.debugBeginBranch(definition, 25)
       state = 189
       continue
     of 189:
+      if not ex.pushBranch(addr bc25):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(35)
+      state = 191
+      continue
+    of 191:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1657,16 +2135,20 @@ proc method23(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 186
+        state = 188
         continue
-      state = 190
+      state = 192
       continue
-    of 186:
+    of 188:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 189
+      state = 191
       continue
-    of 190:
+    of 192:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1676,23 +2158,28 @@ proc method24(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 193
+  of 1: state = 195
   else: discard
   while true:
     case state
     of 0:
-      state = 192
-      continue
-    of 192:
-      # branch empty
+      ex.debugBeginMethod(definition, 24)
       state = 194
       continue
     of 194:
-      if not ex.pushBranch(addr bc26):
-        return 0
+      # branch empty
+      ex.debugBeginBranch(definition, 26)
       state = 196
       continue
     of 196:
+      if not ex.pushBranch(addr bc26):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(36)
+      state = 198
+      continue
+    of 198:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1700,16 +2187,20 @@ proc method24(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 193
+        state = 195
         continue
-      state = 197
+      state = 199
       continue
-    of 193:
+    of 195:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 196
+      state = 198
       continue
-    of 197:
+    of 199:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1719,23 +2210,28 @@ proc method25(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 200
+  of 1: state = 202
   else: discard
   while true:
     case state
     of 0:
-      state = 199
-      continue
-    of 199:
-      # branch one
+      ex.debugBeginMethod(definition, 25)
       state = 201
       continue
     of 201:
-      if not ex.pushBranch(addr bc27):
-        return 0
+      # branch one
+      ex.debugBeginBranch(definition, 27)
       state = 203
       continue
     of 203:
+      if not ex.pushBranch(addr bc27):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(37)
+      state = 205
+      continue
+    of 205:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1743,16 +2239,20 @@ proc method25(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 200
+        state = 202
         continue
-      state = 204
+      state = 206
       continue
-    of 200:
+    of 202:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 203
+      state = 205
       continue
-    of 204:
+    of 206:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1762,23 +2262,28 @@ proc method26(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 207
+  of 1: state = 209
   else: discard
   while true:
     case state
     of 0:
-      state = 206
-      continue
-    of 206:
-      # branch private
+      ex.debugBeginMethod(definition, 26)
       state = 208
       continue
     of 208:
-      if not ex.pushBranch(addr bc28):
-        return 0
+      # branch private
+      ex.debugBeginBranch(definition, 28)
       state = 210
       continue
     of 210:
+      if not ex.pushBranch(addr bc28):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(38)
+      state = 212
+      continue
+    of 212:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1786,16 +2291,20 @@ proc method26(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 207
+        state = 209
         continue
-      state = 211
+      state = 213
       continue
-    of 207:
+    of 209:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 210
+      state = 212
       continue
-    of 211:
+    of 213:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1805,23 +2314,28 @@ proc method27(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 214
+  of 1: state = 216
   else: discard
   while true:
     case state
     of 0:
-      state = 213
-      continue
-    of 213:
-      # branch public
+      ex.debugBeginMethod(definition, 27)
       state = 215
       continue
     of 215:
-      if not ex.pushBranch(addr bc29):
-        return 0
+      # branch public
+      ex.debugBeginBranch(definition, 29)
       state = 217
       continue
     of 217:
+      if not ex.pushBranch(addr bc29):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(39)
+      state = 219
+      continue
+    of 219:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1829,16 +2343,20 @@ proc method27(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 214
+        state = 216
         continue
-      state = 218
+      state = 220
       continue
-    of 214:
+    of 216:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 217
+      state = 219
       continue
-    of 218:
+    of 220:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1848,23 +2366,28 @@ proc method28(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 221
+  of 1: state = 223
   else: discard
   while true:
     case state
     of 0:
-      state = 220
-      continue
-    of 220:
-      # branch private_call
+      ex.debugBeginMethod(definition, 28)
       state = 222
       continue
     of 222:
-      if not ex.pushBranch(addr bc30):
-        return 0
+      # branch private_call
+      ex.debugBeginBranch(definition, 30)
       state = 224
       continue
     of 224:
+      if not ex.pushBranch(addr bc30):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(40)
+      state = 226
+      continue
+    of 226:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1872,16 +2395,20 @@ proc method28(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 221
+        state = 223
         continue
-      state = 225
+      state = 227
       continue
-    of 221:
+    of 223:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 224
+      state = 226
       continue
-    of 225:
+    of 227:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1920,6 +2447,7 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym15 and argumentCount == 0:
     entry = 28
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 18:
@@ -1957,11 +2485,16 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   of 28:
     runResult = ex.run(method28)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task0)], totalRestore: 0)
@@ -1999,3 +2532,438 @@ definition = Definition(abiVersion: ABIVersion, features: featureRuntimeBacktrac
   newPreparedStorage: newPrepared, newExecutionStorage: newExecution, decomposeCall: decomposeCall,
   factNames: @[],
   callTermRequirements: @[])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/method_overloads.domain",
+      strings: @[
+        "OverloadBase::select",
+        "empty",
+        "base_zero",
+        "!base_zero",
+        "inp_value",
+        "?inp_value",
+        "one",
+        "base_one",
+        "!base_one",
+        "MethodOverloads::select",
+        "override_one",
+        "!override_one",
+        "inp_left",
+        "?inp_left",
+        "inp_right",
+        "?inp_right",
+        "two",
+        "local_two",
+        "!local_two",
+        "MethodOverloads::run",
+        "all",
+        "select",
+        "7",
+        "8",
+        "9",
+        "10",
+        "walk",
+        "0",
+        "2",
+        "MethodOverloads::walk",
+        "inp_index",
+        "?inp_index",
+        "inp_count",
+        "?inp_count",
+        "continue",
+        "",
+        "(++)",
+        "(++ ?inp_index)",
+        "finished",
+        "finish",
+        "walk_done",
+        "!walk_done",
+        "MethodOverloads::deferred",
+        "later",
+        "&later",
+        "MethodOverloads::later",
+        "later_zero",
+        "!later_zero",
+        "later_one",
+        "!later_one",
+        "MethodOverloads::mixed",
+        "private",
+        "private_zero",
+        "!private_zero",
+        "public",
+        "public_one",
+        "!public_one",
+        "MethodOverloads::defer_mixed",
+        "private_call",
+        "mixed",
+        "&mixed",
+        "run",
+        "deferred",
+        "defer_mixed"],
+      values: @[
+        1'u32, 5, 4, 3, 0,
+        1, 5, 4, 3, 0,
+        1, 5, 4, 3, 0,
+        1, 5, 4, 4, 0,
+        1, 13, 12, 5, 1,
+        1, 15, 14, 5, 2,
+        1, 13, 12, 6, 1,
+        1, 15, 14, 6, 2,
+        0, 22, 22, 8, NoIndex,
+        0, 23, 23, 8, NoIndex,
+        0, 24, 24, 8, NoIndex,
+        0, 25, 25, 9, NoIndex,
+        0, 27, 27, 10, NoIndex,
+        0, 28, 28, 10, NoIndex,
+        1, 5, 4, 11, 0,
+        1, 5, 4, 12, 0,
+        1, 31, 30, 13, 3,
+        1, 33, 32, 13, 4,
+        1, 31, 30, 14, 3,
+        1, 33, 32, 14, 4,
+        0, 37, 35, 14, NoIndex,
+        1, 33, 32, 14, 4,
+        1, 31, 30, 15, 3,
+        1, 5, 4, 16, 0,
+        1, 5, 4, 17, 0,
+        1, 5, 4, 20, 0,
+        1, 5, 4, 21, 0,
+        1, 5, 4, 23, 0,
+        1, 5, 4, 23, 0,
+        1, 5, 4, 25, 0,
+        1, 5, 4, 26, 0,
+        1, 5, 4, 3, 0,
+        1, 5, 4, 4, 0,
+        1, 13, 12, 5, 1,
+        1, 15, 14, 5, 2,
+        1, 13, 12, 6, 1,
+        1, 15, 14, 6, 2,
+        0, 22, 22, 8, NoIndex,
+        0, 23, 23, 8, NoIndex,
+        0, 24, 24, 8, NoIndex,
+        0, 25, 25, 9, NoIndex,
+        0, 27, 27, 10, NoIndex,
+        0, 28, 28, 10, NoIndex,
+        1, 5, 4, 11, 0,
+        1, 5, 4, 12, 0,
+        1, 31, 30, 13, 3,
+        1, 33, 32, 13, 4,
+        1, 31, 30, 14, 3,
+        1, 33, 32, 14, 4,
+        0, 37, 35, 14, NoIndex,
+        1, 33, 32, 14, 4,
+        1, 31, 30, 15, 3,
+        1, 5, 4, 16, 0,
+        1, 5, 4, 17, 0,
+        1, 5, 4, 20, 0,
+        1, 5, 4, 21, 0,
+        1, 5, 4, 23, 0,
+        1, 5, 4, 23, 0,
+        1, 5, 4, 25, 0,
+        1, 5, 4, 26, 0],
+      variableStringIDs: @[
+        4'u32,
+        12,
+        14,
+        30,
+        32],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 0, 1, NoIndex, NoIndex, 14, 0,
+        8, 2, 18, 2, 0, 0, NoIndex, NoIndex, 14, 0,
+        2, NoIndex, 0, 0, 1, 1, NoIndex, NoIndex, 14, 0,
+        8, 2, 47, 2, 1, 0, NoIndex, NoIndex, 14, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(< ?inp_index ?inp_count)",
+        "(and ...)",
+        "(< ?inp_index ?inp_count)"],
+      conditionChildRefs: @[
+        1'u32,
+        3],
+      tasks: @[
+        1'u32, 2, 0, 0, 2, 3,
+        1, 7, 1, 1, 3, 8,
+        1, 10, 3, 1, 4, 11,
+        1, 17, 6, 2, 6, 18,
+        0, 21, 8, 0, 8, NoIndex,
+        0, 21, 8, 1, 8, NoIndex,
+        0, 21, 9, 2, 8, NoIndex,
+        0, 0, 11, 0, 9, NoIndex,
+        0, 0, 11, 1, 9, NoIndex,
+        0, 26, 12, 2, 10, NoIndex,
+        0, 21, 15, 1, 12, NoIndex,
+        0, 26, 20, 2, 14, NoIndex,
+        0, 26, 22, 1, 15, NoIndex,
+        1, 40, 24, 1, 17, 41,
+        2, 43, 25, 0, 19, 44,
+        2, 43, 26, 1, 21, 44,
+        1, 46, 27, 0, 22, 47,
+        1, 48, 28, 1, 23, 49,
+        1, 52, 29, 0, 24, 53,
+        1, 55, 30, 1, 26, 56,
+        2, 59, 31, 0, 28, 60,
+        1, 2, 31, 0, 2, 3,
+        1, 10, 32, 1, 4, 11,
+        1, 17, 35, 2, 6, 18,
+        0, 21, 37, 0, 8, NoIndex,
+        0, 21, 37, 1, 8, NoIndex,
+        0, 21, 38, 2, 8, NoIndex,
+        0, 0, 40, 0, 9, NoIndex,
+        0, 0, 40, 1, 9, NoIndex,
+        0, 26, 41, 2, 10, NoIndex,
+        0, 21, 44, 1, 12, NoIndex,
+        0, 26, 49, 2, 14, NoIndex,
+        0, 26, 51, 1, 15, NoIndex,
+        1, 40, 53, 1, 17, 41,
+        2, 43, 54, 0, 19, 44,
+        2, 43, 55, 1, 21, 44,
+        1, 46, 56, 0, 22, 47,
+        1, 48, 57, 1, 23, 49,
+        1, 52, 58, 0, 24, 53,
+        1, 55, 59, 1, 26, 56,
+        2, 59, 60, 0, 28, 60],
+      branches: @[
+        1'u32, NoIndex, 0, 1, 2,
+        6, NoIndex, 1, 1, 3,
+        6, NoIndex, 2, 1, 4,
+        16, NoIndex, 3, 1, 6,
+        20, NoIndex, 4, 6, 8,
+        6, NoIndex, 10, 1, 12,
+        34, 0, 11, 1, 14,
+        38, NoIndex, 12, 1, 15,
+        39, NoIndex, 13, 1, 17,
+        1, NoIndex, 14, 1, 19,
+        6, NoIndex, 15, 1, 21,
+        1, NoIndex, 16, 1, 22,
+        6, NoIndex, 17, 1, 23,
+        51, NoIndex, 18, 1, 24,
+        54, NoIndex, 19, 1, 26,
+        58, NoIndex, 20, 1, 28,
+        1, NoIndex, 21, 1, 2,
+        6, NoIndex, 22, 1, 4,
+        16, NoIndex, 23, 1, 6,
+        20, NoIndex, 24, 6, 8,
+        6, NoIndex, 30, 1, 12,
+        34, 2, 31, 1, 14,
+        38, NoIndex, 32, 1, 15,
+        39, NoIndex, 33, 1, 17,
+        1, NoIndex, 34, 1, 19,
+        6, NoIndex, 35, 1, 21,
+        1, NoIndex, 36, 1, 22,
+        6, NoIndex, 37, 1, 23,
+        51, NoIndex, 38, 1, 24,
+        54, NoIndex, 39, 1, 26,
+        58, NoIndex, 40, 1, 28],
+      methods: @[
+        0'u64, 0, 0, 0, 1, 2, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        0, 0, 1, 1, 1, 3, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        9, 2, 1, 2, 1, 3, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        9, 4, 2, 3, 1, 5, 0x0000000000000006'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        19, 8, 0, 4, 1, 7, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        19, 14, 1, 5, 1, 11, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        29, 16, 2, 6, 2, 13, 0x0000000000000018'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        29, 23, 1, 8, 1, 16, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        42, 25, 0, 9, 1, 18, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        42, 25, 1, 10, 1, 20, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        45, 27, 0, 11, 1, 22, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        45, 27, 1, 12, 1, 23, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        50, 29, 0, 13, 1, 24, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        50, 29, 1, 14, 1, 25, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        57, 31, 0, 15, 1, 27, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        21, 31, 0, 16, 1, 2, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        21, 31, 1, 17, 1, 3, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        21, 33, 2, 18, 1, 5, 0x0000000000000006'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        61, 37, 0, 19, 1, 7, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        61, 43, 1, 20, 1, 11, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 45, 2, 21, 2, 13, 0x0000000000000018'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 52, 1, 23, 1, 16, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        62, 54, 0, 24, 1, 18, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        62, 54, 1, 25, 1, 20, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        43, 56, 0, 26, 1, 22, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        43, 56, 1, 27, 1, 23, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        59, 58, 0, 28, 1, 24, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        59, 58, 1, 29, 1, 25, 0x0000000000000001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        63, 60, 0, 30, 1, 27, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: newSeq[uint64](),
+      constants: newSeq[uint32](),
+      callTermSlotCount: 0, factSlotCount: 0,
+      sourceFiles: @[
+        "Domains/Test/../Includes/overload_base.domain",
+        "Domains/Test/method_overloads.domain"],
+      valueSources: @[
+        0'u32, 3, 22, 3, 32,
+        0, 3, 59, 3, 69,
+        1, 3, 22, 3, 32,
+        1, 4, 33, 4, 43,
+        1, 5, 22, 5, 31,
+        1, 5, 32, 5, 42,
+        1, 6, 30, 6, 39,
+        1, 6, 40, 6, 50,
+        1, 8, 35, 8, 36,
+        1, 8, 46, 8, 47,
+        1, 8, 48, 8, 49,
+        1, 9, 63, 9, 65,
+        1, 10, 24, 10, 25,
+        1, 10, 26, 10, 27,
+        1, 11, 19, 11, 29,
+        1, 12, 26, 12, 36,
+        1, 13, 20, 13, 30,
+        1, 13, 31, 13, 41,
+        1, 14, 27, 14, 37,
+        1, 14, 38, 14, 48,
+        1, 14, 58, 14, 72,
+        1, 14, 74, 14, 84,
+        1, 15, 29, 15, 39,
+        1, 16, 20, 16, 30,
+        1, 17, 33, 17, 43,
+        1, 20, 24, 20, 34,
+        1, 21, 26, 21, 36,
+        1, 23, 21, 23, 31,
+        1, 23, 54, 23, 64,
+        1, 25, 21, 25, 31,
+        1, 26, 34, 26, 44,
+        1, 3, 22, 3, 32,
+        1, 4, 33, 4, 43,
+        1, 5, 22, 5, 31,
+        1, 5, 32, 5, 42,
+        1, 6, 30, 6, 39,
+        1, 6, 40, 6, 50,
+        1, 8, 35, 8, 36,
+        1, 8, 46, 8, 47,
+        1, 8, 48, 8, 49,
+        1, 9, 63, 9, 65,
+        1, 10, 24, 10, 25,
+        1, 10, 26, 10, 27,
+        1, 11, 19, 11, 29,
+        1, 12, 26, 12, 36,
+        1, 13, 20, 13, 30,
+        1, 13, 31, 13, 41,
+        1, 14, 27, 14, 37,
+        1, 14, 38, 14, 48,
+        1, 14, 58, 14, 72,
+        1, 14, 74, 14, 84,
+        1, 15, 29, 15, 39,
+        1, 16, 20, 16, 30,
+        1, 17, 33, 17, 43,
+        1, 20, 24, 20, 34,
+        1, 21, 26, 21, 36,
+        1, 23, 21, 23, 31,
+        1, 23, 54, 23, 64,
+        1, 25, 21, 25, 31,
+        1, 26, 34, 26, 44],
+      conditionSources: @[
+        1'u32, 14, 20, 14, 48,
+        1, 14, 25, 14, 48,
+        1, 14, 20, 14, 48,
+        1, 14, 25, 14, 48],
+      taskSources: @[
+        0'u32, 2, 39, 2, 50,
+        0, 3, 48, 3, 69,
+        1, 4, 18, 4, 43,
+        1, 6, 18, 6, 50,
+        1, 8, 18, 8, 25,
+        1, 8, 27, 8, 36,
+        1, 8, 38, 8, 49,
+        1, 9, 18, 9, 39,
+        1, 9, 41, 9, 65,
+        1, 10, 18, 10, 27,
+        1, 12, 18, 12, 36,
+        1, 14, 52, 14, 84,
+        1, 15, 23, 15, 39,
+        1, 17, 21, 17, 43,
+        1, 19, 20, 19, 27,
+        1, 21, 18, 21, 36,
+        1, 22, 33, 22, 45,
+        1, 23, 42, 23, 64,
+        1, 24, 35, 24, 49,
+        1, 26, 21, 26, 44,
+        1, 28, 27, 28, 34,
+        0, 2, 39, 2, 50,
+        1, 4, 18, 4, 43,
+        1, 6, 18, 6, 50,
+        1, 8, 18, 8, 25,
+        1, 8, 27, 8, 36,
+        1, 8, 38, 8, 49,
+        1, 9, 18, 9, 39,
+        1, 9, 41, 9, 65,
+        1, 10, 18, 10, 27,
+        1, 12, 18, 12, 36,
+        1, 14, 52, 14, 84,
+        1, 15, 23, 15, 39,
+        1, 17, 21, 17, 43,
+        1, 19, 20, 19, 27,
+        1, 21, 18, 21, 36,
+        1, 22, 33, 22, 45,
+        1, 23, 42, 23, 64,
+        1, 24, 35, 24, 49,
+        1, 26, 21, 26, 44,
+        1, 28, 27, 28, 34],
+      branchSources: @[
+        0'u32, 2, 28, 2, 52,
+        0, 3, 39, 3, 71,
+        1, 4, 9, 4, 45,
+        1, 6, 9, 6, 52,
+        1, 8, 9, 10, 29,
+        1, 12, 9, 12, 38,
+        1, 14, 9, 14, 86,
+        1, 15, 9, 15, 41,
+        1, 17, 9, 17, 45,
+        1, 19, 9, 19, 29,
+        1, 21, 9, 21, 38,
+        1, 22, 22, 22, 47,
+        1, 23, 33, 23, 66,
+        1, 24, 22, 24, 51,
+        1, 26, 9, 26, 46,
+        1, 28, 9, 28, 36,
+        0, 2, 28, 2, 52,
+        1, 4, 9, 4, 45,
+        1, 6, 9, 6, 52,
+        1, 8, 9, 10, 29,
+        1, 12, 9, 12, 38,
+        1, 14, 9, 14, 86,
+        1, 15, 9, 15, 41,
+        1, 17, 9, 17, 45,
+        1, 19, 9, 19, 29,
+        1, 21, 9, 21, 38,
+        1, 22, 22, 22, 47,
+        1, 23, 33, 23, 66,
+        1, 24, 22, 24, 51,
+        1, 26, 9, 26, 46,
+        1, 28, 9, 28, 36],
+      methodSources: @[
+        0'u32, 2, 5, 2, 53,
+        0, 3, 5, 3, 72,
+        1, 3, 5, 4, 46,
+        1, 5, 5, 6, 53,
+        1, 7, 5, 10, 30,
+        1, 11, 5, 12, 39,
+        1, 13, 5, 15, 42,
+        1, 16, 5, 17, 46,
+        1, 18, 5, 19, 30,
+        1, 20, 5, 21, 39,
+        1, 22, 5, 22, 48,
+        1, 23, 5, 23, 67,
+        1, 24, 5, 24, 52,
+        1, 25, 5, 26, 47,
+        1, 27, 5, 28, 37,
+        0, 2, 5, 2, 53,
+        1, 3, 5, 4, 46,
+        1, 5, 5, 6, 53,
+        1, 7, 5, 10, 30,
+        1, 11, 5, 12, 39,
+        1, 13, 5, 15, 42,
+        1, 16, 5, 17, 46,
+        1, 18, 5, 19, 30,
+        1, 20, 5, 21, 39,
+        1, 22, 5, 22, 48,
+        1, 23, 5, 23, 67,
+        1, 24, 5, 24, 52,
+        1, 25, 5, 26, 47,
+        1, 27, 5, 28, 37],
+      axiomSources: newSeq[uint32](),
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

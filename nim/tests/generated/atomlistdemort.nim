@@ -187,195 +187,387 @@ proc CreateAtomListDemoRTHTN_GetDefinition*(): Definition =
   definition
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!print_original @demo_list)
-  if not ex.appendPlanStep(sym1, [sv7]): return 0
+  if not ex.appendPlanStep(sym1, [sv7]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!print_added ?added)
-  if not ex.appendPlanStep(sym2, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!print_removed ?removed)
-  if not ex.appendPlanStep(sym3, [ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym3, [ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!print_element ?element)
-  if not ex.appendPlanStep(sym4, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (!print_size ?size)
-  if not ex.appendPlanStep(sym5, [ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym5, [ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!print_cleared ?cleared)
-  if not ex.appendPlanStep(sym6, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym6, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (!split_result ?head ?tail)
-  if not ex.appendPlanStep(sym7, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym7, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (!split_single_result ?head ?tail)
-  if not ex.appendPlanStep(sym8, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym8, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (!unexpected_split ?head ?tail)
-  if not ex.appendPlanStep(sym9, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (!empty_list_rejected)
-  if not ex.appendPlanStep(sym10, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym10, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (!bound_outputs_match)
-  if not ex.appendPlanStep(sym11, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym11, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (!unexpected_first_branch)
-  if not ex.appendPlanStep(sym12, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym12, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (!rollback_result ?head ?tail)
-  if not ex.appendPlanStep(sym13, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym13, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (!split_front_result ?element ?remainder)
-  if not ex.appendPlanStep(sym14, [ex.v[2], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym14, [ex.v[2], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (!split_back_result ?element ?remainder)
-  if not ex.appendPlanStep(sym15, [ex.v[2], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym15, [ex.v[2], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (!split_back_bound_outputs_match)
-  if not ex.appendPlanStep(sym16, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym16, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (!print_original @demo_list)
-  if not ex.appendPlanStep(sym1, [sv26]): return 0
+  if not ex.appendPlanStep(sym1, [sv26]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!print_added ?added)
-  if not ex.appendPlanStep(sym2, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym2, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (!print_removed ?removed)
-  if not ex.appendPlanStep(sym3, [ex.v[1]]): return 0
+  if not ex.appendPlanStep(sym3, [ex.v[1]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!print_element ?element)
-  if not ex.appendPlanStep(sym4, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (!print_size ?size)
-  if not ex.appendPlanStep(sym5, [ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym5, [ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!print_cleared ?cleared)
-  if not ex.appendPlanStep(sym6, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym6, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (!split_result ?head ?tail)
-  if not ex.appendPlanStep(sym7, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym7, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (!split_single_result ?head ?tail)
-  if not ex.appendPlanStep(sym8, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym8, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (!unexpected_split ?head ?tail)
-  if not ex.appendPlanStep(sym9, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (!empty_list_rejected)
-  if not ex.appendPlanStep(sym10, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym10, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (!bound_outputs_match)
-  if not ex.appendPlanStep(sym11, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym11, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (!unexpected_first_branch)
-  if not ex.appendPlanStep(sym12, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym12, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (!rollback_result ?head ?tail)
-  if not ex.appendPlanStep(sym13, [ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym13, [ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (!split_front_result ?element ?remainder)
-  if not ex.appendPlanStep(sym14, [ex.v[2], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym14, [ex.v[2], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (!split_back_result ?element ?remainder)
-  if not ex.appendPlanStep(sym15, [ex.v[2], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym15, [ex.v[2], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (!split_back_bound_outputs_match)
-  if not ex.appendPlanStep(sym16, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym16, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: AtomListDemo::show_atom_list/0
@@ -398,76 +590,95 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch print_constant_list
+      ex.debugBeginBranch(definition, 0)
       # (and (= ?added (call list_add @demo_list "return")) (= ?removed (call list_remove_at ?added 1)) (= ?element (call list_get ?removed 2)) (= ?size (call list_size ?added)) (= ?cleared (call list_clear ?removed)))
       cp7_0 = ex.v[0]
       cp7_1 = ex.v[1]
       cp7_2 = ex.v[2]
       cp7_3 = ex.v[3]
       cp7_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 0)
       # (= ?added (call list_add @demo_list "return"))
       cp9_0 = ex.v[0]
       # (= ?added (call list_add @demo_list "return"))
+      ex.debugBeginCondition(definition, 1)
       if not ex.v[0].isBound:
         let (callResult, ok) = ex.invoke(0, @[sv3, sv4], addr cs0, factSymbols)
         if ok:
           ex.setIfChanged(0, callResult)
+          ex.debugEndCondition(definition, true)
           state = 10
           continue
+      ex.debugEndCondition(definition, false)
       state = 8
       continue
     of 10:
       # (= ?removed (call list_remove_at ?added 1))
       cp12_1 = ex.v[1]
       # (= ?removed (call list_remove_at ?added 1))
+      ex.debugBeginCondition(definition, 2)
       if not ex.v[1].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[0], sv5], addr cs1, factSymbols)
         if ok:
           ex.setIfChanged(1, callResult)
+          ex.debugEndCondition(definition, true)
           state = 13
           continue
+      ex.debugEndCondition(definition, false)
       state = 11
       continue
     of 13:
       # (= ?element (call list_get ?removed 2))
       cp15_2 = ex.v[2]
       # (= ?element (call list_get ?removed 2))
+      ex.debugBeginCondition(definition, 3)
       if not ex.v[2].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[1], sv6], addr cs2, factSymbols)
         if ok:
           ex.setIfChanged(2, callResult)
+          ex.debugEndCondition(definition, true)
           state = 16
           continue
+      ex.debugEndCondition(definition, false)
       state = 14
       continue
     of 16:
       # (= ?size (call list_size ?added))
       cp18_3 = ex.v[3]
       # (= ?size (call list_size ?added))
+      ex.debugBeginCondition(definition, 4)
       if not ex.v[3].isBound:
         let (callResult, ok) = ex.invoke(3, @[ex.v[0]], addr cs3, factSymbols)
         if ok:
           ex.setIfChanged(3, callResult)
+          ex.debugEndCondition(definition, true)
           state = 19
           continue
+      ex.debugEndCondition(definition, false)
       state = 17
       continue
     of 19:
       # (= ?cleared (call list_clear ?removed))
       cp21_4 = ex.v[4]
       # (= ?cleared (call list_clear ?removed))
+      ex.debugBeginCondition(definition, 5)
       if not ex.v[4].isBound:
         let (callResult, ok) = ex.invoke(4, @[ex.v[1]], addr cs4, factSymbols)
         if ok:
           ex.setIfChanged(4, callResult)
+          ex.debugEndCondition(definition, true)
           state = 22
           continue
+      ex.debugEndCondition(definition, false)
       state = 20
       continue
     of 22:
+      ex.debugEndCondition(definition, true)
       state = 4
       continue
     of 20:
@@ -496,17 +707,27 @@ proc method0(ex: Exec): int {.nimcall.} =
       ex.v[2] = cp7_2
       ex.v[3] = cp7_3
       ex.v[4] = cp7_4
+      ex.debugEndCondition(definition, false)
       state = 5
       continue
     of 5:
+      ex.debugEndBranch(definition, false)
       state = 1
       continue
     of 4:
       if not ex.pushBranch(addr bc0):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 23
+      ex.debugCapturePendingTask(5)
+      ex.debugCapturePendingTask(4)
+      ex.debugCapturePendingTask(3)
+      ex.debugCapturePendingTask(2)
+      ex.debugCapturePendingTask(1)
+      ex.debugCapturePendingTask(0)
+      state = 24
       continue
-    of 23:
+    of 24:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -516,16 +737,21 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 3
         continue
-      state = 24
+      state = 25
       continue
     of 3:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 23
+      state = 24
       continue
-    of 24:
+    of 25:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 1:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -533,28 +759,32 @@ proc method0(ex: Exec): int {.nimcall.} =
 # method1: AtomListDemo::split_list_basic/0
 proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp31_5: Atom
-  var cp31_6: Atom
-  var cp33_5: Atom
-  var cp33_6: Atom
+  var cp32_5: Atom
+  var cp32_6: Atom
+  var cp34_5: Atom
+  var cp34_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 27
+  of 1: state = 28
   else: discard
   while true:
     case state
     of 0:
-      state = 26
+      ex.debugBeginMethod(definition, 1)
+      state = 27
       continue
-    of 26:
+    of 27:
       # branch split
+      ex.debugBeginBranch(definition, 1)
       # (and (split_list @split_list_input ?head ?tail))
-      cp31_5 = ex.v[5]
-      cp31_6 = ex.v[6]
+      cp32_5 = ex.v[5]
+      cp32_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 6)
       # (split_list @split_list_input ?head ?tail)
-      cp33_5 = ex.v[5]
-      cp33_6 = ex.v[6]
+      cp34_5 = ex.v[5]
+      cp34_6 = ex.v[6]
       # (split_list @split_list_input ?head ?tail)
+      ex.debugBeginCondition(definition, 7)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv8, splitFront)
@@ -565,35 +795,42 @@ proc method1(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 34
+          state = 35
           continue
-        state = 32
+        state = 33
         continue
-      state = 34
-      continue
-    of 34:
-      state = 28
-      continue
-    of 32:
-      ex.v[5] = cp33_5
-      ex.v[6] = cp33_6
-      state = 30
-      continue
-    of 30:
-      ex.v[5] = cp31_5
-      ex.v[6] = cp31_6
-      state = 29
-      continue
-    of 29:
-      state = 25
-      continue
-    of 28:
-      if not ex.pushBranch(addr bc1):
-        return 0
       state = 35
       continue
     of 35:
+      ex.debugEndCondition(definition, true)
+      state = 29
+      continue
+    of 33:
+      ex.v[5] = cp34_5
+      ex.v[6] = cp34_6
+      state = 31
+      continue
+    of 31:
+      ex.v[5] = cp32_5
+      ex.v[6] = cp32_6
+      ex.debugEndCondition(definition, false)
+      state = 30
+      continue
+    of 30:
+      ex.debugEndBranch(definition, false)
+      state = 26
+      continue
+    of 29:
+      if not ex.pushBranch(addr bc1):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(6)
+      state = 37
+      continue
+    of 37:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -601,18 +838,23 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 27
+        state = 28
         continue
-      state = 36
+      state = 38
       continue
-    of 27:
+    of 28:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 35
+      state = 37
       continue
-    of 36:
+    of 38:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 25:
+    of 26:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -620,28 +862,32 @@ proc method1(ex: Exec): int {.nimcall.} =
 # method2: AtomListDemo::split_list_single_element/0
 proc method2(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp43_5: Atom
-  var cp43_6: Atom
   var cp45_5: Atom
   var cp45_6: Atom
+  var cp47_5: Atom
+  var cp47_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 39
+  of 1: state = 41
   else: discard
   while true:
     case state
     of 0:
-      state = 38
+      ex.debugBeginMethod(definition, 2)
+      state = 40
       continue
-    of 38:
+    of 40:
       # branch split
+      ex.debugBeginBranch(definition, 2)
       # (and (split_list @split_list_single ?head ?tail))
-      cp43_5 = ex.v[5]
-      cp43_6 = ex.v[6]
-      # (split_list @split_list_single ?head ?tail)
       cp45_5 = ex.v[5]
       cp45_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 8)
       # (split_list @split_list_single ?head ?tail)
+      cp47_5 = ex.v[5]
+      cp47_6 = ex.v[6]
+      # (split_list @split_list_single ?head ?tail)
+      ex.debugBeginCondition(definition, 9)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv9, splitFront)
@@ -652,35 +898,42 @@ proc method2(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 46
+          state = 48
           continue
-        state = 44
+        state = 46
         continue
-      state = 46
+      state = 48
+      continue
+    of 48:
+      ex.debugEndCondition(definition, true)
+      state = 42
       continue
     of 46:
-      state = 40
+      ex.v[5] = cp47_5
+      ex.v[6] = cp47_6
+      state = 44
       continue
     of 44:
       ex.v[5] = cp45_5
       ex.v[6] = cp45_6
-      state = 42
+      ex.debugEndCondition(definition, false)
+      state = 43
+      continue
+    of 43:
+      ex.debugEndBranch(definition, false)
+      state = 39
       continue
     of 42:
-      ex.v[5] = cp43_5
-      ex.v[6] = cp43_6
-      state = 41
-      continue
-    of 41:
-      state = 37
-      continue
-    of 40:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 47
+      ex.debugCapturePendingTask(7)
+      state = 50
       continue
-    of 47:
+    of 50:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -688,18 +941,23 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 39
+        state = 41
         continue
-      state = 48
+      state = 51
       continue
-    of 39:
+    of 41:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 47
+      state = 50
       continue
-    of 48:
+    of 51:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 37:
+    of 39:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -707,45 +965,52 @@ proc method2(ex: Exec): int {.nimcall.} =
 # method3: AtomListDemo::split_list_empty_fails/0
 proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp57_5: Atom
-  var cp57_6: Atom
-  var cp57_7: Atom
-  var cp59_7: Atom
-  var cp62_5: Atom
-  var cp62_6: Atom
+  var cp60_5: Atom
+  var cp60_6: Atom
+  var cp60_7: Atom
+  var cp62_7: Atom
+  var cp65_5: Atom
+  var cp65_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 52
-  of 2: state = 53
+  of 1: state = 55
+  of 2: state = 56
   else: discard
   while true:
     case state
     of 0:
-      state = 50
+      ex.debugBeginMethod(definition, 3)
+      state = 53
       continue
-    of 50:
+    of 53:
       # branch unexpected
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 3)
       # (and (= ?empty (call list_clear @split_list_single)) (split_list ?empty ?head ?tail))
-      cp57_5 = ex.v[5]
-      cp57_6 = ex.v[6]
-      cp57_7 = ex.v[7]
+      cp60_5 = ex.v[5]
+      cp60_6 = ex.v[6]
+      cp60_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 10)
       # (= ?empty (call list_clear @split_list_single))
-      cp59_7 = ex.v[7]
+      cp62_7 = ex.v[7]
       # (= ?empty (call list_clear @split_list_single))
+      ex.debugBeginCondition(definition, 11)
       if not ex.v[7].isBound:
         let (callResult, ok) = ex.invoke(4, @[sv10], addr cs5, factSymbols)
         if ok:
           ex.setIfChanged(7, callResult)
-          state = 60
+          ex.debugEndCondition(definition, true)
+          state = 63
           continue
-      state = 58
+      ex.debugEndCondition(definition, false)
+      state = 61
       continue
-    of 60:
+    of 63:
       # (split_list ?empty ?head ?tail)
-      cp62_5 = ex.v[5]
-      cp62_6 = ex.v[6]
+      cp65_5 = ex.v[5]
+      cp65_6 = ex.v[6]
       # (split_list ?empty ?head ?tail)
+      ex.debugBeginCondition(definition, 12)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(ex.v[7], splitFront)
@@ -756,42 +1021,49 @@ proc method3(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 63
+          state = 66
           continue
-        state = 61
+        state = 64
         continue
-      state = 63
+      state = 66
       continue
-    of 63:
-      state = 54
+    of 66:
+      ex.debugEndCondition(definition, true)
+      state = 57
+      continue
+    of 64:
+      ex.v[5] = cp65_5
+      ex.v[6] = cp65_6
+      state = 61
       continue
     of 61:
-      ex.v[5] = cp62_5
-      ex.v[6] = cp62_6
+      ex.v[7] = cp62_7
+      state = 59
+      continue
+    of 59:
+      ex.v[5] = cp60_5
+      ex.v[6] = cp60_6
+      ex.v[7] = cp60_7
+      ex.debugEndCondition(definition, false)
       state = 58
       continue
     of 58:
-      ex.v[7] = cp59_7
-      state = 56
-      continue
-    of 56:
-      ex.v[5] = cp57_5
-      ex.v[6] = cp57_6
-      ex.v[7] = cp57_7
-      state = 55
-      continue
-    of 55:
       ex.releaseRetry(fr)
-      state = 51
+      ex.debugEndBranch(definition, false)
+      state = 54
       continue
-    of 54:
+    of 57:
       if not ex.pushBranch(addr bc3):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 64
+      ex.debugCapturePendingTask(8)
+      state = 68
       continue
-    of 64:
+    of 68:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -799,36 +1071,47 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 52
+        state = 55
         continue
-      state = 65
+      state = 69
       continue
-    of 52:
+    of 55:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 51
+        ex.debugEndBranch(definition, false)
+        state = 54
         continue
-      state = 64
-      continue
-    of 65:
-      ex.releaseRetry(fr)
-      return 1
-    of 51:
-      # branch expected
-      state = 66
-      continue
-    of 66:
-      if not ex.pushBranch(addr bc4):
-        return 0
       state = 68
       continue
-    of 68:
+    of 69:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 54:
+      # branch expected
+      ex.debugBeginBranch(definition, 4)
+      state = 70
+      continue
+    of 70:
+      if not ex.pushBranch(addr bc4):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(9)
+      state = 72
+      continue
+    of 72:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -836,16 +1119,20 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 53
+        state = 56
         continue
-      state = 69
+      state = 73
       continue
-    of 53:
+    of 56:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 68
+      state = 72
       continue
-    of 69:
+    of 73:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -855,18 +1142,22 @@ proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 72
+  of 1: state = 76
   else: discard
   while true:
     case state
     of 0:
-      state = 71
+      ex.debugBeginMethod(definition, 4)
+      state = 75
       continue
-    of 71:
+    of 75:
       # branch compatible
+      ex.debugBeginBranch(definition, 5)
       # (and (split_list @split_list_input "one" ("two" "three")))
+      ex.debugBeginCondition(definition, 13)
       # (split_list @split_list_input "one" ("two" "three"))
       # (split_list @split_list_input "one" ("two" "three"))
+      ex.debugBeginCondition(definition, 14)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv11, splitFront)
@@ -876,31 +1167,38 @@ proc method4(ex: Exec): int {.nimcall.} =
           if not sv13.isBound or not equal(sv13, remainder): valid = false
           if valid:
             discard
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 79
+          state = 83
           continue
-        state = 77
+        state = 81
         continue
+      state = 83
+      continue
+    of 83:
+      ex.debugEndCondition(definition, true)
+      state = 77
+      continue
+    of 81:
       state = 79
       continue
     of 79:
-      state = 73
+      ex.debugEndCondition(definition, false)
+      state = 78
       continue
-    of 77:
-      state = 75
-      continue
-    of 75:
+    of 78:
+      ex.debugEndBranch(definition, false)
       state = 74
       continue
-    of 74:
-      state = 70
-      continue
-    of 73:
+    of 77:
       if not ex.pushBranch(addr bc5):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      ex.debugCapturePendingTask(10)
+      state = 85
       continue
-    of 80:
+    of 85:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -908,18 +1206,23 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 72
+        state = 76
         continue
-      state = 81
+      state = 86
       continue
-    of 72:
+    of 76:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      state = 85
       continue
-    of 81:
+    of 86:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 70:
+    of 74:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -927,34 +1230,38 @@ proc method4(ex: Exec): int {.nimcall.} =
 # method5: AtomListDemo::split_list_rollback/0
 proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp90_5: Atom
-  var cp90_6: Atom
-  var cp92_5: Atom
-  var cp92_6: Atom
-  var cp102_5: Atom
-  var cp102_6: Atom
-  var cp104_5: Atom
-  var cp104_6: Atom
+  var cp95_5: Atom
+  var cp95_6: Atom
+  var cp97_5: Atom
+  var cp97_6: Atom
+  var cp108_5: Atom
+  var cp108_6: Atom
+  var cp110_5: Atom
+  var cp110_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 85
-  of 2: state = 86
+  of 1: state = 90
+  of 2: state = 91
   else: discard
   while true:
     case state
     of 0:
-      state = 83
+      ex.debugBeginMethod(definition, 5)
+      state = 88
       continue
-    of 83:
+    of 88:
       # branch fails_after_binding
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 6)
       # (and (split_list @split_list_input ?head ?tail) (== ?head "wrong"))
-      cp90_5 = ex.v[5]
-      cp90_6 = ex.v[6]
+      cp95_5 = ex.v[5]
+      cp95_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 15)
       # (split_list @split_list_input ?head ?tail)
-      cp92_5 = ex.v[5]
-      cp92_6 = ex.v[6]
+      cp97_5 = ex.v[5]
+      cp97_6 = ex.v[6]
       # (split_list @split_list_input ?head ?tail)
+      ex.debugBeginCondition(definition, 16)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv14, splitFront)
@@ -965,48 +1272,58 @@ proc method5(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 93
+          state = 98
           continue
-        state = 91
+        state = 96
         continue
+      state = 98
+      continue
+    of 98:
+      # (== ?head "wrong")
+      # (== ?head "wrong")
+      ex.debugBeginCondition(definition, 17)
+      if compare(ex.v[5], sv15, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 101
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 99
+      continue
+    of 101:
+      ex.debugEndCondition(definition, true)
+      state = 92
+      continue
+    of 99:
+      state = 96
+      continue
+    of 96:
+      ex.v[5] = cp97_5
+      ex.v[6] = cp97_6
+      state = 94
+      continue
+    of 94:
+      ex.v[5] = cp95_5
+      ex.v[6] = cp95_6
+      ex.debugEndCondition(definition, false)
       state = 93
       continue
     of 93:
-      # (== ?head "wrong")
-      # (== ?head "wrong")
-      if compare(ex.v[5], sv15, 0'u32):
-        state = 96
-        continue
-      state = 94
-      continue
-    of 96:
-      state = 87
-      continue
-    of 94:
-      state = 91
-      continue
-    of 91:
-      ex.v[5] = cp92_5
-      ex.v[6] = cp92_6
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 89
       continue
-    of 89:
-      ex.v[5] = cp90_5
-      ex.v[6] = cp90_6
-      state = 88
-      continue
-    of 88:
-      ex.releaseRetry(fr)
-      state = 84
-      continue
-    of 87:
+    of 92:
       if not ex.pushBranch(addr bc6):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 97
+      ex.debugCapturePendingTask(11)
+      state = 103
       continue
-    of 97:
+    of 103:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1014,35 +1331,45 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 85
+        state = 90
         continue
-      state = 98
+      state = 104
       continue
-    of 85:
+    of 90:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 84
+        ex.debugEndBranch(definition, false)
+        state = 89
         continue
-      state = 97
+      state = 103
       continue
-    of 98:
+    of 104:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 84:
+    of 89:
       # branch reuses_same_variables
+      ex.debugBeginBranch(definition, 7)
       # (and (split_list @split_list_single ?head ?tail))
-      cp102_5 = ex.v[5]
-      cp102_6 = ex.v[6]
+      cp108_5 = ex.v[5]
+      cp108_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 18)
       # (split_list @split_list_single ?head ?tail)
-      cp104_5 = ex.v[5]
-      cp104_6 = ex.v[6]
+      cp110_5 = ex.v[5]
+      cp110_6 = ex.v[6]
       # (split_list @split_list_single ?head ?tail)
+      ex.debugBeginCondition(definition, 19)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv16, splitFront)
@@ -1053,35 +1380,42 @@ proc method5(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 105
+          state = 111
           continue
-        state = 103
+        state = 109
         continue
+      state = 111
+      continue
+    of 111:
+      ex.debugEndCondition(definition, true)
       state = 105
       continue
-    of 105:
-      state = 99
+    of 109:
+      ex.v[5] = cp110_5
+      ex.v[6] = cp110_6
+      state = 107
       continue
-    of 103:
-      ex.v[5] = cp104_5
-      ex.v[6] = cp104_6
-      state = 101
-      continue
-    of 101:
-      ex.v[5] = cp102_5
-      ex.v[6] = cp102_6
-      state = 100
-      continue
-    of 100:
-      state = 82
-      continue
-    of 99:
-      if not ex.pushBranch(addr bc7):
-        return 0
+    of 107:
+      ex.v[5] = cp108_5
+      ex.v[6] = cp108_6
+      ex.debugEndCondition(definition, false)
       state = 106
       continue
     of 106:
+      ex.debugEndBranch(definition, false)
+      state = 87
+      continue
+    of 105:
+      if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(12)
+      state = 113
+      continue
+    of 113:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1089,18 +1423,23 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 86
+        state = 91
         continue
-      state = 107
+      state = 114
       continue
-    of 86:
+    of 91:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 106
+      state = 113
       continue
-    of 107:
+    of 114:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 82:
+    of 87:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1108,28 +1447,32 @@ proc method5(ex: Exec): int {.nimcall.} =
 # method6: AtomListDemo::split_list_front_basic/0
 proc method6(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp114_2: Atom
-  var cp114_8: Atom
-  var cp116_2: Atom
-  var cp116_8: Atom
+  var cp121_2: Atom
+  var cp121_8: Atom
+  var cp123_2: Atom
+  var cp123_8: Atom
   var state = 0
   case fr.resume
-  of 1: state = 110
+  of 1: state = 117
   else: discard
   while true:
     case state
     of 0:
-      state = 109
+      ex.debugBeginMethod(definition, 6)
+      state = 116
       continue
-    of 109:
+    of 116:
       # branch split
+      ex.debugBeginBranch(definition, 8)
       # (and (split_list_front @split_list_input ?element ?remainder))
-      cp114_2 = ex.v[2]
-      cp114_8 = ex.v[8]
+      cp121_2 = ex.v[2]
+      cp121_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 20)
       # (split_list_front @split_list_input ?element ?remainder)
-      cp116_2 = ex.v[2]
-      cp116_8 = ex.v[8]
+      cp123_2 = ex.v[2]
+      cp123_8 = ex.v[8]
       # (split_list_front @split_list_input ?element ?remainder)
+      ex.debugBeginCondition(definition, 21)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv17, splitFront)
@@ -1140,35 +1483,42 @@ proc method6(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[2].isBound: ex.v[2] = element
             if not ex.v[8].isBound: ex.v[8] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 117
+          state = 124
           continue
-        state = 115
+        state = 122
         continue
-      state = 117
+      state = 124
       continue
-    of 117:
-      state = 111
-      continue
-    of 115:
-      ex.v[2] = cp116_2
-      ex.v[8] = cp116_8
-      state = 113
-      continue
-    of 113:
-      ex.v[2] = cp114_2
-      ex.v[8] = cp114_8
-      state = 112
-      continue
-    of 112:
-      state = 108
-      continue
-    of 111:
-      if not ex.pushBranch(addr bc8):
-        return 0
+    of 124:
+      ex.debugEndCondition(definition, true)
       state = 118
       continue
+    of 122:
+      ex.v[2] = cp123_2
+      ex.v[8] = cp123_8
+      state = 120
+      continue
+    of 120:
+      ex.v[2] = cp121_2
+      ex.v[8] = cp121_8
+      ex.debugEndCondition(definition, false)
+      state = 119
+      continue
+    of 119:
+      ex.debugEndBranch(definition, false)
+      state = 115
+      continue
     of 118:
+      if not ex.pushBranch(addr bc8):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(13)
+      state = 126
+      continue
+    of 126:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1176,18 +1526,23 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 110
+        state = 117
         continue
-      state = 119
+      state = 127
       continue
-    of 110:
+    of 117:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 118
+      state = 126
       continue
-    of 119:
+    of 127:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 108:
+    of 115:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1195,28 +1550,32 @@ proc method6(ex: Exec): int {.nimcall.} =
 # method7: AtomListDemo::split_list_back_basic/0
 proc method7(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp126_2: Atom
-  var cp126_8: Atom
-  var cp128_2: Atom
-  var cp128_8: Atom
+  var cp134_2: Atom
+  var cp134_8: Atom
+  var cp136_2: Atom
+  var cp136_8: Atom
   var state = 0
   case fr.resume
-  of 1: state = 122
+  of 1: state = 130
   else: discard
   while true:
     case state
     of 0:
-      state = 121
+      ex.debugBeginMethod(definition, 7)
+      state = 129
       continue
-    of 121:
+    of 129:
       # branch split
+      ex.debugBeginBranch(definition, 9)
       # (and (split_list_back @split_list_input ?remainder ?element))
-      cp126_2 = ex.v[2]
-      cp126_8 = ex.v[8]
+      cp134_2 = ex.v[2]
+      cp134_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 22)
       # (split_list_back @split_list_input ?remainder ?element)
-      cp128_2 = ex.v[2]
-      cp128_8 = ex.v[8]
+      cp136_2 = ex.v[2]
+      cp136_8 = ex.v[8]
       # (split_list_back @split_list_input ?remainder ?element)
+      ex.debugBeginCondition(definition, 23)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv18, splitBack)
@@ -1227,35 +1586,42 @@ proc method7(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[2].isBound: ex.v[2] = element
             if not ex.v[8].isBound: ex.v[8] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 129
+          state = 137
           continue
-        state = 127
+        state = 135
         continue
-      state = 129
+      state = 137
       continue
-    of 129:
-      state = 123
+    of 137:
+      ex.debugEndCondition(definition, true)
+      state = 131
       continue
-    of 127:
-      ex.v[2] = cp128_2
-      ex.v[8] = cp128_8
-      state = 125
+    of 135:
+      ex.v[2] = cp136_2
+      ex.v[8] = cp136_8
+      state = 133
       continue
-    of 125:
-      ex.v[2] = cp126_2
-      ex.v[8] = cp126_8
-      state = 124
+    of 133:
+      ex.v[2] = cp134_2
+      ex.v[8] = cp134_8
+      ex.debugEndCondition(definition, false)
+      state = 132
       continue
-    of 124:
-      state = 120
+    of 132:
+      ex.debugEndBranch(definition, false)
+      state = 128
       continue
-    of 123:
+    of 131:
       if not ex.pushBranch(addr bc9):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 130
+      ex.debugCapturePendingTask(14)
+      state = 139
       continue
-    of 130:
+    of 139:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1263,18 +1629,23 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 122
+        state = 130
         continue
-      state = 131
+      state = 140
       continue
-    of 122:
+    of 130:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 130
+      state = 139
       continue
-    of 131:
+    of 140:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 120:
+    of 128:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1284,18 +1655,22 @@ proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 134
+  of 1: state = 143
   else: discard
   while true:
     case state
     of 0:
-      state = 133
+      ex.debugBeginMethod(definition, 8)
+      state = 142
       continue
-    of 133:
+    of 142:
       # branch compatible
+      ex.debugBeginBranch(definition, 10)
       # (and (split_list_back @split_list_input ("one" "two") "three"))
+      ex.debugBeginCondition(definition, 24)
       # (split_list_back @split_list_input ("one" "two") "three")
       # (split_list_back @split_list_input ("one" "two") "three")
+      ex.debugBeginCondition(definition, 25)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv19, splitBack)
@@ -1305,31 +1680,38 @@ proc method8(ex: Exec): int {.nimcall.} =
           if not sv21.isBound or not equal(sv21, remainder): valid = false
           if valid:
             discard
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 141
+          state = 150
           continue
-        state = 139
+        state = 148
         continue
+      state = 150
+      continue
+    of 150:
+      ex.debugEndCondition(definition, true)
+      state = 144
+      continue
+    of 148:
+      state = 146
+      continue
+    of 146:
+      ex.debugEndCondition(definition, false)
+      state = 145
+      continue
+    of 145:
+      ex.debugEndBranch(definition, false)
       state = 141
       continue
-    of 141:
-      state = 135
-      continue
-    of 139:
-      state = 137
-      continue
-    of 137:
-      state = 136
-      continue
-    of 136:
-      state = 132
-      continue
-    of 135:
+    of 144:
       if not ex.pushBranch(addr bc10):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 142
+      ex.debugCapturePendingTask(15)
+      state = 152
       continue
-    of 142:
+    of 152:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1337,18 +1719,23 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 134
+        state = 143
         continue
-      state = 143
-      continue
-    of 134:
-      if fr.childResult == 0:
-        return 0
-      state = 142
+      state = 153
       continue
     of 143:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 152
+      continue
+    of 153:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 132:
+    of 141:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1356,132 +1743,161 @@ proc method8(ex: Exec): int {.nimcall.} =
 # method9: show_atom_list/0
 proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp150_0: Atom
-  var cp150_1: Atom
-  var cp150_2: Atom
-  var cp150_3: Atom
-  var cp150_4: Atom
-  var cp152_0: Atom
-  var cp155_1: Atom
-  var cp158_2: Atom
-  var cp161_3: Atom
-  var cp164_4: Atom
+  var cp160_0: Atom
+  var cp160_1: Atom
+  var cp160_2: Atom
+  var cp160_3: Atom
+  var cp160_4: Atom
+  var cp162_0: Atom
+  var cp165_1: Atom
+  var cp168_2: Atom
+  var cp171_3: Atom
+  var cp174_4: Atom
   var state = 0
   case fr.resume
-  of 1: state = 146
+  of 1: state = 156
   else: discard
   while true:
     case state
     of 0:
-      state = 145
+      ex.debugBeginMethod(definition, 9)
+      state = 155
       continue
-    of 145:
+    of 155:
       # branch print_constant_list
+      ex.debugBeginBranch(definition, 11)
       # (and (= ?added (call list_add @demo_list "return")) (= ?removed (call list_remove_at ?added 1)) (= ?element (call list_get ?removed 2)) (= ?size (call list_size ?added)) (= ?cleared (call list_clear ?removed)))
-      cp150_0 = ex.v[0]
-      cp150_1 = ex.v[1]
-      cp150_2 = ex.v[2]
-      cp150_3 = ex.v[3]
-      cp150_4 = ex.v[4]
+      cp160_0 = ex.v[0]
+      cp160_1 = ex.v[1]
+      cp160_2 = ex.v[2]
+      cp160_3 = ex.v[3]
+      cp160_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 26)
       # (= ?added (call list_add @demo_list "return"))
-      cp152_0 = ex.v[0]
+      cp162_0 = ex.v[0]
       # (= ?added (call list_add @demo_list "return"))
+      ex.debugBeginCondition(definition, 27)
       if not ex.v[0].isBound:
         let (callResult, ok) = ex.invoke(0, @[sv22, sv23], addr cs6, factSymbols)
         if ok:
           ex.setIfChanged(0, callResult)
-          state = 153
+          ex.debugEndCondition(definition, true)
+          state = 163
           continue
-      state = 151
+      ex.debugEndCondition(definition, false)
+      state = 161
       continue
-    of 153:
+    of 163:
       # (= ?removed (call list_remove_at ?added 1))
-      cp155_1 = ex.v[1]
+      cp165_1 = ex.v[1]
       # (= ?removed (call list_remove_at ?added 1))
+      ex.debugBeginCondition(definition, 28)
       if not ex.v[1].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[0], sv24], addr cs7, factSymbols)
         if ok:
           ex.setIfChanged(1, callResult)
-          state = 156
+          ex.debugEndCondition(definition, true)
+          state = 166
           continue
-      state = 154
+      ex.debugEndCondition(definition, false)
+      state = 164
       continue
-    of 156:
+    of 166:
       # (= ?element (call list_get ?removed 2))
-      cp158_2 = ex.v[2]
+      cp168_2 = ex.v[2]
       # (= ?element (call list_get ?removed 2))
+      ex.debugBeginCondition(definition, 29)
       if not ex.v[2].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[1], sv25], addr cs8, factSymbols)
         if ok:
           ex.setIfChanged(2, callResult)
-          state = 159
+          ex.debugEndCondition(definition, true)
+          state = 169
           continue
-      state = 157
+      ex.debugEndCondition(definition, false)
+      state = 167
       continue
-    of 159:
+    of 169:
       # (= ?size (call list_size ?added))
-      cp161_3 = ex.v[3]
+      cp171_3 = ex.v[3]
       # (= ?size (call list_size ?added))
+      ex.debugBeginCondition(definition, 30)
       if not ex.v[3].isBound:
         let (callResult, ok) = ex.invoke(3, @[ex.v[0]], addr cs9, factSymbols)
         if ok:
           ex.setIfChanged(3, callResult)
-          state = 162
+          ex.debugEndCondition(definition, true)
+          state = 172
           continue
-      state = 160
+      ex.debugEndCondition(definition, false)
+      state = 170
       continue
-    of 162:
+    of 172:
       # (= ?cleared (call list_clear ?removed))
-      cp164_4 = ex.v[4]
+      cp174_4 = ex.v[4]
       # (= ?cleared (call list_clear ?removed))
+      ex.debugBeginCondition(definition, 31)
       if not ex.v[4].isBound:
         let (callResult, ok) = ex.invoke(4, @[ex.v[1]], addr cs10, factSymbols)
         if ok:
           ex.setIfChanged(4, callResult)
-          state = 165
+          ex.debugEndCondition(definition, true)
+          state = 175
           continue
-      state = 163
+      ex.debugEndCondition(definition, false)
+      state = 173
       continue
-    of 165:
-      state = 147
-      continue
-    of 163:
-      ex.v[4] = cp164_4
-      state = 160
-      continue
-    of 160:
-      ex.v[3] = cp161_3
+    of 175:
+      ex.debugEndCondition(definition, true)
       state = 157
       continue
-    of 157:
-      ex.v[2] = cp158_2
+    of 173:
+      ex.v[4] = cp174_4
+      state = 170
+      continue
+    of 170:
+      ex.v[3] = cp171_3
+      state = 167
+      continue
+    of 167:
+      ex.v[2] = cp168_2
+      state = 164
+      continue
+    of 164:
+      ex.v[1] = cp165_1
+      state = 161
+      continue
+    of 161:
+      ex.v[0] = cp162_0
+      state = 159
+      continue
+    of 159:
+      ex.v[0] = cp160_0
+      ex.v[1] = cp160_1
+      ex.v[2] = cp160_2
+      ex.v[3] = cp160_3
+      ex.v[4] = cp160_4
+      ex.debugEndCondition(definition, false)
+      state = 158
+      continue
+    of 158:
+      ex.debugEndBranch(definition, false)
       state = 154
       continue
-    of 154:
-      ex.v[1] = cp155_1
-      state = 151
-      continue
-    of 151:
-      ex.v[0] = cp152_0
-      state = 149
-      continue
-    of 149:
-      ex.v[0] = cp150_0
-      ex.v[1] = cp150_1
-      ex.v[2] = cp150_2
-      ex.v[3] = cp150_3
-      ex.v[4] = cp150_4
-      state = 148
-      continue
-    of 148:
-      state = 144
-      continue
-    of 147:
+    of 157:
       if not ex.pushBranch(addr bc11):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 166
+      ex.debugCapturePendingTask(21)
+      ex.debugCapturePendingTask(20)
+      ex.debugCapturePendingTask(19)
+      ex.debugCapturePendingTask(18)
+      ex.debugCapturePendingTask(17)
+      ex.debugCapturePendingTask(16)
+      state = 177
       continue
-    of 166:
+    of 177:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1489,18 +1905,23 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 146
+        state = 156
         continue
-      state = 167
+      state = 178
       continue
-    of 146:
+    of 156:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 166
+      state = 177
       continue
-    of 167:
+    of 178:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 144:
+    of 154:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1508,28 +1929,32 @@ proc method9(ex: Exec): int {.nimcall.} =
 # method10: split_list_basic/0
 proc method10(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp174_5: Atom
-  var cp174_6: Atom
-  var cp176_5: Atom
-  var cp176_6: Atom
+  var cp185_5: Atom
+  var cp185_6: Atom
+  var cp187_5: Atom
+  var cp187_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 170
+  of 1: state = 181
   else: discard
   while true:
     case state
     of 0:
-      state = 169
+      ex.debugBeginMethod(definition, 10)
+      state = 180
       continue
-    of 169:
+    of 180:
       # branch split
+      ex.debugBeginBranch(definition, 12)
       # (and (split_list @split_list_input ?head ?tail))
-      cp174_5 = ex.v[5]
-      cp174_6 = ex.v[6]
+      cp185_5 = ex.v[5]
+      cp185_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 32)
       # (split_list @split_list_input ?head ?tail)
-      cp176_5 = ex.v[5]
-      cp176_6 = ex.v[6]
+      cp187_5 = ex.v[5]
+      cp187_6 = ex.v[6]
       # (split_list @split_list_input ?head ?tail)
+      ex.debugBeginCondition(definition, 33)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv27, splitFront)
@@ -1540,119 +1965,39 @@ proc method10(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 177
+          state = 188
           continue
-        state = 175
+        state = 186
         continue
-      state = 177
+      state = 188
       continue
-    of 177:
-      state = 171
+    of 188:
+      ex.debugEndCondition(definition, true)
+      state = 182
       continue
-    of 175:
-      ex.v[5] = cp176_5
-      ex.v[6] = cp176_6
-      state = 173
-      continue
-    of 173:
-      ex.v[5] = cp174_5
-      ex.v[6] = cp174_6
-      state = 172
-      continue
-    of 172:
-      state = 168
-      continue
-    of 171:
-      if not ex.pushBranch(addr bc12):
-        return 0
-      state = 178
-      continue
-    of 178:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 170
-        continue
-      state = 179
-      continue
-    of 170:
-      if fr.childResult == 0:
-        return 0
-      state = 178
-      continue
-    of 179:
-      return 1
-    of 168:
-      return 0
-    else:
-      return 0
-
-# method11: split_list_single_element/0
-proc method11(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp186_5: Atom
-  var cp186_6: Atom
-  var cp188_5: Atom
-  var cp188_6: Atom
-  var state = 0
-  case fr.resume
-  of 1: state = 182
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 181
-      continue
-    of 181:
-      # branch split
-      # (and (split_list @split_list_single ?head ?tail))
-      cp186_5 = ex.v[5]
-      cp186_6 = ex.v[6]
-      # (split_list @split_list_single ?head ?tail)
-      cp188_5 = ex.v[5]
-      cp188_6 = ex.v[6]
-      # (split_list @split_list_single ?head ?tail)
-      block:
-        var valid = false
-        let (element, remainder, ok) = splitList(sv28, splitFront)
-        if ok:
-          valid = true
-          if ex.v[5].isBound and not equal(ex.v[5], element): valid = false
-          if ex.v[6].isBound and not equal(ex.v[6], remainder): valid = false
-          if valid:
-            if not ex.v[5].isBound: ex.v[5] = element
-            if not ex.v[6].isBound: ex.v[6] = remainder
-        if valid:
-          state = 189
-          continue
-        state = 187
-        continue
-      state = 189
-      continue
-    of 189:
-      state = 183
-      continue
-    of 187:
-      ex.v[5] = cp188_5
-      ex.v[6] = cp188_6
-      state = 185
-      continue
-    of 185:
-      ex.v[5] = cp186_5
-      ex.v[6] = cp186_6
+    of 186:
+      ex.v[5] = cp187_5
+      ex.v[6] = cp187_6
       state = 184
       continue
     of 184:
-      state = 180
+      ex.v[5] = cp185_5
+      ex.v[6] = cp185_6
+      ex.debugEndCondition(definition, false)
+      state = 183
       continue
     of 183:
-      if not ex.pushBranch(addr bc13):
+      ex.debugEndBranch(definition, false)
+      state = 179
+      continue
+    of 182:
+      if not ex.pushBranch(addr bc12):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(22)
       state = 190
       continue
     of 190:
@@ -1663,18 +2008,126 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 182
+        state = 181
         continue
       state = 191
       continue
-    of 182:
+    of 181:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 190
       continue
     of 191:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 180:
+    of 179:
+      ex.debugEndMethod(definition, false)
+      return 0
+    else:
+      return 0
+
+# method11: split_list_single_element/0
+proc method11(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp198_5: Atom
+  var cp198_6: Atom
+  var cp200_5: Atom
+  var cp200_6: Atom
+  var state = 0
+  case fr.resume
+  of 1: state = 194
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 11)
+      state = 193
+      continue
+    of 193:
+      # branch split
+      ex.debugBeginBranch(definition, 13)
+      # (and (split_list @split_list_single ?head ?tail))
+      cp198_5 = ex.v[5]
+      cp198_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 34)
+      # (split_list @split_list_single ?head ?tail)
+      cp200_5 = ex.v[5]
+      cp200_6 = ex.v[6]
+      # (split_list @split_list_single ?head ?tail)
+      ex.debugBeginCondition(definition, 35)
+      block:
+        var valid = false
+        let (element, remainder, ok) = splitList(sv28, splitFront)
+        if ok:
+          valid = true
+          if ex.v[5].isBound and not equal(ex.v[5], element): valid = false
+          if ex.v[6].isBound and not equal(ex.v[6], remainder): valid = false
+          if valid:
+            if not ex.v[5].isBound: ex.v[5] = element
+            if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
+        if valid:
+          state = 201
+          continue
+        state = 199
+        continue
+      state = 201
+      continue
+    of 201:
+      ex.debugEndCondition(definition, true)
+      state = 195
+      continue
+    of 199:
+      ex.v[5] = cp200_5
+      ex.v[6] = cp200_6
+      state = 197
+      continue
+    of 197:
+      ex.v[5] = cp198_5
+      ex.v[6] = cp198_6
+      ex.debugEndCondition(definition, false)
+      state = 196
+      continue
+    of 196:
+      ex.debugEndBranch(definition, false)
+      state = 192
+      continue
+    of 195:
+      if not ex.pushBranch(addr bc13):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(23)
+      state = 203
+      continue
+    of 203:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 194
+        continue
+      state = 204
+      continue
+    of 194:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 203
+      continue
+    of 204:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 192:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1682,45 +2135,52 @@ proc method11(ex: Exec): int {.nimcall.} =
 # method12: split_list_empty_fails/0
 proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp200_5: Atom
-  var cp200_6: Atom
-  var cp200_7: Atom
-  var cp202_7: Atom
-  var cp205_5: Atom
-  var cp205_6: Atom
+  var cp213_5: Atom
+  var cp213_6: Atom
+  var cp213_7: Atom
+  var cp215_7: Atom
+  var cp218_5: Atom
+  var cp218_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 195
-  of 2: state = 196
+  of 1: state = 208
+  of 2: state = 209
   else: discard
   while true:
     case state
     of 0:
-      state = 193
+      ex.debugBeginMethod(definition, 12)
+      state = 206
       continue
-    of 193:
+    of 206:
       # branch unexpected
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 14)
       # (and (= ?empty (call list_clear @split_list_single)) (split_list ?empty ?head ?tail))
-      cp200_5 = ex.v[5]
-      cp200_6 = ex.v[6]
-      cp200_7 = ex.v[7]
+      cp213_5 = ex.v[5]
+      cp213_6 = ex.v[6]
+      cp213_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 36)
       # (= ?empty (call list_clear @split_list_single))
-      cp202_7 = ex.v[7]
+      cp215_7 = ex.v[7]
       # (= ?empty (call list_clear @split_list_single))
+      ex.debugBeginCondition(definition, 37)
       if not ex.v[7].isBound:
         let (callResult, ok) = ex.invoke(4, @[sv29], addr cs11, factSymbols)
         if ok:
           ex.setIfChanged(7, callResult)
-          state = 203
+          ex.debugEndCondition(definition, true)
+          state = 216
           continue
-      state = 201
+      ex.debugEndCondition(definition, false)
+      state = 214
       continue
-    of 203:
+    of 216:
       # (split_list ?empty ?head ?tail)
-      cp205_5 = ex.v[5]
-      cp205_6 = ex.v[6]
+      cp218_5 = ex.v[5]
+      cp218_6 = ex.v[6]
       # (split_list ?empty ?head ?tail)
+      ex.debugBeginCondition(definition, 38)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(ex.v[7], splitFront)
@@ -1731,42 +2191,49 @@ proc method12(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 206
+          state = 219
           continue
-        state = 204
+        state = 217
         continue
-      state = 206
+      state = 219
       continue
-    of 206:
-      state = 197
+    of 219:
+      ex.debugEndCondition(definition, true)
+      state = 210
       continue
-    of 204:
-      ex.v[5] = cp205_5
-      ex.v[6] = cp205_6
-      state = 201
+    of 217:
+      ex.v[5] = cp218_5
+      ex.v[6] = cp218_6
+      state = 214
       continue
-    of 201:
-      ex.v[7] = cp202_7
-      state = 199
+    of 214:
+      ex.v[7] = cp215_7
+      state = 212
       continue
-    of 199:
-      ex.v[5] = cp200_5
-      ex.v[6] = cp200_6
-      ex.v[7] = cp200_7
-      state = 198
+    of 212:
+      ex.v[5] = cp213_5
+      ex.v[6] = cp213_6
+      ex.v[7] = cp213_7
+      ex.debugEndCondition(definition, false)
+      state = 211
       continue
-    of 198:
+    of 211:
       ex.releaseRetry(fr)
-      state = 194
-      continue
-    of 197:
-      if not ex.pushBranch(addr bc14):
-        ex.releaseRetry(fr)
-        return 0
+      ex.debugEndBranch(definition, false)
       state = 207
       continue
-    of 207:
+    of 210:
+      if not ex.pushBranch(addr bc14):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(24)
+      state = 221
+      continue
+    of 221:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1774,36 +2241,47 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 195
+        state = 208
         continue
-      state = 208
+      state = 222
       continue
-    of 195:
+    of 208:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 194
+        ex.debugEndBranch(definition, false)
+        state = 207
         continue
-      state = 207
+      state = 221
       continue
-    of 208:
+    of 222:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 194:
+    of 207:
       # branch expected
-      state = 209
+      ex.debugBeginBranch(definition, 15)
+      state = 223
       continue
-    of 209:
+    of 223:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 211
+      ex.debugCapturePendingTask(25)
+      state = 225
       continue
-    of 211:
+    of 225:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1811,16 +2289,20 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 196
+        state = 209
         continue
-      state = 212
+      state = 226
       continue
-    of 196:
+    of 209:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 211
+      state = 225
       continue
-    of 212:
+    of 226:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1830,18 +2312,22 @@ proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 215
+  of 1: state = 229
   else: discard
   while true:
     case state
     of 0:
-      state = 214
+      ex.debugBeginMethod(definition, 13)
+      state = 228
       continue
-    of 214:
+    of 228:
       # branch compatible
+      ex.debugBeginBranch(definition, 16)
       # (and (split_list @split_list_input "one" ("two" "three")))
+      ex.debugBeginCondition(definition, 39)
       # (split_list @split_list_input "one" ("two" "three"))
       # (split_list @split_list_input "one" ("two" "three"))
+      ex.debugBeginCondition(definition, 40)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv30, splitFront)
@@ -1851,31 +2337,38 @@ proc method13(ex: Exec): int {.nimcall.} =
           if not sv32.isBound or not equal(sv32, remainder): valid = false
           if valid:
             discard
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 222
+          state = 236
           continue
-        state = 220
+        state = 234
         continue
-      state = 222
+      state = 236
       continue
-    of 222:
-      state = 216
+    of 236:
+      ex.debugEndCondition(definition, true)
+      state = 230
       continue
-    of 220:
-      state = 218
+    of 234:
+      state = 232
       continue
-    of 218:
-      state = 217
+    of 232:
+      ex.debugEndCondition(definition, false)
+      state = 231
       continue
-    of 217:
-      state = 213
+    of 231:
+      ex.debugEndBranch(definition, false)
+      state = 227
       continue
-    of 216:
+    of 230:
       if not ex.pushBranch(addr bc16):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 223
+      ex.debugCapturePendingTask(26)
+      state = 238
       continue
-    of 223:
+    of 238:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1883,18 +2376,23 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 215
+        state = 229
         continue
-      state = 224
+      state = 239
       continue
-    of 215:
+    of 229:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 223
+      state = 238
       continue
-    of 224:
+    of 239:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 213:
+    of 227:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1902,34 +2400,38 @@ proc method13(ex: Exec): int {.nimcall.} =
 # method14: split_list_rollback/0
 proc method14(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp233_5: Atom
-  var cp233_6: Atom
-  var cp235_5: Atom
-  var cp235_6: Atom
-  var cp245_5: Atom
-  var cp245_6: Atom
-  var cp247_5: Atom
-  var cp247_6: Atom
+  var cp248_5: Atom
+  var cp248_6: Atom
+  var cp250_5: Atom
+  var cp250_6: Atom
+  var cp261_5: Atom
+  var cp261_6: Atom
+  var cp263_5: Atom
+  var cp263_6: Atom
   var state = 0
   case fr.resume
-  of 1: state = 228
-  of 2: state = 229
+  of 1: state = 243
+  of 2: state = 244
   else: discard
   while true:
     case state
     of 0:
-      state = 226
+      ex.debugBeginMethod(definition, 14)
+      state = 241
       continue
-    of 226:
+    of 241:
       # branch fails_after_binding
       ex.saveRetry(fr, ms14)
+      ex.debugBeginBranch(definition, 17)
       # (and (split_list @split_list_input ?head ?tail) (== ?head "wrong"))
-      cp233_5 = ex.v[5]
-      cp233_6 = ex.v[6]
+      cp248_5 = ex.v[5]
+      cp248_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 41)
       # (split_list @split_list_input ?head ?tail)
-      cp235_5 = ex.v[5]
-      cp235_6 = ex.v[6]
+      cp250_5 = ex.v[5]
+      cp250_6 = ex.v[6]
       # (split_list @split_list_input ?head ?tail)
+      ex.debugBeginCondition(definition, 42)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv33, splitFront)
@@ -1940,48 +2442,58 @@ proc method14(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 236
+          state = 251
           continue
-        state = 234
+        state = 249
         continue
-      state = 236
+      state = 251
       continue
-    of 236:
+    of 251:
       # (== ?head "wrong")
       # (== ?head "wrong")
+      ex.debugBeginCondition(definition, 43)
       if compare(ex.v[5], sv34, 0'u32):
-        state = 239
+        ex.debugEndCondition(definition, true)
+        state = 254
         continue
-      state = 237
+      ex.debugEndCondition(definition, false)
+      state = 252
       continue
-    of 239:
-      state = 230
+    of 254:
+      ex.debugEndCondition(definition, true)
+      state = 245
       continue
-    of 237:
-      state = 234
+    of 252:
+      state = 249
       continue
-    of 234:
-      ex.v[5] = cp235_5
-      ex.v[6] = cp235_6
-      state = 232
+    of 249:
+      ex.v[5] = cp250_5
+      ex.v[6] = cp250_6
+      state = 247
       continue
-    of 232:
-      ex.v[5] = cp233_5
-      ex.v[6] = cp233_6
-      state = 231
+    of 247:
+      ex.v[5] = cp248_5
+      ex.v[6] = cp248_6
+      ex.debugEndCondition(definition, false)
+      state = 246
       continue
-    of 231:
+    of 246:
       ex.releaseRetry(fr)
-      state = 227
+      ex.debugEndBranch(definition, false)
+      state = 242
       continue
-    of 230:
+    of 245:
       if not ex.pushBranch(addr bc17):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 240
+      ex.debugCapturePendingTask(27)
+      state = 256
       continue
-    of 240:
+    of 256:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1989,35 +2501,45 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 228
+        state = 243
         continue
-      state = 241
+      state = 257
       continue
-    of 228:
+    of 243:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms14)
-        state = 227
+        ex.debugEndBranch(definition, false)
+        state = 242
         continue
-      state = 240
+      state = 256
       continue
-    of 241:
+    of 257:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 227:
+    of 242:
       # branch reuses_same_variables
+      ex.debugBeginBranch(definition, 18)
       # (and (split_list @split_list_single ?head ?tail))
-      cp245_5 = ex.v[5]
-      cp245_6 = ex.v[6]
+      cp261_5 = ex.v[5]
+      cp261_6 = ex.v[6]
+      ex.debugBeginCondition(definition, 44)
       # (split_list @split_list_single ?head ?tail)
-      cp247_5 = ex.v[5]
-      cp247_6 = ex.v[6]
+      cp263_5 = ex.v[5]
+      cp263_6 = ex.v[6]
       # (split_list @split_list_single ?head ?tail)
+      ex.debugBeginCondition(definition, 45)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv35, splitFront)
@@ -2028,35 +2550,42 @@ proc method14(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[5].isBound: ex.v[5] = element
             if not ex.v[6].isBound: ex.v[6] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 248
+          state = 264
           continue
-        state = 246
+        state = 262
         continue
-      state = 248
+      state = 264
       continue
-    of 248:
-      state = 242
+    of 264:
+      ex.debugEndCondition(definition, true)
+      state = 258
       continue
-    of 246:
-      ex.v[5] = cp247_5
-      ex.v[6] = cp247_6
-      state = 244
+    of 262:
+      ex.v[5] = cp263_5
+      ex.v[6] = cp263_6
+      state = 260
       continue
-    of 244:
-      ex.v[5] = cp245_5
-      ex.v[6] = cp245_6
-      state = 243
+    of 260:
+      ex.v[5] = cp261_5
+      ex.v[6] = cp261_6
+      ex.debugEndCondition(definition, false)
+      state = 259
       continue
-    of 243:
-      state = 225
+    of 259:
+      ex.debugEndBranch(definition, false)
+      state = 240
       continue
-    of 242:
+    of 258:
       if not ex.pushBranch(addr bc18):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 249
+      ex.debugCapturePendingTask(28)
+      state = 266
       continue
-    of 249:
+    of 266:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2064,18 +2593,23 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 229
+        state = 244
         continue
-      state = 250
+      state = 267
       continue
-    of 229:
+    of 244:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 249
+      state = 266
       continue
-    of 250:
+    of 267:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 225:
+    of 240:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2083,28 +2617,32 @@ proc method14(ex: Exec): int {.nimcall.} =
 # method15: split_list_front_basic/0
 proc method15(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp257_2: Atom
-  var cp257_8: Atom
-  var cp259_2: Atom
-  var cp259_8: Atom
+  var cp274_2: Atom
+  var cp274_8: Atom
+  var cp276_2: Atom
+  var cp276_8: Atom
   var state = 0
   case fr.resume
-  of 1: state = 253
+  of 1: state = 270
   else: discard
   while true:
     case state
     of 0:
-      state = 252
+      ex.debugBeginMethod(definition, 15)
+      state = 269
       continue
-    of 252:
+    of 269:
       # branch split
+      ex.debugBeginBranch(definition, 19)
       # (and (split_list_front @split_list_input ?element ?remainder))
-      cp257_2 = ex.v[2]
-      cp257_8 = ex.v[8]
+      cp274_2 = ex.v[2]
+      cp274_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 46)
       # (split_list_front @split_list_input ?element ?remainder)
-      cp259_2 = ex.v[2]
-      cp259_8 = ex.v[8]
+      cp276_2 = ex.v[2]
+      cp276_8 = ex.v[8]
       # (split_list_front @split_list_input ?element ?remainder)
+      ex.debugBeginCondition(definition, 47)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv36, splitFront)
@@ -2115,35 +2653,42 @@ proc method15(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[2].isBound: ex.v[2] = element
             if not ex.v[8].isBound: ex.v[8] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 260
+          state = 277
           continue
-        state = 258
+        state = 275
         continue
-      state = 260
+      state = 277
       continue
-    of 260:
-      state = 254
+    of 277:
+      ex.debugEndCondition(definition, true)
+      state = 271
       continue
-    of 258:
-      ex.v[2] = cp259_2
-      ex.v[8] = cp259_8
-      state = 256
+    of 275:
+      ex.v[2] = cp276_2
+      ex.v[8] = cp276_8
+      state = 273
       continue
-    of 256:
-      ex.v[2] = cp257_2
-      ex.v[8] = cp257_8
-      state = 255
+    of 273:
+      ex.v[2] = cp274_2
+      ex.v[8] = cp274_8
+      ex.debugEndCondition(definition, false)
+      state = 272
       continue
-    of 255:
-      state = 251
+    of 272:
+      ex.debugEndBranch(definition, false)
+      state = 268
       continue
-    of 254:
+    of 271:
       if not ex.pushBranch(addr bc19):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 261
+      ex.debugCapturePendingTask(29)
+      state = 279
       continue
-    of 261:
+    of 279:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2151,18 +2696,23 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 253
+        state = 270
         continue
-      state = 262
+      state = 280
       continue
-    of 253:
+    of 270:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 261
+      state = 279
       continue
-    of 262:
+    of 280:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 251:
+    of 268:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2170,28 +2720,32 @@ proc method15(ex: Exec): int {.nimcall.} =
 # method16: split_list_back_basic/0
 proc method16(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp269_2: Atom
-  var cp269_8: Atom
-  var cp271_2: Atom
-  var cp271_8: Atom
+  var cp287_2: Atom
+  var cp287_8: Atom
+  var cp289_2: Atom
+  var cp289_8: Atom
   var state = 0
   case fr.resume
-  of 1: state = 265
+  of 1: state = 283
   else: discard
   while true:
     case state
     of 0:
-      state = 264
+      ex.debugBeginMethod(definition, 16)
+      state = 282
       continue
-    of 264:
+    of 282:
       # branch split
+      ex.debugBeginBranch(definition, 20)
       # (and (split_list_back @split_list_input ?remainder ?element))
-      cp269_2 = ex.v[2]
-      cp269_8 = ex.v[8]
+      cp287_2 = ex.v[2]
+      cp287_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 48)
       # (split_list_back @split_list_input ?remainder ?element)
-      cp271_2 = ex.v[2]
-      cp271_8 = ex.v[8]
+      cp289_2 = ex.v[2]
+      cp289_8 = ex.v[8]
       # (split_list_back @split_list_input ?remainder ?element)
+      ex.debugBeginCondition(definition, 49)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv37, splitBack)
@@ -2202,35 +2756,42 @@ proc method16(ex: Exec): int {.nimcall.} =
           if valid:
             if not ex.v[2].isBound: ex.v[2] = element
             if not ex.v[8].isBound: ex.v[8] = remainder
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 272
+          state = 290
           continue
-        state = 270
+        state = 288
         continue
-      state = 272
+      state = 290
       continue
-    of 272:
-      state = 266
+    of 290:
+      ex.debugEndCondition(definition, true)
+      state = 284
       continue
-    of 270:
-      ex.v[2] = cp271_2
-      ex.v[8] = cp271_8
-      state = 268
+    of 288:
+      ex.v[2] = cp289_2
+      ex.v[8] = cp289_8
+      state = 286
       continue
-    of 268:
-      ex.v[2] = cp269_2
-      ex.v[8] = cp269_8
-      state = 267
+    of 286:
+      ex.v[2] = cp287_2
+      ex.v[8] = cp287_8
+      ex.debugEndCondition(definition, false)
+      state = 285
       continue
-    of 267:
-      state = 263
+    of 285:
+      ex.debugEndBranch(definition, false)
+      state = 281
       continue
-    of 266:
+    of 284:
       if not ex.pushBranch(addr bc20):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 273
+      ex.debugCapturePendingTask(30)
+      state = 292
       continue
-    of 273:
+    of 292:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2238,18 +2799,23 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 265
+        state = 283
         continue
-      state = 274
+      state = 293
       continue
-    of 265:
+    of 283:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 273
+      state = 292
       continue
-    of 274:
+    of 293:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 263:
+    of 281:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2259,18 +2825,22 @@ proc method17(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 277
+  of 1: state = 296
   else: discard
   while true:
     case state
     of 0:
-      state = 276
+      ex.debugBeginMethod(definition, 17)
+      state = 295
       continue
-    of 276:
+    of 295:
       # branch compatible
+      ex.debugBeginBranch(definition, 21)
       # (and (split_list_back @split_list_input ("one" "two") "three"))
+      ex.debugBeginCondition(definition, 50)
       # (split_list_back @split_list_input ("one" "two") "three")
       # (split_list_back @split_list_input ("one" "two") "three")
+      ex.debugBeginCondition(definition, 51)
       block:
         var valid = false
         let (element, remainder, ok) = splitList(sv38, splitBack)
@@ -2280,31 +2850,38 @@ proc method17(ex: Exec): int {.nimcall.} =
           if not sv40.isBound or not equal(sv40, remainder): valid = false
           if valid:
             discard
+        ex.debugEndCondition(definition, valid)
         if valid:
-          state = 284
+          state = 303
           continue
-        state = 282
+        state = 301
         continue
-      state = 284
+      state = 303
       continue
-    of 284:
-      state = 278
+    of 303:
+      ex.debugEndCondition(definition, true)
+      state = 297
       continue
-    of 282:
-      state = 280
+    of 301:
+      state = 299
       continue
-    of 280:
-      state = 279
+    of 299:
+      ex.debugEndCondition(definition, false)
+      state = 298
       continue
-    of 279:
-      state = 275
+    of 298:
+      ex.debugEndBranch(definition, false)
+      state = 294
       continue
-    of 278:
+    of 297:
       if not ex.pushBranch(addr bc21):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 285
+      ex.debugCapturePendingTask(31)
+      state = 305
       continue
-    of 285:
+    of 305:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2312,18 +2889,23 @@ proc method17(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 277
+        state = 296
         continue
-      state = 286
+      state = 306
       continue
-    of 277:
+    of 296:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 285
+      state = 305
       continue
-    of 286:
+    of 306:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 275:
+    of 294:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2359,6 +2941,7 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym25 and argumentCount == 0:
     entry = 17
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 9:
@@ -2380,11 +2963,16 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   of 17:
     runResult = ex.run(method17)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task5), PendingTask(fn: task4), PendingTask(fn: task3), PendingTask(fn: task2), PendingTask(fn: task1), PendingTask(fn: task0)], totalRestore: 0)
@@ -2418,3 +3006,740 @@ definition = Definition(abiVersion: ABIVersion, features: featureRuntimeBacktrac
     Requirement(name: "list_size", source: Source(domain: "AtomListDemo", file: "Domains/Test/atom_list_demo.domain", line: 15, column: 26)),
     Requirement(name: "list_clear", source: Source(domain: "AtomListDemo", file: "Domains/Test/atom_list_demo.domain", line: 16, column: 29)),
     Requirement(name: "list_clear", source: Source(domain: "AtomListDemo", file: "Domains/Test/atom_list_demo.domain", line: 54, column: 27))])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/atom_list_demo.domain",
+      strings: @[
+        "AtomListDemoConstants",
+        "demo_list",
+        "(patrol 3 true (10.0 20.0 30.0))",
+        "patrol",
+        "split_list_input",
+        "(one two three)",
+        "(\"one\" \"two\" \"three\")",
+        "split_list_single",
+        "(only)",
+        "(\"only\")",
+        "AtomListDemo::show_atom_list",
+        "print_constant_list",
+        "added",
+        "?added",
+        "list_add",
+        "@demo_list",
+        "return",
+        "\"return\"",
+        "removed",
+        "?removed",
+        "list_remove_at",
+        "1",
+        "element",
+        "?element",
+        "list_get",
+        "2",
+        "size",
+        "?size",
+        "list_size",
+        "cleared",
+        "?cleared",
+        "list_clear",
+        "print_original",
+        "!print_original",
+        "print_added",
+        "!print_added",
+        "print_removed",
+        "!print_removed",
+        "print_element",
+        "!print_element",
+        "print_size",
+        "!print_size",
+        "print_cleared",
+        "!print_cleared",
+        "AtomListDemo::split_list_basic",
+        "split",
+        "@split_list_input",
+        "head",
+        "?head",
+        "tail",
+        "?tail",
+        "split_result",
+        "!split_result",
+        "AtomListDemo::split_list_single_element",
+        "@split_list_single",
+        "split_single_result",
+        "!split_single_result",
+        "AtomListDemo::split_list_empty_fails",
+        "unexpected",
+        "empty",
+        "?empty",
+        "unexpected_split",
+        "!unexpected_split",
+        "expected",
+        "empty_list_rejected",
+        "!empty_list_rejected",
+        "AtomListDemo::split_list_bound_outputs",
+        "compatible",
+        "one",
+        "\"one\"",
+        "(two three)",
+        "(\"two\" \"three\")",
+        "bound_outputs_match",
+        "!bound_outputs_match",
+        "AtomListDemo::split_list_rollback",
+        "fails_after_binding",
+        "wrong",
+        "\"wrong\"",
+        "unexpected_first_branch",
+        "!unexpected_first_branch",
+        "reuses_same_variables",
+        "rollback_result",
+        "!rollback_result",
+        "AtomListDemo::split_list_front_basic",
+        "remainder",
+        "?remainder",
+        "split_front_result",
+        "!split_front_result",
+        "AtomListDemo::split_list_back_basic",
+        "split_back_result",
+        "!split_back_result",
+        "AtomListDemo::split_list_back_bound_outputs",
+        "three",
+        "\"three\"",
+        "(one two)",
+        "(\"one\" \"two\")",
+        "split_back_bound_outputs_match",
+        "!split_back_bound_outputs_match",
+        "show_atom_list",
+        "split_list_basic",
+        "split_list_single_element",
+        "split_list_empty_fails",
+        "split_list_bound_outputs",
+        "split_list_rollback",
+        "split_list_front_basic",
+        "split_list_back_basic",
+        "split_list_back_bound_outputs"],
+      values: @[
+        0'u32, 2, 2, 4, NoIndex,
+        0, 6, 5, 5, NoIndex,
+        0, 9, 8, 6, NoIndex,
+        1, 13, 12, 12, 0,
+        0, 15, 2, 12, NoIndex,
+        2, 17, 16, 12, NoIndex,
+        1, 19, 18, 13, 1,
+        1, 13, 12, 13, 0,
+        0, 21, 21, 13, NoIndex,
+        1, 23, 22, 14, 2,
+        1, 19, 18, 14, 1,
+        0, 25, 25, 14, NoIndex,
+        1, 27, 26, 15, 3,
+        1, 13, 12, 15, 0,
+        1, 30, 29, 16, 4,
+        1, 19, 18, 16, 1,
+        0, 15, 2, 19, NoIndex,
+        1, 13, 12, 20, 0,
+        1, 19, 18, 21, 1,
+        1, 23, 22, 22, 2,
+        1, 27, 26, 23, 3,
+        1, 30, 29, 24, 4,
+        0, 46, 5, 32, NoIndex,
+        1, 48, 47, 32, 5,
+        1, 50, 49, 32, 6,
+        1, 48, 47, 35, 5,
+        1, 50, 49, 35, 6,
+        0, 54, 8, 43, NoIndex,
+        1, 48, 47, 43, 5,
+        1, 50, 49, 43, 6,
+        1, 48, 47, 46, 5,
+        1, 50, 49, 46, 6,
+        1, 60, 59, 54, 7,
+        0, 54, 8, 54, NoIndex,
+        1, 60, 59, 55, 7,
+        1, 48, 47, 55, 5,
+        1, 50, 49, 55, 6,
+        1, 48, 47, 58, 5,
+        1, 50, 49, 58, 6,
+        0, 46, 5, 72, NoIndex,
+        2, 69, 68, 72, NoIndex,
+        0, 71, 70, 72, NoIndex,
+        0, 46, 5, 83, NoIndex,
+        1, 48, 47, 83, 5,
+        1, 50, 49, 83, 6,
+        1, 48, 47, 84, 5,
+        2, 77, 76, 84, NoIndex,
+        0, 54, 8, 92, NoIndex,
+        1, 48, 47, 92, 5,
+        1, 50, 49, 92, 6,
+        1, 48, 47, 95, 5,
+        1, 50, 49, 95, 6,
+        0, 46, 5, 102, NoIndex,
+        1, 23, 22, 102, 2,
+        1, 85, 84, 102, 8,
+        1, 23, 22, 105, 2,
+        1, 85, 84, 105, 8,
+        0, 46, 5, 113, NoIndex,
+        1, 23, 22, 113, 2,
+        1, 85, 84, 113, 8,
+        1, 23, 22, 116, 2,
+        1, 85, 84, 116, 8,
+        0, 46, 5, 124, NoIndex,
+        2, 93, 92, 124, NoIndex,
+        0, 95, 94, 124, NoIndex,
+        1, 13, 12, 12, 0,
+        0, 15, 2, 12, NoIndex,
+        2, 17, 16, 12, NoIndex,
+        1, 19, 18, 13, 1,
+        1, 13, 12, 13, 0,
+        0, 21, 21, 13, NoIndex,
+        1, 23, 22, 14, 2,
+        1, 19, 18, 14, 1,
+        0, 25, 25, 14, NoIndex,
+        1, 27, 26, 15, 3,
+        1, 13, 12, 15, 0,
+        1, 30, 29, 16, 4,
+        1, 19, 18, 16, 1,
+        0, 15, 2, 19, NoIndex,
+        1, 13, 12, 20, 0,
+        1, 19, 18, 21, 1,
+        1, 23, 22, 22, 2,
+        1, 27, 26, 23, 3,
+        1, 30, 29, 24, 4,
+        0, 46, 5, 32, NoIndex,
+        1, 48, 47, 32, 5,
+        1, 50, 49, 32, 6,
+        1, 48, 47, 35, 5,
+        1, 50, 49, 35, 6,
+        0, 54, 8, 43, NoIndex,
+        1, 48, 47, 43, 5,
+        1, 50, 49, 43, 6,
+        1, 48, 47, 46, 5,
+        1, 50, 49, 46, 6,
+        1, 60, 59, 54, 7,
+        0, 54, 8, 54, NoIndex,
+        1, 60, 59, 55, 7,
+        1, 48, 47, 55, 5,
+        1, 50, 49, 55, 6,
+        1, 48, 47, 58, 5,
+        1, 50, 49, 58, 6,
+        0, 46, 5, 72, NoIndex,
+        2, 69, 68, 72, NoIndex,
+        0, 71, 70, 72, NoIndex,
+        0, 46, 5, 83, NoIndex,
+        1, 48, 47, 83, 5,
+        1, 50, 49, 83, 6,
+        1, 48, 47, 84, 5,
+        2, 77, 76, 84, NoIndex,
+        0, 54, 8, 92, NoIndex,
+        1, 48, 47, 92, 5,
+        1, 50, 49, 92, 6,
+        1, 48, 47, 95, 5,
+        1, 50, 49, 95, 6,
+        0, 46, 5, 102, NoIndex,
+        1, 23, 22, 102, 2,
+        1, 85, 84, 102, 8,
+        1, 23, 22, 105, 2,
+        1, 85, 84, 105, 8,
+        0, 46, 5, 113, NoIndex,
+        1, 23, 22, 113, 2,
+        1, 85, 84, 113, 8,
+        1, 23, 22, 116, 2,
+        1, 85, 84, 116, 8,
+        0, 46, 5, 124, NoIndex,
+        2, 93, 92, 124, NoIndex,
+        0, 95, 94, 124, NoIndex],
+      variableStringIDs: @[
+        12'u32,
+        18,
+        22,
+        26,
+        29,
+        47,
+        49,
+        59,
+        84],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 0, 5, NoIndex, NoIndex, 11, 0,
+        7, 14, 4, 2, 0, 0, 3, 0, 12, 0,
+        7, 20, 7, 2, 0, 0, 6, 1, 13, 0,
+        7, 24, 10, 2, 0, 0, 9, 2, 14, 0,
+        7, 28, 13, 1, 0, 0, 12, 3, 15, 0,
+        7, 31, 15, 1, 0, 0, 14, 4, 16, 0,
+        2, NoIndex, 0, 0, 5, 1, NoIndex, NoIndex, 31, 0,
+        9, 0, 22, 3, 5, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 6, 1, NoIndex, NoIndex, 42, 0,
+        9, 0, 27, 3, 6, 0, NoIndex, NoIndex, 43, 0,
+        2, NoIndex, 0, 0, 7, 2, NoIndex, NoIndex, 53, 0,
+        7, 31, 33, 1, 7, 0, 32, 4, 54, 0,
+        9, 0, 34, 3, 7, 0, NoIndex, NoIndex, 55, 0,
+        2, NoIndex, 0, 0, 9, 1, NoIndex, NoIndex, 71, 0,
+        9, 0, 39, 3, 9, 0, NoIndex, NoIndex, 72, 0,
+        2, NoIndex, 0, 0, 10, 2, NoIndex, NoIndex, 82, 0,
+        9, 0, 42, 3, 10, 0, NoIndex, NoIndex, 83, 0,
+        8, 0, 45, 2, 10, 0, NoIndex, NoIndex, 84, 0,
+        2, NoIndex, 0, 0, 12, 1, NoIndex, NoIndex, 91, 0,
+        9, 0, 47, 3, 12, 0, NoIndex, NoIndex, 92, 0,
+        2, NoIndex, 0, 0, 13, 1, NoIndex, NoIndex, 101, 0,
+        9, 1, 52, 3, 13, 0, NoIndex, NoIndex, 102, 0,
+        2, NoIndex, 0, 0, 14, 1, NoIndex, NoIndex, 112, 0,
+        9, 2, 57, 3, 14, 0, NoIndex, NoIndex, 113, 0,
+        2, NoIndex, 0, 0, 15, 1, NoIndex, NoIndex, 123, 0,
+        9, 2, 62, 3, 15, 0, NoIndex, NoIndex, 124, 0,
+        2, NoIndex, 0, 0, 16, 5, NoIndex, NoIndex, 11, 0,
+        7, 14, 66, 2, 16, 0, 65, 0, 12, 0,
+        7, 20, 69, 2, 16, 0, 68, 1, 13, 0,
+        7, 24, 72, 2, 16, 0, 71, 2, 14, 0,
+        7, 28, 75, 1, 16, 0, 74, 3, 15, 0,
+        7, 31, 77, 1, 16, 0, 76, 4, 16, 0,
+        2, NoIndex, 0, 0, 21, 1, NoIndex, NoIndex, 31, 0,
+        9, 0, 84, 3, 21, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 22, 1, NoIndex, NoIndex, 42, 0,
+        9, 0, 89, 3, 22, 0, NoIndex, NoIndex, 43, 0,
+        2, NoIndex, 0, 0, 23, 2, NoIndex, NoIndex, 53, 0,
+        7, 31, 95, 1, 23, 0, 94, 4, 54, 0,
+        9, 0, 96, 3, 23, 0, NoIndex, NoIndex, 55, 0,
+        2, NoIndex, 0, 0, 25, 1, NoIndex, NoIndex, 71, 0,
+        9, 0, 101, 3, 25, 0, NoIndex, NoIndex, 72, 0,
+        2, NoIndex, 0, 0, 26, 2, NoIndex, NoIndex, 82, 0,
+        9, 0, 104, 3, 26, 0, NoIndex, NoIndex, 83, 0,
+        8, 0, 107, 2, 26, 0, NoIndex, NoIndex, 84, 0,
+        2, NoIndex, 0, 0, 28, 1, NoIndex, NoIndex, 91, 0,
+        9, 0, 109, 3, 28, 0, NoIndex, NoIndex, 92, 0,
+        2, NoIndex, 0, 0, 29, 1, NoIndex, NoIndex, 101, 0,
+        9, 1, 114, 3, 29, 0, NoIndex, NoIndex, 102, 0,
+        2, NoIndex, 0, 0, 30, 1, NoIndex, NoIndex, 112, 0,
+        9, 2, 119, 3, 30, 0, NoIndex, NoIndex, 113, 0,
+        2, NoIndex, 0, 0, 31, 1, NoIndex, NoIndex, 123, 0,
+        9, 2, 124, 3, 31, 0, NoIndex, NoIndex, 124, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(= ?added (call list_add @demo_list \"return\"))",
+        "(= ?removed (call list_remove_at ?added 1))",
+        "(= ?element (call list_get ?removed 2))",
+        "(= ?size (call list_size ?added))",
+        "(= ?cleared (call list_clear ?removed))",
+        "(and ...)",
+        "(split_list @split_list_input ?head ?tail)",
+        "(and ...)",
+        "(split_list @split_list_single ?head ?tail)",
+        "(and ...)",
+        "(= ?empty (call list_clear @split_list_single))",
+        "(split_list ?empty ?head ?tail)",
+        "(and ...)",
+        "(split_list @split_list_input \"one\" (\"two\" \"three\"))",
+        "(and ...)",
+        "(split_list @split_list_input ?head ?tail)",
+        "(== ?head \"wrong\")",
+        "(and ...)",
+        "(split_list @split_list_single ?head ?tail)",
+        "(and ...)",
+        "(split_list_front @split_list_input ?element ?remainder)",
+        "(and ...)",
+        "(split_list_back @split_list_input ?remainder ?element)",
+        "(and ...)",
+        "(split_list_back @split_list_input (\"one\" \"two\") \"three\")",
+        "(and ...)",
+        "(= ?added (call list_add @demo_list \"return\"))",
+        "(= ?removed (call list_remove_at ?added 1))",
+        "(= ?element (call list_get ?removed 2))",
+        "(= ?size (call list_size ?added))",
+        "(= ?cleared (call list_clear ?removed))",
+        "(and ...)",
+        "(split_list @split_list_input ?head ?tail)",
+        "(and ...)",
+        "(split_list @split_list_single ?head ?tail)",
+        "(and ...)",
+        "(= ?empty (call list_clear @split_list_single))",
+        "(split_list ?empty ?head ?tail)",
+        "(and ...)",
+        "(split_list @split_list_input \"one\" (\"two\" \"three\"))",
+        "(and ...)",
+        "(split_list @split_list_input ?head ?tail)",
+        "(== ?head \"wrong\")",
+        "(and ...)",
+        "(split_list @split_list_single ?head ?tail)",
+        "(and ...)",
+        "(split_list_front @split_list_input ?element ?remainder)",
+        "(and ...)",
+        "(split_list_back @split_list_input ?remainder ?element)",
+        "(and ...)",
+        "(split_list_back @split_list_input (\"one\" \"two\") \"three\")"],
+      conditionChildRefs: @[
+        1'u32,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11,
+        12,
+        14,
+        16,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        35,
+        37,
+        38,
+        40,
+        42,
+        43,
+        45,
+        47,
+        49,
+        51],
+      tasks: @[
+        1'u32, 32, 16, 1, 19, 33,
+        1, 34, 17, 1, 20, 35,
+        1, 36, 18, 1, 21, 37,
+        1, 38, 19, 1, 22, 39,
+        1, 40, 20, 1, 23, 41,
+        1, 42, 21, 1, 24, 43,
+        1, 51, 25, 2, 35, 52,
+        1, 55, 30, 2, 46, 56,
+        1, 61, 37, 2, 58, 62,
+        1, 64, 39, 0, 64, 65,
+        1, 72, 42, 0, 75, 73,
+        1, 78, 47, 0, 87, 79,
+        1, 81, 50, 2, 95, 82,
+        1, 86, 55, 2, 105, 87,
+        1, 89, 60, 2, 116, 90,
+        1, 96, 65, 0, 127, 97,
+        1, 32, 78, 1, 19, 33,
+        1, 34, 79, 1, 20, 35,
+        1, 36, 80, 1, 21, 37,
+        1, 38, 81, 1, 22, 39,
+        1, 40, 82, 1, 23, 41,
+        1, 42, 83, 1, 24, 43,
+        1, 51, 87, 2, 35, 52,
+        1, 55, 92, 2, 46, 56,
+        1, 61, 99, 2, 58, 62,
+        1, 64, 101, 0, 64, 65,
+        1, 72, 104, 0, 75, 73,
+        1, 78, 109, 0, 87, 79,
+        1, 81, 112, 2, 95, 82,
+        1, 86, 117, 2, 105, 87,
+        1, 89, 122, 2, 116, 90,
+        1, 96, 127, 0, 127, 97],
+      branches: @[
+        11'u32, 0, 0, 6, 10,
+        45, 6, 6, 1, 30,
+        45, 8, 7, 1, 41,
+        58, 10, 8, 1, 52,
+        63, NoIndex, 9, 1, 61,
+        67, 13, 10, 1, 70,
+        75, 15, 11, 1, 81,
+        80, 18, 12, 1, 90,
+        45, 20, 13, 1, 100,
+        45, 22, 14, 1, 111,
+        67, 24, 15, 1, 122,
+        11, 26, 16, 6, 10,
+        45, 32, 22, 1, 30,
+        45, 34, 23, 1, 41,
+        58, 36, 24, 1, 52,
+        63, NoIndex, 25, 1, 61,
+        67, 39, 26, 1, 70,
+        75, 41, 27, 1, 81,
+        80, 44, 28, 1, 90,
+        45, 46, 29, 1, 100,
+        45, 48, 30, 1, 111,
+        67, 50, 31, 1, 122],
+      methods: @[
+        10'u64, 3, 0, 0, 1, 9, 0x000000000000001f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        44, 22, 0, 1, 1, 29, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        53, 27, 0, 2, 1, 40, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        57, 32, 0, 3, 2, 51, 0x00000000000000e0'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        66, 39, 0, 5, 1, 69, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        74, 42, 0, 6, 2, 80, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        83, 52, 0, 8, 1, 99, 0x0000000000000104'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        88, 57, 0, 9, 1, 110, 0x0000000000000104'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        91, 62, 0, 10, 1, 121, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        98, 65, 0, 11, 1, 9, 0x000000000000001f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        99, 84, 0, 12, 1, 29, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        100, 89, 0, 13, 1, 40, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        101, 94, 0, 14, 2, 51, 0x00000000000000e0'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        102, 101, 0, 16, 1, 69, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        103, 104, 0, 17, 2, 80, 0x0000000000000060'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        104, 114, 0, 19, 1, 99, 0x0000000000000104'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        105, 119, 0, 20, 1, 110, 0x0000000000000104'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        106, 124, 0, 21, 1, 121, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: newSeq[uint64](),
+      constants: @[
+        0'u32, 1, 0, 4,
+        0, 4, 1, 5,
+        0, 7, 2, 6],
+      callTermSlotCount: 5, factSlotCount: 0,
+      sourceFiles: @[
+        "Domains/Test/atom_list_demo.domain"],
+      valueSources: @[
+        0'u32, 4, 20, 4, 51,
+        0, 5, 27, 5, 47,
+        0, 6, 28, 6, 35,
+        0, 12, 20, 12, 26,
+        0, 12, 42, 12, 52,
+        0, 12, 53, 12, 61,
+        0, 13, 20, 13, 28,
+        0, 13, 50, 13, 56,
+        0, 13, 57, 13, 58,
+        0, 14, 20, 14, 28,
+        0, 14, 44, 14, 52,
+        0, 14, 53, 14, 54,
+        0, 15, 20, 15, 25,
+        0, 15, 42, 15, 48,
+        0, 16, 20, 16, 28,
+        0, 16, 46, 16, 54,
+        0, 19, 34, 19, 44,
+        0, 20, 31, 20, 37,
+        0, 21, 33, 21, 41,
+        0, 22, 33, 22, 41,
+        0, 23, 30, 23, 35,
+        0, 24, 33, 24, 41,
+        0, 32, 29, 32, 46,
+        0, 32, 47, 32, 52,
+        0, 32, 53, 32, 58,
+        0, 35, 32, 35, 37,
+        0, 35, 38, 35, 43,
+        0, 43, 29, 43, 47,
+        0, 43, 48, 43, 53,
+        0, 43, 54, 43, 59,
+        0, 46, 39, 46, 44,
+        0, 46, 45, 46, 50,
+        0, 54, 20, 54, 26,
+        0, 54, 44, 54, 62,
+        0, 55, 29, 55, 35,
+        0, 55, 36, 55, 41,
+        0, 55, 42, 55, 47,
+        0, 58, 36, 58, 41,
+        0, 58, 42, 58, 47,
+        0, 72, 29, 72, 46,
+        0, 72, 47, 72, 52,
+        0, 72, 53, 72, 67,
+        0, 83, 29, 83, 46,
+        0, 83, 47, 83, 52,
+        0, 83, 53, 83, 58,
+        0, 84, 21, 84, 26,
+        0, 84, 27, 84, 34,
+        0, 92, 29, 92, 47,
+        0, 92, 48, 92, 53,
+        0, 92, 54, 92, 59,
+        0, 95, 35, 95, 40,
+        0, 95, 41, 95, 46,
+        0, 102, 35, 102, 52,
+        0, 102, 53, 102, 61,
+        0, 102, 62, 102, 72,
+        0, 105, 38, 105, 46,
+        0, 105, 47, 105, 57,
+        0, 113, 34, 113, 51,
+        0, 113, 63, 113, 71,
+        0, 113, 52, 113, 62,
+        0, 116, 37, 116, 45,
+        0, 116, 46, 116, 56,
+        0, 124, 34, 124, 51,
+        0, 124, 66, 124, 73,
+        0, 124, 52, 124, 64,
+        0, 12, 20, 12, 26,
+        0, 12, 42, 12, 52,
+        0, 12, 53, 12, 61,
+        0, 13, 20, 13, 28,
+        0, 13, 50, 13, 56,
+        0, 13, 57, 13, 58,
+        0, 14, 20, 14, 28,
+        0, 14, 44, 14, 52,
+        0, 14, 53, 14, 54,
+        0, 15, 20, 15, 25,
+        0, 15, 42, 15, 48,
+        0, 16, 20, 16, 28,
+        0, 16, 46, 16, 54,
+        0, 19, 34, 19, 44,
+        0, 20, 31, 20, 37,
+        0, 21, 33, 21, 41,
+        0, 22, 33, 22, 41,
+        0, 23, 30, 23, 35,
+        0, 24, 33, 24, 41,
+        0, 32, 29, 32, 46,
+        0, 32, 47, 32, 52,
+        0, 32, 53, 32, 58,
+        0, 35, 32, 35, 37,
+        0, 35, 38, 35, 43,
+        0, 43, 29, 43, 47,
+        0, 43, 48, 43, 53,
+        0, 43, 54, 43, 59,
+        0, 46, 39, 46, 44,
+        0, 46, 45, 46, 50,
+        0, 54, 20, 54, 26,
+        0, 54, 44, 54, 62,
+        0, 55, 29, 55, 35,
+        0, 55, 36, 55, 41,
+        0, 55, 42, 55, 47,
+        0, 58, 36, 58, 41,
+        0, 58, 42, 58, 47,
+        0, 72, 29, 72, 46,
+        0, 72, 47, 72, 52,
+        0, 72, 53, 72, 67,
+        0, 83, 29, 83, 46,
+        0, 83, 47, 83, 52,
+        0, 83, 53, 83, 58,
+        0, 84, 21, 84, 26,
+        0, 84, 27, 84, 34,
+        0, 92, 29, 92, 47,
+        0, 92, 48, 92, 53,
+        0, 92, 54, 92, 59,
+        0, 95, 35, 95, 40,
+        0, 95, 41, 95, 46,
+        0, 102, 35, 102, 52,
+        0, 102, 53, 102, 61,
+        0, 102, 62, 102, 72,
+        0, 105, 38, 105, 46,
+        0, 105, 47, 105, 57,
+        0, 113, 34, 113, 51,
+        0, 113, 63, 113, 71,
+        0, 113, 52, 113, 62,
+        0, 116, 37, 116, 45,
+        0, 116, 46, 116, 56,
+        0, 124, 34, 124, 51,
+        0, 124, 66, 124, 73,
+        0, 124, 52, 124, 64],
+      conditionSources: @[
+        0'u32, 11, 14, 16, 55,
+        0, 12, 17, 12, 61,
+        0, 13, 17, 13, 58,
+        0, 14, 17, 14, 54,
+        0, 15, 17, 15, 48,
+        0, 16, 17, 16, 54,
+        0, 31, 14, 32, 58,
+        0, 32, 17, 32, 58,
+        0, 42, 14, 43, 59,
+        0, 43, 17, 43, 59,
+        0, 53, 14, 55, 47,
+        0, 54, 17, 54, 62,
+        0, 55, 17, 55, 47,
+        0, 71, 14, 72, 68,
+        0, 72, 17, 72, 67,
+        0, 82, 14, 84, 34,
+        0, 83, 17, 83, 58,
+        0, 84, 18, 84, 34,
+        0, 91, 14, 92, 59,
+        0, 92, 17, 92, 59,
+        0, 101, 14, 102, 72,
+        0, 102, 17, 102, 72,
+        0, 112, 14, 113, 71,
+        0, 113, 17, 113, 71,
+        0, 123, 14, 124, 73,
+        0, 124, 17, 124, 73,
+        0, 11, 14, 16, 55,
+        0, 12, 17, 12, 61,
+        0, 13, 17, 13, 58,
+        0, 14, 17, 14, 54,
+        0, 15, 17, 15, 48,
+        0, 16, 17, 16, 54,
+        0, 31, 14, 32, 58,
+        0, 32, 17, 32, 58,
+        0, 42, 14, 43, 59,
+        0, 43, 17, 43, 59,
+        0, 53, 14, 55, 47,
+        0, 54, 17, 54, 62,
+        0, 55, 17, 55, 47,
+        0, 71, 14, 72, 68,
+        0, 72, 17, 72, 67,
+        0, 82, 14, 84, 34,
+        0, 83, 17, 83, 58,
+        0, 84, 18, 84, 34,
+        0, 91, 14, 92, 59,
+        0, 92, 17, 92, 59,
+        0, 101, 14, 102, 72,
+        0, 102, 17, 102, 72,
+        0, 112, 14, 113, 71,
+        0, 113, 17, 113, 71,
+        0, 123, 14, 124, 73,
+        0, 124, 17, 124, 73],
+      taskSources: @[
+        0'u32, 19, 17, 19, 44,
+        0, 20, 17, 20, 37,
+        0, 21, 17, 21, 41,
+        0, 22, 17, 22, 41,
+        0, 23, 17, 23, 35,
+        0, 24, 17, 24, 41,
+        0, 35, 17, 35, 43,
+        0, 46, 17, 46, 50,
+        0, 58, 17, 58, 47,
+        0, 64, 17, 64, 38,
+        0, 75, 17, 75, 38,
+        0, 87, 17, 87, 42,
+        0, 95, 17, 95, 46,
+        0, 105, 17, 105, 57,
+        0, 116, 17, 116, 56,
+        0, 127, 17, 127, 49,
+        0, 19, 17, 19, 44,
+        0, 20, 17, 20, 37,
+        0, 21, 17, 21, 41,
+        0, 22, 17, 22, 41,
+        0, 23, 17, 23, 35,
+        0, 24, 17, 24, 41,
+        0, 35, 17, 35, 43,
+        0, 46, 17, 46, 50,
+        0, 58, 17, 58, 47,
+        0, 64, 17, 64, 38,
+        0, 75, 17, 75, 38,
+        0, 87, 17, 87, 42,
+        0, 95, 17, 95, 46,
+        0, 105, 17, 105, 57,
+        0, 116, 17, 116, 56,
+        0, 127, 17, 127, 49],
+      branchSources: @[
+        0'u32, 10, 9, 26, 9,
+        0, 30, 9, 37, 9,
+        0, 41, 9, 48, 9,
+        0, 52, 9, 60, 9,
+        0, 61, 9, 66, 9,
+        0, 70, 9, 77, 9,
+        0, 81, 9, 89, 9,
+        0, 90, 9, 97, 9,
+        0, 100, 9, 107, 9,
+        0, 111, 9, 118, 9,
+        0, 122, 9, 129, 9,
+        0, 10, 9, 26, 9,
+        0, 30, 9, 37, 9,
+        0, 41, 9, 48, 9,
+        0, 52, 9, 60, 9,
+        0, 61, 9, 66, 9,
+        0, 70, 9, 77, 9,
+        0, 81, 9, 89, 9,
+        0, 90, 9, 97, 9,
+        0, 100, 9, 107, 9,
+        0, 111, 9, 118, 9,
+        0, 122, 9, 129, 9],
+      methodSources: @[
+        0'u32, 9, 5, 27, 5,
+        0, 29, 5, 38, 5,
+        0, 40, 5, 49, 5,
+        0, 51, 5, 67, 5,
+        0, 69, 5, 78, 5,
+        0, 80, 5, 98, 5,
+        0, 99, 5, 108, 5,
+        0, 110, 5, 119, 5,
+        0, 121, 5, 130, 5,
+        0, 9, 5, 27, 5,
+        0, 29, 5, 38, 5,
+        0, 40, 5, 49, 5,
+        0, 51, 5, 67, 5,
+        0, 69, 5, 78, 5,
+        0, 80, 5, 98, 5,
+        0, 99, 5, 108, 5,
+        0, 110, 5, 119, 5,
+        0, 121, 5, 130, 5],
+      axiomSources: newSeq[uint32](),
+      constantSources: @[
+        0'u32, 4, 9, 4, 52,
+        0, 5, 9, 5, 48,
+        0, 6, 9, 6, 36])
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

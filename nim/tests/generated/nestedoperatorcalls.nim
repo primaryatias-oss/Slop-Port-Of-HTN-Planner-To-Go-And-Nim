@@ -399,273 +399,525 @@ proc factChoice365(ex: Exec, target: uint32): bool {.nimcall.} =
   false
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (!unexpected)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (call identity 1)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv84], addr cs0, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(98, callResult)
   # (call identity 2)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv85], addr cs1, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(99, callResult)
   # (!result (+ (call identity 1) (call identity 2)))
-  if not ex.appendPlanStep(sym4, [arith(0'u32, [ex.v[98], ex.v[99]])]): return 0
+  if not ex.appendPlanStep(sym4, [arith(0'u32, [ex.v[98], ex.v[99]])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (call missing_distance_callterm)
   block:
     let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs2, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(100, callResult)
   # (!result (+ 1 (call missing_distance_callterm)))
-  if not ex.appendPlanStep(sym4, [arith(0'u32, [newInt(1'i32), ex.v[100]])]): return 0
+  if not ex.appendPlanStep(sym4, [arith(0'u32, [newInt(1'i32), ex.v[100]])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (!continue)
-  if not ex.appendPlanStep(sym6, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym6, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!result ?entity)
-  if not ex.appendPlanStep(sym4, [ex.v[109]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[109]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (!unexpected)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!result ?value)
-  if not ex.appendPlanStep(sym4, [ex.v[27]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[27]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task32(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 32)
   # (!unexpected)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task33(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 33)
   # (!result)
-  if not ex.appendPlanStep(sym4, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym4, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task34(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 34)
   # (call identity 1)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv86], addr cs3, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(214, callResult)
   # (call identity 2)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv87], addr cs4, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(215, callResult)
   # (!result (+ (call identity 1) (call identity 2)))
-  if not ex.appendPlanStep(sym4, [arith(0'u32, [ex.v[214], ex.v[215]])]): return 0
+  if not ex.appendPlanStep(sym4, [arith(0'u32, [ex.v[214], ex.v[215]])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task35(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 35)
   # (call missing_distance_callterm)
   block:
     let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs5, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(216, callResult)
   # (!result (+ 1 (call missing_distance_callterm)))
-  if not ex.appendPlanStep(sym4, [arith(0'u32, [newInt(1'i32), ex.v[216]])]): return 0
+  if not ex.appendPlanStep(sym4, [arith(0'u32, [newInt(1'i32), ex.v[216]])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task36(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 36)
   # (!continue)
-  if not ex.appendPlanStep(sym6, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym6, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task37(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 37)
   # (!result ?entity)
-  if not ex.appendPlanStep(sym4, [ex.v[109]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[109]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task38(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 38)
   # (!unexpected)
-  if not ex.appendPlanStep(sym5, newSeq[Atom]()): return 0
+  if not ex.appendPlanStep(sym5, newSeq[Atom]()):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task39(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 39)
   # (!result ?value)
-  if not ex.appendPlanStep(sym4, [ex.v[27]]): return 0
+  if not ex.appendPlanStep(sym4, [ex.v[27]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: NestedOperatorCalls::behave/0
@@ -694,10 +946,12 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch branch
+      ex.debugBeginBranch(definition, 0)
       # (and (= ?old_position (1.0 0.0 0.0)) (= ?new_position (2.0 0.0 0.0)) (< (call missing_distance_callterm ?old_position ?new_position) 0.2))
       cp7_0 = ex.v[0]
       cp7_1 = ex.v[1]
@@ -705,15 +959,19 @@ proc method0(ex: Exec): int {.nimcall.} =
       cp7_3 = ex.v[3]
       cp7_4 = ex.v[4]
       cp7_5 = ex.v[5]
+      ex.debugBeginCondition(definition, 0)
       # (= ?old_position (1.0 0.0 0.0))
       cp9_0 = ex.v[0]
       # (= ?old_position (1.0 0.0 0.0))
+      ex.debugBeginCondition(definition, 1)
       block:
         let value = sv0
         if value.isBound and not ex.v[0].isBound:
           ex.v[0] = value
+          ex.debugEndCondition(definition, true)
           state = 10
           continue
+        ex.debugEndCondition(definition, false)
         state = 8
         continue
       state = 10
@@ -722,12 +980,15 @@ proc method0(ex: Exec): int {.nimcall.} =
       # (= ?new_position (2.0 0.0 0.0))
       cp12_1 = ex.v[1]
       # (= ?new_position (2.0 0.0 0.0))
+      ex.debugBeginCondition(definition, 2)
       block:
         let value = sv1
         if value.isBound and not ex.v[1].isBound:
           ex.v[1] = value
+          ex.debugEndCondition(definition, true)
           state = 13
           continue
+        ex.debugEndCondition(definition, false)
         state = 11
         continue
       state = 13
@@ -738,15 +999,19 @@ proc method0(ex: Exec): int {.nimcall.} =
       cp15_3 = ex.v[3]
       cp15_4 = ex.v[4]
       cp15_5 = ex.v[5]
+      ex.debugBeginCondition(definition, 3)
       # (= ?$assignment_call_0 ?old_position)
       cp17_2 = ex.v[2]
       # (= ?$assignment_call_0 ?old_position)
+      ex.debugBeginCondition(definition, 4)
       block:
         let value = ex.v[0]
         if value.isBound and not ex.v[2].isBound:
           ex.v[2] = value
+          ex.debugEndCondition(definition, true)
           state = 18
           continue
+        ex.debugEndCondition(definition, false)
         state = 16
         continue
       state = 18
@@ -755,12 +1020,15 @@ proc method0(ex: Exec): int {.nimcall.} =
       # (= ?$assignment_call_1 ?new_position)
       cp20_3 = ex.v[3]
       # (= ?$assignment_call_1 ?new_position)
+      ex.debugBeginCondition(definition, 5)
       block:
         let value = ex.v[1]
         if value.isBound and not ex.v[3].isBound:
           ex.v[3] = value
+          ex.debugEndCondition(definition, true)
           state = 21
           continue
+        ex.debugEndCondition(definition, false)
         state = 19
         continue
       state = 21
@@ -769,24 +1037,30 @@ proc method0(ex: Exec): int {.nimcall.} =
       # (= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))
       cp23_4 = ex.v[4]
       # (= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))
+      ex.debugBeginCondition(definition, 6)
       if not ex.v[4].isBound:
         let (callResult, ok) = ex.invoke(0, @[ex.v[2], ex.v[3]], addr cs6, factSymbols)
         if ok:
           ex.setIfChanged(4, callResult)
+          ex.debugEndCondition(definition, true)
           state = 24
           continue
+      ex.debugEndCondition(definition, false)
       state = 22
       continue
     of 24:
       # (= ?$assignment_call_3 0.2)
       cp26_5 = ex.v[5]
       # (= ?$assignment_call_3 0.2)
+      ex.debugBeginCondition(definition, 7)
       block:
         let value = sv2
         if value.isBound and not ex.v[5].isBound:
           ex.v[5] = value
+          ex.debugEndCondition(definition, true)
           state = 27
           continue
+        ex.debugEndCondition(definition, false)
         state = 25
         continue
       state = 27
@@ -794,12 +1068,17 @@ proc method0(ex: Exec): int {.nimcall.} =
     of 27:
       # (< ?$assignment_call_2 ?$assignment_call_3)
       # (< ?$assignment_call_2 ?$assignment_call_3)
+      ex.debugBeginCondition(definition, 8)
       if compare(ex.v[4], ex.v[5], 2'u32):
+        ex.debugEndCondition(definition, true)
         state = 30
         continue
+      ex.debugEndCondition(definition, false)
       state = 28
       continue
     of 30:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 4
       continue
     of 28:
@@ -826,6 +1105,7 @@ proc method0(ex: Exec): int {.nimcall.} =
       ex.v[3] = cp15_3
       ex.v[4] = cp15_4
       ex.v[5] = cp15_5
+      ex.debugEndCondition(definition, false)
       state = 11
       continue
     of 11:
@@ -843,17 +1123,22 @@ proc method0(ex: Exec): int {.nimcall.} =
       ex.v[3] = cp7_3
       ex.v[4] = cp7_4
       ex.v[5] = cp7_5
+      ex.debugEndCondition(definition, false)
       state = 5
       continue
     of 5:
+      ex.debugEndBranch(definition, false)
       state = 1
       continue
     of 4:
       if not ex.pushBranch(addr bc0):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 31
+      ex.debugCapturePendingTask(0)
+      state = 33
       continue
-    of 31:
+    of 33:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -863,16 +1148,21 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 3
         continue
-      state = 32
+      state = 34
       continue
     of 3:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 31
+      state = 33
       continue
-    of 32:
+    of 34:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 1:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -880,95 +1170,116 @@ proc method0(ex: Exec): int {.nimcall.} =
 # method1: NestedOperatorCalls::missing_right/0
 proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp39_6: Atom
-  var cp39_7: Atom
   var cp41_6: Atom
   var cp41_7: Atom
   var cp43_6: Atom
-  var cp46_7: Atom
+  var cp43_7: Atom
+  var cp45_6: Atom
+  var cp48_7: Atom
   var state = 0
   case fr.resume
-  of 1: state = 35
+  of 1: state = 37
   else: discard
   while true:
     case state
     of 0:
-      state = 34
+      ex.debugBeginMethod(definition, 1)
+      state = 36
       continue
-    of 34:
+    of 36:
       # branch branch
+      ex.debugBeginBranch(definition, 1)
       # (and (< 0.0 (call missing_distance_callterm)))
-      cp39_6 = ex.v[6]
-      cp39_7 = ex.v[7]
-      # (and (= ?$assignment_call_4 0.0) (= ?$assignment_call_5 (call missing_distance_callterm)) (< ?$assignment_call_4 ?$assignment_call_5))
       cp41_6 = ex.v[6]
       cp41_7 = ex.v[7]
-      # (= ?$assignment_call_4 0.0)
+      ex.debugBeginCondition(definition, 9)
+      # (and (= ?$assignment_call_4 0.0) (= ?$assignment_call_5 (call missing_distance_callterm)) (< ?$assignment_call_4 ?$assignment_call_5))
       cp43_6 = ex.v[6]
+      cp43_7 = ex.v[7]
+      ex.debugBeginCondition(definition, 10)
       # (= ?$assignment_call_4 0.0)
+      cp45_6 = ex.v[6]
+      # (= ?$assignment_call_4 0.0)
+      ex.debugBeginCondition(definition, 11)
       block:
         let value = sv3
         if value.isBound and not ex.v[6].isBound:
           ex.v[6] = value
-          state = 44
+          ex.debugEndCondition(definition, true)
+          state = 46
           continue
-        state = 42
+        ex.debugEndCondition(definition, false)
+        state = 44
         continue
-      state = 44
+      state = 46
       continue
-    of 44:
+    of 46:
       # (= ?$assignment_call_5 (call missing_distance_callterm))
-      cp46_7 = ex.v[7]
+      cp48_7 = ex.v[7]
       # (= ?$assignment_call_5 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 12)
       if not ex.v[7].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs7, factSymbols)
         if ok:
           ex.setIfChanged(7, callResult)
-          state = 47
+          ex.debugEndCondition(definition, true)
+          state = 49
           continue
-      state = 45
+      ex.debugEndCondition(definition, false)
+      state = 47
       continue
-    of 47:
+    of 49:
       # (< ?$assignment_call_4 ?$assignment_call_5)
       # (< ?$assignment_call_4 ?$assignment_call_5)
+      ex.debugBeginCondition(definition, 13)
       if compare(ex.v[6], ex.v[7], 2'u32):
-        state = 50
+        ex.debugEndCondition(definition, true)
+        state = 52
         continue
-      state = 48
+      ex.debugEndCondition(definition, false)
+      state = 50
+      continue
+    of 52:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 38
       continue
     of 50:
-      state = 36
+      state = 47
       continue
-    of 48:
-      state = 45
+    of 47:
+      ex.v[7] = cp48_7
+      state = 44
       continue
-    of 45:
-      ex.v[7] = cp46_7
+    of 44:
+      ex.v[6] = cp45_6
       state = 42
       continue
     of 42:
       ex.v[6] = cp43_6
+      ex.v[7] = cp43_7
+      ex.debugEndCondition(definition, false)
       state = 40
       continue
     of 40:
       ex.v[6] = cp41_6
       ex.v[7] = cp41_7
-      state = 38
+      ex.debugEndCondition(definition, false)
+      state = 39
+      continue
+    of 39:
+      ex.debugEndBranch(definition, false)
+      state = 35
       continue
     of 38:
-      ex.v[6] = cp39_6
-      ex.v[7] = cp39_7
-      state = 37
-      continue
-    of 37:
-      state = 33
-      continue
-    of 36:
       if not ex.pushBranch(addr bc1):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 51
+      ex.debugCapturePendingTask(1)
+      state = 55
       continue
-    of 51:
+    of 55:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -976,18 +1287,23 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 35
+        state = 37
         continue
-      state = 52
+      state = 56
       continue
-    of 35:
+    of 37:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 51
+      state = 55
       continue
-    of 52:
+    of 56:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 33:
+    of 35:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -995,170 +1311,200 @@ proc method1(ex: Exec): int {.nimcall.} =
 # method2: NestedOperatorCalls::missing_arithmetic/0
 proc method2(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp59_8: Atom
-  var cp59_9: Atom
-  var cp59_10: Atom
-  var cp59_11: Atom
-  var cp59_12: Atom
-  var cp61_8: Atom
-  var cp61_9: Atom
-  var cp61_10: Atom
-  var cp61_11: Atom
-  var cp61_12: Atom
   var cp63_8: Atom
-  var cp66_9: Atom
-  var cp69_10: Atom
-  var cp72_11: Atom
-  var cp75_12: Atom
+  var cp63_9: Atom
+  var cp63_10: Atom
+  var cp63_11: Atom
+  var cp63_12: Atom
+  var cp65_8: Atom
+  var cp65_9: Atom
+  var cp65_10: Atom
+  var cp65_11: Atom
+  var cp65_12: Atom
+  var cp67_8: Atom
+  var cp70_9: Atom
+  var cp73_10: Atom
+  var cp76_11: Atom
+  var cp79_12: Atom
   var state = 0
   case fr.resume
-  of 1: state = 55
+  of 1: state = 59
   else: discard
   while true:
     case state
     of 0:
-      state = 54
+      ex.debugBeginMethod(definition, 2)
+      state = 58
       continue
-    of 54:
+    of 58:
       # branch branch
+      ex.debugBeginBranch(definition, 2)
       # (and (< (+ 0.0 (call missing_distance_callterm)) 0.2))
-      cp59_8 = ex.v[8]
-      cp59_9 = ex.v[9]
-      cp59_10 = ex.v[10]
-      cp59_11 = ex.v[11]
-      cp59_12 = ex.v[12]
-      # (and (= ?$assignment_call_6 (* 0.0 1)) (= ?$assignment_call_7 (call missing_distance_callterm)) (= ?$assignment_call_8 (* ?$assignment_call_7 1)) (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8)) (= ?$assignment_call_10 0.2) (< ?$assignment_call_9 ?$assignment_call_10))
-      cp61_8 = ex.v[8]
-      cp61_9 = ex.v[9]
-      cp61_10 = ex.v[10]
-      cp61_11 = ex.v[11]
-      cp61_12 = ex.v[12]
-      # (= ?$assignment_call_6 (* 0.0 1))
       cp63_8 = ex.v[8]
+      cp63_9 = ex.v[9]
+      cp63_10 = ex.v[10]
+      cp63_11 = ex.v[11]
+      cp63_12 = ex.v[12]
+      ex.debugBeginCondition(definition, 14)
+      # (and (= ?$assignment_call_6 (* 0.0 1)) (= ?$assignment_call_7 (call missing_distance_callterm)) (= ?$assignment_call_8 (* ?$assignment_call_7 1)) (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8)) (= ?$assignment_call_10 0.2) (< ?$assignment_call_9 ?$assignment_call_10))
+      cp65_8 = ex.v[8]
+      cp65_9 = ex.v[9]
+      cp65_10 = ex.v[10]
+      cp65_11 = ex.v[11]
+      cp65_12 = ex.v[12]
+      ex.debugBeginCondition(definition, 15)
       # (= ?$assignment_call_6 (* 0.0 1))
+      cp67_8 = ex.v[8]
+      # (= ?$assignment_call_6 (* 0.0 1))
+      ex.debugBeginCondition(definition, 16)
       block:
         let value = arith(2'u32, [newFloatBits(0x00000000'u32), newInt(1'i32)])
         if value.isBound and not ex.v[8].isBound:
           ex.v[8] = value
-          state = 64
+          ex.debugEndCondition(definition, true)
+          state = 68
           continue
-        state = 62
+        ex.debugEndCondition(definition, false)
+        state = 66
         continue
-      state = 64
+      state = 68
       continue
-    of 64:
+    of 68:
       # (= ?$assignment_call_7 (call missing_distance_callterm))
-      cp66_9 = ex.v[9]
+      cp70_9 = ex.v[9]
       # (= ?$assignment_call_7 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 17)
       if not ex.v[9].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs8, factSymbols)
         if ok:
           ex.setIfChanged(9, callResult)
-          state = 67
+          ex.debugEndCondition(definition, true)
+          state = 71
           continue
-      state = 65
+      ex.debugEndCondition(definition, false)
+      state = 69
       continue
-    of 67:
+    of 71:
       # (= ?$assignment_call_8 (* ?$assignment_call_7 1))
-      cp69_10 = ex.v[10]
+      cp73_10 = ex.v[10]
       # (= ?$assignment_call_8 (* ?$assignment_call_7 1))
+      ex.debugBeginCondition(definition, 18)
       block:
         let value = arith(2'u32, [ex.v[9], newInt(1'i32)])
         if value.isBound and not ex.v[10].isBound:
           ex.v[10] = value
-          state = 70
+          ex.debugEndCondition(definition, true)
+          state = 74
           continue
-        state = 68
+        ex.debugEndCondition(definition, false)
+        state = 72
         continue
-      state = 70
+      state = 74
       continue
-    of 70:
+    of 74:
       # (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))
-      cp72_11 = ex.v[11]
+      cp76_11 = ex.v[11]
       # (= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))
+      ex.debugBeginCondition(definition, 19)
       block:
         let value = arith(0'u32, [ex.v[8], ex.v[10]])
         if value.isBound and not ex.v[11].isBound:
           ex.v[11] = value
-          state = 73
+          ex.debugEndCondition(definition, true)
+          state = 77
           continue
-        state = 71
+        ex.debugEndCondition(definition, false)
+        state = 75
         continue
-      state = 73
+      state = 77
       continue
-    of 73:
+    of 77:
       # (= ?$assignment_call_10 0.2)
-      cp75_12 = ex.v[12]
+      cp79_12 = ex.v[12]
       # (= ?$assignment_call_10 0.2)
+      ex.debugBeginCondition(definition, 20)
       block:
         let value = sv4
         if value.isBound and not ex.v[12].isBound:
           ex.v[12] = value
-          state = 76
+          ex.debugEndCondition(definition, true)
+          state = 80
           continue
-        state = 74
+        ex.debugEndCondition(definition, false)
+        state = 78
         continue
-      state = 76
+      state = 80
       continue
-    of 76:
+    of 80:
       # (< ?$assignment_call_9 ?$assignment_call_10)
       # (< ?$assignment_call_9 ?$assignment_call_10)
+      ex.debugBeginCondition(definition, 21)
       if compare(ex.v[11], ex.v[12], 2'u32):
-        state = 79
+        ex.debugEndCondition(definition, true)
+        state = 83
         continue
-      state = 77
+      ex.debugEndCondition(definition, false)
+      state = 81
       continue
-    of 79:
-      state = 56
+    of 83:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 60
       continue
-    of 77:
-      state = 74
+    of 81:
+      state = 78
       continue
-    of 74:
-      ex.v[12] = cp75_12
-      state = 71
+    of 78:
+      ex.v[12] = cp79_12
+      state = 75
       continue
-    of 71:
-      ex.v[11] = cp72_11
-      state = 68
+    of 75:
+      ex.v[11] = cp76_11
+      state = 72
       continue
-    of 68:
-      ex.v[10] = cp69_10
-      state = 65
+    of 72:
+      ex.v[10] = cp73_10
+      state = 69
       continue
-    of 65:
-      ex.v[9] = cp66_9
+    of 69:
+      ex.v[9] = cp70_9
+      state = 66
+      continue
+    of 66:
+      ex.v[8] = cp67_8
+      state = 64
+      continue
+    of 64:
+      ex.v[8] = cp65_8
+      ex.v[9] = cp65_9
+      ex.v[10] = cp65_10
+      ex.v[11] = cp65_11
+      ex.v[12] = cp65_12
+      ex.debugEndCondition(definition, false)
       state = 62
       continue
     of 62:
       ex.v[8] = cp63_8
-      state = 60
+      ex.v[9] = cp63_9
+      ex.v[10] = cp63_10
+      ex.v[11] = cp63_11
+      ex.v[12] = cp63_12
+      ex.debugEndCondition(definition, false)
+      state = 61
       continue
-    of 60:
-      ex.v[8] = cp61_8
-      ex.v[9] = cp61_9
-      ex.v[10] = cp61_10
-      ex.v[11] = cp61_11
-      ex.v[12] = cp61_12
-      state = 58
-      continue
-    of 58:
-      ex.v[8] = cp59_8
-      ex.v[9] = cp59_9
-      ex.v[10] = cp59_10
-      ex.v[11] = cp59_11
-      ex.v[12] = cp59_12
+    of 61:
+      ex.debugEndBranch(definition, false)
       state = 57
       continue
-    of 57:
-      state = 53
-      continue
-    of 56:
+    of 60:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      ex.debugCapturePendingTask(2)
+      state = 86
       continue
-    of 80:
+    of 86:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1166,18 +1512,23 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 55
+        state = 59
         continue
-      state = 81
+      state = 87
       continue
-    of 55:
+    of 59:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 80
+      state = 86
       continue
-    of 81:
+    of 87:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 53:
+    of 57:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1185,118 +1536,142 @@ proc method2(ex: Exec): int {.nimcall.} =
 # method3: NestedOperatorCalls::missing_deep/0
 proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp88_13: Atom
-  var cp88_14: Atom
-  var cp88_15: Atom
-  var cp90_13: Atom
-  var cp90_14: Atom
-  var cp90_15: Atom
-  var cp92_13: Atom
-  var cp95_14: Atom
-  var cp98_15: Atom
+  var cp94_13: Atom
+  var cp94_14: Atom
+  var cp94_15: Atom
+  var cp96_13: Atom
+  var cp96_14: Atom
+  var cp96_15: Atom
+  var cp98_13: Atom
+  var cp101_14: Atom
+  var cp104_15: Atom
   var state = 0
   case fr.resume
-  of 1: state = 84
+  of 1: state = 90
   else: discard
   while true:
     case state
     of 0:
-      state = 83
+      ex.debugBeginMethod(definition, 3)
+      state = 89
       continue
-    of 83:
+    of 89:
       # branch branch
+      ex.debugBeginBranch(definition, 3)
       # (and (< (call identity (call missing_distance_callterm)) 0.2))
-      cp88_13 = ex.v[13]
-      cp88_14 = ex.v[14]
-      cp88_15 = ex.v[15]
+      cp94_13 = ex.v[13]
+      cp94_14 = ex.v[14]
+      cp94_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 22)
       # (and (= ?$assignment_call_11 (call missing_distance_callterm)) (= ?$assignment_call_12 (call identity ?$assignment_call_11)) (= ?$assignment_call_13 0.2) (< ?$assignment_call_12 ?$assignment_call_13))
-      cp90_13 = ex.v[13]
-      cp90_14 = ex.v[14]
-      cp90_15 = ex.v[15]
+      cp96_13 = ex.v[13]
+      cp96_14 = ex.v[14]
+      cp96_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 23)
       # (= ?$assignment_call_11 (call missing_distance_callterm))
-      cp92_13 = ex.v[13]
+      cp98_13 = ex.v[13]
       # (= ?$assignment_call_11 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 24)
       if not ex.v[13].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs9, factSymbols)
         if ok:
           ex.setIfChanged(13, callResult)
-          state = 93
+          ex.debugEndCondition(definition, true)
+          state = 99
           continue
-      state = 91
+      ex.debugEndCondition(definition, false)
+      state = 97
       continue
-    of 93:
+    of 99:
       # (= ?$assignment_call_12 (call identity ?$assignment_call_11))
-      cp95_14 = ex.v[14]
+      cp101_14 = ex.v[14]
       # (= ?$assignment_call_12 (call identity ?$assignment_call_11))
+      ex.debugBeginCondition(definition, 25)
       if not ex.v[14].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[13]], addr cs10, factSymbols)
         if ok:
           ex.setIfChanged(14, callResult)
-          state = 96
+          ex.debugEndCondition(definition, true)
+          state = 102
           continue
-      state = 94
+      ex.debugEndCondition(definition, false)
+      state = 100
       continue
-    of 96:
+    of 102:
       # (= ?$assignment_call_13 0.2)
-      cp98_15 = ex.v[15]
+      cp104_15 = ex.v[15]
       # (= ?$assignment_call_13 0.2)
+      ex.debugBeginCondition(definition, 26)
       block:
         let value = sv5
         if value.isBound and not ex.v[15].isBound:
           ex.v[15] = value
-          state = 99
+          ex.debugEndCondition(definition, true)
+          state = 105
           continue
-        state = 97
+        ex.debugEndCondition(definition, false)
+        state = 103
         continue
-      state = 99
+      state = 105
       continue
-    of 99:
+    of 105:
       # (< ?$assignment_call_12 ?$assignment_call_13)
       # (< ?$assignment_call_12 ?$assignment_call_13)
+      ex.debugBeginCondition(definition, 27)
       if compare(ex.v[14], ex.v[15], 2'u32):
-        state = 102
+        ex.debugEndCondition(definition, true)
+        state = 108
         continue
-      state = 100
+      ex.debugEndCondition(definition, false)
+      state = 106
       continue
-    of 102:
-      state = 85
-      continue
-    of 100:
-      state = 97
-      continue
-    of 97:
-      ex.v[15] = cp98_15
-      state = 94
-      continue
-    of 94:
-      ex.v[14] = cp95_14
+    of 108:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 91
       continue
-    of 91:
-      ex.v[13] = cp92_13
-      state = 89
-      continue
-    of 89:
-      ex.v[13] = cp90_13
-      ex.v[14] = cp90_14
-      ex.v[15] = cp90_15
-      state = 87
-      continue
-    of 87:
-      ex.v[13] = cp88_13
-      ex.v[14] = cp88_14
-      ex.v[15] = cp88_15
-      state = 86
-      continue
-    of 86:
-      state = 82
-      continue
-    of 85:
-      if not ex.pushBranch(addr bc3):
-        return 0
+    of 106:
       state = 103
       continue
     of 103:
+      ex.v[15] = cp104_15
+      state = 100
+      continue
+    of 100:
+      ex.v[14] = cp101_14
+      state = 97
+      continue
+    of 97:
+      ex.v[13] = cp98_13
+      state = 95
+      continue
+    of 95:
+      ex.v[13] = cp96_13
+      ex.v[14] = cp96_14
+      ex.v[15] = cp96_15
+      ex.debugEndCondition(definition, false)
+      state = 93
+      continue
+    of 93:
+      ex.v[13] = cp94_13
+      ex.v[14] = cp94_14
+      ex.v[15] = cp94_15
+      ex.debugEndCondition(definition, false)
+      state = 92
+      continue
+    of 92:
+      ex.debugEndBranch(definition, false)
+      state = 88
+      continue
+    of 91:
+      if not ex.pushBranch(addr bc3):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(3)
+      state = 111
+      continue
+    of 111:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1304,18 +1679,23 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 84
+        state = 90
         continue
-      state = 104
+      state = 112
       continue
-    of 84:
+    of 90:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 103
+      state = 111
       continue
-    of 104:
+    of 112:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 82:
+    of 88:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1323,63 +1703,78 @@ proc method3(ex: Exec): int {.nimcall.} =
 # method4: NestedOperatorCalls::bound_first/0
 proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp111_16: Atom
-  var cp113_16: Atom
+  var cp119_16: Atom
+  var cp121_16: Atom
   var state = 0
   case fr.resume
-  of 1: state = 107
+  of 1: state = 115
   else: discard
   while true:
     case state
     of 0:
-      state = 106
+      ex.debugBeginMethod(definition, 4)
+      state = 114
       continue
-    of 106:
+    of 114:
       # branch branch
+      ex.debugBeginBranch(definition, 4)
       # (and (= ?distance (call missing_distance_callterm)) (< ?distance 0.2))
-      cp111_16 = ex.v[16]
+      cp119_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 28)
       # (= ?distance (call missing_distance_callterm))
-      cp113_16 = ex.v[16]
+      cp121_16 = ex.v[16]
       # (= ?distance (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 29)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs11, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 114
+          ex.debugEndCondition(definition, true)
+          state = 122
           continue
-      state = 112
+      ex.debugEndCondition(definition, false)
+      state = 120
       continue
-    of 114:
+    of 122:
       # (< ?distance 0.2)
       # (< ?distance 0.2)
+      ex.debugBeginCondition(definition, 30)
       if compare(ex.v[16], sv6, 2'u32):
-        state = 117
+        ex.debugEndCondition(definition, true)
+        state = 125
         continue
-      state = 115
+      ex.debugEndCondition(definition, false)
+      state = 123
       continue
-    of 117:
-      state = 108
+    of 125:
+      ex.debugEndCondition(definition, true)
+      state = 116
       continue
-    of 115:
-      state = 112
+    of 123:
+      state = 120
       continue
-    of 112:
-      ex.v[16] = cp113_16
-      state = 110
-      continue
-    of 110:
-      ex.v[16] = cp111_16
-      state = 109
-      continue
-    of 109:
-      state = 105
-      continue
-    of 108:
-      if not ex.pushBranch(addr bc4):
-        return 0
+    of 120:
+      ex.v[16] = cp121_16
       state = 118
       continue
     of 118:
+      ex.v[16] = cp119_16
+      ex.debugEndCondition(definition, false)
+      state = 117
+      continue
+    of 117:
+      ex.debugEndBranch(definition, false)
+      state = 113
+      continue
+    of 116:
+      if not ex.pushBranch(addr bc4):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(4)
+      state = 127
+      continue
+    of 127:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1387,18 +1782,23 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 107
+        state = 115
         continue
-      state = 119
+      state = 128
       continue
-    of 107:
+    of 115:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 118
+      state = 127
       continue
-    of 119:
+    of 128:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 105:
+    of 113:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1406,105 +1806,126 @@ proc method4(ex: Exec): int {.nimcall.} =
 # method5: NestedOperatorCalls::two_attempts/0
 proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp128_17: Atom
-  var cp128_18: Atom
-  var cp130_17: Atom
-  var cp130_18: Atom
-  var cp132_17: Atom
-  var cp135_18: Atom
-  var cp145_19: Atom
-  var cp145_20: Atom
-  var cp147_19: Atom
-  var cp147_20: Atom
-  var cp149_19: Atom
-  var cp152_20: Atom
+  var cp137_17: Atom
+  var cp137_18: Atom
+  var cp139_17: Atom
+  var cp139_18: Atom
+  var cp141_17: Atom
+  var cp144_18: Atom
+  var cp156_19: Atom
+  var cp156_20: Atom
+  var cp158_19: Atom
+  var cp158_20: Atom
+  var cp160_19: Atom
+  var cp163_20: Atom
   var state = 0
   case fr.resume
-  of 1: state = 123
-  of 2: state = 124
+  of 1: state = 132
+  of 2: state = 133
   else: discard
   while true:
     case state
     of 0:
-      state = 121
+      ex.debugBeginMethod(definition, 5)
+      state = 130
       continue
-    of 121:
+    of 130:
       # branch first
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 5)
       # (and (< (call missing_distance_callterm) 0.2))
-      cp128_17 = ex.v[17]
-      cp128_18 = ex.v[18]
+      cp137_17 = ex.v[17]
+      cp137_18 = ex.v[18]
+      ex.debugBeginCondition(definition, 31)
       # (and (= ?$assignment_call_14 (call missing_distance_callterm)) (= ?$assignment_call_15 0.2) (< ?$assignment_call_14 ?$assignment_call_15))
-      cp130_17 = ex.v[17]
-      cp130_18 = ex.v[18]
+      cp139_17 = ex.v[17]
+      cp139_18 = ex.v[18]
+      ex.debugBeginCondition(definition, 32)
       # (= ?$assignment_call_14 (call missing_distance_callterm))
-      cp132_17 = ex.v[17]
+      cp141_17 = ex.v[17]
       # (= ?$assignment_call_14 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 33)
       if not ex.v[17].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs12, factSymbols)
         if ok:
           ex.setIfChanged(17, callResult)
-          state = 133
+          ex.debugEndCondition(definition, true)
+          state = 142
           continue
-      state = 131
+      ex.debugEndCondition(definition, false)
+      state = 140
       continue
-    of 133:
+    of 142:
       # (= ?$assignment_call_15 0.2)
-      cp135_18 = ex.v[18]
+      cp144_18 = ex.v[18]
       # (= ?$assignment_call_15 0.2)
+      ex.debugBeginCondition(definition, 34)
       block:
         let value = sv7
         if value.isBound and not ex.v[18].isBound:
           ex.v[18] = value
-          state = 136
+          ex.debugEndCondition(definition, true)
+          state = 145
           continue
-        state = 134
+        ex.debugEndCondition(definition, false)
+        state = 143
         continue
-      state = 136
+      state = 145
       continue
-    of 136:
+    of 145:
       # (< ?$assignment_call_14 ?$assignment_call_15)
       # (< ?$assignment_call_14 ?$assignment_call_15)
+      ex.debugBeginCondition(definition, 35)
       if compare(ex.v[17], ex.v[18], 2'u32):
-        state = 139
+        ex.debugEndCondition(definition, true)
+        state = 148
         continue
-      state = 137
+      ex.debugEndCondition(definition, false)
+      state = 146
       continue
-    of 139:
-      state = 125
-      continue
-    of 137:
+    of 148:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 134
       continue
-    of 134:
-      ex.v[18] = cp135_18
-      state = 131
+    of 146:
+      state = 143
       continue
-    of 131:
-      ex.v[17] = cp132_17
-      state = 129
-      continue
-    of 129:
-      ex.v[17] = cp130_17
-      ex.v[18] = cp130_18
-      state = 127
-      continue
-    of 127:
-      ex.v[17] = cp128_17
-      ex.v[18] = cp128_18
-      state = 126
-      continue
-    of 126:
-      ex.releaseRetry(fr)
-      state = 122
-      continue
-    of 125:
-      if not ex.pushBranch(addr bc5):
-        ex.releaseRetry(fr)
-        return 0
+    of 143:
+      ex.v[18] = cp144_18
       state = 140
       continue
     of 140:
+      ex.v[17] = cp141_17
+      state = 138
+      continue
+    of 138:
+      ex.v[17] = cp139_17
+      ex.v[18] = cp139_18
+      ex.debugEndCondition(definition, false)
+      state = 136
+      continue
+    of 136:
+      ex.v[17] = cp137_17
+      ex.v[18] = cp137_18
+      ex.debugEndCondition(definition, false)
+      state = 135
+      continue
+    of 135:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 131
+      continue
+    of 134:
+      if not ex.pushBranch(addr bc5):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(5)
+      state = 151
+      continue
+    of 151:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1512,97 +1933,122 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 123
+        state = 132
         continue
-      state = 141
+      state = 152
       continue
-    of 123:
+    of 132:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 122
+        ex.debugEndBranch(definition, false)
+        state = 131
         continue
-      state = 140
+      state = 151
       continue
-    of 141:
+    of 152:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 122:
+    of 131:
       # branch second
+      ex.debugBeginBranch(definition, 6)
       # (and (< (call missing_distance_callterm) 0.2))
-      cp145_19 = ex.v[19]
-      cp145_20 = ex.v[20]
+      cp156_19 = ex.v[19]
+      cp156_20 = ex.v[20]
+      ex.debugBeginCondition(definition, 36)
       # (and (= ?$assignment_call_16 (call missing_distance_callterm)) (= ?$assignment_call_17 0.2) (< ?$assignment_call_16 ?$assignment_call_17))
-      cp147_19 = ex.v[19]
-      cp147_20 = ex.v[20]
+      cp158_19 = ex.v[19]
+      cp158_20 = ex.v[20]
+      ex.debugBeginCondition(definition, 37)
       # (= ?$assignment_call_16 (call missing_distance_callterm))
-      cp149_19 = ex.v[19]
+      cp160_19 = ex.v[19]
       # (= ?$assignment_call_16 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 38)
       if not ex.v[19].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs13, factSymbols)
         if ok:
           ex.setIfChanged(19, callResult)
-          state = 150
+          ex.debugEndCondition(definition, true)
+          state = 161
           continue
-      state = 148
+      ex.debugEndCondition(definition, false)
+      state = 159
       continue
-    of 150:
+    of 161:
       # (= ?$assignment_call_17 0.2)
-      cp152_20 = ex.v[20]
+      cp163_20 = ex.v[20]
       # (= ?$assignment_call_17 0.2)
+      ex.debugBeginCondition(definition, 39)
       block:
         let value = sv8
         if value.isBound and not ex.v[20].isBound:
           ex.v[20] = value
-          state = 153
+          ex.debugEndCondition(definition, true)
+          state = 164
           continue
-        state = 151
+        ex.debugEndCondition(definition, false)
+        state = 162
         continue
+      state = 164
+      continue
+    of 164:
+      # (< ?$assignment_call_16 ?$assignment_call_17)
+      # (< ?$assignment_call_16 ?$assignment_call_17)
+      ex.debugBeginCondition(definition, 40)
+      if compare(ex.v[19], ex.v[20], 2'u32):
+        ex.debugEndCondition(definition, true)
+        state = 167
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 165
+      continue
+    of 167:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 153
       continue
-    of 153:
-      # (< ?$assignment_call_16 ?$assignment_call_17)
-      # (< ?$assignment_call_16 ?$assignment_call_17)
-      if compare(ex.v[19], ex.v[20], 2'u32):
-        state = 156
-        continue
-      state = 154
+    of 165:
+      state = 162
       continue
-    of 156:
-      state = 142
+    of 162:
+      ex.v[20] = cp163_20
+      state = 159
       continue
-    of 154:
-      state = 151
-      continue
-    of 151:
-      ex.v[20] = cp152_20
-      state = 148
-      continue
-    of 148:
-      ex.v[19] = cp149_19
-      state = 146
-      continue
-    of 146:
-      ex.v[19] = cp147_19
-      ex.v[20] = cp147_20
-      state = 144
-      continue
-    of 144:
-      ex.v[19] = cp145_19
-      ex.v[20] = cp145_20
-      state = 143
-      continue
-    of 143:
-      state = 120
-      continue
-    of 142:
-      if not ex.pushBranch(addr bc6):
-        return 0
+    of 159:
+      ex.v[19] = cp160_19
       state = 157
       continue
     of 157:
+      ex.v[19] = cp158_19
+      ex.v[20] = cp158_20
+      ex.debugEndCondition(definition, false)
+      state = 155
+      continue
+    of 155:
+      ex.v[19] = cp156_19
+      ex.v[20] = cp156_20
+      ex.debugEndCondition(definition, false)
+      state = 154
+      continue
+    of 154:
+      ex.debugEndBranch(definition, false)
+      state = 129
+      continue
+    of 153:
+      if not ex.pushBranch(addr bc6):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(6)
+      state = 170
+      continue
+    of 170:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1610,18 +2056,23 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 124
+        state = 133
         continue
-      state = 158
+      state = 171
       continue
-    of 124:
+    of 133:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 157
+      state = 170
       continue
-    of 158:
+    of 171:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 120:
+    of 129:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1629,95 +2080,116 @@ proc method5(ex: Exec): int {.nimcall.} =
 # method6: NestedOperatorCalls::valid_left/0
 proc method6(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp165_21: Atom
-  var cp165_22: Atom
-  var cp167_21: Atom
-  var cp167_22: Atom
-  var cp169_21: Atom
-  var cp172_22: Atom
+  var cp178_21: Atom
+  var cp178_22: Atom
+  var cp180_21: Atom
+  var cp180_22: Atom
+  var cp182_21: Atom
+  var cp185_22: Atom
   var state = 0
   case fr.resume
-  of 1: state = 161
+  of 1: state = 174
   else: discard
   while true:
     case state
     of 0:
-      state = 160
+      ex.debugBeginMethod(definition, 6)
+      state = 173
       continue
-    of 160:
+    of 173:
       # branch branch
+      ex.debugBeginBranch(definition, 7)
       # (and (< (call distance) 0.2))
-      cp165_21 = ex.v[21]
-      cp165_22 = ex.v[22]
+      cp178_21 = ex.v[21]
+      cp178_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 41)
       # (and (= ?$assignment_call_18 (call distance)) (= ?$assignment_call_19 0.2) (< ?$assignment_call_18 ?$assignment_call_19))
-      cp167_21 = ex.v[21]
-      cp167_22 = ex.v[22]
+      cp180_21 = ex.v[21]
+      cp180_22 = ex.v[22]
+      ex.debugBeginCondition(definition, 42)
       # (= ?$assignment_call_18 (call distance))
-      cp169_21 = ex.v[21]
+      cp182_21 = ex.v[21]
       # (= ?$assignment_call_18 (call distance))
+      ex.debugBeginCondition(definition, 43)
       if not ex.v[21].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs14, factSymbols)
         if ok:
           ex.setIfChanged(21, callResult)
-          state = 170
+          ex.debugEndCondition(definition, true)
+          state = 183
           continue
-      state = 168
+      ex.debugEndCondition(definition, false)
+      state = 181
       continue
-    of 170:
+    of 183:
       # (= ?$assignment_call_19 0.2)
-      cp172_22 = ex.v[22]
+      cp185_22 = ex.v[22]
       # (= ?$assignment_call_19 0.2)
+      ex.debugBeginCondition(definition, 44)
       block:
         let value = sv9
         if value.isBound and not ex.v[22].isBound:
           ex.v[22] = value
-          state = 173
+          ex.debugEndCondition(definition, true)
+          state = 186
           continue
-        state = 171
+        ex.debugEndCondition(definition, false)
+        state = 184
         continue
-      state = 173
+      state = 186
       continue
-    of 173:
+    of 186:
       # (< ?$assignment_call_18 ?$assignment_call_19)
       # (< ?$assignment_call_18 ?$assignment_call_19)
+      ex.debugBeginCondition(definition, 45)
       if compare(ex.v[21], ex.v[22], 2'u32):
-        state = 176
+        ex.debugEndCondition(definition, true)
+        state = 189
         continue
-      state = 174
+      ex.debugEndCondition(definition, false)
+      state = 187
       continue
-    of 176:
-      state = 162
+    of 189:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 175
       continue
-    of 174:
-      state = 171
+    of 187:
+      state = 184
       continue
-    of 171:
-      ex.v[22] = cp172_22
-      state = 168
+    of 184:
+      ex.v[22] = cp185_22
+      state = 181
       continue
-    of 168:
-      ex.v[21] = cp169_21
-      state = 166
+    of 181:
+      ex.v[21] = cp182_21
+      state = 179
       continue
-    of 166:
-      ex.v[21] = cp167_21
-      ex.v[22] = cp167_22
-      state = 164
-      continue
-    of 164:
-      ex.v[21] = cp165_21
-      ex.v[22] = cp165_22
-      state = 163
-      continue
-    of 163:
-      state = 159
-      continue
-    of 162:
-      if not ex.pushBranch(addr bc7):
-        return 0
+    of 179:
+      ex.v[21] = cp180_21
+      ex.v[22] = cp180_22
+      ex.debugEndCondition(definition, false)
       state = 177
       continue
     of 177:
+      ex.v[21] = cp178_21
+      ex.v[22] = cp178_22
+      ex.debugEndCondition(definition, false)
+      state = 176
+      continue
+    of 176:
+      ex.debugEndBranch(definition, false)
+      state = 172
+      continue
+    of 175:
+      if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(7)
+      state = 192
+      continue
+    of 192:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1725,18 +2197,23 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 161
+        state = 174
         continue
-      state = 178
+      state = 193
       continue
-    of 161:
+    of 174:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 177
+      state = 192
       continue
-    of 178:
+    of 193:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 159:
+    of 172:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1744,95 +2221,116 @@ proc method6(ex: Exec): int {.nimcall.} =
 # method7: NestedOperatorCalls::valid_right/0
 proc method7(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp185_23: Atom
-  var cp185_24: Atom
-  var cp187_23: Atom
-  var cp187_24: Atom
-  var cp189_23: Atom
-  var cp192_24: Atom
+  var cp200_23: Atom
+  var cp200_24: Atom
+  var cp202_23: Atom
+  var cp202_24: Atom
+  var cp204_23: Atom
+  var cp207_24: Atom
   var state = 0
   case fr.resume
-  of 1: state = 181
+  of 1: state = 196
   else: discard
   while true:
     case state
     of 0:
-      state = 180
+      ex.debugBeginMethod(definition, 7)
+      state = 195
       continue
-    of 180:
+    of 195:
       # branch branch
+      ex.debugBeginBranch(definition, 8)
       # (and (< 0.0 (call distance)))
-      cp185_23 = ex.v[23]
-      cp185_24 = ex.v[24]
+      cp200_23 = ex.v[23]
+      cp200_24 = ex.v[24]
+      ex.debugBeginCondition(definition, 46)
       # (and (= ?$assignment_call_20 0.0) (= ?$assignment_call_21 (call distance)) (< ?$assignment_call_20 ?$assignment_call_21))
-      cp187_23 = ex.v[23]
-      cp187_24 = ex.v[24]
+      cp202_23 = ex.v[23]
+      cp202_24 = ex.v[24]
+      ex.debugBeginCondition(definition, 47)
       # (= ?$assignment_call_20 0.0)
-      cp189_23 = ex.v[23]
+      cp204_23 = ex.v[23]
       # (= ?$assignment_call_20 0.0)
+      ex.debugBeginCondition(definition, 48)
       block:
         let value = sv10
         if value.isBound and not ex.v[23].isBound:
           ex.v[23] = value
-          state = 190
+          ex.debugEndCondition(definition, true)
+          state = 205
           continue
-        state = 188
+        ex.debugEndCondition(definition, false)
+        state = 203
         continue
-      state = 190
+      state = 205
       continue
-    of 190:
+    of 205:
       # (= ?$assignment_call_21 (call distance))
-      cp192_24 = ex.v[24]
+      cp207_24 = ex.v[24]
       # (= ?$assignment_call_21 (call distance))
+      ex.debugBeginCondition(definition, 49)
       if not ex.v[24].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs15, factSymbols)
         if ok:
           ex.setIfChanged(24, callResult)
-          state = 193
+          ex.debugEndCondition(definition, true)
+          state = 208
           continue
-      state = 191
+      ex.debugEndCondition(definition, false)
+      state = 206
       continue
-    of 193:
+    of 208:
       # (< ?$assignment_call_20 ?$assignment_call_21)
       # (< ?$assignment_call_20 ?$assignment_call_21)
+      ex.debugBeginCondition(definition, 50)
       if compare(ex.v[23], ex.v[24], 2'u32):
-        state = 196
+        ex.debugEndCondition(definition, true)
+        state = 211
         continue
-      state = 194
+      ex.debugEndCondition(definition, false)
+      state = 209
       continue
-    of 196:
-      state = 182
-      continue
-    of 194:
-      state = 191
-      continue
-    of 191:
-      ex.v[24] = cp192_24
-      state = 188
-      continue
-    of 188:
-      ex.v[23] = cp189_23
-      state = 186
-      continue
-    of 186:
-      ex.v[23] = cp187_23
-      ex.v[24] = cp187_24
-      state = 184
-      continue
-    of 184:
-      ex.v[23] = cp185_23
-      ex.v[24] = cp185_24
-      state = 183
-      continue
-    of 183:
-      state = 179
-      continue
-    of 182:
-      if not ex.pushBranch(addr bc8):
-        return 0
+    of 211:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 197
       continue
+    of 209:
+      state = 206
+      continue
+    of 206:
+      ex.v[24] = cp207_24
+      state = 203
+      continue
+    of 203:
+      ex.v[23] = cp204_23
+      state = 201
+      continue
+    of 201:
+      ex.v[23] = cp202_23
+      ex.v[24] = cp202_24
+      ex.debugEndCondition(definition, false)
+      state = 199
+      continue
+    of 199:
+      ex.v[23] = cp200_23
+      ex.v[24] = cp200_24
+      ex.debugEndCondition(definition, false)
+      state = 198
+      continue
+    of 198:
+      ex.debugEndBranch(definition, false)
+      state = 194
+      continue
     of 197:
+      if not ex.pushBranch(addr bc8):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(8)
+      state = 214
+      continue
+    of 214:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1840,18 +2338,23 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 181
+        state = 196
         continue
-      state = 198
+      state = 215
       continue
-    of 181:
+    of 196:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 197
+      state = 214
       continue
-    of 198:
+    of 215:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 179:
+    of 194:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1859,93 +2362,114 @@ proc method7(ex: Exec): int {.nimcall.} =
 # method8: NestedOperatorCalls::valid_both/0
 proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp205_25: Atom
-  var cp205_26: Atom
-  var cp207_25: Atom
-  var cp207_26: Atom
-  var cp209_25: Atom
-  var cp212_26: Atom
+  var cp222_25: Atom
+  var cp222_26: Atom
+  var cp224_25: Atom
+  var cp224_26: Atom
+  var cp226_25: Atom
+  var cp229_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 201
+  of 1: state = 218
   else: discard
   while true:
     case state
     of 0:
-      state = 200
+      ex.debugBeginMethod(definition, 8)
+      state = 217
       continue
-    of 200:
+    of 217:
       # branch branch
+      ex.debugBeginBranch(definition, 9)
       # (and (== (call distance) (call distance)))
-      cp205_25 = ex.v[25]
-      cp205_26 = ex.v[26]
+      cp222_25 = ex.v[25]
+      cp222_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 51)
       # (and (= ?$assignment_call_22 (call distance)) (= ?$assignment_call_23 (call distance)) (== ?$assignment_call_22 ?$assignment_call_23))
-      cp207_25 = ex.v[25]
-      cp207_26 = ex.v[26]
+      cp224_25 = ex.v[25]
+      cp224_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 52)
       # (= ?$assignment_call_22 (call distance))
-      cp209_25 = ex.v[25]
+      cp226_25 = ex.v[25]
       # (= ?$assignment_call_22 (call distance))
+      ex.debugBeginCondition(definition, 53)
       if not ex.v[25].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs16, factSymbols)
         if ok:
           ex.setIfChanged(25, callResult)
-          state = 210
+          ex.debugEndCondition(definition, true)
+          state = 227
           continue
-      state = 208
+      ex.debugEndCondition(definition, false)
+      state = 225
       continue
-    of 210:
+    of 227:
       # (= ?$assignment_call_23 (call distance))
-      cp212_26 = ex.v[26]
+      cp229_26 = ex.v[26]
       # (= ?$assignment_call_23 (call distance))
+      ex.debugBeginCondition(definition, 54)
       if not ex.v[26].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs17, factSymbols)
         if ok:
           ex.setIfChanged(26, callResult)
-          state = 213
+          ex.debugEndCondition(definition, true)
+          state = 230
           continue
-      state = 211
+      ex.debugEndCondition(definition, false)
+      state = 228
       continue
-    of 213:
+    of 230:
       # (== ?$assignment_call_22 ?$assignment_call_23)
       # (== ?$assignment_call_22 ?$assignment_call_23)
+      ex.debugBeginCondition(definition, 55)
       if compare(ex.v[25], ex.v[26], 0'u32):
-        state = 216
+        ex.debugEndCondition(definition, true)
+        state = 233
         continue
-      state = 214
+      ex.debugEndCondition(definition, false)
+      state = 231
       continue
-    of 216:
-      state = 202
+    of 233:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 219
       continue
-    of 214:
-      state = 211
+    of 231:
+      state = 228
       continue
-    of 211:
-      ex.v[26] = cp212_26
-      state = 208
+    of 228:
+      ex.v[26] = cp229_26
+      state = 225
       continue
-    of 208:
-      ex.v[25] = cp209_25
-      state = 206
+    of 225:
+      ex.v[25] = cp226_25
+      state = 223
       continue
-    of 206:
-      ex.v[25] = cp207_25
-      ex.v[26] = cp207_26
-      state = 204
+    of 223:
+      ex.v[25] = cp224_25
+      ex.v[26] = cp224_26
+      ex.debugEndCondition(definition, false)
+      state = 221
       continue
-    of 204:
-      ex.v[25] = cp205_25
-      ex.v[26] = cp205_26
-      state = 203
+    of 221:
+      ex.v[25] = cp222_25
+      ex.v[26] = cp222_26
+      ex.debugEndCondition(definition, false)
+      state = 220
       continue
-    of 203:
-      state = 199
+    of 220:
+      ex.debugEndBranch(definition, false)
+      state = 216
       continue
-    of 202:
+    of 219:
       if not ex.pushBranch(addr bc9):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 217
+      ex.debugCapturePendingTask(9)
+      state = 236
       continue
-    of 217:
+    of 236:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1953,18 +2477,23 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 201
+        state = 218
         continue
-      state = 218
-      continue
-    of 201:
-      if fr.childResult == 0:
-        return 0
-      state = 217
+      state = 237
       continue
     of 218:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 236
+      continue
+    of 237:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 199:
+    of 216:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -1972,63 +2501,78 @@ proc method8(ex: Exec): int {.nimcall.} =
 # method9: NestedOperatorCalls::valid_bound/0
 proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp225_16: Atom
-  var cp227_16: Atom
+  var cp244_16: Atom
+  var cp246_16: Atom
   var state = 0
   case fr.resume
-  of 1: state = 221
+  of 1: state = 240
   else: discard
   while true:
     case state
     of 0:
-      state = 220
+      ex.debugBeginMethod(definition, 9)
+      state = 239
       continue
-    of 220:
+    of 239:
       # branch branch
+      ex.debugBeginBranch(definition, 10)
       # (and (= ?distance (call distance)) (< ?distance 0.2))
-      cp225_16 = ex.v[16]
+      cp244_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 56)
       # (= ?distance (call distance))
-      cp227_16 = ex.v[16]
+      cp246_16 = ex.v[16]
       # (= ?distance (call distance))
+      ex.debugBeginCondition(definition, 57)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs18, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 228
+          ex.debugEndCondition(definition, true)
+          state = 247
           continue
-      state = 226
+      ex.debugEndCondition(definition, false)
+      state = 245
       continue
-    of 228:
+    of 247:
       # (< ?distance 0.2)
       # (< ?distance 0.2)
+      ex.debugBeginCondition(definition, 58)
       if compare(ex.v[16], sv11, 2'u32):
-        state = 231
+        ex.debugEndCondition(definition, true)
+        state = 250
         continue
-      state = 229
+      ex.debugEndCondition(definition, false)
+      state = 248
       continue
-    of 231:
-      state = 222
+    of 250:
+      ex.debugEndCondition(definition, true)
+      state = 241
       continue
-    of 229:
-      state = 226
+    of 248:
+      state = 245
       continue
-    of 226:
-      ex.v[16] = cp227_16
-      state = 224
+    of 245:
+      ex.v[16] = cp246_16
+      state = 243
       continue
-    of 224:
-      ex.v[16] = cp225_16
-      state = 223
+    of 243:
+      ex.v[16] = cp244_16
+      ex.debugEndCondition(definition, false)
+      state = 242
       continue
-    of 223:
-      state = 219
+    of 242:
+      ex.debugEndBranch(definition, false)
+      state = 238
       continue
-    of 222:
+    of 241:
       if not ex.pushBranch(addr bc10):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 232
+      ex.debugCapturePendingTask(10)
+      state = 252
       continue
-    of 232:
+    of 252:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2036,18 +2580,23 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 221
+        state = 240
         continue
-      state = 233
+      state = 253
       continue
-    of 221:
+    of 240:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 232
+      state = 252
       continue
-    of 233:
+    of 253:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 219:
+    of 238:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2055,1859 +2604,2202 @@ proc method9(ex: Exec): int {.nimcall.} =
 # method10: NestedOperatorCalls::operators/0
 proc method10(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp240_27: Atom
-  var cp240_28: Atom
-  var cp240_29: Atom
-  var cp240_30: Atom
-  var cp240_31: Atom
-  var cp240_32: Atom
-  var cp240_33: Atom
-  var cp240_34: Atom
-  var cp240_35: Atom
-  var cp240_36: Atom
-  var cp240_37: Atom
-  var cp240_38: Atom
-  var cp240_39: Atom
-  var cp240_40: Atom
-  var cp240_41: Atom
-  var cp240_42: Atom
-  var cp240_43: Atom
-  var cp240_44: Atom
-  var cp240_45: Atom
-  var cp240_46: Atom
-  var cp240_47: Atom
-  var cp240_48: Atom
-  var cp240_49: Atom
-  var cp240_50: Atom
-  var cp240_51: Atom
-  var cp240_52: Atom
-  var cp240_53: Atom
-  var cp240_54: Atom
-  var cp240_55: Atom
-  var cp240_56: Atom
-  var cp240_57: Atom
-  var cp240_58: Atom
-  var cp240_59: Atom
-  var cp240_60: Atom
-  var cp240_61: Atom
-  var cp240_62: Atom
-  var cp240_63: Atom
-  var cp240_64: Atom
-  var cp240_65: Atom
-  var cp240_66: Atom
-  var cp240_67: Atom
-  var cp240_68: Atom
-  var cp240_69: Atom
-  var cp240_70: Atom
-  var cp240_71: Atom
-  var cp240_72: Atom
-  var cp240_73: Atom
-  var cp240_74: Atom
-  var cp240_75: Atom
-  var cp240_76: Atom
-  var cp240_77: Atom
-  var cp240_78: Atom
-  var cp240_79: Atom
-  var cp240_80: Atom
-  var cp240_81: Atom
-  var cp240_82: Atom
-  var cp240_83: Atom
-  var cp240_84: Atom
-  var cp240_85: Atom
-  var cp240_86: Atom
-  var cp240_87: Atom
-  var cp240_88: Atom
-  var cp240_89: Atom
-  var cp240_90: Atom
-  var cp240_91: Atom
-  var cp240_92: Atom
-  var cp242_27: Atom
-  var cp245_28: Atom
-  var cp245_29: Atom
-  var cp245_30: Atom
-  var cp247_28: Atom
-  var cp250_29: Atom
-  var cp253_30: Atom
-  var cp259_31: Atom
-  var cp259_32: Atom
-  var cp259_33: Atom
-  var cp261_31: Atom
-  var cp264_32: Atom
-  var cp267_33: Atom
-  var cp273_34: Atom
-  var cp273_35: Atom
-  var cp273_36: Atom
-  var cp275_34: Atom
-  var cp278_35: Atom
-  var cp281_36: Atom
-  var cp287_37: Atom
-  var cp287_38: Atom
-  var cp287_39: Atom
-  var cp289_37: Atom
-  var cp292_38: Atom
-  var cp295_39: Atom
-  var cp301_40: Atom
-  var cp301_41: Atom
-  var cp301_42: Atom
-  var cp303_40: Atom
-  var cp306_41: Atom
-  var cp309_42: Atom
-  var cp315_43: Atom
-  var cp315_44: Atom
-  var cp315_45: Atom
-  var cp317_43: Atom
-  var cp320_44: Atom
-  var cp323_45: Atom
-  var cp329_46: Atom
-  var cp329_47: Atom
-  var cp329_48: Atom
-  var cp329_49: Atom
-  var cp329_50: Atom
-  var cp329_51: Atom
-  var cp331_46: Atom
-  var cp334_47: Atom
-  var cp337_48: Atom
-  var cp340_49: Atom
-  var cp343_50: Atom
-  var cp346_51: Atom
-  var cp352_52: Atom
-  var cp352_53: Atom
-  var cp352_54: Atom
-  var cp352_55: Atom
-  var cp352_56: Atom
-  var cp352_57: Atom
-  var cp354_52: Atom
-  var cp357_53: Atom
-  var cp360_54: Atom
-  var cp363_55: Atom
-  var cp366_56: Atom
-  var cp369_57: Atom
-  var cp375_58: Atom
-  var cp375_59: Atom
-  var cp375_60: Atom
-  var cp375_61: Atom
-  var cp375_62: Atom
-  var cp375_63: Atom
-  var cp377_58: Atom
-  var cp380_59: Atom
-  var cp383_60: Atom
-  var cp386_61: Atom
-  var cp389_62: Atom
-  var cp392_63: Atom
-  var cp398_64: Atom
-  var cp398_65: Atom
-  var cp398_66: Atom
-  var cp398_67: Atom
-  var cp398_68: Atom
-  var cp398_69: Atom
-  var cp400_64: Atom
-  var cp403_65: Atom
-  var cp406_66: Atom
-  var cp409_67: Atom
-  var cp412_68: Atom
-  var cp415_69: Atom
-  var cp421_70: Atom
-  var cp421_71: Atom
-  var cp421_72: Atom
-  var cp421_73: Atom
-  var cp421_74: Atom
-  var cp421_75: Atom
-  var cp423_70: Atom
-  var cp426_71: Atom
-  var cp429_72: Atom
-  var cp432_73: Atom
-  var cp435_74: Atom
-  var cp438_75: Atom
-  var cp444_76: Atom
-  var cp444_77: Atom
-  var cp444_78: Atom
-  var cp444_79: Atom
-  var cp444_80: Atom
-  var cp446_76: Atom
-  var cp449_77: Atom
-  var cp452_78: Atom
-  var cp455_79: Atom
-  var cp458_80: Atom
-  var cp464_81: Atom
-  var cp464_82: Atom
-  var cp464_83: Atom
-  var cp464_84: Atom
-  var cp464_85: Atom
-  var cp466_81: Atom
-  var cp469_82: Atom
-  var cp472_83: Atom
-  var cp475_84: Atom
-  var cp478_85: Atom
-  var cp484_86: Atom
-  var cp484_87: Atom
-  var cp484_88: Atom
-  var cp484_89: Atom
-  var cp484_90: Atom
-  var cp484_91: Atom
-  var cp484_92: Atom
-  var cp486_86: Atom
-  var cp489_87: Atom
-  var cp492_88: Atom
-  var cp495_89: Atom
-  var cp498_90: Atom
-  var cp501_91: Atom
-  var cp504_92: Atom
+  var cp260_27: Atom
+  var cp260_28: Atom
+  var cp260_29: Atom
+  var cp260_30: Atom
+  var cp260_31: Atom
+  var cp260_32: Atom
+  var cp260_33: Atom
+  var cp260_34: Atom
+  var cp260_35: Atom
+  var cp260_36: Atom
+  var cp260_37: Atom
+  var cp260_38: Atom
+  var cp260_39: Atom
+  var cp260_40: Atom
+  var cp260_41: Atom
+  var cp260_42: Atom
+  var cp260_43: Atom
+  var cp260_44: Atom
+  var cp260_45: Atom
+  var cp260_46: Atom
+  var cp260_47: Atom
+  var cp260_48: Atom
+  var cp260_49: Atom
+  var cp260_50: Atom
+  var cp260_51: Atom
+  var cp260_52: Atom
+  var cp260_53: Atom
+  var cp260_54: Atom
+  var cp260_55: Atom
+  var cp260_56: Atom
+  var cp260_57: Atom
+  var cp260_58: Atom
+  var cp260_59: Atom
+  var cp260_60: Atom
+  var cp260_61: Atom
+  var cp260_62: Atom
+  var cp260_63: Atom
+  var cp260_64: Atom
+  var cp260_65: Atom
+  var cp260_66: Atom
+  var cp260_67: Atom
+  var cp260_68: Atom
+  var cp260_69: Atom
+  var cp260_70: Atom
+  var cp260_71: Atom
+  var cp260_72: Atom
+  var cp260_73: Atom
+  var cp260_74: Atom
+  var cp260_75: Atom
+  var cp260_76: Atom
+  var cp260_77: Atom
+  var cp260_78: Atom
+  var cp260_79: Atom
+  var cp260_80: Atom
+  var cp260_81: Atom
+  var cp260_82: Atom
+  var cp260_83: Atom
+  var cp260_84: Atom
+  var cp260_85: Atom
+  var cp260_86: Atom
+  var cp260_87: Atom
+  var cp260_88: Atom
+  var cp260_89: Atom
+  var cp260_90: Atom
+  var cp260_91: Atom
+  var cp260_92: Atom
+  var cp262_27: Atom
+  var cp265_28: Atom
+  var cp265_29: Atom
+  var cp265_30: Atom
+  var cp267_28: Atom
+  var cp270_29: Atom
+  var cp273_30: Atom
+  var cp280_31: Atom
+  var cp280_32: Atom
+  var cp280_33: Atom
+  var cp282_31: Atom
+  var cp285_32: Atom
+  var cp288_33: Atom
+  var cp295_34: Atom
+  var cp295_35: Atom
+  var cp295_36: Atom
+  var cp297_34: Atom
+  var cp300_35: Atom
+  var cp303_36: Atom
+  var cp310_37: Atom
+  var cp310_38: Atom
+  var cp310_39: Atom
+  var cp312_37: Atom
+  var cp315_38: Atom
+  var cp318_39: Atom
+  var cp325_40: Atom
+  var cp325_41: Atom
+  var cp325_42: Atom
+  var cp327_40: Atom
+  var cp330_41: Atom
+  var cp333_42: Atom
+  var cp340_43: Atom
+  var cp340_44: Atom
+  var cp340_45: Atom
+  var cp342_43: Atom
+  var cp345_44: Atom
+  var cp348_45: Atom
+  var cp355_46: Atom
+  var cp355_47: Atom
+  var cp355_48: Atom
+  var cp355_49: Atom
+  var cp355_50: Atom
+  var cp355_51: Atom
+  var cp357_46: Atom
+  var cp360_47: Atom
+  var cp363_48: Atom
+  var cp366_49: Atom
+  var cp369_50: Atom
+  var cp372_51: Atom
+  var cp379_52: Atom
+  var cp379_53: Atom
+  var cp379_54: Atom
+  var cp379_55: Atom
+  var cp379_56: Atom
+  var cp379_57: Atom
+  var cp381_52: Atom
+  var cp384_53: Atom
+  var cp387_54: Atom
+  var cp390_55: Atom
+  var cp393_56: Atom
+  var cp396_57: Atom
+  var cp403_58: Atom
+  var cp403_59: Atom
+  var cp403_60: Atom
+  var cp403_61: Atom
+  var cp403_62: Atom
+  var cp403_63: Atom
+  var cp405_58: Atom
+  var cp408_59: Atom
+  var cp411_60: Atom
+  var cp414_61: Atom
+  var cp417_62: Atom
+  var cp420_63: Atom
+  var cp427_64: Atom
+  var cp427_65: Atom
+  var cp427_66: Atom
+  var cp427_67: Atom
+  var cp427_68: Atom
+  var cp427_69: Atom
+  var cp429_64: Atom
+  var cp432_65: Atom
+  var cp435_66: Atom
+  var cp438_67: Atom
+  var cp441_68: Atom
+  var cp444_69: Atom
+  var cp451_70: Atom
+  var cp451_71: Atom
+  var cp451_72: Atom
+  var cp451_73: Atom
+  var cp451_74: Atom
+  var cp451_75: Atom
+  var cp453_70: Atom
+  var cp456_71: Atom
+  var cp459_72: Atom
+  var cp462_73: Atom
+  var cp465_74: Atom
+  var cp468_75: Atom
+  var cp475_76: Atom
+  var cp475_77: Atom
+  var cp475_78: Atom
+  var cp475_79: Atom
+  var cp475_80: Atom
+  var cp477_76: Atom
+  var cp480_77: Atom
+  var cp483_78: Atom
+  var cp486_79: Atom
+  var cp489_80: Atom
+  var cp496_81: Atom
+  var cp496_82: Atom
+  var cp496_83: Atom
+  var cp496_84: Atom
+  var cp496_85: Atom
+  var cp498_81: Atom
+  var cp501_82: Atom
+  var cp504_83: Atom
+  var cp507_84: Atom
+  var cp510_85: Atom
+  var cp517_86: Atom
+  var cp517_87: Atom
+  var cp517_88: Atom
+  var cp517_89: Atom
+  var cp517_90: Atom
+  var cp517_91: Atom
+  var cp517_92: Atom
+  var cp519_86: Atom
+  var cp522_87: Atom
+  var cp525_88: Atom
+  var cp528_89: Atom
+  var cp531_90: Atom
+  var cp534_91: Atom
+  var cp537_92: Atom
   var state = 0
   case fr.resume
-  of 1: state = 236
+  of 1: state = 256
   else: discard
   while true:
     case state
     of 0:
-      state = 235
+      ex.debugBeginMethod(definition, 10)
+      state = 255
       continue
-    of 235:
+    of 255:
       # branch branch
+      ex.debugBeginBranch(definition, 11)
       # (and (= ?value 3) (< (call identity 2) ?value) (<= ?value (call identity 3)) (> (call identity 4) ?value) (>= ?value (call identity 3)) (== (call identity ?value) 3) (!= 2 (call identity ?value)) (== (+ (call identity 1) 2) 3) (== (- 5 (call identity 2)) 3) (== (* (call identity 2) 3) 6) (== (/ 6 (call identity 2)) 3) (== (% (call identity 7) 4) 3) (== (++ (call identity 2)) 3) (== (-- (call identity 4)) 3) (== (call identity (+ 1 (call identity 2))) 3))
-      cp240_27 = ex.v[27]
-      cp240_28 = ex.v[28]
-      cp240_29 = ex.v[29]
-      cp240_30 = ex.v[30]
-      cp240_31 = ex.v[31]
-      cp240_32 = ex.v[32]
-      cp240_33 = ex.v[33]
-      cp240_34 = ex.v[34]
-      cp240_35 = ex.v[35]
-      cp240_36 = ex.v[36]
-      cp240_37 = ex.v[37]
-      cp240_38 = ex.v[38]
-      cp240_39 = ex.v[39]
-      cp240_40 = ex.v[40]
-      cp240_41 = ex.v[41]
-      cp240_42 = ex.v[42]
-      cp240_43 = ex.v[43]
-      cp240_44 = ex.v[44]
-      cp240_45 = ex.v[45]
-      cp240_46 = ex.v[46]
-      cp240_47 = ex.v[47]
-      cp240_48 = ex.v[48]
-      cp240_49 = ex.v[49]
-      cp240_50 = ex.v[50]
-      cp240_51 = ex.v[51]
-      cp240_52 = ex.v[52]
-      cp240_53 = ex.v[53]
-      cp240_54 = ex.v[54]
-      cp240_55 = ex.v[55]
-      cp240_56 = ex.v[56]
-      cp240_57 = ex.v[57]
-      cp240_58 = ex.v[58]
-      cp240_59 = ex.v[59]
-      cp240_60 = ex.v[60]
-      cp240_61 = ex.v[61]
-      cp240_62 = ex.v[62]
-      cp240_63 = ex.v[63]
-      cp240_64 = ex.v[64]
-      cp240_65 = ex.v[65]
-      cp240_66 = ex.v[66]
-      cp240_67 = ex.v[67]
-      cp240_68 = ex.v[68]
-      cp240_69 = ex.v[69]
-      cp240_70 = ex.v[70]
-      cp240_71 = ex.v[71]
-      cp240_72 = ex.v[72]
-      cp240_73 = ex.v[73]
-      cp240_74 = ex.v[74]
-      cp240_75 = ex.v[75]
-      cp240_76 = ex.v[76]
-      cp240_77 = ex.v[77]
-      cp240_78 = ex.v[78]
-      cp240_79 = ex.v[79]
-      cp240_80 = ex.v[80]
-      cp240_81 = ex.v[81]
-      cp240_82 = ex.v[82]
-      cp240_83 = ex.v[83]
-      cp240_84 = ex.v[84]
-      cp240_85 = ex.v[85]
-      cp240_86 = ex.v[86]
-      cp240_87 = ex.v[87]
-      cp240_88 = ex.v[88]
-      cp240_89 = ex.v[89]
-      cp240_90 = ex.v[90]
-      cp240_91 = ex.v[91]
-      cp240_92 = ex.v[92]
+      cp260_27 = ex.v[27]
+      cp260_28 = ex.v[28]
+      cp260_29 = ex.v[29]
+      cp260_30 = ex.v[30]
+      cp260_31 = ex.v[31]
+      cp260_32 = ex.v[32]
+      cp260_33 = ex.v[33]
+      cp260_34 = ex.v[34]
+      cp260_35 = ex.v[35]
+      cp260_36 = ex.v[36]
+      cp260_37 = ex.v[37]
+      cp260_38 = ex.v[38]
+      cp260_39 = ex.v[39]
+      cp260_40 = ex.v[40]
+      cp260_41 = ex.v[41]
+      cp260_42 = ex.v[42]
+      cp260_43 = ex.v[43]
+      cp260_44 = ex.v[44]
+      cp260_45 = ex.v[45]
+      cp260_46 = ex.v[46]
+      cp260_47 = ex.v[47]
+      cp260_48 = ex.v[48]
+      cp260_49 = ex.v[49]
+      cp260_50 = ex.v[50]
+      cp260_51 = ex.v[51]
+      cp260_52 = ex.v[52]
+      cp260_53 = ex.v[53]
+      cp260_54 = ex.v[54]
+      cp260_55 = ex.v[55]
+      cp260_56 = ex.v[56]
+      cp260_57 = ex.v[57]
+      cp260_58 = ex.v[58]
+      cp260_59 = ex.v[59]
+      cp260_60 = ex.v[60]
+      cp260_61 = ex.v[61]
+      cp260_62 = ex.v[62]
+      cp260_63 = ex.v[63]
+      cp260_64 = ex.v[64]
+      cp260_65 = ex.v[65]
+      cp260_66 = ex.v[66]
+      cp260_67 = ex.v[67]
+      cp260_68 = ex.v[68]
+      cp260_69 = ex.v[69]
+      cp260_70 = ex.v[70]
+      cp260_71 = ex.v[71]
+      cp260_72 = ex.v[72]
+      cp260_73 = ex.v[73]
+      cp260_74 = ex.v[74]
+      cp260_75 = ex.v[75]
+      cp260_76 = ex.v[76]
+      cp260_77 = ex.v[77]
+      cp260_78 = ex.v[78]
+      cp260_79 = ex.v[79]
+      cp260_80 = ex.v[80]
+      cp260_81 = ex.v[81]
+      cp260_82 = ex.v[82]
+      cp260_83 = ex.v[83]
+      cp260_84 = ex.v[84]
+      cp260_85 = ex.v[85]
+      cp260_86 = ex.v[86]
+      cp260_87 = ex.v[87]
+      cp260_88 = ex.v[88]
+      cp260_89 = ex.v[89]
+      cp260_90 = ex.v[90]
+      cp260_91 = ex.v[91]
+      cp260_92 = ex.v[92]
+      ex.debugBeginCondition(definition, 59)
       # (= ?value 3)
-      cp242_27 = ex.v[27]
+      cp262_27 = ex.v[27]
       # (= ?value 3)
+      ex.debugBeginCondition(definition, 60)
       block:
         let value = sv12
         if value.isBound and not ex.v[27].isBound:
           ex.v[27] = value
-          state = 243
+          ex.debugEndCondition(definition, true)
+          state = 263
           continue
-        state = 241
+        ex.debugEndCondition(definition, false)
+        state = 261
         continue
-      state = 243
+      state = 263
       continue
-    of 243:
+    of 263:
       # (and (= ?$assignment_call_24 2) (= ?$assignment_call_25 (call identity ?$assignment_call_24)) (= ?$assignment_call_26 ?value) (< ?$assignment_call_25 ?$assignment_call_26))
-      cp245_28 = ex.v[28]
-      cp245_29 = ex.v[29]
-      cp245_30 = ex.v[30]
+      cp265_28 = ex.v[28]
+      cp265_29 = ex.v[29]
+      cp265_30 = ex.v[30]
+      ex.debugBeginCondition(definition, 61)
       # (= ?$assignment_call_24 2)
-      cp247_28 = ex.v[28]
+      cp267_28 = ex.v[28]
       # (= ?$assignment_call_24 2)
+      ex.debugBeginCondition(definition, 62)
       block:
         let value = sv13
         if value.isBound and not ex.v[28].isBound:
           ex.v[28] = value
-          state = 248
+          ex.debugEndCondition(definition, true)
+          state = 268
           continue
-        state = 246
+        ex.debugEndCondition(definition, false)
+        state = 266
         continue
-      state = 248
+      state = 268
       continue
-    of 248:
+    of 268:
       # (= ?$assignment_call_25 (call identity ?$assignment_call_24))
-      cp250_29 = ex.v[29]
+      cp270_29 = ex.v[29]
       # (= ?$assignment_call_25 (call identity ?$assignment_call_24))
+      ex.debugBeginCondition(definition, 63)
       if not ex.v[29].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[28]], addr cs19, factSymbols)
         if ok:
           ex.setIfChanged(29, callResult)
-          state = 251
+          ex.debugEndCondition(definition, true)
+          state = 271
           continue
-      state = 249
+      ex.debugEndCondition(definition, false)
+      state = 269
       continue
-    of 251:
+    of 271:
       # (= ?$assignment_call_26 ?value)
-      cp253_30 = ex.v[30]
+      cp273_30 = ex.v[30]
       # (= ?$assignment_call_26 ?value)
+      ex.debugBeginCondition(definition, 64)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[30].isBound:
           ex.v[30] = value
-          state = 254
+          ex.debugEndCondition(definition, true)
+          state = 274
           continue
-        state = 252
+        ex.debugEndCondition(definition, false)
+        state = 272
         continue
-      state = 254
+      state = 274
       continue
-    of 254:
+    of 274:
       # (< ?$assignment_call_25 ?$assignment_call_26)
       # (< ?$assignment_call_25 ?$assignment_call_26)
+      ex.debugBeginCondition(definition, 65)
       if compare(ex.v[29], ex.v[30], 2'u32):
-        state = 257
+        ex.debugEndCondition(definition, true)
+        state = 277
         continue
-      state = 255
+      ex.debugEndCondition(definition, false)
+      state = 275
       continue
-    of 257:
+    of 277:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_27 ?value) (= ?$assignment_call_28 3) (= ?$assignment_call_29 (call identity ?$assignment_call_28)) (<= ?$assignment_call_27 ?$assignment_call_29))
-      cp259_31 = ex.v[31]
-      cp259_32 = ex.v[32]
-      cp259_33 = ex.v[33]
+      cp280_31 = ex.v[31]
+      cp280_32 = ex.v[32]
+      cp280_33 = ex.v[33]
+      ex.debugBeginCondition(definition, 66)
       # (= ?$assignment_call_27 ?value)
-      cp261_31 = ex.v[31]
+      cp282_31 = ex.v[31]
       # (= ?$assignment_call_27 ?value)
+      ex.debugBeginCondition(definition, 67)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[31].isBound:
           ex.v[31] = value
-          state = 262
+          ex.debugEndCondition(definition, true)
+          state = 283
           continue
-        state = 260
+        ex.debugEndCondition(definition, false)
+        state = 281
         continue
-      state = 262
+      state = 283
       continue
-    of 262:
+    of 283:
       # (= ?$assignment_call_28 3)
-      cp264_32 = ex.v[32]
+      cp285_32 = ex.v[32]
       # (= ?$assignment_call_28 3)
+      ex.debugBeginCondition(definition, 68)
       block:
         let value = sv14
         if value.isBound and not ex.v[32].isBound:
           ex.v[32] = value
-          state = 265
+          ex.debugEndCondition(definition, true)
+          state = 286
           continue
-        state = 263
+        ex.debugEndCondition(definition, false)
+        state = 284
         continue
-      state = 265
+      state = 286
       continue
-    of 265:
+    of 286:
       # (= ?$assignment_call_29 (call identity ?$assignment_call_28))
-      cp267_33 = ex.v[33]
+      cp288_33 = ex.v[33]
       # (= ?$assignment_call_29 (call identity ?$assignment_call_28))
+      ex.debugBeginCondition(definition, 69)
       if not ex.v[33].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[32]], addr cs20, factSymbols)
         if ok:
           ex.setIfChanged(33, callResult)
-          state = 268
+          ex.debugEndCondition(definition, true)
+          state = 289
           continue
-      state = 266
+      ex.debugEndCondition(definition, false)
+      state = 287
       continue
-    of 268:
+    of 289:
       # (<= ?$assignment_call_27 ?$assignment_call_29)
       # (<= ?$assignment_call_27 ?$assignment_call_29)
+      ex.debugBeginCondition(definition, 70)
       if compare(ex.v[31], ex.v[33], 3'u32):
-        state = 271
+        ex.debugEndCondition(definition, true)
+        state = 292
         continue
-      state = 269
+      ex.debugEndCondition(definition, false)
+      state = 290
       continue
-    of 271:
+    of 292:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_30 4) (= ?$assignment_call_31 (call identity ?$assignment_call_30)) (= ?$assignment_call_32 ?value) (> ?$assignment_call_31 ?$assignment_call_32))
-      cp273_34 = ex.v[34]
-      cp273_35 = ex.v[35]
-      cp273_36 = ex.v[36]
+      cp295_34 = ex.v[34]
+      cp295_35 = ex.v[35]
+      cp295_36 = ex.v[36]
+      ex.debugBeginCondition(definition, 71)
       # (= ?$assignment_call_30 4)
-      cp275_34 = ex.v[34]
+      cp297_34 = ex.v[34]
       # (= ?$assignment_call_30 4)
+      ex.debugBeginCondition(definition, 72)
       block:
         let value = sv15
         if value.isBound and not ex.v[34].isBound:
           ex.v[34] = value
-          state = 276
+          ex.debugEndCondition(definition, true)
+          state = 298
           continue
-        state = 274
+        ex.debugEndCondition(definition, false)
+        state = 296
         continue
-      state = 276
+      state = 298
       continue
-    of 276:
+    of 298:
       # (= ?$assignment_call_31 (call identity ?$assignment_call_30))
-      cp278_35 = ex.v[35]
+      cp300_35 = ex.v[35]
       # (= ?$assignment_call_31 (call identity ?$assignment_call_30))
+      ex.debugBeginCondition(definition, 73)
       if not ex.v[35].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[34]], addr cs21, factSymbols)
         if ok:
           ex.setIfChanged(35, callResult)
-          state = 279
+          ex.debugEndCondition(definition, true)
+          state = 301
           continue
-      state = 277
+      ex.debugEndCondition(definition, false)
+      state = 299
       continue
-    of 279:
+    of 301:
       # (= ?$assignment_call_32 ?value)
-      cp281_36 = ex.v[36]
+      cp303_36 = ex.v[36]
       # (= ?$assignment_call_32 ?value)
+      ex.debugBeginCondition(definition, 74)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[36].isBound:
           ex.v[36] = value
-          state = 282
-          continue
-        state = 280
-        continue
-      state = 282
-      continue
-    of 282:
-      # (> ?$assignment_call_31 ?$assignment_call_32)
-      # (> ?$assignment_call_31 ?$assignment_call_32)
-      if compare(ex.v[35], ex.v[36], 4'u32):
-        state = 285
-        continue
-      state = 283
-      continue
-    of 285:
-      # (and (= ?$assignment_call_33 ?value) (= ?$assignment_call_34 3) (= ?$assignment_call_35 (call identity ?$assignment_call_34)) (>= ?$assignment_call_33 ?$assignment_call_35))
-      cp287_37 = ex.v[37]
-      cp287_38 = ex.v[38]
-      cp287_39 = ex.v[39]
-      # (= ?$assignment_call_33 ?value)
-      cp289_37 = ex.v[37]
-      # (= ?$assignment_call_33 ?value)
-      block:
-        let value = ex.v[27]
-        if value.isBound and not ex.v[37].isBound:
-          ex.v[37] = value
-          state = 290
-          continue
-        state = 288
-        continue
-      state = 290
-      continue
-    of 290:
-      # (= ?$assignment_call_34 3)
-      cp292_38 = ex.v[38]
-      # (= ?$assignment_call_34 3)
-      block:
-        let value = sv16
-        if value.isBound and not ex.v[38].isBound:
-          ex.v[38] = value
-          state = 293
-          continue
-        state = 291
-        continue
-      state = 293
-      continue
-    of 293:
-      # (= ?$assignment_call_35 (call identity ?$assignment_call_34))
-      cp295_39 = ex.v[39]
-      # (= ?$assignment_call_35 (call identity ?$assignment_call_34))
-      if not ex.v[39].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[38]], addr cs22, factSymbols)
-        if ok:
-          ex.setIfChanged(39, callResult)
-          state = 296
-          continue
-      state = 294
-      continue
-    of 296:
-      # (>= ?$assignment_call_33 ?$assignment_call_35)
-      # (>= ?$assignment_call_33 ?$assignment_call_35)
-      if compare(ex.v[37], ex.v[39], 5'u32):
-        state = 299
-        continue
-      state = 297
-      continue
-    of 299:
-      # (and (= ?$assignment_call_36 ?value) (= ?$assignment_call_37 (call identity ?$assignment_call_36)) (= ?$assignment_call_38 3) (== ?$assignment_call_37 ?$assignment_call_38))
-      cp301_40 = ex.v[40]
-      cp301_41 = ex.v[41]
-      cp301_42 = ex.v[42]
-      # (= ?$assignment_call_36 ?value)
-      cp303_40 = ex.v[40]
-      # (= ?$assignment_call_36 ?value)
-      block:
-        let value = ex.v[27]
-        if value.isBound and not ex.v[40].isBound:
-          ex.v[40] = value
+          ex.debugEndCondition(definition, true)
           state = 304
           continue
+        ex.debugEndCondition(definition, false)
         state = 302
         continue
       state = 304
       continue
     of 304:
+      # (> ?$assignment_call_31 ?$assignment_call_32)
+      # (> ?$assignment_call_31 ?$assignment_call_32)
+      ex.debugBeginCondition(definition, 75)
+      if compare(ex.v[35], ex.v[36], 4'u32):
+        ex.debugEndCondition(definition, true)
+        state = 307
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 305
+      continue
+    of 307:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_33 ?value) (= ?$assignment_call_34 3) (= ?$assignment_call_35 (call identity ?$assignment_call_34)) (>= ?$assignment_call_33 ?$assignment_call_35))
+      cp310_37 = ex.v[37]
+      cp310_38 = ex.v[38]
+      cp310_39 = ex.v[39]
+      ex.debugBeginCondition(definition, 76)
+      # (= ?$assignment_call_33 ?value)
+      cp312_37 = ex.v[37]
+      # (= ?$assignment_call_33 ?value)
+      ex.debugBeginCondition(definition, 77)
+      block:
+        let value = ex.v[27]
+        if value.isBound and not ex.v[37].isBound:
+          ex.v[37] = value
+          ex.debugEndCondition(definition, true)
+          state = 313
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 311
+        continue
+      state = 313
+      continue
+    of 313:
+      # (= ?$assignment_call_34 3)
+      cp315_38 = ex.v[38]
+      # (= ?$assignment_call_34 3)
+      ex.debugBeginCondition(definition, 78)
+      block:
+        let value = sv16
+        if value.isBound and not ex.v[38].isBound:
+          ex.v[38] = value
+          ex.debugEndCondition(definition, true)
+          state = 316
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 314
+        continue
+      state = 316
+      continue
+    of 316:
+      # (= ?$assignment_call_35 (call identity ?$assignment_call_34))
+      cp318_39 = ex.v[39]
+      # (= ?$assignment_call_35 (call identity ?$assignment_call_34))
+      ex.debugBeginCondition(definition, 79)
+      if not ex.v[39].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[38]], addr cs22, factSymbols)
+        if ok:
+          ex.setIfChanged(39, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 319
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 317
+      continue
+    of 319:
+      # (>= ?$assignment_call_33 ?$assignment_call_35)
+      # (>= ?$assignment_call_33 ?$assignment_call_35)
+      ex.debugBeginCondition(definition, 80)
+      if compare(ex.v[37], ex.v[39], 5'u32):
+        ex.debugEndCondition(definition, true)
+        state = 322
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 320
+      continue
+    of 322:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_36 ?value) (= ?$assignment_call_37 (call identity ?$assignment_call_36)) (= ?$assignment_call_38 3) (== ?$assignment_call_37 ?$assignment_call_38))
+      cp325_40 = ex.v[40]
+      cp325_41 = ex.v[41]
+      cp325_42 = ex.v[42]
+      ex.debugBeginCondition(definition, 81)
+      # (= ?$assignment_call_36 ?value)
+      cp327_40 = ex.v[40]
+      # (= ?$assignment_call_36 ?value)
+      ex.debugBeginCondition(definition, 82)
+      block:
+        let value = ex.v[27]
+        if value.isBound and not ex.v[40].isBound:
+          ex.v[40] = value
+          ex.debugEndCondition(definition, true)
+          state = 328
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 326
+        continue
+      state = 328
+      continue
+    of 328:
       # (= ?$assignment_call_37 (call identity ?$assignment_call_36))
-      cp306_41 = ex.v[41]
+      cp330_41 = ex.v[41]
       # (= ?$assignment_call_37 (call identity ?$assignment_call_36))
+      ex.debugBeginCondition(definition, 83)
       if not ex.v[41].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[40]], addr cs23, factSymbols)
         if ok:
           ex.setIfChanged(41, callResult)
-          state = 307
+          ex.debugEndCondition(definition, true)
+          state = 331
           continue
-      state = 305
+      ex.debugEndCondition(definition, false)
+      state = 329
       continue
-    of 307:
+    of 331:
       # (= ?$assignment_call_38 3)
-      cp309_42 = ex.v[42]
+      cp333_42 = ex.v[42]
       # (= ?$assignment_call_38 3)
+      ex.debugBeginCondition(definition, 84)
       block:
         let value = sv17
         if value.isBound and not ex.v[42].isBound:
           ex.v[42] = value
-          state = 310
+          ex.debugEndCondition(definition, true)
+          state = 334
           continue
-        state = 308
+        ex.debugEndCondition(definition, false)
+        state = 332
         continue
-      state = 310
+      state = 334
       continue
-    of 310:
+    of 334:
       # (== ?$assignment_call_37 ?$assignment_call_38)
       # (== ?$assignment_call_37 ?$assignment_call_38)
+      ex.debugBeginCondition(definition, 85)
       if compare(ex.v[41], ex.v[42], 0'u32):
-        state = 313
+        ex.debugEndCondition(definition, true)
+        state = 337
         continue
-      state = 311
+      ex.debugEndCondition(definition, false)
+      state = 335
       continue
-    of 313:
+    of 337:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_39 2) (= ?$assignment_call_40 ?value) (= ?$assignment_call_41 (call identity ?$assignment_call_40)) (!= ?$assignment_call_39 ?$assignment_call_41))
-      cp315_43 = ex.v[43]
-      cp315_44 = ex.v[44]
-      cp315_45 = ex.v[45]
+      cp340_43 = ex.v[43]
+      cp340_44 = ex.v[44]
+      cp340_45 = ex.v[45]
+      ex.debugBeginCondition(definition, 86)
       # (= ?$assignment_call_39 2)
-      cp317_43 = ex.v[43]
+      cp342_43 = ex.v[43]
       # (= ?$assignment_call_39 2)
+      ex.debugBeginCondition(definition, 87)
       block:
         let value = sv18
         if value.isBound and not ex.v[43].isBound:
           ex.v[43] = value
-          state = 318
+          ex.debugEndCondition(definition, true)
+          state = 343
           continue
-        state = 316
+        ex.debugEndCondition(definition, false)
+        state = 341
         continue
-      state = 318
+      state = 343
       continue
-    of 318:
+    of 343:
       # (= ?$assignment_call_40 ?value)
-      cp320_44 = ex.v[44]
+      cp345_44 = ex.v[44]
       # (= ?$assignment_call_40 ?value)
+      ex.debugBeginCondition(definition, 88)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[44].isBound:
           ex.v[44] = value
-          state = 321
+          ex.debugEndCondition(definition, true)
+          state = 346
           continue
-        state = 319
+        ex.debugEndCondition(definition, false)
+        state = 344
         continue
-      state = 321
+      state = 346
       continue
-    of 321:
+    of 346:
       # (= ?$assignment_call_41 (call identity ?$assignment_call_40))
-      cp323_45 = ex.v[45]
+      cp348_45 = ex.v[45]
       # (= ?$assignment_call_41 (call identity ?$assignment_call_40))
+      ex.debugBeginCondition(definition, 89)
       if not ex.v[45].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[44]], addr cs24, factSymbols)
         if ok:
           ex.setIfChanged(45, callResult)
-          state = 324
+          ex.debugEndCondition(definition, true)
+          state = 349
           continue
-      state = 322
+      ex.debugEndCondition(definition, false)
+      state = 347
       continue
-    of 324:
+    of 349:
       # (!= ?$assignment_call_39 ?$assignment_call_41)
       # (!= ?$assignment_call_39 ?$assignment_call_41)
+      ex.debugBeginCondition(definition, 90)
       if compare(ex.v[43], ex.v[45], 1'u32):
-        state = 327
+        ex.debugEndCondition(definition, true)
+        state = 352
         continue
-      state = 325
+      ex.debugEndCondition(definition, false)
+      state = 350
       continue
-    of 327:
+    of 352:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_42 1) (= ?$assignment_call_43 (call identity ?$assignment_call_42)) (= ?$assignment_call_44 (* ?$assignment_call_43 1)) (= ?$assignment_call_45 (* 2 1)) (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45)) (= ?$assignment_call_47 3) (== ?$assignment_call_46 ?$assignment_call_47))
-      cp329_46 = ex.v[46]
-      cp329_47 = ex.v[47]
-      cp329_48 = ex.v[48]
-      cp329_49 = ex.v[49]
-      cp329_50 = ex.v[50]
-      cp329_51 = ex.v[51]
+      cp355_46 = ex.v[46]
+      cp355_47 = ex.v[47]
+      cp355_48 = ex.v[48]
+      cp355_49 = ex.v[49]
+      cp355_50 = ex.v[50]
+      cp355_51 = ex.v[51]
+      ex.debugBeginCondition(definition, 91)
       # (= ?$assignment_call_42 1)
-      cp331_46 = ex.v[46]
+      cp357_46 = ex.v[46]
       # (= ?$assignment_call_42 1)
+      ex.debugBeginCondition(definition, 92)
       block:
         let value = sv19
         if value.isBound and not ex.v[46].isBound:
           ex.v[46] = value
-          state = 332
-          continue
-        state = 330
-        continue
-      state = 332
-      continue
-    of 332:
-      # (= ?$assignment_call_43 (call identity ?$assignment_call_42))
-      cp334_47 = ex.v[47]
-      # (= ?$assignment_call_43 (call identity ?$assignment_call_42))
-      if not ex.v[47].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[46]], addr cs25, factSymbols)
-        if ok:
-          ex.setIfChanged(47, callResult)
-          state = 335
-          continue
-      state = 333
-      continue
-    of 335:
-      # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
-      cp337_48 = ex.v[48]
-      # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
-      block:
-        let value = arith(2'u32, [ex.v[47], newInt(1'i32)])
-        if value.isBound and not ex.v[48].isBound:
-          ex.v[48] = value
-          state = 338
-          continue
-        state = 336
-        continue
-      state = 338
-      continue
-    of 338:
-      # (= ?$assignment_call_45 (* 2 1))
-      cp340_49 = ex.v[49]
-      # (= ?$assignment_call_45 (* 2 1))
-      block:
-        let value = arith(2'u32, [newInt(2'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[49].isBound:
-          ex.v[49] = value
-          state = 341
-          continue
-        state = 339
-        continue
-      state = 341
-      continue
-    of 341:
-      # (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
-      cp343_50 = ex.v[50]
-      # (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
-      block:
-        let value = arith(0'u32, [ex.v[48], ex.v[49]])
-        if value.isBound and not ex.v[50].isBound:
-          ex.v[50] = value
-          state = 344
-          continue
-        state = 342
-        continue
-      state = 344
-      continue
-    of 344:
-      # (= ?$assignment_call_47 3)
-      cp346_51 = ex.v[51]
-      # (= ?$assignment_call_47 3)
-      block:
-        let value = sv20
-        if value.isBound and not ex.v[51].isBound:
-          ex.v[51] = value
-          state = 347
-          continue
-        state = 345
-        continue
-      state = 347
-      continue
-    of 347:
-      # (== ?$assignment_call_46 ?$assignment_call_47)
-      # (== ?$assignment_call_46 ?$assignment_call_47)
-      if compare(ex.v[50], ex.v[51], 0'u32):
-        state = 350
-        continue
-      state = 348
-      continue
-    of 350:
-      # (and (= ?$assignment_call_48 (* 5 1)) (= ?$assignment_call_49 2) (= ?$assignment_call_50 (call identity ?$assignment_call_49)) (= ?$assignment_call_51 (* ?$assignment_call_50 1)) (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51)) (= ?$assignment_call_53 3) (== ?$assignment_call_52 ?$assignment_call_53))
-      cp352_52 = ex.v[52]
-      cp352_53 = ex.v[53]
-      cp352_54 = ex.v[54]
-      cp352_55 = ex.v[55]
-      cp352_56 = ex.v[56]
-      cp352_57 = ex.v[57]
-      # (= ?$assignment_call_48 (* 5 1))
-      cp354_52 = ex.v[52]
-      # (= ?$assignment_call_48 (* 5 1))
-      block:
-        let value = arith(2'u32, [newInt(5'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[52].isBound:
-          ex.v[52] = value
-          state = 355
-          continue
-        state = 353
-        continue
-      state = 355
-      continue
-    of 355:
-      # (= ?$assignment_call_49 2)
-      cp357_53 = ex.v[53]
-      # (= ?$assignment_call_49 2)
-      block:
-        let value = sv21
-        if value.isBound and not ex.v[53].isBound:
-          ex.v[53] = value
+          ex.debugEndCondition(definition, true)
           state = 358
           continue
+        ex.debugEndCondition(definition, false)
         state = 356
         continue
       state = 358
       continue
     of 358:
-      # (= ?$assignment_call_50 (call identity ?$assignment_call_49))
-      cp360_54 = ex.v[54]
-      # (= ?$assignment_call_50 (call identity ?$assignment_call_49))
-      if not ex.v[54].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[53]], addr cs26, factSymbols)
+      # (= ?$assignment_call_43 (call identity ?$assignment_call_42))
+      cp360_47 = ex.v[47]
+      # (= ?$assignment_call_43 (call identity ?$assignment_call_42))
+      ex.debugBeginCondition(definition, 93)
+      if not ex.v[47].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[46]], addr cs25, factSymbols)
         if ok:
-          ex.setIfChanged(54, callResult)
+          ex.setIfChanged(47, callResult)
+          ex.debugEndCondition(definition, true)
           state = 361
           continue
+      ex.debugEndCondition(definition, false)
       state = 359
       continue
     of 361:
-      # (= ?$assignment_call_51 (* ?$assignment_call_50 1))
-      cp363_55 = ex.v[55]
-      # (= ?$assignment_call_51 (* ?$assignment_call_50 1))
+      # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
+      cp363_48 = ex.v[48]
+      # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
+      ex.debugBeginCondition(definition, 94)
       block:
-        let value = arith(2'u32, [ex.v[54], newInt(1'i32)])
-        if value.isBound and not ex.v[55].isBound:
-          ex.v[55] = value
+        let value = arith(2'u32, [ex.v[47], newInt(1'i32)])
+        if value.isBound and not ex.v[48].isBound:
+          ex.v[48] = value
+          ex.debugEndCondition(definition, true)
           state = 364
           continue
+        ex.debugEndCondition(definition, false)
         state = 362
         continue
       state = 364
       continue
     of 364:
-      # (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
-      cp366_56 = ex.v[56]
-      # (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
+      # (= ?$assignment_call_45 (* 2 1))
+      cp366_49 = ex.v[49]
+      # (= ?$assignment_call_45 (* 2 1))
+      ex.debugBeginCondition(definition, 95)
       block:
-        let value = arith(1'u32, [ex.v[52], ex.v[55]])
-        if value.isBound and not ex.v[56].isBound:
-          ex.v[56] = value
+        let value = arith(2'u32, [newInt(2'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[49].isBound:
+          ex.v[49] = value
+          ex.debugEndCondition(definition, true)
           state = 367
           continue
+        ex.debugEndCondition(definition, false)
         state = 365
         continue
       state = 367
       continue
     of 367:
-      # (= ?$assignment_call_53 3)
-      cp369_57 = ex.v[57]
-      # (= ?$assignment_call_53 3)
+      # (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
+      cp369_50 = ex.v[50]
+      # (= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))
+      ex.debugBeginCondition(definition, 96)
       block:
-        let value = sv22
-        if value.isBound and not ex.v[57].isBound:
-          ex.v[57] = value
+        let value = arith(0'u32, [ex.v[48], ex.v[49]])
+        if value.isBound and not ex.v[50].isBound:
+          ex.v[50] = value
+          ex.debugEndCondition(definition, true)
           state = 370
           continue
+        ex.debugEndCondition(definition, false)
         state = 368
         continue
       state = 370
       continue
     of 370:
-      # (== ?$assignment_call_52 ?$assignment_call_53)
-      # (== ?$assignment_call_52 ?$assignment_call_53)
-      if compare(ex.v[56], ex.v[57], 0'u32):
-        state = 373
+      # (= ?$assignment_call_47 3)
+      cp372_51 = ex.v[51]
+      # (= ?$assignment_call_47 3)
+      ex.debugBeginCondition(definition, 97)
+      block:
+        let value = sv20
+        if value.isBound and not ex.v[51].isBound:
+          ex.v[51] = value
+          ex.debugEndCondition(definition, true)
+          state = 373
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 371
         continue
-      state = 371
+      state = 373
       continue
     of 373:
+      # (== ?$assignment_call_46 ?$assignment_call_47)
+      # (== ?$assignment_call_46 ?$assignment_call_47)
+      ex.debugBeginCondition(definition, 98)
+      if compare(ex.v[50], ex.v[51], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 376
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 374
+      continue
+    of 376:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_48 (* 5 1)) (= ?$assignment_call_49 2) (= ?$assignment_call_50 (call identity ?$assignment_call_49)) (= ?$assignment_call_51 (* ?$assignment_call_50 1)) (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51)) (= ?$assignment_call_53 3) (== ?$assignment_call_52 ?$assignment_call_53))
+      cp379_52 = ex.v[52]
+      cp379_53 = ex.v[53]
+      cp379_54 = ex.v[54]
+      cp379_55 = ex.v[55]
+      cp379_56 = ex.v[56]
+      cp379_57 = ex.v[57]
+      ex.debugBeginCondition(definition, 99)
+      # (= ?$assignment_call_48 (* 5 1))
+      cp381_52 = ex.v[52]
+      # (= ?$assignment_call_48 (* 5 1))
+      ex.debugBeginCondition(definition, 100)
+      block:
+        let value = arith(2'u32, [newInt(5'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[52].isBound:
+          ex.v[52] = value
+          ex.debugEndCondition(definition, true)
+          state = 382
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 380
+        continue
+      state = 382
+      continue
+    of 382:
+      # (= ?$assignment_call_49 2)
+      cp384_53 = ex.v[53]
+      # (= ?$assignment_call_49 2)
+      ex.debugBeginCondition(definition, 101)
+      block:
+        let value = sv21
+        if value.isBound and not ex.v[53].isBound:
+          ex.v[53] = value
+          ex.debugEndCondition(definition, true)
+          state = 385
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 383
+        continue
+      state = 385
+      continue
+    of 385:
+      # (= ?$assignment_call_50 (call identity ?$assignment_call_49))
+      cp387_54 = ex.v[54]
+      # (= ?$assignment_call_50 (call identity ?$assignment_call_49))
+      ex.debugBeginCondition(definition, 102)
+      if not ex.v[54].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[53]], addr cs26, factSymbols)
+        if ok:
+          ex.setIfChanged(54, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 388
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 386
+      continue
+    of 388:
+      # (= ?$assignment_call_51 (* ?$assignment_call_50 1))
+      cp390_55 = ex.v[55]
+      # (= ?$assignment_call_51 (* ?$assignment_call_50 1))
+      ex.debugBeginCondition(definition, 103)
+      block:
+        let value = arith(2'u32, [ex.v[54], newInt(1'i32)])
+        if value.isBound and not ex.v[55].isBound:
+          ex.v[55] = value
+          ex.debugEndCondition(definition, true)
+          state = 391
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 389
+        continue
+      state = 391
+      continue
+    of 391:
+      # (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
+      cp393_56 = ex.v[56]
+      # (= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))
+      ex.debugBeginCondition(definition, 104)
+      block:
+        let value = arith(1'u32, [ex.v[52], ex.v[55]])
+        if value.isBound and not ex.v[56].isBound:
+          ex.v[56] = value
+          ex.debugEndCondition(definition, true)
+          state = 394
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 392
+        continue
+      state = 394
+      continue
+    of 394:
+      # (= ?$assignment_call_53 3)
+      cp396_57 = ex.v[57]
+      # (= ?$assignment_call_53 3)
+      ex.debugBeginCondition(definition, 105)
+      block:
+        let value = sv22
+        if value.isBound and not ex.v[57].isBound:
+          ex.v[57] = value
+          ex.debugEndCondition(definition, true)
+          state = 397
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 395
+        continue
+      state = 397
+      continue
+    of 397:
+      # (== ?$assignment_call_52 ?$assignment_call_53)
+      # (== ?$assignment_call_52 ?$assignment_call_53)
+      ex.debugBeginCondition(definition, 106)
+      if compare(ex.v[56], ex.v[57], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 400
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 398
+      continue
+    of 400:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_54 2) (= ?$assignment_call_55 (call identity ?$assignment_call_54)) (= ?$assignment_call_56 (* ?$assignment_call_55 1)) (= ?$assignment_call_57 (* 3 1)) (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57)) (= ?$assignment_call_59 6) (== ?$assignment_call_58 ?$assignment_call_59))
-      cp375_58 = ex.v[58]
-      cp375_59 = ex.v[59]
-      cp375_60 = ex.v[60]
-      cp375_61 = ex.v[61]
-      cp375_62 = ex.v[62]
-      cp375_63 = ex.v[63]
+      cp403_58 = ex.v[58]
+      cp403_59 = ex.v[59]
+      cp403_60 = ex.v[60]
+      cp403_61 = ex.v[61]
+      cp403_62 = ex.v[62]
+      cp403_63 = ex.v[63]
+      ex.debugBeginCondition(definition, 107)
       # (= ?$assignment_call_54 2)
-      cp377_58 = ex.v[58]
+      cp405_58 = ex.v[58]
       # (= ?$assignment_call_54 2)
+      ex.debugBeginCondition(definition, 108)
       block:
         let value = sv23
         if value.isBound and not ex.v[58].isBound:
           ex.v[58] = value
-          state = 378
+          ex.debugEndCondition(definition, true)
+          state = 406
           continue
-        state = 376
+        ex.debugEndCondition(definition, false)
+        state = 404
         continue
-      state = 378
+      state = 406
       continue
-    of 378:
+    of 406:
       # (= ?$assignment_call_55 (call identity ?$assignment_call_54))
-      cp380_59 = ex.v[59]
+      cp408_59 = ex.v[59]
       # (= ?$assignment_call_55 (call identity ?$assignment_call_54))
+      ex.debugBeginCondition(definition, 109)
       if not ex.v[59].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[58]], addr cs27, factSymbols)
         if ok:
           ex.setIfChanged(59, callResult)
-          state = 381
+          ex.debugEndCondition(definition, true)
+          state = 409
           continue
-      state = 379
+      ex.debugEndCondition(definition, false)
+      state = 407
       continue
-    of 381:
+    of 409:
       # (= ?$assignment_call_56 (* ?$assignment_call_55 1))
-      cp383_60 = ex.v[60]
+      cp411_60 = ex.v[60]
       # (= ?$assignment_call_56 (* ?$assignment_call_55 1))
+      ex.debugBeginCondition(definition, 110)
       block:
         let value = arith(2'u32, [ex.v[59], newInt(1'i32)])
         if value.isBound and not ex.v[60].isBound:
           ex.v[60] = value
-          state = 384
+          ex.debugEndCondition(definition, true)
+          state = 412
           continue
-        state = 382
+        ex.debugEndCondition(definition, false)
+        state = 410
         continue
-      state = 384
+      state = 412
       continue
-    of 384:
+    of 412:
       # (= ?$assignment_call_57 (* 3 1))
-      cp386_61 = ex.v[61]
+      cp414_61 = ex.v[61]
       # (= ?$assignment_call_57 (* 3 1))
+      ex.debugBeginCondition(definition, 111)
       block:
         let value = arith(2'u32, [newInt(3'i32), newInt(1'i32)])
         if value.isBound and not ex.v[61].isBound:
           ex.v[61] = value
-          state = 387
+          ex.debugEndCondition(definition, true)
+          state = 415
           continue
-        state = 385
+        ex.debugEndCondition(definition, false)
+        state = 413
         continue
-      state = 387
+      state = 415
       continue
-    of 387:
+    of 415:
       # (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))
-      cp389_62 = ex.v[62]
+      cp417_62 = ex.v[62]
       # (= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))
+      ex.debugBeginCondition(definition, 112)
       block:
         let value = arith(2'u32, [ex.v[60], ex.v[61]])
         if value.isBound and not ex.v[62].isBound:
           ex.v[62] = value
-          state = 390
+          ex.debugEndCondition(definition, true)
+          state = 418
           continue
-        state = 388
+        ex.debugEndCondition(definition, false)
+        state = 416
         continue
-      state = 390
+      state = 418
       continue
-    of 390:
+    of 418:
       # (= ?$assignment_call_59 6)
-      cp392_63 = ex.v[63]
+      cp420_63 = ex.v[63]
       # (= ?$assignment_call_59 6)
+      ex.debugBeginCondition(definition, 113)
       block:
         let value = sv24
         if value.isBound and not ex.v[63].isBound:
           ex.v[63] = value
-          state = 393
+          ex.debugEndCondition(definition, true)
+          state = 421
           continue
-        state = 391
+        ex.debugEndCondition(definition, false)
+        state = 419
         continue
-      state = 393
+      state = 421
       continue
-    of 393:
+    of 421:
       # (== ?$assignment_call_58 ?$assignment_call_59)
       # (== ?$assignment_call_58 ?$assignment_call_59)
+      ex.debugBeginCondition(definition, 114)
       if compare(ex.v[62], ex.v[63], 0'u32):
-        state = 396
+        ex.debugEndCondition(definition, true)
+        state = 424
         continue
-      state = 394
+      ex.debugEndCondition(definition, false)
+      state = 422
       continue
-    of 396:
+    of 424:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_60 (* 6 1)) (= ?$assignment_call_61 2) (= ?$assignment_call_62 (call identity ?$assignment_call_61)) (= ?$assignment_call_63 (* ?$assignment_call_62 1)) (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63)) (= ?$assignment_call_65 3) (== ?$assignment_call_64 ?$assignment_call_65))
-      cp398_64 = ex.v[64]
-      cp398_65 = ex.v[65]
-      cp398_66 = ex.v[66]
-      cp398_67 = ex.v[67]
-      cp398_68 = ex.v[68]
-      cp398_69 = ex.v[69]
+      cp427_64 = ex.v[64]
+      cp427_65 = ex.v[65]
+      cp427_66 = ex.v[66]
+      cp427_67 = ex.v[67]
+      cp427_68 = ex.v[68]
+      cp427_69 = ex.v[69]
+      ex.debugBeginCondition(definition, 115)
       # (= ?$assignment_call_60 (* 6 1))
-      cp400_64 = ex.v[64]
+      cp429_64 = ex.v[64]
       # (= ?$assignment_call_60 (* 6 1))
+      ex.debugBeginCondition(definition, 116)
       block:
         let value = arith(2'u32, [newInt(6'i32), newInt(1'i32)])
         if value.isBound and not ex.v[64].isBound:
           ex.v[64] = value
-          state = 401
-          continue
-        state = 399
-        continue
-      state = 401
-      continue
-    of 401:
-      # (= ?$assignment_call_61 2)
-      cp403_65 = ex.v[65]
-      # (= ?$assignment_call_61 2)
-      block:
-        let value = sv25
-        if value.isBound and not ex.v[65].isBound:
-          ex.v[65] = value
-          state = 404
-          continue
-        state = 402
-        continue
-      state = 404
-      continue
-    of 404:
-      # (= ?$assignment_call_62 (call identity ?$assignment_call_61))
-      cp406_66 = ex.v[66]
-      # (= ?$assignment_call_62 (call identity ?$assignment_call_61))
-      if not ex.v[66].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[65]], addr cs28, factSymbols)
-        if ok:
-          ex.setIfChanged(66, callResult)
-          state = 407
-          continue
-      state = 405
-      continue
-    of 407:
-      # (= ?$assignment_call_63 (* ?$assignment_call_62 1))
-      cp409_67 = ex.v[67]
-      # (= ?$assignment_call_63 (* ?$assignment_call_62 1))
-      block:
-        let value = arith(2'u32, [ex.v[66], newInt(1'i32)])
-        if value.isBound and not ex.v[67].isBound:
-          ex.v[67] = value
-          state = 410
-          continue
-        state = 408
-        continue
-      state = 410
-      continue
-    of 410:
-      # (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
-      cp412_68 = ex.v[68]
-      # (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
-      block:
-        let value = arith(3'u32, [ex.v[64], ex.v[67]])
-        if value.isBound and not ex.v[68].isBound:
-          ex.v[68] = value
-          state = 413
-          continue
-        state = 411
-        continue
-      state = 413
-      continue
-    of 413:
-      # (= ?$assignment_call_65 3)
-      cp415_69 = ex.v[69]
-      # (= ?$assignment_call_65 3)
-      block:
-        let value = sv26
-        if value.isBound and not ex.v[69].isBound:
-          ex.v[69] = value
-          state = 416
-          continue
-        state = 414
-        continue
-      state = 416
-      continue
-    of 416:
-      # (== ?$assignment_call_64 ?$assignment_call_65)
-      # (== ?$assignment_call_64 ?$assignment_call_65)
-      if compare(ex.v[68], ex.v[69], 0'u32):
-        state = 419
-        continue
-      state = 417
-      continue
-    of 419:
-      # (and (= ?$assignment_call_66 7) (= ?$assignment_call_67 (call identity ?$assignment_call_66)) (= ?$assignment_call_68 (* ?$assignment_call_67 1)) (= ?$assignment_call_69 (* 4 1)) (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69)) (= ?$assignment_call_71 3) (== ?$assignment_call_70 ?$assignment_call_71))
-      cp421_70 = ex.v[70]
-      cp421_71 = ex.v[71]
-      cp421_72 = ex.v[72]
-      cp421_73 = ex.v[73]
-      cp421_74 = ex.v[74]
-      cp421_75 = ex.v[75]
-      # (= ?$assignment_call_66 7)
-      cp423_70 = ex.v[70]
-      # (= ?$assignment_call_66 7)
-      block:
-        let value = sv27
-        if value.isBound and not ex.v[70].isBound:
-          ex.v[70] = value
-          state = 424
-          continue
-        state = 422
-        continue
-      state = 424
-      continue
-    of 424:
-      # (= ?$assignment_call_67 (call identity ?$assignment_call_66))
-      cp426_71 = ex.v[71]
-      # (= ?$assignment_call_67 (call identity ?$assignment_call_66))
-      if not ex.v[71].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[70]], addr cs29, factSymbols)
-        if ok:
-          ex.setIfChanged(71, callResult)
-          state = 427
-          continue
-      state = 425
-      continue
-    of 427:
-      # (= ?$assignment_call_68 (* ?$assignment_call_67 1))
-      cp429_72 = ex.v[72]
-      # (= ?$assignment_call_68 (* ?$assignment_call_67 1))
-      block:
-        let value = arith(2'u32, [ex.v[71], newInt(1'i32)])
-        if value.isBound and not ex.v[72].isBound:
-          ex.v[72] = value
+          ex.debugEndCondition(definition, true)
           state = 430
           continue
+        ex.debugEndCondition(definition, false)
         state = 428
         continue
       state = 430
       continue
     of 430:
-      # (= ?$assignment_call_69 (* 4 1))
-      cp432_73 = ex.v[73]
-      # (= ?$assignment_call_69 (* 4 1))
+      # (= ?$assignment_call_61 2)
+      cp432_65 = ex.v[65]
+      # (= ?$assignment_call_61 2)
+      ex.debugBeginCondition(definition, 117)
       block:
-        let value = arith(2'u32, [newInt(4'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[73].isBound:
-          ex.v[73] = value
+        let value = sv25
+        if value.isBound and not ex.v[65].isBound:
+          ex.v[65] = value
+          ex.debugEndCondition(definition, true)
           state = 433
           continue
+        ex.debugEndCondition(definition, false)
         state = 431
         continue
       state = 433
       continue
     of 433:
-      # (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
-      cp435_74 = ex.v[74]
-      # (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
-      block:
-        let value = arith(4'u32, [ex.v[72], ex.v[73]])
-        if value.isBound and not ex.v[74].isBound:
-          ex.v[74] = value
+      # (= ?$assignment_call_62 (call identity ?$assignment_call_61))
+      cp435_66 = ex.v[66]
+      # (= ?$assignment_call_62 (call identity ?$assignment_call_61))
+      ex.debugBeginCondition(definition, 118)
+      if not ex.v[66].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[65]], addr cs28, factSymbols)
+        if ok:
+          ex.setIfChanged(66, callResult)
+          ex.debugEndCondition(definition, true)
           state = 436
           continue
-        state = 434
-        continue
-      state = 436
+      ex.debugEndCondition(definition, false)
+      state = 434
       continue
     of 436:
-      # (= ?$assignment_call_71 3)
-      cp438_75 = ex.v[75]
-      # (= ?$assignment_call_71 3)
+      # (= ?$assignment_call_63 (* ?$assignment_call_62 1))
+      cp438_67 = ex.v[67]
+      # (= ?$assignment_call_63 (* ?$assignment_call_62 1))
+      ex.debugBeginCondition(definition, 119)
       block:
-        let value = sv28
-        if value.isBound and not ex.v[75].isBound:
-          ex.v[75] = value
+        let value = arith(2'u32, [ex.v[66], newInt(1'i32)])
+        if value.isBound and not ex.v[67].isBound:
+          ex.v[67] = value
+          ex.debugEndCondition(definition, true)
           state = 439
           continue
+        ex.debugEndCondition(definition, false)
         state = 437
         continue
       state = 439
       continue
     of 439:
-      # (== ?$assignment_call_70 ?$assignment_call_71)
-      # (== ?$assignment_call_70 ?$assignment_call_71)
-      if compare(ex.v[74], ex.v[75], 0'u32):
-        state = 442
+      # (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
+      cp441_68 = ex.v[68]
+      # (= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))
+      ex.debugBeginCondition(definition, 120)
+      block:
+        let value = arith(3'u32, [ex.v[64], ex.v[67]])
+        if value.isBound and not ex.v[68].isBound:
+          ex.v[68] = value
+          ex.debugEndCondition(definition, true)
+          state = 442
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 440
         continue
-      state = 440
+      state = 442
       continue
     of 442:
+      # (= ?$assignment_call_65 3)
+      cp444_69 = ex.v[69]
+      # (= ?$assignment_call_65 3)
+      ex.debugBeginCondition(definition, 121)
+      block:
+        let value = sv26
+        if value.isBound and not ex.v[69].isBound:
+          ex.v[69] = value
+          ex.debugEndCondition(definition, true)
+          state = 445
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 443
+        continue
+      state = 445
+      continue
+    of 445:
+      # (== ?$assignment_call_64 ?$assignment_call_65)
+      # (== ?$assignment_call_64 ?$assignment_call_65)
+      ex.debugBeginCondition(definition, 122)
+      if compare(ex.v[68], ex.v[69], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 448
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 446
+      continue
+    of 448:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_66 7) (= ?$assignment_call_67 (call identity ?$assignment_call_66)) (= ?$assignment_call_68 (* ?$assignment_call_67 1)) (= ?$assignment_call_69 (* 4 1)) (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69)) (= ?$assignment_call_71 3) (== ?$assignment_call_70 ?$assignment_call_71))
+      cp451_70 = ex.v[70]
+      cp451_71 = ex.v[71]
+      cp451_72 = ex.v[72]
+      cp451_73 = ex.v[73]
+      cp451_74 = ex.v[74]
+      cp451_75 = ex.v[75]
+      ex.debugBeginCondition(definition, 123)
+      # (= ?$assignment_call_66 7)
+      cp453_70 = ex.v[70]
+      # (= ?$assignment_call_66 7)
+      ex.debugBeginCondition(definition, 124)
+      block:
+        let value = sv27
+        if value.isBound and not ex.v[70].isBound:
+          ex.v[70] = value
+          ex.debugEndCondition(definition, true)
+          state = 454
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 452
+        continue
+      state = 454
+      continue
+    of 454:
+      # (= ?$assignment_call_67 (call identity ?$assignment_call_66))
+      cp456_71 = ex.v[71]
+      # (= ?$assignment_call_67 (call identity ?$assignment_call_66))
+      ex.debugBeginCondition(definition, 125)
+      if not ex.v[71].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[70]], addr cs29, factSymbols)
+        if ok:
+          ex.setIfChanged(71, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 457
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 455
+      continue
+    of 457:
+      # (= ?$assignment_call_68 (* ?$assignment_call_67 1))
+      cp459_72 = ex.v[72]
+      # (= ?$assignment_call_68 (* ?$assignment_call_67 1))
+      ex.debugBeginCondition(definition, 126)
+      block:
+        let value = arith(2'u32, [ex.v[71], newInt(1'i32)])
+        if value.isBound and not ex.v[72].isBound:
+          ex.v[72] = value
+          ex.debugEndCondition(definition, true)
+          state = 460
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 458
+        continue
+      state = 460
+      continue
+    of 460:
+      # (= ?$assignment_call_69 (* 4 1))
+      cp462_73 = ex.v[73]
+      # (= ?$assignment_call_69 (* 4 1))
+      ex.debugBeginCondition(definition, 127)
+      block:
+        let value = arith(2'u32, [newInt(4'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[73].isBound:
+          ex.v[73] = value
+          ex.debugEndCondition(definition, true)
+          state = 463
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 461
+        continue
+      state = 463
+      continue
+    of 463:
+      # (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
+      cp465_74 = ex.v[74]
+      # (= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))
+      ex.debugBeginCondition(definition, 128)
+      block:
+        let value = arith(4'u32, [ex.v[72], ex.v[73]])
+        if value.isBound and not ex.v[74].isBound:
+          ex.v[74] = value
+          ex.debugEndCondition(definition, true)
+          state = 466
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 464
+        continue
+      state = 466
+      continue
+    of 466:
+      # (= ?$assignment_call_71 3)
+      cp468_75 = ex.v[75]
+      # (= ?$assignment_call_71 3)
+      ex.debugBeginCondition(definition, 129)
+      block:
+        let value = sv28
+        if value.isBound and not ex.v[75].isBound:
+          ex.v[75] = value
+          ex.debugEndCondition(definition, true)
+          state = 469
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 467
+        continue
+      state = 469
+      continue
+    of 469:
+      # (== ?$assignment_call_70 ?$assignment_call_71)
+      # (== ?$assignment_call_70 ?$assignment_call_71)
+      ex.debugBeginCondition(definition, 130)
+      if compare(ex.v[74], ex.v[75], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 472
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 470
+      continue
+    of 472:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_72 2) (= ?$assignment_call_73 (call identity ?$assignment_call_72)) (= ?$assignment_call_74 (* ?$assignment_call_73 1)) (= ?$assignment_call_75 (++ ?$assignment_call_74)) (= ?$assignment_call_76 3) (== ?$assignment_call_75 ?$assignment_call_76))
-      cp444_76 = ex.v[76]
-      cp444_77 = ex.v[77]
-      cp444_78 = ex.v[78]
-      cp444_79 = ex.v[79]
-      cp444_80 = ex.v[80]
+      cp475_76 = ex.v[76]
+      cp475_77 = ex.v[77]
+      cp475_78 = ex.v[78]
+      cp475_79 = ex.v[79]
+      cp475_80 = ex.v[80]
+      ex.debugBeginCondition(definition, 131)
       # (= ?$assignment_call_72 2)
-      cp446_76 = ex.v[76]
+      cp477_76 = ex.v[76]
       # (= ?$assignment_call_72 2)
+      ex.debugBeginCondition(definition, 132)
       block:
         let value = sv29
         if value.isBound and not ex.v[76].isBound:
           ex.v[76] = value
-          state = 447
+          ex.debugEndCondition(definition, true)
+          state = 478
           continue
-        state = 445
+        ex.debugEndCondition(definition, false)
+        state = 476
         continue
-      state = 447
+      state = 478
       continue
-    of 447:
+    of 478:
       # (= ?$assignment_call_73 (call identity ?$assignment_call_72))
-      cp449_77 = ex.v[77]
+      cp480_77 = ex.v[77]
       # (= ?$assignment_call_73 (call identity ?$assignment_call_72))
+      ex.debugBeginCondition(definition, 133)
       if not ex.v[77].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[76]], addr cs30, factSymbols)
         if ok:
           ex.setIfChanged(77, callResult)
-          state = 450
+          ex.debugEndCondition(definition, true)
+          state = 481
           continue
-      state = 448
+      ex.debugEndCondition(definition, false)
+      state = 479
       continue
-    of 450:
+    of 481:
       # (= ?$assignment_call_74 (* ?$assignment_call_73 1))
-      cp452_78 = ex.v[78]
+      cp483_78 = ex.v[78]
       # (= ?$assignment_call_74 (* ?$assignment_call_73 1))
+      ex.debugBeginCondition(definition, 134)
       block:
         let value = arith(2'u32, [ex.v[77], newInt(1'i32)])
         if value.isBound and not ex.v[78].isBound:
           ex.v[78] = value
-          state = 453
+          ex.debugEndCondition(definition, true)
+          state = 484
           continue
-        state = 451
+        ex.debugEndCondition(definition, false)
+        state = 482
         continue
-      state = 453
+      state = 484
       continue
-    of 453:
+    of 484:
       # (= ?$assignment_call_75 (++ ?$assignment_call_74))
-      cp455_79 = ex.v[79]
+      cp486_79 = ex.v[79]
       # (= ?$assignment_call_75 (++ ?$assignment_call_74))
+      ex.debugBeginCondition(definition, 135)
       block:
         let value = arith(5'u32, [ex.v[78]])
         if value.isBound and not ex.v[79].isBound:
           ex.v[79] = value
-          state = 456
-          continue
-        state = 454
-        continue
-      state = 456
-      continue
-    of 456:
-      # (= ?$assignment_call_76 3)
-      cp458_80 = ex.v[80]
-      # (= ?$assignment_call_76 3)
-      block:
-        let value = sv30
-        if value.isBound and not ex.v[80].isBound:
-          ex.v[80] = value
-          state = 459
-          continue
-        state = 457
-        continue
-      state = 459
-      continue
-    of 459:
-      # (== ?$assignment_call_75 ?$assignment_call_76)
-      # (== ?$assignment_call_75 ?$assignment_call_76)
-      if compare(ex.v[79], ex.v[80], 0'u32):
-        state = 462
-        continue
-      state = 460
-      continue
-    of 462:
-      # (and (= ?$assignment_call_77 4) (= ?$assignment_call_78 (call identity ?$assignment_call_77)) (= ?$assignment_call_79 (* ?$assignment_call_78 1)) (= ?$assignment_call_80 (-- ?$assignment_call_79)) (= ?$assignment_call_81 3) (== ?$assignment_call_80 ?$assignment_call_81))
-      cp464_81 = ex.v[81]
-      cp464_82 = ex.v[82]
-      cp464_83 = ex.v[83]
-      cp464_84 = ex.v[84]
-      cp464_85 = ex.v[85]
-      # (= ?$assignment_call_77 4)
-      cp466_81 = ex.v[81]
-      # (= ?$assignment_call_77 4)
-      block:
-        let value = sv31
-        if value.isBound and not ex.v[81].isBound:
-          ex.v[81] = value
-          state = 467
-          continue
-        state = 465
-        continue
-      state = 467
-      continue
-    of 467:
-      # (= ?$assignment_call_78 (call identity ?$assignment_call_77))
-      cp469_82 = ex.v[82]
-      # (= ?$assignment_call_78 (call identity ?$assignment_call_77))
-      if not ex.v[82].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[81]], addr cs31, factSymbols)
-        if ok:
-          ex.setIfChanged(82, callResult)
-          state = 470
-          continue
-      state = 468
-      continue
-    of 470:
-      # (= ?$assignment_call_79 (* ?$assignment_call_78 1))
-      cp472_83 = ex.v[83]
-      # (= ?$assignment_call_79 (* ?$assignment_call_78 1))
-      block:
-        let value = arith(2'u32, [ex.v[82], newInt(1'i32)])
-        if value.isBound and not ex.v[83].isBound:
-          ex.v[83] = value
-          state = 473
-          continue
-        state = 471
-        continue
-      state = 473
-      continue
-    of 473:
-      # (= ?$assignment_call_80 (-- ?$assignment_call_79))
-      cp475_84 = ex.v[84]
-      # (= ?$assignment_call_80 (-- ?$assignment_call_79))
-      block:
-        let value = arith(6'u32, [ex.v[83]])
-        if value.isBound and not ex.v[84].isBound:
-          ex.v[84] = value
-          state = 476
-          continue
-        state = 474
-        continue
-      state = 476
-      continue
-    of 476:
-      # (= ?$assignment_call_81 3)
-      cp478_85 = ex.v[85]
-      # (= ?$assignment_call_81 3)
-      block:
-        let value = sv32
-        if value.isBound and not ex.v[85].isBound:
-          ex.v[85] = value
-          state = 479
-          continue
-        state = 477
-        continue
-      state = 479
-      continue
-    of 479:
-      # (== ?$assignment_call_80 ?$assignment_call_81)
-      # (== ?$assignment_call_80 ?$assignment_call_81)
-      if compare(ex.v[84], ex.v[85], 0'u32):
-        state = 482
-        continue
-      state = 480
-      continue
-    of 482:
-      # (and (= ?$assignment_call_82 (* 1 1)) (= ?$assignment_call_83 2) (= ?$assignment_call_84 (call identity ?$assignment_call_83)) (= ?$assignment_call_85 (* ?$assignment_call_84 1)) (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85)) (= ?$assignment_call_87 (call identity ?$assignment_call_86)) (= ?$assignment_call_88 3) (== ?$assignment_call_87 ?$assignment_call_88))
-      cp484_86 = ex.v[86]
-      cp484_87 = ex.v[87]
-      cp484_88 = ex.v[88]
-      cp484_89 = ex.v[89]
-      cp484_90 = ex.v[90]
-      cp484_91 = ex.v[91]
-      cp484_92 = ex.v[92]
-      # (= ?$assignment_call_82 (* 1 1))
-      cp486_86 = ex.v[86]
-      # (= ?$assignment_call_82 (* 1 1))
-      block:
-        let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[86].isBound:
-          ex.v[86] = value
+          ex.debugEndCondition(definition, true)
           state = 487
           continue
+        ex.debugEndCondition(definition, false)
         state = 485
         continue
       state = 487
       continue
     of 487:
-      # (= ?$assignment_call_83 2)
-      cp489_87 = ex.v[87]
-      # (= ?$assignment_call_83 2)
+      # (= ?$assignment_call_76 3)
+      cp489_80 = ex.v[80]
+      # (= ?$assignment_call_76 3)
+      ex.debugBeginCondition(definition, 136)
       block:
-        let value = sv33
-        if value.isBound and not ex.v[87].isBound:
-          ex.v[87] = value
+        let value = sv30
+        if value.isBound and not ex.v[80].isBound:
+          ex.v[80] = value
+          ex.debugEndCondition(definition, true)
           state = 490
           continue
+        ex.debugEndCondition(definition, false)
         state = 488
         continue
       state = 490
       continue
     of 490:
-      # (= ?$assignment_call_84 (call identity ?$assignment_call_83))
-      cp492_88 = ex.v[88]
-      # (= ?$assignment_call_84 (call identity ?$assignment_call_83))
-      if not ex.v[88].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[87]], addr cs32, factSymbols)
-        if ok:
-          ex.setIfChanged(88, callResult)
-          state = 493
-          continue
+      # (== ?$assignment_call_75 ?$assignment_call_76)
+      # (== ?$assignment_call_75 ?$assignment_call_76)
+      ex.debugBeginCondition(definition, 137)
+      if compare(ex.v[79], ex.v[80], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 493
+        continue
+      ex.debugEndCondition(definition, false)
       state = 491
       continue
     of 493:
-      # (= ?$assignment_call_85 (* ?$assignment_call_84 1))
-      cp495_89 = ex.v[89]
-      # (= ?$assignment_call_85 (* ?$assignment_call_84 1))
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_77 4) (= ?$assignment_call_78 (call identity ?$assignment_call_77)) (= ?$assignment_call_79 (* ?$assignment_call_78 1)) (= ?$assignment_call_80 (-- ?$assignment_call_79)) (= ?$assignment_call_81 3) (== ?$assignment_call_80 ?$assignment_call_81))
+      cp496_81 = ex.v[81]
+      cp496_82 = ex.v[82]
+      cp496_83 = ex.v[83]
+      cp496_84 = ex.v[84]
+      cp496_85 = ex.v[85]
+      ex.debugBeginCondition(definition, 138)
+      # (= ?$assignment_call_77 4)
+      cp498_81 = ex.v[81]
+      # (= ?$assignment_call_77 4)
+      ex.debugBeginCondition(definition, 139)
       block:
-        let value = arith(2'u32, [ex.v[88], newInt(1'i32)])
-        if value.isBound and not ex.v[89].isBound:
-          ex.v[89] = value
-          state = 496
-          continue
-        state = 494
-        continue
-      state = 496
-      continue
-    of 496:
-      # (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
-      cp498_90 = ex.v[90]
-      # (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
-      block:
-        let value = arith(0'u32, [ex.v[86], ex.v[89]])
-        if value.isBound and not ex.v[90].isBound:
-          ex.v[90] = value
+        let value = sv31
+        if value.isBound and not ex.v[81].isBound:
+          ex.v[81] = value
+          ex.debugEndCondition(definition, true)
           state = 499
           continue
+        ex.debugEndCondition(definition, false)
         state = 497
         continue
       state = 499
       continue
     of 499:
-      # (= ?$assignment_call_87 (call identity ?$assignment_call_86))
-      cp501_91 = ex.v[91]
-      # (= ?$assignment_call_87 (call identity ?$assignment_call_86))
-      if not ex.v[91].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[90]], addr cs33, factSymbols)
+      # (= ?$assignment_call_78 (call identity ?$assignment_call_77))
+      cp501_82 = ex.v[82]
+      # (= ?$assignment_call_78 (call identity ?$assignment_call_77))
+      ex.debugBeginCondition(definition, 140)
+      if not ex.v[82].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[81]], addr cs31, factSymbols)
         if ok:
-          ex.setIfChanged(91, callResult)
+          ex.setIfChanged(82, callResult)
+          ex.debugEndCondition(definition, true)
           state = 502
           continue
+      ex.debugEndCondition(definition, false)
       state = 500
       continue
     of 502:
-      # (= ?$assignment_call_88 3)
-      cp504_92 = ex.v[92]
-      # (= ?$assignment_call_88 3)
+      # (= ?$assignment_call_79 (* ?$assignment_call_78 1))
+      cp504_83 = ex.v[83]
+      # (= ?$assignment_call_79 (* ?$assignment_call_78 1))
+      ex.debugBeginCondition(definition, 141)
       block:
-        let value = sv34
-        if value.isBound and not ex.v[92].isBound:
-          ex.v[92] = value
+        let value = arith(2'u32, [ex.v[82], newInt(1'i32)])
+        if value.isBound and not ex.v[83].isBound:
+          ex.v[83] = value
+          ex.debugEndCondition(definition, true)
           state = 505
           continue
+        ex.debugEndCondition(definition, false)
         state = 503
         continue
       state = 505
       continue
     of 505:
-      # (== ?$assignment_call_87 ?$assignment_call_88)
-      # (== ?$assignment_call_87 ?$assignment_call_88)
-      if compare(ex.v[91], ex.v[92], 0'u32):
-        state = 508
+      # (= ?$assignment_call_80 (-- ?$assignment_call_79))
+      cp507_84 = ex.v[84]
+      # (= ?$assignment_call_80 (-- ?$assignment_call_79))
+      ex.debugBeginCondition(definition, 142)
+      block:
+        let value = arith(6'u32, [ex.v[83]])
+        if value.isBound and not ex.v[84].isBound:
+          ex.v[84] = value
+          ex.debugEndCondition(definition, true)
+          state = 508
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 506
         continue
-      state = 506
+      state = 508
       continue
     of 508:
-      state = 237
-      continue
-    of 506:
-      state = 503
-      continue
-    of 503:
-      ex.v[92] = cp504_92
-      state = 500
-      continue
-    of 500:
-      ex.v[91] = cp501_91
-      state = 497
-      continue
-    of 497:
-      ex.v[90] = cp498_90
-      state = 494
-      continue
-    of 494:
-      ex.v[89] = cp495_89
-      state = 491
-      continue
-    of 491:
-      ex.v[88] = cp492_88
-      state = 488
-      continue
-    of 488:
-      ex.v[87] = cp489_87
-      state = 485
-      continue
-    of 485:
-      ex.v[86] = cp486_86
-      state = 483
-      continue
-    of 483:
-      ex.v[86] = cp484_86
-      ex.v[87] = cp484_87
-      ex.v[88] = cp484_88
-      ex.v[89] = cp484_89
-      ex.v[90] = cp484_90
-      ex.v[91] = cp484_91
-      ex.v[92] = cp484_92
-      state = 480
-      continue
-    of 480:
-      state = 477
-      continue
-    of 477:
-      ex.v[85] = cp478_85
-      state = 474
-      continue
-    of 474:
-      ex.v[84] = cp475_84
-      state = 471
-      continue
-    of 471:
-      ex.v[83] = cp472_83
-      state = 468
-      continue
-    of 468:
-      ex.v[82] = cp469_82
-      state = 465
-      continue
-    of 465:
-      ex.v[81] = cp466_81
-      state = 463
-      continue
-    of 463:
-      ex.v[81] = cp464_81
-      ex.v[82] = cp464_82
-      ex.v[83] = cp464_83
-      ex.v[84] = cp464_84
-      ex.v[85] = cp464_85
-      state = 460
-      continue
-    of 460:
-      state = 457
-      continue
-    of 457:
-      ex.v[80] = cp458_80
-      state = 454
-      continue
-    of 454:
-      ex.v[79] = cp455_79
-      state = 451
-      continue
-    of 451:
-      ex.v[78] = cp452_78
-      state = 448
-      continue
-    of 448:
-      ex.v[77] = cp449_77
-      state = 445
-      continue
-    of 445:
-      ex.v[76] = cp446_76
-      state = 443
-      continue
-    of 443:
-      ex.v[76] = cp444_76
-      ex.v[77] = cp444_77
-      ex.v[78] = cp444_78
-      ex.v[79] = cp444_79
-      ex.v[80] = cp444_80
-      state = 440
-      continue
-    of 440:
-      state = 437
-      continue
-    of 437:
-      ex.v[75] = cp438_75
-      state = 434
-      continue
-    of 434:
-      ex.v[74] = cp435_74
-      state = 431
-      continue
-    of 431:
-      ex.v[73] = cp432_73
-      state = 428
-      continue
-    of 428:
-      ex.v[72] = cp429_72
-      state = 425
-      continue
-    of 425:
-      ex.v[71] = cp426_71
-      state = 422
-      continue
-    of 422:
-      ex.v[70] = cp423_70
-      state = 420
-      continue
-    of 420:
-      ex.v[70] = cp421_70
-      ex.v[71] = cp421_71
-      ex.v[72] = cp421_72
-      ex.v[73] = cp421_73
-      ex.v[74] = cp421_74
-      ex.v[75] = cp421_75
-      state = 417
-      continue
-    of 417:
-      state = 414
-      continue
-    of 414:
-      ex.v[69] = cp415_69
-      state = 411
-      continue
-    of 411:
-      ex.v[68] = cp412_68
-      state = 408
-      continue
-    of 408:
-      ex.v[67] = cp409_67
-      state = 405
-      continue
-    of 405:
-      ex.v[66] = cp406_66
-      state = 402
-      continue
-    of 402:
-      ex.v[65] = cp403_65
-      state = 399
-      continue
-    of 399:
-      ex.v[64] = cp400_64
-      state = 397
-      continue
-    of 397:
-      ex.v[64] = cp398_64
-      ex.v[65] = cp398_65
-      ex.v[66] = cp398_66
-      ex.v[67] = cp398_67
-      ex.v[68] = cp398_68
-      ex.v[69] = cp398_69
-      state = 394
-      continue
-    of 394:
-      state = 391
-      continue
-    of 391:
-      ex.v[63] = cp392_63
-      state = 388
-      continue
-    of 388:
-      ex.v[62] = cp389_62
-      state = 385
-      continue
-    of 385:
-      ex.v[61] = cp386_61
-      state = 382
-      continue
-    of 382:
-      ex.v[60] = cp383_60
-      state = 379
-      continue
-    of 379:
-      ex.v[59] = cp380_59
-      state = 376
-      continue
-    of 376:
-      ex.v[58] = cp377_58
-      state = 374
-      continue
-    of 374:
-      ex.v[58] = cp375_58
-      ex.v[59] = cp375_59
-      ex.v[60] = cp375_60
-      ex.v[61] = cp375_61
-      ex.v[62] = cp375_62
-      ex.v[63] = cp375_63
-      state = 371
-      continue
-    of 371:
-      state = 368
-      continue
-    of 368:
-      ex.v[57] = cp369_57
-      state = 365
-      continue
-    of 365:
-      ex.v[56] = cp366_56
-      state = 362
-      continue
-    of 362:
-      ex.v[55] = cp363_55
-      state = 359
-      continue
-    of 359:
-      ex.v[54] = cp360_54
-      state = 356
-      continue
-    of 356:
-      ex.v[53] = cp357_53
-      state = 353
-      continue
-    of 353:
-      ex.v[52] = cp354_52
-      state = 351
-      continue
-    of 351:
-      ex.v[52] = cp352_52
-      ex.v[53] = cp352_53
-      ex.v[54] = cp352_54
-      ex.v[55] = cp352_55
-      ex.v[56] = cp352_56
-      ex.v[57] = cp352_57
-      state = 348
-      continue
-    of 348:
-      state = 345
-      continue
-    of 345:
-      ex.v[51] = cp346_51
-      state = 342
-      continue
-    of 342:
-      ex.v[50] = cp343_50
-      state = 339
-      continue
-    of 339:
-      ex.v[49] = cp340_49
-      state = 336
-      continue
-    of 336:
-      ex.v[48] = cp337_48
-      state = 333
-      continue
-    of 333:
-      ex.v[47] = cp334_47
-      state = 330
-      continue
-    of 330:
-      ex.v[46] = cp331_46
-      state = 328
-      continue
-    of 328:
-      ex.v[46] = cp329_46
-      ex.v[47] = cp329_47
-      ex.v[48] = cp329_48
-      ex.v[49] = cp329_49
-      ex.v[50] = cp329_50
-      ex.v[51] = cp329_51
-      state = 325
-      continue
-    of 325:
-      state = 322
-      continue
-    of 322:
-      ex.v[45] = cp323_45
-      state = 319
-      continue
-    of 319:
-      ex.v[44] = cp320_44
-      state = 316
-      continue
-    of 316:
-      ex.v[43] = cp317_43
-      state = 314
-      continue
-    of 314:
-      ex.v[43] = cp315_43
-      ex.v[44] = cp315_44
-      ex.v[45] = cp315_45
-      state = 311
-      continue
-    of 311:
-      state = 308
-      continue
-    of 308:
-      ex.v[42] = cp309_42
-      state = 305
-      continue
-    of 305:
-      ex.v[41] = cp306_41
-      state = 302
-      continue
-    of 302:
-      ex.v[40] = cp303_40
-      state = 300
-      continue
-    of 300:
-      ex.v[40] = cp301_40
-      ex.v[41] = cp301_41
-      ex.v[42] = cp301_42
-      state = 297
-      continue
-    of 297:
-      state = 294
-      continue
-    of 294:
-      ex.v[39] = cp295_39
-      state = 291
-      continue
-    of 291:
-      ex.v[38] = cp292_38
-      state = 288
-      continue
-    of 288:
-      ex.v[37] = cp289_37
-      state = 286
-      continue
-    of 286:
-      ex.v[37] = cp287_37
-      ex.v[38] = cp287_38
-      ex.v[39] = cp287_39
-      state = 283
-      continue
-    of 283:
-      state = 280
-      continue
-    of 280:
-      ex.v[36] = cp281_36
-      state = 277
-      continue
-    of 277:
-      ex.v[35] = cp278_35
-      state = 274
-      continue
-    of 274:
-      ex.v[34] = cp275_34
-      state = 272
-      continue
-    of 272:
-      ex.v[34] = cp273_34
-      ex.v[35] = cp273_35
-      ex.v[36] = cp273_36
-      state = 269
-      continue
-    of 269:
-      state = 266
-      continue
-    of 266:
-      ex.v[33] = cp267_33
-      state = 263
-      continue
-    of 263:
-      ex.v[32] = cp264_32
-      state = 260
-      continue
-    of 260:
-      ex.v[31] = cp261_31
-      state = 258
-      continue
-    of 258:
-      ex.v[31] = cp259_31
-      ex.v[32] = cp259_32
-      ex.v[33] = cp259_33
-      state = 255
-      continue
-    of 255:
-      state = 252
-      continue
-    of 252:
-      ex.v[30] = cp253_30
-      state = 249
-      continue
-    of 249:
-      ex.v[29] = cp250_29
-      state = 246
-      continue
-    of 246:
-      ex.v[28] = cp247_28
-      state = 244
-      continue
-    of 244:
-      ex.v[28] = cp245_28
-      ex.v[29] = cp245_29
-      ex.v[30] = cp245_30
-      state = 241
-      continue
-    of 241:
-      ex.v[27] = cp242_27
-      state = 239
-      continue
-    of 239:
-      ex.v[27] = cp240_27
-      ex.v[28] = cp240_28
-      ex.v[29] = cp240_29
-      ex.v[30] = cp240_30
-      ex.v[31] = cp240_31
-      ex.v[32] = cp240_32
-      ex.v[33] = cp240_33
-      ex.v[34] = cp240_34
-      ex.v[35] = cp240_35
-      ex.v[36] = cp240_36
-      ex.v[37] = cp240_37
-      ex.v[38] = cp240_38
-      ex.v[39] = cp240_39
-      ex.v[40] = cp240_40
-      ex.v[41] = cp240_41
-      ex.v[42] = cp240_42
-      ex.v[43] = cp240_43
-      ex.v[44] = cp240_44
-      ex.v[45] = cp240_45
-      ex.v[46] = cp240_46
-      ex.v[47] = cp240_47
-      ex.v[48] = cp240_48
-      ex.v[49] = cp240_49
-      ex.v[50] = cp240_50
-      ex.v[51] = cp240_51
-      ex.v[52] = cp240_52
-      ex.v[53] = cp240_53
-      ex.v[54] = cp240_54
-      ex.v[55] = cp240_55
-      ex.v[56] = cp240_56
-      ex.v[57] = cp240_57
-      ex.v[58] = cp240_58
-      ex.v[59] = cp240_59
-      ex.v[60] = cp240_60
-      ex.v[61] = cp240_61
-      ex.v[62] = cp240_62
-      ex.v[63] = cp240_63
-      ex.v[64] = cp240_64
-      ex.v[65] = cp240_65
-      ex.v[66] = cp240_66
-      ex.v[67] = cp240_67
-      ex.v[68] = cp240_68
-      ex.v[69] = cp240_69
-      ex.v[70] = cp240_70
-      ex.v[71] = cp240_71
-      ex.v[72] = cp240_72
-      ex.v[73] = cp240_73
-      ex.v[74] = cp240_74
-      ex.v[75] = cp240_75
-      ex.v[76] = cp240_76
-      ex.v[77] = cp240_77
-      ex.v[78] = cp240_78
-      ex.v[79] = cp240_79
-      ex.v[80] = cp240_80
-      ex.v[81] = cp240_81
-      ex.v[82] = cp240_82
-      ex.v[83] = cp240_83
-      ex.v[84] = cp240_84
-      ex.v[85] = cp240_85
-      ex.v[86] = cp240_86
-      ex.v[87] = cp240_87
-      ex.v[88] = cp240_88
-      ex.v[89] = cp240_89
-      ex.v[90] = cp240_90
-      ex.v[91] = cp240_91
-      ex.v[92] = cp240_92
-      state = 238
-      continue
-    of 238:
-      state = 234
-      continue
-    of 237:
-      if not ex.pushBranch(addr bc11):
-        return 0
+      # (= ?$assignment_call_81 3)
+      cp510_85 = ex.v[85]
+      # (= ?$assignment_call_81 3)
+      ex.debugBeginCondition(definition, 143)
+      block:
+        let value = sv32
+        if value.isBound and not ex.v[85].isBound:
+          ex.v[85] = value
+          ex.debugEndCondition(definition, true)
+          state = 511
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 509
+        continue
+      state = 511
+      continue
+    of 511:
+      # (== ?$assignment_call_80 ?$assignment_call_81)
+      # (== ?$assignment_call_80 ?$assignment_call_81)
+      ex.debugBeginCondition(definition, 144)
+      if compare(ex.v[84], ex.v[85], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 514
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 512
+      continue
+    of 514:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_82 (* 1 1)) (= ?$assignment_call_83 2) (= ?$assignment_call_84 (call identity ?$assignment_call_83)) (= ?$assignment_call_85 (* ?$assignment_call_84 1)) (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85)) (= ?$assignment_call_87 (call identity ?$assignment_call_86)) (= ?$assignment_call_88 3) (== ?$assignment_call_87 ?$assignment_call_88))
+      cp517_86 = ex.v[86]
+      cp517_87 = ex.v[87]
+      cp517_88 = ex.v[88]
+      cp517_89 = ex.v[89]
+      cp517_90 = ex.v[90]
+      cp517_91 = ex.v[91]
+      cp517_92 = ex.v[92]
+      ex.debugBeginCondition(definition, 145)
+      # (= ?$assignment_call_82 (* 1 1))
+      cp519_86 = ex.v[86]
+      # (= ?$assignment_call_82 (* 1 1))
+      ex.debugBeginCondition(definition, 146)
+      block:
+        let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[86].isBound:
+          ex.v[86] = value
+          ex.debugEndCondition(definition, true)
+          state = 520
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 518
+        continue
+      state = 520
+      continue
+    of 520:
+      # (= ?$assignment_call_83 2)
+      cp522_87 = ex.v[87]
+      # (= ?$assignment_call_83 2)
+      ex.debugBeginCondition(definition, 147)
+      block:
+        let value = sv33
+        if value.isBound and not ex.v[87].isBound:
+          ex.v[87] = value
+          ex.debugEndCondition(definition, true)
+          state = 523
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 521
+        continue
+      state = 523
+      continue
+    of 523:
+      # (= ?$assignment_call_84 (call identity ?$assignment_call_83))
+      cp525_88 = ex.v[88]
+      # (= ?$assignment_call_84 (call identity ?$assignment_call_83))
+      ex.debugBeginCondition(definition, 148)
+      if not ex.v[88].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[87]], addr cs32, factSymbols)
+        if ok:
+          ex.setIfChanged(88, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 526
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 524
+      continue
+    of 526:
+      # (= ?$assignment_call_85 (* ?$assignment_call_84 1))
+      cp528_89 = ex.v[89]
+      # (= ?$assignment_call_85 (* ?$assignment_call_84 1))
+      ex.debugBeginCondition(definition, 149)
+      block:
+        let value = arith(2'u32, [ex.v[88], newInt(1'i32)])
+        if value.isBound and not ex.v[89].isBound:
+          ex.v[89] = value
+          ex.debugEndCondition(definition, true)
+          state = 529
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 527
+        continue
+      state = 529
+      continue
+    of 529:
+      # (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
+      cp531_90 = ex.v[90]
+      # (= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))
+      ex.debugBeginCondition(definition, 150)
+      block:
+        let value = arith(0'u32, [ex.v[86], ex.v[89]])
+        if value.isBound and not ex.v[90].isBound:
+          ex.v[90] = value
+          ex.debugEndCondition(definition, true)
+          state = 532
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 530
+        continue
+      state = 532
+      continue
+    of 532:
+      # (= ?$assignment_call_87 (call identity ?$assignment_call_86))
+      cp534_91 = ex.v[91]
+      # (= ?$assignment_call_87 (call identity ?$assignment_call_86))
+      ex.debugBeginCondition(definition, 151)
+      if not ex.v[91].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[90]], addr cs33, factSymbols)
+        if ok:
+          ex.setIfChanged(91, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 535
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 533
+      continue
+    of 535:
+      # (= ?$assignment_call_88 3)
+      cp537_92 = ex.v[92]
+      # (= ?$assignment_call_88 3)
+      ex.debugBeginCondition(definition, 152)
+      block:
+        let value = sv34
+        if value.isBound and not ex.v[92].isBound:
+          ex.v[92] = value
+          ex.debugEndCondition(definition, true)
+          state = 538
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 536
+        continue
+      state = 538
+      continue
+    of 538:
+      # (== ?$assignment_call_87 ?$assignment_call_88)
+      # (== ?$assignment_call_87 ?$assignment_call_88)
+      ex.debugBeginCondition(definition, 153)
+      if compare(ex.v[91], ex.v[92], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 541
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 539
+      continue
+    of 541:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 257
+      continue
+    of 539:
+      state = 536
+      continue
+    of 536:
+      ex.v[92] = cp537_92
+      state = 533
+      continue
+    of 533:
+      ex.v[91] = cp534_91
+      state = 530
+      continue
+    of 530:
+      ex.v[90] = cp531_90
+      state = 527
+      continue
+    of 527:
+      ex.v[89] = cp528_89
+      state = 524
+      continue
+    of 524:
+      ex.v[88] = cp525_88
+      state = 521
+      continue
+    of 521:
+      ex.v[87] = cp522_87
+      state = 518
+      continue
+    of 518:
+      ex.v[86] = cp519_86
+      state = 516
+      continue
+    of 516:
+      ex.v[86] = cp517_86
+      ex.v[87] = cp517_87
+      ex.v[88] = cp517_88
+      ex.v[89] = cp517_89
+      ex.v[90] = cp517_90
+      ex.v[91] = cp517_91
+      ex.v[92] = cp517_92
+      ex.debugEndCondition(definition, false)
+      state = 515
+      continue
+    of 515:
+      ex.debugBeginCondition(definition, 138)
+      state = 512
+      continue
+    of 512:
       state = 509
       continue
     of 509:
+      ex.v[85] = cp510_85
+      state = 506
+      continue
+    of 506:
+      ex.v[84] = cp507_84
+      state = 503
+      continue
+    of 503:
+      ex.v[83] = cp504_83
+      state = 500
+      continue
+    of 500:
+      ex.v[82] = cp501_82
+      state = 497
+      continue
+    of 497:
+      ex.v[81] = cp498_81
+      state = 495
+      continue
+    of 495:
+      ex.v[81] = cp496_81
+      ex.v[82] = cp496_82
+      ex.v[83] = cp496_83
+      ex.v[84] = cp496_84
+      ex.v[85] = cp496_85
+      ex.debugEndCondition(definition, false)
+      state = 494
+      continue
+    of 494:
+      ex.debugBeginCondition(definition, 131)
+      state = 491
+      continue
+    of 491:
+      state = 488
+      continue
+    of 488:
+      ex.v[80] = cp489_80
+      state = 485
+      continue
+    of 485:
+      ex.v[79] = cp486_79
+      state = 482
+      continue
+    of 482:
+      ex.v[78] = cp483_78
+      state = 479
+      continue
+    of 479:
+      ex.v[77] = cp480_77
+      state = 476
+      continue
+    of 476:
+      ex.v[76] = cp477_76
+      state = 474
+      continue
+    of 474:
+      ex.v[76] = cp475_76
+      ex.v[77] = cp475_77
+      ex.v[78] = cp475_78
+      ex.v[79] = cp475_79
+      ex.v[80] = cp475_80
+      ex.debugEndCondition(definition, false)
+      state = 473
+      continue
+    of 473:
+      ex.debugBeginCondition(definition, 123)
+      state = 470
+      continue
+    of 470:
+      state = 467
+      continue
+    of 467:
+      ex.v[75] = cp468_75
+      state = 464
+      continue
+    of 464:
+      ex.v[74] = cp465_74
+      state = 461
+      continue
+    of 461:
+      ex.v[73] = cp462_73
+      state = 458
+      continue
+    of 458:
+      ex.v[72] = cp459_72
+      state = 455
+      continue
+    of 455:
+      ex.v[71] = cp456_71
+      state = 452
+      continue
+    of 452:
+      ex.v[70] = cp453_70
+      state = 450
+      continue
+    of 450:
+      ex.v[70] = cp451_70
+      ex.v[71] = cp451_71
+      ex.v[72] = cp451_72
+      ex.v[73] = cp451_73
+      ex.v[74] = cp451_74
+      ex.v[75] = cp451_75
+      ex.debugEndCondition(definition, false)
+      state = 449
+      continue
+    of 449:
+      ex.debugBeginCondition(definition, 115)
+      state = 446
+      continue
+    of 446:
+      state = 443
+      continue
+    of 443:
+      ex.v[69] = cp444_69
+      state = 440
+      continue
+    of 440:
+      ex.v[68] = cp441_68
+      state = 437
+      continue
+    of 437:
+      ex.v[67] = cp438_67
+      state = 434
+      continue
+    of 434:
+      ex.v[66] = cp435_66
+      state = 431
+      continue
+    of 431:
+      ex.v[65] = cp432_65
+      state = 428
+      continue
+    of 428:
+      ex.v[64] = cp429_64
+      state = 426
+      continue
+    of 426:
+      ex.v[64] = cp427_64
+      ex.v[65] = cp427_65
+      ex.v[66] = cp427_66
+      ex.v[67] = cp427_67
+      ex.v[68] = cp427_68
+      ex.v[69] = cp427_69
+      ex.debugEndCondition(definition, false)
+      state = 425
+      continue
+    of 425:
+      ex.debugBeginCondition(definition, 107)
+      state = 422
+      continue
+    of 422:
+      state = 419
+      continue
+    of 419:
+      ex.v[63] = cp420_63
+      state = 416
+      continue
+    of 416:
+      ex.v[62] = cp417_62
+      state = 413
+      continue
+    of 413:
+      ex.v[61] = cp414_61
+      state = 410
+      continue
+    of 410:
+      ex.v[60] = cp411_60
+      state = 407
+      continue
+    of 407:
+      ex.v[59] = cp408_59
+      state = 404
+      continue
+    of 404:
+      ex.v[58] = cp405_58
+      state = 402
+      continue
+    of 402:
+      ex.v[58] = cp403_58
+      ex.v[59] = cp403_59
+      ex.v[60] = cp403_60
+      ex.v[61] = cp403_61
+      ex.v[62] = cp403_62
+      ex.v[63] = cp403_63
+      ex.debugEndCondition(definition, false)
+      state = 401
+      continue
+    of 401:
+      ex.debugBeginCondition(definition, 99)
+      state = 398
+      continue
+    of 398:
+      state = 395
+      continue
+    of 395:
+      ex.v[57] = cp396_57
+      state = 392
+      continue
+    of 392:
+      ex.v[56] = cp393_56
+      state = 389
+      continue
+    of 389:
+      ex.v[55] = cp390_55
+      state = 386
+      continue
+    of 386:
+      ex.v[54] = cp387_54
+      state = 383
+      continue
+    of 383:
+      ex.v[53] = cp384_53
+      state = 380
+      continue
+    of 380:
+      ex.v[52] = cp381_52
+      state = 378
+      continue
+    of 378:
+      ex.v[52] = cp379_52
+      ex.v[53] = cp379_53
+      ex.v[54] = cp379_54
+      ex.v[55] = cp379_55
+      ex.v[56] = cp379_56
+      ex.v[57] = cp379_57
+      ex.debugEndCondition(definition, false)
+      state = 377
+      continue
+    of 377:
+      ex.debugBeginCondition(definition, 91)
+      state = 374
+      continue
+    of 374:
+      state = 371
+      continue
+    of 371:
+      ex.v[51] = cp372_51
+      state = 368
+      continue
+    of 368:
+      ex.v[50] = cp369_50
+      state = 365
+      continue
+    of 365:
+      ex.v[49] = cp366_49
+      state = 362
+      continue
+    of 362:
+      ex.v[48] = cp363_48
+      state = 359
+      continue
+    of 359:
+      ex.v[47] = cp360_47
+      state = 356
+      continue
+    of 356:
+      ex.v[46] = cp357_46
+      state = 354
+      continue
+    of 354:
+      ex.v[46] = cp355_46
+      ex.v[47] = cp355_47
+      ex.v[48] = cp355_48
+      ex.v[49] = cp355_49
+      ex.v[50] = cp355_50
+      ex.v[51] = cp355_51
+      ex.debugEndCondition(definition, false)
+      state = 353
+      continue
+    of 353:
+      ex.debugBeginCondition(definition, 86)
+      state = 350
+      continue
+    of 350:
+      state = 347
+      continue
+    of 347:
+      ex.v[45] = cp348_45
+      state = 344
+      continue
+    of 344:
+      ex.v[44] = cp345_44
+      state = 341
+      continue
+    of 341:
+      ex.v[43] = cp342_43
+      state = 339
+      continue
+    of 339:
+      ex.v[43] = cp340_43
+      ex.v[44] = cp340_44
+      ex.v[45] = cp340_45
+      ex.debugEndCondition(definition, false)
+      state = 338
+      continue
+    of 338:
+      ex.debugBeginCondition(definition, 81)
+      state = 335
+      continue
+    of 335:
+      state = 332
+      continue
+    of 332:
+      ex.v[42] = cp333_42
+      state = 329
+      continue
+    of 329:
+      ex.v[41] = cp330_41
+      state = 326
+      continue
+    of 326:
+      ex.v[40] = cp327_40
+      state = 324
+      continue
+    of 324:
+      ex.v[40] = cp325_40
+      ex.v[41] = cp325_41
+      ex.v[42] = cp325_42
+      ex.debugEndCondition(definition, false)
+      state = 323
+      continue
+    of 323:
+      ex.debugBeginCondition(definition, 76)
+      state = 320
+      continue
+    of 320:
+      state = 317
+      continue
+    of 317:
+      ex.v[39] = cp318_39
+      state = 314
+      continue
+    of 314:
+      ex.v[38] = cp315_38
+      state = 311
+      continue
+    of 311:
+      ex.v[37] = cp312_37
+      state = 309
+      continue
+    of 309:
+      ex.v[37] = cp310_37
+      ex.v[38] = cp310_38
+      ex.v[39] = cp310_39
+      ex.debugEndCondition(definition, false)
+      state = 308
+      continue
+    of 308:
+      ex.debugBeginCondition(definition, 71)
+      state = 305
+      continue
+    of 305:
+      state = 302
+      continue
+    of 302:
+      ex.v[36] = cp303_36
+      state = 299
+      continue
+    of 299:
+      ex.v[35] = cp300_35
+      state = 296
+      continue
+    of 296:
+      ex.v[34] = cp297_34
+      state = 294
+      continue
+    of 294:
+      ex.v[34] = cp295_34
+      ex.v[35] = cp295_35
+      ex.v[36] = cp295_36
+      ex.debugEndCondition(definition, false)
+      state = 293
+      continue
+    of 293:
+      ex.debugBeginCondition(definition, 66)
+      state = 290
+      continue
+    of 290:
+      state = 287
+      continue
+    of 287:
+      ex.v[33] = cp288_33
+      state = 284
+      continue
+    of 284:
+      ex.v[32] = cp285_32
+      state = 281
+      continue
+    of 281:
+      ex.v[31] = cp282_31
+      state = 279
+      continue
+    of 279:
+      ex.v[31] = cp280_31
+      ex.v[32] = cp280_32
+      ex.v[33] = cp280_33
+      ex.debugEndCondition(definition, false)
+      state = 278
+      continue
+    of 278:
+      ex.debugBeginCondition(definition, 61)
+      state = 275
+      continue
+    of 275:
+      state = 272
+      continue
+    of 272:
+      ex.v[30] = cp273_30
+      state = 269
+      continue
+    of 269:
+      ex.v[29] = cp270_29
+      state = 266
+      continue
+    of 266:
+      ex.v[28] = cp267_28
+      state = 264
+      continue
+    of 264:
+      ex.v[28] = cp265_28
+      ex.v[29] = cp265_29
+      ex.v[30] = cp265_30
+      ex.debugEndCondition(definition, false)
+      state = 261
+      continue
+    of 261:
+      ex.v[27] = cp262_27
+      state = 259
+      continue
+    of 259:
+      ex.v[27] = cp260_27
+      ex.v[28] = cp260_28
+      ex.v[29] = cp260_29
+      ex.v[30] = cp260_30
+      ex.v[31] = cp260_31
+      ex.v[32] = cp260_32
+      ex.v[33] = cp260_33
+      ex.v[34] = cp260_34
+      ex.v[35] = cp260_35
+      ex.v[36] = cp260_36
+      ex.v[37] = cp260_37
+      ex.v[38] = cp260_38
+      ex.v[39] = cp260_39
+      ex.v[40] = cp260_40
+      ex.v[41] = cp260_41
+      ex.v[42] = cp260_42
+      ex.v[43] = cp260_43
+      ex.v[44] = cp260_44
+      ex.v[45] = cp260_45
+      ex.v[46] = cp260_46
+      ex.v[47] = cp260_47
+      ex.v[48] = cp260_48
+      ex.v[49] = cp260_49
+      ex.v[50] = cp260_50
+      ex.v[51] = cp260_51
+      ex.v[52] = cp260_52
+      ex.v[53] = cp260_53
+      ex.v[54] = cp260_54
+      ex.v[55] = cp260_55
+      ex.v[56] = cp260_56
+      ex.v[57] = cp260_57
+      ex.v[58] = cp260_58
+      ex.v[59] = cp260_59
+      ex.v[60] = cp260_60
+      ex.v[61] = cp260_61
+      ex.v[62] = cp260_62
+      ex.v[63] = cp260_63
+      ex.v[64] = cp260_64
+      ex.v[65] = cp260_65
+      ex.v[66] = cp260_66
+      ex.v[67] = cp260_67
+      ex.v[68] = cp260_68
+      ex.v[69] = cp260_69
+      ex.v[70] = cp260_70
+      ex.v[71] = cp260_71
+      ex.v[72] = cp260_72
+      ex.v[73] = cp260_73
+      ex.v[74] = cp260_74
+      ex.v[75] = cp260_75
+      ex.v[76] = cp260_76
+      ex.v[77] = cp260_77
+      ex.v[78] = cp260_78
+      ex.v[79] = cp260_79
+      ex.v[80] = cp260_80
+      ex.v[81] = cp260_81
+      ex.v[82] = cp260_82
+      ex.v[83] = cp260_83
+      ex.v[84] = cp260_84
+      ex.v[85] = cp260_85
+      ex.v[86] = cp260_86
+      ex.v[87] = cp260_87
+      ex.v[88] = cp260_88
+      ex.v[89] = cp260_89
+      ex.v[90] = cp260_90
+      ex.v[91] = cp260_91
+      ex.v[92] = cp260_92
+      ex.debugEndCondition(definition, false)
+      state = 258
+      continue
+    of 258:
+      ex.debugEndBranch(definition, false)
+      state = 254
+      continue
+    of 257:
+      if not ex.pushBranch(addr bc11):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(11)
+      state = 544
+      continue
+    of 544:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3915,18 +4807,23 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 236
+        state = 256
         continue
-      state = 510
+      state = 545
       continue
-    of 236:
+    of 256:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 509
+      state = 544
       continue
-    of 510:
+    of 545:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 234:
+    of 254:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -3934,174 +4831,204 @@ proc method10(ex: Exec): int {.nimcall.} =
 # method11: NestedOperatorCalls::short_circuit/0
 proc method11(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp519_93: Atom
-  var cp519_94: Atom
-  var cp519_95: Atom
-  var cp519_96: Atom
-  var cp519_97: Atom
-  var cp521_93: Atom
-  var cp521_94: Atom
-  var cp521_95: Atom
-  var cp521_96: Atom
-  var cp521_97: Atom
-  var cp523_93: Atom
-  var cp526_94: Atom
-  var cp529_95: Atom
-  var cp532_96: Atom
-  var cp535_97: Atom
+  var cp554_93: Atom
+  var cp554_94: Atom
+  var cp554_95: Atom
+  var cp554_96: Atom
+  var cp554_97: Atom
+  var cp556_93: Atom
+  var cp556_94: Atom
+  var cp556_95: Atom
+  var cp556_96: Atom
+  var cp556_97: Atom
+  var cp558_93: Atom
+  var cp561_94: Atom
+  var cp564_95: Atom
+  var cp567_96: Atom
+  var cp570_97: Atom
   var state = 0
   case fr.resume
-  of 1: state = 514
-  of 2: state = 515
+  of 1: state = 549
+  of 2: state = 550
   else: discard
   while true:
     case state
     of 0:
-      state = 512
+      ex.debugBeginMethod(definition, 11)
+      state = 547
       continue
-    of 512:
+    of 547:
       # branch branch
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 12)
       # (and (< (+ false (call missing_distance_callterm)) 0.2))
-      cp519_93 = ex.v[93]
-      cp519_94 = ex.v[94]
-      cp519_95 = ex.v[95]
-      cp519_96 = ex.v[96]
-      cp519_97 = ex.v[97]
+      cp554_93 = ex.v[93]
+      cp554_94 = ex.v[94]
+      cp554_95 = ex.v[95]
+      cp554_96 = ex.v[96]
+      cp554_97 = ex.v[97]
+      ex.debugBeginCondition(definition, 154)
       # (and (= ?$assignment_call_89 (* false 1)) (= ?$assignment_call_90 (call missing_distance_callterm)) (= ?$assignment_call_91 (* ?$assignment_call_90 1)) (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91)) (= ?$assignment_call_93 0.2) (< ?$assignment_call_92 ?$assignment_call_93))
-      cp521_93 = ex.v[93]
-      cp521_94 = ex.v[94]
-      cp521_95 = ex.v[95]
-      cp521_96 = ex.v[96]
-      cp521_97 = ex.v[97]
+      cp556_93 = ex.v[93]
+      cp556_94 = ex.v[94]
+      cp556_95 = ex.v[95]
+      cp556_96 = ex.v[96]
+      cp556_97 = ex.v[97]
+      ex.debugBeginCondition(definition, 155)
       # (= ?$assignment_call_89 (* false 1))
-      cp523_93 = ex.v[93]
+      cp558_93 = ex.v[93]
       # (= ?$assignment_call_89 (* false 1))
+      ex.debugBeginCondition(definition, 156)
       block:
         let value = arith(2'u32, [Atom(), newInt(1'i32)])
         if value.isBound and not ex.v[93].isBound:
           ex.v[93] = value
-          state = 524
+          ex.debugEndCondition(definition, true)
+          state = 559
           continue
-        state = 522
+        ex.debugEndCondition(definition, false)
+        state = 557
         continue
-      state = 524
+      state = 559
       continue
-    of 524:
+    of 559:
       # (= ?$assignment_call_90 (call missing_distance_callterm))
-      cp526_94 = ex.v[94]
+      cp561_94 = ex.v[94]
       # (= ?$assignment_call_90 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 157)
       if not ex.v[94].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs34, factSymbols)
         if ok:
           ex.setIfChanged(94, callResult)
-          state = 527
+          ex.debugEndCondition(definition, true)
+          state = 562
           continue
-      state = 525
+      ex.debugEndCondition(definition, false)
+      state = 560
       continue
-    of 527:
+    of 562:
       # (= ?$assignment_call_91 (* ?$assignment_call_90 1))
-      cp529_95 = ex.v[95]
+      cp564_95 = ex.v[95]
       # (= ?$assignment_call_91 (* ?$assignment_call_90 1))
+      ex.debugBeginCondition(definition, 158)
       block:
         let value = arith(2'u32, [ex.v[94], newInt(1'i32)])
         if value.isBound and not ex.v[95].isBound:
           ex.v[95] = value
-          state = 530
+          ex.debugEndCondition(definition, true)
+          state = 565
           continue
-        state = 528
+        ex.debugEndCondition(definition, false)
+        state = 563
         continue
-      state = 530
+      state = 565
       continue
-    of 530:
+    of 565:
       # (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))
-      cp532_96 = ex.v[96]
+      cp567_96 = ex.v[96]
       # (= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))
+      ex.debugBeginCondition(definition, 159)
       block:
         let value = arith(0'u32, [ex.v[93], ex.v[95]])
         if value.isBound and not ex.v[96].isBound:
           ex.v[96] = value
-          state = 533
+          ex.debugEndCondition(definition, true)
+          state = 568
           continue
-        state = 531
+        ex.debugEndCondition(definition, false)
+        state = 566
         continue
-      state = 533
+      state = 568
       continue
-    of 533:
+    of 568:
       # (= ?$assignment_call_93 0.2)
-      cp535_97 = ex.v[97]
+      cp570_97 = ex.v[97]
       # (= ?$assignment_call_93 0.2)
+      ex.debugBeginCondition(definition, 160)
       block:
         let value = sv35
         if value.isBound and not ex.v[97].isBound:
           ex.v[97] = value
-          state = 536
+          ex.debugEndCondition(definition, true)
+          state = 571
           continue
-        state = 534
+        ex.debugEndCondition(definition, false)
+        state = 569
         continue
-      state = 536
+      state = 571
       continue
-    of 536:
+    of 571:
       # (< ?$assignment_call_92 ?$assignment_call_93)
       # (< ?$assignment_call_92 ?$assignment_call_93)
+      ex.debugBeginCondition(definition, 161)
       if compare(ex.v[96], ex.v[97], 2'u32):
-        state = 539
+        ex.debugEndCondition(definition, true)
+        state = 574
         continue
-      state = 537
+      ex.debugEndCondition(definition, false)
+      state = 572
       continue
-    of 539:
-      state = 516
+    of 574:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 551
       continue
-    of 537:
-      state = 534
+    of 572:
+      state = 569
       continue
-    of 534:
-      ex.v[97] = cp535_97
-      state = 531
+    of 569:
+      ex.v[97] = cp570_97
+      state = 566
       continue
-    of 531:
-      ex.v[96] = cp532_96
-      state = 528
+    of 566:
+      ex.v[96] = cp567_96
+      state = 563
       continue
-    of 528:
-      ex.v[95] = cp529_95
-      state = 525
+    of 563:
+      ex.v[95] = cp564_95
+      state = 560
       continue
-    of 525:
-      ex.v[94] = cp526_94
-      state = 522
+    of 560:
+      ex.v[94] = cp561_94
+      state = 557
       continue
-    of 522:
-      ex.v[93] = cp523_93
-      state = 520
+    of 557:
+      ex.v[93] = cp558_93
+      state = 555
       continue
-    of 520:
-      ex.v[93] = cp521_93
-      ex.v[94] = cp521_94
-      ex.v[95] = cp521_95
-      ex.v[96] = cp521_96
-      ex.v[97] = cp521_97
-      state = 518
+    of 555:
+      ex.v[93] = cp556_93
+      ex.v[94] = cp556_94
+      ex.v[95] = cp556_95
+      ex.v[96] = cp556_96
+      ex.v[97] = cp556_97
+      ex.debugEndCondition(definition, false)
+      state = 553
       continue
-    of 518:
-      ex.v[93] = cp519_93
-      ex.v[94] = cp519_94
-      ex.v[95] = cp519_95
-      ex.v[96] = cp519_96
-      ex.v[97] = cp519_97
-      state = 517
+    of 553:
+      ex.v[93] = cp554_93
+      ex.v[94] = cp554_94
+      ex.v[95] = cp554_95
+      ex.v[96] = cp554_96
+      ex.v[97] = cp554_97
+      ex.debugEndCondition(definition, false)
+      state = 552
       continue
-    of 517:
+    of 552:
       ex.releaseRetry(fr)
-      state = 513
+      ex.debugEndBranch(definition, false)
+      state = 548
       continue
-    of 516:
+    of 551:
       if not ex.pushBranch(addr bc12):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 540
+      ex.debugCapturePendingTask(12)
+      state = 577
       continue
-    of 540:
+    of 577:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4109,33 +5036,42 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 514
+        state = 549
         continue
-      state = 541
+      state = 578
       continue
-    of 514:
+    of 549:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 513
+        ex.debugEndBranch(definition, false)
+        state = 548
         continue
-      state = 540
+      state = 577
       continue
-    of 541:
+    of 578:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 513:
+    of 548:
       # branch fallback
-      state = 542
+      ex.debugBeginBranch(definition, 13)
+      state = 579
       continue
-    of 542:
+    of 579:
       if not ex.pushBranch(addr bc13):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 544
+      ex.debugCapturePendingTask(13)
+      state = 581
       continue
-    of 544:
+    of 581:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4143,16 +5079,20 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 515
+        state = 550
         continue
-      state = 545
+      state = 582
       continue
-    of 515:
+    of 550:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 544
+      state = 581
       continue
-    of 545:
+    of 582:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -4162,23 +5102,28 @@ proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 548
+  of 1: state = 585
   else: discard
   while true:
     case state
     of 0:
-      state = 547
+      ex.debugBeginMethod(definition, 12)
+      state = 584
       continue
-    of 547:
+    of 584:
       # branch branch
-      state = 549
+      ex.debugBeginBranch(definition, 14)
+      state = 586
       continue
-    of 549:
+    of 586:
       if not ex.pushBranch(addr bc14):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 551
+      ex.debugCapturePendingTask(14)
+      state = 588
       continue
-    of 551:
+    of 588:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4186,16 +5131,20 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 548
+        state = 585
         continue
-      state = 552
+      state = 589
       continue
-    of 548:
+    of 585:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 551
+      state = 588
       continue
-    of 552:
+    of 589:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -4205,23 +5154,28 @@ proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 555
+  of 1: state = 592
   else: discard
   while true:
     case state
     of 0:
-      state = 554
+      ex.debugBeginMethod(definition, 13)
+      state = 591
       continue
-    of 554:
+    of 591:
       # branch branch
-      state = 556
+      ex.debugBeginBranch(definition, 15)
+      state = 593
       continue
-    of 556:
+    of 593:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 558
+      ex.debugCapturePendingTask(15)
+      state = 595
       continue
-    of 558:
+    of 595:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4229,16 +5183,20 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 555
+        state = 592
         continue
-      state = 559
+      state = 596
       continue
-    of 555:
+    of 592:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 558
+      state = 595
       continue
-    of 559:
+    of 596:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -4246,205 +5204,238 @@ proc method13(ex: Exec): int {.nimcall.} =
 # method14: NestedOperatorCalls::continue_move/0
 proc method14(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp566_101: Atom
-  var cp566_102: Atom
-  var cp566_103: Atom
-  var cp566_104: Atom
-  var cp566_105: Atom
-  var cp566_106: Atom
-  var cp566_107: Atom
-  var cp566_108: Atom
-  var cp568_101: Atom
-  var cp568_102: Atom
-  var cp568_103: Atom
-  var fc569: uint32
-  var cp572_104: Atom
-  var cp575_105: Atom
-  var cp575_106: Atom
-  var cp575_107: Atom
-  var cp575_108: Atom
-  var cp577_105: Atom
-  var cp580_106: Atom
-  var cp583_107: Atom
-  var cp586_108: Atom
+  var cp603_101: Atom
+  var cp603_102: Atom
+  var cp603_103: Atom
+  var cp603_104: Atom
+  var cp603_105: Atom
+  var cp603_106: Atom
+  var cp603_107: Atom
+  var cp603_108: Atom
+  var cp605_101: Atom
+  var cp605_102: Atom
+  var cp605_103: Atom
+  var fc606: uint32
+  var cp609_104: Atom
+  var cp612_105: Atom
+  var cp612_106: Atom
+  var cp612_107: Atom
+  var cp612_108: Atom
+  var cp614_105: Atom
+  var cp617_106: Atom
+  var cp620_107: Atom
+  var cp623_108: Atom
   var state = 0
   case fr.resume
-  of 1: state = 562
+  of 1: state = 599
   else: discard
   while true:
     case state
     of 0:
-      state = 561
+      ex.debugBeginMethod(definition, 14)
+      state = 598
       continue
-    of 561:
+    of 598:
       # branch continue_move_to_seen_entity
+      ex.debugBeginBranch(definition, 16)
       # (and (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position) (= ?new_entity_position (call get_entity_position ?entity_id)) (< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2))
-      cp566_101 = ex.v[101]
-      cp566_102 = ex.v[102]
-      cp566_103 = ex.v[103]
-      cp566_104 = ex.v[104]
-      cp566_105 = ex.v[105]
-      cp566_106 = ex.v[106]
-      cp566_107 = ex.v[107]
-      cp566_108 = ex.v[108]
+      cp603_101 = ex.v[101]
+      cp603_102 = ex.v[102]
+      cp603_103 = ex.v[103]
+      cp603_104 = ex.v[104]
+      cp603_105 = ex.v[105]
+      cp603_106 = ex.v[106]
+      cp603_107 = ex.v[107]
+      cp603_108 = ex.v[108]
+      ex.debugBeginCondition(definition, 162)
       # (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)
-      cp568_101 = ex.v[101]
-      cp568_102 = ex.v[102]
-      cp568_103 = ex.v[103]
-      fc569 = 0
-      state = 570
+      cp605_101 = ex.v[101]
+      cp605_102 = ex.v[102]
+      cp605_103 = ex.v[103]
+      fc606 = 0
+      state = 607
       continue
-    of 570:
-      inc fc569
-      if not factChoice163(ex, fc569 - 1):
-        state = 567
+    of 607:
+      ex.debugBeginCondition(definition, 163)
+      inc fc606
+      if not factChoice163(ex, fc606 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 604
         continue
+      ex.debugEndCondition(definition, true)
       # (= ?new_entity_position (call get_entity_position ?entity_id))
-      cp572_104 = ex.v[104]
+      cp609_104 = ex.v[104]
       # (= ?new_entity_position (call get_entity_position ?entity_id))
+      ex.debugBeginCondition(definition, 164)
       if not ex.v[104].isBound:
         let (callResult, ok) = ex.invoke(3, @[ex.v[102]], addr cs35, factSymbols)
         if ok:
           ex.setIfChanged(104, callResult)
-          state = 573
+          ex.debugEndCondition(definition, true)
+          state = 610
           continue
-      state = 571
+      ex.debugEndCondition(definition, false)
+      state = 608
       continue
-    of 573:
+    of 610:
       # (and (= ?$assignment_call_97 ?old_entity_position) (= ?$assignment_call_98 ?new_entity_position) (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98)) (= ?$assignment_call_100 0.2) (< ?$assignment_call_99 ?$assignment_call_100))
-      cp575_105 = ex.v[105]
-      cp575_106 = ex.v[106]
-      cp575_107 = ex.v[107]
-      cp575_108 = ex.v[108]
+      cp612_105 = ex.v[105]
+      cp612_106 = ex.v[106]
+      cp612_107 = ex.v[107]
+      cp612_108 = ex.v[108]
+      ex.debugBeginCondition(definition, 165)
       # (= ?$assignment_call_97 ?old_entity_position)
-      cp577_105 = ex.v[105]
+      cp614_105 = ex.v[105]
       # (= ?$assignment_call_97 ?old_entity_position)
+      ex.debugBeginCondition(definition, 166)
       block:
         let value = ex.v[103]
         if value.isBound and not ex.v[105].isBound:
           ex.v[105] = value
-          state = 578
+          ex.debugEndCondition(definition, true)
+          state = 615
           continue
-        state = 576
+        ex.debugEndCondition(definition, false)
+        state = 613
         continue
-      state = 578
+      state = 615
       continue
-    of 578:
+    of 615:
       # (= ?$assignment_call_98 ?new_entity_position)
-      cp580_106 = ex.v[106]
+      cp617_106 = ex.v[106]
       # (= ?$assignment_call_98 ?new_entity_position)
+      ex.debugBeginCondition(definition, 167)
       block:
         let value = ex.v[104]
         if value.isBound and not ex.v[106].isBound:
           ex.v[106] = value
-          state = 581
+          ex.debugEndCondition(definition, true)
+          state = 618
           continue
-        state = 579
+        ex.debugEndCondition(definition, false)
+        state = 616
         continue
-      state = 581
+      state = 618
       continue
-    of 581:
+    of 618:
       # (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))
-      cp583_107 = ex.v[107]
+      cp620_107 = ex.v[107]
       # (= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))
+      ex.debugBeginCondition(definition, 168)
       if not ex.v[107].isBound:
         let (callResult, ok) = ex.invoke(4, @[ex.v[105], ex.v[106]], addr cs36, factSymbols)
         if ok:
           ex.setIfChanged(107, callResult)
-          state = 584
+          ex.debugEndCondition(definition, true)
+          state = 621
           continue
-      state = 582
+      ex.debugEndCondition(definition, false)
+      state = 619
       continue
-    of 584:
+    of 621:
       # (= ?$assignment_call_100 0.2)
-      cp586_108 = ex.v[108]
+      cp623_108 = ex.v[108]
       # (= ?$assignment_call_100 0.2)
+      ex.debugBeginCondition(definition, 169)
       block:
         let value = sv37
         if value.isBound and not ex.v[108].isBound:
           ex.v[108] = value
-          state = 587
+          ex.debugEndCondition(definition, true)
+          state = 624
           continue
-        state = 585
+        ex.debugEndCondition(definition, false)
+        state = 622
         continue
-      state = 587
+      state = 624
       continue
-    of 587:
+    of 624:
       # (< ?$assignment_call_99 ?$assignment_call_100)
       # (< ?$assignment_call_99 ?$assignment_call_100)
+      ex.debugBeginCondition(definition, 170)
       if compare(ex.v[107], ex.v[108], 2'u32):
-        state = 590
+        ex.debugEndCondition(definition, true)
+        state = 627
         continue
-      state = 588
+      ex.debugEndCondition(definition, false)
+      state = 625
       continue
-    of 590:
-      state = 563
+    of 627:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 600
       continue
-    of 588:
-      state = 585
+    of 625:
+      state = 622
       continue
-    of 585:
-      ex.v[108] = cp586_108
-      state = 582
+    of 622:
+      ex.v[108] = cp623_108
+      state = 619
       continue
-    of 582:
-      ex.v[107] = cp583_107
-      state = 579
+    of 619:
+      ex.v[107] = cp620_107
+      state = 616
       continue
-    of 579:
-      ex.v[106] = cp580_106
-      state = 576
+    of 616:
+      ex.v[106] = cp617_106
+      state = 613
       continue
-    of 576:
-      ex.v[105] = cp577_105
-      state = 574
+    of 613:
+      ex.v[105] = cp614_105
+      state = 611
       continue
-    of 574:
-      ex.v[105] = cp575_105
-      ex.v[106] = cp575_106
-      ex.v[107] = cp575_107
-      ex.v[108] = cp575_108
-      state = 571
+    of 611:
+      ex.v[105] = cp612_105
+      ex.v[106] = cp612_106
+      ex.v[107] = cp612_107
+      ex.v[108] = cp612_108
+      ex.debugEndCondition(definition, false)
+      state = 608
       continue
-    of 571:
-      ex.v[104] = cp572_104
-      state = 569
+    of 608:
+      ex.v[104] = cp609_104
+      state = 606
       continue
-    of 569:
-      ex.v[101] = cp568_101
-      ex.v[102] = cp568_102
-      ex.v[103] = cp568_103
-      cp568_101 = ex.v[101]
-      cp568_102 = ex.v[102]
-      cp568_103 = ex.v[103]
-      state = 570
+    of 606:
+      ex.v[101] = cp605_101
+      ex.v[102] = cp605_102
+      ex.v[103] = cp605_103
+      cp605_101 = ex.v[101]
+      cp605_102 = ex.v[102]
+      cp605_103 = ex.v[103]
+      state = 607
       continue
-    of 567:
-      ex.v[101] = cp568_101
-      ex.v[102] = cp568_102
-      ex.v[103] = cp568_103
-      state = 565
+    of 604:
+      ex.v[101] = cp605_101
+      ex.v[102] = cp605_102
+      ex.v[103] = cp605_103
+      state = 602
       continue
-    of 565:
-      ex.v[101] = cp566_101
-      ex.v[102] = cp566_102
-      ex.v[103] = cp566_103
-      ex.v[104] = cp566_104
-      ex.v[105] = cp566_105
-      ex.v[106] = cp566_106
-      ex.v[107] = cp566_107
-      ex.v[108] = cp566_108
-      state = 564
+    of 602:
+      ex.v[101] = cp603_101
+      ex.v[102] = cp603_102
+      ex.v[103] = cp603_103
+      ex.v[104] = cp603_104
+      ex.v[105] = cp603_105
+      ex.v[106] = cp603_106
+      ex.v[107] = cp603_107
+      ex.v[108] = cp603_108
+      ex.debugEndCondition(definition, false)
+      state = 601
       continue
-    of 564:
-      state = 560
+    of 601:
+      ex.debugEndBranch(definition, false)
+      state = 597
       continue
-    of 563:
+    of 600:
       if not ex.pushBranch(addr bc16):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 591
+      ex.debugCapturePendingTask(16)
+      state = 630
       continue
-    of 591:
+    of 630:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4452,18 +5443,23 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 562
+        state = 599
         continue
-      state = 592
+      state = 631
       continue
-    of 562:
+    of 599:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 591
+      state = 630
       continue
-    of 592:
+    of 631:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 560:
+    of 597:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4471,144 +5467,171 @@ proc method14(ex: Exec): int {.nimcall.} =
 # method15: NestedOperatorCalls::debugger_backtracking/0
 proc method15(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp599_109: Atom
-  var cp599_110: Atom
-  var cp599_111: Atom
-  var cp599_112: Atom
-  var cp601_109: Atom
-  var fc602: uint32
-  var cp605_110: Atom
-  var cp605_111: Atom
-  var cp605_112: Atom
-  var cp607_110: Atom
-  var cp610_111: Atom
-  var cp613_112: Atom
+  var cp638_109: Atom
+  var cp638_110: Atom
+  var cp638_111: Atom
+  var cp638_112: Atom
+  var cp640_109: Atom
+  var fc641: uint32
+  var cp644_110: Atom
+  var cp644_111: Atom
+  var cp644_112: Atom
+  var cp646_110: Atom
+  var cp649_111: Atom
+  var cp652_112: Atom
   var state = 0
   case fr.resume
-  of 1: state = 595
+  of 1: state = 634
   else: discard
   while true:
     case state
     of 0:
-      state = 594
+      ex.debugBeginMethod(definition, 15)
+      state = 633
       continue
-    of 594:
+    of 633:
       # branch branch
+      ex.debugBeginBranch(definition, 17)
       # (and (candidate ?entity) (< (call identity ?entity) 2))
-      cp599_109 = ex.v[109]
-      cp599_110 = ex.v[110]
-      cp599_111 = ex.v[111]
-      cp599_112 = ex.v[112]
+      cp638_109 = ex.v[109]
+      cp638_110 = ex.v[110]
+      cp638_111 = ex.v[111]
+      cp638_112 = ex.v[112]
+      ex.debugBeginCondition(definition, 171)
       # (candidate ?entity)
-      cp601_109 = ex.v[109]
-      fc602 = 0
-      state = 603
+      cp640_109 = ex.v[109]
+      fc641 = 0
+      state = 642
       continue
-    of 603:
-      inc fc602
-      if not factChoice172(ex, fc602 - 1):
-        state = 600
+    of 642:
+      ex.debugBeginCondition(definition, 172)
+      inc fc641
+      if not factChoice172(ex, fc641 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 639
         continue
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_101 ?entity) (= ?$assignment_call_102 (call identity ?$assignment_call_101)) (= ?$assignment_call_103 2) (< ?$assignment_call_102 ?$assignment_call_103))
-      cp605_110 = ex.v[110]
-      cp605_111 = ex.v[111]
-      cp605_112 = ex.v[112]
+      cp644_110 = ex.v[110]
+      cp644_111 = ex.v[111]
+      cp644_112 = ex.v[112]
+      ex.debugBeginCondition(definition, 173)
       # (= ?$assignment_call_101 ?entity)
-      cp607_110 = ex.v[110]
+      cp646_110 = ex.v[110]
       # (= ?$assignment_call_101 ?entity)
+      ex.debugBeginCondition(definition, 174)
       block:
         let value = ex.v[109]
         if value.isBound and not ex.v[110].isBound:
           ex.v[110] = value
-          state = 608
+          ex.debugEndCondition(definition, true)
+          state = 647
           continue
-        state = 606
+        ex.debugEndCondition(definition, false)
+        state = 645
         continue
-      state = 608
+      state = 647
       continue
-    of 608:
+    of 647:
       # (= ?$assignment_call_102 (call identity ?$assignment_call_101))
-      cp610_111 = ex.v[111]
+      cp649_111 = ex.v[111]
       # (= ?$assignment_call_102 (call identity ?$assignment_call_101))
+      ex.debugBeginCondition(definition, 175)
       if not ex.v[111].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[110]], addr cs37, factSymbols)
         if ok:
           ex.setIfChanged(111, callResult)
-          state = 611
+          ex.debugEndCondition(definition, true)
+          state = 650
           continue
-      state = 609
+      ex.debugEndCondition(definition, false)
+      state = 648
       continue
-    of 611:
+    of 650:
       # (= ?$assignment_call_103 2)
-      cp613_112 = ex.v[112]
+      cp652_112 = ex.v[112]
       # (= ?$assignment_call_103 2)
+      ex.debugBeginCondition(definition, 176)
       block:
         let value = sv38
         if value.isBound and not ex.v[112].isBound:
           ex.v[112] = value
-          state = 614
+          ex.debugEndCondition(definition, true)
+          state = 653
           continue
-        state = 612
+        ex.debugEndCondition(definition, false)
+        state = 651
         continue
-      state = 614
+      state = 653
       continue
-    of 614:
+    of 653:
       # (< ?$assignment_call_102 ?$assignment_call_103)
       # (< ?$assignment_call_102 ?$assignment_call_103)
+      ex.debugBeginCondition(definition, 177)
       if compare(ex.v[111], ex.v[112], 2'u32):
-        state = 617
+        ex.debugEndCondition(definition, true)
+        state = 656
         continue
-      state = 615
+      ex.debugEndCondition(definition, false)
+      state = 654
       continue
-    of 617:
-      state = 596
+    of 656:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 635
       continue
-    of 615:
-      state = 612
+    of 654:
+      state = 651
       continue
-    of 612:
-      ex.v[112] = cp613_112
-      state = 609
+    of 651:
+      ex.v[112] = cp652_112
+      state = 648
       continue
-    of 609:
-      ex.v[111] = cp610_111
-      state = 606
+    of 648:
+      ex.v[111] = cp649_111
+      state = 645
       continue
-    of 606:
-      ex.v[110] = cp607_110
-      state = 604
+    of 645:
+      ex.v[110] = cp646_110
+      state = 643
       continue
-    of 604:
-      ex.v[110] = cp605_110
-      ex.v[111] = cp605_111
-      ex.v[112] = cp605_112
-      state = 602
+    of 643:
+      ex.v[110] = cp644_110
+      ex.v[111] = cp644_111
+      ex.v[112] = cp644_112
+      ex.debugEndCondition(definition, false)
+      state = 641
       continue
-    of 602:
-      ex.v[109] = cp601_109
-      cp601_109 = ex.v[109]
-      state = 603
+    of 641:
+      ex.v[109] = cp640_109
+      cp640_109 = ex.v[109]
+      state = 642
       continue
-    of 600:
-      ex.v[109] = cp601_109
-      state = 598
+    of 639:
+      ex.v[109] = cp640_109
+      state = 637
       continue
-    of 598:
-      ex.v[109] = cp599_109
-      ex.v[110] = cp599_110
-      ex.v[111] = cp599_111
-      ex.v[112] = cp599_112
-      state = 597
+    of 637:
+      ex.v[109] = cp638_109
+      ex.v[110] = cp638_110
+      ex.v[111] = cp638_111
+      ex.v[112] = cp638_112
+      ex.debugEndCondition(definition, false)
+      state = 636
       continue
-    of 597:
-      state = 593
+    of 636:
+      ex.debugEndBranch(definition, false)
+      state = 632
       continue
-    of 596:
+    of 635:
       if not ex.pushBranch(addr bc17):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 618
+      ex.debugCapturePendingTask(17)
+      state = 659
       continue
-    of 618:
+    of 659:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4616,18 +5639,23 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 595
+        state = 634
         continue
-      state = 619
+      state = 660
       continue
-    of 595:
+    of 634:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 618
+      state = 659
       continue
-    of 619:
+    of 660:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 593:
+    of 632:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4635,114 +5663,137 @@ proc method15(ex: Exec): int {.nimcall.} =
 # method16: NestedOperatorCalls::debugger_skipped/0
 proc method16(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp626_113: Atom
-  var cp626_114: Atom
-  var cp631_113: Atom
-  var cp631_114: Atom
-  var cp633_113: Atom
-  var cp636_114: Atom
+  var cp667_113: Atom
+  var cp667_114: Atom
+  var cp672_113: Atom
+  var cp672_114: Atom
+  var cp674_113: Atom
+  var cp677_114: Atom
   var state = 0
   case fr.resume
-  of 1: state = 622
+  of 1: state = 663
   else: discard
   while true:
     case state
     of 0:
-      state = 621
+      ex.debugBeginMethod(definition, 16)
+      state = 662
       continue
-    of 621:
+    of 662:
       # branch branch
+      ex.debugBeginBranch(definition, 18)
       # (and (absent_fact) (< (call distance) 0.2))
-      cp626_113 = ex.v[113]
-      cp626_114 = ex.v[114]
+      cp667_113 = ex.v[113]
+      cp667_114 = ex.v[114]
+      ex.debugBeginCondition(definition, 178)
       # (absent_fact)
       # (absent_fact)
       block:
+        ex.debugBeginCondition(definition, 179)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 629
+          state = 670
           continue
-        state = 627
+        state = 668
         continue
-      state = 629
+      state = 670
       continue
-    of 629:
+    of 670:
       # (and (= ?$assignment_call_104 (call distance)) (= ?$assignment_call_105 0.2) (< ?$assignment_call_104 ?$assignment_call_105))
-      cp631_113 = ex.v[113]
-      cp631_114 = ex.v[114]
+      cp672_113 = ex.v[113]
+      cp672_114 = ex.v[114]
+      ex.debugBeginCondition(definition, 180)
       # (= ?$assignment_call_104 (call distance))
-      cp633_113 = ex.v[113]
+      cp674_113 = ex.v[113]
       # (= ?$assignment_call_104 (call distance))
+      ex.debugBeginCondition(definition, 181)
       if not ex.v[113].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs38, factSymbols)
         if ok:
           ex.setIfChanged(113, callResult)
-          state = 634
+          ex.debugEndCondition(definition, true)
+          state = 675
           continue
-      state = 632
+      ex.debugEndCondition(definition, false)
+      state = 673
       continue
-    of 634:
+    of 675:
       # (= ?$assignment_call_105 0.2)
-      cp636_114 = ex.v[114]
+      cp677_114 = ex.v[114]
       # (= ?$assignment_call_105 0.2)
+      ex.debugBeginCondition(definition, 182)
       block:
         let value = sv39
         if value.isBound and not ex.v[114].isBound:
           ex.v[114] = value
-          state = 637
+          ex.debugEndCondition(definition, true)
+          state = 678
           continue
-        state = 635
+        ex.debugEndCondition(definition, false)
+        state = 676
         continue
-      state = 637
+      state = 678
       continue
-    of 637:
+    of 678:
       # (< ?$assignment_call_104 ?$assignment_call_105)
       # (< ?$assignment_call_104 ?$assignment_call_105)
+      ex.debugBeginCondition(definition, 183)
       if compare(ex.v[113], ex.v[114], 2'u32):
-        state = 640
+        ex.debugEndCondition(definition, true)
+        state = 681
         continue
-      state = 638
+      ex.debugEndCondition(definition, false)
+      state = 679
       continue
-    of 640:
-      state = 623
+    of 681:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 664
       continue
-    of 638:
-      state = 635
+    of 679:
+      state = 676
       continue
-    of 635:
-      ex.v[114] = cp636_114
-      state = 632
+    of 676:
+      ex.v[114] = cp677_114
+      state = 673
       continue
-    of 632:
-      ex.v[113] = cp633_113
-      state = 630
+    of 673:
+      ex.v[113] = cp674_113
+      state = 671
       continue
-    of 630:
-      ex.v[113] = cp631_113
-      ex.v[114] = cp631_114
-      state = 627
+    of 671:
+      ex.v[113] = cp672_113
+      ex.v[114] = cp672_114
+      ex.debugEndCondition(definition, false)
+      state = 668
       continue
-    of 627:
-      state = 625
+    of 668:
+      state = 666
       continue
-    of 625:
-      ex.v[113] = cp626_113
-      ex.v[114] = cp626_114
-      state = 624
+    of 666:
+      ex.v[113] = cp667_113
+      ex.v[114] = cp667_114
+      ex.debugEndCondition(definition, false)
+      state = 665
       continue
-    of 624:
-      state = 620
+    of 665:
+      ex.debugEndBranch(definition, false)
+      state = 661
       continue
-    of 623:
+    of 664:
       if not ex.pushBranch(addr bc18):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 641
+      ex.debugCapturePendingTask(18)
+      state = 684
       continue
-    of 641:
+    of 684:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4750,18 +5801,23 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 622
+        state = 663
         continue
-      state = 642
+      state = 685
       continue
-    of 622:
+    of 663:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 641
+      state = 684
       continue
-    of 642:
+    of 685:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 620:
+    of 661:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4769,196 +5825,233 @@ proc method16(ex: Exec): int {.nimcall.} =
 # method17: NestedOperatorCalls::debugger_assignment/0
 proc method17(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp649_27: Atom
-  var cp649_115: Atom
-  var cp649_116: Atom
-  var cp649_117: Atom
-  var cp649_118: Atom
-  var cp649_119: Atom
-  var cp651_27: Atom
-  var cp651_115: Atom
-  var cp651_116: Atom
-  var cp651_117: Atom
-  var cp651_118: Atom
-  var cp651_119: Atom
-  var cp653_115: Atom
-  var cp656_116: Atom
-  var cp659_117: Atom
-  var cp662_118: Atom
-  var cp665_119: Atom
-  var cp668_27: Atom
+  var cp692_27: Atom
+  var cp692_115: Atom
+  var cp692_116: Atom
+  var cp692_117: Atom
+  var cp692_118: Atom
+  var cp692_119: Atom
+  var cp694_27: Atom
+  var cp694_115: Atom
+  var cp694_116: Atom
+  var cp694_117: Atom
+  var cp694_118: Atom
+  var cp694_119: Atom
+  var cp696_115: Atom
+  var cp699_116: Atom
+  var cp702_117: Atom
+  var cp705_118: Atom
+  var cp708_119: Atom
+  var cp711_27: Atom
   var state = 0
   case fr.resume
-  of 1: state = 645
+  of 1: state = 688
   else: discard
   while true:
     case state
     of 0:
-      state = 644
+      ex.debugBeginMethod(definition, 17)
+      state = 687
       continue
-    of 644:
+    of 687:
       # branch branch
+      ex.debugBeginBranch(definition, 19)
       # (and (= ?value (call identity (+ 1 (call identity 2)))) (== ?value 3))
-      cp649_27 = ex.v[27]
-      cp649_115 = ex.v[115]
-      cp649_116 = ex.v[116]
-      cp649_117 = ex.v[117]
-      cp649_118 = ex.v[118]
-      cp649_119 = ex.v[119]
+      cp692_27 = ex.v[27]
+      cp692_115 = ex.v[115]
+      cp692_116 = ex.v[116]
+      cp692_117 = ex.v[117]
+      cp692_118 = ex.v[118]
+      cp692_119 = ex.v[119]
+      ex.debugBeginCondition(definition, 184)
       # (and (= ?$assignment_call_106 (* 1 1)) (= ?$assignment_call_107 2) (= ?$assignment_call_108 (call identity ?$assignment_call_107)) (= ?$assignment_call_109 (* ?$assignment_call_108 1)) (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109)) (= ?value (call identity ?$assignment_call_110)))
-      cp651_27 = ex.v[27]
-      cp651_115 = ex.v[115]
-      cp651_116 = ex.v[116]
-      cp651_117 = ex.v[117]
-      cp651_118 = ex.v[118]
-      cp651_119 = ex.v[119]
+      cp694_27 = ex.v[27]
+      cp694_115 = ex.v[115]
+      cp694_116 = ex.v[116]
+      cp694_117 = ex.v[117]
+      cp694_118 = ex.v[118]
+      cp694_119 = ex.v[119]
+      ex.debugBeginCondition(definition, 185)
       if ex.v[27].isBound:
-        state = 650
+        state = 693
         continue
       # (= ?$assignment_call_106 (* 1 1))
-      cp653_115 = ex.v[115]
+      cp696_115 = ex.v[115]
       # (= ?$assignment_call_106 (* 1 1))
+      ex.debugBeginCondition(definition, 186)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[115].isBound:
           ex.v[115] = value
-          state = 654
+          ex.debugEndCondition(definition, true)
+          state = 697
           continue
-        state = 652
+        ex.debugEndCondition(definition, false)
+        state = 695
         continue
-      state = 654
+      state = 697
       continue
-    of 654:
+    of 697:
       # (= ?$assignment_call_107 2)
-      cp656_116 = ex.v[116]
+      cp699_116 = ex.v[116]
       # (= ?$assignment_call_107 2)
+      ex.debugBeginCondition(definition, 187)
       block:
         let value = sv40
         if value.isBound and not ex.v[116].isBound:
           ex.v[116] = value
-          state = 657
+          ex.debugEndCondition(definition, true)
+          state = 700
           continue
-        state = 655
+        ex.debugEndCondition(definition, false)
+        state = 698
         continue
-      state = 657
+      state = 700
       continue
-    of 657:
+    of 700:
       # (= ?$assignment_call_108 (call identity ?$assignment_call_107))
-      cp659_117 = ex.v[117]
+      cp702_117 = ex.v[117]
       # (= ?$assignment_call_108 (call identity ?$assignment_call_107))
+      ex.debugBeginCondition(definition, 188)
       if not ex.v[117].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[116]], addr cs39, factSymbols)
         if ok:
           ex.setIfChanged(117, callResult)
-          state = 660
+          ex.debugEndCondition(definition, true)
+          state = 703
           continue
-      state = 658
+      ex.debugEndCondition(definition, false)
+      state = 701
       continue
-    of 660:
+    of 703:
       # (= ?$assignment_call_109 (* ?$assignment_call_108 1))
-      cp662_118 = ex.v[118]
+      cp705_118 = ex.v[118]
       # (= ?$assignment_call_109 (* ?$assignment_call_108 1))
+      ex.debugBeginCondition(definition, 189)
       block:
         let value = arith(2'u32, [ex.v[117], newInt(1'i32)])
         if value.isBound and not ex.v[118].isBound:
           ex.v[118] = value
-          state = 663
+          ex.debugEndCondition(definition, true)
+          state = 706
           continue
-        state = 661
+        ex.debugEndCondition(definition, false)
+        state = 704
         continue
-      state = 663
+      state = 706
       continue
-    of 663:
+    of 706:
       # (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))
-      cp665_119 = ex.v[119]
+      cp708_119 = ex.v[119]
       # (= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))
+      ex.debugBeginCondition(definition, 190)
       block:
         let value = arith(0'u32, [ex.v[115], ex.v[118]])
         if value.isBound and not ex.v[119].isBound:
           ex.v[119] = value
-          state = 666
+          ex.debugEndCondition(definition, true)
+          state = 709
           continue
-        state = 664
+        ex.debugEndCondition(definition, false)
+        state = 707
         continue
-      state = 666
+      state = 709
       continue
-    of 666:
+    of 709:
       # (= ?value (call identity ?$assignment_call_110))
-      cp668_27 = ex.v[27]
+      cp711_27 = ex.v[27]
       # (= ?value (call identity ?$assignment_call_110))
+      ex.debugBeginCondition(definition, 191)
       if not ex.v[27].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[119]], addr cs40, factSymbols)
         if ok:
           ex.setIfChanged(27, callResult)
-          state = 669
+          ex.debugEndCondition(definition, true)
+          state = 712
           continue
-      state = 667
+      ex.debugEndCondition(definition, false)
+      state = 710
       continue
-    of 669:
+    of 712:
+      ex.debugEndCondition(definition, true)
       # (== ?value 3)
       # (== ?value 3)
+      ex.debugBeginCondition(definition, 192)
       if compare(ex.v[27], sv41, 0'u32):
-        state = 672
+        ex.debugEndCondition(definition, true)
+        state = 716
         continue
-      state = 670
+      ex.debugEndCondition(definition, false)
+      state = 714
       continue
-    of 672:
-      state = 646
+    of 716:
+      ex.debugEndCondition(definition, true)
+      state = 689
       continue
-    of 670:
-      state = 667
+    of 714:
+      state = 713
       continue
-    of 667:
-      ex.v[27] = cp668_27
-      state = 664
+    of 713:
+      ex.debugBeginCondition(definition, 185)
+      state = 710
       continue
-    of 664:
-      ex.v[119] = cp665_119
-      state = 661
+    of 710:
+      ex.v[27] = cp711_27
+      state = 707
       continue
-    of 661:
-      ex.v[118] = cp662_118
-      state = 658
+    of 707:
+      ex.v[119] = cp708_119
+      state = 704
       continue
-    of 658:
-      ex.v[117] = cp659_117
-      state = 655
+    of 704:
+      ex.v[118] = cp705_118
+      state = 701
       continue
-    of 655:
-      ex.v[116] = cp656_116
-      state = 652
+    of 701:
+      ex.v[117] = cp702_117
+      state = 698
       continue
-    of 652:
-      ex.v[115] = cp653_115
-      state = 650
+    of 698:
+      ex.v[116] = cp699_116
+      state = 695
       continue
-    of 650:
-      ex.v[27] = cp651_27
-      ex.v[115] = cp651_115
-      ex.v[116] = cp651_116
-      ex.v[117] = cp651_117
-      ex.v[118] = cp651_118
-      ex.v[119] = cp651_119
-      state = 648
+    of 695:
+      ex.v[115] = cp696_115
+      state = 693
       continue
-    of 648:
-      ex.v[27] = cp649_27
-      ex.v[115] = cp649_115
-      ex.v[116] = cp649_116
-      ex.v[117] = cp649_117
-      ex.v[118] = cp649_118
-      ex.v[119] = cp649_119
-      state = 647
+    of 693:
+      ex.v[27] = cp694_27
+      ex.v[115] = cp694_115
+      ex.v[116] = cp694_116
+      ex.v[117] = cp694_117
+      ex.v[118] = cp694_118
+      ex.v[119] = cp694_119
+      ex.debugEndCondition(definition, false)
+      state = 691
       continue
-    of 647:
-      state = 643
+    of 691:
+      ex.v[27] = cp692_27
+      ex.v[115] = cp692_115
+      ex.v[116] = cp692_116
+      ex.v[117] = cp692_117
+      ex.v[118] = cp692_118
+      ex.v[119] = cp692_119
+      ex.debugEndCondition(definition, false)
+      state = 690
       continue
-    of 646:
+    of 690:
+      ex.debugEndBranch(definition, false)
+      state = 686
+      continue
+    of 689:
       if not ex.pushBranch(addr bc19):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 673
+      ex.debugCapturePendingTask(19)
+      state = 718
       continue
-    of 673:
+    of 718:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4966,18 +6059,23 @@ proc method17(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 645
+        state = 688
         continue
-      state = 674
+      state = 719
       continue
-    of 645:
+    of 688:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 673
+      state = 718
       continue
-    of 674:
+    of 719:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 643:
+    of 686:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4985,189 +6083,222 @@ proc method17(ex: Exec): int {.nimcall.} =
 # method18: behave/0
 proc method18(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp681_0: Atom
-  var cp681_1: Atom
-  var cp681_120: Atom
-  var cp681_121: Atom
-  var cp681_122: Atom
-  var cp681_123: Atom
-  var cp683_0: Atom
-  var cp686_1: Atom
-  var cp689_120: Atom
-  var cp689_121: Atom
-  var cp689_122: Atom
-  var cp689_123: Atom
-  var cp691_120: Atom
-  var cp694_121: Atom
-  var cp697_122: Atom
-  var cp700_123: Atom
+  var cp726_0: Atom
+  var cp726_1: Atom
+  var cp726_120: Atom
+  var cp726_121: Atom
+  var cp726_122: Atom
+  var cp726_123: Atom
+  var cp728_0: Atom
+  var cp731_1: Atom
+  var cp734_120: Atom
+  var cp734_121: Atom
+  var cp734_122: Atom
+  var cp734_123: Atom
+  var cp736_120: Atom
+  var cp739_121: Atom
+  var cp742_122: Atom
+  var cp745_123: Atom
   var state = 0
   case fr.resume
-  of 1: state = 677
+  of 1: state = 722
   else: discard
   while true:
     case state
     of 0:
-      state = 676
+      ex.debugBeginMethod(definition, 18)
+      state = 721
       continue
-    of 676:
+    of 721:
       # branch branch
+      ex.debugBeginBranch(definition, 20)
       # (and (= ?old_position (1.0 0.0 0.0)) (= ?new_position (2.0 0.0 0.0)) (< (call missing_distance_callterm ?old_position ?new_position) 0.2))
-      cp681_0 = ex.v[0]
-      cp681_1 = ex.v[1]
-      cp681_120 = ex.v[120]
-      cp681_121 = ex.v[121]
-      cp681_122 = ex.v[122]
-      cp681_123 = ex.v[123]
+      cp726_0 = ex.v[0]
+      cp726_1 = ex.v[1]
+      cp726_120 = ex.v[120]
+      cp726_121 = ex.v[121]
+      cp726_122 = ex.v[122]
+      cp726_123 = ex.v[123]
+      ex.debugBeginCondition(definition, 193)
       # (= ?old_position (1.0 0.0 0.0))
-      cp683_0 = ex.v[0]
+      cp728_0 = ex.v[0]
       # (= ?old_position (1.0 0.0 0.0))
+      ex.debugBeginCondition(definition, 194)
       block:
         let value = sv42
         if value.isBound and not ex.v[0].isBound:
           ex.v[0] = value
-          state = 684
+          ex.debugEndCondition(definition, true)
+          state = 729
           continue
-        state = 682
+        ex.debugEndCondition(definition, false)
+        state = 727
         continue
-      state = 684
+      state = 729
       continue
-    of 684:
+    of 729:
       # (= ?new_position (2.0 0.0 0.0))
-      cp686_1 = ex.v[1]
+      cp731_1 = ex.v[1]
       # (= ?new_position (2.0 0.0 0.0))
+      ex.debugBeginCondition(definition, 195)
       block:
         let value = sv43
         if value.isBound and not ex.v[1].isBound:
           ex.v[1] = value
-          state = 687
+          ex.debugEndCondition(definition, true)
+          state = 732
           continue
-        state = 685
+        ex.debugEndCondition(definition, false)
+        state = 730
         continue
-      state = 687
+      state = 732
       continue
-    of 687:
+    of 732:
       # (and (= ?$assignment_call_111 ?old_position) (= ?$assignment_call_112 ?new_position) (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112)) (= ?$assignment_call_114 0.2) (< ?$assignment_call_113 ?$assignment_call_114))
-      cp689_120 = ex.v[120]
-      cp689_121 = ex.v[121]
-      cp689_122 = ex.v[122]
-      cp689_123 = ex.v[123]
+      cp734_120 = ex.v[120]
+      cp734_121 = ex.v[121]
+      cp734_122 = ex.v[122]
+      cp734_123 = ex.v[123]
+      ex.debugBeginCondition(definition, 196)
       # (= ?$assignment_call_111 ?old_position)
-      cp691_120 = ex.v[120]
+      cp736_120 = ex.v[120]
       # (= ?$assignment_call_111 ?old_position)
+      ex.debugBeginCondition(definition, 197)
       block:
         let value = ex.v[0]
         if value.isBound and not ex.v[120].isBound:
           ex.v[120] = value
-          state = 692
+          ex.debugEndCondition(definition, true)
+          state = 737
           continue
-        state = 690
+        ex.debugEndCondition(definition, false)
+        state = 735
         continue
-      state = 692
+      state = 737
       continue
-    of 692:
+    of 737:
       # (= ?$assignment_call_112 ?new_position)
-      cp694_121 = ex.v[121]
+      cp739_121 = ex.v[121]
       # (= ?$assignment_call_112 ?new_position)
+      ex.debugBeginCondition(definition, 198)
       block:
         let value = ex.v[1]
         if value.isBound and not ex.v[121].isBound:
           ex.v[121] = value
-          state = 695
+          ex.debugEndCondition(definition, true)
+          state = 740
           continue
-        state = 693
+        ex.debugEndCondition(definition, false)
+        state = 738
         continue
-      state = 695
+      state = 740
       continue
-    of 695:
+    of 740:
       # (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))
-      cp697_122 = ex.v[122]
+      cp742_122 = ex.v[122]
       # (= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))
+      ex.debugBeginCondition(definition, 199)
       if not ex.v[122].isBound:
         let (callResult, ok) = ex.invoke(0, @[ex.v[120], ex.v[121]], addr cs41, factSymbols)
         if ok:
           ex.setIfChanged(122, callResult)
-          state = 698
+          ex.debugEndCondition(definition, true)
+          state = 743
           continue
-      state = 696
+      ex.debugEndCondition(definition, false)
+      state = 741
       continue
-    of 698:
+    of 743:
       # (= ?$assignment_call_114 0.2)
-      cp700_123 = ex.v[123]
+      cp745_123 = ex.v[123]
       # (= ?$assignment_call_114 0.2)
+      ex.debugBeginCondition(definition, 200)
       block:
         let value = sv44
         if value.isBound and not ex.v[123].isBound:
           ex.v[123] = value
-          state = 701
+          ex.debugEndCondition(definition, true)
+          state = 746
           continue
-        state = 699
+        ex.debugEndCondition(definition, false)
+        state = 744
         continue
-      state = 701
+      state = 746
       continue
-    of 701:
+    of 746:
       # (< ?$assignment_call_113 ?$assignment_call_114)
       # (< ?$assignment_call_113 ?$assignment_call_114)
+      ex.debugBeginCondition(definition, 201)
       if compare(ex.v[122], ex.v[123], 2'u32):
-        state = 704
+        ex.debugEndCondition(definition, true)
+        state = 749
         continue
-      state = 702
+      ex.debugEndCondition(definition, false)
+      state = 747
       continue
-    of 704:
-      state = 678
+    of 749:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 723
       continue
-    of 702:
-      state = 699
+    of 747:
+      state = 744
       continue
-    of 699:
-      ex.v[123] = cp700_123
-      state = 696
+    of 744:
+      ex.v[123] = cp745_123
+      state = 741
       continue
-    of 696:
-      ex.v[122] = cp697_122
-      state = 693
+    of 741:
+      ex.v[122] = cp742_122
+      state = 738
       continue
-    of 693:
-      ex.v[121] = cp694_121
-      state = 690
+    of 738:
+      ex.v[121] = cp739_121
+      state = 735
       continue
-    of 690:
-      ex.v[120] = cp691_120
-      state = 688
+    of 735:
+      ex.v[120] = cp736_120
+      state = 733
       continue
-    of 688:
-      ex.v[120] = cp689_120
-      ex.v[121] = cp689_121
-      ex.v[122] = cp689_122
-      ex.v[123] = cp689_123
-      state = 685
+    of 733:
+      ex.v[120] = cp734_120
+      ex.v[121] = cp734_121
+      ex.v[122] = cp734_122
+      ex.v[123] = cp734_123
+      ex.debugEndCondition(definition, false)
+      state = 730
       continue
-    of 685:
-      ex.v[1] = cp686_1
-      state = 682
+    of 730:
+      ex.v[1] = cp731_1
+      state = 727
       continue
-    of 682:
-      ex.v[0] = cp683_0
-      state = 680
+    of 727:
+      ex.v[0] = cp728_0
+      state = 725
       continue
-    of 680:
-      ex.v[0] = cp681_0
-      ex.v[1] = cp681_1
-      ex.v[120] = cp681_120
-      ex.v[121] = cp681_121
-      ex.v[122] = cp681_122
-      ex.v[123] = cp681_123
-      state = 679
+    of 725:
+      ex.v[0] = cp726_0
+      ex.v[1] = cp726_1
+      ex.v[120] = cp726_120
+      ex.v[121] = cp726_121
+      ex.v[122] = cp726_122
+      ex.v[123] = cp726_123
+      ex.debugEndCondition(definition, false)
+      state = 724
       continue
-    of 679:
-      state = 675
+    of 724:
+      ex.debugEndBranch(definition, false)
+      state = 720
       continue
-    of 678:
+    of 723:
       if not ex.pushBranch(addr bc20):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 705
+      ex.debugCapturePendingTask(20)
+      state = 752
       continue
-    of 705:
+    of 752:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5175,18 +6306,23 @@ proc method18(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 677
+        state = 722
         continue
-      state = 706
+      state = 753
       continue
-    of 677:
+    of 722:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 705
+      state = 752
       continue
-    of 706:
+    of 753:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 675:
+    of 720:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5194,95 +6330,116 @@ proc method18(ex: Exec): int {.nimcall.} =
 # method19: missing_right/0
 proc method19(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp713_124: Atom
-  var cp713_125: Atom
-  var cp715_124: Atom
-  var cp715_125: Atom
-  var cp717_124: Atom
-  var cp720_125: Atom
+  var cp760_124: Atom
+  var cp760_125: Atom
+  var cp762_124: Atom
+  var cp762_125: Atom
+  var cp764_124: Atom
+  var cp767_125: Atom
   var state = 0
   case fr.resume
-  of 1: state = 709
+  of 1: state = 756
   else: discard
   while true:
     case state
     of 0:
-      state = 708
+      ex.debugBeginMethod(definition, 19)
+      state = 755
       continue
-    of 708:
+    of 755:
       # branch branch
+      ex.debugBeginBranch(definition, 21)
       # (and (< 0.0 (call missing_distance_callterm)))
-      cp713_124 = ex.v[124]
-      cp713_125 = ex.v[125]
+      cp760_124 = ex.v[124]
+      cp760_125 = ex.v[125]
+      ex.debugBeginCondition(definition, 202)
       # (and (= ?$assignment_call_115 0.0) (= ?$assignment_call_116 (call missing_distance_callterm)) (< ?$assignment_call_115 ?$assignment_call_116))
-      cp715_124 = ex.v[124]
-      cp715_125 = ex.v[125]
+      cp762_124 = ex.v[124]
+      cp762_125 = ex.v[125]
+      ex.debugBeginCondition(definition, 203)
       # (= ?$assignment_call_115 0.0)
-      cp717_124 = ex.v[124]
+      cp764_124 = ex.v[124]
       # (= ?$assignment_call_115 0.0)
+      ex.debugBeginCondition(definition, 204)
       block:
         let value = sv45
         if value.isBound and not ex.v[124].isBound:
           ex.v[124] = value
-          state = 718
+          ex.debugEndCondition(definition, true)
+          state = 765
           continue
-        state = 716
+        ex.debugEndCondition(definition, false)
+        state = 763
         continue
-      state = 718
+      state = 765
       continue
-    of 718:
+    of 765:
       # (= ?$assignment_call_116 (call missing_distance_callterm))
-      cp720_125 = ex.v[125]
+      cp767_125 = ex.v[125]
       # (= ?$assignment_call_116 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 205)
       if not ex.v[125].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs42, factSymbols)
         if ok:
           ex.setIfChanged(125, callResult)
-          state = 721
+          ex.debugEndCondition(definition, true)
+          state = 768
           continue
-      state = 719
+      ex.debugEndCondition(definition, false)
+      state = 766
       continue
-    of 721:
+    of 768:
       # (< ?$assignment_call_115 ?$assignment_call_116)
       # (< ?$assignment_call_115 ?$assignment_call_116)
+      ex.debugBeginCondition(definition, 206)
       if compare(ex.v[124], ex.v[125], 2'u32):
-        state = 724
+        ex.debugEndCondition(definition, true)
+        state = 771
         continue
-      state = 722
+      ex.debugEndCondition(definition, false)
+      state = 769
       continue
-    of 724:
-      state = 710
+    of 771:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 757
       continue
-    of 722:
-      state = 719
+    of 769:
+      state = 766
       continue
-    of 719:
-      ex.v[125] = cp720_125
-      state = 716
+    of 766:
+      ex.v[125] = cp767_125
+      state = 763
       continue
-    of 716:
-      ex.v[124] = cp717_124
-      state = 714
+    of 763:
+      ex.v[124] = cp764_124
+      state = 761
       continue
-    of 714:
-      ex.v[124] = cp715_124
-      ex.v[125] = cp715_125
-      state = 712
+    of 761:
+      ex.v[124] = cp762_124
+      ex.v[125] = cp762_125
+      ex.debugEndCondition(definition, false)
+      state = 759
       continue
-    of 712:
-      ex.v[124] = cp713_124
-      ex.v[125] = cp713_125
-      state = 711
+    of 759:
+      ex.v[124] = cp760_124
+      ex.v[125] = cp760_125
+      ex.debugEndCondition(definition, false)
+      state = 758
       continue
-    of 711:
-      state = 707
+    of 758:
+      ex.debugEndBranch(definition, false)
+      state = 754
       continue
-    of 710:
+    of 757:
       if not ex.pushBranch(addr bc21):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 725
+      ex.debugCapturePendingTask(21)
+      state = 774
       continue
-    of 725:
+    of 774:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5290,18 +6447,23 @@ proc method19(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 709
+        state = 756
         continue
-      state = 726
+      state = 775
       continue
-    of 709:
+    of 756:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 725
+      state = 774
       continue
-    of 726:
+    of 775:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 707:
+    of 754:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5309,170 +6471,200 @@ proc method19(ex: Exec): int {.nimcall.} =
 # method20: missing_arithmetic/0
 proc method20(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp733_126: Atom
-  var cp733_127: Atom
-  var cp733_128: Atom
-  var cp733_129: Atom
-  var cp733_130: Atom
-  var cp735_126: Atom
-  var cp735_127: Atom
-  var cp735_128: Atom
-  var cp735_129: Atom
-  var cp735_130: Atom
-  var cp737_126: Atom
-  var cp740_127: Atom
-  var cp743_128: Atom
-  var cp746_129: Atom
-  var cp749_130: Atom
+  var cp782_126: Atom
+  var cp782_127: Atom
+  var cp782_128: Atom
+  var cp782_129: Atom
+  var cp782_130: Atom
+  var cp784_126: Atom
+  var cp784_127: Atom
+  var cp784_128: Atom
+  var cp784_129: Atom
+  var cp784_130: Atom
+  var cp786_126: Atom
+  var cp789_127: Atom
+  var cp792_128: Atom
+  var cp795_129: Atom
+  var cp798_130: Atom
   var state = 0
   case fr.resume
-  of 1: state = 729
+  of 1: state = 778
   else: discard
   while true:
     case state
     of 0:
-      state = 728
+      ex.debugBeginMethod(definition, 20)
+      state = 777
       continue
-    of 728:
+    of 777:
       # branch branch
+      ex.debugBeginBranch(definition, 22)
       # (and (< (+ 0.0 (call missing_distance_callterm)) 0.2))
-      cp733_126 = ex.v[126]
-      cp733_127 = ex.v[127]
-      cp733_128 = ex.v[128]
-      cp733_129 = ex.v[129]
-      cp733_130 = ex.v[130]
+      cp782_126 = ex.v[126]
+      cp782_127 = ex.v[127]
+      cp782_128 = ex.v[128]
+      cp782_129 = ex.v[129]
+      cp782_130 = ex.v[130]
+      ex.debugBeginCondition(definition, 207)
       # (and (= ?$assignment_call_117 (* 0.0 1)) (= ?$assignment_call_118 (call missing_distance_callterm)) (= ?$assignment_call_119 (* ?$assignment_call_118 1)) (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119)) (= ?$assignment_call_121 0.2) (< ?$assignment_call_120 ?$assignment_call_121))
-      cp735_126 = ex.v[126]
-      cp735_127 = ex.v[127]
-      cp735_128 = ex.v[128]
-      cp735_129 = ex.v[129]
-      cp735_130 = ex.v[130]
+      cp784_126 = ex.v[126]
+      cp784_127 = ex.v[127]
+      cp784_128 = ex.v[128]
+      cp784_129 = ex.v[129]
+      cp784_130 = ex.v[130]
+      ex.debugBeginCondition(definition, 208)
       # (= ?$assignment_call_117 (* 0.0 1))
-      cp737_126 = ex.v[126]
+      cp786_126 = ex.v[126]
       # (= ?$assignment_call_117 (* 0.0 1))
+      ex.debugBeginCondition(definition, 209)
       block:
         let value = arith(2'u32, [newFloatBits(0x00000000'u32), newInt(1'i32)])
         if value.isBound and not ex.v[126].isBound:
           ex.v[126] = value
-          state = 738
+          ex.debugEndCondition(definition, true)
+          state = 787
           continue
-        state = 736
+        ex.debugEndCondition(definition, false)
+        state = 785
         continue
-      state = 738
+      state = 787
       continue
-    of 738:
+    of 787:
       # (= ?$assignment_call_118 (call missing_distance_callterm))
-      cp740_127 = ex.v[127]
+      cp789_127 = ex.v[127]
       # (= ?$assignment_call_118 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 210)
       if not ex.v[127].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs43, factSymbols)
         if ok:
           ex.setIfChanged(127, callResult)
-          state = 741
+          ex.debugEndCondition(definition, true)
+          state = 790
           continue
-      state = 739
+      ex.debugEndCondition(definition, false)
+      state = 788
       continue
-    of 741:
+    of 790:
       # (= ?$assignment_call_119 (* ?$assignment_call_118 1))
-      cp743_128 = ex.v[128]
+      cp792_128 = ex.v[128]
       # (= ?$assignment_call_119 (* ?$assignment_call_118 1))
+      ex.debugBeginCondition(definition, 211)
       block:
         let value = arith(2'u32, [ex.v[127], newInt(1'i32)])
         if value.isBound and not ex.v[128].isBound:
           ex.v[128] = value
-          state = 744
+          ex.debugEndCondition(definition, true)
+          state = 793
           continue
-        state = 742
+        ex.debugEndCondition(definition, false)
+        state = 791
         continue
-      state = 744
+      state = 793
       continue
-    of 744:
+    of 793:
       # (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))
-      cp746_129 = ex.v[129]
+      cp795_129 = ex.v[129]
       # (= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))
+      ex.debugBeginCondition(definition, 212)
       block:
         let value = arith(0'u32, [ex.v[126], ex.v[128]])
         if value.isBound and not ex.v[129].isBound:
           ex.v[129] = value
-          state = 747
+          ex.debugEndCondition(definition, true)
+          state = 796
           continue
-        state = 745
+        ex.debugEndCondition(definition, false)
+        state = 794
         continue
-      state = 747
+      state = 796
       continue
-    of 747:
+    of 796:
       # (= ?$assignment_call_121 0.2)
-      cp749_130 = ex.v[130]
+      cp798_130 = ex.v[130]
       # (= ?$assignment_call_121 0.2)
+      ex.debugBeginCondition(definition, 213)
       block:
         let value = sv46
         if value.isBound and not ex.v[130].isBound:
           ex.v[130] = value
-          state = 750
+          ex.debugEndCondition(definition, true)
+          state = 799
           continue
-        state = 748
+        ex.debugEndCondition(definition, false)
+        state = 797
         continue
-      state = 750
+      state = 799
       continue
-    of 750:
+    of 799:
       # (< ?$assignment_call_120 ?$assignment_call_121)
       # (< ?$assignment_call_120 ?$assignment_call_121)
+      ex.debugBeginCondition(definition, 214)
       if compare(ex.v[129], ex.v[130], 2'u32):
-        state = 753
+        ex.debugEndCondition(definition, true)
+        state = 802
         continue
-      state = 751
+      ex.debugEndCondition(definition, false)
+      state = 800
       continue
-    of 753:
-      state = 730
+    of 802:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 779
       continue
-    of 751:
-      state = 748
+    of 800:
+      state = 797
       continue
-    of 748:
-      ex.v[130] = cp749_130
-      state = 745
+    of 797:
+      ex.v[130] = cp798_130
+      state = 794
       continue
-    of 745:
-      ex.v[129] = cp746_129
-      state = 742
+    of 794:
+      ex.v[129] = cp795_129
+      state = 791
       continue
-    of 742:
-      ex.v[128] = cp743_128
-      state = 739
+    of 791:
+      ex.v[128] = cp792_128
+      state = 788
       continue
-    of 739:
-      ex.v[127] = cp740_127
-      state = 736
+    of 788:
+      ex.v[127] = cp789_127
+      state = 785
       continue
-    of 736:
-      ex.v[126] = cp737_126
-      state = 734
+    of 785:
+      ex.v[126] = cp786_126
+      state = 783
       continue
-    of 734:
-      ex.v[126] = cp735_126
-      ex.v[127] = cp735_127
-      ex.v[128] = cp735_128
-      ex.v[129] = cp735_129
-      ex.v[130] = cp735_130
-      state = 732
+    of 783:
+      ex.v[126] = cp784_126
+      ex.v[127] = cp784_127
+      ex.v[128] = cp784_128
+      ex.v[129] = cp784_129
+      ex.v[130] = cp784_130
+      ex.debugEndCondition(definition, false)
+      state = 781
       continue
-    of 732:
-      ex.v[126] = cp733_126
-      ex.v[127] = cp733_127
-      ex.v[128] = cp733_128
-      ex.v[129] = cp733_129
-      ex.v[130] = cp733_130
-      state = 731
+    of 781:
+      ex.v[126] = cp782_126
+      ex.v[127] = cp782_127
+      ex.v[128] = cp782_128
+      ex.v[129] = cp782_129
+      ex.v[130] = cp782_130
+      ex.debugEndCondition(definition, false)
+      state = 780
       continue
-    of 731:
-      state = 727
+    of 780:
+      ex.debugEndBranch(definition, false)
+      state = 776
       continue
-    of 730:
+    of 779:
       if not ex.pushBranch(addr bc22):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 754
+      ex.debugCapturePendingTask(22)
+      state = 805
       continue
-    of 754:
+    of 805:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5480,18 +6672,23 @@ proc method20(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 729
+        state = 778
         continue
-      state = 755
+      state = 806
       continue
-    of 729:
+    of 778:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 754
+      state = 805
       continue
-    of 755:
+    of 806:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 727:
+    of 776:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5499,118 +6696,142 @@ proc method20(ex: Exec): int {.nimcall.} =
 # method21: missing_deep/0
 proc method21(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp762_131: Atom
-  var cp762_132: Atom
-  var cp762_133: Atom
-  var cp764_131: Atom
-  var cp764_132: Atom
-  var cp764_133: Atom
-  var cp766_131: Atom
-  var cp769_132: Atom
-  var cp772_133: Atom
+  var cp813_131: Atom
+  var cp813_132: Atom
+  var cp813_133: Atom
+  var cp815_131: Atom
+  var cp815_132: Atom
+  var cp815_133: Atom
+  var cp817_131: Atom
+  var cp820_132: Atom
+  var cp823_133: Atom
   var state = 0
   case fr.resume
-  of 1: state = 758
+  of 1: state = 809
   else: discard
   while true:
     case state
     of 0:
-      state = 757
+      ex.debugBeginMethod(definition, 21)
+      state = 808
       continue
-    of 757:
+    of 808:
       # branch branch
+      ex.debugBeginBranch(definition, 23)
       # (and (< (call identity (call missing_distance_callterm)) 0.2))
-      cp762_131 = ex.v[131]
-      cp762_132 = ex.v[132]
-      cp762_133 = ex.v[133]
+      cp813_131 = ex.v[131]
+      cp813_132 = ex.v[132]
+      cp813_133 = ex.v[133]
+      ex.debugBeginCondition(definition, 215)
       # (and (= ?$assignment_call_122 (call missing_distance_callterm)) (= ?$assignment_call_123 (call identity ?$assignment_call_122)) (= ?$assignment_call_124 0.2) (< ?$assignment_call_123 ?$assignment_call_124))
-      cp764_131 = ex.v[131]
-      cp764_132 = ex.v[132]
-      cp764_133 = ex.v[133]
+      cp815_131 = ex.v[131]
+      cp815_132 = ex.v[132]
+      cp815_133 = ex.v[133]
+      ex.debugBeginCondition(definition, 216)
       # (= ?$assignment_call_122 (call missing_distance_callterm))
-      cp766_131 = ex.v[131]
+      cp817_131 = ex.v[131]
       # (= ?$assignment_call_122 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 217)
       if not ex.v[131].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs44, factSymbols)
         if ok:
           ex.setIfChanged(131, callResult)
-          state = 767
+          ex.debugEndCondition(definition, true)
+          state = 818
           continue
-      state = 765
+      ex.debugEndCondition(definition, false)
+      state = 816
       continue
-    of 767:
+    of 818:
       # (= ?$assignment_call_123 (call identity ?$assignment_call_122))
-      cp769_132 = ex.v[132]
+      cp820_132 = ex.v[132]
       # (= ?$assignment_call_123 (call identity ?$assignment_call_122))
+      ex.debugBeginCondition(definition, 218)
       if not ex.v[132].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[131]], addr cs45, factSymbols)
         if ok:
           ex.setIfChanged(132, callResult)
-          state = 770
+          ex.debugEndCondition(definition, true)
+          state = 821
           continue
-      state = 768
+      ex.debugEndCondition(definition, false)
+      state = 819
       continue
-    of 770:
+    of 821:
       # (= ?$assignment_call_124 0.2)
-      cp772_133 = ex.v[133]
+      cp823_133 = ex.v[133]
       # (= ?$assignment_call_124 0.2)
+      ex.debugBeginCondition(definition, 219)
       block:
         let value = sv47
         if value.isBound and not ex.v[133].isBound:
           ex.v[133] = value
-          state = 773
+          ex.debugEndCondition(definition, true)
+          state = 824
           continue
-        state = 771
+        ex.debugEndCondition(definition, false)
+        state = 822
         continue
-      state = 773
+      state = 824
       continue
-    of 773:
+    of 824:
       # (< ?$assignment_call_123 ?$assignment_call_124)
       # (< ?$assignment_call_123 ?$assignment_call_124)
+      ex.debugBeginCondition(definition, 220)
       if compare(ex.v[132], ex.v[133], 2'u32):
-        state = 776
+        ex.debugEndCondition(definition, true)
+        state = 827
         continue
-      state = 774
+      ex.debugEndCondition(definition, false)
+      state = 825
       continue
-    of 776:
-      state = 759
+    of 827:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 810
       continue
-    of 774:
-      state = 771
+    of 825:
+      state = 822
       continue
-    of 771:
-      ex.v[133] = cp772_133
-      state = 768
+    of 822:
+      ex.v[133] = cp823_133
+      state = 819
       continue
-    of 768:
-      ex.v[132] = cp769_132
-      state = 765
+    of 819:
+      ex.v[132] = cp820_132
+      state = 816
       continue
-    of 765:
-      ex.v[131] = cp766_131
-      state = 763
+    of 816:
+      ex.v[131] = cp817_131
+      state = 814
       continue
-    of 763:
-      ex.v[131] = cp764_131
-      ex.v[132] = cp764_132
-      ex.v[133] = cp764_133
-      state = 761
+    of 814:
+      ex.v[131] = cp815_131
+      ex.v[132] = cp815_132
+      ex.v[133] = cp815_133
+      ex.debugEndCondition(definition, false)
+      state = 812
       continue
-    of 761:
-      ex.v[131] = cp762_131
-      ex.v[132] = cp762_132
-      ex.v[133] = cp762_133
-      state = 760
+    of 812:
+      ex.v[131] = cp813_131
+      ex.v[132] = cp813_132
+      ex.v[133] = cp813_133
+      ex.debugEndCondition(definition, false)
+      state = 811
       continue
-    of 760:
-      state = 756
+    of 811:
+      ex.debugEndBranch(definition, false)
+      state = 807
       continue
-    of 759:
+    of 810:
       if not ex.pushBranch(addr bc23):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 777
+      ex.debugCapturePendingTask(23)
+      state = 830
       continue
-    of 777:
+    of 830:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5618,18 +6839,23 @@ proc method21(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 758
+        state = 809
         continue
-      state = 778
+      state = 831
       continue
-    of 758:
+    of 809:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 777
+      state = 830
       continue
-    of 778:
+    of 831:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 756:
+    of 807:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5637,63 +6863,78 @@ proc method21(ex: Exec): int {.nimcall.} =
 # method22: bound_first/0
 proc method22(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp785_16: Atom
-  var cp787_16: Atom
+  var cp838_16: Atom
+  var cp840_16: Atom
   var state = 0
   case fr.resume
-  of 1: state = 781
+  of 1: state = 834
   else: discard
   while true:
     case state
     of 0:
-      state = 780
+      ex.debugBeginMethod(definition, 22)
+      state = 833
       continue
-    of 780:
+    of 833:
       # branch branch
+      ex.debugBeginBranch(definition, 24)
       # (and (= ?distance (call missing_distance_callterm)) (< ?distance 0.2))
-      cp785_16 = ex.v[16]
+      cp838_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 221)
       # (= ?distance (call missing_distance_callterm))
-      cp787_16 = ex.v[16]
+      cp840_16 = ex.v[16]
       # (= ?distance (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 222)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs46, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 788
+          ex.debugEndCondition(definition, true)
+          state = 841
           continue
-      state = 786
+      ex.debugEndCondition(definition, false)
+      state = 839
       continue
-    of 788:
+    of 841:
       # (< ?distance 0.2)
       # (< ?distance 0.2)
+      ex.debugBeginCondition(definition, 223)
       if compare(ex.v[16], sv48, 2'u32):
-        state = 791
+        ex.debugEndCondition(definition, true)
+        state = 844
         continue
-      state = 789
+      ex.debugEndCondition(definition, false)
+      state = 842
       continue
-    of 791:
-      state = 782
+    of 844:
+      ex.debugEndCondition(definition, true)
+      state = 835
       continue
-    of 789:
-      state = 786
+    of 842:
+      state = 839
       continue
-    of 786:
-      ex.v[16] = cp787_16
-      state = 784
+    of 839:
+      ex.v[16] = cp840_16
+      state = 837
       continue
-    of 784:
-      ex.v[16] = cp785_16
-      state = 783
+    of 837:
+      ex.v[16] = cp838_16
+      ex.debugEndCondition(definition, false)
+      state = 836
       continue
-    of 783:
-      state = 779
+    of 836:
+      ex.debugEndBranch(definition, false)
+      state = 832
       continue
-    of 782:
+    of 835:
       if not ex.pushBranch(addr bc24):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 792
+      ex.debugCapturePendingTask(24)
+      state = 846
       continue
-    of 792:
+    of 846:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5701,18 +6942,23 @@ proc method22(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 781
+        state = 834
         continue
-      state = 793
+      state = 847
       continue
-    of 781:
+    of 834:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 792
+      state = 846
       continue
-    of 793:
+    of 847:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 779:
+    of 832:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5720,105 +6966,126 @@ proc method22(ex: Exec): int {.nimcall.} =
 # method23: two_attempts/0
 proc method23(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp802_134: Atom
-  var cp802_135: Atom
-  var cp804_134: Atom
-  var cp804_135: Atom
-  var cp806_134: Atom
-  var cp809_135: Atom
-  var cp819_136: Atom
-  var cp819_137: Atom
-  var cp821_136: Atom
-  var cp821_137: Atom
-  var cp823_136: Atom
-  var cp826_137: Atom
+  var cp856_134: Atom
+  var cp856_135: Atom
+  var cp858_134: Atom
+  var cp858_135: Atom
+  var cp860_134: Atom
+  var cp863_135: Atom
+  var cp875_136: Atom
+  var cp875_137: Atom
+  var cp877_136: Atom
+  var cp877_137: Atom
+  var cp879_136: Atom
+  var cp882_137: Atom
   var state = 0
   case fr.resume
-  of 1: state = 797
-  of 2: state = 798
+  of 1: state = 851
+  of 2: state = 852
   else: discard
   while true:
     case state
     of 0:
-      state = 795
+      ex.debugBeginMethod(definition, 23)
+      state = 849
       continue
-    of 795:
+    of 849:
       # branch first
       ex.saveRetry(fr, ms23)
+      ex.debugBeginBranch(definition, 25)
       # (and (< (call missing_distance_callterm) 0.2))
-      cp802_134 = ex.v[134]
-      cp802_135 = ex.v[135]
+      cp856_134 = ex.v[134]
+      cp856_135 = ex.v[135]
+      ex.debugBeginCondition(definition, 224)
       # (and (= ?$assignment_call_125 (call missing_distance_callterm)) (= ?$assignment_call_126 0.2) (< ?$assignment_call_125 ?$assignment_call_126))
-      cp804_134 = ex.v[134]
-      cp804_135 = ex.v[135]
+      cp858_134 = ex.v[134]
+      cp858_135 = ex.v[135]
+      ex.debugBeginCondition(definition, 225)
       # (= ?$assignment_call_125 (call missing_distance_callterm))
-      cp806_134 = ex.v[134]
+      cp860_134 = ex.v[134]
       # (= ?$assignment_call_125 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 226)
       if not ex.v[134].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs47, factSymbols)
         if ok:
           ex.setIfChanged(134, callResult)
-          state = 807
+          ex.debugEndCondition(definition, true)
+          state = 861
           continue
-      state = 805
+      ex.debugEndCondition(definition, false)
+      state = 859
       continue
-    of 807:
+    of 861:
       # (= ?$assignment_call_126 0.2)
-      cp809_135 = ex.v[135]
+      cp863_135 = ex.v[135]
       # (= ?$assignment_call_126 0.2)
+      ex.debugBeginCondition(definition, 227)
       block:
         let value = sv49
         if value.isBound and not ex.v[135].isBound:
           ex.v[135] = value
-          state = 810
+          ex.debugEndCondition(definition, true)
+          state = 864
           continue
-        state = 808
+        ex.debugEndCondition(definition, false)
+        state = 862
         continue
-      state = 810
+      state = 864
       continue
-    of 810:
+    of 864:
       # (< ?$assignment_call_125 ?$assignment_call_126)
       # (< ?$assignment_call_125 ?$assignment_call_126)
+      ex.debugBeginCondition(definition, 228)
       if compare(ex.v[134], ex.v[135], 2'u32):
-        state = 813
+        ex.debugEndCondition(definition, true)
+        state = 867
         continue
-      state = 811
+      ex.debugEndCondition(definition, false)
+      state = 865
       continue
-    of 813:
-      state = 799
+    of 867:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 853
       continue
-    of 811:
-      state = 808
+    of 865:
+      state = 862
       continue
-    of 808:
-      ex.v[135] = cp809_135
-      state = 805
+    of 862:
+      ex.v[135] = cp863_135
+      state = 859
       continue
-    of 805:
-      ex.v[134] = cp806_134
-      state = 803
+    of 859:
+      ex.v[134] = cp860_134
+      state = 857
       continue
-    of 803:
-      ex.v[134] = cp804_134
-      ex.v[135] = cp804_135
-      state = 801
+    of 857:
+      ex.v[134] = cp858_134
+      ex.v[135] = cp858_135
+      ex.debugEndCondition(definition, false)
+      state = 855
       continue
-    of 801:
-      ex.v[134] = cp802_134
-      ex.v[135] = cp802_135
-      state = 800
+    of 855:
+      ex.v[134] = cp856_134
+      ex.v[135] = cp856_135
+      ex.debugEndCondition(definition, false)
+      state = 854
       continue
-    of 800:
+    of 854:
       ex.releaseRetry(fr)
-      state = 796
+      ex.debugEndBranch(definition, false)
+      state = 850
       continue
-    of 799:
+    of 853:
       if not ex.pushBranch(addr bc25):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 814
+      ex.debugCapturePendingTask(25)
+      state = 870
       continue
-    of 814:
+    of 870:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5826,97 +7093,122 @@ proc method23(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 797
+        state = 851
         continue
-      state = 815
+      state = 871
       continue
-    of 797:
+    of 851:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms23)
-        state = 796
+        ex.debugEndBranch(definition, false)
+        state = 850
         continue
-      state = 814
+      state = 870
       continue
-    of 815:
+    of 871:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 796:
+    of 850:
       # branch second
+      ex.debugBeginBranch(definition, 26)
       # (and (< (call missing_distance_callterm) 0.2))
-      cp819_136 = ex.v[136]
-      cp819_137 = ex.v[137]
+      cp875_136 = ex.v[136]
+      cp875_137 = ex.v[137]
+      ex.debugBeginCondition(definition, 229)
       # (and (= ?$assignment_call_127 (call missing_distance_callterm)) (= ?$assignment_call_128 0.2) (< ?$assignment_call_127 ?$assignment_call_128))
-      cp821_136 = ex.v[136]
-      cp821_137 = ex.v[137]
+      cp877_136 = ex.v[136]
+      cp877_137 = ex.v[137]
+      ex.debugBeginCondition(definition, 230)
       # (= ?$assignment_call_127 (call missing_distance_callterm))
-      cp823_136 = ex.v[136]
+      cp879_136 = ex.v[136]
       # (= ?$assignment_call_127 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 231)
       if not ex.v[136].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs48, factSymbols)
         if ok:
           ex.setIfChanged(136, callResult)
-          state = 824
+          ex.debugEndCondition(definition, true)
+          state = 880
           continue
-      state = 822
+      ex.debugEndCondition(definition, false)
+      state = 878
       continue
-    of 824:
+    of 880:
       # (= ?$assignment_call_128 0.2)
-      cp826_137 = ex.v[137]
+      cp882_137 = ex.v[137]
       # (= ?$assignment_call_128 0.2)
+      ex.debugBeginCondition(definition, 232)
       block:
         let value = sv50
         if value.isBound and not ex.v[137].isBound:
           ex.v[137] = value
-          state = 827
+          ex.debugEndCondition(definition, true)
+          state = 883
           continue
-        state = 825
+        ex.debugEndCondition(definition, false)
+        state = 881
         continue
-      state = 827
+      state = 883
       continue
-    of 827:
+    of 883:
       # (< ?$assignment_call_127 ?$assignment_call_128)
       # (< ?$assignment_call_127 ?$assignment_call_128)
+      ex.debugBeginCondition(definition, 233)
       if compare(ex.v[136], ex.v[137], 2'u32):
-        state = 830
+        ex.debugEndCondition(definition, true)
+        state = 886
         continue
-      state = 828
+      ex.debugEndCondition(definition, false)
+      state = 884
       continue
-    of 830:
-      state = 816
+    of 886:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 872
       continue
-    of 828:
-      state = 825
+    of 884:
+      state = 881
       continue
-    of 825:
-      ex.v[137] = cp826_137
-      state = 822
+    of 881:
+      ex.v[137] = cp882_137
+      state = 878
       continue
-    of 822:
-      ex.v[136] = cp823_136
-      state = 820
+    of 878:
+      ex.v[136] = cp879_136
+      state = 876
       continue
-    of 820:
-      ex.v[136] = cp821_136
-      ex.v[137] = cp821_137
-      state = 818
+    of 876:
+      ex.v[136] = cp877_136
+      ex.v[137] = cp877_137
+      ex.debugEndCondition(definition, false)
+      state = 874
       continue
-    of 818:
-      ex.v[136] = cp819_136
-      ex.v[137] = cp819_137
-      state = 817
+    of 874:
+      ex.v[136] = cp875_136
+      ex.v[137] = cp875_137
+      ex.debugEndCondition(definition, false)
+      state = 873
       continue
-    of 817:
-      state = 794
+    of 873:
+      ex.debugEndBranch(definition, false)
+      state = 848
       continue
-    of 816:
+    of 872:
       if not ex.pushBranch(addr bc26):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 831
+      ex.debugCapturePendingTask(26)
+      state = 889
       continue
-    of 831:
+    of 889:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5924,18 +7216,23 @@ proc method23(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 798
+        state = 852
         continue
-      state = 832
+      state = 890
       continue
-    of 798:
+    of 852:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 831
+      state = 889
       continue
-    of 832:
+    of 890:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 794:
+    of 848:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5943,95 +7240,116 @@ proc method23(ex: Exec): int {.nimcall.} =
 # method24: valid_left/0
 proc method24(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp839_138: Atom
-  var cp839_139: Atom
-  var cp841_138: Atom
-  var cp841_139: Atom
-  var cp843_138: Atom
-  var cp846_139: Atom
+  var cp897_138: Atom
+  var cp897_139: Atom
+  var cp899_138: Atom
+  var cp899_139: Atom
+  var cp901_138: Atom
+  var cp904_139: Atom
   var state = 0
   case fr.resume
-  of 1: state = 835
+  of 1: state = 893
   else: discard
   while true:
     case state
     of 0:
-      state = 834
+      ex.debugBeginMethod(definition, 24)
+      state = 892
       continue
-    of 834:
+    of 892:
       # branch branch
+      ex.debugBeginBranch(definition, 27)
       # (and (< (call distance) 0.2))
-      cp839_138 = ex.v[138]
-      cp839_139 = ex.v[139]
+      cp897_138 = ex.v[138]
+      cp897_139 = ex.v[139]
+      ex.debugBeginCondition(definition, 234)
       # (and (= ?$assignment_call_129 (call distance)) (= ?$assignment_call_130 0.2) (< ?$assignment_call_129 ?$assignment_call_130))
-      cp841_138 = ex.v[138]
-      cp841_139 = ex.v[139]
+      cp899_138 = ex.v[138]
+      cp899_139 = ex.v[139]
+      ex.debugBeginCondition(definition, 235)
       # (= ?$assignment_call_129 (call distance))
-      cp843_138 = ex.v[138]
+      cp901_138 = ex.v[138]
       # (= ?$assignment_call_129 (call distance))
+      ex.debugBeginCondition(definition, 236)
       if not ex.v[138].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs49, factSymbols)
         if ok:
           ex.setIfChanged(138, callResult)
-          state = 844
+          ex.debugEndCondition(definition, true)
+          state = 902
           continue
-      state = 842
+      ex.debugEndCondition(definition, false)
+      state = 900
       continue
-    of 844:
+    of 902:
       # (= ?$assignment_call_130 0.2)
-      cp846_139 = ex.v[139]
+      cp904_139 = ex.v[139]
       # (= ?$assignment_call_130 0.2)
+      ex.debugBeginCondition(definition, 237)
       block:
         let value = sv51
         if value.isBound and not ex.v[139].isBound:
           ex.v[139] = value
-          state = 847
+          ex.debugEndCondition(definition, true)
+          state = 905
           continue
-        state = 845
+        ex.debugEndCondition(definition, false)
+        state = 903
         continue
-      state = 847
+      state = 905
       continue
-    of 847:
+    of 905:
       # (< ?$assignment_call_129 ?$assignment_call_130)
       # (< ?$assignment_call_129 ?$assignment_call_130)
+      ex.debugBeginCondition(definition, 238)
       if compare(ex.v[138], ex.v[139], 2'u32):
-        state = 850
+        ex.debugEndCondition(definition, true)
+        state = 908
         continue
-      state = 848
+      ex.debugEndCondition(definition, false)
+      state = 906
       continue
-    of 850:
-      state = 836
+    of 908:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 894
       continue
-    of 848:
-      state = 845
+    of 906:
+      state = 903
       continue
-    of 845:
-      ex.v[139] = cp846_139
-      state = 842
+    of 903:
+      ex.v[139] = cp904_139
+      state = 900
       continue
-    of 842:
-      ex.v[138] = cp843_138
-      state = 840
+    of 900:
+      ex.v[138] = cp901_138
+      state = 898
       continue
-    of 840:
-      ex.v[138] = cp841_138
-      ex.v[139] = cp841_139
-      state = 838
+    of 898:
+      ex.v[138] = cp899_138
+      ex.v[139] = cp899_139
+      ex.debugEndCondition(definition, false)
+      state = 896
       continue
-    of 838:
-      ex.v[138] = cp839_138
-      ex.v[139] = cp839_139
-      state = 837
+    of 896:
+      ex.v[138] = cp897_138
+      ex.v[139] = cp897_139
+      ex.debugEndCondition(definition, false)
+      state = 895
       continue
-    of 837:
-      state = 833
+    of 895:
+      ex.debugEndBranch(definition, false)
+      state = 891
       continue
-    of 836:
+    of 894:
       if not ex.pushBranch(addr bc27):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 851
+      ex.debugCapturePendingTask(27)
+      state = 911
       continue
-    of 851:
+    of 911:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6039,18 +7357,23 @@ proc method24(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 835
+        state = 893
         continue
-      state = 852
+      state = 912
       continue
-    of 835:
+    of 893:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 851
+      state = 911
       continue
-    of 852:
+    of 912:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 833:
+    of 891:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6058,95 +7381,116 @@ proc method24(ex: Exec): int {.nimcall.} =
 # method25: valid_right/0
 proc method25(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp859_140: Atom
-  var cp859_141: Atom
-  var cp861_140: Atom
-  var cp861_141: Atom
-  var cp863_140: Atom
-  var cp866_141: Atom
+  var cp919_140: Atom
+  var cp919_141: Atom
+  var cp921_140: Atom
+  var cp921_141: Atom
+  var cp923_140: Atom
+  var cp926_141: Atom
   var state = 0
   case fr.resume
-  of 1: state = 855
+  of 1: state = 915
   else: discard
   while true:
     case state
     of 0:
-      state = 854
+      ex.debugBeginMethod(definition, 25)
+      state = 914
       continue
-    of 854:
+    of 914:
       # branch branch
+      ex.debugBeginBranch(definition, 28)
       # (and (< 0.0 (call distance)))
-      cp859_140 = ex.v[140]
-      cp859_141 = ex.v[141]
+      cp919_140 = ex.v[140]
+      cp919_141 = ex.v[141]
+      ex.debugBeginCondition(definition, 239)
       # (and (= ?$assignment_call_131 0.0) (= ?$assignment_call_132 (call distance)) (< ?$assignment_call_131 ?$assignment_call_132))
-      cp861_140 = ex.v[140]
-      cp861_141 = ex.v[141]
+      cp921_140 = ex.v[140]
+      cp921_141 = ex.v[141]
+      ex.debugBeginCondition(definition, 240)
       # (= ?$assignment_call_131 0.0)
-      cp863_140 = ex.v[140]
+      cp923_140 = ex.v[140]
       # (= ?$assignment_call_131 0.0)
+      ex.debugBeginCondition(definition, 241)
       block:
         let value = sv52
         if value.isBound and not ex.v[140].isBound:
           ex.v[140] = value
-          state = 864
+          ex.debugEndCondition(definition, true)
+          state = 924
           continue
-        state = 862
+        ex.debugEndCondition(definition, false)
+        state = 922
         continue
-      state = 864
+      state = 924
       continue
-    of 864:
+    of 924:
       # (= ?$assignment_call_132 (call distance))
-      cp866_141 = ex.v[141]
+      cp926_141 = ex.v[141]
       # (= ?$assignment_call_132 (call distance))
+      ex.debugBeginCondition(definition, 242)
       if not ex.v[141].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs50, factSymbols)
         if ok:
           ex.setIfChanged(141, callResult)
-          state = 867
+          ex.debugEndCondition(definition, true)
+          state = 927
           continue
-      state = 865
+      ex.debugEndCondition(definition, false)
+      state = 925
       continue
-    of 867:
+    of 927:
       # (< ?$assignment_call_131 ?$assignment_call_132)
       # (< ?$assignment_call_131 ?$assignment_call_132)
+      ex.debugBeginCondition(definition, 243)
       if compare(ex.v[140], ex.v[141], 2'u32):
-        state = 870
+        ex.debugEndCondition(definition, true)
+        state = 930
         continue
-      state = 868
+      ex.debugEndCondition(definition, false)
+      state = 928
       continue
-    of 870:
-      state = 856
+    of 930:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 916
       continue
-    of 868:
-      state = 865
+    of 928:
+      state = 925
       continue
-    of 865:
-      ex.v[141] = cp866_141
-      state = 862
+    of 925:
+      ex.v[141] = cp926_141
+      state = 922
       continue
-    of 862:
-      ex.v[140] = cp863_140
-      state = 860
+    of 922:
+      ex.v[140] = cp923_140
+      state = 920
       continue
-    of 860:
-      ex.v[140] = cp861_140
-      ex.v[141] = cp861_141
-      state = 858
+    of 920:
+      ex.v[140] = cp921_140
+      ex.v[141] = cp921_141
+      ex.debugEndCondition(definition, false)
+      state = 918
       continue
-    of 858:
-      ex.v[140] = cp859_140
-      ex.v[141] = cp859_141
-      state = 857
+    of 918:
+      ex.v[140] = cp919_140
+      ex.v[141] = cp919_141
+      ex.debugEndCondition(definition, false)
+      state = 917
       continue
-    of 857:
-      state = 853
+    of 917:
+      ex.debugEndBranch(definition, false)
+      state = 913
       continue
-    of 856:
+    of 916:
       if not ex.pushBranch(addr bc28):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 871
+      ex.debugCapturePendingTask(28)
+      state = 933
       continue
-    of 871:
+    of 933:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6154,18 +7498,23 @@ proc method25(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 855
+        state = 915
         continue
-      state = 872
+      state = 934
       continue
-    of 855:
+    of 915:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 871
+      state = 933
       continue
-    of 872:
+    of 934:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 853:
+    of 913:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6173,93 +7522,114 @@ proc method25(ex: Exec): int {.nimcall.} =
 # method26: valid_both/0
 proc method26(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp879_142: Atom
-  var cp879_143: Atom
-  var cp881_142: Atom
-  var cp881_143: Atom
-  var cp883_142: Atom
-  var cp886_143: Atom
+  var cp941_142: Atom
+  var cp941_143: Atom
+  var cp943_142: Atom
+  var cp943_143: Atom
+  var cp945_142: Atom
+  var cp948_143: Atom
   var state = 0
   case fr.resume
-  of 1: state = 875
+  of 1: state = 937
   else: discard
   while true:
     case state
     of 0:
-      state = 874
+      ex.debugBeginMethod(definition, 26)
+      state = 936
       continue
-    of 874:
+    of 936:
       # branch branch
+      ex.debugBeginBranch(definition, 29)
       # (and (== (call distance) (call distance)))
-      cp879_142 = ex.v[142]
-      cp879_143 = ex.v[143]
+      cp941_142 = ex.v[142]
+      cp941_143 = ex.v[143]
+      ex.debugBeginCondition(definition, 244)
       # (and (= ?$assignment_call_133 (call distance)) (= ?$assignment_call_134 (call distance)) (== ?$assignment_call_133 ?$assignment_call_134))
-      cp881_142 = ex.v[142]
-      cp881_143 = ex.v[143]
+      cp943_142 = ex.v[142]
+      cp943_143 = ex.v[143]
+      ex.debugBeginCondition(definition, 245)
       # (= ?$assignment_call_133 (call distance))
-      cp883_142 = ex.v[142]
+      cp945_142 = ex.v[142]
       # (= ?$assignment_call_133 (call distance))
+      ex.debugBeginCondition(definition, 246)
       if not ex.v[142].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs51, factSymbols)
         if ok:
           ex.setIfChanged(142, callResult)
-          state = 884
+          ex.debugEndCondition(definition, true)
+          state = 946
           continue
-      state = 882
+      ex.debugEndCondition(definition, false)
+      state = 944
       continue
-    of 884:
+    of 946:
       # (= ?$assignment_call_134 (call distance))
-      cp886_143 = ex.v[143]
+      cp948_143 = ex.v[143]
       # (= ?$assignment_call_134 (call distance))
+      ex.debugBeginCondition(definition, 247)
       if not ex.v[143].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs52, factSymbols)
         if ok:
           ex.setIfChanged(143, callResult)
-          state = 887
+          ex.debugEndCondition(definition, true)
+          state = 949
           continue
-      state = 885
+      ex.debugEndCondition(definition, false)
+      state = 947
       continue
-    of 887:
+    of 949:
       # (== ?$assignment_call_133 ?$assignment_call_134)
       # (== ?$assignment_call_133 ?$assignment_call_134)
+      ex.debugBeginCondition(definition, 248)
       if compare(ex.v[142], ex.v[143], 0'u32):
-        state = 890
+        ex.debugEndCondition(definition, true)
+        state = 952
         continue
-      state = 888
+      ex.debugEndCondition(definition, false)
+      state = 950
       continue
-    of 890:
-      state = 876
+    of 952:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 938
       continue
-    of 888:
-      state = 885
+    of 950:
+      state = 947
       continue
-    of 885:
-      ex.v[143] = cp886_143
-      state = 882
+    of 947:
+      ex.v[143] = cp948_143
+      state = 944
       continue
-    of 882:
-      ex.v[142] = cp883_142
-      state = 880
+    of 944:
+      ex.v[142] = cp945_142
+      state = 942
       continue
-    of 880:
-      ex.v[142] = cp881_142
-      ex.v[143] = cp881_143
-      state = 878
+    of 942:
+      ex.v[142] = cp943_142
+      ex.v[143] = cp943_143
+      ex.debugEndCondition(definition, false)
+      state = 940
       continue
-    of 878:
-      ex.v[142] = cp879_142
-      ex.v[143] = cp879_143
-      state = 877
+    of 940:
+      ex.v[142] = cp941_142
+      ex.v[143] = cp941_143
+      ex.debugEndCondition(definition, false)
+      state = 939
       continue
-    of 877:
-      state = 873
+    of 939:
+      ex.debugEndBranch(definition, false)
+      state = 935
       continue
-    of 876:
+    of 938:
       if not ex.pushBranch(addr bc29):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 891
+      ex.debugCapturePendingTask(29)
+      state = 955
       continue
-    of 891:
+    of 955:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6267,18 +7637,23 @@ proc method26(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 875
+        state = 937
         continue
-      state = 892
+      state = 956
       continue
-    of 875:
+    of 937:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 891
+      state = 955
       continue
-    of 892:
+    of 956:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 873:
+    of 935:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6286,63 +7661,78 @@ proc method26(ex: Exec): int {.nimcall.} =
 # method27: valid_bound/0
 proc method27(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp899_16: Atom
-  var cp901_16: Atom
+  var cp963_16: Atom
+  var cp965_16: Atom
   var state = 0
   case fr.resume
-  of 1: state = 895
+  of 1: state = 959
   else: discard
   while true:
     case state
     of 0:
-      state = 894
+      ex.debugBeginMethod(definition, 27)
+      state = 958
       continue
-    of 894:
+    of 958:
       # branch branch
+      ex.debugBeginBranch(definition, 30)
       # (and (= ?distance (call distance)) (< ?distance 0.2))
-      cp899_16 = ex.v[16]
+      cp963_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 249)
       # (= ?distance (call distance))
-      cp901_16 = ex.v[16]
+      cp965_16 = ex.v[16]
       # (= ?distance (call distance))
+      ex.debugBeginCondition(definition, 250)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs53, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 902
+          ex.debugEndCondition(definition, true)
+          state = 966
           continue
-      state = 900
+      ex.debugEndCondition(definition, false)
+      state = 964
       continue
-    of 902:
+    of 966:
       # (< ?distance 0.2)
       # (< ?distance 0.2)
+      ex.debugBeginCondition(definition, 251)
       if compare(ex.v[16], sv53, 2'u32):
-        state = 905
+        ex.debugEndCondition(definition, true)
+        state = 969
         continue
-      state = 903
+      ex.debugEndCondition(definition, false)
+      state = 967
       continue
-    of 905:
-      state = 896
+    of 969:
+      ex.debugEndCondition(definition, true)
+      state = 960
       continue
-    of 903:
-      state = 900
+    of 967:
+      state = 964
       continue
-    of 900:
-      ex.v[16] = cp901_16
-      state = 898
+    of 964:
+      ex.v[16] = cp965_16
+      state = 962
       continue
-    of 898:
-      ex.v[16] = cp899_16
-      state = 897
+    of 962:
+      ex.v[16] = cp963_16
+      ex.debugEndCondition(definition, false)
+      state = 961
       continue
-    of 897:
-      state = 893
+    of 961:
+      ex.debugEndBranch(definition, false)
+      state = 957
       continue
-    of 896:
+    of 960:
       if not ex.pushBranch(addr bc30):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 906
+      ex.debugCapturePendingTask(30)
+      state = 971
       continue
-    of 906:
+    of 971:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6350,18 +7740,23 @@ proc method27(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 895
+        state = 959
         continue
-      state = 907
+      state = 972
       continue
-    of 895:
+    of 959:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 906
+      state = 971
       continue
-    of 907:
+    of 972:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 893:
+    of 957:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6369,1859 +7764,2202 @@ proc method27(ex: Exec): int {.nimcall.} =
 # method28: operators/0
 proc method28(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp914_27: Atom
-  var cp914_144: Atom
-  var cp914_145: Atom
-  var cp914_146: Atom
-  var cp914_147: Atom
-  var cp914_148: Atom
-  var cp914_149: Atom
-  var cp914_150: Atom
-  var cp914_151: Atom
-  var cp914_152: Atom
-  var cp914_153: Atom
-  var cp914_154: Atom
-  var cp914_155: Atom
-  var cp914_156: Atom
-  var cp914_157: Atom
-  var cp914_158: Atom
-  var cp914_159: Atom
-  var cp914_160: Atom
-  var cp914_161: Atom
-  var cp914_162: Atom
-  var cp914_163: Atom
-  var cp914_164: Atom
-  var cp914_165: Atom
-  var cp914_166: Atom
-  var cp914_167: Atom
-  var cp914_168: Atom
-  var cp914_169: Atom
-  var cp914_170: Atom
-  var cp914_171: Atom
-  var cp914_172: Atom
-  var cp914_173: Atom
-  var cp914_174: Atom
-  var cp914_175: Atom
-  var cp914_176: Atom
-  var cp914_177: Atom
-  var cp914_178: Atom
-  var cp914_179: Atom
-  var cp914_180: Atom
-  var cp914_181: Atom
-  var cp914_182: Atom
-  var cp914_183: Atom
-  var cp914_184: Atom
-  var cp914_185: Atom
-  var cp914_186: Atom
-  var cp914_187: Atom
-  var cp914_188: Atom
-  var cp914_189: Atom
-  var cp914_190: Atom
-  var cp914_191: Atom
-  var cp914_192: Atom
-  var cp914_193: Atom
-  var cp914_194: Atom
-  var cp914_195: Atom
-  var cp914_196: Atom
-  var cp914_197: Atom
-  var cp914_198: Atom
-  var cp914_199: Atom
-  var cp914_200: Atom
-  var cp914_201: Atom
-  var cp914_202: Atom
-  var cp914_203: Atom
-  var cp914_204: Atom
-  var cp914_205: Atom
-  var cp914_206: Atom
-  var cp914_207: Atom
-  var cp914_208: Atom
-  var cp916_27: Atom
-  var cp919_144: Atom
-  var cp919_145: Atom
-  var cp919_146: Atom
-  var cp921_144: Atom
-  var cp924_145: Atom
-  var cp927_146: Atom
-  var cp933_147: Atom
-  var cp933_148: Atom
-  var cp933_149: Atom
-  var cp935_147: Atom
-  var cp938_148: Atom
-  var cp941_149: Atom
-  var cp947_150: Atom
-  var cp947_151: Atom
-  var cp947_152: Atom
-  var cp949_150: Atom
-  var cp952_151: Atom
-  var cp955_152: Atom
-  var cp961_153: Atom
-  var cp961_154: Atom
-  var cp961_155: Atom
-  var cp963_153: Atom
-  var cp966_154: Atom
-  var cp969_155: Atom
-  var cp975_156: Atom
-  var cp975_157: Atom
-  var cp975_158: Atom
-  var cp977_156: Atom
-  var cp980_157: Atom
-  var cp983_158: Atom
-  var cp989_159: Atom
-  var cp989_160: Atom
-  var cp989_161: Atom
-  var cp991_159: Atom
-  var cp994_160: Atom
-  var cp997_161: Atom
-  var cp1003_162: Atom
-  var cp1003_163: Atom
-  var cp1003_164: Atom
-  var cp1003_165: Atom
-  var cp1003_166: Atom
-  var cp1003_167: Atom
-  var cp1005_162: Atom
-  var cp1008_163: Atom
-  var cp1011_164: Atom
-  var cp1014_165: Atom
-  var cp1017_166: Atom
-  var cp1020_167: Atom
-  var cp1026_168: Atom
-  var cp1026_169: Atom
-  var cp1026_170: Atom
-  var cp1026_171: Atom
-  var cp1026_172: Atom
-  var cp1026_173: Atom
-  var cp1028_168: Atom
-  var cp1031_169: Atom
-  var cp1034_170: Atom
-  var cp1037_171: Atom
-  var cp1040_172: Atom
-  var cp1043_173: Atom
-  var cp1049_174: Atom
-  var cp1049_175: Atom
-  var cp1049_176: Atom
-  var cp1049_177: Atom
-  var cp1049_178: Atom
-  var cp1049_179: Atom
-  var cp1051_174: Atom
-  var cp1054_175: Atom
-  var cp1057_176: Atom
-  var cp1060_177: Atom
-  var cp1063_178: Atom
-  var cp1066_179: Atom
-  var cp1072_180: Atom
-  var cp1072_181: Atom
-  var cp1072_182: Atom
-  var cp1072_183: Atom
-  var cp1072_184: Atom
-  var cp1072_185: Atom
-  var cp1074_180: Atom
-  var cp1077_181: Atom
-  var cp1080_182: Atom
-  var cp1083_183: Atom
-  var cp1086_184: Atom
-  var cp1089_185: Atom
-  var cp1095_186: Atom
-  var cp1095_187: Atom
-  var cp1095_188: Atom
-  var cp1095_189: Atom
-  var cp1095_190: Atom
-  var cp1095_191: Atom
-  var cp1097_186: Atom
-  var cp1100_187: Atom
-  var cp1103_188: Atom
-  var cp1106_189: Atom
-  var cp1109_190: Atom
-  var cp1112_191: Atom
-  var cp1118_192: Atom
-  var cp1118_193: Atom
-  var cp1118_194: Atom
-  var cp1118_195: Atom
-  var cp1118_196: Atom
-  var cp1120_192: Atom
-  var cp1123_193: Atom
-  var cp1126_194: Atom
-  var cp1129_195: Atom
-  var cp1132_196: Atom
-  var cp1138_197: Atom
-  var cp1138_198: Atom
-  var cp1138_199: Atom
-  var cp1138_200: Atom
-  var cp1138_201: Atom
-  var cp1140_197: Atom
-  var cp1143_198: Atom
-  var cp1146_199: Atom
-  var cp1149_200: Atom
-  var cp1152_201: Atom
-  var cp1158_202: Atom
-  var cp1158_203: Atom
-  var cp1158_204: Atom
-  var cp1158_205: Atom
-  var cp1158_206: Atom
-  var cp1158_207: Atom
-  var cp1158_208: Atom
-  var cp1160_202: Atom
-  var cp1163_203: Atom
-  var cp1166_204: Atom
-  var cp1169_205: Atom
-  var cp1172_206: Atom
-  var cp1175_207: Atom
-  var cp1178_208: Atom
+  var cp979_27: Atom
+  var cp979_144: Atom
+  var cp979_145: Atom
+  var cp979_146: Atom
+  var cp979_147: Atom
+  var cp979_148: Atom
+  var cp979_149: Atom
+  var cp979_150: Atom
+  var cp979_151: Atom
+  var cp979_152: Atom
+  var cp979_153: Atom
+  var cp979_154: Atom
+  var cp979_155: Atom
+  var cp979_156: Atom
+  var cp979_157: Atom
+  var cp979_158: Atom
+  var cp979_159: Atom
+  var cp979_160: Atom
+  var cp979_161: Atom
+  var cp979_162: Atom
+  var cp979_163: Atom
+  var cp979_164: Atom
+  var cp979_165: Atom
+  var cp979_166: Atom
+  var cp979_167: Atom
+  var cp979_168: Atom
+  var cp979_169: Atom
+  var cp979_170: Atom
+  var cp979_171: Atom
+  var cp979_172: Atom
+  var cp979_173: Atom
+  var cp979_174: Atom
+  var cp979_175: Atom
+  var cp979_176: Atom
+  var cp979_177: Atom
+  var cp979_178: Atom
+  var cp979_179: Atom
+  var cp979_180: Atom
+  var cp979_181: Atom
+  var cp979_182: Atom
+  var cp979_183: Atom
+  var cp979_184: Atom
+  var cp979_185: Atom
+  var cp979_186: Atom
+  var cp979_187: Atom
+  var cp979_188: Atom
+  var cp979_189: Atom
+  var cp979_190: Atom
+  var cp979_191: Atom
+  var cp979_192: Atom
+  var cp979_193: Atom
+  var cp979_194: Atom
+  var cp979_195: Atom
+  var cp979_196: Atom
+  var cp979_197: Atom
+  var cp979_198: Atom
+  var cp979_199: Atom
+  var cp979_200: Atom
+  var cp979_201: Atom
+  var cp979_202: Atom
+  var cp979_203: Atom
+  var cp979_204: Atom
+  var cp979_205: Atom
+  var cp979_206: Atom
+  var cp979_207: Atom
+  var cp979_208: Atom
+  var cp981_27: Atom
+  var cp984_144: Atom
+  var cp984_145: Atom
+  var cp984_146: Atom
+  var cp986_144: Atom
+  var cp989_145: Atom
+  var cp992_146: Atom
+  var cp999_147: Atom
+  var cp999_148: Atom
+  var cp999_149: Atom
+  var cp1001_147: Atom
+  var cp1004_148: Atom
+  var cp1007_149: Atom
+  var cp1014_150: Atom
+  var cp1014_151: Atom
+  var cp1014_152: Atom
+  var cp1016_150: Atom
+  var cp1019_151: Atom
+  var cp1022_152: Atom
+  var cp1029_153: Atom
+  var cp1029_154: Atom
+  var cp1029_155: Atom
+  var cp1031_153: Atom
+  var cp1034_154: Atom
+  var cp1037_155: Atom
+  var cp1044_156: Atom
+  var cp1044_157: Atom
+  var cp1044_158: Atom
+  var cp1046_156: Atom
+  var cp1049_157: Atom
+  var cp1052_158: Atom
+  var cp1059_159: Atom
+  var cp1059_160: Atom
+  var cp1059_161: Atom
+  var cp1061_159: Atom
+  var cp1064_160: Atom
+  var cp1067_161: Atom
+  var cp1074_162: Atom
+  var cp1074_163: Atom
+  var cp1074_164: Atom
+  var cp1074_165: Atom
+  var cp1074_166: Atom
+  var cp1074_167: Atom
+  var cp1076_162: Atom
+  var cp1079_163: Atom
+  var cp1082_164: Atom
+  var cp1085_165: Atom
+  var cp1088_166: Atom
+  var cp1091_167: Atom
+  var cp1098_168: Atom
+  var cp1098_169: Atom
+  var cp1098_170: Atom
+  var cp1098_171: Atom
+  var cp1098_172: Atom
+  var cp1098_173: Atom
+  var cp1100_168: Atom
+  var cp1103_169: Atom
+  var cp1106_170: Atom
+  var cp1109_171: Atom
+  var cp1112_172: Atom
+  var cp1115_173: Atom
+  var cp1122_174: Atom
+  var cp1122_175: Atom
+  var cp1122_176: Atom
+  var cp1122_177: Atom
+  var cp1122_178: Atom
+  var cp1122_179: Atom
+  var cp1124_174: Atom
+  var cp1127_175: Atom
+  var cp1130_176: Atom
+  var cp1133_177: Atom
+  var cp1136_178: Atom
+  var cp1139_179: Atom
+  var cp1146_180: Atom
+  var cp1146_181: Atom
+  var cp1146_182: Atom
+  var cp1146_183: Atom
+  var cp1146_184: Atom
+  var cp1146_185: Atom
+  var cp1148_180: Atom
+  var cp1151_181: Atom
+  var cp1154_182: Atom
+  var cp1157_183: Atom
+  var cp1160_184: Atom
+  var cp1163_185: Atom
+  var cp1170_186: Atom
+  var cp1170_187: Atom
+  var cp1170_188: Atom
+  var cp1170_189: Atom
+  var cp1170_190: Atom
+  var cp1170_191: Atom
+  var cp1172_186: Atom
+  var cp1175_187: Atom
+  var cp1178_188: Atom
+  var cp1181_189: Atom
+  var cp1184_190: Atom
+  var cp1187_191: Atom
+  var cp1194_192: Atom
+  var cp1194_193: Atom
+  var cp1194_194: Atom
+  var cp1194_195: Atom
+  var cp1194_196: Atom
+  var cp1196_192: Atom
+  var cp1199_193: Atom
+  var cp1202_194: Atom
+  var cp1205_195: Atom
+  var cp1208_196: Atom
+  var cp1215_197: Atom
+  var cp1215_198: Atom
+  var cp1215_199: Atom
+  var cp1215_200: Atom
+  var cp1215_201: Atom
+  var cp1217_197: Atom
+  var cp1220_198: Atom
+  var cp1223_199: Atom
+  var cp1226_200: Atom
+  var cp1229_201: Atom
+  var cp1236_202: Atom
+  var cp1236_203: Atom
+  var cp1236_204: Atom
+  var cp1236_205: Atom
+  var cp1236_206: Atom
+  var cp1236_207: Atom
+  var cp1236_208: Atom
+  var cp1238_202: Atom
+  var cp1241_203: Atom
+  var cp1244_204: Atom
+  var cp1247_205: Atom
+  var cp1250_206: Atom
+  var cp1253_207: Atom
+  var cp1256_208: Atom
   var state = 0
   case fr.resume
-  of 1: state = 910
+  of 1: state = 975
   else: discard
   while true:
     case state
     of 0:
-      state = 909
+      ex.debugBeginMethod(definition, 28)
+      state = 974
       continue
-    of 909:
+    of 974:
       # branch branch
+      ex.debugBeginBranch(definition, 31)
       # (and (= ?value 3) (< (call identity 2) ?value) (<= ?value (call identity 3)) (> (call identity 4) ?value) (>= ?value (call identity 3)) (== (call identity ?value) 3) (!= 2 (call identity ?value)) (== (+ (call identity 1) 2) 3) (== (- 5 (call identity 2)) 3) (== (* (call identity 2) 3) 6) (== (/ 6 (call identity 2)) 3) (== (% (call identity 7) 4) 3) (== (++ (call identity 2)) 3) (== (-- (call identity 4)) 3) (== (call identity (+ 1 (call identity 2))) 3))
-      cp914_27 = ex.v[27]
-      cp914_144 = ex.v[144]
-      cp914_145 = ex.v[145]
-      cp914_146 = ex.v[146]
-      cp914_147 = ex.v[147]
-      cp914_148 = ex.v[148]
-      cp914_149 = ex.v[149]
-      cp914_150 = ex.v[150]
-      cp914_151 = ex.v[151]
-      cp914_152 = ex.v[152]
-      cp914_153 = ex.v[153]
-      cp914_154 = ex.v[154]
-      cp914_155 = ex.v[155]
-      cp914_156 = ex.v[156]
-      cp914_157 = ex.v[157]
-      cp914_158 = ex.v[158]
-      cp914_159 = ex.v[159]
-      cp914_160 = ex.v[160]
-      cp914_161 = ex.v[161]
-      cp914_162 = ex.v[162]
-      cp914_163 = ex.v[163]
-      cp914_164 = ex.v[164]
-      cp914_165 = ex.v[165]
-      cp914_166 = ex.v[166]
-      cp914_167 = ex.v[167]
-      cp914_168 = ex.v[168]
-      cp914_169 = ex.v[169]
-      cp914_170 = ex.v[170]
-      cp914_171 = ex.v[171]
-      cp914_172 = ex.v[172]
-      cp914_173 = ex.v[173]
-      cp914_174 = ex.v[174]
-      cp914_175 = ex.v[175]
-      cp914_176 = ex.v[176]
-      cp914_177 = ex.v[177]
-      cp914_178 = ex.v[178]
-      cp914_179 = ex.v[179]
-      cp914_180 = ex.v[180]
-      cp914_181 = ex.v[181]
-      cp914_182 = ex.v[182]
-      cp914_183 = ex.v[183]
-      cp914_184 = ex.v[184]
-      cp914_185 = ex.v[185]
-      cp914_186 = ex.v[186]
-      cp914_187 = ex.v[187]
-      cp914_188 = ex.v[188]
-      cp914_189 = ex.v[189]
-      cp914_190 = ex.v[190]
-      cp914_191 = ex.v[191]
-      cp914_192 = ex.v[192]
-      cp914_193 = ex.v[193]
-      cp914_194 = ex.v[194]
-      cp914_195 = ex.v[195]
-      cp914_196 = ex.v[196]
-      cp914_197 = ex.v[197]
-      cp914_198 = ex.v[198]
-      cp914_199 = ex.v[199]
-      cp914_200 = ex.v[200]
-      cp914_201 = ex.v[201]
-      cp914_202 = ex.v[202]
-      cp914_203 = ex.v[203]
-      cp914_204 = ex.v[204]
-      cp914_205 = ex.v[205]
-      cp914_206 = ex.v[206]
-      cp914_207 = ex.v[207]
-      cp914_208 = ex.v[208]
+      cp979_27 = ex.v[27]
+      cp979_144 = ex.v[144]
+      cp979_145 = ex.v[145]
+      cp979_146 = ex.v[146]
+      cp979_147 = ex.v[147]
+      cp979_148 = ex.v[148]
+      cp979_149 = ex.v[149]
+      cp979_150 = ex.v[150]
+      cp979_151 = ex.v[151]
+      cp979_152 = ex.v[152]
+      cp979_153 = ex.v[153]
+      cp979_154 = ex.v[154]
+      cp979_155 = ex.v[155]
+      cp979_156 = ex.v[156]
+      cp979_157 = ex.v[157]
+      cp979_158 = ex.v[158]
+      cp979_159 = ex.v[159]
+      cp979_160 = ex.v[160]
+      cp979_161 = ex.v[161]
+      cp979_162 = ex.v[162]
+      cp979_163 = ex.v[163]
+      cp979_164 = ex.v[164]
+      cp979_165 = ex.v[165]
+      cp979_166 = ex.v[166]
+      cp979_167 = ex.v[167]
+      cp979_168 = ex.v[168]
+      cp979_169 = ex.v[169]
+      cp979_170 = ex.v[170]
+      cp979_171 = ex.v[171]
+      cp979_172 = ex.v[172]
+      cp979_173 = ex.v[173]
+      cp979_174 = ex.v[174]
+      cp979_175 = ex.v[175]
+      cp979_176 = ex.v[176]
+      cp979_177 = ex.v[177]
+      cp979_178 = ex.v[178]
+      cp979_179 = ex.v[179]
+      cp979_180 = ex.v[180]
+      cp979_181 = ex.v[181]
+      cp979_182 = ex.v[182]
+      cp979_183 = ex.v[183]
+      cp979_184 = ex.v[184]
+      cp979_185 = ex.v[185]
+      cp979_186 = ex.v[186]
+      cp979_187 = ex.v[187]
+      cp979_188 = ex.v[188]
+      cp979_189 = ex.v[189]
+      cp979_190 = ex.v[190]
+      cp979_191 = ex.v[191]
+      cp979_192 = ex.v[192]
+      cp979_193 = ex.v[193]
+      cp979_194 = ex.v[194]
+      cp979_195 = ex.v[195]
+      cp979_196 = ex.v[196]
+      cp979_197 = ex.v[197]
+      cp979_198 = ex.v[198]
+      cp979_199 = ex.v[199]
+      cp979_200 = ex.v[200]
+      cp979_201 = ex.v[201]
+      cp979_202 = ex.v[202]
+      cp979_203 = ex.v[203]
+      cp979_204 = ex.v[204]
+      cp979_205 = ex.v[205]
+      cp979_206 = ex.v[206]
+      cp979_207 = ex.v[207]
+      cp979_208 = ex.v[208]
+      ex.debugBeginCondition(definition, 252)
       # (= ?value 3)
-      cp916_27 = ex.v[27]
+      cp981_27 = ex.v[27]
       # (= ?value 3)
+      ex.debugBeginCondition(definition, 253)
       block:
         let value = sv54
         if value.isBound and not ex.v[27].isBound:
           ex.v[27] = value
-          state = 917
+          ex.debugEndCondition(definition, true)
+          state = 982
           continue
-        state = 915
+        ex.debugEndCondition(definition, false)
+        state = 980
         continue
-      state = 917
+      state = 982
       continue
-    of 917:
+    of 982:
       # (and (= ?$assignment_call_135 2) (= ?$assignment_call_136 (call identity ?$assignment_call_135)) (= ?$assignment_call_137 ?value) (< ?$assignment_call_136 ?$assignment_call_137))
-      cp919_144 = ex.v[144]
-      cp919_145 = ex.v[145]
-      cp919_146 = ex.v[146]
+      cp984_144 = ex.v[144]
+      cp984_145 = ex.v[145]
+      cp984_146 = ex.v[146]
+      ex.debugBeginCondition(definition, 254)
       # (= ?$assignment_call_135 2)
-      cp921_144 = ex.v[144]
+      cp986_144 = ex.v[144]
       # (= ?$assignment_call_135 2)
+      ex.debugBeginCondition(definition, 255)
       block:
         let value = sv55
         if value.isBound and not ex.v[144].isBound:
           ex.v[144] = value
-          state = 922
+          ex.debugEndCondition(definition, true)
+          state = 987
           continue
-        state = 920
+        ex.debugEndCondition(definition, false)
+        state = 985
         continue
-      state = 922
+      state = 987
       continue
-    of 922:
+    of 987:
       # (= ?$assignment_call_136 (call identity ?$assignment_call_135))
-      cp924_145 = ex.v[145]
+      cp989_145 = ex.v[145]
       # (= ?$assignment_call_136 (call identity ?$assignment_call_135))
+      ex.debugBeginCondition(definition, 256)
       if not ex.v[145].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[144]], addr cs54, factSymbols)
         if ok:
           ex.setIfChanged(145, callResult)
-          state = 925
+          ex.debugEndCondition(definition, true)
+          state = 990
           continue
-      state = 923
+      ex.debugEndCondition(definition, false)
+      state = 988
       continue
-    of 925:
+    of 990:
       # (= ?$assignment_call_137 ?value)
-      cp927_146 = ex.v[146]
+      cp992_146 = ex.v[146]
       # (= ?$assignment_call_137 ?value)
+      ex.debugBeginCondition(definition, 257)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[146].isBound:
           ex.v[146] = value
-          state = 928
+          ex.debugEndCondition(definition, true)
+          state = 993
           continue
-        state = 926
+        ex.debugEndCondition(definition, false)
+        state = 991
         continue
-      state = 928
+      state = 993
       continue
-    of 928:
+    of 993:
       # (< ?$assignment_call_136 ?$assignment_call_137)
       # (< ?$assignment_call_136 ?$assignment_call_137)
+      ex.debugBeginCondition(definition, 258)
       if compare(ex.v[145], ex.v[146], 2'u32):
-        state = 931
+        ex.debugEndCondition(definition, true)
+        state = 996
         continue
-      state = 929
+      ex.debugEndCondition(definition, false)
+      state = 994
       continue
-    of 931:
+    of 996:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_138 ?value) (= ?$assignment_call_139 3) (= ?$assignment_call_140 (call identity ?$assignment_call_139)) (<= ?$assignment_call_138 ?$assignment_call_140))
-      cp933_147 = ex.v[147]
-      cp933_148 = ex.v[148]
-      cp933_149 = ex.v[149]
+      cp999_147 = ex.v[147]
+      cp999_148 = ex.v[148]
+      cp999_149 = ex.v[149]
+      ex.debugBeginCondition(definition, 259)
       # (= ?$assignment_call_138 ?value)
-      cp935_147 = ex.v[147]
+      cp1001_147 = ex.v[147]
       # (= ?$assignment_call_138 ?value)
+      ex.debugBeginCondition(definition, 260)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[147].isBound:
           ex.v[147] = value
-          state = 936
+          ex.debugEndCondition(definition, true)
+          state = 1002
           continue
-        state = 934
+        ex.debugEndCondition(definition, false)
+        state = 1000
         continue
-      state = 936
+      state = 1002
       continue
-    of 936:
+    of 1002:
       # (= ?$assignment_call_139 3)
-      cp938_148 = ex.v[148]
+      cp1004_148 = ex.v[148]
       # (= ?$assignment_call_139 3)
+      ex.debugBeginCondition(definition, 261)
       block:
         let value = sv56
         if value.isBound and not ex.v[148].isBound:
           ex.v[148] = value
-          state = 939
+          ex.debugEndCondition(definition, true)
+          state = 1005
           continue
-        state = 937
+        ex.debugEndCondition(definition, false)
+        state = 1003
         continue
-      state = 939
+      state = 1005
       continue
-    of 939:
+    of 1005:
       # (= ?$assignment_call_140 (call identity ?$assignment_call_139))
-      cp941_149 = ex.v[149]
+      cp1007_149 = ex.v[149]
       # (= ?$assignment_call_140 (call identity ?$assignment_call_139))
+      ex.debugBeginCondition(definition, 262)
       if not ex.v[149].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[148]], addr cs55, factSymbols)
         if ok:
           ex.setIfChanged(149, callResult)
-          state = 942
+          ex.debugEndCondition(definition, true)
+          state = 1008
           continue
-      state = 940
+      ex.debugEndCondition(definition, false)
+      state = 1006
       continue
-    of 942:
+    of 1008:
       # (<= ?$assignment_call_138 ?$assignment_call_140)
       # (<= ?$assignment_call_138 ?$assignment_call_140)
+      ex.debugBeginCondition(definition, 263)
       if compare(ex.v[147], ex.v[149], 3'u32):
-        state = 945
+        ex.debugEndCondition(definition, true)
+        state = 1011
         continue
-      state = 943
+      ex.debugEndCondition(definition, false)
+      state = 1009
       continue
-    of 945:
+    of 1011:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_141 4) (= ?$assignment_call_142 (call identity ?$assignment_call_141)) (= ?$assignment_call_143 ?value) (> ?$assignment_call_142 ?$assignment_call_143))
-      cp947_150 = ex.v[150]
-      cp947_151 = ex.v[151]
-      cp947_152 = ex.v[152]
+      cp1014_150 = ex.v[150]
+      cp1014_151 = ex.v[151]
+      cp1014_152 = ex.v[152]
+      ex.debugBeginCondition(definition, 264)
       # (= ?$assignment_call_141 4)
-      cp949_150 = ex.v[150]
+      cp1016_150 = ex.v[150]
       # (= ?$assignment_call_141 4)
+      ex.debugBeginCondition(definition, 265)
       block:
         let value = sv57
         if value.isBound and not ex.v[150].isBound:
           ex.v[150] = value
-          state = 950
+          ex.debugEndCondition(definition, true)
+          state = 1017
           continue
-        state = 948
+        ex.debugEndCondition(definition, false)
+        state = 1015
         continue
-      state = 950
+      state = 1017
       continue
-    of 950:
+    of 1017:
       # (= ?$assignment_call_142 (call identity ?$assignment_call_141))
-      cp952_151 = ex.v[151]
+      cp1019_151 = ex.v[151]
       # (= ?$assignment_call_142 (call identity ?$assignment_call_141))
+      ex.debugBeginCondition(definition, 266)
       if not ex.v[151].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[150]], addr cs56, factSymbols)
         if ok:
           ex.setIfChanged(151, callResult)
-          state = 953
+          ex.debugEndCondition(definition, true)
+          state = 1020
           continue
-      state = 951
+      ex.debugEndCondition(definition, false)
+      state = 1018
       continue
-    of 953:
+    of 1020:
       # (= ?$assignment_call_143 ?value)
-      cp955_152 = ex.v[152]
+      cp1022_152 = ex.v[152]
       # (= ?$assignment_call_143 ?value)
+      ex.debugBeginCondition(definition, 267)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[152].isBound:
           ex.v[152] = value
-          state = 956
+          ex.debugEndCondition(definition, true)
+          state = 1023
           continue
-        state = 954
+        ex.debugEndCondition(definition, false)
+        state = 1021
         continue
-      state = 956
+      state = 1023
       continue
-    of 956:
+    of 1023:
       # (> ?$assignment_call_142 ?$assignment_call_143)
       # (> ?$assignment_call_142 ?$assignment_call_143)
+      ex.debugBeginCondition(definition, 268)
       if compare(ex.v[151], ex.v[152], 4'u32):
-        state = 959
+        ex.debugEndCondition(definition, true)
+        state = 1026
         continue
-      state = 957
+      ex.debugEndCondition(definition, false)
+      state = 1024
       continue
-    of 959:
+    of 1026:
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_144 ?value) (= ?$assignment_call_145 3) (= ?$assignment_call_146 (call identity ?$assignment_call_145)) (>= ?$assignment_call_144 ?$assignment_call_146))
-      cp961_153 = ex.v[153]
-      cp961_154 = ex.v[154]
-      cp961_155 = ex.v[155]
+      cp1029_153 = ex.v[153]
+      cp1029_154 = ex.v[154]
+      cp1029_155 = ex.v[155]
+      ex.debugBeginCondition(definition, 269)
       # (= ?$assignment_call_144 ?value)
-      cp963_153 = ex.v[153]
+      cp1031_153 = ex.v[153]
       # (= ?$assignment_call_144 ?value)
+      ex.debugBeginCondition(definition, 270)
       block:
         let value = ex.v[27]
         if value.isBound and not ex.v[153].isBound:
           ex.v[153] = value
-          state = 964
-          continue
-        state = 962
-        continue
-      state = 964
-      continue
-    of 964:
-      # (= ?$assignment_call_145 3)
-      cp966_154 = ex.v[154]
-      # (= ?$assignment_call_145 3)
-      block:
-        let value = sv58
-        if value.isBound and not ex.v[154].isBound:
-          ex.v[154] = value
-          state = 967
-          continue
-        state = 965
-        continue
-      state = 967
-      continue
-    of 967:
-      # (= ?$assignment_call_146 (call identity ?$assignment_call_145))
-      cp969_155 = ex.v[155]
-      # (= ?$assignment_call_146 (call identity ?$assignment_call_145))
-      if not ex.v[155].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[154]], addr cs57, factSymbols)
-        if ok:
-          ex.setIfChanged(155, callResult)
-          state = 970
-          continue
-      state = 968
-      continue
-    of 970:
-      # (>= ?$assignment_call_144 ?$assignment_call_146)
-      # (>= ?$assignment_call_144 ?$assignment_call_146)
-      if compare(ex.v[153], ex.v[155], 5'u32):
-        state = 973
-        continue
-      state = 971
-      continue
-    of 973:
-      # (and (= ?$assignment_call_147 ?value) (= ?$assignment_call_148 (call identity ?$assignment_call_147)) (= ?$assignment_call_149 3) (== ?$assignment_call_148 ?$assignment_call_149))
-      cp975_156 = ex.v[156]
-      cp975_157 = ex.v[157]
-      cp975_158 = ex.v[158]
-      # (= ?$assignment_call_147 ?value)
-      cp977_156 = ex.v[156]
-      # (= ?$assignment_call_147 ?value)
-      block:
-        let value = ex.v[27]
-        if value.isBound and not ex.v[156].isBound:
-          ex.v[156] = value
-          state = 978
-          continue
-        state = 976
-        continue
-      state = 978
-      continue
-    of 978:
-      # (= ?$assignment_call_148 (call identity ?$assignment_call_147))
-      cp980_157 = ex.v[157]
-      # (= ?$assignment_call_148 (call identity ?$assignment_call_147))
-      if not ex.v[157].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[156]], addr cs58, factSymbols)
-        if ok:
-          ex.setIfChanged(157, callResult)
-          state = 981
-          continue
-      state = 979
-      continue
-    of 981:
-      # (= ?$assignment_call_149 3)
-      cp983_158 = ex.v[158]
-      # (= ?$assignment_call_149 3)
-      block:
-        let value = sv59
-        if value.isBound and not ex.v[158].isBound:
-          ex.v[158] = value
-          state = 984
-          continue
-        state = 982
-        continue
-      state = 984
-      continue
-    of 984:
-      # (== ?$assignment_call_148 ?$assignment_call_149)
-      # (== ?$assignment_call_148 ?$assignment_call_149)
-      if compare(ex.v[157], ex.v[158], 0'u32):
-        state = 987
-        continue
-      state = 985
-      continue
-    of 987:
-      # (and (= ?$assignment_call_150 2) (= ?$assignment_call_151 ?value) (= ?$assignment_call_152 (call identity ?$assignment_call_151)) (!= ?$assignment_call_150 ?$assignment_call_152))
-      cp989_159 = ex.v[159]
-      cp989_160 = ex.v[160]
-      cp989_161 = ex.v[161]
-      # (= ?$assignment_call_150 2)
-      cp991_159 = ex.v[159]
-      # (= ?$assignment_call_150 2)
-      block:
-        let value = sv60
-        if value.isBound and not ex.v[159].isBound:
-          ex.v[159] = value
-          state = 992
-          continue
-        state = 990
-        continue
-      state = 992
-      continue
-    of 992:
-      # (= ?$assignment_call_151 ?value)
-      cp994_160 = ex.v[160]
-      # (= ?$assignment_call_151 ?value)
-      block:
-        let value = ex.v[27]
-        if value.isBound and not ex.v[160].isBound:
-          ex.v[160] = value
-          state = 995
-          continue
-        state = 993
-        continue
-      state = 995
-      continue
-    of 995:
-      # (= ?$assignment_call_152 (call identity ?$assignment_call_151))
-      cp997_161 = ex.v[161]
-      # (= ?$assignment_call_152 (call identity ?$assignment_call_151))
-      if not ex.v[161].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[160]], addr cs59, factSymbols)
-        if ok:
-          ex.setIfChanged(161, callResult)
-          state = 998
-          continue
-      state = 996
-      continue
-    of 998:
-      # (!= ?$assignment_call_150 ?$assignment_call_152)
-      # (!= ?$assignment_call_150 ?$assignment_call_152)
-      if compare(ex.v[159], ex.v[161], 1'u32):
-        state = 1001
-        continue
-      state = 999
-      continue
-    of 1001:
-      # (and (= ?$assignment_call_153 1) (= ?$assignment_call_154 (call identity ?$assignment_call_153)) (= ?$assignment_call_155 (* ?$assignment_call_154 1)) (= ?$assignment_call_156 (* 2 1)) (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156)) (= ?$assignment_call_158 3) (== ?$assignment_call_157 ?$assignment_call_158))
-      cp1003_162 = ex.v[162]
-      cp1003_163 = ex.v[163]
-      cp1003_164 = ex.v[164]
-      cp1003_165 = ex.v[165]
-      cp1003_166 = ex.v[166]
-      cp1003_167 = ex.v[167]
-      # (= ?$assignment_call_153 1)
-      cp1005_162 = ex.v[162]
-      # (= ?$assignment_call_153 1)
-      block:
-        let value = sv61
-        if value.isBound and not ex.v[162].isBound:
-          ex.v[162] = value
-          state = 1006
-          continue
-        state = 1004
-        continue
-      state = 1006
-      continue
-    of 1006:
-      # (= ?$assignment_call_154 (call identity ?$assignment_call_153))
-      cp1008_163 = ex.v[163]
-      # (= ?$assignment_call_154 (call identity ?$assignment_call_153))
-      if not ex.v[163].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[162]], addr cs60, factSymbols)
-        if ok:
-          ex.setIfChanged(163, callResult)
-          state = 1009
-          continue
-      state = 1007
-      continue
-    of 1009:
-      # (= ?$assignment_call_155 (* ?$assignment_call_154 1))
-      cp1011_164 = ex.v[164]
-      # (= ?$assignment_call_155 (* ?$assignment_call_154 1))
-      block:
-        let value = arith(2'u32, [ex.v[163], newInt(1'i32)])
-        if value.isBound and not ex.v[164].isBound:
-          ex.v[164] = value
-          state = 1012
-          continue
-        state = 1010
-        continue
-      state = 1012
-      continue
-    of 1012:
-      # (= ?$assignment_call_156 (* 2 1))
-      cp1014_165 = ex.v[165]
-      # (= ?$assignment_call_156 (* 2 1))
-      block:
-        let value = arith(2'u32, [newInt(2'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[165].isBound:
-          ex.v[165] = value
-          state = 1015
-          continue
-        state = 1013
-        continue
-      state = 1015
-      continue
-    of 1015:
-      # (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
-      cp1017_166 = ex.v[166]
-      # (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
-      block:
-        let value = arith(0'u32, [ex.v[164], ex.v[165]])
-        if value.isBound and not ex.v[166].isBound:
-          ex.v[166] = value
-          state = 1018
-          continue
-        state = 1016
-        continue
-      state = 1018
-      continue
-    of 1018:
-      # (= ?$assignment_call_158 3)
-      cp1020_167 = ex.v[167]
-      # (= ?$assignment_call_158 3)
-      block:
-        let value = sv62
-        if value.isBound and not ex.v[167].isBound:
-          ex.v[167] = value
-          state = 1021
-          continue
-        state = 1019
-        continue
-      state = 1021
-      continue
-    of 1021:
-      # (== ?$assignment_call_157 ?$assignment_call_158)
-      # (== ?$assignment_call_157 ?$assignment_call_158)
-      if compare(ex.v[166], ex.v[167], 0'u32):
-        state = 1024
-        continue
-      state = 1022
-      continue
-    of 1024:
-      # (and (= ?$assignment_call_159 (* 5 1)) (= ?$assignment_call_160 2) (= ?$assignment_call_161 (call identity ?$assignment_call_160)) (= ?$assignment_call_162 (* ?$assignment_call_161 1)) (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162)) (= ?$assignment_call_164 3) (== ?$assignment_call_163 ?$assignment_call_164))
-      cp1026_168 = ex.v[168]
-      cp1026_169 = ex.v[169]
-      cp1026_170 = ex.v[170]
-      cp1026_171 = ex.v[171]
-      cp1026_172 = ex.v[172]
-      cp1026_173 = ex.v[173]
-      # (= ?$assignment_call_159 (* 5 1))
-      cp1028_168 = ex.v[168]
-      # (= ?$assignment_call_159 (* 5 1))
-      block:
-        let value = arith(2'u32, [newInt(5'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[168].isBound:
-          ex.v[168] = value
-          state = 1029
-          continue
-        state = 1027
-        continue
-      state = 1029
-      continue
-    of 1029:
-      # (= ?$assignment_call_160 2)
-      cp1031_169 = ex.v[169]
-      # (= ?$assignment_call_160 2)
-      block:
-        let value = sv63
-        if value.isBound and not ex.v[169].isBound:
-          ex.v[169] = value
+          ex.debugEndCondition(definition, true)
           state = 1032
           continue
+        ex.debugEndCondition(definition, false)
         state = 1030
         continue
       state = 1032
       continue
     of 1032:
-      # (= ?$assignment_call_161 (call identity ?$assignment_call_160))
-      cp1034_170 = ex.v[170]
-      # (= ?$assignment_call_161 (call identity ?$assignment_call_160))
-      if not ex.v[170].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[169]], addr cs61, factSymbols)
-        if ok:
-          ex.setIfChanged(170, callResult)
+      # (= ?$assignment_call_145 3)
+      cp1034_154 = ex.v[154]
+      # (= ?$assignment_call_145 3)
+      ex.debugBeginCondition(definition, 271)
+      block:
+        let value = sv58
+        if value.isBound and not ex.v[154].isBound:
+          ex.v[154] = value
+          ex.debugEndCondition(definition, true)
           state = 1035
           continue
-      state = 1033
+        ex.debugEndCondition(definition, false)
+        state = 1033
+        continue
+      state = 1035
       continue
     of 1035:
-      # (= ?$assignment_call_162 (* ?$assignment_call_161 1))
-      cp1037_171 = ex.v[171]
-      # (= ?$assignment_call_162 (* ?$assignment_call_161 1))
-      block:
-        let value = arith(2'u32, [ex.v[170], newInt(1'i32)])
-        if value.isBound and not ex.v[171].isBound:
-          ex.v[171] = value
+      # (= ?$assignment_call_146 (call identity ?$assignment_call_145))
+      cp1037_155 = ex.v[155]
+      # (= ?$assignment_call_146 (call identity ?$assignment_call_145))
+      ex.debugBeginCondition(definition, 272)
+      if not ex.v[155].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[154]], addr cs57, factSymbols)
+        if ok:
+          ex.setIfChanged(155, callResult)
+          ex.debugEndCondition(definition, true)
           state = 1038
           continue
-        state = 1036
-        continue
-      state = 1038
+      ex.debugEndCondition(definition, false)
+      state = 1036
       continue
     of 1038:
-      # (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
-      cp1040_172 = ex.v[172]
-      # (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
-      block:
-        let value = arith(1'u32, [ex.v[168], ex.v[171]])
-        if value.isBound and not ex.v[172].isBound:
-          ex.v[172] = value
-          state = 1041
-          continue
-        state = 1039
+      # (>= ?$assignment_call_144 ?$assignment_call_146)
+      # (>= ?$assignment_call_144 ?$assignment_call_146)
+      ex.debugBeginCondition(definition, 273)
+      if compare(ex.v[153], ex.v[155], 5'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1041
         continue
-      state = 1041
+      ex.debugEndCondition(definition, false)
+      state = 1039
       continue
     of 1041:
-      # (= ?$assignment_call_164 3)
-      cp1043_173 = ex.v[173]
-      # (= ?$assignment_call_164 3)
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_147 ?value) (= ?$assignment_call_148 (call identity ?$assignment_call_147)) (= ?$assignment_call_149 3) (== ?$assignment_call_148 ?$assignment_call_149))
+      cp1044_156 = ex.v[156]
+      cp1044_157 = ex.v[157]
+      cp1044_158 = ex.v[158]
+      ex.debugBeginCondition(definition, 274)
+      # (= ?$assignment_call_147 ?value)
+      cp1046_156 = ex.v[156]
+      # (= ?$assignment_call_147 ?value)
+      ex.debugBeginCondition(definition, 275)
       block:
-        let value = sv64
-        if value.isBound and not ex.v[173].isBound:
-          ex.v[173] = value
-          state = 1044
+        let value = ex.v[27]
+        if value.isBound and not ex.v[156].isBound:
+          ex.v[156] = value
+          ex.debugEndCondition(definition, true)
+          state = 1047
           continue
-        state = 1042
+        ex.debugEndCondition(definition, false)
+        state = 1045
         continue
-      state = 1044
-      continue
-    of 1044:
-      # (== ?$assignment_call_163 ?$assignment_call_164)
-      # (== ?$assignment_call_163 ?$assignment_call_164)
-      if compare(ex.v[172], ex.v[173], 0'u32):
-        state = 1047
-        continue
-      state = 1045
+      state = 1047
       continue
     of 1047:
-      # (and (= ?$assignment_call_165 2) (= ?$assignment_call_166 (call identity ?$assignment_call_165)) (= ?$assignment_call_167 (* ?$assignment_call_166 1)) (= ?$assignment_call_168 (* 3 1)) (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168)) (= ?$assignment_call_170 6) (== ?$assignment_call_169 ?$assignment_call_170))
-      cp1049_174 = ex.v[174]
-      cp1049_175 = ex.v[175]
-      cp1049_176 = ex.v[176]
-      cp1049_177 = ex.v[177]
-      cp1049_178 = ex.v[178]
-      cp1049_179 = ex.v[179]
-      # (= ?$assignment_call_165 2)
-      cp1051_174 = ex.v[174]
-      # (= ?$assignment_call_165 2)
-      block:
-        let value = sv65
-        if value.isBound and not ex.v[174].isBound:
-          ex.v[174] = value
-          state = 1052
-          continue
-        state = 1050
-        continue
-      state = 1052
-      continue
-    of 1052:
-      # (= ?$assignment_call_166 (call identity ?$assignment_call_165))
-      cp1054_175 = ex.v[175]
-      # (= ?$assignment_call_166 (call identity ?$assignment_call_165))
-      if not ex.v[175].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[174]], addr cs62, factSymbols)
+      # (= ?$assignment_call_148 (call identity ?$assignment_call_147))
+      cp1049_157 = ex.v[157]
+      # (= ?$assignment_call_148 (call identity ?$assignment_call_147))
+      ex.debugBeginCondition(definition, 276)
+      if not ex.v[157].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[156]], addr cs58, factSymbols)
         if ok:
-          ex.setIfChanged(175, callResult)
-          state = 1055
+          ex.setIfChanged(157, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1050
           continue
+      ex.debugEndCondition(definition, false)
+      state = 1048
+      continue
+    of 1050:
+      # (= ?$assignment_call_149 3)
+      cp1052_158 = ex.v[158]
+      # (= ?$assignment_call_149 3)
+      ex.debugBeginCondition(definition, 277)
+      block:
+        let value = sv59
+        if value.isBound and not ex.v[158].isBound:
+          ex.v[158] = value
+          ex.debugEndCondition(definition, true)
+          state = 1053
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1051
+        continue
       state = 1053
       continue
-    of 1055:
-      # (= ?$assignment_call_167 (* ?$assignment_call_166 1))
-      cp1057_176 = ex.v[176]
-      # (= ?$assignment_call_167 (* ?$assignment_call_166 1))
-      block:
-        let value = arith(2'u32, [ex.v[175], newInt(1'i32)])
-        if value.isBound and not ex.v[176].isBound:
-          ex.v[176] = value
-          state = 1058
-          continue
+    of 1053:
+      # (== ?$assignment_call_148 ?$assignment_call_149)
+      # (== ?$assignment_call_148 ?$assignment_call_149)
+      ex.debugBeginCondition(definition, 278)
+      if compare(ex.v[157], ex.v[158], 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 1056
         continue
-      state = 1058
+      ex.debugEndCondition(definition, false)
+      state = 1054
       continue
-    of 1058:
-      # (= ?$assignment_call_168 (* 3 1))
-      cp1060_177 = ex.v[177]
-      # (= ?$assignment_call_168 (* 3 1))
+    of 1056:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_150 2) (= ?$assignment_call_151 ?value) (= ?$assignment_call_152 (call identity ?$assignment_call_151)) (!= ?$assignment_call_150 ?$assignment_call_152))
+      cp1059_159 = ex.v[159]
+      cp1059_160 = ex.v[160]
+      cp1059_161 = ex.v[161]
+      ex.debugBeginCondition(definition, 279)
+      # (= ?$assignment_call_150 2)
+      cp1061_159 = ex.v[159]
+      # (= ?$assignment_call_150 2)
+      ex.debugBeginCondition(definition, 280)
       block:
-        let value = arith(2'u32, [newInt(3'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[177].isBound:
-          ex.v[177] = value
-          state = 1061
+        let value = sv60
+        if value.isBound and not ex.v[159].isBound:
+          ex.v[159] = value
+          ex.debugEndCondition(definition, true)
+          state = 1062
           continue
-        state = 1059
+        ex.debugEndCondition(definition, false)
+        state = 1060
         continue
-      state = 1061
+      state = 1062
       continue
-    of 1061:
-      # (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
-      cp1063_178 = ex.v[178]
-      # (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
+    of 1062:
+      # (= ?$assignment_call_151 ?value)
+      cp1064_160 = ex.v[160]
+      # (= ?$assignment_call_151 ?value)
+      ex.debugBeginCondition(definition, 281)
       block:
-        let value = arith(2'u32, [ex.v[176], ex.v[177]])
-        if value.isBound and not ex.v[178].isBound:
-          ex.v[178] = value
-          state = 1064
+        let value = ex.v[27]
+        if value.isBound and not ex.v[160].isBound:
+          ex.v[160] = value
+          ex.debugEndCondition(definition, true)
+          state = 1065
           continue
-        state = 1062
+        ex.debugEndCondition(definition, false)
+        state = 1063
         continue
-      state = 1064
+      state = 1065
       continue
-    of 1064:
-      # (= ?$assignment_call_170 6)
-      cp1066_179 = ex.v[179]
-      # (= ?$assignment_call_170 6)
+    of 1065:
+      # (= ?$assignment_call_152 (call identity ?$assignment_call_151))
+      cp1067_161 = ex.v[161]
+      # (= ?$assignment_call_152 (call identity ?$assignment_call_151))
+      ex.debugBeginCondition(definition, 282)
+      if not ex.v[161].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[160]], addr cs59, factSymbols)
+        if ok:
+          ex.setIfChanged(161, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1068
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1066
+      continue
+    of 1068:
+      # (!= ?$assignment_call_150 ?$assignment_call_152)
+      # (!= ?$assignment_call_150 ?$assignment_call_152)
+      ex.debugBeginCondition(definition, 283)
+      if compare(ex.v[159], ex.v[161], 1'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1071
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1069
+      continue
+    of 1071:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_153 1) (= ?$assignment_call_154 (call identity ?$assignment_call_153)) (= ?$assignment_call_155 (* ?$assignment_call_154 1)) (= ?$assignment_call_156 (* 2 1)) (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156)) (= ?$assignment_call_158 3) (== ?$assignment_call_157 ?$assignment_call_158))
+      cp1074_162 = ex.v[162]
+      cp1074_163 = ex.v[163]
+      cp1074_164 = ex.v[164]
+      cp1074_165 = ex.v[165]
+      cp1074_166 = ex.v[166]
+      cp1074_167 = ex.v[167]
+      ex.debugBeginCondition(definition, 284)
+      # (= ?$assignment_call_153 1)
+      cp1076_162 = ex.v[162]
+      # (= ?$assignment_call_153 1)
+      ex.debugBeginCondition(definition, 285)
       block:
-        let value = sv66
-        if value.isBound and not ex.v[179].isBound:
-          ex.v[179] = value
-          state = 1067
+        let value = sv61
+        if value.isBound and not ex.v[162].isBound:
+          ex.v[162] = value
+          ex.debugEndCondition(definition, true)
+          state = 1077
           continue
-        state = 1065
+        ex.debugEndCondition(definition, false)
+        state = 1075
         continue
-      state = 1067
+      state = 1077
       continue
-    of 1067:
-      # (== ?$assignment_call_169 ?$assignment_call_170)
-      # (== ?$assignment_call_169 ?$assignment_call_170)
-      if compare(ex.v[178], ex.v[179], 0'u32):
-        state = 1070
-        continue
-      state = 1068
-      continue
-    of 1070:
-      # (and (= ?$assignment_call_171 (* 6 1)) (= ?$assignment_call_172 2) (= ?$assignment_call_173 (call identity ?$assignment_call_172)) (= ?$assignment_call_174 (* ?$assignment_call_173 1)) (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174)) (= ?$assignment_call_176 3) (== ?$assignment_call_175 ?$assignment_call_176))
-      cp1072_180 = ex.v[180]
-      cp1072_181 = ex.v[181]
-      cp1072_182 = ex.v[182]
-      cp1072_183 = ex.v[183]
-      cp1072_184 = ex.v[184]
-      cp1072_185 = ex.v[185]
-      # (= ?$assignment_call_171 (* 6 1))
-      cp1074_180 = ex.v[180]
-      # (= ?$assignment_call_171 (* 6 1))
-      block:
-        let value = arith(2'u32, [newInt(6'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[180].isBound:
-          ex.v[180] = value
-          state = 1075
+    of 1077:
+      # (= ?$assignment_call_154 (call identity ?$assignment_call_153))
+      cp1079_163 = ex.v[163]
+      # (= ?$assignment_call_154 (call identity ?$assignment_call_153))
+      ex.debugBeginCondition(definition, 286)
+      if not ex.v[163].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[162]], addr cs60, factSymbols)
+        if ok:
+          ex.setIfChanged(163, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1080
           continue
-        state = 1073
-        continue
-      state = 1075
-      continue
-    of 1075:
-      # (= ?$assignment_call_172 2)
-      cp1077_181 = ex.v[181]
-      # (= ?$assignment_call_172 2)
-      block:
-        let value = sv67
-        if value.isBound and not ex.v[181].isBound:
-          ex.v[181] = value
-          state = 1078
-          continue
-        state = 1076
-        continue
+      ex.debugEndCondition(definition, false)
       state = 1078
       continue
-    of 1078:
-      # (= ?$assignment_call_173 (call identity ?$assignment_call_172))
-      cp1080_182 = ex.v[182]
-      # (= ?$assignment_call_173 (call identity ?$assignment_call_172))
-      if not ex.v[182].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[181]], addr cs63, factSymbols)
-        if ok:
-          ex.setIfChanged(182, callResult)
-          state = 1081
-          continue
-      state = 1079
-      continue
-    of 1081:
-      # (= ?$assignment_call_174 (* ?$assignment_call_173 1))
-      cp1083_183 = ex.v[183]
-      # (= ?$assignment_call_174 (* ?$assignment_call_173 1))
+    of 1080:
+      # (= ?$assignment_call_155 (* ?$assignment_call_154 1))
+      cp1082_164 = ex.v[164]
+      # (= ?$assignment_call_155 (* ?$assignment_call_154 1))
+      ex.debugBeginCondition(definition, 287)
       block:
-        let value = arith(2'u32, [ex.v[182], newInt(1'i32)])
-        if value.isBound and not ex.v[183].isBound:
-          ex.v[183] = value
-          state = 1084
+        let value = arith(2'u32, [ex.v[163], newInt(1'i32)])
+        if value.isBound and not ex.v[164].isBound:
+          ex.v[164] = value
+          ex.debugEndCondition(definition, true)
+          state = 1083
           continue
-        state = 1082
+        ex.debugEndCondition(definition, false)
+        state = 1081
         continue
-      state = 1084
+      state = 1083
       continue
-    of 1084:
-      # (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
-      cp1086_184 = ex.v[184]
-      # (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
+    of 1083:
+      # (= ?$assignment_call_156 (* 2 1))
+      cp1085_165 = ex.v[165]
+      # (= ?$assignment_call_156 (* 2 1))
+      ex.debugBeginCondition(definition, 288)
       block:
-        let value = arith(3'u32, [ex.v[180], ex.v[183]])
-        if value.isBound and not ex.v[184].isBound:
-          ex.v[184] = value
-          state = 1087
+        let value = arith(2'u32, [newInt(2'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[165].isBound:
+          ex.v[165] = value
+          ex.debugEndCondition(definition, true)
+          state = 1086
           continue
-        state = 1085
+        ex.debugEndCondition(definition, false)
+        state = 1084
         continue
-      state = 1087
+      state = 1086
       continue
-    of 1087:
-      # (= ?$assignment_call_176 3)
-      cp1089_185 = ex.v[185]
-      # (= ?$assignment_call_176 3)
+    of 1086:
+      # (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
+      cp1088_166 = ex.v[166]
+      # (= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))
+      ex.debugBeginCondition(definition, 289)
       block:
-        let value = sv68
-        if value.isBound and not ex.v[185].isBound:
-          ex.v[185] = value
-          state = 1090
+        let value = arith(0'u32, [ex.v[164], ex.v[165]])
+        if value.isBound and not ex.v[166].isBound:
+          ex.v[166] = value
+          ex.debugEndCondition(definition, true)
+          state = 1089
           continue
-        state = 1088
+        ex.debugEndCondition(definition, false)
+        state = 1087
         continue
-      state = 1090
+      state = 1089
       continue
-    of 1090:
-      # (== ?$assignment_call_175 ?$assignment_call_176)
-      # (== ?$assignment_call_175 ?$assignment_call_176)
-      if compare(ex.v[184], ex.v[185], 0'u32):
-        state = 1093
-        continue
-      state = 1091
-      continue
-    of 1093:
-      # (and (= ?$assignment_call_177 7) (= ?$assignment_call_178 (call identity ?$assignment_call_177)) (= ?$assignment_call_179 (* ?$assignment_call_178 1)) (= ?$assignment_call_180 (* 4 1)) (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180)) (= ?$assignment_call_182 3) (== ?$assignment_call_181 ?$assignment_call_182))
-      cp1095_186 = ex.v[186]
-      cp1095_187 = ex.v[187]
-      cp1095_188 = ex.v[188]
-      cp1095_189 = ex.v[189]
-      cp1095_190 = ex.v[190]
-      cp1095_191 = ex.v[191]
-      # (= ?$assignment_call_177 7)
-      cp1097_186 = ex.v[186]
-      # (= ?$assignment_call_177 7)
+    of 1089:
+      # (= ?$assignment_call_158 3)
+      cp1091_167 = ex.v[167]
+      # (= ?$assignment_call_158 3)
+      ex.debugBeginCondition(definition, 290)
       block:
-        let value = sv69
-        if value.isBound and not ex.v[186].isBound:
-          ex.v[186] = value
-          state = 1098
+        let value = sv62
+        if value.isBound and not ex.v[167].isBound:
+          ex.v[167] = value
+          ex.debugEndCondition(definition, true)
+          state = 1092
           continue
-        state = 1096
+        ex.debugEndCondition(definition, false)
+        state = 1090
         continue
-      state = 1098
+      state = 1092
       continue
-    of 1098:
-      # (= ?$assignment_call_178 (call identity ?$assignment_call_177))
-      cp1100_187 = ex.v[187]
-      # (= ?$assignment_call_178 (call identity ?$assignment_call_177))
-      if not ex.v[187].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[186]], addr cs64, factSymbols)
-        if ok:
-          ex.setIfChanged(187, callResult)
+    of 1092:
+      # (== ?$assignment_call_157 ?$assignment_call_158)
+      # (== ?$assignment_call_157 ?$assignment_call_158)
+      ex.debugBeginCondition(definition, 291)
+      if compare(ex.v[166], ex.v[167], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1095
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1093
+      continue
+    of 1095:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_159 (* 5 1)) (= ?$assignment_call_160 2) (= ?$assignment_call_161 (call identity ?$assignment_call_160)) (= ?$assignment_call_162 (* ?$assignment_call_161 1)) (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162)) (= ?$assignment_call_164 3) (== ?$assignment_call_163 ?$assignment_call_164))
+      cp1098_168 = ex.v[168]
+      cp1098_169 = ex.v[169]
+      cp1098_170 = ex.v[170]
+      cp1098_171 = ex.v[171]
+      cp1098_172 = ex.v[172]
+      cp1098_173 = ex.v[173]
+      ex.debugBeginCondition(definition, 292)
+      # (= ?$assignment_call_159 (* 5 1))
+      cp1100_168 = ex.v[168]
+      # (= ?$assignment_call_159 (* 5 1))
+      ex.debugBeginCondition(definition, 293)
+      block:
+        let value = arith(2'u32, [newInt(5'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[168].isBound:
+          ex.v[168] = value
+          ex.debugEndCondition(definition, true)
           state = 1101
           continue
-      state = 1099
+        ex.debugEndCondition(definition, false)
+        state = 1099
+        continue
+      state = 1101
       continue
     of 1101:
-      # (= ?$assignment_call_179 (* ?$assignment_call_178 1))
-      cp1103_188 = ex.v[188]
-      # (= ?$assignment_call_179 (* ?$assignment_call_178 1))
+      # (= ?$assignment_call_160 2)
+      cp1103_169 = ex.v[169]
+      # (= ?$assignment_call_160 2)
+      ex.debugBeginCondition(definition, 294)
       block:
-        let value = arith(2'u32, [ex.v[187], newInt(1'i32)])
-        if value.isBound and not ex.v[188].isBound:
-          ex.v[188] = value
+        let value = sv63
+        if value.isBound and not ex.v[169].isBound:
+          ex.v[169] = value
+          ex.debugEndCondition(definition, true)
           state = 1104
           continue
+        ex.debugEndCondition(definition, false)
         state = 1102
         continue
       state = 1104
       continue
     of 1104:
-      # (= ?$assignment_call_180 (* 4 1))
-      cp1106_189 = ex.v[189]
-      # (= ?$assignment_call_180 (* 4 1))
-      block:
-        let value = arith(2'u32, [newInt(4'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[189].isBound:
-          ex.v[189] = value
+      # (= ?$assignment_call_161 (call identity ?$assignment_call_160))
+      cp1106_170 = ex.v[170]
+      # (= ?$assignment_call_161 (call identity ?$assignment_call_160))
+      ex.debugBeginCondition(definition, 295)
+      if not ex.v[170].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[169]], addr cs61, factSymbols)
+        if ok:
+          ex.setIfChanged(170, callResult)
+          ex.debugEndCondition(definition, true)
           state = 1107
           continue
-        state = 1105
-        continue
-      state = 1107
+      ex.debugEndCondition(definition, false)
+      state = 1105
       continue
     of 1107:
-      # (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
-      cp1109_190 = ex.v[190]
-      # (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
+      # (= ?$assignment_call_162 (* ?$assignment_call_161 1))
+      cp1109_171 = ex.v[171]
+      # (= ?$assignment_call_162 (* ?$assignment_call_161 1))
+      ex.debugBeginCondition(definition, 296)
       block:
-        let value = arith(4'u32, [ex.v[188], ex.v[189]])
-        if value.isBound and not ex.v[190].isBound:
-          ex.v[190] = value
+        let value = arith(2'u32, [ex.v[170], newInt(1'i32)])
+        if value.isBound and not ex.v[171].isBound:
+          ex.v[171] = value
+          ex.debugEndCondition(definition, true)
           state = 1110
           continue
+        ex.debugEndCondition(definition, false)
         state = 1108
         continue
       state = 1110
       continue
     of 1110:
-      # (= ?$assignment_call_182 3)
-      cp1112_191 = ex.v[191]
-      # (= ?$assignment_call_182 3)
+      # (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
+      cp1112_172 = ex.v[172]
+      # (= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))
+      ex.debugBeginCondition(definition, 297)
       block:
-        let value = sv70
-        if value.isBound and not ex.v[191].isBound:
-          ex.v[191] = value
+        let value = arith(1'u32, [ex.v[168], ex.v[171]])
+        if value.isBound and not ex.v[172].isBound:
+          ex.v[172] = value
+          ex.debugEndCondition(definition, true)
           state = 1113
           continue
+        ex.debugEndCondition(definition, false)
         state = 1111
         continue
       state = 1113
       continue
     of 1113:
-      # (== ?$assignment_call_181 ?$assignment_call_182)
-      # (== ?$assignment_call_181 ?$assignment_call_182)
-      if compare(ex.v[190], ex.v[191], 0'u32):
-        state = 1116
+      # (= ?$assignment_call_164 3)
+      cp1115_173 = ex.v[173]
+      # (= ?$assignment_call_164 3)
+      ex.debugBeginCondition(definition, 298)
+      block:
+        let value = sv64
+        if value.isBound and not ex.v[173].isBound:
+          ex.v[173] = value
+          ex.debugEndCondition(definition, true)
+          state = 1116
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1114
         continue
-      state = 1114
+      state = 1116
       continue
     of 1116:
-      # (and (= ?$assignment_call_183 2) (= ?$assignment_call_184 (call identity ?$assignment_call_183)) (= ?$assignment_call_185 (* ?$assignment_call_184 1)) (= ?$assignment_call_186 (++ ?$assignment_call_185)) (= ?$assignment_call_187 3) (== ?$assignment_call_186 ?$assignment_call_187))
-      cp1118_192 = ex.v[192]
-      cp1118_193 = ex.v[193]
-      cp1118_194 = ex.v[194]
-      cp1118_195 = ex.v[195]
-      cp1118_196 = ex.v[196]
-      # (= ?$assignment_call_183 2)
-      cp1120_192 = ex.v[192]
-      # (= ?$assignment_call_183 2)
-      block:
-        let value = sv71
-        if value.isBound and not ex.v[192].isBound:
-          ex.v[192] = value
-          state = 1121
-          continue
+      # (== ?$assignment_call_163 ?$assignment_call_164)
+      # (== ?$assignment_call_163 ?$assignment_call_164)
+      ex.debugBeginCondition(definition, 299)
+      if compare(ex.v[172], ex.v[173], 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 1119
         continue
-      state = 1121
+      ex.debugEndCondition(definition, false)
+      state = 1117
       continue
-    of 1121:
-      # (= ?$assignment_call_184 (call identity ?$assignment_call_183))
-      cp1123_193 = ex.v[193]
-      # (= ?$assignment_call_184 (call identity ?$assignment_call_183))
-      if not ex.v[193].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[192]], addr cs65, factSymbols)
+    of 1119:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_165 2) (= ?$assignment_call_166 (call identity ?$assignment_call_165)) (= ?$assignment_call_167 (* ?$assignment_call_166 1)) (= ?$assignment_call_168 (* 3 1)) (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168)) (= ?$assignment_call_170 6) (== ?$assignment_call_169 ?$assignment_call_170))
+      cp1122_174 = ex.v[174]
+      cp1122_175 = ex.v[175]
+      cp1122_176 = ex.v[176]
+      cp1122_177 = ex.v[177]
+      cp1122_178 = ex.v[178]
+      cp1122_179 = ex.v[179]
+      ex.debugBeginCondition(definition, 300)
+      # (= ?$assignment_call_165 2)
+      cp1124_174 = ex.v[174]
+      # (= ?$assignment_call_165 2)
+      ex.debugBeginCondition(definition, 301)
+      block:
+        let value = sv65
+        if value.isBound and not ex.v[174].isBound:
+          ex.v[174] = value
+          ex.debugEndCondition(definition, true)
+          state = 1125
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1123
+        continue
+      state = 1125
+      continue
+    of 1125:
+      # (= ?$assignment_call_166 (call identity ?$assignment_call_165))
+      cp1127_175 = ex.v[175]
+      # (= ?$assignment_call_166 (call identity ?$assignment_call_165))
+      ex.debugBeginCondition(definition, 302)
+      if not ex.v[175].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[174]], addr cs62, factSymbols)
         if ok:
-          ex.setIfChanged(193, callResult)
-          state = 1124
+          ex.setIfChanged(175, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1128
           continue
-      state = 1122
+      ex.debugEndCondition(definition, false)
+      state = 1126
       continue
-    of 1124:
-      # (= ?$assignment_call_185 (* ?$assignment_call_184 1))
-      cp1126_194 = ex.v[194]
-      # (= ?$assignment_call_185 (* ?$assignment_call_184 1))
+    of 1128:
+      # (= ?$assignment_call_167 (* ?$assignment_call_166 1))
+      cp1130_176 = ex.v[176]
+      # (= ?$assignment_call_167 (* ?$assignment_call_166 1))
+      ex.debugBeginCondition(definition, 303)
       block:
-        let value = arith(2'u32, [ex.v[193], newInt(1'i32)])
-        if value.isBound and not ex.v[194].isBound:
-          ex.v[194] = value
-          state = 1127
+        let value = arith(2'u32, [ex.v[175], newInt(1'i32)])
+        if value.isBound and not ex.v[176].isBound:
+          ex.v[176] = value
+          ex.debugEndCondition(definition, true)
+          state = 1131
           continue
-        state = 1125
+        ex.debugEndCondition(definition, false)
+        state = 1129
         continue
-      state = 1127
+      state = 1131
       continue
-    of 1127:
-      # (= ?$assignment_call_186 (++ ?$assignment_call_185))
-      cp1129_195 = ex.v[195]
-      # (= ?$assignment_call_186 (++ ?$assignment_call_185))
+    of 1131:
+      # (= ?$assignment_call_168 (* 3 1))
+      cp1133_177 = ex.v[177]
+      # (= ?$assignment_call_168 (* 3 1))
+      ex.debugBeginCondition(definition, 304)
       block:
-        let value = arith(5'u32, [ex.v[194]])
-        if value.isBound and not ex.v[195].isBound:
-          ex.v[195] = value
-          state = 1130
+        let value = arith(2'u32, [newInt(3'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[177].isBound:
+          ex.v[177] = value
+          ex.debugEndCondition(definition, true)
+          state = 1134
           continue
-        state = 1128
-        continue
-      state = 1130
-      continue
-    of 1130:
-      # (= ?$assignment_call_187 3)
-      cp1132_196 = ex.v[196]
-      # (= ?$assignment_call_187 3)
-      block:
-        let value = sv72
-        if value.isBound and not ex.v[196].isBound:
-          ex.v[196] = value
-          state = 1133
-          continue
-        state = 1131
-        continue
-      state = 1133
-      continue
-    of 1133:
-      # (== ?$assignment_call_186 ?$assignment_call_187)
-      # (== ?$assignment_call_186 ?$assignment_call_187)
-      if compare(ex.v[195], ex.v[196], 0'u32):
-        state = 1136
+        ex.debugEndCondition(definition, false)
+        state = 1132
         continue
       state = 1134
       continue
-    of 1136:
-      # (and (= ?$assignment_call_188 4) (= ?$assignment_call_189 (call identity ?$assignment_call_188)) (= ?$assignment_call_190 (* ?$assignment_call_189 1)) (= ?$assignment_call_191 (-- ?$assignment_call_190)) (= ?$assignment_call_192 3) (== ?$assignment_call_191 ?$assignment_call_192))
-      cp1138_197 = ex.v[197]
-      cp1138_198 = ex.v[198]
-      cp1138_199 = ex.v[199]
-      cp1138_200 = ex.v[200]
-      cp1138_201 = ex.v[201]
-      # (= ?$assignment_call_188 4)
-      cp1140_197 = ex.v[197]
-      # (= ?$assignment_call_188 4)
+    of 1134:
+      # (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
+      cp1136_178 = ex.v[178]
+      # (= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))
+      ex.debugBeginCondition(definition, 305)
       block:
-        let value = sv73
-        if value.isBound and not ex.v[197].isBound:
-          ex.v[197] = value
-          state = 1141
+        let value = arith(2'u32, [ex.v[176], ex.v[177]])
+        if value.isBound and not ex.v[178].isBound:
+          ex.v[178] = value
+          ex.debugEndCondition(definition, true)
+          state = 1137
           continue
-        state = 1139
+        ex.debugEndCondition(definition, false)
+        state = 1135
         continue
+      state = 1137
+      continue
+    of 1137:
+      # (= ?$assignment_call_170 6)
+      cp1139_179 = ex.v[179]
+      # (= ?$assignment_call_170 6)
+      ex.debugBeginCondition(definition, 306)
+      block:
+        let value = sv66
+        if value.isBound and not ex.v[179].isBound:
+          ex.v[179] = value
+          ex.debugEndCondition(definition, true)
+          state = 1140
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1138
+        continue
+      state = 1140
+      continue
+    of 1140:
+      # (== ?$assignment_call_169 ?$assignment_call_170)
+      # (== ?$assignment_call_169 ?$assignment_call_170)
+      ex.debugBeginCondition(definition, 307)
+      if compare(ex.v[178], ex.v[179], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1143
+        continue
+      ex.debugEndCondition(definition, false)
       state = 1141
       continue
-    of 1141:
-      # (= ?$assignment_call_189 (call identity ?$assignment_call_188))
-      cp1143_198 = ex.v[198]
-      # (= ?$assignment_call_189 (call identity ?$assignment_call_188))
-      if not ex.v[198].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[197]], addr cs66, factSymbols)
+    of 1143:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_171 (* 6 1)) (= ?$assignment_call_172 2) (= ?$assignment_call_173 (call identity ?$assignment_call_172)) (= ?$assignment_call_174 (* ?$assignment_call_173 1)) (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174)) (= ?$assignment_call_176 3) (== ?$assignment_call_175 ?$assignment_call_176))
+      cp1146_180 = ex.v[180]
+      cp1146_181 = ex.v[181]
+      cp1146_182 = ex.v[182]
+      cp1146_183 = ex.v[183]
+      cp1146_184 = ex.v[184]
+      cp1146_185 = ex.v[185]
+      ex.debugBeginCondition(definition, 308)
+      # (= ?$assignment_call_171 (* 6 1))
+      cp1148_180 = ex.v[180]
+      # (= ?$assignment_call_171 (* 6 1))
+      ex.debugBeginCondition(definition, 309)
+      block:
+        let value = arith(2'u32, [newInt(6'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[180].isBound:
+          ex.v[180] = value
+          ex.debugEndCondition(definition, true)
+          state = 1149
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1147
+        continue
+      state = 1149
+      continue
+    of 1149:
+      # (= ?$assignment_call_172 2)
+      cp1151_181 = ex.v[181]
+      # (= ?$assignment_call_172 2)
+      ex.debugBeginCondition(definition, 310)
+      block:
+        let value = sv67
+        if value.isBound and not ex.v[181].isBound:
+          ex.v[181] = value
+          ex.debugEndCondition(definition, true)
+          state = 1152
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1150
+        continue
+      state = 1152
+      continue
+    of 1152:
+      # (= ?$assignment_call_173 (call identity ?$assignment_call_172))
+      cp1154_182 = ex.v[182]
+      # (= ?$assignment_call_173 (call identity ?$assignment_call_172))
+      ex.debugBeginCondition(definition, 311)
+      if not ex.v[182].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[181]], addr cs63, factSymbols)
         if ok:
-          ex.setIfChanged(198, callResult)
-          state = 1144
+          ex.setIfChanged(182, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1155
           continue
-      state = 1142
-      continue
-    of 1144:
-      # (= ?$assignment_call_190 (* ?$assignment_call_189 1))
-      cp1146_199 = ex.v[199]
-      # (= ?$assignment_call_190 (* ?$assignment_call_189 1))
-      block:
-        let value = arith(2'u32, [ex.v[198], newInt(1'i32)])
-        if value.isBound and not ex.v[199].isBound:
-          ex.v[199] = value
-          state = 1147
-          continue
-        state = 1145
-        continue
-      state = 1147
-      continue
-    of 1147:
-      # (= ?$assignment_call_191 (-- ?$assignment_call_190))
-      cp1149_200 = ex.v[200]
-      # (= ?$assignment_call_191 (-- ?$assignment_call_190))
-      block:
-        let value = arith(6'u32, [ex.v[199]])
-        if value.isBound and not ex.v[200].isBound:
-          ex.v[200] = value
-          state = 1150
-          continue
-        state = 1148
-        continue
-      state = 1150
-      continue
-    of 1150:
-      # (= ?$assignment_call_192 3)
-      cp1152_201 = ex.v[201]
-      # (= ?$assignment_call_192 3)
-      block:
-        let value = sv74
-        if value.isBound and not ex.v[201].isBound:
-          ex.v[201] = value
-          state = 1153
-          continue
-        state = 1151
-        continue
+      ex.debugEndCondition(definition, false)
       state = 1153
       continue
-    of 1153:
-      # (== ?$assignment_call_191 ?$assignment_call_192)
-      # (== ?$assignment_call_191 ?$assignment_call_192)
-      if compare(ex.v[200], ex.v[201], 0'u32):
+    of 1155:
+      # (= ?$assignment_call_174 (* ?$assignment_call_173 1))
+      cp1157_183 = ex.v[183]
+      # (= ?$assignment_call_174 (* ?$assignment_call_173 1))
+      ex.debugBeginCondition(definition, 312)
+      block:
+        let value = arith(2'u32, [ex.v[182], newInt(1'i32)])
+        if value.isBound and not ex.v[183].isBound:
+          ex.v[183] = value
+          ex.debugEndCondition(definition, true)
+          state = 1158
+          continue
+        ex.debugEndCondition(definition, false)
         state = 1156
         continue
-      state = 1154
+      state = 1158
       continue
-    of 1156:
-      # (and (= ?$assignment_call_193 (* 1 1)) (= ?$assignment_call_194 2) (= ?$assignment_call_195 (call identity ?$assignment_call_194)) (= ?$assignment_call_196 (* ?$assignment_call_195 1)) (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196)) (= ?$assignment_call_198 (call identity ?$assignment_call_197)) (= ?$assignment_call_199 3) (== ?$assignment_call_198 ?$assignment_call_199))
-      cp1158_202 = ex.v[202]
-      cp1158_203 = ex.v[203]
-      cp1158_204 = ex.v[204]
-      cp1158_205 = ex.v[205]
-      cp1158_206 = ex.v[206]
-      cp1158_207 = ex.v[207]
-      cp1158_208 = ex.v[208]
-      # (= ?$assignment_call_193 (* 1 1))
-      cp1160_202 = ex.v[202]
-      # (= ?$assignment_call_193 (* 1 1))
+    of 1158:
+      # (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
+      cp1160_184 = ex.v[184]
+      # (= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))
+      ex.debugBeginCondition(definition, 313)
       block:
-        let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
-        if value.isBound and not ex.v[202].isBound:
-          ex.v[202] = value
+        let value = arith(3'u32, [ex.v[180], ex.v[183]])
+        if value.isBound and not ex.v[184].isBound:
+          ex.v[184] = value
+          ex.debugEndCondition(definition, true)
           state = 1161
           continue
+        ex.debugEndCondition(definition, false)
         state = 1159
         continue
       state = 1161
       continue
     of 1161:
-      # (= ?$assignment_call_194 2)
-      cp1163_203 = ex.v[203]
-      # (= ?$assignment_call_194 2)
+      # (= ?$assignment_call_176 3)
+      cp1163_185 = ex.v[185]
+      # (= ?$assignment_call_176 3)
+      ex.debugBeginCondition(definition, 314)
       block:
-        let value = sv75
-        if value.isBound and not ex.v[203].isBound:
-          ex.v[203] = value
+        let value = sv68
+        if value.isBound and not ex.v[185].isBound:
+          ex.v[185] = value
+          ex.debugEndCondition(definition, true)
           state = 1164
           continue
+        ex.debugEndCondition(definition, false)
         state = 1162
         continue
       state = 1164
       continue
     of 1164:
-      # (= ?$assignment_call_195 (call identity ?$assignment_call_194))
-      cp1166_204 = ex.v[204]
-      # (= ?$assignment_call_195 (call identity ?$assignment_call_194))
-      if not ex.v[204].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[203]], addr cs67, factSymbols)
-        if ok:
-          ex.setIfChanged(204, callResult)
-          state = 1167
-          continue
+      # (== ?$assignment_call_175 ?$assignment_call_176)
+      # (== ?$assignment_call_175 ?$assignment_call_176)
+      ex.debugBeginCondition(definition, 315)
+      if compare(ex.v[184], ex.v[185], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1167
+        continue
+      ex.debugEndCondition(definition, false)
       state = 1165
       continue
     of 1167:
-      # (= ?$assignment_call_196 (* ?$assignment_call_195 1))
-      cp1169_205 = ex.v[205]
-      # (= ?$assignment_call_196 (* ?$assignment_call_195 1))
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_177 7) (= ?$assignment_call_178 (call identity ?$assignment_call_177)) (= ?$assignment_call_179 (* ?$assignment_call_178 1)) (= ?$assignment_call_180 (* 4 1)) (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180)) (= ?$assignment_call_182 3) (== ?$assignment_call_181 ?$assignment_call_182))
+      cp1170_186 = ex.v[186]
+      cp1170_187 = ex.v[187]
+      cp1170_188 = ex.v[188]
+      cp1170_189 = ex.v[189]
+      cp1170_190 = ex.v[190]
+      cp1170_191 = ex.v[191]
+      ex.debugBeginCondition(definition, 316)
+      # (= ?$assignment_call_177 7)
+      cp1172_186 = ex.v[186]
+      # (= ?$assignment_call_177 7)
+      ex.debugBeginCondition(definition, 317)
       block:
-        let value = arith(2'u32, [ex.v[204], newInt(1'i32)])
-        if value.isBound and not ex.v[205].isBound:
-          ex.v[205] = value
-          state = 1170
-          continue
-        state = 1168
-        continue
-      state = 1170
-      continue
-    of 1170:
-      # (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
-      cp1172_206 = ex.v[206]
-      # (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
-      block:
-        let value = arith(0'u32, [ex.v[202], ex.v[205]])
-        if value.isBound and not ex.v[206].isBound:
-          ex.v[206] = value
+        let value = sv69
+        if value.isBound and not ex.v[186].isBound:
+          ex.v[186] = value
+          ex.debugEndCondition(definition, true)
           state = 1173
           continue
+        ex.debugEndCondition(definition, false)
         state = 1171
         continue
       state = 1173
       continue
     of 1173:
-      # (= ?$assignment_call_198 (call identity ?$assignment_call_197))
-      cp1175_207 = ex.v[207]
-      # (= ?$assignment_call_198 (call identity ?$assignment_call_197))
-      if not ex.v[207].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[206]], addr cs68, factSymbols)
+      # (= ?$assignment_call_178 (call identity ?$assignment_call_177))
+      cp1175_187 = ex.v[187]
+      # (= ?$assignment_call_178 (call identity ?$assignment_call_177))
+      ex.debugBeginCondition(definition, 318)
+      if not ex.v[187].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[186]], addr cs64, factSymbols)
         if ok:
-          ex.setIfChanged(207, callResult)
+          ex.setIfChanged(187, callResult)
+          ex.debugEndCondition(definition, true)
           state = 1176
           continue
+      ex.debugEndCondition(definition, false)
       state = 1174
       continue
     of 1176:
-      # (= ?$assignment_call_199 3)
-      cp1178_208 = ex.v[208]
-      # (= ?$assignment_call_199 3)
+      # (= ?$assignment_call_179 (* ?$assignment_call_178 1))
+      cp1178_188 = ex.v[188]
+      # (= ?$assignment_call_179 (* ?$assignment_call_178 1))
+      ex.debugBeginCondition(definition, 319)
       block:
-        let value = sv76
-        if value.isBound and not ex.v[208].isBound:
-          ex.v[208] = value
+        let value = arith(2'u32, [ex.v[187], newInt(1'i32)])
+        if value.isBound and not ex.v[188].isBound:
+          ex.v[188] = value
+          ex.debugEndCondition(definition, true)
           state = 1179
           continue
+        ex.debugEndCondition(definition, false)
         state = 1177
         continue
       state = 1179
       continue
     of 1179:
-      # (== ?$assignment_call_198 ?$assignment_call_199)
-      # (== ?$assignment_call_198 ?$assignment_call_199)
-      if compare(ex.v[207], ex.v[208], 0'u32):
-        state = 1182
+      # (= ?$assignment_call_180 (* 4 1))
+      cp1181_189 = ex.v[189]
+      # (= ?$assignment_call_180 (* 4 1))
+      ex.debugBeginCondition(definition, 320)
+      block:
+        let value = arith(2'u32, [newInt(4'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[189].isBound:
+          ex.v[189] = value
+          ex.debugEndCondition(definition, true)
+          state = 1182
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1180
         continue
-      state = 1180
+      state = 1182
       continue
     of 1182:
-      state = 911
-      continue
-    of 1180:
-      state = 1177
-      continue
-    of 1177:
-      ex.v[208] = cp1178_208
-      state = 1174
-      continue
-    of 1174:
-      ex.v[207] = cp1175_207
-      state = 1171
-      continue
-    of 1171:
-      ex.v[206] = cp1172_206
-      state = 1168
-      continue
-    of 1168:
-      ex.v[205] = cp1169_205
-      state = 1165
-      continue
-    of 1165:
-      ex.v[204] = cp1166_204
-      state = 1162
-      continue
-    of 1162:
-      ex.v[203] = cp1163_203
-      state = 1159
-      continue
-    of 1159:
-      ex.v[202] = cp1160_202
-      state = 1157
-      continue
-    of 1157:
-      ex.v[202] = cp1158_202
-      ex.v[203] = cp1158_203
-      ex.v[204] = cp1158_204
-      ex.v[205] = cp1158_205
-      ex.v[206] = cp1158_206
-      ex.v[207] = cp1158_207
-      ex.v[208] = cp1158_208
-      state = 1154
-      continue
-    of 1154:
-      state = 1151
-      continue
-    of 1151:
-      ex.v[201] = cp1152_201
-      state = 1148
-      continue
-    of 1148:
-      ex.v[200] = cp1149_200
-      state = 1145
-      continue
-    of 1145:
-      ex.v[199] = cp1146_199
-      state = 1142
-      continue
-    of 1142:
-      ex.v[198] = cp1143_198
-      state = 1139
-      continue
-    of 1139:
-      ex.v[197] = cp1140_197
-      state = 1137
-      continue
-    of 1137:
-      ex.v[197] = cp1138_197
-      ex.v[198] = cp1138_198
-      ex.v[199] = cp1138_199
-      ex.v[200] = cp1138_200
-      ex.v[201] = cp1138_201
-      state = 1134
-      continue
-    of 1134:
-      state = 1131
-      continue
-    of 1131:
-      ex.v[196] = cp1132_196
-      state = 1128
-      continue
-    of 1128:
-      ex.v[195] = cp1129_195
-      state = 1125
-      continue
-    of 1125:
-      ex.v[194] = cp1126_194
-      state = 1122
-      continue
-    of 1122:
-      ex.v[193] = cp1123_193
-      state = 1119
-      continue
-    of 1119:
-      ex.v[192] = cp1120_192
-      state = 1117
-      continue
-    of 1117:
-      ex.v[192] = cp1118_192
-      ex.v[193] = cp1118_193
-      ex.v[194] = cp1118_194
-      ex.v[195] = cp1118_195
-      ex.v[196] = cp1118_196
-      state = 1114
-      continue
-    of 1114:
-      state = 1111
-      continue
-    of 1111:
-      ex.v[191] = cp1112_191
-      state = 1108
-      continue
-    of 1108:
-      ex.v[190] = cp1109_190
-      state = 1105
-      continue
-    of 1105:
-      ex.v[189] = cp1106_189
-      state = 1102
-      continue
-    of 1102:
-      ex.v[188] = cp1103_188
-      state = 1099
-      continue
-    of 1099:
-      ex.v[187] = cp1100_187
-      state = 1096
-      continue
-    of 1096:
-      ex.v[186] = cp1097_186
-      state = 1094
-      continue
-    of 1094:
-      ex.v[186] = cp1095_186
-      ex.v[187] = cp1095_187
-      ex.v[188] = cp1095_188
-      ex.v[189] = cp1095_189
-      ex.v[190] = cp1095_190
-      ex.v[191] = cp1095_191
-      state = 1091
-      continue
-    of 1091:
-      state = 1088
-      continue
-    of 1088:
-      ex.v[185] = cp1089_185
-      state = 1085
-      continue
-    of 1085:
-      ex.v[184] = cp1086_184
-      state = 1082
-      continue
-    of 1082:
-      ex.v[183] = cp1083_183
-      state = 1079
-      continue
-    of 1079:
-      ex.v[182] = cp1080_182
-      state = 1076
-      continue
-    of 1076:
-      ex.v[181] = cp1077_181
-      state = 1073
-      continue
-    of 1073:
-      ex.v[180] = cp1074_180
-      state = 1071
-      continue
-    of 1071:
-      ex.v[180] = cp1072_180
-      ex.v[181] = cp1072_181
-      ex.v[182] = cp1072_182
-      ex.v[183] = cp1072_183
-      ex.v[184] = cp1072_184
-      ex.v[185] = cp1072_185
-      state = 1068
-      continue
-    of 1068:
-      state = 1065
-      continue
-    of 1065:
-      ex.v[179] = cp1066_179
-      state = 1062
-      continue
-    of 1062:
-      ex.v[178] = cp1063_178
-      state = 1059
-      continue
-    of 1059:
-      ex.v[177] = cp1060_177
-      state = 1056
-      continue
-    of 1056:
-      ex.v[176] = cp1057_176
-      state = 1053
-      continue
-    of 1053:
-      ex.v[175] = cp1054_175
-      state = 1050
-      continue
-    of 1050:
-      ex.v[174] = cp1051_174
-      state = 1048
-      continue
-    of 1048:
-      ex.v[174] = cp1049_174
-      ex.v[175] = cp1049_175
-      ex.v[176] = cp1049_176
-      ex.v[177] = cp1049_177
-      ex.v[178] = cp1049_178
-      ex.v[179] = cp1049_179
-      state = 1045
-      continue
-    of 1045:
-      state = 1042
-      continue
-    of 1042:
-      ex.v[173] = cp1043_173
-      state = 1039
-      continue
-    of 1039:
-      ex.v[172] = cp1040_172
-      state = 1036
-      continue
-    of 1036:
-      ex.v[171] = cp1037_171
-      state = 1033
-      continue
-    of 1033:
-      ex.v[170] = cp1034_170
-      state = 1030
-      continue
-    of 1030:
-      ex.v[169] = cp1031_169
-      state = 1027
-      continue
-    of 1027:
-      ex.v[168] = cp1028_168
-      state = 1025
-      continue
-    of 1025:
-      ex.v[168] = cp1026_168
-      ex.v[169] = cp1026_169
-      ex.v[170] = cp1026_170
-      ex.v[171] = cp1026_171
-      ex.v[172] = cp1026_172
-      ex.v[173] = cp1026_173
-      state = 1022
-      continue
-    of 1022:
-      state = 1019
-      continue
-    of 1019:
-      ex.v[167] = cp1020_167
-      state = 1016
-      continue
-    of 1016:
-      ex.v[166] = cp1017_166
-      state = 1013
-      continue
-    of 1013:
-      ex.v[165] = cp1014_165
-      state = 1010
-      continue
-    of 1010:
-      ex.v[164] = cp1011_164
-      state = 1007
-      continue
-    of 1007:
-      ex.v[163] = cp1008_163
-      state = 1004
-      continue
-    of 1004:
-      ex.v[162] = cp1005_162
-      state = 1002
-      continue
-    of 1002:
-      ex.v[162] = cp1003_162
-      ex.v[163] = cp1003_163
-      ex.v[164] = cp1003_164
-      ex.v[165] = cp1003_165
-      ex.v[166] = cp1003_166
-      ex.v[167] = cp1003_167
-      state = 999
-      continue
-    of 999:
-      state = 996
-      continue
-    of 996:
-      ex.v[161] = cp997_161
-      state = 993
-      continue
-    of 993:
-      ex.v[160] = cp994_160
-      state = 990
-      continue
-    of 990:
-      ex.v[159] = cp991_159
-      state = 988
-      continue
-    of 988:
-      ex.v[159] = cp989_159
-      ex.v[160] = cp989_160
-      ex.v[161] = cp989_161
-      state = 985
-      continue
-    of 985:
-      state = 982
-      continue
-    of 982:
-      ex.v[158] = cp983_158
-      state = 979
-      continue
-    of 979:
-      ex.v[157] = cp980_157
+      # (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
+      cp1184_190 = ex.v[190]
+      # (= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))
+      ex.debugBeginCondition(definition, 321)
+      block:
+        let value = arith(4'u32, [ex.v[188], ex.v[189]])
+        if value.isBound and not ex.v[190].isBound:
+          ex.v[190] = value
+          ex.debugEndCondition(definition, true)
+          state = 1185
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1183
+        continue
+      state = 1185
+      continue
+    of 1185:
+      # (= ?$assignment_call_182 3)
+      cp1187_191 = ex.v[191]
+      # (= ?$assignment_call_182 3)
+      ex.debugBeginCondition(definition, 322)
+      block:
+        let value = sv70
+        if value.isBound and not ex.v[191].isBound:
+          ex.v[191] = value
+          ex.debugEndCondition(definition, true)
+          state = 1188
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1186
+        continue
+      state = 1188
+      continue
+    of 1188:
+      # (== ?$assignment_call_181 ?$assignment_call_182)
+      # (== ?$assignment_call_181 ?$assignment_call_182)
+      ex.debugBeginCondition(definition, 323)
+      if compare(ex.v[190], ex.v[191], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1191
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1189
+      continue
+    of 1191:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_183 2) (= ?$assignment_call_184 (call identity ?$assignment_call_183)) (= ?$assignment_call_185 (* ?$assignment_call_184 1)) (= ?$assignment_call_186 (++ ?$assignment_call_185)) (= ?$assignment_call_187 3) (== ?$assignment_call_186 ?$assignment_call_187))
+      cp1194_192 = ex.v[192]
+      cp1194_193 = ex.v[193]
+      cp1194_194 = ex.v[194]
+      cp1194_195 = ex.v[195]
+      cp1194_196 = ex.v[196]
+      ex.debugBeginCondition(definition, 324)
+      # (= ?$assignment_call_183 2)
+      cp1196_192 = ex.v[192]
+      # (= ?$assignment_call_183 2)
+      ex.debugBeginCondition(definition, 325)
+      block:
+        let value = sv71
+        if value.isBound and not ex.v[192].isBound:
+          ex.v[192] = value
+          ex.debugEndCondition(definition, true)
+          state = 1197
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1195
+        continue
+      state = 1197
+      continue
+    of 1197:
+      # (= ?$assignment_call_184 (call identity ?$assignment_call_183))
+      cp1199_193 = ex.v[193]
+      # (= ?$assignment_call_184 (call identity ?$assignment_call_183))
+      ex.debugBeginCondition(definition, 326)
+      if not ex.v[193].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[192]], addr cs65, factSymbols)
+        if ok:
+          ex.setIfChanged(193, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1200
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1198
+      continue
+    of 1200:
+      # (= ?$assignment_call_185 (* ?$assignment_call_184 1))
+      cp1202_194 = ex.v[194]
+      # (= ?$assignment_call_185 (* ?$assignment_call_184 1))
+      ex.debugBeginCondition(definition, 327)
+      block:
+        let value = arith(2'u32, [ex.v[193], newInt(1'i32)])
+        if value.isBound and not ex.v[194].isBound:
+          ex.v[194] = value
+          ex.debugEndCondition(definition, true)
+          state = 1203
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1201
+        continue
+      state = 1203
+      continue
+    of 1203:
+      # (= ?$assignment_call_186 (++ ?$assignment_call_185))
+      cp1205_195 = ex.v[195]
+      # (= ?$assignment_call_186 (++ ?$assignment_call_185))
+      ex.debugBeginCondition(definition, 328)
+      block:
+        let value = arith(5'u32, [ex.v[194]])
+        if value.isBound and not ex.v[195].isBound:
+          ex.v[195] = value
+          ex.debugEndCondition(definition, true)
+          state = 1206
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1204
+        continue
+      state = 1206
+      continue
+    of 1206:
+      # (= ?$assignment_call_187 3)
+      cp1208_196 = ex.v[196]
+      # (= ?$assignment_call_187 3)
+      ex.debugBeginCondition(definition, 329)
+      block:
+        let value = sv72
+        if value.isBound and not ex.v[196].isBound:
+          ex.v[196] = value
+          ex.debugEndCondition(definition, true)
+          state = 1209
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1207
+        continue
+      state = 1209
+      continue
+    of 1209:
+      # (== ?$assignment_call_186 ?$assignment_call_187)
+      # (== ?$assignment_call_186 ?$assignment_call_187)
+      ex.debugBeginCondition(definition, 330)
+      if compare(ex.v[195], ex.v[196], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1212
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1210
+      continue
+    of 1212:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_188 4) (= ?$assignment_call_189 (call identity ?$assignment_call_188)) (= ?$assignment_call_190 (* ?$assignment_call_189 1)) (= ?$assignment_call_191 (-- ?$assignment_call_190)) (= ?$assignment_call_192 3) (== ?$assignment_call_191 ?$assignment_call_192))
+      cp1215_197 = ex.v[197]
+      cp1215_198 = ex.v[198]
+      cp1215_199 = ex.v[199]
+      cp1215_200 = ex.v[200]
+      cp1215_201 = ex.v[201]
+      ex.debugBeginCondition(definition, 331)
+      # (= ?$assignment_call_188 4)
+      cp1217_197 = ex.v[197]
+      # (= ?$assignment_call_188 4)
+      ex.debugBeginCondition(definition, 332)
+      block:
+        let value = sv73
+        if value.isBound and not ex.v[197].isBound:
+          ex.v[197] = value
+          ex.debugEndCondition(definition, true)
+          state = 1218
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1216
+        continue
+      state = 1218
+      continue
+    of 1218:
+      # (= ?$assignment_call_189 (call identity ?$assignment_call_188))
+      cp1220_198 = ex.v[198]
+      # (= ?$assignment_call_189 (call identity ?$assignment_call_188))
+      ex.debugBeginCondition(definition, 333)
+      if not ex.v[198].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[197]], addr cs66, factSymbols)
+        if ok:
+          ex.setIfChanged(198, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1221
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1219
+      continue
+    of 1221:
+      # (= ?$assignment_call_190 (* ?$assignment_call_189 1))
+      cp1223_199 = ex.v[199]
+      # (= ?$assignment_call_190 (* ?$assignment_call_189 1))
+      ex.debugBeginCondition(definition, 334)
+      block:
+        let value = arith(2'u32, [ex.v[198], newInt(1'i32)])
+        if value.isBound and not ex.v[199].isBound:
+          ex.v[199] = value
+          ex.debugEndCondition(definition, true)
+          state = 1224
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1222
+        continue
+      state = 1224
+      continue
+    of 1224:
+      # (= ?$assignment_call_191 (-- ?$assignment_call_190))
+      cp1226_200 = ex.v[200]
+      # (= ?$assignment_call_191 (-- ?$assignment_call_190))
+      ex.debugBeginCondition(definition, 335)
+      block:
+        let value = arith(6'u32, [ex.v[199]])
+        if value.isBound and not ex.v[200].isBound:
+          ex.v[200] = value
+          ex.debugEndCondition(definition, true)
+          state = 1227
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1225
+        continue
+      state = 1227
+      continue
+    of 1227:
+      # (= ?$assignment_call_192 3)
+      cp1229_201 = ex.v[201]
+      # (= ?$assignment_call_192 3)
+      ex.debugBeginCondition(definition, 336)
+      block:
+        let value = sv74
+        if value.isBound and not ex.v[201].isBound:
+          ex.v[201] = value
+          ex.debugEndCondition(definition, true)
+          state = 1230
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1228
+        continue
+      state = 1230
+      continue
+    of 1230:
+      # (== ?$assignment_call_191 ?$assignment_call_192)
+      # (== ?$assignment_call_191 ?$assignment_call_192)
+      ex.debugBeginCondition(definition, 337)
+      if compare(ex.v[200], ex.v[201], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1233
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1231
+      continue
+    of 1233:
+      ex.debugEndCondition(definition, true)
+      # (and (= ?$assignment_call_193 (* 1 1)) (= ?$assignment_call_194 2) (= ?$assignment_call_195 (call identity ?$assignment_call_194)) (= ?$assignment_call_196 (* ?$assignment_call_195 1)) (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196)) (= ?$assignment_call_198 (call identity ?$assignment_call_197)) (= ?$assignment_call_199 3) (== ?$assignment_call_198 ?$assignment_call_199))
+      cp1236_202 = ex.v[202]
+      cp1236_203 = ex.v[203]
+      cp1236_204 = ex.v[204]
+      cp1236_205 = ex.v[205]
+      cp1236_206 = ex.v[206]
+      cp1236_207 = ex.v[207]
+      cp1236_208 = ex.v[208]
+      ex.debugBeginCondition(definition, 338)
+      # (= ?$assignment_call_193 (* 1 1))
+      cp1238_202 = ex.v[202]
+      # (= ?$assignment_call_193 (* 1 1))
+      ex.debugBeginCondition(definition, 339)
+      block:
+        let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
+        if value.isBound and not ex.v[202].isBound:
+          ex.v[202] = value
+          ex.debugEndCondition(definition, true)
+          state = 1239
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1237
+        continue
+      state = 1239
+      continue
+    of 1239:
+      # (= ?$assignment_call_194 2)
+      cp1241_203 = ex.v[203]
+      # (= ?$assignment_call_194 2)
+      ex.debugBeginCondition(definition, 340)
+      block:
+        let value = sv75
+        if value.isBound and not ex.v[203].isBound:
+          ex.v[203] = value
+          ex.debugEndCondition(definition, true)
+          state = 1242
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1240
+        continue
+      state = 1242
+      continue
+    of 1242:
+      # (= ?$assignment_call_195 (call identity ?$assignment_call_194))
+      cp1244_204 = ex.v[204]
+      # (= ?$assignment_call_195 (call identity ?$assignment_call_194))
+      ex.debugBeginCondition(definition, 341)
+      if not ex.v[204].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[203]], addr cs67, factSymbols)
+        if ok:
+          ex.setIfChanged(204, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1245
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1243
+      continue
+    of 1245:
+      # (= ?$assignment_call_196 (* ?$assignment_call_195 1))
+      cp1247_205 = ex.v[205]
+      # (= ?$assignment_call_196 (* ?$assignment_call_195 1))
+      ex.debugBeginCondition(definition, 342)
+      block:
+        let value = arith(2'u32, [ex.v[204], newInt(1'i32)])
+        if value.isBound and not ex.v[205].isBound:
+          ex.v[205] = value
+          ex.debugEndCondition(definition, true)
+          state = 1248
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1246
+        continue
+      state = 1248
+      continue
+    of 1248:
+      # (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
+      cp1250_206 = ex.v[206]
+      # (= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))
+      ex.debugBeginCondition(definition, 343)
+      block:
+        let value = arith(0'u32, [ex.v[202], ex.v[205]])
+        if value.isBound and not ex.v[206].isBound:
+          ex.v[206] = value
+          ex.debugEndCondition(definition, true)
+          state = 1251
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1249
+        continue
+      state = 1251
+      continue
+    of 1251:
+      # (= ?$assignment_call_198 (call identity ?$assignment_call_197))
+      cp1253_207 = ex.v[207]
+      # (= ?$assignment_call_198 (call identity ?$assignment_call_197))
+      ex.debugBeginCondition(definition, 344)
+      if not ex.v[207].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[206]], addr cs68, factSymbols)
+        if ok:
+          ex.setIfChanged(207, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1254
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1252
+      continue
+    of 1254:
+      # (= ?$assignment_call_199 3)
+      cp1256_208 = ex.v[208]
+      # (= ?$assignment_call_199 3)
+      ex.debugBeginCondition(definition, 345)
+      block:
+        let value = sv76
+        if value.isBound and not ex.v[208].isBound:
+          ex.v[208] = value
+          ex.debugEndCondition(definition, true)
+          state = 1257
+          continue
+        ex.debugEndCondition(definition, false)
+        state = 1255
+        continue
+      state = 1257
+      continue
+    of 1257:
+      # (== ?$assignment_call_198 ?$assignment_call_199)
+      # (== ?$assignment_call_198 ?$assignment_call_199)
+      ex.debugBeginCondition(definition, 346)
+      if compare(ex.v[207], ex.v[208], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 1260
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 1258
+      continue
+    of 1260:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 976
       continue
-    of 976:
-      ex.v[156] = cp977_156
-      state = 974
+    of 1258:
+      state = 1255
       continue
-    of 974:
-      ex.v[156] = cp975_156
-      ex.v[157] = cp975_157
-      ex.v[158] = cp975_158
-      state = 971
+    of 1255:
+      ex.v[208] = cp1256_208
+      state = 1252
       continue
-    of 971:
-      state = 968
+    of 1252:
+      ex.v[207] = cp1253_207
+      state = 1249
       continue
-    of 968:
-      ex.v[155] = cp969_155
-      state = 965
+    of 1249:
+      ex.v[206] = cp1250_206
+      state = 1246
       continue
-    of 965:
-      ex.v[154] = cp966_154
-      state = 962
+    of 1246:
+      ex.v[205] = cp1247_205
+      state = 1243
       continue
-    of 962:
-      ex.v[153] = cp963_153
-      state = 960
+    of 1243:
+      ex.v[204] = cp1244_204
+      state = 1240
       continue
-    of 960:
-      ex.v[153] = cp961_153
-      ex.v[154] = cp961_154
-      ex.v[155] = cp961_155
-      state = 957
+    of 1240:
+      ex.v[203] = cp1241_203
+      state = 1237
       continue
-    of 957:
-      state = 954
+    of 1237:
+      ex.v[202] = cp1238_202
+      state = 1235
       continue
-    of 954:
-      ex.v[152] = cp955_152
-      state = 951
+    of 1235:
+      ex.v[202] = cp1236_202
+      ex.v[203] = cp1236_203
+      ex.v[204] = cp1236_204
+      ex.v[205] = cp1236_205
+      ex.v[206] = cp1236_206
+      ex.v[207] = cp1236_207
+      ex.v[208] = cp1236_208
+      ex.debugEndCondition(definition, false)
+      state = 1234
       continue
-    of 951:
-      ex.v[151] = cp952_151
-      state = 948
+    of 1234:
+      ex.debugBeginCondition(definition, 331)
+      state = 1231
       continue
-    of 948:
-      ex.v[150] = cp949_150
-      state = 946
+    of 1231:
+      state = 1228
       continue
-    of 946:
-      ex.v[150] = cp947_150
-      ex.v[151] = cp947_151
-      ex.v[152] = cp947_152
-      state = 943
+    of 1228:
+      ex.v[201] = cp1229_201
+      state = 1225
       continue
-    of 943:
-      state = 940
+    of 1225:
+      ex.v[200] = cp1226_200
+      state = 1222
       continue
-    of 940:
-      ex.v[149] = cp941_149
-      state = 937
+    of 1222:
+      ex.v[199] = cp1223_199
+      state = 1219
       continue
-    of 937:
-      ex.v[148] = cp938_148
-      state = 934
+    of 1219:
+      ex.v[198] = cp1220_198
+      state = 1216
       continue
-    of 934:
-      ex.v[147] = cp935_147
-      state = 932
+    of 1216:
+      ex.v[197] = cp1217_197
+      state = 1214
       continue
-    of 932:
-      ex.v[147] = cp933_147
-      ex.v[148] = cp933_148
-      ex.v[149] = cp933_149
-      state = 929
+    of 1214:
+      ex.v[197] = cp1215_197
+      ex.v[198] = cp1215_198
+      ex.v[199] = cp1215_199
+      ex.v[200] = cp1215_200
+      ex.v[201] = cp1215_201
+      ex.debugEndCondition(definition, false)
+      state = 1213
       continue
-    of 929:
-      state = 926
+    of 1213:
+      ex.debugBeginCondition(definition, 324)
+      state = 1210
       continue
-    of 926:
-      ex.v[146] = cp927_146
-      state = 923
+    of 1210:
+      state = 1207
       continue
-    of 923:
-      ex.v[145] = cp924_145
-      state = 920
+    of 1207:
+      ex.v[196] = cp1208_196
+      state = 1204
       continue
-    of 920:
-      ex.v[144] = cp921_144
-      state = 918
+    of 1204:
+      ex.v[195] = cp1205_195
+      state = 1201
       continue
-    of 918:
-      ex.v[144] = cp919_144
-      ex.v[145] = cp919_145
-      ex.v[146] = cp919_146
-      state = 915
+    of 1201:
+      ex.v[194] = cp1202_194
+      state = 1198
       continue
-    of 915:
-      ex.v[27] = cp916_27
-      state = 913
+    of 1198:
+      ex.v[193] = cp1199_193
+      state = 1195
       continue
-    of 913:
-      ex.v[27] = cp914_27
-      ex.v[144] = cp914_144
-      ex.v[145] = cp914_145
-      ex.v[146] = cp914_146
-      ex.v[147] = cp914_147
-      ex.v[148] = cp914_148
-      ex.v[149] = cp914_149
-      ex.v[150] = cp914_150
-      ex.v[151] = cp914_151
-      ex.v[152] = cp914_152
-      ex.v[153] = cp914_153
-      ex.v[154] = cp914_154
-      ex.v[155] = cp914_155
-      ex.v[156] = cp914_156
-      ex.v[157] = cp914_157
-      ex.v[158] = cp914_158
-      ex.v[159] = cp914_159
-      ex.v[160] = cp914_160
-      ex.v[161] = cp914_161
-      ex.v[162] = cp914_162
-      ex.v[163] = cp914_163
-      ex.v[164] = cp914_164
-      ex.v[165] = cp914_165
-      ex.v[166] = cp914_166
-      ex.v[167] = cp914_167
-      ex.v[168] = cp914_168
-      ex.v[169] = cp914_169
-      ex.v[170] = cp914_170
-      ex.v[171] = cp914_171
-      ex.v[172] = cp914_172
-      ex.v[173] = cp914_173
-      ex.v[174] = cp914_174
-      ex.v[175] = cp914_175
-      ex.v[176] = cp914_176
-      ex.v[177] = cp914_177
-      ex.v[178] = cp914_178
-      ex.v[179] = cp914_179
-      ex.v[180] = cp914_180
-      ex.v[181] = cp914_181
-      ex.v[182] = cp914_182
-      ex.v[183] = cp914_183
-      ex.v[184] = cp914_184
-      ex.v[185] = cp914_185
-      ex.v[186] = cp914_186
-      ex.v[187] = cp914_187
-      ex.v[188] = cp914_188
-      ex.v[189] = cp914_189
-      ex.v[190] = cp914_190
-      ex.v[191] = cp914_191
-      ex.v[192] = cp914_192
-      ex.v[193] = cp914_193
-      ex.v[194] = cp914_194
-      ex.v[195] = cp914_195
-      ex.v[196] = cp914_196
-      ex.v[197] = cp914_197
-      ex.v[198] = cp914_198
-      ex.v[199] = cp914_199
-      ex.v[200] = cp914_200
-      ex.v[201] = cp914_201
-      ex.v[202] = cp914_202
-      ex.v[203] = cp914_203
-      ex.v[204] = cp914_204
-      ex.v[205] = cp914_205
-      ex.v[206] = cp914_206
-      ex.v[207] = cp914_207
-      ex.v[208] = cp914_208
-      state = 912
+    of 1195:
+      ex.v[192] = cp1196_192
+      state = 1193
       continue
-    of 912:
-      state = 908
+    of 1193:
+      ex.v[192] = cp1194_192
+      ex.v[193] = cp1194_193
+      ex.v[194] = cp1194_194
+      ex.v[195] = cp1194_195
+      ex.v[196] = cp1194_196
+      ex.debugEndCondition(definition, false)
+      state = 1192
       continue
-    of 911:
-      if not ex.pushBranch(addr bc31):
-        return 0
+    of 1192:
+      ex.debugBeginCondition(definition, 316)
+      state = 1189
+      continue
+    of 1189:
+      state = 1186
+      continue
+    of 1186:
+      ex.v[191] = cp1187_191
       state = 1183
       continue
     of 1183:
+      ex.v[190] = cp1184_190
+      state = 1180
+      continue
+    of 1180:
+      ex.v[189] = cp1181_189
+      state = 1177
+      continue
+    of 1177:
+      ex.v[188] = cp1178_188
+      state = 1174
+      continue
+    of 1174:
+      ex.v[187] = cp1175_187
+      state = 1171
+      continue
+    of 1171:
+      ex.v[186] = cp1172_186
+      state = 1169
+      continue
+    of 1169:
+      ex.v[186] = cp1170_186
+      ex.v[187] = cp1170_187
+      ex.v[188] = cp1170_188
+      ex.v[189] = cp1170_189
+      ex.v[190] = cp1170_190
+      ex.v[191] = cp1170_191
+      ex.debugEndCondition(definition, false)
+      state = 1168
+      continue
+    of 1168:
+      ex.debugBeginCondition(definition, 308)
+      state = 1165
+      continue
+    of 1165:
+      state = 1162
+      continue
+    of 1162:
+      ex.v[185] = cp1163_185
+      state = 1159
+      continue
+    of 1159:
+      ex.v[184] = cp1160_184
+      state = 1156
+      continue
+    of 1156:
+      ex.v[183] = cp1157_183
+      state = 1153
+      continue
+    of 1153:
+      ex.v[182] = cp1154_182
+      state = 1150
+      continue
+    of 1150:
+      ex.v[181] = cp1151_181
+      state = 1147
+      continue
+    of 1147:
+      ex.v[180] = cp1148_180
+      state = 1145
+      continue
+    of 1145:
+      ex.v[180] = cp1146_180
+      ex.v[181] = cp1146_181
+      ex.v[182] = cp1146_182
+      ex.v[183] = cp1146_183
+      ex.v[184] = cp1146_184
+      ex.v[185] = cp1146_185
+      ex.debugEndCondition(definition, false)
+      state = 1144
+      continue
+    of 1144:
+      ex.debugBeginCondition(definition, 300)
+      state = 1141
+      continue
+    of 1141:
+      state = 1138
+      continue
+    of 1138:
+      ex.v[179] = cp1139_179
+      state = 1135
+      continue
+    of 1135:
+      ex.v[178] = cp1136_178
+      state = 1132
+      continue
+    of 1132:
+      ex.v[177] = cp1133_177
+      state = 1129
+      continue
+    of 1129:
+      ex.v[176] = cp1130_176
+      state = 1126
+      continue
+    of 1126:
+      ex.v[175] = cp1127_175
+      state = 1123
+      continue
+    of 1123:
+      ex.v[174] = cp1124_174
+      state = 1121
+      continue
+    of 1121:
+      ex.v[174] = cp1122_174
+      ex.v[175] = cp1122_175
+      ex.v[176] = cp1122_176
+      ex.v[177] = cp1122_177
+      ex.v[178] = cp1122_178
+      ex.v[179] = cp1122_179
+      ex.debugEndCondition(definition, false)
+      state = 1120
+      continue
+    of 1120:
+      ex.debugBeginCondition(definition, 292)
+      state = 1117
+      continue
+    of 1117:
+      state = 1114
+      continue
+    of 1114:
+      ex.v[173] = cp1115_173
+      state = 1111
+      continue
+    of 1111:
+      ex.v[172] = cp1112_172
+      state = 1108
+      continue
+    of 1108:
+      ex.v[171] = cp1109_171
+      state = 1105
+      continue
+    of 1105:
+      ex.v[170] = cp1106_170
+      state = 1102
+      continue
+    of 1102:
+      ex.v[169] = cp1103_169
+      state = 1099
+      continue
+    of 1099:
+      ex.v[168] = cp1100_168
+      state = 1097
+      continue
+    of 1097:
+      ex.v[168] = cp1098_168
+      ex.v[169] = cp1098_169
+      ex.v[170] = cp1098_170
+      ex.v[171] = cp1098_171
+      ex.v[172] = cp1098_172
+      ex.v[173] = cp1098_173
+      ex.debugEndCondition(definition, false)
+      state = 1096
+      continue
+    of 1096:
+      ex.debugBeginCondition(definition, 284)
+      state = 1093
+      continue
+    of 1093:
+      state = 1090
+      continue
+    of 1090:
+      ex.v[167] = cp1091_167
+      state = 1087
+      continue
+    of 1087:
+      ex.v[166] = cp1088_166
+      state = 1084
+      continue
+    of 1084:
+      ex.v[165] = cp1085_165
+      state = 1081
+      continue
+    of 1081:
+      ex.v[164] = cp1082_164
+      state = 1078
+      continue
+    of 1078:
+      ex.v[163] = cp1079_163
+      state = 1075
+      continue
+    of 1075:
+      ex.v[162] = cp1076_162
+      state = 1073
+      continue
+    of 1073:
+      ex.v[162] = cp1074_162
+      ex.v[163] = cp1074_163
+      ex.v[164] = cp1074_164
+      ex.v[165] = cp1074_165
+      ex.v[166] = cp1074_166
+      ex.v[167] = cp1074_167
+      ex.debugEndCondition(definition, false)
+      state = 1072
+      continue
+    of 1072:
+      ex.debugBeginCondition(definition, 279)
+      state = 1069
+      continue
+    of 1069:
+      state = 1066
+      continue
+    of 1066:
+      ex.v[161] = cp1067_161
+      state = 1063
+      continue
+    of 1063:
+      ex.v[160] = cp1064_160
+      state = 1060
+      continue
+    of 1060:
+      ex.v[159] = cp1061_159
+      state = 1058
+      continue
+    of 1058:
+      ex.v[159] = cp1059_159
+      ex.v[160] = cp1059_160
+      ex.v[161] = cp1059_161
+      ex.debugEndCondition(definition, false)
+      state = 1057
+      continue
+    of 1057:
+      ex.debugBeginCondition(definition, 274)
+      state = 1054
+      continue
+    of 1054:
+      state = 1051
+      continue
+    of 1051:
+      ex.v[158] = cp1052_158
+      state = 1048
+      continue
+    of 1048:
+      ex.v[157] = cp1049_157
+      state = 1045
+      continue
+    of 1045:
+      ex.v[156] = cp1046_156
+      state = 1043
+      continue
+    of 1043:
+      ex.v[156] = cp1044_156
+      ex.v[157] = cp1044_157
+      ex.v[158] = cp1044_158
+      ex.debugEndCondition(definition, false)
+      state = 1042
+      continue
+    of 1042:
+      ex.debugBeginCondition(definition, 269)
+      state = 1039
+      continue
+    of 1039:
+      state = 1036
+      continue
+    of 1036:
+      ex.v[155] = cp1037_155
+      state = 1033
+      continue
+    of 1033:
+      ex.v[154] = cp1034_154
+      state = 1030
+      continue
+    of 1030:
+      ex.v[153] = cp1031_153
+      state = 1028
+      continue
+    of 1028:
+      ex.v[153] = cp1029_153
+      ex.v[154] = cp1029_154
+      ex.v[155] = cp1029_155
+      ex.debugEndCondition(definition, false)
+      state = 1027
+      continue
+    of 1027:
+      ex.debugBeginCondition(definition, 264)
+      state = 1024
+      continue
+    of 1024:
+      state = 1021
+      continue
+    of 1021:
+      ex.v[152] = cp1022_152
+      state = 1018
+      continue
+    of 1018:
+      ex.v[151] = cp1019_151
+      state = 1015
+      continue
+    of 1015:
+      ex.v[150] = cp1016_150
+      state = 1013
+      continue
+    of 1013:
+      ex.v[150] = cp1014_150
+      ex.v[151] = cp1014_151
+      ex.v[152] = cp1014_152
+      ex.debugEndCondition(definition, false)
+      state = 1012
+      continue
+    of 1012:
+      ex.debugBeginCondition(definition, 259)
+      state = 1009
+      continue
+    of 1009:
+      state = 1006
+      continue
+    of 1006:
+      ex.v[149] = cp1007_149
+      state = 1003
+      continue
+    of 1003:
+      ex.v[148] = cp1004_148
+      state = 1000
+      continue
+    of 1000:
+      ex.v[147] = cp1001_147
+      state = 998
+      continue
+    of 998:
+      ex.v[147] = cp999_147
+      ex.v[148] = cp999_148
+      ex.v[149] = cp999_149
+      ex.debugEndCondition(definition, false)
+      state = 997
+      continue
+    of 997:
+      ex.debugBeginCondition(definition, 254)
+      state = 994
+      continue
+    of 994:
+      state = 991
+      continue
+    of 991:
+      ex.v[146] = cp992_146
+      state = 988
+      continue
+    of 988:
+      ex.v[145] = cp989_145
+      state = 985
+      continue
+    of 985:
+      ex.v[144] = cp986_144
+      state = 983
+      continue
+    of 983:
+      ex.v[144] = cp984_144
+      ex.v[145] = cp984_145
+      ex.v[146] = cp984_146
+      ex.debugEndCondition(definition, false)
+      state = 980
+      continue
+    of 980:
+      ex.v[27] = cp981_27
+      state = 978
+      continue
+    of 978:
+      ex.v[27] = cp979_27
+      ex.v[144] = cp979_144
+      ex.v[145] = cp979_145
+      ex.v[146] = cp979_146
+      ex.v[147] = cp979_147
+      ex.v[148] = cp979_148
+      ex.v[149] = cp979_149
+      ex.v[150] = cp979_150
+      ex.v[151] = cp979_151
+      ex.v[152] = cp979_152
+      ex.v[153] = cp979_153
+      ex.v[154] = cp979_154
+      ex.v[155] = cp979_155
+      ex.v[156] = cp979_156
+      ex.v[157] = cp979_157
+      ex.v[158] = cp979_158
+      ex.v[159] = cp979_159
+      ex.v[160] = cp979_160
+      ex.v[161] = cp979_161
+      ex.v[162] = cp979_162
+      ex.v[163] = cp979_163
+      ex.v[164] = cp979_164
+      ex.v[165] = cp979_165
+      ex.v[166] = cp979_166
+      ex.v[167] = cp979_167
+      ex.v[168] = cp979_168
+      ex.v[169] = cp979_169
+      ex.v[170] = cp979_170
+      ex.v[171] = cp979_171
+      ex.v[172] = cp979_172
+      ex.v[173] = cp979_173
+      ex.v[174] = cp979_174
+      ex.v[175] = cp979_175
+      ex.v[176] = cp979_176
+      ex.v[177] = cp979_177
+      ex.v[178] = cp979_178
+      ex.v[179] = cp979_179
+      ex.v[180] = cp979_180
+      ex.v[181] = cp979_181
+      ex.v[182] = cp979_182
+      ex.v[183] = cp979_183
+      ex.v[184] = cp979_184
+      ex.v[185] = cp979_185
+      ex.v[186] = cp979_186
+      ex.v[187] = cp979_187
+      ex.v[188] = cp979_188
+      ex.v[189] = cp979_189
+      ex.v[190] = cp979_190
+      ex.v[191] = cp979_191
+      ex.v[192] = cp979_192
+      ex.v[193] = cp979_193
+      ex.v[194] = cp979_194
+      ex.v[195] = cp979_195
+      ex.v[196] = cp979_196
+      ex.v[197] = cp979_197
+      ex.v[198] = cp979_198
+      ex.v[199] = cp979_199
+      ex.v[200] = cp979_200
+      ex.v[201] = cp979_201
+      ex.v[202] = cp979_202
+      ex.v[203] = cp979_203
+      ex.v[204] = cp979_204
+      ex.v[205] = cp979_205
+      ex.v[206] = cp979_206
+      ex.v[207] = cp979_207
+      ex.v[208] = cp979_208
+      ex.debugEndCondition(definition, false)
+      state = 977
+      continue
+    of 977:
+      ex.debugEndBranch(definition, false)
+      state = 973
+      continue
+    of 976:
+      if not ex.pushBranch(addr bc31):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(31)
+      state = 1263
+      continue
+    of 1263:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8229,18 +9967,23 @@ proc method28(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 910
+        state = 975
         continue
-      state = 1184
+      state = 1264
       continue
-    of 910:
+    of 975:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1183
+      state = 1263
       continue
-    of 1184:
+    of 1264:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 908:
+    of 973:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -8248,174 +9991,204 @@ proc method28(ex: Exec): int {.nimcall.} =
 # method29: short_circuit/0
 proc method29(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1193_209: Atom
-  var cp1193_210: Atom
-  var cp1193_211: Atom
-  var cp1193_212: Atom
-  var cp1193_213: Atom
-  var cp1195_209: Atom
-  var cp1195_210: Atom
-  var cp1195_211: Atom
-  var cp1195_212: Atom
-  var cp1195_213: Atom
-  var cp1197_209: Atom
-  var cp1200_210: Atom
-  var cp1203_211: Atom
-  var cp1206_212: Atom
-  var cp1209_213: Atom
+  var cp1273_209: Atom
+  var cp1273_210: Atom
+  var cp1273_211: Atom
+  var cp1273_212: Atom
+  var cp1273_213: Atom
+  var cp1275_209: Atom
+  var cp1275_210: Atom
+  var cp1275_211: Atom
+  var cp1275_212: Atom
+  var cp1275_213: Atom
+  var cp1277_209: Atom
+  var cp1280_210: Atom
+  var cp1283_211: Atom
+  var cp1286_212: Atom
+  var cp1289_213: Atom
   var state = 0
   case fr.resume
-  of 1: state = 1188
-  of 2: state = 1189
+  of 1: state = 1268
+  of 2: state = 1269
   else: discard
   while true:
     case state
     of 0:
-      state = 1186
+      ex.debugBeginMethod(definition, 29)
+      state = 1266
       continue
-    of 1186:
+    of 1266:
       # branch branch
       ex.saveRetry(fr, ms29)
+      ex.debugBeginBranch(definition, 32)
       # (and (< (+ false (call missing_distance_callterm)) 0.2))
-      cp1193_209 = ex.v[209]
-      cp1193_210 = ex.v[210]
-      cp1193_211 = ex.v[211]
-      cp1193_212 = ex.v[212]
-      cp1193_213 = ex.v[213]
+      cp1273_209 = ex.v[209]
+      cp1273_210 = ex.v[210]
+      cp1273_211 = ex.v[211]
+      cp1273_212 = ex.v[212]
+      cp1273_213 = ex.v[213]
+      ex.debugBeginCondition(definition, 347)
       # (and (= ?$assignment_call_200 (* false 1)) (= ?$assignment_call_201 (call missing_distance_callterm)) (= ?$assignment_call_202 (* ?$assignment_call_201 1)) (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202)) (= ?$assignment_call_204 0.2) (< ?$assignment_call_203 ?$assignment_call_204))
-      cp1195_209 = ex.v[209]
-      cp1195_210 = ex.v[210]
-      cp1195_211 = ex.v[211]
-      cp1195_212 = ex.v[212]
-      cp1195_213 = ex.v[213]
+      cp1275_209 = ex.v[209]
+      cp1275_210 = ex.v[210]
+      cp1275_211 = ex.v[211]
+      cp1275_212 = ex.v[212]
+      cp1275_213 = ex.v[213]
+      ex.debugBeginCondition(definition, 348)
       # (= ?$assignment_call_200 (* false 1))
-      cp1197_209 = ex.v[209]
+      cp1277_209 = ex.v[209]
       # (= ?$assignment_call_200 (* false 1))
+      ex.debugBeginCondition(definition, 349)
       block:
         let value = arith(2'u32, [Atom(), newInt(1'i32)])
         if value.isBound and not ex.v[209].isBound:
           ex.v[209] = value
-          state = 1198
+          ex.debugEndCondition(definition, true)
+          state = 1278
           continue
-        state = 1196
+        ex.debugEndCondition(definition, false)
+        state = 1276
         continue
-      state = 1198
+      state = 1278
       continue
-    of 1198:
+    of 1278:
       # (= ?$assignment_call_201 (call missing_distance_callterm))
-      cp1200_210 = ex.v[210]
+      cp1280_210 = ex.v[210]
       # (= ?$assignment_call_201 (call missing_distance_callterm))
+      ex.debugBeginCondition(definition, 350)
       if not ex.v[210].isBound:
         let (callResult, ok) = ex.invoke(0, newSeq[Atom](), addr cs69, factSymbols)
         if ok:
           ex.setIfChanged(210, callResult)
-          state = 1201
+          ex.debugEndCondition(definition, true)
+          state = 1281
           continue
-      state = 1199
+      ex.debugEndCondition(definition, false)
+      state = 1279
       continue
-    of 1201:
+    of 1281:
       # (= ?$assignment_call_202 (* ?$assignment_call_201 1))
-      cp1203_211 = ex.v[211]
+      cp1283_211 = ex.v[211]
       # (= ?$assignment_call_202 (* ?$assignment_call_201 1))
+      ex.debugBeginCondition(definition, 351)
       block:
         let value = arith(2'u32, [ex.v[210], newInt(1'i32)])
         if value.isBound and not ex.v[211].isBound:
           ex.v[211] = value
-          state = 1204
+          ex.debugEndCondition(definition, true)
+          state = 1284
           continue
-        state = 1202
+        ex.debugEndCondition(definition, false)
+        state = 1282
         continue
-      state = 1204
+      state = 1284
       continue
-    of 1204:
+    of 1284:
       # (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))
-      cp1206_212 = ex.v[212]
+      cp1286_212 = ex.v[212]
       # (= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))
+      ex.debugBeginCondition(definition, 352)
       block:
         let value = arith(0'u32, [ex.v[209], ex.v[211]])
         if value.isBound and not ex.v[212].isBound:
           ex.v[212] = value
-          state = 1207
+          ex.debugEndCondition(definition, true)
+          state = 1287
           continue
-        state = 1205
+        ex.debugEndCondition(definition, false)
+        state = 1285
         continue
-      state = 1207
+      state = 1287
       continue
-    of 1207:
+    of 1287:
       # (= ?$assignment_call_204 0.2)
-      cp1209_213 = ex.v[213]
+      cp1289_213 = ex.v[213]
       # (= ?$assignment_call_204 0.2)
+      ex.debugBeginCondition(definition, 353)
       block:
         let value = sv77
         if value.isBound and not ex.v[213].isBound:
           ex.v[213] = value
-          state = 1210
+          ex.debugEndCondition(definition, true)
+          state = 1290
           continue
-        state = 1208
+        ex.debugEndCondition(definition, false)
+        state = 1288
         continue
-      state = 1210
+      state = 1290
       continue
-    of 1210:
+    of 1290:
       # (< ?$assignment_call_203 ?$assignment_call_204)
       # (< ?$assignment_call_203 ?$assignment_call_204)
+      ex.debugBeginCondition(definition, 354)
       if compare(ex.v[212], ex.v[213], 2'u32):
-        state = 1213
+        ex.debugEndCondition(definition, true)
+        state = 1293
         continue
-      state = 1211
+      ex.debugEndCondition(definition, false)
+      state = 1291
       continue
-    of 1213:
-      state = 1190
+    of 1293:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1270
       continue
-    of 1211:
-      state = 1208
+    of 1291:
+      state = 1288
       continue
-    of 1208:
-      ex.v[213] = cp1209_213
-      state = 1205
+    of 1288:
+      ex.v[213] = cp1289_213
+      state = 1285
       continue
-    of 1205:
-      ex.v[212] = cp1206_212
-      state = 1202
+    of 1285:
+      ex.v[212] = cp1286_212
+      state = 1282
       continue
-    of 1202:
-      ex.v[211] = cp1203_211
-      state = 1199
+    of 1282:
+      ex.v[211] = cp1283_211
+      state = 1279
       continue
-    of 1199:
-      ex.v[210] = cp1200_210
-      state = 1196
+    of 1279:
+      ex.v[210] = cp1280_210
+      state = 1276
       continue
-    of 1196:
-      ex.v[209] = cp1197_209
-      state = 1194
+    of 1276:
+      ex.v[209] = cp1277_209
+      state = 1274
       continue
-    of 1194:
-      ex.v[209] = cp1195_209
-      ex.v[210] = cp1195_210
-      ex.v[211] = cp1195_211
-      ex.v[212] = cp1195_212
-      ex.v[213] = cp1195_213
-      state = 1192
+    of 1274:
+      ex.v[209] = cp1275_209
+      ex.v[210] = cp1275_210
+      ex.v[211] = cp1275_211
+      ex.v[212] = cp1275_212
+      ex.v[213] = cp1275_213
+      ex.debugEndCondition(definition, false)
+      state = 1272
       continue
-    of 1192:
-      ex.v[209] = cp1193_209
-      ex.v[210] = cp1193_210
-      ex.v[211] = cp1193_211
-      ex.v[212] = cp1193_212
-      ex.v[213] = cp1193_213
-      state = 1191
+    of 1272:
+      ex.v[209] = cp1273_209
+      ex.v[210] = cp1273_210
+      ex.v[211] = cp1273_211
+      ex.v[212] = cp1273_212
+      ex.v[213] = cp1273_213
+      ex.debugEndCondition(definition, false)
+      state = 1271
       continue
-    of 1191:
+    of 1271:
       ex.releaseRetry(fr)
-      state = 1187
+      ex.debugEndBranch(definition, false)
+      state = 1267
       continue
-    of 1190:
+    of 1270:
       if not ex.pushBranch(addr bc32):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1214
+      ex.debugCapturePendingTask(32)
+      state = 1296
       continue
-    of 1214:
+    of 1296:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8423,33 +10196,42 @@ proc method29(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1188
+        state = 1268
         continue
-      state = 1215
+      state = 1297
       continue
-    of 1188:
+    of 1268:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms29)
-        state = 1187
+        ex.debugEndBranch(definition, false)
+        state = 1267
         continue
-      state = 1214
+      state = 1296
       continue
-    of 1215:
+    of 1297:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1187:
+    of 1267:
       # branch fallback
-      state = 1216
+      ex.debugBeginBranch(definition, 33)
+      state = 1298
       continue
-    of 1216:
+    of 1298:
       if not ex.pushBranch(addr bc33):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1218
+      ex.debugCapturePendingTask(33)
+      state = 1300
       continue
-    of 1218:
+    of 1300:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8457,16 +10239,20 @@ proc method29(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1189
+        state = 1269
         continue
-      state = 1219
+      state = 1301
       continue
-    of 1189:
+    of 1269:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1218
+      state = 1300
       continue
-    of 1219:
+    of 1301:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -8476,23 +10262,28 @@ proc method30(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 1222
+  of 1: state = 1304
   else: discard
   while true:
     case state
     of 0:
-      state = 1221
+      ex.debugBeginMethod(definition, 30)
+      state = 1303
       continue
-    of 1221:
+    of 1303:
       # branch branch
-      state = 1223
+      ex.debugBeginBranch(definition, 34)
+      state = 1305
       continue
-    of 1223:
+    of 1305:
       if not ex.pushBranch(addr bc34):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1225
+      ex.debugCapturePendingTask(34)
+      state = 1307
       continue
-    of 1225:
+    of 1307:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8500,16 +10291,20 @@ proc method30(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1222
+        state = 1304
         continue
-      state = 1226
+      state = 1308
       continue
-    of 1222:
+    of 1304:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1225
+      state = 1307
       continue
-    of 1226:
+    of 1308:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -8519,23 +10314,28 @@ proc method31(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 1229
+  of 1: state = 1311
   else: discard
   while true:
     case state
     of 0:
-      state = 1228
+      ex.debugBeginMethod(definition, 31)
+      state = 1310
       continue
-    of 1228:
+    of 1310:
       # branch branch
-      state = 1230
+      ex.debugBeginBranch(definition, 35)
+      state = 1312
       continue
-    of 1230:
+    of 1312:
       if not ex.pushBranch(addr bc35):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1232
+      ex.debugCapturePendingTask(35)
+      state = 1314
       continue
-    of 1232:
+    of 1314:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8543,16 +10343,20 @@ proc method31(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1229
+        state = 1311
         continue
-      state = 1233
+      state = 1315
       continue
-    of 1229:
+    of 1311:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1232
+      state = 1314
       continue
-    of 1233:
+    of 1315:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -8560,205 +10364,238 @@ proc method31(ex: Exec): int {.nimcall.} =
 # method32: continue_move/0
 proc method32(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1240_101: Atom
-  var cp1240_102: Atom
-  var cp1240_103: Atom
-  var cp1240_104: Atom
-  var cp1240_217: Atom
-  var cp1240_218: Atom
-  var cp1240_219: Atom
-  var cp1240_220: Atom
-  var cp1242_101: Atom
-  var cp1242_102: Atom
-  var cp1242_103: Atom
-  var fc1243: uint32
-  var cp1246_104: Atom
-  var cp1249_217: Atom
-  var cp1249_218: Atom
-  var cp1249_219: Atom
-  var cp1249_220: Atom
-  var cp1251_217: Atom
-  var cp1254_218: Atom
-  var cp1257_219: Atom
-  var cp1260_220: Atom
+  var cp1322_101: Atom
+  var cp1322_102: Atom
+  var cp1322_103: Atom
+  var cp1322_104: Atom
+  var cp1322_217: Atom
+  var cp1322_218: Atom
+  var cp1322_219: Atom
+  var cp1322_220: Atom
+  var cp1324_101: Atom
+  var cp1324_102: Atom
+  var cp1324_103: Atom
+  var fc1325: uint32
+  var cp1328_104: Atom
+  var cp1331_217: Atom
+  var cp1331_218: Atom
+  var cp1331_219: Atom
+  var cp1331_220: Atom
+  var cp1333_217: Atom
+  var cp1336_218: Atom
+  var cp1339_219: Atom
+  var cp1342_220: Atom
   var state = 0
   case fr.resume
-  of 1: state = 1236
+  of 1: state = 1318
   else: discard
   while true:
     case state
     of 0:
-      state = 1235
+      ex.debugBeginMethod(definition, 32)
+      state = 1317
       continue
-    of 1235:
+    of 1317:
       # branch continue_move_to_seen_entity
+      ex.debugBeginBranch(definition, 36)
       # (and (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position) (= ?new_entity_position (call get_entity_position ?entity_id)) (< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2))
-      cp1240_101 = ex.v[101]
-      cp1240_102 = ex.v[102]
-      cp1240_103 = ex.v[103]
-      cp1240_104 = ex.v[104]
-      cp1240_217 = ex.v[217]
-      cp1240_218 = ex.v[218]
-      cp1240_219 = ex.v[219]
-      cp1240_220 = ex.v[220]
+      cp1322_101 = ex.v[101]
+      cp1322_102 = ex.v[102]
+      cp1322_103 = ex.v[103]
+      cp1322_104 = ex.v[104]
+      cp1322_217 = ex.v[217]
+      cp1322_218 = ex.v[218]
+      cp1322_219 = ex.v[219]
+      cp1322_220 = ex.v[220]
+      ex.debugBeginCondition(definition, 355)
       # (active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)
-      cp1242_101 = ex.v[101]
-      cp1242_102 = ex.v[102]
-      cp1242_103 = ex.v[103]
-      fc1243 = 0
-      state = 1244
+      cp1324_101 = ex.v[101]
+      cp1324_102 = ex.v[102]
+      cp1324_103 = ex.v[103]
+      fc1325 = 0
+      state = 1326
       continue
-    of 1244:
-      inc fc1243
-      if not factChoice356(ex, fc1243 - 1):
-        state = 1241
+    of 1326:
+      ex.debugBeginCondition(definition, 356)
+      inc fc1325
+      if not factChoice356(ex, fc1325 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1323
         continue
+      ex.debugEndCondition(definition, true)
       # (= ?new_entity_position (call get_entity_position ?entity_id))
-      cp1246_104 = ex.v[104]
+      cp1328_104 = ex.v[104]
       # (= ?new_entity_position (call get_entity_position ?entity_id))
+      ex.debugBeginCondition(definition, 357)
       if not ex.v[104].isBound:
         let (callResult, ok) = ex.invoke(3, @[ex.v[102]], addr cs70, factSymbols)
         if ok:
           ex.setIfChanged(104, callResult)
-          state = 1247
+          ex.debugEndCondition(definition, true)
+          state = 1329
           continue
-      state = 1245
+      ex.debugEndCondition(definition, false)
+      state = 1327
       continue
-    of 1247:
+    of 1329:
       # (and (= ?$assignment_call_208 ?old_entity_position) (= ?$assignment_call_209 ?new_entity_position) (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209)) (= ?$assignment_call_211 0.2) (< ?$assignment_call_210 ?$assignment_call_211))
-      cp1249_217 = ex.v[217]
-      cp1249_218 = ex.v[218]
-      cp1249_219 = ex.v[219]
-      cp1249_220 = ex.v[220]
+      cp1331_217 = ex.v[217]
+      cp1331_218 = ex.v[218]
+      cp1331_219 = ex.v[219]
+      cp1331_220 = ex.v[220]
+      ex.debugBeginCondition(definition, 358)
       # (= ?$assignment_call_208 ?old_entity_position)
-      cp1251_217 = ex.v[217]
+      cp1333_217 = ex.v[217]
       # (= ?$assignment_call_208 ?old_entity_position)
+      ex.debugBeginCondition(definition, 359)
       block:
         let value = ex.v[103]
         if value.isBound and not ex.v[217].isBound:
           ex.v[217] = value
-          state = 1252
+          ex.debugEndCondition(definition, true)
+          state = 1334
           continue
-        state = 1250
+        ex.debugEndCondition(definition, false)
+        state = 1332
         continue
-      state = 1252
+      state = 1334
       continue
-    of 1252:
+    of 1334:
       # (= ?$assignment_call_209 ?new_entity_position)
-      cp1254_218 = ex.v[218]
+      cp1336_218 = ex.v[218]
       # (= ?$assignment_call_209 ?new_entity_position)
+      ex.debugBeginCondition(definition, 360)
       block:
         let value = ex.v[104]
         if value.isBound and not ex.v[218].isBound:
           ex.v[218] = value
-          state = 1255
+          ex.debugEndCondition(definition, true)
+          state = 1337
           continue
-        state = 1253
+        ex.debugEndCondition(definition, false)
+        state = 1335
         continue
-      state = 1255
+      state = 1337
       continue
-    of 1255:
+    of 1337:
       # (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))
-      cp1257_219 = ex.v[219]
+      cp1339_219 = ex.v[219]
       # (= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))
+      ex.debugBeginCondition(definition, 361)
       if not ex.v[219].isBound:
         let (callResult, ok) = ex.invoke(4, @[ex.v[217], ex.v[218]], addr cs71, factSymbols)
         if ok:
           ex.setIfChanged(219, callResult)
-          state = 1258
+          ex.debugEndCondition(definition, true)
+          state = 1340
           continue
-      state = 1256
+      ex.debugEndCondition(definition, false)
+      state = 1338
       continue
-    of 1258:
+    of 1340:
       # (= ?$assignment_call_211 0.2)
-      cp1260_220 = ex.v[220]
+      cp1342_220 = ex.v[220]
       # (= ?$assignment_call_211 0.2)
+      ex.debugBeginCondition(definition, 362)
       block:
         let value = sv79
         if value.isBound and not ex.v[220].isBound:
           ex.v[220] = value
-          state = 1261
+          ex.debugEndCondition(definition, true)
+          state = 1343
           continue
-        state = 1259
+        ex.debugEndCondition(definition, false)
+        state = 1341
         continue
-      state = 1261
+      state = 1343
       continue
-    of 1261:
+    of 1343:
       # (< ?$assignment_call_210 ?$assignment_call_211)
       # (< ?$assignment_call_210 ?$assignment_call_211)
+      ex.debugBeginCondition(definition, 363)
       if compare(ex.v[219], ex.v[220], 2'u32):
-        state = 1264
+        ex.debugEndCondition(definition, true)
+        state = 1346
         continue
-      state = 1262
+      ex.debugEndCondition(definition, false)
+      state = 1344
       continue
-    of 1264:
-      state = 1237
+    of 1346:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1319
       continue
-    of 1262:
-      state = 1259
+    of 1344:
+      state = 1341
       continue
-    of 1259:
-      ex.v[220] = cp1260_220
-      state = 1256
+    of 1341:
+      ex.v[220] = cp1342_220
+      state = 1338
       continue
-    of 1256:
-      ex.v[219] = cp1257_219
-      state = 1253
+    of 1338:
+      ex.v[219] = cp1339_219
+      state = 1335
       continue
-    of 1253:
-      ex.v[218] = cp1254_218
-      state = 1250
+    of 1335:
+      ex.v[218] = cp1336_218
+      state = 1332
       continue
-    of 1250:
-      ex.v[217] = cp1251_217
-      state = 1248
+    of 1332:
+      ex.v[217] = cp1333_217
+      state = 1330
       continue
-    of 1248:
-      ex.v[217] = cp1249_217
-      ex.v[218] = cp1249_218
-      ex.v[219] = cp1249_219
-      ex.v[220] = cp1249_220
-      state = 1245
+    of 1330:
+      ex.v[217] = cp1331_217
+      ex.v[218] = cp1331_218
+      ex.v[219] = cp1331_219
+      ex.v[220] = cp1331_220
+      ex.debugEndCondition(definition, false)
+      state = 1327
       continue
-    of 1245:
-      ex.v[104] = cp1246_104
-      state = 1243
+    of 1327:
+      ex.v[104] = cp1328_104
+      state = 1325
       continue
-    of 1243:
-      ex.v[101] = cp1242_101
-      ex.v[102] = cp1242_102
-      ex.v[103] = cp1242_103
-      cp1242_101 = ex.v[101]
-      cp1242_102 = ex.v[102]
-      cp1242_103 = ex.v[103]
-      state = 1244
+    of 1325:
+      ex.v[101] = cp1324_101
+      ex.v[102] = cp1324_102
+      ex.v[103] = cp1324_103
+      cp1324_101 = ex.v[101]
+      cp1324_102 = ex.v[102]
+      cp1324_103 = ex.v[103]
+      state = 1326
       continue
-    of 1241:
-      ex.v[101] = cp1242_101
-      ex.v[102] = cp1242_102
-      ex.v[103] = cp1242_103
-      state = 1239
+    of 1323:
+      ex.v[101] = cp1324_101
+      ex.v[102] = cp1324_102
+      ex.v[103] = cp1324_103
+      state = 1321
       continue
-    of 1239:
-      ex.v[101] = cp1240_101
-      ex.v[102] = cp1240_102
-      ex.v[103] = cp1240_103
-      ex.v[104] = cp1240_104
-      ex.v[217] = cp1240_217
-      ex.v[218] = cp1240_218
-      ex.v[219] = cp1240_219
-      ex.v[220] = cp1240_220
-      state = 1238
+    of 1321:
+      ex.v[101] = cp1322_101
+      ex.v[102] = cp1322_102
+      ex.v[103] = cp1322_103
+      ex.v[104] = cp1322_104
+      ex.v[217] = cp1322_217
+      ex.v[218] = cp1322_218
+      ex.v[219] = cp1322_219
+      ex.v[220] = cp1322_220
+      ex.debugEndCondition(definition, false)
+      state = 1320
       continue
-    of 1238:
-      state = 1234
+    of 1320:
+      ex.debugEndBranch(definition, false)
+      state = 1316
       continue
-    of 1237:
+    of 1319:
       if not ex.pushBranch(addr bc36):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1265
+      ex.debugCapturePendingTask(36)
+      state = 1349
       continue
-    of 1265:
+    of 1349:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8766,18 +10603,23 @@ proc method32(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1236
+        state = 1318
         continue
-      state = 1266
+      state = 1350
       continue
-    of 1236:
+    of 1318:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1265
+      state = 1349
       continue
-    of 1266:
+    of 1350:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1234:
+    of 1316:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -8785,144 +10627,171 @@ proc method32(ex: Exec): int {.nimcall.} =
 # method33: debugger_backtracking/0
 proc method33(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1273_109: Atom
-  var cp1273_221: Atom
-  var cp1273_222: Atom
-  var cp1273_223: Atom
-  var cp1275_109: Atom
-  var fc1276: uint32
-  var cp1279_221: Atom
-  var cp1279_222: Atom
-  var cp1279_223: Atom
-  var cp1281_221: Atom
-  var cp1284_222: Atom
-  var cp1287_223: Atom
+  var cp1357_109: Atom
+  var cp1357_221: Atom
+  var cp1357_222: Atom
+  var cp1357_223: Atom
+  var cp1359_109: Atom
+  var fc1360: uint32
+  var cp1363_221: Atom
+  var cp1363_222: Atom
+  var cp1363_223: Atom
+  var cp1365_221: Atom
+  var cp1368_222: Atom
+  var cp1371_223: Atom
   var state = 0
   case fr.resume
-  of 1: state = 1269
+  of 1: state = 1353
   else: discard
   while true:
     case state
     of 0:
-      state = 1268
+      ex.debugBeginMethod(definition, 33)
+      state = 1352
       continue
-    of 1268:
+    of 1352:
       # branch branch
+      ex.debugBeginBranch(definition, 37)
       # (and (candidate ?entity) (< (call identity ?entity) 2))
-      cp1273_109 = ex.v[109]
-      cp1273_221 = ex.v[221]
-      cp1273_222 = ex.v[222]
-      cp1273_223 = ex.v[223]
+      cp1357_109 = ex.v[109]
+      cp1357_221 = ex.v[221]
+      cp1357_222 = ex.v[222]
+      cp1357_223 = ex.v[223]
+      ex.debugBeginCondition(definition, 364)
       # (candidate ?entity)
-      cp1275_109 = ex.v[109]
-      fc1276 = 0
-      state = 1277
+      cp1359_109 = ex.v[109]
+      fc1360 = 0
+      state = 1361
       continue
-    of 1277:
-      inc fc1276
-      if not factChoice365(ex, fc1276 - 1):
-        state = 1274
+    of 1361:
+      ex.debugBeginCondition(definition, 365)
+      inc fc1360
+      if not factChoice365(ex, fc1360 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1358
         continue
+      ex.debugEndCondition(definition, true)
       # (and (= ?$assignment_call_212 ?entity) (= ?$assignment_call_213 (call identity ?$assignment_call_212)) (= ?$assignment_call_214 2) (< ?$assignment_call_213 ?$assignment_call_214))
-      cp1279_221 = ex.v[221]
-      cp1279_222 = ex.v[222]
-      cp1279_223 = ex.v[223]
+      cp1363_221 = ex.v[221]
+      cp1363_222 = ex.v[222]
+      cp1363_223 = ex.v[223]
+      ex.debugBeginCondition(definition, 366)
       # (= ?$assignment_call_212 ?entity)
-      cp1281_221 = ex.v[221]
+      cp1365_221 = ex.v[221]
       # (= ?$assignment_call_212 ?entity)
+      ex.debugBeginCondition(definition, 367)
       block:
         let value = ex.v[109]
         if value.isBound and not ex.v[221].isBound:
           ex.v[221] = value
-          state = 1282
+          ex.debugEndCondition(definition, true)
+          state = 1366
           continue
-        state = 1280
+        ex.debugEndCondition(definition, false)
+        state = 1364
         continue
-      state = 1282
+      state = 1366
       continue
-    of 1282:
+    of 1366:
       # (= ?$assignment_call_213 (call identity ?$assignment_call_212))
-      cp1284_222 = ex.v[222]
+      cp1368_222 = ex.v[222]
       # (= ?$assignment_call_213 (call identity ?$assignment_call_212))
+      ex.debugBeginCondition(definition, 368)
       if not ex.v[222].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[221]], addr cs72, factSymbols)
         if ok:
           ex.setIfChanged(222, callResult)
-          state = 1285
+          ex.debugEndCondition(definition, true)
+          state = 1369
           continue
-      state = 1283
+      ex.debugEndCondition(definition, false)
+      state = 1367
       continue
-    of 1285:
+    of 1369:
       # (= ?$assignment_call_214 2)
-      cp1287_223 = ex.v[223]
+      cp1371_223 = ex.v[223]
       # (= ?$assignment_call_214 2)
+      ex.debugBeginCondition(definition, 369)
       block:
         let value = sv80
         if value.isBound and not ex.v[223].isBound:
           ex.v[223] = value
-          state = 1288
+          ex.debugEndCondition(definition, true)
+          state = 1372
           continue
-        state = 1286
+        ex.debugEndCondition(definition, false)
+        state = 1370
         continue
-      state = 1288
+      state = 1372
       continue
-    of 1288:
+    of 1372:
       # (< ?$assignment_call_213 ?$assignment_call_214)
       # (< ?$assignment_call_213 ?$assignment_call_214)
+      ex.debugBeginCondition(definition, 370)
       if compare(ex.v[222], ex.v[223], 2'u32):
-        state = 1291
+        ex.debugEndCondition(definition, true)
+        state = 1375
         continue
-      state = 1289
+      ex.debugEndCondition(definition, false)
+      state = 1373
       continue
-    of 1291:
-      state = 1270
+    of 1375:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1354
       continue
-    of 1289:
-      state = 1286
+    of 1373:
+      state = 1370
       continue
-    of 1286:
-      ex.v[223] = cp1287_223
-      state = 1283
+    of 1370:
+      ex.v[223] = cp1371_223
+      state = 1367
       continue
-    of 1283:
-      ex.v[222] = cp1284_222
-      state = 1280
+    of 1367:
+      ex.v[222] = cp1368_222
+      state = 1364
       continue
-    of 1280:
-      ex.v[221] = cp1281_221
-      state = 1278
+    of 1364:
+      ex.v[221] = cp1365_221
+      state = 1362
       continue
-    of 1278:
-      ex.v[221] = cp1279_221
-      ex.v[222] = cp1279_222
-      ex.v[223] = cp1279_223
-      state = 1276
+    of 1362:
+      ex.v[221] = cp1363_221
+      ex.v[222] = cp1363_222
+      ex.v[223] = cp1363_223
+      ex.debugEndCondition(definition, false)
+      state = 1360
       continue
-    of 1276:
-      ex.v[109] = cp1275_109
-      cp1275_109 = ex.v[109]
-      state = 1277
+    of 1360:
+      ex.v[109] = cp1359_109
+      cp1359_109 = ex.v[109]
+      state = 1361
       continue
-    of 1274:
-      ex.v[109] = cp1275_109
-      state = 1272
+    of 1358:
+      ex.v[109] = cp1359_109
+      state = 1356
       continue
-    of 1272:
-      ex.v[109] = cp1273_109
-      ex.v[221] = cp1273_221
-      ex.v[222] = cp1273_222
-      ex.v[223] = cp1273_223
-      state = 1271
+    of 1356:
+      ex.v[109] = cp1357_109
+      ex.v[221] = cp1357_221
+      ex.v[222] = cp1357_222
+      ex.v[223] = cp1357_223
+      ex.debugEndCondition(definition, false)
+      state = 1355
       continue
-    of 1271:
-      state = 1267
+    of 1355:
+      ex.debugEndBranch(definition, false)
+      state = 1351
       continue
-    of 1270:
+    of 1354:
       if not ex.pushBranch(addr bc37):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1292
+      ex.debugCapturePendingTask(37)
+      state = 1378
       continue
-    of 1292:
+    of 1378:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8930,18 +10799,23 @@ proc method33(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1269
+        state = 1353
         continue
-      state = 1293
+      state = 1379
       continue
-    of 1269:
+    of 1353:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1292
+      state = 1378
       continue
-    of 1293:
+    of 1379:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1267:
+    of 1351:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -8949,114 +10823,137 @@ proc method33(ex: Exec): int {.nimcall.} =
 # method34: debugger_skipped/0
 proc method34(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1300_224: Atom
-  var cp1300_225: Atom
-  var cp1305_224: Atom
-  var cp1305_225: Atom
-  var cp1307_224: Atom
-  var cp1310_225: Atom
+  var cp1386_224: Atom
+  var cp1386_225: Atom
+  var cp1391_224: Atom
+  var cp1391_225: Atom
+  var cp1393_224: Atom
+  var cp1396_225: Atom
   var state = 0
   case fr.resume
-  of 1: state = 1296
+  of 1: state = 1382
   else: discard
   while true:
     case state
     of 0:
-      state = 1295
+      ex.debugBeginMethod(definition, 34)
+      state = 1381
       continue
-    of 1295:
+    of 1381:
       # branch branch
+      ex.debugBeginBranch(definition, 38)
       # (and (absent_fact) (< (call distance) 0.2))
-      cp1300_224 = ex.v[224]
-      cp1300_225 = ex.v[225]
+      cp1386_224 = ex.v[224]
+      cp1386_225 = ex.v[225]
+      ex.debugBeginCondition(definition, 371)
       # (absent_fact)
       # (absent_fact)
       block:
+        ex.debugBeginCondition(definition, 372)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[0].rows.len:
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1303
+          state = 1389
           continue
-        state = 1301
+        state = 1387
         continue
-      state = 1303
+      state = 1389
       continue
-    of 1303:
+    of 1389:
       # (and (= ?$assignment_call_215 (call distance)) (= ?$assignment_call_216 0.2) (< ?$assignment_call_215 ?$assignment_call_216))
-      cp1305_224 = ex.v[224]
-      cp1305_225 = ex.v[225]
+      cp1391_224 = ex.v[224]
+      cp1391_225 = ex.v[225]
+      ex.debugBeginCondition(definition, 373)
       # (= ?$assignment_call_215 (call distance))
-      cp1307_224 = ex.v[224]
+      cp1393_224 = ex.v[224]
       # (= ?$assignment_call_215 (call distance))
+      ex.debugBeginCondition(definition, 374)
       if not ex.v[224].isBound:
         let (callResult, ok) = ex.invoke(2, newSeq[Atom](), addr cs73, factSymbols)
         if ok:
           ex.setIfChanged(224, callResult)
-          state = 1308
+          ex.debugEndCondition(definition, true)
+          state = 1394
           continue
-      state = 1306
+      ex.debugEndCondition(definition, false)
+      state = 1392
       continue
-    of 1308:
+    of 1394:
       # (= ?$assignment_call_216 0.2)
-      cp1310_225 = ex.v[225]
+      cp1396_225 = ex.v[225]
       # (= ?$assignment_call_216 0.2)
+      ex.debugBeginCondition(definition, 375)
       block:
         let value = sv81
         if value.isBound and not ex.v[225].isBound:
           ex.v[225] = value
-          state = 1311
+          ex.debugEndCondition(definition, true)
+          state = 1397
           continue
-        state = 1309
+        ex.debugEndCondition(definition, false)
+        state = 1395
         continue
-      state = 1311
+      state = 1397
       continue
-    of 1311:
+    of 1397:
       # (< ?$assignment_call_215 ?$assignment_call_216)
       # (< ?$assignment_call_215 ?$assignment_call_216)
+      ex.debugBeginCondition(definition, 376)
       if compare(ex.v[224], ex.v[225], 2'u32):
-        state = 1314
+        ex.debugEndCondition(definition, true)
+        state = 1400
         continue
-      state = 1312
+      ex.debugEndCondition(definition, false)
+      state = 1398
       continue
-    of 1314:
-      state = 1297
+    of 1400:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1383
       continue
-    of 1312:
-      state = 1309
+    of 1398:
+      state = 1395
       continue
-    of 1309:
-      ex.v[225] = cp1310_225
-      state = 1306
+    of 1395:
+      ex.v[225] = cp1396_225
+      state = 1392
       continue
-    of 1306:
-      ex.v[224] = cp1307_224
-      state = 1304
+    of 1392:
+      ex.v[224] = cp1393_224
+      state = 1390
       continue
-    of 1304:
-      ex.v[224] = cp1305_224
-      ex.v[225] = cp1305_225
-      state = 1301
+    of 1390:
+      ex.v[224] = cp1391_224
+      ex.v[225] = cp1391_225
+      ex.debugEndCondition(definition, false)
+      state = 1387
       continue
-    of 1301:
-      state = 1299
+    of 1387:
+      state = 1385
       continue
-    of 1299:
-      ex.v[224] = cp1300_224
-      ex.v[225] = cp1300_225
-      state = 1298
+    of 1385:
+      ex.v[224] = cp1386_224
+      ex.v[225] = cp1386_225
+      ex.debugEndCondition(definition, false)
+      state = 1384
       continue
-    of 1298:
-      state = 1294
+    of 1384:
+      ex.debugEndBranch(definition, false)
+      state = 1380
       continue
-    of 1297:
+    of 1383:
       if not ex.pushBranch(addr bc38):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1315
+      ex.debugCapturePendingTask(38)
+      state = 1403
       continue
-    of 1315:
+    of 1403:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9064,18 +10961,23 @@ proc method34(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1296
+        state = 1382
         continue
-      state = 1316
+      state = 1404
       continue
-    of 1296:
+    of 1382:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1315
+      state = 1403
       continue
-    of 1316:
+    of 1404:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1294:
+    of 1380:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -9083,196 +10985,233 @@ proc method34(ex: Exec): int {.nimcall.} =
 # method35: debugger_assignment/0
 proc method35(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1323_27: Atom
-  var cp1323_226: Atom
-  var cp1323_227: Atom
-  var cp1323_228: Atom
-  var cp1323_229: Atom
-  var cp1323_230: Atom
-  var cp1325_27: Atom
-  var cp1325_226: Atom
-  var cp1325_227: Atom
-  var cp1325_228: Atom
-  var cp1325_229: Atom
-  var cp1325_230: Atom
-  var cp1327_226: Atom
-  var cp1330_227: Atom
-  var cp1333_228: Atom
-  var cp1336_229: Atom
-  var cp1339_230: Atom
-  var cp1342_27: Atom
+  var cp1411_27: Atom
+  var cp1411_226: Atom
+  var cp1411_227: Atom
+  var cp1411_228: Atom
+  var cp1411_229: Atom
+  var cp1411_230: Atom
+  var cp1413_27: Atom
+  var cp1413_226: Atom
+  var cp1413_227: Atom
+  var cp1413_228: Atom
+  var cp1413_229: Atom
+  var cp1413_230: Atom
+  var cp1415_226: Atom
+  var cp1418_227: Atom
+  var cp1421_228: Atom
+  var cp1424_229: Atom
+  var cp1427_230: Atom
+  var cp1430_27: Atom
   var state = 0
   case fr.resume
-  of 1: state = 1319
+  of 1: state = 1407
   else: discard
   while true:
     case state
     of 0:
-      state = 1318
+      ex.debugBeginMethod(definition, 35)
+      state = 1406
       continue
-    of 1318:
+    of 1406:
       # branch branch
+      ex.debugBeginBranch(definition, 39)
       # (and (= ?value (call identity (+ 1 (call identity 2)))) (== ?value 3))
-      cp1323_27 = ex.v[27]
-      cp1323_226 = ex.v[226]
-      cp1323_227 = ex.v[227]
-      cp1323_228 = ex.v[228]
-      cp1323_229 = ex.v[229]
-      cp1323_230 = ex.v[230]
+      cp1411_27 = ex.v[27]
+      cp1411_226 = ex.v[226]
+      cp1411_227 = ex.v[227]
+      cp1411_228 = ex.v[228]
+      cp1411_229 = ex.v[229]
+      cp1411_230 = ex.v[230]
+      ex.debugBeginCondition(definition, 377)
       # (and (= ?$assignment_call_217 (* 1 1)) (= ?$assignment_call_218 2) (= ?$assignment_call_219 (call identity ?$assignment_call_218)) (= ?$assignment_call_220 (* ?$assignment_call_219 1)) (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220)) (= ?value (call identity ?$assignment_call_221)))
-      cp1325_27 = ex.v[27]
-      cp1325_226 = ex.v[226]
-      cp1325_227 = ex.v[227]
-      cp1325_228 = ex.v[228]
-      cp1325_229 = ex.v[229]
-      cp1325_230 = ex.v[230]
+      cp1413_27 = ex.v[27]
+      cp1413_226 = ex.v[226]
+      cp1413_227 = ex.v[227]
+      cp1413_228 = ex.v[228]
+      cp1413_229 = ex.v[229]
+      cp1413_230 = ex.v[230]
+      ex.debugBeginCondition(definition, 378)
       if ex.v[27].isBound:
-        state = 1324
+        state = 1412
         continue
       # (= ?$assignment_call_217 (* 1 1))
-      cp1327_226 = ex.v[226]
+      cp1415_226 = ex.v[226]
       # (= ?$assignment_call_217 (* 1 1))
+      ex.debugBeginCondition(definition, 379)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[226].isBound:
           ex.v[226] = value
-          state = 1328
+          ex.debugEndCondition(definition, true)
+          state = 1416
           continue
-        state = 1326
+        ex.debugEndCondition(definition, false)
+        state = 1414
         continue
-      state = 1328
+      state = 1416
       continue
-    of 1328:
+    of 1416:
       # (= ?$assignment_call_218 2)
-      cp1330_227 = ex.v[227]
+      cp1418_227 = ex.v[227]
       # (= ?$assignment_call_218 2)
+      ex.debugBeginCondition(definition, 380)
       block:
         let value = sv82
         if value.isBound and not ex.v[227].isBound:
           ex.v[227] = value
-          state = 1331
+          ex.debugEndCondition(definition, true)
+          state = 1419
           continue
-        state = 1329
+        ex.debugEndCondition(definition, false)
+        state = 1417
         continue
-      state = 1331
+      state = 1419
       continue
-    of 1331:
+    of 1419:
       # (= ?$assignment_call_219 (call identity ?$assignment_call_218))
-      cp1333_228 = ex.v[228]
+      cp1421_228 = ex.v[228]
       # (= ?$assignment_call_219 (call identity ?$assignment_call_218))
+      ex.debugBeginCondition(definition, 381)
       if not ex.v[228].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[227]], addr cs74, factSymbols)
         if ok:
           ex.setIfChanged(228, callResult)
-          state = 1334
+          ex.debugEndCondition(definition, true)
+          state = 1422
           continue
-      state = 1332
+      ex.debugEndCondition(definition, false)
+      state = 1420
       continue
-    of 1334:
+    of 1422:
       # (= ?$assignment_call_220 (* ?$assignment_call_219 1))
-      cp1336_229 = ex.v[229]
+      cp1424_229 = ex.v[229]
       # (= ?$assignment_call_220 (* ?$assignment_call_219 1))
+      ex.debugBeginCondition(definition, 382)
       block:
         let value = arith(2'u32, [ex.v[228], newInt(1'i32)])
         if value.isBound and not ex.v[229].isBound:
           ex.v[229] = value
-          state = 1337
+          ex.debugEndCondition(definition, true)
+          state = 1425
           continue
-        state = 1335
+        ex.debugEndCondition(definition, false)
+        state = 1423
         continue
-      state = 1337
+      state = 1425
       continue
-    of 1337:
+    of 1425:
       # (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))
-      cp1339_230 = ex.v[230]
+      cp1427_230 = ex.v[230]
       # (= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))
+      ex.debugBeginCondition(definition, 383)
       block:
         let value = arith(0'u32, [ex.v[226], ex.v[229]])
         if value.isBound and not ex.v[230].isBound:
           ex.v[230] = value
-          state = 1340
+          ex.debugEndCondition(definition, true)
+          state = 1428
           continue
-        state = 1338
+        ex.debugEndCondition(definition, false)
+        state = 1426
         continue
-      state = 1340
+      state = 1428
       continue
-    of 1340:
+    of 1428:
       # (= ?value (call identity ?$assignment_call_221))
-      cp1342_27 = ex.v[27]
+      cp1430_27 = ex.v[27]
       # (= ?value (call identity ?$assignment_call_221))
+      ex.debugBeginCondition(definition, 384)
       if not ex.v[27].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[230]], addr cs75, factSymbols)
         if ok:
           ex.setIfChanged(27, callResult)
-          state = 1343
+          ex.debugEndCondition(definition, true)
+          state = 1431
           continue
-      state = 1341
+      ex.debugEndCondition(definition, false)
+      state = 1429
       continue
-    of 1343:
+    of 1431:
+      ex.debugEndCondition(definition, true)
       # (== ?value 3)
       # (== ?value 3)
+      ex.debugBeginCondition(definition, 385)
       if compare(ex.v[27], sv83, 0'u32):
-        state = 1346
+        ex.debugEndCondition(definition, true)
+        state = 1435
         continue
-      state = 1344
+      ex.debugEndCondition(definition, false)
+      state = 1433
       continue
-    of 1346:
-      state = 1320
+    of 1435:
+      ex.debugEndCondition(definition, true)
+      state = 1408
       continue
-    of 1344:
-      state = 1341
+    of 1433:
+      state = 1432
       continue
-    of 1341:
-      ex.v[27] = cp1342_27
-      state = 1338
+    of 1432:
+      ex.debugBeginCondition(definition, 378)
+      state = 1429
       continue
-    of 1338:
-      ex.v[230] = cp1339_230
-      state = 1335
+    of 1429:
+      ex.v[27] = cp1430_27
+      state = 1426
       continue
-    of 1335:
-      ex.v[229] = cp1336_229
-      state = 1332
+    of 1426:
+      ex.v[230] = cp1427_230
+      state = 1423
       continue
-    of 1332:
-      ex.v[228] = cp1333_228
-      state = 1329
+    of 1423:
+      ex.v[229] = cp1424_229
+      state = 1420
       continue
-    of 1329:
-      ex.v[227] = cp1330_227
-      state = 1326
+    of 1420:
+      ex.v[228] = cp1421_228
+      state = 1417
       continue
-    of 1326:
-      ex.v[226] = cp1327_226
-      state = 1324
+    of 1417:
+      ex.v[227] = cp1418_227
+      state = 1414
       continue
-    of 1324:
-      ex.v[27] = cp1325_27
-      ex.v[226] = cp1325_226
-      ex.v[227] = cp1325_227
-      ex.v[228] = cp1325_228
-      ex.v[229] = cp1325_229
-      ex.v[230] = cp1325_230
-      state = 1322
+    of 1414:
+      ex.v[226] = cp1415_226
+      state = 1412
       continue
-    of 1322:
-      ex.v[27] = cp1323_27
-      ex.v[226] = cp1323_226
-      ex.v[227] = cp1323_227
-      ex.v[228] = cp1323_228
-      ex.v[229] = cp1323_229
-      ex.v[230] = cp1323_230
-      state = 1321
+    of 1412:
+      ex.v[27] = cp1413_27
+      ex.v[226] = cp1413_226
+      ex.v[227] = cp1413_227
+      ex.v[228] = cp1413_228
+      ex.v[229] = cp1413_229
+      ex.v[230] = cp1413_230
+      ex.debugEndCondition(definition, false)
+      state = 1410
       continue
-    of 1321:
-      state = 1317
+    of 1410:
+      ex.v[27] = cp1411_27
+      ex.v[226] = cp1411_226
+      ex.v[227] = cp1411_227
+      ex.v[228] = cp1411_228
+      ex.v[229] = cp1411_229
+      ex.v[230] = cp1411_230
+      ex.debugEndCondition(definition, false)
+      state = 1409
       continue
-    of 1320:
+    of 1409:
+      ex.debugEndBranch(definition, false)
+      state = 1405
+      continue
+    of 1408:
       if not ex.pushBranch(addr bc39):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1347
+      ex.debugCapturePendingTask(39)
+      state = 1437
       continue
-    of 1347:
+    of 1437:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9280,18 +11219,23 @@ proc method35(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1319
+        state = 1407
         continue
-      state = 1348
+      state = 1438
       continue
-    of 1319:
+    of 1407:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1347
+      state = 1437
       continue
-    of 1348:
+    of 1438:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1317:
+    of 1405:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -9345,6 +11289,7 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym24 and argumentCount == 0:
     entry = 35
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 18:
@@ -9384,11 +11329,16 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   of 35:
     runResult = ex.run(method35)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task0)], totalRestore: 0)
@@ -9472,3 +11422,3743 @@ definition = Definition(abiVersion: ABIVersion, features: featureNone, domainID:
     Requirement(name: "identity", source: Source(domain: "NestedOperatorCalls", file: "Domains/Test/nested_operator_calls.domain", line: 59, column: 33)),
     Requirement(name: "identity", source: Source(domain: "NestedOperatorCalls", file: "Domains/Test/nested_operator_calls.domain", line: 59, column: 51)),
     Requirement(name: "missing_distance_callterm", source: Source(domain: "NestedOperatorCalls", file: "Domains/Test/nested_operator_calls.domain", line: 61, column: 35))])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/nested_operator_calls.domain",
+      strings: @[
+        "NestedOperatorCalls::behave",
+        "branch",
+        "old_position",
+        "?old_position",
+        "(1.0 0.0 0.0)",
+        "new_position",
+        "?new_position",
+        "(2.0 0.0 0.0)",
+        "$assignment_call_0",
+        "$assignment_call_1",
+        "$assignment_call_2",
+        "$assignment_call_3",
+        "?$assignment_call_0",
+        "?$assignment_call_1",
+        "?$assignment_call_2",
+        "missing_distance_callterm",
+        "?$assignment_call_3",
+        "0.2",
+        "result",
+        "!result",
+        "NestedOperatorCalls::missing_right",
+        "$assignment_call_4",
+        "$assignment_call_5",
+        "?$assignment_call_4",
+        "0.0",
+        "?$assignment_call_5",
+        "NestedOperatorCalls::missing_arithmetic",
+        "$assignment_call_6",
+        "$assignment_call_7",
+        "$assignment_call_8",
+        "$assignment_call_9",
+        "$assignment_call_10",
+        "?$assignment_call_6",
+        "",
+        "(* 0.0 1)",
+        "1",
+        "?$assignment_call_7",
+        "?$assignment_call_8",
+        "(* ?$assignment_call_7 1)",
+        "?$assignment_call_9",
+        "(+ ?$assignment_call_6 ?$assignment_call_8)",
+        "?$assignment_call_10",
+        "NestedOperatorCalls::missing_deep",
+        "$assignment_call_11",
+        "$assignment_call_12",
+        "$assignment_call_13",
+        "?$assignment_call_11",
+        "?$assignment_call_12",
+        "identity",
+        "?$assignment_call_13",
+        "NestedOperatorCalls::bound_first",
+        "distance",
+        "?distance",
+        "NestedOperatorCalls::two_attempts",
+        "first",
+        "$assignment_call_14",
+        "$assignment_call_15",
+        "?$assignment_call_14",
+        "?$assignment_call_15",
+        "second",
+        "$assignment_call_16",
+        "$assignment_call_17",
+        "?$assignment_call_16",
+        "?$assignment_call_17",
+        "NestedOperatorCalls::valid_left",
+        "$assignment_call_18",
+        "$assignment_call_19",
+        "?$assignment_call_18",
+        "?$assignment_call_19",
+        "NestedOperatorCalls::valid_right",
+        "$assignment_call_20",
+        "$assignment_call_21",
+        "?$assignment_call_20",
+        "?$assignment_call_21",
+        "NestedOperatorCalls::valid_both",
+        "$assignment_call_22",
+        "$assignment_call_23",
+        "?$assignment_call_22",
+        "?$assignment_call_23",
+        "NestedOperatorCalls::valid_bound",
+        "NestedOperatorCalls::operators",
+        "value",
+        "?value",
+        "3",
+        "$assignment_call_24",
+        "$assignment_call_25",
+        "$assignment_call_26",
+        "?$assignment_call_24",
+        "2",
+        "?$assignment_call_25",
+        "?$assignment_call_26",
+        "$assignment_call_27",
+        "$assignment_call_28",
+        "$assignment_call_29",
+        "?$assignment_call_27",
+        "?$assignment_call_28",
+        "?$assignment_call_29",
+        "$assignment_call_30",
+        "$assignment_call_31",
+        "$assignment_call_32",
+        "?$assignment_call_30",
+        "4",
+        "?$assignment_call_31",
+        "?$assignment_call_32",
+        "$assignment_call_33",
+        "$assignment_call_34",
+        "$assignment_call_35",
+        "?$assignment_call_33",
+        "?$assignment_call_34",
+        "?$assignment_call_35",
+        "$assignment_call_36",
+        "$assignment_call_37",
+        "$assignment_call_38",
+        "?$assignment_call_36",
+        "?$assignment_call_37",
+        "?$assignment_call_38",
+        "$assignment_call_39",
+        "$assignment_call_40",
+        "$assignment_call_41",
+        "?$assignment_call_39",
+        "?$assignment_call_40",
+        "?$assignment_call_41",
+        "$assignment_call_42",
+        "$assignment_call_43",
+        "$assignment_call_44",
+        "$assignment_call_45",
+        "$assignment_call_46",
+        "$assignment_call_47",
+        "?$assignment_call_42",
+        "?$assignment_call_43",
+        "?$assignment_call_44",
+        "(* ?$assignment_call_43 1)",
+        "?$assignment_call_45",
+        "(* 2 1)",
+        "?$assignment_call_46",
+        "(+ ?$assignment_call_44 ?$assignment_call_45)",
+        "?$assignment_call_47",
+        "$assignment_call_48",
+        "$assignment_call_49",
+        "$assignment_call_50",
+        "$assignment_call_51",
+        "$assignment_call_52",
+        "$assignment_call_53",
+        "?$assignment_call_48",
+        "(* 5 1)",
+        "5",
+        "?$assignment_call_49",
+        "?$assignment_call_50",
+        "?$assignment_call_51",
+        "(* ?$assignment_call_50 1)",
+        "?$assignment_call_52",
+        "(- ?$assignment_call_48 ?$assignment_call_51)",
+        "?$assignment_call_53",
+        "$assignment_call_54",
+        "$assignment_call_55",
+        "$assignment_call_56",
+        "$assignment_call_57",
+        "$assignment_call_58",
+        "$assignment_call_59",
+        "?$assignment_call_54",
+        "?$assignment_call_55",
+        "?$assignment_call_56",
+        "(* ?$assignment_call_55 1)",
+        "?$assignment_call_57",
+        "(* 3 1)",
+        "?$assignment_call_58",
+        "(* ?$assignment_call_56 ?$assignment_call_57)",
+        "?$assignment_call_59",
+        "6",
+        "$assignment_call_60",
+        "$assignment_call_61",
+        "$assignment_call_62",
+        "$assignment_call_63",
+        "$assignment_call_64",
+        "$assignment_call_65",
+        "?$assignment_call_60",
+        "(* 6 1)",
+        "?$assignment_call_61",
+        "?$assignment_call_62",
+        "?$assignment_call_63",
+        "(* ?$assignment_call_62 1)",
+        "?$assignment_call_64",
+        "(/ ?$assignment_call_60 ?$assignment_call_63)",
+        "?$assignment_call_65",
+        "$assignment_call_66",
+        "$assignment_call_67",
+        "$assignment_call_68",
+        "$assignment_call_69",
+        "$assignment_call_70",
+        "$assignment_call_71",
+        "?$assignment_call_66",
+        "7",
+        "?$assignment_call_67",
+        "?$assignment_call_68",
+        "(* ?$assignment_call_67 1)",
+        "?$assignment_call_69",
+        "(* 4 1)",
+        "?$assignment_call_70",
+        "(% ?$assignment_call_68 ?$assignment_call_69)",
+        "?$assignment_call_71",
+        "$assignment_call_72",
+        "$assignment_call_73",
+        "$assignment_call_74",
+        "$assignment_call_75",
+        "$assignment_call_76",
+        "?$assignment_call_72",
+        "?$assignment_call_73",
+        "?$assignment_call_74",
+        "(* ?$assignment_call_73 1)",
+        "?$assignment_call_75",
+        "(++ ?$assignment_call_74)",
+        "?$assignment_call_76",
+        "$assignment_call_77",
+        "$assignment_call_78",
+        "$assignment_call_79",
+        "$assignment_call_80",
+        "$assignment_call_81",
+        "?$assignment_call_77",
+        "?$assignment_call_78",
+        "?$assignment_call_79",
+        "(* ?$assignment_call_78 1)",
+        "?$assignment_call_80",
+        "(-- ?$assignment_call_79)",
+        "?$assignment_call_81",
+        "$assignment_call_82",
+        "$assignment_call_83",
+        "$assignment_call_84",
+        "$assignment_call_85",
+        "$assignment_call_86",
+        "$assignment_call_87",
+        "$assignment_call_88",
+        "?$assignment_call_82",
+        "(* 1 1)",
+        "?$assignment_call_83",
+        "?$assignment_call_84",
+        "?$assignment_call_85",
+        "(* ?$assignment_call_84 1)",
+        "?$assignment_call_86",
+        "(+ ?$assignment_call_82 ?$assignment_call_85)",
+        "?$assignment_call_87",
+        "?$assignment_call_88",
+        "NestedOperatorCalls::short_circuit",
+        "$assignment_call_89",
+        "$assignment_call_90",
+        "$assignment_call_91",
+        "$assignment_call_92",
+        "$assignment_call_93",
+        "?$assignment_call_89",
+        "(* false 1)",
+        "false",
+        "?$assignment_call_90",
+        "?$assignment_call_91",
+        "(* ?$assignment_call_90 1)",
+        "?$assignment_call_92",
+        "(+ ?$assignment_call_89 ?$assignment_call_91)",
+        "?$assignment_call_93",
+        "unexpected",
+        "!unexpected",
+        "fallback",
+        "NestedOperatorCalls::task_arithmetic",
+        "(+)",
+        "(+ (call identity 1) (call identity 2))",
+        "(call identity 1)",
+        "__task_call_result_94",
+        "(call identity 2)",
+        "__task_call_result_95",
+        "NestedOperatorCalls::missing_task_arithmetic",
+        "(+ 1 (call missing_distance_callterm))",
+        "(call missing_distance_callterm)",
+        "__task_call_result_96",
+        "NestedOperatorCalls::continue_move",
+        "continue_move_to_seen_entity",
+        "active_plan",
+        "plan_time",
+        "?plan_time",
+        "moving_to_seen_entity",
+        "entity_id",
+        "?entity_id",
+        "old_entity_position",
+        "?old_entity_position",
+        "new_entity_position",
+        "?new_entity_position",
+        "get_entity_position",
+        "$assignment_call_97",
+        "$assignment_call_98",
+        "$assignment_call_99",
+        "$assignment_call_100",
+        "?$assignment_call_97",
+        "?$assignment_call_98",
+        "?$assignment_call_99",
+        "get_distance_from_to",
+        "?$assignment_call_100",
+        "continue",
+        "!continue",
+        "NestedOperatorCalls::debugger_backtracking",
+        "candidate",
+        "entity",
+        "?entity",
+        "$assignment_call_101",
+        "$assignment_call_102",
+        "$assignment_call_103",
+        "?$assignment_call_101",
+        "?$assignment_call_102",
+        "?$assignment_call_103",
+        "NestedOperatorCalls::debugger_skipped",
+        "absent_fact",
+        "$assignment_call_104",
+        "$assignment_call_105",
+        "?$assignment_call_104",
+        "?$assignment_call_105",
+        "NestedOperatorCalls::debugger_assignment",
+        "$assignment_call_106",
+        "$assignment_call_107",
+        "$assignment_call_108",
+        "$assignment_call_109",
+        "$assignment_call_110",
+        "?$assignment_call_106",
+        "?$assignment_call_107",
+        "?$assignment_call_108",
+        "?$assignment_call_109",
+        "(* ?$assignment_call_108 1)",
+        "?$assignment_call_110",
+        "(+ ?$assignment_call_106 ?$assignment_call_109)",
+        "behave",
+        "$assignment_call_111",
+        "$assignment_call_112",
+        "$assignment_call_113",
+        "$assignment_call_114",
+        "?$assignment_call_111",
+        "?$assignment_call_112",
+        "?$assignment_call_113",
+        "?$assignment_call_114",
+        "missing_right",
+        "$assignment_call_115",
+        "$assignment_call_116",
+        "?$assignment_call_115",
+        "?$assignment_call_116",
+        "missing_arithmetic",
+        "$assignment_call_117",
+        "$assignment_call_118",
+        "$assignment_call_119",
+        "$assignment_call_120",
+        "$assignment_call_121",
+        "?$assignment_call_117",
+        "?$assignment_call_118",
+        "?$assignment_call_119",
+        "(* ?$assignment_call_118 1)",
+        "?$assignment_call_120",
+        "(+ ?$assignment_call_117 ?$assignment_call_119)",
+        "?$assignment_call_121",
+        "missing_deep",
+        "$assignment_call_122",
+        "$assignment_call_123",
+        "$assignment_call_124",
+        "?$assignment_call_122",
+        "?$assignment_call_123",
+        "?$assignment_call_124",
+        "bound_first",
+        "two_attempts",
+        "$assignment_call_125",
+        "$assignment_call_126",
+        "?$assignment_call_125",
+        "?$assignment_call_126",
+        "$assignment_call_127",
+        "$assignment_call_128",
+        "?$assignment_call_127",
+        "?$assignment_call_128",
+        "valid_left",
+        "$assignment_call_129",
+        "$assignment_call_130",
+        "?$assignment_call_129",
+        "?$assignment_call_130",
+        "valid_right",
+        "$assignment_call_131",
+        "$assignment_call_132",
+        "?$assignment_call_131",
+        "?$assignment_call_132",
+        "valid_both",
+        "$assignment_call_133",
+        "$assignment_call_134",
+        "?$assignment_call_133",
+        "?$assignment_call_134",
+        "valid_bound",
+        "operators",
+        "$assignment_call_135",
+        "$assignment_call_136",
+        "$assignment_call_137",
+        "?$assignment_call_135",
+        "?$assignment_call_136",
+        "?$assignment_call_137",
+        "$assignment_call_138",
+        "$assignment_call_139",
+        "$assignment_call_140",
+        "?$assignment_call_138",
+        "?$assignment_call_139",
+        "?$assignment_call_140",
+        "$assignment_call_141",
+        "$assignment_call_142",
+        "$assignment_call_143",
+        "?$assignment_call_141",
+        "?$assignment_call_142",
+        "?$assignment_call_143",
+        "$assignment_call_144",
+        "$assignment_call_145",
+        "$assignment_call_146",
+        "?$assignment_call_144",
+        "?$assignment_call_145",
+        "?$assignment_call_146",
+        "$assignment_call_147",
+        "$assignment_call_148",
+        "$assignment_call_149",
+        "?$assignment_call_147",
+        "?$assignment_call_148",
+        "?$assignment_call_149",
+        "$assignment_call_150",
+        "$assignment_call_151",
+        "$assignment_call_152",
+        "?$assignment_call_150",
+        "?$assignment_call_151",
+        "?$assignment_call_152",
+        "$assignment_call_153",
+        "$assignment_call_154",
+        "$assignment_call_155",
+        "$assignment_call_156",
+        "$assignment_call_157",
+        "$assignment_call_158",
+        "?$assignment_call_153",
+        "?$assignment_call_154",
+        "?$assignment_call_155",
+        "(* ?$assignment_call_154 1)",
+        "?$assignment_call_156",
+        "?$assignment_call_157",
+        "(+ ?$assignment_call_155 ?$assignment_call_156)",
+        "?$assignment_call_158",
+        "$assignment_call_159",
+        "$assignment_call_160",
+        "$assignment_call_161",
+        "$assignment_call_162",
+        "$assignment_call_163",
+        "$assignment_call_164",
+        "?$assignment_call_159",
+        "?$assignment_call_160",
+        "?$assignment_call_161",
+        "?$assignment_call_162",
+        "(* ?$assignment_call_161 1)",
+        "?$assignment_call_163",
+        "(- ?$assignment_call_159 ?$assignment_call_162)",
+        "?$assignment_call_164",
+        "$assignment_call_165",
+        "$assignment_call_166",
+        "$assignment_call_167",
+        "$assignment_call_168",
+        "$assignment_call_169",
+        "$assignment_call_170",
+        "?$assignment_call_165",
+        "?$assignment_call_166",
+        "?$assignment_call_167",
+        "(* ?$assignment_call_166 1)",
+        "?$assignment_call_168",
+        "?$assignment_call_169",
+        "(* ?$assignment_call_167 ?$assignment_call_168)",
+        "?$assignment_call_170",
+        "$assignment_call_171",
+        "$assignment_call_172",
+        "$assignment_call_173",
+        "$assignment_call_174",
+        "$assignment_call_175",
+        "$assignment_call_176",
+        "?$assignment_call_171",
+        "?$assignment_call_172",
+        "?$assignment_call_173",
+        "?$assignment_call_174",
+        "(* ?$assignment_call_173 1)",
+        "?$assignment_call_175",
+        "(/ ?$assignment_call_171 ?$assignment_call_174)",
+        "?$assignment_call_176",
+        "$assignment_call_177",
+        "$assignment_call_178",
+        "$assignment_call_179",
+        "$assignment_call_180",
+        "$assignment_call_181",
+        "$assignment_call_182",
+        "?$assignment_call_177",
+        "?$assignment_call_178",
+        "?$assignment_call_179",
+        "(* ?$assignment_call_178 1)",
+        "?$assignment_call_180",
+        "?$assignment_call_181",
+        "(% ?$assignment_call_179 ?$assignment_call_180)",
+        "?$assignment_call_182",
+        "$assignment_call_183",
+        "$assignment_call_184",
+        "$assignment_call_185",
+        "$assignment_call_186",
+        "$assignment_call_187",
+        "?$assignment_call_183",
+        "?$assignment_call_184",
+        "?$assignment_call_185",
+        "(* ?$assignment_call_184 1)",
+        "?$assignment_call_186",
+        "(++ ?$assignment_call_185)",
+        "?$assignment_call_187",
+        "$assignment_call_188",
+        "$assignment_call_189",
+        "$assignment_call_190",
+        "$assignment_call_191",
+        "$assignment_call_192",
+        "?$assignment_call_188",
+        "?$assignment_call_189",
+        "?$assignment_call_190",
+        "(* ?$assignment_call_189 1)",
+        "?$assignment_call_191",
+        "(-- ?$assignment_call_190)",
+        "?$assignment_call_192",
+        "$assignment_call_193",
+        "$assignment_call_194",
+        "$assignment_call_195",
+        "$assignment_call_196",
+        "$assignment_call_197",
+        "$assignment_call_198",
+        "$assignment_call_199",
+        "?$assignment_call_193",
+        "?$assignment_call_194",
+        "?$assignment_call_195",
+        "?$assignment_call_196",
+        "(* ?$assignment_call_195 1)",
+        "?$assignment_call_197",
+        "(+ ?$assignment_call_193 ?$assignment_call_196)",
+        "?$assignment_call_198",
+        "?$assignment_call_199",
+        "short_circuit",
+        "$assignment_call_200",
+        "$assignment_call_201",
+        "$assignment_call_202",
+        "$assignment_call_203",
+        "$assignment_call_204",
+        "?$assignment_call_200",
+        "?$assignment_call_201",
+        "?$assignment_call_202",
+        "(* ?$assignment_call_201 1)",
+        "?$assignment_call_203",
+        "(+ ?$assignment_call_200 ?$assignment_call_202)",
+        "?$assignment_call_204",
+        "task_arithmetic",
+        "__task_call_result_205",
+        "__task_call_result_206",
+        "missing_task_arithmetic",
+        "__task_call_result_207",
+        "continue_move",
+        "$assignment_call_208",
+        "$assignment_call_209",
+        "$assignment_call_210",
+        "$assignment_call_211",
+        "?$assignment_call_208",
+        "?$assignment_call_209",
+        "?$assignment_call_210",
+        "?$assignment_call_211",
+        "debugger_backtracking",
+        "$assignment_call_212",
+        "$assignment_call_213",
+        "$assignment_call_214",
+        "?$assignment_call_212",
+        "?$assignment_call_213",
+        "?$assignment_call_214",
+        "debugger_skipped",
+        "$assignment_call_215",
+        "$assignment_call_216",
+        "?$assignment_call_215",
+        "?$assignment_call_216",
+        "debugger_assignment",
+        "$assignment_call_217",
+        "$assignment_call_218",
+        "$assignment_call_219",
+        "$assignment_call_220",
+        "$assignment_call_221",
+        "?$assignment_call_217",
+        "?$assignment_call_218",
+        "?$assignment_call_219",
+        "?$assignment_call_220",
+        "(* ?$assignment_call_219 1)",
+        "?$assignment_call_221",
+        "(+ ?$assignment_call_217 ?$assignment_call_220)"],
+      values: @[
+        1'u32, 3, 2, 7, 0,
+        0, 4, 4, 7, NoIndex,
+        1, 6, 5, 8, 1,
+        0, 7, 7, 8, NoIndex,
+        1, 12, 8, 9, 2,
+        1, 3, 2, 9, 0,
+        1, 13, 9, 9, 3,
+        1, 6, 5, 9, 1,
+        1, 14, 10, 9, 4,
+        1, 12, 8, 9, 2,
+        1, 13, 9, 9, 3,
+        1, 16, 11, 9, 5,
+        0, 17, 17, 9, NoIndex,
+        1, 14, 10, 9, 4,
+        1, 16, 11, 9, 5,
+        1, 23, 21, 15, 6,
+        0, 24, 24, 15, NoIndex,
+        1, 25, 22, 15, 7,
+        1, 23, 21, 15, 6,
+        1, 25, 22, 15, 7,
+        1, 32, 27, 17, 8,
+        0, 34, 33, 17, NoIndex,
+        1, 36, 28, 17, 9,
+        1, 37, 29, 17, 10,
+        0, 38, 33, 17, NoIndex,
+        1, 39, 30, 17, 11,
+        0, 40, 33, 17, NoIndex,
+        1, 41, 31, 17, 12,
+        0, 17, 17, 17, NoIndex,
+        1, 39, 30, 17, 11,
+        1, 41, 31, 17, 12,
+        1, 46, 43, 19, 13,
+        1, 47, 44, 19, 14,
+        1, 46, 43, 19, 13,
+        1, 49, 45, 19, 15,
+        0, 17, 17, 19, NoIndex,
+        1, 47, 44, 19, 14,
+        1, 49, 45, 19, 15,
+        1, 52, 51, 21, 16,
+        1, 52, 51, 21, 16,
+        0, 17, 17, 21, NoIndex,
+        1, 57, 55, 23, 17,
+        1, 58, 56, 23, 18,
+        0, 17, 17, 23, NoIndex,
+        1, 57, 55, 23, 17,
+        1, 58, 56, 23, 18,
+        1, 62, 60, 24, 19,
+        1, 63, 61, 24, 20,
+        0, 17, 17, 24, NoIndex,
+        1, 62, 60, 24, 19,
+        1, 63, 61, 24, 20,
+        1, 67, 65, 26, 21,
+        1, 68, 66, 26, 22,
+        0, 17, 17, 26, NoIndex,
+        1, 67, 65, 26, 21,
+        1, 68, 66, 26, 22,
+        1, 72, 70, 28, 23,
+        0, 24, 24, 28, NoIndex,
+        1, 73, 71, 28, 24,
+        1, 72, 70, 28, 23,
+        1, 73, 71, 28, 24,
+        1, 77, 75, 30, 25,
+        1, 78, 76, 30, 26,
+        1, 77, 75, 30, 25,
+        1, 78, 76, 30, 26,
+        1, 52, 51, 32, 16,
+        1, 52, 51, 32, 16,
+        0, 17, 17, 32, NoIndex,
+        1, 82, 81, 36, 27,
+        0, 83, 83, 36, NoIndex,
+        1, 87, 84, 37, 28,
+        0, 88, 88, 37, NoIndex,
+        1, 89, 85, 37, 29,
+        1, 87, 84, 37, 28,
+        1, 90, 86, 37, 30,
+        1, 82, 81, 37, 27,
+        1, 89, 85, 37, 29,
+        1, 90, 86, 37, 30,
+        1, 94, 91, 38, 31,
+        1, 82, 81, 38, 27,
+        1, 95, 92, 38, 32,
+        0, 83, 83, 38, NoIndex,
+        1, 96, 93, 38, 33,
+        1, 95, 92, 38, 32,
+        1, 94, 91, 38, 31,
+        1, 96, 93, 38, 33,
+        1, 100, 97, 39, 34,
+        0, 101, 101, 39, NoIndex,
+        1, 102, 98, 39, 35,
+        1, 100, 97, 39, 34,
+        1, 103, 99, 39, 36,
+        1, 82, 81, 39, 27,
+        1, 102, 98, 39, 35,
+        1, 103, 99, 39, 36,
+        1, 107, 104, 40, 37,
+        1, 82, 81, 40, 27,
+        1, 108, 105, 40, 38,
+        0, 83, 83, 40, NoIndex,
+        1, 109, 106, 40, 39,
+        1, 108, 105, 40, 38,
+        1, 107, 104, 40, 37,
+        1, 109, 106, 40, 39,
+        1, 113, 110, 41, 40,
+        1, 82, 81, 41, 27,
+        1, 114, 111, 41, 41,
+        1, 113, 110, 41, 40,
+        1, 115, 112, 41, 42,
+        0, 83, 83, 41, NoIndex,
+        1, 114, 111, 41, 41,
+        1, 115, 112, 41, 42,
+        1, 119, 116, 42, 43,
+        0, 88, 88, 42, NoIndex,
+        1, 120, 117, 42, 44,
+        1, 82, 81, 42, 27,
+        1, 121, 118, 42, 45,
+        1, 120, 117, 42, 44,
+        1, 119, 116, 42, 43,
+        1, 121, 118, 42, 45,
+        1, 128, 122, 43, 46,
+        0, 35, 35, 43, NoIndex,
+        1, 129, 123, 43, 47,
+        1, 128, 122, 43, 46,
+        1, 130, 124, 43, 48,
+        0, 131, 33, 43, NoIndex,
+        1, 132, 125, 43, 49,
+        0, 133, 33, 43, NoIndex,
+        1, 134, 126, 43, 50,
+        0, 135, 33, 43, NoIndex,
+        1, 136, 127, 43, 51,
+        0, 83, 83, 43, NoIndex,
+        1, 134, 126, 43, 50,
+        1, 136, 127, 43, 51,
+        1, 143, 137, 44, 52,
+        0, 144, 33, 44, NoIndex,
+        1, 146, 138, 44, 53,
+        0, 88, 88, 44, NoIndex,
+        1, 147, 139, 44, 54,
+        1, 146, 138, 44, 53,
+        1, 148, 140, 44, 55,
+        0, 149, 33, 44, NoIndex,
+        1, 150, 141, 44, 56,
+        0, 151, 33, 44, NoIndex,
+        1, 152, 142, 44, 57,
+        0, 83, 83, 44, NoIndex,
+        1, 150, 141, 44, 56,
+        1, 152, 142, 44, 57,
+        1, 159, 153, 45, 58,
+        0, 88, 88, 45, NoIndex,
+        1, 160, 154, 45, 59,
+        1, 159, 153, 45, 58,
+        1, 161, 155, 45, 60,
+        0, 162, 33, 45, NoIndex,
+        1, 163, 156, 45, 61,
+        0, 164, 33, 45, NoIndex,
+        1, 165, 157, 45, 62,
+        0, 166, 33, 45, NoIndex,
+        1, 167, 158, 45, 63,
+        0, 168, 168, 45, NoIndex,
+        1, 165, 157, 45, 62,
+        1, 167, 158, 45, 63,
+        1, 175, 169, 46, 64,
+        0, 176, 33, 46, NoIndex,
+        1, 177, 170, 46, 65,
+        0, 88, 88, 46, NoIndex,
+        1, 178, 171, 46, 66,
+        1, 177, 170, 46, 65,
+        1, 179, 172, 46, 67,
+        0, 180, 33, 46, NoIndex,
+        1, 181, 173, 46, 68,
+        0, 182, 33, 46, NoIndex,
+        1, 183, 174, 46, 69,
+        0, 83, 83, 46, NoIndex,
+        1, 181, 173, 46, 68,
+        1, 183, 174, 46, 69,
+        1, 190, 184, 47, 70,
+        0, 191, 191, 47, NoIndex,
+        1, 192, 185, 47, 71,
+        1, 190, 184, 47, 70,
+        1, 193, 186, 47, 72,
+        0, 194, 33, 47, NoIndex,
+        1, 195, 187, 47, 73,
+        0, 196, 33, 47, NoIndex,
+        1, 197, 188, 47, 74,
+        0, 198, 33, 47, NoIndex,
+        1, 199, 189, 47, 75,
+        0, 83, 83, 47, NoIndex,
+        1, 197, 188, 47, 74,
+        1, 199, 189, 47, 75,
+        1, 205, 200, 48, 76,
+        0, 88, 88, 48, NoIndex,
+        1, 206, 201, 48, 77,
+        1, 205, 200, 48, 76,
+        1, 207, 202, 48, 78,
+        0, 208, 33, 48, NoIndex,
+        1, 209, 203, 48, 79,
+        0, 210, 33, 48, NoIndex,
+        1, 211, 204, 48, 80,
+        0, 83, 83, 48, NoIndex,
+        1, 209, 203, 48, 79,
+        1, 211, 204, 48, 80,
+        1, 217, 212, 49, 81,
+        0, 101, 101, 49, NoIndex,
+        1, 218, 213, 49, 82,
+        1, 217, 212, 49, 81,
+        1, 219, 214, 49, 83,
+        0, 220, 33, 49, NoIndex,
+        1, 221, 215, 49, 84,
+        0, 222, 33, 49, NoIndex,
+        1, 223, 216, 49, 85,
+        0, 83, 83, 49, NoIndex,
+        1, 221, 215, 49, 84,
+        1, 223, 216, 49, 85,
+        1, 231, 224, 50, 86,
+        0, 232, 33, 50, NoIndex,
+        1, 233, 225, 50, 87,
+        0, 88, 88, 50, NoIndex,
+        1, 234, 226, 50, 88,
+        1, 233, 225, 50, 87,
+        1, 235, 227, 50, 89,
+        0, 236, 33, 50, NoIndex,
+        1, 237, 228, 50, 90,
+        0, 238, 33, 50, NoIndex,
+        1, 239, 229, 50, 91,
+        1, 237, 228, 50, 90,
+        1, 240, 230, 50, 92,
+        0, 83, 83, 50, NoIndex,
+        1, 239, 229, 50, 91,
+        1, 240, 230, 50, 92,
+        1, 247, 242, 56, 93,
+        0, 248, 33, 56, NoIndex,
+        1, 250, 243, 56, 94,
+        1, 251, 244, 56, 95,
+        0, 252, 33, 56, NoIndex,
+        1, 253, 245, 56, 96,
+        0, 254, 33, 56, NoIndex,
+        1, 255, 246, 56, 97,
+        0, 17, 17, 56, NoIndex,
+        1, 253, 245, 56, 96,
+        1, 255, 246, 56, 97,
+        0, 261, 33, 59, NoIndex,
+        0, 267, 33, 61, NoIndex,
+        1, 274, 273, 66, 101,
+        0, 275, 275, 66, NoIndex,
+        1, 277, 276, 66, 102,
+        1, 279, 278, 66, 103,
+        1, 281, 280, 67, 104,
+        1, 277, 276, 67, 102,
+        1, 287, 283, 69, 105,
+        1, 279, 278, 69, 103,
+        1, 288, 284, 69, 106,
+        1, 281, 280, 69, 104,
+        1, 289, 285, 69, 107,
+        1, 287, 283, 69, 105,
+        1, 288, 284, 69, 106,
+        1, 291, 286, 69, 108,
+        0, 17, 17, 69, NoIndex,
+        1, 289, 285, 69, 107,
+        1, 291, 286, 69, 108,
+        1, 297, 296, 76, 109,
+        1, 301, 298, 76, 110,
+        1, 297, 296, 76, 109,
+        1, 302, 299, 76, 111,
+        1, 301, 298, 76, 110,
+        1, 303, 300, 76, 112,
+        0, 88, 88, 76, NoIndex,
+        1, 302, 299, 76, 111,
+        1, 303, 300, 76, 112,
+        1, 297, 296, 77, 109,
+        1, 308, 306, 80, 113,
+        1, 309, 307, 80, 114,
+        0, 17, 17, 80, NoIndex,
+        1, 308, 306, 80, 113,
+        1, 309, 307, 80, 114,
+        1, 316, 311, 84, 115,
+        0, 232, 33, 84, NoIndex,
+        1, 317, 312, 84, 116,
+        0, 88, 88, 84, NoIndex,
+        1, 318, 313, 84, 117,
+        1, 317, 312, 84, 116,
+        1, 319, 314, 84, 118,
+        0, 320, 33, 84, NoIndex,
+        1, 321, 315, 84, 119,
+        0, 322, 33, 84, NoIndex,
+        1, 82, 81, 84, 27,
+        1, 321, 315, 84, 119,
+        1, 82, 81, 84, 27,
+        1, 82, 81, 84, 27,
+        0, 83, 83, 84, NoIndex,
+        1, 82, 81, 85, 27,
+        1, 3, 2, 7, 0,
+        0, 4, 4, 7, NoIndex,
+        1, 6, 5, 8, 1,
+        0, 7, 7, 8, NoIndex,
+        1, 328, 324, 9, 120,
+        1, 3, 2, 9, 0,
+        1, 329, 325, 9, 121,
+        1, 6, 5, 9, 1,
+        1, 330, 326, 9, 122,
+        1, 328, 324, 9, 120,
+        1, 329, 325, 9, 121,
+        1, 331, 327, 9, 123,
+        0, 17, 17, 9, NoIndex,
+        1, 330, 326, 9, 122,
+        1, 331, 327, 9, 123,
+        1, 335, 333, 15, 124,
+        0, 24, 24, 15, NoIndex,
+        1, 336, 334, 15, 125,
+        1, 335, 333, 15, 124,
+        1, 336, 334, 15, 125,
+        1, 343, 338, 17, 126,
+        0, 34, 33, 17, NoIndex,
+        1, 344, 339, 17, 127,
+        1, 345, 340, 17, 128,
+        0, 346, 33, 17, NoIndex,
+        1, 347, 341, 17, 129,
+        0, 348, 33, 17, NoIndex,
+        1, 349, 342, 17, 130,
+        0, 17, 17, 17, NoIndex,
+        1, 347, 341, 17, 129,
+        1, 349, 342, 17, 130,
+        1, 354, 351, 19, 131,
+        1, 355, 352, 19, 132,
+        1, 354, 351, 19, 131,
+        1, 356, 353, 19, 133,
+        0, 17, 17, 19, NoIndex,
+        1, 355, 352, 19, 132,
+        1, 356, 353, 19, 133,
+        1, 52, 51, 21, 16,
+        1, 52, 51, 21, 16,
+        0, 17, 17, 21, NoIndex,
+        1, 361, 359, 23, 134,
+        1, 362, 360, 23, 135,
+        0, 17, 17, 23, NoIndex,
+        1, 361, 359, 23, 134,
+        1, 362, 360, 23, 135,
+        1, 365, 363, 24, 136,
+        1, 366, 364, 24, 137,
+        0, 17, 17, 24, NoIndex,
+        1, 365, 363, 24, 136,
+        1, 366, 364, 24, 137,
+        1, 370, 368, 26, 138,
+        1, 371, 369, 26, 139,
+        0, 17, 17, 26, NoIndex,
+        1, 370, 368, 26, 138,
+        1, 371, 369, 26, 139,
+        1, 375, 373, 28, 140,
+        0, 24, 24, 28, NoIndex,
+        1, 376, 374, 28, 141,
+        1, 375, 373, 28, 140,
+        1, 376, 374, 28, 141,
+        1, 380, 378, 30, 142,
+        1, 381, 379, 30, 143,
+        1, 380, 378, 30, 142,
+        1, 381, 379, 30, 143,
+        1, 52, 51, 32, 16,
+        1, 52, 51, 32, 16,
+        0, 17, 17, 32, NoIndex,
+        1, 82, 81, 36, 27,
+        0, 83, 83, 36, NoIndex,
+        1, 387, 384, 37, 144,
+        0, 88, 88, 37, NoIndex,
+        1, 388, 385, 37, 145,
+        1, 387, 384, 37, 144,
+        1, 389, 386, 37, 146,
+        1, 82, 81, 37, 27,
+        1, 388, 385, 37, 145,
+        1, 389, 386, 37, 146,
+        1, 393, 390, 38, 147,
+        1, 82, 81, 38, 27,
+        1, 394, 391, 38, 148,
+        0, 83, 83, 38, NoIndex,
+        1, 395, 392, 38, 149,
+        1, 394, 391, 38, 148,
+        1, 393, 390, 38, 147,
+        1, 395, 392, 38, 149,
+        1, 399, 396, 39, 150,
+        0, 101, 101, 39, NoIndex,
+        1, 400, 397, 39, 151,
+        1, 399, 396, 39, 150,
+        1, 401, 398, 39, 152,
+        1, 82, 81, 39, 27,
+        1, 400, 397, 39, 151,
+        1, 401, 398, 39, 152,
+        1, 405, 402, 40, 153,
+        1, 82, 81, 40, 27,
+        1, 406, 403, 40, 154,
+        0, 83, 83, 40, NoIndex,
+        1, 407, 404, 40, 155,
+        1, 406, 403, 40, 154,
+        1, 405, 402, 40, 153,
+        1, 407, 404, 40, 155,
+        1, 411, 408, 41, 156,
+        1, 82, 81, 41, 27,
+        1, 412, 409, 41, 157,
+        1, 411, 408, 41, 156,
+        1, 413, 410, 41, 158,
+        0, 83, 83, 41, NoIndex,
+        1, 412, 409, 41, 157,
+        1, 413, 410, 41, 158,
+        1, 417, 414, 42, 159,
+        0, 88, 88, 42, NoIndex,
+        1, 418, 415, 42, 160,
+        1, 82, 81, 42, 27,
+        1, 419, 416, 42, 161,
+        1, 418, 415, 42, 160,
+        1, 417, 414, 42, 159,
+        1, 419, 416, 42, 161,
+        1, 426, 420, 43, 162,
+        0, 35, 35, 43, NoIndex,
+        1, 427, 421, 43, 163,
+        1, 426, 420, 43, 162,
+        1, 428, 422, 43, 164,
+        0, 429, 33, 43, NoIndex,
+        1, 430, 423, 43, 165,
+        0, 133, 33, 43, NoIndex,
+        1, 431, 424, 43, 166,
+        0, 432, 33, 43, NoIndex,
+        1, 433, 425, 43, 167,
+        0, 83, 83, 43, NoIndex,
+        1, 431, 424, 43, 166,
+        1, 433, 425, 43, 167,
+        1, 440, 434, 44, 168,
+        0, 144, 33, 44, NoIndex,
+        1, 441, 435, 44, 169,
+        0, 88, 88, 44, NoIndex,
+        1, 442, 436, 44, 170,
+        1, 441, 435, 44, 169,
+        1, 443, 437, 44, 171,
+        0, 444, 33, 44, NoIndex,
+        1, 445, 438, 44, 172,
+        0, 446, 33, 44, NoIndex,
+        1, 447, 439, 44, 173,
+        0, 83, 83, 44, NoIndex,
+        1, 445, 438, 44, 172,
+        1, 447, 439, 44, 173,
+        1, 454, 448, 45, 174,
+        0, 88, 88, 45, NoIndex,
+        1, 455, 449, 45, 175,
+        1, 454, 448, 45, 174,
+        1, 456, 450, 45, 176,
+        0, 457, 33, 45, NoIndex,
+        1, 458, 451, 45, 177,
+        0, 164, 33, 45, NoIndex,
+        1, 459, 452, 45, 178,
+        0, 460, 33, 45, NoIndex,
+        1, 461, 453, 45, 179,
+        0, 168, 168, 45, NoIndex,
+        1, 459, 452, 45, 178,
+        1, 461, 453, 45, 179,
+        1, 468, 462, 46, 180,
+        0, 176, 33, 46, NoIndex,
+        1, 469, 463, 46, 181,
+        0, 88, 88, 46, NoIndex,
+        1, 470, 464, 46, 182,
+        1, 469, 463, 46, 181,
+        1, 471, 465, 46, 183,
+        0, 472, 33, 46, NoIndex,
+        1, 473, 466, 46, 184,
+        0, 474, 33, 46, NoIndex,
+        1, 475, 467, 46, 185,
+        0, 83, 83, 46, NoIndex,
+        1, 473, 466, 46, 184,
+        1, 475, 467, 46, 185,
+        1, 482, 476, 47, 186,
+        0, 191, 191, 47, NoIndex,
+        1, 483, 477, 47, 187,
+        1, 482, 476, 47, 186,
+        1, 484, 478, 47, 188,
+        0, 485, 33, 47, NoIndex,
+        1, 486, 479, 47, 189,
+        0, 196, 33, 47, NoIndex,
+        1, 487, 480, 47, 190,
+        0, 488, 33, 47, NoIndex,
+        1, 489, 481, 47, 191,
+        0, 83, 83, 47, NoIndex,
+        1, 487, 480, 47, 190,
+        1, 489, 481, 47, 191,
+        1, 495, 490, 48, 192,
+        0, 88, 88, 48, NoIndex,
+        1, 496, 491, 48, 193,
+        1, 495, 490, 48, 192,
+        1, 497, 492, 48, 194,
+        0, 498, 33, 48, NoIndex,
+        1, 499, 493, 48, 195,
+        0, 500, 33, 48, NoIndex,
+        1, 501, 494, 48, 196,
+        0, 83, 83, 48, NoIndex,
+        1, 499, 493, 48, 195,
+        1, 501, 494, 48, 196,
+        1, 507, 502, 49, 197,
+        0, 101, 101, 49, NoIndex,
+        1, 508, 503, 49, 198,
+        1, 507, 502, 49, 197,
+        1, 509, 504, 49, 199,
+        0, 510, 33, 49, NoIndex,
+        1, 511, 505, 49, 200,
+        0, 512, 33, 49, NoIndex,
+        1, 513, 506, 49, 201,
+        0, 83, 83, 49, NoIndex,
+        1, 511, 505, 49, 200,
+        1, 513, 506, 49, 201,
+        1, 521, 514, 50, 202,
+        0, 232, 33, 50, NoIndex,
+        1, 522, 515, 50, 203,
+        0, 88, 88, 50, NoIndex,
+        1, 523, 516, 50, 204,
+        1, 522, 515, 50, 203,
+        1, 524, 517, 50, 205,
+        0, 525, 33, 50, NoIndex,
+        1, 526, 518, 50, 206,
+        0, 527, 33, 50, NoIndex,
+        1, 528, 519, 50, 207,
+        1, 526, 518, 50, 206,
+        1, 529, 520, 50, 208,
+        0, 83, 83, 50, NoIndex,
+        1, 528, 519, 50, 207,
+        1, 529, 520, 50, 208,
+        1, 536, 531, 56, 209,
+        0, 248, 33, 56, NoIndex,
+        1, 537, 532, 56, 210,
+        1, 538, 533, 56, 211,
+        0, 539, 33, 56, NoIndex,
+        1, 540, 534, 56, 212,
+        0, 541, 33, 56, NoIndex,
+        1, 542, 535, 56, 213,
+        0, 17, 17, 56, NoIndex,
+        1, 540, 534, 56, 212,
+        1, 542, 535, 56, 213,
+        0, 261, 33, 59, NoIndex,
+        0, 267, 33, 61, NoIndex,
+        1, 274, 273, 66, 101,
+        0, 275, 275, 66, NoIndex,
+        1, 277, 276, 66, 102,
+        1, 279, 278, 66, 103,
+        1, 281, 280, 67, 104,
+        1, 277, 276, 67, 102,
+        1, 553, 549, 69, 217,
+        1, 279, 278, 69, 103,
+        1, 554, 550, 69, 218,
+        1, 281, 280, 69, 104,
+        1, 555, 551, 69, 219,
+        1, 553, 549, 69, 217,
+        1, 554, 550, 69, 218,
+        1, 556, 552, 69, 220,
+        0, 17, 17, 69, NoIndex,
+        1, 555, 551, 69, 219,
+        1, 556, 552, 69, 220,
+        1, 297, 296, 76, 109,
+        1, 561, 558, 76, 221,
+        1, 297, 296, 76, 109,
+        1, 562, 559, 76, 222,
+        1, 561, 558, 76, 221,
+        1, 563, 560, 76, 223,
+        0, 88, 88, 76, NoIndex,
+        1, 562, 559, 76, 222,
+        1, 563, 560, 76, 223,
+        1, 297, 296, 77, 109,
+        1, 567, 565, 80, 224,
+        1, 568, 566, 80, 225,
+        0, 17, 17, 80, NoIndex,
+        1, 567, 565, 80, 224,
+        1, 568, 566, 80, 225,
+        1, 575, 570, 84, 226,
+        0, 232, 33, 84, NoIndex,
+        1, 576, 571, 84, 227,
+        0, 88, 88, 84, NoIndex,
+        1, 577, 572, 84, 228,
+        1, 576, 571, 84, 227,
+        1, 578, 573, 84, 229,
+        0, 579, 33, 84, NoIndex,
+        1, 580, 574, 84, 230,
+        0, 581, 33, 84, NoIndex,
+        1, 82, 81, 84, 27,
+        1, 580, 574, 84, 230,
+        1, 82, 81, 84, 27,
+        1, 82, 81, 84, 27,
+        0, 83, 83, 84, NoIndex,
+        1, 82, 81, 85, 27],
+      variableStringIDs: @[
+        2'u32,
+        5,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        51,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        81,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        273,
+        276,
+        278,
+        280,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        296,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 5, 3, NoIndex, NoIndex, 6, 0,
+        10, NoIndex, 1, 1, 0, 0, 0, NoIndex, 7, 0,
+        10, NoIndex, 3, 1, 0, 0, 2, NoIndex, 8, 0,
+        8, 2, 13, 2, 0, 5, NoIndex, NoIndex, 9, 0,
+        10, NoIndex, 5, 1, 0, 0, 4, NoIndex, 9, 1,
+        10, NoIndex, 7, 1, 0, 0, 6, NoIndex, 9, 1,
+        7, 15, 9, 2, 0, 0, 8, 0, 9, 1,
+        10, NoIndex, 12, 1, 0, 0, 11, NoIndex, 9, 1,
+        8, 2, 13, 2, 0, 0, NoIndex, NoIndex, 9, 1,
+        2, NoIndex, 0, 0, 11, 1, NoIndex, NoIndex, 15, 0,
+        8, 2, 18, 2, 8, 3, NoIndex, NoIndex, 15, 0,
+        10, NoIndex, 16, 1, 8, 0, 15, NoIndex, 15, 1,
+        7, 15, 18, 0, 8, 0, 17, 0, 15, 1,
+        8, 2, 18, 2, 8, 0, NoIndex, NoIndex, 15, 1,
+        2, NoIndex, 0, 0, 18, 1, NoIndex, NoIndex, 17, 0,
+        8, 2, 29, 2, 12, 6, NoIndex, NoIndex, 17, 0,
+        10, NoIndex, 21, 1, 12, 0, 20, NoIndex, 17, 1,
+        7, 15, 23, 0, 12, 0, 22, 0, 17, 1,
+        10, NoIndex, 24, 1, 12, 0, 23, NoIndex, 17, 1,
+        10, NoIndex, 26, 1, 12, 0, 25, NoIndex, 17, 1,
+        10, NoIndex, 28, 1, 12, 0, 27, NoIndex, 17, 1,
+        8, 2, 29, 2, 12, 0, NoIndex, NoIndex, 17, 1,
+        2, NoIndex, 0, 0, 23, 1, NoIndex, NoIndex, 19, 0,
+        8, 2, 36, 2, 19, 4, NoIndex, NoIndex, 19, 0,
+        7, 15, 32, 0, 19, 0, 31, 0, 19, 1,
+        7, 48, 33, 1, 19, 0, 32, 1, 19, 1,
+        10, NoIndex, 35, 1, 19, 0, 34, NoIndex, 19, 1,
+        8, 2, 36, 2, 19, 0, NoIndex, NoIndex, 19, 1,
+        2, NoIndex, 0, 0, 24, 2, NoIndex, NoIndex, 21, 0,
+        7, 15, 39, 0, 24, 0, 38, 0, 21, 0,
+        8, 2, 39, 2, 24, 0, NoIndex, NoIndex, 21, 0,
+        2, NoIndex, 0, 0, 29, 1, NoIndex, NoIndex, 23, 0,
+        8, 2, 44, 2, 26, 3, NoIndex, NoIndex, 23, 0,
+        7, 15, 42, 0, 26, 0, 41, 0, 23, 1,
+        10, NoIndex, 43, 1, 26, 0, 42, NoIndex, 23, 1,
+        8, 2, 44, 2, 26, 0, NoIndex, NoIndex, 23, 1,
+        2, NoIndex, 0, 0, 33, 1, NoIndex, NoIndex, 24, 0,
+        8, 2, 49, 2, 30, 3, NoIndex, NoIndex, 24, 0,
+        7, 15, 47, 0, 30, 0, 46, 0, 24, 1,
+        10, NoIndex, 48, 1, 30, 0, 47, NoIndex, 24, 1,
+        8, 2, 49, 2, 30, 0, NoIndex, NoIndex, 24, 1,
+        2, NoIndex, 0, 0, 37, 1, NoIndex, NoIndex, 26, 0,
+        8, 2, 54, 2, 34, 3, NoIndex, NoIndex, 26, 0,
+        7, 51, 52, 0, 34, 0, 51, 2, 26, 1,
+        10, NoIndex, 53, 1, 34, 0, 52, NoIndex, 26, 1,
+        8, 2, 54, 2, 34, 0, NoIndex, NoIndex, 26, 1,
+        2, NoIndex, 0, 0, 41, 1, NoIndex, NoIndex, 28, 0,
+        8, 2, 59, 2, 38, 3, NoIndex, NoIndex, 28, 0,
+        10, NoIndex, 57, 1, 38, 0, 56, NoIndex, 28, 1,
+        7, 51, 59, 0, 38, 0, 58, 2, 28, 1,
+        8, 2, 59, 2, 38, 0, NoIndex, NoIndex, 28, 1,
+        2, NoIndex, 0, 0, 45, 1, NoIndex, NoIndex, 30, 0,
+        8, 0, 63, 2, 42, 3, NoIndex, NoIndex, 30, 0,
+        7, 51, 62, 0, 42, 0, 61, 2, 30, 1,
+        7, 51, 63, 0, 42, 0, 62, 2, 30, 1,
+        8, 0, 63, 2, 42, 0, NoIndex, NoIndex, 30, 1,
+        2, NoIndex, 0, 0, 46, 2, NoIndex, NoIndex, 32, 0,
+        7, 51, 66, 0, 46, 0, 65, 2, 32, 0,
+        8, 2, 66, 2, 46, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 127, 15, NoIndex, NoIndex, 35, 0,
+        10, NoIndex, 69, 1, 48, 0, 68, NoIndex, 36, 0,
+        8, 2, 76, 2, 48, 4, NoIndex, NoIndex, 37, 0,
+        10, NoIndex, 71, 1, 48, 0, 70, NoIndex, 37, 1,
+        7, 48, 73, 1, 48, 0, 72, 1, 37, 1,
+        10, NoIndex, 75, 1, 48, 0, 74, NoIndex, 37, 1,
+        8, 2, 76, 2, 48, 0, NoIndex, NoIndex, 37, 1,
+        8, 3, 84, 2, 52, 4, NoIndex, NoIndex, 38, 0,
+        10, NoIndex, 79, 1, 52, 0, 78, NoIndex, 38, 1,
+        10, NoIndex, 81, 1, 52, 0, 80, NoIndex, 38, 1,
+        7, 48, 83, 1, 52, 0, 82, 1, 38, 1,
+        8, 3, 84, 2, 52, 0, NoIndex, NoIndex, 38, 1,
+        8, 4, 92, 2, 56, 4, NoIndex, NoIndex, 39, 0,
+        10, NoIndex, 87, 1, 56, 0, 86, NoIndex, 39, 1,
+        7, 48, 89, 1, 56, 0, 88, 1, 39, 1,
+        10, NoIndex, 91, 1, 56, 0, 90, NoIndex, 39, 1,
+        8, 4, 92, 2, 56, 0, NoIndex, NoIndex, 39, 1,
+        8, 5, 100, 2, 60, 4, NoIndex, NoIndex, 40, 0,
+        10, NoIndex, 95, 1, 60, 0, 94, NoIndex, 40, 1,
+        10, NoIndex, 97, 1, 60, 0, 96, NoIndex, 40, 1,
+        7, 48, 99, 1, 60, 0, 98, 1, 40, 1,
+        8, 5, 100, 2, 60, 0, NoIndex, NoIndex, 40, 1,
+        8, 0, 108, 2, 64, 4, NoIndex, NoIndex, 41, 0,
+        10, NoIndex, 103, 1, 64, 0, 102, NoIndex, 41, 1,
+        7, 48, 105, 1, 64, 0, 104, 1, 41, 1,
+        10, NoIndex, 107, 1, 64, 0, 106, NoIndex, 41, 1,
+        8, 0, 108, 2, 64, 0, NoIndex, NoIndex, 41, 1,
+        8, 1, 116, 2, 68, 4, NoIndex, NoIndex, 42, 0,
+        10, NoIndex, 111, 1, 68, 0, 110, NoIndex, 42, 1,
+        10, NoIndex, 113, 1, 68, 0, 112, NoIndex, 42, 1,
+        7, 48, 115, 1, 68, 0, 114, 1, 42, 1,
+        8, 1, 116, 2, 68, 0, NoIndex, NoIndex, 42, 1,
+        8, 0, 130, 2, 72, 7, NoIndex, NoIndex, 43, 0,
+        10, NoIndex, 119, 1, 72, 0, 118, NoIndex, 43, 1,
+        7, 48, 121, 1, 72, 0, 120, 1, 43, 1,
+        10, NoIndex, 123, 1, 72, 0, 122, NoIndex, 43, 1,
+        10, NoIndex, 125, 1, 72, 0, 124, NoIndex, 43, 1,
+        10, NoIndex, 127, 1, 72, 0, 126, NoIndex, 43, 1,
+        10, NoIndex, 129, 1, 72, 0, 128, NoIndex, 43, 1,
+        8, 0, 130, 2, 72, 0, NoIndex, NoIndex, 43, 1,
+        8, 0, 144, 2, 79, 7, NoIndex, NoIndex, 44, 0,
+        10, NoIndex, 133, 1, 79, 0, 132, NoIndex, 44, 1,
+        10, NoIndex, 135, 1, 79, 0, 134, NoIndex, 44, 1,
+        7, 48, 137, 1, 79, 0, 136, 1, 44, 1,
+        10, NoIndex, 139, 1, 79, 0, 138, NoIndex, 44, 1,
+        10, NoIndex, 141, 1, 79, 0, 140, NoIndex, 44, 1,
+        10, NoIndex, 143, 1, 79, 0, 142, NoIndex, 44, 1,
+        8, 0, 144, 2, 79, 0, NoIndex, NoIndex, 44, 1,
+        8, 0, 158, 2, 86, 7, NoIndex, NoIndex, 45, 0,
+        10, NoIndex, 147, 1, 86, 0, 146, NoIndex, 45, 1,
+        7, 48, 149, 1, 86, 0, 148, 1, 45, 1,
+        10, NoIndex, 151, 1, 86, 0, 150, NoIndex, 45, 1,
+        10, NoIndex, 153, 1, 86, 0, 152, NoIndex, 45, 1,
+        10, NoIndex, 155, 1, 86, 0, 154, NoIndex, 45, 1,
+        10, NoIndex, 157, 1, 86, 0, 156, NoIndex, 45, 1,
+        8, 0, 158, 2, 86, 0, NoIndex, NoIndex, 45, 1,
+        8, 0, 172, 2, 93, 7, NoIndex, NoIndex, 46, 0,
+        10, NoIndex, 161, 1, 93, 0, 160, NoIndex, 46, 1,
+        10, NoIndex, 163, 1, 93, 0, 162, NoIndex, 46, 1,
+        7, 48, 165, 1, 93, 0, 164, 1, 46, 1,
+        10, NoIndex, 167, 1, 93, 0, 166, NoIndex, 46, 1,
+        10, NoIndex, 169, 1, 93, 0, 168, NoIndex, 46, 1,
+        10, NoIndex, 171, 1, 93, 0, 170, NoIndex, 46, 1,
+        8, 0, 172, 2, 93, 0, NoIndex, NoIndex, 46, 1,
+        8, 0, 186, 2, 100, 7, NoIndex, NoIndex, 47, 0,
+        10, NoIndex, 175, 1, 100, 0, 174, NoIndex, 47, 1,
+        7, 48, 177, 1, 100, 0, 176, 1, 47, 1,
+        10, NoIndex, 179, 1, 100, 0, 178, NoIndex, 47, 1,
+        10, NoIndex, 181, 1, 100, 0, 180, NoIndex, 47, 1,
+        10, NoIndex, 183, 1, 100, 0, 182, NoIndex, 47, 1,
+        10, NoIndex, 185, 1, 100, 0, 184, NoIndex, 47, 1,
+        8, 0, 186, 2, 100, 0, NoIndex, NoIndex, 47, 1,
+        8, 0, 198, 2, 107, 6, NoIndex, NoIndex, 48, 0,
+        10, NoIndex, 189, 1, 107, 0, 188, NoIndex, 48, 1,
+        7, 48, 191, 1, 107, 0, 190, 1, 48, 1,
+        10, NoIndex, 193, 1, 107, 0, 192, NoIndex, 48, 1,
+        10, NoIndex, 195, 1, 107, 0, 194, NoIndex, 48, 1,
+        10, NoIndex, 197, 1, 107, 0, 196, NoIndex, 48, 1,
+        8, 0, 198, 2, 107, 0, NoIndex, NoIndex, 48, 1,
+        8, 0, 210, 2, 113, 6, NoIndex, NoIndex, 49, 0,
+        10, NoIndex, 201, 1, 113, 0, 200, NoIndex, 49, 1,
+        7, 48, 203, 1, 113, 0, 202, 1, 49, 1,
+        10, NoIndex, 205, 1, 113, 0, 204, NoIndex, 49, 1,
+        10, NoIndex, 207, 1, 113, 0, 206, NoIndex, 49, 1,
+        10, NoIndex, 209, 1, 113, 0, 208, NoIndex, 49, 1,
+        8, 0, 210, 2, 113, 0, NoIndex, NoIndex, 49, 1,
+        8, 0, 226, 2, 119, 8, NoIndex, NoIndex, 50, 0,
+        10, NoIndex, 213, 1, 119, 0, 212, NoIndex, 50, 1,
+        10, NoIndex, 215, 1, 119, 0, 214, NoIndex, 50, 1,
+        7, 48, 217, 1, 119, 0, 216, 1, 50, 1,
+        10, NoIndex, 219, 1, 119, 0, 218, NoIndex, 50, 1,
+        10, NoIndex, 221, 1, 119, 0, 220, NoIndex, 50, 1,
+        7, 48, 223, 1, 119, 0, 222, 1, 50, 1,
+        10, NoIndex, 225, 1, 119, 0, 224, NoIndex, 50, 1,
+        8, 0, 226, 2, 119, 0, NoIndex, NoIndex, 50, 1,
+        2, NoIndex, 0, 0, 148, 1, NoIndex, NoIndex, 56, 0,
+        8, 2, 237, 2, 142, 6, NoIndex, NoIndex, 56, 0,
+        10, NoIndex, 229, 1, 142, 0, 228, NoIndex, 56, 1,
+        7, 15, 231, 0, 142, 0, 230, 0, 56, 1,
+        10, NoIndex, 232, 1, 142, 0, 231, NoIndex, 56, 1,
+        10, NoIndex, 234, 1, 142, 0, 233, NoIndex, 56, 1,
+        10, NoIndex, 236, 1, 142, 0, 235, NoIndex, 56, 1,
+        8, 2, 237, 2, 142, 0, NoIndex, NoIndex, 56, 1,
+        2, NoIndex, 0, 0, 154, 3, NoIndex, NoIndex, 65, 0,
+        0, 272, 241, 4, 149, 0, NoIndex, 0, 66, 0,
+        7, 282, 246, 1, 149, 0, 245, 3, 67, 0,
+        8, 2, 256, 2, 149, 5, NoIndex, NoIndex, 69, 0,
+        10, NoIndex, 248, 1, 149, 0, 247, NoIndex, 69, 1,
+        10, NoIndex, 250, 1, 149, 0, 249, NoIndex, 69, 1,
+        7, 290, 252, 2, 149, 0, 251, 4, 69, 1,
+        10, NoIndex, 255, 1, 149, 0, 254, NoIndex, 69, 1,
+        8, 2, 256, 2, 149, 0, NoIndex, NoIndex, 69, 1,
+        2, NoIndex, 0, 0, 161, 2, NoIndex, NoIndex, 76, 0,
+        0, 295, 258, 1, 157, 0, NoIndex, 1, 76, 0,
+        8, 2, 265, 2, 157, 4, NoIndex, NoIndex, 76, 0,
+        10, NoIndex, 260, 1, 157, 0, 259, NoIndex, 76, 1,
+        7, 48, 262, 1, 157, 0, 261, 1, 76, 1,
+        10, NoIndex, 264, 1, 157, 0, 263, NoIndex, 76, 1,
+        8, 2, 265, 2, 157, 0, NoIndex, NoIndex, 76, 1,
+        2, NoIndex, 0, 0, 166, 2, NoIndex, NoIndex, 80, 0,
+        0, 305, 268, 0, 163, 0, NoIndex, 2, 80, 0,
+        8, 2, 271, 2, 163, 3, NoIndex, NoIndex, 80, 0,
+        7, 51, 269, 0, 163, 0, 268, 2, 80, 1,
+        10, NoIndex, 270, 1, 163, 0, 269, NoIndex, 80, 1,
+        8, 2, 271, 2, 163, 0, NoIndex, NoIndex, 80, 1,
+        2, NoIndex, 0, 0, 174, 2, NoIndex, NoIndex, 84, 0,
+        7, 48, 284, 1, 168, 6, 283, 1, 84, 0,
+        10, NoIndex, 274, 1, 168, 0, 273, NoIndex, 84, 1,
+        10, NoIndex, 276, 1, 168, 0, 275, NoIndex, 84, 1,
+        7, 48, 278, 1, 168, 0, 277, 1, 84, 1,
+        10, NoIndex, 280, 1, 168, 0, 279, NoIndex, 84, 1,
+        10, NoIndex, 282, 1, 168, 0, 281, NoIndex, 84, 1,
+        7, 48, 284, 1, 168, 0, 283, 1, 84, 1,
+        8, 0, 286, 2, 174, 0, NoIndex, NoIndex, 84, 0,
+        2, NoIndex, 0, 0, 181, 3, NoIndex, NoIndex, 6, 0,
+        10, NoIndex, 290, 1, 176, 0, 289, NoIndex, 7, 0,
+        10, NoIndex, 292, 1, 176, 0, 291, NoIndex, 8, 0,
+        8, 2, 302, 2, 176, 5, NoIndex, NoIndex, 9, 0,
+        10, NoIndex, 294, 1, 176, 0, 293, NoIndex, 9, 1,
+        10, NoIndex, 296, 1, 176, 0, 295, NoIndex, 9, 1,
+        7, 15, 298, 2, 176, 0, 297, 0, 9, 1,
+        10, NoIndex, 301, 1, 176, 0, 300, NoIndex, 9, 1,
+        8, 2, 302, 2, 176, 0, NoIndex, NoIndex, 9, 1,
+        2, NoIndex, 0, 0, 187, 1, NoIndex, NoIndex, 15, 0,
+        8, 2, 307, 2, 184, 3, NoIndex, NoIndex, 15, 0,
+        10, NoIndex, 305, 1, 184, 0, 304, NoIndex, 15, 1,
+        7, 15, 307, 0, 184, 0, 306, 0, 15, 1,
+        8, 2, 307, 2, 184, 0, NoIndex, NoIndex, 15, 1,
+        2, NoIndex, 0, 0, 194, 1, NoIndex, NoIndex, 17, 0,
+        8, 2, 318, 2, 188, 6, NoIndex, NoIndex, 17, 0,
+        10, NoIndex, 310, 1, 188, 0, 309, NoIndex, 17, 1,
+        7, 15, 312, 0, 188, 0, 311, 0, 17, 1,
+        10, NoIndex, 313, 1, 188, 0, 312, NoIndex, 17, 1,
+        10, NoIndex, 315, 1, 188, 0, 314, NoIndex, 17, 1,
+        10, NoIndex, 317, 1, 188, 0, 316, NoIndex, 17, 1,
+        8, 2, 318, 2, 188, 0, NoIndex, NoIndex, 17, 1,
+        2, NoIndex, 0, 0, 199, 1, NoIndex, NoIndex, 19, 0,
+        8, 2, 325, 2, 195, 4, NoIndex, NoIndex, 19, 0,
+        7, 15, 321, 0, 195, 0, 320, 0, 19, 1,
+        7, 48, 322, 1, 195, 0, 321, 1, 19, 1,
+        10, NoIndex, 324, 1, 195, 0, 323, NoIndex, 19, 1,
+        8, 2, 325, 2, 195, 0, NoIndex, NoIndex, 19, 1,
+        2, NoIndex, 0, 0, 200, 2, NoIndex, NoIndex, 21, 0,
+        7, 15, 328, 0, 200, 0, 327, 0, 21, 0,
+        8, 2, 328, 2, 200, 0, NoIndex, NoIndex, 21, 0,
+        2, NoIndex, 0, 0, 205, 1, NoIndex, NoIndex, 23, 0,
+        8, 2, 333, 2, 202, 3, NoIndex, NoIndex, 23, 0,
+        7, 15, 331, 0, 202, 0, 330, 0, 23, 1,
+        10, NoIndex, 332, 1, 202, 0, 331, NoIndex, 23, 1,
+        8, 2, 333, 2, 202, 0, NoIndex, NoIndex, 23, 1,
+        2, NoIndex, 0, 0, 209, 1, NoIndex, NoIndex, 24, 0,
+        8, 2, 338, 2, 206, 3, NoIndex, NoIndex, 24, 0,
+        7, 15, 336, 0, 206, 0, 335, 0, 24, 1,
+        10, NoIndex, 337, 1, 206, 0, 336, NoIndex, 24, 1,
+        8, 2, 338, 2, 206, 0, NoIndex, NoIndex, 24, 1,
+        2, NoIndex, 0, 0, 213, 1, NoIndex, NoIndex, 26, 0,
+        8, 2, 343, 2, 210, 3, NoIndex, NoIndex, 26, 0,
+        7, 51, 341, 0, 210, 0, 340, 2, 26, 1,
+        10, NoIndex, 342, 1, 210, 0, 341, NoIndex, 26, 1,
+        8, 2, 343, 2, 210, 0, NoIndex, NoIndex, 26, 1,
+        2, NoIndex, 0, 0, 217, 1, NoIndex, NoIndex, 28, 0,
+        8, 2, 348, 2, 214, 3, NoIndex, NoIndex, 28, 0,
+        10, NoIndex, 346, 1, 214, 0, 345, NoIndex, 28, 1,
+        7, 51, 348, 0, 214, 0, 347, 2, 28, 1,
+        8, 2, 348, 2, 214, 0, NoIndex, NoIndex, 28, 1,
+        2, NoIndex, 0, 0, 221, 1, NoIndex, NoIndex, 30, 0,
+        8, 0, 352, 2, 218, 3, NoIndex, NoIndex, 30, 0,
+        7, 51, 351, 0, 218, 0, 350, 2, 30, 1,
+        7, 51, 352, 0, 218, 0, 351, 2, 30, 1,
+        8, 0, 352, 2, 218, 0, NoIndex, NoIndex, 30, 1,
+        2, NoIndex, 0, 0, 222, 2, NoIndex, NoIndex, 32, 0,
+        7, 51, 355, 0, 222, 0, 354, 2, 32, 0,
+        8, 2, 355, 2, 222, 0, NoIndex, NoIndex, 32, 0,
+        2, NoIndex, 0, 0, 303, 15, NoIndex, NoIndex, 35, 0,
+        10, NoIndex, 358, 1, 224, 0, 357, NoIndex, 36, 0,
+        8, 2, 365, 2, 224, 4, NoIndex, NoIndex, 37, 0,
+        10, NoIndex, 360, 1, 224, 0, 359, NoIndex, 37, 1,
+        7, 48, 362, 1, 224, 0, 361, 1, 37, 1,
+        10, NoIndex, 364, 1, 224, 0, 363, NoIndex, 37, 1,
+        8, 2, 365, 2, 224, 0, NoIndex, NoIndex, 37, 1,
+        8, 3, 373, 2, 228, 4, NoIndex, NoIndex, 38, 0,
+        10, NoIndex, 368, 1, 228, 0, 367, NoIndex, 38, 1,
+        10, NoIndex, 370, 1, 228, 0, 369, NoIndex, 38, 1,
+        7, 48, 372, 1, 228, 0, 371, 1, 38, 1,
+        8, 3, 373, 2, 228, 0, NoIndex, NoIndex, 38, 1,
+        8, 4, 381, 2, 232, 4, NoIndex, NoIndex, 39, 0,
+        10, NoIndex, 376, 1, 232, 0, 375, NoIndex, 39, 1,
+        7, 48, 378, 1, 232, 0, 377, 1, 39, 1,
+        10, NoIndex, 380, 1, 232, 0, 379, NoIndex, 39, 1,
+        8, 4, 381, 2, 232, 0, NoIndex, NoIndex, 39, 1,
+        8, 5, 389, 2, 236, 4, NoIndex, NoIndex, 40, 0,
+        10, NoIndex, 384, 1, 236, 0, 383, NoIndex, 40, 1,
+        10, NoIndex, 386, 1, 236, 0, 385, NoIndex, 40, 1,
+        7, 48, 388, 1, 236, 0, 387, 1, 40, 1,
+        8, 5, 389, 2, 236, 0, NoIndex, NoIndex, 40, 1,
+        8, 0, 397, 2, 240, 4, NoIndex, NoIndex, 41, 0,
+        10, NoIndex, 392, 1, 240, 0, 391, NoIndex, 41, 1,
+        7, 48, 394, 1, 240, 0, 393, 1, 41, 1,
+        10, NoIndex, 396, 1, 240, 0, 395, NoIndex, 41, 1,
+        8, 0, 397, 2, 240, 0, NoIndex, NoIndex, 41, 1,
+        8, 1, 405, 2, 244, 4, NoIndex, NoIndex, 42, 0,
+        10, NoIndex, 400, 1, 244, 0, 399, NoIndex, 42, 1,
+        10, NoIndex, 402, 1, 244, 0, 401, NoIndex, 42, 1,
+        7, 48, 404, 1, 244, 0, 403, 1, 42, 1,
+        8, 1, 405, 2, 244, 0, NoIndex, NoIndex, 42, 1,
+        8, 0, 419, 2, 248, 7, NoIndex, NoIndex, 43, 0,
+        10, NoIndex, 408, 1, 248, 0, 407, NoIndex, 43, 1,
+        7, 48, 410, 1, 248, 0, 409, 1, 43, 1,
+        10, NoIndex, 412, 1, 248, 0, 411, NoIndex, 43, 1,
+        10, NoIndex, 414, 1, 248, 0, 413, NoIndex, 43, 1,
+        10, NoIndex, 416, 1, 248, 0, 415, NoIndex, 43, 1,
+        10, NoIndex, 418, 1, 248, 0, 417, NoIndex, 43, 1,
+        8, 0, 419, 2, 248, 0, NoIndex, NoIndex, 43, 1,
+        8, 0, 433, 2, 255, 7, NoIndex, NoIndex, 44, 0,
+        10, NoIndex, 422, 1, 255, 0, 421, NoIndex, 44, 1,
+        10, NoIndex, 424, 1, 255, 0, 423, NoIndex, 44, 1,
+        7, 48, 426, 1, 255, 0, 425, 1, 44, 1,
+        10, NoIndex, 428, 1, 255, 0, 427, NoIndex, 44, 1,
+        10, NoIndex, 430, 1, 255, 0, 429, NoIndex, 44, 1,
+        10, NoIndex, 432, 1, 255, 0, 431, NoIndex, 44, 1,
+        8, 0, 433, 2, 255, 0, NoIndex, NoIndex, 44, 1,
+        8, 0, 447, 2, 262, 7, NoIndex, NoIndex, 45, 0,
+        10, NoIndex, 436, 1, 262, 0, 435, NoIndex, 45, 1,
+        7, 48, 438, 1, 262, 0, 437, 1, 45, 1,
+        10, NoIndex, 440, 1, 262, 0, 439, NoIndex, 45, 1,
+        10, NoIndex, 442, 1, 262, 0, 441, NoIndex, 45, 1,
+        10, NoIndex, 444, 1, 262, 0, 443, NoIndex, 45, 1,
+        10, NoIndex, 446, 1, 262, 0, 445, NoIndex, 45, 1,
+        8, 0, 447, 2, 262, 0, NoIndex, NoIndex, 45, 1,
+        8, 0, 461, 2, 269, 7, NoIndex, NoIndex, 46, 0,
+        10, NoIndex, 450, 1, 269, 0, 449, NoIndex, 46, 1,
+        10, NoIndex, 452, 1, 269, 0, 451, NoIndex, 46, 1,
+        7, 48, 454, 1, 269, 0, 453, 1, 46, 1,
+        10, NoIndex, 456, 1, 269, 0, 455, NoIndex, 46, 1,
+        10, NoIndex, 458, 1, 269, 0, 457, NoIndex, 46, 1,
+        10, NoIndex, 460, 1, 269, 0, 459, NoIndex, 46, 1,
+        8, 0, 461, 2, 269, 0, NoIndex, NoIndex, 46, 1,
+        8, 0, 475, 2, 276, 7, NoIndex, NoIndex, 47, 0,
+        10, NoIndex, 464, 1, 276, 0, 463, NoIndex, 47, 1,
+        7, 48, 466, 1, 276, 0, 465, 1, 47, 1,
+        10, NoIndex, 468, 1, 276, 0, 467, NoIndex, 47, 1,
+        10, NoIndex, 470, 1, 276, 0, 469, NoIndex, 47, 1,
+        10, NoIndex, 472, 1, 276, 0, 471, NoIndex, 47, 1,
+        10, NoIndex, 474, 1, 276, 0, 473, NoIndex, 47, 1,
+        8, 0, 475, 2, 276, 0, NoIndex, NoIndex, 47, 1,
+        8, 0, 487, 2, 283, 6, NoIndex, NoIndex, 48, 0,
+        10, NoIndex, 478, 1, 283, 0, 477, NoIndex, 48, 1,
+        7, 48, 480, 1, 283, 0, 479, 1, 48, 1,
+        10, NoIndex, 482, 1, 283, 0, 481, NoIndex, 48, 1,
+        10, NoIndex, 484, 1, 283, 0, 483, NoIndex, 48, 1,
+        10, NoIndex, 486, 1, 283, 0, 485, NoIndex, 48, 1,
+        8, 0, 487, 2, 283, 0, NoIndex, NoIndex, 48, 1,
+        8, 0, 499, 2, 289, 6, NoIndex, NoIndex, 49, 0,
+        10, NoIndex, 490, 1, 289, 0, 489, NoIndex, 49, 1,
+        7, 48, 492, 1, 289, 0, 491, 1, 49, 1,
+        10, NoIndex, 494, 1, 289, 0, 493, NoIndex, 49, 1,
+        10, NoIndex, 496, 1, 289, 0, 495, NoIndex, 49, 1,
+        10, NoIndex, 498, 1, 289, 0, 497, NoIndex, 49, 1,
+        8, 0, 499, 2, 289, 0, NoIndex, NoIndex, 49, 1,
+        8, 0, 515, 2, 295, 8, NoIndex, NoIndex, 50, 0,
+        10, NoIndex, 502, 1, 295, 0, 501, NoIndex, 50, 1,
+        10, NoIndex, 504, 1, 295, 0, 503, NoIndex, 50, 1,
+        7, 48, 506, 1, 295, 0, 505, 1, 50, 1,
+        10, NoIndex, 508, 1, 295, 0, 507, NoIndex, 50, 1,
+        10, NoIndex, 510, 1, 295, 0, 509, NoIndex, 50, 1,
+        7, 48, 512, 1, 295, 0, 511, 1, 50, 1,
+        10, NoIndex, 514, 1, 295, 0, 513, NoIndex, 50, 1,
+        8, 0, 515, 2, 295, 0, NoIndex, NoIndex, 50, 1,
+        2, NoIndex, 0, 0, 324, 1, NoIndex, NoIndex, 56, 0,
+        8, 2, 526, 2, 318, 6, NoIndex, NoIndex, 56, 0,
+        10, NoIndex, 518, 1, 318, 0, 517, NoIndex, 56, 1,
+        7, 15, 520, 0, 318, 0, 519, 0, 56, 1,
+        10, NoIndex, 521, 1, 318, 0, 520, NoIndex, 56, 1,
+        10, NoIndex, 523, 1, 318, 0, 522, NoIndex, 56, 1,
+        10, NoIndex, 525, 1, 318, 0, 524, NoIndex, 56, 1,
+        8, 2, 526, 2, 318, 0, NoIndex, NoIndex, 56, 1,
+        2, NoIndex, 0, 0, 330, 3, NoIndex, NoIndex, 65, 0,
+        0, 272, 530, 4, 325, 0, NoIndex, 0, 66, 0,
+        7, 282, 535, 1, 325, 0, 534, 3, 67, 0,
+        8, 2, 545, 2, 325, 5, NoIndex, NoIndex, 69, 0,
+        10, NoIndex, 537, 1, 325, 0, 536, NoIndex, 69, 1,
+        10, NoIndex, 539, 1, 325, 0, 538, NoIndex, 69, 1,
+        7, 290, 541, 2, 325, 0, 540, 4, 69, 1,
+        10, NoIndex, 544, 1, 325, 0, 543, NoIndex, 69, 1,
+        8, 2, 545, 2, 325, 0, NoIndex, NoIndex, 69, 1,
+        2, NoIndex, 0, 0, 337, 2, NoIndex, NoIndex, 76, 0,
+        0, 295, 547, 1, 333, 0, NoIndex, 1, 76, 0,
+        8, 2, 554, 2, 333, 4, NoIndex, NoIndex, 76, 0,
+        10, NoIndex, 549, 1, 333, 0, 548, NoIndex, 76, 1,
+        7, 48, 551, 1, 333, 0, 550, 1, 76, 1,
+        10, NoIndex, 553, 1, 333, 0, 552, NoIndex, 76, 1,
+        8, 2, 554, 2, 333, 0, NoIndex, NoIndex, 76, 1,
+        2, NoIndex, 0, 0, 342, 2, NoIndex, NoIndex, 80, 0,
+        0, 305, 557, 0, 339, 0, NoIndex, 2, 80, 0,
+        8, 2, 560, 2, 339, 3, NoIndex, NoIndex, 80, 0,
+        7, 51, 558, 0, 339, 0, 557, 2, 80, 1,
+        10, NoIndex, 559, 1, 339, 0, 558, NoIndex, 80, 1,
+        8, 2, 560, 2, 339, 0, NoIndex, NoIndex, 80, 1,
+        2, NoIndex, 0, 0, 350, 2, NoIndex, NoIndex, 84, 0,
+        7, 48, 573, 1, 344, 6, 572, 1, 84, 0,
+        10, NoIndex, 563, 1, 344, 0, 562, NoIndex, 84, 1,
+        10, NoIndex, 565, 1, 344, 0, 564, NoIndex, 84, 1,
+        7, 48, 567, 1, 344, 0, 566, 1, 84, 1,
+        10, NoIndex, 569, 1, 344, 0, 568, NoIndex, 84, 1,
+        10, NoIndex, 571, 1, 344, 0, 570, NoIndex, 84, 1,
+        7, 48, 573, 1, 344, 0, 572, 1, 84, 1,
+        8, 0, 575, 2, 350, 0, NoIndex, NoIndex, 84, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(= ?old_position (1.0 0.0 0.0))",
+        "(= ?new_position (2.0 0.0 0.0))",
+        "(< (call missing_distance_callterm ?old_position ?new_position) 0.2)",
+        "(= ?$assignment_call_0 ?old_position)",
+        "(= ?$assignment_call_1 ?new_position)",
+        "(= ?$assignment_call_2 (call missing_distance_callterm ?$assignment_call_0 ?$assignment_call_1))",
+        "(= ?$assignment_call_3 0.2)",
+        "(< ?$assignment_call_2 ?$assignment_call_3)",
+        "(and ...)",
+        "(< 0.0 (call missing_distance_callterm))",
+        "(= ?$assignment_call_4 0.0)",
+        "(= ?$assignment_call_5 (call missing_distance_callterm))",
+        "(< ?$assignment_call_4 ?$assignment_call_5)",
+        "(and ...)",
+        "(< (+ 0.0 (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_6 (* 0.0 1))",
+        "(= ?$assignment_call_7 (call missing_distance_callterm))",
+        "(= ?$assignment_call_8 (* ?$assignment_call_7 1))",
+        "(= ?$assignment_call_9 (+ ?$assignment_call_6 ?$assignment_call_8))",
+        "(= ?$assignment_call_10 0.2)",
+        "(< ?$assignment_call_9 ?$assignment_call_10)",
+        "(and ...)",
+        "(< (call identity (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_11 (call missing_distance_callterm))",
+        "(= ?$assignment_call_12 (call identity ?$assignment_call_11))",
+        "(= ?$assignment_call_13 0.2)",
+        "(< ?$assignment_call_12 ?$assignment_call_13)",
+        "(and ...)",
+        "(= ?distance (call missing_distance_callterm))",
+        "(< ?distance 0.2)",
+        "(and ...)",
+        "(< (call missing_distance_callterm) 0.2)",
+        "(= ?$assignment_call_14 (call missing_distance_callterm))",
+        "(= ?$assignment_call_15 0.2)",
+        "(< ?$assignment_call_14 ?$assignment_call_15)",
+        "(and ...)",
+        "(< (call missing_distance_callterm) 0.2)",
+        "(= ?$assignment_call_16 (call missing_distance_callterm))",
+        "(= ?$assignment_call_17 0.2)",
+        "(< ?$assignment_call_16 ?$assignment_call_17)",
+        "(and ...)",
+        "(< (call distance) 0.2)",
+        "(= ?$assignment_call_18 (call distance))",
+        "(= ?$assignment_call_19 0.2)",
+        "(< ?$assignment_call_18 ?$assignment_call_19)",
+        "(and ...)",
+        "(< 0.0 (call distance))",
+        "(= ?$assignment_call_20 0.0)",
+        "(= ?$assignment_call_21 (call distance))",
+        "(< ?$assignment_call_20 ?$assignment_call_21)",
+        "(and ...)",
+        "(== (call distance) (call distance))",
+        "(= ?$assignment_call_22 (call distance))",
+        "(= ?$assignment_call_23 (call distance))",
+        "(== ?$assignment_call_22 ?$assignment_call_23)",
+        "(and ...)",
+        "(= ?distance (call distance))",
+        "(< ?distance 0.2)",
+        "(and ...)",
+        "(= ?value 3)",
+        "(< (call identity 2) ?value)",
+        "(= ?$assignment_call_24 2)",
+        "(= ?$assignment_call_25 (call identity ?$assignment_call_24))",
+        "(= ?$assignment_call_26 ?value)",
+        "(< ?$assignment_call_25 ?$assignment_call_26)",
+        "(<= ?value (call identity 3))",
+        "(= ?$assignment_call_27 ?value)",
+        "(= ?$assignment_call_28 3)",
+        "(= ?$assignment_call_29 (call identity ?$assignment_call_28))",
+        "(<= ?$assignment_call_27 ?$assignment_call_29)",
+        "(> (call identity 4) ?value)",
+        "(= ?$assignment_call_30 4)",
+        "(= ?$assignment_call_31 (call identity ?$assignment_call_30))",
+        "(= ?$assignment_call_32 ?value)",
+        "(> ?$assignment_call_31 ?$assignment_call_32)",
+        "(>= ?value (call identity 3))",
+        "(= ?$assignment_call_33 ?value)",
+        "(= ?$assignment_call_34 3)",
+        "(= ?$assignment_call_35 (call identity ?$assignment_call_34))",
+        "(>= ?$assignment_call_33 ?$assignment_call_35)",
+        "(== (call identity ?value) 3)",
+        "(= ?$assignment_call_36 ?value)",
+        "(= ?$assignment_call_37 (call identity ?$assignment_call_36))",
+        "(= ?$assignment_call_38 3)",
+        "(== ?$assignment_call_37 ?$assignment_call_38)",
+        "(!= 2 (call identity ?value))",
+        "(= ?$assignment_call_39 2)",
+        "(= ?$assignment_call_40 ?value)",
+        "(= ?$assignment_call_41 (call identity ?$assignment_call_40))",
+        "(!= ?$assignment_call_39 ?$assignment_call_41)",
+        "(== (+ (call identity 1) 2) 3)",
+        "(= ?$assignment_call_42 1)",
+        "(= ?$assignment_call_43 (call identity ?$assignment_call_42))",
+        "(= ?$assignment_call_44 (* ?$assignment_call_43 1))",
+        "(= ?$assignment_call_45 (* 2 1))",
+        "(= ?$assignment_call_46 (+ ?$assignment_call_44 ?$assignment_call_45))",
+        "(= ?$assignment_call_47 3)",
+        "(== ?$assignment_call_46 ?$assignment_call_47)",
+        "(== (- 5 (call identity 2)) 3)",
+        "(= ?$assignment_call_48 (* 5 1))",
+        "(= ?$assignment_call_49 2)",
+        "(= ?$assignment_call_50 (call identity ?$assignment_call_49))",
+        "(= ?$assignment_call_51 (* ?$assignment_call_50 1))",
+        "(= ?$assignment_call_52 (- ?$assignment_call_48 ?$assignment_call_51))",
+        "(= ?$assignment_call_53 3)",
+        "(== ?$assignment_call_52 ?$assignment_call_53)",
+        "(== (* (call identity 2) 3) 6)",
+        "(= ?$assignment_call_54 2)",
+        "(= ?$assignment_call_55 (call identity ?$assignment_call_54))",
+        "(= ?$assignment_call_56 (* ?$assignment_call_55 1))",
+        "(= ?$assignment_call_57 (* 3 1))",
+        "(= ?$assignment_call_58 (* ?$assignment_call_56 ?$assignment_call_57))",
+        "(= ?$assignment_call_59 6)",
+        "(== ?$assignment_call_58 ?$assignment_call_59)",
+        "(== (/ 6 (call identity 2)) 3)",
+        "(= ?$assignment_call_60 (* 6 1))",
+        "(= ?$assignment_call_61 2)",
+        "(= ?$assignment_call_62 (call identity ?$assignment_call_61))",
+        "(= ?$assignment_call_63 (* ?$assignment_call_62 1))",
+        "(= ?$assignment_call_64 (/ ?$assignment_call_60 ?$assignment_call_63))",
+        "(= ?$assignment_call_65 3)",
+        "(== ?$assignment_call_64 ?$assignment_call_65)",
+        "(== (% (call identity 7) 4) 3)",
+        "(= ?$assignment_call_66 7)",
+        "(= ?$assignment_call_67 (call identity ?$assignment_call_66))",
+        "(= ?$assignment_call_68 (* ?$assignment_call_67 1))",
+        "(= ?$assignment_call_69 (* 4 1))",
+        "(= ?$assignment_call_70 (% ?$assignment_call_68 ?$assignment_call_69))",
+        "(= ?$assignment_call_71 3)",
+        "(== ?$assignment_call_70 ?$assignment_call_71)",
+        "(== (++ (call identity 2)) 3)",
+        "(= ?$assignment_call_72 2)",
+        "(= ?$assignment_call_73 (call identity ?$assignment_call_72))",
+        "(= ?$assignment_call_74 (* ?$assignment_call_73 1))",
+        "(= ?$assignment_call_75 (++ ?$assignment_call_74))",
+        "(= ?$assignment_call_76 3)",
+        "(== ?$assignment_call_75 ?$assignment_call_76)",
+        "(== (-- (call identity 4)) 3)",
+        "(= ?$assignment_call_77 4)",
+        "(= ?$assignment_call_78 (call identity ?$assignment_call_77))",
+        "(= ?$assignment_call_79 (* ?$assignment_call_78 1))",
+        "(= ?$assignment_call_80 (-- ?$assignment_call_79))",
+        "(= ?$assignment_call_81 3)",
+        "(== ?$assignment_call_80 ?$assignment_call_81)",
+        "(== (call identity (+ 1 (call identity 2))) 3)",
+        "(= ?$assignment_call_82 (* 1 1))",
+        "(= ?$assignment_call_83 2)",
+        "(= ?$assignment_call_84 (call identity ?$assignment_call_83))",
+        "(= ?$assignment_call_85 (* ?$assignment_call_84 1))",
+        "(= ?$assignment_call_86 (+ ?$assignment_call_82 ?$assignment_call_85))",
+        "(= ?$assignment_call_87 (call identity ?$assignment_call_86))",
+        "(= ?$assignment_call_88 3)",
+        "(== ?$assignment_call_87 ?$assignment_call_88)",
+        "(and ...)",
+        "(< (+ false (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_89 (* false 1))",
+        "(= ?$assignment_call_90 (call missing_distance_callterm))",
+        "(= ?$assignment_call_91 (* ?$assignment_call_90 1))",
+        "(= ?$assignment_call_92 (+ ?$assignment_call_89 ?$assignment_call_91))",
+        "(= ?$assignment_call_93 0.2)",
+        "(< ?$assignment_call_92 ?$assignment_call_93)",
+        "(and ...)",
+        "(active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)",
+        "(= ?new_entity_position (call get_entity_position ?entity_id))",
+        "(< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2)",
+        "(= ?$assignment_call_97 ?old_entity_position)",
+        "(= ?$assignment_call_98 ?new_entity_position)",
+        "(= ?$assignment_call_99 (call get_distance_from_to ?$assignment_call_97 ?$assignment_call_98))",
+        "(= ?$assignment_call_100 0.2)",
+        "(< ?$assignment_call_99 ?$assignment_call_100)",
+        "(and ...)",
+        "(candidate ?entity)",
+        "(< (call identity ?entity) 2)",
+        "(= ?$assignment_call_101 ?entity)",
+        "(= ?$assignment_call_102 (call identity ?$assignment_call_101))",
+        "(= ?$assignment_call_103 2)",
+        "(< ?$assignment_call_102 ?$assignment_call_103)",
+        "(and ...)",
+        "(absent_fact)",
+        "(< (call distance) 0.2)",
+        "(= ?$assignment_call_104 (call distance))",
+        "(= ?$assignment_call_105 0.2)",
+        "(< ?$assignment_call_104 ?$assignment_call_105)",
+        "(and ...)",
+        "(= ?value (call identity (+ 1 (call identity 2))))",
+        "(= ?$assignment_call_106 (* 1 1))",
+        "(= ?$assignment_call_107 2)",
+        "(= ?$assignment_call_108 (call identity ?$assignment_call_107))",
+        "(= ?$assignment_call_109 (* ?$assignment_call_108 1))",
+        "(= ?$assignment_call_110 (+ ?$assignment_call_106 ?$assignment_call_109))",
+        "(= ?value (call identity ?$assignment_call_110))",
+        "(== ?value 3)",
+        "(and ...)",
+        "(= ?old_position (1.0 0.0 0.0))",
+        "(= ?new_position (2.0 0.0 0.0))",
+        "(< (call missing_distance_callterm ?old_position ?new_position) 0.2)",
+        "(= ?$assignment_call_111 ?old_position)",
+        "(= ?$assignment_call_112 ?new_position)",
+        "(= ?$assignment_call_113 (call missing_distance_callterm ?$assignment_call_111 ?$assignment_call_112))",
+        "(= ?$assignment_call_114 0.2)",
+        "(< ?$assignment_call_113 ?$assignment_call_114)",
+        "(and ...)",
+        "(< 0.0 (call missing_distance_callterm))",
+        "(= ?$assignment_call_115 0.0)",
+        "(= ?$assignment_call_116 (call missing_distance_callterm))",
+        "(< ?$assignment_call_115 ?$assignment_call_116)",
+        "(and ...)",
+        "(< (+ 0.0 (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_117 (* 0.0 1))",
+        "(= ?$assignment_call_118 (call missing_distance_callterm))",
+        "(= ?$assignment_call_119 (* ?$assignment_call_118 1))",
+        "(= ?$assignment_call_120 (+ ?$assignment_call_117 ?$assignment_call_119))",
+        "(= ?$assignment_call_121 0.2)",
+        "(< ?$assignment_call_120 ?$assignment_call_121)",
+        "(and ...)",
+        "(< (call identity (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_122 (call missing_distance_callterm))",
+        "(= ?$assignment_call_123 (call identity ?$assignment_call_122))",
+        "(= ?$assignment_call_124 0.2)",
+        "(< ?$assignment_call_123 ?$assignment_call_124)",
+        "(and ...)",
+        "(= ?distance (call missing_distance_callterm))",
+        "(< ?distance 0.2)",
+        "(and ...)",
+        "(< (call missing_distance_callterm) 0.2)",
+        "(= ?$assignment_call_125 (call missing_distance_callterm))",
+        "(= ?$assignment_call_126 0.2)",
+        "(< ?$assignment_call_125 ?$assignment_call_126)",
+        "(and ...)",
+        "(< (call missing_distance_callterm) 0.2)",
+        "(= ?$assignment_call_127 (call missing_distance_callterm))",
+        "(= ?$assignment_call_128 0.2)",
+        "(< ?$assignment_call_127 ?$assignment_call_128)",
+        "(and ...)",
+        "(< (call distance) 0.2)",
+        "(= ?$assignment_call_129 (call distance))",
+        "(= ?$assignment_call_130 0.2)",
+        "(< ?$assignment_call_129 ?$assignment_call_130)",
+        "(and ...)",
+        "(< 0.0 (call distance))",
+        "(= ?$assignment_call_131 0.0)",
+        "(= ?$assignment_call_132 (call distance))",
+        "(< ?$assignment_call_131 ?$assignment_call_132)",
+        "(and ...)",
+        "(== (call distance) (call distance))",
+        "(= ?$assignment_call_133 (call distance))",
+        "(= ?$assignment_call_134 (call distance))",
+        "(== ?$assignment_call_133 ?$assignment_call_134)",
+        "(and ...)",
+        "(= ?distance (call distance))",
+        "(< ?distance 0.2)",
+        "(and ...)",
+        "(= ?value 3)",
+        "(< (call identity 2) ?value)",
+        "(= ?$assignment_call_135 2)",
+        "(= ?$assignment_call_136 (call identity ?$assignment_call_135))",
+        "(= ?$assignment_call_137 ?value)",
+        "(< ?$assignment_call_136 ?$assignment_call_137)",
+        "(<= ?value (call identity 3))",
+        "(= ?$assignment_call_138 ?value)",
+        "(= ?$assignment_call_139 3)",
+        "(= ?$assignment_call_140 (call identity ?$assignment_call_139))",
+        "(<= ?$assignment_call_138 ?$assignment_call_140)",
+        "(> (call identity 4) ?value)",
+        "(= ?$assignment_call_141 4)",
+        "(= ?$assignment_call_142 (call identity ?$assignment_call_141))",
+        "(= ?$assignment_call_143 ?value)",
+        "(> ?$assignment_call_142 ?$assignment_call_143)",
+        "(>= ?value (call identity 3))",
+        "(= ?$assignment_call_144 ?value)",
+        "(= ?$assignment_call_145 3)",
+        "(= ?$assignment_call_146 (call identity ?$assignment_call_145))",
+        "(>= ?$assignment_call_144 ?$assignment_call_146)",
+        "(== (call identity ?value) 3)",
+        "(= ?$assignment_call_147 ?value)",
+        "(= ?$assignment_call_148 (call identity ?$assignment_call_147))",
+        "(= ?$assignment_call_149 3)",
+        "(== ?$assignment_call_148 ?$assignment_call_149)",
+        "(!= 2 (call identity ?value))",
+        "(= ?$assignment_call_150 2)",
+        "(= ?$assignment_call_151 ?value)",
+        "(= ?$assignment_call_152 (call identity ?$assignment_call_151))",
+        "(!= ?$assignment_call_150 ?$assignment_call_152)",
+        "(== (+ (call identity 1) 2) 3)",
+        "(= ?$assignment_call_153 1)",
+        "(= ?$assignment_call_154 (call identity ?$assignment_call_153))",
+        "(= ?$assignment_call_155 (* ?$assignment_call_154 1))",
+        "(= ?$assignment_call_156 (* 2 1))",
+        "(= ?$assignment_call_157 (+ ?$assignment_call_155 ?$assignment_call_156))",
+        "(= ?$assignment_call_158 3)",
+        "(== ?$assignment_call_157 ?$assignment_call_158)",
+        "(== (- 5 (call identity 2)) 3)",
+        "(= ?$assignment_call_159 (* 5 1))",
+        "(= ?$assignment_call_160 2)",
+        "(= ?$assignment_call_161 (call identity ?$assignment_call_160))",
+        "(= ?$assignment_call_162 (* ?$assignment_call_161 1))",
+        "(= ?$assignment_call_163 (- ?$assignment_call_159 ?$assignment_call_162))",
+        "(= ?$assignment_call_164 3)",
+        "(== ?$assignment_call_163 ?$assignment_call_164)",
+        "(== (* (call identity 2) 3) 6)",
+        "(= ?$assignment_call_165 2)",
+        "(= ?$assignment_call_166 (call identity ?$assignment_call_165))",
+        "(= ?$assignment_call_167 (* ?$assignment_call_166 1))",
+        "(= ?$assignment_call_168 (* 3 1))",
+        "(= ?$assignment_call_169 (* ?$assignment_call_167 ?$assignment_call_168))",
+        "(= ?$assignment_call_170 6)",
+        "(== ?$assignment_call_169 ?$assignment_call_170)",
+        "(== (/ 6 (call identity 2)) 3)",
+        "(= ?$assignment_call_171 (* 6 1))",
+        "(= ?$assignment_call_172 2)",
+        "(= ?$assignment_call_173 (call identity ?$assignment_call_172))",
+        "(= ?$assignment_call_174 (* ?$assignment_call_173 1))",
+        "(= ?$assignment_call_175 (/ ?$assignment_call_171 ?$assignment_call_174))",
+        "(= ?$assignment_call_176 3)",
+        "(== ?$assignment_call_175 ?$assignment_call_176)",
+        "(== (% (call identity 7) 4) 3)",
+        "(= ?$assignment_call_177 7)",
+        "(= ?$assignment_call_178 (call identity ?$assignment_call_177))",
+        "(= ?$assignment_call_179 (* ?$assignment_call_178 1))",
+        "(= ?$assignment_call_180 (* 4 1))",
+        "(= ?$assignment_call_181 (% ?$assignment_call_179 ?$assignment_call_180))",
+        "(= ?$assignment_call_182 3)",
+        "(== ?$assignment_call_181 ?$assignment_call_182)",
+        "(== (++ (call identity 2)) 3)",
+        "(= ?$assignment_call_183 2)",
+        "(= ?$assignment_call_184 (call identity ?$assignment_call_183))",
+        "(= ?$assignment_call_185 (* ?$assignment_call_184 1))",
+        "(= ?$assignment_call_186 (++ ?$assignment_call_185))",
+        "(= ?$assignment_call_187 3)",
+        "(== ?$assignment_call_186 ?$assignment_call_187)",
+        "(== (-- (call identity 4)) 3)",
+        "(= ?$assignment_call_188 4)",
+        "(= ?$assignment_call_189 (call identity ?$assignment_call_188))",
+        "(= ?$assignment_call_190 (* ?$assignment_call_189 1))",
+        "(= ?$assignment_call_191 (-- ?$assignment_call_190))",
+        "(= ?$assignment_call_192 3)",
+        "(== ?$assignment_call_191 ?$assignment_call_192)",
+        "(== (call identity (+ 1 (call identity 2))) 3)",
+        "(= ?$assignment_call_193 (* 1 1))",
+        "(= ?$assignment_call_194 2)",
+        "(= ?$assignment_call_195 (call identity ?$assignment_call_194))",
+        "(= ?$assignment_call_196 (* ?$assignment_call_195 1))",
+        "(= ?$assignment_call_197 (+ ?$assignment_call_193 ?$assignment_call_196))",
+        "(= ?$assignment_call_198 (call identity ?$assignment_call_197))",
+        "(= ?$assignment_call_199 3)",
+        "(== ?$assignment_call_198 ?$assignment_call_199)",
+        "(and ...)",
+        "(< (+ false (call missing_distance_callterm)) 0.2)",
+        "(= ?$assignment_call_200 (* false 1))",
+        "(= ?$assignment_call_201 (call missing_distance_callterm))",
+        "(= ?$assignment_call_202 (* ?$assignment_call_201 1))",
+        "(= ?$assignment_call_203 (+ ?$assignment_call_200 ?$assignment_call_202))",
+        "(= ?$assignment_call_204 0.2)",
+        "(< ?$assignment_call_203 ?$assignment_call_204)",
+        "(and ...)",
+        "(active_plan ?plan_time moving_to_seen_entity ?entity_id ?old_entity_position)",
+        "(= ?new_entity_position (call get_entity_position ?entity_id))",
+        "(< (call get_distance_from_to ?old_entity_position ?new_entity_position) 0.2)",
+        "(= ?$assignment_call_208 ?old_entity_position)",
+        "(= ?$assignment_call_209 ?new_entity_position)",
+        "(= ?$assignment_call_210 (call get_distance_from_to ?$assignment_call_208 ?$assignment_call_209))",
+        "(= ?$assignment_call_211 0.2)",
+        "(< ?$assignment_call_210 ?$assignment_call_211)",
+        "(and ...)",
+        "(candidate ?entity)",
+        "(< (call identity ?entity) 2)",
+        "(= ?$assignment_call_212 ?entity)",
+        "(= ?$assignment_call_213 (call identity ?$assignment_call_212))",
+        "(= ?$assignment_call_214 2)",
+        "(< ?$assignment_call_213 ?$assignment_call_214)",
+        "(and ...)",
+        "(absent_fact)",
+        "(< (call distance) 0.2)",
+        "(= ?$assignment_call_215 (call distance))",
+        "(= ?$assignment_call_216 0.2)",
+        "(< ?$assignment_call_215 ?$assignment_call_216)",
+        "(and ...)",
+        "(= ?value (call identity (+ 1 (call identity 2))))",
+        "(= ?$assignment_call_217 (* 1 1))",
+        "(= ?$assignment_call_218 2)",
+        "(= ?$assignment_call_219 (call identity ?$assignment_call_218))",
+        "(= ?$assignment_call_220 (* ?$assignment_call_219 1))",
+        "(= ?$assignment_call_221 (+ ?$assignment_call_217 ?$assignment_call_220))",
+        "(= ?value (call identity ?$assignment_call_221))",
+        "(== ?value 3)"],
+      conditionChildRefs: @[
+        4'u32,
+        5,
+        6,
+        7,
+        8,
+        1,
+        2,
+        3,
+        11,
+        12,
+        13,
+        10,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        15,
+        24,
+        25,
+        26,
+        27,
+        23,
+        29,
+        30,
+        33,
+        34,
+        35,
+        32,
+        38,
+        39,
+        40,
+        37,
+        43,
+        44,
+        45,
+        42,
+        48,
+        49,
+        50,
+        47,
+        53,
+        54,
+        55,
+        52,
+        57,
+        58,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        72,
+        73,
+        74,
+        75,
+        77,
+        78,
+        79,
+        80,
+        82,
+        83,
+        84,
+        85,
+        87,
+        88,
+        89,
+        90,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        60,
+        61,
+        66,
+        71,
+        76,
+        81,
+        86,
+        91,
+        99,
+        107,
+        115,
+        123,
+        131,
+        138,
+        145,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        155,
+        166,
+        167,
+        168,
+        169,
+        170,
+        163,
+        164,
+        165,
+        174,
+        175,
+        176,
+        177,
+        172,
+        173,
+        181,
+        182,
+        183,
+        179,
+        180,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        185,
+        192,
+        197,
+        198,
+        199,
+        200,
+        201,
+        194,
+        195,
+        196,
+        204,
+        205,
+        206,
+        203,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        208,
+        217,
+        218,
+        219,
+        220,
+        216,
+        222,
+        223,
+        226,
+        227,
+        228,
+        225,
+        231,
+        232,
+        233,
+        230,
+        236,
+        237,
+        238,
+        235,
+        241,
+        242,
+        243,
+        240,
+        246,
+        247,
+        248,
+        245,
+        250,
+        251,
+        255,
+        256,
+        257,
+        258,
+        260,
+        261,
+        262,
+        263,
+        265,
+        266,
+        267,
+        268,
+        270,
+        271,
+        272,
+        273,
+        275,
+        276,
+        277,
+        278,
+        280,
+        281,
+        282,
+        283,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        253,
+        254,
+        259,
+        264,
+        269,
+        274,
+        279,
+        284,
+        292,
+        300,
+        308,
+        316,
+        324,
+        331,
+        338,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        348,
+        359,
+        360,
+        361,
+        362,
+        363,
+        356,
+        357,
+        358,
+        367,
+        368,
+        369,
+        370,
+        365,
+        366,
+        374,
+        375,
+        376,
+        372,
+        373,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        378,
+        385],
+      tasks: @[
+        1'u32, 18, 15, 0, 11, 19,
+        1, 18, 20, 0, 15, 19,
+        1, 18, 31, 0, 17, 19,
+        1, 18, 38, 0, 19, 19,
+        1, 18, 41, 0, 21, 19,
+        1, 18, 46, 0, 23, 19,
+        1, 18, 51, 0, 24, 19,
+        1, 18, 56, 0, 26, 19,
+        1, 18, 61, 0, 28, 19,
+        1, 18, 65, 0, 30, 19,
+        1, 18, 68, 0, 32, 19,
+        1, 18, 228, 0, 52, 19,
+        1, 256, 239, 0, 56, 257,
+        1, 18, 239, 0, 57, 19,
+        1, 18, 239, 1, 59, 19,
+        1, 18, 240, 1, 61, 19,
+        1, 292, 258, 0, 71, 293,
+        1, 18, 267, 1, 77, 19,
+        1, 256, 273, 0, 81, 257,
+        1, 18, 288, 1, 85, 19,
+        1, 18, 304, 0, 11, 19,
+        1, 18, 309, 0, 15, 19,
+        1, 18, 320, 0, 17, 19,
+        1, 18, 327, 0, 19, 19,
+        1, 18, 330, 0, 21, 19,
+        1, 18, 335, 0, 23, 19,
+        1, 18, 340, 0, 24, 19,
+        1, 18, 345, 0, 26, 19,
+        1, 18, 350, 0, 28, 19,
+        1, 18, 354, 0, 30, 19,
+        1, 18, 357, 0, 32, 19,
+        1, 18, 517, 0, 52, 19,
+        1, 256, 528, 0, 56, 257,
+        1, 18, 528, 0, 57, 19,
+        1, 18, 528, 1, 59, 19,
+        1, 18, 529, 1, 61, 19,
+        1, 292, 547, 0, 71, 293,
+        1, 18, 556, 1, 77, 19,
+        1, 256, 562, 0, 81, 257,
+        1, 18, 577, 1, 85, 19],
+      branches: @[
+        1'u32, 0, 0, 1, 5,
+        1, 9, 1, 1, 15,
+        1, 14, 2, 1, 17,
+        1, 22, 3, 1, 19,
+        1, 28, 4, 1, 21,
+        54, 31, 5, 1, 23,
+        59, 36, 6, 1, 24,
+        1, 41, 7, 1, 26,
+        1, 46, 8, 1, 28,
+        1, 51, 9, 1, 30,
+        1, 56, 10, 1, 32,
+        1, 59, 11, 1, 34,
+        1, 154, 12, 1, 56,
+        258, NoIndex, 13, 1, 57,
+        1, NoIndex, 14, 1, 59,
+        1, NoIndex, 15, 1, 61,
+        271, 162, 16, 1, 64,
+        1, 171, 17, 1, 75,
+        1, 178, 18, 1, 79,
+        1, 184, 19, 1, 83,
+        1, 193, 20, 1, 5,
+        1, 202, 21, 1, 15,
+        1, 207, 22, 1, 17,
+        1, 215, 23, 1, 19,
+        1, 221, 24, 1, 21,
+        54, 224, 25, 1, 23,
+        59, 229, 26, 1, 24,
+        1, 234, 27, 1, 26,
+        1, 239, 28, 1, 28,
+        1, 244, 29, 1, 30,
+        1, 249, 30, 1, 32,
+        1, 252, 31, 1, 34,
+        1, 347, 32, 1, 56,
+        258, NoIndex, 33, 1, 57,
+        1, NoIndex, 34, 1, 59,
+        1, NoIndex, 35, 1, 61,
+        271, 355, 36, 1, 64,
+        1, 364, 37, 1, 75,
+        1, 371, 38, 1, 79,
+        1, 377, 39, 1, 83],
+      methods: @[
+        0'u64, 0, 0, 0, 1, 4, 0x000000000000003f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        20, 15, 0, 1, 1, 14, 0x00000000000000c0'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 20, 0, 2, 1, 16, 0x0000000000001f00'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        42, 31, 0, 3, 1, 18, 0x000000000000e000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        50, 38, 0, 4, 1, 20, 0x0000000000010000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        53, 41, 0, 5, 2, 22, 0x00000000001e0000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        64, 51, 0, 7, 1, 25, 0x0000000000600000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        69, 56, 0, 8, 1, 27, 0x0000000001800000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        74, 61, 0, 9, 1, 29, 0x0000000006000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        79, 65, 0, 10, 1, 31, 0x0000000000010000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        80, 68, 0, 11, 1, 33, 0xfffffffff8000000'u64, 0x000000001fffffff'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        241, 228, 0, 12, 2, 55, 0x0000000000000000'u64, 0x00000003e0000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        259, 239, 0, 14, 1, 58, 0x0000000000000000'u64, 0x0000000c00000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        266, 240, 0, 15, 1, 60, 0x0000000000000000'u64, 0x0000001000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        270, 241, 0, 16, 1, 63, 0x0000000000000000'u64, 0x00001fe000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        294, 258, 0, 17, 1, 74, 0x0000000000000000'u64, 0x0001e00000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        304, 268, 0, 18, 1, 78, 0x0000000000000000'u64, 0x0006000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        310, 273, 0, 19, 1, 82, 0x0000000008000000'u64, 0x00f8000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        323, 289, 0, 20, 1, 4, 0x0000000000000003'u64, 0x0f00000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        332, 304, 0, 21, 1, 14, 0x0000000000000000'u64, 0x3000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        337, 309, 0, 22, 1, 16, 0x0000000000000000'u64, 0xc000000000000000'u64, 0x0000000000000007'u64, 0x0000000000000000'u64,
+        350, 320, 0, 23, 1, 18, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000038'u64, 0x0000000000000000'u64,
+        357, 327, 0, 24, 1, 20, 0x0000000000010000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        358, 330, 0, 25, 2, 22, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x00000000000003c0'u64, 0x0000000000000000'u64,
+        367, 340, 0, 27, 1, 25, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000c00'u64, 0x0000000000000000'u64,
+        372, 345, 0, 28, 1, 27, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000003000'u64, 0x0000000000000000'u64,
+        377, 350, 0, 29, 1, 29, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x000000000000c000'u64, 0x0000000000000000'u64,
+        382, 354, 0, 30, 1, 31, 0x0000000000010000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        383, 357, 0, 31, 1, 33, 0x0000000008000000'u64, 0x0000000000000000'u64, 0xffffffffffff0000'u64, 0x000000000001ffff'u64,
+        530, 517, 0, 32, 2, 55, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x00000000003e0000'u64,
+        543, 528, 0, 34, 1, 58, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000c00000'u64,
+        546, 529, 0, 35, 1, 60, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000001000000'u64,
+        548, 530, 0, 36, 1, 63, 0x0000000000000000'u64, 0x000001e000000000'u64, 0x0000000000000000'u64, 0x000000001e000000'u64,
+        557, 547, 0, 37, 1, 74, 0x0000000000000000'u64, 0x0000200000000000'u64, 0x0000000000000000'u64, 0x00000000e0000000'u64,
+        564, 557, 0, 38, 1, 78, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000300000000'u64,
+        569, 562, 0, 39, 1, 82, 0x0000000008000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000007c00000000'u64],
+      axioms: newSeq[uint64](),
+      constants: newSeq[uint32](),
+      callTermSlotCount: 5, factSlotCount: 3,
+      sourceFiles: @[
+        "Domains/Test/nested_operator_calls.domain"],
+      valueSources: @[
+        0'u32, 7, 20, 7, 33,
+        0, 7, 34, 7, 46,
+        0, 8, 20, 8, 33,
+        0, 8, 34, 8, 46,
+        0, 9, 52, 9, 65,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 66, 9, 79,
+        0, 9, 20, 9, 79,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 9, 81, 9, 84,
+        0, 9, 20, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 15, 25, 15, 28,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 17, 28, 17, 31,
+        0, 17, 28, 17, 31,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 25, 17, 64,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 17, 66, 17, 69,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 19, 40, 19, 71,
+        0, 19, 25, 19, 72,
+        0, 19, 40, 19, 71,
+        0, 19, 74, 19, 77,
+        0, 19, 74, 19, 77,
+        0, 19, 25, 19, 72,
+        0, 19, 74, 19, 77,
+        0, 21, 25, 21, 34,
+        0, 21, 72, 21, 81,
+        0, 21, 82, 21, 85,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 23, 57, 23, 60,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 24, 58, 24, 61,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 26, 41, 26, 44,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 28, 25, 28, 28,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 32, 25, 32, 34,
+        0, 32, 55, 32, 64,
+        0, 32, 65, 32, 68,
+        0, 36, 20, 36, 26,
+        0, 36, 27, 36, 28,
+        0, 37, 35, 37, 36,
+        0, 37, 35, 37, 36,
+        0, 37, 20, 37, 36,
+        0, 37, 35, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 37, 38, 37, 44,
+        0, 37, 20, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 21, 38, 27,
+        0, 38, 43, 38, 44,
+        0, 38, 43, 38, 44,
+        0, 38, 28, 38, 44,
+        0, 38, 43, 38, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 28, 38, 44,
+        0, 39, 35, 39, 36,
+        0, 39, 35, 39, 36,
+        0, 39, 20, 39, 36,
+        0, 39, 35, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 39, 38, 39, 44,
+        0, 39, 20, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 21, 40, 27,
+        0, 40, 43, 40, 44,
+        0, 40, 43, 40, 44,
+        0, 40, 28, 40, 44,
+        0, 40, 43, 40, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 28, 40, 44,
+        0, 41, 36, 41, 42,
+        0, 41, 36, 41, 42,
+        0, 41, 21, 41, 42,
+        0, 41, 36, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 41, 44, 41, 45,
+        0, 41, 21, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 42, 21, 42, 22,
+        0, 42, 21, 42, 22,
+        0, 42, 38, 42, 44,
+        0, 42, 38, 42, 44,
+        0, 42, 23, 42, 44,
+        0, 42, 38, 42, 44,
+        0, 42, 21, 42, 22,
+        0, 42, 23, 42, 44,
+        0, 43, 39, 43, 40,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 42, 43, 43,
+        0, 43, 42, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 43, 45, 43, 46,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 44, 24, 44, 25,
+        0, 44, 24, 44, 25,
+        0, 44, 41, 44, 42,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 21, 44, 43,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 44, 45, 44, 46,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 45, 39, 45, 40,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 42, 45, 43,
+        0, 45, 42, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 45, 45, 45, 46,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 46, 24, 46, 25,
+        0, 46, 24, 46, 25,
+        0, 46, 41, 46, 42,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 21, 46, 43,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 46, 45, 46, 46,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 47, 39, 47, 40,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 42, 47, 43,
+        0, 47, 42, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 47, 45, 47, 46,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 48, 40, 48, 41,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 21, 48, 42,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 48, 44, 48, 45,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 49, 40, 49, 41,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 21, 49, 42,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 49, 44, 49, 45,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 50, 39, 50, 40,
+        0, 50, 39, 50, 40,
+        0, 50, 56, 50, 57,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 36, 50, 58,
+        0, 50, 36, 50, 58,
+        0, 50, 21, 50, 59,
+        0, 50, 36, 50, 58,
+        0, 50, 61, 50, 62,
+        0, 50, 61, 50, 62,
+        0, 50, 21, 50, 59,
+        0, 50, 61, 50, 62,
+        0, 56, 28, 56, 33,
+        0, 56, 28, 56, 33,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 25, 56, 66,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 56, 68, 56, 71,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 59, 30, 59, 68,
+        0, 61, 30, 61, 67,
+        0, 66, 30, 66, 40,
+        0, 66, 41, 66, 62,
+        0, 66, 63, 66, 73,
+        0, 66, 74, 66, 94,
+        0, 67, 20, 67, 40,
+        0, 67, 67, 67, 77,
+        0, 69, 47, 69, 67,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 68, 69, 88,
+        0, 69, 20, 69, 88,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 69, 90, 69, 93,
+        0, 69, 20, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 76, 29, 76, 36,
+        0, 76, 56, 76, 63,
+        0, 76, 56, 76, 63,
+        0, 76, 41, 76, 63,
+        0, 76, 56, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 76, 65, 76, 66,
+        0, 76, 41, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 77, 23, 77, 30,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 80, 51, 80, 54,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 84, 46, 84, 47,
+        0, 84, 46, 84, 47,
+        0, 84, 63, 84, 64,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 43, 84, 65,
+        0, 84, 43, 84, 65,
+        0, 84, 21, 84, 27,
+        0, 84, 43, 84, 65,
+        0, 84, 21, 84, 27,
+        0, 84, 73, 84, 79,
+        0, 84, 80, 84, 81,
+        0, 85, 23, 85, 29,
+        0, 7, 20, 7, 33,
+        0, 7, 34, 7, 46,
+        0, 8, 20, 8, 33,
+        0, 8, 34, 8, 46,
+        0, 9, 52, 9, 65,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 66, 9, 79,
+        0, 9, 20, 9, 79,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 9, 81, 9, 84,
+        0, 9, 20, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 15, 25, 15, 28,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 17, 28, 17, 31,
+        0, 17, 28, 17, 31,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 25, 17, 64,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 17, 66, 17, 69,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 19, 40, 19, 71,
+        0, 19, 25, 19, 72,
+        0, 19, 40, 19, 71,
+        0, 19, 74, 19, 77,
+        0, 19, 74, 19, 77,
+        0, 19, 25, 19, 72,
+        0, 19, 74, 19, 77,
+        0, 21, 25, 21, 34,
+        0, 21, 72, 21, 81,
+        0, 21, 82, 21, 85,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 23, 57, 23, 60,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 24, 58, 24, 61,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 26, 41, 26, 44,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 28, 25, 28, 28,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 32, 25, 32, 34,
+        0, 32, 55, 32, 64,
+        0, 32, 65, 32, 68,
+        0, 36, 20, 36, 26,
+        0, 36, 27, 36, 28,
+        0, 37, 35, 37, 36,
+        0, 37, 35, 37, 36,
+        0, 37, 20, 37, 36,
+        0, 37, 35, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 37, 38, 37, 44,
+        0, 37, 20, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 21, 38, 27,
+        0, 38, 43, 38, 44,
+        0, 38, 43, 38, 44,
+        0, 38, 28, 38, 44,
+        0, 38, 43, 38, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 28, 38, 44,
+        0, 39, 35, 39, 36,
+        0, 39, 35, 39, 36,
+        0, 39, 20, 39, 36,
+        0, 39, 35, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 39, 38, 39, 44,
+        0, 39, 20, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 21, 40, 27,
+        0, 40, 43, 40, 44,
+        0, 40, 43, 40, 44,
+        0, 40, 28, 40, 44,
+        0, 40, 43, 40, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 28, 40, 44,
+        0, 41, 36, 41, 42,
+        0, 41, 36, 41, 42,
+        0, 41, 21, 41, 42,
+        0, 41, 36, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 41, 44, 41, 45,
+        0, 41, 21, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 42, 21, 42, 22,
+        0, 42, 21, 42, 22,
+        0, 42, 38, 42, 44,
+        0, 42, 38, 42, 44,
+        0, 42, 23, 42, 44,
+        0, 42, 38, 42, 44,
+        0, 42, 21, 42, 22,
+        0, 42, 23, 42, 44,
+        0, 43, 39, 43, 40,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 42, 43, 43,
+        0, 43, 42, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 43, 45, 43, 46,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 44, 24, 44, 25,
+        0, 44, 24, 44, 25,
+        0, 44, 41, 44, 42,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 21, 44, 43,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 44, 45, 44, 46,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 45, 39, 45, 40,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 42, 45, 43,
+        0, 45, 42, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 45, 45, 45, 46,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 46, 24, 46, 25,
+        0, 46, 24, 46, 25,
+        0, 46, 41, 46, 42,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 21, 46, 43,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 46, 45, 46, 46,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 47, 39, 47, 40,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 42, 47, 43,
+        0, 47, 42, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 47, 45, 47, 46,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 48, 40, 48, 41,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 21, 48, 42,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 48, 44, 48, 45,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 49, 40, 49, 41,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 21, 49, 42,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 49, 44, 49, 45,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 50, 39, 50, 40,
+        0, 50, 39, 50, 40,
+        0, 50, 56, 50, 57,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 36, 50, 58,
+        0, 50, 36, 50, 58,
+        0, 50, 21, 50, 59,
+        0, 50, 36, 50, 58,
+        0, 50, 61, 50, 62,
+        0, 50, 61, 50, 62,
+        0, 50, 21, 50, 59,
+        0, 50, 61, 50, 62,
+        0, 56, 28, 56, 33,
+        0, 56, 28, 56, 33,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 25, 56, 66,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 56, 68, 56, 71,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 59, 30, 59, 68,
+        0, 61, 30, 61, 67,
+        0, 66, 30, 66, 40,
+        0, 66, 41, 66, 62,
+        0, 66, 63, 66, 73,
+        0, 66, 74, 66, 94,
+        0, 67, 20, 67, 40,
+        0, 67, 67, 67, 77,
+        0, 69, 47, 69, 67,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 68, 69, 88,
+        0, 69, 20, 69, 88,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 69, 90, 69, 93,
+        0, 69, 20, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 76, 29, 76, 36,
+        0, 76, 56, 76, 63,
+        0, 76, 56, 76, 63,
+        0, 76, 41, 76, 63,
+        0, 76, 56, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 76, 65, 76, 66,
+        0, 76, 41, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 77, 23, 77, 30,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 80, 51, 80, 54,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 84, 46, 84, 47,
+        0, 84, 46, 84, 47,
+        0, 84, 63, 84, 64,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 43, 84, 65,
+        0, 84, 43, 84, 65,
+        0, 84, 21, 84, 27,
+        0, 84, 43, 84, 65,
+        0, 84, 21, 84, 27,
+        0, 84, 73, 84, 79,
+        0, 84, 80, 84, 81,
+        0, 85, 23, 85, 29],
+      conditionSources: @[
+        0'u32, 6, 14, 9, 84,
+        0, 7, 17, 7, 46,
+        0, 8, 17, 8, 46,
+        0, 9, 18, 9, 84,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 20, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 9, 18, 9, 84,
+        0, 15, 18, 15, 61,
+        0, 15, 23, 15, 60,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 15, 23, 15, 60,
+        0, 17, 18, 17, 69,
+        0, 17, 23, 17, 69,
+        0, 17, 28, 17, 31,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 17, 23, 17, 69,
+        0, 19, 18, 19, 77,
+        0, 19, 23, 19, 77,
+        0, 19, 40, 19, 71,
+        0, 19, 25, 19, 72,
+        0, 19, 74, 19, 77,
+        0, 19, 23, 19, 77,
+        0, 21, 18, 21, 85,
+        0, 21, 22, 21, 66,
+        0, 21, 70, 21, 85,
+        0, 23, 17, 23, 60,
+        0, 23, 22, 23, 60,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 23, 22, 23, 60,
+        0, 24, 18, 24, 61,
+        0, 24, 23, 24, 61,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 24, 23, 24, 61,
+        0, 26, 18, 26, 44,
+        0, 26, 23, 26, 44,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 26, 23, 26, 44,
+        0, 28, 18, 28, 44,
+        0, 28, 23, 28, 43,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 28, 23, 28, 43,
+        0, 30, 18, 30, 57,
+        0, 30, 23, 30, 56,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 30, 23, 30, 56,
+        0, 32, 18, 32, 68,
+        0, 32, 22, 32, 49,
+        0, 32, 53, 32, 68,
+        0, 35, 14, 50, 62,
+        0, 36, 17, 36, 28,
+        0, 37, 18, 37, 44,
+        0, 37, 35, 37, 36,
+        0, 37, 20, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 37, 18, 37, 44,
+        0, 38, 18, 38, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 43, 38, 44,
+        0, 38, 28, 38, 44,
+        0, 38, 18, 38, 44,
+        0, 39, 18, 39, 44,
+        0, 39, 35, 39, 36,
+        0, 39, 20, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 39, 18, 39, 44,
+        0, 40, 18, 40, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 43, 40, 44,
+        0, 40, 28, 40, 44,
+        0, 40, 18, 40, 44,
+        0, 41, 18, 41, 45,
+        0, 41, 36, 41, 42,
+        0, 41, 21, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 41, 18, 41, 45,
+        0, 42, 18, 42, 44,
+        0, 42, 21, 42, 22,
+        0, 42, 38, 42, 44,
+        0, 42, 23, 42, 44,
+        0, 42, 18, 42, 44,
+        0, 43, 18, 43, 46,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 42, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 43, 18, 43, 46,
+        0, 44, 18, 44, 46,
+        0, 44, 24, 44, 25,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 44, 18, 44, 46,
+        0, 45, 18, 45, 46,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 42, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 45, 18, 45, 46,
+        0, 46, 18, 46, 46,
+        0, 46, 24, 46, 25,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 46, 18, 46, 46,
+        0, 47, 18, 47, 46,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 42, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 47, 18, 47, 46,
+        0, 48, 18, 48, 45,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 48, 18, 48, 45,
+        0, 49, 18, 49, 45,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 49, 18, 49, 45,
+        0, 50, 18, 50, 62,
+        0, 50, 39, 50, 40,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 36, 50, 58,
+        0, 50, 21, 50, 59,
+        0, 50, 61, 50, 62,
+        0, 50, 18, 50, 62,
+        0, 56, 18, 56, 71,
+        0, 56, 23, 56, 71,
+        0, 56, 28, 56, 33,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 56, 23, 56, 71,
+        0, 65, 14, 69, 93,
+        0, 66, 17, 66, 94,
+        0, 67, 17, 67, 77,
+        0, 69, 18, 69, 93,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 20, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 69, 18, 69, 93,
+        0, 76, 14, 76, 66,
+        0, 76, 18, 76, 36,
+        0, 76, 39, 76, 66,
+        0, 76, 56, 76, 63,
+        0, 76, 41, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 76, 39, 76, 66,
+        0, 80, 14, 80, 54,
+        0, 80, 18, 80, 30,
+        0, 80, 33, 80, 54,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 80, 33, 80, 54,
+        0, 84, 14, 84, 81,
+        0, 84, 18, 84, 66,
+        0, 84, 46, 84, 47,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 43, 84, 65,
+        0, 84, 18, 84, 66,
+        0, 84, 70, 84, 81,
+        0, 6, 14, 9, 84,
+        0, 7, 17, 7, 46,
+        0, 8, 17, 8, 46,
+        0, 9, 18, 9, 84,
+        0, 9, 52, 9, 65,
+        0, 9, 66, 9, 79,
+        0, 9, 20, 9, 79,
+        0, 9, 81, 9, 84,
+        0, 9, 18, 9, 84,
+        0, 15, 18, 15, 61,
+        0, 15, 23, 15, 60,
+        0, 15, 25, 15, 28,
+        0, 15, 29, 15, 60,
+        0, 15, 23, 15, 60,
+        0, 17, 18, 17, 69,
+        0, 17, 23, 17, 69,
+        0, 17, 28, 17, 31,
+        0, 17, 32, 17, 63,
+        0, 17, 32, 17, 63,
+        0, 17, 25, 17, 64,
+        0, 17, 66, 17, 69,
+        0, 17, 23, 17, 69,
+        0, 19, 18, 19, 77,
+        0, 19, 23, 19, 77,
+        0, 19, 40, 19, 71,
+        0, 19, 25, 19, 72,
+        0, 19, 74, 19, 77,
+        0, 19, 23, 19, 77,
+        0, 21, 18, 21, 85,
+        0, 21, 22, 21, 66,
+        0, 21, 70, 21, 85,
+        0, 23, 17, 23, 60,
+        0, 23, 22, 23, 60,
+        0, 23, 24, 23, 55,
+        0, 23, 57, 23, 60,
+        0, 23, 22, 23, 60,
+        0, 24, 18, 24, 61,
+        0, 24, 23, 24, 61,
+        0, 24, 25, 24, 56,
+        0, 24, 58, 24, 61,
+        0, 24, 23, 24, 61,
+        0, 26, 18, 26, 44,
+        0, 26, 23, 26, 44,
+        0, 26, 25, 26, 39,
+        0, 26, 41, 26, 44,
+        0, 26, 23, 26, 44,
+        0, 28, 18, 28, 44,
+        0, 28, 23, 28, 43,
+        0, 28, 25, 28, 28,
+        0, 28, 29, 28, 43,
+        0, 28, 23, 28, 43,
+        0, 30, 18, 30, 57,
+        0, 30, 23, 30, 56,
+        0, 30, 26, 30, 40,
+        0, 30, 42, 30, 56,
+        0, 30, 23, 30, 56,
+        0, 32, 18, 32, 68,
+        0, 32, 22, 32, 49,
+        0, 32, 53, 32, 68,
+        0, 35, 14, 50, 62,
+        0, 36, 17, 36, 28,
+        0, 37, 18, 37, 44,
+        0, 37, 35, 37, 36,
+        0, 37, 20, 37, 36,
+        0, 37, 38, 37, 44,
+        0, 37, 18, 37, 44,
+        0, 38, 18, 38, 44,
+        0, 38, 21, 38, 27,
+        0, 38, 43, 38, 44,
+        0, 38, 28, 38, 44,
+        0, 38, 18, 38, 44,
+        0, 39, 18, 39, 44,
+        0, 39, 35, 39, 36,
+        0, 39, 20, 39, 36,
+        0, 39, 38, 39, 44,
+        0, 39, 18, 39, 44,
+        0, 40, 18, 40, 44,
+        0, 40, 21, 40, 27,
+        0, 40, 43, 40, 44,
+        0, 40, 28, 40, 44,
+        0, 40, 18, 40, 44,
+        0, 41, 18, 41, 45,
+        0, 41, 36, 41, 42,
+        0, 41, 21, 41, 42,
+        0, 41, 44, 41, 45,
+        0, 41, 18, 41, 45,
+        0, 42, 18, 42, 44,
+        0, 42, 21, 42, 22,
+        0, 42, 38, 42, 44,
+        0, 42, 23, 42, 44,
+        0, 42, 18, 42, 44,
+        0, 43, 18, 43, 46,
+        0, 43, 39, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 24, 43, 40,
+        0, 43, 42, 43, 43,
+        0, 43, 21, 43, 43,
+        0, 43, 45, 43, 46,
+        0, 43, 18, 43, 46,
+        0, 44, 18, 44, 46,
+        0, 44, 24, 44, 25,
+        0, 44, 41, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 26, 44, 42,
+        0, 44, 21, 44, 43,
+        0, 44, 45, 44, 46,
+        0, 44, 18, 44, 46,
+        0, 45, 18, 45, 46,
+        0, 45, 39, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 24, 45, 40,
+        0, 45, 42, 45, 43,
+        0, 45, 21, 45, 43,
+        0, 45, 45, 45, 46,
+        0, 45, 18, 45, 46,
+        0, 46, 18, 46, 46,
+        0, 46, 24, 46, 25,
+        0, 46, 41, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 26, 46, 42,
+        0, 46, 21, 46, 43,
+        0, 46, 45, 46, 46,
+        0, 46, 18, 46, 46,
+        0, 47, 18, 47, 46,
+        0, 47, 39, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 24, 47, 40,
+        0, 47, 42, 47, 43,
+        0, 47, 21, 47, 43,
+        0, 47, 45, 47, 46,
+        0, 47, 18, 47, 46,
+        0, 48, 18, 48, 45,
+        0, 48, 40, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 25, 48, 41,
+        0, 48, 21, 48, 42,
+        0, 48, 44, 48, 45,
+        0, 48, 18, 48, 45,
+        0, 49, 18, 49, 45,
+        0, 49, 40, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 25, 49, 41,
+        0, 49, 21, 49, 42,
+        0, 49, 44, 49, 45,
+        0, 49, 18, 49, 45,
+        0, 50, 18, 50, 62,
+        0, 50, 39, 50, 40,
+        0, 50, 56, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 41, 50, 57,
+        0, 50, 36, 50, 58,
+        0, 50, 21, 50, 59,
+        0, 50, 61, 50, 62,
+        0, 50, 18, 50, 62,
+        0, 56, 18, 56, 71,
+        0, 56, 23, 56, 71,
+        0, 56, 28, 56, 33,
+        0, 56, 34, 56, 65,
+        0, 56, 34, 56, 65,
+        0, 56, 25, 56, 66,
+        0, 56, 68, 56, 71,
+        0, 56, 23, 56, 71,
+        0, 65, 14, 69, 93,
+        0, 66, 17, 66, 94,
+        0, 67, 17, 67, 77,
+        0, 69, 18, 69, 93,
+        0, 69, 47, 69, 67,
+        0, 69, 68, 69, 88,
+        0, 69, 20, 69, 88,
+        0, 69, 90, 69, 93,
+        0, 69, 18, 69, 93,
+        0, 76, 14, 76, 66,
+        0, 76, 18, 76, 36,
+        0, 76, 39, 76, 66,
+        0, 76, 56, 76, 63,
+        0, 76, 41, 76, 63,
+        0, 76, 65, 76, 66,
+        0, 76, 39, 76, 66,
+        0, 80, 14, 80, 54,
+        0, 80, 18, 80, 30,
+        0, 80, 33, 80, 54,
+        0, 80, 35, 80, 49,
+        0, 80, 51, 80, 54,
+        0, 80, 33, 80, 54,
+        0, 84, 14, 84, 81,
+        0, 84, 18, 84, 66,
+        0, 84, 46, 84, 47,
+        0, 84, 63, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 48, 84, 64,
+        0, 84, 43, 84, 65,
+        0, 84, 18, 84, 66,
+        0, 84, 70, 84, 81],
+      taskSources: @[
+        0'u32, 11, 14, 11, 22,
+        0, 15, 65, 15, 73,
+        0, 17, 73, 17, 81,
+        0, 19, 81, 19, 89,
+        0, 21, 89, 21, 97,
+        0, 23, 64, 23, 72,
+        0, 24, 65, 24, 73,
+        0, 26, 48, 26, 56,
+        0, 28, 48, 28, 56,
+        0, 30, 61, 30, 69,
+        0, 32, 72, 32, 80,
+        0, 52, 14, 52, 22,
+        0, 56, 75, 56, 87,
+        0, 57, 23, 57, 31,
+        0, 59, 21, 59, 69,
+        0, 61, 21, 61, 68,
+        0, 71, 14, 71, 24,
+        0, 77, 14, 77, 30,
+        0, 81, 14, 81, 26,
+        0, 85, 14, 85, 29,
+        0, 11, 14, 11, 22,
+        0, 15, 65, 15, 73,
+        0, 17, 73, 17, 81,
+        0, 19, 81, 19, 89,
+        0, 21, 89, 21, 97,
+        0, 23, 64, 23, 72,
+        0, 24, 65, 24, 73,
+        0, 26, 48, 26, 56,
+        0, 28, 48, 28, 56,
+        0, 30, 61, 30, 69,
+        0, 32, 72, 32, 80,
+        0, 52, 14, 52, 22,
+        0, 56, 75, 56, 87,
+        0, 57, 23, 57, 31,
+        0, 59, 21, 59, 69,
+        0, 61, 21, 61, 68,
+        0, 71, 14, 71, 24,
+        0, 77, 14, 77, 30,
+        0, 81, 14, 81, 26,
+        0, 85, 14, 85, 29],
+      branchSources: @[
+        0'u32, 5, 9, 12, 9,
+        0, 15, 9, 15, 75,
+        0, 17, 9, 17, 83,
+        0, 19, 9, 19, 91,
+        0, 21, 9, 21, 99,
+        0, 23, 9, 23, 74,
+        0, 24, 9, 24, 75,
+        0, 26, 9, 26, 58,
+        0, 28, 9, 28, 58,
+        0, 30, 9, 30, 71,
+        0, 32, 9, 32, 82,
+        0, 34, 9, 53, 9,
+        0, 56, 9, 56, 89,
+        0, 57, 9, 57, 33,
+        0, 59, 9, 59, 71,
+        0, 61, 9, 61, 70,
+        0, 64, 9, 72, 9,
+        0, 75, 9, 77, 32,
+        0, 79, 9, 81, 28,
+        0, 83, 9, 85, 31,
+        0, 5, 9, 12, 9,
+        0, 15, 9, 15, 75,
+        0, 17, 9, 17, 83,
+        0, 19, 9, 19, 91,
+        0, 21, 9, 21, 99,
+        0, 23, 9, 23, 74,
+        0, 24, 9, 24, 75,
+        0, 26, 9, 26, 58,
+        0, 28, 9, 28, 58,
+        0, 30, 9, 30, 71,
+        0, 32, 9, 32, 82,
+        0, 34, 9, 53, 9,
+        0, 56, 9, 56, 89,
+        0, 57, 9, 57, 33,
+        0, 59, 9, 59, 71,
+        0, 61, 9, 61, 70,
+        0, 64, 9, 72, 9,
+        0, 75, 9, 77, 32,
+        0, 79, 9, 81, 28,
+        0, 83, 9, 85, 31],
+      methodSources: @[
+        0'u32, 4, 5, 13, 5,
+        0, 14, 5, 15, 76,
+        0, 16, 5, 17, 84,
+        0, 18, 5, 19, 92,
+        0, 20, 5, 21, 100,
+        0, 22, 5, 24, 76,
+        0, 25, 5, 26, 59,
+        0, 27, 5, 28, 59,
+        0, 29, 5, 30, 72,
+        0, 31, 5, 32, 83,
+        0, 33, 5, 54, 5,
+        0, 55, 5, 57, 34,
+        0, 58, 5, 59, 72,
+        0, 60, 5, 61, 71,
+        0, 63, 5, 73, 5,
+        0, 74, 5, 77, 33,
+        0, 78, 5, 81, 29,
+        0, 82, 5, 85, 32,
+        0, 4, 5, 13, 5,
+        0, 14, 5, 15, 76,
+        0, 16, 5, 17, 84,
+        0, 18, 5, 19, 92,
+        0, 20, 5, 21, 100,
+        0, 22, 5, 24, 76,
+        0, 25, 5, 26, 59,
+        0, 27, 5, 28, 59,
+        0, 29, 5, 30, 72,
+        0, 31, 5, 32, 83,
+        0, 33, 5, 54, 5,
+        0, 55, 5, 57, 34,
+        0, 58, 5, 59, 72,
+        0, 60, 5, 61, 71,
+        0, 63, 5, 73, 5,
+        0, 74, 5, 77, 33,
+        0, 78, 5, 81, 29,
+        0, 82, 5, 85, 32],
+      axiomSources: newSeq[uint32](),
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

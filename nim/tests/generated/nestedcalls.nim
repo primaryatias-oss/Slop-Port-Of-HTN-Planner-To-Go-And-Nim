@@ -84,76 +84,111 @@ proc CreateNestedCallsHTN_GetDefinition*(): Definition =
   definition
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (call inc 1)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv0], addr cs0, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(0, callResult)
   # (call inc 2)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv1], addr cs1, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(1, callResult)
   # (call inc 3)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv2], addr cs2, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(2, callResult)
   # (call inc (call inc 3))
   block:
     let (callResult, ok) = ex.invoke(1, @[ex.v[2]], addr cs3, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(3, callResult)
   # (call mul (call inc 2) (call inc (call inc 3)))
   block:
     let (callResult, ok) = ex.invoke(2, @[ex.v[1], ex.v[3]], addr cs4, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(4, callResult)
   # (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[0], ex.v[4]], addr cs5, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(5, callResult)
   # (!capture (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3)))))
-  if not ex.appendPlanStep(sym0, [ex.v[5]]): return 0
+  if not ex.appendPlanStep(sym0, [ex.v[5]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (call inc 4)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv3], addr cs6, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(6, callResult)
   # (call inc 5)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv4], addr cs7, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(7, callResult)
   # (call inc 6)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv5], addr cs8, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(8, callResult)
   # (call inc (call inc 6))
   block:
     let (callResult, ok) = ex.invoke(1, @[ex.v[8]], addr cs9, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(9, callResult)
   # (call add (call inc 5) (call inc (call inc 6)))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[7], ex.v[9]], addr cs10, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(10, callResult)
   # (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[6], ex.v[10]], addr cs11, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(11, callResult)
   # (consume_nested (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6)))))
   let arg0 = ex.v[11]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[12] = Atom()
   ex.enterFrame()
   ex.setIfChanged(12, arg0)
@@ -162,82 +197,123 @@ proc task1(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!capture ?inp_value)
-  if not ex.appendPlanStep(sym0, [ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym0, [ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (call inc 1)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv6], addr cs12, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(13, callResult)
   # (call inc 2)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv7], addr cs13, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(14, callResult)
   # (call inc 3)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv8], addr cs14, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(15, callResult)
   # (call inc (call inc 3))
   block:
     let (callResult, ok) = ex.invoke(1, @[ex.v[15]], addr cs15, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(16, callResult)
   # (call mul (call inc 2) (call inc (call inc 3)))
   block:
     let (callResult, ok) = ex.invoke(2, @[ex.v[14], ex.v[16]], addr cs16, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(17, callResult)
   # (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[13], ex.v[17]], addr cs17, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(18, callResult)
   # (!capture (call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3)))))
-  if not ex.appendPlanStep(sym0, [ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym0, [ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (call inc 4)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv9], addr cs18, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(19, callResult)
   # (call inc 5)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv10], addr cs19, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(20, callResult)
   # (call inc 6)
   block:
     let (callResult, ok) = ex.invoke(1, @[sv11], addr cs20, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(21, callResult)
   # (call inc (call inc 6))
   block:
     let (callResult, ok) = ex.invoke(1, @[ex.v[21]], addr cs21, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(22, callResult)
   # (call add (call inc 5) (call inc (call inc 6)))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[20], ex.v[22]], addr cs22, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(23, callResult)
   # (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))
   block:
     let (callResult, ok) = ex.invoke(0, @[ex.v[19], ex.v[23]], addr cs23, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(24, callResult)
   # (consume_nested (call add (call inc 4) (call add (call inc 5) (call inc (call inc 6)))))
   let arg0 = ex.v[24]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[12] = Atom()
   ex.enterFrame()
   ex.setIfChanged(12, arg0)
@@ -246,9 +322,15 @@ proc task4(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!capture ?inp_value)
-  if not ex.appendPlanStep(sym0, [ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym0, [ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: NestedCallsDemo::test_nested_calls/0
@@ -261,15 +343,21 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch branch_nested_calls
+      ex.debugBeginBranch(definition, 0)
       state = 4
       continue
     of 4:
       if not ex.pushBranch(addr bc0):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(1)
+      ex.debugCapturePendingTask(0)
       state = 6
       continue
     of 6:
@@ -286,10 +374,14 @@ proc method0(ex: Exec): int {.nimcall.} =
       continue
     of 3:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 6
       continue
     of 7:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -304,15 +396,20 @@ proc method1(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 1)
       state = 9
       continue
     of 9:
       # branch branch_consume
+      ex.debugBeginBranch(definition, 1)
       state = 11
       continue
     of 11:
       if not ex.pushBranch(addr bc1):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(2)
       state = 13
       continue
     of 13:
@@ -329,10 +426,14 @@ proc method1(ex: Exec): int {.nimcall.} =
       continue
     of 10:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 13
       continue
     of 14:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -347,15 +448,21 @@ proc method2(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 2)
       state = 16
       continue
     of 16:
       # branch branch_nested_calls
+      ex.debugBeginBranch(definition, 2)
       state = 18
       continue
     of 18:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(4)
+      ex.debugCapturePendingTask(3)
       state = 20
       continue
     of 20:
@@ -372,10 +479,14 @@ proc method2(ex: Exec): int {.nimcall.} =
       continue
     of 17:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 20
       continue
     of 21:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -390,15 +501,20 @@ proc method3(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 3)
       state = 23
       continue
     of 23:
       # branch branch_consume
+      ex.debugBeginBranch(definition, 3)
       state = 25
       continue
     of 25:
       if not ex.pushBranch(addr bc3):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(5)
       state = 27
       continue
     of 27:
@@ -415,10 +531,14 @@ proc method3(ex: Exec): int {.nimcall.} =
       continue
     of 24:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
       state = 27
       continue
     of 28:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -438,16 +558,22 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym1 and argumentCount == 0:
     entry = 2
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 2:
     runResult = ex.run(method2)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task1, restore: @[0'u32, 1'u32, 2'u32, 3'u32, 4'u32, 5'u32]), PendingTask(fn: task0)], totalRestore: 6)
@@ -469,3 +595,156 @@ definition = Definition(abiVersion: ABIVersion, features: featureNone, domainID:
     Requirement(name: "inc", source: Source(domain: "NestedCallsDemo", file: "Domains/Test/nested_calls.domain", line: 28, column: 29)),
     Requirement(name: "add", source: Source(domain: "NestedCallsDemo", file: "Domains/Test/nested_calls.domain", line: 26, column: 25)),
     Requirement(name: "add", source: Source(domain: "NestedCallsDemo", file: "Domains/Test/nested_calls.domain", line: 24, column: 21))])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/nested_calls.domain",
+      strings: @[
+        "NestedCallsDemo::test_nested_calls",
+        "branch_nested_calls",
+        "capture",
+        "!capture",
+        "add",
+        "inc",
+        "1",
+        "(call inc 1)",
+        "__task_call_result_0",
+        "mul",
+        "2",
+        "(call inc 2)",
+        "__task_call_result_1",
+        "3",
+        "(call inc 3)",
+        "__task_call_result_2",
+        "(call inc (call inc 3))",
+        "__task_call_result_3",
+        "(call mul (call inc 2) (call inc (call inc 3)))",
+        "__task_call_result_4",
+        "(call add (call inc 1) (call mul (call inc 2) (call inc (call inc 3))))",
+        "__task_call_result_5",
+        "consume_nested",
+        "4",
+        "(call inc 4)",
+        "__task_call_result_6",
+        "5",
+        "(call inc 5)",
+        "__task_call_result_7",
+        "6",
+        "(call inc 6)",
+        "__task_call_result_8",
+        "(call inc (call inc 6))",
+        "__task_call_result_9",
+        "(call add (call inc 5) (call inc (call inc 6)))",
+        "__task_call_result_10",
+        "(call add (call inc 4) (call add (call inc 5) (call inc (call inc 6))))",
+        "__task_call_result_11",
+        "NestedCallsDemo::consume_nested",
+        "inp_value",
+        "?inp_value",
+        "branch_consume",
+        "test_nested_calls",
+        "__task_call_result_12",
+        "__task_call_result_13",
+        "__task_call_result_14",
+        "__task_call_result_15",
+        "__task_call_result_16",
+        "__task_call_result_17",
+        "__task_call_result_18",
+        "__task_call_result_19",
+        "__task_call_result_20",
+        "__task_call_result_21",
+        "__task_call_result_22",
+        "__task_call_result_23"],
+      values: @[
+        4'u32, 20, 21, 12, 5,
+        4, 36, 37, 24, 11,
+        1, 40, 39, 36, 12,
+        1, 40, 39, 42, 12,
+        4, 20, 48, 12, 18,
+        4, 36, 54, 24, 24,
+        1, 40, 39, 36, 12,
+        1, 40, 39, 42, 12],
+      variableStringIDs: @[
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        39,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex],
+      conditions: newSeq[uint32](),
+      conditionExpressions: newSeq[string](),
+      conditionChildRefs: newSeq[uint32](),
+      tasks: @[
+        1'u32, 2, 0, 1, 11, 3,
+        0, 22, 1, 1, 23, NoIndex,
+        1, 2, 3, 1, 42, 3,
+        1, 2, 4, 1, 11, 3,
+        0, 22, 5, 1, 23, NoIndex,
+        1, 2, 7, 1, 42, 3],
+      branches: @[
+        1'u32, NoIndex, 0, 2, 5,
+        41, NoIndex, 2, 1, 38,
+        1, NoIndex, 3, 2, 5,
+        41, NoIndex, 5, 1, 38],
+      methods: @[
+        0'u64, 0, 0, 0, 1, 3, 0x0000000000000fff'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        38, 2, 1, 1, 1, 36, 0x0000000000001000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        42, 4, 0, 2, 1, 3, 0x0000000001ffe000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        22, 6, 1, 3, 1, 36, 0x0000000000001000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: newSeq[uint64](),
+      constants: newSeq[uint32](),
+      callTermSlotCount: 3, factSlotCount: 0,
+      sourceFiles: @[
+        "Domains/Test/nested_calls.domain"],
+      valueSources: @[
+        0'u32, 12, 21, 18, 21,
+        0, 24, 21, 30, 21,
+        0, 36, 30, 36, 40,
+        0, 42, 27, 42, 37,
+        0, 12, 21, 18, 21,
+        0, 24, 21, 30, 21,
+        0, 36, 30, 36, 40,
+        0, 42, 27, 42, 37],
+      conditionSources: newSeq[uint32](),
+      taskSources: @[
+        0'u32, 11, 17, 19, 17,
+        0, 23, 17, 31, 17,
+        0, 42, 17, 42, 37,
+        0, 11, 17, 19, 17,
+        0, 23, 17, 31, 17,
+        0, 42, 17, 42, 37],
+      branchSources: @[
+        0'u32, 5, 9, 33, 9,
+        0, 38, 9, 44, 9,
+        0, 5, 9, 33, 9,
+        0, 38, 9, 44, 9],
+      methodSources: @[
+        0'u32, 3, 5, 34, 5,
+        0, 36, 5, 45, 5,
+        0, 3, 5, 34, 5,
+        0, 36, 5, 45, 5],
+      axiomSources: newSeq[uint32](),
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

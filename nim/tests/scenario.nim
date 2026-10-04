@@ -3,8 +3,8 @@
 ## oracle (tools/oracle/oracle.cpp); golden files produced by the oracle are
 ## compared with this interpreter's output byte for byte.
 
-import std/[os, strutils, tables]
-import htn/[atom, callterm, integration, planner, worldstate]
+import std/[algorithm, os, strutils, tables]
+import htn/[atom, callterm, debugger, integration, planner, worldstate]
 
 type
   WorldStateDaemon = ref object of RootObj
@@ -26,6 +26,10 @@ type
     policy: ErrorPolicy
     rawPrepared: RootRef
     rawExec: Exec
+    # The generated event debugger (-d:htnDebug builds only).
+    debuggerEnabled: bool
+    debugger: GeneratedDebugger
+    dumpedRevision: uint64
 
   Runner = ref object
     output: string
@@ -224,6 +228,14 @@ proc createPlanner(r: Runner, s: ScenarioState, variant: string) =
   s.unit.setBacktrackingMode(s.mode)
   s.unit.executionContext.callTermErrorPolicy = s.policy
   s.unit.executionContext.callTermErrorCallback = r.onError()
+  if s.debuggerEnabled: s.unit.setGeneratedDebugger(s.debugger)
+
+proc dumpDebugger(r: Runner, s: ScenarioState) =
+  ## Writes every recorded node of the generated event debugger after a new
+  ## capture (the debugger is reset by every decomposition).
+  if not s.debuggerEnabled or s.debugger.revision == s.dumpedRevision: return
+  s.dumpedRevision = s.debugger.revision
+  for line in s.debugger.dump(): r.emit(line)
 
 proc makeScenarioCall*(callText: string): (Atom, bool) =
   ## Parses "name arg..." with the world-state syntax and builds (name arg...).
@@ -248,12 +260,16 @@ proc runRaw(r: Runner, s: ScenarioState, callText: string, requireTopLevel: bool
   var ctx = Context(worldState: s.database.worldState, bindings: s.hook.bindings, backtrackingMode: s.mode,
     execution: s.rawExec, prepared: s.rawPrepared, callTermErrorPolicy: s.policy,
     callTermErrorCallback: r.onError())
+  if s.debuggerEnabled:
+    ctx.debugger = s.debugger
+    s.debugger.reset(if d.debugMetadata == nil: "" else: d.debugMetadata.sourceFile)
   let (plan, status) = d.decomposeCall(ctx, call, requireTopLevel)
   r.emit("status " & $status)
   let info = s.rawExec.info
   let lastError = if info.lastError.len == 0: "-" else: info.lastError
   r.emit("info peak=" & $info.peakCallFrames & " capacity=" & $info.callFrameCapacity & " error=" & lastError)
   r.emitPlan(plan)
+  r.dumpDebugger(s)
 
 proc runLines(r: Runner, path: string) =
   var current: ScenarioState = nil
@@ -272,7 +288,8 @@ proc runLines(r: Runner, path: string) =
       argument = trimmed[space + 1 .. ^1].strip(chars = {' ', '\t', '\r'})
     if command == "scenario":
       finish()
-      current = ScenarioState(spec: @["standard"], mode: bmAll, policy: epFailSilently, agent: AgentDaemon(value: 1))
+      current = ScenarioState(spec: @["standard"], mode: bmAll, policy: epFailSilently, agent: AgentDaemon(value: 1),
+        debugger: newGeneratedDebugger())
       r.emit("scenario " & argument)
       continue
     if current == nil: fail("command outside of a scenario")
@@ -321,6 +338,15 @@ proc runLines(r: Runner, path: string) =
       let parts = argument.split(' ')
       if parts.len != 2: fail("rebind <name> <int>")
       s.registry.bindRaw(parts[0], r.constantFunction(parts[0], int32(parseInt(parts[1]))))
+    of "debugger":
+      when not htnDebugEnabled:
+        fail("the debugger command needs a build with -d:htnDebug")
+      else:
+        if argument != "on" and argument != "off": fail("debugger expects on or off")
+        s.debuggerEnabled = argument == "on"
+        s.debugger.setEnabled(s.debuggerEnabled)
+        s.dumpedRevision = s.debugger.revision
+        s.unit.setGeneratedDebugger(if s.debuggerEnabled: s.debugger else: nil)
     of "call":
       r.emit("call " & argument)
       let (call, ok) = makeScenarioCall(argument)
@@ -328,10 +354,12 @@ proc runLines(r: Runner, path: string) =
       let status = s.unit.decomposeCall(call)
       r.emit("status " & $status)
       r.emitPlan(s.unit.lastDecomposition)
+      r.dumpDebugger(s)
     of "resolve":
       r.emit("resolve")
       while true:
         let resolution = s.unit.resolveCurrentPrimitiveTask()
+        r.dumpDebugger(s)
         if resolution == taskReady:
           let (task, _) = s.unit.currentPrimitiveTask()
           r.emit("exec " & formatStep(task))
@@ -357,3 +385,45 @@ proc runScenarioFile*(path, root: string, planners: Table[string, DefinitionGett
   except ScenarioError as e:
     return (r.output, path & ": " & e.msg)
   (r.output, "")
+
+proc checkGoldenDirectory*(root, directory: string, planners: Table[string, DefinitionGetter]): bool =
+  ## Runs every `<root>/<directory>/*.scn` file and compares its output with
+  ## the `.golden` file next to it, printing one line per file and the first
+  ## difference. Returns whether every file matches.
+  var files: seq[string]
+  for file in walkFiles(root / directory / "*.scn"): files.add file
+  files.sort()
+  if files.len == 0:
+    echo "no scenario files found in ", directory
+    return false
+  var failures = 0
+  for file in files:
+    let golden = readFile(file.changeFileExt("golden"))
+    let (output, error) = runScenarioFile(file, root, planners)
+    let name = extractFilename(file)
+    if error.len > 0:
+      echo "[FAIL] ", name, ": ", error
+      inc failures
+      continue
+    if output == golden:
+      echo "[OK]   ", name
+      continue
+    inc failures
+    let want = golden.split('\n')
+    let got = output.split('\n')
+    var scenarioName = ""
+    for i in 0 ..< max(want.len, got.len):
+      let w = if i < want.len: want[i] else: ""
+      let g = if i < got.len: got[i] else: ""
+      if w.startsWith("scenario "): scenarioName = w
+      if w != g:
+        echo "[FAIL] ", name, " ", scenarioName, ": first difference at line ", i + 1
+        for k in max(0, i - 8) ..< i: echo "    ", want[k]
+        echo "  want: ", w
+        echo "  got:  ", g
+        break
+  if failures > 0:
+    echo failures, " scenario file(s) failed"
+    return false
+  echo "all ", files.len, " scenario files of ", directory, " match the oracle"
+  true

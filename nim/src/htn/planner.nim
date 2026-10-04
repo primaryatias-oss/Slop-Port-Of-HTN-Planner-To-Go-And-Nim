@@ -8,7 +8,14 @@
 ## pending-continuation stack with restore snapshots, explicit call frames
 ## with branch-retry state and the iterative dispatcher.
 
-import atom, callterm, worldstate
+import atom, callterm, debugger, debugmeta, worldstate
+export debugmeta
+
+const htnDebugEnabled* = defined(htnDebug)
+  ## Whether generated planners report execution events to a
+  ## `GeneratedDebugger` and build their debug metadata (`-d:htnDebug`, the
+  ## HTN_DEBUG_DECOMPOSITION builds of the original). Without it the event
+  ## templates below expand to nothing.
 
 const MaxFloat32 = 3.4028234663852886e38
   ## FLT_MAX.
@@ -39,6 +46,8 @@ type
     clientContext*: RootRef
     callTermErrorPolicy*: ErrorPolicy
     callTermErrorCallback*: ErrorCallback
+    debugger*: GeneratedDebugger
+      ## Receives execution events in `-d:htnDebug` builds (nil: none).
 
   ExecutionInfo* = object
     ## Call-frame diagnostics of the last decomposition.
@@ -59,6 +68,8 @@ type
     decomposeCall*: DecomposeCallFn
     factNames*: seq[string]
     callTermRequirements*: seq[Requirement]
+    debugMetadata*: DebugMetadata
+      ## The compiled domain for debuggers (set in `-d:htnDebug` builds).
 
   DefinitionGetter* = proc (): Definition {.nimcall.}
     ## The exported `<entry point>_GetDefinition` accessor of a generated
@@ -445,3 +456,38 @@ proc compare*(left, right: Atom, op: uint32): bool =
   of 4: l > r
   of 5: l >= r
   else: false
+
+# ---------------------------------------------------------------------------
+# Debugger events (HTN_GENERATED_EVENT_DEBUG_*), called by generated code.
+# They expand to nothing unless htnDebugEnabled.
+
+template debugEvent(ex: Exec, event: untyped, arguments: varargs[untyped]) =
+  when htnDebugEnabled:
+    if ex.ctx.debugger != nil: event(ex.ctx.debugger, arguments)
+
+template debugBeginPlan*(ex: Exec, d: Definition, meth: uint32) =
+  debugEvent(ex, beginPlan, d.debugMetadata, meth, ex.v)
+template debugEndPlan*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endPlan, d.debugMetadata, ex.v, succeeded)
+template debugBeginMethod*(ex: Exec, d: Definition, meth: uint32) =
+  debugEvent(ex, beginMethod, d.debugMetadata, meth, ex.v)
+template debugEndMethod*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endMethod, d.debugMetadata, ex.v, succeeded)
+template debugBeginBranch*(ex: Exec, d: Definition, branch: uint32) =
+  debugEvent(ex, beginBranch, d.debugMetadata, branch, ex.v)
+template debugEndBranch*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endBranch, d.debugMetadata, ex.v, succeeded)
+template debugCapturePendingTask*(ex: Exec, task: uint32) =
+  debugEvent(ex, capturePendingTask, task)
+template debugBeginTask*(ex: Exec, d: Definition, task: uint32) =
+  debugEvent(ex, beginTask, d.debugMetadata, task, ex.v)
+template debugEndTask*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endTask, d.debugMetadata, ex.v, succeeded)
+template debugBeginCondition*(ex: Exec, d: Definition, condition: uint32) =
+  debugEvent(ex, beginCondition, d.debugMetadata, condition, ex.v)
+template debugEndCondition*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endCondition, d.debugMetadata, ex.v, succeeded)
+template debugBeginAxiom*(ex: Exec, d: Definition, axiom: uint32) =
+  debugEvent(ex, beginAxiom, d.debugMetadata, axiom, ex.v)
+template debugEndAxiom*(ex: Exec, d: Definition, succeeded: bool) =
+  debugEvent(ex, endAxiom, d.debugMetadata, ex.v, succeeded)

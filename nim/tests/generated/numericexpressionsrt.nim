@@ -417,9 +417,11 @@ proc axiomBegin58(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   if in4.isBound: ex.setIfChanged(4, in4)
   if in5.isBound: ex.setIfChanged(5, in5)
   if in6.isBound: ex.setIfChanged(6, in6)
+  ex.debugBeginAxiom(definition, 4)
 
 proc axiomEnd58(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.v[2] = scope.saved[2]
@@ -439,6 +441,7 @@ proc axiomBegin59(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(7, in0)
+  ex.debugBeginAxiom(definition, 5)
 
 proc axiomEnd59(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -449,6 +452,7 @@ proc axiomEnd59(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[7] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -461,6 +465,7 @@ proc axiomBegin61(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd61(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -471,6 +476,7 @@ proc axiomEnd61(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -483,6 +489,7 @@ proc axiomBegin63(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd63(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -493,6 +500,7 @@ proc axiomEnd63(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -506,6 +514,7 @@ proc axiomBegin65(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(7, in0)
+  ex.debugBeginAxiom(definition, 5)
 
 proc axiomEnd65(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -516,6 +525,7 @@ proc axiomEnd65(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[7] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -552,9 +562,11 @@ proc axiomBegin67(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   if in4.isBound: ex.setIfChanged(4, in4)
   if in5.isBound: ex.setIfChanged(5, in5)
   if in6.isBound: ex.setIfChanged(6, in6)
+  ex.debugBeginAxiom(definition, 4)
 
 proc axiomEnd67(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.v[2] = scope.saved[2]
@@ -573,6 +585,7 @@ proc axiomBegin69(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd69(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -583,6 +596,7 @@ proc axiomEnd69(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -597,6 +611,7 @@ proc axiomBegin120(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[10] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 7)
 
 proc axiomEnd120(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -608,6 +623,7 @@ proc axiomEnd120(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
   var out0: Atom
   if valid:
     out0 = ex.v[9]
+  ex.debugEndAxiom(definition, valid)
   ex.v[9] = scope.saved[0]
   ex.v[10] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -647,9 +663,11 @@ proc axiomBegin147(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   if in4.isBound: ex.setIfChanged(4, in4)
   if in5.isBound: ex.setIfChanged(5, in5)
   if in6.isBound: ex.setIfChanged(6, in6)
+  ex.debugBeginAxiom(definition, 4)
 
 proc axiomEnd147(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.v[2] = scope.saved[2]
@@ -669,6 +687,7 @@ proc axiomBegin148(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(7, in0)
+  ex.debugBeginAxiom(definition, 5)
 
 proc axiomEnd148(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -679,6 +698,7 @@ proc axiomEnd148(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[7] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -691,6 +711,7 @@ proc axiomBegin150(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd150(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -701,6 +722,7 @@ proc axiomEnd150(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -713,6 +735,7 @@ proc axiomBegin152(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd152(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -723,6 +746,7 @@ proc axiomEnd152(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -736,6 +760,7 @@ proc axiomBegin154(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(7, in0)
+  ex.debugBeginAxiom(definition, 5)
 
 proc axiomEnd154(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -746,6 +771,7 @@ proc axiomEnd154(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[7] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -782,9 +808,11 @@ proc axiomBegin156(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   if in4.isBound: ex.setIfChanged(4, in4)
   if in5.isBound: ex.setIfChanged(5, in5)
   if in6.isBound: ex.setIfChanged(6, in6)
+  ex.debugBeginAxiom(definition, 4)
 
 proc axiomEnd156(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.v[2] = scope.saved[2]
@@ -803,6 +831,7 @@ proc axiomBegin158(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[8] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 6)
 
 proc axiomEnd158(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -813,6 +842,7 @@ proc axiomEnd158(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
       valid = false
     elif not scope.args[0].isBound:
       valid = false
+  ex.debugEndAxiom(definition, valid)
   ex.v[8] = scope.saved[0]
   ex.currentFrameID = scope.callerFrame
   valid
@@ -827,6 +857,7 @@ proc axiomBegin209(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.v[10] = Atom()
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
+  ex.debugBeginAxiom(definition, 7)
 
 proc axiomEnd209(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -838,6 +869,7 @@ proc axiomEnd209(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
   var out0: Atom
   if valid:
     out0 = ex.v[9]
+  ex.debugEndAxiom(definition, valid)
   ex.v[9] = scope.saved[0]
   ex.v[10] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -990,43 +1022,82 @@ proc factChoice166(ex: Exec, target: uint32): bool {.nimcall.} =
   false
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!numeric_result "success")
-  if not ex.appendPlanStep(sym6, [sv29]): return 0
+  if not ex.appendPlanStep(sym6, [sv29]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (!numeric_result "failure")
-  if not ex.appendPlanStep(sym6, [sv30]): return 0
+  if not ex.appendPlanStep(sym6, [sv30]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!numeric_result "unexpected_success")
-  if not ex.appendPlanStep(sym6, [sv32]): return 0
+  if not ex.appendPlanStep(sym6, [sv32]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!numeric_result "controlled_failure")
-  if not ex.appendPlanStep(sym6, [sv33]): return 0
+  if not ex.appendPlanStep(sym6, [sv33]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (!numeric_result "unexpected_success")
-  if not ex.appendPlanStep(sym6, [sv35]): return 0
+  if not ex.appendPlanStep(sym6, [sv35]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!numeric_result "controlled_failure")
-  if not ex.appendPlanStep(sym6, [sv36]): return 0
+  if not ex.appendPlanStep(sym6, [sv36]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (compound_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
   let arg0 = arith(0'u32, [newInt(1'i32), newInt(2'i32)])
   let arg1 = arith(1'u32, [newInt(10'i32), newInt(4'i32)])
@@ -1035,7 +1106,9 @@ proc task6(ex: Exec): int {.nimcall.} =
   let arg4 = arith(4'u32, [newInt(8'i32), newInt(3'i32)])
   let arg5 = arith(5'u32, [newInt(6'i32)])
   let arg6 = arith(6'u32, [newInt(8'i32)])
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound or not arg4.isBound or not arg5.isBound or not arg6.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound or not arg4.isBound or not arg5.isBound or not arg6.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -1056,43 +1129,68 @@ proc task6(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (!primitive_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
-  if not ex.appendPlanStep(sym7, [arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)]), arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)]), arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)]), arith(6'u32, [newInt(8'i32)])]): return 0
+  if not ex.appendPlanStep(sym7, [arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)]), arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)]), arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)]), arith(6'u32, [newInt(8'i32)])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (call add (+ 1 2) (- 10 4))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)])], addr cs0, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(14, callResult)
   # (call add (* 2 3) (/ 12 2))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)])], addr cs1, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(15, callResult)
   # (call add (% 8 3) (++ 6))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)])], addr cs2, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(16, callResult)
   # (call inc (-- 8))
   block:
     let (callResult, ok) = ex.invoke(1, @[arith(6'u32, [newInt(8'i32)])], addr cs3, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(17, callResult)
   # (!callterm_arithmetic_arguments (call add (+ 1 2) (- 10 4)) (call add (* 2 3) (/ 12 2)) (call add (% 8 3) (++ 6)) (call inc (-- 8)))
-  if not ex.appendPlanStep(sym8, [ex.v[14], ex.v[15], ex.v[16], ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym8, [ex.v[14], ex.v[15], ex.v[16], ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (recursive_method 0 2)
   let arg0 = sv37
   let arg1 = sv38
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[18] = Atom()
   ex.v[19] = Atom()
   ex.enterFrame()
@@ -1103,17 +1201,28 @@ proc task9(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (!compound_arithmetic_arguments ?inp_add ?inp_subtract ?inp_multiply ?inp_divide ?inp_modulo ?inp_increment ?inp_decrement)
-  if not ex.appendPlanStep(sym9, [ex.v[0], ex.v[1], ex.v[2], ex.v[3], ex.v[4], ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[0], ex.v[1], ex.v[2], ex.v[3], ex.v[4], ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (recursive_method (++ ?inp_index) ?inp_count)
   let arg0 = arith(5'u32, [ex.v[18]])
   let arg1 = ex.v[19]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[18] = Atom()
   ex.v[19] = Atom()
   ex.enterFrame()
@@ -1124,169 +1233,334 @@ proc task11(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (!recursive_arithmetic_result ?inp_index)
-  if not ex.appendPlanStep(sym10, [ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym10, [ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (!axiom_arithmetic_arguments "success")
-  if not ex.appendPlanStep(sym11, [sv39]): return 0
+  if not ex.appendPlanStep(sym11, [sv39]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (!axiom_output_expression "success")
-  if not ex.appendPlanStep(sym12, [sv40]): return 0
+  if not ex.appendPlanStep(sym12, [sv40]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (!axiom_output_mismatch "unexpected_success")
-  if not ex.appendPlanStep(sym13, [sv41]): return 0
+  if not ex.appendPlanStep(sym13, [sv41]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (!axiom_output_mismatch "controlled_failure")
-  if not ex.appendPlanStep(sym13, [sv42]): return 0
+  if not ex.appendPlanStep(sym13, [sv42]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!axiom_io_mismatch "unexpected_success")
-  if not ex.appendPlanStep(sym14, [sv43]): return 0
+  if not ex.appendPlanStep(sym14, [sv43]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (!axiom_io_mismatch "controlled_failure")
-  if not ex.appendPlanStep(sym14, [sv44]): return 0
+  if not ex.appendPlanStep(sym14, [sv44]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!axiom_invalid_input_expression "unexpected_success")
-  if not ex.appendPlanStep(sym15, [sv51]): return 0
+  if not ex.appendPlanStep(sym15, [sv51]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (!axiom_invalid_input_expression "controlled_failure")
-  if not ex.appendPlanStep(sym15, [sv52]): return 0
+  if not ex.appendPlanStep(sym15, [sv52]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!axiom_invalid_output_expression "unexpected_success")
-  if not ex.appendPlanStep(sym16, [sv53]): return 0
+  if not ex.appendPlanStep(sym16, [sv53]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (!axiom_invalid_output_expression "controlled_failure")
-  if not ex.appendPlanStep(sym16, [sv54]): return 0
+  if not ex.appendPlanStep(sym16, [sv54]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (!assignment_values ?kind ?number ?result ?flag)
-  if not ex.appendPlanStep(sym17, [ex.v[20], ex.v[21], ex.v[23], ex.v[24]]): return 0
+  if not ex.appendPlanStep(sym17, [ex.v[20], ex.v[21], ex.v[23], ex.v[24]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task32(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 32)
   # (!assignment_result ?result)
-  if not ex.appendPlanStep(sym18, [ex.v[23]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[23]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task33(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 33)
   # (!numeric_result "success")
-  if not ex.appendPlanStep(sym6, [sv76]): return 0
+  if not ex.appendPlanStep(sym6, [sv76]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task34(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 34)
   # (!numeric_result "failure")
-  if not ex.appendPlanStep(sym6, [sv77]): return 0
+  if not ex.appendPlanStep(sym6, [sv77]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task35(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 35)
   # (!numeric_result "unexpected_success")
-  if not ex.appendPlanStep(sym6, [sv79]): return 0
+  if not ex.appendPlanStep(sym6, [sv79]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task36(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 36)
   # (!numeric_result "controlled_failure")
-  if not ex.appendPlanStep(sym6, [sv80]): return 0
+  if not ex.appendPlanStep(sym6, [sv80]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task37(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 37)
   # (!numeric_result "unexpected_success")
-  if not ex.appendPlanStep(sym6, [sv82]): return 0
+  if not ex.appendPlanStep(sym6, [sv82]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task38(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 38)
   # (!numeric_result "controlled_failure")
-  if not ex.appendPlanStep(sym6, [sv83]): return 0
+  if not ex.appendPlanStep(sym6, [sv83]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task39(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 39)
   # (compound_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
   let arg0 = arith(0'u32, [newInt(1'i32), newInt(2'i32)])
   let arg1 = arith(1'u32, [newInt(10'i32), newInt(4'i32)])
@@ -1295,7 +1569,9 @@ proc task39(ex: Exec): int {.nimcall.} =
   let arg4 = arith(4'u32, [newInt(8'i32), newInt(3'i32)])
   let arg5 = arith(5'u32, [newInt(6'i32)])
   let arg6 = arith(6'u32, [newInt(8'i32)])
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound or not arg4.isBound or not arg5.isBound or not arg6.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound or not arg4.isBound or not arg5.isBound or not arg6.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[1] = Atom()
   ex.v[2] = Atom()
@@ -1316,43 +1592,68 @@ proc task39(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task40(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 40)
   # (!primitive_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
-  if not ex.appendPlanStep(sym7, [arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)]), arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)]), arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)]), arith(6'u32, [newInt(8'i32)])]): return 0
+  if not ex.appendPlanStep(sym7, [arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)]), arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)]), arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)]), arith(6'u32, [newInt(8'i32)])]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task41(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 41)
   # (call add (+ 1 2) (- 10 4))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(0'u32, [newInt(1'i32), newInt(2'i32)]), arith(1'u32, [newInt(10'i32), newInt(4'i32)])], addr cs4, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(48, callResult)
   # (call add (* 2 3) (/ 12 2))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(2'u32, [newInt(2'i32), newInt(3'i32)]), arith(3'u32, [newInt(12'i32), newInt(2'i32)])], addr cs5, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(49, callResult)
   # (call add (% 8 3) (++ 6))
   block:
     let (callResult, ok) = ex.invoke(0, @[arith(4'u32, [newInt(8'i32), newInt(3'i32)]), arith(5'u32, [newInt(6'i32)])], addr cs6, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(50, callResult)
   # (call inc (-- 8))
   block:
     let (callResult, ok) = ex.invoke(1, @[arith(6'u32, [newInt(8'i32)])], addr cs7, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(51, callResult)
   # (!callterm_arithmetic_arguments (call add (+ 1 2) (- 10 4)) (call add (* 2 3) (/ 12 2)) (call add (% 8 3) (++ 6)) (call inc (-- 8)))
-  if not ex.appendPlanStep(sym8, [ex.v[48], ex.v[49], ex.v[50], ex.v[51]]): return 0
+  if not ex.appendPlanStep(sym8, [ex.v[48], ex.v[49], ex.v[50], ex.v[51]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task42(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 42)
   # (recursive_method 0 2)
   let arg0 = sv84
   let arg1 = sv85
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[18] = Atom()
   ex.v[19] = Atom()
   ex.enterFrame()
@@ -1363,17 +1664,28 @@ proc task42(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task43(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 43)
   # (!compound_arithmetic_arguments ?inp_add ?inp_subtract ?inp_multiply ?inp_divide ?inp_modulo ?inp_increment ?inp_decrement)
-  if not ex.appendPlanStep(sym9, [ex.v[0], ex.v[1], ex.v[2], ex.v[3], ex.v[4], ex.v[5], ex.v[6]]): return 0
+  if not ex.appendPlanStep(sym9, [ex.v[0], ex.v[1], ex.v[2], ex.v[3], ex.v[4], ex.v[5], ex.v[6]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task44(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 44)
   # (recursive_method (++ ?inp_index) ?inp_count)
   let arg0 = arith(5'u32, [ex.v[18]])
   let arg1 = ex.v[19]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[18] = Atom()
   ex.v[19] = Atom()
   ex.enterFrame()
@@ -1384,129 +1696,255 @@ proc task44(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task45(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 45)
   # (!recursive_arithmetic_result ?inp_index)
-  if not ex.appendPlanStep(sym10, [ex.v[18]]): return 0
+  if not ex.appendPlanStep(sym10, [ex.v[18]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task46(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 46)
   # (!axiom_arithmetic_arguments "success")
-  if not ex.appendPlanStep(sym11, [sv86]): return 0
+  if not ex.appendPlanStep(sym11, [sv86]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task47(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 47)
   # (!axiom_output_expression "success")
-  if not ex.appendPlanStep(sym12, [sv87]): return 0
+  if not ex.appendPlanStep(sym12, [sv87]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task48(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 48)
   # (!axiom_output_mismatch "unexpected_success")
-  if not ex.appendPlanStep(sym13, [sv88]): return 0
+  if not ex.appendPlanStep(sym13, [sv88]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task49(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 49)
   # (!axiom_output_mismatch "controlled_failure")
-  if not ex.appendPlanStep(sym13, [sv89]): return 0
+  if not ex.appendPlanStep(sym13, [sv89]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task50(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 50)
   # (!axiom_io_mismatch "unexpected_success")
-  if not ex.appendPlanStep(sym14, [sv90]): return 0
+  if not ex.appendPlanStep(sym14, [sv90]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task51(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 51)
   # (!axiom_io_mismatch "controlled_failure")
-  if not ex.appendPlanStep(sym14, [sv91]): return 0
+  if not ex.appendPlanStep(sym14, [sv91]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task52(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 52)
   # (!axiom_invalid_input_expression "unexpected_success")
-  if not ex.appendPlanStep(sym15, [sv98]): return 0
+  if not ex.appendPlanStep(sym15, [sv98]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task53(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 53)
   # (!axiom_invalid_input_expression "controlled_failure")
-  if not ex.appendPlanStep(sym15, [sv99]): return 0
+  if not ex.appendPlanStep(sym15, [sv99]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task54(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 54)
   # (!axiom_invalid_output_expression "unexpected_success")
-  if not ex.appendPlanStep(sym16, [sv100]): return 0
+  if not ex.appendPlanStep(sym16, [sv100]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task55(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 55)
   # (!axiom_invalid_output_expression "controlled_failure")
-  if not ex.appendPlanStep(sym16, [sv101]): return 0
+  if not ex.appendPlanStep(sym16, [sv101]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task56(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 56)
   # (!assignment_values ?kind ?number ?result ?flag)
-  if not ex.appendPlanStep(sym17, [ex.v[20], ex.v[21], ex.v[23], ex.v[24]]): return 0
+  if not ex.appendPlanStep(sym17, [ex.v[20], ex.v[21], ex.v[23], ex.v[24]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task57(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 57)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task58(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 58)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task59(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 59)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task60(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 60)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task61(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 61)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task62(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 62)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task63(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 63)
   # (!unexpected ?value)
-  if not ex.appendPlanStep(sym19, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym19, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task64(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 64)
   # (!assignment_result ?value)
-  if not ex.appendPlanStep(sym18, [ex.v[26]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[26]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task65(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 65)
   # (!assignment_result ?result)
-  if not ex.appendPlanStep(sym18, [ex.v[23]]): return 0
+  if not ex.appendPlanStep(sym18, [ex.v[23]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: NumericExpressionsDemo::run/0
@@ -1529,149 +1967,201 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch numeric_expressions_succeed
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 0)
       # (and (time ?time) (plan_start_time ?plan_start_time) (plan_duration ?plan_duration) (<= ?time (+ ?plan_start_time ?plan_duration)) (== (+ 1 2 3) 6) (== (- 10 3 2) 5) (< (- 5) 0) (== (* 2 3 4) 24) (== (/ 20 2 2) 5) (== (% 17 5) 2) (== (+ 1 2.5) 3.5) (== (++ 41) 42) (== (-- 41) 40) (== (++ 2.5) 3.5) (== (-- (++ 10)) 10) (> (* (- ?time 1) 2) (/ 100 2)))
       cp9_11 = ex.v[11]
       cp9_12 = ex.v[12]
       cp9_13 = ex.v[13]
+      ex.debugBeginCondition(definition, 32)
       # (time ?time)
       cp11_11 = ex.v[11]
       fc12 = 0
       state = 13
       continue
     of 13:
+      ex.debugBeginCondition(definition, 33)
       inc fc12
       if not factChoice33(ex, fc12 - 1):
+        ex.debugEndCondition(definition, false)
         state = 10
         continue
+      ex.debugEndCondition(definition, true)
       # (plan_start_time ?plan_start_time)
       cp15_12 = ex.v[12]
       fc16 = 0
       state = 17
       continue
     of 17:
+      ex.debugBeginCondition(definition, 34)
       inc fc16
       if not factChoice34(ex, fc16 - 1):
+        ex.debugEndCondition(definition, false)
         state = 14
         continue
+      ex.debugEndCondition(definition, true)
       # (plan_duration ?plan_duration)
       cp19_13 = ex.v[13]
       fc20 = 0
       state = 21
       continue
     of 21:
+      ex.debugBeginCondition(definition, 35)
       inc fc20
       if not factChoice35(ex, fc20 - 1):
+        ex.debugEndCondition(definition, false)
         state = 18
         continue
+      ex.debugEndCondition(definition, true)
       # (<= ?time (+ ?plan_start_time ?plan_duration))
       # (<= ?time (+ ?plan_start_time ?plan_duration))
+      ex.debugBeginCondition(definition, 36)
       if compare(ex.v[11], arith(0'u32, [ex.v[12], ex.v[13]]), 3'u32):
+        ex.debugEndCondition(definition, true)
         state = 24
         continue
+      ex.debugEndCondition(definition, false)
       state = 22
       continue
     of 24:
       # (== (+ 1 2 3) 6)
       # (== (+ 1 2 3) 6)
+      ex.debugBeginCondition(definition, 37)
       if compare(arith(0'u32, [newInt(1'i32), newInt(2'i32), newInt(3'i32)]), sv18, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 27
         continue
+      ex.debugEndCondition(definition, false)
       state = 25
       continue
     of 27:
       # (== (- 10 3 2) 5)
       # (== (- 10 3 2) 5)
+      ex.debugBeginCondition(definition, 38)
       if compare(arith(1'u32, [newInt(10'i32), newInt(3'i32), newInt(2'i32)]), sv19, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 30
         continue
+      ex.debugEndCondition(definition, false)
       state = 28
       continue
     of 30:
       # (< (- 5) 0)
       # (< (- 5) 0)
+      ex.debugBeginCondition(definition, 39)
       if compare(arith(1'u32, [newInt(5'i32)]), sv20, 2'u32):
+        ex.debugEndCondition(definition, true)
         state = 33
         continue
+      ex.debugEndCondition(definition, false)
       state = 31
       continue
     of 33:
       # (== (* 2 3 4) 24)
       # (== (* 2 3 4) 24)
+      ex.debugBeginCondition(definition, 40)
       if compare(arith(2'u32, [newInt(2'i32), newInt(3'i32), newInt(4'i32)]), sv21, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 36
         continue
+      ex.debugEndCondition(definition, false)
       state = 34
       continue
     of 36:
       # (== (/ 20 2 2) 5)
       # (== (/ 20 2 2) 5)
+      ex.debugBeginCondition(definition, 41)
       if compare(arith(3'u32, [newInt(20'i32), newInt(2'i32), newInt(2'i32)]), sv22, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 39
         continue
+      ex.debugEndCondition(definition, false)
       state = 37
       continue
     of 39:
       # (== (% 17 5) 2)
       # (== (% 17 5) 2)
+      ex.debugBeginCondition(definition, 42)
       if compare(arith(4'u32, [newInt(17'i32), newInt(5'i32)]), sv23, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 42
         continue
+      ex.debugEndCondition(definition, false)
       state = 40
       continue
     of 42:
       # (== (+ 1 2.5) 3.5)
       # (== (+ 1 2.5) 3.5)
+      ex.debugBeginCondition(definition, 43)
       if compare(arith(0'u32, [newInt(1'i32), newFloatBits(0x40200000'u32)]), sv24, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 45
         continue
+      ex.debugEndCondition(definition, false)
       state = 43
       continue
     of 45:
       # (== (++ 41) 42)
       # (== (++ 41) 42)
+      ex.debugBeginCondition(definition, 44)
       if compare(arith(5'u32, [newInt(41'i32)]), sv25, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 48
         continue
+      ex.debugEndCondition(definition, false)
       state = 46
       continue
     of 48:
       # (== (-- 41) 40)
       # (== (-- 41) 40)
+      ex.debugBeginCondition(definition, 45)
       if compare(arith(6'u32, [newInt(41'i32)]), sv26, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 51
         continue
+      ex.debugEndCondition(definition, false)
       state = 49
       continue
     of 51:
       # (== (++ 2.5) 3.5)
       # (== (++ 2.5) 3.5)
+      ex.debugBeginCondition(definition, 46)
       if compare(arith(5'u32, [newFloatBits(0x40200000'u32)]), sv27, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 54
         continue
+      ex.debugEndCondition(definition, false)
       state = 52
       continue
     of 54:
       # (== (-- (++ 10)) 10)
       # (== (-- (++ 10)) 10)
+      ex.debugBeginCondition(definition, 47)
       if compare(arith(6'u32, [arith(5'u32, [newInt(10'i32)])]), sv28, 0'u32):
+        ex.debugEndCondition(definition, true)
         state = 57
         continue
+      ex.debugEndCondition(definition, false)
       state = 55
       continue
     of 57:
       # (> (* (- ?time 1) 2) (/ 100 2))
       # (> (* (- ?time 1) 2) (/ 100 2))
+      ex.debugBeginCondition(definition, 48)
       if compare(arith(2'u32, [arith(1'u32, [ex.v[11], newInt(1'i32)]), newInt(2'i32)]), arith(3'u32, [newInt(100'i32), newInt(2'i32)]), 4'u32):
+        ex.debugEndCondition(definition, true)
         state = 60
         continue
+      ex.debugEndCondition(definition, false)
       state = 58
       continue
     of 60:
+      ex.debugEndCondition(definition, true)
       state = 6
       continue
     of 58:
@@ -1753,19 +2243,24 @@ proc method0(ex: Exec): int {.nimcall.} =
       ex.v[11] = cp9_11
       ex.v[12] = cp9_12
       ex.v[13] = cp9_13
+      ex.debugEndCondition(definition, false)
       state = 7
       continue
     of 7:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 3
       continue
     of 6:
       if not ex.pushBranch(addr bc0):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 61
+      ex.debugCapturePendingTask(0)
+      state = 62
       continue
-    of 61:
+    of 62:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1775,34 +2270,45 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 4
         continue
-      state = 62
+      state = 63
       continue
     of 4:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 3
         continue
-      state = 61
+      state = 62
       continue
-    of 62:
+    of 63:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 3:
       # branch numeric_expressions_failed
-      state = 63
+      ex.debugBeginBranch(definition, 1)
+      state = 64
       continue
-    of 63:
+    of 64:
       if not ex.pushBranch(addr bc1):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 65
+      ex.debugCapturePendingTask(1)
+      state = 66
       continue
-    of 65:
+    of 66:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1812,14 +2318,18 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 5
         continue
-      state = 66
+      state = 67
       continue
     of 5:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 65
+      state = 66
       continue
-    of 66:
+    of 67:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1829,45 +2339,57 @@ proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 70
-  of 2: state = 71
+  of 1: state = 71
+  of 2: state = 72
   else: discard
   while true:
     case state
     of 0:
-      state = 68
+      ex.debugBeginMethod(definition, 1)
+      state = 69
       continue
-    of 68:
+    of 69:
       # branch invalid_expression_does_not_succeed
       ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 2)
       # (and (== (/ 1 0) 0))
+      ex.debugBeginCondition(definition, 49)
       # (== (/ 1 0) 0)
       # (== (/ 1 0) 0)
+      ex.debugBeginCondition(definition, 50)
       if compare(arith(3'u32, [newInt(1'i32), newInt(0'i32)]), sv31, 0'u32):
-        state = 78
+        ex.debugEndCondition(definition, true)
+        state = 79
         continue
-      state = 76
+      ex.debugEndCondition(definition, false)
+      state = 77
       continue
-    of 78:
-      state = 72
+    of 79:
+      ex.debugEndCondition(definition, true)
+      state = 73
       continue
-    of 76:
+    of 77:
+      state = 75
+      continue
+    of 75:
+      ex.debugEndCondition(definition, false)
       state = 74
       continue
     of 74:
-      state = 73
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 70
       continue
     of 73:
-      ex.releaseRetry(fr)
-      state = 69
-      continue
-    of 72:
       if not ex.pushBranch(addr bc2):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 79
+      ex.debugCapturePendingTask(2)
+      state = 81
       continue
-    of 79:
+    of 81:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1875,36 +2397,47 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 70
+        state = 71
         continue
-      state = 80
+      state = 82
       continue
-    of 70:
+    of 71:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms1)
-        state = 69
+        ex.debugEndBranch(definition, false)
+        state = 70
         continue
-      state = 79
-      continue
-    of 80:
-      ex.releaseRetry(fr)
-      return 1
-    of 69:
-      # branch invalid_expression_falls_back
       state = 81
       continue
-    of 81:
-      if not ex.pushBranch(addr bc3):
-        return 0
+    of 82:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 70:
+      # branch invalid_expression_falls_back
+      ex.debugBeginBranch(definition, 3)
       state = 83
       continue
     of 83:
+      if not ex.pushBranch(addr bc3):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(3)
+      state = 85
+      continue
+    of 85:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -1912,16 +2445,20 @@ proc method1(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 71
+        state = 72
         continue
-      state = 84
+      state = 86
       continue
-    of 71:
+    of 72:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 83
+      state = 85
       continue
-    of 84:
+    of 86:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -1931,45 +2468,57 @@ proc method2(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 88
-  of 2: state = 89
+  of 1: state = 90
+  of 2: state = 91
   else: discard
   while true:
     case state
     of 0:
-      state = 86
+      ex.debugBeginMethod(definition, 2)
+      state = 88
       continue
-    of 86:
+    of 88:
       # branch invalid_expression_does_not_succeed
       ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 4)
       # (and (== (+ invalid 1) 2))
+      ex.debugBeginCondition(definition, 51)
       # (== (+ invalid 1) 2)
       # (== (+ invalid 1) 2)
+      ex.debugBeginCondition(definition, 52)
       if compare(arith(0'u32, [Atom(), newInt(1'i32)]), sv34, 0'u32):
-        state = 96
+        ex.debugEndCondition(definition, true)
+        state = 98
         continue
-      state = 94
+      ex.debugEndCondition(definition, false)
+      state = 96
       continue
-    of 96:
-      state = 90
-      continue
-    of 94:
+    of 98:
+      ex.debugEndCondition(definition, true)
       state = 92
       continue
-    of 92:
-      state = 91
+    of 96:
+      state = 94
       continue
-    of 91:
+    of 94:
+      ex.debugEndCondition(definition, false)
+      state = 93
+      continue
+    of 93:
       ex.releaseRetry(fr)
-      state = 87
+      ex.debugEndBranch(definition, false)
+      state = 89
       continue
-    of 90:
+    of 92:
       if not ex.pushBranch(addr bc4):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 97
+      ex.debugCapturePendingTask(4)
+      state = 100
       continue
-    of 97:
+    of 100:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -1977,36 +2526,47 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 88
+        state = 90
         continue
-      state = 98
+      state = 101
       continue
-    of 88:
+    of 90:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 87
+        ex.debugEndBranch(definition, false)
+        state = 89
         continue
-      state = 97
-      continue
-    of 98:
-      ex.releaseRetry(fr)
-      return 1
-    of 87:
-      # branch invalid_expression_falls_back
-      state = 99
-      continue
-    of 99:
-      if not ex.pushBranch(addr bc5):
-        return 0
-      state = 101
+      state = 100
       continue
     of 101:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 89:
+      # branch invalid_expression_falls_back
+      ex.debugBeginBranch(definition, 5)
+      state = 102
+      continue
+    of 102:
+      if not ex.pushBranch(addr bc5):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(5)
+      state = 104
+      continue
+    of 104:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2014,16 +2574,20 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 89
+        state = 91
         continue
-      state = 102
+      state = 105
       continue
-    of 89:
+    of 91:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 101
+      state = 104
       continue
-    of 102:
+    of 105:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2033,23 +2597,31 @@ proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 105
+  of 1: state = 108
   else: discard
   while true:
     case state
     of 0:
-      state = 104
+      ex.debugBeginMethod(definition, 3)
+      state = 107
       continue
-    of 104:
+    of 107:
       # branch exercise_all_argument_contexts
-      state = 106
+      ex.debugBeginBranch(definition, 6)
+      state = 109
       continue
-    of 106:
+    of 109:
       if not ex.pushBranch(addr bc6):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 108
+      ex.debugCapturePendingTask(9)
+      ex.debugCapturePendingTask(8)
+      ex.debugCapturePendingTask(7)
+      ex.debugCapturePendingTask(6)
+      state = 111
       continue
-    of 108:
+    of 111:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2057,16 +2629,20 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 105
+        state = 108
         continue
-      state = 109
+      state = 112
       continue
-    of 105:
+    of 108:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 108
+      state = 111
       continue
-    of 109:
+    of 112:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2076,23 +2652,28 @@ proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 112
+  of 1: state = 115
   else: discard
   while true:
     case state
     of 0:
-      state = 111
+      ex.debugBeginMethod(definition, 4)
+      state = 114
       continue
-    of 111:
+    of 114:
       # branch emit_compound_arguments
-      state = 113
+      ex.debugBeginBranch(definition, 7)
+      state = 116
       continue
-    of 113:
+    of 116:
       if not ex.pushBranch(addr bc7):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 115
+      ex.debugCapturePendingTask(10)
+      state = 118
       continue
-    of 115:
+    of 118:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2100,16 +2681,20 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 112
+        state = 115
         continue
-      state = 116
+      state = 119
       continue
-    of 112:
+    of 115:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 115
+      state = 118
       continue
-    of 116:
+    of 119:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2119,45 +2704,57 @@ proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 120
-  of 2: state = 121
+  of 1: state = 123
+  of 2: state = 124
   else: discard
   while true:
     case state
     of 0:
-      state = 118
+      ex.debugBeginMethod(definition, 5)
+      state = 121
       continue
-    of 118:
+    of 121:
       # branch continue_recursion
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 8)
       # (and (< ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 53)
       # (< ?inp_index ?inp_count)
       # (< ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 54)
       if compare(ex.v[18], ex.v[19], 2'u32):
-        state = 128
+        ex.debugEndCondition(definition, true)
+        state = 131
         continue
-      state = 126
-      continue
-    of 128:
-      state = 122
-      continue
-    of 126:
-      state = 124
-      continue
-    of 124:
-      state = 123
-      continue
-    of 123:
-      ex.releaseRetry(fr)
-      state = 119
-      continue
-    of 122:
-      if not ex.pushBranch(addr bc8):
-        ex.releaseRetry(fr)
-        return 0
+      ex.debugEndCondition(definition, false)
       state = 129
       continue
+    of 131:
+      ex.debugEndCondition(definition, true)
+      state = 125
+      continue
     of 129:
+      state = 127
+      continue
+    of 127:
+      ex.debugEndCondition(definition, false)
+      state = 126
+      continue
+    of 126:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 122
+      continue
+    of 125:
+      if not ex.pushBranch(addr bc8):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(11)
+      state = 133
+      continue
+    of 133:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2165,54 +2762,72 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 120
+        state = 123
         continue
-      state = 130
+      state = 134
       continue
-    of 120:
+    of 123:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 119
+        ex.debugEndBranch(definition, false)
+        state = 122
         continue
-      state = 129
-      continue
-    of 130:
-      ex.releaseRetry(fr)
-      return 1
-    of 119:
-      # branch finish_recursion
-      # (and (== ?inp_index ?inp_count))
-      # (== ?inp_index ?inp_count)
-      # (== ?inp_index ?inp_count)
-      if compare(ex.v[18], ex.v[19], 0'u32):
-        state = 137
-        continue
-      state = 135
-      continue
-    of 137:
-      state = 131
-      continue
-    of 135:
       state = 133
       continue
-    of 133:
-      state = 132
+    of 134:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 122:
+      # branch finish_recursion
+      ex.debugBeginBranch(definition, 9)
+      # (and (== ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 55)
+      # (== ?inp_index ?inp_count)
+      # (== ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 56)
+      if compare(ex.v[18], ex.v[19], 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 141
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 139
       continue
-    of 132:
-      state = 117
+    of 141:
+      ex.debugEndCondition(definition, true)
+      state = 135
       continue
-    of 131:
+    of 139:
+      state = 137
+      continue
+    of 137:
+      ex.debugEndCondition(definition, false)
+      state = 136
+      continue
+    of 136:
+      ex.debugEndBranch(definition, false)
+      state = 120
+      continue
+    of 135:
       if not ex.pushBranch(addr bc9):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 138
+      ex.debugCapturePendingTask(12)
+      state = 143
       continue
-    of 138:
+    of 143:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2220,18 +2835,23 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 121
+        state = 124
         continue
-      state = 139
+      state = 144
       continue
-    of 121:
+    of 124:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 138
+      state = 143
       continue
-    of 139:
+    of 144:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 117:
+    of 120:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2239,198 +2859,257 @@ proc method5(ex: Exec): int {.nimcall.} =
 # method6: NumericExpressionsDemo::axiom_argument_expressions/0
 proc method6(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as58_147: AxiomScope
-  var as58_147Frame: uint64
-  var cp173_0: Atom
-  var cp173_1: Atom
-  var cp173_2: Atom
-  var cp173_3: Atom
-  var cp173_4: Atom
-  var cp173_5: Atom
-  var cp173_6: Atom
-  var as58_147Copy: AxiomScope
-  var as59_175: AxiomScope
-  var as59_175Frame: uint64
-  var cp183_7: Atom
-  var as59_175Copy: AxiomScope
+  var as58_152: AxiomScope
+  var as58_152Frame: uint64
+  var cp179_0: Atom
+  var cp179_1: Atom
+  var cp179_2: Atom
+  var cp179_3: Atom
+  var cp179_4: Atom
+  var cp179_5: Atom
+  var cp179_6: Atom
+  var as58_152Copy: AxiomScope
+  var as59_182: AxiomScope
+  var as59_182Frame: uint64
+  var cp191_7: Atom
+  var as59_182Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 142
+  of 1: state = 147
   else: discard
   while true:
     case state
     of 0:
-      state = 141
+      ex.debugBeginMethod(definition, 6)
+      state = 146
       continue
-    of 141:
+    of 146:
       # branch exercise_axiom_arguments
+      ex.debugBeginBranch(definition, 10)
       # (and (#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8)) (#accept_arithmetic_io (++ 6)))
+      ex.debugBeginCondition(definition, 57)
       # (#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
-      as58_147.saved.setLen(7)
-      as58_147.args.setLen(7)
-      axiomBegin58(ex, as58_147)
-      as58_147Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 58)
+      as58_152.saved.setLen(7)
+      as58_152.args.setLen(7)
+      axiomBegin58(ex, as58_152)
+      as58_152Frame = ex.currentFrameID
       # (and (== ?inp_add 3) (== ?inp_subtract 6) (== ?inp_multiply 6) (== ?inp_divide 6) (== ?inp_modulo 2) (== ?inp_increment 7) (== ?inp_decrement 7))
+      ex.debugBeginCondition(definition, 16)
       # (== ?inp_add 3)
       # (== ?inp_add 3)
+      ex.debugBeginCondition(definition, 17)
       if compare(ex.v[0], sv9, 0'u32):
-        state = 154
+        ex.debugEndCondition(definition, true)
+        state = 159
         continue
-      state = 152
+      ex.debugEndCondition(definition, false)
+      state = 157
       continue
-    of 154:
+    of 159:
       # (== ?inp_subtract 6)
       # (== ?inp_subtract 6)
+      ex.debugBeginCondition(definition, 18)
       if compare(ex.v[1], sv10, 0'u32):
-        state = 157
+        ex.debugEndCondition(definition, true)
+        state = 162
         continue
-      state = 155
+      ex.debugEndCondition(definition, false)
+      state = 160
       continue
-    of 157:
+    of 162:
       # (== ?inp_multiply 6)
       # (== ?inp_multiply 6)
+      ex.debugBeginCondition(definition, 19)
       if compare(ex.v[2], sv11, 0'u32):
-        state = 160
+        ex.debugEndCondition(definition, true)
+        state = 165
         continue
-      state = 158
+      ex.debugEndCondition(definition, false)
+      state = 163
       continue
-    of 160:
+    of 165:
       # (== ?inp_divide 6)
       # (== ?inp_divide 6)
+      ex.debugBeginCondition(definition, 20)
       if compare(ex.v[3], sv12, 0'u32):
-        state = 163
+        ex.debugEndCondition(definition, true)
+        state = 168
         continue
-      state = 161
+      ex.debugEndCondition(definition, false)
+      state = 166
       continue
-    of 163:
+    of 168:
       # (== ?inp_modulo 2)
       # (== ?inp_modulo 2)
+      ex.debugBeginCondition(definition, 21)
       if compare(ex.v[4], sv13, 0'u32):
-        state = 166
+        ex.debugEndCondition(definition, true)
+        state = 171
         continue
-      state = 164
+      ex.debugEndCondition(definition, false)
+      state = 169
       continue
-    of 166:
+    of 171:
       # (== ?inp_increment 7)
       # (== ?inp_increment 7)
+      ex.debugBeginCondition(definition, 22)
       if compare(ex.v[5], sv14, 0'u32):
-        state = 169
-        continue
-      state = 167
-      continue
-    of 169:
-      # (== ?inp_decrement 7)
-      # (== ?inp_decrement 7)
-      if compare(ex.v[6], sv15, 0'u32):
-        state = 172
-        continue
-      state = 170
-      continue
-    of 172:
-      cp173_0 = ex.v[0]
-      cp173_1 = ex.v[1]
-      cp173_2 = ex.v[2]
-      cp173_3 = ex.v[3]
-      cp173_4 = ex.v[4]
-      cp173_5 = ex.v[5]
-      cp173_6 = ex.v[6]
-      as58_147Copy = as58_147
-      if not axiomEnd58(ex, true, as58_147Copy):
+        ex.debugEndCondition(definition, true)
         state = 174
         continue
-      # (#accept_arithmetic_io (++ 6))
-      as59_175.saved.setLen(1)
-      as59_175.args.setLen(1)
-      axiomBegin59(ex, as59_175)
-      as59_175Frame = ex.currentFrameID
-      # (and (== ?io_value 7))
-      # (== ?io_value 7)
-      # (== ?io_value 7)
-      if compare(ex.v[7], sv16, 0'u32):
-        state = 182
-        continue
-      state = 180
-      continue
-    of 182:
-      cp183_7 = ex.v[7]
-      as59_175Copy = as59_175
-      if not axiomEnd59(ex, true, as59_175Copy):
-        state = 184
-        continue
-      state = 143
-      continue
-    of 184:
-      ex.v[7] = cp183_7
-      ex.currentFrameID = as59_175Frame
-      state = 180
-      continue
-    of 180:
-      state = 178
-      continue
-    of 178:
-      state = 177
-      continue
-    of 177:
-      axiomEnd59(ex, false, as59_175)
-      state = 175
-      continue
-    of 175:
-      state = 174
+      ex.debugEndCondition(definition, false)
+      state = 172
       continue
     of 174:
-      ex.v[0] = cp173_0
-      ex.v[1] = cp173_1
-      ex.v[2] = cp173_2
-      ex.v[3] = cp173_3
-      ex.v[4] = cp173_4
-      ex.v[5] = cp173_5
-      ex.v[6] = cp173_6
-      ex.currentFrameID = as58_147Frame
-      state = 170
+      # (== ?inp_decrement 7)
+      # (== ?inp_decrement 7)
+      ex.debugBeginCondition(definition, 23)
+      if compare(ex.v[6], sv15, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 177
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 175
       continue
-    of 170:
-      state = 167
+    of 177:
+      ex.debugEndCondition(definition, true)
+      cp179_0 = ex.v[0]
+      cp179_1 = ex.v[1]
+      cp179_2 = ex.v[2]
+      cp179_3 = ex.v[3]
+      cp179_4 = ex.v[4]
+      cp179_5 = ex.v[5]
+      cp179_6 = ex.v[6]
+      as58_152Copy = as58_152
+      if not axiomEnd58(ex, true, as58_152Copy):
+        state = 180
+        continue
+      ex.debugEndCondition(definition, true)
+      # (#accept_arithmetic_io (++ 6))
+      ex.debugBeginCondition(definition, 59)
+      as59_182.saved.setLen(1)
+      as59_182.args.setLen(1)
+      axiomBegin59(ex, as59_182)
+      as59_182Frame = ex.currentFrameID
+      # (and (== ?io_value 7))
+      ex.debugBeginCondition(definition, 24)
+      # (== ?io_value 7)
+      # (== ?io_value 7)
+      ex.debugBeginCondition(definition, 25)
+      if compare(ex.v[7], sv16, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 189
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 187
       continue
-    of 167:
-      state = 164
+    of 189:
+      ex.debugEndCondition(definition, true)
+      cp191_7 = ex.v[7]
+      as59_182Copy = as59_182
+      if not axiomEnd59(ex, true, as59_182Copy):
+        state = 192
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 148
       continue
-    of 164:
-      state = 161
+    of 192:
+      ex.v[7] = cp191_7
+      ex.currentFrameID = as59_182Frame
+      ex.debugBeginAxiom(definition, 5)
+      state = 190
       continue
-    of 161:
-      state = 158
+    of 190:
+      ex.debugBeginCondition(definition, 24)
+      state = 187
       continue
-    of 158:
-      state = 155
-      continue
-    of 155:
-      state = 152
-      continue
-    of 152:
-      state = 150
-      continue
-    of 150:
-      state = 149
-      continue
-    of 149:
-      axiomEnd58(ex, false, as58_147)
-      state = 147
-      continue
-    of 147:
-      state = 145
-      continue
-    of 145:
-      state = 144
-      continue
-    of 144:
-      state = 140
-      continue
-    of 143:
-      if not ex.pushBranch(addr bc10):
-        return 0
+    of 187:
       state = 185
       continue
     of 185:
+      ex.debugEndCondition(definition, false)
+      state = 184
+      continue
+    of 184:
+      axiomEnd59(ex, false, as59_182)
+      state = 182
+      continue
+    of 182:
+      ex.debugEndCondition(definition, false)
+      state = 181
+      continue
+    of 181:
+      ex.debugBeginCondition(definition, 58)
+      state = 180
+      continue
+    of 180:
+      ex.v[0] = cp179_0
+      ex.v[1] = cp179_1
+      ex.v[2] = cp179_2
+      ex.v[3] = cp179_3
+      ex.v[4] = cp179_4
+      ex.v[5] = cp179_5
+      ex.v[6] = cp179_6
+      ex.currentFrameID = as58_152Frame
+      ex.debugBeginAxiom(definition, 4)
+      state = 178
+      continue
+    of 178:
+      ex.debugBeginCondition(definition, 16)
+      state = 175
+      continue
+    of 175:
+      state = 172
+      continue
+    of 172:
+      state = 169
+      continue
+    of 169:
+      state = 166
+      continue
+    of 166:
+      state = 163
+      continue
+    of 163:
+      state = 160
+      continue
+    of 160:
+      state = 157
+      continue
+    of 157:
+      state = 155
+      continue
+    of 155:
+      ex.debugEndCondition(definition, false)
+      state = 154
+      continue
+    of 154:
+      axiomEnd58(ex, false, as58_152)
+      state = 152
+      continue
+    of 152:
+      ex.debugEndCondition(definition, false)
+      state = 150
+      continue
+    of 150:
+      ex.debugEndCondition(definition, false)
+      state = 149
+      continue
+    of 149:
+      ex.debugEndBranch(definition, false)
+      state = 145
+      continue
+    of 148:
+      if not ex.pushBranch(addr bc10):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(13)
+      state = 195
+      continue
+    of 195:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2438,18 +3117,23 @@ proc method6(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 142
+        state = 147
         continue
-      state = 186
+      state = 196
       continue
-    of 142:
+    of 147:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 185
+      state = 195
       continue
-    of 186:
+    of 196:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 140:
+    of 145:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2457,80 +3141,102 @@ proc method6(ex: Exec): int {.nimcall.} =
 # method7: NumericExpressionsDemo::axiom_output_expression/0
 proc method7(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as61_194: AxiomScope
-  var as61_194Frame: uint64
-  var cp198_8: Atom
-  var cp200_8: Atom
-  var fc201: uint32
-  var cp203_8: Atom
-  var as61_194Copy: AxiomScope
+  var as61_204: AxiomScope
+  var as61_204Frame: uint64
+  var cp208_8: Atom
+  var cp210_8: Atom
+  var fc211: uint32
+  var cp214_8: Atom
+  var as61_204Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 189
+  of 1: state = 199
   else: discard
   while true:
     case state
     of 0:
-      state = 188
+      ex.debugBeginMethod(definition, 7)
+      state = 198
       continue
-    of 188:
+    of 198:
       # branch matching_output
+      ex.debugBeginBranch(definition, 11)
       # (and (#produce_arithmetic_output (++ 6)))
+      ex.debugBeginCondition(definition, 60)
       # (#produce_arithmetic_output (++ 6))
-      state = 194
+      ex.debugBeginCondition(definition, 61)
+      state = 204
       continue
-    of 202:
-      inc fc201
-      if not factChoice27(ex, fc201 - 1):
-        state = 199
+    of 212:
+      ex.debugBeginCondition(definition, 27)
+      inc fc211
+      if not factChoice27(ex, fc211 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 209
         continue
-      cp203_8 = ex.v[8]
-      as61_194Copy = as61_194
-      if not axiomEnd61(ex, true, as61_194Copy):
-        state = 204
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp214_8 = ex.v[8]
+      as61_204Copy = as61_204
+      if not axiomEnd61(ex, true, as61_204Copy):
+        state = 215
         continue
-      state = 190
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 200
+      continue
+    of 215:
+      ex.v[8] = cp214_8
+      ex.currentFrameID = as61_204Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 213
+      continue
+    of 213:
+      ex.debugBeginCondition(definition, 26)
+      state = 211
+      continue
+    of 211:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 209
+        continue
+      ex.v[8] = cp210_8
+      cp210_8 = ex.v[8]
+      state = 212
+      continue
+    of 209:
+      ex.v[8] = cp210_8
+      state = 207
+      continue
+    of 207:
+      ex.v[8] = cp208_8
+      ex.debugEndCondition(definition, false)
+      state = 206
+      continue
+    of 206:
+      axiomEnd61(ex, false, as61_204)
+      state = 204
       continue
     of 204:
-      ex.v[8] = cp203_8
-      ex.currentFrameID = as61_194Frame
+      ex.debugEndCondition(definition, false)
+      state = 202
+      continue
+    of 202:
+      ex.debugEndCondition(definition, false)
       state = 201
       continue
     of 201:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 199
-        continue
-      ex.v[8] = cp200_8
-      cp200_8 = ex.v[8]
-      state = 202
-      continue
-    of 199:
-      ex.v[8] = cp200_8
+      ex.debugEndBranch(definition, false)
       state = 197
       continue
-    of 197:
-      ex.v[8] = cp198_8
-      state = 196
-      continue
-    of 196:
-      axiomEnd61(ex, false, as61_194)
-      state = 194
-      continue
-    of 194:
-      state = 192
-      continue
-    of 192:
-      state = 191
-      continue
-    of 191:
-      state = 187
-      continue
-    of 190:
+    of 200:
       if not ex.pushBranch(addr bc11):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 205
+      ex.debugCapturePendingTask(14)
+      state = 218
       continue
-    of 205:
+    of 218:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2538,18 +3244,23 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 189
+        state = 199
         continue
-      state = 206
+      state = 219
       continue
-    of 189:
+    of 199:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 205
+      state = 218
       continue
-    of 206:
+    of 219:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 187:
+    of 197:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -2557,84 +3268,106 @@ proc method7(ex: Exec): int {.nimcall.} =
 # method8: NumericExpressionsDemo::axiom_output_mismatch/0
 proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as63_216: AxiomScope
-  var as63_216Frame: uint64
-  var cp220_8: Atom
-  var cp222_8: Atom
-  var fc223: uint32
-  var cp225_8: Atom
-  var as63_216Copy: AxiomScope
+  var as63_229: AxiomScope
+  var as63_229Frame: uint64
+  var cp233_8: Atom
+  var cp235_8: Atom
+  var fc236: uint32
+  var cp239_8: Atom
+  var as63_229Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 210
-  of 2: state = 211
+  of 1: state = 223
+  of 2: state = 224
   else: discard
   while true:
     case state
     of 0:
-      state = 208
-      continue
-    of 208:
-      # branch unexpected_match
-      ex.saveRetry(fr, ms8)
-      # (and (#produce_arithmetic_output (++ 7)))
-      # (#produce_arithmetic_output (++ 7))
-      state = 216
-      continue
-    of 224:
-      inc fc223
-      if not factChoice27(ex, fc223 - 1):
-        state = 221
-        continue
-      cp225_8 = ex.v[8]
-      as63_216Copy = as63_216
-      if not axiomEnd63(ex, true, as63_216Copy):
-        state = 226
-        continue
-      state = 212
-      continue
-    of 226:
-      ex.v[8] = cp225_8
-      ex.currentFrameID = as63_216Frame
-      state = 223
-      continue
-    of 223:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 221
-        continue
-      ex.v[8] = cp222_8
-      cp222_8 = ex.v[8]
-      state = 224
+      ex.debugBeginMethod(definition, 8)
+      state = 221
       continue
     of 221:
-      ex.v[8] = cp222_8
-      state = 219
+      # branch unexpected_match
+      ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 12)
+      # (and (#produce_arithmetic_output (++ 7)))
+      ex.debugBeginCondition(definition, 62)
+      # (#produce_arithmetic_output (++ 7))
+      ex.debugBeginCondition(definition, 63)
+      state = 229
       continue
-    of 219:
-      ex.v[8] = cp220_8
-      state = 218
+    of 237:
+      ex.debugBeginCondition(definition, 27)
+      inc fc236
+      if not factChoice27(ex, fc236 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 234
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp239_8 = ex.v[8]
+      as63_229Copy = as63_229
+      if not axiomEnd63(ex, true, as63_229Copy):
+        state = 240
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 225
       continue
-    of 218:
-      axiomEnd63(ex, false, as63_216)
-      state = 216
+    of 240:
+      ex.v[8] = cp239_8
+      ex.currentFrameID = as63_229Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 238
       continue
-    of 216:
-      state = 214
+    of 238:
+      ex.debugBeginCondition(definition, 26)
+      state = 236
       continue
-    of 214:
-      state = 213
+    of 236:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 234
+        continue
+      ex.v[8] = cp235_8
+      cp235_8 = ex.v[8]
+      state = 237
       continue
-    of 213:
-      ex.releaseRetry(fr)
-      state = 209
+    of 234:
+      ex.v[8] = cp235_8
+      state = 232
       continue
-    of 212:
-      if not ex.pushBranch(addr bc12):
-        ex.releaseRetry(fr)
-        return 0
+    of 232:
+      ex.v[8] = cp233_8
+      ex.debugEndCondition(definition, false)
+      state = 231
+      continue
+    of 231:
+      axiomEnd63(ex, false, as63_229)
+      state = 229
+      continue
+    of 229:
+      ex.debugEndCondition(definition, false)
       state = 227
       continue
     of 227:
+      ex.debugEndCondition(definition, false)
+      state = 226
+      continue
+    of 226:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 222
+      continue
+    of 225:
+      if not ex.pushBranch(addr bc12):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(15)
+      state = 243
+      continue
+    of 243:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2642,36 +3375,47 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 210
+        state = 223
         continue
-      state = 228
+      state = 244
       continue
-    of 210:
+    of 223:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms8)
-        state = 209
+        ex.debugEndBranch(definition, false)
+        state = 222
         continue
-      state = 227
+      state = 243
       continue
-    of 228:
+    of 244:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 209:
+    of 222:
       # branch expected_failure
-      state = 229
+      ex.debugBeginBranch(definition, 13)
+      state = 245
       continue
-    of 229:
+    of 245:
       if not ex.pushBranch(addr bc13):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 231
+      ex.debugCapturePendingTask(16)
+      state = 247
       continue
-    of 231:
+    of 247:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2679,16 +3423,20 @@ proc method8(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 211
+        state = 224
         continue
-      state = 232
+      state = 248
       continue
-    of 211:
+    of 224:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 231
+      state = 247
       continue
-    of 232:
+    of 248:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2696,77 +3444,100 @@ proc method8(ex: Exec): int {.nimcall.} =
 # method9: NumericExpressionsDemo::axiom_io_mismatch/0
 proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as65_242: AxiomScope
-  var as65_242Frame: uint64
-  var cp250_7: Atom
-  var as65_242Copy: AxiomScope
+  var as65_258: AxiomScope
+  var as65_258Frame: uint64
+  var cp267_7: Atom
+  var as65_258Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 236
-  of 2: state = 237
+  of 1: state = 252
+  of 2: state = 253
   else: discard
   while true:
     case state
     of 0:
-      state = 234
+      ex.debugBeginMethod(definition, 9)
+      state = 250
       continue
-    of 234:
+    of 250:
       # branch unexpected_match
       ex.saveRetry(fr, ms9)
+      ex.debugBeginBranch(definition, 14)
       # (and (#accept_arithmetic_io (++ 7)))
+      ex.debugBeginCondition(definition, 64)
       # (#accept_arithmetic_io (++ 7))
-      as65_242.saved.setLen(1)
-      as65_242.args.setLen(1)
-      axiomBegin65(ex, as65_242)
-      as65_242Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 65)
+      as65_258.saved.setLen(1)
+      as65_258.args.setLen(1)
+      axiomBegin65(ex, as65_258)
+      as65_258Frame = ex.currentFrameID
       # (and (== ?io_value 7))
+      ex.debugBeginCondition(definition, 24)
       # (== ?io_value 7)
       # (== ?io_value 7)
+      ex.debugBeginCondition(definition, 25)
       if compare(ex.v[7], sv16, 0'u32):
-        state = 249
+        ex.debugEndCondition(definition, true)
+        state = 265
         continue
-      state = 247
+      ex.debugEndCondition(definition, false)
+      state = 263
       continue
-    of 249:
-      cp250_7 = ex.v[7]
-      as65_242Copy = as65_242
-      if not axiomEnd65(ex, true, as65_242Copy):
-        state = 251
+    of 265:
+      ex.debugEndCondition(definition, true)
+      cp267_7 = ex.v[7]
+      as65_258Copy = as65_258
+      if not axiomEnd65(ex, true, as65_258Copy):
+        state = 268
         continue
-      state = 238
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 254
       continue
-    of 251:
-      ex.v[7] = cp250_7
-      ex.currentFrameID = as65_242Frame
-      state = 247
+    of 268:
+      ex.v[7] = cp267_7
+      ex.currentFrameID = as65_258Frame
+      ex.debugBeginAxiom(definition, 5)
+      state = 266
       continue
-    of 247:
-      state = 245
+    of 266:
+      ex.debugBeginCondition(definition, 24)
+      state = 263
       continue
-    of 245:
-      state = 244
+    of 263:
+      state = 261
       continue
-    of 244:
-      axiomEnd65(ex, false, as65_242)
-      state = 242
+    of 261:
+      ex.debugEndCondition(definition, false)
+      state = 260
       continue
-    of 242:
-      state = 240
+    of 260:
+      axiomEnd65(ex, false, as65_258)
+      state = 258
       continue
-    of 240:
-      state = 239
+    of 258:
+      ex.debugEndCondition(definition, false)
+      state = 256
       continue
-    of 239:
+    of 256:
+      ex.debugEndCondition(definition, false)
+      state = 255
+      continue
+    of 255:
       ex.releaseRetry(fr)
-      state = 235
+      ex.debugEndBranch(definition, false)
+      state = 251
       continue
-    of 238:
+    of 254:
       if not ex.pushBranch(addr bc14):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 252
+      ex.debugCapturePendingTask(17)
+      state = 271
       continue
-    of 252:
+    of 271:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2774,36 +3545,47 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 236
+        state = 252
         continue
-      state = 253
+      state = 272
       continue
-    of 236:
+    of 252:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms9)
-        state = 235
+        ex.debugEndBranch(definition, false)
+        state = 251
         continue
-      state = 252
+      state = 271
       continue
-    of 253:
+    of 272:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 235:
+    of 251:
       # branch expected_failure
-      state = 254
+      ex.debugBeginBranch(definition, 15)
+      state = 273
       continue
-    of 254:
+    of 273:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 256
+      ex.debugCapturePendingTask(18)
+      state = 275
       continue
-    of 256:
+    of 275:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2811,16 +3593,20 @@ proc method9(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 237
+        state = 253
         continue
-      state = 257
+      state = 276
       continue
-    of 237:
+    of 253:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 256
+      state = 275
       continue
-    of 257:
+    of 276:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2828,161 +3614,202 @@ proc method9(ex: Exec): int {.nimcall.} =
 # method10: NumericExpressionsDemo::axiom_invalid_input_expression/0
 proc method10(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as67_267: AxiomScope
-  var as67_267Frame: uint64
-  var cp293_0: Atom
-  var cp293_1: Atom
-  var cp293_2: Atom
-  var cp293_3: Atom
-  var cp293_4: Atom
-  var cp293_5: Atom
-  var cp293_6: Atom
-  var as67_267Copy: AxiomScope
+  var as67_286: AxiomScope
+  var as67_286Frame: uint64
+  var cp313_0: Atom
+  var cp313_1: Atom
+  var cp313_2: Atom
+  var cp313_3: Atom
+  var cp313_4: Atom
+  var cp313_5: Atom
+  var cp313_6: Atom
+  var as67_286Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 261
-  of 2: state = 262
+  of 1: state = 280
+  of 2: state = 281
   else: discard
   while true:
     case state
     of 0:
-      state = 259
-      continue
-    of 259:
-      # branch unexpected_match
-      ex.saveRetry(fr, ms10)
-      # (and (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7))
-      # (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7)
-      as67_267.saved.setLen(7)
-      as67_267.args.setLen(7)
-      axiomBegin67(ex, as67_267)
-      as67_267Frame = ex.currentFrameID
-      # (and (== ?inp_add 3) (== ?inp_subtract 6) (== ?inp_multiply 6) (== ?inp_divide 6) (== ?inp_modulo 2) (== ?inp_increment 7) (== ?inp_decrement 7))
-      # (== ?inp_add 3)
-      # (== ?inp_add 3)
-      if compare(ex.v[0], sv9, 0'u32):
-        state = 274
-        continue
-      state = 272
-      continue
-    of 274:
-      # (== ?inp_subtract 6)
-      # (== ?inp_subtract 6)
-      if compare(ex.v[1], sv10, 0'u32):
-        state = 277
-        continue
-      state = 275
-      continue
-    of 277:
-      # (== ?inp_multiply 6)
-      # (== ?inp_multiply 6)
-      if compare(ex.v[2], sv11, 0'u32):
-        state = 280
-        continue
-      state = 278
-      continue
-    of 280:
-      # (== ?inp_divide 6)
-      # (== ?inp_divide 6)
-      if compare(ex.v[3], sv12, 0'u32):
-        state = 283
-        continue
-      state = 281
-      continue
-    of 283:
-      # (== ?inp_modulo 2)
-      # (== ?inp_modulo 2)
-      if compare(ex.v[4], sv13, 0'u32):
-        state = 286
-        continue
-      state = 284
-      continue
-    of 286:
-      # (== ?inp_increment 7)
-      # (== ?inp_increment 7)
-      if compare(ex.v[5], sv14, 0'u32):
-        state = 289
-        continue
-      state = 287
-      continue
-    of 289:
-      # (== ?inp_decrement 7)
-      # (== ?inp_decrement 7)
-      if compare(ex.v[6], sv15, 0'u32):
-        state = 292
-        continue
-      state = 290
-      continue
-    of 292:
-      cp293_0 = ex.v[0]
-      cp293_1 = ex.v[1]
-      cp293_2 = ex.v[2]
-      cp293_3 = ex.v[3]
-      cp293_4 = ex.v[4]
-      cp293_5 = ex.v[5]
-      cp293_6 = ex.v[6]
-      as67_267Copy = as67_267
-      if not axiomEnd67(ex, true, as67_267Copy):
-        state = 294
-        continue
-      state = 263
-      continue
-    of 294:
-      ex.v[0] = cp293_0
-      ex.v[1] = cp293_1
-      ex.v[2] = cp293_2
-      ex.v[3] = cp293_3
-      ex.v[4] = cp293_4
-      ex.v[5] = cp293_5
-      ex.v[6] = cp293_6
-      ex.currentFrameID = as67_267Frame
-      state = 290
-      continue
-    of 290:
-      state = 287
-      continue
-    of 287:
-      state = 284
-      continue
-    of 284:
-      state = 281
-      continue
-    of 281:
+      ex.debugBeginMethod(definition, 10)
       state = 278
       continue
     of 278:
-      state = 275
+      # branch unexpected_match
+      ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 16)
+      # (and (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7))
+      ex.debugBeginCondition(definition, 66)
+      # (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7)
+      ex.debugBeginCondition(definition, 67)
+      as67_286.saved.setLen(7)
+      as67_286.args.setLen(7)
+      axiomBegin67(ex, as67_286)
+      as67_286Frame = ex.currentFrameID
+      # (and (== ?inp_add 3) (== ?inp_subtract 6) (== ?inp_multiply 6) (== ?inp_divide 6) (== ?inp_modulo 2) (== ?inp_increment 7) (== ?inp_decrement 7))
+      ex.debugBeginCondition(definition, 16)
+      # (== ?inp_add 3)
+      # (== ?inp_add 3)
+      ex.debugBeginCondition(definition, 17)
+      if compare(ex.v[0], sv9, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 293
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 291
       continue
-    of 275:
-      state = 272
+    of 293:
+      # (== ?inp_subtract 6)
+      # (== ?inp_subtract 6)
+      ex.debugBeginCondition(definition, 18)
+      if compare(ex.v[1], sv10, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 296
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 294
       continue
-    of 272:
-      state = 270
+    of 296:
+      # (== ?inp_multiply 6)
+      # (== ?inp_multiply 6)
+      ex.debugBeginCondition(definition, 19)
+      if compare(ex.v[2], sv11, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 299
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 297
       continue
-    of 270:
-      state = 269
+    of 299:
+      # (== ?inp_divide 6)
+      # (== ?inp_divide 6)
+      ex.debugBeginCondition(definition, 20)
+      if compare(ex.v[3], sv12, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 302
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 300
       continue
-    of 269:
-      axiomEnd67(ex, false, as67_267)
-      state = 267
+    of 302:
+      # (== ?inp_modulo 2)
+      # (== ?inp_modulo 2)
+      ex.debugBeginCondition(definition, 21)
+      if compare(ex.v[4], sv13, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 305
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 303
       continue
-    of 267:
-      state = 265
+    of 305:
+      # (== ?inp_increment 7)
+      # (== ?inp_increment 7)
+      ex.debugBeginCondition(definition, 22)
+      if compare(ex.v[5], sv14, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 308
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 306
       continue
-    of 265:
-      state = 264
+    of 308:
+      # (== ?inp_decrement 7)
+      # (== ?inp_decrement 7)
+      ex.debugBeginCondition(definition, 23)
+      if compare(ex.v[6], sv15, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 311
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 309
       continue
-    of 264:
+    of 311:
+      ex.debugEndCondition(definition, true)
+      cp313_0 = ex.v[0]
+      cp313_1 = ex.v[1]
+      cp313_2 = ex.v[2]
+      cp313_3 = ex.v[3]
+      cp313_4 = ex.v[4]
+      cp313_5 = ex.v[5]
+      cp313_6 = ex.v[6]
+      as67_286Copy = as67_286
+      if not axiomEnd67(ex, true, as67_286Copy):
+        state = 314
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 282
+      continue
+    of 314:
+      ex.v[0] = cp313_0
+      ex.v[1] = cp313_1
+      ex.v[2] = cp313_2
+      ex.v[3] = cp313_3
+      ex.v[4] = cp313_4
+      ex.v[5] = cp313_5
+      ex.v[6] = cp313_6
+      ex.currentFrameID = as67_286Frame
+      ex.debugBeginAxiom(definition, 4)
+      state = 312
+      continue
+    of 312:
+      ex.debugBeginCondition(definition, 16)
+      state = 309
+      continue
+    of 309:
+      state = 306
+      continue
+    of 306:
+      state = 303
+      continue
+    of 303:
+      state = 300
+      continue
+    of 300:
+      state = 297
+      continue
+    of 297:
+      state = 294
+      continue
+    of 294:
+      state = 291
+      continue
+    of 291:
+      state = 289
+      continue
+    of 289:
+      ex.debugEndCondition(definition, false)
+      state = 288
+      continue
+    of 288:
+      axiomEnd67(ex, false, as67_286)
+      state = 286
+      continue
+    of 286:
+      ex.debugEndCondition(definition, false)
+      state = 284
+      continue
+    of 284:
+      ex.debugEndCondition(definition, false)
+      state = 283
+      continue
+    of 283:
       ex.releaseRetry(fr)
-      state = 260
+      ex.debugEndBranch(definition, false)
+      state = 279
       continue
-    of 263:
+    of 282:
       if not ex.pushBranch(addr bc16):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 295
+      ex.debugCapturePendingTask(19)
+      state = 317
       continue
-    of 295:
+    of 317:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2990,36 +3817,47 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 261
+        state = 280
         continue
-      state = 296
+      state = 318
       continue
-    of 261:
+    of 280:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms10)
-        state = 260
+        ex.debugEndBranch(definition, false)
+        state = 279
         continue
-      state = 295
+      state = 317
       continue
-    of 296:
+    of 318:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 260:
+    of 279:
       # branch expected_failure
-      state = 297
+      ex.debugBeginBranch(definition, 17)
+      state = 319
       continue
-    of 297:
+    of 319:
       if not ex.pushBranch(addr bc17):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 299
+      ex.debugCapturePendingTask(20)
+      state = 321
       continue
-    of 299:
+    of 321:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3027,16 +3865,20 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 262
+        state = 281
         continue
-      state = 300
+      state = 322
       continue
-    of 262:
+    of 281:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 299
+      state = 321
       continue
-    of 300:
+    of 322:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -3044,84 +3886,106 @@ proc method10(ex: Exec): int {.nimcall.} =
 # method11: NumericExpressionsDemo::axiom_invalid_output_expression/0
 proc method11(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as69_310: AxiomScope
-  var as69_310Frame: uint64
-  var cp314_8: Atom
-  var cp316_8: Atom
-  var fc317: uint32
-  var cp319_8: Atom
-  var as69_310Copy: AxiomScope
+  var as69_332: AxiomScope
+  var as69_332Frame: uint64
+  var cp336_8: Atom
+  var cp338_8: Atom
+  var fc339: uint32
+  var cp342_8: Atom
+  var as69_332Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 304
-  of 2: state = 305
+  of 1: state = 326
+  of 2: state = 327
   else: discard
   while true:
     case state
     of 0:
-      state = 302
+      ex.debugBeginMethod(definition, 11)
+      state = 324
       continue
-    of 302:
+    of 324:
       # branch unexpected_match
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 18)
       # (and (#produce_arithmetic_output (/ 1 0)))
+      ex.debugBeginCondition(definition, 68)
       # (#produce_arithmetic_output (/ 1 0))
-      state = 310
+      ex.debugBeginCondition(definition, 69)
+      state = 332
       continue
-    of 318:
-      inc fc317
-      if not factChoice27(ex, fc317 - 1):
-        state = 315
+    of 340:
+      ex.debugBeginCondition(definition, 27)
+      inc fc339
+      if not factChoice27(ex, fc339 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 337
         continue
-      cp319_8 = ex.v[8]
-      as69_310Copy = as69_310
-      if not axiomEnd69(ex, true, as69_310Copy):
-        state = 320
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp342_8 = ex.v[8]
+      as69_332Copy = as69_332
+      if not axiomEnd69(ex, true, as69_332Copy):
+        state = 343
         continue
-      state = 306
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 328
       continue
-    of 320:
-      ex.v[8] = cp319_8
-      ex.currentFrameID = as69_310Frame
-      state = 317
+    of 343:
+      ex.v[8] = cp342_8
+      ex.currentFrameID = as69_332Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 341
       continue
-    of 317:
+    of 341:
+      ex.debugBeginCondition(definition, 26)
+      state = 339
+      continue
+    of 339:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 315
+        state = 337
         continue
-      ex.v[8] = cp316_8
-      cp316_8 = ex.v[8]
-      state = 318
+      ex.v[8] = cp338_8
+      cp338_8 = ex.v[8]
+      state = 340
       continue
-    of 315:
-      ex.v[8] = cp316_8
-      state = 313
+    of 337:
+      ex.v[8] = cp338_8
+      state = 335
       continue
-    of 313:
-      ex.v[8] = cp314_8
-      state = 312
+    of 335:
+      ex.v[8] = cp336_8
+      ex.debugEndCondition(definition, false)
+      state = 334
       continue
-    of 312:
-      axiomEnd69(ex, false, as69_310)
-      state = 310
+    of 334:
+      axiomEnd69(ex, false, as69_332)
+      state = 332
       continue
-    of 310:
-      state = 308
+    of 332:
+      ex.debugEndCondition(definition, false)
+      state = 330
       continue
-    of 308:
-      state = 307
+    of 330:
+      ex.debugEndCondition(definition, false)
+      state = 329
       continue
-    of 307:
+    of 329:
       ex.releaseRetry(fr)
-      state = 303
+      ex.debugEndBranch(definition, false)
+      state = 325
       continue
-    of 306:
+    of 328:
       if not ex.pushBranch(addr bc18):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 321
+      ex.debugCapturePendingTask(21)
+      state = 346
       continue
-    of 321:
+    of 346:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -3129,36 +3993,47 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 304
+        state = 326
         continue
-      state = 322
+      state = 347
       continue
-    of 304:
+    of 326:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 303
+        ex.debugEndBranch(definition, false)
+        state = 325
         continue
-      state = 321
+      state = 346
       continue
-    of 322:
+    of 347:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 303:
-      # branch expected_failure
-      state = 323
-      continue
-    of 323:
-      if not ex.pushBranch(addr bc19):
-        return 0
-      state = 325
-      continue
     of 325:
+      # branch expected_failure
+      ex.debugBeginBranch(definition, 19)
+      state = 348
+      continue
+    of 348:
+      if not ex.pushBranch(addr bc19):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(22)
+      state = 350
+      continue
+    of 350:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3166,16 +4041,20 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 305
+        state = 327
         continue
-      state = 326
+      state = 351
       continue
-    of 305:
+    of 327:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 325
+      state = 350
       continue
-    of 326:
+    of 351:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -3183,140 +4062,164 @@ proc method11(ex: Exec): int {.nimcall.} =
 # method12: NumericExpressionsDemo::assignment_values/0
 proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp333_20: Atom
-  var cp333_21: Atom
-  var cp333_22: Atom
-  var cp333_23: Atom
-  var cp333_24: Atom
-  var cp335_20: Atom
-  var cp338_21: Atom
-  var cp341_22: Atom
-  var cp344_23: Atom
-  var cp347_24: Atom
+  var cp358_20: Atom
+  var cp358_21: Atom
+  var cp358_22: Atom
+  var cp358_23: Atom
+  var cp358_24: Atom
+  var cp360_20: Atom
+  var cp363_21: Atom
+  var cp366_22: Atom
+  var cp369_23: Atom
+  var cp372_24: Atom
   var state = 0
   case fr.resume
-  of 1: state = 329
+  of 1: state = 354
   else: discard
   while true:
     case state
     of 0:
-      state = 328
+      ex.debugBeginMethod(definition, 12)
+      state = 353
       continue
-    of 328:
+    of 353:
       # branch success
+      ex.debugBeginBranch(definition, 20)
       # (and (= ?kind main_threat) (= ?number (+ 2 3)) (= ?copy ?number) (= ?result (call assignment_probe ?copy)) (= ?flag false))
-      cp333_20 = ex.v[20]
-      cp333_21 = ex.v[21]
-      cp333_22 = ex.v[22]
-      cp333_23 = ex.v[23]
-      cp333_24 = ex.v[24]
+      cp358_20 = ex.v[20]
+      cp358_21 = ex.v[21]
+      cp358_22 = ex.v[22]
+      cp358_23 = ex.v[23]
+      cp358_24 = ex.v[24]
+      ex.debugBeginCondition(definition, 70)
       # (= ?kind main_threat)
-      cp335_20 = ex.v[20]
+      cp360_20 = ex.v[20]
       # (= ?kind main_threat)
+      ex.debugBeginCondition(definition, 71)
       block:
         let value = sv55
         if value.isBound and not ex.v[20].isBound:
           ex.v[20] = value
-          state = 336
+          ex.debugEndCondition(definition, true)
+          state = 361
           continue
-        state = 334
+        ex.debugEndCondition(definition, false)
+        state = 359
         continue
-      state = 336
+      state = 361
       continue
-    of 336:
+    of 361:
       # (= ?number (+ 2 3))
-      cp338_21 = ex.v[21]
+      cp363_21 = ex.v[21]
       # (= ?number (+ 2 3))
+      ex.debugBeginCondition(definition, 72)
       block:
         let value = arith(0'u32, [newInt(2'i32), newInt(3'i32)])
         if value.isBound and not ex.v[21].isBound:
           ex.v[21] = value
-          state = 339
+          ex.debugEndCondition(definition, true)
+          state = 364
           continue
-        state = 337
+        ex.debugEndCondition(definition, false)
+        state = 362
         continue
-      state = 339
+      state = 364
       continue
-    of 339:
+    of 364:
       # (= ?copy ?number)
-      cp341_22 = ex.v[22]
+      cp366_22 = ex.v[22]
       # (= ?copy ?number)
+      ex.debugBeginCondition(definition, 73)
       block:
         let value = ex.v[21]
         if value.isBound and not ex.v[22].isBound:
           ex.v[22] = value
-          state = 342
+          ex.debugEndCondition(definition, true)
+          state = 367
           continue
-        state = 340
+        ex.debugEndCondition(definition, false)
+        state = 365
         continue
-      state = 342
+      state = 367
       continue
-    of 342:
+    of 367:
       # (= ?result (call assignment_probe ?copy))
-      cp344_23 = ex.v[23]
+      cp369_23 = ex.v[23]
       # (= ?result (call assignment_probe ?copy))
+      ex.debugBeginCondition(definition, 74)
       if not ex.v[23].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[22]], addr cs8, factSymbols)
         if ok:
           ex.setIfChanged(23, callResult)
-          state = 345
+          ex.debugEndCondition(definition, true)
+          state = 370
           continue
-      state = 343
+      ex.debugEndCondition(definition, false)
+      state = 368
       continue
-    of 345:
+    of 370:
       # (= ?flag false)
-      cp347_24 = ex.v[24]
+      cp372_24 = ex.v[24]
       # (= ?flag false)
+      ex.debugBeginCondition(definition, 75)
       block:
         let value = sv56
         if value.isBound and not ex.v[24].isBound:
           ex.v[24] = value
-          state = 348
+          ex.debugEndCondition(definition, true)
+          state = 373
           continue
-        state = 346
+        ex.debugEndCondition(definition, false)
+        state = 371
         continue
-      state = 348
+      state = 373
       continue
-    of 348:
-      state = 330
+    of 373:
+      ex.debugEndCondition(definition, true)
+      state = 355
       continue
-    of 346:
-      ex.v[24] = cp347_24
-      state = 343
+    of 371:
+      ex.v[24] = cp372_24
+      state = 368
       continue
-    of 343:
-      ex.v[23] = cp344_23
-      state = 340
+    of 368:
+      ex.v[23] = cp369_23
+      state = 365
       continue
-    of 340:
-      ex.v[22] = cp341_22
-      state = 337
+    of 365:
+      ex.v[22] = cp366_22
+      state = 362
       continue
-    of 337:
-      ex.v[21] = cp338_21
-      state = 334
+    of 362:
+      ex.v[21] = cp363_21
+      state = 359
       continue
-    of 334:
-      ex.v[20] = cp335_20
-      state = 332
+    of 359:
+      ex.v[20] = cp360_20
+      state = 357
       continue
-    of 332:
-      ex.v[20] = cp333_20
-      ex.v[21] = cp333_21
-      ex.v[22] = cp333_22
-      ex.v[23] = cp333_23
-      ex.v[24] = cp333_24
-      state = 331
+    of 357:
+      ex.v[20] = cp358_20
+      ex.v[21] = cp358_21
+      ex.v[22] = cp358_22
+      ex.v[23] = cp358_23
+      ex.v[24] = cp358_24
+      ex.debugEndCondition(definition, false)
+      state = 356
       continue
-    of 331:
-      state = 327
+    of 356:
+      ex.debugEndBranch(definition, false)
+      state = 352
       continue
-    of 330:
+    of 355:
       if not ex.pushBranch(addr bc20):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 349
+      ex.debugCapturePendingTask(23)
+      state = 375
       continue
-    of 349:
+    of 375:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3324,18 +4227,23 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 329
+        state = 354
         continue
-      state = 350
+      state = 376
       continue
-    of 329:
+    of 354:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 349
+      state = 375
       continue
-    of 350:
+    of 376:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 327:
+    of 352:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -3343,90 +4251,108 @@ proc method12(ex: Exec): int {.nimcall.} =
 # method13: NumericExpressionsDemo::assignment_backtracking/0
 proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp357_25: Atom
-  var cp357_26: Atom
-  var cp359_25: Atom
-  var fc360: uint32
-  var cp363_26: Atom
+  var cp383_25: Atom
+  var cp383_26: Atom
+  var cp385_25: Atom
+  var fc386: uint32
+  var cp389_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 353
+  of 1: state = 379
   else: discard
   while true:
     case state
     of 0:
-      state = 352
+      ex.debugBeginMethod(definition, 13)
+      state = 378
       continue
-    of 352:
+    of 378:
       # branch success
+      ex.debugBeginBranch(definition, 21)
       # (and (assignment_candidate ?candidate) (= ?value (call assignment_probe ?candidate)) (== ?value 3))
-      cp357_25 = ex.v[25]
-      cp357_26 = ex.v[26]
+      cp383_25 = ex.v[25]
+      cp383_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 76)
       # (assignment_candidate ?candidate)
-      cp359_25 = ex.v[25]
-      fc360 = 0
-      state = 361
+      cp385_25 = ex.v[25]
+      fc386 = 0
+      state = 387
       continue
-    of 361:
-      inc fc360
-      if not factChoice77(ex, fc360 - 1):
-        state = 358
+    of 387:
+      ex.debugBeginCondition(definition, 77)
+      inc fc386
+      if not factChoice77(ex, fc386 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 384
         continue
+      ex.debugEndCondition(definition, true)
       # (= ?value (call assignment_probe ?candidate))
-      cp363_26 = ex.v[26]
+      cp389_26 = ex.v[26]
       # (= ?value (call assignment_probe ?candidate))
+      ex.debugBeginCondition(definition, 78)
       if not ex.v[26].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[25]], addr cs9, factSymbols)
         if ok:
           ex.setIfChanged(26, callResult)
-          state = 364
+          ex.debugEndCondition(definition, true)
+          state = 390
           continue
-      state = 362
+      ex.debugEndCondition(definition, false)
+      state = 388
       continue
-    of 364:
+    of 390:
       # (== ?value 3)
       # (== ?value 3)
+      ex.debugBeginCondition(definition, 79)
       if compare(ex.v[26], sv57, 0'u32):
-        state = 367
+        ex.debugEndCondition(definition, true)
+        state = 393
         continue
-      state = 365
+      ex.debugEndCondition(definition, false)
+      state = 391
       continue
-    of 367:
-      state = 354
+    of 393:
+      ex.debugEndCondition(definition, true)
+      state = 380
       continue
-    of 365:
-      state = 362
+    of 391:
+      state = 388
       continue
-    of 362:
-      ex.v[26] = cp363_26
-      state = 360
+    of 388:
+      ex.v[26] = cp389_26
+      state = 386
       continue
-    of 360:
+    of 386:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 358
+        state = 384
         continue
-      ex.v[25] = cp359_25
-      cp359_25 = ex.v[25]
-      state = 361
+      ex.v[25] = cp385_25
+      cp385_25 = ex.v[25]
+      state = 387
       continue
-    of 358:
-      ex.v[25] = cp359_25
-      state = 356
+    of 384:
+      ex.v[25] = cp385_25
+      state = 382
       continue
-    of 356:
-      ex.v[25] = cp357_25
-      ex.v[26] = cp357_26
-      state = 355
+    of 382:
+      ex.v[25] = cp383_25
+      ex.v[26] = cp383_26
+      ex.debugEndCondition(definition, false)
+      state = 381
       continue
-    of 355:
-      state = 351
+    of 381:
+      ex.debugEndBranch(definition, false)
+      state = 377
       continue
-    of 354:
+    of 380:
       if not ex.pushBranch(addr bc21):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 368
+      ex.debugCapturePendingTask(24)
+      state = 395
       continue
-    of 368:
+    of 395:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3434,18 +4360,23 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 353
+        state = 379
         continue
-      state = 369
+      state = 396
       continue
-    of 353:
+    of 379:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 368
+      state = 395
       continue
-    of 369:
+    of 396:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 351:
+    of 377:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -3453,210 +4384,243 @@ proc method13(ex: Exec): int {.nimcall.} =
 # method14: NumericExpressionsDemo::assignment_nested_calls/0
 proc method14(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp376_26: Atom
-  var cp376_27: Atom
-  var cp376_28: Atom
-  var cp376_29: Atom
-  var cp376_30: Atom
-  var cp376_31: Atom
-  var cp376_32: Atom
-  var cp378_26: Atom
-  var cp378_27: Atom
-  var cp378_28: Atom
-  var cp378_29: Atom
-  var cp378_30: Atom
-  var cp378_31: Atom
-  var cp378_32: Atom
-  var cp380_27: Atom
-  var cp383_28: Atom
-  var cp386_29: Atom
-  var cp389_30: Atom
-  var cp392_31: Atom
-  var cp395_32: Atom
-  var cp398_26: Atom
+  var cp403_26: Atom
+  var cp403_27: Atom
+  var cp403_28: Atom
+  var cp403_29: Atom
+  var cp403_30: Atom
+  var cp403_31: Atom
+  var cp403_32: Atom
+  var cp405_26: Atom
+  var cp405_27: Atom
+  var cp405_28: Atom
+  var cp405_29: Atom
+  var cp405_30: Atom
+  var cp405_31: Atom
+  var cp405_32: Atom
+  var cp407_27: Atom
+  var cp410_28: Atom
+  var cp413_29: Atom
+  var cp416_30: Atom
+  var cp419_31: Atom
+  var cp422_32: Atom
+  var cp425_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 372
+  of 1: state = 399
   else: discard
   while true:
     case state
     of 0:
-      state = 371
+      ex.debugBeginMethod(definition, 14)
+      state = 398
       continue
-    of 371:
+    of 398:
       # branch success
+      ex.debugBeginBranch(definition, 22)
       # (and (= ?value (+ (call assignment_probe 1) (call assignment_probe 2))))
-      cp376_26 = ex.v[26]
-      cp376_27 = ex.v[27]
-      cp376_28 = ex.v[28]
-      cp376_29 = ex.v[29]
-      cp376_30 = ex.v[30]
-      cp376_31 = ex.v[31]
-      cp376_32 = ex.v[32]
+      cp403_26 = ex.v[26]
+      cp403_27 = ex.v[27]
+      cp403_28 = ex.v[28]
+      cp403_29 = ex.v[29]
+      cp403_30 = ex.v[30]
+      cp403_31 = ex.v[31]
+      cp403_32 = ex.v[32]
+      ex.debugBeginCondition(definition, 80)
       # (and (= ?$assignment_call_4 1) (= ?$assignment_call_5 (call assignment_probe ?$assignment_call_4)) (= ?$assignment_call_6 (* ?$assignment_call_5 1)) (= ?$assignment_call_7 2) (= ?$assignment_call_8 (call assignment_probe ?$assignment_call_7)) (= ?$assignment_call_9 (* ?$assignment_call_8 1)) (= ?value (+ ?$assignment_call_6 ?$assignment_call_9)))
-      cp378_26 = ex.v[26]
-      cp378_27 = ex.v[27]
-      cp378_28 = ex.v[28]
-      cp378_29 = ex.v[29]
-      cp378_30 = ex.v[30]
-      cp378_31 = ex.v[31]
-      cp378_32 = ex.v[32]
+      cp405_26 = ex.v[26]
+      cp405_27 = ex.v[27]
+      cp405_28 = ex.v[28]
+      cp405_29 = ex.v[29]
+      cp405_30 = ex.v[30]
+      cp405_31 = ex.v[31]
+      cp405_32 = ex.v[32]
+      ex.debugBeginCondition(definition, 81)
       if ex.v[26].isBound:
-        state = 377
+        state = 404
         continue
       # (= ?$assignment_call_4 1)
-      cp380_27 = ex.v[27]
+      cp407_27 = ex.v[27]
       # (= ?$assignment_call_4 1)
+      ex.debugBeginCondition(definition, 82)
       block:
         let value = sv58
         if value.isBound and not ex.v[27].isBound:
           ex.v[27] = value
-          state = 381
+          ex.debugEndCondition(definition, true)
+          state = 408
           continue
-        state = 379
+        ex.debugEndCondition(definition, false)
+        state = 406
         continue
-      state = 381
+      state = 408
       continue
-    of 381:
+    of 408:
       # (= ?$assignment_call_5 (call assignment_probe ?$assignment_call_4))
-      cp383_28 = ex.v[28]
+      cp410_28 = ex.v[28]
       # (= ?$assignment_call_5 (call assignment_probe ?$assignment_call_4))
+      ex.debugBeginCondition(definition, 83)
       if not ex.v[28].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[27]], addr cs10, factSymbols)
         if ok:
           ex.setIfChanged(28, callResult)
-          state = 384
+          ex.debugEndCondition(definition, true)
+          state = 411
           continue
-      state = 382
+      ex.debugEndCondition(definition, false)
+      state = 409
       continue
-    of 384:
+    of 411:
       # (= ?$assignment_call_6 (* ?$assignment_call_5 1))
-      cp386_29 = ex.v[29]
+      cp413_29 = ex.v[29]
       # (= ?$assignment_call_6 (* ?$assignment_call_5 1))
+      ex.debugBeginCondition(definition, 84)
       block:
         let value = arith(2'u32, [ex.v[28], newInt(1'i32)])
         if value.isBound and not ex.v[29].isBound:
           ex.v[29] = value
-          state = 387
+          ex.debugEndCondition(definition, true)
+          state = 414
           continue
-        state = 385
+        ex.debugEndCondition(definition, false)
+        state = 412
         continue
-      state = 387
+      state = 414
       continue
-    of 387:
+    of 414:
       # (= ?$assignment_call_7 2)
-      cp389_30 = ex.v[30]
+      cp416_30 = ex.v[30]
       # (= ?$assignment_call_7 2)
+      ex.debugBeginCondition(definition, 85)
       block:
         let value = sv59
         if value.isBound and not ex.v[30].isBound:
           ex.v[30] = value
-          state = 390
+          ex.debugEndCondition(definition, true)
+          state = 417
           continue
-        state = 388
+        ex.debugEndCondition(definition, false)
+        state = 415
         continue
-      state = 390
+      state = 417
       continue
-    of 390:
+    of 417:
       # (= ?$assignment_call_8 (call assignment_probe ?$assignment_call_7))
-      cp392_31 = ex.v[31]
+      cp419_31 = ex.v[31]
       # (= ?$assignment_call_8 (call assignment_probe ?$assignment_call_7))
+      ex.debugBeginCondition(definition, 86)
       if not ex.v[31].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[30]], addr cs11, factSymbols)
         if ok:
           ex.setIfChanged(31, callResult)
-          state = 393
+          ex.debugEndCondition(definition, true)
+          state = 420
           continue
-      state = 391
+      ex.debugEndCondition(definition, false)
+      state = 418
       continue
-    of 393:
+    of 420:
       # (= ?$assignment_call_9 (* ?$assignment_call_8 1))
-      cp395_32 = ex.v[32]
+      cp422_32 = ex.v[32]
       # (= ?$assignment_call_9 (* ?$assignment_call_8 1))
+      ex.debugBeginCondition(definition, 87)
       block:
         let value = arith(2'u32, [ex.v[31], newInt(1'i32)])
         if value.isBound and not ex.v[32].isBound:
           ex.v[32] = value
-          state = 396
+          ex.debugEndCondition(definition, true)
+          state = 423
           continue
-        state = 394
+        ex.debugEndCondition(definition, false)
+        state = 421
         continue
-      state = 396
+      state = 423
       continue
-    of 396:
+    of 423:
       # (= ?value (+ ?$assignment_call_6 ?$assignment_call_9))
-      cp398_26 = ex.v[26]
+      cp425_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_6 ?$assignment_call_9))
+      ex.debugBeginCondition(definition, 88)
       block:
         let value = arith(0'u32, [ex.v[29], ex.v[32]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 399
+          ex.debugEndCondition(definition, true)
+          state = 426
           continue
-        state = 397
+        ex.debugEndCondition(definition, false)
+        state = 424
         continue
-      state = 399
+      state = 426
       continue
-    of 399:
-      state = 373
-      continue
-    of 397:
-      ex.v[26] = cp398_26
-      state = 394
-      continue
-    of 394:
-      ex.v[32] = cp395_32
-      state = 391
-      continue
-    of 391:
-      ex.v[31] = cp392_31
-      state = 388
-      continue
-    of 388:
-      ex.v[30] = cp389_30
-      state = 385
-      continue
-    of 385:
-      ex.v[29] = cp386_29
-      state = 382
-      continue
-    of 382:
-      ex.v[28] = cp383_28
-      state = 379
-      continue
-    of 379:
-      ex.v[27] = cp380_27
-      state = 377
-      continue
-    of 377:
-      ex.v[26] = cp378_26
-      ex.v[27] = cp378_27
-      ex.v[28] = cp378_28
-      ex.v[29] = cp378_29
-      ex.v[30] = cp378_30
-      ex.v[31] = cp378_31
-      ex.v[32] = cp378_32
-      state = 375
-      continue
-    of 375:
-      ex.v[26] = cp376_26
-      ex.v[27] = cp376_27
-      ex.v[28] = cp376_28
-      ex.v[29] = cp376_29
-      ex.v[30] = cp376_30
-      ex.v[31] = cp376_31
-      ex.v[32] = cp376_32
-      state = 374
-      continue
-    of 374:
-      state = 370
-      continue
-    of 373:
-      if not ex.pushBranch(addr bc22):
-        return 0
+    of 426:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 400
       continue
+    of 424:
+      ex.v[26] = cp425_26
+      state = 421
+      continue
+    of 421:
+      ex.v[32] = cp422_32
+      state = 418
+      continue
+    of 418:
+      ex.v[31] = cp419_31
+      state = 415
+      continue
+    of 415:
+      ex.v[30] = cp416_30
+      state = 412
+      continue
+    of 412:
+      ex.v[29] = cp413_29
+      state = 409
+      continue
+    of 409:
+      ex.v[28] = cp410_28
+      state = 406
+      continue
+    of 406:
+      ex.v[27] = cp407_27
+      state = 404
+      continue
+    of 404:
+      ex.v[26] = cp405_26
+      ex.v[27] = cp405_27
+      ex.v[28] = cp405_28
+      ex.v[29] = cp405_29
+      ex.v[30] = cp405_30
+      ex.v[31] = cp405_31
+      ex.v[32] = cp405_32
+      ex.debugEndCondition(definition, false)
+      state = 402
+      continue
+    of 402:
+      ex.v[26] = cp403_26
+      ex.v[27] = cp403_27
+      ex.v[28] = cp403_28
+      ex.v[29] = cp403_29
+      ex.v[30] = cp403_30
+      ex.v[31] = cp403_31
+      ex.v[32] = cp403_32
+      ex.debugEndCondition(definition, false)
+      state = 401
+      continue
+    of 401:
+      ex.debugEndBranch(definition, false)
+      state = 397
+      continue
     of 400:
+      if not ex.pushBranch(addr bc22):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(25)
+      state = 429
+      continue
+    of 429:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3664,18 +4628,23 @@ proc method14(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 372
+        state = 399
         continue
-      state = 401
+      state = 430
       continue
-    of 372:
+    of 399:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 400
+      state = 429
       continue
-    of 401:
+    of 430:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 370:
+    of 397:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -3683,60 +4652,72 @@ proc method14(ex: Exec): int {.nimcall.} =
 # method15: NumericExpressionsDemo::assignment_failure/0
 proc method15(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp410_26: Atom
-  var cp412_26: Atom
-  var cp419_26: Atom
-  var cp421_26: Atom
+  var cp439_26: Atom
+  var cp441_26: Atom
+  var cp449_26: Atom
+  var cp451_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 405
-  of 2: state = 406
+  of 1: state = 434
+  of 2: state = 435
   else: discard
   while true:
     case state
     of 0:
-      state = 403
+      ex.debugBeginMethod(definition, 15)
+      state = 432
       continue
-    of 403:
+    of 432:
       # branch failed
       ex.saveRetry(fr, ms15)
+      ex.debugBeginBranch(definition, 23)
       # (and (= ?value (/ 1 0)))
-      cp410_26 = ex.v[26]
+      cp439_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 89)
       # (= ?value (/ 1 0))
-      cp412_26 = ex.v[26]
+      cp441_26 = ex.v[26]
       # (= ?value (/ 1 0))
+      ex.debugBeginCondition(definition, 90)
       block:
         let value = arith(3'u32, [newInt(1'i32), newInt(0'i32)])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 413
+          ex.debugEndCondition(definition, true)
+          state = 442
           continue
-        state = 411
+        ex.debugEndCondition(definition, false)
+        state = 440
         continue
-      state = 413
+      state = 442
       continue
-    of 413:
-      state = 407
+    of 442:
+      ex.debugEndCondition(definition, true)
+      state = 436
       continue
-    of 411:
-      ex.v[26] = cp412_26
-      state = 409
+    of 440:
+      ex.v[26] = cp441_26
+      state = 438
       continue
-    of 409:
-      ex.v[26] = cp410_26
-      state = 408
+    of 438:
+      ex.v[26] = cp439_26
+      ex.debugEndCondition(definition, false)
+      state = 437
       continue
-    of 408:
+    of 437:
       ex.releaseRetry(fr)
-      state = 404
+      ex.debugEndBranch(definition, false)
+      state = 433
       continue
-    of 407:
+    of 436:
       if not ex.pushBranch(addr bc23):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 414
+      ex.debugCapturePendingTask(26)
+      state = 444
       continue
-    of 414:
+    of 444:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -3744,63 +4725,81 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 405
+        state = 434
         continue
-      state = 415
+      state = 445
       continue
-    of 405:
+    of 434:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms15)
-        state = 404
+        ex.debugEndBranch(definition, false)
+        state = 433
         continue
-      state = 414
+      state = 444
       continue
-    of 415:
+    of 445:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 404:
+    of 433:
       # branch fallback
+      ex.debugBeginBranch(definition, 24)
       # (and (= ?value 9))
-      cp419_26 = ex.v[26]
+      cp449_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 91)
       # (= ?value 9)
-      cp421_26 = ex.v[26]
+      cp451_26 = ex.v[26]
       # (= ?value 9)
+      ex.debugBeginCondition(definition, 92)
       block:
         let value = sv60
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 422
+          ex.debugEndCondition(definition, true)
+          state = 452
           continue
-        state = 420
+        ex.debugEndCondition(definition, false)
+        state = 450
         continue
-      state = 422
+      state = 452
       continue
-    of 422:
-      state = 416
+    of 452:
+      ex.debugEndCondition(definition, true)
+      state = 446
       continue
-    of 420:
-      ex.v[26] = cp421_26
-      state = 418
+    of 450:
+      ex.v[26] = cp451_26
+      state = 448
       continue
-    of 418:
-      ex.v[26] = cp419_26
-      state = 417
+    of 448:
+      ex.v[26] = cp449_26
+      ex.debugEndCondition(definition, false)
+      state = 447
       continue
-    of 417:
-      state = 402
+    of 447:
+      ex.debugEndBranch(definition, false)
+      state = 431
       continue
-    of 416:
+    of 446:
       if not ex.pushBranch(addr bc24):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 423
+      ex.debugCapturePendingTask(27)
+      state = 454
       continue
-    of 423:
+    of 454:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3808,18 +4807,23 @@ proc method15(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 406
+        state = 435
         continue
-      state = 424
+      state = 455
       continue
-    of 406:
+    of 435:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 423
+      state = 454
       continue
-    of 424:
+    of 455:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 402:
+    of 431:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -3827,253 +4831,286 @@ proc method15(ex: Exec): int {.nimcall.} =
 # method16: NumericExpressionsDemo::assignment_ordered_failure/0
 proc method16(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp437_26: Atom
-  var cp437_33: Atom
-  var cp437_34: Atom
-  var cp437_35: Atom
-  var cp437_36: Atom
-  var cp437_37: Atom
-  var cp437_38: Atom
-  var cp439_26: Atom
-  var cp439_33: Atom
-  var cp439_34: Atom
-  var cp439_35: Atom
-  var cp439_36: Atom
-  var cp439_37: Atom
-  var cp439_38: Atom
-  var cp441_33: Atom
-  var cp444_34: Atom
-  var cp447_35: Atom
-  var cp450_36: Atom
-  var cp453_37: Atom
-  var cp456_38: Atom
-  var cp459_26: Atom
-  var cp466_26: Atom
-  var cp466_39: Atom
-  var cp466_40: Atom
-  var cp466_41: Atom
-  var cp466_42: Atom
   var cp468_26: Atom
-  var cp468_39: Atom
-  var cp468_40: Atom
-  var cp468_41: Atom
-  var cp468_42: Atom
-  var cp470_39: Atom
-  var cp473_40: Atom
-  var cp476_41: Atom
-  var cp479_42: Atom
-  var cp482_26: Atom
-  var cp489_26: Atom
-  var cp489_43: Atom
-  var cp489_44: Atom
-  var cp489_45: Atom
-  var cp489_46: Atom
-  var cp489_47: Atom
-  var cp491_26: Atom
-  var cp491_43: Atom
-  var cp491_44: Atom
-  var cp491_45: Atom
-  var cp491_46: Atom
-  var cp491_47: Atom
-  var cp493_43: Atom
-  var cp496_44: Atom
-  var cp499_45: Atom
-  var cp502_46: Atom
-  var cp505_47: Atom
-  var cp508_26: Atom
+  var cp468_33: Atom
+  var cp468_34: Atom
+  var cp468_35: Atom
+  var cp468_36: Atom
+  var cp468_37: Atom
+  var cp468_38: Atom
+  var cp470_26: Atom
+  var cp470_33: Atom
+  var cp470_34: Atom
+  var cp470_35: Atom
+  var cp470_36: Atom
+  var cp470_37: Atom
+  var cp470_38: Atom
+  var cp472_33: Atom
+  var cp475_34: Atom
+  var cp478_35: Atom
+  var cp481_36: Atom
+  var cp484_37: Atom
+  var cp487_38: Atom
+  var cp490_26: Atom
+  var cp499_26: Atom
+  var cp499_39: Atom
+  var cp499_40: Atom
+  var cp499_41: Atom
+  var cp499_42: Atom
+  var cp501_26: Atom
+  var cp501_39: Atom
+  var cp501_40: Atom
+  var cp501_41: Atom
+  var cp501_42: Atom
+  var cp503_39: Atom
+  var cp506_40: Atom
+  var cp509_41: Atom
+  var cp512_42: Atom
   var cp515_26: Atom
-  var cp517_26: Atom
+  var cp524_26: Atom
+  var cp524_43: Atom
+  var cp524_44: Atom
+  var cp524_45: Atom
+  var cp524_46: Atom
+  var cp524_47: Atom
+  var cp526_26: Atom
+  var cp526_43: Atom
+  var cp526_44: Atom
+  var cp526_45: Atom
+  var cp526_46: Atom
+  var cp526_47: Atom
+  var cp528_43: Atom
+  var cp531_44: Atom
+  var cp534_45: Atom
+  var cp537_46: Atom
+  var cp540_47: Atom
+  var cp543_26: Atom
+  var cp552_26: Atom
+  var cp554_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 430
-  of 2: state = 431
-  of 3: state = 432
-  of 4: state = 433
+  of 1: state = 461
+  of 2: state = 462
+  of 3: state = 463
+  of 4: state = 464
   else: discard
   while true:
     case state
     of 0:
-      state = 426
+      ex.debugBeginMethod(definition, 16)
+      state = 457
       continue
-    of 426:
+    of 457:
       # branch arithmetic_failure
       ex.saveRetry(fr, ms16)
+      ex.debugBeginBranch(definition, 25)
       # (and (= ?value (+ (/ 1 0) (call assignment_probe 1))))
-      cp437_26 = ex.v[26]
-      cp437_33 = ex.v[33]
-      cp437_34 = ex.v[34]
-      cp437_35 = ex.v[35]
-      cp437_36 = ex.v[36]
-      cp437_37 = ex.v[37]
-      cp437_38 = ex.v[38]
+      cp468_26 = ex.v[26]
+      cp468_33 = ex.v[33]
+      cp468_34 = ex.v[34]
+      cp468_35 = ex.v[35]
+      cp468_36 = ex.v[36]
+      cp468_37 = ex.v[37]
+      cp468_38 = ex.v[38]
+      ex.debugBeginCondition(definition, 93)
       # (and (= ?$assignment_call_10 (* 1 1)) (= ?$assignment_call_11 (* 0 1)) (= ?$assignment_call_12 (* (/ ?$assignment_call_10 ?$assignment_call_11) 1)) (= ?$assignment_call_13 1) (= ?$assignment_call_14 (call assignment_probe ?$assignment_call_13)) (= ?$assignment_call_15 (* ?$assignment_call_14 1)) (= ?value (+ ?$assignment_call_12 ?$assignment_call_15)))
-      cp439_26 = ex.v[26]
-      cp439_33 = ex.v[33]
-      cp439_34 = ex.v[34]
-      cp439_35 = ex.v[35]
-      cp439_36 = ex.v[36]
-      cp439_37 = ex.v[37]
-      cp439_38 = ex.v[38]
+      cp470_26 = ex.v[26]
+      cp470_33 = ex.v[33]
+      cp470_34 = ex.v[34]
+      cp470_35 = ex.v[35]
+      cp470_36 = ex.v[36]
+      cp470_37 = ex.v[37]
+      cp470_38 = ex.v[38]
+      ex.debugBeginCondition(definition, 94)
       if ex.v[26].isBound:
-        state = 438
+        state = 469
         continue
       # (= ?$assignment_call_10 (* 1 1))
-      cp441_33 = ex.v[33]
+      cp472_33 = ex.v[33]
       # (= ?$assignment_call_10 (* 1 1))
+      ex.debugBeginCondition(definition, 95)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[33].isBound:
           ex.v[33] = value
-          state = 442
+          ex.debugEndCondition(definition, true)
+          state = 473
           continue
-        state = 440
+        ex.debugEndCondition(definition, false)
+        state = 471
         continue
-      state = 442
+      state = 473
       continue
-    of 442:
+    of 473:
       # (= ?$assignment_call_11 (* 0 1))
-      cp444_34 = ex.v[34]
+      cp475_34 = ex.v[34]
       # (= ?$assignment_call_11 (* 0 1))
+      ex.debugBeginCondition(definition, 96)
       block:
         let value = arith(2'u32, [newInt(0'i32), newInt(1'i32)])
         if value.isBound and not ex.v[34].isBound:
           ex.v[34] = value
-          state = 445
+          ex.debugEndCondition(definition, true)
+          state = 476
           continue
-        state = 443
+        ex.debugEndCondition(definition, false)
+        state = 474
         continue
-      state = 445
+      state = 476
       continue
-    of 445:
+    of 476:
       # (= ?$assignment_call_12 (* (/ ?$assignment_call_10 ?$assignment_call_11) 1))
-      cp447_35 = ex.v[35]
+      cp478_35 = ex.v[35]
       # (= ?$assignment_call_12 (* (/ ?$assignment_call_10 ?$assignment_call_11) 1))
+      ex.debugBeginCondition(definition, 97)
       block:
         let value = arith(2'u32, [arith(3'u32, [ex.v[33], ex.v[34]]), newInt(1'i32)])
         if value.isBound and not ex.v[35].isBound:
           ex.v[35] = value
-          state = 448
+          ex.debugEndCondition(definition, true)
+          state = 479
           continue
-        state = 446
+        ex.debugEndCondition(definition, false)
+        state = 477
         continue
-      state = 448
+      state = 479
       continue
-    of 448:
+    of 479:
       # (= ?$assignment_call_13 1)
-      cp450_36 = ex.v[36]
+      cp481_36 = ex.v[36]
       # (= ?$assignment_call_13 1)
+      ex.debugBeginCondition(definition, 98)
       block:
         let value = sv61
         if value.isBound and not ex.v[36].isBound:
           ex.v[36] = value
-          state = 451
+          ex.debugEndCondition(definition, true)
+          state = 482
           continue
-        state = 449
+        ex.debugEndCondition(definition, false)
+        state = 480
         continue
-      state = 451
+      state = 482
       continue
-    of 451:
+    of 482:
       # (= ?$assignment_call_14 (call assignment_probe ?$assignment_call_13))
-      cp453_37 = ex.v[37]
+      cp484_37 = ex.v[37]
       # (= ?$assignment_call_14 (call assignment_probe ?$assignment_call_13))
+      ex.debugBeginCondition(definition, 99)
       if not ex.v[37].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[36]], addr cs12, factSymbols)
         if ok:
           ex.setIfChanged(37, callResult)
-          state = 454
+          ex.debugEndCondition(definition, true)
+          state = 485
           continue
-      state = 452
+      ex.debugEndCondition(definition, false)
+      state = 483
       continue
-    of 454:
+    of 485:
       # (= ?$assignment_call_15 (* ?$assignment_call_14 1))
-      cp456_38 = ex.v[38]
+      cp487_38 = ex.v[38]
       # (= ?$assignment_call_15 (* ?$assignment_call_14 1))
+      ex.debugBeginCondition(definition, 100)
       block:
         let value = arith(2'u32, [ex.v[37], newInt(1'i32)])
         if value.isBound and not ex.v[38].isBound:
           ex.v[38] = value
-          state = 457
+          ex.debugEndCondition(definition, true)
+          state = 488
           continue
-        state = 455
+        ex.debugEndCondition(definition, false)
+        state = 486
         continue
-      state = 457
+      state = 488
       continue
-    of 457:
+    of 488:
       # (= ?value (+ ?$assignment_call_12 ?$assignment_call_15))
-      cp459_26 = ex.v[26]
+      cp490_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_12 ?$assignment_call_15))
+      ex.debugBeginCondition(definition, 101)
       block:
         let value = arith(0'u32, [ex.v[35], ex.v[38]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 460
+          ex.debugEndCondition(definition, true)
+          state = 491
           continue
-        state = 458
+        ex.debugEndCondition(definition, false)
+        state = 489
         continue
-      state = 460
+      state = 491
       continue
-    of 460:
-      state = 434
+    of 491:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 465
       continue
-    of 458:
-      ex.v[26] = cp459_26
-      state = 455
+    of 489:
+      ex.v[26] = cp490_26
+      state = 486
       continue
-    of 455:
-      ex.v[38] = cp456_38
-      state = 452
+    of 486:
+      ex.v[38] = cp487_38
+      state = 483
       continue
-    of 452:
-      ex.v[37] = cp453_37
-      state = 449
+    of 483:
+      ex.v[37] = cp484_37
+      state = 480
       continue
-    of 449:
-      ex.v[36] = cp450_36
-      state = 446
+    of 480:
+      ex.v[36] = cp481_36
+      state = 477
       continue
-    of 446:
-      ex.v[35] = cp447_35
-      state = 443
+    of 477:
+      ex.v[35] = cp478_35
+      state = 474
       continue
-    of 443:
-      ex.v[34] = cp444_34
-      state = 440
+    of 474:
+      ex.v[34] = cp475_34
+      state = 471
       continue
-    of 440:
-      ex.v[33] = cp441_33
-      state = 438
+    of 471:
+      ex.v[33] = cp472_33
+      state = 469
       continue
-    of 438:
-      ex.v[26] = cp439_26
-      ex.v[33] = cp439_33
-      ex.v[34] = cp439_34
-      ex.v[35] = cp439_35
-      ex.v[36] = cp439_36
-      ex.v[37] = cp439_37
-      ex.v[38] = cp439_38
-      state = 436
+    of 469:
+      ex.v[26] = cp470_26
+      ex.v[33] = cp470_33
+      ex.v[34] = cp470_34
+      ex.v[35] = cp470_35
+      ex.v[36] = cp470_36
+      ex.v[37] = cp470_37
+      ex.v[38] = cp470_38
+      ex.debugEndCondition(definition, false)
+      state = 467
       continue
-    of 436:
-      ex.v[26] = cp437_26
-      ex.v[33] = cp437_33
-      ex.v[34] = cp437_34
-      ex.v[35] = cp437_35
-      ex.v[36] = cp437_36
-      ex.v[37] = cp437_37
-      ex.v[38] = cp437_38
-      state = 435
+    of 467:
+      ex.v[26] = cp468_26
+      ex.v[33] = cp468_33
+      ex.v[34] = cp468_34
+      ex.v[35] = cp468_35
+      ex.v[36] = cp468_36
+      ex.v[37] = cp468_37
+      ex.v[38] = cp468_38
+      ex.debugEndCondition(definition, false)
+      state = 466
       continue
-    of 435:
+    of 466:
       ex.releaseRetry(fr)
-      state = 427
+      ex.debugEndBranch(definition, false)
+      state = 458
       continue
-    of 434:
+    of 465:
       if not ex.pushBranch(addr bc25):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 461
+      ex.debugCapturePendingTask(28)
+      state = 494
       continue
-    of 461:
+    of 494:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4081,161 +5118,194 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 430
+        state = 461
         continue
-      state = 462
+      state = 495
       continue
-    of 430:
+    of 461:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms16)
-        state = 427
+        ex.debugEndBranch(definition, false)
+        state = 458
         continue
-      state = 461
+      state = 494
       continue
-    of 462:
+    of 495:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 427:
+    of 458:
       # branch type_failure
       ex.saveRetry(fr, ms16)
+      ex.debugBeginBranch(definition, 26)
       # (and (= ?value (+ false (call assignment_probe 1))))
-      cp466_26 = ex.v[26]
-      cp466_39 = ex.v[39]
-      cp466_40 = ex.v[40]
-      cp466_41 = ex.v[41]
-      cp466_42 = ex.v[42]
+      cp499_26 = ex.v[26]
+      cp499_39 = ex.v[39]
+      cp499_40 = ex.v[40]
+      cp499_41 = ex.v[41]
+      cp499_42 = ex.v[42]
+      ex.debugBeginCondition(definition, 102)
       # (and (= ?$assignment_call_16 (* false 1)) (= ?$assignment_call_17 1) (= ?$assignment_call_18 (call assignment_probe ?$assignment_call_17)) (= ?$assignment_call_19 (* ?$assignment_call_18 1)) (= ?value (+ ?$assignment_call_16 ?$assignment_call_19)))
-      cp468_26 = ex.v[26]
-      cp468_39 = ex.v[39]
-      cp468_40 = ex.v[40]
-      cp468_41 = ex.v[41]
-      cp468_42 = ex.v[42]
+      cp501_26 = ex.v[26]
+      cp501_39 = ex.v[39]
+      cp501_40 = ex.v[40]
+      cp501_41 = ex.v[41]
+      cp501_42 = ex.v[42]
+      ex.debugBeginCondition(definition, 103)
       if ex.v[26].isBound:
-        state = 467
+        state = 500
         continue
       # (= ?$assignment_call_16 (* false 1))
-      cp470_39 = ex.v[39]
+      cp503_39 = ex.v[39]
       # (= ?$assignment_call_16 (* false 1))
+      ex.debugBeginCondition(definition, 104)
       block:
         let value = arith(2'u32, [Atom(), newInt(1'i32)])
         if value.isBound and not ex.v[39].isBound:
           ex.v[39] = value
-          state = 471
+          ex.debugEndCondition(definition, true)
+          state = 504
           continue
-        state = 469
+        ex.debugEndCondition(definition, false)
+        state = 502
         continue
-      state = 471
+      state = 504
       continue
-    of 471:
+    of 504:
       # (= ?$assignment_call_17 1)
-      cp473_40 = ex.v[40]
+      cp506_40 = ex.v[40]
       # (= ?$assignment_call_17 1)
+      ex.debugBeginCondition(definition, 105)
       block:
         let value = sv62
         if value.isBound and not ex.v[40].isBound:
           ex.v[40] = value
-          state = 474
+          ex.debugEndCondition(definition, true)
+          state = 507
           continue
-        state = 472
+        ex.debugEndCondition(definition, false)
+        state = 505
         continue
-      state = 474
+      state = 507
       continue
-    of 474:
+    of 507:
       # (= ?$assignment_call_18 (call assignment_probe ?$assignment_call_17))
-      cp476_41 = ex.v[41]
+      cp509_41 = ex.v[41]
       # (= ?$assignment_call_18 (call assignment_probe ?$assignment_call_17))
+      ex.debugBeginCondition(definition, 106)
       if not ex.v[41].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[40]], addr cs13, factSymbols)
         if ok:
           ex.setIfChanged(41, callResult)
-          state = 477
+          ex.debugEndCondition(definition, true)
+          state = 510
           continue
-      state = 475
+      ex.debugEndCondition(definition, false)
+      state = 508
       continue
-    of 477:
+    of 510:
       # (= ?$assignment_call_19 (* ?$assignment_call_18 1))
-      cp479_42 = ex.v[42]
+      cp512_42 = ex.v[42]
       # (= ?$assignment_call_19 (* ?$assignment_call_18 1))
+      ex.debugBeginCondition(definition, 107)
       block:
         let value = arith(2'u32, [ex.v[41], newInt(1'i32)])
         if value.isBound and not ex.v[42].isBound:
           ex.v[42] = value
-          state = 480
+          ex.debugEndCondition(definition, true)
+          state = 513
           continue
-        state = 478
+        ex.debugEndCondition(definition, false)
+        state = 511
         continue
-      state = 480
+      state = 513
       continue
-    of 480:
+    of 513:
       # (= ?value (+ ?$assignment_call_16 ?$assignment_call_19))
-      cp482_26 = ex.v[26]
+      cp515_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_16 ?$assignment_call_19))
+      ex.debugBeginCondition(definition, 108)
       block:
         let value = arith(0'u32, [ex.v[39], ex.v[42]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 483
+          ex.debugEndCondition(definition, true)
+          state = 516
           continue
-        state = 481
+        ex.debugEndCondition(definition, false)
+        state = 514
         continue
-      state = 483
+      state = 516
       continue
-    of 483:
-      state = 463
+    of 516:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 496
       continue
-    of 481:
-      ex.v[26] = cp482_26
-      state = 478
+    of 514:
+      ex.v[26] = cp515_26
+      state = 511
       continue
-    of 478:
-      ex.v[42] = cp479_42
-      state = 475
+    of 511:
+      ex.v[42] = cp512_42
+      state = 508
       continue
-    of 475:
-      ex.v[41] = cp476_41
-      state = 472
+    of 508:
+      ex.v[41] = cp509_41
+      state = 505
       continue
-    of 472:
-      ex.v[40] = cp473_40
-      state = 469
+    of 505:
+      ex.v[40] = cp506_40
+      state = 502
       continue
-    of 469:
-      ex.v[39] = cp470_39
-      state = 467
+    of 502:
+      ex.v[39] = cp503_39
+      state = 500
       continue
-    of 467:
-      ex.v[26] = cp468_26
-      ex.v[39] = cp468_39
-      ex.v[40] = cp468_40
-      ex.v[41] = cp468_41
-      ex.v[42] = cp468_42
-      state = 465
+    of 500:
+      ex.v[26] = cp501_26
+      ex.v[39] = cp501_39
+      ex.v[40] = cp501_40
+      ex.v[41] = cp501_41
+      ex.v[42] = cp501_42
+      ex.debugEndCondition(definition, false)
+      state = 498
       continue
-    of 465:
-      ex.v[26] = cp466_26
-      ex.v[39] = cp466_39
-      ex.v[40] = cp466_40
-      ex.v[41] = cp466_41
-      ex.v[42] = cp466_42
-      state = 464
+    of 498:
+      ex.v[26] = cp499_26
+      ex.v[39] = cp499_39
+      ex.v[40] = cp499_40
+      ex.v[41] = cp499_41
+      ex.v[42] = cp499_42
+      ex.debugEndCondition(definition, false)
+      state = 497
       continue
-    of 464:
+    of 497:
       ex.releaseRetry(fr)
-      state = 428
+      ex.debugEndBranch(definition, false)
+      state = 459
       continue
-    of 463:
+    of 496:
       if not ex.pushBranch(addr bc26):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 484
+      ex.debugCapturePendingTask(29)
+      state = 519
       continue
-    of 484:
+    of 519:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4243,181 +5313,217 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 431
+        state = 462
         continue
-      state = 485
+      state = 520
       continue
-    of 431:
+    of 462:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms16)
-        state = 428
+        ex.debugEndBranch(definition, false)
+        state = 459
         continue
-      state = 484
+      state = 519
       continue
-    of 485:
+    of 520:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 428:
+    of 459:
       # branch argument_failure
       ex.saveRetry(fr, ms16)
+      ex.debugBeginBranch(definition, 27)
       # (and (= ?value (call assignment_probe (/ 1 0) (call assignment_probe 1))))
-      cp489_26 = ex.v[26]
-      cp489_43 = ex.v[43]
-      cp489_44 = ex.v[44]
-      cp489_45 = ex.v[45]
-      cp489_46 = ex.v[46]
-      cp489_47 = ex.v[47]
+      cp524_26 = ex.v[26]
+      cp524_43 = ex.v[43]
+      cp524_44 = ex.v[44]
+      cp524_45 = ex.v[45]
+      cp524_46 = ex.v[46]
+      cp524_47 = ex.v[47]
+      ex.debugBeginCondition(definition, 109)
       # (and (= ?$assignment_call_20 (* 1 1)) (= ?$assignment_call_21 (* 0 1)) (= ?$assignment_call_22 (/ ?$assignment_call_20 ?$assignment_call_21)) (= ?$assignment_call_23 1) (= ?$assignment_call_24 (call assignment_probe ?$assignment_call_23)) (= ?value (call assignment_probe ?$assignment_call_22 ?$assignment_call_24)))
-      cp491_26 = ex.v[26]
-      cp491_43 = ex.v[43]
-      cp491_44 = ex.v[44]
-      cp491_45 = ex.v[45]
-      cp491_46 = ex.v[46]
-      cp491_47 = ex.v[47]
+      cp526_26 = ex.v[26]
+      cp526_43 = ex.v[43]
+      cp526_44 = ex.v[44]
+      cp526_45 = ex.v[45]
+      cp526_46 = ex.v[46]
+      cp526_47 = ex.v[47]
+      ex.debugBeginCondition(definition, 110)
       if ex.v[26].isBound:
-        state = 490
+        state = 525
         continue
       # (= ?$assignment_call_20 (* 1 1))
-      cp493_43 = ex.v[43]
+      cp528_43 = ex.v[43]
       # (= ?$assignment_call_20 (* 1 1))
+      ex.debugBeginCondition(definition, 111)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[43].isBound:
           ex.v[43] = value
-          state = 494
+          ex.debugEndCondition(definition, true)
+          state = 529
           continue
-        state = 492
+        ex.debugEndCondition(definition, false)
+        state = 527
         continue
-      state = 494
+      state = 529
       continue
-    of 494:
+    of 529:
       # (= ?$assignment_call_21 (* 0 1))
-      cp496_44 = ex.v[44]
+      cp531_44 = ex.v[44]
       # (= ?$assignment_call_21 (* 0 1))
+      ex.debugBeginCondition(definition, 112)
       block:
         let value = arith(2'u32, [newInt(0'i32), newInt(1'i32)])
         if value.isBound and not ex.v[44].isBound:
           ex.v[44] = value
-          state = 497
+          ex.debugEndCondition(definition, true)
+          state = 532
           continue
-        state = 495
+        ex.debugEndCondition(definition, false)
+        state = 530
         continue
-      state = 497
+      state = 532
       continue
-    of 497:
+    of 532:
       # (= ?$assignment_call_22 (/ ?$assignment_call_20 ?$assignment_call_21))
-      cp499_45 = ex.v[45]
+      cp534_45 = ex.v[45]
       # (= ?$assignment_call_22 (/ ?$assignment_call_20 ?$assignment_call_21))
+      ex.debugBeginCondition(definition, 113)
       block:
         let value = arith(3'u32, [ex.v[43], ex.v[44]])
         if value.isBound and not ex.v[45].isBound:
           ex.v[45] = value
-          state = 500
+          ex.debugEndCondition(definition, true)
+          state = 535
           continue
-        state = 498
+        ex.debugEndCondition(definition, false)
+        state = 533
         continue
-      state = 500
+      state = 535
       continue
-    of 500:
+    of 535:
       # (= ?$assignment_call_23 1)
-      cp502_46 = ex.v[46]
+      cp537_46 = ex.v[46]
       # (= ?$assignment_call_23 1)
+      ex.debugBeginCondition(definition, 114)
       block:
         let value = sv63
         if value.isBound and not ex.v[46].isBound:
           ex.v[46] = value
-          state = 503
+          ex.debugEndCondition(definition, true)
+          state = 538
           continue
-        state = 501
+        ex.debugEndCondition(definition, false)
+        state = 536
         continue
-      state = 503
+      state = 538
       continue
-    of 503:
+    of 538:
       # (= ?$assignment_call_24 (call assignment_probe ?$assignment_call_23))
-      cp505_47 = ex.v[47]
+      cp540_47 = ex.v[47]
       # (= ?$assignment_call_24 (call assignment_probe ?$assignment_call_23))
+      ex.debugBeginCondition(definition, 115)
       if not ex.v[47].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[46]], addr cs14, factSymbols)
         if ok:
           ex.setIfChanged(47, callResult)
-          state = 506
+          ex.debugEndCondition(definition, true)
+          state = 541
           continue
-      state = 504
+      ex.debugEndCondition(definition, false)
+      state = 539
       continue
-    of 506:
+    of 541:
       # (= ?value (call assignment_probe ?$assignment_call_22 ?$assignment_call_24))
-      cp508_26 = ex.v[26]
+      cp543_26 = ex.v[26]
       # (= ?value (call assignment_probe ?$assignment_call_22 ?$assignment_call_24))
+      ex.debugBeginCondition(definition, 116)
       if not ex.v[26].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[45], ex.v[47]], addr cs15, factSymbols)
         if ok:
           ex.setIfChanged(26, callResult)
-          state = 509
+          ex.debugEndCondition(definition, true)
+          state = 544
           continue
-      state = 507
+      ex.debugEndCondition(definition, false)
+      state = 542
       continue
-    of 509:
-      state = 486
+    of 544:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 521
       continue
-    of 507:
-      ex.v[26] = cp508_26
-      state = 504
+    of 542:
+      ex.v[26] = cp543_26
+      state = 539
       continue
-    of 504:
-      ex.v[47] = cp505_47
-      state = 501
+    of 539:
+      ex.v[47] = cp540_47
+      state = 536
       continue
-    of 501:
-      ex.v[46] = cp502_46
-      state = 498
+    of 536:
+      ex.v[46] = cp537_46
+      state = 533
       continue
-    of 498:
-      ex.v[45] = cp499_45
-      state = 495
+    of 533:
+      ex.v[45] = cp534_45
+      state = 530
       continue
-    of 495:
-      ex.v[44] = cp496_44
-      state = 492
+    of 530:
+      ex.v[44] = cp531_44
+      state = 527
       continue
-    of 492:
-      ex.v[43] = cp493_43
-      state = 490
+    of 527:
+      ex.v[43] = cp528_43
+      state = 525
       continue
-    of 490:
-      ex.v[26] = cp491_26
-      ex.v[43] = cp491_43
-      ex.v[44] = cp491_44
-      ex.v[45] = cp491_45
-      ex.v[46] = cp491_46
-      ex.v[47] = cp491_47
-      state = 488
+    of 525:
+      ex.v[26] = cp526_26
+      ex.v[43] = cp526_43
+      ex.v[44] = cp526_44
+      ex.v[45] = cp526_45
+      ex.v[46] = cp526_46
+      ex.v[47] = cp526_47
+      ex.debugEndCondition(definition, false)
+      state = 523
       continue
-    of 488:
-      ex.v[26] = cp489_26
-      ex.v[43] = cp489_43
-      ex.v[44] = cp489_44
-      ex.v[45] = cp489_45
-      ex.v[46] = cp489_46
-      ex.v[47] = cp489_47
-      state = 487
+    of 523:
+      ex.v[26] = cp524_26
+      ex.v[43] = cp524_43
+      ex.v[44] = cp524_44
+      ex.v[45] = cp524_45
+      ex.v[46] = cp524_46
+      ex.v[47] = cp524_47
+      ex.debugEndCondition(definition, false)
+      state = 522
       continue
-    of 487:
+    of 522:
       ex.releaseRetry(fr)
-      state = 429
+      ex.debugEndBranch(definition, false)
+      state = 460
       continue
-    of 486:
+    of 521:
       if not ex.pushBranch(addr bc27):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 510
+      ex.debugCapturePendingTask(30)
+      state = 547
       continue
-    of 510:
+    of 547:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4425,63 +5531,81 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 432
+        state = 463
         continue
-      state = 511
+      state = 548
       continue
-    of 432:
+    of 463:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms16)
-        state = 429
+        ex.debugEndBranch(definition, false)
+        state = 460
         continue
-      state = 510
+      state = 547
       continue
-    of 511:
+    of 548:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 429:
+    of 460:
       # branch fallback
+      ex.debugBeginBranch(definition, 28)
       # (and (= ?value 9))
-      cp515_26 = ex.v[26]
+      cp552_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 117)
       # (= ?value 9)
-      cp517_26 = ex.v[26]
+      cp554_26 = ex.v[26]
       # (= ?value 9)
+      ex.debugBeginCondition(definition, 118)
       block:
         let value = sv64
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 518
+          ex.debugEndCondition(definition, true)
+          state = 555
           continue
-        state = 516
+        ex.debugEndCondition(definition, false)
+        state = 553
         continue
-      state = 518
+      state = 555
       continue
-    of 518:
-      state = 512
+    of 555:
+      ex.debugEndCondition(definition, true)
+      state = 549
       continue
-    of 516:
-      ex.v[26] = cp517_26
-      state = 514
+    of 553:
+      ex.v[26] = cp554_26
+      state = 551
       continue
-    of 514:
-      ex.v[26] = cp515_26
-      state = 513
+    of 551:
+      ex.v[26] = cp552_26
+      ex.debugEndCondition(definition, false)
+      state = 550
       continue
-    of 513:
-      state = 425
+    of 550:
+      ex.debugEndBranch(definition, false)
+      state = 456
       continue
-    of 512:
+    of 549:
       if not ex.pushBranch(addr bc28):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 519
+      ex.debugCapturePendingTask(31)
+      state = 557
       continue
-    of 519:
+    of 557:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4489,18 +5613,23 @@ proc method16(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 433
+        state = 464
         continue
-      state = 520
+      state = 558
       continue
-    of 433:
+    of 464:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 519
+      state = 557
       continue
-    of 520:
+    of 558:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 425:
+    of 456:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4508,136 +5637,165 @@ proc method16(ex: Exec): int {.nimcall.} =
 # method17: NumericExpressionsDemo::assignment_axiom/0
 proc method17(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp527_23: Atom
-  var cp529_23: Atom
-  var as120_528: AxiomScope
-  var as120_528Frame: uint64
-  var cp532_9: Atom
-  var cp532_10: Atom
-  var cp534_10: Atom
-  var cp537_9: Atom
-  var fc538: uint32
-  var cp543_9: Atom
-  var cp543_10: Atom
-  var as120_528Copy: AxiomScope
+  var cp565_23: Atom
+  var cp567_23: Atom
+  var as120_566: AxiomScope
+  var as120_566Frame: uint64
+  var cp570_9: Atom
+  var cp570_10: Atom
+  var cp572_10: Atom
+  var cp575_9: Atom
+  var fc576: uint32
+  var cp582_9: Atom
+  var cp582_10: Atom
+  var as120_566Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 523
+  of 1: state = 561
   else: discard
   while true:
     case state
     of 0:
-      state = 522
+      ex.debugBeginMethod(definition, 17)
+      state = 560
       continue
-    of 522:
+    of 560:
       # branch success
+      ex.debugBeginBranch(definition, 29)
       # (and (#assignment_local ?result))
-      cp527_23 = ex.v[23]
+      cp565_23 = ex.v[23]
+      ex.debugBeginCondition(definition, 119)
       # (#assignment_local ?result)
-      cp529_23 = ex.v[23]
+      cp567_23 = ex.v[23]
+      ex.debugBeginCondition(definition, 120)
       if ex.v[23].isBound:
-        state = 528
+        state = 566
         continue
-      as120_528.saved.setLen(2)
-      as120_528.args.setLen(1)
-      axiomBegin120(ex, as120_528)
-      as120_528Frame = ex.currentFrameID
+      as120_566.saved.setLen(2)
+      as120_566.args.setLen(1)
+      axiomBegin120(ex, as120_566)
+      as120_566Frame = ex.currentFrameID
       # (and (= ?local 2) (assignment_candidate ?out_result) (== ?out_result ?local))
-      cp532_9 = ex.v[9]
-      cp532_10 = ex.v[10]
+      cp570_9 = ex.v[9]
+      cp570_10 = ex.v[10]
+      ex.debugBeginCondition(definition, 28)
       # (= ?local 2)
-      cp534_10 = ex.v[10]
+      cp572_10 = ex.v[10]
       # (= ?local 2)
+      ex.debugBeginCondition(definition, 29)
       block:
         let value = sv17
         if value.isBound and not ex.v[10].isBound:
           ex.v[10] = value
-          state = 535
+          ex.debugEndCondition(definition, true)
+          state = 573
           continue
-        state = 533
+        ex.debugEndCondition(definition, false)
+        state = 571
         continue
-      state = 535
+      state = 573
       continue
-    of 535:
+    of 573:
       # (assignment_candidate ?out_result)
-      cp537_9 = ex.v[9]
-      fc538 = 0
-      state = 539
+      cp575_9 = ex.v[9]
+      fc576 = 0
+      state = 577
       continue
-    of 539:
-      inc fc538
-      if not factChoice30(ex, fc538 - 1):
-        state = 536
+    of 577:
+      ex.debugBeginCondition(definition, 30)
+      inc fc576
+      if not factChoice30(ex, fc576 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 574
         continue
+      ex.debugEndCondition(definition, true)
       # (== ?out_result ?local)
       # (== ?out_result ?local)
+      ex.debugBeginCondition(definition, 31)
       if compare(ex.v[9], ex.v[10], 0'u32):
-        state = 542
+        ex.debugEndCondition(definition, true)
+        state = 580
         continue
-      state = 540
+      ex.debugEndCondition(definition, false)
+      state = 578
       continue
-    of 542:
-      cp543_9 = ex.v[9]
-      cp543_10 = ex.v[10]
-      as120_528Copy = as120_528
-      if not axiomEnd120(ex, true, as120_528Copy):
-        state = 544
+    of 580:
+      ex.debugEndCondition(definition, true)
+      cp582_9 = ex.v[9]
+      cp582_10 = ex.v[10]
+      as120_566Copy = as120_566
+      if not axiomEnd120(ex, true, as120_566Copy):
+        state = 583
         continue
-      state = 524
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 562
       continue
-    of 544:
-      ex.v[23] = cp529_23
-      cp529_23 = ex.v[23]
-      ex.v[9] = cp543_9
-      ex.v[10] = cp543_10
-      ex.currentFrameID = as120_528Frame
-      state = 540
+    of 583:
+      ex.v[23] = cp567_23
+      cp567_23 = ex.v[23]
+      ex.v[9] = cp582_9
+      ex.v[10] = cp582_10
+      ex.currentFrameID = as120_566Frame
+      ex.debugBeginAxiom(definition, 7)
+      state = 581
       continue
-    of 540:
-      state = 538
+    of 581:
+      ex.debugBeginCondition(definition, 28)
+      state = 578
       continue
-    of 538:
+    of 578:
+      state = 576
+      continue
+    of 576:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 536
+        state = 574
         continue
-      ex.v[9] = cp537_9
-      cp537_9 = ex.v[9]
-      state = 539
+      ex.v[9] = cp575_9
+      cp575_9 = ex.v[9]
+      state = 577
       continue
-    of 536:
-      ex.v[9] = cp537_9
-      state = 533
+    of 574:
+      ex.v[9] = cp575_9
+      state = 571
       continue
-    of 533:
-      ex.v[10] = cp534_10
-      state = 531
+    of 571:
+      ex.v[10] = cp572_10
+      state = 569
       continue
-    of 531:
-      ex.v[9] = cp532_9
-      ex.v[10] = cp532_10
-      state = 530
+    of 569:
+      ex.v[9] = cp570_9
+      ex.v[10] = cp570_10
+      ex.debugEndCondition(definition, false)
+      state = 568
       continue
-    of 530:
-      axiomEnd120(ex, false, as120_528)
-      state = 528
+    of 568:
+      axiomEnd120(ex, false, as120_566)
+      state = 566
       continue
-    of 528:
-      ex.v[23] = cp529_23
-      state = 526
+    of 566:
+      ex.v[23] = cp567_23
+      ex.debugEndCondition(definition, false)
+      state = 564
       continue
-    of 526:
-      ex.v[23] = cp527_23
-      state = 525
+    of 564:
+      ex.v[23] = cp565_23
+      ex.debugEndCondition(definition, false)
+      state = 563
       continue
-    of 525:
-      state = 521
+    of 563:
+      ex.debugEndBranch(definition, false)
+      state = 559
       continue
-    of 524:
+    of 562:
       if not ex.pushBranch(addr bc29):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 545
+      ex.debugCapturePendingTask(32)
+      state = 586
       continue
-    of 545:
+    of 586:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4645,18 +5803,23 @@ proc method17(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 523
+        state = 561
         continue
-      state = 546
+      state = 587
       continue
-    of 523:
+    of 561:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 545
+      state = 586
       continue
-    of 546:
+    of 587:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 521:
+    of 559:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -4664,260 +5827,317 @@ proc method17(ex: Exec): int {.nimcall.} =
 # method18: run/0
 proc method18(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp555_11: Atom
-  var cp555_12: Atom
-  var cp555_13: Atom
-  var cp557_11: Atom
-  var fc558: uint32
-  var cp561_12: Atom
-  var fc562: uint32
-  var cp565_13: Atom
-  var fc566: uint32
+  var cp596_11: Atom
+  var cp596_12: Atom
+  var cp596_13: Atom
+  var cp598_11: Atom
+  var fc599: uint32
+  var cp602_12: Atom
+  var fc603: uint32
+  var cp606_13: Atom
+  var fc607: uint32
   var state = 0
   case fr.resume
-  of 1: state = 550
-  of 2: state = 551
+  of 1: state = 591
+  of 2: state = 592
   else: discard
   while true:
     case state
     of 0:
-      state = 548
-      continue
-    of 548:
-      # branch numeric_expressions_succeed
-      ex.saveRetry(fr, ms18)
-      # (and (time ?time) (plan_start_time ?plan_start_time) (plan_duration ?plan_duration) (<= ?time (+ ?plan_start_time ?plan_duration)) (== (+ 1 2 3) 6) (== (- 10 3 2) 5) (< (- 5) 0) (== (* 2 3 4) 24) (== (/ 20 2 2) 5) (== (% 17 5) 2) (== (+ 1 2.5) 3.5) (== (++ 41) 42) (== (-- 41) 40) (== (++ 2.5) 3.5) (== (-- (++ 10)) 10) (> (* (- ?time 1) 2) (/ 100 2)))
-      cp555_11 = ex.v[11]
-      cp555_12 = ex.v[12]
-      cp555_13 = ex.v[13]
-      # (time ?time)
-      cp557_11 = ex.v[11]
-      fc558 = 0
-      state = 559
-      continue
-    of 559:
-      inc fc558
-      if not factChoice122(ex, fc558 - 1):
-        state = 556
-        continue
-      # (plan_start_time ?plan_start_time)
-      cp561_12 = ex.v[12]
-      fc562 = 0
-      state = 563
-      continue
-    of 563:
-      inc fc562
-      if not factChoice123(ex, fc562 - 1):
-        state = 560
-        continue
-      # (plan_duration ?plan_duration)
-      cp565_13 = ex.v[13]
-      fc566 = 0
-      state = 567
-      continue
-    of 567:
-      inc fc566
-      if not factChoice124(ex, fc566 - 1):
-        state = 564
-        continue
-      # (<= ?time (+ ?plan_start_time ?plan_duration))
-      # (<= ?time (+ ?plan_start_time ?plan_duration))
-      if compare(ex.v[11], arith(0'u32, [ex.v[12], ex.v[13]]), 3'u32):
-        state = 570
-        continue
-      state = 568
-      continue
-    of 570:
-      # (== (+ 1 2 3) 6)
-      # (== (+ 1 2 3) 6)
-      if compare(arith(0'u32, [newInt(1'i32), newInt(2'i32), newInt(3'i32)]), sv65, 0'u32):
-        state = 573
-        continue
-      state = 571
-      continue
-    of 573:
-      # (== (- 10 3 2) 5)
-      # (== (- 10 3 2) 5)
-      if compare(arith(1'u32, [newInt(10'i32), newInt(3'i32), newInt(2'i32)]), sv66, 0'u32):
-        state = 576
-        continue
-      state = 574
-      continue
-    of 576:
-      # (< (- 5) 0)
-      # (< (- 5) 0)
-      if compare(arith(1'u32, [newInt(5'i32)]), sv67, 2'u32):
-        state = 579
-        continue
-      state = 577
-      continue
-    of 579:
-      # (== (* 2 3 4) 24)
-      # (== (* 2 3 4) 24)
-      if compare(arith(2'u32, [newInt(2'i32), newInt(3'i32), newInt(4'i32)]), sv68, 0'u32):
-        state = 582
-        continue
-      state = 580
-      continue
-    of 582:
-      # (== (/ 20 2 2) 5)
-      # (== (/ 20 2 2) 5)
-      if compare(arith(3'u32, [newInt(20'i32), newInt(2'i32), newInt(2'i32)]), sv69, 0'u32):
-        state = 585
-        continue
-      state = 583
-      continue
-    of 585:
-      # (== (% 17 5) 2)
-      # (== (% 17 5) 2)
-      if compare(arith(4'u32, [newInt(17'i32), newInt(5'i32)]), sv70, 0'u32):
-        state = 588
-        continue
-      state = 586
-      continue
-    of 588:
-      # (== (+ 1 2.5) 3.5)
-      # (== (+ 1 2.5) 3.5)
-      if compare(arith(0'u32, [newInt(1'i32), newFloatBits(0x40200000'u32)]), sv71, 0'u32):
-        state = 591
-        continue
-      state = 589
-      continue
-    of 591:
-      # (== (++ 41) 42)
-      # (== (++ 41) 42)
-      if compare(arith(5'u32, [newInt(41'i32)]), sv72, 0'u32):
-        state = 594
-        continue
-      state = 592
-      continue
-    of 594:
-      # (== (-- 41) 40)
-      # (== (-- 41) 40)
-      if compare(arith(6'u32, [newInt(41'i32)]), sv73, 0'u32):
-        state = 597
-        continue
-      state = 595
-      continue
-    of 597:
-      # (== (++ 2.5) 3.5)
-      # (== (++ 2.5) 3.5)
-      if compare(arith(5'u32, [newFloatBits(0x40200000'u32)]), sv74, 0'u32):
-        state = 600
-        continue
-      state = 598
-      continue
-    of 600:
-      # (== (-- (++ 10)) 10)
-      # (== (-- (++ 10)) 10)
-      if compare(arith(6'u32, [arith(5'u32, [newInt(10'i32)])]), sv75, 0'u32):
-        state = 603
-        continue
-      state = 601
-      continue
-    of 603:
-      # (> (* (- ?time 1) 2) (/ 100 2))
-      # (> (* (- ?time 1) 2) (/ 100 2))
-      if compare(arith(2'u32, [arith(1'u32, [ex.v[11], newInt(1'i32)]), newInt(2'i32)]), arith(3'u32, [newInt(100'i32), newInt(2'i32)]), 4'u32):
-        state = 606
-        continue
-      state = 604
-      continue
-    of 606:
-      state = 552
-      continue
-    of 604:
-      state = 601
-      continue
-    of 601:
-      state = 598
-      continue
-    of 598:
-      state = 595
-      continue
-    of 595:
-      state = 592
-      continue
-    of 592:
+      ex.debugBeginMethod(definition, 18)
       state = 589
       continue
     of 589:
-      state = 586
+      # branch numeric_expressions_succeed
+      ex.saveRetry(fr, ms18)
+      ex.debugBeginBranch(definition, 30)
+      # (and (time ?time) (plan_start_time ?plan_start_time) (plan_duration ?plan_duration) (<= ?time (+ ?plan_start_time ?plan_duration)) (== (+ 1 2 3) 6) (== (- 10 3 2) 5) (< (- 5) 0) (== (* 2 3 4) 24) (== (/ 20 2 2) 5) (== (% 17 5) 2) (== (+ 1 2.5) 3.5) (== (++ 41) 42) (== (-- 41) 40) (== (++ 2.5) 3.5) (== (-- (++ 10)) 10) (> (* (- ?time 1) 2) (/ 100 2)))
+      cp596_11 = ex.v[11]
+      cp596_12 = ex.v[12]
+      cp596_13 = ex.v[13]
+      ex.debugBeginCondition(definition, 121)
+      # (time ?time)
+      cp598_11 = ex.v[11]
+      fc599 = 0
+      state = 600
       continue
-    of 586:
-      state = 583
-      continue
-    of 583:
-      state = 580
-      continue
-    of 580:
-      state = 577
-      continue
-    of 577:
-      state = 574
-      continue
-    of 574:
-      state = 571
-      continue
-    of 571:
-      state = 568
-      continue
-    of 568:
-      state = 566
-      continue
-    of 566:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 564
+    of 600:
+      ex.debugBeginCondition(definition, 122)
+      inc fc599
+      if not factChoice122(ex, fc599 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 597
         continue
-      ex.v[13] = cp565_13
-      cp565_13 = ex.v[13]
-      state = 567
+      ex.debugEndCondition(definition, true)
+      # (plan_start_time ?plan_start_time)
+      cp602_12 = ex.v[12]
+      fc603 = 0
+      state = 604
       continue
-    of 564:
-      ex.v[13] = cp565_13
-      state = 562
-      continue
-    of 562:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 560
+    of 604:
+      ex.debugBeginCondition(definition, 123)
+      inc fc603
+      if not factChoice123(ex, fc603 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 601
         continue
-      ex.v[12] = cp561_12
-      cp561_12 = ex.v[12]
-      state = 563
+      ex.debugEndCondition(definition, true)
+      # (plan_duration ?plan_duration)
+      cp606_13 = ex.v[13]
+      fc607 = 0
+      state = 608
       continue
-    of 560:
-      ex.v[12] = cp561_12
-      state = 558
-      continue
-    of 558:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 556
+    of 608:
+      ex.debugBeginCondition(definition, 124)
+      inc fc607
+      if not factChoice124(ex, fc607 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 605
         continue
-      ex.v[11] = cp557_11
-      cp557_11 = ex.v[11]
-      state = 559
+      ex.debugEndCondition(definition, true)
+      # (<= ?time (+ ?plan_start_time ?plan_duration))
+      # (<= ?time (+ ?plan_start_time ?plan_duration))
+      ex.debugBeginCondition(definition, 125)
+      if compare(ex.v[11], arith(0'u32, [ex.v[12], ex.v[13]]), 3'u32):
+        ex.debugEndCondition(definition, true)
+        state = 611
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 609
       continue
-    of 556:
-      ex.v[11] = cp557_11
-      state = 554
+    of 611:
+      # (== (+ 1 2 3) 6)
+      # (== (+ 1 2 3) 6)
+      ex.debugBeginCondition(definition, 126)
+      if compare(arith(0'u32, [newInt(1'i32), newInt(2'i32), newInt(3'i32)]), sv65, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 614
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 612
       continue
-    of 554:
-      ex.v[11] = cp555_11
-      ex.v[12] = cp555_12
-      ex.v[13] = cp555_13
-      state = 553
+    of 614:
+      # (== (- 10 3 2) 5)
+      # (== (- 10 3 2) 5)
+      ex.debugBeginCondition(definition, 127)
+      if compare(arith(1'u32, [newInt(10'i32), newInt(3'i32), newInt(2'i32)]), sv66, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 617
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 615
       continue
-    of 553:
-      ex.releaseRetry(fr)
-      state = 549
+    of 617:
+      # (< (- 5) 0)
+      # (< (- 5) 0)
+      ex.debugBeginCondition(definition, 128)
+      if compare(arith(1'u32, [newInt(5'i32)]), sv67, 2'u32):
+        ex.debugEndCondition(definition, true)
+        state = 620
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 618
       continue
-    of 552:
-      if not ex.pushBranch(addr bc30):
-        ex.releaseRetry(fr)
-        return 0
+    of 620:
+      # (== (* 2 3 4) 24)
+      # (== (* 2 3 4) 24)
+      ex.debugBeginCondition(definition, 129)
+      if compare(arith(2'u32, [newInt(2'i32), newInt(3'i32), newInt(4'i32)]), sv68, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 623
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 621
+      continue
+    of 623:
+      # (== (/ 20 2 2) 5)
+      # (== (/ 20 2 2) 5)
+      ex.debugBeginCondition(definition, 130)
+      if compare(arith(3'u32, [newInt(20'i32), newInt(2'i32), newInt(2'i32)]), sv69, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 626
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 624
+      continue
+    of 626:
+      # (== (% 17 5) 2)
+      # (== (% 17 5) 2)
+      ex.debugBeginCondition(definition, 131)
+      if compare(arith(4'u32, [newInt(17'i32), newInt(5'i32)]), sv70, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 629
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 627
+      continue
+    of 629:
+      # (== (+ 1 2.5) 3.5)
+      # (== (+ 1 2.5) 3.5)
+      ex.debugBeginCondition(definition, 132)
+      if compare(arith(0'u32, [newInt(1'i32), newFloatBits(0x40200000'u32)]), sv71, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 632
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 630
+      continue
+    of 632:
+      # (== (++ 41) 42)
+      # (== (++ 41) 42)
+      ex.debugBeginCondition(definition, 133)
+      if compare(arith(5'u32, [newInt(41'i32)]), sv72, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 635
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 633
+      continue
+    of 635:
+      # (== (-- 41) 40)
+      # (== (-- 41) 40)
+      ex.debugBeginCondition(definition, 134)
+      if compare(arith(6'u32, [newInt(41'i32)]), sv73, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 638
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 636
+      continue
+    of 638:
+      # (== (++ 2.5) 3.5)
+      # (== (++ 2.5) 3.5)
+      ex.debugBeginCondition(definition, 135)
+      if compare(arith(5'u32, [newFloatBits(0x40200000'u32)]), sv74, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 641
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 639
+      continue
+    of 641:
+      # (== (-- (++ 10)) 10)
+      # (== (-- (++ 10)) 10)
+      ex.debugBeginCondition(definition, 136)
+      if compare(arith(6'u32, [arith(5'u32, [newInt(10'i32)])]), sv75, 0'u32):
+        ex.debugEndCondition(definition, true)
+        state = 644
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 642
+      continue
+    of 644:
+      # (> (* (- ?time 1) 2) (/ 100 2))
+      # (> (* (- ?time 1) 2) (/ 100 2))
+      ex.debugBeginCondition(definition, 137)
+      if compare(arith(2'u32, [arith(1'u32, [ex.v[11], newInt(1'i32)]), newInt(2'i32)]), arith(3'u32, [newInt(100'i32), newInt(2'i32)]), 4'u32):
+        ex.debugEndCondition(definition, true)
+        state = 647
+        continue
+      ex.debugEndCondition(definition, false)
+      state = 645
+      continue
+    of 647:
+      ex.debugEndCondition(definition, true)
+      state = 593
+      continue
+    of 645:
+      state = 642
+      continue
+    of 642:
+      state = 639
+      continue
+    of 639:
+      state = 636
+      continue
+    of 636:
+      state = 633
+      continue
+    of 633:
+      state = 630
+      continue
+    of 630:
+      state = 627
+      continue
+    of 627:
+      state = 624
+      continue
+    of 624:
+      state = 621
+      continue
+    of 621:
+      state = 618
+      continue
+    of 618:
+      state = 615
+      continue
+    of 615:
+      state = 612
+      continue
+    of 612:
+      state = 609
+      continue
+    of 609:
       state = 607
       continue
     of 607:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 605
+        continue
+      ex.v[13] = cp606_13
+      cp606_13 = ex.v[13]
+      state = 608
+      continue
+    of 605:
+      ex.v[13] = cp606_13
+      state = 603
+      continue
+    of 603:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 601
+        continue
+      ex.v[12] = cp602_12
+      cp602_12 = ex.v[12]
+      state = 604
+      continue
+    of 601:
+      ex.v[12] = cp602_12
+      state = 599
+      continue
+    of 599:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 597
+        continue
+      ex.v[11] = cp598_11
+      cp598_11 = ex.v[11]
+      state = 600
+      continue
+    of 597:
+      ex.v[11] = cp598_11
+      state = 595
+      continue
+    of 595:
+      ex.v[11] = cp596_11
+      ex.v[12] = cp596_12
+      ex.v[13] = cp596_13
+      ex.debugEndCondition(definition, false)
+      state = 594
+      continue
+    of 594:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 590
+      continue
+    of 593:
+      if not ex.pushBranch(addr bc30):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(33)
+      state = 649
+      continue
+    of 649:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4925,36 +6145,47 @@ proc method18(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 550
+        state = 591
         continue
-      state = 608
+      state = 650
       continue
-    of 550:
+    of 591:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms18)
-        state = 549
+        ex.debugEndBranch(definition, false)
+        state = 590
         continue
-      state = 607
+      state = 649
       continue
-    of 608:
+    of 650:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 549:
+    of 590:
       # branch numeric_expressions_failed
-      state = 609
+      ex.debugBeginBranch(definition, 31)
+      state = 651
       continue
-    of 609:
+    of 651:
       if not ex.pushBranch(addr bc31):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 611
+      ex.debugCapturePendingTask(34)
+      state = 653
       continue
-    of 611:
+    of 653:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -4962,16 +6193,20 @@ proc method18(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 551
+        state = 592
         continue
-      state = 612
+      state = 654
       continue
-    of 551:
+    of 592:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 611
+      state = 653
       continue
-    of 612:
+    of 654:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -4981,45 +6216,57 @@ proc method19(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 616
-  of 2: state = 617
+  of 1: state = 658
+  of 2: state = 659
   else: discard
   while true:
     case state
     of 0:
-      state = 614
+      ex.debugBeginMethod(definition, 19)
+      state = 656
       continue
-    of 614:
+    of 656:
       # branch invalid_expression_does_not_succeed
       ex.saveRetry(fr, ms19)
+      ex.debugBeginBranch(definition, 32)
       # (and (== (/ 1 0) 0))
+      ex.debugBeginCondition(definition, 138)
       # (== (/ 1 0) 0)
       # (== (/ 1 0) 0)
+      ex.debugBeginCondition(definition, 139)
       if compare(arith(3'u32, [newInt(1'i32), newInt(0'i32)]), sv78, 0'u32):
-        state = 624
+        ex.debugEndCondition(definition, true)
+        state = 666
         continue
-      state = 622
+      ex.debugEndCondition(definition, false)
+      state = 664
       continue
-    of 624:
-      state = 618
+    of 666:
+      ex.debugEndCondition(definition, true)
+      state = 660
       continue
-    of 622:
-      state = 620
+    of 664:
+      state = 662
       continue
-    of 620:
-      state = 619
+    of 662:
+      ex.debugEndCondition(definition, false)
+      state = 661
       continue
-    of 619:
+    of 661:
       ex.releaseRetry(fr)
-      state = 615
+      ex.debugEndBranch(definition, false)
+      state = 657
       continue
-    of 618:
+    of 660:
       if not ex.pushBranch(addr bc32):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 625
+      ex.debugCapturePendingTask(35)
+      state = 668
       continue
-    of 625:
+    of 668:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5027,36 +6274,47 @@ proc method19(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 616
+        state = 658
         continue
-      state = 626
+      state = 669
       continue
-    of 616:
+    of 658:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms19)
-        state = 615
+        ex.debugEndBranch(definition, false)
+        state = 657
         continue
-      state = 625
+      state = 668
       continue
-    of 626:
+    of 669:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 615:
+    of 657:
       # branch invalid_expression_falls_back
-      state = 627
+      ex.debugBeginBranch(definition, 33)
+      state = 670
       continue
-    of 627:
+    of 670:
       if not ex.pushBranch(addr bc33):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 629
+      ex.debugCapturePendingTask(36)
+      state = 672
       continue
-    of 629:
+    of 672:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5064,16 +6322,20 @@ proc method19(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 617
+        state = 659
         continue
-      state = 630
+      state = 673
       continue
-    of 617:
+    of 659:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 629
+      state = 672
       continue
-    of 630:
+    of 673:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5083,45 +6345,57 @@ proc method20(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 634
-  of 2: state = 635
+  of 1: state = 677
+  of 2: state = 678
   else: discard
   while true:
     case state
     of 0:
-      state = 632
+      ex.debugBeginMethod(definition, 20)
+      state = 675
       continue
-    of 632:
+    of 675:
       # branch invalid_expression_does_not_succeed
       ex.saveRetry(fr, ms20)
+      ex.debugBeginBranch(definition, 34)
       # (and (== (+ invalid 1) 2))
+      ex.debugBeginCondition(definition, 140)
       # (== (+ invalid 1) 2)
       # (== (+ invalid 1) 2)
+      ex.debugBeginCondition(definition, 141)
       if compare(arith(0'u32, [Atom(), newInt(1'i32)]), sv81, 0'u32):
-        state = 642
+        ex.debugEndCondition(definition, true)
+        state = 685
         continue
-      state = 640
+      ex.debugEndCondition(definition, false)
+      state = 683
       continue
-    of 642:
-      state = 636
+    of 685:
+      ex.debugEndCondition(definition, true)
+      state = 679
       continue
-    of 640:
-      state = 638
+    of 683:
+      state = 681
       continue
-    of 638:
-      state = 637
+    of 681:
+      ex.debugEndCondition(definition, false)
+      state = 680
       continue
-    of 637:
+    of 680:
       ex.releaseRetry(fr)
-      state = 633
+      ex.debugEndBranch(definition, false)
+      state = 676
       continue
-    of 636:
+    of 679:
       if not ex.pushBranch(addr bc34):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 643
+      ex.debugCapturePendingTask(37)
+      state = 687
       continue
-    of 643:
+    of 687:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5129,36 +6403,47 @@ proc method20(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 634
+        state = 677
         continue
-      state = 644
+      state = 688
       continue
-    of 634:
+    of 677:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms20)
-        state = 633
+        ex.debugEndBranch(definition, false)
+        state = 676
         continue
-      state = 643
+      state = 687
       continue
-    of 644:
+    of 688:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 633:
+    of 676:
       # branch invalid_expression_falls_back
-      state = 645
+      ex.debugBeginBranch(definition, 35)
+      state = 689
       continue
-    of 645:
+    of 689:
       if not ex.pushBranch(addr bc35):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 647
+      ex.debugCapturePendingTask(38)
+      state = 691
       continue
-    of 647:
+    of 691:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5166,16 +6451,20 @@ proc method20(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 635
+        state = 678
         continue
-      state = 648
+      state = 692
       continue
-    of 635:
+    of 678:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 647
+      state = 691
       continue
-    of 648:
+    of 692:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5185,23 +6474,31 @@ proc method21(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 651
+  of 1: state = 695
   else: discard
   while true:
     case state
     of 0:
-      state = 650
+      ex.debugBeginMethod(definition, 21)
+      state = 694
       continue
-    of 650:
+    of 694:
       # branch exercise_all_argument_contexts
-      state = 652
+      ex.debugBeginBranch(definition, 36)
+      state = 696
       continue
-    of 652:
+    of 696:
       if not ex.pushBranch(addr bc36):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 654
+      ex.debugCapturePendingTask(42)
+      ex.debugCapturePendingTask(41)
+      ex.debugCapturePendingTask(40)
+      ex.debugCapturePendingTask(39)
+      state = 698
       continue
-    of 654:
+    of 698:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5209,16 +6506,20 @@ proc method21(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 651
+        state = 695
         continue
-      state = 655
+      state = 699
       continue
-    of 651:
+    of 695:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 654
+      state = 698
       continue
-    of 655:
+    of 699:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5228,23 +6529,28 @@ proc method22(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 658
+  of 1: state = 702
   else: discard
   while true:
     case state
     of 0:
-      state = 657
+      ex.debugBeginMethod(definition, 22)
+      state = 701
       continue
-    of 657:
+    of 701:
       # branch emit_compound_arguments
-      state = 659
+      ex.debugBeginBranch(definition, 37)
+      state = 703
       continue
-    of 659:
+    of 703:
       if not ex.pushBranch(addr bc37):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 661
+      ex.debugCapturePendingTask(43)
+      state = 705
       continue
-    of 661:
+    of 705:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5252,16 +6558,20 @@ proc method22(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 658
+        state = 702
         continue
-      state = 662
+      state = 706
       continue
-    of 658:
+    of 702:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 661
+      state = 705
       continue
-    of 662:
+    of 706:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5271,45 +6581,57 @@ proc method23(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 666
-  of 2: state = 667
+  of 1: state = 710
+  of 2: state = 711
   else: discard
   while true:
     case state
     of 0:
-      state = 664
+      ex.debugBeginMethod(definition, 23)
+      state = 708
       continue
-    of 664:
+    of 708:
       # branch continue_recursion
       ex.saveRetry(fr, ms23)
+      ex.debugBeginBranch(definition, 38)
       # (and (< ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 142)
       # (< ?inp_index ?inp_count)
       # (< ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 143)
       if compare(ex.v[18], ex.v[19], 2'u32):
-        state = 674
+        ex.debugEndCondition(definition, true)
+        state = 718
         continue
-      state = 672
+      ex.debugEndCondition(definition, false)
+      state = 716
       continue
-    of 674:
-      state = 668
+    of 718:
+      ex.debugEndCondition(definition, true)
+      state = 712
       continue
-    of 672:
-      state = 670
+    of 716:
+      state = 714
       continue
-    of 670:
-      state = 669
+    of 714:
+      ex.debugEndCondition(definition, false)
+      state = 713
       continue
-    of 669:
+    of 713:
       ex.releaseRetry(fr)
-      state = 665
+      ex.debugEndBranch(definition, false)
+      state = 709
       continue
-    of 668:
+    of 712:
       if not ex.pushBranch(addr bc38):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 675
+      ex.debugCapturePendingTask(44)
+      state = 720
       continue
-    of 675:
+    of 720:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5317,54 +6639,72 @@ proc method23(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 666
+        state = 710
         continue
-      state = 676
+      state = 721
       continue
-    of 666:
+    of 710:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms23)
-        state = 665
+        ex.debugEndBranch(definition, false)
+        state = 709
         continue
-      state = 675
+      state = 720
       continue
-    of 676:
+    of 721:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 665:
+    of 709:
       # branch finish_recursion
+      ex.debugBeginBranch(definition, 39)
       # (and (== ?inp_index ?inp_count))
+      ex.debugBeginCondition(definition, 144)
       # (== ?inp_index ?inp_count)
       # (== ?inp_index ?inp_count)
+      ex.debugBeginCondition(definition, 145)
       if compare(ex.v[18], ex.v[19], 0'u32):
-        state = 683
+        ex.debugEndCondition(definition, true)
+        state = 728
         continue
-      state = 681
+      ex.debugEndCondition(definition, false)
+      state = 726
       continue
-    of 683:
-      state = 677
+    of 728:
+      ex.debugEndCondition(definition, true)
+      state = 722
       continue
-    of 681:
-      state = 679
+    of 726:
+      state = 724
       continue
-    of 679:
-      state = 678
+    of 724:
+      ex.debugEndCondition(definition, false)
+      state = 723
       continue
-    of 678:
-      state = 663
+    of 723:
+      ex.debugEndBranch(definition, false)
+      state = 707
       continue
-    of 677:
+    of 722:
       if not ex.pushBranch(addr bc39):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 684
+      ex.debugCapturePendingTask(45)
+      state = 730
       continue
-    of 684:
+    of 730:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5372,18 +6712,23 @@ proc method23(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 667
+        state = 711
         continue
-      state = 685
+      state = 731
       continue
-    of 667:
+    of 711:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 684
+      state = 730
       continue
-    of 685:
+    of 731:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 663:
+    of 707:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5391,198 +6736,257 @@ proc method23(ex: Exec): int {.nimcall.} =
 # method24: axiom_argument_expressions/0
 proc method24(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as147_693: AxiomScope
-  var as147_693Frame: uint64
-  var cp719_0: Atom
-  var cp719_1: Atom
-  var cp719_2: Atom
-  var cp719_3: Atom
-  var cp719_4: Atom
-  var cp719_5: Atom
-  var cp719_6: Atom
-  var as147_693Copy: AxiomScope
-  var as148_721: AxiomScope
-  var as148_721Frame: uint64
-  var cp729_7: Atom
-  var as148_721Copy: AxiomScope
+  var as147_739: AxiomScope
+  var as147_739Frame: uint64
+  var cp766_0: Atom
+  var cp766_1: Atom
+  var cp766_2: Atom
+  var cp766_3: Atom
+  var cp766_4: Atom
+  var cp766_5: Atom
+  var cp766_6: Atom
+  var as147_739Copy: AxiomScope
+  var as148_769: AxiomScope
+  var as148_769Frame: uint64
+  var cp778_7: Atom
+  var as148_769Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 688
+  of 1: state = 734
   else: discard
   while true:
     case state
     of 0:
-      state = 687
+      ex.debugBeginMethod(definition, 24)
+      state = 733
       continue
-    of 687:
+    of 733:
       # branch exercise_axiom_arguments
+      ex.debugBeginBranch(definition, 40)
       # (and (#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8)) (#accept_arithmetic_io (++ 6)))
+      ex.debugBeginCondition(definition, 146)
       # (#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))
-      as147_693.saved.setLen(7)
-      as147_693.args.setLen(7)
-      axiomBegin147(ex, as147_693)
-      as147_693Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 147)
+      as147_739.saved.setLen(7)
+      as147_739.args.setLen(7)
+      axiomBegin147(ex, as147_739)
+      as147_739Frame = ex.currentFrameID
       # (and (== ?inp_add 3) (== ?inp_subtract 6) (== ?inp_multiply 6) (== ?inp_divide 6) (== ?inp_modulo 2) (== ?inp_increment 7) (== ?inp_decrement 7))
+      ex.debugBeginCondition(definition, 16)
       # (== ?inp_add 3)
       # (== ?inp_add 3)
+      ex.debugBeginCondition(definition, 17)
       if compare(ex.v[0], sv9, 0'u32):
-        state = 700
+        ex.debugEndCondition(definition, true)
+        state = 746
         continue
-      state = 698
+      ex.debugEndCondition(definition, false)
+      state = 744
       continue
-    of 700:
+    of 746:
       # (== ?inp_subtract 6)
       # (== ?inp_subtract 6)
+      ex.debugBeginCondition(definition, 18)
       if compare(ex.v[1], sv10, 0'u32):
-        state = 703
+        ex.debugEndCondition(definition, true)
+        state = 749
         continue
-      state = 701
+      ex.debugEndCondition(definition, false)
+      state = 747
       continue
-    of 703:
+    of 749:
       # (== ?inp_multiply 6)
       # (== ?inp_multiply 6)
+      ex.debugBeginCondition(definition, 19)
       if compare(ex.v[2], sv11, 0'u32):
-        state = 706
+        ex.debugEndCondition(definition, true)
+        state = 752
         continue
-      state = 704
+      ex.debugEndCondition(definition, false)
+      state = 750
       continue
-    of 706:
+    of 752:
       # (== ?inp_divide 6)
       # (== ?inp_divide 6)
+      ex.debugBeginCondition(definition, 20)
       if compare(ex.v[3], sv12, 0'u32):
-        state = 709
+        ex.debugEndCondition(definition, true)
+        state = 755
         continue
-      state = 707
+      ex.debugEndCondition(definition, false)
+      state = 753
       continue
-    of 709:
+    of 755:
       # (== ?inp_modulo 2)
       # (== ?inp_modulo 2)
+      ex.debugBeginCondition(definition, 21)
       if compare(ex.v[4], sv13, 0'u32):
-        state = 712
+        ex.debugEndCondition(definition, true)
+        state = 758
         continue
-      state = 710
+      ex.debugEndCondition(definition, false)
+      state = 756
       continue
-    of 712:
+    of 758:
       # (== ?inp_increment 7)
       # (== ?inp_increment 7)
+      ex.debugBeginCondition(definition, 22)
       if compare(ex.v[5], sv14, 0'u32):
-        state = 715
+        ex.debugEndCondition(definition, true)
+        state = 761
         continue
-      state = 713
+      ex.debugEndCondition(definition, false)
+      state = 759
       continue
-    of 715:
+    of 761:
       # (== ?inp_decrement 7)
       # (== ?inp_decrement 7)
+      ex.debugBeginCondition(definition, 23)
       if compare(ex.v[6], sv15, 0'u32):
-        state = 718
+        ex.debugEndCondition(definition, true)
+        state = 764
         continue
-      state = 716
+      ex.debugEndCondition(definition, false)
+      state = 762
       continue
-    of 718:
-      cp719_0 = ex.v[0]
-      cp719_1 = ex.v[1]
-      cp719_2 = ex.v[2]
-      cp719_3 = ex.v[3]
-      cp719_4 = ex.v[4]
-      cp719_5 = ex.v[5]
-      cp719_6 = ex.v[6]
-      as147_693Copy = as147_693
-      if not axiomEnd147(ex, true, as147_693Copy):
-        state = 720
+    of 764:
+      ex.debugEndCondition(definition, true)
+      cp766_0 = ex.v[0]
+      cp766_1 = ex.v[1]
+      cp766_2 = ex.v[2]
+      cp766_3 = ex.v[3]
+      cp766_4 = ex.v[4]
+      cp766_5 = ex.v[5]
+      cp766_6 = ex.v[6]
+      as147_739Copy = as147_739
+      if not axiomEnd147(ex, true, as147_739Copy):
+        state = 767
         continue
+      ex.debugEndCondition(definition, true)
       # (#accept_arithmetic_io (++ 6))
-      as148_721.saved.setLen(1)
-      as148_721.args.setLen(1)
-      axiomBegin148(ex, as148_721)
-      as148_721Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 148)
+      as148_769.saved.setLen(1)
+      as148_769.args.setLen(1)
+      axiomBegin148(ex, as148_769)
+      as148_769Frame = ex.currentFrameID
       # (and (== ?io_value 7))
+      ex.debugBeginCondition(definition, 24)
       # (== ?io_value 7)
       # (== ?io_value 7)
+      ex.debugBeginCondition(definition, 25)
       if compare(ex.v[7], sv16, 0'u32):
-        state = 728
+        ex.debugEndCondition(definition, true)
+        state = 776
         continue
-      state = 726
+      ex.debugEndCondition(definition, false)
+      state = 774
       continue
-    of 728:
-      cp729_7 = ex.v[7]
-      as148_721Copy = as148_721
-      if not axiomEnd148(ex, true, as148_721Copy):
-        state = 730
+    of 776:
+      ex.debugEndCondition(definition, true)
+      cp778_7 = ex.v[7]
+      as148_769Copy = as148_769
+      if not axiomEnd148(ex, true, as148_769Copy):
+        state = 779
         continue
-      state = 689
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 735
       continue
-    of 730:
-      ex.v[7] = cp729_7
-      ex.currentFrameID = as148_721Frame
-      state = 726
+    of 779:
+      ex.v[7] = cp778_7
+      ex.currentFrameID = as148_769Frame
+      ex.debugBeginAxiom(definition, 5)
+      state = 777
       continue
-    of 726:
-      state = 724
+    of 777:
+      ex.debugBeginCondition(definition, 24)
+      state = 774
       continue
-    of 724:
-      state = 723
+    of 774:
+      state = 772
       continue
-    of 723:
-      axiomEnd148(ex, false, as148_721)
-      state = 721
+    of 772:
+      ex.debugEndCondition(definition, false)
+      state = 771
       continue
-    of 721:
-      state = 720
+    of 771:
+      axiomEnd148(ex, false, as148_769)
+      state = 769
       continue
-    of 720:
-      ex.v[0] = cp719_0
-      ex.v[1] = cp719_1
-      ex.v[2] = cp719_2
-      ex.v[3] = cp719_3
-      ex.v[4] = cp719_4
-      ex.v[5] = cp719_5
-      ex.v[6] = cp719_6
-      ex.currentFrameID = as147_693Frame
-      state = 716
+    of 769:
+      ex.debugEndCondition(definition, false)
+      state = 768
       continue
-    of 716:
-      state = 713
+    of 768:
+      ex.debugBeginCondition(definition, 147)
+      state = 767
       continue
-    of 713:
-      state = 710
+    of 767:
+      ex.v[0] = cp766_0
+      ex.v[1] = cp766_1
+      ex.v[2] = cp766_2
+      ex.v[3] = cp766_3
+      ex.v[4] = cp766_4
+      ex.v[5] = cp766_5
+      ex.v[6] = cp766_6
+      ex.currentFrameID = as147_739Frame
+      ex.debugBeginAxiom(definition, 4)
+      state = 765
       continue
-    of 710:
-      state = 707
+    of 765:
+      ex.debugBeginCondition(definition, 16)
+      state = 762
       continue
-    of 707:
-      state = 704
+    of 762:
+      state = 759
       continue
-    of 704:
-      state = 701
+    of 759:
+      state = 756
       continue
-    of 701:
-      state = 698
+    of 756:
+      state = 753
       continue
-    of 698:
-      state = 696
+    of 753:
+      state = 750
       continue
-    of 696:
-      state = 695
+    of 750:
+      state = 747
       continue
-    of 695:
-      axiomEnd147(ex, false, as147_693)
-      state = 693
+    of 747:
+      state = 744
       continue
-    of 693:
-      state = 691
+    of 744:
+      state = 742
       continue
-    of 691:
-      state = 690
+    of 742:
+      ex.debugEndCondition(definition, false)
+      state = 741
       continue
-    of 690:
-      state = 686
+    of 741:
+      axiomEnd147(ex, false, as147_739)
+      state = 739
       continue
-    of 689:
+    of 739:
+      ex.debugEndCondition(definition, false)
+      state = 737
+      continue
+    of 737:
+      ex.debugEndCondition(definition, false)
+      state = 736
+      continue
+    of 736:
+      ex.debugEndBranch(definition, false)
+      state = 732
+      continue
+    of 735:
       if not ex.pushBranch(addr bc40):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 731
+      ex.debugCapturePendingTask(46)
+      state = 782
       continue
-    of 731:
+    of 782:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5590,18 +6994,23 @@ proc method24(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 688
+        state = 734
         continue
-      state = 732
+      state = 783
       continue
-    of 688:
+    of 734:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 731
+      state = 782
       continue
-    of 732:
+    of 783:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 686:
+    of 732:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5609,80 +7018,102 @@ proc method24(ex: Exec): int {.nimcall.} =
 # method25: axiom_output_expression/0
 proc method25(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as150_740: AxiomScope
-  var as150_740Frame: uint64
-  var cp744_8: Atom
-  var cp746_8: Atom
-  var fc747: uint32
-  var cp749_8: Atom
-  var as150_740Copy: AxiomScope
+  var as150_791: AxiomScope
+  var as150_791Frame: uint64
+  var cp795_8: Atom
+  var cp797_8: Atom
+  var fc798: uint32
+  var cp801_8: Atom
+  var as150_791Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 735
+  of 1: state = 786
   else: discard
   while true:
     case state
     of 0:
-      state = 734
+      ex.debugBeginMethod(definition, 25)
+      state = 785
       continue
-    of 734:
+    of 785:
       # branch matching_output
+      ex.debugBeginBranch(definition, 41)
       # (and (#produce_arithmetic_output (++ 6)))
+      ex.debugBeginCondition(definition, 149)
       # (#produce_arithmetic_output (++ 6))
-      state = 740
+      ex.debugBeginCondition(definition, 150)
+      state = 791
       continue
-    of 748:
-      inc fc747
-      if not factChoice27(ex, fc747 - 1):
-        state = 745
+    of 799:
+      ex.debugBeginCondition(definition, 27)
+      inc fc798
+      if not factChoice27(ex, fc798 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 796
         continue
-      cp749_8 = ex.v[8]
-      as150_740Copy = as150_740
-      if not axiomEnd150(ex, true, as150_740Copy):
-        state = 750
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp801_8 = ex.v[8]
+      as150_791Copy = as150_791
+      if not axiomEnd150(ex, true, as150_791Copy):
+        state = 802
         continue
-      state = 736
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 787
       continue
-    of 750:
-      ex.v[8] = cp749_8
-      ex.currentFrameID = as150_740Frame
-      state = 747
+    of 802:
+      ex.v[8] = cp801_8
+      ex.currentFrameID = as150_791Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 800
       continue
-    of 747:
+    of 800:
+      ex.debugBeginCondition(definition, 26)
+      state = 798
+      continue
+    of 798:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 745
+        state = 796
         continue
-      ex.v[8] = cp746_8
-      cp746_8 = ex.v[8]
-      state = 748
+      ex.v[8] = cp797_8
+      cp797_8 = ex.v[8]
+      state = 799
       continue
-    of 745:
-      ex.v[8] = cp746_8
-      state = 743
+    of 796:
+      ex.v[8] = cp797_8
+      state = 794
       continue
-    of 743:
-      ex.v[8] = cp744_8
-      state = 742
+    of 794:
+      ex.v[8] = cp795_8
+      ex.debugEndCondition(definition, false)
+      state = 793
       continue
-    of 742:
-      axiomEnd150(ex, false, as150_740)
-      state = 740
+    of 793:
+      axiomEnd150(ex, false, as150_791)
+      state = 791
       continue
-    of 740:
-      state = 738
+    of 791:
+      ex.debugEndCondition(definition, false)
+      state = 789
       continue
-    of 738:
-      state = 737
+    of 789:
+      ex.debugEndCondition(definition, false)
+      state = 788
       continue
-    of 737:
-      state = 733
+    of 788:
+      ex.debugEndBranch(definition, false)
+      state = 784
       continue
-    of 736:
+    of 787:
       if not ex.pushBranch(addr bc41):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 751
+      ex.debugCapturePendingTask(47)
+      state = 805
       continue
-    of 751:
+    of 805:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5690,18 +7121,23 @@ proc method25(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 735
+        state = 786
         continue
-      state = 752
+      state = 806
       continue
-    of 735:
+    of 786:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 751
+      state = 805
       continue
-    of 752:
+    of 806:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 733:
+    of 784:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -5709,84 +7145,106 @@ proc method25(ex: Exec): int {.nimcall.} =
 # method26: axiom_output_mismatch/0
 proc method26(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as152_762: AxiomScope
-  var as152_762Frame: uint64
-  var cp766_8: Atom
-  var cp768_8: Atom
-  var fc769: uint32
-  var cp771_8: Atom
-  var as152_762Copy: AxiomScope
+  var as152_816: AxiomScope
+  var as152_816Frame: uint64
+  var cp820_8: Atom
+  var cp822_8: Atom
+  var fc823: uint32
+  var cp826_8: Atom
+  var as152_816Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 756
-  of 2: state = 757
+  of 1: state = 810
+  of 2: state = 811
   else: discard
   while true:
     case state
     of 0:
-      state = 754
+      ex.debugBeginMethod(definition, 26)
+      state = 808
       continue
-    of 754:
+    of 808:
       # branch unexpected_match
       ex.saveRetry(fr, ms26)
+      ex.debugBeginBranch(definition, 42)
       # (and (#produce_arithmetic_output (++ 7)))
+      ex.debugBeginCondition(definition, 151)
       # (#produce_arithmetic_output (++ 7))
-      state = 762
+      ex.debugBeginCondition(definition, 152)
+      state = 816
       continue
-    of 770:
-      inc fc769
-      if not factChoice27(ex, fc769 - 1):
-        state = 767
+    of 824:
+      ex.debugBeginCondition(definition, 27)
+      inc fc823
+      if not factChoice27(ex, fc823 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 821
         continue
-      cp771_8 = ex.v[8]
-      as152_762Copy = as152_762
-      if not axiomEnd152(ex, true, as152_762Copy):
-        state = 772
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp826_8 = ex.v[8]
+      as152_816Copy = as152_816
+      if not axiomEnd152(ex, true, as152_816Copy):
+        state = 827
         continue
-      state = 758
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 812
       continue
-    of 772:
-      ex.v[8] = cp771_8
-      ex.currentFrameID = as152_762Frame
-      state = 769
+    of 827:
+      ex.v[8] = cp826_8
+      ex.currentFrameID = as152_816Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 825
       continue
-    of 769:
+    of 825:
+      ex.debugBeginCondition(definition, 26)
+      state = 823
+      continue
+    of 823:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 767
+        state = 821
         continue
-      ex.v[8] = cp768_8
-      cp768_8 = ex.v[8]
-      state = 770
+      ex.v[8] = cp822_8
+      cp822_8 = ex.v[8]
+      state = 824
       continue
-    of 767:
-      ex.v[8] = cp768_8
-      state = 765
+    of 821:
+      ex.v[8] = cp822_8
+      state = 819
       continue
-    of 765:
-      ex.v[8] = cp766_8
-      state = 764
+    of 819:
+      ex.v[8] = cp820_8
+      ex.debugEndCondition(definition, false)
+      state = 818
       continue
-    of 764:
-      axiomEnd152(ex, false, as152_762)
-      state = 762
+    of 818:
+      axiomEnd152(ex, false, as152_816)
+      state = 816
       continue
-    of 762:
-      state = 760
+    of 816:
+      ex.debugEndCondition(definition, false)
+      state = 814
       continue
-    of 760:
-      state = 759
+    of 814:
+      ex.debugEndCondition(definition, false)
+      state = 813
       continue
-    of 759:
+    of 813:
       ex.releaseRetry(fr)
-      state = 755
+      ex.debugEndBranch(definition, false)
+      state = 809
       continue
-    of 758:
+    of 812:
       if not ex.pushBranch(addr bc42):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 773
+      ex.debugCapturePendingTask(48)
+      state = 830
       continue
-    of 773:
+    of 830:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5794,36 +7252,47 @@ proc method26(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 756
+        state = 810
         continue
-      state = 774
+      state = 831
       continue
-    of 756:
+    of 810:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms26)
-        state = 755
+        ex.debugEndBranch(definition, false)
+        state = 809
         continue
-      state = 773
+      state = 830
       continue
-    of 774:
+    of 831:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 755:
+    of 809:
       # branch expected_failure
-      state = 775
+      ex.debugBeginBranch(definition, 43)
+      state = 832
       continue
-    of 775:
+    of 832:
       if not ex.pushBranch(addr bc43):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 777
+      ex.debugCapturePendingTask(49)
+      state = 834
       continue
-    of 777:
+    of 834:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5831,16 +7300,20 @@ proc method26(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 757
+        state = 811
         continue
-      state = 778
+      state = 835
       continue
-    of 757:
+    of 811:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 777
+      state = 834
       continue
-    of 778:
+    of 835:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5848,77 +7321,100 @@ proc method26(ex: Exec): int {.nimcall.} =
 # method27: axiom_io_mismatch/0
 proc method27(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as154_788: AxiomScope
-  var as154_788Frame: uint64
-  var cp796_7: Atom
-  var as154_788Copy: AxiomScope
+  var as154_845: AxiomScope
+  var as154_845Frame: uint64
+  var cp854_7: Atom
+  var as154_845Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 782
-  of 2: state = 783
+  of 1: state = 839
+  of 2: state = 840
   else: discard
   while true:
     case state
     of 0:
-      state = 780
+      ex.debugBeginMethod(definition, 27)
+      state = 837
       continue
-    of 780:
+    of 837:
       # branch unexpected_match
       ex.saveRetry(fr, ms27)
+      ex.debugBeginBranch(definition, 44)
       # (and (#accept_arithmetic_io (++ 7)))
+      ex.debugBeginCondition(definition, 153)
       # (#accept_arithmetic_io (++ 7))
-      as154_788.saved.setLen(1)
-      as154_788.args.setLen(1)
-      axiomBegin154(ex, as154_788)
-      as154_788Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 154)
+      as154_845.saved.setLen(1)
+      as154_845.args.setLen(1)
+      axiomBegin154(ex, as154_845)
+      as154_845Frame = ex.currentFrameID
       # (and (== ?io_value 7))
+      ex.debugBeginCondition(definition, 24)
       # (== ?io_value 7)
       # (== ?io_value 7)
+      ex.debugBeginCondition(definition, 25)
       if compare(ex.v[7], sv16, 0'u32):
-        state = 795
+        ex.debugEndCondition(definition, true)
+        state = 852
         continue
-      state = 793
+      ex.debugEndCondition(definition, false)
+      state = 850
       continue
-    of 795:
-      cp796_7 = ex.v[7]
-      as154_788Copy = as154_788
-      if not axiomEnd154(ex, true, as154_788Copy):
-        state = 797
+    of 852:
+      ex.debugEndCondition(definition, true)
+      cp854_7 = ex.v[7]
+      as154_845Copy = as154_845
+      if not axiomEnd154(ex, true, as154_845Copy):
+        state = 855
         continue
-      state = 784
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 841
       continue
-    of 797:
-      ex.v[7] = cp796_7
-      ex.currentFrameID = as154_788Frame
-      state = 793
+    of 855:
+      ex.v[7] = cp854_7
+      ex.currentFrameID = as154_845Frame
+      ex.debugBeginAxiom(definition, 5)
+      state = 853
       continue
-    of 793:
-      state = 791
+    of 853:
+      ex.debugBeginCondition(definition, 24)
+      state = 850
       continue
-    of 791:
-      state = 790
+    of 850:
+      state = 848
       continue
-    of 790:
-      axiomEnd154(ex, false, as154_788)
-      state = 788
+    of 848:
+      ex.debugEndCondition(definition, false)
+      state = 847
       continue
-    of 788:
-      state = 786
+    of 847:
+      axiomEnd154(ex, false, as154_845)
+      state = 845
       continue
-    of 786:
-      state = 785
+    of 845:
+      ex.debugEndCondition(definition, false)
+      state = 843
       continue
-    of 785:
+    of 843:
+      ex.debugEndCondition(definition, false)
+      state = 842
+      continue
+    of 842:
       ex.releaseRetry(fr)
-      state = 781
+      ex.debugEndBranch(definition, false)
+      state = 838
       continue
-    of 784:
+    of 841:
       if not ex.pushBranch(addr bc44):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 798
+      ex.debugCapturePendingTask(50)
+      state = 858
       continue
-    of 798:
+    of 858:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5926,36 +7422,47 @@ proc method27(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 782
+        state = 839
         continue
-      state = 799
+      state = 859
       continue
-    of 782:
+    of 839:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms27)
-        state = 781
+        ex.debugEndBranch(definition, false)
+        state = 838
         continue
-      state = 798
+      state = 858
       continue
-    of 799:
+    of 859:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 781:
+    of 838:
       # branch expected_failure
-      state = 800
+      ex.debugBeginBranch(definition, 45)
+      state = 860
       continue
-    of 800:
+    of 860:
       if not ex.pushBranch(addr bc45):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 802
+      ex.debugCapturePendingTask(51)
+      state = 862
       continue
-    of 802:
+    of 862:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5963,16 +7470,20 @@ proc method27(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 783
+        state = 840
         continue
-      state = 803
+      state = 863
       continue
-    of 783:
+    of 840:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 802
+      state = 862
       continue
-    of 803:
+    of 863:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5980,161 +7491,202 @@ proc method27(ex: Exec): int {.nimcall.} =
 # method28: axiom_invalid_input_expression/0
 proc method28(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as156_813: AxiomScope
-  var as156_813Frame: uint64
-  var cp839_0: Atom
-  var cp839_1: Atom
-  var cp839_2: Atom
-  var cp839_3: Atom
-  var cp839_4: Atom
-  var cp839_5: Atom
-  var cp839_6: Atom
-  var as156_813Copy: AxiomScope
+  var as156_873: AxiomScope
+  var as156_873Frame: uint64
+  var cp900_0: Atom
+  var cp900_1: Atom
+  var cp900_2: Atom
+  var cp900_3: Atom
+  var cp900_4: Atom
+  var cp900_5: Atom
+  var cp900_6: Atom
+  var as156_873Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 807
-  of 2: state = 808
+  of 1: state = 867
+  of 2: state = 868
   else: discard
   while true:
     case state
     of 0:
-      state = 805
+      ex.debugBeginMethod(definition, 28)
+      state = 865
       continue
-    of 805:
+    of 865:
       # branch unexpected_match
       ex.saveRetry(fr, ms28)
+      ex.debugBeginBranch(definition, 46)
       # (and (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7))
+      ex.debugBeginCondition(definition, 155)
       # (#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7)
-      as156_813.saved.setLen(7)
-      as156_813.args.setLen(7)
-      axiomBegin156(ex, as156_813)
-      as156_813Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 156)
+      as156_873.saved.setLen(7)
+      as156_873.args.setLen(7)
+      axiomBegin156(ex, as156_873)
+      as156_873Frame = ex.currentFrameID
       # (and (== ?inp_add 3) (== ?inp_subtract 6) (== ?inp_multiply 6) (== ?inp_divide 6) (== ?inp_modulo 2) (== ?inp_increment 7) (== ?inp_decrement 7))
+      ex.debugBeginCondition(definition, 16)
       # (== ?inp_add 3)
       # (== ?inp_add 3)
+      ex.debugBeginCondition(definition, 17)
       if compare(ex.v[0], sv9, 0'u32):
-        state = 820
+        ex.debugEndCondition(definition, true)
+        state = 880
         continue
-      state = 818
+      ex.debugEndCondition(definition, false)
+      state = 878
       continue
-    of 820:
+    of 880:
       # (== ?inp_subtract 6)
       # (== ?inp_subtract 6)
+      ex.debugBeginCondition(definition, 18)
       if compare(ex.v[1], sv10, 0'u32):
-        state = 823
+        ex.debugEndCondition(definition, true)
+        state = 883
         continue
-      state = 821
+      ex.debugEndCondition(definition, false)
+      state = 881
       continue
-    of 823:
+    of 883:
       # (== ?inp_multiply 6)
       # (== ?inp_multiply 6)
+      ex.debugBeginCondition(definition, 19)
       if compare(ex.v[2], sv11, 0'u32):
-        state = 826
+        ex.debugEndCondition(definition, true)
+        state = 886
         continue
-      state = 824
+      ex.debugEndCondition(definition, false)
+      state = 884
       continue
-    of 826:
+    of 886:
       # (== ?inp_divide 6)
       # (== ?inp_divide 6)
+      ex.debugBeginCondition(definition, 20)
       if compare(ex.v[3], sv12, 0'u32):
-        state = 829
+        ex.debugEndCondition(definition, true)
+        state = 889
         continue
-      state = 827
+      ex.debugEndCondition(definition, false)
+      state = 887
       continue
-    of 829:
+    of 889:
       # (== ?inp_modulo 2)
       # (== ?inp_modulo 2)
+      ex.debugBeginCondition(definition, 21)
       if compare(ex.v[4], sv13, 0'u32):
-        state = 832
+        ex.debugEndCondition(definition, true)
+        state = 892
         continue
-      state = 830
+      ex.debugEndCondition(definition, false)
+      state = 890
       continue
-    of 832:
+    of 892:
       # (== ?inp_increment 7)
       # (== ?inp_increment 7)
+      ex.debugBeginCondition(definition, 22)
       if compare(ex.v[5], sv14, 0'u32):
-        state = 835
+        ex.debugEndCondition(definition, true)
+        state = 895
         continue
-      state = 833
+      ex.debugEndCondition(definition, false)
+      state = 893
       continue
-    of 835:
+    of 895:
       # (== ?inp_decrement 7)
       # (== ?inp_decrement 7)
+      ex.debugBeginCondition(definition, 23)
       if compare(ex.v[6], sv15, 0'u32):
-        state = 838
+        ex.debugEndCondition(definition, true)
+        state = 898
         continue
-      state = 836
+      ex.debugEndCondition(definition, false)
+      state = 896
       continue
-    of 838:
-      cp839_0 = ex.v[0]
-      cp839_1 = ex.v[1]
-      cp839_2 = ex.v[2]
-      cp839_3 = ex.v[3]
-      cp839_4 = ex.v[4]
-      cp839_5 = ex.v[5]
-      cp839_6 = ex.v[6]
-      as156_813Copy = as156_813
-      if not axiomEnd156(ex, true, as156_813Copy):
-        state = 840
+    of 898:
+      ex.debugEndCondition(definition, true)
+      cp900_0 = ex.v[0]
+      cp900_1 = ex.v[1]
+      cp900_2 = ex.v[2]
+      cp900_3 = ex.v[3]
+      cp900_4 = ex.v[4]
+      cp900_5 = ex.v[5]
+      cp900_6 = ex.v[6]
+      as156_873Copy = as156_873
+      if not axiomEnd156(ex, true, as156_873Copy):
+        state = 901
         continue
-      state = 809
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 869
       continue
-    of 840:
-      ex.v[0] = cp839_0
-      ex.v[1] = cp839_1
-      ex.v[2] = cp839_2
-      ex.v[3] = cp839_3
-      ex.v[4] = cp839_4
-      ex.v[5] = cp839_5
-      ex.v[6] = cp839_6
-      ex.currentFrameID = as156_813Frame
-      state = 836
+    of 901:
+      ex.v[0] = cp900_0
+      ex.v[1] = cp900_1
+      ex.v[2] = cp900_2
+      ex.v[3] = cp900_3
+      ex.v[4] = cp900_4
+      ex.v[5] = cp900_5
+      ex.v[6] = cp900_6
+      ex.currentFrameID = as156_873Frame
+      ex.debugBeginAxiom(definition, 4)
+      state = 899
       continue
-    of 836:
-      state = 833
+    of 899:
+      ex.debugBeginCondition(definition, 16)
+      state = 896
       continue
-    of 833:
-      state = 830
+    of 896:
+      state = 893
       continue
-    of 830:
-      state = 827
+    of 893:
+      state = 890
       continue
-    of 827:
-      state = 824
+    of 890:
+      state = 887
       continue
-    of 824:
-      state = 821
+    of 887:
+      state = 884
       continue
-    of 821:
-      state = 818
+    of 884:
+      state = 881
       continue
-    of 818:
-      state = 816
+    of 881:
+      state = 878
       continue
-    of 816:
-      state = 815
+    of 878:
+      state = 876
       continue
-    of 815:
-      axiomEnd156(ex, false, as156_813)
-      state = 813
+    of 876:
+      ex.debugEndCondition(definition, false)
+      state = 875
       continue
-    of 813:
-      state = 811
+    of 875:
+      axiomEnd156(ex, false, as156_873)
+      state = 873
       continue
-    of 811:
-      state = 810
+    of 873:
+      ex.debugEndCondition(definition, false)
+      state = 871
       continue
-    of 810:
+    of 871:
+      ex.debugEndCondition(definition, false)
+      state = 870
+      continue
+    of 870:
       ex.releaseRetry(fr)
-      state = 806
+      ex.debugEndBranch(definition, false)
+      state = 866
       continue
-    of 809:
+    of 869:
       if not ex.pushBranch(addr bc46):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 841
+      ex.debugCapturePendingTask(52)
+      state = 904
       continue
-    of 841:
+    of 904:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6142,36 +7694,47 @@ proc method28(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 807
+        state = 867
         continue
-      state = 842
+      state = 905
       continue
-    of 807:
+    of 867:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms28)
-        state = 806
+        ex.debugEndBranch(definition, false)
+        state = 866
         continue
-      state = 841
+      state = 904
       continue
-    of 842:
+    of 905:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 806:
+    of 866:
       # branch expected_failure
-      state = 843
+      ex.debugBeginBranch(definition, 47)
+      state = 906
       continue
-    of 843:
+    of 906:
       if not ex.pushBranch(addr bc47):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 845
+      ex.debugCapturePendingTask(53)
+      state = 908
       continue
-    of 845:
+    of 908:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6179,16 +7742,20 @@ proc method28(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 808
+        state = 868
         continue
-      state = 846
+      state = 909
       continue
-    of 808:
+    of 868:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 845
+      state = 908
       continue
-    of 846:
+    of 909:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -6196,84 +7763,106 @@ proc method28(ex: Exec): int {.nimcall.} =
 # method29: axiom_invalid_output_expression/0
 proc method29(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var as158_856: AxiomScope
-  var as158_856Frame: uint64
-  var cp860_8: Atom
-  var cp862_8: Atom
-  var fc863: uint32
-  var cp865_8: Atom
-  var as158_856Copy: AxiomScope
+  var as158_919: AxiomScope
+  var as158_919Frame: uint64
+  var cp923_8: Atom
+  var cp925_8: Atom
+  var fc926: uint32
+  var cp929_8: Atom
+  var as158_919Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 850
-  of 2: state = 851
+  of 1: state = 913
+  of 2: state = 914
   else: discard
   while true:
     case state
     of 0:
-      state = 848
+      ex.debugBeginMethod(definition, 29)
+      state = 911
       continue
-    of 848:
+    of 911:
       # branch unexpected_match
       ex.saveRetry(fr, ms29)
+      ex.debugBeginBranch(definition, 48)
       # (and (#produce_arithmetic_output (/ 1 0)))
+      ex.debugBeginCondition(definition, 157)
       # (#produce_arithmetic_output (/ 1 0))
-      state = 856
+      ex.debugBeginCondition(definition, 158)
+      state = 919
       continue
-    of 864:
-      inc fc863
-      if not factChoice27(ex, fc863 - 1):
-        state = 861
+    of 927:
+      ex.debugBeginCondition(definition, 27)
+      inc fc926
+      if not factChoice27(ex, fc926 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 924
         continue
-      cp865_8 = ex.v[8]
-      as158_856Copy = as158_856
-      if not axiomEnd158(ex, true, as158_856Copy):
-        state = 866
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp929_8 = ex.v[8]
+      as158_919Copy = as158_919
+      if not axiomEnd158(ex, true, as158_919Copy):
+        state = 930
         continue
-      state = 852
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 915
       continue
-    of 866:
-      ex.v[8] = cp865_8
-      ex.currentFrameID = as158_856Frame
-      state = 863
+    of 930:
+      ex.v[8] = cp929_8
+      ex.currentFrameID = as158_919Frame
+      ex.debugBeginAxiom(definition, 6)
+      state = 928
       continue
-    of 863:
+    of 928:
+      ex.debugBeginCondition(definition, 26)
+      state = 926
+      continue
+    of 926:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 861
+        state = 924
         continue
-      ex.v[8] = cp862_8
-      cp862_8 = ex.v[8]
-      state = 864
+      ex.v[8] = cp925_8
+      cp925_8 = ex.v[8]
+      state = 927
       continue
-    of 861:
-      ex.v[8] = cp862_8
-      state = 859
+    of 924:
+      ex.v[8] = cp925_8
+      state = 922
       continue
-    of 859:
-      ex.v[8] = cp860_8
-      state = 858
+    of 922:
+      ex.v[8] = cp923_8
+      ex.debugEndCondition(definition, false)
+      state = 921
       continue
-    of 858:
-      axiomEnd158(ex, false, as158_856)
-      state = 856
+    of 921:
+      axiomEnd158(ex, false, as158_919)
+      state = 919
       continue
-    of 856:
-      state = 854
+    of 919:
+      ex.debugEndCondition(definition, false)
+      state = 917
       continue
-    of 854:
-      state = 853
+    of 917:
+      ex.debugEndCondition(definition, false)
+      state = 916
       continue
-    of 853:
+    of 916:
       ex.releaseRetry(fr)
-      state = 849
+      ex.debugEndBranch(definition, false)
+      state = 912
       continue
-    of 852:
+    of 915:
       if not ex.pushBranch(addr bc48):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 867
+      ex.debugCapturePendingTask(54)
+      state = 933
       continue
-    of 867:
+    of 933:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6281,36 +7870,47 @@ proc method29(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 850
+        state = 913
         continue
-      state = 868
+      state = 934
       continue
-    of 850:
+    of 913:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms29)
-        state = 849
+        ex.debugEndBranch(definition, false)
+        state = 912
         continue
-      state = 867
+      state = 933
       continue
-    of 868:
+    of 934:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 849:
+    of 912:
       # branch expected_failure
-      state = 869
+      ex.debugBeginBranch(definition, 49)
+      state = 935
       continue
-    of 869:
+    of 935:
       if not ex.pushBranch(addr bc49):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 871
+      ex.debugCapturePendingTask(55)
+      state = 937
       continue
-    of 871:
+    of 937:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6318,16 +7918,20 @@ proc method29(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 851
+        state = 914
         continue
-      state = 872
+      state = 938
       continue
-    of 851:
+    of 914:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 871
+      state = 937
       continue
-    of 872:
+    of 938:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -6335,140 +7939,164 @@ proc method29(ex: Exec): int {.nimcall.} =
 # method30: assignment_values/0
 proc method30(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp879_20: Atom
-  var cp879_21: Atom
-  var cp879_22: Atom
-  var cp879_23: Atom
-  var cp879_24: Atom
-  var cp881_20: Atom
-  var cp884_21: Atom
-  var cp887_22: Atom
-  var cp890_23: Atom
-  var cp893_24: Atom
+  var cp945_20: Atom
+  var cp945_21: Atom
+  var cp945_22: Atom
+  var cp945_23: Atom
+  var cp945_24: Atom
+  var cp947_20: Atom
+  var cp950_21: Atom
+  var cp953_22: Atom
+  var cp956_23: Atom
+  var cp959_24: Atom
   var state = 0
   case fr.resume
-  of 1: state = 875
+  of 1: state = 941
   else: discard
   while true:
     case state
     of 0:
-      state = 874
+      ex.debugBeginMethod(definition, 30)
+      state = 940
       continue
-    of 874:
+    of 940:
       # branch success
+      ex.debugBeginBranch(definition, 50)
       # (and (= ?kind main_threat) (= ?number (+ 2 3)) (= ?copy ?number) (= ?result (call assignment_probe ?copy)) (= ?flag false))
-      cp879_20 = ex.v[20]
-      cp879_21 = ex.v[21]
-      cp879_22 = ex.v[22]
-      cp879_23 = ex.v[23]
-      cp879_24 = ex.v[24]
+      cp945_20 = ex.v[20]
+      cp945_21 = ex.v[21]
+      cp945_22 = ex.v[22]
+      cp945_23 = ex.v[23]
+      cp945_24 = ex.v[24]
+      ex.debugBeginCondition(definition, 159)
       # (= ?kind main_threat)
-      cp881_20 = ex.v[20]
+      cp947_20 = ex.v[20]
       # (= ?kind main_threat)
+      ex.debugBeginCondition(definition, 160)
       block:
         let value = sv102
         if value.isBound and not ex.v[20].isBound:
           ex.v[20] = value
-          state = 882
+          ex.debugEndCondition(definition, true)
+          state = 948
           continue
-        state = 880
+        ex.debugEndCondition(definition, false)
+        state = 946
         continue
-      state = 882
+      state = 948
       continue
-    of 882:
+    of 948:
       # (= ?number (+ 2 3))
-      cp884_21 = ex.v[21]
+      cp950_21 = ex.v[21]
       # (= ?number (+ 2 3))
+      ex.debugBeginCondition(definition, 161)
       block:
         let value = arith(0'u32, [newInt(2'i32), newInt(3'i32)])
         if value.isBound and not ex.v[21].isBound:
           ex.v[21] = value
-          state = 885
+          ex.debugEndCondition(definition, true)
+          state = 951
           continue
-        state = 883
+        ex.debugEndCondition(definition, false)
+        state = 949
         continue
-      state = 885
+      state = 951
       continue
-    of 885:
+    of 951:
       # (= ?copy ?number)
-      cp887_22 = ex.v[22]
+      cp953_22 = ex.v[22]
       # (= ?copy ?number)
+      ex.debugBeginCondition(definition, 162)
       block:
         let value = ex.v[21]
         if value.isBound and not ex.v[22].isBound:
           ex.v[22] = value
-          state = 888
+          ex.debugEndCondition(definition, true)
+          state = 954
           continue
-        state = 886
+        ex.debugEndCondition(definition, false)
+        state = 952
         continue
-      state = 888
+      state = 954
       continue
-    of 888:
+    of 954:
       # (= ?result (call assignment_probe ?copy))
-      cp890_23 = ex.v[23]
+      cp956_23 = ex.v[23]
       # (= ?result (call assignment_probe ?copy))
+      ex.debugBeginCondition(definition, 163)
       if not ex.v[23].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[22]], addr cs16, factSymbols)
         if ok:
           ex.setIfChanged(23, callResult)
-          state = 891
+          ex.debugEndCondition(definition, true)
+          state = 957
           continue
-      state = 889
+      ex.debugEndCondition(definition, false)
+      state = 955
       continue
-    of 891:
+    of 957:
       # (= ?flag false)
-      cp893_24 = ex.v[24]
+      cp959_24 = ex.v[24]
       # (= ?flag false)
+      ex.debugBeginCondition(definition, 164)
       block:
         let value = sv103
         if value.isBound and not ex.v[24].isBound:
           ex.v[24] = value
-          state = 894
+          ex.debugEndCondition(definition, true)
+          state = 960
           continue
-        state = 892
+        ex.debugEndCondition(definition, false)
+        state = 958
         continue
-      state = 894
+      state = 960
       continue
-    of 894:
-      state = 876
+    of 960:
+      ex.debugEndCondition(definition, true)
+      state = 942
       continue
-    of 892:
-      ex.v[24] = cp893_24
-      state = 889
+    of 958:
+      ex.v[24] = cp959_24
+      state = 955
       continue
-    of 889:
-      ex.v[23] = cp890_23
-      state = 886
+    of 955:
+      ex.v[23] = cp956_23
+      state = 952
       continue
-    of 886:
-      ex.v[22] = cp887_22
-      state = 883
+    of 952:
+      ex.v[22] = cp953_22
+      state = 949
       continue
-    of 883:
-      ex.v[21] = cp884_21
-      state = 880
+    of 949:
+      ex.v[21] = cp950_21
+      state = 946
       continue
-    of 880:
-      ex.v[20] = cp881_20
-      state = 878
+    of 946:
+      ex.v[20] = cp947_20
+      state = 944
       continue
-    of 878:
-      ex.v[20] = cp879_20
-      ex.v[21] = cp879_21
-      ex.v[22] = cp879_22
-      ex.v[23] = cp879_23
-      ex.v[24] = cp879_24
-      state = 877
+    of 944:
+      ex.v[20] = cp945_20
+      ex.v[21] = cp945_21
+      ex.v[22] = cp945_22
+      ex.v[23] = cp945_23
+      ex.v[24] = cp945_24
+      ex.debugEndCondition(definition, false)
+      state = 943
       continue
-    of 877:
-      state = 873
+    of 943:
+      ex.debugEndBranch(definition, false)
+      state = 939
       continue
-    of 876:
+    of 942:
       if not ex.pushBranch(addr bc50):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 895
+      ex.debugCapturePendingTask(56)
+      state = 962
       continue
-    of 895:
+    of 962:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6476,18 +8104,23 @@ proc method30(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 875
+        state = 941
         continue
-      state = 896
+      state = 963
       continue
-    of 875:
+    of 941:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 895
+      state = 962
       continue
-    of 896:
+    of 963:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 873:
+    of 939:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6495,90 +8128,108 @@ proc method30(ex: Exec): int {.nimcall.} =
 # method31: assignment_backtracking/0
 proc method31(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp903_25: Atom
-  var cp903_26: Atom
-  var cp905_25: Atom
-  var fc906: uint32
-  var cp909_26: Atom
+  var cp970_25: Atom
+  var cp970_26: Atom
+  var cp972_25: Atom
+  var fc973: uint32
+  var cp976_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 899
+  of 1: state = 966
   else: discard
   while true:
     case state
     of 0:
-      state = 898
+      ex.debugBeginMethod(definition, 31)
+      state = 965
       continue
-    of 898:
+    of 965:
       # branch success
+      ex.debugBeginBranch(definition, 51)
       # (and (assignment_candidate ?candidate) (= ?value (call assignment_probe ?candidate)) (== ?value 3))
-      cp903_25 = ex.v[25]
-      cp903_26 = ex.v[26]
+      cp970_25 = ex.v[25]
+      cp970_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 165)
       # (assignment_candidate ?candidate)
-      cp905_25 = ex.v[25]
-      fc906 = 0
-      state = 907
+      cp972_25 = ex.v[25]
+      fc973 = 0
+      state = 974
       continue
-    of 907:
-      inc fc906
-      if not factChoice166(ex, fc906 - 1):
-        state = 904
+    of 974:
+      ex.debugBeginCondition(definition, 166)
+      inc fc973
+      if not factChoice166(ex, fc973 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 971
         continue
+      ex.debugEndCondition(definition, true)
       # (= ?value (call assignment_probe ?candidate))
-      cp909_26 = ex.v[26]
+      cp976_26 = ex.v[26]
       # (= ?value (call assignment_probe ?candidate))
+      ex.debugBeginCondition(definition, 167)
       if not ex.v[26].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[25]], addr cs17, factSymbols)
         if ok:
           ex.setIfChanged(26, callResult)
-          state = 910
+          ex.debugEndCondition(definition, true)
+          state = 977
           continue
-      state = 908
+      ex.debugEndCondition(definition, false)
+      state = 975
       continue
-    of 910:
+    of 977:
       # (== ?value 3)
       # (== ?value 3)
+      ex.debugBeginCondition(definition, 168)
       if compare(ex.v[26], sv104, 0'u32):
-        state = 913
+        ex.debugEndCondition(definition, true)
+        state = 980
         continue
-      state = 911
+      ex.debugEndCondition(definition, false)
+      state = 978
       continue
-    of 913:
-      state = 900
+    of 980:
+      ex.debugEndCondition(definition, true)
+      state = 967
       continue
-    of 911:
-      state = 908
+    of 978:
+      state = 975
       continue
-    of 908:
-      ex.v[26] = cp909_26
-      state = 906
+    of 975:
+      ex.v[26] = cp976_26
+      state = 973
       continue
-    of 906:
+    of 973:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 904
+        state = 971
         continue
-      ex.v[25] = cp905_25
-      cp905_25 = ex.v[25]
-      state = 907
+      ex.v[25] = cp972_25
+      cp972_25 = ex.v[25]
+      state = 974
       continue
-    of 904:
-      ex.v[25] = cp905_25
-      state = 902
+    of 971:
+      ex.v[25] = cp972_25
+      state = 969
       continue
-    of 902:
-      ex.v[25] = cp903_25
-      ex.v[26] = cp903_26
-      state = 901
+    of 969:
+      ex.v[25] = cp970_25
+      ex.v[26] = cp970_26
+      ex.debugEndCondition(definition, false)
+      state = 968
       continue
-    of 901:
-      state = 897
+    of 968:
+      ex.debugEndBranch(definition, false)
+      state = 964
       continue
-    of 900:
+    of 967:
       if not ex.pushBranch(addr bc51):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 914
+      ex.debugCapturePendingTask(57)
+      state = 982
       continue
-    of 914:
+    of 982:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6586,18 +8237,23 @@ proc method31(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 899
+        state = 966
         continue
-      state = 915
+      state = 983
       continue
-    of 899:
+    of 966:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 914
+      state = 982
       continue
-    of 915:
+    of 983:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 897:
+    of 964:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6605,210 +8261,243 @@ proc method31(ex: Exec): int {.nimcall.} =
 # method32: assignment_nested_calls/0
 proc method32(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp922_26: Atom
-  var cp922_52: Atom
-  var cp922_53: Atom
-  var cp922_54: Atom
-  var cp922_55: Atom
-  var cp922_56: Atom
-  var cp922_57: Atom
-  var cp924_26: Atom
-  var cp924_52: Atom
-  var cp924_53: Atom
-  var cp924_54: Atom
-  var cp924_55: Atom
-  var cp924_56: Atom
-  var cp924_57: Atom
-  var cp926_52: Atom
-  var cp929_53: Atom
-  var cp932_54: Atom
-  var cp935_55: Atom
-  var cp938_56: Atom
-  var cp941_57: Atom
-  var cp944_26: Atom
+  var cp990_26: Atom
+  var cp990_52: Atom
+  var cp990_53: Atom
+  var cp990_54: Atom
+  var cp990_55: Atom
+  var cp990_56: Atom
+  var cp990_57: Atom
+  var cp992_26: Atom
+  var cp992_52: Atom
+  var cp992_53: Atom
+  var cp992_54: Atom
+  var cp992_55: Atom
+  var cp992_56: Atom
+  var cp992_57: Atom
+  var cp994_52: Atom
+  var cp997_53: Atom
+  var cp1000_54: Atom
+  var cp1003_55: Atom
+  var cp1006_56: Atom
+  var cp1009_57: Atom
+  var cp1012_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 918
+  of 1: state = 986
   else: discard
   while true:
     case state
     of 0:
-      state = 917
+      ex.debugBeginMethod(definition, 32)
+      state = 985
       continue
-    of 917:
+    of 985:
       # branch success
+      ex.debugBeginBranch(definition, 52)
       # (and (= ?value (+ (call assignment_probe 1) (call assignment_probe 2))))
-      cp922_26 = ex.v[26]
-      cp922_52 = ex.v[52]
-      cp922_53 = ex.v[53]
-      cp922_54 = ex.v[54]
-      cp922_55 = ex.v[55]
-      cp922_56 = ex.v[56]
-      cp922_57 = ex.v[57]
+      cp990_26 = ex.v[26]
+      cp990_52 = ex.v[52]
+      cp990_53 = ex.v[53]
+      cp990_54 = ex.v[54]
+      cp990_55 = ex.v[55]
+      cp990_56 = ex.v[56]
+      cp990_57 = ex.v[57]
+      ex.debugBeginCondition(definition, 169)
       # (and (= ?$assignment_call_29 1) (= ?$assignment_call_30 (call assignment_probe ?$assignment_call_29)) (= ?$assignment_call_31 (* ?$assignment_call_30 1)) (= ?$assignment_call_32 2) (= ?$assignment_call_33 (call assignment_probe ?$assignment_call_32)) (= ?$assignment_call_34 (* ?$assignment_call_33 1)) (= ?value (+ ?$assignment_call_31 ?$assignment_call_34)))
-      cp924_26 = ex.v[26]
-      cp924_52 = ex.v[52]
-      cp924_53 = ex.v[53]
-      cp924_54 = ex.v[54]
-      cp924_55 = ex.v[55]
-      cp924_56 = ex.v[56]
-      cp924_57 = ex.v[57]
+      cp992_26 = ex.v[26]
+      cp992_52 = ex.v[52]
+      cp992_53 = ex.v[53]
+      cp992_54 = ex.v[54]
+      cp992_55 = ex.v[55]
+      cp992_56 = ex.v[56]
+      cp992_57 = ex.v[57]
+      ex.debugBeginCondition(definition, 170)
       if ex.v[26].isBound:
-        state = 923
+        state = 991
         continue
       # (= ?$assignment_call_29 1)
-      cp926_52 = ex.v[52]
+      cp994_52 = ex.v[52]
       # (= ?$assignment_call_29 1)
+      ex.debugBeginCondition(definition, 171)
       block:
         let value = sv105
         if value.isBound and not ex.v[52].isBound:
           ex.v[52] = value
-          state = 927
+          ex.debugEndCondition(definition, true)
+          state = 995
           continue
-        state = 925
+        ex.debugEndCondition(definition, false)
+        state = 993
         continue
-      state = 927
+      state = 995
       continue
-    of 927:
+    of 995:
       # (= ?$assignment_call_30 (call assignment_probe ?$assignment_call_29))
-      cp929_53 = ex.v[53]
+      cp997_53 = ex.v[53]
       # (= ?$assignment_call_30 (call assignment_probe ?$assignment_call_29))
+      ex.debugBeginCondition(definition, 172)
       if not ex.v[53].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[52]], addr cs18, factSymbols)
         if ok:
           ex.setIfChanged(53, callResult)
-          state = 930
+          ex.debugEndCondition(definition, true)
+          state = 998
           continue
-      state = 928
+      ex.debugEndCondition(definition, false)
+      state = 996
       continue
-    of 930:
+    of 998:
       # (= ?$assignment_call_31 (* ?$assignment_call_30 1))
-      cp932_54 = ex.v[54]
+      cp1000_54 = ex.v[54]
       # (= ?$assignment_call_31 (* ?$assignment_call_30 1))
+      ex.debugBeginCondition(definition, 173)
       block:
         let value = arith(2'u32, [ex.v[53], newInt(1'i32)])
         if value.isBound and not ex.v[54].isBound:
           ex.v[54] = value
-          state = 933
+          ex.debugEndCondition(definition, true)
+          state = 1001
           continue
-        state = 931
+        ex.debugEndCondition(definition, false)
+        state = 999
         continue
-      state = 933
+      state = 1001
       continue
-    of 933:
+    of 1001:
       # (= ?$assignment_call_32 2)
-      cp935_55 = ex.v[55]
+      cp1003_55 = ex.v[55]
       # (= ?$assignment_call_32 2)
+      ex.debugBeginCondition(definition, 174)
       block:
         let value = sv106
         if value.isBound and not ex.v[55].isBound:
           ex.v[55] = value
-          state = 936
+          ex.debugEndCondition(definition, true)
+          state = 1004
           continue
-        state = 934
+        ex.debugEndCondition(definition, false)
+        state = 1002
         continue
-      state = 936
+      state = 1004
       continue
-    of 936:
+    of 1004:
       # (= ?$assignment_call_33 (call assignment_probe ?$assignment_call_32))
-      cp938_56 = ex.v[56]
+      cp1006_56 = ex.v[56]
       # (= ?$assignment_call_33 (call assignment_probe ?$assignment_call_32))
+      ex.debugBeginCondition(definition, 175)
       if not ex.v[56].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[55]], addr cs19, factSymbols)
         if ok:
           ex.setIfChanged(56, callResult)
-          state = 939
+          ex.debugEndCondition(definition, true)
+          state = 1007
           continue
-      state = 937
+      ex.debugEndCondition(definition, false)
+      state = 1005
       continue
-    of 939:
+    of 1007:
       # (= ?$assignment_call_34 (* ?$assignment_call_33 1))
-      cp941_57 = ex.v[57]
+      cp1009_57 = ex.v[57]
       # (= ?$assignment_call_34 (* ?$assignment_call_33 1))
+      ex.debugBeginCondition(definition, 176)
       block:
         let value = arith(2'u32, [ex.v[56], newInt(1'i32)])
         if value.isBound and not ex.v[57].isBound:
           ex.v[57] = value
-          state = 942
+          ex.debugEndCondition(definition, true)
+          state = 1010
           continue
-        state = 940
+        ex.debugEndCondition(definition, false)
+        state = 1008
         continue
-      state = 942
+      state = 1010
       continue
-    of 942:
+    of 1010:
       # (= ?value (+ ?$assignment_call_31 ?$assignment_call_34))
-      cp944_26 = ex.v[26]
+      cp1012_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_31 ?$assignment_call_34))
+      ex.debugBeginCondition(definition, 177)
       block:
         let value = arith(0'u32, [ex.v[54], ex.v[57]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 945
+          ex.debugEndCondition(definition, true)
+          state = 1013
           continue
-        state = 943
+        ex.debugEndCondition(definition, false)
+        state = 1011
         continue
-      state = 945
+      state = 1013
       continue
-    of 945:
-      state = 919
+    of 1013:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 987
       continue
-    of 943:
-      ex.v[26] = cp944_26
-      state = 940
+    of 1011:
+      ex.v[26] = cp1012_26
+      state = 1008
       continue
-    of 940:
-      ex.v[57] = cp941_57
-      state = 937
+    of 1008:
+      ex.v[57] = cp1009_57
+      state = 1005
       continue
-    of 937:
-      ex.v[56] = cp938_56
-      state = 934
+    of 1005:
+      ex.v[56] = cp1006_56
+      state = 1002
       continue
-    of 934:
-      ex.v[55] = cp935_55
-      state = 931
+    of 1002:
+      ex.v[55] = cp1003_55
+      state = 999
       continue
-    of 931:
-      ex.v[54] = cp932_54
-      state = 928
+    of 999:
+      ex.v[54] = cp1000_54
+      state = 996
       continue
-    of 928:
-      ex.v[53] = cp929_53
-      state = 925
+    of 996:
+      ex.v[53] = cp997_53
+      state = 993
       continue
-    of 925:
-      ex.v[52] = cp926_52
-      state = 923
+    of 993:
+      ex.v[52] = cp994_52
+      state = 991
       continue
-    of 923:
-      ex.v[26] = cp924_26
-      ex.v[52] = cp924_52
-      ex.v[53] = cp924_53
-      ex.v[54] = cp924_54
-      ex.v[55] = cp924_55
-      ex.v[56] = cp924_56
-      ex.v[57] = cp924_57
-      state = 921
+    of 991:
+      ex.v[26] = cp992_26
+      ex.v[52] = cp992_52
+      ex.v[53] = cp992_53
+      ex.v[54] = cp992_54
+      ex.v[55] = cp992_55
+      ex.v[56] = cp992_56
+      ex.v[57] = cp992_57
+      ex.debugEndCondition(definition, false)
+      state = 989
       continue
-    of 921:
-      ex.v[26] = cp922_26
-      ex.v[52] = cp922_52
-      ex.v[53] = cp922_53
-      ex.v[54] = cp922_54
-      ex.v[55] = cp922_55
-      ex.v[56] = cp922_56
-      ex.v[57] = cp922_57
-      state = 920
+    of 989:
+      ex.v[26] = cp990_26
+      ex.v[52] = cp990_52
+      ex.v[53] = cp990_53
+      ex.v[54] = cp990_54
+      ex.v[55] = cp990_55
+      ex.v[56] = cp990_56
+      ex.v[57] = cp990_57
+      ex.debugEndCondition(definition, false)
+      state = 988
       continue
-    of 920:
-      state = 916
+    of 988:
+      ex.debugEndBranch(definition, false)
+      state = 984
       continue
-    of 919:
+    of 987:
       if not ex.pushBranch(addr bc52):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 946
+      ex.debugCapturePendingTask(58)
+      state = 1016
       continue
-    of 946:
+    of 1016:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6816,18 +8505,23 @@ proc method32(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 918
+        state = 986
         continue
-      state = 947
+      state = 1017
       continue
-    of 918:
+    of 986:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 946
+      state = 1016
       continue
-    of 947:
+    of 1017:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 916:
+    of 984:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6835,60 +8529,72 @@ proc method32(ex: Exec): int {.nimcall.} =
 # method33: assignment_failure/0
 proc method33(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp956_26: Atom
-  var cp958_26: Atom
-  var cp965_26: Atom
-  var cp967_26: Atom
+  var cp1026_26: Atom
+  var cp1028_26: Atom
+  var cp1036_26: Atom
+  var cp1038_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 951
-  of 2: state = 952
+  of 1: state = 1021
+  of 2: state = 1022
   else: discard
   while true:
     case state
     of 0:
-      state = 949
+      ex.debugBeginMethod(definition, 33)
+      state = 1019
       continue
-    of 949:
+    of 1019:
       # branch failed
       ex.saveRetry(fr, ms33)
+      ex.debugBeginBranch(definition, 53)
       # (and (= ?value (/ 1 0)))
-      cp956_26 = ex.v[26]
+      cp1026_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 178)
       # (= ?value (/ 1 0))
-      cp958_26 = ex.v[26]
+      cp1028_26 = ex.v[26]
       # (= ?value (/ 1 0))
+      ex.debugBeginCondition(definition, 179)
       block:
         let value = arith(3'u32, [newInt(1'i32), newInt(0'i32)])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 959
+          ex.debugEndCondition(definition, true)
+          state = 1029
           continue
-        state = 957
+        ex.debugEndCondition(definition, false)
+        state = 1027
         continue
-      state = 959
+      state = 1029
       continue
-    of 959:
-      state = 953
+    of 1029:
+      ex.debugEndCondition(definition, true)
+      state = 1023
       continue
-    of 957:
-      ex.v[26] = cp958_26
-      state = 955
+    of 1027:
+      ex.v[26] = cp1028_26
+      state = 1025
       continue
-    of 955:
-      ex.v[26] = cp956_26
-      state = 954
+    of 1025:
+      ex.v[26] = cp1026_26
+      ex.debugEndCondition(definition, false)
+      state = 1024
       continue
-    of 954:
+    of 1024:
       ex.releaseRetry(fr)
-      state = 950
+      ex.debugEndBranch(definition, false)
+      state = 1020
       continue
-    of 953:
+    of 1023:
       if not ex.pushBranch(addr bc53):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 960
+      ex.debugCapturePendingTask(59)
+      state = 1031
       continue
-    of 960:
+    of 1031:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6896,63 +8602,81 @@ proc method33(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 951
+        state = 1021
         continue
-      state = 961
+      state = 1032
       continue
-    of 951:
+    of 1021:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms33)
-        state = 950
+        ex.debugEndBranch(definition, false)
+        state = 1020
         continue
-      state = 960
+      state = 1031
       continue
-    of 961:
+    of 1032:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 950:
+    of 1020:
       # branch fallback
+      ex.debugBeginBranch(definition, 54)
       # (and (= ?value 9))
-      cp965_26 = ex.v[26]
+      cp1036_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 180)
       # (= ?value 9)
-      cp967_26 = ex.v[26]
+      cp1038_26 = ex.v[26]
       # (= ?value 9)
+      ex.debugBeginCondition(definition, 181)
       block:
         let value = sv107
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 968
+          ex.debugEndCondition(definition, true)
+          state = 1039
           continue
-        state = 966
+        ex.debugEndCondition(definition, false)
+        state = 1037
         continue
-      state = 968
+      state = 1039
       continue
-    of 968:
-      state = 962
+    of 1039:
+      ex.debugEndCondition(definition, true)
+      state = 1033
       continue
-    of 966:
-      ex.v[26] = cp967_26
-      state = 964
+    of 1037:
+      ex.v[26] = cp1038_26
+      state = 1035
       continue
-    of 964:
-      ex.v[26] = cp965_26
-      state = 963
+    of 1035:
+      ex.v[26] = cp1036_26
+      ex.debugEndCondition(definition, false)
+      state = 1034
       continue
-    of 963:
-      state = 948
+    of 1034:
+      ex.debugEndBranch(definition, false)
+      state = 1018
       continue
-    of 962:
+    of 1033:
       if not ex.pushBranch(addr bc54):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 969
+      ex.debugCapturePendingTask(60)
+      state = 1041
       continue
-    of 969:
+    of 1041:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6960,18 +8684,23 @@ proc method33(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 952
+        state = 1022
         continue
-      state = 970
+      state = 1042
       continue
-    of 952:
+    of 1022:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 969
+      state = 1041
       continue
-    of 970:
+    of 1042:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 948:
+    of 1018:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -6979,253 +8708,286 @@ proc method33(ex: Exec): int {.nimcall.} =
 # method34: assignment_ordered_failure/0
 proc method34(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp983_26: Atom
-  var cp983_58: Atom
-  var cp983_59: Atom
-  var cp983_60: Atom
-  var cp983_61: Atom
-  var cp983_62: Atom
-  var cp983_63: Atom
-  var cp985_26: Atom
-  var cp985_58: Atom
-  var cp985_59: Atom
-  var cp985_60: Atom
-  var cp985_61: Atom
-  var cp985_62: Atom
-  var cp985_63: Atom
-  var cp987_58: Atom
-  var cp990_59: Atom
-  var cp993_60: Atom
-  var cp996_61: Atom
-  var cp999_62: Atom
-  var cp1002_63: Atom
-  var cp1005_26: Atom
-  var cp1012_26: Atom
-  var cp1012_64: Atom
-  var cp1012_65: Atom
-  var cp1012_66: Atom
-  var cp1012_67: Atom
-  var cp1014_26: Atom
-  var cp1014_64: Atom
-  var cp1014_65: Atom
-  var cp1014_66: Atom
-  var cp1014_67: Atom
-  var cp1016_64: Atom
-  var cp1019_65: Atom
-  var cp1022_66: Atom
-  var cp1025_67: Atom
-  var cp1028_26: Atom
-  var cp1035_26: Atom
-  var cp1035_68: Atom
-  var cp1035_69: Atom
-  var cp1035_70: Atom
-  var cp1035_71: Atom
-  var cp1035_72: Atom
-  var cp1037_26: Atom
-  var cp1037_68: Atom
-  var cp1037_69: Atom
-  var cp1037_70: Atom
-  var cp1037_71: Atom
-  var cp1037_72: Atom
-  var cp1039_68: Atom
-  var cp1042_69: Atom
-  var cp1045_70: Atom
-  var cp1048_71: Atom
-  var cp1051_72: Atom
-  var cp1054_26: Atom
-  var cp1061_26: Atom
-  var cp1063_26: Atom
+  var cp1055_26: Atom
+  var cp1055_58: Atom
+  var cp1055_59: Atom
+  var cp1055_60: Atom
+  var cp1055_61: Atom
+  var cp1055_62: Atom
+  var cp1055_63: Atom
+  var cp1057_26: Atom
+  var cp1057_58: Atom
+  var cp1057_59: Atom
+  var cp1057_60: Atom
+  var cp1057_61: Atom
+  var cp1057_62: Atom
+  var cp1057_63: Atom
+  var cp1059_58: Atom
+  var cp1062_59: Atom
+  var cp1065_60: Atom
+  var cp1068_61: Atom
+  var cp1071_62: Atom
+  var cp1074_63: Atom
+  var cp1077_26: Atom
+  var cp1086_26: Atom
+  var cp1086_64: Atom
+  var cp1086_65: Atom
+  var cp1086_66: Atom
+  var cp1086_67: Atom
+  var cp1088_26: Atom
+  var cp1088_64: Atom
+  var cp1088_65: Atom
+  var cp1088_66: Atom
+  var cp1088_67: Atom
+  var cp1090_64: Atom
+  var cp1093_65: Atom
+  var cp1096_66: Atom
+  var cp1099_67: Atom
+  var cp1102_26: Atom
+  var cp1111_26: Atom
+  var cp1111_68: Atom
+  var cp1111_69: Atom
+  var cp1111_70: Atom
+  var cp1111_71: Atom
+  var cp1111_72: Atom
+  var cp1113_26: Atom
+  var cp1113_68: Atom
+  var cp1113_69: Atom
+  var cp1113_70: Atom
+  var cp1113_71: Atom
+  var cp1113_72: Atom
+  var cp1115_68: Atom
+  var cp1118_69: Atom
+  var cp1121_70: Atom
+  var cp1124_71: Atom
+  var cp1127_72: Atom
+  var cp1130_26: Atom
+  var cp1139_26: Atom
+  var cp1141_26: Atom
   var state = 0
   case fr.resume
-  of 1: state = 976
-  of 2: state = 977
-  of 3: state = 978
-  of 4: state = 979
+  of 1: state = 1048
+  of 2: state = 1049
+  of 3: state = 1050
+  of 4: state = 1051
   else: discard
   while true:
     case state
     of 0:
-      state = 972
+      ex.debugBeginMethod(definition, 34)
+      state = 1044
       continue
-    of 972:
+    of 1044:
       # branch arithmetic_failure
       ex.saveRetry(fr, ms34)
+      ex.debugBeginBranch(definition, 55)
       # (and (= ?value (+ (/ 1 0) (call assignment_probe 1))))
-      cp983_26 = ex.v[26]
-      cp983_58 = ex.v[58]
-      cp983_59 = ex.v[59]
-      cp983_60 = ex.v[60]
-      cp983_61 = ex.v[61]
-      cp983_62 = ex.v[62]
-      cp983_63 = ex.v[63]
+      cp1055_26 = ex.v[26]
+      cp1055_58 = ex.v[58]
+      cp1055_59 = ex.v[59]
+      cp1055_60 = ex.v[60]
+      cp1055_61 = ex.v[61]
+      cp1055_62 = ex.v[62]
+      cp1055_63 = ex.v[63]
+      ex.debugBeginCondition(definition, 182)
       # (and (= ?$assignment_call_35 (* 1 1)) (= ?$assignment_call_36 (* 0 1)) (= ?$assignment_call_37 (* (/ ?$assignment_call_35 ?$assignment_call_36) 1)) (= ?$assignment_call_38 1) (= ?$assignment_call_39 (call assignment_probe ?$assignment_call_38)) (= ?$assignment_call_40 (* ?$assignment_call_39 1)) (= ?value (+ ?$assignment_call_37 ?$assignment_call_40)))
-      cp985_26 = ex.v[26]
-      cp985_58 = ex.v[58]
-      cp985_59 = ex.v[59]
-      cp985_60 = ex.v[60]
-      cp985_61 = ex.v[61]
-      cp985_62 = ex.v[62]
-      cp985_63 = ex.v[63]
+      cp1057_26 = ex.v[26]
+      cp1057_58 = ex.v[58]
+      cp1057_59 = ex.v[59]
+      cp1057_60 = ex.v[60]
+      cp1057_61 = ex.v[61]
+      cp1057_62 = ex.v[62]
+      cp1057_63 = ex.v[63]
+      ex.debugBeginCondition(definition, 183)
       if ex.v[26].isBound:
-        state = 984
+        state = 1056
         continue
       # (= ?$assignment_call_35 (* 1 1))
-      cp987_58 = ex.v[58]
+      cp1059_58 = ex.v[58]
       # (= ?$assignment_call_35 (* 1 1))
+      ex.debugBeginCondition(definition, 184)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[58].isBound:
           ex.v[58] = value
-          state = 988
+          ex.debugEndCondition(definition, true)
+          state = 1060
           continue
-        state = 986
+        ex.debugEndCondition(definition, false)
+        state = 1058
         continue
-      state = 988
+      state = 1060
       continue
-    of 988:
+    of 1060:
       # (= ?$assignment_call_36 (* 0 1))
-      cp990_59 = ex.v[59]
+      cp1062_59 = ex.v[59]
       # (= ?$assignment_call_36 (* 0 1))
+      ex.debugBeginCondition(definition, 185)
       block:
         let value = arith(2'u32, [newInt(0'i32), newInt(1'i32)])
         if value.isBound and not ex.v[59].isBound:
           ex.v[59] = value
-          state = 991
+          ex.debugEndCondition(definition, true)
+          state = 1063
           continue
-        state = 989
+        ex.debugEndCondition(definition, false)
+        state = 1061
         continue
-      state = 991
+      state = 1063
       continue
-    of 991:
+    of 1063:
       # (= ?$assignment_call_37 (* (/ ?$assignment_call_35 ?$assignment_call_36) 1))
-      cp993_60 = ex.v[60]
+      cp1065_60 = ex.v[60]
       # (= ?$assignment_call_37 (* (/ ?$assignment_call_35 ?$assignment_call_36) 1))
+      ex.debugBeginCondition(definition, 186)
       block:
         let value = arith(2'u32, [arith(3'u32, [ex.v[58], ex.v[59]]), newInt(1'i32)])
         if value.isBound and not ex.v[60].isBound:
           ex.v[60] = value
-          state = 994
+          ex.debugEndCondition(definition, true)
+          state = 1066
           continue
-        state = 992
+        ex.debugEndCondition(definition, false)
+        state = 1064
         continue
-      state = 994
+      state = 1066
       continue
-    of 994:
+    of 1066:
       # (= ?$assignment_call_38 1)
-      cp996_61 = ex.v[61]
+      cp1068_61 = ex.v[61]
       # (= ?$assignment_call_38 1)
+      ex.debugBeginCondition(definition, 187)
       block:
         let value = sv108
         if value.isBound and not ex.v[61].isBound:
           ex.v[61] = value
-          state = 997
+          ex.debugEndCondition(definition, true)
+          state = 1069
           continue
-        state = 995
+        ex.debugEndCondition(definition, false)
+        state = 1067
         continue
-      state = 997
+      state = 1069
       continue
-    of 997:
+    of 1069:
       # (= ?$assignment_call_39 (call assignment_probe ?$assignment_call_38))
-      cp999_62 = ex.v[62]
+      cp1071_62 = ex.v[62]
       # (= ?$assignment_call_39 (call assignment_probe ?$assignment_call_38))
+      ex.debugBeginCondition(definition, 188)
       if not ex.v[62].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[61]], addr cs20, factSymbols)
         if ok:
           ex.setIfChanged(62, callResult)
-          state = 1000
+          ex.debugEndCondition(definition, true)
+          state = 1072
           continue
-      state = 998
+      ex.debugEndCondition(definition, false)
+      state = 1070
       continue
-    of 1000:
+    of 1072:
       # (= ?$assignment_call_40 (* ?$assignment_call_39 1))
-      cp1002_63 = ex.v[63]
+      cp1074_63 = ex.v[63]
       # (= ?$assignment_call_40 (* ?$assignment_call_39 1))
+      ex.debugBeginCondition(definition, 189)
       block:
         let value = arith(2'u32, [ex.v[62], newInt(1'i32)])
         if value.isBound and not ex.v[63].isBound:
           ex.v[63] = value
-          state = 1003
+          ex.debugEndCondition(definition, true)
+          state = 1075
           continue
-        state = 1001
+        ex.debugEndCondition(definition, false)
+        state = 1073
         continue
-      state = 1003
+      state = 1075
       continue
-    of 1003:
+    of 1075:
       # (= ?value (+ ?$assignment_call_37 ?$assignment_call_40))
-      cp1005_26 = ex.v[26]
+      cp1077_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_37 ?$assignment_call_40))
+      ex.debugBeginCondition(definition, 190)
       block:
         let value = arith(0'u32, [ex.v[60], ex.v[63]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 1006
+          ex.debugEndCondition(definition, true)
+          state = 1078
           continue
-        state = 1004
+        ex.debugEndCondition(definition, false)
+        state = 1076
         continue
-      state = 1006
+      state = 1078
       continue
-    of 1006:
-      state = 980
+    of 1078:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1052
       continue
-    of 1004:
-      ex.v[26] = cp1005_26
-      state = 1001
+    of 1076:
+      ex.v[26] = cp1077_26
+      state = 1073
       continue
-    of 1001:
-      ex.v[63] = cp1002_63
-      state = 998
+    of 1073:
+      ex.v[63] = cp1074_63
+      state = 1070
       continue
-    of 998:
-      ex.v[62] = cp999_62
-      state = 995
+    of 1070:
+      ex.v[62] = cp1071_62
+      state = 1067
       continue
-    of 995:
-      ex.v[61] = cp996_61
-      state = 992
+    of 1067:
+      ex.v[61] = cp1068_61
+      state = 1064
       continue
-    of 992:
-      ex.v[60] = cp993_60
-      state = 989
+    of 1064:
+      ex.v[60] = cp1065_60
+      state = 1061
       continue
-    of 989:
-      ex.v[59] = cp990_59
-      state = 986
+    of 1061:
+      ex.v[59] = cp1062_59
+      state = 1058
       continue
-    of 986:
-      ex.v[58] = cp987_58
-      state = 984
+    of 1058:
+      ex.v[58] = cp1059_58
+      state = 1056
       continue
-    of 984:
-      ex.v[26] = cp985_26
-      ex.v[58] = cp985_58
-      ex.v[59] = cp985_59
-      ex.v[60] = cp985_60
-      ex.v[61] = cp985_61
-      ex.v[62] = cp985_62
-      ex.v[63] = cp985_63
-      state = 982
+    of 1056:
+      ex.v[26] = cp1057_26
+      ex.v[58] = cp1057_58
+      ex.v[59] = cp1057_59
+      ex.v[60] = cp1057_60
+      ex.v[61] = cp1057_61
+      ex.v[62] = cp1057_62
+      ex.v[63] = cp1057_63
+      ex.debugEndCondition(definition, false)
+      state = 1054
       continue
-    of 982:
-      ex.v[26] = cp983_26
-      ex.v[58] = cp983_58
-      ex.v[59] = cp983_59
-      ex.v[60] = cp983_60
-      ex.v[61] = cp983_61
-      ex.v[62] = cp983_62
-      ex.v[63] = cp983_63
-      state = 981
+    of 1054:
+      ex.v[26] = cp1055_26
+      ex.v[58] = cp1055_58
+      ex.v[59] = cp1055_59
+      ex.v[60] = cp1055_60
+      ex.v[61] = cp1055_61
+      ex.v[62] = cp1055_62
+      ex.v[63] = cp1055_63
+      ex.debugEndCondition(definition, false)
+      state = 1053
       continue
-    of 981:
+    of 1053:
       ex.releaseRetry(fr)
-      state = 973
+      ex.debugEndBranch(definition, false)
+      state = 1045
       continue
-    of 980:
+    of 1052:
       if not ex.pushBranch(addr bc55):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1007
+      ex.debugCapturePendingTask(61)
+      state = 1081
       continue
-    of 1007:
+    of 1081:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7233,161 +8995,194 @@ proc method34(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 976
+        state = 1048
         continue
-      state = 1008
+      state = 1082
       continue
-    of 976:
+    of 1048:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms34)
-        state = 973
+        ex.debugEndBranch(definition, false)
+        state = 1045
         continue
-      state = 1007
+      state = 1081
       continue
-    of 1008:
+    of 1082:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 973:
+    of 1045:
       # branch type_failure
       ex.saveRetry(fr, ms34)
+      ex.debugBeginBranch(definition, 56)
       # (and (= ?value (+ false (call assignment_probe 1))))
-      cp1012_26 = ex.v[26]
-      cp1012_64 = ex.v[64]
-      cp1012_65 = ex.v[65]
-      cp1012_66 = ex.v[66]
-      cp1012_67 = ex.v[67]
+      cp1086_26 = ex.v[26]
+      cp1086_64 = ex.v[64]
+      cp1086_65 = ex.v[65]
+      cp1086_66 = ex.v[66]
+      cp1086_67 = ex.v[67]
+      ex.debugBeginCondition(definition, 191)
       # (and (= ?$assignment_call_41 (* false 1)) (= ?$assignment_call_42 1) (= ?$assignment_call_43 (call assignment_probe ?$assignment_call_42)) (= ?$assignment_call_44 (* ?$assignment_call_43 1)) (= ?value (+ ?$assignment_call_41 ?$assignment_call_44)))
-      cp1014_26 = ex.v[26]
-      cp1014_64 = ex.v[64]
-      cp1014_65 = ex.v[65]
-      cp1014_66 = ex.v[66]
-      cp1014_67 = ex.v[67]
+      cp1088_26 = ex.v[26]
+      cp1088_64 = ex.v[64]
+      cp1088_65 = ex.v[65]
+      cp1088_66 = ex.v[66]
+      cp1088_67 = ex.v[67]
+      ex.debugBeginCondition(definition, 192)
       if ex.v[26].isBound:
-        state = 1013
+        state = 1087
         continue
       # (= ?$assignment_call_41 (* false 1))
-      cp1016_64 = ex.v[64]
+      cp1090_64 = ex.v[64]
       # (= ?$assignment_call_41 (* false 1))
+      ex.debugBeginCondition(definition, 193)
       block:
         let value = arith(2'u32, [Atom(), newInt(1'i32)])
         if value.isBound and not ex.v[64].isBound:
           ex.v[64] = value
-          state = 1017
+          ex.debugEndCondition(definition, true)
+          state = 1091
           continue
-        state = 1015
+        ex.debugEndCondition(definition, false)
+        state = 1089
         continue
-      state = 1017
+      state = 1091
       continue
-    of 1017:
+    of 1091:
       # (= ?$assignment_call_42 1)
-      cp1019_65 = ex.v[65]
+      cp1093_65 = ex.v[65]
       # (= ?$assignment_call_42 1)
+      ex.debugBeginCondition(definition, 194)
       block:
         let value = sv109
         if value.isBound and not ex.v[65].isBound:
           ex.v[65] = value
-          state = 1020
+          ex.debugEndCondition(definition, true)
+          state = 1094
           continue
-        state = 1018
+        ex.debugEndCondition(definition, false)
+        state = 1092
         continue
-      state = 1020
+      state = 1094
       continue
-    of 1020:
+    of 1094:
       # (= ?$assignment_call_43 (call assignment_probe ?$assignment_call_42))
-      cp1022_66 = ex.v[66]
+      cp1096_66 = ex.v[66]
       # (= ?$assignment_call_43 (call assignment_probe ?$assignment_call_42))
+      ex.debugBeginCondition(definition, 195)
       if not ex.v[66].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[65]], addr cs21, factSymbols)
         if ok:
           ex.setIfChanged(66, callResult)
-          state = 1023
+          ex.debugEndCondition(definition, true)
+          state = 1097
           continue
-      state = 1021
+      ex.debugEndCondition(definition, false)
+      state = 1095
       continue
-    of 1023:
+    of 1097:
       # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
-      cp1025_67 = ex.v[67]
+      cp1099_67 = ex.v[67]
       # (= ?$assignment_call_44 (* ?$assignment_call_43 1))
+      ex.debugBeginCondition(definition, 196)
       block:
         let value = arith(2'u32, [ex.v[66], newInt(1'i32)])
         if value.isBound and not ex.v[67].isBound:
           ex.v[67] = value
-          state = 1026
+          ex.debugEndCondition(definition, true)
+          state = 1100
           continue
-        state = 1024
+        ex.debugEndCondition(definition, false)
+        state = 1098
         continue
-      state = 1026
+      state = 1100
       continue
-    of 1026:
+    of 1100:
       # (= ?value (+ ?$assignment_call_41 ?$assignment_call_44))
-      cp1028_26 = ex.v[26]
+      cp1102_26 = ex.v[26]
       # (= ?value (+ ?$assignment_call_41 ?$assignment_call_44))
+      ex.debugBeginCondition(definition, 197)
       block:
         let value = arith(0'u32, [ex.v[64], ex.v[67]])
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 1029
+          ex.debugEndCondition(definition, true)
+          state = 1103
           continue
-        state = 1027
+        ex.debugEndCondition(definition, false)
+        state = 1101
         continue
-      state = 1029
+      state = 1103
       continue
-    of 1029:
-      state = 1009
+    of 1103:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1083
       continue
-    of 1027:
-      ex.v[26] = cp1028_26
-      state = 1024
+    of 1101:
+      ex.v[26] = cp1102_26
+      state = 1098
       continue
-    of 1024:
-      ex.v[67] = cp1025_67
-      state = 1021
+    of 1098:
+      ex.v[67] = cp1099_67
+      state = 1095
       continue
-    of 1021:
-      ex.v[66] = cp1022_66
-      state = 1018
+    of 1095:
+      ex.v[66] = cp1096_66
+      state = 1092
       continue
-    of 1018:
-      ex.v[65] = cp1019_65
-      state = 1015
+    of 1092:
+      ex.v[65] = cp1093_65
+      state = 1089
       continue
-    of 1015:
-      ex.v[64] = cp1016_64
-      state = 1013
+    of 1089:
+      ex.v[64] = cp1090_64
+      state = 1087
       continue
-    of 1013:
-      ex.v[26] = cp1014_26
-      ex.v[64] = cp1014_64
-      ex.v[65] = cp1014_65
-      ex.v[66] = cp1014_66
-      ex.v[67] = cp1014_67
-      state = 1011
+    of 1087:
+      ex.v[26] = cp1088_26
+      ex.v[64] = cp1088_64
+      ex.v[65] = cp1088_65
+      ex.v[66] = cp1088_66
+      ex.v[67] = cp1088_67
+      ex.debugEndCondition(definition, false)
+      state = 1085
       continue
-    of 1011:
-      ex.v[26] = cp1012_26
-      ex.v[64] = cp1012_64
-      ex.v[65] = cp1012_65
-      ex.v[66] = cp1012_66
-      ex.v[67] = cp1012_67
-      state = 1010
+    of 1085:
+      ex.v[26] = cp1086_26
+      ex.v[64] = cp1086_64
+      ex.v[65] = cp1086_65
+      ex.v[66] = cp1086_66
+      ex.v[67] = cp1086_67
+      ex.debugEndCondition(definition, false)
+      state = 1084
       continue
-    of 1010:
+    of 1084:
       ex.releaseRetry(fr)
-      state = 974
+      ex.debugEndBranch(definition, false)
+      state = 1046
       continue
-    of 1009:
+    of 1083:
       if not ex.pushBranch(addr bc56):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1030
+      ex.debugCapturePendingTask(62)
+      state = 1106
       continue
-    of 1030:
+    of 1106:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7395,181 +9190,217 @@ proc method34(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 977
+        state = 1049
         continue
-      state = 1031
+      state = 1107
       continue
-    of 977:
+    of 1049:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms34)
-        state = 974
+        ex.debugEndBranch(definition, false)
+        state = 1046
         continue
-      state = 1030
+      state = 1106
       continue
-    of 1031:
+    of 1107:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 974:
+    of 1046:
       # branch argument_failure
       ex.saveRetry(fr, ms34)
+      ex.debugBeginBranch(definition, 57)
       # (and (= ?value (call assignment_probe (/ 1 0) (call assignment_probe 1))))
-      cp1035_26 = ex.v[26]
-      cp1035_68 = ex.v[68]
-      cp1035_69 = ex.v[69]
-      cp1035_70 = ex.v[70]
-      cp1035_71 = ex.v[71]
-      cp1035_72 = ex.v[72]
+      cp1111_26 = ex.v[26]
+      cp1111_68 = ex.v[68]
+      cp1111_69 = ex.v[69]
+      cp1111_70 = ex.v[70]
+      cp1111_71 = ex.v[71]
+      cp1111_72 = ex.v[72]
+      ex.debugBeginCondition(definition, 198)
       # (and (= ?$assignment_call_45 (* 1 1)) (= ?$assignment_call_46 (* 0 1)) (= ?$assignment_call_47 (/ ?$assignment_call_45 ?$assignment_call_46)) (= ?$assignment_call_48 1) (= ?$assignment_call_49 (call assignment_probe ?$assignment_call_48)) (= ?value (call assignment_probe ?$assignment_call_47 ?$assignment_call_49)))
-      cp1037_26 = ex.v[26]
-      cp1037_68 = ex.v[68]
-      cp1037_69 = ex.v[69]
-      cp1037_70 = ex.v[70]
-      cp1037_71 = ex.v[71]
-      cp1037_72 = ex.v[72]
+      cp1113_26 = ex.v[26]
+      cp1113_68 = ex.v[68]
+      cp1113_69 = ex.v[69]
+      cp1113_70 = ex.v[70]
+      cp1113_71 = ex.v[71]
+      cp1113_72 = ex.v[72]
+      ex.debugBeginCondition(definition, 199)
       if ex.v[26].isBound:
-        state = 1036
+        state = 1112
         continue
       # (= ?$assignment_call_45 (* 1 1))
-      cp1039_68 = ex.v[68]
+      cp1115_68 = ex.v[68]
       # (= ?$assignment_call_45 (* 1 1))
+      ex.debugBeginCondition(definition, 200)
       block:
         let value = arith(2'u32, [newInt(1'i32), newInt(1'i32)])
         if value.isBound and not ex.v[68].isBound:
           ex.v[68] = value
-          state = 1040
+          ex.debugEndCondition(definition, true)
+          state = 1116
           continue
-        state = 1038
+        ex.debugEndCondition(definition, false)
+        state = 1114
         continue
-      state = 1040
+      state = 1116
       continue
-    of 1040:
+    of 1116:
       # (= ?$assignment_call_46 (* 0 1))
-      cp1042_69 = ex.v[69]
+      cp1118_69 = ex.v[69]
       # (= ?$assignment_call_46 (* 0 1))
+      ex.debugBeginCondition(definition, 201)
       block:
         let value = arith(2'u32, [newInt(0'i32), newInt(1'i32)])
         if value.isBound and not ex.v[69].isBound:
           ex.v[69] = value
-          state = 1043
+          ex.debugEndCondition(definition, true)
+          state = 1119
           continue
-        state = 1041
+        ex.debugEndCondition(definition, false)
+        state = 1117
         continue
-      state = 1043
+      state = 1119
       continue
-    of 1043:
+    of 1119:
       # (= ?$assignment_call_47 (/ ?$assignment_call_45 ?$assignment_call_46))
-      cp1045_70 = ex.v[70]
+      cp1121_70 = ex.v[70]
       # (= ?$assignment_call_47 (/ ?$assignment_call_45 ?$assignment_call_46))
+      ex.debugBeginCondition(definition, 202)
       block:
         let value = arith(3'u32, [ex.v[68], ex.v[69]])
         if value.isBound and not ex.v[70].isBound:
           ex.v[70] = value
-          state = 1046
+          ex.debugEndCondition(definition, true)
+          state = 1122
           continue
-        state = 1044
+        ex.debugEndCondition(definition, false)
+        state = 1120
         continue
-      state = 1046
+      state = 1122
       continue
-    of 1046:
+    of 1122:
       # (= ?$assignment_call_48 1)
-      cp1048_71 = ex.v[71]
+      cp1124_71 = ex.v[71]
       # (= ?$assignment_call_48 1)
+      ex.debugBeginCondition(definition, 203)
       block:
         let value = sv110
         if value.isBound and not ex.v[71].isBound:
           ex.v[71] = value
-          state = 1049
+          ex.debugEndCondition(definition, true)
+          state = 1125
           continue
-        state = 1047
+        ex.debugEndCondition(definition, false)
+        state = 1123
         continue
-      state = 1049
+      state = 1125
       continue
-    of 1049:
+    of 1125:
       # (= ?$assignment_call_49 (call assignment_probe ?$assignment_call_48))
-      cp1051_72 = ex.v[72]
+      cp1127_72 = ex.v[72]
       # (= ?$assignment_call_49 (call assignment_probe ?$assignment_call_48))
+      ex.debugBeginCondition(definition, 204)
       if not ex.v[72].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[71]], addr cs22, factSymbols)
         if ok:
           ex.setIfChanged(72, callResult)
-          state = 1052
+          ex.debugEndCondition(definition, true)
+          state = 1128
           continue
-      state = 1050
+      ex.debugEndCondition(definition, false)
+      state = 1126
       continue
-    of 1052:
+    of 1128:
       # (= ?value (call assignment_probe ?$assignment_call_47 ?$assignment_call_49))
-      cp1054_26 = ex.v[26]
+      cp1130_26 = ex.v[26]
       # (= ?value (call assignment_probe ?$assignment_call_47 ?$assignment_call_49))
+      ex.debugBeginCondition(definition, 205)
       if not ex.v[26].isBound:
         let (callResult, ok) = ex.invoke(2, @[ex.v[70], ex.v[72]], addr cs23, factSymbols)
         if ok:
           ex.setIfChanged(26, callResult)
-          state = 1055
+          ex.debugEndCondition(definition, true)
+          state = 1131
           continue
-      state = 1053
+      ex.debugEndCondition(definition, false)
+      state = 1129
       continue
-    of 1055:
-      state = 1032
+    of 1131:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1108
       continue
-    of 1053:
-      ex.v[26] = cp1054_26
-      state = 1050
+    of 1129:
+      ex.v[26] = cp1130_26
+      state = 1126
       continue
-    of 1050:
-      ex.v[72] = cp1051_72
+    of 1126:
+      ex.v[72] = cp1127_72
+      state = 1123
+      continue
+    of 1123:
+      ex.v[71] = cp1124_71
+      state = 1120
+      continue
+    of 1120:
+      ex.v[70] = cp1121_70
+      state = 1117
+      continue
+    of 1117:
+      ex.v[69] = cp1118_69
+      state = 1114
+      continue
+    of 1114:
+      ex.v[68] = cp1115_68
+      state = 1112
+      continue
+    of 1112:
+      ex.v[26] = cp1113_26
+      ex.v[68] = cp1113_68
+      ex.v[69] = cp1113_69
+      ex.v[70] = cp1113_70
+      ex.v[71] = cp1113_71
+      ex.v[72] = cp1113_72
+      ex.debugEndCondition(definition, false)
+      state = 1110
+      continue
+    of 1110:
+      ex.v[26] = cp1111_26
+      ex.v[68] = cp1111_68
+      ex.v[69] = cp1111_69
+      ex.v[70] = cp1111_70
+      ex.v[71] = cp1111_71
+      ex.v[72] = cp1111_72
+      ex.debugEndCondition(definition, false)
+      state = 1109
+      continue
+    of 1109:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 1047
       continue
-    of 1047:
-      ex.v[71] = cp1048_71
-      state = 1044
-      continue
-    of 1044:
-      ex.v[70] = cp1045_70
-      state = 1041
-      continue
-    of 1041:
-      ex.v[69] = cp1042_69
-      state = 1038
-      continue
-    of 1038:
-      ex.v[68] = cp1039_68
-      state = 1036
-      continue
-    of 1036:
-      ex.v[26] = cp1037_26
-      ex.v[68] = cp1037_68
-      ex.v[69] = cp1037_69
-      ex.v[70] = cp1037_70
-      ex.v[71] = cp1037_71
-      ex.v[72] = cp1037_72
-      state = 1034
-      continue
-    of 1034:
-      ex.v[26] = cp1035_26
-      ex.v[68] = cp1035_68
-      ex.v[69] = cp1035_69
-      ex.v[70] = cp1035_70
-      ex.v[71] = cp1035_71
-      ex.v[72] = cp1035_72
-      state = 1033
-      continue
-    of 1033:
-      ex.releaseRetry(fr)
-      state = 975
-      continue
-    of 1032:
+    of 1108:
       if not ex.pushBranch(addr bc57):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1056
+      ex.debugCapturePendingTask(63)
+      state = 1134
       continue
-    of 1056:
+    of 1134:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7577,63 +9408,81 @@ proc method34(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 978
+        state = 1050
         continue
-      state = 1057
+      state = 1135
       continue
-    of 978:
+    of 1050:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms34)
-        state = 975
+        ex.debugEndBranch(definition, false)
+        state = 1047
         continue
-      state = 1056
+      state = 1134
       continue
-    of 1057:
+    of 1135:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 975:
+    of 1047:
       # branch fallback
+      ex.debugBeginBranch(definition, 58)
       # (and (= ?value 9))
-      cp1061_26 = ex.v[26]
+      cp1139_26 = ex.v[26]
+      ex.debugBeginCondition(definition, 206)
       # (= ?value 9)
-      cp1063_26 = ex.v[26]
+      cp1141_26 = ex.v[26]
       # (= ?value 9)
+      ex.debugBeginCondition(definition, 207)
       block:
         let value = sv111
         if value.isBound and not ex.v[26].isBound:
           ex.v[26] = value
-          state = 1064
+          ex.debugEndCondition(definition, true)
+          state = 1142
           continue
-        state = 1062
+        ex.debugEndCondition(definition, false)
+        state = 1140
         continue
-      state = 1064
+      state = 1142
       continue
-    of 1064:
-      state = 1058
+    of 1142:
+      ex.debugEndCondition(definition, true)
+      state = 1136
       continue
-    of 1062:
-      ex.v[26] = cp1063_26
-      state = 1060
+    of 1140:
+      ex.v[26] = cp1141_26
+      state = 1138
       continue
-    of 1060:
-      ex.v[26] = cp1061_26
-      state = 1059
+    of 1138:
+      ex.v[26] = cp1139_26
+      ex.debugEndCondition(definition, false)
+      state = 1137
       continue
-    of 1059:
-      state = 971
+    of 1137:
+      ex.debugEndBranch(definition, false)
+      state = 1043
       continue
-    of 1058:
+    of 1136:
       if not ex.pushBranch(addr bc58):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1065
+      ex.debugCapturePendingTask(64)
+      state = 1144
       continue
-    of 1065:
+    of 1144:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -7641,18 +9490,23 @@ proc method34(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 979
+        state = 1051
         continue
-      state = 1066
+      state = 1145
       continue
-    of 979:
+    of 1051:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1065
+      state = 1144
       continue
-    of 1066:
+    of 1145:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 971:
+    of 1043:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -7660,136 +9514,165 @@ proc method34(ex: Exec): int {.nimcall.} =
 # method35: assignment_axiom/0
 proc method35(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1073_23: Atom
-  var cp1075_23: Atom
-  var as209_1074: AxiomScope
-  var as209_1074Frame: uint64
-  var cp1078_9: Atom
-  var cp1078_10: Atom
-  var cp1080_10: Atom
-  var cp1083_9: Atom
-  var fc1084: uint32
-  var cp1089_9: Atom
-  var cp1089_10: Atom
-  var as209_1074Copy: AxiomScope
+  var cp1152_23: Atom
+  var cp1154_23: Atom
+  var as209_1153: AxiomScope
+  var as209_1153Frame: uint64
+  var cp1157_9: Atom
+  var cp1157_10: Atom
+  var cp1159_10: Atom
+  var cp1162_9: Atom
+  var fc1163: uint32
+  var cp1169_9: Atom
+  var cp1169_10: Atom
+  var as209_1153Copy: AxiomScope
   var state = 0
   case fr.resume
-  of 1: state = 1069
+  of 1: state = 1148
   else: discard
   while true:
     case state
     of 0:
-      state = 1068
+      ex.debugBeginMethod(definition, 35)
+      state = 1147
       continue
-    of 1068:
+    of 1147:
       # branch success
+      ex.debugBeginBranch(definition, 59)
       # (and (#assignment_local ?result))
-      cp1073_23 = ex.v[23]
+      cp1152_23 = ex.v[23]
+      ex.debugBeginCondition(definition, 208)
       # (#assignment_local ?result)
-      cp1075_23 = ex.v[23]
+      cp1154_23 = ex.v[23]
+      ex.debugBeginCondition(definition, 209)
       if ex.v[23].isBound:
-        state = 1074
+        state = 1153
         continue
-      as209_1074.saved.setLen(2)
-      as209_1074.args.setLen(1)
-      axiomBegin209(ex, as209_1074)
-      as209_1074Frame = ex.currentFrameID
+      as209_1153.saved.setLen(2)
+      as209_1153.args.setLen(1)
+      axiomBegin209(ex, as209_1153)
+      as209_1153Frame = ex.currentFrameID
       # (and (= ?local 2) (assignment_candidate ?out_result) (== ?out_result ?local))
-      cp1078_9 = ex.v[9]
-      cp1078_10 = ex.v[10]
+      cp1157_9 = ex.v[9]
+      cp1157_10 = ex.v[10]
+      ex.debugBeginCondition(definition, 28)
       # (= ?local 2)
-      cp1080_10 = ex.v[10]
+      cp1159_10 = ex.v[10]
       # (= ?local 2)
+      ex.debugBeginCondition(definition, 29)
       block:
         let value = sv17
         if value.isBound and not ex.v[10].isBound:
           ex.v[10] = value
-          state = 1081
+          ex.debugEndCondition(definition, true)
+          state = 1160
           continue
-        state = 1079
+        ex.debugEndCondition(definition, false)
+        state = 1158
         continue
-      state = 1081
+      state = 1160
       continue
-    of 1081:
+    of 1160:
       # (assignment_candidate ?out_result)
-      cp1083_9 = ex.v[9]
-      fc1084 = 0
-      state = 1085
+      cp1162_9 = ex.v[9]
+      fc1163 = 0
+      state = 1164
       continue
-    of 1085:
-      inc fc1084
-      if not factChoice30(ex, fc1084 - 1):
-        state = 1082
+    of 1164:
+      ex.debugBeginCondition(definition, 30)
+      inc fc1163
+      if not factChoice30(ex, fc1163 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1161
         continue
+      ex.debugEndCondition(definition, true)
       # (== ?out_result ?local)
       # (== ?out_result ?local)
+      ex.debugBeginCondition(definition, 31)
       if compare(ex.v[9], ex.v[10], 0'u32):
-        state = 1088
+        ex.debugEndCondition(definition, true)
+        state = 1167
         continue
-      state = 1086
+      ex.debugEndCondition(definition, false)
+      state = 1165
       continue
-    of 1088:
-      cp1089_9 = ex.v[9]
-      cp1089_10 = ex.v[10]
-      as209_1074Copy = as209_1074
-      if not axiomEnd209(ex, true, as209_1074Copy):
-        state = 1090
+    of 1167:
+      ex.debugEndCondition(definition, true)
+      cp1169_9 = ex.v[9]
+      cp1169_10 = ex.v[10]
+      as209_1153Copy = as209_1153
+      if not axiomEnd209(ex, true, as209_1153Copy):
+        state = 1170
         continue
-      state = 1070
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1149
       continue
-    of 1090:
-      ex.v[23] = cp1075_23
-      cp1075_23 = ex.v[23]
-      ex.v[9] = cp1089_9
-      ex.v[10] = cp1089_10
-      ex.currentFrameID = as209_1074Frame
-      state = 1086
+    of 1170:
+      ex.v[23] = cp1154_23
+      cp1154_23 = ex.v[23]
+      ex.v[9] = cp1169_9
+      ex.v[10] = cp1169_10
+      ex.currentFrameID = as209_1153Frame
+      ex.debugBeginAxiom(definition, 7)
+      state = 1168
       continue
-    of 1086:
-      state = 1084
+    of 1168:
+      ex.debugBeginCondition(definition, 28)
+      state = 1165
       continue
-    of 1084:
+    of 1165:
+      state = 1163
+      continue
+    of 1163:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1082
+        state = 1161
         continue
-      ex.v[9] = cp1083_9
-      cp1083_9 = ex.v[9]
-      state = 1085
+      ex.v[9] = cp1162_9
+      cp1162_9 = ex.v[9]
+      state = 1164
       continue
-    of 1082:
-      ex.v[9] = cp1083_9
-      state = 1079
+    of 1161:
+      ex.v[9] = cp1162_9
+      state = 1158
       continue
-    of 1079:
-      ex.v[10] = cp1080_10
-      state = 1077
+    of 1158:
+      ex.v[10] = cp1159_10
+      state = 1156
       continue
-    of 1077:
-      ex.v[9] = cp1078_9
-      ex.v[10] = cp1078_10
-      state = 1076
+    of 1156:
+      ex.v[9] = cp1157_9
+      ex.v[10] = cp1157_10
+      ex.debugEndCondition(definition, false)
+      state = 1155
       continue
-    of 1076:
-      axiomEnd209(ex, false, as209_1074)
-      state = 1074
+    of 1155:
+      axiomEnd209(ex, false, as209_1153)
+      state = 1153
       continue
-    of 1074:
-      ex.v[23] = cp1075_23
-      state = 1072
+    of 1153:
+      ex.v[23] = cp1154_23
+      ex.debugEndCondition(definition, false)
+      state = 1151
       continue
-    of 1072:
-      ex.v[23] = cp1073_23
-      state = 1071
+    of 1151:
+      ex.v[23] = cp1152_23
+      ex.debugEndCondition(definition, false)
+      state = 1150
       continue
-    of 1071:
-      state = 1067
+    of 1150:
+      ex.debugEndBranch(definition, false)
+      state = 1146
       continue
-    of 1070:
+    of 1149:
       if not ex.pushBranch(addr bc59):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1091
+      ex.debugCapturePendingTask(65)
+      state = 1173
       continue
-    of 1091:
+    of 1173:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -7797,18 +9680,23 @@ proc method35(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1069
+        state = 1148
         continue
-      state = 1092
+      state = 1174
       continue
-    of 1069:
+    of 1148:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1091
+      state = 1173
       continue
-    of 1092:
+    of 1174:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1067:
+    of 1146:
+      ex.debugEndMethod(definition, false)
       return 0
     else:
       return 0
@@ -7858,6 +9746,7 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym35 and argumentCount == 0:
     entry = 35
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 18:
@@ -7893,11 +9782,16 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   of 35:
     runResult = ex.run(method35)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task0)], totalRestore: 0)
@@ -7975,3 +9869,2487 @@ definition = Definition(abiVersion: ABIVersion, features: featureRuntimeBacktrac
     Requirement(name: "add", source: Source(domain: "NumericExpressionsDemo", file: "Domains/Test/numeric_expressions.domain", line: 96, column: 21)),
     Requirement(name: "add", source: Source(domain: "NumericExpressionsDemo", file: "Domains/Test/numeric_expressions.domain", line: 97, column: 21)),
     Requirement(name: "inc", source: Source(domain: "NumericExpressionsDemo", file: "Domains/Test/numeric_expressions.domain", line: 98, column: 21))])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/numeric_expressions.domain",
+      strings: @[
+        "NumericExpressionsDemo::accept_arithmetic_arguments",
+        "inp_add",
+        "?inp_add",
+        "inp_subtract",
+        "?inp_subtract",
+        "inp_multiply",
+        "?inp_multiply",
+        "inp_divide",
+        "?inp_divide",
+        "inp_modulo",
+        "?inp_modulo",
+        "inp_increment",
+        "?inp_increment",
+        "inp_decrement",
+        "?inp_decrement",
+        "3",
+        "6",
+        "2",
+        "7",
+        "NumericExpressionsDemo::accept_arithmetic_io",
+        "io_value",
+        "?io_value",
+        "NumericExpressionsDemo::produce_arithmetic_output",
+        "out_value",
+        "?out_value",
+        "generated_number",
+        "NumericExpressionsDemo::assignment_local",
+        "out_result",
+        "?out_result",
+        "local",
+        "?local",
+        "assignment_candidate",
+        "accept_arithmetic_arguments",
+        "accept_arithmetic_io",
+        "produce_arithmetic_output",
+        "assignment_local",
+        "NumericExpressionsDemo::run",
+        "numeric_expressions_succeed",
+        "time",
+        "?time",
+        "plan_start_time",
+        "?plan_start_time",
+        "plan_duration",
+        "?plan_duration",
+        "",
+        "(+ ?plan_start_time ?plan_duration)",
+        "(+ 1 2 3)",
+        "1",
+        "(- 10 3 2)",
+        "10",
+        "5",
+        "(- 5)",
+        "0",
+        "(* 2 3 4)",
+        "4",
+        "24",
+        "(/ 20 2 2)",
+        "20",
+        "(% 17 5)",
+        "17",
+        "(+ 1 2.5)",
+        "2.5",
+        "3.5",
+        "(++ 41)",
+        "41",
+        "42",
+        "(-- 41)",
+        "40",
+        "(++ 2.5)",
+        "(-- (++ 10))",
+        "(++ 10)",
+        "(* (- ?time 1) 2)",
+        "(- ?time 1)",
+        "(/ 100 2)",
+        "100",
+        "numeric_result",
+        "!numeric_result",
+        "success",
+        "\"success\"",
+        "numeric_expressions_failed",
+        "failure",
+        "\"failure\"",
+        "NumericExpressionsDemo::division_by_zero",
+        "invalid_expression_does_not_succeed",
+        "(/ 1 0)",
+        "unexpected_success",
+        "\"unexpected_success\"",
+        "invalid_expression_falls_back",
+        "controlled_failure",
+        "\"controlled_failure\"",
+        "NumericExpressionsDemo::invalid_operand_type",
+        "(+ invalid 1)",
+        "invalid",
+        "NumericExpressionsDemo::argument_expressions",
+        "exercise_all_argument_contexts",
+        "compound_arithmetic_arguments",
+        "(+)",
+        "(+ 1 2)",
+        "(-)",
+        "(- 10 4)",
+        "(*)",
+        "(* 2 3)",
+        "(/)",
+        "(/ 12 2)",
+        "12",
+        "(%)",
+        "(% 8 3)",
+        "8",
+        "(++)",
+        "(++ 6)",
+        "(--)",
+        "(-- 8)",
+        "primitive_arithmetic_arguments",
+        "!primitive_arithmetic_arguments",
+        "callterm_arithmetic_arguments",
+        "!callterm_arithmetic_arguments",
+        "add",
+        "(call add (+ 1 2) (- 10 4))",
+        "__task_call_result_0",
+        "(call add (* 2 3) (/ 12 2))",
+        "__task_call_result_1",
+        "(call add (% 8 3) (++ 6))",
+        "__task_call_result_2",
+        "inc",
+        "(call inc (-- 8))",
+        "__task_call_result_3",
+        "recursive_method",
+        "NumericExpressionsDemo::compound_arithmetic_arguments",
+        "emit_compound_arguments",
+        "!compound_arithmetic_arguments",
+        "NumericExpressionsDemo::recursive_method",
+        "inp_index",
+        "?inp_index",
+        "inp_count",
+        "?inp_count",
+        "continue_recursion",
+        "(++ ?inp_index)",
+        "finish_recursion",
+        "recursive_arithmetic_result",
+        "!recursive_arithmetic_result",
+        "NumericExpressionsDemo::axiom_argument_expressions",
+        "exercise_axiom_arguments",
+        "axiom_arithmetic_arguments",
+        "!axiom_arithmetic_arguments",
+        "NumericExpressionsDemo::axiom_output_expression",
+        "matching_output",
+        "axiom_output_expression",
+        "!axiom_output_expression",
+        "NumericExpressionsDemo::axiom_output_mismatch",
+        "unexpected_match",
+        "(++ 7)",
+        "axiom_output_mismatch",
+        "!axiom_output_mismatch",
+        "expected_failure",
+        "NumericExpressionsDemo::axiom_io_mismatch",
+        "axiom_io_mismatch",
+        "!axiom_io_mismatch",
+        "NumericExpressionsDemo::axiom_invalid_input_expression",
+        "axiom_invalid_input_expression",
+        "!axiom_invalid_input_expression",
+        "NumericExpressionsDemo::axiom_invalid_output_expression",
+        "axiom_invalid_output_expression",
+        "!axiom_invalid_output_expression",
+        "NumericExpressionsDemo::assignment_values",
+        "kind",
+        "?kind",
+        "main_threat",
+        "number",
+        "?number",
+        "(+ 2 3)",
+        "copy",
+        "?copy",
+        "result",
+        "?result",
+        "assignment_probe",
+        "flag",
+        "?flag",
+        "false",
+        "assignment_values",
+        "!assignment_values",
+        "NumericExpressionsDemo::assignment_backtracking",
+        "candidate",
+        "?candidate",
+        "value",
+        "?value",
+        "assignment_result",
+        "!assignment_result",
+        "NumericExpressionsDemo::assignment_nested_calls",
+        "$assignment_call_4",
+        "$assignment_call_5",
+        "$assignment_call_6",
+        "$assignment_call_7",
+        "$assignment_call_8",
+        "$assignment_call_9",
+        "?$assignment_call_4",
+        "?$assignment_call_5",
+        "?$assignment_call_6",
+        "(* ?$assignment_call_5 1)",
+        "?$assignment_call_7",
+        "?$assignment_call_8",
+        "?$assignment_call_9",
+        "(* ?$assignment_call_8 1)",
+        "(+ ?$assignment_call_6 ?$assignment_call_9)",
+        "NumericExpressionsDemo::assignment_failure",
+        "failed",
+        "unexpected",
+        "!unexpected",
+        "fallback",
+        "9",
+        "NumericExpressionsDemo::assignment_ordered_failure",
+        "arithmetic_failure",
+        "$assignment_call_10",
+        "$assignment_call_11",
+        "$assignment_call_12",
+        "$assignment_call_13",
+        "$assignment_call_14",
+        "$assignment_call_15",
+        "?$assignment_call_10",
+        "(* 1 1)",
+        "?$assignment_call_11",
+        "(* 0 1)",
+        "?$assignment_call_12",
+        "(* (/ ?$assignment_call_10 ?$assignment_call_11) 1)",
+        "(/ ?$assignment_call_10 ?$assignment_call_11)",
+        "?$assignment_call_13",
+        "?$assignment_call_14",
+        "?$assignment_call_15",
+        "(* ?$assignment_call_14 1)",
+        "(+ ?$assignment_call_12 ?$assignment_call_15)",
+        "type_failure",
+        "$assignment_call_16",
+        "$assignment_call_17",
+        "$assignment_call_18",
+        "$assignment_call_19",
+        "?$assignment_call_16",
+        "(* false 1)",
+        "?$assignment_call_17",
+        "?$assignment_call_18",
+        "?$assignment_call_19",
+        "(* ?$assignment_call_18 1)",
+        "(+ ?$assignment_call_16 ?$assignment_call_19)",
+        "argument_failure",
+        "$assignment_call_20",
+        "$assignment_call_21",
+        "$assignment_call_22",
+        "$assignment_call_23",
+        "$assignment_call_24",
+        "?$assignment_call_20",
+        "?$assignment_call_21",
+        "?$assignment_call_22",
+        "(/ ?$assignment_call_20 ?$assignment_call_21)",
+        "?$assignment_call_23",
+        "?$assignment_call_24",
+        "NumericExpressionsDemo::assignment_axiom",
+        "run",
+        "division_by_zero",
+        "invalid_operand_type",
+        "argument_expressions",
+        "__task_call_result_25",
+        "__task_call_result_26",
+        "__task_call_result_27",
+        "__task_call_result_28",
+        "axiom_argument_expressions",
+        "assignment_backtracking",
+        "assignment_nested_calls",
+        "$assignment_call_29",
+        "$assignment_call_30",
+        "$assignment_call_31",
+        "$assignment_call_32",
+        "$assignment_call_33",
+        "$assignment_call_34",
+        "?$assignment_call_29",
+        "?$assignment_call_30",
+        "?$assignment_call_31",
+        "(* ?$assignment_call_30 1)",
+        "?$assignment_call_32",
+        "?$assignment_call_33",
+        "?$assignment_call_34",
+        "(* ?$assignment_call_33 1)",
+        "(+ ?$assignment_call_31 ?$assignment_call_34)",
+        "assignment_failure",
+        "assignment_ordered_failure",
+        "$assignment_call_35",
+        "$assignment_call_36",
+        "$assignment_call_37",
+        "$assignment_call_38",
+        "$assignment_call_39",
+        "$assignment_call_40",
+        "?$assignment_call_35",
+        "?$assignment_call_36",
+        "?$assignment_call_37",
+        "(* (/ ?$assignment_call_35 ?$assignment_call_36) 1)",
+        "(/ ?$assignment_call_35 ?$assignment_call_36)",
+        "?$assignment_call_38",
+        "?$assignment_call_39",
+        "?$assignment_call_40",
+        "(* ?$assignment_call_39 1)",
+        "(+ ?$assignment_call_37 ?$assignment_call_40)",
+        "$assignment_call_41",
+        "$assignment_call_42",
+        "$assignment_call_43",
+        "$assignment_call_44",
+        "?$assignment_call_41",
+        "?$assignment_call_42",
+        "?$assignment_call_43",
+        "?$assignment_call_44",
+        "(* ?$assignment_call_43 1)",
+        "(+ ?$assignment_call_41 ?$assignment_call_44)",
+        "$assignment_call_45",
+        "$assignment_call_46",
+        "$assignment_call_47",
+        "$assignment_call_48",
+        "$assignment_call_49",
+        "?$assignment_call_45",
+        "?$assignment_call_46",
+        "?$assignment_call_47",
+        "(/ ?$assignment_call_45 ?$assignment_call_46)",
+        "?$assignment_call_48",
+        "?$assignment_call_49",
+        "assignment_axiom"],
+      values: @[
+        1'u32, 2, 1, 238, 0,
+        1, 4, 3, 238, 1,
+        1, 6, 5, 238, 2,
+        1, 8, 7, 238, 3,
+        1, 10, 9, 239, 4,
+        1, 12, 11, 239, 5,
+        1, 14, 13, 239, 6,
+        1, 2, 1, 241, 0,
+        0, 15, 15, 241, NoIndex,
+        1, 4, 3, 242, 1,
+        0, 16, 16, 242, NoIndex,
+        1, 6, 5, 243, 2,
+        0, 16, 16, 243, NoIndex,
+        1, 8, 7, 244, 3,
+        0, 16, 16, 244, NoIndex,
+        1, 10, 9, 245, 4,
+        0, 17, 17, 245, NoIndex,
+        1, 12, 11, 246, 5,
+        0, 18, 18, 246, NoIndex,
+        1, 14, 13, 247, 6,
+        0, 18, 18, 247, NoIndex,
+        1, 21, 20, 251, 7,
+        1, 21, 20, 253, 7,
+        0, 18, 18, 253, NoIndex,
+        1, 24, 23, 257, 8,
+        1, 24, 23, 259, 8,
+        1, 28, 27, 309, 9,
+        1, 30, 29, 311, 10,
+        0, 17, 17, 311, NoIndex,
+        1, 28, 27, 312, 9,
+        1, 28, 27, 313, 9,
+        1, 30, 29, 313, 10,
+        1, 2, 1, 238, 0,
+        1, 4, 3, 238, 1,
+        1, 6, 5, 238, 2,
+        1, 8, 7, 238, 3,
+        1, 10, 9, 239, 4,
+        1, 12, 11, 239, 5,
+        1, 14, 13, 239, 6,
+        1, 2, 1, 241, 0,
+        0, 15, 15, 241, NoIndex,
+        1, 4, 3, 242, 1,
+        0, 16, 16, 242, NoIndex,
+        1, 6, 5, 243, 2,
+        0, 16, 16, 243, NoIndex,
+        1, 8, 7, 244, 3,
+        0, 16, 16, 244, NoIndex,
+        1, 10, 9, 245, 4,
+        0, 17, 17, 245, NoIndex,
+        1, 12, 11, 246, 5,
+        0, 18, 18, 246, NoIndex,
+        1, 14, 13, 247, 6,
+        0, 18, 18, 247, NoIndex,
+        1, 21, 20, 251, 7,
+        1, 21, 20, 253, 7,
+        0, 18, 18, 253, NoIndex,
+        1, 24, 23, 257, 8,
+        1, 24, 23, 259, 8,
+        1, 28, 27, 309, 9,
+        1, 30, 29, 311, 10,
+        0, 17, 17, 311, NoIndex,
+        1, 28, 27, 312, 9,
+        1, 28, 27, 313, 9,
+        1, 30, 29, 313, 10,
+        1, 39, 38, 6, 11,
+        1, 41, 40, 7, 12,
+        1, 43, 42, 8, 13,
+        1, 39, 38, 9, 11,
+        0, 45, 44, 9, NoIndex,
+        0, 46, 44, 10, NoIndex,
+        0, 16, 16, 10, NoIndex,
+        0, 48, 44, 11, NoIndex,
+        0, 50, 50, 11, NoIndex,
+        0, 51, 44, 12, NoIndex,
+        0, 52, 52, 12, NoIndex,
+        0, 53, 44, 13, NoIndex,
+        0, 55, 55, 13, NoIndex,
+        0, 56, 44, 14, NoIndex,
+        0, 50, 50, 14, NoIndex,
+        0, 58, 44, 15, NoIndex,
+        0, 17, 17, 15, NoIndex,
+        0, 60, 44, 16, NoIndex,
+        0, 62, 62, 16, NoIndex,
+        0, 63, 44, 17, NoIndex,
+        0, 65, 65, 17, NoIndex,
+        0, 66, 44, 18, NoIndex,
+        0, 67, 67, 18, NoIndex,
+        0, 68, 44, 19, NoIndex,
+        0, 62, 62, 19, NoIndex,
+        0, 69, 44, 20, NoIndex,
+        0, 49, 49, 20, NoIndex,
+        0, 71, 44, 21, NoIndex,
+        0, 73, 44, 21, NoIndex,
+        2, 78, 77, 24, NoIndex,
+        2, 81, 80, 31, NoIndex,
+        0, 84, 44, 39, NoIndex,
+        0, 52, 52, 39, NoIndex,
+        2, 86, 85, 42, NoIndex,
+        2, 89, 88, 49, NoIndex,
+        0, 91, 44, 57, NoIndex,
+        0, 17, 17, 57, NoIndex,
+        2, 86, 85, 60, NoIndex,
+        2, 89, 88, 67, NoIndex,
+        0, 97, 44, 77, NoIndex,
+        0, 99, 44, 78, NoIndex,
+        0, 101, 44, 79, NoIndex,
+        0, 103, 44, 80, NoIndex,
+        0, 106, 44, 81, NoIndex,
+        0, 109, 44, 82, NoIndex,
+        0, 111, 44, 83, NoIndex,
+        0, 97, 44, 86, NoIndex,
+        0, 99, 44, 87, NoIndex,
+        0, 101, 44, 88, NoIndex,
+        0, 103, 44, 89, NoIndex,
+        0, 106, 44, 90, NoIndex,
+        0, 109, 44, 91, NoIndex,
+        0, 111, 44, 92, NoIndex,
+        4, 117, 118, 95, 14,
+        4, 119, 120, 96, 15,
+        4, 121, 122, 97, 16,
+        4, 124, 125, 98, 17,
+        0, 52, 52, 100, NoIndex,
+        0, 17, 17, 100, NoIndex,
+        1, 2, 1, 106, 0,
+        1, 4, 3, 106, 1,
+        1, 6, 5, 106, 2,
+        1, 8, 7, 106, 3,
+        1, 10, 9, 107, 4,
+        1, 12, 11, 107, 5,
+        1, 14, 13, 107, 6,
+        1, 2, 1, 112, 0,
+        1, 4, 3, 112, 1,
+        1, 6, 5, 112, 2,
+        1, 8, 7, 112, 3,
+        1, 10, 9, 113, 4,
+        1, 12, 11, 113, 5,
+        1, 14, 13, 113, 6,
+        1, 132, 131, 118, 18,
+        1, 134, 133, 118, 19,
+        1, 132, 131, 121, 18,
+        1, 134, 133, 121, 19,
+        0, 136, 44, 124, NoIndex,
+        1, 134, 133, 124, 19,
+        1, 132, 131, 129, 18,
+        1, 134, 133, 129, 19,
+        1, 132, 131, 132, 18,
+        0, 97, 44, 141, NoIndex,
+        0, 99, 44, 142, NoIndex,
+        0, 101, 44, 143, NoIndex,
+        0, 103, 44, 144, NoIndex,
+        0, 106, 44, 145, NoIndex,
+        0, 109, 44, 146, NoIndex,
+        0, 111, 44, 147, NoIndex,
+        0, 109, 44, 149, NoIndex,
+        2, 78, 77, 152, NoIndex,
+        0, 109, 44, 160, NoIndex,
+        2, 78, 77, 163, NoIndex,
+        0, 150, 44, 171, NoIndex,
+        2, 86, 85, 174, NoIndex,
+        2, 89, 88, 180, NoIndex,
+        0, 150, 44, 188, NoIndex,
+        2, 86, 85, 191, NoIndex,
+        2, 89, 88, 197, NoIndex,
+        0, 84, 44, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 17, 17, 206, NoIndex,
+        0, 18, 18, 206, NoIndex,
+        0, 18, 18, 206, NoIndex,
+        2, 86, 85, 209, NoIndex,
+        2, 89, 88, 215, NoIndex,
+        0, 84, 44, 223, NoIndex,
+        2, 86, 85, 226, NoIndex,
+        2, 89, 88, 232, NoIndex,
+        1, 165, 164, 266, 20,
+        0, 166, 166, 266, NoIndex,
+        1, 168, 167, 267, 21,
+        0, 169, 44, 267, NoIndex,
+        1, 171, 170, 268, 22,
+        1, 168, 167, 268, 21,
+        1, 173, 172, 269, 23,
+        1, 171, 170, 269, 22,
+        1, 176, 175, 270, 24,
+        0, 177, 177, 270, NoIndex,
+        1, 165, 164, 272, 20,
+        1, 168, 167, 272, 21,
+        1, 173, 172, 272, 23,
+        1, 176, 175, 272, 24,
+        1, 182, 181, 279, 25,
+        1, 184, 183, 280, 26,
+        1, 182, 181, 280, 25,
+        1, 184, 183, 281, 26,
+        0, 15, 15, 281, NoIndex,
+        1, 184, 183, 283, 26,
+        1, 194, 188, 289, 27,
+        0, 47, 47, 289, NoIndex,
+        1, 195, 189, 289, 28,
+        1, 194, 188, 289, 27,
+        1, 196, 190, 289, 29,
+        0, 197, 44, 289, NoIndex,
+        1, 198, 191, 289, 30,
+        0, 17, 17, 289, NoIndex,
+        1, 199, 192, 289, 31,
+        1, 198, 191, 289, 30,
+        1, 200, 193, 289, 32,
+        0, 201, 44, 289, NoIndex,
+        1, 184, 183, 289, 26,
+        0, 202, 44, 289, NoIndex,
+        1, 184, 183, 289, 26,
+        1, 184, 183, 290, 26,
+        1, 184, 183, 295, 26,
+        0, 84, 44, 295, NoIndex,
+        1, 184, 183, 295, 26,
+        1, 184, 183, 296, 26,
+        0, 208, 208, 296, NoIndex,
+        1, 184, 183, 296, 26,
+        1, 217, 211, 300, 33,
+        0, 218, 44, 300, NoIndex,
+        1, 219, 212, 300, 34,
+        0, 220, 44, 300, NoIndex,
+        1, 221, 213, 300, 35,
+        0, 222, 44, 300, NoIndex,
+        1, 224, 214, 300, 36,
+        0, 47, 47, 300, NoIndex,
+        1, 225, 215, 300, 37,
+        1, 224, 214, 300, 36,
+        1, 226, 216, 300, 38,
+        0, 227, 44, 300, NoIndex,
+        1, 184, 183, 300, 26,
+        0, 228, 44, 300, NoIndex,
+        1, 184, 183, 300, 26,
+        1, 184, 183, 300, 26,
+        1, 234, 230, 301, 39,
+        0, 235, 44, 301, NoIndex,
+        1, 236, 231, 301, 40,
+        0, 47, 47, 301, NoIndex,
+        1, 237, 232, 301, 41,
+        1, 236, 231, 301, 40,
+        1, 238, 233, 301, 42,
+        0, 239, 44, 301, NoIndex,
+        1, 184, 183, 301, 26,
+        0, 240, 44, 301, NoIndex,
+        1, 184, 183, 301, 26,
+        1, 184, 183, 301, 26,
+        1, 247, 242, 302, 43,
+        0, 218, 44, 302, NoIndex,
+        1, 248, 243, 302, 44,
+        0, 220, 44, 302, NoIndex,
+        1, 249, 244, 302, 45,
+        0, 250, 44, 302, NoIndex,
+        1, 251, 245, 302, 46,
+        0, 47, 47, 302, NoIndex,
+        1, 252, 246, 302, 47,
+        1, 251, 245, 302, 46,
+        1, 184, 183, 302, 26,
+        1, 249, 244, 302, 45,
+        1, 252, 246, 302, 47,
+        1, 184, 183, 302, 26,
+        1, 184, 183, 302, 26,
+        1, 184, 183, 303, 26,
+        0, 208, 208, 303, NoIndex,
+        1, 184, 183, 303, 26,
+        1, 173, 172, 307, 23,
+        1, 173, 172, 307, 23,
+        1, 39, 38, 6, 11,
+        1, 41, 40, 7, 12,
+        1, 43, 42, 8, 13,
+        1, 39, 38, 9, 11,
+        0, 45, 44, 9, NoIndex,
+        0, 46, 44, 10, NoIndex,
+        0, 16, 16, 10, NoIndex,
+        0, 48, 44, 11, NoIndex,
+        0, 50, 50, 11, NoIndex,
+        0, 51, 44, 12, NoIndex,
+        0, 52, 52, 12, NoIndex,
+        0, 53, 44, 13, NoIndex,
+        0, 55, 55, 13, NoIndex,
+        0, 56, 44, 14, NoIndex,
+        0, 50, 50, 14, NoIndex,
+        0, 58, 44, 15, NoIndex,
+        0, 17, 17, 15, NoIndex,
+        0, 60, 44, 16, NoIndex,
+        0, 62, 62, 16, NoIndex,
+        0, 63, 44, 17, NoIndex,
+        0, 65, 65, 17, NoIndex,
+        0, 66, 44, 18, NoIndex,
+        0, 67, 67, 18, NoIndex,
+        0, 68, 44, 19, NoIndex,
+        0, 62, 62, 19, NoIndex,
+        0, 69, 44, 20, NoIndex,
+        0, 49, 49, 20, NoIndex,
+        0, 71, 44, 21, NoIndex,
+        0, 73, 44, 21, NoIndex,
+        2, 78, 77, 24, NoIndex,
+        2, 81, 80, 31, NoIndex,
+        0, 84, 44, 39, NoIndex,
+        0, 52, 52, 39, NoIndex,
+        2, 86, 85, 42, NoIndex,
+        2, 89, 88, 49, NoIndex,
+        0, 91, 44, 57, NoIndex,
+        0, 17, 17, 57, NoIndex,
+        2, 86, 85, 60, NoIndex,
+        2, 89, 88, 67, NoIndex,
+        0, 97, 44, 77, NoIndex,
+        0, 99, 44, 78, NoIndex,
+        0, 101, 44, 79, NoIndex,
+        0, 103, 44, 80, NoIndex,
+        0, 106, 44, 81, NoIndex,
+        0, 109, 44, 82, NoIndex,
+        0, 111, 44, 83, NoIndex,
+        0, 97, 44, 86, NoIndex,
+        0, 99, 44, 87, NoIndex,
+        0, 101, 44, 88, NoIndex,
+        0, 103, 44, 89, NoIndex,
+        0, 106, 44, 90, NoIndex,
+        0, 109, 44, 91, NoIndex,
+        0, 111, 44, 92, NoIndex,
+        4, 117, 258, 95, 48,
+        4, 119, 259, 96, 49,
+        4, 121, 260, 97, 50,
+        4, 124, 261, 98, 51,
+        0, 52, 52, 100, NoIndex,
+        0, 17, 17, 100, NoIndex,
+        1, 2, 1, 106, 0,
+        1, 4, 3, 106, 1,
+        1, 6, 5, 106, 2,
+        1, 8, 7, 106, 3,
+        1, 10, 9, 107, 4,
+        1, 12, 11, 107, 5,
+        1, 14, 13, 107, 6,
+        1, 2, 1, 112, 0,
+        1, 4, 3, 112, 1,
+        1, 6, 5, 112, 2,
+        1, 8, 7, 112, 3,
+        1, 10, 9, 113, 4,
+        1, 12, 11, 113, 5,
+        1, 14, 13, 113, 6,
+        1, 132, 131, 118, 18,
+        1, 134, 133, 118, 19,
+        1, 132, 131, 121, 18,
+        1, 134, 133, 121, 19,
+        0, 136, 44, 124, NoIndex,
+        1, 134, 133, 124, 19,
+        1, 132, 131, 129, 18,
+        1, 134, 133, 129, 19,
+        1, 132, 131, 132, 18,
+        0, 97, 44, 141, NoIndex,
+        0, 99, 44, 142, NoIndex,
+        0, 101, 44, 143, NoIndex,
+        0, 103, 44, 144, NoIndex,
+        0, 106, 44, 145, NoIndex,
+        0, 109, 44, 146, NoIndex,
+        0, 111, 44, 147, NoIndex,
+        0, 109, 44, 149, NoIndex,
+        2, 78, 77, 152, NoIndex,
+        0, 109, 44, 160, NoIndex,
+        2, 78, 77, 163, NoIndex,
+        0, 150, 44, 171, NoIndex,
+        2, 86, 85, 174, NoIndex,
+        2, 89, 88, 180, NoIndex,
+        0, 150, 44, 188, NoIndex,
+        2, 86, 85, 191, NoIndex,
+        2, 89, 88, 197, NoIndex,
+        0, 84, 44, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 16, 16, 206, NoIndex,
+        0, 17, 17, 206, NoIndex,
+        0, 18, 18, 206, NoIndex,
+        0, 18, 18, 206, NoIndex,
+        2, 86, 85, 209, NoIndex,
+        2, 89, 88, 215, NoIndex,
+        0, 84, 44, 223, NoIndex,
+        2, 86, 85, 226, NoIndex,
+        2, 89, 88, 232, NoIndex,
+        1, 165, 164, 266, 20,
+        0, 166, 166, 266, NoIndex,
+        1, 168, 167, 267, 21,
+        0, 169, 44, 267, NoIndex,
+        1, 171, 170, 268, 22,
+        1, 168, 167, 268, 21,
+        1, 173, 172, 269, 23,
+        1, 171, 170, 269, 22,
+        1, 176, 175, 270, 24,
+        0, 177, 177, 270, NoIndex,
+        1, 165, 164, 272, 20,
+        1, 168, 167, 272, 21,
+        1, 173, 172, 272, 23,
+        1, 176, 175, 272, 24,
+        1, 182, 181, 279, 25,
+        1, 184, 183, 280, 26,
+        1, 182, 181, 280, 25,
+        1, 184, 183, 281, 26,
+        0, 15, 15, 281, NoIndex,
+        1, 184, 183, 283, 26,
+        1, 271, 265, 289, 52,
+        0, 47, 47, 289, NoIndex,
+        1, 272, 266, 289, 53,
+        1, 271, 265, 289, 52,
+        1, 273, 267, 289, 54,
+        0, 274, 44, 289, NoIndex,
+        1, 275, 268, 289, 55,
+        0, 17, 17, 289, NoIndex,
+        1, 276, 269, 289, 56,
+        1, 275, 268, 289, 55,
+        1, 277, 270, 289, 57,
+        0, 278, 44, 289, NoIndex,
+        1, 184, 183, 289, 26,
+        0, 279, 44, 289, NoIndex,
+        1, 184, 183, 289, 26,
+        1, 184, 183, 290, 26,
+        1, 184, 183, 295, 26,
+        0, 84, 44, 295, NoIndex,
+        1, 184, 183, 295, 26,
+        1, 184, 183, 296, 26,
+        0, 208, 208, 296, NoIndex,
+        1, 184, 183, 296, 26,
+        1, 288, 282, 300, 58,
+        0, 218, 44, 300, NoIndex,
+        1, 289, 283, 300, 59,
+        0, 220, 44, 300, NoIndex,
+        1, 290, 284, 300, 60,
+        0, 291, 44, 300, NoIndex,
+        1, 293, 285, 300, 61,
+        0, 47, 47, 300, NoIndex,
+        1, 294, 286, 300, 62,
+        1, 293, 285, 300, 61,
+        1, 295, 287, 300, 63,
+        0, 296, 44, 300, NoIndex,
+        1, 184, 183, 300, 26,
+        0, 297, 44, 300, NoIndex,
+        1, 184, 183, 300, 26,
+        1, 184, 183, 300, 26,
+        1, 302, 298, 301, 64,
+        0, 235, 44, 301, NoIndex,
+        1, 303, 299, 301, 65,
+        0, 47, 47, 301, NoIndex,
+        1, 304, 300, 301, 66,
+        1, 303, 299, 301, 65,
+        1, 305, 301, 301, 67,
+        0, 306, 44, 301, NoIndex,
+        1, 184, 183, 301, 26,
+        0, 307, 44, 301, NoIndex,
+        1, 184, 183, 301, 26,
+        1, 184, 183, 301, 26,
+        1, 313, 308, 302, 68,
+        0, 218, 44, 302, NoIndex,
+        1, 314, 309, 302, 69,
+        0, 220, 44, 302, NoIndex,
+        1, 315, 310, 302, 70,
+        0, 316, 44, 302, NoIndex,
+        1, 317, 311, 302, 71,
+        0, 47, 47, 302, NoIndex,
+        1, 318, 312, 302, 72,
+        1, 317, 311, 302, 71,
+        1, 184, 183, 302, 26,
+        1, 315, 310, 302, 70,
+        1, 318, 312, 302, 72,
+        1, 184, 183, 302, 26,
+        1, 184, 183, 302, 26,
+        1, 184, 183, 303, 26,
+        0, 208, 208, 303, NoIndex,
+        1, 184, 183, 303, 26,
+        1, 173, 172, 307, 23,
+        1, 173, 172, 307, 23],
+      variableStringIDs: @[
+        1'u32,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        20,
+        23,
+        27,
+        29,
+        38,
+        40,
+        42,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        131,
+        133,
+        164,
+        167,
+        170,
+        172,
+        175,
+        181,
+        183,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex,
+        NoIndex],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 0, 7, NoIndex, NoIndex, 240, 0,
+        8, 0, 7, 2, 0, 0, NoIndex, NoIndex, 241, 0,
+        8, 0, 9, 2, 0, 0, NoIndex, NoIndex, 242, 0,
+        8, 0, 11, 2, 0, 0, NoIndex, NoIndex, 243, 0,
+        8, 0, 13, 2, 0, 0, NoIndex, NoIndex, 244, 0,
+        8, 0, 15, 2, 0, 0, NoIndex, NoIndex, 245, 0,
+        8, 0, 17, 2, 0, 0, NoIndex, NoIndex, 246, 0,
+        8, 0, 19, 2, 0, 0, NoIndex, NoIndex, 247, 0,
+        2, NoIndex, 0, 0, 7, 1, NoIndex, NoIndex, 252, 0,
+        8, 0, 22, 2, 7, 0, NoIndex, NoIndex, 253, 0,
+        2, NoIndex, 0, 0, 8, 1, NoIndex, NoIndex, 258, 0,
+        0, 25, 25, 1, 8, 0, NoIndex, 0, 259, 0,
+        2, NoIndex, 0, 0, 9, 3, NoIndex, NoIndex, 310, 0,
+        10, NoIndex, 28, 1, 9, 0, 27, NoIndex, 311, 0,
+        0, 31, 29, 1, 9, 0, NoIndex, 1, 312, 0,
+        8, 0, 30, 2, 9, 0, NoIndex, NoIndex, 313, 0,
+        2, NoIndex, 0, 0, 12, 7, NoIndex, NoIndex, 240, 0,
+        8, 0, 39, 2, 12, 0, NoIndex, NoIndex, 241, 0,
+        8, 0, 41, 2, 12, 0, NoIndex, NoIndex, 242, 0,
+        8, 0, 43, 2, 12, 0, NoIndex, NoIndex, 243, 0,
+        8, 0, 45, 2, 12, 0, NoIndex, NoIndex, 244, 0,
+        8, 0, 47, 2, 12, 0, NoIndex, NoIndex, 245, 0,
+        8, 0, 49, 2, 12, 0, NoIndex, NoIndex, 246, 0,
+        8, 0, 51, 2, 12, 0, NoIndex, NoIndex, 247, 0,
+        2, NoIndex, 0, 0, 19, 1, NoIndex, NoIndex, 252, 0,
+        8, 0, 54, 2, 19, 0, NoIndex, NoIndex, 253, 0,
+        2, NoIndex, 0, 0, 20, 1, NoIndex, NoIndex, 258, 0,
+        0, 25, 57, 1, 20, 0, NoIndex, 0, 259, 0,
+        2, NoIndex, 0, 0, 21, 3, NoIndex, NoIndex, 310, 0,
+        10, NoIndex, 60, 1, 21, 0, 59, NoIndex, 311, 0,
+        0, 31, 61, 1, 21, 0, NoIndex, 1, 312, 0,
+        8, 0, 62, 2, 21, 0, NoIndex, NoIndex, 313, 0,
+        2, NoIndex, 0, 0, 24, 16, NoIndex, NoIndex, 5, 0,
+        0, 38, 64, 1, 24, 0, NoIndex, 2, 6, 0,
+        0, 40, 65, 1, 24, 0, NoIndex, 3, 7, 0,
+        0, 42, 66, 1, 24, 0, NoIndex, 4, 8, 0,
+        8, 3, 67, 2, 24, 0, NoIndex, NoIndex, 9, 0,
+        8, 0, 69, 2, 24, 0, NoIndex, NoIndex, 10, 0,
+        8, 0, 71, 2, 24, 0, NoIndex, NoIndex, 11, 0,
+        8, 2, 73, 2, 24, 0, NoIndex, NoIndex, 12, 0,
+        8, 0, 75, 2, 24, 0, NoIndex, NoIndex, 13, 0,
+        8, 0, 77, 2, 24, 0, NoIndex, NoIndex, 14, 0,
+        8, 0, 79, 2, 24, 0, NoIndex, NoIndex, 15, 0,
+        8, 0, 81, 2, 24, 0, NoIndex, NoIndex, 16, 0,
+        8, 0, 83, 2, 24, 0, NoIndex, NoIndex, 17, 0,
+        8, 0, 85, 2, 24, 0, NoIndex, NoIndex, 18, 0,
+        8, 0, 87, 2, 24, 0, NoIndex, NoIndex, 19, 0,
+        8, 0, 89, 2, 24, 0, NoIndex, NoIndex, 20, 0,
+        8, 4, 91, 2, 24, 0, NoIndex, NoIndex, 21, 0,
+        2, NoIndex, 0, 0, 40, 1, NoIndex, NoIndex, 38, 0,
+        8, 0, 95, 2, 40, 0, NoIndex, NoIndex, 39, 0,
+        2, NoIndex, 0, 0, 41, 1, NoIndex, NoIndex, 56, 0,
+        8, 0, 99, 2, 41, 0, NoIndex, NoIndex, 57, 0,
+        2, NoIndex, 0, 0, 42, 1, NoIndex, NoIndex, 120, 0,
+        8, 2, 139, 2, 42, 0, NoIndex, NoIndex, 121, 0,
+        2, NoIndex, 0, 0, 43, 1, NoIndex, NoIndex, 128, 0,
+        8, 0, 143, 2, 43, 0, NoIndex, NoIndex, 129, 0,
+        2, NoIndex, 0, 0, 44, 2, NoIndex, NoIndex, 139, 0,
+        1, 32, 146, 7, 44, 0, NoIndex, 4, 140, 0,
+        1, 33, 153, 1, 44, 0, NoIndex, 5, 149, 0,
+        2, NoIndex, 0, 0, 46, 1, NoIndex, NoIndex, 159, 0,
+        1, 34, 155, 1, 46, 0, NoIndex, 6, 160, 0,
+        2, NoIndex, 0, 0, 47, 1, NoIndex, NoIndex, 170, 0,
+        1, 34, 157, 1, 47, 0, NoIndex, 6, 171, 0,
+        2, NoIndex, 0, 0, 48, 1, NoIndex, NoIndex, 187, 0,
+        1, 33, 160, 1, 48, 0, NoIndex, 5, 188, 0,
+        2, NoIndex, 0, 0, 49, 1, NoIndex, NoIndex, 204, 0,
+        1, 32, 163, 7, 49, 0, NoIndex, 4, 205, 0,
+        2, NoIndex, 0, 0, 50, 1, NoIndex, NoIndex, 222, 0,
+        1, 34, 172, 1, 50, 0, NoIndex, 6, 223, 0,
+        2, NoIndex, 0, 0, 51, 5, NoIndex, NoIndex, 265, 0,
+        10, NoIndex, 176, 1, 51, 0, 175, NoIndex, 266, 0,
+        10, NoIndex, 178, 1, 51, 0, 177, NoIndex, 267, 0,
+        10, NoIndex, 180, 1, 51, 0, 179, NoIndex, 268, 0,
+        7, 174, 182, 1, 51, 0, 181, 2, 269, 0,
+        10, NoIndex, 184, 1, 51, 0, 183, NoIndex, 270, 0,
+        2, NoIndex, 0, 0, 56, 3, NoIndex, NoIndex, 278, 0,
+        0, 31, 189, 1, 56, 0, NoIndex, 1, 279, 0,
+        7, 174, 191, 1, 56, 0, 190, 2, 280, 0,
+        8, 0, 192, 2, 56, 0, NoIndex, NoIndex, 281, 0,
+        2, NoIndex, 0, 0, 66, 1, NoIndex, NoIndex, 289, 0,
+        10, NoIndex, 208, 1, 59, 7, 207, NoIndex, 289, 0,
+        10, NoIndex, 196, 1, 59, 0, 195, NoIndex, 289, 1,
+        7, 174, 198, 1, 59, 0, 197, 2, 289, 1,
+        10, NoIndex, 200, 1, 59, 0, 199, NoIndex, 289, 1,
+        10, NoIndex, 202, 1, 59, 0, 201, NoIndex, 289, 1,
+        7, 174, 204, 1, 59, 0, 203, 2, 289, 1,
+        10, NoIndex, 206, 1, 59, 0, 205, NoIndex, 289, 1,
+        10, NoIndex, 208, 1, 59, 0, 207, NoIndex, 289, 1,
+        2, NoIndex, 0, 0, 67, 1, NoIndex, NoIndex, 295, 0,
+        10, NoIndex, 212, 1, 67, 0, 211, NoIndex, 295, 0,
+        2, NoIndex, 0, 0, 68, 1, NoIndex, NoIndex, 296, 0,
+        10, NoIndex, 215, 1, 68, 0, 214, NoIndex, 296, 0,
+        2, NoIndex, 0, 0, 76, 1, NoIndex, NoIndex, 300, 0,
+        10, NoIndex, 230, 1, 69, 7, 229, NoIndex, 300, 0,
+        10, NoIndex, 218, 1, 69, 0, 217, NoIndex, 300, 1,
+        10, NoIndex, 220, 1, 69, 0, 219, NoIndex, 300, 1,
+        10, NoIndex, 222, 1, 69, 0, 221, NoIndex, 300, 1,
+        10, NoIndex, 224, 1, 69, 0, 223, NoIndex, 300, 1,
+        7, 174, 226, 1, 69, 0, 225, 2, 300, 1,
+        10, NoIndex, 228, 1, 69, 0, 227, NoIndex, 300, 1,
+        10, NoIndex, 230, 1, 69, 0, 229, NoIndex, 300, 1,
+        2, NoIndex, 0, 0, 82, 1, NoIndex, NoIndex, 301, 0,
+        10, NoIndex, 242, 1, 77, 5, 241, NoIndex, 301, 0,
+        10, NoIndex, 234, 1, 77, 0, 233, NoIndex, 301, 1,
+        10, NoIndex, 236, 1, 77, 0, 235, NoIndex, 301, 1,
+        7, 174, 238, 1, 77, 0, 237, 2, 301, 1,
+        10, NoIndex, 240, 1, 77, 0, 239, NoIndex, 301, 1,
+        10, NoIndex, 242, 1, 77, 0, 241, NoIndex, 301, 1,
+        2, NoIndex, 0, 0, 89, 1, NoIndex, NoIndex, 302, 0,
+        7, 174, 256, 2, 83, 6, 255, 2, 302, 0,
+        10, NoIndex, 246, 1, 83, 0, 245, NoIndex, 302, 1,
+        10, NoIndex, 248, 1, 83, 0, 247, NoIndex, 302, 1,
+        10, NoIndex, 250, 1, 83, 0, 249, NoIndex, 302, 1,
+        10, NoIndex, 252, 1, 83, 0, 251, NoIndex, 302, 1,
+        7, 174, 254, 1, 83, 0, 253, 2, 302, 1,
+        7, 174, 256, 2, 83, 0, 255, 2, 302, 1,
+        2, NoIndex, 0, 0, 90, 1, NoIndex, NoIndex, 303, 0,
+        10, NoIndex, 261, 1, 90, 0, 260, NoIndex, 303, 0,
+        2, NoIndex, 0, 0, 91, 1, NoIndex, NoIndex, 307, 0,
+        1, 35, 263, 1, 91, 0, NoIndex, 7, 307, 0,
+        2, NoIndex, 0, 0, 92, 16, NoIndex, NoIndex, 5, 0,
+        0, 38, 265, 1, 92, 0, NoIndex, 2, 6, 0,
+        0, 40, 266, 1, 92, 0, NoIndex, 3, 7, 0,
+        0, 42, 267, 1, 92, 0, NoIndex, 4, 8, 0,
+        8, 3, 268, 2, 92, 0, NoIndex, NoIndex, 9, 0,
+        8, 0, 270, 2, 92, 0, NoIndex, NoIndex, 10, 0,
+        8, 0, 272, 2, 92, 0, NoIndex, NoIndex, 11, 0,
+        8, 2, 274, 2, 92, 0, NoIndex, NoIndex, 12, 0,
+        8, 0, 276, 2, 92, 0, NoIndex, NoIndex, 13, 0,
+        8, 0, 278, 2, 92, 0, NoIndex, NoIndex, 14, 0,
+        8, 0, 280, 2, 92, 0, NoIndex, NoIndex, 15, 0,
+        8, 0, 282, 2, 92, 0, NoIndex, NoIndex, 16, 0,
+        8, 0, 284, 2, 92, 0, NoIndex, NoIndex, 17, 0,
+        8, 0, 286, 2, 92, 0, NoIndex, NoIndex, 18, 0,
+        8, 0, 288, 2, 92, 0, NoIndex, NoIndex, 19, 0,
+        8, 0, 290, 2, 92, 0, NoIndex, NoIndex, 20, 0,
+        8, 4, 292, 2, 92, 0, NoIndex, NoIndex, 21, 0,
+        2, NoIndex, 0, 0, 108, 1, NoIndex, NoIndex, 38, 0,
+        8, 0, 296, 2, 108, 0, NoIndex, NoIndex, 39, 0,
+        2, NoIndex, 0, 0, 109, 1, NoIndex, NoIndex, 56, 0,
+        8, 0, 300, 2, 109, 0, NoIndex, NoIndex, 57, 0,
+        2, NoIndex, 0, 0, 110, 1, NoIndex, NoIndex, 120, 0,
+        8, 2, 340, 2, 110, 0, NoIndex, NoIndex, 121, 0,
+        2, NoIndex, 0, 0, 111, 1, NoIndex, NoIndex, 128, 0,
+        8, 0, 344, 2, 111, 0, NoIndex, NoIndex, 129, 0,
+        2, NoIndex, 0, 0, 112, 2, NoIndex, NoIndex, 139, 0,
+        1, 32, 347, 7, 112, 0, NoIndex, 4, 140, 0,
+        1, 33, 354, 1, 112, 0, NoIndex, 5, 149, 0,
+        2, NoIndex, 0, 0, 114, 1, NoIndex, NoIndex, 159, 0,
+        1, 34, 356, 1, 114, 0, NoIndex, 6, 160, 0,
+        2, NoIndex, 0, 0, 115, 1, NoIndex, NoIndex, 170, 0,
+        1, 34, 358, 1, 115, 0, NoIndex, 6, 171, 0,
+        2, NoIndex, 0, 0, 116, 1, NoIndex, NoIndex, 187, 0,
+        1, 33, 361, 1, 116, 0, NoIndex, 5, 188, 0,
+        2, NoIndex, 0, 0, 117, 1, NoIndex, NoIndex, 204, 0,
+        1, 32, 364, 7, 117, 0, NoIndex, 4, 205, 0,
+        2, NoIndex, 0, 0, 118, 1, NoIndex, NoIndex, 222, 0,
+        1, 34, 373, 1, 118, 0, NoIndex, 6, 223, 0,
+        2, NoIndex, 0, 0, 119, 5, NoIndex, NoIndex, 265, 0,
+        10, NoIndex, 377, 1, 119, 0, 376, NoIndex, 266, 0,
+        10, NoIndex, 379, 1, 119, 0, 378, NoIndex, 267, 0,
+        10, NoIndex, 381, 1, 119, 0, 380, NoIndex, 268, 0,
+        7, 174, 383, 1, 119, 0, 382, 2, 269, 0,
+        10, NoIndex, 385, 1, 119, 0, 384, NoIndex, 270, 0,
+        2, NoIndex, 0, 0, 124, 3, NoIndex, NoIndex, 278, 0,
+        0, 31, 390, 1, 124, 0, NoIndex, 1, 279, 0,
+        7, 174, 392, 1, 124, 0, 391, 2, 280, 0,
+        8, 0, 393, 2, 124, 0, NoIndex, NoIndex, 281, 0,
+        2, NoIndex, 0, 0, 134, 1, NoIndex, NoIndex, 289, 0,
+        10, NoIndex, 409, 1, 127, 7, 408, NoIndex, 289, 0,
+        10, NoIndex, 397, 1, 127, 0, 396, NoIndex, 289, 1,
+        7, 174, 399, 1, 127, 0, 398, 2, 289, 1,
+        10, NoIndex, 401, 1, 127, 0, 400, NoIndex, 289, 1,
+        10, NoIndex, 403, 1, 127, 0, 402, NoIndex, 289, 1,
+        7, 174, 405, 1, 127, 0, 404, 2, 289, 1,
+        10, NoIndex, 407, 1, 127, 0, 406, NoIndex, 289, 1,
+        10, NoIndex, 409, 1, 127, 0, 408, NoIndex, 289, 1,
+        2, NoIndex, 0, 0, 135, 1, NoIndex, NoIndex, 295, 0,
+        10, NoIndex, 413, 1, 135, 0, 412, NoIndex, 295, 0,
+        2, NoIndex, 0, 0, 136, 1, NoIndex, NoIndex, 296, 0,
+        10, NoIndex, 416, 1, 136, 0, 415, NoIndex, 296, 0,
+        2, NoIndex, 0, 0, 144, 1, NoIndex, NoIndex, 300, 0,
+        10, NoIndex, 431, 1, 137, 7, 430, NoIndex, 300, 0,
+        10, NoIndex, 419, 1, 137, 0, 418, NoIndex, 300, 1,
+        10, NoIndex, 421, 1, 137, 0, 420, NoIndex, 300, 1,
+        10, NoIndex, 423, 1, 137, 0, 422, NoIndex, 300, 1,
+        10, NoIndex, 425, 1, 137, 0, 424, NoIndex, 300, 1,
+        7, 174, 427, 1, 137, 0, 426, 2, 300, 1,
+        10, NoIndex, 429, 1, 137, 0, 428, NoIndex, 300, 1,
+        10, NoIndex, 431, 1, 137, 0, 430, NoIndex, 300, 1,
+        2, NoIndex, 0, 0, 150, 1, NoIndex, NoIndex, 301, 0,
+        10, NoIndex, 443, 1, 145, 5, 442, NoIndex, 301, 0,
+        10, NoIndex, 435, 1, 145, 0, 434, NoIndex, 301, 1,
+        10, NoIndex, 437, 1, 145, 0, 436, NoIndex, 301, 1,
+        7, 174, 439, 1, 145, 0, 438, 2, 301, 1,
+        10, NoIndex, 441, 1, 145, 0, 440, NoIndex, 301, 1,
+        10, NoIndex, 443, 1, 145, 0, 442, NoIndex, 301, 1,
+        2, NoIndex, 0, 0, 157, 1, NoIndex, NoIndex, 302, 0,
+        7, 174, 457, 2, 151, 6, 456, 2, 302, 0,
+        10, NoIndex, 447, 1, 151, 0, 446, NoIndex, 302, 1,
+        10, NoIndex, 449, 1, 151, 0, 448, NoIndex, 302, 1,
+        10, NoIndex, 451, 1, 151, 0, 450, NoIndex, 302, 1,
+        10, NoIndex, 453, 1, 151, 0, 452, NoIndex, 302, 1,
+        7, 174, 455, 1, 151, 0, 454, 2, 302, 1,
+        7, 174, 457, 2, 151, 0, 456, 2, 302, 1,
+        2, NoIndex, 0, 0, 158, 1, NoIndex, NoIndex, 303, 0,
+        10, NoIndex, 462, 1, 158, 0, 461, NoIndex, 303, 0,
+        2, NoIndex, 0, 0, 159, 1, NoIndex, NoIndex, 307, 0,
+        1, 35, 464, 1, 159, 0, NoIndex, 7, 307, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(== ?inp_add 3)",
+        "(== ?inp_subtract 6)",
+        "(== ?inp_multiply 6)",
+        "(== ?inp_divide 6)",
+        "(== ?inp_modulo 2)",
+        "(== ?inp_increment 7)",
+        "(== ?inp_decrement 7)",
+        "(and ...)",
+        "(== ?io_value 7)",
+        "(and ...)",
+        "(generated_number ?out_value)",
+        "(and ...)",
+        "(= ?local 2)",
+        "(assignment_candidate ?out_result)",
+        "(== ?out_result ?local)",
+        "(and ...)",
+        "(== ?inp_add 3)",
+        "(== ?inp_subtract 6)",
+        "(== ?inp_multiply 6)",
+        "(== ?inp_divide 6)",
+        "(== ?inp_modulo 2)",
+        "(== ?inp_increment 7)",
+        "(== ?inp_decrement 7)",
+        "(and ...)",
+        "(== ?io_value 7)",
+        "(and ...)",
+        "(generated_number ?out_value)",
+        "(and ...)",
+        "(= ?local 2)",
+        "(assignment_candidate ?out_result)",
+        "(== ?out_result ?local)",
+        "(and ...)",
+        "(time ?time)",
+        "(plan_start_time ?plan_start_time)",
+        "(plan_duration ?plan_duration)",
+        "(<= ?time (+ ?plan_start_time ?plan_duration))",
+        "(== (+ 1 2 3) 6)",
+        "(== (- 10 3 2) 5)",
+        "(< (- 5) 0)",
+        "(== (* 2 3 4) 24)",
+        "(== (/ 20 2 2) 5)",
+        "(== (% 17 5) 2)",
+        "(== (+ 1 2.5) 3.5)",
+        "(== (++ 41) 42)",
+        "(== (-- 41) 40)",
+        "(== (++ 2.5) 3.5)",
+        "(== (-- (++ 10)) 10)",
+        "(> (* (- ?time 1) 2) (/ 100 2))",
+        "(and ...)",
+        "(== (/ 1 0) 0)",
+        "(and ...)",
+        "(== (+ invalid 1) 2)",
+        "(and ...)",
+        "(< ?inp_index ?inp_count)",
+        "(and ...)",
+        "(== ?inp_index ?inp_count)",
+        "(and ...)",
+        "(#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))",
+        "(#accept_arithmetic_io (++ 6))",
+        "(and ...)",
+        "(#produce_arithmetic_output (++ 6))",
+        "(and ...)",
+        "(#produce_arithmetic_output (++ 7))",
+        "(and ...)",
+        "(#accept_arithmetic_io (++ 7))",
+        "(and ...)",
+        "(#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7)",
+        "(and ...)",
+        "(#produce_arithmetic_output (/ 1 0))",
+        "(and ...)",
+        "(= ?kind main_threat)",
+        "(= ?number (+ 2 3))",
+        "(= ?copy ?number)",
+        "(= ?result (call assignment_probe ?copy))",
+        "(= ?flag false)",
+        "(and ...)",
+        "(assignment_candidate ?candidate)",
+        "(= ?value (call assignment_probe ?candidate))",
+        "(== ?value 3)",
+        "(and ...)",
+        "(= ?value (+ (call assignment_probe 1) (call assignment_probe 2)))",
+        "(= ?$assignment_call_4 1)",
+        "(= ?$assignment_call_5 (call assignment_probe ?$assignment_call_4))",
+        "(= ?$assignment_call_6 (* ?$assignment_call_5 1))",
+        "(= ?$assignment_call_7 2)",
+        "(= ?$assignment_call_8 (call assignment_probe ?$assignment_call_7))",
+        "(= ?$assignment_call_9 (* ?$assignment_call_8 1))",
+        "(= ?value (+ ?$assignment_call_6 ?$assignment_call_9))",
+        "(and ...)",
+        "(= ?value (/ 1 0))",
+        "(and ...)",
+        "(= ?value 9)",
+        "(and ...)",
+        "(= ?value (+ (/ 1 0) (call assignment_probe 1)))",
+        "(= ?$assignment_call_10 (* 1 1))",
+        "(= ?$assignment_call_11 (* 0 1))",
+        "(= ?$assignment_call_12 (* (/ ?$assignment_call_10 ?$assignment_call_11) 1))",
+        "(= ?$assignment_call_13 1)",
+        "(= ?$assignment_call_14 (call assignment_probe ?$assignment_call_13))",
+        "(= ?$assignment_call_15 (* ?$assignment_call_14 1))",
+        "(= ?value (+ ?$assignment_call_12 ?$assignment_call_15))",
+        "(and ...)",
+        "(= ?value (+ false (call assignment_probe 1)))",
+        "(= ?$assignment_call_16 (* false 1))",
+        "(= ?$assignment_call_17 1)",
+        "(= ?$assignment_call_18 (call assignment_probe ?$assignment_call_17))",
+        "(= ?$assignment_call_19 (* ?$assignment_call_18 1))",
+        "(= ?value (+ ?$assignment_call_16 ?$assignment_call_19))",
+        "(and ...)",
+        "(= ?value (call assignment_probe (/ 1 0) (call assignment_probe 1)))",
+        "(= ?$assignment_call_20 (* 1 1))",
+        "(= ?$assignment_call_21 (* 0 1))",
+        "(= ?$assignment_call_22 (/ ?$assignment_call_20 ?$assignment_call_21))",
+        "(= ?$assignment_call_23 1)",
+        "(= ?$assignment_call_24 (call assignment_probe ?$assignment_call_23))",
+        "(= ?value (call assignment_probe ?$assignment_call_22 ?$assignment_call_24))",
+        "(and ...)",
+        "(= ?value 9)",
+        "(and ...)",
+        "(#assignment_local ?result)",
+        "(and ...)",
+        "(time ?time)",
+        "(plan_start_time ?plan_start_time)",
+        "(plan_duration ?plan_duration)",
+        "(<= ?time (+ ?plan_start_time ?plan_duration))",
+        "(== (+ 1 2 3) 6)",
+        "(== (- 10 3 2) 5)",
+        "(< (- 5) 0)",
+        "(== (* 2 3 4) 24)",
+        "(== (/ 20 2 2) 5)",
+        "(== (% 17 5) 2)",
+        "(== (+ 1 2.5) 3.5)",
+        "(== (++ 41) 42)",
+        "(== (-- 41) 40)",
+        "(== (++ 2.5) 3.5)",
+        "(== (-- (++ 10)) 10)",
+        "(> (* (- ?time 1) 2) (/ 100 2))",
+        "(and ...)",
+        "(== (/ 1 0) 0)",
+        "(and ...)",
+        "(== (+ invalid 1) 2)",
+        "(and ...)",
+        "(< ?inp_index ?inp_count)",
+        "(and ...)",
+        "(== ?inp_index ?inp_count)",
+        "(and ...)",
+        "(#accept_arithmetic_arguments (+ 1 2) (- 10 4) (* 2 3) (/ 12 2) (% 8 3) (++ 6) (-- 8))",
+        "(#accept_arithmetic_io (++ 6))",
+        "(and ...)",
+        "(#produce_arithmetic_output (++ 6))",
+        "(and ...)",
+        "(#produce_arithmetic_output (++ 7))",
+        "(and ...)",
+        "(#accept_arithmetic_io (++ 7))",
+        "(and ...)",
+        "(#accept_arithmetic_arguments (/ 1 0) 6 6 6 2 7 7)",
+        "(and ...)",
+        "(#produce_arithmetic_output (/ 1 0))",
+        "(and ...)",
+        "(= ?kind main_threat)",
+        "(= ?number (+ 2 3))",
+        "(= ?copy ?number)",
+        "(= ?result (call assignment_probe ?copy))",
+        "(= ?flag false)",
+        "(and ...)",
+        "(assignment_candidate ?candidate)",
+        "(= ?value (call assignment_probe ?candidate))",
+        "(== ?value 3)",
+        "(and ...)",
+        "(= ?value (+ (call assignment_probe 1) (call assignment_probe 2)))",
+        "(= ?$assignment_call_29 1)",
+        "(= ?$assignment_call_30 (call assignment_probe ?$assignment_call_29))",
+        "(= ?$assignment_call_31 (* ?$assignment_call_30 1))",
+        "(= ?$assignment_call_32 2)",
+        "(= ?$assignment_call_33 (call assignment_probe ?$assignment_call_32))",
+        "(= ?$assignment_call_34 (* ?$assignment_call_33 1))",
+        "(= ?value (+ ?$assignment_call_31 ?$assignment_call_34))",
+        "(and ...)",
+        "(= ?value (/ 1 0))",
+        "(and ...)",
+        "(= ?value 9)",
+        "(and ...)",
+        "(= ?value (+ (/ 1 0) (call assignment_probe 1)))",
+        "(= ?$assignment_call_35 (* 1 1))",
+        "(= ?$assignment_call_36 (* 0 1))",
+        "(= ?$assignment_call_37 (* (/ ?$assignment_call_35 ?$assignment_call_36) 1))",
+        "(= ?$assignment_call_38 1)",
+        "(= ?$assignment_call_39 (call assignment_probe ?$assignment_call_38))",
+        "(= ?$assignment_call_40 (* ?$assignment_call_39 1))",
+        "(= ?value (+ ?$assignment_call_37 ?$assignment_call_40))",
+        "(and ...)",
+        "(= ?value (+ false (call assignment_probe 1)))",
+        "(= ?$assignment_call_41 (* false 1))",
+        "(= ?$assignment_call_42 1)",
+        "(= ?$assignment_call_43 (call assignment_probe ?$assignment_call_42))",
+        "(= ?$assignment_call_44 (* ?$assignment_call_43 1))",
+        "(= ?value (+ ?$assignment_call_41 ?$assignment_call_44))",
+        "(and ...)",
+        "(= ?value (call assignment_probe (/ 1 0) (call assignment_probe 1)))",
+        "(= ?$assignment_call_45 (* 1 1))",
+        "(= ?$assignment_call_46 (* 0 1))",
+        "(= ?$assignment_call_47 (/ ?$assignment_call_45 ?$assignment_call_46))",
+        "(= ?$assignment_call_48 1)",
+        "(= ?$assignment_call_49 (call assignment_probe ?$assignment_call_48))",
+        "(= ?value (call assignment_probe ?$assignment_call_47 ?$assignment_call_49))",
+        "(and ...)",
+        "(= ?value 9)",
+        "(and ...)",
+        "(#assignment_local ?result)"],
+      conditionChildRefs: @[
+        1'u32,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        25,
+        27,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        59,
+        61,
+        63,
+        65,
+        67,
+        69,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77,
+        78,
+        79,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        81,
+        90,
+        92,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        94,
+        104,
+        105,
+        106,
+        107,
+        108,
+        103,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        110,
+        118,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        139,
+        141,
+        143,
+        145,
+        147,
+        148,
+        150,
+        152,
+        154,
+        156,
+        158,
+        160,
+        161,
+        162,
+        163,
+        164,
+        166,
+        167,
+        168,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        170,
+        179,
+        181,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        183,
+        193,
+        194,
+        195,
+        196,
+        197,
+        192,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        199,
+        207,
+        209],
+      tasks: @[
+        1'u32, 75, 93, 1, 24, 76,
+        1, 75, 94, 1, 31, 76,
+        1, 75, 97, 1, 42, 76,
+        1, 75, 98, 1, 49, 76,
+        1, 75, 101, 1, 60, 76,
+        1, 75, 102, 1, 67, 76,
+        0, 95, 103, 7, 76, NoIndex,
+        1, 112, 110, 7, 85, 113,
+        1, 114, 117, 4, 94, 115,
+        0, 126, 121, 2, 100, NoIndex,
+        1, 95, 130, 7, 111, 129,
+        0, 126, 141, 2, 124, NoIndex,
+        1, 138, 145, 1, 132, 139,
+        1, 142, 154, 1, 152, 143,
+        1, 146, 156, 1, 163, 147,
+        1, 151, 158, 1, 174, 152,
+        1, 151, 159, 1, 180, 152,
+        1, 155, 161, 1, 191, 156,
+        1, 155, 162, 1, 197, 156,
+        1, 158, 170, 1, 209, 159,
+        1, 158, 171, 1, 215, 159,
+        1, 161, 173, 1, 226, 162,
+        1, 161, 174, 1, 232, 162,
+        1, 178, 185, 4, 272, 179,
+        1, 185, 194, 1, 283, 186,
+        1, 185, 210, 1, 290, 186,
+        1, 205, 213, 1, 295, 206,
+        1, 185, 216, 1, 296, 186,
+        1, 205, 232, 1, 300, 206,
+        1, 205, 244, 1, 301, 206,
+        1, 205, 259, 1, 302, 206,
+        1, 185, 262, 1, 303, 186,
+        1, 185, 264, 1, 307, 186,
+        1, 75, 294, 1, 24, 76,
+        1, 75, 295, 1, 31, 76,
+        1, 75, 298, 1, 42, 76,
+        1, 75, 299, 1, 49, 76,
+        1, 75, 302, 1, 60, 76,
+        1, 75, 303, 1, 67, 76,
+        0, 95, 304, 7, 76, NoIndex,
+        1, 112, 311, 7, 85, 113,
+        1, 114, 318, 4, 94, 115,
+        0, 126, 322, 2, 100, NoIndex,
+        1, 95, 331, 7, 111, 129,
+        0, 126, 342, 2, 124, NoIndex,
+        1, 138, 346, 1, 132, 139,
+        1, 142, 355, 1, 152, 143,
+        1, 146, 357, 1, 163, 147,
+        1, 151, 359, 1, 174, 152,
+        1, 151, 360, 1, 180, 152,
+        1, 155, 362, 1, 191, 156,
+        1, 155, 363, 1, 197, 156,
+        1, 158, 371, 1, 209, 159,
+        1, 158, 372, 1, 215, 159,
+        1, 161, 374, 1, 226, 162,
+        1, 161, 375, 1, 232, 162,
+        1, 178, 386, 4, 272, 179,
+        1, 185, 395, 1, 283, 186,
+        1, 185, 411, 1, 290, 186,
+        1, 205, 414, 1, 295, 206,
+        1, 185, 417, 1, 296, 186,
+        1, 205, 433, 1, 300, 206,
+        1, 205, 445, 1, 301, 206,
+        1, 205, 460, 1, 302, 206,
+        1, 185, 463, 1, 303, 186,
+        1, 185, 465, 1, 307, 186],
+      branches: @[
+        37'u32, 32, 0, 1, 4,
+        79, NoIndex, 1, 1, 27,
+        83, 49, 2, 1, 37,
+        87, NoIndex, 3, 1, 45,
+        83, 51, 4, 1, 55,
+        87, NoIndex, 5, 1, 63,
+        94, NoIndex, 6, 4, 73,
+        128, NoIndex, 10, 1, 108,
+        135, 53, 11, 1, 119,
+        137, 55, 12, 1, 127,
+        141, 57, 13, 1, 138,
+        145, 60, 14, 1, 158,
+        149, 62, 15, 1, 169,
+        153, NoIndex, 16, 1, 177,
+        149, 64, 17, 1, 186,
+        153, NoIndex, 18, 1, 194,
+        149, 66, 19, 1, 203,
+        153, NoIndex, 20, 1, 212,
+        149, 68, 21, 1, 221,
+        153, NoIndex, 22, 1, 229,
+        77, 70, 23, 1, 264,
+        77, 76, 24, 1, 277,
+        77, 80, 25, 1, 288,
+        204, 89, 26, 1, 295,
+        207, 91, 27, 1, 296,
+        210, 93, 28, 1, 300,
+        229, 102, 29, 1, 301,
+        241, 109, 30, 1, 302,
+        207, 117, 31, 1, 303,
+        77, 119, 32, 1, 307,
+        37, 121, 33, 1, 4,
+        79, NoIndex, 34, 1, 27,
+        83, 138, 35, 1, 37,
+        87, NoIndex, 36, 1, 45,
+        83, 140, 37, 1, 55,
+        87, NoIndex, 38, 1, 63,
+        94, NoIndex, 39, 4, 73,
+        128, NoIndex, 43, 1, 108,
+        135, 142, 44, 1, 119,
+        137, 144, 45, 1, 127,
+        141, 146, 46, 1, 138,
+        145, 149, 47, 1, 158,
+        149, 151, 48, 1, 169,
+        153, NoIndex, 49, 1, 177,
+        149, 153, 50, 1, 186,
+        153, NoIndex, 51, 1, 194,
+        149, 155, 52, 1, 203,
+        153, NoIndex, 53, 1, 212,
+        149, 157, 54, 1, 221,
+        153, NoIndex, 55, 1, 229,
+        77, 159, 56, 1, 264,
+        77, 165, 57, 1, 277,
+        77, 169, 58, 1, 288,
+        204, 178, 59, 1, 295,
+        207, 180, 60, 1, 296,
+        210, 182, 61, 1, 300,
+        229, 191, 62, 1, 301,
+        241, 198, 63, 1, 302,
+        207, 206, 64, 1, 303,
+        77, 208, 65, 1, 307],
+      methods: @[
+        36'u64, 64, 0, 0, 2, 3, 0x0000000000003800'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        82, 95, 0, 2, 2, 36, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        90, 99, 0, 4, 2, 54, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        93, 103, 0, 6, 1, 72, 0x000000000003c000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        127, 123, 7, 7, 1, 105, 0x000000000000007f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        130, 137, 2, 8, 2, 118, 0x00000000000c0000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        140, 146, 0, 10, 1, 137, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        144, 155, 0, 11, 1, 157, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        148, 157, 0, 12, 2, 168, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        154, 160, 0, 14, 2, 185, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        157, 163, 0, 16, 2, 202, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        160, 172, 0, 18, 2, 220, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        163, 175, 0, 20, 1, 263, 0x0000000001f00000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        180, 189, 0, 21, 1, 276, 0x0000000006000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        187, 195, 0, 22, 1, 287, 0x00000001fc000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        203, 211, 0, 23, 2, 294, 0x0000000004000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        209, 217, 0, 25, 4, 299, 0x0000fffe04000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        253, 263, 0, 29, 1, 306, 0x0000000000800000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        254, 265, 0, 30, 2, 3, 0x0000000000003800'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        255, 296, 0, 32, 2, 36, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        256, 300, 0, 34, 2, 54, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        257, 304, 0, 36, 1, 72, 0x000f000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        95, 324, 7, 37, 1, 105, 0x000000000000007f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        126, 338, 2, 38, 2, 118, 0x00000000000c0000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        262, 347, 0, 40, 1, 137, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        146, 356, 0, 41, 1, 157, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        151, 358, 0, 42, 2, 168, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        155, 361, 0, 44, 2, 185, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        158, 364, 0, 46, 2, 202, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        161, 373, 0, 48, 2, 220, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        178, 376, 0, 50, 1, 263, 0x0000000001f00000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        263, 390, 0, 51, 1, 276, 0x0000000006000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        264, 396, 0, 52, 1, 287, 0x03f0000004000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        280, 412, 0, 53, 2, 294, 0x0000000004000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        281, 418, 0, 55, 4, 299, 0xfc00000004000000'u64, 0x00000000000001ff'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        319, 464, 0, 59, 1, 306, 0x0000000000800000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: @[
+        0'u64, 0, 7, 0, 237, 0x000000000000007f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        19, 21, 1, 8, 251, 0x0000000000000080'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        22, 24, 1, 10, 257, 0x0000000000000100'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 26, 1, 12, 309, 0x0000000000000600'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        32, 32, 7, 16, 237, 0x000000000000007f'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        33, 53, 1, 24, 251, 0x0000000000000080'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        34, 56, 1, 26, 257, 0x0000000000000100'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        35, 58, 1, 28, 309, 0x0000000000000600'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      constants: newSeq[uint32](),
+      callTermSlotCount: 3, factSlotCount: 5,
+      sourceFiles: @[
+        "Domains/Test/numeric_expressions.domain"],
+      valueSources: @[
+        0'u32, 238, 14, 238, 22,
+        0, 238, 23, 238, 36,
+        0, 238, 37, 238, 50,
+        0, 238, 51, 238, 62,
+        0, 239, 14, 239, 25,
+        0, 239, 26, 239, 40,
+        0, 239, 41, 239, 55,
+        0, 241, 17, 241, 25,
+        0, 241, 26, 241, 27,
+        0, 242, 17, 242, 30,
+        0, 242, 31, 242, 32,
+        0, 243, 17, 243, 30,
+        0, 243, 31, 243, 32,
+        0, 244, 17, 244, 28,
+        0, 244, 29, 244, 30,
+        0, 245, 17, 245, 28,
+        0, 245, 29, 245, 30,
+        0, 246, 17, 246, 31,
+        0, 246, 32, 246, 33,
+        0, 247, 17, 247, 31,
+        0, 247, 32, 247, 33,
+        0, 251, 35, 251, 44,
+        0, 253, 17, 253, 26,
+        0, 253, 27, 253, 28,
+        0, 257, 40, 257, 50,
+        0, 259, 31, 259, 41,
+        0, 309, 31, 309, 42,
+        0, 311, 16, 311, 22,
+        0, 311, 23, 311, 24,
+        0, 312, 35, 312, 46,
+        0, 313, 17, 313, 28,
+        0, 313, 29, 313, 35,
+        0, 238, 14, 238, 22,
+        0, 238, 23, 238, 36,
+        0, 238, 37, 238, 50,
+        0, 238, 51, 238, 62,
+        0, 239, 14, 239, 25,
+        0, 239, 26, 239, 40,
+        0, 239, 41, 239, 55,
+        0, 241, 17, 241, 25,
+        0, 241, 26, 241, 27,
+        0, 242, 17, 242, 30,
+        0, 242, 31, 242, 32,
+        0, 243, 17, 243, 30,
+        0, 243, 31, 243, 32,
+        0, 244, 17, 244, 28,
+        0, 244, 29, 244, 30,
+        0, 245, 17, 245, 28,
+        0, 245, 29, 245, 30,
+        0, 246, 17, 246, 31,
+        0, 246, 32, 246, 33,
+        0, 247, 17, 247, 31,
+        0, 247, 32, 247, 33,
+        0, 251, 35, 251, 44,
+        0, 253, 17, 253, 26,
+        0, 253, 27, 253, 28,
+        0, 257, 40, 257, 50,
+        0, 259, 31, 259, 41,
+        0, 309, 31, 309, 42,
+        0, 311, 16, 311, 22,
+        0, 311, 23, 311, 24,
+        0, 312, 35, 312, 46,
+        0, 313, 17, 313, 28,
+        0, 313, 29, 313, 35,
+        0, 6, 23, 6, 28,
+        0, 7, 34, 7, 50,
+        0, 8, 32, 8, 46,
+        0, 9, 21, 9, 26,
+        0, 9, 27, 9, 61,
+        0, 10, 21, 10, 29,
+        0, 10, 31, 10, 32,
+        0, 11, 21, 11, 30,
+        0, 11, 32, 11, 33,
+        0, 12, 20, 12, 24,
+        0, 12, 26, 12, 27,
+        0, 13, 21, 13, 29,
+        0, 13, 31, 13, 33,
+        0, 14, 21, 14, 30,
+        0, 14, 32, 14, 33,
+        0, 15, 21, 15, 28,
+        0, 15, 30, 15, 31,
+        0, 16, 21, 16, 29,
+        0, 16, 31, 16, 34,
+        0, 17, 21, 17, 27,
+        0, 17, 29, 17, 31,
+        0, 18, 21, 18, 27,
+        0, 18, 29, 18, 31,
+        0, 19, 21, 19, 28,
+        0, 19, 30, 19, 33,
+        0, 20, 21, 20, 32,
+        0, 20, 34, 20, 36,
+        0, 21, 20, 21, 36,
+        0, 21, 38, 21, 46,
+        0, 24, 34, 24, 43,
+        0, 31, 34, 31, 43,
+        0, 39, 21, 39, 27,
+        0, 39, 29, 39, 30,
+        0, 42, 34, 42, 54,
+        0, 49, 34, 49, 54,
+        0, 57, 21, 57, 33,
+        0, 57, 35, 57, 36,
+        0, 60, 34, 60, 54,
+        0, 67, 34, 67, 54,
+        0, 77, 21, 77, 27,
+        0, 78, 21, 78, 28,
+        0, 79, 21, 79, 27,
+        0, 80, 21, 80, 28,
+        0, 81, 21, 81, 27,
+        0, 82, 21, 82, 26,
+        0, 83, 21, 83, 26,
+        0, 86, 21, 86, 27,
+        0, 87, 21, 87, 28,
+        0, 88, 21, 88, 27,
+        0, 89, 21, 89, 28,
+        0, 90, 21, 90, 27,
+        0, 91, 21, 91, 26,
+        0, 92, 21, 92, 26,
+        0, 95, 21, 95, 47,
+        0, 96, 21, 96, 47,
+        0, 97, 21, 97, 45,
+        0, 98, 21, 98, 37,
+        0, 100, 35, 100, 36,
+        0, 100, 37, 100, 38,
+        0, 106, 15, 106, 23,
+        0, 106, 24, 106, 37,
+        0, 106, 38, 106, 51,
+        0, 106, 52, 106, 63,
+        0, 107, 15, 107, 26,
+        0, 107, 27, 107, 41,
+        0, 107, 42, 107, 56,
+        0, 112, 21, 112, 29,
+        0, 112, 30, 112, 43,
+        0, 112, 44, 112, 57,
+        0, 112, 58, 112, 69,
+        0, 113, 21, 113, 32,
+        0, 113, 33, 113, 47,
+        0, 113, 48, 113, 62,
+        0, 118, 32, 118, 42,
+        0, 118, 43, 118, 53,
+        0, 121, 20, 121, 30,
+        0, 121, 31, 121, 41,
+        0, 124, 35, 124, 49,
+        0, 124, 51, 124, 61,
+        0, 129, 21, 129, 31,
+        0, 129, 32, 129, 42,
+        0, 132, 47, 132, 57,
+        0, 141, 21, 141, 27,
+        0, 142, 21, 142, 28,
+        0, 143, 21, 143, 27,
+        0, 144, 21, 144, 28,
+        0, 145, 21, 145, 27,
+        0, 146, 21, 146, 26,
+        0, 147, 21, 147, 26,
+        0, 149, 40, 149, 45,
+        0, 152, 46, 152, 55,
+        0, 160, 45, 160, 50,
+        0, 163, 43, 163, 52,
+        0, 171, 45, 171, 50,
+        0, 174, 41, 174, 61,
+        0, 180, 41, 180, 61,
+        0, 188, 40, 188, 45,
+        0, 191, 37, 191, 57,
+        0, 197, 37, 197, 57,
+        0, 206, 21, 206, 27,
+        0, 206, 29, 206, 30,
+        0, 206, 31, 206, 32,
+        0, 206, 33, 206, 34,
+        0, 206, 35, 206, 36,
+        0, 206, 37, 206, 38,
+        0, 206, 39, 206, 40,
+        0, 209, 50, 209, 70,
+        0, 215, 50, 215, 70,
+        0, 223, 45, 223, 51,
+        0, 226, 51, 226, 71,
+        0, 232, 51, 232, 71,
+        0, 266, 20, 266, 25,
+        0, 266, 26, 266, 37,
+        0, 267, 20, 267, 27,
+        0, 267, 28, 267, 34,
+        0, 268, 20, 268, 25,
+        0, 268, 26, 268, 33,
+        0, 269, 20, 269, 27,
+        0, 269, 51, 269, 56,
+        0, 270, 20, 270, 25,
+        0, 270, 26, 270, 31,
+        0, 272, 34, 272, 39,
+        0, 272, 40, 272, 47,
+        0, 272, 48, 272, 55,
+        0, 272, 56, 272, 61,
+        0, 279, 39, 279, 49,
+        0, 280, 20, 280, 26,
+        0, 280, 50, 280, 60,
+        0, 281, 21, 281, 27,
+        0, 281, 28, 281, 29,
+        0, 283, 34, 283, 40,
+        0, 289, 54, 289, 55,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 80, 289, 81,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 21, 289, 27,
+        0, 289, 28, 289, 82,
+        0, 289, 21, 289, 27,
+        0, 290, 34, 290, 40,
+        0, 295, 25, 295, 31,
+        0, 295, 32, 295, 38,
+        0, 295, 56, 295, 62,
+        0, 296, 27, 296, 33,
+        0, 296, 34, 296, 35,
+        0, 296, 59, 296, 65,
+        0, 300, 50, 300, 51,
+        0, 300, 50, 300, 51,
+        0, 300, 52, 300, 53,
+        0, 300, 52, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 78, 300, 79,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 37, 300, 43,
+        0, 300, 44, 300, 80,
+        0, 300, 37, 300, 43,
+        0, 300, 98, 300, 104,
+        0, 301, 41, 301, 46,
+        0, 301, 41, 301, 46,
+        0, 301, 70, 301, 71,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 31, 301, 37,
+        0, 301, 38, 301, 72,
+        0, 301, 31, 301, 37,
+        0, 301, 90, 301, 96,
+        0, 302, 68, 302, 69,
+        0, 302, 68, 302, 69,
+        0, 302, 70, 302, 71,
+        0, 302, 70, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 96, 302, 97,
+        0, 302, 96, 302, 97,
+        0, 302, 73, 302, 97,
+        0, 302, 96, 302, 97,
+        0, 302, 35, 302, 41,
+        0, 302, 65, 302, 71,
+        0, 302, 73, 302, 97,
+        0, 302, 35, 302, 41,
+        0, 302, 116, 302, 122,
+        0, 303, 27, 303, 33,
+        0, 303, 34, 303, 35,
+        0, 303, 59, 303, 65,
+        0, 307, 42, 307, 49,
+        0, 307, 73, 307, 80,
+        0, 6, 23, 6, 28,
+        0, 7, 34, 7, 50,
+        0, 8, 32, 8, 46,
+        0, 9, 21, 9, 26,
+        0, 9, 27, 9, 61,
+        0, 10, 21, 10, 29,
+        0, 10, 31, 10, 32,
+        0, 11, 21, 11, 30,
+        0, 11, 32, 11, 33,
+        0, 12, 20, 12, 24,
+        0, 12, 26, 12, 27,
+        0, 13, 21, 13, 29,
+        0, 13, 31, 13, 33,
+        0, 14, 21, 14, 30,
+        0, 14, 32, 14, 33,
+        0, 15, 21, 15, 28,
+        0, 15, 30, 15, 31,
+        0, 16, 21, 16, 29,
+        0, 16, 31, 16, 34,
+        0, 17, 21, 17, 27,
+        0, 17, 29, 17, 31,
+        0, 18, 21, 18, 27,
+        0, 18, 29, 18, 31,
+        0, 19, 21, 19, 28,
+        0, 19, 30, 19, 33,
+        0, 20, 21, 20, 32,
+        0, 20, 34, 20, 36,
+        0, 21, 20, 21, 36,
+        0, 21, 38, 21, 46,
+        0, 24, 34, 24, 43,
+        0, 31, 34, 31, 43,
+        0, 39, 21, 39, 27,
+        0, 39, 29, 39, 30,
+        0, 42, 34, 42, 54,
+        0, 49, 34, 49, 54,
+        0, 57, 21, 57, 33,
+        0, 57, 35, 57, 36,
+        0, 60, 34, 60, 54,
+        0, 67, 34, 67, 54,
+        0, 77, 21, 77, 27,
+        0, 78, 21, 78, 28,
+        0, 79, 21, 79, 27,
+        0, 80, 21, 80, 28,
+        0, 81, 21, 81, 27,
+        0, 82, 21, 82, 26,
+        0, 83, 21, 83, 26,
+        0, 86, 21, 86, 27,
+        0, 87, 21, 87, 28,
+        0, 88, 21, 88, 27,
+        0, 89, 21, 89, 28,
+        0, 90, 21, 90, 27,
+        0, 91, 21, 91, 26,
+        0, 92, 21, 92, 26,
+        0, 95, 21, 95, 47,
+        0, 96, 21, 96, 47,
+        0, 97, 21, 97, 45,
+        0, 98, 21, 98, 37,
+        0, 100, 35, 100, 36,
+        0, 100, 37, 100, 38,
+        0, 106, 15, 106, 23,
+        0, 106, 24, 106, 37,
+        0, 106, 38, 106, 51,
+        0, 106, 52, 106, 63,
+        0, 107, 15, 107, 26,
+        0, 107, 27, 107, 41,
+        0, 107, 42, 107, 56,
+        0, 112, 21, 112, 29,
+        0, 112, 30, 112, 43,
+        0, 112, 44, 112, 57,
+        0, 112, 58, 112, 69,
+        0, 113, 21, 113, 32,
+        0, 113, 33, 113, 47,
+        0, 113, 48, 113, 62,
+        0, 118, 32, 118, 42,
+        0, 118, 43, 118, 53,
+        0, 121, 20, 121, 30,
+        0, 121, 31, 121, 41,
+        0, 124, 35, 124, 49,
+        0, 124, 51, 124, 61,
+        0, 129, 21, 129, 31,
+        0, 129, 32, 129, 42,
+        0, 132, 47, 132, 57,
+        0, 141, 21, 141, 27,
+        0, 142, 21, 142, 28,
+        0, 143, 21, 143, 27,
+        0, 144, 21, 144, 28,
+        0, 145, 21, 145, 27,
+        0, 146, 21, 146, 26,
+        0, 147, 21, 147, 26,
+        0, 149, 40, 149, 45,
+        0, 152, 46, 152, 55,
+        0, 160, 45, 160, 50,
+        0, 163, 43, 163, 52,
+        0, 171, 45, 171, 50,
+        0, 174, 41, 174, 61,
+        0, 180, 41, 180, 61,
+        0, 188, 40, 188, 45,
+        0, 191, 37, 191, 57,
+        0, 197, 37, 197, 57,
+        0, 206, 21, 206, 27,
+        0, 206, 29, 206, 30,
+        0, 206, 31, 206, 32,
+        0, 206, 33, 206, 34,
+        0, 206, 35, 206, 36,
+        0, 206, 37, 206, 38,
+        0, 206, 39, 206, 40,
+        0, 209, 50, 209, 70,
+        0, 215, 50, 215, 70,
+        0, 223, 45, 223, 51,
+        0, 226, 51, 226, 71,
+        0, 232, 51, 232, 71,
+        0, 266, 20, 266, 25,
+        0, 266, 26, 266, 37,
+        0, 267, 20, 267, 27,
+        0, 267, 28, 267, 34,
+        0, 268, 20, 268, 25,
+        0, 268, 26, 268, 33,
+        0, 269, 20, 269, 27,
+        0, 269, 51, 269, 56,
+        0, 270, 20, 270, 25,
+        0, 270, 26, 270, 31,
+        0, 272, 34, 272, 39,
+        0, 272, 40, 272, 47,
+        0, 272, 48, 272, 55,
+        0, 272, 56, 272, 61,
+        0, 279, 39, 279, 49,
+        0, 280, 20, 280, 26,
+        0, 280, 50, 280, 60,
+        0, 281, 21, 281, 27,
+        0, 281, 28, 281, 29,
+        0, 283, 34, 283, 40,
+        0, 289, 54, 289, 55,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 80, 289, 81,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 21, 289, 27,
+        0, 289, 28, 289, 82,
+        0, 289, 21, 289, 27,
+        0, 290, 34, 290, 40,
+        0, 295, 25, 295, 31,
+        0, 295, 32, 295, 38,
+        0, 295, 56, 295, 62,
+        0, 296, 27, 296, 33,
+        0, 296, 34, 296, 35,
+        0, 296, 59, 296, 65,
+        0, 300, 50, 300, 51,
+        0, 300, 50, 300, 51,
+        0, 300, 52, 300, 53,
+        0, 300, 52, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 78, 300, 79,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 37, 300, 43,
+        0, 300, 44, 300, 80,
+        0, 300, 37, 300, 43,
+        0, 300, 98, 300, 104,
+        0, 301, 41, 301, 46,
+        0, 301, 41, 301, 46,
+        0, 301, 70, 301, 71,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 31, 301, 37,
+        0, 301, 38, 301, 72,
+        0, 301, 31, 301, 37,
+        0, 301, 90, 301, 96,
+        0, 302, 68, 302, 69,
+        0, 302, 68, 302, 69,
+        0, 302, 70, 302, 71,
+        0, 302, 70, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 96, 302, 97,
+        0, 302, 96, 302, 97,
+        0, 302, 73, 302, 97,
+        0, 302, 96, 302, 97,
+        0, 302, 35, 302, 41,
+        0, 302, 65, 302, 71,
+        0, 302, 73, 302, 97,
+        0, 302, 35, 302, 41,
+        0, 302, 116, 302, 122,
+        0, 303, 27, 303, 33,
+        0, 303, 34, 303, 35,
+        0, 303, 59, 303, 65,
+        0, 307, 42, 307, 49,
+        0, 307, 73, 307, 80],
+      conditionSources: @[
+        0'u32, 240, 10, 247, 33,
+        0, 241, 14, 241, 27,
+        0, 242, 14, 242, 32,
+        0, 243, 14, 243, 32,
+        0, 244, 14, 244, 30,
+        0, 245, 14, 245, 30,
+        0, 246, 14, 246, 33,
+        0, 247, 14, 247, 33,
+        0, 252, 10, 253, 28,
+        0, 253, 14, 253, 28,
+        0, 258, 10, 259, 41,
+        0, 259, 13, 259, 41,
+        0, 310, 10, 313, 35,
+        0, 311, 13, 311, 24,
+        0, 312, 13, 312, 46,
+        0, 313, 14, 313, 35,
+        0, 240, 10, 247, 33,
+        0, 241, 14, 241, 27,
+        0, 242, 14, 242, 32,
+        0, 243, 14, 243, 32,
+        0, 244, 14, 244, 30,
+        0, 245, 14, 245, 30,
+        0, 246, 14, 246, 33,
+        0, 247, 14, 247, 33,
+        0, 252, 10, 253, 28,
+        0, 253, 14, 253, 28,
+        0, 258, 10, 259, 41,
+        0, 259, 13, 259, 41,
+        0, 310, 10, 313, 35,
+        0, 311, 13, 311, 24,
+        0, 312, 13, 312, 46,
+        0, 313, 14, 313, 35,
+        0, 5, 14, 21, 47,
+        0, 6, 17, 6, 28,
+        0, 7, 17, 7, 50,
+        0, 8, 17, 8, 46,
+        0, 9, 18, 9, 61,
+        0, 10, 18, 10, 32,
+        0, 11, 18, 11, 33,
+        0, 12, 18, 12, 27,
+        0, 13, 18, 13, 33,
+        0, 14, 18, 14, 33,
+        0, 15, 18, 15, 31,
+        0, 16, 18, 16, 34,
+        0, 17, 18, 17, 31,
+        0, 18, 18, 18, 31,
+        0, 19, 18, 19, 33,
+        0, 20, 18, 20, 36,
+        0, 21, 18, 21, 46,
+        0, 38, 14, 39, 30,
+        0, 39, 18, 39, 30,
+        0, 56, 14, 57, 36,
+        0, 57, 18, 57, 36,
+        0, 120, 14, 121, 41,
+        0, 121, 18, 121, 41,
+        0, 128, 14, 129, 42,
+        0, 129, 18, 129, 42,
+        0, 139, 14, 149, 46,
+        0, 140, 17, 147, 26,
+        0, 149, 17, 149, 45,
+        0, 159, 14, 160, 51,
+        0, 160, 17, 160, 50,
+        0, 170, 14, 171, 51,
+        0, 171, 17, 171, 50,
+        0, 187, 14, 188, 46,
+        0, 188, 17, 188, 45,
+        0, 204, 14, 206, 40,
+        0, 205, 17, 206, 40,
+        0, 222, 14, 223, 52,
+        0, 223, 17, 223, 51,
+        0, 265, 14, 270, 31,
+        0, 266, 17, 266, 37,
+        0, 267, 17, 267, 34,
+        0, 268, 17, 268, 33,
+        0, 269, 17, 269, 56,
+        0, 270, 17, 270, 31,
+        0, 278, 14, 281, 29,
+        0, 279, 17, 279, 49,
+        0, 280, 17, 280, 60,
+        0, 281, 18, 281, 29,
+        0, 289, 14, 289, 83,
+        0, 289, 18, 289, 82,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 18, 289, 82,
+        0, 295, 18, 295, 39,
+        0, 295, 22, 295, 38,
+        0, 296, 20, 296, 35,
+        0, 296, 24, 296, 35,
+        0, 300, 30, 300, 81,
+        0, 300, 34, 300, 80,
+        0, 300, 50, 300, 51,
+        0, 300, 52, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 34, 300, 80,
+        0, 301, 24, 301, 73,
+        0, 301, 28, 301, 72,
+        0, 301, 41, 301, 46,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 28, 301, 72,
+        0, 302, 28, 302, 99,
+        0, 302, 32, 302, 98,
+        0, 302, 68, 302, 69,
+        0, 302, 70, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 96, 302, 97,
+        0, 302, 73, 302, 97,
+        0, 302, 32, 302, 98,
+        0, 303, 20, 303, 35,
+        0, 303, 24, 303, 35,
+        0, 307, 19, 307, 49,
+        0, 307, 23, 307, 49,
+        0, 5, 14, 21, 47,
+        0, 6, 17, 6, 28,
+        0, 7, 17, 7, 50,
+        0, 8, 17, 8, 46,
+        0, 9, 18, 9, 61,
+        0, 10, 18, 10, 32,
+        0, 11, 18, 11, 33,
+        0, 12, 18, 12, 27,
+        0, 13, 18, 13, 33,
+        0, 14, 18, 14, 33,
+        0, 15, 18, 15, 31,
+        0, 16, 18, 16, 34,
+        0, 17, 18, 17, 31,
+        0, 18, 18, 18, 31,
+        0, 19, 18, 19, 33,
+        0, 20, 18, 20, 36,
+        0, 21, 18, 21, 46,
+        0, 38, 14, 39, 30,
+        0, 39, 18, 39, 30,
+        0, 56, 14, 57, 36,
+        0, 57, 18, 57, 36,
+        0, 120, 14, 121, 41,
+        0, 121, 18, 121, 41,
+        0, 128, 14, 129, 42,
+        0, 129, 18, 129, 42,
+        0, 139, 14, 149, 46,
+        0, 140, 17, 147, 26,
+        0, 149, 17, 149, 45,
+        0, 159, 14, 160, 51,
+        0, 160, 17, 160, 50,
+        0, 170, 14, 171, 51,
+        0, 171, 17, 171, 50,
+        0, 187, 14, 188, 46,
+        0, 188, 17, 188, 45,
+        0, 204, 14, 206, 40,
+        0, 205, 17, 206, 40,
+        0, 222, 14, 223, 52,
+        0, 223, 17, 223, 51,
+        0, 265, 14, 270, 31,
+        0, 266, 17, 266, 37,
+        0, 267, 17, 267, 34,
+        0, 268, 17, 268, 33,
+        0, 269, 17, 269, 56,
+        0, 270, 17, 270, 31,
+        0, 278, 14, 281, 29,
+        0, 279, 17, 279, 49,
+        0, 280, 17, 280, 60,
+        0, 281, 18, 281, 29,
+        0, 289, 14, 289, 83,
+        0, 289, 18, 289, 82,
+        0, 289, 54, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 31, 289, 55,
+        0, 289, 80, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 57, 289, 81,
+        0, 289, 18, 289, 82,
+        0, 295, 18, 295, 39,
+        0, 295, 22, 295, 38,
+        0, 296, 20, 296, 35,
+        0, 296, 24, 296, 35,
+        0, 300, 30, 300, 81,
+        0, 300, 34, 300, 80,
+        0, 300, 50, 300, 51,
+        0, 300, 52, 300, 53,
+        0, 300, 47, 300, 53,
+        0, 300, 78, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 55, 300, 79,
+        0, 300, 34, 300, 80,
+        0, 301, 24, 301, 73,
+        0, 301, 28, 301, 72,
+        0, 301, 41, 301, 46,
+        0, 301, 70, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 47, 301, 71,
+        0, 301, 28, 301, 72,
+        0, 302, 28, 302, 99,
+        0, 302, 32, 302, 98,
+        0, 302, 68, 302, 69,
+        0, 302, 70, 302, 71,
+        0, 302, 65, 302, 71,
+        0, 302, 96, 302, 97,
+        0, 302, 73, 302, 97,
+        0, 302, 32, 302, 98,
+        0, 303, 20, 303, 35,
+        0, 303, 24, 303, 35,
+        0, 307, 19, 307, 49,
+        0, 307, 23, 307, 49],
+      taskSources: @[
+        0'u32, 24, 17, 24, 43,
+        0, 31, 17, 31, 43,
+        0, 42, 17, 42, 54,
+        0, 49, 17, 49, 54,
+        0, 60, 17, 60, 54,
+        0, 67, 17, 67, 54,
+        0, 76, 17, 84, 17,
+        0, 85, 17, 93, 17,
+        0, 94, 17, 99, 17,
+        0, 100, 17, 100, 38,
+        0, 111, 17, 113, 62,
+        0, 124, 17, 124, 61,
+        0, 132, 17, 132, 57,
+        0, 152, 17, 152, 55,
+        0, 163, 17, 163, 52,
+        0, 174, 17, 174, 61,
+        0, 180, 17, 180, 61,
+        0, 191, 17, 191, 57,
+        0, 197, 17, 197, 57,
+        0, 209, 17, 209, 70,
+        0, 215, 17, 215, 70,
+        0, 226, 17, 226, 71,
+        0, 232, 17, 232, 71,
+        0, 272, 14, 272, 61,
+        0, 283, 14, 283, 40,
+        0, 290, 14, 290, 40,
+        0, 295, 43, 295, 62,
+        0, 296, 39, 296, 65,
+        0, 300, 85, 300, 104,
+        0, 301, 77, 301, 96,
+        0, 302, 103, 302, 122,
+        0, 303, 39, 303, 65,
+        0, 307, 53, 307, 80,
+        0, 24, 17, 24, 43,
+        0, 31, 17, 31, 43,
+        0, 42, 17, 42, 54,
+        0, 49, 17, 49, 54,
+        0, 60, 17, 60, 54,
+        0, 67, 17, 67, 54,
+        0, 76, 17, 84, 17,
+        0, 85, 17, 93, 17,
+        0, 94, 17, 99, 17,
+        0, 100, 17, 100, 38,
+        0, 111, 17, 113, 62,
+        0, 124, 17, 124, 61,
+        0, 132, 17, 132, 57,
+        0, 152, 17, 152, 55,
+        0, 163, 17, 163, 52,
+        0, 174, 17, 174, 61,
+        0, 180, 17, 180, 61,
+        0, 191, 17, 191, 57,
+        0, 197, 17, 197, 57,
+        0, 209, 17, 209, 70,
+        0, 215, 17, 215, 70,
+        0, 226, 17, 226, 71,
+        0, 232, 17, 232, 71,
+        0, 272, 14, 272, 61,
+        0, 283, 14, 283, 40,
+        0, 290, 14, 290, 40,
+        0, 295, 43, 295, 62,
+        0, 296, 39, 296, 65,
+        0, 300, 85, 300, 104,
+        0, 301, 77, 301, 96,
+        0, 302, 103, 302, 122,
+        0, 303, 39, 303, 65,
+        0, 307, 53, 307, 80],
+      branchSources: @[
+        0'u32, 4, 9, 26, 9,
+        0, 27, 9, 33, 9,
+        0, 37, 9, 44, 9,
+        0, 45, 9, 51, 9,
+        0, 55, 9, 62, 9,
+        0, 63, 9, 69, 9,
+        0, 73, 9, 102, 9,
+        0, 108, 9, 115, 9,
+        0, 119, 9, 126, 9,
+        0, 127, 9, 134, 9,
+        0, 138, 9, 154, 9,
+        0, 158, 9, 165, 9,
+        0, 169, 9, 176, 9,
+        0, 177, 9, 182, 9,
+        0, 186, 9, 193, 9,
+        0, 194, 9, 199, 9,
+        0, 203, 9, 211, 9,
+        0, 212, 9, 217, 9,
+        0, 221, 9, 228, 9,
+        0, 229, 9, 234, 9,
+        0, 264, 9, 273, 9,
+        0, 277, 9, 284, 9,
+        0, 288, 9, 291, 9,
+        0, 295, 9, 295, 64,
+        0, 296, 9, 296, 67,
+        0, 300, 9, 300, 106,
+        0, 301, 9, 301, 98,
+        0, 302, 9, 302, 124,
+        0, 303, 9, 303, 67,
+        0, 307, 9, 307, 82,
+        0, 4, 9, 26, 9,
+        0, 27, 9, 33, 9,
+        0, 37, 9, 44, 9,
+        0, 45, 9, 51, 9,
+        0, 55, 9, 62, 9,
+        0, 63, 9, 69, 9,
+        0, 73, 9, 102, 9,
+        0, 108, 9, 115, 9,
+        0, 119, 9, 126, 9,
+        0, 127, 9, 134, 9,
+        0, 138, 9, 154, 9,
+        0, 158, 9, 165, 9,
+        0, 169, 9, 176, 9,
+        0, 177, 9, 182, 9,
+        0, 186, 9, 193, 9,
+        0, 194, 9, 199, 9,
+        0, 203, 9, 211, 9,
+        0, 212, 9, 217, 9,
+        0, 221, 9, 228, 9,
+        0, 229, 9, 234, 9,
+        0, 264, 9, 273, 9,
+        0, 277, 9, 284, 9,
+        0, 288, 9, 291, 9,
+        0, 295, 9, 295, 64,
+        0, 296, 9, 296, 67,
+        0, 300, 9, 300, 106,
+        0, 301, 9, 301, 98,
+        0, 302, 9, 302, 124,
+        0, 303, 9, 303, 67,
+        0, 307, 9, 307, 82],
+      methodSources: @[
+        0'u32, 3, 5, 34, 5,
+        0, 36, 5, 52, 5,
+        0, 54, 5, 70, 5,
+        0, 72, 5, 103, 5,
+        0, 105, 5, 116, 5,
+        0, 118, 5, 135, 5,
+        0, 137, 5, 155, 5,
+        0, 157, 5, 166, 5,
+        0, 168, 5, 183, 5,
+        0, 185, 5, 200, 5,
+        0, 202, 5, 218, 5,
+        0, 220, 5, 235, 5,
+        0, 263, 5, 274, 5,
+        0, 276, 5, 285, 5,
+        0, 287, 5, 292, 5,
+        0, 294, 5, 297, 5,
+        0, 299, 5, 304, 5,
+        0, 306, 5, 308, 5,
+        0, 3, 5, 34, 5,
+        0, 36, 5, 52, 5,
+        0, 54, 5, 70, 5,
+        0, 72, 5, 103, 5,
+        0, 105, 5, 116, 5,
+        0, 118, 5, 135, 5,
+        0, 137, 5, 155, 5,
+        0, 157, 5, 166, 5,
+        0, 168, 5, 183, 5,
+        0, 185, 5, 200, 5,
+        0, 202, 5, 218, 5,
+        0, 220, 5, 235, 5,
+        0, 263, 5, 274, 5,
+        0, 276, 5, 285, 5,
+        0, 287, 5, 292, 5,
+        0, 294, 5, 297, 5,
+        0, 299, 5, 304, 5,
+        0, 306, 5, 308, 5],
+      axiomSources: @[
+        0'u32, 237, 5, 249, 5,
+        0, 251, 5, 255, 5,
+        0, 257, 5, 261, 5,
+        0, 309, 5, 315, 5,
+        0, 237, 5, 249, 5,
+        0, 251, 5, 255, 5,
+        0, 257, 5, 261, 5,
+        0, 309, 5, 315, 5],
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())

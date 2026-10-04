@@ -302,9 +302,11 @@ proc axiomBegin32(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
   if in1.isBound: ex.setIfChanged(2, in1)
+  ex.debugBeginAxiom(definition, 3)
 
 proc axiomEnd32(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[2] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -322,6 +324,7 @@ proc axiomBegin75(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd75(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -333,6 +336,7 @@ proc axiomEnd75(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
   var out1: Atom
   if valid:
     out1 = ex.v[1]
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -352,6 +356,7 @@ proc axiomBegin82(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd82(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -363,6 +368,7 @@ proc axiomEnd82(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcal
   var out1: Atom
   if valid:
     out1 = ex.v[1]
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -382,9 +388,11 @@ proc axiomBegin83(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
   if in1.isBound: ex.setIfChanged(2, in1)
+  ex.debugBeginAxiom(definition, 3)
 
 proc axiomEnd83(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[2] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -402,9 +410,11 @@ proc axiomBegin123(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
   if in1.isBound: ex.setIfChanged(2, in1)
+  ex.debugBeginAxiom(definition, 3)
 
 proc axiomEnd123(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[2] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -422,6 +432,7 @@ proc axiomBegin166(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd166(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -433,6 +444,7 @@ proc axiomEnd166(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
   var out1: Atom
   if valid:
     out1 = ex.v[1]
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -452,6 +464,7 @@ proc axiomBegin173(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   scope.callerFrame = ex.currentFrameID
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
+  ex.debugBeginAxiom(definition, 2)
 
 proc axiomEnd173(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
@@ -463,6 +476,7 @@ proc axiomEnd173(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimca
   var out1: Atom
   if valid:
     out1 = ex.v[1]
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[1] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -482,9 +496,11 @@ proc axiomBegin174(ex: Exec, scope: var AxiomScope) {.nimcall.} =
   ex.enterFrame()
   if in0.isBound: ex.setIfChanged(0, in0)
   if in1.isBound: ex.setIfChanged(2, in1)
+  ex.debugBeginAxiom(definition, 3)
 
 proc axiomEnd174(ex: Exec, succeeded: bool, scope: var AxiomScope): bool {.nimcall, discardable.} =
   var valid = succeeded
+  ex.debugEndAxiom(definition, valid)
   ex.v[0] = scope.saved[0]
   ex.v[2] = scope.saved[1]
   ex.currentFrameID = scope.callerFrame
@@ -1771,17 +1787,28 @@ proc factChoice209(ex: Exec, target: uint32): bool {.nimcall.} =
   false
 
 proc task0(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 0)
   # (!move_to_cover ?cover)
-  if not ex.appendPlanStep(sym35, [ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym35, [ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task1(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 1)
   # (combat_response ?inp_entity ?inp_enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[2]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -1792,55 +1819,102 @@ proc task1(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task2(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 2)
   # (!retreat ?route)
-  if not ex.appendPlanStep(sym36, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym36, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task3(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 3)
   # (!log "Emergency fallback")
-  if not ex.appendPlanStep(sym37, [sv0]): return 0
+  if not ex.appendPlanStep(sym37, [sv0]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task4(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 4)
   # (!aim ?inp_enemy)
-  if not ex.appendPlanStep(sym38, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym38, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task5(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 5)
   # (!fire ?inp_enemy)
-  if not ex.appendPlanStep(sym39, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym39, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task6(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 6)
   # (!reload ?inp_entity)
-  if not ex.appendPlanStep(sym40, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym40, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task7(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 7)
   # (!disengage ?inp_enemy)
-  if not ex.appendPlanStep(sym41, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym41, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task8(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 8)
   # (!log "Recursive scenario started" ?entity ?health ?max_speed)
-  if not ex.appendPlanStep(sym37, [sv3, ex.v[5], ex.v[7], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym37, [sv3, ex.v[5], ex.v[7], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task9(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 9)
   # (iterate_over_entities 0 ?num_entities ?health ?max_speed)
   let arg0 = sv4
   let arg1 = ex.v[6]
   let arg2 = ex.v[7]
   let arg3 = ex.v[8]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[9] = Atom()
   ex.v[10] = Atom()
   ex.v[11] = Atom()
@@ -1857,18 +1931,29 @@ proc task9(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task10(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 10)
   # (!log "Scenario started" ?entity ?health ?max_speed)
-  if not ex.appendPlanStep(sym37, [sv6, ex.v[5], ex.v[7], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym37, [sv6, ex.v[5], ex.v[7], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task11(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 11)
   # (evaluate_situation ?entity ?health ?max_speed)
   let arg0 = ex.v[5]
   let arg1 = ex.v[7]
   let arg2 = ex.v[8]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[11] = Atom()
   ex.v[12] = Atom()
@@ -1882,18 +1967,29 @@ proc task11(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task12(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 12)
   # (!log "No active entity")
-  if not ex.appendPlanStep(sym37, [sv7]): return 0
+  if not ex.appendPlanStep(sym37, [sv7]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task13(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 13)
   # (evaluate_situation ?entity_id ?inp_health ?inp_max_speed)
   let arg0 = ex.v[13]
   let arg1 = ex.v[11]
   let arg2 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[11] = Atom()
   ex.v[12] = Atom()
@@ -1907,18 +2003,25 @@ proc task13(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task14(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 14)
   # (call inc ?inp_entity_index)
   block:
     let (callResult, ok) = ex.invoke(4, @[ex.v[9]], addr cs0, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(14, callResult)
   # (iterate_over_entities (call inc ?inp_entity_index) ?inp_num_entities ?inp_health ?inp_max_speed)
   let arg0 = ex.v[14]
   let arg1 = ex.v[10]
   let arg2 = ex.v[11]
   let arg3 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[9] = Atom()
   ex.v[10] = Atom()
   ex.v[11] = Atom()
@@ -1935,17 +2038,28 @@ proc task14(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task15(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 15)
   # (!log "Emergency response")
-  if not ex.appendPlanStep(sym37, [sv9]): return 0
+  if not ex.appendPlanStep(sym37, [sv9]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task16(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 16)
   # (emergency_response ?inp_entity ?enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[15]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.v[3] = Atom()
@@ -1958,17 +2072,28 @@ proc task16(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task17(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 17)
   # (!log "Combat response")
-  if not ex.appendPlanStep(sym37, [sv11]): return 0
+  if not ex.appendPlanStep(sym37, [sv11]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task18(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 18)
   # (combat_response ?inp_entity ?enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[15]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -1979,16 +2104,27 @@ proc task18(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task19(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 19)
   # (!log "Recovery response")
-  if not ex.appendPlanStep(sym37, [sv12]): return 0
+  if not ex.appendPlanStep(sym37, [sv12]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task20(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 20)
   # (recovery_response ?inp_entity)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[16] = Atom()
   ex.v[17] = Atom()
@@ -1999,17 +2135,28 @@ proc task20(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task21(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 21)
   # (!log "Mobility response")
-  if not ex.appendPlanStep(sym37, [sv13]): return 0
+  if not ex.appendPlanStep(sym37, [sv13]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task22(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 22)
   # (mobility_response ?inp_entity ?inp_max_speed)
   let arg0 = ex.v[0]
   let arg1 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[4] = Atom()
   ex.v[12] = Atom()
@@ -2021,65 +2168,124 @@ proc task22(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task23(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 23)
   # (!log "Idle - no special action")
-  if not ex.appendPlanStep(sym37, [sv14]): return 0
+  if not ex.appendPlanStep(sym37, [sv14]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task24(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 24)
   # (!use_medkit ?inp_entity)
-  if not ex.appendPlanStep(sym42, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym42, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task25(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 25)
   # (!move_to_healing_station ?station)
-  if not ex.appendPlanStep(sym43, [ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym43, [ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task26(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 26)
   # (!heal_at_station ?station)
-  if not ex.appendPlanStep(sym44, [ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym44, [ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task27(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 27)
   # (!log "Cannot recover right now")
-  if not ex.appendPlanStep(sym37, [sv15]): return 0
+  if not ex.appendPlanStep(sym37, [sv15]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task28(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 28)
   # (!sprint_to ?route ?inp_max_speed)
-  if not ex.appendPlanStep(sym45, [ex.v[4], ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym45, [ex.v[4], ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task29(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 29)
   # (!walk_to ?route)
-  if not ex.appendPlanStep(sym46, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym46, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task30(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 30)
   # (!log "Cannot reach objective")
-  if not ex.appendPlanStep(sym37, [sv17]): return 0
+  if not ex.appendPlanStep(sym37, [sv17]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task31(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 31)
   # (!move_to_cover ?cover)
-  if not ex.appendPlanStep(sym35, [ex.v[3]]): return 0
+  if not ex.appendPlanStep(sym35, [ex.v[3]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task32(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 32)
   # (combat_response ?inp_entity ?inp_enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[2]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -2090,55 +2296,102 @@ proc task32(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task33(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 33)
   # (!retreat ?route)
-  if not ex.appendPlanStep(sym36, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym36, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task34(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 34)
   # (!log "Emergency fallback")
-  if not ex.appendPlanStep(sym37, [sv18]): return 0
+  if not ex.appendPlanStep(sym37, [sv18]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task35(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 35)
   # (!aim ?inp_enemy)
-  if not ex.appendPlanStep(sym38, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym38, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task36(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 36)
   # (!fire ?inp_enemy)
-  if not ex.appendPlanStep(sym39, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym39, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task37(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 37)
   # (!reload ?inp_entity)
-  if not ex.appendPlanStep(sym40, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym40, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task38(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 38)
   # (!disengage ?inp_enemy)
-  if not ex.appendPlanStep(sym41, [ex.v[2]]): return 0
+  if not ex.appendPlanStep(sym41, [ex.v[2]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task39(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 39)
   # (!log "Recursive scenario started" ?entity ?health ?max_speed)
-  if not ex.appendPlanStep(sym37, [sv21, ex.v[5], ex.v[7], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym37, [sv21, ex.v[5], ex.v[7], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task40(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 40)
   # (iterate_over_entities 0 ?num_entities ?health ?max_speed)
   let arg0 = sv22
   let arg1 = ex.v[6]
   let arg2 = ex.v[7]
   let arg3 = ex.v[8]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[9] = Atom()
   ex.v[10] = Atom()
   ex.v[11] = Atom()
@@ -2155,18 +2408,29 @@ proc task40(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task41(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 41)
   # (!log "Scenario started" ?entity ?health ?max_speed)
-  if not ex.appendPlanStep(sym37, [sv24, ex.v[5], ex.v[7], ex.v[8]]): return 0
+  if not ex.appendPlanStep(sym37, [sv24, ex.v[5], ex.v[7], ex.v[8]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task42(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 42)
   # (evaluate_situation ?entity ?health ?max_speed)
   let arg0 = ex.v[5]
   let arg1 = ex.v[7]
   let arg2 = ex.v[8]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[11] = Atom()
   ex.v[12] = Atom()
@@ -2180,18 +2444,29 @@ proc task42(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task43(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 43)
   # (!log "No active entity")
-  if not ex.appendPlanStep(sym37, [sv25]): return 0
+  if not ex.appendPlanStep(sym37, [sv25]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task44(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 44)
   # (evaluate_situation ?entity_id ?inp_health ?inp_max_speed)
   let arg0 = ex.v[13]
   let arg1 = ex.v[11]
   let arg2 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[11] = Atom()
   ex.v[12] = Atom()
@@ -2205,18 +2480,25 @@ proc task44(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task45(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 45)
   # (call inc ?inp_entity_index)
   block:
     let (callResult, ok) = ex.invoke(4, @[ex.v[9]], addr cs1, factSymbols)
-    if not ok: return 0
+    if not ok:
+      ex.debugEndTask(definition, false)
+      return 0
     ex.setIfChanged(18, callResult)
   # (iterate_over_entities (call inc ?inp_entity_index) ?inp_num_entities ?inp_health ?inp_max_speed)
   let arg0 = ex.v[18]
   let arg1 = ex.v[10]
   let arg2 = ex.v[11]
   let arg3 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound: return 0
+  if not arg0.isBound or not arg1.isBound or not arg2.isBound or not arg3.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[9] = Atom()
   ex.v[10] = Atom()
   ex.v[11] = Atom()
@@ -2233,17 +2515,28 @@ proc task45(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task46(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 46)
   # (!log "Emergency response")
-  if not ex.appendPlanStep(sym37, [sv27]): return 0
+  if not ex.appendPlanStep(sym37, [sv27]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task47(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 47)
   # (emergency_response ?inp_entity ?enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[15]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.v[3] = Atom()
@@ -2256,17 +2549,28 @@ proc task47(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task48(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 48)
   # (!log "Combat response")
-  if not ex.appendPlanStep(sym37, [sv29]): return 0
+  if not ex.appendPlanStep(sym37, [sv29]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task49(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 49)
   # (combat_response ?inp_entity ?enemy)
   let arg0 = ex.v[0]
   let arg1 = ex.v[15]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[2] = Atom()
   ex.enterFrame()
@@ -2277,16 +2581,27 @@ proc task49(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task50(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 50)
   # (!log "Recovery response")
-  if not ex.appendPlanStep(sym37, [sv30]): return 0
+  if not ex.appendPlanStep(sym37, [sv30]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task51(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 51)
   # (recovery_response ?inp_entity)
   let arg0 = ex.v[0]
-  if not arg0.isBound: return 0
+  if not arg0.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[16] = Atom()
   ex.v[17] = Atom()
@@ -2297,17 +2612,28 @@ proc task51(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task52(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 52)
   # (!log "Mobility response")
-  if not ex.appendPlanStep(sym37, [sv31]): return 0
+  if not ex.appendPlanStep(sym37, [sv31]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task53(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 53)
   # (mobility_response ?inp_entity ?inp_max_speed)
   let arg0 = ex.v[0]
   let arg1 = ex.v[12]
-  if not arg0.isBound or not arg1.isBound: return 0
+  if not arg0.isBound or not arg1.isBound:
+    ex.debugEndTask(definition, false)
+    return 0
   ex.v[0] = Atom()
   ex.v[4] = Atom()
   ex.v[12] = Atom()
@@ -2319,51 +2645,99 @@ proc task53(ex: Exec): int {.nimcall.} =
   return 2
 
 proc task54(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 54)
   # (!log "Idle - no special action")
-  if not ex.appendPlanStep(sym37, [sv32]): return 0
+  if not ex.appendPlanStep(sym37, [sv32]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task55(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 55)
   # (!use_medkit ?inp_entity)
-  if not ex.appendPlanStep(sym42, [ex.v[0]]): return 0
+  if not ex.appendPlanStep(sym42, [ex.v[0]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task56(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 56)
   # (!move_to_healing_station ?station)
-  if not ex.appendPlanStep(sym43, [ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym43, [ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task57(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 57)
   # (!heal_at_station ?station)
-  if not ex.appendPlanStep(sym44, [ex.v[17]]): return 0
+  if not ex.appendPlanStep(sym44, [ex.v[17]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task58(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 58)
   # (!log "Cannot recover right now")
-  if not ex.appendPlanStep(sym37, [sv33]): return 0
+  if not ex.appendPlanStep(sym37, [sv33]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task59(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 59)
   # (!sprint_to ?route ?inp_max_speed)
-  if not ex.appendPlanStep(sym45, [ex.v[4], ex.v[12]]): return 0
+  if not ex.appendPlanStep(sym45, [ex.v[4], ex.v[12]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task60(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 60)
   # (!walk_to ?route)
-  if not ex.appendPlanStep(sym46, [ex.v[4]]): return 0
+  if not ex.appendPlanStep(sym46, [ex.v[4]]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 proc task61(ex: Exec): int {.nimcall.} =
-  if ex.frame().resume != 0: return ex.frame().childResult
+  if ex.frame().resume != 0:
+    ex.debugEndTask(definition, ex.frame().childResult != 0)
+    return ex.frame().childResult
+  ex.debugBeginTask(definition, 61)
   # (!log "Cannot reach objective")
-  if not ex.appendPlanStep(sym37, [sv35]): return 0
+  if not ex.appendPlanStep(sym37, [sv35]):
+    ex.debugEndTask(definition, false)
+    return 0
+  ex.debugEndTask(definition, true)
   return 1
 
 # method0: combat_reactions::emergency_response/2
@@ -2372,17 +2746,17 @@ proc method0(ex: Exec): int {.nimcall.} =
   var cp11_3: Atom
   var cp13_3: Atom
   var fc14: uint32
-  var as32_22: AxiomScope
-  var as32_22Frame: uint64
-  var alt27: bool
-  var cp48_0: Atom
-  var cp48_2: Atom
-  var as32_22Copy: AxiomScope
-  var cp69_0: Atom
-  var cp69_2: Atom
-  var cp76_4: Atom
-  var cp78_4: Atom
-  var fc79: uint32
+  var as32_23: AxiomScope
+  var as32_23Frame: uint64
+  var alt28: bool
+  var cp53_0: Atom
+  var cp53_2: Atom
+  var as32_23Copy: AxiomScope
+  var cp80_0: Atom
+  var cp80_2: Atom
+  var cp89_4: Atom
+  var cp91_4: Atom
+  var fc92: uint32
   var state = 0
   case fr.resume
   of 1: state = 5
@@ -2392,33 +2766,42 @@ proc method0(ex: Exec): int {.nimcall.} =
   while true:
     case state
     of 0:
+      ex.debugBeginMethod(definition, 0)
       state = 2
       continue
     of 2:
       # branch branch_take_cover_and_fight
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 0)
       # (and (cover_available ?inp_entity ?cover) (not (cover_compromised ?cover)) (#can_engage ?inp_entity ?inp_enemy))
       cp11_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 28)
       # (cover_available ?inp_entity ?cover)
       cp13_3 = ex.v[3]
       fc14 = 0
       state = 15
       continue
     of 15:
+      ex.debugBeginCondition(definition, 29)
       inc fc14
       if not factChoice29(ex, fc14 - 1):
+        ex.debugEndCondition(definition, false)
         state = 12
         continue
+      ex.debugEndCondition(definition, true)
       # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 30)
       # (cover_compromised ?cover)
       # (cover_compromised ?cover)
       block:
+        ex.debugBeginCondition(definition, 31)
         let ft = ex.factTables[9]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[3]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 21
           continue
@@ -2433,256 +2816,338 @@ proc method0(ex: Exec): int {.nimcall.} =
       state = 18
       continue
     of 18:
+      ex.debugEndCondition(definition, true)
       # (#can_engage ?inp_entity ?inp_enemy)
-      as32_22.saved.setLen(2)
-      as32_22.args.setLen(2)
-      axiomBegin32(ex, as32_22)
-      as32_22Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 32)
+      as32_23.saved.setLen(2)
+      as32_23.args.setLen(2)
+      axiomBegin32(ex, as32_23)
+      as32_23Frame = ex.currentFrameID
       # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
       # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt27 = false
+      ex.debugBeginCondition(definition, 20)
+      alt28 = false
       # (has_weapon ?inp_entity)
       # (has_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 21)
         let ft = ex.factTables[3]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 32
+          state = 33
           continue
-        state = 30
+        state = 31
         continue
-      state = 32
+      state = 33
       continue
-    of 32:
-      alt27 = true
+    of 33:
+      alt28 = true
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 23)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 35
+          state = 37
           continue
-        state = 33
+        state = 35
         continue
-      state = 35
+      state = 37
       continue
-    of 35:
+    of 37:
       # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
       # (weapon_jammed ?inp_entity)
       # (weapon_jammed ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 25)
         let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 41
+          state = 43
           continue
-        state = 39
+        state = 41
         continue
-      state = 41
+      state = 43
       continue
-    of 41:
-      state = 36
-      continue
-    of 39:
+    of 43:
       state = 38
       continue
-    of 38:
+    of 41:
+      state = 40
+      continue
+    of 40:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 27)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 47
+          state = 50
           continue
-        state = 45
+        state = 48
         continue
+      state = 50
+      continue
+    of 50:
+      state = 45
+      continue
+    of 48:
       state = 47
       continue
     of 47:
-      state = 42
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp53_0 = ex.v[0]
+      cp53_2 = ex.v[2]
+      as32_23Copy = as32_23
+      if not axiomEnd32(ex, true, as32_23Copy):
+        state = 54
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 8
+      continue
+    of 54:
+      ex.v[0] = cp53_0
+      ex.v[2] = cp53_2
+      ex.currentFrameID = as32_23Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 52
+      continue
+    of 52:
+      ex.debugBeginCondition(definition, 19)
+      state = 51
+      continue
+    of 51:
+      ex.debugBeginCondition(definition, 26)
+      state = 45
       continue
     of 45:
+      ex.debugEndCondition(definition, false)
       state = 44
       continue
     of 44:
-      cp48_0 = ex.v[0]
-      cp48_2 = ex.v[2]
-      as32_22Copy = as32_22
-      if not axiomEnd32(ex, true, as32_22Copy):
-        state = 49
-        continue
-      state = 8
+      ex.debugBeginCondition(definition, 24)
+      state = 38
       continue
-    of 49:
-      ex.v[0] = cp48_0
-      ex.v[2] = cp48_2
-      ex.currentFrameID = as32_22Frame
-      state = 42
+    of 38:
+      ex.debugEndCondition(definition, false)
+      state = 35
       continue
-    of 42:
-      state = 36
+    of 35:
+      state = 34
       continue
-    of 36:
-      state = 33
+    of 34:
+      ex.debugBeginCondition(definition, 20)
+      state = 31
       continue
-    of 33:
+    of 31:
       state = 30
       continue
     of 30:
-      state = 29
-      continue
-    of 29:
-      if alt27 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 27
+      if alt28 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 28
         continue
       # (has_backup_weapon ?inp_entity)
       # (has_backup_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 22)
         let ft = ex.factTables[4]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 53
+          state = 60
           continue
-        state = 51
+        state = 58
         continue
-      state = 53
+      state = 60
       continue
-    of 53:
-      alt27 = true
+    of 60:
+      alt28 = true
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 23)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 56
+          state = 64
           continue
-        state = 54
+        state = 62
         continue
-      state = 56
+      state = 64
       continue
-    of 56:
+    of 64:
       # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
       # (weapon_jammed ?inp_entity)
       # (weapon_jammed ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 25)
         let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 62
+          state = 70
           continue
-        state = 60
+        state = 68
         continue
-      state = 62
+      state = 70
       continue
-    of 62:
-      state = 57
+    of 70:
+      state = 65
       continue
-    of 60:
-      state = 59
+    of 68:
+      state = 67
       continue
-    of 59:
+    of 67:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 27)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 68
+          state = 77
           continue
-        state = 66
+        state = 75
         continue
-      state = 68
+      state = 77
       continue
-    of 68:
-      state = 63
+    of 77:
+      state = 72
       continue
-    of 66:
+    of 75:
+      state = 74
+      continue
+    of 74:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp80_0 = ex.v[0]
+      cp80_2 = ex.v[2]
+      as32_23Copy = as32_23
+      if not axiomEnd32(ex, true, as32_23Copy):
+        state = 81
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 8
+      continue
+    of 81:
+      ex.v[0] = cp80_0
+      ex.v[2] = cp80_2
+      ex.currentFrameID = as32_23Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 79
+      continue
+    of 79:
+      ex.debugBeginCondition(definition, 19)
+      state = 78
+      continue
+    of 78:
+      ex.debugBeginCondition(definition, 26)
+      state = 72
+      continue
+    of 72:
+      ex.debugEndCondition(definition, false)
+      state = 71
+      continue
+    of 71:
+      ex.debugBeginCondition(definition, 24)
       state = 65
       continue
     of 65:
-      cp69_0 = ex.v[0]
-      cp69_2 = ex.v[2]
-      as32_22Copy = as32_22
-      if not axiomEnd32(ex, true, as32_22Copy):
-        state = 70
-        continue
-      state = 8
+      ex.debugEndCondition(definition, false)
+      state = 62
       continue
-    of 70:
-      ex.v[0] = cp69_0
-      ex.v[2] = cp69_2
-      ex.currentFrameID = as32_22Frame
-      state = 63
+    of 62:
+      state = 61
       continue
-    of 63:
+    of 61:
+      ex.debugBeginCondition(definition, 20)
+      state = 58
+      continue
+    of 58:
       state = 57
       continue
     of 57:
-      state = 54
-      continue
-    of 54:
-      state = 51
-      continue
-    of 51:
-      state = 50
-      continue
-    of 50:
-      if alt27 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 27
+      if alt28 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 28
         continue
-      state = 27
+      state = 28
       continue
-    of 27:
+    of 28:
+      ex.debugEndCondition(definition, false)
+      state = 26
+      continue
+    of 26:
+      ex.debugEndCondition(definition, false)
       state = 25
       continue
     of 25:
-      state = 24
+      axiomEnd32(ex, false, as32_23)
+      state = 23
       continue
-    of 24:
-      axiomEnd32(ex, false, as32_22)
+    of 23:
+      ex.debugEndCondition(definition, false)
       state = 22
       continue
     of 22:
+      ex.debugBeginCondition(definition, 30)
       state = 16
       continue
     of 16:
+      ex.debugEndCondition(definition, false)
       state = 14
       continue
     of 14:
@@ -2699,19 +3164,25 @@ proc method0(ex: Exec): int {.nimcall.} =
       continue
     of 10:
       ex.v[3] = cp11_3
+      ex.debugEndCondition(definition, false)
       state = 9
       continue
     of 9:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 3
       continue
     of 8:
       if not ex.pushBranch(addr bc0):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 71
+      ex.debugCapturePendingTask(1)
+      ex.debugCapturePendingTask(0)
+      state = 84
       continue
-    of 71:
+    of 84:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2721,95 +3192,118 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 5
         continue
-      state = 72
+      state = 85
       continue
     of 5:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 3
         continue
-      state = 71
+      state = 84
       continue
-    of 72:
+    of 85:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 3:
       # branch branch_retreat
       ex.saveRetry(fr, ms0)
+      ex.debugBeginBranch(definition, 1)
       # (and (retreat_route ?inp_entity ?route) (not (route_blocked ?route)))
-      cp76_4 = ex.v[4]
+      cp89_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 33)
       # (retreat_route ?inp_entity ?route)
-      cp78_4 = ex.v[4]
-      fc79 = 0
-      state = 80
+      cp91_4 = ex.v[4]
+      fc92 = 0
+      state = 93
       continue
-    of 80:
-      inc fc79
-      if not factChoice34(ex, fc79 - 1):
-        state = 77
+    of 93:
+      ex.debugBeginCondition(definition, 34)
+      inc fc92
+      if not factChoice34(ex, fc92 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 90
         continue
+      ex.debugEndCondition(definition, true)
       # (not (route_blocked ?route))
+      ex.debugBeginCondition(definition, 35)
       # (route_blocked ?route)
       # (route_blocked ?route)
       block:
+        ex.debugBeginCondition(definition, 36)
         let ft = ex.factTables[11]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 86
+          state = 99
           continue
-        state = 84
+        state = 97
         continue
+      state = 99
+      continue
+    of 99:
+      state = 94
+      continue
+    of 97:
+      state = 96
+      continue
+    of 96:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       state = 86
       continue
-    of 86:
-      state = 81
+    of 94:
+      ex.debugEndCondition(definition, false)
+      state = 92
       continue
-    of 84:
-      state = 83
-      continue
-    of 83:
-      state = 73
-      continue
-    of 81:
-      state = 79
-      continue
-    of 79:
+    of 92:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 77
+        state = 90
         continue
-      ex.v[4] = cp78_4
-      cp78_4 = ex.v[4]
-      state = 80
+      ex.v[4] = cp91_4
+      cp91_4 = ex.v[4]
+      state = 93
       continue
-    of 77:
-      ex.v[4] = cp78_4
-      state = 75
+    of 90:
+      ex.v[4] = cp91_4
+      state = 88
       continue
-    of 75:
-      ex.v[4] = cp76_4
-      state = 74
-      continue
-    of 74:
-      ex.releaseRetry(fr)
-      state = 4
-      continue
-    of 73:
-      if not ex.pushBranch(addr bc1):
-        ex.releaseRetry(fr)
-        return 0
+    of 88:
+      ex.v[4] = cp89_4
+      ex.debugEndCondition(definition, false)
       state = 87
       continue
     of 87:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 4
+      continue
+    of 86:
+      if not ex.pushBranch(addr bc1):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(2)
+      state = 102
+      continue
+    of 102:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -2819,34 +3313,45 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 6
         continue
-      state = 88
+      state = 103
       continue
     of 6:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms0)
+        ex.debugEndBranch(definition, false)
         state = 4
         continue
-      state = 87
+      state = 102
       continue
-    of 88:
+    of 103:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     of 4:
       # branch branch_emergency_fallback
-      state = 89
+      ex.debugBeginBranch(definition, 2)
+      state = 104
       continue
-    of 89:
+    of 104:
       if not ex.pushBranch(addr bc2):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 91
+      ex.debugCapturePendingTask(3)
+      state = 106
       continue
-    of 91:
+    of 106:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -2856,14 +3361,18 @@ proc method0(ex: Exec): int {.nimcall.} =
         fr.childResult = 0
         state = 7
         continue
-      state = 92
+      state = 107
       continue
     of 7:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 91
+      state = 106
       continue
-    of 92:
+    of 107:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -2873,88 +3382,35 @@ proc method1(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 97
-  of 2: state = 98
-  of 3: state = 99
+  of 1: state = 112
+  of 2: state = 113
+  of 3: state = 114
   else: discard
   while true:
     case state
     of 0:
-      state = 94
+      ex.debugBeginMethod(definition, 1)
+      state = 109
       continue
-    of 94:
+    of 109:
       # branch branch_attack
       ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 3)
       # (and (or (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)) (call binded_function_with_args "attacking enemy"))
+      ex.debugBeginCondition(definition, 37)
       # (or (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 38)
       # (has_weapon ?inp_entity)
       # (has_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 39)
         let ft = ex.factTables[3]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
-        if matched:
-          state = 109
-          continue
-        state = 107
-        continue
-      state = 109
-      continue
-    of 109:
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 112
-          continue
-        state = 110
-        continue
-      state = 112
-      continue
-    of 112:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 118
-          continue
-        state = 116
-        continue
-      state = 118
-      continue
-    of 118:
-      state = 113
-      continue
-    of 116:
-      state = 115
-      continue
-    of 115:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 124
           continue
@@ -2963,66 +3419,39 @@ proc method1(ex: Exec): int {.nimcall.} =
       state = 124
       continue
     of 124:
-      state = 119
-      continue
-    of 122:
-      state = 121
-      continue
-    of 121:
-      # (call binded_function_with_args "attacking enemy")
-      # (call binded_function_with_args "attacking enemy")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv1], addr cs2, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 127
-          continue
-      state = 125
-      continue
-    of 127:
-      state = 100
-      continue
-    of 125:
-      state = 119
-      continue
-    of 119:
-      state = 113
-      continue
-    of 113:
-      state = 110
-      continue
-    of 110:
-      state = 104
-      continue
-    of 107:
-      state = 106
-      continue
-    of 106:
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[4]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 131
-          continue
-        state = 129
-        continue
-      state = 131
-      continue
-    of 131:
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 41)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 128
+          continue
+        state = 126
+        continue
+      state = 128
+      continue
+    of 128:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 42)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 43)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 134
           continue
@@ -3031,182 +3460,167 @@ proc method1(ex: Exec): int {.nimcall.} =
       state = 134
       continue
     of 134:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 140
-          continue
-        state = 138
-        continue
-      state = 140
+      state = 129
       continue
-    of 140:
-      state = 135
+    of 132:
+      state = 131
       continue
-    of 138:
-      state = 137
-      continue
-    of 137:
+    of 131:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 44)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 45)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 146
+          state = 141
           continue
-        state = 144
+        state = 139
         continue
-      state = 146
-      continue
-    of 146:
-      state = 141
-      continue
-    of 144:
-      state = 143
-      continue
-    of 143:
-      # (call binded_function_with_args "attacking enemy")
-      # (call binded_function_with_args "attacking enemy")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv1], addr cs3, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 149
-          continue
-      state = 147
-      continue
-    of 149:
-      state = 100
-      continue
-    of 147:
       state = 141
       continue
     of 141:
+      state = 136
+      continue
+    of 139:
+      state = 138
+      continue
+    of 138:
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "attacking enemy")
+      # (call binded_function_with_args "attacking enemy")
+      ex.debugBeginCondition(definition, 46)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv1], addr cs2, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 145
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 143
+      continue
+    of 145:
+      ex.debugEndCondition(definition, true)
+      state = 115
+      continue
+    of 143:
+      state = 142
+      continue
+    of 142:
+      ex.debugBeginCondition(definition, 44)
+      state = 136
+      continue
+    of 136:
+      ex.debugEndCondition(definition, false)
       state = 135
       continue
     of 135:
-      state = 132
-      continue
-    of 132:
-      state = 104
+      ex.debugBeginCondition(definition, 42)
+      state = 129
       continue
     of 129:
-      state = 128
+      ex.debugEndCondition(definition, false)
+      state = 126
       continue
-    of 128:
-      state = 104
+    of 126:
+      state = 125
       continue
-    of 104:
-      state = 102
+    of 125:
+      ex.debugBeginCondition(definition, 38)
+      state = 119
       continue
-    of 102:
-      state = 101
+    of 122:
+      state = 121
       continue
-    of 101:
-      ex.releaseRetry(fr)
-      state = 95
-      continue
-    of 100:
-      if not ex.pushBranch(addr bc3):
-        ex.releaseRetry(fr)
-        return 0
-      state = 150
-      continue
-    of 150:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 97
-        continue
-      state = 151
-      continue
-    of 97:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms1)
-        state = 95
-        continue
-      state = 150
-      continue
-    of 151:
-      ex.releaseRetry(fr)
-      return 1
-    of 95:
-      # branch branch_reload
-      ex.saveRetry(fr, ms1)
-      # (and (has_weapon ?inp_entity) (not (ammo_available ?inp_entity)) (ammo_reserve ?inp_entity))
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
+    of 121:
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
       block:
-        let ft = ex.factTables[3]
+        ex.debugBeginCondition(definition, 40)
+        let ft = ex.factTables[4]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 158
+          state = 150
           continue
-        state = 156
+        state = 148
         continue
-      state = 158
+      state = 150
       continue
-    of 158:
-      # (not (ammo_available ?inp_entity))
+    of 150:
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 41)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 164
+          state = 154
           continue
-        state = 162
+        state = 152
         continue
-      state = 164
+      state = 154
       continue
-    of 164:
-      state = 159
-      continue
-    of 162:
-      state = 161
-      continue
-    of 161:
-      # (ammo_reserve ?inp_entity)
-      # (ammo_reserve ?inp_entity)
+    of 154:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 42)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
       block:
-        let ft = ex.factTables[12]
+        ex.debugBeginCondition(definition, 43)
+        let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 160
+          continue
+        state = 158
+        continue
+      state = 160
+      continue
+    of 160:
+      state = 155
+      continue
+    of 158:
+      state = 157
+      continue
+    of 157:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 44)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 45)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 167
           continue
@@ -3215,306 +3629,85 @@ proc method1(ex: Exec): int {.nimcall.} =
       state = 167
       continue
     of 167:
-      state = 152
+      state = 162
       continue
     of 165:
-      state = 159
+      state = 164
       continue
-    of 159:
-      state = 156
+    of 164:
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "attacking enemy")
+      # (call binded_function_with_args "attacking enemy")
+      ex.debugBeginCondition(definition, 46)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv1], addr cs3, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 171
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 169
       continue
-    of 156:
-      state = 154
+    of 171:
+      ex.debugEndCondition(definition, true)
+      state = 115
       continue
-    of 154:
-      state = 153
-      continue
-    of 153:
-      ex.releaseRetry(fr)
-      state = 96
-      continue
-    of 152:
-      if not ex.pushBranch(addr bc4):
-        ex.releaseRetry(fr)
-        return 0
+    of 169:
       state = 168
       continue
     of 168:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 98
-        continue
-      state = 169
+      ex.debugBeginCondition(definition, 44)
+      state = 162
       continue
-    of 98:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms1)
-        state = 96
-        continue
-      state = 168
+    of 162:
+      ex.debugEndCondition(definition, false)
+      state = 161
       continue
-    of 169:
+    of 161:
+      ex.debugBeginCondition(definition, 42)
+      state = 155
+      continue
+    of 155:
+      ex.debugEndCondition(definition, false)
+      state = 152
+      continue
+    of 152:
+      state = 151
+      continue
+    of 151:
+      ex.debugBeginCondition(definition, 38)
+      state = 119
+      continue
+    of 148:
+      state = 147
+      continue
+    of 147:
+      state = 119
+      continue
+    of 119:
+      ex.debugEndCondition(definition, false)
+      state = 117
+      continue
+    of 117:
+      ex.debugEndCondition(definition, false)
+      state = 116
+      continue
+    of 116:
       ex.releaseRetry(fr)
-      return 1
-    of 96:
-      # branch branch_disengage
-      state = 170
+      ex.debugEndBranch(definition, false)
+      state = 110
       continue
-    of 170:
-      if not ex.pushBranch(addr bc5):
+    of 115:
+      if not ex.pushBranch(addr bc3):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 172
-      continue
-    of 172:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 99
-        continue
+      ex.debugCapturePendingTask(5)
+      ex.debugCapturePendingTask(4)
       state = 173
       continue
-    of 99:
-      if fr.childResult == 0:
-        return 0
-      state = 172
-      continue
     of 173:
-      return 1
-    else:
-      return 0
-
-# method2: ComplexScenario::run_scenario/0
-proc method2(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp184_5: Atom
-  var cp184_6: Atom
-  var cp184_7: Atom
-  var cp184_8: Atom
-  var cp186_5: Atom
-  var fc187: uint32
-  var cp190_6: Atom
-  var fc191: uint32
-  var cp197_7: Atom
-  var cp200_8: Atom
-  var cp219_5: Atom
-  var cp219_7: Atom
-  var cp219_8: Atom
-  var cp221_5: Atom
-  var fc222: uint32
-  var cp228_7: Atom
-  var cp231_8: Atom
-  var state = 0
-  case fr.resume
-  of 1: state = 178
-  of 2: state = 179
-  of 3: state = 180
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 175
-      continue
-    of 175:
-      # branch branch_iterate_all_entities
-      ex.saveRetry(fr, ms2)
-      # (and (controlled_entity ?entity) (entity_count ?num_entities) (call binded_function_with_args "starting recursive complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
-      cp184_5 = ex.v[5]
-      cp184_6 = ex.v[6]
-      cp184_7 = ex.v[7]
-      cp184_8 = ex.v[8]
-      # (controlled_entity ?entity)
-      cp186_5 = ex.v[5]
-      fc187 = 0
-      state = 188
-      continue
-    of 188:
-      inc fc187
-      if not factChoice53(ex, fc187 - 1):
-        state = 185
-        continue
-      # (entity_count ?num_entities)
-      cp190_6 = ex.v[6]
-      fc191 = 0
-      state = 192
-      continue
-    of 192:
-      inc fc191
-      if not factChoice54(ex, fc191 - 1):
-        state = 189
-        continue
-      # (call binded_function_with_args "starting recursive complex HTN scenario")
-      # (call binded_function_with_args "starting recursive complex HTN scenario")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv2], addr cs4, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 195
-          continue
-      state = 193
-      continue
-    of 195:
-      # (= ?health (call get_health ?entity))
-      cp197_7 = ex.v[7]
-      # (= ?health (call get_health ?entity))
-      if not ex.v[7].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs5, factSymbols)
-        if ok:
-          ex.setIfChanged(7, callResult)
-          state = 198
-          continue
-      state = 196
-      continue
-    of 198:
-      # (= ?max_speed (call get_max_speed ?entity))
-      cp200_8 = ex.v[8]
-      # (= ?max_speed (call get_max_speed ?entity))
-      if not ex.v[8].isBound:
-        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs6, factSymbols)
-        if ok:
-          ex.setIfChanged(8, callResult)
-          state = 201
-          continue
-      state = 199
-      continue
-    of 201:
-      # (health_value ?entity ?health)
-      # (health_value ?entity ?health)
-      block:
-        let ft = ex.factTables[15]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
-          matched = true
-          break
-        if matched:
-          state = 204
-          continue
-        state = 202
-        continue
-      state = 204
-      continue
-    of 204:
-      # (speed_value ?entity ?max_speed)
-      # (speed_value ?entity ?max_speed)
-      block:
-        let ft = ex.factTables[16]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
-          matched = true
-          break
-        if matched:
-          state = 207
-          continue
-        state = 205
-        continue
-      state = 207
-      continue
-    of 207:
-      # (not (entity_disabled ?entity))
-      # (entity_disabled ?entity)
-      # (entity_disabled ?entity)
-      block:
-        let ft = ex.factTables[17]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
-          matched = true
-          break
-        if matched:
-          state = 213
-          continue
-        state = 211
-        continue
-      state = 213
-      continue
-    of 213:
-      state = 208
-      continue
-    of 211:
-      state = 210
-      continue
-    of 210:
-      state = 181
-      continue
-    of 208:
-      state = 205
-      continue
-    of 205:
-      state = 202
-      continue
-    of 202:
-      state = 199
-      continue
-    of 199:
-      ex.v[8] = cp200_8
-      state = 196
-      continue
-    of 196:
-      ex.v[7] = cp197_7
-      state = 193
-      continue
-    of 193:
-      state = 191
-      continue
-    of 191:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 189
-        continue
-      ex.v[6] = cp190_6
-      cp190_6 = ex.v[6]
-      state = 192
-      continue
-    of 189:
-      ex.v[6] = cp190_6
-      state = 187
-      continue
-    of 187:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 185
-        continue
-      ex.v[5] = cp186_5
-      cp186_5 = ex.v[5]
-      state = 188
-      continue
-    of 185:
-      ex.v[5] = cp186_5
-      state = 183
-      continue
-    of 183:
-      ex.v[5] = cp184_5
-      ex.v[6] = cp184_6
-      ex.v[7] = cp184_7
-      ex.v[8] = cp184_8
-      state = 182
-      continue
-    of 182:
-      ex.releaseRetry(fr)
-      state = 176
-      continue
-    of 181:
-      if not ex.pushBranch(addr bc6):
-        ex.releaseRetry(fr)
-        return 0
-      state = 214
-      continue
-    of 214:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -3522,80 +3715,329 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 178
+        state = 112
         continue
-      state = 215
+      state = 174
       continue
-    of 178:
+    of 112:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
-        ex.restoreRetry(fr, ms2)
-        state = 176
+        ex.restoreRetry(fr, ms1)
+        ex.debugEndBranch(definition, false)
+        state = 110
         continue
-      state = 214
+      state = 173
       continue
-    of 215:
+    of 174:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
+    of 110:
+      # branch branch_reload
+      ex.saveRetry(fr, ms1)
+      ex.debugBeginBranch(definition, 4)
+      # (and (has_weapon ?inp_entity) (not (ammo_available ?inp_entity)) (ammo_reserve ?inp_entity))
+      ex.debugBeginCondition(definition, 47)
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 48)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 181
+          continue
+        state = 179
+        continue
+      state = 181
+      continue
+    of 181:
+      # (not (ammo_available ?inp_entity))
+      ex.debugBeginCondition(definition, 49)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 50)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 187
+          continue
+        state = 185
+        continue
+      state = 187
+      continue
+    of 187:
+      state = 182
+      continue
+    of 185:
+      state = 184
+      continue
+    of 184:
+      ex.debugEndCondition(definition, true)
+      # (ammo_reserve ?inp_entity)
+      # (ammo_reserve ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 51)
+        let ft = ex.factTables[12]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 191
+          continue
+        state = 189
+        continue
+      state = 191
+      continue
+    of 191:
+      ex.debugEndCondition(definition, true)
+      state = 175
+      continue
+    of 189:
+      state = 188
+      continue
+    of 188:
+      ex.debugBeginCondition(definition, 49)
+      state = 182
+      continue
+    of 182:
+      ex.debugEndCondition(definition, false)
+      state = 179
+      continue
+    of 179:
+      state = 177
+      continue
+    of 177:
+      ex.debugEndCondition(definition, false)
+      state = 176
+      continue
     of 176:
-      # branch branch_active_entity
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 111
+      continue
+    of 175:
+      if not ex.pushBranch(addr bc4):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(6)
+      state = 193
+      continue
+    of 193:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 113
+        continue
+      state = 194
+      continue
+    of 113:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms1)
+        ex.debugEndBranch(definition, false)
+        state = 111
+        continue
+      state = 193
+      continue
+    of 194:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 111:
+      # branch branch_disengage
+      ex.debugBeginBranch(definition, 5)
+      state = 195
+      continue
+    of 195:
+      if not ex.pushBranch(addr bc5):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(7)
+      state = 197
+      continue
+    of 197:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 114
+        continue
+      state = 198
+      continue
+    of 114:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 197
+      continue
+    of 198:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    else:
+      return 0
+
+# method2: ComplexScenario::run_scenario/0
+proc method2(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp209_5: Atom
+  var cp209_6: Atom
+  var cp209_7: Atom
+  var cp209_8: Atom
+  var cp211_5: Atom
+  var fc212: uint32
+  var cp215_6: Atom
+  var fc216: uint32
+  var cp222_7: Atom
+  var cp225_8: Atom
+  var cp246_5: Atom
+  var cp246_7: Atom
+  var cp246_8: Atom
+  var cp248_5: Atom
+  var fc249: uint32
+  var cp255_7: Atom
+  var cp258_8: Atom
+  var state = 0
+  case fr.resume
+  of 1: state = 203
+  of 2: state = 204
+  of 3: state = 205
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 2)
+      state = 200
+      continue
+    of 200:
+      # branch branch_iterate_all_entities
       ex.saveRetry(fr, ms2)
-      # (and (controlled_entity ?entity) (call binded_function_with_args "starting complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
-      cp219_5 = ex.v[5]
-      cp219_7 = ex.v[7]
-      cp219_8 = ex.v[8]
+      ex.debugBeginBranch(definition, 6)
+      # (and (controlled_entity ?entity) (entity_count ?num_entities) (call binded_function_with_args "starting recursive complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
+      cp209_5 = ex.v[5]
+      cp209_6 = ex.v[6]
+      cp209_7 = ex.v[7]
+      cp209_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 52)
       # (controlled_entity ?entity)
-      cp221_5 = ex.v[5]
-      fc222 = 0
-      state = 223
+      cp211_5 = ex.v[5]
+      fc212 = 0
+      state = 213
+      continue
+    of 213:
+      ex.debugBeginCondition(definition, 53)
+      inc fc212
+      if not factChoice53(ex, fc212 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 210
+        continue
+      ex.debugEndCondition(definition, true)
+      # (entity_count ?num_entities)
+      cp215_6 = ex.v[6]
+      fc216 = 0
+      state = 217
+      continue
+    of 217:
+      ex.debugBeginCondition(definition, 54)
+      inc fc216
+      if not factChoice54(ex, fc216 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 214
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "starting recursive complex HTN scenario")
+      # (call binded_function_with_args "starting recursive complex HTN scenario")
+      ex.debugBeginCondition(definition, 55)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv2], addr cs4, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 220
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 218
+      continue
+    of 220:
+      # (= ?health (call get_health ?entity))
+      cp222_7 = ex.v[7]
+      # (= ?health (call get_health ?entity))
+      ex.debugBeginCondition(definition, 56)
+      if not ex.v[7].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs5, factSymbols)
+        if ok:
+          ex.setIfChanged(7, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 223
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 221
       continue
     of 223:
-      inc fc222
-      if not factChoice63(ex, fc222 - 1):
-        state = 220
-        continue
-      # (call binded_function_with_args "starting complex HTN scenario")
-      # (call binded_function_with_args "starting complex HTN scenario")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv5], addr cs7, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
+      # (= ?max_speed (call get_max_speed ?entity))
+      cp225_8 = ex.v[8]
+      # (= ?max_speed (call get_max_speed ?entity))
+      ex.debugBeginCondition(definition, 57)
+      if not ex.v[8].isBound:
+        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs6, factSymbols)
+        if ok:
+          ex.setIfChanged(8, callResult)
+          ex.debugEndCondition(definition, true)
           state = 226
           continue
+      ex.debugEndCondition(definition, false)
       state = 224
       continue
     of 226:
-      # (= ?health (call get_health ?entity))
-      cp228_7 = ex.v[7]
-      # (= ?health (call get_health ?entity))
-      if not ex.v[7].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs8, factSymbols)
-        if ok:
-          ex.setIfChanged(7, callResult)
-          state = 229
-          continue
-      state = 227
-      continue
-    of 229:
-      # (= ?max_speed (call get_max_speed ?entity))
-      cp231_8 = ex.v[8]
-      # (= ?max_speed (call get_max_speed ?entity))
-      if not ex.v[8].isBound:
-        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs9, factSymbols)
-        if ok:
-          ex.setIfChanged(8, callResult)
-          state = 232
-          continue
-      state = 230
-      continue
-    of 232:
       # (health_value ?entity ?health)
       # (health_value ?entity ?health)
       block:
+        ex.debugBeginCondition(definition, 58)
         let ft = ex.factTables[15]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -3603,17 +4045,19 @@ proc method2(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 235
+          state = 229
           continue
-        state = 233
+        state = 227
         continue
-      state = 235
+      state = 229
       continue
-    of 235:
+    of 229:
       # (speed_value ?entity ?max_speed)
       # (speed_value ?entity ?max_speed)
       block:
+        ex.debugBeginCondition(definition, 59)
         let ft = ex.factTables[16]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -3621,6 +4065,28 @@ proc method2(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 232
+          continue
+        state = 230
+        continue
+      state = 232
+      continue
+    of 232:
+      # (not (entity_disabled ?entity))
+      ex.debugBeginCondition(definition, 60)
+      # (entity_disabled ?entity)
+      # (entity_disabled ?entity)
+      block:
+        ex.debugBeginCondition(definition, 61)
+        let ft = ex.factTables[17]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 238
           continue
@@ -3629,81 +4095,311 @@ proc method2(ex: Exec): int {.nimcall.} =
       state = 238
       continue
     of 238:
+      state = 233
+      continue
+    of 236:
+      state = 235
+      continue
+    of 235:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 206
+      continue
+    of 233:
+      ex.debugEndCondition(definition, false)
+      state = 230
+      continue
+    of 230:
+      state = 227
+      continue
+    of 227:
+      state = 224
+      continue
+    of 224:
+      ex.v[8] = cp225_8
+      state = 221
+      continue
+    of 221:
+      ex.v[7] = cp222_7
+      state = 218
+      continue
+    of 218:
+      state = 216
+      continue
+    of 216:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 214
+        continue
+      ex.v[6] = cp215_6
+      cp215_6 = ex.v[6]
+      state = 217
+      continue
+    of 214:
+      ex.v[6] = cp215_6
+      state = 212
+      continue
+    of 212:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 210
+        continue
+      ex.v[5] = cp211_5
+      cp211_5 = ex.v[5]
+      state = 213
+      continue
+    of 210:
+      ex.v[5] = cp211_5
+      state = 208
+      continue
+    of 208:
+      ex.v[5] = cp209_5
+      ex.v[6] = cp209_6
+      ex.v[7] = cp209_7
+      ex.v[8] = cp209_8
+      ex.debugEndCondition(definition, false)
+      state = 207
+      continue
+    of 207:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 201
+      continue
+    of 206:
+      if not ex.pushBranch(addr bc6):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(9)
+      ex.debugCapturePendingTask(8)
+      state = 241
+      continue
+    of 241:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 203
+        continue
+      state = 242
+      continue
+    of 203:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms2)
+        ex.debugEndBranch(definition, false)
+        state = 201
+        continue
+      state = 241
+      continue
+    of 242:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 201:
+      # branch branch_active_entity
+      ex.saveRetry(fr, ms2)
+      ex.debugBeginBranch(definition, 7)
+      # (and (controlled_entity ?entity) (call binded_function_with_args "starting complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
+      cp246_5 = ex.v[5]
+      cp246_7 = ex.v[7]
+      cp246_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 62)
+      # (controlled_entity ?entity)
+      cp248_5 = ex.v[5]
+      fc249 = 0
+      state = 250
+      continue
+    of 250:
+      ex.debugBeginCondition(definition, 63)
+      inc fc249
+      if not factChoice63(ex, fc249 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 247
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "starting complex HTN scenario")
+      # (call binded_function_with_args "starting complex HTN scenario")
+      ex.debugBeginCondition(definition, 64)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv5], addr cs7, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 253
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 251
+      continue
+    of 253:
+      # (= ?health (call get_health ?entity))
+      cp255_7 = ex.v[7]
+      # (= ?health (call get_health ?entity))
+      ex.debugBeginCondition(definition, 65)
+      if not ex.v[7].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs8, factSymbols)
+        if ok:
+          ex.setIfChanged(7, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 256
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 254
+      continue
+    of 256:
+      # (= ?max_speed (call get_max_speed ?entity))
+      cp258_8 = ex.v[8]
+      # (= ?max_speed (call get_max_speed ?entity))
+      ex.debugBeginCondition(definition, 66)
+      if not ex.v[8].isBound:
+        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs9, factSymbols)
+        if ok:
+          ex.setIfChanged(8, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 259
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 257
+      continue
+    of 259:
+      # (health_value ?entity ?health)
+      # (health_value ?entity ?health)
+      block:
+        ex.debugBeginCondition(definition, 67)
+        let ft = ex.factTables[15]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 262
+          continue
+        state = 260
+        continue
+      state = 262
+      continue
+    of 262:
+      # (speed_value ?entity ?max_speed)
+      # (speed_value ?entity ?max_speed)
+      block:
+        ex.debugBeginCondition(definition, 68)
+        let ft = ex.factTables[16]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 265
+          continue
+        state = 263
+        continue
+      state = 265
+      continue
+    of 265:
       # (not (entity_disabled ?entity))
+      ex.debugBeginCondition(definition, 69)
       # (entity_disabled ?entity)
       # (entity_disabled ?entity)
       block:
+        ex.debugBeginCondition(definition, 70)
         let ft = ex.factTables[17]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 244
+          state = 271
           continue
-        state = 242
+        state = 269
         continue
-      state = 244
+      state = 271
       continue
-    of 244:
-      state = 239
+    of 271:
+      state = 266
       continue
-    of 242:
-      state = 241
+    of 269:
+      state = 268
       continue
-    of 241:
-      state = 216
+    of 268:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 243
       continue
-    of 239:
-      state = 236
+    of 266:
+      ex.debugEndCondition(definition, false)
+      state = 263
       continue
-    of 236:
-      state = 233
+    of 263:
+      state = 260
       continue
-    of 233:
-      state = 230
+    of 260:
+      state = 257
       continue
-    of 230:
-      ex.v[8] = cp231_8
-      state = 227
+    of 257:
+      ex.v[8] = cp258_8
+      state = 254
       continue
-    of 227:
-      ex.v[7] = cp228_7
-      state = 224
+    of 254:
+      ex.v[7] = cp255_7
+      state = 251
       continue
-    of 224:
-      state = 222
+    of 251:
+      state = 249
       continue
-    of 222:
+    of 249:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 220
+        state = 247
         continue
-      ex.v[5] = cp221_5
-      cp221_5 = ex.v[5]
-      state = 223
+      ex.v[5] = cp248_5
+      cp248_5 = ex.v[5]
+      state = 250
       continue
-    of 220:
-      ex.v[5] = cp221_5
-      state = 218
-      continue
-    of 218:
-      ex.v[5] = cp219_5
-      ex.v[7] = cp219_7
-      ex.v[8] = cp219_8
-      state = 217
-      continue
-    of 217:
-      ex.releaseRetry(fr)
-      state = 177
-      continue
-    of 216:
-      if not ex.pushBranch(addr bc7):
-        ex.releaseRetry(fr)
-        return 0
+    of 247:
+      ex.v[5] = cp248_5
       state = 245
       continue
     of 245:
+      ex.v[5] = cp246_5
+      ex.v[7] = cp246_7
+      ex.v[8] = cp246_8
+      ex.debugEndCondition(definition, false)
+      state = 244
+      continue
+    of 244:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 202
+      continue
+    of 243:
+      if not ex.pushBranch(addr bc7):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(11)
+      ex.debugCapturePendingTask(10)
+      state = 274
+      continue
+    of 274:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -3711,36 +4407,47 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 179
+        state = 204
         continue
-      state = 246
+      state = 275
       continue
-    of 179:
+    of 204:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms2)
-        state = 177
+        ex.debugEndBranch(definition, false)
+        state = 202
         continue
-      state = 245
+      state = 274
       continue
-    of 246:
+    of 275:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 177:
+    of 202:
       # branch branch_no_active_entity
-      state = 247
+      ex.debugBeginBranch(definition, 8)
+      state = 276
       continue
-    of 247:
+    of 276:
       if not ex.pushBranch(addr bc8):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 249
+      ex.debugCapturePendingTask(12)
+      state = 278
       continue
-    of 249:
+    of 278:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -3748,16 +4455,20 @@ proc method2(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 180
+        state = 205
         continue
-      state = 250
+      state = 279
       continue
-    of 180:
+    of 205:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 249
+      state = 278
       continue
-    of 250:
+    of 279:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -3765,64 +4476,80 @@ proc method2(ex: Exec): int {.nimcall.} =
 # method3: ComplexScenario::iterate_over_entities/4
 proc method3(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp258_13: Atom
-  var cp263_13: Atom
-  var fc264: uint32
+  var cp287_13: Atom
+  var cp292_13: Atom
+  var fc293: uint32
   var state = 0
   case fr.resume
-  of 1: state = 254
+  of 1: state = 283
   else: discard
   while true:
     case state
     of 0:
-      state = 252
+      ex.debugBeginMethod(definition, 3)
+      state = 281
       continue
-    of 252:
+    of 281:
       # branch branch_internal
       ex.saveRetry(fr, ms3)
+      ex.debugBeginBranch(definition, 9)
       # (and (call lt ?inp_entity_index ?inp_num_entities) (entity ?inp_entity_index ?entity_id))
-      cp258_13 = ex.v[13]
+      cp287_13 = ex.v[13]
+      ex.debugBeginCondition(definition, 71)
       # (call lt ?inp_entity_index ?inp_num_entities)
       # (call lt ?inp_entity_index ?inp_num_entities)
+      ex.debugBeginCondition(definition, 72)
       block:
         let (callResult, ok) = ex.invoke(3, @[ex.v[9], ex.v[10]], addr cs10, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 261
+          ex.debugEndCondition(definition, true)
+          state = 290
           continue
-      state = 259
+      ex.debugEndCondition(definition, false)
+      state = 288
       continue
-    of 261:
+    of 290:
       # (entity ?inp_entity_index ?entity_id)
-      cp263_13 = ex.v[13]
-      fc264 = 0
-      inc fc264
-      if not factChoice73(ex, fc264 - 1):
-        state = 262
+      cp292_13 = ex.v[13]
+      fc293 = 0
+      ex.debugBeginCondition(definition, 73)
+      inc fc293
+      if not factChoice73(ex, fc293 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 291
         continue
-      state = 255
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 284
       continue
-    of 262:
-      ex.v[13] = cp263_13
-      state = 259
+    of 291:
+      ex.v[13] = cp292_13
+      state = 288
       continue
-    of 259:
-      state = 257
+    of 288:
+      state = 286
       continue
-    of 257:
-      ex.v[13] = cp258_13
-      state = 256
+    of 286:
+      ex.v[13] = cp287_13
+      ex.debugEndCondition(definition, false)
+      state = 285
       continue
-    of 256:
+    of 285:
       ex.releaseRetry(fr)
-      state = 253
+      ex.debugEndBranch(definition, false)
+      state = 282
       continue
-    of 255:
+    of 284:
       if not ex.pushBranch(addr bc9):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 266
+      ex.debugCapturePendingTask(14)
+      ex.debugCapturePendingTask(13)
+      state = 296
       continue
-    of 266:
+    of 296:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -3830,31 +4557,41 @@ proc method3(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 254
+        state = 283
         continue
-      state = 267
+      state = 297
       continue
-    of 254:
+    of 283:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms3)
-        state = 253
+        ex.debugEndBranch(definition, false)
+        state = 282
         continue
-      state = 266
+      state = 296
       continue
-    of 267:
+    of 297:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 253:
+    of 282:
       # branch branch_done
-      state = 268
+      ex.debugBeginBranch(definition, 10)
+      state = 298
       continue
-    of 268:
+    of 298:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -3862,405 +4599,514 @@ proc method3(ex: Exec): int {.nimcall.} =
 # method4: ComplexScenario::evaluate_situation/3
 proc method4(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp284_15: Atom
-  var cp286_15: Atom
-  var as75_285: AxiomScope
-  var as75_285Frame: uint64
-  var cp289_1: Atom
-  var cp291_1: Atom
-  var cp294_1: Atom
-  var fc295: uint32
-  var cp300_0: Atom
-  var cp300_1: Atom
-  var as75_285Copy: AxiomScope
-  var cp323_1: Atom
-  var fc324: uint32
-  var cp329_0: Atom
-  var cp329_1: Atom
-  var cp355_15: Atom
-  var cp357_15: Atom
-  var as82_356: AxiomScope
-  var as82_356Frame: uint64
+  var cp314_15: Atom
+  var cp316_15: Atom
+  var as75_315: AxiomScope
+  var as75_315Frame: uint64
+  var cp319_1: Atom
+  var cp321_1: Atom
+  var cp324_1: Atom
+  var fc325: uint32
+  var cp332_0: Atom
+  var cp332_1: Atom
+  var as75_315Copy: AxiomScope
   var cp360_1: Atom
-  var cp362_1: Atom
-  var cp365_1: Atom
-  var fc366: uint32
-  var cp371_0: Atom
-  var cp371_1: Atom
-  var as82_356Copy: AxiomScope
-  var as83_373: AxiomScope
-  var as83_373Frame: uint64
-  var alt378: bool
-  var cp399_0: Atom
-  var cp399_2: Atom
-  var as83_373Copy: AxiomScope
-  var cp423_0: Atom
-  var cp423_2: Atom
-  var cp430_1: Atom
-  var fc431: uint32
-  var cp436_0: Atom
-  var cp436_1: Atom
-  var as83_438: AxiomScope
-  var as83_438Frame: uint64
-  var alt443: bool
-  var cp464_0: Atom
-  var cp464_2: Atom
-  var as83_438Copy: AxiomScope
-  var cp488_0: Atom
-  var cp488_2: Atom
-  var alt527: bool
+  var fc361: uint32
+  var cp368_0: Atom
+  var cp368_1: Atom
+  var cp399_15: Atom
+  var cp401_15: Atom
+  var as82_400: AxiomScope
+  var as82_400Frame: uint64
+  var cp404_1: Atom
+  var cp406_1: Atom
+  var cp409_1: Atom
+  var fc410: uint32
+  var cp417_0: Atom
+  var cp417_1: Atom
+  var as82_400Copy: AxiomScope
+  var as83_420: AxiomScope
+  var as83_420Frame: uint64
+  var alt425: bool
+  var cp450_0: Atom
+  var cp450_2: Atom
+  var as83_420Copy: AxiomScope
+  var cp480_0: Atom
+  var cp480_2: Atom
+  var cp489_1: Atom
+  var fc490: uint32
+  var cp497_0: Atom
+  var cp497_1: Atom
+  var as83_500: AxiomScope
+  var as83_500Frame: uint64
+  var alt505: bool
+  var cp530_0: Atom
+  var cp530_2: Atom
+  var as83_500Copy: AxiomScope
+  var cp560_0: Atom
+  var cp560_2: Atom
+  var alt606: bool
   var state = 0
   case fr.resume
-  of 1: state = 276
-  of 2: state = 277
-  of 3: state = 278
-  of 4: state = 279
-  of 5: state = 280
+  of 1: state = 306
+  of 2: state = 307
+  of 3: state = 308
+  of 4: state = 309
+  of 5: state = 310
   else: discard
   while true:
     case state
     of 0:
-      state = 271
-      continue
-    of 271:
-      # branch branch_emergency
-      ex.saveRetry(fr, ms4)
-      # (and (#is_threat ?inp_entity ?enemy) (critical_threat ?enemy) (or (enemy_close ?enemy) (low_cover ?inp_entity)) (call binded_function_with_args "emergency branch selected"))
-      cp284_15 = ex.v[15]
-      # (#is_threat ?inp_entity ?enemy)
-      cp286_15 = ex.v[15]
-      if ex.v[15].isBound:
-        state = 285
-        continue
-      as75_285.saved.setLen(2)
-      as75_285.args.setLen(2)
-      axiomBegin75(ex, as75_285)
-      as75_285Frame = ex.currentFrameID
-      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
-      cp289_1 = ex.v[1]
-      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
-      cp291_1 = ex.v[1]
-      # (enemy_visible ?inp_entity ?out_enemy)
-      cp294_1 = ex.v[1]
-      fc295 = 0
-      inc fc295
-      if not factChoice16(ex, fc295 - 1):
-        state = 293
-        continue
-      # (enemy_hostile ?out_enemy)
-      # (enemy_hostile ?out_enemy)
-      block:
-        let ft = ex.factTables[2]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
-          matched = true
-          break
-        if matched:
-          state = 299
-          continue
-        state = 297
-        continue
-      state = 299
-      continue
-    of 299:
-      cp300_0 = ex.v[0]
-      cp300_1 = ex.v[1]
-      as75_285Copy = as75_285
-      if not axiomEnd75(ex, true, as75_285Copy):
-        state = 301
-        continue
-      # (critical_threat ?enemy)
-      # (critical_threat ?enemy)
-      block:
-        let ft = ex.factTables[19]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
-          matched = true
-          break
-        if matched:
-          state = 304
-          continue
-        state = 302
-        continue
-      state = 304
-      continue
-    of 304:
-      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
-      # (enemy_close ?enemy)
-      # (enemy_close ?enemy)
-      block:
-        let ft = ex.factTables[20]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
-          matched = true
-          break
-        if matched:
-          state = 310
-          continue
-        state = 308
-        continue
-      state = 310
-      continue
-    of 310:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs11, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 313
-          continue
-      state = 311
-      continue
-    of 313:
-      state = 281
-      continue
-    of 311:
-      state = 305
-      continue
-    of 308:
-      state = 307
-      continue
-    of 307:
-      # (low_cover ?inp_entity)
-      # (low_cover ?inp_entity)
-      block:
-        let ft = ex.factTables[21]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 317
-          continue
-        state = 315
-        continue
-      state = 317
-      continue
-    of 317:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs12, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 320
-          continue
-      state = 318
-      continue
-    of 320:
-      state = 281
-      continue
-    of 318:
-      state = 305
-      continue
-    of 315:
-      state = 314
-      continue
-    of 314:
-      state = 305
-      continue
-    of 305:
-      state = 302
-      continue
-    of 302:
+      ex.debugBeginMethod(definition, 4)
       state = 301
       continue
     of 301:
-      ex.v[15] = cp286_15
-      cp286_15 = ex.v[15]
-      ex.v[0] = cp300_0
-      ex.v[1] = cp300_1
-      ex.currentFrameID = as75_285Frame
-      state = 297
-      continue
-    of 297:
-      state = 290
-      continue
-    of 293:
-      ex.v[1] = cp294_1
-      state = 292
-      continue
-    of 292:
-      # (enemy_recently_seen ?inp_entity ?out_enemy)
-      cp323_1 = ex.v[1]
-      fc324 = 0
-      inc fc324
-      if not factChoice17(ex, fc324 - 1):
-        state = 322
+      # branch branch_emergency
+      ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 11)
+      # (and (#is_threat ?inp_entity ?enemy) (critical_threat ?enemy) (or (enemy_close ?enemy) (low_cover ?inp_entity)) (call binded_function_with_args "emergency branch selected"))
+      cp314_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 74)
+      # (#is_threat ?inp_entity ?enemy)
+      cp316_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 75)
+      if ex.v[15].isBound:
+        state = 315
         continue
+      as75_315.saved.setLen(2)
+      as75_315.args.setLen(2)
+      axiomBegin75(ex, as75_315)
+      as75_315Frame = ex.currentFrameID
+      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
+      cp319_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 14)
+      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
+      cp321_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 15)
+      # (enemy_visible ?inp_entity ?out_enemy)
+      cp324_1 = ex.v[1]
+      fc325 = 0
+      ex.debugBeginCondition(definition, 16)
+      inc fc325
+      if not factChoice16(ex, fc325 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 323
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       # (enemy_hostile ?out_enemy)
       # (enemy_hostile ?out_enemy)
       block:
+        ex.debugBeginCondition(definition, 18)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 328
+          state = 330
           continue
-        state = 326
+        state = 328
         continue
-      state = 328
+      state = 330
       continue
-    of 328:
-      cp329_0 = ex.v[0]
-      cp329_1 = ex.v[1]
-      as75_285Copy = as75_285
-      if not axiomEnd75(ex, true, as75_285Copy):
-        state = 330
+    of 330:
+      ex.debugEndCondition(definition, true)
+      cp332_0 = ex.v[0]
+      cp332_1 = ex.v[1]
+      as75_315Copy = as75_315
+      if not axiomEnd75(ex, true, as75_315Copy):
+        state = 333
         continue
+      ex.debugEndCondition(definition, true)
       # (critical_threat ?enemy)
       # (critical_threat ?enemy)
       block:
+        ex.debugBeginCondition(definition, 76)
         let ft = ex.factTables[19]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 333
+          state = 337
           continue
-        state = 331
+        state = 335
         continue
-      state = 333
+      state = 337
       continue
-    of 333:
+    of 337:
       # (or (enemy_close ?enemy) (low_cover ?inp_entity))
+      ex.debugBeginCondition(definition, 77)
       # (enemy_close ?enemy)
       # (enemy_close ?enemy)
       block:
+        ex.debugBeginCondition(definition, 78)
         let ft = ex.factTables[20]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 339
+          state = 343
           continue
-        state = 337
+        state = 341
         continue
-      state = 339
+      state = 343
       continue
-    of 339:
+    of 343:
+      ex.debugEndCondition(definition, true)
       # (call binded_function_with_args "emergency branch selected")
       # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 80)
       block:
-        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs13, factSymbols)
+        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs11, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 342
+          ex.debugEndCondition(definition, true)
+          state = 347
           continue
+      ex.debugEndCondition(definition, false)
+      state = 345
+      continue
+    of 347:
+      ex.debugEndCondition(definition, true)
+      state = 311
+      continue
+    of 345:
+      state = 344
+      continue
+    of 344:
+      ex.debugBeginCondition(definition, 77)
+      state = 338
+      continue
+    of 341:
       state = 340
       continue
-    of 342:
-      state = 281
-      continue
     of 340:
-      state = 334
-      continue
-    of 337:
-      state = 336
-      continue
-    of 336:
       # (low_cover ?inp_entity)
       # (low_cover ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 79)
         let ft = ex.factTables[21]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 346
+          state = 352
           continue
-        state = 344
+        state = 350
         continue
-      state = 346
+      state = 352
       continue
-    of 346:
+    of 352:
+      ex.debugEndCondition(definition, true)
       # (call binded_function_with_args "emergency branch selected")
       # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 80)
       block:
-        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs14, factSymbols)
+        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs12, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 349
+          ex.debugEndCondition(definition, true)
+          state = 356
           continue
-      state = 347
+      ex.debugEndCondition(definition, false)
+      state = 354
+      continue
+    of 356:
+      ex.debugEndCondition(definition, true)
+      state = 311
+      continue
+    of 354:
+      state = 353
+      continue
+    of 353:
+      ex.debugBeginCondition(definition, 77)
+      state = 338
+      continue
+    of 350:
+      state = 349
       continue
     of 349:
-      state = 281
+      state = 338
       continue
-    of 347:
-      state = 334
+    of 338:
+      ex.debugEndCondition(definition, false)
+      state = 335
       continue
-    of 344:
-      state = 343
-      continue
-    of 343:
+    of 335:
       state = 334
       continue
     of 334:
+      ex.debugBeginCondition(definition, 75)
+      state = 333
+      continue
+    of 333:
+      ex.v[15] = cp316_15
+      cp316_15 = ex.v[15]
+      ex.v[0] = cp332_0
+      ex.v[1] = cp332_1
+      ex.currentFrameID = as75_315Frame
+      ex.debugBeginAxiom(definition, 2)
       state = 331
       continue
     of 331:
-      state = 330
+      ex.debugBeginCondition(definition, 14)
+      state = 328
       continue
-    of 330:
-      ex.v[15] = cp286_15
-      cp286_15 = ex.v[15]
-      ex.v[0] = cp329_0
-      ex.v[1] = cp329_1
-      ex.currentFrameID = as75_285Frame
-      state = 326
+    of 328:
+      state = 327
       continue
-    of 326:
-      state = 290
+    of 327:
+      ex.debugBeginCondition(definition, 15)
+      state = 320
+      continue
+    of 323:
+      ex.v[1] = cp324_1
+      state = 322
       continue
     of 322:
-      ex.v[1] = cp323_1
-      state = 321
+      # (enemy_recently_seen ?inp_entity ?out_enemy)
+      cp360_1 = ex.v[1]
+      fc361 = 0
+      ex.debugBeginCondition(definition, 17)
+      inc fc361
+      if not factChoice17(ex, fc361 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 359
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      # (enemy_hostile ?out_enemy)
+      # (enemy_hostile ?out_enemy)
+      block:
+        ex.debugBeginCondition(definition, 18)
+        let ft = ex.factTables[2]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 366
+          continue
+        state = 364
+        continue
+      state = 366
       continue
-    of 321:
-      state = 290
+    of 366:
+      ex.debugEndCondition(definition, true)
+      cp368_0 = ex.v[0]
+      cp368_1 = ex.v[1]
+      as75_315Copy = as75_315
+      if not axiomEnd75(ex, true, as75_315Copy):
+        state = 369
+        continue
+      ex.debugEndCondition(definition, true)
+      # (critical_threat ?enemy)
+      # (critical_threat ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 76)
+        let ft = ex.factTables[19]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 373
+          continue
+        state = 371
+        continue
+      state = 373
       continue
-    of 290:
-      ex.v[1] = cp291_1
-      state = 288
+    of 373:
+      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
+      ex.debugBeginCondition(definition, 77)
+      # (enemy_close ?enemy)
+      # (enemy_close ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 78)
+        let ft = ex.factTables[20]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 379
+          continue
+        state = 377
+        continue
+      state = 379
       continue
-    of 288:
-      ex.v[1] = cp289_1
-      state = 287
+    of 379:
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 80)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs13, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 383
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 381
       continue
-    of 287:
-      axiomEnd75(ex, false, as75_285)
-      state = 285
+    of 383:
+      ex.debugEndCondition(definition, true)
+      state = 311
       continue
-    of 285:
-      ex.v[15] = cp286_15
-      state = 283
+    of 381:
+      state = 380
       continue
-    of 283:
-      ex.v[15] = cp284_15
-      state = 282
+    of 380:
+      ex.debugBeginCondition(definition, 77)
+      state = 374
       continue
-    of 282:
+    of 377:
+      state = 376
+      continue
+    of 376:
+      # (low_cover ?inp_entity)
+      # (low_cover ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 79)
+        let ft = ex.factTables[21]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 388
+          continue
+        state = 386
+        continue
+      state = 388
+      continue
+    of 388:
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 80)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv8], addr cs14, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 392
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 390
+      continue
+    of 392:
+      ex.debugEndCondition(definition, true)
+      state = 311
+      continue
+    of 390:
+      state = 389
+      continue
+    of 389:
+      ex.debugBeginCondition(definition, 77)
+      state = 374
+      continue
+    of 386:
+      state = 385
+      continue
+    of 385:
+      state = 374
+      continue
+    of 374:
+      ex.debugEndCondition(definition, false)
+      state = 371
+      continue
+    of 371:
+      state = 370
+      continue
+    of 370:
+      ex.debugBeginCondition(definition, 75)
+      state = 369
+      continue
+    of 369:
+      ex.v[15] = cp316_15
+      cp316_15 = ex.v[15]
+      ex.v[0] = cp368_0
+      ex.v[1] = cp368_1
+      ex.currentFrameID = as75_315Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 367
+      continue
+    of 367:
+      ex.debugBeginCondition(definition, 14)
+      state = 364
+      continue
+    of 364:
+      state = 363
+      continue
+    of 363:
+      ex.debugBeginCondition(definition, 15)
+      state = 320
+      continue
+    of 359:
+      ex.v[1] = cp360_1
+      state = 358
+      continue
+    of 358:
+      state = 320
+      continue
+    of 320:
+      ex.v[1] = cp321_1
+      ex.debugEndCondition(definition, false)
+      state = 318
+      continue
+    of 318:
+      ex.v[1] = cp319_1
+      ex.debugEndCondition(definition, false)
+      state = 317
+      continue
+    of 317:
+      axiomEnd75(ex, false, as75_315)
+      state = 315
+      continue
+    of 315:
+      ex.v[15] = cp316_15
+      ex.debugEndCondition(definition, false)
+      state = 313
+      continue
+    of 313:
+      ex.v[15] = cp314_15
+      ex.debugEndCondition(definition, false)
+      state = 312
+      continue
+    of 312:
       ex.releaseRetry(fr)
-      state = 272
+      ex.debugEndBranch(definition, false)
+      state = 302
       continue
-    of 281:
+    of 311:
       if not ex.pushBranch(addr bc11):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 350
+      ex.debugCapturePendingTask(16)
+      ex.debugCapturePendingTask(15)
+      state = 394
       continue
-    of 350:
+    of 394:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4268,719 +5114,962 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 276
+        state = 306
         continue
-      state = 351
+      state = 395
       continue
-    of 276:
+    of 306:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 272
+        ex.debugEndBranch(definition, false)
+        state = 302
         continue
-      state = 350
-      continue
-    of 351:
-      ex.releaseRetry(fr)
-      return 1
-    of 272:
-      # branch branch_combat
-      ex.saveRetry(fr, ms4)
-      # (and (#is_threat ?inp_entity ?enemy) (#can_engage ?inp_entity ?enemy) (call binded_function_with_args "combat branch selected"))
-      cp355_15 = ex.v[15]
-      # (#is_threat ?inp_entity ?enemy)
-      cp357_15 = ex.v[15]
-      if ex.v[15].isBound:
-        state = 356
-        continue
-      as82_356.saved.setLen(2)
-      as82_356.args.setLen(2)
-      axiomBegin82(ex, as82_356)
-      as82_356Frame = ex.currentFrameID
-      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
-      cp360_1 = ex.v[1]
-      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
-      cp362_1 = ex.v[1]
-      # (enemy_visible ?inp_entity ?out_enemy)
-      cp365_1 = ex.v[1]
-      fc366 = 0
-      inc fc366
-      if not factChoice16(ex, fc366 - 1):
-        state = 364
-        continue
-      # (enemy_hostile ?out_enemy)
-      # (enemy_hostile ?out_enemy)
-      block:
-        let ft = ex.factTables[2]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
-          matched = true
-          break
-        if matched:
-          state = 370
-          continue
-        state = 368
-        continue
-      state = 370
-      continue
-    of 370:
-      cp371_0 = ex.v[0]
-      cp371_1 = ex.v[1]
-      as82_356Copy = as82_356
-      if not axiomEnd82(ex, true, as82_356Copy):
-        state = 372
-        continue
-      # (#can_engage ?inp_entity ?enemy)
-      as83_373.saved.setLen(2)
-      as83_373.args.setLen(2)
-      axiomBegin83(ex, as83_373)
-      as83_373Frame = ex.currentFrameID
-      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
-      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt378 = false
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[3]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 383
-          continue
-        state = 381
-        continue
-      state = 383
-      continue
-    of 383:
-      alt378 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 386
-          continue
-        state = 384
-        continue
-      state = 386
-      continue
-    of 386:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 392
-          continue
-        state = 390
-        continue
-      state = 392
-      continue
-    of 392:
-      state = 387
-      continue
-    of 390:
-      state = 389
-      continue
-    of 389:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 398
-          continue
-        state = 396
-        continue
-      state = 398
-      continue
-    of 398:
-      state = 393
-      continue
-    of 396:
-      state = 395
+      state = 394
       continue
     of 395:
-      cp399_0 = ex.v[0]
-      cp399_2 = ex.v[2]
-      as83_373Copy = as83_373
-      if not axiomEnd83(ex, true, as83_373Copy):
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 302:
+      # branch branch_combat
+      ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 12)
+      # (and (#is_threat ?inp_entity ?enemy) (#can_engage ?inp_entity ?enemy) (call binded_function_with_args "combat branch selected"))
+      cp399_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 81)
+      # (#is_threat ?inp_entity ?enemy)
+      cp401_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 82)
+      if ex.v[15].isBound:
         state = 400
         continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs15, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 403
-          continue
-      state = 401
-      continue
-    of 403:
-      state = 352
-      continue
-    of 401:
-      state = 400
-      continue
-    of 400:
-      ex.v[0] = cp399_0
-      ex.v[2] = cp399_2
-      ex.currentFrameID = as83_373Frame
-      state = 393
-      continue
-    of 393:
-      state = 387
-      continue
-    of 387:
-      state = 384
-      continue
-    of 384:
-      state = 381
-      continue
-    of 381:
-      state = 380
-      continue
-    of 380:
-      if alt378 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 378
-        continue
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[4]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 407
-          continue
-        state = 405
-        continue
-      state = 407
-      continue
-    of 407:
-      alt378 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 410
-          continue
+      as82_400.saved.setLen(2)
+      as82_400.args.setLen(2)
+      axiomBegin82(ex, as82_400)
+      as82_400Frame = ex.currentFrameID
+      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
+      cp404_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 14)
+      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
+      cp406_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 15)
+      # (enemy_visible ?inp_entity ?out_enemy)
+      cp409_1 = ex.v[1]
+      fc410 = 0
+      ex.debugBeginCondition(definition, 16)
+      inc fc410
+      if not factChoice16(ex, fc410 - 1):
+        ex.debugEndCondition(definition, false)
         state = 408
         continue
-      state = 410
-      continue
-    of 410:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 416
-          continue
-        state = 414
-        continue
-      state = 416
-      continue
-    of 416:
-      state = 411
-      continue
-    of 414:
-      state = 413
-      continue
-    of 413:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 422
-          continue
-        state = 420
-        continue
-      state = 422
-      continue
-    of 422:
-      state = 417
-      continue
-    of 420:
-      state = 419
-      continue
-    of 419:
-      cp423_0 = ex.v[0]
-      cp423_2 = ex.v[2]
-      as83_373Copy = as83_373
-      if not axiomEnd83(ex, true, as83_373Copy):
-        state = 424
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs16, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 427
-          continue
-      state = 425
-      continue
-    of 427:
-      state = 352
-      continue
-    of 425:
-      state = 424
-      continue
-    of 424:
-      ex.v[0] = cp423_0
-      ex.v[2] = cp423_2
-      ex.currentFrameID = as83_373Frame
-      state = 417
-      continue
-    of 417:
-      state = 411
-      continue
-    of 411:
-      state = 408
-      continue
-    of 408:
-      state = 405
-      continue
-    of 405:
-      state = 404
-      continue
-    of 404:
-      if alt378 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 378
-        continue
-      state = 378
-      continue
-    of 378:
-      state = 376
-      continue
-    of 376:
-      state = 375
-      continue
-    of 375:
-      axiomEnd83(ex, false, as83_373)
-      state = 373
-      continue
-    of 373:
-      state = 372
-      continue
-    of 372:
-      ex.v[15] = cp357_15
-      cp357_15 = ex.v[15]
-      ex.v[0] = cp371_0
-      ex.v[1] = cp371_1
-      ex.currentFrameID = as82_356Frame
-      state = 368
-      continue
-    of 368:
-      state = 361
-      continue
-    of 364:
-      ex.v[1] = cp365_1
-      state = 363
-      continue
-    of 363:
-      # (enemy_recently_seen ?inp_entity ?out_enemy)
-      cp430_1 = ex.v[1]
-      fc431 = 0
-      inc fc431
-      if not factChoice17(ex, fc431 - 1):
-        state = 429
-        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       # (enemy_hostile ?out_enemy)
       # (enemy_hostile ?out_enemy)
       block:
+        ex.debugBeginCondition(definition, 18)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 435
+          state = 415
           continue
-        state = 433
+        state = 413
         continue
-      state = 435
+      state = 415
       continue
-    of 435:
-      cp436_0 = ex.v[0]
-      cp436_1 = ex.v[1]
-      as82_356Copy = as82_356
-      if not axiomEnd82(ex, true, as82_356Copy):
-        state = 437
+    of 415:
+      ex.debugEndCondition(definition, true)
+      cp417_0 = ex.v[0]
+      cp417_1 = ex.v[1]
+      as82_400Copy = as82_400
+      if not axiomEnd82(ex, true, as82_400Copy):
+        state = 418
         continue
+      ex.debugEndCondition(definition, true)
       # (#can_engage ?inp_entity ?enemy)
-      as83_438.saved.setLen(2)
-      as83_438.args.setLen(2)
-      axiomBegin83(ex, as83_438)
-      as83_438Frame = ex.currentFrameID
+      ex.debugBeginCondition(definition, 83)
+      as83_420.saved.setLen(2)
+      as83_420.args.setLen(2)
+      axiomBegin83(ex, as83_420)
+      as83_420Frame = ex.currentFrameID
       # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
       # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt443 = false
+      ex.debugBeginCondition(definition, 20)
+      alt425 = false
       # (has_weapon ?inp_entity)
       # (has_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 21)
         let ft = ex.factTables[3]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 448
+          state = 430
           continue
-        state = 446
+        state = 428
         continue
-      state = 448
+      state = 430
       continue
-    of 448:
-      alt443 = true
+    of 430:
+      alt425 = true
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 23)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 451
+          state = 434
           continue
-        state = 449
+        state = 432
         continue
-      state = 451
+      state = 434
       continue
-    of 451:
+    of 434:
       # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
       # (weapon_jammed ?inp_entity)
       # (weapon_jammed ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 25)
         let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 457
+          state = 440
           continue
-        state = 455
+        state = 438
         continue
-      state = 457
-      continue
-    of 457:
-      state = 452
-      continue
-    of 455:
-      state = 454
-      continue
-    of 454:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 463
-          continue
-        state = 461
-        continue
-      state = 463
-      continue
-    of 463:
-      state = 458
-      continue
-    of 461:
-      state = 460
-      continue
-    of 460:
-      cp464_0 = ex.v[0]
-      cp464_2 = ex.v[2]
-      as83_438Copy = as83_438
-      if not axiomEnd83(ex, true, as83_438Copy):
-        state = 465
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs17, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 468
-          continue
-      state = 466
-      continue
-    of 468:
-      state = 352
-      continue
-    of 466:
-      state = 465
-      continue
-    of 465:
-      ex.v[0] = cp464_0
-      ex.v[2] = cp464_2
-      ex.currentFrameID = as83_438Frame
-      state = 458
-      continue
-    of 458:
-      state = 452
-      continue
-    of 452:
-      state = 449
-      continue
-    of 449:
-      state = 446
-      continue
-    of 446:
-      state = 445
-      continue
-    of 445:
-      if alt443 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 443
-        continue
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[4]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 472
-          continue
-        state = 470
-        continue
-      state = 472
-      continue
-    of 472:
-      alt443 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 475
-          continue
-        state = 473
-        continue
-      state = 475
-      continue
-    of 475:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 481
-          continue
-        state = 479
-        continue
-      state = 481
-      continue
-    of 481:
-      state = 476
-      continue
-    of 479:
-      state = 478
-      continue
-    of 478:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 487
-          continue
-        state = 485
-        continue
-      state = 487
-      continue
-    of 487:
-      state = 482
-      continue
-    of 485:
-      state = 484
-      continue
-    of 484:
-      cp488_0 = ex.v[0]
-      cp488_2 = ex.v[2]
-      as83_438Copy = as83_438
-      if not axiomEnd83(ex, true, as83_438Copy):
-        state = 489
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs18, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 492
-          continue
-      state = 490
-      continue
-    of 492:
-      state = 352
-      continue
-    of 490:
-      state = 489
-      continue
-    of 489:
-      ex.v[0] = cp488_0
-      ex.v[2] = cp488_2
-      ex.currentFrameID = as83_438Frame
-      state = 482
-      continue
-    of 482:
-      state = 476
-      continue
-    of 476:
-      state = 473
-      continue
-    of 473:
-      state = 470
-      continue
-    of 470:
-      state = 469
-      continue
-    of 469:
-      if alt443 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 443
-        continue
-      state = 443
-      continue
-    of 443:
-      state = 441
-      continue
-    of 441:
       state = 440
       continue
     of 440:
-      axiomEnd83(ex, false, as83_438)
-      state = 438
+      state = 435
       continue
     of 438:
       state = 437
       continue
     of 437:
-      ex.v[15] = cp357_15
-      cp357_15 = ex.v[15]
-      ex.v[0] = cp436_0
-      ex.v[1] = cp436_1
-      ex.currentFrameID = as82_356Frame
-      state = 433
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 447
+          continue
+        state = 445
+        continue
+      state = 447
       continue
-    of 433:
-      state = 361
+    of 447:
+      state = 442
       continue
-    of 429:
-      ex.v[1] = cp430_1
+    of 445:
+      state = 444
+      continue
+    of 444:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp450_0 = ex.v[0]
+      cp450_2 = ex.v[2]
+      as83_420Copy = as83_420
+      if not axiomEnd83(ex, true, as83_420Copy):
+        state = 451
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 84)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs15, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 455
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 453
+      continue
+    of 455:
+      ex.debugEndCondition(definition, true)
+      state = 396
+      continue
+    of 453:
+      state = 452
+      continue
+    of 452:
+      ex.debugBeginCondition(definition, 83)
+      state = 451
+      continue
+    of 451:
+      ex.v[0] = cp450_0
+      ex.v[2] = cp450_2
+      ex.currentFrameID = as83_420Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 449
+      continue
+    of 449:
+      ex.debugBeginCondition(definition, 19)
+      state = 448
+      continue
+    of 448:
+      ex.debugBeginCondition(definition, 26)
+      state = 442
+      continue
+    of 442:
+      ex.debugEndCondition(definition, false)
+      state = 441
+      continue
+    of 441:
+      ex.debugBeginCondition(definition, 24)
+      state = 435
+      continue
+    of 435:
+      ex.debugEndCondition(definition, false)
+      state = 432
+      continue
+    of 432:
+      state = 431
+      continue
+    of 431:
+      ex.debugBeginCondition(definition, 20)
       state = 428
       continue
     of 428:
-      state = 361
+      state = 427
       continue
-    of 361:
-      ex.v[1] = cp362_1
-      state = 359
+    of 427:
+      if alt425 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 425
+        continue
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 22)
+        let ft = ex.factTables[4]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 460
+          continue
+        state = 458
+        continue
+      state = 460
       continue
-    of 359:
-      ex.v[1] = cp360_1
-      state = 358
+    of 460:
+      alt425 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 464
+          continue
+        state = 462
+        continue
+      state = 464
       continue
-    of 358:
-      axiomEnd82(ex, false, as82_356)
-      state = 356
+    of 464:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 470
+          continue
+        state = 468
+        continue
+      state = 470
       continue
-    of 356:
-      ex.v[15] = cp357_15
-      state = 354
+    of 470:
+      state = 465
       continue
-    of 354:
-      ex.v[15] = cp355_15
-      state = 353
+    of 468:
+      state = 467
       continue
-    of 353:
-      ex.releaseRetry(fr)
-      state = 273
+    of 467:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 477
+          continue
+        state = 475
+        continue
+      state = 477
       continue
-    of 352:
-      if not ex.pushBranch(addr bc12):
-        ex.releaseRetry(fr)
-        return 0
+    of 477:
+      state = 472
+      continue
+    of 475:
+      state = 474
+      continue
+    of 474:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp480_0 = ex.v[0]
+      cp480_2 = ex.v[2]
+      as83_420Copy = as83_420
+      if not axiomEnd83(ex, true, as83_420Copy):
+        state = 481
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 84)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs16, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 485
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 483
+      continue
+    of 485:
+      ex.debugEndCondition(definition, true)
+      state = 396
+      continue
+    of 483:
+      state = 482
+      continue
+    of 482:
+      ex.debugBeginCondition(definition, 83)
+      state = 481
+      continue
+    of 481:
+      ex.v[0] = cp480_0
+      ex.v[2] = cp480_2
+      ex.currentFrameID = as83_420Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 479
+      continue
+    of 479:
+      ex.debugBeginCondition(definition, 19)
+      state = 478
+      continue
+    of 478:
+      ex.debugBeginCondition(definition, 26)
+      state = 472
+      continue
+    of 472:
+      ex.debugEndCondition(definition, false)
+      state = 471
+      continue
+    of 471:
+      ex.debugBeginCondition(definition, 24)
+      state = 465
+      continue
+    of 465:
+      ex.debugEndCondition(definition, false)
+      state = 462
+      continue
+    of 462:
+      state = 461
+      continue
+    of 461:
+      ex.debugBeginCondition(definition, 20)
+      state = 458
+      continue
+    of 458:
+      state = 457
+      continue
+    of 457:
+      if alt425 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 425
+        continue
+      state = 425
+      continue
+    of 425:
+      ex.debugEndCondition(definition, false)
+      state = 423
+      continue
+    of 423:
+      ex.debugEndCondition(definition, false)
+      state = 422
+      continue
+    of 422:
+      axiomEnd83(ex, false, as83_420)
+      state = 420
+      continue
+    of 420:
+      ex.debugEndCondition(definition, false)
+      state = 419
+      continue
+    of 419:
+      ex.debugBeginCondition(definition, 82)
+      state = 418
+      continue
+    of 418:
+      ex.v[15] = cp401_15
+      cp401_15 = ex.v[15]
+      ex.v[0] = cp417_0
+      ex.v[1] = cp417_1
+      ex.currentFrameID = as82_400Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 416
+      continue
+    of 416:
+      ex.debugBeginCondition(definition, 14)
+      state = 413
+      continue
+    of 413:
+      state = 412
+      continue
+    of 412:
+      ex.debugBeginCondition(definition, 15)
+      state = 405
+      continue
+    of 408:
+      ex.v[1] = cp409_1
+      state = 407
+      continue
+    of 407:
+      # (enemy_recently_seen ?inp_entity ?out_enemy)
+      cp489_1 = ex.v[1]
+      fc490 = 0
+      ex.debugBeginCondition(definition, 17)
+      inc fc490
+      if not factChoice17(ex, fc490 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 488
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      # (enemy_hostile ?out_enemy)
+      # (enemy_hostile ?out_enemy)
+      block:
+        ex.debugBeginCondition(definition, 18)
+        let ft = ex.factTables[2]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 495
+          continue
+        state = 493
+        continue
+      state = 495
+      continue
+    of 495:
+      ex.debugEndCondition(definition, true)
+      cp497_0 = ex.v[0]
+      cp497_1 = ex.v[1]
+      as82_400Copy = as82_400
+      if not axiomEnd82(ex, true, as82_400Copy):
+        state = 498
+        continue
+      ex.debugEndCondition(definition, true)
+      # (#can_engage ?inp_entity ?enemy)
+      ex.debugBeginCondition(definition, 83)
+      as83_500.saved.setLen(2)
+      as83_500.args.setLen(2)
+      axiomBegin83(ex, as83_500)
+      as83_500Frame = ex.currentFrameID
+      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
+      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 20)
+      alt505 = false
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 21)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 510
+          continue
+        state = 508
+        continue
+      state = 510
+      continue
+    of 510:
+      alt505 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 514
+          continue
+        state = 512
+        continue
+      state = 514
+      continue
+    of 514:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 520
+          continue
+        state = 518
+        continue
+      state = 520
+      continue
+    of 520:
+      state = 515
+      continue
+    of 518:
+      state = 517
+      continue
+    of 517:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 527
+          continue
+        state = 525
+        continue
+      state = 527
+      continue
+    of 527:
+      state = 522
+      continue
+    of 525:
+      state = 524
+      continue
+    of 524:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp530_0 = ex.v[0]
+      cp530_2 = ex.v[2]
+      as83_500Copy = as83_500
+      if not axiomEnd83(ex, true, as83_500Copy):
+        state = 531
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 84)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs17, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 535
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 533
+      continue
+    of 535:
+      ex.debugEndCondition(definition, true)
+      state = 396
+      continue
+    of 533:
+      state = 532
+      continue
+    of 532:
+      ex.debugBeginCondition(definition, 83)
+      state = 531
+      continue
+    of 531:
+      ex.v[0] = cp530_0
+      ex.v[2] = cp530_2
+      ex.currentFrameID = as83_500Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 529
+      continue
+    of 529:
+      ex.debugBeginCondition(definition, 19)
+      state = 528
+      continue
+    of 528:
+      ex.debugBeginCondition(definition, 26)
+      state = 522
+      continue
+    of 522:
+      ex.debugEndCondition(definition, false)
+      state = 521
+      continue
+    of 521:
+      ex.debugBeginCondition(definition, 24)
+      state = 515
+      continue
+    of 515:
+      ex.debugEndCondition(definition, false)
+      state = 512
+      continue
+    of 512:
+      state = 511
+      continue
+    of 511:
+      ex.debugBeginCondition(definition, 20)
+      state = 508
+      continue
+    of 508:
+      state = 507
+      continue
+    of 507:
+      if alt505 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 505
+        continue
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 22)
+        let ft = ex.factTables[4]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 540
+          continue
+        state = 538
+        continue
+      state = 540
+      continue
+    of 540:
+      alt505 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 544
+          continue
+        state = 542
+        continue
+      state = 544
+      continue
+    of 544:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 550
+          continue
+        state = 548
+        continue
+      state = 550
+      continue
+    of 550:
+      state = 545
+      continue
+    of 548:
+      state = 547
+      continue
+    of 547:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 557
+          continue
+        state = 555
+        continue
+      state = 557
+      continue
+    of 557:
+      state = 552
+      continue
+    of 555:
+      state = 554
+      continue
+    of 554:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp560_0 = ex.v[0]
+      cp560_2 = ex.v[2]
+      as83_500Copy = as83_500
+      if not axiomEnd83(ex, true, as83_500Copy):
+        state = 561
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 84)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv10], addr cs18, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 565
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 563
+      continue
+    of 565:
+      ex.debugEndCondition(definition, true)
+      state = 396
+      continue
+    of 563:
+      state = 562
+      continue
+    of 562:
+      ex.debugBeginCondition(definition, 83)
+      state = 561
+      continue
+    of 561:
+      ex.v[0] = cp560_0
+      ex.v[2] = cp560_2
+      ex.currentFrameID = as83_500Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 559
+      continue
+    of 559:
+      ex.debugBeginCondition(definition, 19)
+      state = 558
+      continue
+    of 558:
+      ex.debugBeginCondition(definition, 26)
+      state = 552
+      continue
+    of 552:
+      ex.debugEndCondition(definition, false)
+      state = 551
+      continue
+    of 551:
+      ex.debugBeginCondition(definition, 24)
+      state = 545
+      continue
+    of 545:
+      ex.debugEndCondition(definition, false)
+      state = 542
+      continue
+    of 542:
+      state = 541
+      continue
+    of 541:
+      ex.debugBeginCondition(definition, 20)
+      state = 538
+      continue
+    of 538:
+      state = 537
+      continue
+    of 537:
+      if alt505 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 505
+        continue
+      state = 505
+      continue
+    of 505:
+      ex.debugEndCondition(definition, false)
+      state = 503
+      continue
+    of 503:
+      ex.debugEndCondition(definition, false)
+      state = 502
+      continue
+    of 502:
+      axiomEnd83(ex, false, as83_500)
+      state = 500
+      continue
+    of 500:
+      ex.debugEndCondition(definition, false)
+      state = 499
+      continue
+    of 499:
+      ex.debugBeginCondition(definition, 82)
+      state = 498
+      continue
+    of 498:
+      ex.v[15] = cp401_15
+      cp401_15 = ex.v[15]
+      ex.v[0] = cp497_0
+      ex.v[1] = cp497_1
+      ex.currentFrameID = as82_400Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 496
+      continue
+    of 496:
+      ex.debugBeginCondition(definition, 14)
       state = 493
       continue
     of 493:
+      state = 492
+      continue
+    of 492:
+      ex.debugBeginCondition(definition, 15)
+      state = 405
+      continue
+    of 488:
+      ex.v[1] = cp489_1
+      state = 487
+      continue
+    of 487:
+      state = 405
+      continue
+    of 405:
+      ex.v[1] = cp406_1
+      ex.debugEndCondition(definition, false)
+      state = 403
+      continue
+    of 403:
+      ex.v[1] = cp404_1
+      ex.debugEndCondition(definition, false)
+      state = 402
+      continue
+    of 402:
+      axiomEnd82(ex, false, as82_400)
+      state = 400
+      continue
+    of 400:
+      ex.v[15] = cp401_15
+      ex.debugEndCondition(definition, false)
+      state = 398
+      continue
+    of 398:
+      ex.v[15] = cp399_15
+      ex.debugEndCondition(definition, false)
+      state = 397
+      continue
+    of 397:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 303
+      continue
+    of 396:
+      if not ex.pushBranch(addr bc12):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(18)
+      ex.debugCapturePendingTask(17)
+      state = 567
+      continue
+    of 567:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -4988,143 +6077,179 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 277
+        state = 307
         continue
-      state = 494
+      state = 568
       continue
-    of 277:
+    of 307:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 273
+        ex.debugEndBranch(definition, false)
+        state = 303
         continue
-      state = 493
+      state = 567
       continue
-    of 494:
+    of 568:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 273:
+    of 303:
       # branch branch_recovery
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 13)
       # (and (needs_healing ?inp_entity) (not (under_fire ?inp_entity)) (or (medkit ?inp_entity) (healing_station_nearby ?inp_entity)))
+      ex.debugBeginCondition(definition, 85)
       # (needs_healing ?inp_entity)
       # (needs_healing ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 86)
         let ft = ex.factTables[22]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 501
+          state = 575
           continue
-        state = 499
+        state = 573
         continue
-      state = 501
+      state = 575
       continue
-    of 501:
+    of 575:
       # (not (under_fire ?inp_entity))
+      ex.debugBeginCondition(definition, 87)
       # (under_fire ?inp_entity)
       # (under_fire ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 88)
         let ft = ex.factTables[23]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 507
+          state = 581
           continue
-        state = 505
+        state = 579
         continue
-      state = 507
+      state = 581
       continue
-    of 507:
-      state = 502
+    of 581:
+      state = 576
       continue
-    of 505:
-      state = 504
+    of 579:
+      state = 578
       continue
-    of 504:
+    of 578:
+      ex.debugEndCondition(definition, true)
       # (or (medkit ?inp_entity) (healing_station_nearby ?inp_entity))
+      ex.debugBeginCondition(definition, 89)
       # (medkit ?inp_entity)
       # (medkit ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 90)
         let ft = ex.factTables[24]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 513
+          state = 588
           continue
-        state = 511
+        state = 586
         continue
-      state = 513
+      state = 588
       continue
-    of 513:
-      state = 495
+    of 588:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 569
       continue
-    of 511:
-      state = 510
+    of 586:
+      state = 585
       continue
-    of 510:
+    of 585:
       # (healing_station_nearby ?inp_entity)
       # (healing_station_nearby ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 91)
         let ft = ex.factTables[25]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 517
+          state = 594
           continue
-        state = 515
+        state = 592
         continue
-      state = 517
+      state = 594
       continue
-    of 517:
-      state = 495
+    of 594:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 569
       continue
-    of 515:
-      state = 514
+    of 592:
+      state = 591
       continue
-    of 514:
-      state = 508
+    of 591:
+      state = 583
       continue
-    of 508:
-      state = 502
+    of 583:
+      ex.debugEndCondition(definition, false)
+      state = 582
       continue
-    of 502:
-      state = 499
+    of 582:
+      ex.debugBeginCondition(definition, 87)
+      state = 576
       continue
-    of 499:
-      state = 497
+    of 576:
+      ex.debugEndCondition(definition, false)
+      state = 573
       continue
-    of 497:
-      state = 496
+    of 573:
+      state = 571
       continue
-    of 496:
+    of 571:
+      ex.debugEndCondition(definition, false)
+      state = 570
+      continue
+    of 570:
       ex.releaseRetry(fr)
-      state = 274
+      ex.debugEndBranch(definition, false)
+      state = 304
       continue
-    of 495:
+    of 569:
       if not ex.pushBranch(addr bc13):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 518
+      ex.debugCapturePendingTask(20)
+      ex.debugCapturePendingTask(19)
+      state = 597
       continue
-    of 518:
+    of 597:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5132,179 +6257,224 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 278
+        state = 308
         continue
-      state = 519
+      state = 598
       continue
-    of 278:
+    of 308:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 274
+        ex.debugEndBranch(definition, false)
+        state = 304
         continue
-      state = 518
+      state = 597
       continue
-    of 519:
+    of 598:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 274:
+    of 304:
       # branch branch_mobility
       ex.saveRetry(fr, ms4)
+      ex.debugBeginBranch(definition, 14)
       # (and (objective_far ?inp_entity) (alt (path_open ?inp_entity) (alternate_path_open ?inp_entity)) (not (movement_blocked ?inp_entity)))
+      ex.debugBeginCondition(definition, 92)
       # (objective_far ?inp_entity)
       # (objective_far ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 93)
         let ft = ex.factTables[26]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 526
+          state = 605
           continue
-        state = 524
+        state = 603
         continue
-      state = 526
+      state = 605
       continue
-    of 526:
+    of 605:
       # (alt (path_open ?inp_entity) (alternate_path_open ?inp_entity))
-      alt527 = false
+      ex.debugBeginCondition(definition, 94)
+      alt606 = false
       # (path_open ?inp_entity)
       # (path_open ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 95)
         let ft = ex.factTables[27]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 532
+          state = 611
           continue
-        state = 530
+        state = 609
         continue
-      state = 532
+      state = 611
       continue
-    of 532:
-      alt527 = true
+    of 611:
+      alt606 = true
+      ex.debugEndCondition(definition, true)
       # (not (movement_blocked ?inp_entity))
+      ex.debugBeginCondition(definition, 97)
       # (movement_blocked ?inp_entity)
       # (movement_blocked ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 98)
         let ft = ex.factTables[29]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 538
+          state = 618
           continue
-        state = 536
+        state = 616
         continue
-      state = 538
+      state = 618
       continue
-    of 538:
-      state = 533
+    of 618:
+      state = 613
       continue
-    of 536:
-      state = 535
+    of 616:
+      state = 615
       continue
-    of 535:
-      state = 520
+    of 615:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 599
       continue
-    of 533:
-      state = 530
+    of 613:
+      ex.debugEndCondition(definition, false)
+      state = 612
       continue
-    of 530:
-      state = 529
+    of 612:
+      ex.debugBeginCondition(definition, 94)
+      state = 609
       continue
-    of 529:
-      if alt527 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 527
+    of 609:
+      state = 608
+      continue
+    of 608:
+      if alt606 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 606
         continue
       # (alternate_path_open ?inp_entity)
       # (alternate_path_open ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 96)
         let ft = ex.factTables[28]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 542
+          state = 624
           continue
-        state = 540
+        state = 622
         continue
-      state = 542
+      state = 624
       continue
-    of 542:
-      alt527 = true
+    of 624:
+      alt606 = true
+      ex.debugEndCondition(definition, true)
       # (not (movement_blocked ?inp_entity))
+      ex.debugBeginCondition(definition, 97)
       # (movement_blocked ?inp_entity)
       # (movement_blocked ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 98)
         let ft = ex.factTables[29]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 548
+          state = 631
           continue
-        state = 546
+        state = 629
         continue
-      state = 548
+      state = 631
       continue
-    of 548:
-      state = 543
+    of 631:
+      state = 626
       continue
-    of 546:
-      state = 545
+    of 629:
+      state = 628
       continue
-    of 545:
-      state = 520
+    of 628:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 599
       continue
-    of 543:
-      state = 540
+    of 626:
+      ex.debugEndCondition(definition, false)
+      state = 625
       continue
-    of 540:
-      state = 539
+    of 625:
+      ex.debugBeginCondition(definition, 94)
+      state = 622
       continue
-    of 539:
-      if alt527 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 527
+    of 622:
+      state = 621
+      continue
+    of 621:
+      if alt606 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 606
         continue
-      state = 527
+      state = 606
       continue
-    of 527:
-      state = 524
+    of 606:
+      ex.debugEndCondition(definition, false)
+      state = 603
       continue
-    of 524:
-      state = 522
+    of 603:
+      state = 601
       continue
-    of 522:
-      state = 521
+    of 601:
+      ex.debugEndCondition(definition, false)
+      state = 600
       continue
-    of 521:
+    of 600:
       ex.releaseRetry(fr)
-      state = 275
+      ex.debugEndBranch(definition, false)
+      state = 305
       continue
-    of 520:
+    of 599:
       if not ex.pushBranch(addr bc14):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 549
+      ex.debugCapturePendingTask(22)
+      ex.debugCapturePendingTask(21)
+      state = 634
       continue
-    of 549:
+    of 634:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5312,36 +6482,47 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 279
+        state = 309
         continue
-      state = 550
+      state = 635
       continue
-    of 279:
+    of 309:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms4)
-        state = 275
+        ex.debugEndBranch(definition, false)
+        state = 305
         continue
-      state = 549
+      state = 634
       continue
-    of 550:
+    of 635:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 275:
+    of 305:
       # branch branch_idle
-      state = 551
+      ex.debugBeginBranch(definition, 15)
+      state = 636
       continue
-    of 551:
+    of 636:
       if not ex.pushBranch(addr bc15):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 553
+      ex.debugCapturePendingTask(23)
+      state = 638
       continue
-    of 553:
+    of 638:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -5349,16 +6530,20 @@ proc method4(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 280
+        state = 310
         continue
-      state = 554
+      state = 639
       continue
-    of 280:
+    of 310:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 553
+      state = 638
       continue
-    of 554:
+    of 639:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -5366,42 +6551,49 @@ proc method4(ex: Exec): int {.nimcall.} =
 # method5: ComplexScenario::recovery_response/1
 proc method5(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp565_16: Atom
-  var cp567_16: Atom
-  var cp586_17: Atom
-  var cp588_17: Atom
-  var fc589: uint32
+  var cp650_16: Atom
+  var cp652_16: Atom
+  var cp673_17: Atom
+  var cp675_17: Atom
+  var fc676: uint32
   var state = 0
   case fr.resume
-  of 1: state = 559
-  of 2: state = 560
-  of 3: state = 561
+  of 1: state = 644
+  of 2: state = 645
+  of 3: state = 646
   else: discard
   while true:
     case state
     of 0:
-      state = 556
+      ex.debugBeginMethod(definition, 5)
+      state = 641
       continue
-    of 556:
+    of 641:
       # branch branch_use_medkit
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 16)
       # (and (= ?current_health (call get_health ?inp_entity)) (health_value ?inp_entity ?current_health) (medkit ?inp_entity) (not (under_fire ?inp_entity)))
-      cp565_16 = ex.v[16]
+      cp650_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 99)
       # (= ?current_health (call get_health ?inp_entity))
-      cp567_16 = ex.v[16]
+      cp652_16 = ex.v[16]
       # (= ?current_health (call get_health ?inp_entity))
+      ex.debugBeginCondition(definition, 100)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[0]], addr cs19, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 568
+          ex.debugEndCondition(definition, true)
+          state = 653
           continue
-      state = 566
+      ex.debugEndCondition(definition, false)
+      state = 651
       continue
-    of 568:
+    of 653:
       # (health_value ?inp_entity ?current_health)
       # (health_value ?inp_entity ?current_health)
       block:
+        ex.debugBeginCondition(definition, 101)
         let ft = ex.factTables[15]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -5409,85 +6601,99 @@ proc method5(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[16]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 571
+          state = 656
           continue
-        state = 569
+        state = 654
         continue
-      state = 571
+      state = 656
       continue
-    of 571:
+    of 656:
       # (medkit ?inp_entity)
       # (medkit ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 102)
         let ft = ex.factTables[24]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 574
+          state = 659
           continue
-        state = 572
+        state = 657
         continue
-      state = 574
+      state = 659
       continue
-    of 574:
+    of 659:
       # (not (under_fire ?inp_entity))
+      ex.debugBeginCondition(definition, 103)
       # (under_fire ?inp_entity)
       # (under_fire ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 104)
         let ft = ex.factTables[23]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 580
+          state = 665
           continue
-        state = 578
+        state = 663
         continue
-      state = 580
+      state = 665
       continue
-    of 580:
-      state = 575
+    of 665:
+      state = 660
       continue
-    of 578:
-      state = 577
+    of 663:
+      state = 662
       continue
-    of 577:
-      state = 562
+    of 662:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 647
       continue
-    of 575:
-      state = 572
+    of 660:
+      ex.debugEndCondition(definition, false)
+      state = 657
       continue
-    of 572:
-      state = 569
+    of 657:
+      state = 654
       continue
-    of 569:
-      state = 566
+    of 654:
+      state = 651
       continue
-    of 566:
-      ex.v[16] = cp567_16
-      state = 564
+    of 651:
+      ex.v[16] = cp652_16
+      state = 649
       continue
-    of 564:
-      ex.v[16] = cp565_16
-      state = 563
+    of 649:
+      ex.v[16] = cp650_16
+      ex.debugEndCondition(definition, false)
+      state = 648
       continue
-    of 563:
+    of 648:
       ex.releaseRetry(fr)
-      state = 557
+      ex.debugEndBranch(definition, false)
+      state = 642
       continue
-    of 562:
+    of 647:
       if not ex.pushBranch(addr bc16):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 581
+      ex.debugCapturePendingTask(24)
+      state = 668
       continue
-    of 581:
+    of 668:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -5495,520 +6701,66 @@ proc method5(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 559
+        state = 644
         continue
-      state = 582
+      state = 669
       continue
-    of 559:
+    of 644:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms5)
-        state = 557
+        ex.debugEndBranch(definition, false)
+        state = 642
         continue
-      state = 581
+      state = 668
       continue
-    of 582:
+    of 669:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 557:
+    of 642:
       # branch branch_use_station
       ex.saveRetry(fr, ms5)
+      ex.debugBeginBranch(definition, 17)
       # (and (healing_station ?inp_entity ?station) (not (station_offline ?station)))
-      cp586_17 = ex.v[17]
+      cp673_17 = ex.v[17]
+      ex.debugBeginCondition(definition, 105)
       # (healing_station ?inp_entity ?station)
-      cp588_17 = ex.v[17]
-      fc589 = 0
-      state = 590
+      cp675_17 = ex.v[17]
+      fc676 = 0
+      state = 677
       continue
-    of 590:
-      inc fc589
-      if not factChoice106(ex, fc589 - 1):
-        state = 587
+    of 677:
+      ex.debugBeginCondition(definition, 106)
+      inc fc676
+      if not factChoice106(ex, fc676 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 674
         continue
+      ex.debugEndCondition(definition, true)
       # (not (station_offline ?station))
+      ex.debugBeginCondition(definition, 107)
       # (station_offline ?station)
       # (station_offline ?station)
       block:
+        ex.debugBeginCondition(definition, 108)
         let ft = ex.factTables[31]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[17]): continue
           matched = true
           break
-        if matched:
-          state = 596
-          continue
-        state = 594
-        continue
-      state = 596
-      continue
-    of 596:
-      state = 591
-      continue
-    of 594:
-      state = 593
-      continue
-    of 593:
-      state = 583
-      continue
-    of 591:
-      state = 589
-      continue
-    of 589:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 587
-        continue
-      ex.v[17] = cp588_17
-      cp588_17 = ex.v[17]
-      state = 590
-      continue
-    of 587:
-      ex.v[17] = cp588_17
-      state = 585
-      continue
-    of 585:
-      ex.v[17] = cp586_17
-      state = 584
-      continue
-    of 584:
-      ex.releaseRetry(fr)
-      state = 558
-      continue
-    of 583:
-      if not ex.pushBranch(addr bc17):
-        ex.releaseRetry(fr)
-        return 0
-      state = 597
-      continue
-    of 597:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 560
-        continue
-      state = 598
-      continue
-    of 560:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms5)
-        state = 558
-        continue
-      state = 597
-      continue
-    of 598:
-      ex.releaseRetry(fr)
-      return 1
-    of 558:
-      # branch branch_recovery_fallback
-      state = 599
-      continue
-    of 599:
-      if not ex.pushBranch(addr bc18):
-        return 0
-      state = 601
-      continue
-    of 601:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 561
-        continue
-      state = 602
-      continue
-    of 561:
-      if fr.childResult == 0:
-        return 0
-      state = 601
-      continue
-    of 602:
-      return 1
-    else:
-      return 0
-
-# method6: ComplexScenario::mobility_response/2
-proc method6(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp613_4: Atom
-  var cp615_4: Atom
-  var fc616: uint32
-  var cp635_4: Atom
-  var cp637_4: Atom
-  var fc638: uint32
-  var state = 0
-  case fr.resume
-  of 1: state = 607
-  of 2: state = 608
-  of 3: state = 609
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 604
-      continue
-    of 604:
-      # branch branch_sprint
-      ex.saveRetry(fr, ms6)
-      # (and (route_clear ?inp_entity ?route) (not (route_dangerous ?route)) (speed_value ?inp_entity ?inp_max_speed) (call binded_function_with_args "sprinting to objective"))
-      cp613_4 = ex.v[4]
-      # (route_clear ?inp_entity ?route)
-      cp615_4 = ex.v[4]
-      fc616 = 0
-      state = 617
-      continue
-    of 617:
-      inc fc616
-      if not factChoice110(ex, fc616 - 1):
-        state = 614
-        continue
-      # (not (route_dangerous ?route))
-      # (route_dangerous ?route)
-      # (route_dangerous ?route)
-      block:
-        let ft = ex.factTables[33]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
-          matched = true
-          break
-        if matched:
-          state = 623
-          continue
-        state = 621
-        continue
-      state = 623
-      continue
-    of 623:
-      state = 618
-      continue
-    of 621:
-      state = 620
-      continue
-    of 620:
-      # (speed_value ?inp_entity ?inp_max_speed)
-      # (speed_value ?inp_entity ?inp_max_speed)
-      block:
-        let ft = ex.factTables[16]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[12]): continue
-          matched = true
-          break
-        if matched:
-          state = 626
-          continue
-        state = 624
-        continue
-      state = 626
-      continue
-    of 626:
-      # (call binded_function_with_args "sprinting to objective")
-      # (call binded_function_with_args "sprinting to objective")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv16], addr cs20, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 629
-          continue
-      state = 627
-      continue
-    of 629:
-      state = 610
-      continue
-    of 627:
-      state = 624
-      continue
-    of 624:
-      state = 618
-      continue
-    of 618:
-      state = 616
-      continue
-    of 616:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 614
-        continue
-      ex.v[4] = cp615_4
-      cp615_4 = ex.v[4]
-      state = 617
-      continue
-    of 614:
-      ex.v[4] = cp615_4
-      state = 612
-      continue
-    of 612:
-      ex.v[4] = cp613_4
-      state = 611
-      continue
-    of 611:
-      ex.releaseRetry(fr)
-      state = 605
-      continue
-    of 610:
-      if not ex.pushBranch(addr bc19):
-        ex.releaseRetry(fr)
-        return 0
-      state = 630
-      continue
-    of 630:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 607
-        continue
-      state = 631
-      continue
-    of 607:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms6)
-        state = 605
-        continue
-      state = 630
-      continue
-    of 631:
-      ex.releaseRetry(fr)
-      return 1
-    of 605:
-      # branch branch_walk_alternate
-      ex.saveRetry(fr, ms6)
-      # (and (alternate_route ?inp_entity ?route) (not (route_blocked ?route)))
-      cp635_4 = ex.v[4]
-      # (alternate_route ?inp_entity ?route)
-      cp637_4 = ex.v[4]
-      fc638 = 0
-      state = 639
-      continue
-    of 639:
-      inc fc638
-      if not factChoice116(ex, fc638 - 1):
-        state = 636
-        continue
-      # (not (route_blocked ?route))
-      # (route_blocked ?route)
-      # (route_blocked ?route)
-      block:
-        let ft = ex.factTables[11]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
-          matched = true
-          break
-        if matched:
-          state = 645
-          continue
-        state = 643
-        continue
-      state = 645
-      continue
-    of 645:
-      state = 640
-      continue
-    of 643:
-      state = 642
-      continue
-    of 642:
-      state = 632
-      continue
-    of 640:
-      state = 638
-      continue
-    of 638:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 636
-        continue
-      ex.v[4] = cp637_4
-      cp637_4 = ex.v[4]
-      state = 639
-      continue
-    of 636:
-      ex.v[4] = cp637_4
-      state = 634
-      continue
-    of 634:
-      ex.v[4] = cp635_4
-      state = 633
-      continue
-    of 633:
-      ex.releaseRetry(fr)
-      state = 606
-      continue
-    of 632:
-      if not ex.pushBranch(addr bc20):
-        ex.releaseRetry(fr)
-        return 0
-      state = 646
-      continue
-    of 646:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 608
-        continue
-      state = 647
-      continue
-    of 608:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms6)
-        state = 606
-        continue
-      state = 646
-      continue
-    of 647:
-      ex.releaseRetry(fr)
-      return 1
-    of 606:
-      # branch branch_mobility_fallback
-      state = 648
-      continue
-    of 648:
-      if not ex.pushBranch(addr bc21):
-        return 0
-      state = 650
-      continue
-    of 650:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 609
-        continue
-      state = 651
-      continue
-    of 609:
-      if fr.childResult == 0:
-        return 0
-      state = 650
-      continue
-    of 651:
-      return 1
-    else:
-      return 0
-
-# method7: emergency_response/2
-proc method7(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp662_3: Atom
-  var cp664_3: Atom
-  var fc665: uint32
-  var as123_673: AxiomScope
-  var as123_673Frame: uint64
-  var alt678: bool
-  var cp699_0: Atom
-  var cp699_2: Atom
-  var as123_673Copy: AxiomScope
-  var cp720_0: Atom
-  var cp720_2: Atom
-  var cp727_4: Atom
-  var cp729_4: Atom
-  var fc730: uint32
-  var state = 0
-  case fr.resume
-  of 1: state = 656
-  of 2: state = 657
-  of 3: state = 658
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 653
-      continue
-    of 653:
-      # branch branch_take_cover_and_fight
-      ex.saveRetry(fr, ms7)
-      # (and (cover_available ?inp_entity ?cover) (not (cover_compromised ?cover)) (#can_engage ?inp_entity ?inp_enemy))
-      cp662_3 = ex.v[3]
-      # (cover_available ?inp_entity ?cover)
-      cp664_3 = ex.v[3]
-      fc665 = 0
-      state = 666
-      continue
-    of 666:
-      inc fc665
-      if not factChoice120(ex, fc665 - 1):
-        state = 663
-        continue
-      # (not (cover_compromised ?cover))
-      # (cover_compromised ?cover)
-      # (cover_compromised ?cover)
-      block:
-        let ft = ex.factTables[9]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[3]): continue
-          matched = true
-          break
-        if matched:
-          state = 672
-          continue
-        state = 670
-        continue
-      state = 672
-      continue
-    of 672:
-      state = 667
-      continue
-    of 670:
-      state = 669
-      continue
-    of 669:
-      # (#can_engage ?inp_entity ?inp_enemy)
-      as123_673.saved.setLen(2)
-      as123_673.args.setLen(2)
-      axiomBegin123(ex, as123_673)
-      as123_673Frame = ex.currentFrameID
-      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
-      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt678 = false
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[3]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 683
           continue
@@ -6017,358 +6769,53 @@ proc method7(ex: Exec): int {.nimcall.} =
       state = 683
       continue
     of 683:
-      alt678 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 686
-          continue
-        state = 684
-        continue
-      state = 686
-      continue
-    of 686:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 692
-          continue
-        state = 690
-        continue
-      state = 692
-      continue
-    of 692:
-      state = 687
-      continue
-    of 690:
-      state = 689
-      continue
-    of 689:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 698
-          continue
-        state = 696
-        continue
-      state = 698
-      continue
-    of 698:
-      state = 693
-      continue
-    of 696:
-      state = 695
-      continue
-    of 695:
-      cp699_0 = ex.v[0]
-      cp699_2 = ex.v[2]
-      as123_673Copy = as123_673
-      if not axiomEnd123(ex, true, as123_673Copy):
-        state = 700
-        continue
-      state = 659
-      continue
-    of 700:
-      ex.v[0] = cp699_0
-      ex.v[2] = cp699_2
-      ex.currentFrameID = as123_673Frame
-      state = 693
-      continue
-    of 693:
-      state = 687
-      continue
-    of 687:
-      state = 684
-      continue
-    of 684:
-      state = 681
+      state = 678
       continue
     of 681:
       state = 680
       continue
     of 680:
-      if alt678 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 678
-        continue
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[4]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 704
-          continue
-        state = 702
-        continue
-      state = 704
-      continue
-    of 704:
-      alt678 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 707
-          continue
-        state = 705
-        continue
-      state = 707
-      continue
-    of 707:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 713
-          continue
-        state = 711
-        continue
-      state = 713
-      continue
-    of 713:
-      state = 708
-      continue
-    of 711:
-      state = 710
-      continue
-    of 710:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 719
-          continue
-        state = 717
-        continue
-      state = 719
-      continue
-    of 719:
-      state = 714
-      continue
-    of 717:
-      state = 716
-      continue
-    of 716:
-      cp720_0 = ex.v[0]
-      cp720_2 = ex.v[2]
-      as123_673Copy = as123_673
-      if not axiomEnd123(ex, true, as123_673Copy):
-        state = 721
-        continue
-      state = 659
-      continue
-    of 721:
-      ex.v[0] = cp720_0
-      ex.v[2] = cp720_2
-      ex.currentFrameID = as123_673Frame
-      state = 714
-      continue
-    of 714:
-      state = 708
-      continue
-    of 708:
-      state = 705
-      continue
-    of 705:
-      state = 702
-      continue
-    of 702:
-      state = 701
-      continue
-    of 701:
-      if alt678 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 678
-        continue
-      state = 678
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 670
       continue
     of 678:
+      ex.debugEndCondition(definition, false)
       state = 676
       continue
     of 676:
-      state = 675
-      continue
-    of 675:
-      axiomEnd123(ex, false, as123_673)
-      state = 673
-      continue
-    of 673:
-      state = 667
-      continue
-    of 667:
-      state = 665
-      continue
-    of 665:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 663
+        state = 674
         continue
-      ex.v[3] = cp664_3
-      cp664_3 = ex.v[3]
-      state = 666
+      ex.v[17] = cp675_17
+      cp675_17 = ex.v[17]
+      state = 677
       continue
-    of 663:
-      ex.v[3] = cp664_3
-      state = 661
+    of 674:
+      ex.v[17] = cp675_17
+      state = 672
       continue
-    of 661:
-      ex.v[3] = cp662_3
-      state = 660
+    of 672:
+      ex.v[17] = cp673_17
+      ex.debugEndCondition(definition, false)
+      state = 671
       continue
-    of 660:
+    of 671:
       ex.releaseRetry(fr)
-      state = 654
+      ex.debugEndBranch(definition, false)
+      state = 643
       continue
-    of 659:
-      if not ex.pushBranch(addr bc22):
+    of 670:
+      if not ex.pushBranch(addr bc17):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 722
+      ex.debugCapturePendingTask(26)
+      ex.debugCapturePendingTask(25)
+      state = 686
       continue
-    of 722:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 656
-        continue
-      state = 723
-      continue
-    of 656:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms7)
-        state = 654
-        continue
-      state = 722
-      continue
-    of 723:
-      ex.releaseRetry(fr)
-      return 1
-    of 654:
-      # branch branch_retreat
-      ex.saveRetry(fr, ms7)
-      # (and (retreat_route ?inp_entity ?route) (not (route_blocked ?route)))
-      cp727_4 = ex.v[4]
-      # (retreat_route ?inp_entity ?route)
-      cp729_4 = ex.v[4]
-      fc730 = 0
-      state = 731
-      continue
-    of 731:
-      inc fc730
-      if not factChoice125(ex, fc730 - 1):
-        state = 728
-        continue
-      # (not (route_blocked ?route))
-      # (route_blocked ?route)
-      # (route_blocked ?route)
-      block:
-        let ft = ex.factTables[11]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
-          matched = true
-          break
-        if matched:
-          state = 737
-          continue
-        state = 735
-        continue
-      state = 737
-      continue
-    of 737:
-      state = 732
-      continue
-    of 735:
-      state = 734
-      continue
-    of 734:
-      state = 724
-      continue
-    of 732:
-      state = 730
-      continue
-    of 730:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 728
-        continue
-      ex.v[4] = cp729_4
-      cp729_4 = ex.v[4]
-      state = 731
-      continue
-    of 728:
-      ex.v[4] = cp729_4
-      state = 726
-      continue
-    of 726:
-      ex.v[4] = cp727_4
-      state = 725
-      continue
-    of 725:
-      ex.releaseRetry(fr)
-      state = 655
-      continue
-    of 724:
-      if not ex.pushBranch(addr bc23):
-        ex.releaseRetry(fr)
-        return 0
-      state = 738
-      continue
-    of 738:
+    of 686:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -6376,36 +6823,47 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 657
+        state = 645
         continue
-      state = 739
+      state = 687
       continue
-    of 657:
+    of 645:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
-        ex.restoreRetry(fr, ms7)
-        state = 655
+        ex.restoreRetry(fr, ms5)
+        ex.debugEndBranch(definition, false)
+        state = 643
         continue
-      state = 738
+      state = 686
       continue
-    of 739:
+    of 687:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 655:
-      # branch branch_emergency_fallback
-      state = 740
+    of 643:
+      # branch branch_recovery_fallback
+      ex.debugBeginBranch(definition, 18)
+      state = 688
       continue
-    of 740:
-      if not ex.pushBranch(addr bc24):
+    of 688:
+      if not ex.pushBranch(addr bc18):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 742
+      ex.debugCapturePendingTask(27)
+      state = 690
       continue
-    of 742:
+    of 690:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -6413,16 +6871,1002 @@ proc method7(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 658
+        state = 646
         continue
+      state = 691
+      continue
+    of 646:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 690
+      continue
+    of 691:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    else:
+      return 0
+
+# method6: ComplexScenario::mobility_response/2
+proc method6(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp702_4: Atom
+  var cp704_4: Atom
+  var fc705: uint32
+  var cp726_4: Atom
+  var cp728_4: Atom
+  var fc729: uint32
+  var state = 0
+  case fr.resume
+  of 1: state = 696
+  of 2: state = 697
+  of 3: state = 698
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 6)
+      state = 693
+      continue
+    of 693:
+      # branch branch_sprint
+      ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 19)
+      # (and (route_clear ?inp_entity ?route) (not (route_dangerous ?route)) (speed_value ?inp_entity ?inp_max_speed) (call binded_function_with_args "sprinting to objective"))
+      cp702_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 109)
+      # (route_clear ?inp_entity ?route)
+      cp704_4 = ex.v[4]
+      fc705 = 0
+      state = 706
+      continue
+    of 706:
+      ex.debugBeginCondition(definition, 110)
+      inc fc705
+      if not factChoice110(ex, fc705 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 703
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (route_dangerous ?route))
+      ex.debugBeginCondition(definition, 111)
+      # (route_dangerous ?route)
+      # (route_dangerous ?route)
+      block:
+        ex.debugBeginCondition(definition, 112)
+        let ft = ex.factTables[33]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 712
+          continue
+        state = 710
+        continue
+      state = 712
+      continue
+    of 712:
+      state = 707
+      continue
+    of 710:
+      state = 709
+      continue
+    of 709:
+      ex.debugEndCondition(definition, true)
+      # (speed_value ?inp_entity ?inp_max_speed)
+      # (speed_value ?inp_entity ?inp_max_speed)
+      block:
+        ex.debugBeginCondition(definition, 113)
+        let ft = ex.factTables[16]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[12]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 716
+          continue
+        state = 714
+        continue
+      state = 716
+      continue
+    of 716:
+      # (call binded_function_with_args "sprinting to objective")
+      # (call binded_function_with_args "sprinting to objective")
+      ex.debugBeginCondition(definition, 114)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv16], addr cs20, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 719
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 717
+      continue
+    of 719:
+      ex.debugEndCondition(definition, true)
+      state = 699
+      continue
+    of 717:
+      state = 714
+      continue
+    of 714:
+      state = 713
+      continue
+    of 713:
+      ex.debugBeginCondition(definition, 111)
+      state = 707
+      continue
+    of 707:
+      ex.debugEndCondition(definition, false)
+      state = 705
+      continue
+    of 705:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 703
+        continue
+      ex.v[4] = cp704_4
+      cp704_4 = ex.v[4]
+      state = 706
+      continue
+    of 703:
+      ex.v[4] = cp704_4
+      state = 701
+      continue
+    of 701:
+      ex.v[4] = cp702_4
+      ex.debugEndCondition(definition, false)
+      state = 700
+      continue
+    of 700:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 694
+      continue
+    of 699:
+      if not ex.pushBranch(addr bc19):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(28)
+      state = 721
+      continue
+    of 721:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 696
+        continue
+      state = 722
+      continue
+    of 696:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms6)
+        ex.debugEndBranch(definition, false)
+        state = 694
+        continue
+      state = 721
+      continue
+    of 722:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 694:
+      # branch branch_walk_alternate
+      ex.saveRetry(fr, ms6)
+      ex.debugBeginBranch(definition, 20)
+      # (and (alternate_route ?inp_entity ?route) (not (route_blocked ?route)))
+      cp726_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 115)
+      # (alternate_route ?inp_entity ?route)
+      cp728_4 = ex.v[4]
+      fc729 = 0
+      state = 730
+      continue
+    of 730:
+      ex.debugBeginCondition(definition, 116)
+      inc fc729
+      if not factChoice116(ex, fc729 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 727
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (route_blocked ?route))
+      ex.debugBeginCondition(definition, 117)
+      # (route_blocked ?route)
+      # (route_blocked ?route)
+      block:
+        ex.debugBeginCondition(definition, 118)
+        let ft = ex.factTables[11]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 736
+          continue
+        state = 734
+        continue
+      state = 736
+      continue
+    of 736:
+      state = 731
+      continue
+    of 734:
+      state = 733
+      continue
+    of 733:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 723
+      continue
+    of 731:
+      ex.debugEndCondition(definition, false)
+      state = 729
+      continue
+    of 729:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 727
+        continue
+      ex.v[4] = cp728_4
+      cp728_4 = ex.v[4]
+      state = 730
+      continue
+    of 727:
+      ex.v[4] = cp728_4
+      state = 725
+      continue
+    of 725:
+      ex.v[4] = cp726_4
+      ex.debugEndCondition(definition, false)
+      state = 724
+      continue
+    of 724:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 695
+      continue
+    of 723:
+      if not ex.pushBranch(addr bc20):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(29)
+      state = 739
+      continue
+    of 739:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 697
+        continue
+      state = 740
+      continue
+    of 697:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms6)
+        ex.debugEndBranch(definition, false)
+        state = 695
+        continue
+      state = 739
+      continue
+    of 740:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 695:
+      # branch branch_mobility_fallback
+      ex.debugBeginBranch(definition, 21)
+      state = 741
+      continue
+    of 741:
+      if not ex.pushBranch(addr bc21):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(30)
       state = 743
       continue
-    of 658:
-      if fr.childResult == 0:
-        return 0
-      state = 742
-      continue
     of 743:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 698
+        continue
+      state = 744
+      continue
+    of 698:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 743
+      continue
+    of 744:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    else:
+      return 0
+
+# method7: emergency_response/2
+proc method7(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp755_3: Atom
+  var cp757_3: Atom
+  var fc758: uint32
+  var as123_767: AxiomScope
+  var as123_767Frame: uint64
+  var alt772: bool
+  var cp797_0: Atom
+  var cp797_2: Atom
+  var as123_767Copy: AxiomScope
+  var cp824_0: Atom
+  var cp824_2: Atom
+  var cp833_4: Atom
+  var cp835_4: Atom
+  var fc836: uint32
+  var state = 0
+  case fr.resume
+  of 1: state = 749
+  of 2: state = 750
+  of 3: state = 751
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 7)
+      state = 746
+      continue
+    of 746:
+      # branch branch_take_cover_and_fight
+      ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 22)
+      # (and (cover_available ?inp_entity ?cover) (not (cover_compromised ?cover)) (#can_engage ?inp_entity ?inp_enemy))
+      cp755_3 = ex.v[3]
+      ex.debugBeginCondition(definition, 119)
+      # (cover_available ?inp_entity ?cover)
+      cp757_3 = ex.v[3]
+      fc758 = 0
+      state = 759
+      continue
+    of 759:
+      ex.debugBeginCondition(definition, 120)
+      inc fc758
+      if not factChoice120(ex, fc758 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 756
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (cover_compromised ?cover))
+      ex.debugBeginCondition(definition, 121)
+      # (cover_compromised ?cover)
+      # (cover_compromised ?cover)
+      block:
+        ex.debugBeginCondition(definition, 122)
+        let ft = ex.factTables[9]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[3]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 765
+          continue
+        state = 763
+        continue
+      state = 765
+      continue
+    of 765:
+      state = 760
+      continue
+    of 763:
+      state = 762
+      continue
+    of 762:
+      ex.debugEndCondition(definition, true)
+      # (#can_engage ?inp_entity ?inp_enemy)
+      ex.debugBeginCondition(definition, 123)
+      as123_767.saved.setLen(2)
+      as123_767.args.setLen(2)
+      axiomBegin123(ex, as123_767)
+      as123_767Frame = ex.currentFrameID
+      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
+      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 20)
+      alt772 = false
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 21)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 777
+          continue
+        state = 775
+        continue
+      state = 777
+      continue
+    of 777:
+      alt772 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 781
+          continue
+        state = 779
+        continue
+      state = 781
+      continue
+    of 781:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 787
+          continue
+        state = 785
+        continue
+      state = 787
+      continue
+    of 787:
+      state = 782
+      continue
+    of 785:
+      state = 784
+      continue
+    of 784:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 794
+          continue
+        state = 792
+        continue
+      state = 794
+      continue
+    of 794:
+      state = 789
+      continue
+    of 792:
+      state = 791
+      continue
+    of 791:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp797_0 = ex.v[0]
+      cp797_2 = ex.v[2]
+      as123_767Copy = as123_767
+      if not axiomEnd123(ex, true, as123_767Copy):
+        state = 798
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 752
+      continue
+    of 798:
+      ex.v[0] = cp797_0
+      ex.v[2] = cp797_2
+      ex.currentFrameID = as123_767Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 796
+      continue
+    of 796:
+      ex.debugBeginCondition(definition, 19)
+      state = 795
+      continue
+    of 795:
+      ex.debugBeginCondition(definition, 26)
+      state = 789
+      continue
+    of 789:
+      ex.debugEndCondition(definition, false)
+      state = 788
+      continue
+    of 788:
+      ex.debugBeginCondition(definition, 24)
+      state = 782
+      continue
+    of 782:
+      ex.debugEndCondition(definition, false)
+      state = 779
+      continue
+    of 779:
+      state = 778
+      continue
+    of 778:
+      ex.debugBeginCondition(definition, 20)
+      state = 775
+      continue
+    of 775:
+      state = 774
+      continue
+    of 774:
+      if alt772 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 772
+        continue
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 22)
+        let ft = ex.factTables[4]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 804
+          continue
+        state = 802
+        continue
+      state = 804
+      continue
+    of 804:
+      alt772 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 808
+          continue
+        state = 806
+        continue
+      state = 808
+      continue
+    of 808:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 814
+          continue
+        state = 812
+        continue
+      state = 814
+      continue
+    of 814:
+      state = 809
+      continue
+    of 812:
+      state = 811
+      continue
+    of 811:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 821
+          continue
+        state = 819
+        continue
+      state = 821
+      continue
+    of 821:
+      state = 816
+      continue
+    of 819:
+      state = 818
+      continue
+    of 818:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp824_0 = ex.v[0]
+      cp824_2 = ex.v[2]
+      as123_767Copy = as123_767
+      if not axiomEnd123(ex, true, as123_767Copy):
+        state = 825
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 752
+      continue
+    of 825:
+      ex.v[0] = cp824_0
+      ex.v[2] = cp824_2
+      ex.currentFrameID = as123_767Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 823
+      continue
+    of 823:
+      ex.debugBeginCondition(definition, 19)
+      state = 822
+      continue
+    of 822:
+      ex.debugBeginCondition(definition, 26)
+      state = 816
+      continue
+    of 816:
+      ex.debugEndCondition(definition, false)
+      state = 815
+      continue
+    of 815:
+      ex.debugBeginCondition(definition, 24)
+      state = 809
+      continue
+    of 809:
+      ex.debugEndCondition(definition, false)
+      state = 806
+      continue
+    of 806:
+      state = 805
+      continue
+    of 805:
+      ex.debugBeginCondition(definition, 20)
+      state = 802
+      continue
+    of 802:
+      state = 801
+      continue
+    of 801:
+      if alt772 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 772
+        continue
+      state = 772
+      continue
+    of 772:
+      ex.debugEndCondition(definition, false)
+      state = 770
+      continue
+    of 770:
+      ex.debugEndCondition(definition, false)
+      state = 769
+      continue
+    of 769:
+      axiomEnd123(ex, false, as123_767)
+      state = 767
+      continue
+    of 767:
+      ex.debugEndCondition(definition, false)
+      state = 766
+      continue
+    of 766:
+      ex.debugBeginCondition(definition, 121)
+      state = 760
+      continue
+    of 760:
+      ex.debugEndCondition(definition, false)
+      state = 758
+      continue
+    of 758:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 756
+        continue
+      ex.v[3] = cp757_3
+      cp757_3 = ex.v[3]
+      state = 759
+      continue
+    of 756:
+      ex.v[3] = cp757_3
+      state = 754
+      continue
+    of 754:
+      ex.v[3] = cp755_3
+      ex.debugEndCondition(definition, false)
+      state = 753
+      continue
+    of 753:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 747
+      continue
+    of 752:
+      if not ex.pushBranch(addr bc22):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(32)
+      ex.debugCapturePendingTask(31)
+      state = 828
+      continue
+    of 828:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 749
+        continue
+      state = 829
+      continue
+    of 749:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms7)
+        ex.debugEndBranch(definition, false)
+        state = 747
+        continue
+      state = 828
+      continue
+    of 829:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 747:
+      # branch branch_retreat
+      ex.saveRetry(fr, ms7)
+      ex.debugBeginBranch(definition, 23)
+      # (and (retreat_route ?inp_entity ?route) (not (route_blocked ?route)))
+      cp833_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 124)
+      # (retreat_route ?inp_entity ?route)
+      cp835_4 = ex.v[4]
+      fc836 = 0
+      state = 837
+      continue
+    of 837:
+      ex.debugBeginCondition(definition, 125)
+      inc fc836
+      if not factChoice125(ex, fc836 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 834
+        continue
+      ex.debugEndCondition(definition, true)
+      # (not (route_blocked ?route))
+      ex.debugBeginCondition(definition, 126)
+      # (route_blocked ?route)
+      # (route_blocked ?route)
+      block:
+        ex.debugBeginCondition(definition, 127)
+        let ft = ex.factTables[11]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 843
+          continue
+        state = 841
+        continue
+      state = 843
+      continue
+    of 843:
+      state = 838
+      continue
+    of 841:
+      state = 840
+      continue
+    of 840:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 830
+      continue
+    of 838:
+      ex.debugEndCondition(definition, false)
+      state = 836
+      continue
+    of 836:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 834
+        continue
+      ex.v[4] = cp835_4
+      cp835_4 = ex.v[4]
+      state = 837
+      continue
+    of 834:
+      ex.v[4] = cp835_4
+      state = 832
+      continue
+    of 832:
+      ex.v[4] = cp833_4
+      ex.debugEndCondition(definition, false)
+      state = 831
+      continue
+    of 831:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 748
+      continue
+    of 830:
+      if not ex.pushBranch(addr bc23):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(33)
+      state = 846
+      continue
+    of 846:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 750
+        continue
+      state = 847
+      continue
+    of 750:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms7)
+        ex.debugEndBranch(definition, false)
+        state = 748
+        continue
+      state = 846
+      continue
+    of 847:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 748:
+      # branch branch_emergency_fallback
+      ex.debugBeginBranch(definition, 24)
+      state = 848
+      continue
+    of 848:
+      if not ex.pushBranch(addr bc24):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(34)
+      state = 850
+      continue
+    of 850:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 751
+        continue
+      state = 851
+      continue
+    of 751:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 850
+      continue
+    of 851:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -6432,953 +7876,329 @@ proc method8(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
   var state = 0
   case fr.resume
-  of 1: state = 748
-  of 2: state = 749
-  of 3: state = 750
+  of 1: state = 856
+  of 2: state = 857
+  of 3: state = 858
   else: discard
   while true:
     case state
     of 0:
-      state = 745
+      ex.debugBeginMethod(definition, 8)
+      state = 853
       continue
-    of 745:
+    of 853:
       # branch branch_attack
       ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 25)
       # (and (or (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)) (call binded_function_with_args "attacking enemy"))
+      ex.debugBeginCondition(definition, 128)
       # (or (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 129)
       # (has_weapon ?inp_entity)
       # (has_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 130)
         let ft = ex.factTables[3]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 760
+          state = 868
           continue
-        state = 758
+        state = 866
         continue
-      state = 760
+      state = 868
       continue
-    of 760:
+    of 868:
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 132)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 763
+          state = 872
           continue
-        state = 761
+        state = 870
         continue
-      state = 763
+      state = 872
       continue
-    of 763:
+    of 872:
       # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 133)
       # (weapon_jammed ?inp_entity)
       # (weapon_jammed ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 134)
         let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 769
+          state = 878
           continue
-        state = 767
+        state = 876
         continue
-      state = 769
+      state = 878
       continue
-    of 769:
-      state = 764
+    of 878:
+      state = 873
       continue
-    of 767:
-      state = 766
+    of 876:
+      state = 875
       continue
-    of 766:
+    of 875:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 135)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 136)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 775
+          state = 885
           continue
-        state = 773
+        state = 883
         continue
-      state = 775
+      state = 885
       continue
-    of 775:
-      state = 770
+    of 885:
+      state = 880
       continue
-    of 773:
-      state = 772
+    of 883:
+      state = 882
       continue
-    of 772:
+    of 882:
+      ex.debugEndCondition(definition, true)
       # (call binded_function_with_args "attacking enemy")
       # (call binded_function_with_args "attacking enemy")
+      ex.debugBeginCondition(definition, 137)
       block:
         let (callResult, ok) = ex.invoke(0, @[sv19], addr cs21, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 778
+          ex.debugEndCondition(definition, true)
+          state = 889
           continue
-      state = 776
+      ex.debugEndCondition(definition, false)
+      state = 887
       continue
-    of 778:
-      state = 751
+    of 889:
+      ex.debugEndCondition(definition, true)
+      state = 859
       continue
-    of 776:
-      state = 770
+    of 887:
+      state = 886
       continue
-    of 770:
-      state = 764
+    of 886:
+      ex.debugBeginCondition(definition, 135)
+      state = 880
       continue
-    of 764:
-      state = 761
+    of 880:
+      ex.debugEndCondition(definition, false)
+      state = 879
       continue
-    of 761:
-      state = 755
+    of 879:
+      ex.debugBeginCondition(definition, 133)
+      state = 873
       continue
-    of 758:
-      state = 757
+    of 873:
+      ex.debugEndCondition(definition, false)
+      state = 870
       continue
-    of 757:
+    of 870:
+      state = 869
+      continue
+    of 869:
+      ex.debugBeginCondition(definition, 129)
+      state = 863
+      continue
+    of 866:
+      state = 865
+      continue
+    of 865:
       # (has_backup_weapon ?inp_entity)
       # (has_backup_weapon ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 131)
         let ft = ex.factTables[4]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 782
+          state = 894
           continue
-        state = 780
+        state = 892
         continue
-      state = 782
+      state = 894
       continue
-    of 782:
+    of 894:
+      ex.debugEndCondition(definition, true)
       # (ammo_available ?inp_entity)
       # (ammo_available ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 132)
         let ft = ex.factTables[5]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 785
+          state = 898
           continue
-        state = 783
+        state = 896
         continue
-      state = 785
+      state = 898
       continue
-    of 785:
+    of 898:
       # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 133)
       # (weapon_jammed ?inp_entity)
       # (weapon_jammed ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 134)
         let ft = ex.factTables[6]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 791
+          state = 904
           continue
-        state = 789
+        state = 902
         continue
-      state = 791
+      state = 904
       continue
-    of 791:
-      state = 786
+    of 904:
+      state = 899
       continue
-    of 789:
-      state = 788
+    of 902:
+      state = 901
       continue
-    of 788:
+    of 901:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 135)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 136)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 797
+          state = 911
           continue
-        state = 795
+        state = 909
         continue
-      state = 797
+      state = 911
       continue
-    of 797:
-      state = 792
-      continue
-    of 795:
-      state = 794
-      continue
-    of 794:
-      # (call binded_function_with_args "attacking enemy")
-      # (call binded_function_with_args "attacking enemy")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv19], addr cs22, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 800
-          continue
-      state = 798
-      continue
-    of 800:
-      state = 751
-      continue
-    of 798:
-      state = 792
-      continue
-    of 792:
-      state = 786
-      continue
-    of 786:
-      state = 783
-      continue
-    of 783:
-      state = 755
-      continue
-    of 780:
-      state = 779
-      continue
-    of 779:
-      state = 755
-      continue
-    of 755:
-      state = 753
-      continue
-    of 753:
-      state = 752
-      continue
-    of 752:
-      ex.releaseRetry(fr)
-      state = 746
-      continue
-    of 751:
-      if not ex.pushBranch(addr bc25):
-        ex.releaseRetry(fr)
-        return 0
-      state = 801
-      continue
-    of 801:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 748
-        continue
-      state = 802
-      continue
-    of 748:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms8)
-        state = 746
-        continue
-      state = 801
-      continue
-    of 802:
-      ex.releaseRetry(fr)
-      return 1
-    of 746:
-      # branch branch_reload
-      ex.saveRetry(fr, ms8)
-      # (and (has_weapon ?inp_entity) (not (ammo_available ?inp_entity)) (ammo_reserve ?inp_entity))
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[3]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 809
-          continue
-        state = 807
-        continue
-      state = 809
-      continue
-    of 809:
-      # (not (ammo_available ?inp_entity))
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 815
-          continue
-        state = 813
-        continue
-      state = 815
-      continue
-    of 815:
-      state = 810
-      continue
-    of 813:
-      state = 812
-      continue
-    of 812:
-      # (ammo_reserve ?inp_entity)
-      # (ammo_reserve ?inp_entity)
-      block:
-        let ft = ex.factTables[12]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 818
-          continue
-        state = 816
-        continue
-      state = 818
-      continue
-    of 818:
-      state = 803
-      continue
-    of 816:
-      state = 810
-      continue
-    of 810:
-      state = 807
-      continue
-    of 807:
-      state = 805
-      continue
-    of 805:
-      state = 804
-      continue
-    of 804:
-      ex.releaseRetry(fr)
-      state = 747
-      continue
-    of 803:
-      if not ex.pushBranch(addr bc26):
-        ex.releaseRetry(fr)
-        return 0
-      state = 819
-      continue
-    of 819:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 749
-        continue
-      state = 820
-      continue
-    of 749:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms8)
-        state = 747
-        continue
-      state = 819
-      continue
-    of 820:
-      ex.releaseRetry(fr)
-      return 1
-    of 747:
-      # branch branch_disengage
-      state = 821
-      continue
-    of 821:
-      if not ex.pushBranch(addr bc27):
-        return 0
-      state = 823
-      continue
-    of 823:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 750
-        continue
-      state = 824
-      continue
-    of 750:
-      if fr.childResult == 0:
-        return 0
-      state = 823
-      continue
-    of 824:
-      return 1
-    else:
-      return 0
-
-# method9: run_scenario/0
-proc method9(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp835_5: Atom
-  var cp835_6: Atom
-  var cp835_7: Atom
-  var cp835_8: Atom
-  var cp837_5: Atom
-  var fc838: uint32
-  var cp841_6: Atom
-  var fc842: uint32
-  var cp848_7: Atom
-  var cp851_8: Atom
-  var cp870_5: Atom
-  var cp870_7: Atom
-  var cp870_8: Atom
-  var cp872_5: Atom
-  var fc873: uint32
-  var cp879_7: Atom
-  var cp882_8: Atom
-  var state = 0
-  case fr.resume
-  of 1: state = 829
-  of 2: state = 830
-  of 3: state = 831
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 826
-      continue
-    of 826:
-      # branch branch_iterate_all_entities
-      ex.saveRetry(fr, ms9)
-      # (and (controlled_entity ?entity) (entity_count ?num_entities) (call binded_function_with_args "starting recursive complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
-      cp835_5 = ex.v[5]
-      cp835_6 = ex.v[6]
-      cp835_7 = ex.v[7]
-      cp835_8 = ex.v[8]
-      # (controlled_entity ?entity)
-      cp837_5 = ex.v[5]
-      fc838 = 0
-      state = 839
-      continue
-    of 839:
-      inc fc838
-      if not factChoice144(ex, fc838 - 1):
-        state = 836
-        continue
-      # (entity_count ?num_entities)
-      cp841_6 = ex.v[6]
-      fc842 = 0
-      state = 843
-      continue
-    of 843:
-      inc fc842
-      if not factChoice145(ex, fc842 - 1):
-        state = 840
-        continue
-      # (call binded_function_with_args "starting recursive complex HTN scenario")
-      # (call binded_function_with_args "starting recursive complex HTN scenario")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv20], addr cs23, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 846
-          continue
-      state = 844
-      continue
-    of 846:
-      # (= ?health (call get_health ?entity))
-      cp848_7 = ex.v[7]
-      # (= ?health (call get_health ?entity))
-      if not ex.v[7].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs24, factSymbols)
-        if ok:
-          ex.setIfChanged(7, callResult)
-          state = 849
-          continue
-      state = 847
-      continue
-    of 849:
-      # (= ?max_speed (call get_max_speed ?entity))
-      cp851_8 = ex.v[8]
-      # (= ?max_speed (call get_max_speed ?entity))
-      if not ex.v[8].isBound:
-        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs25, factSymbols)
-        if ok:
-          ex.setIfChanged(8, callResult)
-          state = 852
-          continue
-      state = 850
-      continue
-    of 852:
-      # (health_value ?entity ?health)
-      # (health_value ?entity ?health)
-      block:
-        let ft = ex.factTables[15]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
-          matched = true
-          break
-        if matched:
-          state = 855
-          continue
-        state = 853
-        continue
-      state = 855
-      continue
-    of 855:
-      # (speed_value ?entity ?max_speed)
-      # (speed_value ?entity ?max_speed)
-      block:
-        let ft = ex.factTables[16]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
-          matched = true
-          break
-        if matched:
-          state = 858
-          continue
-        state = 856
-        continue
-      state = 858
-      continue
-    of 858:
-      # (not (entity_disabled ?entity))
-      # (entity_disabled ?entity)
-      # (entity_disabled ?entity)
-      block:
-        let ft = ex.factTables[17]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
-          matched = true
-          break
-        if matched:
-          state = 864
-          continue
-        state = 862
-        continue
-      state = 864
-      continue
-    of 864:
-      state = 859
-      continue
-    of 862:
-      state = 861
-      continue
-    of 861:
-      state = 832
-      continue
-    of 859:
-      state = 856
-      continue
-    of 856:
-      state = 853
-      continue
-    of 853:
-      state = 850
-      continue
-    of 850:
-      ex.v[8] = cp851_8
-      state = 847
-      continue
-    of 847:
-      ex.v[7] = cp848_7
-      state = 844
-      continue
-    of 844:
-      state = 842
-      continue
-    of 842:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 840
-        continue
-      ex.v[6] = cp841_6
-      cp841_6 = ex.v[6]
-      state = 843
-      continue
-    of 840:
-      ex.v[6] = cp841_6
-      state = 838
-      continue
-    of 838:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 836
-        continue
-      ex.v[5] = cp837_5
-      cp837_5 = ex.v[5]
-      state = 839
-      continue
-    of 836:
-      ex.v[5] = cp837_5
-      state = 834
-      continue
-    of 834:
-      ex.v[5] = cp835_5
-      ex.v[6] = cp835_6
-      ex.v[7] = cp835_7
-      ex.v[8] = cp835_8
-      state = 833
-      continue
-    of 833:
-      ex.releaseRetry(fr)
-      state = 827
-      continue
-    of 832:
-      if not ex.pushBranch(addr bc28):
-        ex.releaseRetry(fr)
-        return 0
-      state = 865
-      continue
-    of 865:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 1
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 829
-        continue
-      state = 866
-      continue
-    of 829:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms9)
-        state = 827
-        continue
-      state = 865
-      continue
-    of 866:
-      ex.releaseRetry(fr)
-      return 1
-    of 827:
-      # branch branch_active_entity
-      ex.saveRetry(fr, ms9)
-      # (and (controlled_entity ?entity) (call binded_function_with_args "starting complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
-      cp870_5 = ex.v[5]
-      cp870_7 = ex.v[7]
-      cp870_8 = ex.v[8]
-      # (controlled_entity ?entity)
-      cp872_5 = ex.v[5]
-      fc873 = 0
-      state = 874
-      continue
-    of 874:
-      inc fc873
-      if not factChoice154(ex, fc873 - 1):
-        state = 871
-        continue
-      # (call binded_function_with_args "starting complex HTN scenario")
-      # (call binded_function_with_args "starting complex HTN scenario")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv23], addr cs26, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 877
-          continue
-      state = 875
-      continue
-    of 877:
-      # (= ?health (call get_health ?entity))
-      cp879_7 = ex.v[7]
-      # (= ?health (call get_health ?entity))
-      if not ex.v[7].isBound:
-        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs27, factSymbols)
-        if ok:
-          ex.setIfChanged(7, callResult)
-          state = 880
-          continue
-      state = 878
-      continue
-    of 880:
-      # (= ?max_speed (call get_max_speed ?entity))
-      cp882_8 = ex.v[8]
-      # (= ?max_speed (call get_max_speed ?entity))
-      if not ex.v[8].isBound:
-        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs28, factSymbols)
-        if ok:
-          ex.setIfChanged(8, callResult)
-          state = 883
-          continue
-      state = 881
-      continue
-    of 883:
-      # (health_value ?entity ?health)
-      # (health_value ?entity ?health)
-      block:
-        let ft = ex.factTables[15]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
-          matched = true
-          break
-        if matched:
-          state = 886
-          continue
-        state = 884
-        continue
-      state = 886
-      continue
-    of 886:
-      # (speed_value ?entity ?max_speed)
-      # (speed_value ?entity ?max_speed)
-      block:
-        let ft = ex.factTables[16]
-        var matched = false
-        for row in 0 ..< ft.tables[2].rows.len:
-          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
-          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
-          matched = true
-          break
-        if matched:
-          state = 889
-          continue
-        state = 887
-        continue
-      state = 889
-      continue
-    of 889:
-      # (not (entity_disabled ?entity))
-      # (entity_disabled ?entity)
-      # (entity_disabled ?entity)
-      block:
-        let ft = ex.factTables[17]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
-          matched = true
-          break
-        if matched:
-          state = 895
-          continue
-        state = 893
-        continue
-      state = 895
-      continue
-    of 895:
-      state = 890
-      continue
-    of 893:
-      state = 892
-      continue
-    of 892:
-      state = 867
-      continue
-    of 890:
-      state = 887
-      continue
-    of 887:
-      state = 884
-      continue
-    of 884:
-      state = 881
-      continue
-    of 881:
-      ex.v[8] = cp882_8
-      state = 878
-      continue
-    of 878:
-      ex.v[7] = cp879_7
-      state = 875
-      continue
-    of 875:
-      state = 873
-      continue
-    of 873:
-      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 871
-        continue
-      ex.v[5] = cp872_5
-      cp872_5 = ex.v[5]
-      state = 874
-      continue
-    of 871:
-      ex.v[5] = cp872_5
-      state = 869
-      continue
-    of 869:
-      ex.v[5] = cp870_5
-      ex.v[7] = cp870_7
-      ex.v[8] = cp870_8
-      state = 868
-      continue
-    of 868:
-      ex.releaseRetry(fr)
-      state = 828
-      continue
-    of 867:
-      if not ex.pushBranch(addr bc29):
-        ex.releaseRetry(fr)
-        return 0
-      state = 896
-      continue
-    of 896:
-      if ex.pendingCount > fr.retryPendingBase:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 2
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 830
-        continue
-      state = 897
-      continue
-    of 830:
-      if fr.childResult == 0:
-        if ex.failureState != dsNoPlan:
-          ex.releaseRetry(fr)
-          return 0
-        if (ex.ctx.backtrackingMode and bmBranches) == 0:
-          ex.releaseRetry(fr)
-          return 0
-        ex.restoreRetry(fr, ms9)
-        state = 828
-        continue
-      state = 896
-      continue
-    of 897:
-      ex.releaseRetry(fr)
-      return 1
-    of 828:
-      # branch branch_no_active_entity
-      state = 898
-      continue
-    of 898:
-      if not ex.pushBranch(addr bc30):
-        return 0
-      state = 900
-      continue
-    of 900:
-      if ex.pendingCount > 0:
-        let next = ex.popPending()
-        if next != nil:
-          fr.resume = 3
-          ex.next = next
-          return 2
-        fr.childResult = 0
-        state = 831
-        continue
-      state = 901
-      continue
-    of 831:
-      if fr.childResult == 0:
-        return 0
-      state = 900
-      continue
-    of 901:
-      return 1
-    else:
-      return 0
-
-# method10: iterate_over_entities/4
-proc method10(ex: Exec): int {.nimcall.} =
-  let fr = ex.frame()
-  var cp909_13: Atom
-  var cp914_13: Atom
-  var fc915: uint32
-  var state = 0
-  case fr.resume
-  of 1: state = 905
-  else: discard
-  while true:
-    case state
-    of 0:
-      state = 903
-      continue
-    of 903:
-      # branch branch_internal
-      ex.saveRetry(fr, ms10)
-      # (and (call lt ?inp_entity_index ?inp_num_entities) (entity ?inp_entity_index ?entity_id))
-      cp909_13 = ex.v[13]
-      # (call lt ?inp_entity_index ?inp_num_entities)
-      # (call lt ?inp_entity_index ?inp_num_entities)
-      block:
-        let (callResult, ok) = ex.invoke(3, @[ex.v[9], ex.v[10]], addr cs29, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 912
-          continue
-      state = 910
-      continue
-    of 912:
-      # (entity ?inp_entity_index ?entity_id)
-      cp914_13 = ex.v[13]
-      fc915 = 0
-      inc fc915
-      if not factChoice164(ex, fc915 - 1):
-        state = 913
-        continue
+    of 911:
       state = 906
       continue
-    of 913:
-      ex.v[13] = cp914_13
-      state = 910
-      continue
-    of 910:
+    of 909:
       state = 908
       continue
     of 908:
-      ex.v[13] = cp909_13
-      state = 907
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "attacking enemy")
+      # (call binded_function_with_args "attacking enemy")
+      ex.debugBeginCondition(definition, 137)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv19], addr cs22, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 915
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 913
       continue
-    of 907:
-      ex.releaseRetry(fr)
-      state = 904
+    of 915:
+      ex.debugEndCondition(definition, true)
+      state = 859
+      continue
+    of 913:
+      state = 912
+      continue
+    of 912:
+      ex.debugBeginCondition(definition, 135)
+      state = 906
       continue
     of 906:
-      if not ex.pushBranch(addr bc31):
+      ex.debugEndCondition(definition, false)
+      state = 905
+      continue
+    of 905:
+      ex.debugBeginCondition(definition, 133)
+      state = 899
+      continue
+    of 899:
+      ex.debugEndCondition(definition, false)
+      state = 896
+      continue
+    of 896:
+      state = 895
+      continue
+    of 895:
+      ex.debugBeginCondition(definition, 129)
+      state = 863
+      continue
+    of 892:
+      state = 891
+      continue
+    of 891:
+      state = 863
+      continue
+    of 863:
+      ex.debugEndCondition(definition, false)
+      state = 861
+      continue
+    of 861:
+      ex.debugEndCondition(definition, false)
+      state = 860
+      continue
+    of 860:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 854
+      continue
+    of 859:
+      if not ex.pushBranch(addr bc25):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
+      ex.debugCapturePendingTask(36)
+      ex.debugCapturePendingTask(35)
       state = 917
       continue
     of 917:
@@ -7389,437 +8209,465 @@ proc method10(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 905
+        state = 856
         continue
       state = 918
       continue
-    of 905:
+    of 856:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
-        ex.restoreRetry(fr, ms10)
-        state = 904
+        ex.restoreRetry(fr, ms8)
+        ex.debugEndBranch(definition, false)
+        state = 854
         continue
       state = 917
       continue
     of 918:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 904:
-      # branch branch_done
+    of 854:
+      # branch branch_reload
+      ex.saveRetry(fr, ms8)
+      ex.debugBeginBranch(definition, 26)
+      # (and (has_weapon ?inp_entity) (not (ammo_available ?inp_entity)) (ammo_reserve ?inp_entity))
+      ex.debugBeginCondition(definition, 138)
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 139)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 925
+          continue
+        state = 923
+        continue
+      state = 925
+      continue
+    of 925:
+      # (not (ammo_available ?inp_entity))
+      ex.debugBeginCondition(definition, 140)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 141)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 931
+          continue
+        state = 929
+        continue
+      state = 931
+      continue
+    of 931:
+      state = 926
+      continue
+    of 929:
+      state = 928
+      continue
+    of 928:
+      ex.debugEndCondition(definition, true)
+      # (ammo_reserve ?inp_entity)
+      # (ammo_reserve ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 142)
+        let ft = ex.factTables[12]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 935
+          continue
+        state = 933
+        continue
+      state = 935
+      continue
+    of 935:
+      ex.debugEndCondition(definition, true)
       state = 919
       continue
+    of 933:
+      state = 932
+      continue
+    of 932:
+      ex.debugBeginCondition(definition, 140)
+      state = 926
+      continue
+    of 926:
+      ex.debugEndCondition(definition, false)
+      state = 923
+      continue
+    of 923:
+      state = 921
+      continue
+    of 921:
+      ex.debugEndCondition(definition, false)
+      state = 920
+      continue
+    of 920:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 855
+      continue
     of 919:
+      if not ex.pushBranch(addr bc26):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(37)
+      state = 937
+      continue
+    of 937:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 857
+        continue
+      state = 938
+      continue
+    of 857:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms8)
+        ex.debugEndBranch(definition, false)
+        state = 855
+        continue
+      state = 937
+      continue
+    of 938:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 855:
+      # branch branch_disengage
+      ex.debugBeginBranch(definition, 27)
+      state = 939
+      continue
+    of 939:
+      if not ex.pushBranch(addr bc27):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(38)
+      state = 941
+      continue
+    of 941:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 858
+        continue
+      state = 942
+      continue
+    of 858:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 941
+      continue
+    of 942:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
 
-# method11: evaluate_situation/3
-proc method11(ex: Exec): int {.nimcall.} =
+# method9: run_scenario/0
+proc method9(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp935_15: Atom
-  var cp937_15: Atom
-  var as166_936: AxiomScope
-  var as166_936Frame: uint64
-  var cp940_1: Atom
-  var cp942_1: Atom
-  var cp945_1: Atom
-  var fc946: uint32
-  var cp951_0: Atom
-  var cp951_1: Atom
-  var as166_936Copy: AxiomScope
-  var cp974_1: Atom
-  var fc975: uint32
-  var cp980_0: Atom
-  var cp980_1: Atom
-  var cp1006_15: Atom
-  var cp1008_15: Atom
-  var as173_1007: AxiomScope
-  var as173_1007Frame: uint64
-  var cp1011_1: Atom
-  var cp1013_1: Atom
-  var cp1016_1: Atom
-  var fc1017: uint32
-  var cp1022_0: Atom
-  var cp1022_1: Atom
-  var as173_1007Copy: AxiomScope
-  var as174_1024: AxiomScope
-  var as174_1024Frame: uint64
-  var alt1029: bool
-  var cp1050_0: Atom
-  var cp1050_2: Atom
-  var as174_1024Copy: AxiomScope
-  var cp1074_0: Atom
-  var cp1074_2: Atom
-  var cp1081_1: Atom
-  var fc1082: uint32
-  var cp1087_0: Atom
-  var cp1087_1: Atom
-  var as174_1089: AxiomScope
-  var as174_1089Frame: uint64
-  var alt1094: bool
-  var cp1115_0: Atom
-  var cp1115_2: Atom
-  var as174_1089Copy: AxiomScope
-  var cp1139_0: Atom
-  var cp1139_2: Atom
-  var alt1178: bool
+  var cp953_5: Atom
+  var cp953_6: Atom
+  var cp953_7: Atom
+  var cp953_8: Atom
+  var cp955_5: Atom
+  var fc956: uint32
+  var cp959_6: Atom
+  var fc960: uint32
+  var cp966_7: Atom
+  var cp969_8: Atom
+  var cp990_5: Atom
+  var cp990_7: Atom
+  var cp990_8: Atom
+  var cp992_5: Atom
+  var fc993: uint32
+  var cp999_7: Atom
+  var cp1002_8: Atom
   var state = 0
   case fr.resume
-  of 1: state = 927
-  of 2: state = 928
-  of 3: state = 929
-  of 4: state = 930
-  of 5: state = 931
+  of 1: state = 947
+  of 2: state = 948
+  of 3: state = 949
   else: discard
   while true:
     case state
     of 0:
-      state = 922
+      ex.debugBeginMethod(definition, 9)
+      state = 944
       continue
-    of 922:
-      # branch branch_emergency
-      ex.saveRetry(fr, ms11)
-      # (and (#is_threat ?inp_entity ?enemy) (critical_threat ?enemy) (or (enemy_close ?enemy) (low_cover ?inp_entity)) (call binded_function_with_args "emergency branch selected"))
-      cp935_15 = ex.v[15]
-      # (#is_threat ?inp_entity ?enemy)
-      cp937_15 = ex.v[15]
-      if ex.v[15].isBound:
-        state = 936
-        continue
-      as166_936.saved.setLen(2)
-      as166_936.args.setLen(2)
-      axiomBegin166(ex, as166_936)
-      as166_936Frame = ex.currentFrameID
-      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
-      cp940_1 = ex.v[1]
-      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
-      cp942_1 = ex.v[1]
-      # (enemy_visible ?inp_entity ?out_enemy)
-      cp945_1 = ex.v[1]
-      fc946 = 0
-      inc fc946
-      if not factChoice16(ex, fc946 - 1):
-        state = 944
-        continue
-      # (enemy_hostile ?out_enemy)
-      # (enemy_hostile ?out_enemy)
-      block:
-        let ft = ex.factTables[2]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
-          matched = true
-          break
-        if matched:
-          state = 950
-          continue
-        state = 948
-        continue
-      state = 950
+    of 944:
+      # branch branch_iterate_all_entities
+      ex.saveRetry(fr, ms9)
+      ex.debugBeginBranch(definition, 28)
+      # (and (controlled_entity ?entity) (entity_count ?num_entities) (call binded_function_with_args "starting recursive complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
+      cp953_5 = ex.v[5]
+      cp953_6 = ex.v[6]
+      cp953_7 = ex.v[7]
+      cp953_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 143)
+      # (controlled_entity ?entity)
+      cp955_5 = ex.v[5]
+      fc956 = 0
+      state = 957
       continue
-    of 950:
-      cp951_0 = ex.v[0]
-      cp951_1 = ex.v[1]
-      as166_936Copy = as166_936
-      if not axiomEnd166(ex, true, as166_936Copy):
-        state = 952
+    of 957:
+      ex.debugBeginCondition(definition, 144)
+      inc fc956
+      if not factChoice144(ex, fc956 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 954
         continue
-      # (critical_threat ?enemy)
-      # (critical_threat ?enemy)
-      block:
-        let ft = ex.factTables[19]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
-          matched = true
-          break
-        if matched:
-          state = 955
-          continue
-        state = 953
-        continue
-      state = 955
-      continue
-    of 955:
-      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
-      # (enemy_close ?enemy)
-      # (enemy_close ?enemy)
-      block:
-        let ft = ex.factTables[20]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
-          matched = true
-          break
-        if matched:
-          state = 961
-          continue
-        state = 959
-        continue
+      ex.debugEndCondition(definition, true)
+      # (entity_count ?num_entities)
+      cp959_6 = ex.v[6]
+      fc960 = 0
       state = 961
       continue
     of 961:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 145)
+      inc fc960
+      if not factChoice145(ex, fc960 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 958
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "starting recursive complex HTN scenario")
+      # (call binded_function_with_args "starting recursive complex HTN scenario")
+      ex.debugBeginCondition(definition, 146)
       block:
-        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs30, factSymbols)
+        let (callResult, ok) = ex.invoke(0, @[sv20], addr cs23, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
           state = 964
           continue
+      ex.debugEndCondition(definition, false)
       state = 962
       continue
     of 964:
-      state = 932
-      continue
-    of 962:
-      state = 956
-      continue
-    of 959:
-      state = 958
-      continue
-    of 958:
-      # (low_cover ?inp_entity)
-      # (low_cover ?inp_entity)
-      block:
-        let ft = ex.factTables[21]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 968
+      # (= ?health (call get_health ?entity))
+      cp966_7 = ex.v[7]
+      # (= ?health (call get_health ?entity))
+      ex.debugBeginCondition(definition, 147)
+      if not ex.v[7].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs24, factSymbols)
+        if ok:
+          ex.setIfChanged(7, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 967
           continue
-        state = 966
-        continue
-      state = 968
-      continue
-    of 968:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs31, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 971
-          continue
-      state = 969
-      continue
-    of 971:
-      state = 932
-      continue
-    of 969:
-      state = 956
-      continue
-    of 966:
+      ex.debugEndCondition(definition, false)
       state = 965
       continue
-    of 965:
-      state = 956
+    of 967:
+      # (= ?max_speed (call get_max_speed ?entity))
+      cp969_8 = ex.v[8]
+      # (= ?max_speed (call get_max_speed ?entity))
+      ex.debugBeginCondition(definition, 148)
+      if not ex.v[8].isBound:
+        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs25, factSymbols)
+        if ok:
+          ex.setIfChanged(8, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 970
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 968
       continue
-    of 956:
-      state = 953
-      continue
-    of 953:
-      state = 952
-      continue
-    of 952:
-      ex.v[15] = cp937_15
-      cp937_15 = ex.v[15]
-      ex.v[0] = cp951_0
-      ex.v[1] = cp951_1
-      ex.currentFrameID = as166_936Frame
-      state = 948
-      continue
-    of 948:
-      state = 941
-      continue
-    of 944:
-      ex.v[1] = cp945_1
-      state = 943
-      continue
-    of 943:
-      # (enemy_recently_seen ?inp_entity ?out_enemy)
-      cp974_1 = ex.v[1]
-      fc975 = 0
-      inc fc975
-      if not factChoice17(ex, fc975 - 1):
-        state = 973
-        continue
-      # (enemy_hostile ?out_enemy)
-      # (enemy_hostile ?out_enemy)
+    of 970:
+      # (health_value ?entity ?health)
+      # (health_value ?entity ?health)
       block:
-        let ft = ex.factTables[2]
+        ex.debugBeginCondition(definition, 149)
+        let ft = ex.factTables[15]
         var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 979
+          state = 973
           continue
-        state = 977
+        state = 971
         continue
-      state = 979
+      state = 973
       continue
-    of 979:
-      cp980_0 = ex.v[0]
-      cp980_1 = ex.v[1]
-      as166_936Copy = as166_936
-      if not axiomEnd166(ex, true, as166_936Copy):
-        state = 981
-        continue
-      # (critical_threat ?enemy)
-      # (critical_threat ?enemy)
+    of 973:
+      # (speed_value ?entity ?max_speed)
+      # (speed_value ?entity ?max_speed)
       block:
-        let ft = ex.factTables[19]
+        ex.debugBeginCondition(definition, 150)
+        let ft = ex.factTables[16]
         var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 984
+          state = 976
           continue
-        state = 982
+        state = 974
         continue
-      state = 984
+      state = 976
       continue
-    of 984:
-      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
-      # (enemy_close ?enemy)
-      # (enemy_close ?enemy)
+    of 976:
+      # (not (entity_disabled ?entity))
+      ex.debugBeginCondition(definition, 151)
+      # (entity_disabled ?entity)
+      # (entity_disabled ?entity)
       block:
-        let ft = ex.factTables[20]
+        ex.debugBeginCondition(definition, 152)
+        let ft = ex.factTables[17]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 990
+          state = 982
           continue
-        state = 988
+        state = 980
         continue
-      state = 990
-      continue
-    of 990:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs32, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 993
-          continue
-      state = 991
-      continue
-    of 993:
-      state = 932
-      continue
-    of 991:
-      state = 985
-      continue
-    of 988:
-      state = 987
-      continue
-    of 987:
-      # (low_cover ?inp_entity)
-      # (low_cover ?inp_entity)
-      block:
-        let ft = ex.factTables[21]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 997
-          continue
-        state = 995
-        continue
-      state = 997
-      continue
-    of 997:
-      # (call binded_function_with_args "emergency branch selected")
-      # (call binded_function_with_args "emergency branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs33, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1000
-          continue
-      state = 998
-      continue
-    of 1000:
-      state = 932
-      continue
-    of 998:
-      state = 985
-      continue
-    of 995:
-      state = 994
-      continue
-    of 994:
-      state = 985
-      continue
-    of 985:
       state = 982
       continue
     of 982:
-      state = 981
-      continue
-    of 981:
-      ex.v[15] = cp937_15
-      cp937_15 = ex.v[15]
-      ex.v[0] = cp980_0
-      ex.v[1] = cp980_1
-      ex.currentFrameID = as166_936Frame
       state = 977
       continue
+    of 980:
+      state = 979
+      continue
+    of 979:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 950
+      continue
     of 977:
-      state = 941
+      ex.debugEndCondition(definition, false)
+      state = 974
       continue
-    of 973:
-      ex.v[1] = cp974_1
-      state = 972
+    of 974:
+      state = 971
       continue
-    of 972:
-      state = 941
+    of 971:
+      state = 968
       continue
-    of 941:
-      ex.v[1] = cp942_1
-      state = 939
+    of 968:
+      ex.v[8] = cp969_8
+      state = 965
       continue
-    of 939:
-      ex.v[1] = cp940_1
-      state = 938
+    of 965:
+      ex.v[7] = cp966_7
+      state = 962
       continue
-    of 938:
-      axiomEnd166(ex, false, as166_936)
-      state = 936
+    of 962:
+      state = 960
       continue
-    of 936:
-      ex.v[15] = cp937_15
-      state = 934
+    of 960:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 958
+        continue
+      ex.v[6] = cp959_6
+      cp959_6 = ex.v[6]
+      state = 961
       continue
-    of 934:
-      ex.v[15] = cp935_15
-      state = 933
+    of 958:
+      ex.v[6] = cp959_6
+      state = 956
       continue
-    of 933:
+    of 956:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 954
+        continue
+      ex.v[5] = cp955_5
+      cp955_5 = ex.v[5]
+      state = 957
+      continue
+    of 954:
+      ex.v[5] = cp955_5
+      state = 952
+      continue
+    of 952:
+      ex.v[5] = cp953_5
+      ex.v[6] = cp953_6
+      ex.v[7] = cp953_7
+      ex.v[8] = cp953_8
+      ex.debugEndCondition(definition, false)
+      state = 951
+      continue
+    of 951:
       ex.releaseRetry(fr)
-      state = 923
+      ex.debugEndBranch(definition, false)
+      state = 945
       continue
-    of 932:
-      if not ex.pushBranch(addr bc33):
+    of 950:
+      if not ex.pushBranch(addr bc28):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1001
+      ex.debugCapturePendingTask(40)
+      ex.debugCapturePendingTask(39)
+      state = 985
       continue
-    of 1001:
+    of 985:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -7827,538 +8675,769 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 927
+        state = 947
         continue
-      state = 1002
+      state = 986
       continue
-    of 927:
+    of 947:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
-        ex.restoreRetry(fr, ms11)
-        state = 923
+        ex.restoreRetry(fr, ms9)
+        ex.debugEndBranch(definition, false)
+        state = 945
         continue
+      state = 985
+      continue
+    of 986:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 945:
+      # branch branch_active_entity
+      ex.saveRetry(fr, ms9)
+      ex.debugBeginBranch(definition, 29)
+      # (and (controlled_entity ?entity) (call binded_function_with_args "starting complex HTN scenario") (= ?health (call get_health ?entity)) (= ?max_speed (call get_max_speed ?entity)) (health_value ?entity ?health) (speed_value ?entity ?max_speed) (not (entity_disabled ?entity)))
+      cp990_5 = ex.v[5]
+      cp990_7 = ex.v[7]
+      cp990_8 = ex.v[8]
+      ex.debugBeginCondition(definition, 153)
+      # (controlled_entity ?entity)
+      cp992_5 = ex.v[5]
+      fc993 = 0
+      state = 994
+      continue
+    of 994:
+      ex.debugBeginCondition(definition, 154)
+      inc fc993
+      if not factChoice154(ex, fc993 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 991
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "starting complex HTN scenario")
+      # (call binded_function_with_args "starting complex HTN scenario")
+      ex.debugBeginCondition(definition, 155)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv23], addr cs26, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 997
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 995
+      continue
+    of 997:
+      # (= ?health (call get_health ?entity))
+      cp999_7 = ex.v[7]
+      # (= ?health (call get_health ?entity))
+      ex.debugBeginCondition(definition, 156)
+      if not ex.v[7].isBound:
+        let (callResult, ok) = ex.invoke(1, @[ex.v[5]], addr cs27, factSymbols)
+        if ok:
+          ex.setIfChanged(7, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1000
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 998
+      continue
+    of 1000:
+      # (= ?max_speed (call get_max_speed ?entity))
+      cp1002_8 = ex.v[8]
+      # (= ?max_speed (call get_max_speed ?entity))
+      ex.debugBeginCondition(definition, 157)
+      if not ex.v[8].isBound:
+        let (callResult, ok) = ex.invoke(2, @[ex.v[5]], addr cs28, factSymbols)
+        if ok:
+          ex.setIfChanged(8, callResult)
+          ex.debugEndCondition(definition, true)
+          state = 1003
+          continue
+      ex.debugEndCondition(definition, false)
       state = 1001
       continue
-    of 1002:
-      ex.releaseRetry(fr)
-      return 1
-    of 923:
-      # branch branch_combat
-      ex.saveRetry(fr, ms11)
-      # (and (#is_threat ?inp_entity ?enemy) (#can_engage ?inp_entity ?enemy) (call binded_function_with_args "combat branch selected"))
-      cp1006_15 = ex.v[15]
-      # (#is_threat ?inp_entity ?enemy)
-      cp1008_15 = ex.v[15]
-      if ex.v[15].isBound:
+    of 1003:
+      # (health_value ?entity ?health)
+      # (health_value ?entity ?health)
+      block:
+        ex.debugBeginCondition(definition, 158)
+        let ft = ex.factTables[15]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[7]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1006
+          continue
+        state = 1004
+        continue
+      state = 1006
+      continue
+    of 1006:
+      # (speed_value ?entity ?max_speed)
+      # (speed_value ?entity ?max_speed)
+      block:
+        ex.debugBeginCondition(definition, 159)
+        let ft = ex.factTables[16]
+        var matched = false
+        for row in 0 ..< ft.tables[2].rows.len:
+          if not equal(ft.tables[2].rows[row][0], ex.v[5]): continue
+          if not equal(ft.tables[2].rows[row][1], ex.v[8]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1009
+          continue
         state = 1007
         continue
-      as173_1007.saved.setLen(2)
-      as173_1007.args.setLen(2)
-      axiomBegin173(ex, as173_1007)
-      as173_1007Frame = ex.currentFrameID
-      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
-      cp1011_1 = ex.v[1]
-      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
-      cp1013_1 = ex.v[1]
-      # (enemy_visible ?inp_entity ?out_enemy)
-      cp1016_1 = ex.v[1]
-      fc1017 = 0
-      inc fc1017
-      if not factChoice16(ex, fc1017 - 1):
-        state = 1015
-        continue
-      # (enemy_hostile ?out_enemy)
-      # (enemy_hostile ?out_enemy)
-      block:
-        let ft = ex.factTables[2]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
-          matched = true
-          break
-        if matched:
-          state = 1021
-          continue
-        state = 1019
-        continue
-      state = 1021
+      state = 1009
       continue
-    of 1021:
-      cp1022_0 = ex.v[0]
-      cp1022_1 = ex.v[1]
-      as173_1007Copy = as173_1007
-      if not axiomEnd173(ex, true, as173_1007Copy):
-        state = 1023
-        continue
-      # (#can_engage ?inp_entity ?enemy)
-      as174_1024.saved.setLen(2)
-      as174_1024.args.setLen(2)
-      axiomBegin174(ex, as174_1024)
-      as174_1024Frame = ex.currentFrameID
-      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
-      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt1029 = false
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
+    of 1009:
+      # (not (entity_disabled ?entity))
+      ex.debugBeginCondition(definition, 160)
+      # (entity_disabled ?entity)
+      # (entity_disabled ?entity)
       block:
-        let ft = ex.factTables[3]
+        ex.debugBeginCondition(definition, 161)
+        let ft = ex.factTables[17]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[1].rows[row][0], ex.v[5]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
+          state = 1015
+          continue
+        state = 1013
+        continue
+      state = 1015
+      continue
+    of 1015:
+      state = 1010
+      continue
+    of 1013:
+      state = 1012
+      continue
+    of 1012:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 987
+      continue
+    of 1010:
+      ex.debugEndCondition(definition, false)
+      state = 1007
+      continue
+    of 1007:
+      state = 1004
+      continue
+    of 1004:
+      state = 1001
+      continue
+    of 1001:
+      ex.v[8] = cp1002_8
+      state = 998
+      continue
+    of 998:
+      ex.v[7] = cp999_7
+      state = 995
+      continue
+    of 995:
+      state = 993
+      continue
+    of 993:
+      if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 991
+        continue
+      ex.v[5] = cp992_5
+      cp992_5 = ex.v[5]
+      state = 994
+      continue
+    of 991:
+      ex.v[5] = cp992_5
+      state = 989
+      continue
+    of 989:
+      ex.v[5] = cp990_5
+      ex.v[7] = cp990_7
+      ex.v[8] = cp990_8
+      ex.debugEndCondition(definition, false)
+      state = 988
+      continue
+    of 988:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 946
+      continue
+    of 987:
+      if not ex.pushBranch(addr bc29):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(42)
+      ex.debugCapturePendingTask(41)
+      state = 1018
+      continue
+    of 1018:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 2
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 948
+        continue
+      state = 1019
+      continue
+    of 948:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms9)
+        ex.debugEndBranch(definition, false)
+        state = 946
+        continue
+      state = 1018
+      continue
+    of 1019:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 946:
+      # branch branch_no_active_entity
+      ex.debugBeginBranch(definition, 30)
+      state = 1020
+      continue
+    of 1020:
+      if not ex.pushBranch(addr bc30):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(43)
+      state = 1022
+      continue
+    of 1022:
+      if ex.pendingCount > 0:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 3
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 949
+        continue
+      state = 1023
+      continue
+    of 949:
+      if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      state = 1022
+      continue
+    of 1023:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    else:
+      return 0
+
+# method10: iterate_over_entities/4
+proc method10(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp1031_13: Atom
+  var cp1036_13: Atom
+  var fc1037: uint32
+  var state = 0
+  case fr.resume
+  of 1: state = 1027
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 10)
+      state = 1025
+      continue
+    of 1025:
+      # branch branch_internal
+      ex.saveRetry(fr, ms10)
+      ex.debugBeginBranch(definition, 31)
+      # (and (call lt ?inp_entity_index ?inp_num_entities) (entity ?inp_entity_index ?entity_id))
+      cp1031_13 = ex.v[13]
+      ex.debugBeginCondition(definition, 162)
+      # (call lt ?inp_entity_index ?inp_num_entities)
+      # (call lt ?inp_entity_index ?inp_num_entities)
+      ex.debugBeginCondition(definition, 163)
+      block:
+        let (callResult, ok) = ex.invoke(3, @[ex.v[9], ex.v[10]], addr cs29, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
           state = 1034
           continue
-        state = 1032
-        continue
-      state = 1034
+      ex.debugEndCondition(definition, false)
+      state = 1032
       continue
     of 1034:
-      alt1029 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1037
-          continue
+      # (entity ?inp_entity_index ?entity_id)
+      cp1036_13 = ex.v[13]
+      fc1037 = 0
+      ex.debugBeginCondition(definition, 164)
+      inc fc1037
+      if not factChoice164(ex, fc1037 - 1):
+        ex.debugEndCondition(definition, false)
         state = 1035
         continue
-      state = 1037
-      continue
-    of 1037:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1043
-          continue
-        state = 1041
-        continue
-      state = 1043
-      continue
-    of 1043:
-      state = 1038
-      continue
-    of 1041:
-      state = 1040
-      continue
-    of 1040:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 1049
-          continue
-        state = 1047
-        continue
-      state = 1049
-      continue
-    of 1049:
-      state = 1044
-      continue
-    of 1047:
-      state = 1046
-      continue
-    of 1046:
-      cp1050_0 = ex.v[0]
-      cp1050_2 = ex.v[2]
-      as174_1024Copy = as174_1024
-      if not axiomEnd174(ex, true, as174_1024Copy):
-        state = 1051
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs34, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1054
-          continue
-      state = 1052
-      continue
-    of 1054:
-      state = 1003
-      continue
-    of 1052:
-      state = 1051
-      continue
-    of 1051:
-      ex.v[0] = cp1050_0
-      ex.v[2] = cp1050_2
-      ex.currentFrameID = as174_1024Frame
-      state = 1044
-      continue
-    of 1044:
-      state = 1038
-      continue
-    of 1038:
-      state = 1035
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1028
       continue
     of 1035:
+      ex.v[13] = cp1036_13
       state = 1032
       continue
     of 1032:
-      state = 1031
+      state = 1030
       continue
-    of 1031:
-      if alt1029 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1029
-        continue
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
-      block:
-        let ft = ex.factTables[4]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1058
-          continue
-        state = 1056
-        continue
-      state = 1058
-      continue
-    of 1058:
-      alt1029 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
-      block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1061
-          continue
-        state = 1059
-        continue
-      state = 1061
-      continue
-    of 1061:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
-      block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1067
-          continue
-        state = 1065
-        continue
-      state = 1067
-      continue
-    of 1067:
-      state = 1062
-      continue
-    of 1065:
-      state = 1064
-      continue
-    of 1064:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 1073
-          continue
-        state = 1071
-        continue
-      state = 1073
-      continue
-    of 1073:
-      state = 1068
-      continue
-    of 1071:
-      state = 1070
-      continue
-    of 1070:
-      cp1074_0 = ex.v[0]
-      cp1074_2 = ex.v[2]
-      as174_1024Copy = as174_1024
-      if not axiomEnd174(ex, true, as174_1024Copy):
-        state = 1075
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs35, factSymbols)
-        if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1078
-          continue
-      state = 1076
-      continue
-    of 1078:
-      state = 1003
-      continue
-    of 1076:
-      state = 1075
-      continue
-    of 1075:
-      ex.v[0] = cp1074_0
-      ex.v[2] = cp1074_2
-      ex.currentFrameID = as174_1024Frame
-      state = 1068
-      continue
-    of 1068:
-      state = 1062
-      continue
-    of 1062:
-      state = 1059
-      continue
-    of 1059:
-      state = 1056
-      continue
-    of 1056:
-      state = 1055
-      continue
-    of 1055:
-      if alt1029 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1029
-        continue
+    of 1030:
+      ex.v[13] = cp1031_13
+      ex.debugEndCondition(definition, false)
       state = 1029
       continue
     of 1029:
-      state = 1027
-      continue
-    of 1027:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
       state = 1026
       continue
-    of 1026:
-      axiomEnd174(ex, false, as174_1024)
-      state = 1024
+    of 1028:
+      if not ex.pushBranch(addr bc31):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(45)
+      ex.debugCapturePendingTask(44)
+      state = 1040
       continue
-    of 1024:
-      state = 1023
-      continue
-    of 1023:
-      ex.v[15] = cp1008_15
-      cp1008_15 = ex.v[15]
-      ex.v[0] = cp1022_0
-      ex.v[1] = cp1022_1
-      ex.currentFrameID = as173_1007Frame
-      state = 1019
-      continue
-    of 1019:
-      state = 1012
-      continue
-    of 1015:
-      ex.v[1] = cp1016_1
-      state = 1014
-      continue
-    of 1014:
-      # (enemy_recently_seen ?inp_entity ?out_enemy)
-      cp1081_1 = ex.v[1]
-      fc1082 = 0
-      inc fc1082
-      if not factChoice17(ex, fc1082 - 1):
-        state = 1080
+    of 1040:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1027
         continue
+      state = 1041
+      continue
+    of 1027:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms10)
+        ex.debugEndBranch(definition, false)
+        state = 1026
+        continue
+      state = 1040
+      continue
+    of 1041:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1026:
+      # branch branch_done
+      ex.debugBeginBranch(definition, 32)
+      state = 1042
+      continue
+    of 1042:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    else:
+      return 0
+
+# method11: evaluate_situation/3
+proc method11(ex: Exec): int {.nimcall.} =
+  let fr = ex.frame()
+  var cp1058_15: Atom
+  var cp1060_15: Atom
+  var as166_1059: AxiomScope
+  var as166_1059Frame: uint64
+  var cp1063_1: Atom
+  var cp1065_1: Atom
+  var cp1068_1: Atom
+  var fc1069: uint32
+  var cp1076_0: Atom
+  var cp1076_1: Atom
+  var as166_1059Copy: AxiomScope
+  var cp1104_1: Atom
+  var fc1105: uint32
+  var cp1112_0: Atom
+  var cp1112_1: Atom
+  var cp1143_15: Atom
+  var cp1145_15: Atom
+  var as173_1144: AxiomScope
+  var as173_1144Frame: uint64
+  var cp1148_1: Atom
+  var cp1150_1: Atom
+  var cp1153_1: Atom
+  var fc1154: uint32
+  var cp1161_0: Atom
+  var cp1161_1: Atom
+  var as173_1144Copy: AxiomScope
+  var as174_1164: AxiomScope
+  var as174_1164Frame: uint64
+  var alt1169: bool
+  var cp1194_0: Atom
+  var cp1194_2: Atom
+  var as174_1164Copy: AxiomScope
+  var cp1224_0: Atom
+  var cp1224_2: Atom
+  var cp1233_1: Atom
+  var fc1234: uint32
+  var cp1241_0: Atom
+  var cp1241_1: Atom
+  var as174_1244: AxiomScope
+  var as174_1244Frame: uint64
+  var alt1249: bool
+  var cp1274_0: Atom
+  var cp1274_2: Atom
+  var as174_1244Copy: AxiomScope
+  var cp1304_0: Atom
+  var cp1304_2: Atom
+  var alt1350: bool
+  var state = 0
+  case fr.resume
+  of 1: state = 1050
+  of 2: state = 1051
+  of 3: state = 1052
+  of 4: state = 1053
+  of 5: state = 1054
+  else: discard
+  while true:
+    case state
+    of 0:
+      ex.debugBeginMethod(definition, 11)
+      state = 1045
+      continue
+    of 1045:
+      # branch branch_emergency
+      ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 33)
+      # (and (#is_threat ?inp_entity ?enemy) (critical_threat ?enemy) (or (enemy_close ?enemy) (low_cover ?inp_entity)) (call binded_function_with_args "emergency branch selected"))
+      cp1058_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 165)
+      # (#is_threat ?inp_entity ?enemy)
+      cp1060_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 166)
+      if ex.v[15].isBound:
+        state = 1059
+        continue
+      as166_1059.saved.setLen(2)
+      as166_1059.args.setLen(2)
+      axiomBegin166(ex, as166_1059)
+      as166_1059Frame = ex.currentFrameID
+      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
+      cp1063_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 14)
+      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
+      cp1065_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 15)
+      # (enemy_visible ?inp_entity ?out_enemy)
+      cp1068_1 = ex.v[1]
+      fc1069 = 0
+      ex.debugBeginCondition(definition, 16)
+      inc fc1069
+      if not factChoice16(ex, fc1069 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1067
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
       # (enemy_hostile ?out_enemy)
       # (enemy_hostile ?out_enemy)
       block:
+        ex.debugBeginCondition(definition, 18)
         let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1086
+          state = 1074
           continue
-        state = 1084
+        state = 1072
         continue
-      state = 1086
+      state = 1074
       continue
-    of 1086:
-      cp1087_0 = ex.v[0]
-      cp1087_1 = ex.v[1]
-      as173_1007Copy = as173_1007
-      if not axiomEnd173(ex, true, as173_1007Copy):
-        state = 1088
+    of 1074:
+      ex.debugEndCondition(definition, true)
+      cp1076_0 = ex.v[0]
+      cp1076_1 = ex.v[1]
+      as166_1059Copy = as166_1059
+      if not axiomEnd166(ex, true, as166_1059Copy):
+        state = 1077
         continue
-      # (#can_engage ?inp_entity ?enemy)
-      as174_1089.saved.setLen(2)
-      as174_1089.args.setLen(2)
-      axiomBegin174(ex, as174_1089)
-      as174_1089Frame = ex.currentFrameID
-      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
-      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
-      alt1094 = false
-      # (has_weapon ?inp_entity)
-      # (has_weapon ?inp_entity)
+      ex.debugEndCondition(definition, true)
+      # (critical_threat ?enemy)
+      # (critical_threat ?enemy)
       block:
-        let ft = ex.factTables[3]
+        ex.debugBeginCondition(definition, 167)
+        let ft = ex.factTables[19]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1099
+          state = 1081
           continue
-        state = 1097
+        state = 1079
         continue
-      state = 1099
+      state = 1081
       continue
-    of 1099:
-      alt1094 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
+    of 1081:
+      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
+      ex.debugBeginCondition(definition, 168)
+      # (enemy_close ?enemy)
+      # (enemy_close ?enemy)
       block:
-        let ft = ex.factTables[5]
+        ex.debugBeginCondition(definition, 169)
+        let ft = ex.factTables[20]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1102
+          state = 1087
           continue
-        state = 1100
+        state = 1085
         continue
-      state = 1102
+      state = 1087
       continue
-    of 1102:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
+    of 1087:
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 171)
       block:
-        let ft = ex.factTables[6]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1108
-          continue
-        state = 1106
-        continue
-      state = 1108
-      continue
-    of 1108:
-      state = 1103
-      continue
-    of 1106:
-      state = 1105
-      continue
-    of 1105:
-      # (not (enemy_invulnerable ?inp_enemy))
-      # (enemy_invulnerable ?inp_enemy)
-      # (enemy_invulnerable ?inp_enemy)
-      block:
-        let ft = ex.factTables[7]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
-          matched = true
-          break
-        if matched:
-          state = 1114
-          continue
-        state = 1112
-        continue
-      state = 1114
-      continue
-    of 1114:
-      state = 1109
-      continue
-    of 1112:
-      state = 1111
-      continue
-    of 1111:
-      cp1115_0 = ex.v[0]
-      cp1115_2 = ex.v[2]
-      as174_1089Copy = as174_1089
-      if not axiomEnd174(ex, true, as174_1089Copy):
-        state = 1116
-        continue
-      # (call binded_function_with_args "combat branch selected")
-      # (call binded_function_with_args "combat branch selected")
-      block:
-        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs36, factSymbols)
+        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs30, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1119
+          ex.debugEndCondition(definition, true)
+          state = 1091
           continue
-      state = 1117
+      ex.debugEndCondition(definition, false)
+      state = 1089
       continue
-    of 1119:
-      state = 1003
+    of 1091:
+      ex.debugEndCondition(definition, true)
+      state = 1055
       continue
-    of 1117:
-      state = 1116
+    of 1089:
+      state = 1088
       continue
-    of 1116:
-      ex.v[0] = cp1115_0
-      ex.v[2] = cp1115_2
-      ex.currentFrameID = as174_1089Frame
-      state = 1109
+    of 1088:
+      ex.debugBeginCondition(definition, 168)
+      state = 1082
       continue
-    of 1109:
-      state = 1103
+    of 1085:
+      state = 1084
       continue
-    of 1103:
-      state = 1100
-      continue
-    of 1100:
-      state = 1097
-      continue
-    of 1097:
+    of 1084:
+      # (low_cover ?inp_entity)
+      # (low_cover ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 170)
+        let ft = ex.factTables[21]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1096
+          continue
+        state = 1094
+        continue
       state = 1096
       continue
     of 1096:
-      if alt1094 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1094
-        continue
-      # (has_backup_weapon ?inp_entity)
-      # (has_backup_weapon ?inp_entity)
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 171)
       block:
-        let ft = ex.factTables[4]
+        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs31, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1100
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1098
+      continue
+    of 1100:
+      ex.debugEndCondition(definition, true)
+      state = 1055
+      continue
+    of 1098:
+      state = 1097
+      continue
+    of 1097:
+      ex.debugBeginCondition(definition, 168)
+      state = 1082
+      continue
+    of 1094:
+      state = 1093
+      continue
+    of 1093:
+      state = 1082
+      continue
+    of 1082:
+      ex.debugEndCondition(definition, false)
+      state = 1079
+      continue
+    of 1079:
+      state = 1078
+      continue
+    of 1078:
+      ex.debugBeginCondition(definition, 166)
+      state = 1077
+      continue
+    of 1077:
+      ex.v[15] = cp1060_15
+      cp1060_15 = ex.v[15]
+      ex.v[0] = cp1076_0
+      ex.v[1] = cp1076_1
+      ex.currentFrameID = as166_1059Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 1075
+      continue
+    of 1075:
+      ex.debugBeginCondition(definition, 14)
+      state = 1072
+      continue
+    of 1072:
+      state = 1071
+      continue
+    of 1071:
+      ex.debugBeginCondition(definition, 15)
+      state = 1064
+      continue
+    of 1067:
+      ex.v[1] = cp1068_1
+      state = 1066
+      continue
+    of 1066:
+      # (enemy_recently_seen ?inp_entity ?out_enemy)
+      cp1104_1 = ex.v[1]
+      fc1105 = 0
+      ex.debugBeginCondition(definition, 17)
+      inc fc1105
+      if not factChoice17(ex, fc1105 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1103
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      # (enemy_hostile ?out_enemy)
+      # (enemy_hostile ?out_enemy)
+      block:
+        ex.debugBeginCondition(definition, 18)
+        let ft = ex.factTables[2]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1110
+          continue
+        state = 1108
+        continue
+      state = 1110
+      continue
+    of 1110:
+      ex.debugEndCondition(definition, true)
+      cp1112_0 = ex.v[0]
+      cp1112_1 = ex.v[1]
+      as166_1059Copy = as166_1059
+      if not axiomEnd166(ex, true, as166_1059Copy):
+        state = 1113
+        continue
+      ex.debugEndCondition(definition, true)
+      # (critical_threat ?enemy)
+      # (critical_threat ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 167)
+        let ft = ex.factTables[19]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1117
+          continue
+        state = 1115
+        continue
+      state = 1117
+      continue
+    of 1117:
+      # (or (enemy_close ?enemy) (low_cover ?inp_entity))
+      ex.debugBeginCondition(definition, 168)
+      # (enemy_close ?enemy)
+      # (enemy_close ?enemy)
+      block:
+        ex.debugBeginCondition(definition, 169)
+        let ft = ex.factTables[20]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[15]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 1123
           continue
@@ -8367,34 +9446,45 @@ proc method11(ex: Exec): int {.nimcall.} =
       state = 1123
       continue
     of 1123:
-      alt1094 = true
-      # (ammo_available ?inp_entity)
-      # (ammo_available ?inp_entity)
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 171)
       block:
-        let ft = ex.factTables[5]
-        var matched = false
-        for row in 0 ..< ft.tables[1].rows.len:
-          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
-          matched = true
-          break
-        if matched:
-          state = 1126
+        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs32, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1127
           continue
-        state = 1124
-        continue
-      state = 1126
+      ex.debugEndCondition(definition, false)
+      state = 1125
       continue
-    of 1126:
-      # (not (weapon_jammed ?inp_entity))
-      # (weapon_jammed ?inp_entity)
-      # (weapon_jammed ?inp_entity)
+    of 1127:
+      ex.debugEndCondition(definition, true)
+      state = 1055
+      continue
+    of 1125:
+      state = 1124
+      continue
+    of 1124:
+      ex.debugBeginCondition(definition, 168)
+      state = 1118
+      continue
+    of 1121:
+      state = 1120
+      continue
+    of 1120:
+      # (low_cover ?inp_entity)
+      # (low_cover ?inp_entity)
       block:
-        let ft = ex.factTables[6]
+        ex.debugBeginCondition(definition, 170)
+        let ft = ex.factTables[21]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
           state = 1132
           continue
@@ -8403,143 +9493,1077 @@ proc method11(ex: Exec): int {.nimcall.} =
       state = 1132
       continue
     of 1132:
-      state = 1127
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "emergency branch selected")
+      # (call binded_function_with_args "emergency branch selected")
+      ex.debugBeginCondition(definition, 171)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv26], addr cs33, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1136
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1134
+      continue
+    of 1136:
+      ex.debugEndCondition(definition, true)
+      state = 1055
+      continue
+    of 1134:
+      state = 1133
+      continue
+    of 1133:
+      ex.debugBeginCondition(definition, 168)
+      state = 1118
       continue
     of 1130:
       state = 1129
       continue
     of 1129:
+      state = 1118
+      continue
+    of 1118:
+      ex.debugEndCondition(definition, false)
+      state = 1115
+      continue
+    of 1115:
+      state = 1114
+      continue
+    of 1114:
+      ex.debugBeginCondition(definition, 166)
+      state = 1113
+      continue
+    of 1113:
+      ex.v[15] = cp1060_15
+      cp1060_15 = ex.v[15]
+      ex.v[0] = cp1112_0
+      ex.v[1] = cp1112_1
+      ex.currentFrameID = as166_1059Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 1111
+      continue
+    of 1111:
+      ex.debugBeginCondition(definition, 14)
+      state = 1108
+      continue
+    of 1108:
+      state = 1107
+      continue
+    of 1107:
+      ex.debugBeginCondition(definition, 15)
+      state = 1064
+      continue
+    of 1103:
+      ex.v[1] = cp1104_1
+      state = 1102
+      continue
+    of 1102:
+      state = 1064
+      continue
+    of 1064:
+      ex.v[1] = cp1065_1
+      ex.debugEndCondition(definition, false)
+      state = 1062
+      continue
+    of 1062:
+      ex.v[1] = cp1063_1
+      ex.debugEndCondition(definition, false)
+      state = 1061
+      continue
+    of 1061:
+      axiomEnd166(ex, false, as166_1059)
+      state = 1059
+      continue
+    of 1059:
+      ex.v[15] = cp1060_15
+      ex.debugEndCondition(definition, false)
+      state = 1057
+      continue
+    of 1057:
+      ex.v[15] = cp1058_15
+      ex.debugEndCondition(definition, false)
+      state = 1056
+      continue
+    of 1056:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1046
+      continue
+    of 1055:
+      if not ex.pushBranch(addr bc33):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(47)
+      ex.debugCapturePendingTask(46)
+      state = 1138
+      continue
+    of 1138:
+      if ex.pendingCount > fr.retryPendingBase:
+        let next = ex.popPending()
+        if next != nil:
+          fr.resume = 1
+          ex.next = next
+          return 2
+        fr.childResult = 0
+        state = 1050
+        continue
+      state = 1139
+      continue
+    of 1050:
+      if fr.childResult == 0:
+        if ex.failureState != dsNoPlan:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        if (ex.ctx.backtrackingMode and bmBranches) == 0:
+          ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
+          return 0
+        ex.restoreRetry(fr, ms11)
+        ex.debugEndBranch(definition, false)
+        state = 1046
+        continue
+      state = 1138
+      continue
+    of 1139:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
+      return 1
+    of 1046:
+      # branch branch_combat
+      ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 34)
+      # (and (#is_threat ?inp_entity ?enemy) (#can_engage ?inp_entity ?enemy) (call binded_function_with_args "combat branch selected"))
+      cp1143_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 172)
+      # (#is_threat ?inp_entity ?enemy)
+      cp1145_15 = ex.v[15]
+      ex.debugBeginCondition(definition, 173)
+      if ex.v[15].isBound:
+        state = 1144
+        continue
+      as173_1144.saved.setLen(2)
+      as173_1144.args.setLen(2)
+      axiomBegin173(ex, as173_1144)
+      as173_1144Frame = ex.currentFrameID
+      # (and (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy)) (enemy_hostile ?out_enemy))
+      cp1148_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 14)
+      # (or (enemy_visible ?inp_entity ?out_enemy) (enemy_recently_seen ?inp_entity ?out_enemy))
+      cp1150_1 = ex.v[1]
+      ex.debugBeginCondition(definition, 15)
+      # (enemy_visible ?inp_entity ?out_enemy)
+      cp1153_1 = ex.v[1]
+      fc1154 = 0
+      ex.debugBeginCondition(definition, 16)
+      inc fc1154
+      if not factChoice16(ex, fc1154 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1152
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      # (enemy_hostile ?out_enemy)
+      # (enemy_hostile ?out_enemy)
+      block:
+        ex.debugBeginCondition(definition, 18)
+        let ft = ex.factTables[2]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1159
+          continue
+        state = 1157
+        continue
+      state = 1159
+      continue
+    of 1159:
+      ex.debugEndCondition(definition, true)
+      cp1161_0 = ex.v[0]
+      cp1161_1 = ex.v[1]
+      as173_1144Copy = as173_1144
+      if not axiomEnd173(ex, true, as173_1144Copy):
+        state = 1162
+        continue
+      ex.debugEndCondition(definition, true)
+      # (#can_engage ?inp_entity ?enemy)
+      ex.debugBeginCondition(definition, 174)
+      as174_1164.saved.setLen(2)
+      as174_1164.args.setLen(2)
+      axiomBegin174(ex, as174_1164)
+      as174_1164Frame = ex.currentFrameID
+      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
+      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 20)
+      alt1169 = false
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 21)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1174
+          continue
+        state = 1172
+        continue
+      state = 1174
+      continue
+    of 1174:
+      alt1169 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1178
+          continue
+        state = 1176
+        continue
+      state = 1178
+      continue
+    of 1178:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1184
+          continue
+        state = 1182
+        continue
+      state = 1184
+      continue
+    of 1184:
+      state = 1179
+      continue
+    of 1182:
+      state = 1181
+      continue
+    of 1181:
+      ex.debugEndCondition(definition, true)
       # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
       # (enemy_invulnerable ?inp_enemy)
       # (enemy_invulnerable ?inp_enemy)
       block:
+        ex.debugBeginCondition(definition, 27)
         let ft = ex.factTables[7]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1138
+          state = 1191
           continue
-        state = 1136
+        state = 1189
         continue
-      state = 1138
+      state = 1191
       continue
-    of 1138:
-      state = 1133
+    of 1191:
+      state = 1186
       continue
-    of 1136:
-      state = 1135
+    of 1189:
+      state = 1188
       continue
-    of 1135:
-      cp1139_0 = ex.v[0]
-      cp1139_2 = ex.v[2]
-      as174_1089Copy = as174_1089
-      if not axiomEnd174(ex, true, as174_1089Copy):
-        state = 1140
+    of 1188:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp1194_0 = ex.v[0]
+      cp1194_2 = ex.v[2]
+      as174_1164Copy = as174_1164
+      if not axiomEnd174(ex, true, as174_1164Copy):
+        state = 1195
         continue
+      ex.debugEndCondition(definition, true)
       # (call binded_function_with_args "combat branch selected")
       # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 175)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs34, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1199
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1197
+      continue
+    of 1199:
+      ex.debugEndCondition(definition, true)
+      state = 1140
+      continue
+    of 1197:
+      state = 1196
+      continue
+    of 1196:
+      ex.debugBeginCondition(definition, 174)
+      state = 1195
+      continue
+    of 1195:
+      ex.v[0] = cp1194_0
+      ex.v[2] = cp1194_2
+      ex.currentFrameID = as174_1164Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 1193
+      continue
+    of 1193:
+      ex.debugBeginCondition(definition, 19)
+      state = 1192
+      continue
+    of 1192:
+      ex.debugBeginCondition(definition, 26)
+      state = 1186
+      continue
+    of 1186:
+      ex.debugEndCondition(definition, false)
+      state = 1185
+      continue
+    of 1185:
+      ex.debugBeginCondition(definition, 24)
+      state = 1179
+      continue
+    of 1179:
+      ex.debugEndCondition(definition, false)
+      state = 1176
+      continue
+    of 1176:
+      state = 1175
+      continue
+    of 1175:
+      ex.debugBeginCondition(definition, 20)
+      state = 1172
+      continue
+    of 1172:
+      state = 1171
+      continue
+    of 1171:
+      if alt1169 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1169
+        continue
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 22)
+        let ft = ex.factTables[4]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1204
+          continue
+        state = 1202
+        continue
+      state = 1204
+      continue
+    of 1204:
+      alt1169 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1208
+          continue
+        state = 1206
+        continue
+      state = 1208
+      continue
+    of 1208:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1214
+          continue
+        state = 1212
+        continue
+      state = 1214
+      continue
+    of 1214:
+      state = 1209
+      continue
+    of 1212:
+      state = 1211
+      continue
+    of 1211:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1221
+          continue
+        state = 1219
+        continue
+      state = 1221
+      continue
+    of 1221:
+      state = 1216
+      continue
+    of 1219:
+      state = 1218
+      continue
+    of 1218:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp1224_0 = ex.v[0]
+      cp1224_2 = ex.v[2]
+      as174_1164Copy = as174_1164
+      if not axiomEnd174(ex, true, as174_1164Copy):
+        state = 1225
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 175)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs35, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1229
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1227
+      continue
+    of 1229:
+      ex.debugEndCondition(definition, true)
+      state = 1140
+      continue
+    of 1227:
+      state = 1226
+      continue
+    of 1226:
+      ex.debugBeginCondition(definition, 174)
+      state = 1225
+      continue
+    of 1225:
+      ex.v[0] = cp1224_0
+      ex.v[2] = cp1224_2
+      ex.currentFrameID = as174_1164Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 1223
+      continue
+    of 1223:
+      ex.debugBeginCondition(definition, 19)
+      state = 1222
+      continue
+    of 1222:
+      ex.debugBeginCondition(definition, 26)
+      state = 1216
+      continue
+    of 1216:
+      ex.debugEndCondition(definition, false)
+      state = 1215
+      continue
+    of 1215:
+      ex.debugBeginCondition(definition, 24)
+      state = 1209
+      continue
+    of 1209:
+      ex.debugEndCondition(definition, false)
+      state = 1206
+      continue
+    of 1206:
+      state = 1205
+      continue
+    of 1205:
+      ex.debugBeginCondition(definition, 20)
+      state = 1202
+      continue
+    of 1202:
+      state = 1201
+      continue
+    of 1201:
+      if alt1169 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1169
+        continue
+      state = 1169
+      continue
+    of 1169:
+      ex.debugEndCondition(definition, false)
+      state = 1167
+      continue
+    of 1167:
+      ex.debugEndCondition(definition, false)
+      state = 1166
+      continue
+    of 1166:
+      axiomEnd174(ex, false, as174_1164)
+      state = 1164
+      continue
+    of 1164:
+      ex.debugEndCondition(definition, false)
+      state = 1163
+      continue
+    of 1163:
+      ex.debugBeginCondition(definition, 173)
+      state = 1162
+      continue
+    of 1162:
+      ex.v[15] = cp1145_15
+      cp1145_15 = ex.v[15]
+      ex.v[0] = cp1161_0
+      ex.v[1] = cp1161_1
+      ex.currentFrameID = as173_1144Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 1160
+      continue
+    of 1160:
+      ex.debugBeginCondition(definition, 14)
+      state = 1157
+      continue
+    of 1157:
+      state = 1156
+      continue
+    of 1156:
+      ex.debugBeginCondition(definition, 15)
+      state = 1149
+      continue
+    of 1152:
+      ex.v[1] = cp1153_1
+      state = 1151
+      continue
+    of 1151:
+      # (enemy_recently_seen ?inp_entity ?out_enemy)
+      cp1233_1 = ex.v[1]
+      fc1234 = 0
+      ex.debugBeginCondition(definition, 17)
+      inc fc1234
+      if not factChoice17(ex, fc1234 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1232
+        continue
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      # (enemy_hostile ?out_enemy)
+      # (enemy_hostile ?out_enemy)
+      block:
+        ex.debugBeginCondition(definition, 18)
+        let ft = ex.factTables[2]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[1]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1239
+          continue
+        state = 1237
+        continue
+      state = 1239
+      continue
+    of 1239:
+      ex.debugEndCondition(definition, true)
+      cp1241_0 = ex.v[0]
+      cp1241_1 = ex.v[1]
+      as173_1144Copy = as173_1144
+      if not axiomEnd173(ex, true, as173_1144Copy):
+        state = 1242
+        continue
+      ex.debugEndCondition(definition, true)
+      # (#can_engage ?inp_entity ?enemy)
+      ex.debugBeginCondition(definition, 174)
+      as174_1244.saved.setLen(2)
+      as174_1244.args.setLen(2)
+      axiomBegin174(ex, as174_1244)
+      as174_1244Frame = ex.currentFrameID
+      # (and (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity)) (ammo_available ?inp_entity) (not (weapon_jammed ?inp_entity)) (not (enemy_invulnerable ?inp_enemy)))
+      ex.debugBeginCondition(definition, 19)
+      # (alt (has_weapon ?inp_entity) (has_backup_weapon ?inp_entity))
+      ex.debugBeginCondition(definition, 20)
+      alt1249 = false
+      # (has_weapon ?inp_entity)
+      # (has_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 21)
+        let ft = ex.factTables[3]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1254
+          continue
+        state = 1252
+        continue
+      state = 1254
+      continue
+    of 1254:
+      alt1249 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1258
+          continue
+        state = 1256
+        continue
+      state = 1258
+      continue
+    of 1258:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1264
+          continue
+        state = 1262
+        continue
+      state = 1264
+      continue
+    of 1264:
+      state = 1259
+      continue
+    of 1262:
+      state = 1261
+      continue
+    of 1261:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1271
+          continue
+        state = 1269
+        continue
+      state = 1271
+      continue
+    of 1271:
+      state = 1266
+      continue
+    of 1269:
+      state = 1268
+      continue
+    of 1268:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp1274_0 = ex.v[0]
+      cp1274_2 = ex.v[2]
+      as174_1244Copy = as174_1244
+      if not axiomEnd174(ex, true, as174_1244Copy):
+        state = 1275
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 175)
+      block:
+        let (callResult, ok) = ex.invoke(0, @[sv28], addr cs36, factSymbols)
+        if ok and callResult.isKind(akBool) and callResult.boolValue:
+          ex.debugEndCondition(definition, true)
+          state = 1279
+          continue
+      ex.debugEndCondition(definition, false)
+      state = 1277
+      continue
+    of 1279:
+      ex.debugEndCondition(definition, true)
+      state = 1140
+      continue
+    of 1277:
+      state = 1276
+      continue
+    of 1276:
+      ex.debugBeginCondition(definition, 174)
+      state = 1275
+      continue
+    of 1275:
+      ex.v[0] = cp1274_0
+      ex.v[2] = cp1274_2
+      ex.currentFrameID = as174_1244Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 1273
+      continue
+    of 1273:
+      ex.debugBeginCondition(definition, 19)
+      state = 1272
+      continue
+    of 1272:
+      ex.debugBeginCondition(definition, 26)
+      state = 1266
+      continue
+    of 1266:
+      ex.debugEndCondition(definition, false)
+      state = 1265
+      continue
+    of 1265:
+      ex.debugBeginCondition(definition, 24)
+      state = 1259
+      continue
+    of 1259:
+      ex.debugEndCondition(definition, false)
+      state = 1256
+      continue
+    of 1256:
+      state = 1255
+      continue
+    of 1255:
+      ex.debugBeginCondition(definition, 20)
+      state = 1252
+      continue
+    of 1252:
+      state = 1251
+      continue
+    of 1251:
+      if alt1249 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1249
+        continue
+      # (has_backup_weapon ?inp_entity)
+      # (has_backup_weapon ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 22)
+        let ft = ex.factTables[4]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1284
+          continue
+        state = 1282
+        continue
+      state = 1284
+      continue
+    of 1284:
+      alt1249 = true
+      ex.debugEndCondition(definition, true)
+      # (ammo_available ?inp_entity)
+      # (ammo_available ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 23)
+        let ft = ex.factTables[5]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1288
+          continue
+        state = 1286
+        continue
+      state = 1288
+      continue
+    of 1288:
+      # (not (weapon_jammed ?inp_entity))
+      ex.debugBeginCondition(definition, 24)
+      # (weapon_jammed ?inp_entity)
+      # (weapon_jammed ?inp_entity)
+      block:
+        ex.debugBeginCondition(definition, 25)
+        let ft = ex.factTables[6]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1294
+          continue
+        state = 1292
+        continue
+      state = 1294
+      continue
+    of 1294:
+      state = 1289
+      continue
+    of 1292:
+      state = 1291
+      continue
+    of 1291:
+      ex.debugEndCondition(definition, true)
+      # (not (enemy_invulnerable ?inp_enemy))
+      ex.debugBeginCondition(definition, 26)
+      # (enemy_invulnerable ?inp_enemy)
+      # (enemy_invulnerable ?inp_enemy)
+      block:
+        ex.debugBeginCondition(definition, 27)
+        let ft = ex.factTables[7]
+        var matched = false
+        for row in 0 ..< ft.tables[1].rows.len:
+          if not equal(ft.tables[1].rows[row][0], ex.v[2]): continue
+          matched = true
+          break
+        ex.debugEndCondition(definition, matched)
+        if matched:
+          state = 1301
+          continue
+        state = 1299
+        continue
+      state = 1301
+      continue
+    of 1301:
+      state = 1296
+      continue
+    of 1299:
+      state = 1298
+      continue
+    of 1298:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      cp1304_0 = ex.v[0]
+      cp1304_2 = ex.v[2]
+      as174_1244Copy = as174_1244
+      if not axiomEnd174(ex, true, as174_1244Copy):
+        state = 1305
+        continue
+      ex.debugEndCondition(definition, true)
+      # (call binded_function_with_args "combat branch selected")
+      # (call binded_function_with_args "combat branch selected")
+      ex.debugBeginCondition(definition, 175)
       block:
         let (callResult, ok) = ex.invoke(0, @[sv28], addr cs37, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1143
+          ex.debugEndCondition(definition, true)
+          state = 1309
           continue
-      state = 1141
+      ex.debugEndCondition(definition, false)
+      state = 1307
       continue
-    of 1143:
-      state = 1003
-      continue
-    of 1141:
+    of 1309:
+      ex.debugEndCondition(definition, true)
       state = 1140
       continue
-    of 1140:
-      ex.v[0] = cp1139_0
-      ex.v[2] = cp1139_2
-      ex.currentFrameID = as174_1089Frame
-      state = 1133
+    of 1307:
+      state = 1306
       continue
-    of 1133:
-      state = 1127
+    of 1306:
+      ex.debugBeginCondition(definition, 174)
+      state = 1305
       continue
-    of 1127:
-      state = 1124
+    of 1305:
+      ex.v[0] = cp1304_0
+      ex.v[2] = cp1304_2
+      ex.currentFrameID = as174_1244Frame
+      ex.debugBeginAxiom(definition, 3)
+      state = 1303
       continue
-    of 1124:
-      state = 1121
+    of 1303:
+      ex.debugBeginCondition(definition, 19)
+      state = 1302
       continue
-    of 1121:
-      state = 1120
+    of 1302:
+      ex.debugBeginCondition(definition, 26)
+      state = 1296
       continue
-    of 1120:
-      if alt1094 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1094
+    of 1296:
+      ex.debugEndCondition(definition, false)
+      state = 1295
+      continue
+    of 1295:
+      ex.debugBeginCondition(definition, 24)
+      state = 1289
+      continue
+    of 1289:
+      ex.debugEndCondition(definition, false)
+      state = 1286
+      continue
+    of 1286:
+      state = 1285
+      continue
+    of 1285:
+      ex.debugBeginCondition(definition, 20)
+      state = 1282
+      continue
+    of 1282:
+      state = 1281
+      continue
+    of 1281:
+      if alt1249 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1249
         continue
-      state = 1094
+      state = 1249
       continue
-    of 1094:
-      state = 1092
+    of 1249:
+      ex.debugEndCondition(definition, false)
+      state = 1247
       continue
-    of 1092:
-      state = 1091
+    of 1247:
+      ex.debugEndCondition(definition, false)
+      state = 1246
       continue
-    of 1091:
-      axiomEnd174(ex, false, as174_1089)
-      state = 1089
+    of 1246:
+      axiomEnd174(ex, false, as174_1244)
+      state = 1244
       continue
-    of 1089:
-      state = 1088
+    of 1244:
+      ex.debugEndCondition(definition, false)
+      state = 1243
       continue
-    of 1088:
-      ex.v[15] = cp1008_15
-      cp1008_15 = ex.v[15]
-      ex.v[0] = cp1087_0
-      ex.v[1] = cp1087_1
-      ex.currentFrameID = as173_1007Frame
-      state = 1084
+    of 1243:
+      ex.debugBeginCondition(definition, 173)
+      state = 1242
       continue
-    of 1084:
-      state = 1012
+    of 1242:
+      ex.v[15] = cp1145_15
+      cp1145_15 = ex.v[15]
+      ex.v[0] = cp1241_0
+      ex.v[1] = cp1241_1
+      ex.currentFrameID = as173_1144Frame
+      ex.debugBeginAxiom(definition, 2)
+      state = 1240
       continue
-    of 1080:
-      ex.v[1] = cp1081_1
-      state = 1079
+    of 1240:
+      ex.debugBeginCondition(definition, 14)
+      state = 1237
       continue
-    of 1079:
-      state = 1012
+    of 1237:
+      state = 1236
       continue
-    of 1012:
-      ex.v[1] = cp1013_1
-      state = 1010
+    of 1236:
+      ex.debugBeginCondition(definition, 15)
+      state = 1149
       continue
-    of 1010:
-      ex.v[1] = cp1011_1
-      state = 1009
+    of 1232:
+      ex.v[1] = cp1233_1
+      state = 1231
       continue
-    of 1009:
-      axiomEnd173(ex, false, as173_1007)
-      state = 1007
+    of 1231:
+      state = 1149
       continue
-    of 1007:
-      ex.v[15] = cp1008_15
-      state = 1005
+    of 1149:
+      ex.v[1] = cp1150_1
+      ex.debugEndCondition(definition, false)
+      state = 1147
       continue
-    of 1005:
-      ex.v[15] = cp1006_15
-      state = 1004
+    of 1147:
+      ex.v[1] = cp1148_1
+      ex.debugEndCondition(definition, false)
+      state = 1146
       continue
-    of 1004:
-      ex.releaseRetry(fr)
-      state = 924
-      continue
-    of 1003:
-      if not ex.pushBranch(addr bc34):
-        ex.releaseRetry(fr)
-        return 0
+    of 1146:
+      axiomEnd173(ex, false, as173_1144)
       state = 1144
       continue
     of 1144:
+      ex.v[15] = cp1145_15
+      ex.debugEndCondition(definition, false)
+      state = 1142
+      continue
+    of 1142:
+      ex.v[15] = cp1143_15
+      ex.debugEndCondition(definition, false)
+      state = 1141
+      continue
+    of 1141:
+      ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, false)
+      state = 1047
+      continue
+    of 1140:
+      if not ex.pushBranch(addr bc34):
+        ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
+        return 0
+      ex.debugCapturePendingTask(49)
+      ex.debugCapturePendingTask(48)
+      state = 1311
+      continue
+    of 1311:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8547,143 +10571,179 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 928
+        state = 1051
         continue
-      state = 1145
+      state = 1312
       continue
-    of 928:
+    of 1051:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 924
+        ex.debugEndBranch(definition, false)
+        state = 1047
         continue
-      state = 1144
+      state = 1311
       continue
-    of 1145:
+    of 1312:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 924:
+    of 1047:
       # branch branch_recovery
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 35)
       # (and (needs_healing ?inp_entity) (not (under_fire ?inp_entity)) (or (medkit ?inp_entity) (healing_station_nearby ?inp_entity)))
+      ex.debugBeginCondition(definition, 176)
       # (needs_healing ?inp_entity)
       # (needs_healing ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 177)
         let ft = ex.factTables[22]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1152
+          state = 1319
           continue
-        state = 1150
+        state = 1317
         continue
-      state = 1152
+      state = 1319
       continue
-    of 1152:
+    of 1319:
       # (not (under_fire ?inp_entity))
+      ex.debugBeginCondition(definition, 178)
       # (under_fire ?inp_entity)
       # (under_fire ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 179)
         let ft = ex.factTables[23]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1158
+          state = 1325
           continue
-        state = 1156
+        state = 1323
         continue
-      state = 1158
+      state = 1325
       continue
-    of 1158:
-      state = 1153
+    of 1325:
+      state = 1320
       continue
-    of 1156:
-      state = 1155
+    of 1323:
+      state = 1322
       continue
-    of 1155:
+    of 1322:
+      ex.debugEndCondition(definition, true)
       # (or (medkit ?inp_entity) (healing_station_nearby ?inp_entity))
+      ex.debugBeginCondition(definition, 180)
       # (medkit ?inp_entity)
       # (medkit ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 181)
         let ft = ex.factTables[24]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1164
+          state = 1332
           continue
-        state = 1162
+        state = 1330
         continue
-      state = 1164
+      state = 1332
       continue
-    of 1164:
-      state = 1146
+    of 1332:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1313
       continue
-    of 1162:
-      state = 1161
+    of 1330:
+      state = 1329
       continue
-    of 1161:
+    of 1329:
       # (healing_station_nearby ?inp_entity)
       # (healing_station_nearby ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 182)
         let ft = ex.factTables[25]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1168
+          state = 1338
           continue
-        state = 1166
+        state = 1336
         continue
-      state = 1168
+      state = 1338
       continue
-    of 1168:
-      state = 1146
+    of 1338:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1313
       continue
-    of 1166:
-      state = 1165
+    of 1336:
+      state = 1335
       continue
-    of 1165:
-      state = 1159
+    of 1335:
+      state = 1327
       continue
-    of 1159:
-      state = 1153
+    of 1327:
+      ex.debugEndCondition(definition, false)
+      state = 1326
       continue
-    of 1153:
-      state = 1150
+    of 1326:
+      ex.debugBeginCondition(definition, 178)
+      state = 1320
       continue
-    of 1150:
-      state = 1148
+    of 1320:
+      ex.debugEndCondition(definition, false)
+      state = 1317
       continue
-    of 1148:
-      state = 1147
+    of 1317:
+      state = 1315
       continue
-    of 1147:
+    of 1315:
+      ex.debugEndCondition(definition, false)
+      state = 1314
+      continue
+    of 1314:
       ex.releaseRetry(fr)
-      state = 925
+      ex.debugEndBranch(definition, false)
+      state = 1048
       continue
-    of 1146:
+    of 1313:
       if not ex.pushBranch(addr bc35):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1169
+      ex.debugCapturePendingTask(51)
+      ex.debugCapturePendingTask(50)
+      state = 1341
       continue
-    of 1169:
+    of 1341:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8691,179 +10751,224 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 929
+        state = 1052
         continue
-      state = 1170
+      state = 1342
       continue
-    of 929:
+    of 1052:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 925
+        ex.debugEndBranch(definition, false)
+        state = 1048
         continue
-      state = 1169
+      state = 1341
       continue
-    of 1170:
+    of 1342:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 925:
+    of 1048:
       # branch branch_mobility
       ex.saveRetry(fr, ms11)
+      ex.debugBeginBranch(definition, 36)
       # (and (objective_far ?inp_entity) (alt (path_open ?inp_entity) (alternate_path_open ?inp_entity)) (not (movement_blocked ?inp_entity)))
+      ex.debugBeginCondition(definition, 183)
       # (objective_far ?inp_entity)
       # (objective_far ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 184)
         let ft = ex.factTables[26]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1177
+          state = 1349
           continue
-        state = 1175
+        state = 1347
         continue
-      state = 1177
+      state = 1349
       continue
-    of 1177:
+    of 1349:
       # (alt (path_open ?inp_entity) (alternate_path_open ?inp_entity))
-      alt1178 = false
+      ex.debugBeginCondition(definition, 185)
+      alt1350 = false
       # (path_open ?inp_entity)
       # (path_open ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 186)
         let ft = ex.factTables[27]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1183
+          state = 1355
           continue
-        state = 1181
+        state = 1353
         continue
-      state = 1183
+      state = 1355
       continue
-    of 1183:
-      alt1178 = true
+    of 1355:
+      alt1350 = true
+      ex.debugEndCondition(definition, true)
       # (not (movement_blocked ?inp_entity))
+      ex.debugBeginCondition(definition, 188)
       # (movement_blocked ?inp_entity)
       # (movement_blocked ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 189)
         let ft = ex.factTables[29]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1189
+          state = 1362
           continue
-        state = 1187
+        state = 1360
         continue
-      state = 1189
+      state = 1362
       continue
-    of 1189:
-      state = 1184
+    of 1362:
+      state = 1357
       continue
-    of 1187:
-      state = 1186
+    of 1360:
+      state = 1359
       continue
-    of 1186:
-      state = 1171
+    of 1359:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1343
       continue
-    of 1184:
-      state = 1181
+    of 1357:
+      ex.debugEndCondition(definition, false)
+      state = 1356
       continue
-    of 1181:
-      state = 1180
+    of 1356:
+      ex.debugBeginCondition(definition, 185)
+      state = 1353
       continue
-    of 1180:
-      if alt1178 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1178
+    of 1353:
+      state = 1352
+      continue
+    of 1352:
+      if alt1350 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1350
         continue
       # (alternate_path_open ?inp_entity)
       # (alternate_path_open ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 187)
         let ft = ex.factTables[28]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1193
+          state = 1368
           continue
-        state = 1191
+        state = 1366
         continue
-      state = 1193
+      state = 1368
       continue
-    of 1193:
-      alt1178 = true
+    of 1368:
+      alt1350 = true
+      ex.debugEndCondition(definition, true)
       # (not (movement_blocked ?inp_entity))
+      ex.debugBeginCondition(definition, 188)
       # (movement_blocked ?inp_entity)
       # (movement_blocked ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 189)
         let ft = ex.factTables[29]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1199
+          state = 1375
           continue
-        state = 1197
+        state = 1373
         continue
-      state = 1199
+      state = 1375
       continue
-    of 1199:
-      state = 1194
+    of 1375:
+      state = 1370
       continue
-    of 1197:
-      state = 1196
+    of 1373:
+      state = 1372
       continue
-    of 1196:
-      state = 1171
+    of 1372:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1343
       continue
-    of 1194:
-      state = 1191
+    of 1370:
+      ex.debugEndCondition(definition, false)
+      state = 1369
       continue
-    of 1191:
-      state = 1190
+    of 1369:
+      ex.debugBeginCondition(definition, 185)
+      state = 1366
       continue
-    of 1190:
-      if alt1178 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1178
+    of 1366:
+      state = 1365
+      continue
+    of 1365:
+      if alt1350 and (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
+        state = 1350
         continue
-      state = 1178
+      state = 1350
       continue
-    of 1178:
-      state = 1175
+    of 1350:
+      ex.debugEndCondition(definition, false)
+      state = 1347
       continue
-    of 1175:
-      state = 1173
+    of 1347:
+      state = 1345
       continue
-    of 1173:
-      state = 1172
+    of 1345:
+      ex.debugEndCondition(definition, false)
+      state = 1344
       continue
-    of 1172:
+    of 1344:
       ex.releaseRetry(fr)
-      state = 926
+      ex.debugEndBranch(definition, false)
+      state = 1049
       continue
-    of 1171:
+    of 1343:
       if not ex.pushBranch(addr bc36):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1200
+      ex.debugCapturePendingTask(53)
+      ex.debugCapturePendingTask(52)
+      state = 1378
       continue
-    of 1200:
+    of 1378:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -8871,36 +10976,47 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 930
+        state = 1053
         continue
-      state = 1201
+      state = 1379
       continue
-    of 930:
+    of 1053:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms11)
-        state = 926
+        ex.debugEndBranch(definition, false)
+        state = 1049
         continue
-      state = 1200
+      state = 1378
       continue
-    of 1201:
+    of 1379:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 926:
+    of 1049:
       # branch branch_idle
-      state = 1202
+      ex.debugBeginBranch(definition, 37)
+      state = 1380
       continue
-    of 1202:
+    of 1380:
       if not ex.pushBranch(addr bc37):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1204
+      ex.debugCapturePendingTask(54)
+      state = 1382
       continue
-    of 1204:
+    of 1382:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -8908,16 +11024,20 @@ proc method11(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 931
+        state = 1054
         continue
-      state = 1205
+      state = 1383
       continue
-    of 931:
+    of 1054:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1204
+      state = 1382
       continue
-    of 1205:
+    of 1383:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -8925,42 +11045,49 @@ proc method11(ex: Exec): int {.nimcall.} =
 # method12: recovery_response/1
 proc method12(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1216_16: Atom
-  var cp1218_16: Atom
-  var cp1237_17: Atom
-  var cp1239_17: Atom
-  var fc1240: uint32
+  var cp1394_16: Atom
+  var cp1396_16: Atom
+  var cp1417_17: Atom
+  var cp1419_17: Atom
+  var fc1420: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1210
-  of 2: state = 1211
-  of 3: state = 1212
+  of 1: state = 1388
+  of 2: state = 1389
+  of 3: state = 1390
   else: discard
   while true:
     case state
     of 0:
-      state = 1207
+      ex.debugBeginMethod(definition, 12)
+      state = 1385
       continue
-    of 1207:
+    of 1385:
       # branch branch_use_medkit
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 38)
       # (and (= ?current_health (call get_health ?inp_entity)) (health_value ?inp_entity ?current_health) (medkit ?inp_entity) (not (under_fire ?inp_entity)))
-      cp1216_16 = ex.v[16]
+      cp1394_16 = ex.v[16]
+      ex.debugBeginCondition(definition, 190)
       # (= ?current_health (call get_health ?inp_entity))
-      cp1218_16 = ex.v[16]
+      cp1396_16 = ex.v[16]
       # (= ?current_health (call get_health ?inp_entity))
+      ex.debugBeginCondition(definition, 191)
       if not ex.v[16].isBound:
         let (callResult, ok) = ex.invoke(1, @[ex.v[0]], addr cs38, factSymbols)
         if ok:
           ex.setIfChanged(16, callResult)
-          state = 1219
+          ex.debugEndCondition(definition, true)
+          state = 1397
           continue
-      state = 1217
+      ex.debugEndCondition(definition, false)
+      state = 1395
       continue
-    of 1219:
+    of 1397:
       # (health_value ?inp_entity ?current_health)
       # (health_value ?inp_entity ?current_health)
       block:
+        ex.debugBeginCondition(definition, 192)
         let ft = ex.factTables[15]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -8968,85 +11095,99 @@ proc method12(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[16]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1222
+          state = 1400
           continue
-        state = 1220
+        state = 1398
         continue
-      state = 1222
+      state = 1400
       continue
-    of 1222:
+    of 1400:
       # (medkit ?inp_entity)
       # (medkit ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 193)
         let ft = ex.factTables[24]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1225
+          state = 1403
           continue
-        state = 1223
+        state = 1401
         continue
-      state = 1225
+      state = 1403
       continue
-    of 1225:
+    of 1403:
       # (not (under_fire ?inp_entity))
+      ex.debugBeginCondition(definition, 194)
       # (under_fire ?inp_entity)
       # (under_fire ?inp_entity)
       block:
+        ex.debugBeginCondition(definition, 195)
         let ft = ex.factTables[23]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[0]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1231
+          state = 1409
           continue
-        state = 1229
+        state = 1407
         continue
-      state = 1231
+      state = 1409
       continue
-    of 1231:
-      state = 1226
+    of 1409:
+      state = 1404
       continue
-    of 1229:
-      state = 1228
+    of 1407:
+      state = 1406
       continue
-    of 1228:
-      state = 1213
+    of 1406:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1391
       continue
-    of 1226:
-      state = 1223
+    of 1404:
+      ex.debugEndCondition(definition, false)
+      state = 1401
       continue
-    of 1223:
-      state = 1220
+    of 1401:
+      state = 1398
       continue
-    of 1220:
-      state = 1217
+    of 1398:
+      state = 1395
       continue
-    of 1217:
-      ex.v[16] = cp1218_16
-      state = 1215
+    of 1395:
+      ex.v[16] = cp1396_16
+      state = 1393
       continue
-    of 1215:
-      ex.v[16] = cp1216_16
-      state = 1214
+    of 1393:
+      ex.v[16] = cp1394_16
+      ex.debugEndCondition(definition, false)
+      state = 1392
       continue
-    of 1214:
+    of 1392:
       ex.releaseRetry(fr)
-      state = 1208
+      ex.debugEndBranch(definition, false)
+      state = 1386
       continue
-    of 1213:
+    of 1391:
       if not ex.pushBranch(addr bc38):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1232
+      ex.debugCapturePendingTask(55)
+      state = 1412
       continue
-    of 1232:
+    of 1412:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9054,97 +11195,121 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1210
+        state = 1388
         continue
-      state = 1233
+      state = 1413
       continue
-    of 1210:
+    of 1388:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1208
+        ex.debugEndBranch(definition, false)
+        state = 1386
         continue
-      state = 1232
+      state = 1412
       continue
-    of 1233:
+    of 1413:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1208:
+    of 1386:
       # branch branch_use_station
       ex.saveRetry(fr, ms12)
+      ex.debugBeginBranch(definition, 39)
       # (and (healing_station ?inp_entity ?station) (not (station_offline ?station)))
-      cp1237_17 = ex.v[17]
+      cp1417_17 = ex.v[17]
+      ex.debugBeginCondition(definition, 196)
       # (healing_station ?inp_entity ?station)
-      cp1239_17 = ex.v[17]
-      fc1240 = 0
-      state = 1241
+      cp1419_17 = ex.v[17]
+      fc1420 = 0
+      state = 1421
       continue
-    of 1241:
-      inc fc1240
-      if not factChoice197(ex, fc1240 - 1):
-        state = 1238
+    of 1421:
+      ex.debugBeginCondition(definition, 197)
+      inc fc1420
+      if not factChoice197(ex, fc1420 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1418
         continue
+      ex.debugEndCondition(definition, true)
       # (not (station_offline ?station))
+      ex.debugBeginCondition(definition, 198)
       # (station_offline ?station)
       # (station_offline ?station)
       block:
+        ex.debugBeginCondition(definition, 199)
         let ft = ex.factTables[31]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[17]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1247
+          state = 1427
           continue
-        state = 1245
+        state = 1425
         continue
-      state = 1247
+      state = 1427
       continue
-    of 1247:
-      state = 1242
+    of 1427:
+      state = 1422
       continue
-    of 1245:
-      state = 1244
+    of 1425:
+      state = 1424
       continue
-    of 1244:
-      state = 1234
+    of 1424:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1414
       continue
-    of 1242:
-      state = 1240
+    of 1422:
+      ex.debugEndCondition(definition, false)
+      state = 1420
       continue
-    of 1240:
+    of 1420:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1238
+        state = 1418
         continue
-      ex.v[17] = cp1239_17
-      cp1239_17 = ex.v[17]
-      state = 1241
+      ex.v[17] = cp1419_17
+      cp1419_17 = ex.v[17]
+      state = 1421
       continue
-    of 1238:
-      ex.v[17] = cp1239_17
-      state = 1236
+    of 1418:
+      ex.v[17] = cp1419_17
+      state = 1416
       continue
-    of 1236:
-      ex.v[17] = cp1237_17
-      state = 1235
+    of 1416:
+      ex.v[17] = cp1417_17
+      ex.debugEndCondition(definition, false)
+      state = 1415
       continue
-    of 1235:
+    of 1415:
       ex.releaseRetry(fr)
-      state = 1209
+      ex.debugEndBranch(definition, false)
+      state = 1387
       continue
-    of 1234:
+    of 1414:
       if not ex.pushBranch(addr bc39):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1248
+      ex.debugCapturePendingTask(57)
+      ex.debugCapturePendingTask(56)
+      state = 1430
       continue
-    of 1248:
+    of 1430:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9152,36 +11317,47 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1211
+        state = 1389
         continue
-      state = 1249
+      state = 1431
       continue
-    of 1211:
+    of 1389:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms12)
-        state = 1209
+        ex.debugEndBranch(definition, false)
+        state = 1387
         continue
-      state = 1248
+      state = 1430
       continue
-    of 1249:
+    of 1431:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1209:
+    of 1387:
       # branch branch_recovery_fallback
-      state = 1250
+      ex.debugBeginBranch(definition, 40)
+      state = 1432
       continue
-    of 1250:
+    of 1432:
       if not ex.pushBranch(addr bc40):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1252
+      ex.debugCapturePendingTask(58)
+      state = 1434
       continue
-    of 1252:
+    of 1434:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9189,16 +11365,20 @@ proc method12(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1212
+        state = 1390
         continue
-      state = 1253
+      state = 1435
       continue
-    of 1212:
+    of 1390:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1252
+      state = 1434
       continue
-    of 1253:
+    of 1435:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -9206,65 +11386,76 @@ proc method12(ex: Exec): int {.nimcall.} =
 # method13: mobility_response/2
 proc method13(ex: Exec): int {.nimcall.} =
   let fr = ex.frame()
-  var cp1264_4: Atom
-  var cp1266_4: Atom
-  var fc1267: uint32
-  var cp1286_4: Atom
-  var cp1288_4: Atom
-  var fc1289: uint32
+  var cp1446_4: Atom
+  var cp1448_4: Atom
+  var fc1449: uint32
+  var cp1470_4: Atom
+  var cp1472_4: Atom
+  var fc1473: uint32
   var state = 0
   case fr.resume
-  of 1: state = 1258
-  of 2: state = 1259
-  of 3: state = 1260
+  of 1: state = 1440
+  of 2: state = 1441
+  of 3: state = 1442
   else: discard
   while true:
     case state
     of 0:
-      state = 1255
+      ex.debugBeginMethod(definition, 13)
+      state = 1437
       continue
-    of 1255:
+    of 1437:
       # branch branch_sprint
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 41)
       # (and (route_clear ?inp_entity ?route) (not (route_dangerous ?route)) (speed_value ?inp_entity ?inp_max_speed) (call binded_function_with_args "sprinting to objective"))
-      cp1264_4 = ex.v[4]
+      cp1446_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 200)
       # (route_clear ?inp_entity ?route)
-      cp1266_4 = ex.v[4]
-      fc1267 = 0
-      state = 1268
+      cp1448_4 = ex.v[4]
+      fc1449 = 0
+      state = 1450
       continue
-    of 1268:
-      inc fc1267
-      if not factChoice201(ex, fc1267 - 1):
-        state = 1265
+    of 1450:
+      ex.debugBeginCondition(definition, 201)
+      inc fc1449
+      if not factChoice201(ex, fc1449 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1447
         continue
+      ex.debugEndCondition(definition, true)
       # (not (route_dangerous ?route))
+      ex.debugBeginCondition(definition, 202)
       # (route_dangerous ?route)
       # (route_dangerous ?route)
       block:
+        ex.debugBeginCondition(definition, 203)
         let ft = ex.factTables[33]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1274
+          state = 1456
           continue
-        state = 1272
+        state = 1454
         continue
-      state = 1274
+      state = 1456
       continue
-    of 1274:
-      state = 1269
+    of 1456:
+      state = 1451
       continue
-    of 1272:
-      state = 1271
+    of 1454:
+      state = 1453
       continue
-    of 1271:
+    of 1453:
+      ex.debugEndCondition(definition, true)
       # (speed_value ?inp_entity ?inp_max_speed)
       # (speed_value ?inp_entity ?inp_max_speed)
       block:
+        ex.debugBeginCondition(definition, 204)
         let ft = ex.factTables[16]
         var matched = false
         for row in 0 ..< ft.tables[2].rows.len:
@@ -9272,62 +11463,77 @@ proc method13(ex: Exec): int {.nimcall.} =
           if not equal(ft.tables[2].rows[row][1], ex.v[12]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1277
+          state = 1460
           continue
-        state = 1275
+        state = 1458
         continue
-      state = 1277
+      state = 1460
       continue
-    of 1277:
+    of 1460:
       # (call binded_function_with_args "sprinting to objective")
       # (call binded_function_with_args "sprinting to objective")
+      ex.debugBeginCondition(definition, 205)
       block:
         let (callResult, ok) = ex.invoke(0, @[sv34], addr cs39, factSymbols)
         if ok and callResult.isKind(akBool) and callResult.boolValue:
-          state = 1280
+          ex.debugEndCondition(definition, true)
+          state = 1463
           continue
-      state = 1278
+      ex.debugEndCondition(definition, false)
+      state = 1461
       continue
-    of 1280:
-      state = 1261
+    of 1463:
+      ex.debugEndCondition(definition, true)
+      state = 1443
       continue
-    of 1278:
-      state = 1275
+    of 1461:
+      state = 1458
       continue
-    of 1275:
-      state = 1269
+    of 1458:
+      state = 1457
       continue
-    of 1269:
-      state = 1267
+    of 1457:
+      ex.debugBeginCondition(definition, 202)
+      state = 1451
       continue
-    of 1267:
+    of 1451:
+      ex.debugEndCondition(definition, false)
+      state = 1449
+      continue
+    of 1449:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1265
+        state = 1447
         continue
-      ex.v[4] = cp1266_4
-      cp1266_4 = ex.v[4]
-      state = 1268
+      ex.v[4] = cp1448_4
+      cp1448_4 = ex.v[4]
+      state = 1450
       continue
-    of 1265:
-      ex.v[4] = cp1266_4
-      state = 1263
+    of 1447:
+      ex.v[4] = cp1448_4
+      state = 1445
       continue
-    of 1263:
-      ex.v[4] = cp1264_4
-      state = 1262
+    of 1445:
+      ex.v[4] = cp1446_4
+      ex.debugEndCondition(definition, false)
+      state = 1444
       continue
-    of 1262:
+    of 1444:
       ex.releaseRetry(fr)
-      state = 1256
+      ex.debugEndBranch(definition, false)
+      state = 1438
       continue
-    of 1261:
+    of 1443:
       if not ex.pushBranch(addr bc41):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1281
+      ex.debugCapturePendingTask(59)
+      state = 1465
       continue
-    of 1281:
+    of 1465:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9335,97 +11541,120 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1258
+        state = 1440
         continue
-      state = 1282
+      state = 1466
       continue
-    of 1258:
+    of 1440:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1256
+        ex.debugEndBranch(definition, false)
+        state = 1438
         continue
-      state = 1281
+      state = 1465
       continue
-    of 1282:
+    of 1466:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1256:
+    of 1438:
       # branch branch_walk_alternate
       ex.saveRetry(fr, ms13)
+      ex.debugBeginBranch(definition, 42)
       # (and (alternate_route ?inp_entity ?route) (not (route_blocked ?route)))
-      cp1286_4 = ex.v[4]
+      cp1470_4 = ex.v[4]
+      ex.debugBeginCondition(definition, 206)
       # (alternate_route ?inp_entity ?route)
-      cp1288_4 = ex.v[4]
-      fc1289 = 0
-      state = 1290
+      cp1472_4 = ex.v[4]
+      fc1473 = 0
+      state = 1474
       continue
-    of 1290:
-      inc fc1289
-      if not factChoice207(ex, fc1289 - 1):
-        state = 1287
+    of 1474:
+      ex.debugBeginCondition(definition, 207)
+      inc fc1473
+      if not factChoice207(ex, fc1473 - 1):
+        ex.debugEndCondition(definition, false)
+        state = 1471
         continue
+      ex.debugEndCondition(definition, true)
       # (not (route_blocked ?route))
+      ex.debugBeginCondition(definition, 208)
       # (route_blocked ?route)
       # (route_blocked ?route)
       block:
+        ex.debugBeginCondition(definition, 209)
         let ft = ex.factTables[11]
         var matched = false
         for row in 0 ..< ft.tables[1].rows.len:
           if not equal(ft.tables[1].rows[row][0], ex.v[4]): continue
           matched = true
           break
+        ex.debugEndCondition(definition, matched)
         if matched:
-          state = 1296
+          state = 1480
           continue
-        state = 1294
+        state = 1478
         continue
-      state = 1296
+      state = 1480
       continue
-    of 1296:
-      state = 1291
+    of 1480:
+      state = 1475
       continue
-    of 1294:
-      state = 1293
+    of 1478:
+      state = 1477
       continue
-    of 1293:
-      state = 1283
+    of 1477:
+      ex.debugEndCondition(definition, true)
+      ex.debugEndCondition(definition, true)
+      state = 1467
       continue
-    of 1291:
-      state = 1289
+    of 1475:
+      ex.debugEndCondition(definition, false)
+      state = 1473
       continue
-    of 1289:
+    of 1473:
       if (ex.ctx.backtrackingMode and bmFactsAndAxioms) == 0:
-        state = 1287
+        state = 1471
         continue
-      ex.v[4] = cp1288_4
-      cp1288_4 = ex.v[4]
-      state = 1290
+      ex.v[4] = cp1472_4
+      cp1472_4 = ex.v[4]
+      state = 1474
       continue
-    of 1287:
-      ex.v[4] = cp1288_4
-      state = 1285
+    of 1471:
+      ex.v[4] = cp1472_4
+      state = 1469
       continue
-    of 1285:
-      ex.v[4] = cp1286_4
-      state = 1284
+    of 1469:
+      ex.v[4] = cp1470_4
+      ex.debugEndCondition(definition, false)
+      state = 1468
       continue
-    of 1284:
+    of 1468:
       ex.releaseRetry(fr)
-      state = 1257
+      ex.debugEndBranch(definition, false)
+      state = 1439
       continue
-    of 1283:
+    of 1467:
       if not ex.pushBranch(addr bc42):
         ex.releaseRetry(fr)
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1297
+      ex.debugCapturePendingTask(60)
+      state = 1483
       continue
-    of 1297:
+    of 1483:
       if ex.pendingCount > fr.retryPendingBase:
         let next = ex.popPending()
         if next != nil:
@@ -9433,36 +11662,47 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1259
+        state = 1441
         continue
-      state = 1298
+      state = 1484
       continue
-    of 1259:
+    of 1441:
       if fr.childResult == 0:
         if ex.failureState != dsNoPlan:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         if (ex.ctx.backtrackingMode and bmBranches) == 0:
           ex.releaseRetry(fr)
+          ex.debugEndBranch(definition, false)
+          ex.debugEndMethod(definition, false)
           return 0
         ex.restoreRetry(fr, ms13)
-        state = 1257
+        ex.debugEndBranch(definition, false)
+        state = 1439
         continue
-      state = 1297
+      state = 1483
       continue
-    of 1298:
+    of 1484:
       ex.releaseRetry(fr)
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
-    of 1257:
+    of 1439:
       # branch branch_mobility_fallback
-      state = 1299
+      ex.debugBeginBranch(definition, 43)
+      state = 1485
       continue
-    of 1299:
+    of 1485:
       if not ex.pushBranch(addr bc43):
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1301
+      ex.debugCapturePendingTask(61)
+      state = 1487
       continue
-    of 1301:
+    of 1487:
       if ex.pendingCount > 0:
         let next = ex.popPending()
         if next != nil:
@@ -9470,16 +11710,20 @@ proc method13(ex: Exec): int {.nimcall.} =
           ex.next = next
           return 2
         fr.childResult = 0
-        state = 1260
+        state = 1442
         continue
-      state = 1302
+      state = 1488
       continue
-    of 1260:
+    of 1442:
       if fr.childResult == 0:
+        ex.debugEndBranch(definition, false)
+        ex.debugEndMethod(definition, false)
         return 0
-      state = 1301
+      state = 1487
       continue
-    of 1302:
+    of 1488:
+      ex.debugEndBranch(definition, true)
+      ex.debugEndMethod(definition, true)
       return 1
     else:
       return 0
@@ -9499,16 +11743,22 @@ proc decomposeCall(ctx: var Context, call: Atom, requireTopLevel: bool): (Atom, 
   if entry < 0 and head.symbolValue == sym47 and argumentCount == 0:
     entry = 9
   if entry < 0: return (empty, dsInvalidCall)
+  ex.debugBeginPlan(definition, uint32(entry))
   var runResult = 0
   case entry
   of 9:
     runResult = ex.run(method9)
   else: discard
-  if runResult == 0: return (empty, ex.failureState)
+  if runResult == 0:
+    ex.debugEndPlan(definition, false)
+    return (empty, ex.failureState)
   while ex.pendingCount != 0:
     let next = ex.popPending()
     if next == nil: break
-    if ex.run(next) == 0: return (empty, ex.failureState)
+    if ex.run(next) == 0:
+      ex.debugEndPlan(definition, false)
+      return (empty, ex.failureState)
+  ex.debugEndPlan(definition, true)
   (ex.planAtom(), dsSucceeded)
 
 bc0 = BranchContinuations(tasks: @[PendingTask(fn: task1), PendingTask(fn: task0)], totalRestore: 0)
@@ -9569,3 +11819,1925 @@ definition = Definition(abiVersion: ABIVersion, features: featureRuntimeBacktrac
     Requirement(name: "get_health", source: Source(domain: "ComplexScenario", file: "Domains/Test/complex_scenario.domain", line: 147, column: 36)),
     Requirement(name: "binded_function_with_args", source: Source(domain: "ComplexScenario", file: "Domains/Test/complex_scenario.domain", line: 184, column: 17)),
     Requirement(name: "inc", source: Source(domain: "ComplexScenario", file: "Domains/Test/complex_scenario.domain", line: 61, column: 40))])
+
+when htnDebugEnabled:
+  proc debugTables(): DebugTables =
+    DebugTables(
+      sourceFile: "Domains/Test/complex_scenario.domain",
+      strings: @[
+        "combat_reactions::is_threat",
+        "inp_entity",
+        "?inp_entity",
+        "out_enemy",
+        "?out_enemy",
+        "enemy_visible",
+        "enemy_recently_seen",
+        "enemy_hostile",
+        "combat_reactions::can_engage",
+        "inp_enemy",
+        "?inp_enemy",
+        "has_weapon",
+        "has_backup_weapon",
+        "ammo_available",
+        "weapon_jammed",
+        "enemy_invulnerable",
+        "is_threat",
+        "can_engage",
+        "combat_reactions::emergency_response",
+        "branch_take_cover_and_fight",
+        "cover_available",
+        "cover",
+        "?cover",
+        "cover_compromised",
+        "move_to_cover",
+        "!move_to_cover",
+        "combat_response",
+        "branch_retreat",
+        "retreat_route",
+        "route",
+        "?route",
+        "route_blocked",
+        "retreat",
+        "!retreat",
+        "branch_emergency_fallback",
+        "log",
+        "!log",
+        "Emergency fallback",
+        "\"Emergency fallback\"",
+        "combat_reactions::combat_response",
+        "branch_attack",
+        "binded_function_with_args",
+        "attacking enemy",
+        "\"attacking enemy\"",
+        "aim",
+        "!aim",
+        "fire",
+        "!fire",
+        "branch_reload",
+        "ammo_reserve",
+        "reload",
+        "!reload",
+        "branch_disengage",
+        "disengage",
+        "!disengage",
+        "ComplexScenario::run_scenario",
+        "branch_iterate_all_entities",
+        "controlled_entity",
+        "entity",
+        "?entity",
+        "entity_count",
+        "num_entities",
+        "?num_entities",
+        "starting recursive complex HTN scenario",
+        "\"starting recursive complex HTN scenario\"",
+        "health",
+        "?health",
+        "get_health",
+        "max_speed",
+        "?max_speed",
+        "get_max_speed",
+        "health_value",
+        "speed_value",
+        "entity_disabled",
+        "Recursive scenario started",
+        "\"Recursive scenario started\"",
+        "iterate_over_entities",
+        "0",
+        "branch_active_entity",
+        "starting complex HTN scenario",
+        "\"starting complex HTN scenario\"",
+        "Scenario started",
+        "\"Scenario started\"",
+        "evaluate_situation",
+        "branch_no_active_entity",
+        "No active entity",
+        "\"No active entity\"",
+        "ComplexScenario::iterate_over_entities",
+        "inp_entity_index",
+        "?inp_entity_index",
+        "inp_num_entities",
+        "?inp_num_entities",
+        "inp_health",
+        "?inp_health",
+        "inp_max_speed",
+        "?inp_max_speed",
+        "branch_internal",
+        "lt",
+        "entity_id",
+        "?entity_id",
+        "inc",
+        "(call inc ?inp_entity_index)",
+        "__task_call_result_0",
+        "branch_done",
+        "ComplexScenario::evaluate_situation",
+        "branch_emergency",
+        "enemy",
+        "?enemy",
+        "critical_threat",
+        "enemy_close",
+        "low_cover",
+        "emergency branch selected",
+        "\"emergency branch selected\"",
+        "Emergency response",
+        "\"Emergency response\"",
+        "emergency_response",
+        "branch_combat",
+        "combat branch selected",
+        "\"combat branch selected\"",
+        "Combat response",
+        "\"Combat response\"",
+        "branch_recovery",
+        "needs_healing",
+        "under_fire",
+        "medkit",
+        "healing_station_nearby",
+        "Recovery response",
+        "\"Recovery response\"",
+        "recovery_response",
+        "branch_mobility",
+        "objective_far",
+        "path_open",
+        "alternate_path_open",
+        "movement_blocked",
+        "Mobility response",
+        "\"Mobility response\"",
+        "mobility_response",
+        "branch_idle",
+        "Idle - no special action",
+        "\"Idle - no special action\"",
+        "ComplexScenario::recovery_response",
+        "branch_use_medkit",
+        "current_health",
+        "?current_health",
+        "use_medkit",
+        "!use_medkit",
+        "branch_use_station",
+        "healing_station",
+        "station",
+        "?station",
+        "station_offline",
+        "move_to_healing_station",
+        "!move_to_healing_station",
+        "heal_at_station",
+        "!heal_at_station",
+        "branch_recovery_fallback",
+        "Cannot recover right now",
+        "\"Cannot recover right now\"",
+        "ComplexScenario::mobility_response",
+        "branch_sprint",
+        "route_clear",
+        "route_dangerous",
+        "sprinting to objective",
+        "\"sprinting to objective\"",
+        "sprint_to",
+        "!sprint_to",
+        "branch_walk_alternate",
+        "alternate_route",
+        "walk_to",
+        "!walk_to",
+        "branch_mobility_fallback",
+        "Cannot reach objective",
+        "\"Cannot reach objective\"",
+        "run_scenario",
+        "__task_call_result_1"],
+      values: @[
+        1'u32, 2, 1, 3, 0,
+        1, 4, 3, 3, 1,
+        1, 2, 1, 6, 0,
+        1, 4, 3, 6, 1,
+        1, 2, 1, 7, 0,
+        1, 4, 3, 7, 1,
+        1, 4, 3, 9, 1,
+        1, 2, 1, 13, 0,
+        1, 10, 9, 13, 2,
+        1, 2, 1, 16, 0,
+        1, 2, 1, 17, 0,
+        1, 2, 1, 19, 0,
+        1, 2, 1, 20, 0,
+        1, 10, 9, 21, 2,
+        1, 2, 1, 3, 0,
+        1, 4, 3, 3, 1,
+        1, 2, 1, 6, 0,
+        1, 4, 3, 6, 1,
+        1, 2, 1, 7, 0,
+        1, 4, 3, 7, 1,
+        1, 4, 3, 9, 1,
+        1, 2, 1, 13, 0,
+        1, 10, 9, 13, 2,
+        1, 2, 1, 16, 0,
+        1, 2, 1, 17, 0,
+        1, 2, 1, 19, 0,
+        1, 2, 1, 20, 0,
+        1, 10, 9, 21, 2,
+        1, 2, 1, 25, 0,
+        1, 10, 9, 25, 2,
+        1, 2, 1, 29, 0,
+        1, 22, 21, 29, 3,
+        1, 22, 21, 30, 3,
+        1, 2, 1, 31, 0,
+        1, 10, 9, 31, 2,
+        1, 22, 21, 34, 3,
+        1, 2, 1, 35, 0,
+        1, 10, 9, 35, 2,
+        1, 2, 1, 41, 0,
+        1, 30, 29, 41, 4,
+        1, 30, 29, 42, 4,
+        1, 30, 29, 45, 4,
+        2, 38, 37, 53, NoIndex,
+        1, 2, 1, 58, 0,
+        1, 10, 9, 58, 2,
+        1, 2, 1, 63, 0,
+        1, 2, 1, 64, 0,
+        1, 2, 1, 66, 0,
+        1, 2, 1, 67, 0,
+        1, 10, 9, 68, 2,
+        2, 43, 42, 69, NoIndex,
+        1, 10, 9, 72, 2,
+        1, 10, 9, 73, 2,
+        1, 2, 1, 79, 0,
+        1, 2, 1, 80, 0,
+        1, 2, 1, 81, 0,
+        1, 2, 1, 84, 0,
+        1, 10, 9, 92, 2,
+        1, 59, 58, 12, 5,
+        1, 62, 61, 13, 6,
+        2, 64, 63, 14, NoIndex,
+        1, 66, 65, 15, 7,
+        1, 59, 58, 15, 5,
+        1, 69, 68, 16, 8,
+        1, 59, 58, 16, 5,
+        1, 59, 58, 17, 5,
+        1, 66, 65, 17, 7,
+        1, 59, 58, 18, 5,
+        1, 69, 68, 18, 8,
+        1, 59, 58, 19, 5,
+        2, 75, 74, 22, NoIndex,
+        1, 59, 58, 22, 5,
+        1, 66, 65, 22, 7,
+        1, 69, 68, 22, 8,
+        0, 77, 77, 23, NoIndex,
+        1, 62, 61, 23, 6,
+        1, 66, 65, 23, 7,
+        1, 69, 68, 23, 8,
+        1, 59, 58, 29, 5,
+        2, 80, 79, 30, NoIndex,
+        1, 66, 65, 31, 7,
+        1, 59, 58, 31, 5,
+        1, 69, 68, 32, 8,
+        1, 59, 58, 32, 5,
+        1, 59, 58, 33, 5,
+        1, 66, 65, 33, 7,
+        1, 59, 58, 34, 5,
+        1, 69, 68, 34, 8,
+        1, 59, 58, 35, 5,
+        2, 82, 81, 38, NoIndex,
+        1, 59, 58, 38, 5,
+        1, 66, 65, 38, 7,
+        1, 69, 68, 38, 8,
+        1, 59, 58, 39, 5,
+        1, 66, 65, 39, 7,
+        1, 69, 68, 39, 8,
+        2, 86, 85, 47, NoIndex,
+        1, 89, 88, 52, 9,
+        1, 91, 90, 52, 10,
+        1, 93, 92, 52, 11,
+        1, 95, 94, 52, 12,
+        1, 89, 88, 56, 9,
+        1, 91, 90, 56, 10,
+        1, 89, 88, 57, 9,
+        1, 99, 98, 57, 13,
+        1, 99, 98, 60, 13,
+        1, 93, 92, 60, 11,
+        1, 95, 94, 60, 12,
+        4, 101, 102, 61, 14,
+        1, 91, 90, 61, 10,
+        1, 93, 92, 61, 11,
+        1, 95, 94, 61, 12,
+        1, 2, 1, 74, 0,
+        1, 93, 92, 74, 11,
+        1, 95, 94, 74, 12,
+        1, 2, 1, 78, 0,
+        1, 107, 106, 78, 15,
+        1, 107, 106, 79, 15,
+        1, 107, 106, 81, 15,
+        1, 2, 1, 82, 0,
+        2, 112, 111, 84, NoIndex,
+        2, 114, 113, 87, NoIndex,
+        1, 2, 1, 88, 0,
+        1, 107, 106, 88, 15,
+        1, 2, 1, 94, 0,
+        1, 107, 106, 94, 15,
+        1, 2, 1, 95, 0,
+        1, 107, 106, 95, 15,
+        2, 118, 117, 96, NoIndex,
+        2, 120, 119, 99, NoIndex,
+        1, 2, 1, 100, 0,
+        1, 107, 106, 100, 15,
+        1, 2, 1, 106, 0,
+        1, 2, 1, 107, 0,
+        1, 2, 1, 109, 0,
+        1, 2, 1, 110, 0,
+        2, 127, 126, 114, NoIndex,
+        1, 2, 1, 115, 0,
+        1, 2, 1, 121, 0,
+        1, 2, 1, 123, 0,
+        1, 2, 1, 124, 0,
+        1, 2, 1, 126, 0,
+        2, 135, 134, 129, NoIndex,
+        1, 2, 1, 130, 0,
+        1, 95, 94, 130, 12,
+        2, 139, 138, 138, NoIndex,
+        1, 2, 1, 143, 0,
+        1, 143, 142, 147, 16,
+        1, 2, 1, 147, 0,
+        1, 2, 1, 148, 0,
+        1, 143, 142, 148, 16,
+        1, 2, 1, 149, 0,
+        1, 2, 1, 150, 0,
+        1, 2, 1, 153, 0,
+        1, 2, 1, 159, 0,
+        1, 149, 148, 159, 17,
+        1, 149, 148, 160, 17,
+        1, 149, 148, 163, 17,
+        1, 149, 148, 164, 17,
+        2, 157, 156, 172, NoIndex,
+        1, 2, 1, 177, 0,
+        1, 95, 94, 177, 12,
+        1, 2, 1, 181, 0,
+        1, 30, 29, 181, 4,
+        1, 30, 29, 182, 4,
+        1, 2, 1, 183, 0,
+        1, 95, 94, 183, 12,
+        2, 163, 162, 184, NoIndex,
+        1, 30, 29, 187, 4,
+        1, 95, 94, 187, 12,
+        1, 2, 1, 193, 0,
+        1, 30, 29, 193, 4,
+        1, 30, 29, 194, 4,
+        1, 30, 29, 197, 4,
+        2, 172, 171, 205, NoIndex,
+        1, 2, 1, 25, 0,
+        1, 10, 9, 25, 2,
+        1, 2, 1, 29, 0,
+        1, 22, 21, 29, 3,
+        1, 22, 21, 30, 3,
+        1, 2, 1, 31, 0,
+        1, 10, 9, 31, 2,
+        1, 22, 21, 34, 3,
+        1, 2, 1, 35, 0,
+        1, 10, 9, 35, 2,
+        1, 2, 1, 41, 0,
+        1, 30, 29, 41, 4,
+        1, 30, 29, 42, 4,
+        1, 30, 29, 45, 4,
+        2, 38, 37, 53, NoIndex,
+        1, 2, 1, 58, 0,
+        1, 10, 9, 58, 2,
+        1, 2, 1, 63, 0,
+        1, 2, 1, 64, 0,
+        1, 2, 1, 66, 0,
+        1, 2, 1, 67, 0,
+        1, 10, 9, 68, 2,
+        2, 43, 42, 69, NoIndex,
+        1, 10, 9, 72, 2,
+        1, 10, 9, 73, 2,
+        1, 2, 1, 79, 0,
+        1, 2, 1, 80, 0,
+        1, 2, 1, 81, 0,
+        1, 2, 1, 84, 0,
+        1, 10, 9, 92, 2,
+        1, 59, 58, 12, 5,
+        1, 62, 61, 13, 6,
+        2, 64, 63, 14, NoIndex,
+        1, 66, 65, 15, 7,
+        1, 59, 58, 15, 5,
+        1, 69, 68, 16, 8,
+        1, 59, 58, 16, 5,
+        1, 59, 58, 17, 5,
+        1, 66, 65, 17, 7,
+        1, 59, 58, 18, 5,
+        1, 69, 68, 18, 8,
+        1, 59, 58, 19, 5,
+        2, 75, 74, 22, NoIndex,
+        1, 59, 58, 22, 5,
+        1, 66, 65, 22, 7,
+        1, 69, 68, 22, 8,
+        0, 77, 77, 23, NoIndex,
+        1, 62, 61, 23, 6,
+        1, 66, 65, 23, 7,
+        1, 69, 68, 23, 8,
+        1, 59, 58, 29, 5,
+        2, 80, 79, 30, NoIndex,
+        1, 66, 65, 31, 7,
+        1, 59, 58, 31, 5,
+        1, 69, 68, 32, 8,
+        1, 59, 58, 32, 5,
+        1, 59, 58, 33, 5,
+        1, 66, 65, 33, 7,
+        1, 59, 58, 34, 5,
+        1, 69, 68, 34, 8,
+        1, 59, 58, 35, 5,
+        2, 82, 81, 38, NoIndex,
+        1, 59, 58, 38, 5,
+        1, 66, 65, 38, 7,
+        1, 69, 68, 38, 8,
+        1, 59, 58, 39, 5,
+        1, 66, 65, 39, 7,
+        1, 69, 68, 39, 8,
+        2, 86, 85, 47, NoIndex,
+        1, 89, 88, 52, 9,
+        1, 91, 90, 52, 10,
+        1, 93, 92, 52, 11,
+        1, 95, 94, 52, 12,
+        1, 89, 88, 56, 9,
+        1, 91, 90, 56, 10,
+        1, 89, 88, 57, 9,
+        1, 99, 98, 57, 13,
+        1, 99, 98, 60, 13,
+        1, 93, 92, 60, 11,
+        1, 95, 94, 60, 12,
+        4, 101, 174, 61, 18,
+        1, 91, 90, 61, 10,
+        1, 93, 92, 61, 11,
+        1, 95, 94, 61, 12,
+        1, 2, 1, 74, 0,
+        1, 93, 92, 74, 11,
+        1, 95, 94, 74, 12,
+        1, 2, 1, 78, 0,
+        1, 107, 106, 78, 15,
+        1, 107, 106, 79, 15,
+        1, 107, 106, 81, 15,
+        1, 2, 1, 82, 0,
+        2, 112, 111, 84, NoIndex,
+        2, 114, 113, 87, NoIndex,
+        1, 2, 1, 88, 0,
+        1, 107, 106, 88, 15,
+        1, 2, 1, 94, 0,
+        1, 107, 106, 94, 15,
+        1, 2, 1, 95, 0,
+        1, 107, 106, 95, 15,
+        2, 118, 117, 96, NoIndex,
+        2, 120, 119, 99, NoIndex,
+        1, 2, 1, 100, 0,
+        1, 107, 106, 100, 15,
+        1, 2, 1, 106, 0,
+        1, 2, 1, 107, 0,
+        1, 2, 1, 109, 0,
+        1, 2, 1, 110, 0,
+        2, 127, 126, 114, NoIndex,
+        1, 2, 1, 115, 0,
+        1, 2, 1, 121, 0,
+        1, 2, 1, 123, 0,
+        1, 2, 1, 124, 0,
+        1, 2, 1, 126, 0,
+        2, 135, 134, 129, NoIndex,
+        1, 2, 1, 130, 0,
+        1, 95, 94, 130, 12,
+        2, 139, 138, 138, NoIndex,
+        1, 2, 1, 143, 0,
+        1, 143, 142, 147, 16,
+        1, 2, 1, 147, 0,
+        1, 2, 1, 148, 0,
+        1, 143, 142, 148, 16,
+        1, 2, 1, 149, 0,
+        1, 2, 1, 150, 0,
+        1, 2, 1, 153, 0,
+        1, 2, 1, 159, 0,
+        1, 149, 148, 159, 17,
+        1, 149, 148, 160, 17,
+        1, 149, 148, 163, 17,
+        1, 149, 148, 164, 17,
+        2, 157, 156, 172, NoIndex,
+        1, 2, 1, 177, 0,
+        1, 95, 94, 177, 12,
+        1, 2, 1, 181, 0,
+        1, 30, 29, 181, 4,
+        1, 30, 29, 182, 4,
+        1, 2, 1, 183, 0,
+        1, 95, 94, 183, 12,
+        2, 163, 162, 184, NoIndex,
+        1, 30, 29, 187, 4,
+        1, 95, 94, 187, 12,
+        1, 2, 1, 193, 0,
+        1, 30, 29, 193, 4,
+        1, 30, 29, 194, 4,
+        1, 30, 29, 197, 4,
+        2, 172, 171, 205, NoIndex],
+      variableStringIDs: @[
+        1'u32,
+        3,
+        9,
+        21,
+        29,
+        58,
+        61,
+        65,
+        68,
+        88,
+        90,
+        92,
+        94,
+        98,
+        NoIndex,
+        106,
+        142,
+        148,
+        NoIndex],
+      conditions: @[
+        2'u32, NoIndex, 0, 0, 2, 2, NoIndex, NoIndex, 4, 0,
+        3, NoIndex, 0, 0, 0, 2, NoIndex, NoIndex, 5, 0,
+        0, 5, 2, 2, 0, 0, NoIndex, 0, 6, 0,
+        0, 6, 4, 2, 0, 0, NoIndex, 1, 7, 0,
+        0, 7, 6, 1, 2, 0, NoIndex, 2, 9, 0,
+        2, NoIndex, 0, 0, 8, 4, NoIndex, NoIndex, 14, 0,
+        4, NoIndex, 0, 0, 4, 2, NoIndex, NoIndex, 15, 0,
+        0, 11, 9, 1, 4, 0, NoIndex, 3, 16, 0,
+        0, 12, 10, 1, 4, 0, NoIndex, 4, 17, 0,
+        0, 13, 11, 1, 6, 0, NoIndex, 5, 19, 0,
+        5, NoIndex, 0, 0, 6, 1, NoIndex, NoIndex, 20, 0,
+        0, 14, 12, 1, 6, 0, NoIndex, 6, 20, 0,
+        5, NoIndex, 0, 0, 7, 1, NoIndex, NoIndex, 21, 0,
+        0, 15, 13, 1, 7, 0, NoIndex, 7, 21, 0,
+        2, NoIndex, 0, 0, 14, 2, NoIndex, NoIndex, 4, 0,
+        3, NoIndex, 0, 0, 12, 2, NoIndex, NoIndex, 5, 0,
+        0, 5, 16, 2, 12, 0, NoIndex, 0, 6, 0,
+        0, 6, 18, 2, 12, 0, NoIndex, 1, 7, 0,
+        0, 7, 20, 1, 14, 0, NoIndex, 2, 9, 0,
+        2, NoIndex, 0, 0, 20, 4, NoIndex, NoIndex, 14, 0,
+        4, NoIndex, 0, 0, 16, 2, NoIndex, NoIndex, 15, 0,
+        0, 11, 23, 1, 16, 0, NoIndex, 3, 16, 0,
+        0, 12, 24, 1, 16, 0, NoIndex, 4, 17, 0,
+        0, 13, 25, 1, 18, 0, NoIndex, 5, 19, 0,
+        5, NoIndex, 0, 0, 18, 1, NoIndex, NoIndex, 20, 0,
+        0, 14, 26, 1, 18, 0, NoIndex, 6, 20, 0,
+        5, NoIndex, 0, 0, 19, 1, NoIndex, NoIndex, 21, 0,
+        0, 15, 27, 1, 19, 0, NoIndex, 7, 21, 0,
+        2, NoIndex, 0, 0, 25, 3, NoIndex, NoIndex, 28, 0,
+        0, 20, 30, 2, 24, 0, NoIndex, 8, 29, 0,
+        5, NoIndex, 0, 0, 24, 1, NoIndex, NoIndex, 30, 0,
+        0, 23, 32, 1, 24, 0, NoIndex, 9, 30, 0,
+        1, 17, 33, 2, 25, 0, NoIndex, 3, 31, 0,
+        2, NoIndex, 0, 0, 29, 2, NoIndex, NoIndex, 40, 0,
+        0, 28, 38, 2, 28, 0, NoIndex, 10, 41, 0,
+        5, NoIndex, 0, 0, 28, 1, NoIndex, NoIndex, 42, 0,
+        0, 31, 40, 1, 28, 0, NoIndex, 11, 42, 0,
+        2, NoIndex, 0, 0, 35, 5, NoIndex, NoIndex, 61, 0,
+        3, NoIndex, 0, 0, 31, 2, NoIndex, NoIndex, 62, 0,
+        0, 11, 45, 1, 31, 0, NoIndex, 3, 63, 0,
+        0, 12, 46, 1, 31, 0, NoIndex, 4, 64, 0,
+        0, 13, 47, 1, 33, 0, NoIndex, 5, 66, 0,
+        5, NoIndex, 0, 0, 33, 1, NoIndex, NoIndex, 67, 0,
+        0, 14, 48, 1, 33, 0, NoIndex, 6, 67, 0,
+        5, NoIndex, 0, 0, 34, 1, NoIndex, NoIndex, 68, 0,
+        0, 15, 49, 1, 34, 0, NoIndex, 7, 68, 0,
+        6, 41, 50, 1, 35, 0, NoIndex, 0, 69, 0,
+        2, NoIndex, 0, 0, 41, 3, NoIndex, NoIndex, 78, 0,
+        0, 11, 53, 1, 40, 0, NoIndex, 3, 79, 0,
+        5, NoIndex, 0, 0, 40, 1, NoIndex, NoIndex, 80, 0,
+        0, 13, 54, 1, 40, 0, NoIndex, 5, 80, 0,
+        0, 49, 55, 1, 41, 0, NoIndex, 12, 81, 0,
+        2, NoIndex, 0, 0, 45, 8, NoIndex, NoIndex, 11, 0,
+        0, 57, 58, 1, 44, 0, NoIndex, 13, 12, 0,
+        0, 60, 59, 1, 44, 0, NoIndex, 14, 13, 0,
+        6, 41, 60, 1, 44, 0, NoIndex, 0, 14, 0,
+        7, 67, 62, 1, 44, 0, 61, 1, 15, 0,
+        7, 70, 64, 1, 44, 0, 63, 2, 16, 0,
+        0, 71, 65, 2, 44, 0, NoIndex, 15, 17, 0,
+        0, 72, 67, 2, 44, 0, NoIndex, 16, 18, 0,
+        5, NoIndex, 0, 0, 44, 1, NoIndex, NoIndex, 19, 0,
+        0, 73, 69, 1, 44, 0, NoIndex, 17, 19, 0,
+        2, NoIndex, 0, 0, 54, 7, NoIndex, NoIndex, 28, 0,
+        0, 57, 78, 1, 53, 0, NoIndex, 13, 29, 0,
+        6, 41, 79, 1, 53, 0, NoIndex, 0, 30, 0,
+        7, 67, 81, 1, 53, 0, 80, 1, 31, 0,
+        7, 70, 83, 1, 53, 0, 82, 2, 32, 0,
+        0, 71, 84, 2, 53, 0, NoIndex, 15, 33, 0,
+        0, 72, 86, 2, 53, 0, NoIndex, 16, 34, 0,
+        5, NoIndex, 0, 0, 53, 1, NoIndex, NoIndex, 35, 0,
+        0, 73, 88, 1, 53, 0, NoIndex, 17, 35, 0,
+        2, NoIndex, 0, 0, 61, 2, NoIndex, NoIndex, 55, 0,
+        6, 97, 101, 2, 61, 0, NoIndex, 3, 56, 0,
+        0, 58, 103, 2, 61, 0, NoIndex, 18, 57, 0,
+        2, NoIndex, 0, 0, 65, 4, NoIndex, NoIndex, 77, 0,
+        1, 16, 115, 2, 63, 0, NoIndex, 2, 78, 0,
+        0, 108, 117, 1, 63, 0, NoIndex, 19, 79, 0,
+        3, NoIndex, 0, 0, 63, 2, NoIndex, NoIndex, 80, 0,
+        0, 109, 118, 1, 63, 0, NoIndex, 20, 81, 0,
+        0, 110, 119, 1, 63, 0, NoIndex, 21, 82, 0,
+        6, 41, 120, 1, 65, 0, NoIndex, 0, 84, 0,
+        2, NoIndex, 0, 0, 69, 3, NoIndex, NoIndex, 93, 0,
+        1, 16, 124, 2, 69, 0, NoIndex, 2, 94, 0,
+        1, 17, 126, 2, 69, 0, NoIndex, 3, 95, 0,
+        6, 41, 128, 1, 69, 0, NoIndex, 0, 96, 0,
+        2, NoIndex, 0, 0, 75, 3, NoIndex, NoIndex, 105, 0,
+        0, 122, 132, 1, 72, 0, NoIndex, 22, 106, 0,
+        5, NoIndex, 0, 0, 72, 1, NoIndex, NoIndex, 107, 0,
+        0, 123, 133, 1, 72, 0, NoIndex, 23, 107, 0,
+        3, NoIndex, 0, 0, 73, 2, NoIndex, NoIndex, 108, 0,
+        0, 124, 134, 1, 73, 0, NoIndex, 24, 109, 0,
+        0, 125, 135, 1, 73, 0, NoIndex, 25, 110, 0,
+        2, NoIndex, 0, 0, 81, 3, NoIndex, NoIndex, 120, 0,
+        0, 130, 138, 1, 78, 0, NoIndex, 26, 121, 0,
+        4, NoIndex, 0, 0, 78, 2, NoIndex, NoIndex, 122, 0,
+        0, 131, 139, 1, 78, 0, NoIndex, 27, 123, 0,
+        0, 132, 140, 1, 78, 0, NoIndex, 28, 124, 0,
+        5, NoIndex, 0, 0, 80, 1, NoIndex, NoIndex, 126, 0,
+        0, 133, 141, 1, 80, 0, NoIndex, 29, 126, 0,
+        2, NoIndex, 0, 0, 85, 4, NoIndex, NoIndex, 146, 0,
+        7, 67, 148, 1, 84, 0, 147, 1, 147, 0,
+        0, 71, 149, 2, 84, 0, NoIndex, 15, 148, 0,
+        0, 124, 151, 1, 84, 0, NoIndex, 24, 149, 0,
+        5, NoIndex, 0, 0, 84, 1, NoIndex, NoIndex, 150, 0,
+        0, 123, 152, 1, 84, 0, NoIndex, 23, 150, 0,
+        2, NoIndex, 0, 0, 90, 2, NoIndex, NoIndex, 158, 0,
+        0, 147, 154, 2, 89, 0, NoIndex, 30, 159, 0,
+        5, NoIndex, 0, 0, 89, 1, NoIndex, NoIndex, 160, 0,
+        0, 150, 156, 1, 89, 0, NoIndex, 31, 160, 0,
+        2, NoIndex, 0, 0, 93, 4, NoIndex, NoIndex, 180, 0,
+        0, 160, 162, 2, 92, 0, NoIndex, 32, 181, 0,
+        5, NoIndex, 0, 0, 92, 1, NoIndex, NoIndex, 182, 0,
+        0, 161, 164, 1, 92, 0, NoIndex, 33, 182, 0,
+        0, 72, 165, 2, 93, 0, NoIndex, 16, 183, 0,
+        6, 41, 167, 1, 93, 0, NoIndex, 0, 184, 0,
+        2, NoIndex, 0, 0, 98, 2, NoIndex, NoIndex, 192, 0,
+        0, 167, 170, 2, 97, 0, NoIndex, 34, 193, 0,
+        5, NoIndex, 0, 0, 97, 1, NoIndex, NoIndex, 194, 0,
+        0, 31, 172, 1, 97, 0, NoIndex, 11, 194, 0,
+        2, NoIndex, 0, 0, 101, 3, NoIndex, NoIndex, 28, 0,
+        0, 20, 177, 2, 100, 0, NoIndex, 8, 29, 0,
+        5, NoIndex, 0, 0, 100, 1, NoIndex, NoIndex, 30, 0,
+        0, 23, 179, 1, 100, 0, NoIndex, 9, 30, 0,
+        1, 17, 180, 2, 101, 0, NoIndex, 3, 31, 0,
+        2, NoIndex, 0, 0, 105, 2, NoIndex, NoIndex, 40, 0,
+        0, 28, 185, 2, 104, 0, NoIndex, 10, 41, 0,
+        5, NoIndex, 0, 0, 104, 1, NoIndex, NoIndex, 42, 0,
+        0, 31, 187, 1, 104, 0, NoIndex, 11, 42, 0,
+        2, NoIndex, 0, 0, 111, 5, NoIndex, NoIndex, 61, 0,
+        3, NoIndex, 0, 0, 107, 2, NoIndex, NoIndex, 62, 0,
+        0, 11, 192, 1, 107, 0, NoIndex, 3, 63, 0,
+        0, 12, 193, 1, 107, 0, NoIndex, 4, 64, 0,
+        0, 13, 194, 1, 109, 0, NoIndex, 5, 66, 0,
+        5, NoIndex, 0, 0, 109, 1, NoIndex, NoIndex, 67, 0,
+        0, 14, 195, 1, 109, 0, NoIndex, 6, 67, 0,
+        5, NoIndex, 0, 0, 110, 1, NoIndex, NoIndex, 68, 0,
+        0, 15, 196, 1, 110, 0, NoIndex, 7, 68, 0,
+        6, 41, 197, 1, 111, 0, NoIndex, 0, 69, 0,
+        2, NoIndex, 0, 0, 117, 3, NoIndex, NoIndex, 78, 0,
+        0, 11, 200, 1, 116, 0, NoIndex, 3, 79, 0,
+        5, NoIndex, 0, 0, 116, 1, NoIndex, NoIndex, 80, 0,
+        0, 13, 201, 1, 116, 0, NoIndex, 5, 80, 0,
+        0, 49, 202, 1, 117, 0, NoIndex, 12, 81, 0,
+        2, NoIndex, 0, 0, 121, 8, NoIndex, NoIndex, 11, 0,
+        0, 57, 205, 1, 120, 0, NoIndex, 13, 12, 0,
+        0, 60, 206, 1, 120, 0, NoIndex, 14, 13, 0,
+        6, 41, 207, 1, 120, 0, NoIndex, 0, 14, 0,
+        7, 67, 209, 1, 120, 0, 208, 1, 15, 0,
+        7, 70, 211, 1, 120, 0, 210, 2, 16, 0,
+        0, 71, 212, 2, 120, 0, NoIndex, 15, 17, 0,
+        0, 72, 214, 2, 120, 0, NoIndex, 16, 18, 0,
+        5, NoIndex, 0, 0, 120, 1, NoIndex, NoIndex, 19, 0,
+        0, 73, 216, 1, 120, 0, NoIndex, 17, 19, 0,
+        2, NoIndex, 0, 0, 130, 7, NoIndex, NoIndex, 28, 0,
+        0, 57, 225, 1, 129, 0, NoIndex, 13, 29, 0,
+        6, 41, 226, 1, 129, 0, NoIndex, 0, 30, 0,
+        7, 67, 228, 1, 129, 0, 227, 1, 31, 0,
+        7, 70, 230, 1, 129, 0, 229, 2, 32, 0,
+        0, 71, 231, 2, 129, 0, NoIndex, 15, 33, 0,
+        0, 72, 233, 2, 129, 0, NoIndex, 16, 34, 0,
+        5, NoIndex, 0, 0, 129, 1, NoIndex, NoIndex, 35, 0,
+        0, 73, 235, 1, 129, 0, NoIndex, 17, 35, 0,
+        2, NoIndex, 0, 0, 137, 2, NoIndex, NoIndex, 55, 0,
+        6, 97, 248, 2, 137, 0, NoIndex, 3, 56, 0,
+        0, 58, 250, 2, 137, 0, NoIndex, 18, 57, 0,
+        2, NoIndex, 0, 0, 141, 4, NoIndex, NoIndex, 77, 0,
+        1, 16, 262, 2, 139, 0, NoIndex, 2, 78, 0,
+        0, 108, 264, 1, 139, 0, NoIndex, 19, 79, 0,
+        3, NoIndex, 0, 0, 139, 2, NoIndex, NoIndex, 80, 0,
+        0, 109, 265, 1, 139, 0, NoIndex, 20, 81, 0,
+        0, 110, 266, 1, 139, 0, NoIndex, 21, 82, 0,
+        6, 41, 267, 1, 141, 0, NoIndex, 0, 84, 0,
+        2, NoIndex, 0, 0, 145, 3, NoIndex, NoIndex, 93, 0,
+        1, 16, 271, 2, 145, 0, NoIndex, 2, 94, 0,
+        1, 17, 273, 2, 145, 0, NoIndex, 3, 95, 0,
+        6, 41, 275, 1, 145, 0, NoIndex, 0, 96, 0,
+        2, NoIndex, 0, 0, 151, 3, NoIndex, NoIndex, 105, 0,
+        0, 122, 279, 1, 148, 0, NoIndex, 22, 106, 0,
+        5, NoIndex, 0, 0, 148, 1, NoIndex, NoIndex, 107, 0,
+        0, 123, 280, 1, 148, 0, NoIndex, 23, 107, 0,
+        3, NoIndex, 0, 0, 149, 2, NoIndex, NoIndex, 108, 0,
+        0, 124, 281, 1, 149, 0, NoIndex, 24, 109, 0,
+        0, 125, 282, 1, 149, 0, NoIndex, 25, 110, 0,
+        2, NoIndex, 0, 0, 157, 3, NoIndex, NoIndex, 120, 0,
+        0, 130, 285, 1, 154, 0, NoIndex, 26, 121, 0,
+        4, NoIndex, 0, 0, 154, 2, NoIndex, NoIndex, 122, 0,
+        0, 131, 286, 1, 154, 0, NoIndex, 27, 123, 0,
+        0, 132, 287, 1, 154, 0, NoIndex, 28, 124, 0,
+        5, NoIndex, 0, 0, 156, 1, NoIndex, NoIndex, 126, 0,
+        0, 133, 288, 1, 156, 0, NoIndex, 29, 126, 0,
+        2, NoIndex, 0, 0, 161, 4, NoIndex, NoIndex, 146, 0,
+        7, 67, 295, 1, 160, 0, 294, 1, 147, 0,
+        0, 71, 296, 2, 160, 0, NoIndex, 15, 148, 0,
+        0, 124, 298, 1, 160, 0, NoIndex, 24, 149, 0,
+        5, NoIndex, 0, 0, 160, 1, NoIndex, NoIndex, 150, 0,
+        0, 123, 299, 1, 160, 0, NoIndex, 23, 150, 0,
+        2, NoIndex, 0, 0, 166, 2, NoIndex, NoIndex, 158, 0,
+        0, 147, 301, 2, 165, 0, NoIndex, 30, 159, 0,
+        5, NoIndex, 0, 0, 165, 1, NoIndex, NoIndex, 160, 0,
+        0, 150, 303, 1, 165, 0, NoIndex, 31, 160, 0,
+        2, NoIndex, 0, 0, 169, 4, NoIndex, NoIndex, 180, 0,
+        0, 160, 309, 2, 168, 0, NoIndex, 32, 181, 0,
+        5, NoIndex, 0, 0, 168, 1, NoIndex, NoIndex, 182, 0,
+        0, 161, 311, 1, 168, 0, NoIndex, 33, 182, 0,
+        0, 72, 312, 2, 169, 0, NoIndex, 16, 183, 0,
+        6, 41, 314, 1, 169, 0, NoIndex, 0, 184, 0,
+        2, NoIndex, 0, 0, 174, 2, NoIndex, NoIndex, 192, 0,
+        0, 167, 317, 2, 173, 0, NoIndex, 34, 193, 0,
+        5, NoIndex, 0, 0, 173, 1, NoIndex, NoIndex, 194, 0,
+        0, 31, 319, 1, 173, 0, NoIndex, 11, 194, 0],
+      conditionExpressions: @[
+        "(and ...)",
+        "(or ...)",
+        "(enemy_visible ?inp_entity ?out_enemy)",
+        "(enemy_recently_seen ?inp_entity ?out_enemy)",
+        "(enemy_hostile ?out_enemy)",
+        "(and ...)",
+        "(alt ...)",
+        "(has_weapon ?inp_entity)",
+        "(has_backup_weapon ?inp_entity)",
+        "(ammo_available ?inp_entity)",
+        "(not ...)",
+        "(weapon_jammed ?inp_entity)",
+        "(not ...)",
+        "(enemy_invulnerable ?inp_enemy)",
+        "(and ...)",
+        "(or ...)",
+        "(enemy_visible ?inp_entity ?out_enemy)",
+        "(enemy_recently_seen ?inp_entity ?out_enemy)",
+        "(enemy_hostile ?out_enemy)",
+        "(and ...)",
+        "(alt ...)",
+        "(has_weapon ?inp_entity)",
+        "(has_backup_weapon ?inp_entity)",
+        "(ammo_available ?inp_entity)",
+        "(not ...)",
+        "(weapon_jammed ?inp_entity)",
+        "(not ...)",
+        "(enemy_invulnerable ?inp_enemy)",
+        "(and ...)",
+        "(cover_available ?inp_entity ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(#can_engage ?inp_entity ?inp_enemy)",
+        "(and ...)",
+        "(retreat_route ?inp_entity ?route)",
+        "(not ...)",
+        "(route_blocked ?route)",
+        "(and ...)",
+        "(or ...)",
+        "(has_weapon ?inp_entity)",
+        "(has_backup_weapon ?inp_entity)",
+        "(ammo_available ?inp_entity)",
+        "(not ...)",
+        "(weapon_jammed ?inp_entity)",
+        "(not ...)",
+        "(enemy_invulnerable ?inp_enemy)",
+        "(call binded_function_with_args \"attacking enemy\")",
+        "(and ...)",
+        "(has_weapon ?inp_entity)",
+        "(not ...)",
+        "(ammo_available ?inp_entity)",
+        "(ammo_reserve ?inp_entity)",
+        "(and ...)",
+        "(controlled_entity ?entity)",
+        "(entity_count ?num_entities)",
+        "(call binded_function_with_args \"starting recursive complex HTN scenario\")",
+        "(= ?health (call get_health ?entity))",
+        "(= ?max_speed (call get_max_speed ?entity))",
+        "(health_value ?entity ?health)",
+        "(speed_value ?entity ?max_speed)",
+        "(not ...)",
+        "(entity_disabled ?entity)",
+        "(and ...)",
+        "(controlled_entity ?entity)",
+        "(call binded_function_with_args \"starting complex HTN scenario\")",
+        "(= ?health (call get_health ?entity))",
+        "(= ?max_speed (call get_max_speed ?entity))",
+        "(health_value ?entity ?health)",
+        "(speed_value ?entity ?max_speed)",
+        "(not ...)",
+        "(entity_disabled ?entity)",
+        "(and ...)",
+        "(call lt ?inp_entity_index ?inp_num_entities)",
+        "(entity ?inp_entity_index ?entity_id)",
+        "(and ...)",
+        "(#is_threat ?inp_entity ?enemy)",
+        "(critical_threat ?enemy)",
+        "(or ...)",
+        "(enemy_close ?enemy)",
+        "(low_cover ?inp_entity)",
+        "(call binded_function_with_args \"emergency branch selected\")",
+        "(and ...)",
+        "(#is_threat ?inp_entity ?enemy)",
+        "(#can_engage ?inp_entity ?enemy)",
+        "(call binded_function_with_args \"combat branch selected\")",
+        "(and ...)",
+        "(needs_healing ?inp_entity)",
+        "(not ...)",
+        "(under_fire ?inp_entity)",
+        "(or ...)",
+        "(medkit ?inp_entity)",
+        "(healing_station_nearby ?inp_entity)",
+        "(and ...)",
+        "(objective_far ?inp_entity)",
+        "(alt ...)",
+        "(path_open ?inp_entity)",
+        "(alternate_path_open ?inp_entity)",
+        "(not ...)",
+        "(movement_blocked ?inp_entity)",
+        "(and ...)",
+        "(= ?current_health (call get_health ?inp_entity))",
+        "(health_value ?inp_entity ?current_health)",
+        "(medkit ?inp_entity)",
+        "(not ...)",
+        "(under_fire ?inp_entity)",
+        "(and ...)",
+        "(healing_station ?inp_entity ?station)",
+        "(not ...)",
+        "(station_offline ?station)",
+        "(and ...)",
+        "(route_clear ?inp_entity ?route)",
+        "(not ...)",
+        "(route_dangerous ?route)",
+        "(speed_value ?inp_entity ?inp_max_speed)",
+        "(call binded_function_with_args \"sprinting to objective\")",
+        "(and ...)",
+        "(alternate_route ?inp_entity ?route)",
+        "(not ...)",
+        "(route_blocked ?route)",
+        "(and ...)",
+        "(cover_available ?inp_entity ?cover)",
+        "(not ...)",
+        "(cover_compromised ?cover)",
+        "(#can_engage ?inp_entity ?inp_enemy)",
+        "(and ...)",
+        "(retreat_route ?inp_entity ?route)",
+        "(not ...)",
+        "(route_blocked ?route)",
+        "(and ...)",
+        "(or ...)",
+        "(has_weapon ?inp_entity)",
+        "(has_backup_weapon ?inp_entity)",
+        "(ammo_available ?inp_entity)",
+        "(not ...)",
+        "(weapon_jammed ?inp_entity)",
+        "(not ...)",
+        "(enemy_invulnerable ?inp_enemy)",
+        "(call binded_function_with_args \"attacking enemy\")",
+        "(and ...)",
+        "(has_weapon ?inp_entity)",
+        "(not ...)",
+        "(ammo_available ?inp_entity)",
+        "(ammo_reserve ?inp_entity)",
+        "(and ...)",
+        "(controlled_entity ?entity)",
+        "(entity_count ?num_entities)",
+        "(call binded_function_with_args \"starting recursive complex HTN scenario\")",
+        "(= ?health (call get_health ?entity))",
+        "(= ?max_speed (call get_max_speed ?entity))",
+        "(health_value ?entity ?health)",
+        "(speed_value ?entity ?max_speed)",
+        "(not ...)",
+        "(entity_disabled ?entity)",
+        "(and ...)",
+        "(controlled_entity ?entity)",
+        "(call binded_function_with_args \"starting complex HTN scenario\")",
+        "(= ?health (call get_health ?entity))",
+        "(= ?max_speed (call get_max_speed ?entity))",
+        "(health_value ?entity ?health)",
+        "(speed_value ?entity ?max_speed)",
+        "(not ...)",
+        "(entity_disabled ?entity)",
+        "(and ...)",
+        "(call lt ?inp_entity_index ?inp_num_entities)",
+        "(entity ?inp_entity_index ?entity_id)",
+        "(and ...)",
+        "(#is_threat ?inp_entity ?enemy)",
+        "(critical_threat ?enemy)",
+        "(or ...)",
+        "(enemy_close ?enemy)",
+        "(low_cover ?inp_entity)",
+        "(call binded_function_with_args \"emergency branch selected\")",
+        "(and ...)",
+        "(#is_threat ?inp_entity ?enemy)",
+        "(#can_engage ?inp_entity ?enemy)",
+        "(call binded_function_with_args \"combat branch selected\")",
+        "(and ...)",
+        "(needs_healing ?inp_entity)",
+        "(not ...)",
+        "(under_fire ?inp_entity)",
+        "(or ...)",
+        "(medkit ?inp_entity)",
+        "(healing_station_nearby ?inp_entity)",
+        "(and ...)",
+        "(objective_far ?inp_entity)",
+        "(alt ...)",
+        "(path_open ?inp_entity)",
+        "(alternate_path_open ?inp_entity)",
+        "(not ...)",
+        "(movement_blocked ?inp_entity)",
+        "(and ...)",
+        "(= ?current_health (call get_health ?inp_entity))",
+        "(health_value ?inp_entity ?current_health)",
+        "(medkit ?inp_entity)",
+        "(not ...)",
+        "(under_fire ?inp_entity)",
+        "(and ...)",
+        "(healing_station ?inp_entity ?station)",
+        "(not ...)",
+        "(station_offline ?station)",
+        "(and ...)",
+        "(route_clear ?inp_entity ?route)",
+        "(not ...)",
+        "(route_dangerous ?route)",
+        "(speed_value ?inp_entity ?inp_max_speed)",
+        "(call binded_function_with_args \"sprinting to objective\")",
+        "(and ...)",
+        "(alternate_route ?inp_entity ?route)",
+        "(not ...)",
+        "(route_blocked ?route)"],
+      conditionChildRefs: @[
+        2'u32,
+        3,
+        1,
+        4,
+        7,
+        8,
+        11,
+        13,
+        6,
+        9,
+        10,
+        12,
+        16,
+        17,
+        15,
+        18,
+        21,
+        22,
+        25,
+        27,
+        20,
+        23,
+        24,
+        26,
+        31,
+        29,
+        30,
+        32,
+        36,
+        34,
+        35,
+        39,
+        40,
+        43,
+        45,
+        38,
+        41,
+        42,
+        44,
+        46,
+        50,
+        48,
+        49,
+        51,
+        61,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        70,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        72,
+        73,
+        78,
+        79,
+        75,
+        76,
+        77,
+        80,
+        82,
+        83,
+        84,
+        88,
+        90,
+        91,
+        86,
+        87,
+        89,
+        95,
+        96,
+        98,
+        93,
+        94,
+        97,
+        104,
+        100,
+        101,
+        102,
+        103,
+        108,
+        106,
+        107,
+        112,
+        110,
+        111,
+        113,
+        114,
+        118,
+        116,
+        117,
+        122,
+        120,
+        121,
+        123,
+        127,
+        125,
+        126,
+        130,
+        131,
+        134,
+        136,
+        129,
+        132,
+        133,
+        135,
+        137,
+        141,
+        139,
+        140,
+        142,
+        152,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        161,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        163,
+        164,
+        169,
+        170,
+        166,
+        167,
+        168,
+        171,
+        173,
+        174,
+        175,
+        179,
+        181,
+        182,
+        177,
+        178,
+        180,
+        186,
+        187,
+        189,
+        184,
+        185,
+        188,
+        195,
+        191,
+        192,
+        193,
+        194,
+        199,
+        197,
+        198,
+        203,
+        201,
+        202,
+        204,
+        205,
+        209,
+        207,
+        208],
+      tasks: @[
+        1'u32, 24, 35, 1, 34, 25,
+        0, 26, 36, 2, 35, NoIndex,
+        1, 32, 41, 1, 45, 33,
+        1, 35, 42, 1, 53, 36,
+        1, 44, 51, 1, 72, 45,
+        1, 46, 52, 1, 73, 47,
+        1, 50, 56, 1, 84, 51,
+        1, 53, 57, 1, 92, 54,
+        1, 35, 70, 4, 22, 36,
+        0, 76, 74, 4, 23, NoIndex,
+        1, 35, 89, 4, 38, 36,
+        0, 83, 93, 3, 39, NoIndex,
+        1, 35, 96, 1, 47, 36,
+        0, 83, 105, 3, 60, NoIndex,
+        0, 76, 108, 4, 61, NoIndex,
+        1, 35, 121, 1, 87, 36,
+        0, 115, 122, 2, 88, NoIndex,
+        1, 35, 129, 1, 99, 36,
+        0, 26, 130, 2, 100, NoIndex,
+        1, 35, 136, 1, 114, 36,
+        0, 128, 137, 1, 115, NoIndex,
+        1, 35, 142, 1, 129, 36,
+        0, 136, 143, 2, 130, NoIndex,
+        1, 35, 145, 1, 138, 36,
+        1, 144, 153, 1, 153, 145,
+        1, 151, 157, 1, 163, 152,
+        1, 153, 158, 1, 164, 154,
+        1, 35, 159, 1, 172, 36,
+        1, 164, 168, 2, 187, 165,
+        1, 168, 173, 1, 197, 169,
+        1, 35, 174, 1, 205, 36,
+        1, 24, 182, 1, 34, 25,
+        0, 26, 183, 2, 35, NoIndex,
+        1, 32, 188, 1, 45, 33,
+        1, 35, 189, 1, 53, 36,
+        1, 44, 198, 1, 72, 45,
+        1, 46, 199, 1, 73, 47,
+        1, 50, 203, 1, 84, 51,
+        1, 53, 204, 1, 92, 54,
+        1, 35, 217, 4, 22, 36,
+        0, 76, 221, 4, 23, NoIndex,
+        1, 35, 236, 4, 38, 36,
+        0, 83, 240, 3, 39, NoIndex,
+        1, 35, 243, 1, 47, 36,
+        0, 83, 252, 3, 60, NoIndex,
+        0, 76, 255, 4, 61, NoIndex,
+        1, 35, 268, 1, 87, 36,
+        0, 115, 269, 2, 88, NoIndex,
+        1, 35, 276, 1, 99, 36,
+        0, 26, 277, 2, 100, NoIndex,
+        1, 35, 283, 1, 114, 36,
+        0, 128, 284, 1, 115, NoIndex,
+        1, 35, 289, 1, 129, 36,
+        0, 136, 290, 2, 130, NoIndex,
+        1, 35, 292, 1, 138, 36,
+        1, 144, 300, 1, 153, 145,
+        1, 151, 304, 1, 163, 152,
+        1, 153, 305, 1, 164, 154,
+        1, 35, 306, 1, 172, 36,
+        1, 164, 315, 2, 187, 165,
+        1, 168, 320, 1, 197, 169,
+        1, 35, 321, 1, 205, 36],
+      branches: @[
+        19'u32, 28, 0, 2, 27,
+        27, 33, 2, 1, 39,
+        34, NoIndex, 3, 1, 49,
+        40, 37, 4, 2, 60,
+        48, 47, 6, 1, 77,
+        52, NoIndex, 7, 1, 88,
+        56, 52, 8, 2, 10,
+        78, 62, 10, 2, 27,
+        84, NoIndex, 12, 1, 43,
+        96, 71, 13, 2, 54,
+        103, NoIndex, 15, 0, 65,
+        105, 74, 15, 2, 76,
+        116, 81, 17, 2, 92,
+        121, 85, 19, 2, 104,
+        129, 92, 21, 2, 119,
+        137, NoIndex, 23, 1, 134,
+        141, 99, 24, 1, 145,
+        146, 105, 25, 2, 157,
+        155, NoIndex, 27, 1, 168,
+        159, 109, 28, 1, 179,
+        166, 115, 29, 1, 191,
+        170, NoIndex, 30, 1, 201,
+        19, 119, 31, 2, 27,
+        27, 124, 33, 1, 39,
+        34, NoIndex, 34, 1, 49,
+        40, 128, 35, 2, 60,
+        48, 138, 37, 1, 77,
+        52, NoIndex, 38, 1, 88,
+        56, 143, 39, 2, 10,
+        78, 153, 41, 2, 27,
+        84, NoIndex, 43, 1, 43,
+        96, 162, 44, 2, 54,
+        103, NoIndex, 46, 0, 65,
+        105, 165, 46, 2, 76,
+        116, 172, 48, 2, 92,
+        121, 176, 50, 2, 104,
+        129, 183, 52, 2, 119,
+        137, NoIndex, 54, 1, 134,
+        141, 190, 55, 1, 145,
+        146, 196, 56, 2, 157,
+        155, NoIndex, 58, 1, 168,
+        159, 200, 59, 1, 179,
+        166, 206, 60, 1, 191,
+        170, NoIndex, 61, 1, 201],
+      methods: @[
+        18'u64, 28, 2, 0, 3, 25, 0x000000000000001d'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        39, 43, 2, 3, 3, 58, 0x0000000000000005'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        55, 58, 0, 6, 3, 5, 0x00000000000001e0'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        87, 97, 4, 9, 2, 52, 0x0000000000007e00'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        104, 112, 3, 11, 5, 74, 0x0000000000009801'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        140, 146, 1, 16, 3, 143, 0x0000000000030001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        158, 160, 2, 19, 3, 177, 0x0000000000001011'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        115, 175, 2, 22, 3, 25, 0x000000000000001d'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        26, 190, 2, 25, 3, 58, 0x0000000000000005'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        173, 205, 0, 28, 3, 5, 0x00000000000001e0'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        76, 244, 4, 31, 2, 52, 0x0000000000043e00'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        83, 259, 3, 33, 5, 74, 0x0000000000009801'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        128, 293, 1, 38, 3, 143, 0x0000000000030001'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        136, 307, 2, 41, 3, 177, 0x0000000000001011'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      axioms: @[
+        0'u64, 0, 2, 0, 3, 0x0000000000000003'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        8, 7, 2, 5, 13, 0x0000000000000005'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        16, 14, 2, 14, 3, 0x0000000000000003'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64,
+        17, 21, 2, 19, 13, 0x0000000000000005'u64, 0x0000000000000000'u64, 0x0000000000000000'u64, 0x0000000000000000'u64],
+      constants: newSeq[uint32](),
+      callTermSlotCount: 5, factSlotCount: 35,
+      sourceFiles: @[
+        "Domains/Test/../Includes/combat_reactions.domain",
+        "Domains/Test/complex_scenario.domain"],
+      valueSources: @[
+        0'u32, 3, 24, 3, 35,
+        0, 3, 36, 3, 46,
+        0, 6, 32, 6, 43,
+        0, 6, 44, 6, 54,
+        0, 7, 38, 7, 49,
+        0, 7, 50, 7, 60,
+        0, 9, 28, 9, 38,
+        0, 13, 25, 13, 36,
+        0, 13, 37, 13, 47,
+        0, 16, 29, 16, 40,
+        0, 17, 36, 17, 47,
+        0, 19, 29, 19, 40,
+        0, 20, 33, 20, 44,
+        0, 21, 38, 21, 48,
+        0, 3, 24, 3, 35,
+        0, 3, 36, 3, 46,
+        0, 6, 32, 6, 43,
+        0, 6, 44, 6, 54,
+        0, 7, 38, 7, 49,
+        0, 7, 50, 7, 60,
+        0, 9, 28, 9, 38,
+        0, 13, 25, 13, 36,
+        0, 13, 37, 13, 47,
+        0, 16, 29, 16, 40,
+        0, 17, 36, 17, 47,
+        0, 19, 29, 19, 40,
+        0, 20, 33, 20, 44,
+        0, 21, 38, 21, 48,
+        0, 25, 34, 25, 45,
+        0, 25, 46, 25, 56,
+        0, 29, 34, 29, 45,
+        0, 29, 46, 29, 52,
+        0, 30, 41, 30, 47,
+        0, 31, 30, 31, 41,
+        0, 31, 42, 31, 52,
+        0, 34, 33, 34, 39,
+        0, 35, 34, 35, 45,
+        0, 35, 46, 35, 56,
+        0, 41, 32, 41, 43,
+        0, 41, 44, 41, 50,
+        0, 42, 37, 42, 43,
+        0, 45, 27, 45, 33,
+        0, 53, 23, 53, 43,
+        0, 58, 31, 58, 42,
+        0, 58, 43, 58, 53,
+        0, 63, 33, 63, 44,
+        0, 64, 40, 64, 51,
+        0, 66, 33, 66, 44,
+        0, 67, 37, 67, 48,
+        0, 68, 42, 68, 52,
+        0, 69, 49, 69, 66,
+        0, 72, 23, 72, 33,
+        0, 73, 24, 73, 34,
+        0, 79, 29, 79, 40,
+        0, 80, 38, 80, 49,
+        0, 81, 31, 81, 42,
+        0, 84, 26, 84, 37,
+        0, 92, 29, 92, 39,
+        1, 12, 36, 12, 43,
+        1, 13, 31, 13, 44,
+        1, 14, 49, 14, 90,
+        1, 15, 20, 15, 27,
+        1, 15, 45, 15, 52,
+        1, 16, 20, 16, 30,
+        1, 16, 51, 16, 58,
+        1, 17, 31, 17, 38,
+        1, 17, 39, 17, 46,
+        1, 18, 30, 18, 37,
+        1, 18, 38, 18, 48,
+        1, 19, 39, 19, 46,
+        1, 22, 23, 22, 51,
+        1, 22, 52, 22, 59,
+        1, 22, 60, 22, 67,
+        1, 22, 68, 22, 78,
+        1, 23, 40, 23, 41,
+        1, 23, 42, 23, 55,
+        1, 23, 56, 23, 63,
+        1, 23, 64, 23, 74,
+        1, 29, 36, 29, 43,
+        1, 30, 49, 30, 80,
+        1, 31, 20, 31, 27,
+        1, 31, 45, 31, 52,
+        1, 32, 20, 32, 30,
+        1, 32, 51, 32, 58,
+        1, 33, 31, 33, 38,
+        1, 33, 39, 33, 46,
+        1, 34, 30, 34, 37,
+        1, 34, 38, 34, 48,
+        1, 35, 39, 35, 46,
+        1, 38, 23, 38, 41,
+        1, 38, 42, 38, 49,
+        1, 38, 50, 38, 57,
+        1, 38, 58, 38, 68,
+        1, 39, 37, 39, 44,
+        1, 39, 45, 39, 52,
+        1, 39, 53, 39, 63,
+        1, 47, 23, 47, 41,
+        1, 52, 37, 52, 54,
+        1, 52, 55, 52, 72,
+        1, 52, 73, 52, 84,
+        1, 52, 85, 52, 99,
+        1, 56, 26, 56, 43,
+        1, 56, 44, 56, 61,
+        1, 57, 25, 57, 42,
+        1, 57, 43, 57, 53,
+        1, 60, 37, 60, 47,
+        1, 60, 48, 60, 59,
+        1, 60, 60, 60, 74,
+        1, 61, 40, 61, 67,
+        1, 61, 69, 61, 86,
+        1, 61, 87, 61, 98,
+        1, 61, 99, 61, 113,
+        1, 74, 34, 74, 45,
+        1, 74, 46, 74, 57,
+        1, 74, 58, 74, 72,
+        1, 78, 29, 78, 40,
+        1, 78, 41, 78, 47,
+        1, 79, 34, 79, 40,
+        1, 81, 34, 81, 40,
+        1, 82, 32, 82, 43,
+        1, 84, 49, 84, 76,
+        1, 87, 23, 87, 43,
+        1, 88, 37, 88, 48,
+        1, 88, 49, 88, 55,
+        1, 94, 29, 94, 40,
+        1, 94, 41, 94, 47,
+        1, 95, 30, 95, 41,
+        1, 95, 42, 95, 48,
+        1, 96, 49, 96, 73,
+        1, 99, 23, 99, 40,
+        1, 100, 34, 100, 45,
+        1, 100, 46, 100, 52,
+        1, 106, 32, 106, 43,
+        1, 107, 34, 107, 45,
+        1, 109, 29, 109, 40,
+        1, 110, 45, 110, 56,
+        1, 114, 23, 114, 42,
+        1, 115, 36, 115, 47,
+        1, 121, 32, 121, 43,
+        1, 123, 32, 123, 43,
+        1, 124, 42, 124, 53,
+        1, 126, 40, 126, 51,
+        1, 129, 23, 129, 42,
+        1, 130, 36, 130, 47,
+        1, 130, 48, 130, 62,
+        1, 138, 23, 138, 49,
+        1, 143, 33, 143, 44,
+        1, 147, 20, 147, 35,
+        1, 147, 53, 147, 64,
+        1, 148, 31, 148, 42,
+        1, 148, 43, 148, 58,
+        1, 149, 25, 149, 36,
+        1, 150, 34, 150, 45,
+        1, 153, 30, 153, 41,
+        1, 159, 34, 159, 45,
+        1, 159, 46, 159, 54,
+        1, 160, 39, 160, 47,
+        1, 163, 43, 163, 51,
+        1, 164, 35, 164, 43,
+        1, 172, 23, 172, 49,
+        1, 177, 33, 177, 44,
+        1, 177, 45, 177, 59,
+        1, 181, 30, 181, 41,
+        1, 181, 42, 181, 48,
+        1, 182, 39, 182, 45,
+        1, 183, 30, 183, 41,
+        1, 183, 42, 183, 56,
+        1, 184, 49, 184, 73,
+        1, 187, 29, 187, 35,
+        1, 187, 36, 187, 50,
+        1, 193, 34, 193, 45,
+        1, 193, 46, 193, 52,
+        1, 194, 37, 194, 43,
+        1, 197, 27, 197, 33,
+        1, 205, 23, 205, 47,
+        0, 25, 34, 25, 45,
+        0, 25, 46, 25, 56,
+        0, 29, 34, 29, 45,
+        0, 29, 46, 29, 52,
+        0, 30, 41, 30, 47,
+        0, 31, 30, 31, 41,
+        0, 31, 42, 31, 52,
+        0, 34, 33, 34, 39,
+        0, 35, 34, 35, 45,
+        0, 35, 46, 35, 56,
+        0, 41, 32, 41, 43,
+        0, 41, 44, 41, 50,
+        0, 42, 37, 42, 43,
+        0, 45, 27, 45, 33,
+        0, 53, 23, 53, 43,
+        0, 58, 31, 58, 42,
+        0, 58, 43, 58, 53,
+        0, 63, 33, 63, 44,
+        0, 64, 40, 64, 51,
+        0, 66, 33, 66, 44,
+        0, 67, 37, 67, 48,
+        0, 68, 42, 68, 52,
+        0, 69, 49, 69, 66,
+        0, 72, 23, 72, 33,
+        0, 73, 24, 73, 34,
+        0, 79, 29, 79, 40,
+        0, 80, 38, 80, 49,
+        0, 81, 31, 81, 42,
+        0, 84, 26, 84, 37,
+        0, 92, 29, 92, 39,
+        1, 12, 36, 12, 43,
+        1, 13, 31, 13, 44,
+        1, 14, 49, 14, 90,
+        1, 15, 20, 15, 27,
+        1, 15, 45, 15, 52,
+        1, 16, 20, 16, 30,
+        1, 16, 51, 16, 58,
+        1, 17, 31, 17, 38,
+        1, 17, 39, 17, 46,
+        1, 18, 30, 18, 37,
+        1, 18, 38, 18, 48,
+        1, 19, 39, 19, 46,
+        1, 22, 23, 22, 51,
+        1, 22, 52, 22, 59,
+        1, 22, 60, 22, 67,
+        1, 22, 68, 22, 78,
+        1, 23, 40, 23, 41,
+        1, 23, 42, 23, 55,
+        1, 23, 56, 23, 63,
+        1, 23, 64, 23, 74,
+        1, 29, 36, 29, 43,
+        1, 30, 49, 30, 80,
+        1, 31, 20, 31, 27,
+        1, 31, 45, 31, 52,
+        1, 32, 20, 32, 30,
+        1, 32, 51, 32, 58,
+        1, 33, 31, 33, 38,
+        1, 33, 39, 33, 46,
+        1, 34, 30, 34, 37,
+        1, 34, 38, 34, 48,
+        1, 35, 39, 35, 46,
+        1, 38, 23, 38, 41,
+        1, 38, 42, 38, 49,
+        1, 38, 50, 38, 57,
+        1, 38, 58, 38, 68,
+        1, 39, 37, 39, 44,
+        1, 39, 45, 39, 52,
+        1, 39, 53, 39, 63,
+        1, 47, 23, 47, 41,
+        1, 52, 37, 52, 54,
+        1, 52, 55, 52, 72,
+        1, 52, 73, 52, 84,
+        1, 52, 85, 52, 99,
+        1, 56, 26, 56, 43,
+        1, 56, 44, 56, 61,
+        1, 57, 25, 57, 42,
+        1, 57, 43, 57, 53,
+        1, 60, 37, 60, 47,
+        1, 60, 48, 60, 59,
+        1, 60, 60, 60, 74,
+        1, 61, 40, 61, 67,
+        1, 61, 69, 61, 86,
+        1, 61, 87, 61, 98,
+        1, 61, 99, 61, 113,
+        1, 74, 34, 74, 45,
+        1, 74, 46, 74, 57,
+        1, 74, 58, 74, 72,
+        1, 78, 29, 78, 40,
+        1, 78, 41, 78, 47,
+        1, 79, 34, 79, 40,
+        1, 81, 34, 81, 40,
+        1, 82, 32, 82, 43,
+        1, 84, 49, 84, 76,
+        1, 87, 23, 87, 43,
+        1, 88, 37, 88, 48,
+        1, 88, 49, 88, 55,
+        1, 94, 29, 94, 40,
+        1, 94, 41, 94, 47,
+        1, 95, 30, 95, 41,
+        1, 95, 42, 95, 48,
+        1, 96, 49, 96, 73,
+        1, 99, 23, 99, 40,
+        1, 100, 34, 100, 45,
+        1, 100, 46, 100, 52,
+        1, 106, 32, 106, 43,
+        1, 107, 34, 107, 45,
+        1, 109, 29, 109, 40,
+        1, 110, 45, 110, 56,
+        1, 114, 23, 114, 42,
+        1, 115, 36, 115, 47,
+        1, 121, 32, 121, 43,
+        1, 123, 32, 123, 43,
+        1, 124, 42, 124, 53,
+        1, 126, 40, 126, 51,
+        1, 129, 23, 129, 42,
+        1, 130, 36, 130, 47,
+        1, 130, 48, 130, 62,
+        1, 138, 23, 138, 49,
+        1, 143, 33, 143, 44,
+        1, 147, 20, 147, 35,
+        1, 147, 53, 147, 64,
+        1, 148, 31, 148, 42,
+        1, 148, 43, 148, 58,
+        1, 149, 25, 149, 36,
+        1, 150, 34, 150, 45,
+        1, 153, 30, 153, 41,
+        1, 159, 34, 159, 45,
+        1, 159, 46, 159, 54,
+        1, 160, 39, 160, 47,
+        1, 163, 43, 163, 51,
+        1, 164, 35, 164, 43,
+        1, 172, 23, 172, 49,
+        1, 177, 33, 177, 44,
+        1, 177, 45, 177, 59,
+        1, 181, 30, 181, 41,
+        1, 181, 42, 181, 48,
+        1, 182, 39, 182, 45,
+        1, 183, 30, 183, 41,
+        1, 183, 42, 183, 56,
+        1, 184, 49, 184, 73,
+        1, 187, 29, 187, 35,
+        1, 187, 36, 187, 50,
+        1, 193, 34, 193, 45,
+        1, 193, 46, 193, 52,
+        1, 194, 37, 194, 43,
+        1, 197, 27, 197, 33,
+        1, 205, 23, 205, 47],
+      conditionSources: @[
+        0'u32, 4, 10, 9, 38,
+        0, 5, 14, 7, 60,
+        0, 6, 17, 6, 54,
+        0, 7, 17, 7, 60,
+        0, 9, 13, 9, 38,
+        0, 14, 10, 21, 49,
+        0, 15, 14, 17, 47,
+        0, 16, 17, 16, 40,
+        0, 17, 17, 17, 47,
+        0, 19, 13, 19, 40,
+        0, 20, 13, 20, 44,
+        0, 20, 18, 20, 44,
+        0, 21, 13, 21, 48,
+        0, 21, 18, 21, 48,
+        0, 4, 10, 9, 38,
+        0, 5, 14, 7, 60,
+        0, 6, 17, 6, 54,
+        0, 7, 17, 7, 60,
+        0, 9, 13, 9, 38,
+        0, 14, 10, 21, 49,
+        0, 15, 14, 17, 47,
+        0, 16, 17, 16, 40,
+        0, 17, 17, 17, 47,
+        0, 19, 13, 19, 40,
+        0, 20, 13, 20, 44,
+        0, 20, 18, 20, 44,
+        0, 21, 13, 21, 48,
+        0, 21, 18, 21, 48,
+        0, 28, 14, 31, 52,
+        0, 29, 17, 29, 52,
+        0, 30, 17, 30, 47,
+        0, 30, 22, 30, 47,
+        0, 31, 17, 31, 52,
+        0, 40, 14, 42, 44,
+        0, 41, 17, 41, 50,
+        0, 42, 17, 42, 43,
+        0, 42, 22, 42, 43,
+        0, 61, 14, 69, 66,
+        0, 62, 18, 64, 51,
+        0, 63, 21, 63, 44,
+        0, 64, 21, 64, 51,
+        0, 66, 17, 66, 44,
+        0, 67, 17, 67, 48,
+        0, 67, 22, 67, 48,
+        0, 68, 17, 68, 52,
+        0, 68, 22, 68, 52,
+        0, 69, 17, 69, 66,
+        0, 78, 14, 81, 42,
+        0, 79, 17, 79, 40,
+        0, 80, 17, 80, 49,
+        0, 80, 22, 80, 49,
+        0, 81, 17, 81, 42,
+        1, 11, 14, 19, 47,
+        1, 12, 17, 12, 43,
+        1, 13, 17, 13, 44,
+        1, 14, 17, 14, 90,
+        1, 15, 17, 15, 52,
+        1, 16, 17, 16, 58,
+        1, 17, 17, 17, 46,
+        1, 18, 17, 18, 48,
+        1, 19, 17, 19, 46,
+        1, 19, 22, 19, 46,
+        1, 28, 14, 35, 47,
+        1, 29, 17, 29, 43,
+        1, 30, 17, 30, 80,
+        1, 31, 17, 31, 52,
+        1, 32, 17, 32, 58,
+        1, 33, 17, 33, 46,
+        1, 34, 17, 34, 48,
+        1, 35, 17, 35, 46,
+        1, 35, 22, 35, 46,
+        1, 55, 14, 57, 53,
+        1, 56, 17, 56, 61,
+        1, 57, 17, 57, 53,
+        1, 77, 14, 84, 76,
+        1, 78, 17, 78, 47,
+        1, 79, 17, 79, 40,
+        1, 80, 18, 82, 43,
+        1, 81, 21, 81, 40,
+        1, 82, 21, 82, 43,
+        1, 84, 17, 84, 76,
+        1, 93, 14, 96, 73,
+        1, 94, 17, 94, 47,
+        1, 95, 17, 95, 48,
+        1, 96, 17, 96, 73,
+        1, 105, 14, 111, 17,
+        1, 106, 17, 106, 43,
+        1, 107, 17, 107, 45,
+        1, 107, 22, 107, 45,
+        1, 108, 18, 110, 56,
+        1, 109, 21, 109, 40,
+        1, 110, 21, 110, 56,
+        1, 120, 14, 126, 52,
+        1, 121, 17, 121, 43,
+        1, 122, 18, 124, 53,
+        1, 123, 21, 123, 43,
+        1, 124, 21, 124, 53,
+        1, 126, 17, 126, 51,
+        1, 126, 22, 126, 51,
+        1, 146, 14, 150, 46,
+        1, 147, 17, 147, 64,
+        1, 148, 17, 148, 58,
+        1, 149, 17, 149, 36,
+        1, 150, 17, 150, 45,
+        1, 150, 22, 150, 45,
+        1, 158, 14, 160, 48,
+        1, 159, 17, 159, 54,
+        1, 160, 17, 160, 47,
+        1, 160, 22, 160, 47,
+        1, 180, 14, 184, 73,
+        1, 181, 17, 181, 48,
+        1, 182, 17, 182, 45,
+        1, 182, 22, 182, 45,
+        1, 183, 17, 183, 56,
+        1, 184, 17, 184, 73,
+        1, 192, 14, 194, 44,
+        1, 193, 17, 193, 52,
+        1, 194, 17, 194, 43,
+        1, 194, 22, 194, 43,
+        0, 28, 14, 31, 52,
+        0, 29, 17, 29, 52,
+        0, 30, 17, 30, 47,
+        0, 30, 22, 30, 47,
+        0, 31, 17, 31, 52,
+        0, 40, 14, 42, 44,
+        0, 41, 17, 41, 50,
+        0, 42, 17, 42, 43,
+        0, 42, 22, 42, 43,
+        0, 61, 14, 69, 66,
+        0, 62, 18, 64, 51,
+        0, 63, 21, 63, 44,
+        0, 64, 21, 64, 51,
+        0, 66, 17, 66, 44,
+        0, 67, 17, 67, 48,
+        0, 67, 22, 67, 48,
+        0, 68, 17, 68, 52,
+        0, 68, 22, 68, 52,
+        0, 69, 17, 69, 66,
+        0, 78, 14, 81, 42,
+        0, 79, 17, 79, 40,
+        0, 80, 17, 80, 49,
+        0, 80, 22, 80, 49,
+        0, 81, 17, 81, 42,
+        1, 11, 14, 19, 47,
+        1, 12, 17, 12, 43,
+        1, 13, 17, 13, 44,
+        1, 14, 17, 14, 90,
+        1, 15, 17, 15, 52,
+        1, 16, 17, 16, 58,
+        1, 17, 17, 17, 46,
+        1, 18, 17, 18, 48,
+        1, 19, 17, 19, 46,
+        1, 19, 22, 19, 46,
+        1, 28, 14, 35, 47,
+        1, 29, 17, 29, 43,
+        1, 30, 17, 30, 80,
+        1, 31, 17, 31, 52,
+        1, 32, 17, 32, 58,
+        1, 33, 17, 33, 46,
+        1, 34, 17, 34, 48,
+        1, 35, 17, 35, 46,
+        1, 35, 22, 35, 46,
+        1, 55, 14, 57, 53,
+        1, 56, 17, 56, 61,
+        1, 57, 17, 57, 53,
+        1, 77, 14, 84, 76,
+        1, 78, 17, 78, 47,
+        1, 79, 17, 79, 40,
+        1, 80, 18, 82, 43,
+        1, 81, 21, 81, 40,
+        1, 82, 21, 82, 43,
+        1, 84, 17, 84, 76,
+        1, 93, 14, 96, 73,
+        1, 94, 17, 94, 47,
+        1, 95, 17, 95, 48,
+        1, 96, 17, 96, 73,
+        1, 105, 14, 111, 17,
+        1, 106, 17, 106, 43,
+        1, 107, 17, 107, 45,
+        1, 107, 22, 107, 45,
+        1, 108, 18, 110, 56,
+        1, 109, 21, 109, 40,
+        1, 110, 21, 110, 56,
+        1, 120, 14, 126, 52,
+        1, 121, 17, 121, 43,
+        1, 122, 18, 124, 53,
+        1, 123, 21, 123, 43,
+        1, 124, 21, 124, 53,
+        1, 126, 17, 126, 51,
+        1, 126, 22, 126, 51,
+        1, 146, 14, 150, 46,
+        1, 147, 17, 147, 64,
+        1, 148, 17, 148, 58,
+        1, 149, 17, 149, 36,
+        1, 150, 17, 150, 45,
+        1, 150, 22, 150, 45,
+        1, 158, 14, 160, 48,
+        1, 159, 17, 159, 54,
+        1, 160, 17, 160, 47,
+        1, 160, 22, 160, 47,
+        1, 180, 14, 184, 73,
+        1, 181, 17, 181, 48,
+        1, 182, 17, 182, 45,
+        1, 182, 22, 182, 45,
+        1, 183, 17, 183, 56,
+        1, 184, 17, 184, 73,
+        1, 192, 14, 194, 44,
+        1, 193, 17, 193, 52,
+        1, 194, 17, 194, 43,
+        1, 194, 22, 194, 43],
+      taskSources: @[
+        0'u32, 34, 17, 34, 39,
+        0, 35, 17, 35, 56,
+        0, 45, 17, 45, 33,
+        0, 53, 17, 53, 43,
+        0, 72, 17, 72, 33,
+        0, 73, 17, 73, 34,
+        0, 84, 17, 84, 37,
+        0, 92, 17, 92, 39,
+        1, 22, 17, 22, 78,
+        1, 23, 17, 23, 74,
+        1, 38, 17, 38, 68,
+        1, 39, 17, 39, 63,
+        1, 47, 17, 47, 41,
+        1, 60, 17, 60, 74,
+        1, 61, 17, 61, 113,
+        1, 87, 17, 87, 43,
+        1, 88, 17, 88, 55,
+        1, 99, 17, 99, 40,
+        1, 100, 17, 100, 52,
+        1, 114, 17, 114, 42,
+        1, 115, 17, 115, 47,
+        1, 129, 17, 129, 42,
+        1, 130, 17, 130, 62,
+        1, 138, 17, 138, 49,
+        1, 153, 17, 153, 41,
+        1, 163, 17, 163, 51,
+        1, 164, 17, 164, 43,
+        1, 172, 17, 172, 49,
+        1, 187, 17, 187, 50,
+        1, 197, 17, 197, 33,
+        1, 205, 17, 205, 47,
+        0, 34, 17, 34, 39,
+        0, 35, 17, 35, 56,
+        0, 45, 17, 45, 33,
+        0, 53, 17, 53, 43,
+        0, 72, 17, 72, 33,
+        0, 73, 17, 73, 34,
+        0, 84, 17, 84, 37,
+        0, 92, 17, 92, 39,
+        1, 22, 17, 22, 78,
+        1, 23, 17, 23, 74,
+        1, 38, 17, 38, 68,
+        1, 39, 17, 39, 63,
+        1, 47, 17, 47, 41,
+        1, 60, 17, 60, 74,
+        1, 61, 17, 61, 113,
+        1, 87, 17, 87, 43,
+        1, 88, 17, 88, 55,
+        1, 99, 17, 99, 40,
+        1, 100, 17, 100, 52,
+        1, 114, 17, 114, 42,
+        1, 115, 17, 115, 47,
+        1, 129, 17, 129, 42,
+        1, 130, 17, 130, 62,
+        1, 138, 17, 138, 49,
+        1, 153, 17, 153, 41,
+        1, 163, 17, 163, 51,
+        1, 164, 17, 164, 43,
+        1, 172, 17, 172, 49,
+        1, 187, 17, 187, 50,
+        1, 197, 17, 197, 33,
+        1, 205, 17, 205, 47],
+      branchSources: @[
+        0'u32, 27, 9, 37, 9,
+        0, 39, 9, 47, 9,
+        0, 49, 9, 55, 9,
+        0, 60, 9, 75, 9,
+        0, 77, 9, 86, 9,
+        0, 88, 9, 94, 9,
+        1, 10, 9, 25, 9,
+        1, 27, 9, 41, 9,
+        1, 43, 9, 49, 9,
+        1, 54, 9, 63, 9,
+        1, 65, 9, 71, 9,
+        1, 76, 9, 90, 9,
+        1, 92, 9, 102, 9,
+        1, 104, 9, 117, 9,
+        1, 119, 9, 132, 9,
+        1, 134, 9, 140, 9,
+        1, 145, 9, 155, 9,
+        1, 157, 9, 166, 9,
+        1, 168, 9, 174, 9,
+        1, 179, 9, 189, 9,
+        1, 191, 9, 199, 9,
+        1, 201, 9, 207, 9,
+        0, 27, 9, 37, 9,
+        0, 39, 9, 47, 9,
+        0, 49, 9, 55, 9,
+        0, 60, 9, 75, 9,
+        0, 77, 9, 86, 9,
+        0, 88, 9, 94, 9,
+        1, 10, 9, 25, 9,
+        1, 27, 9, 41, 9,
+        1, 43, 9, 49, 9,
+        1, 54, 9, 63, 9,
+        1, 65, 9, 71, 9,
+        1, 76, 9, 90, 9,
+        1, 92, 9, 102, 9,
+        1, 104, 9, 117, 9,
+        1, 119, 9, 132, 9,
+        1, 134, 9, 140, 9,
+        1, 145, 9, 155, 9,
+        1, 157, 9, 166, 9,
+        1, 168, 9, 174, 9,
+        1, 179, 9, 189, 9,
+        1, 191, 9, 199, 9,
+        1, 201, 9, 207, 9],
+      methodSources: @[
+        0'u32, 25, 5, 56, 5,
+        0, 58, 5, 95, 5,
+        1, 5, 5, 50, 5,
+        1, 52, 5, 72, 5,
+        1, 74, 5, 141, 5,
+        1, 143, 5, 175, 5,
+        1, 177, 5, 208, 5,
+        0, 25, 5, 56, 5,
+        0, 58, 5, 95, 5,
+        1, 5, 5, 50, 5,
+        1, 52, 5, 72, 5,
+        1, 74, 5, 141, 5,
+        1, 143, 5, 175, 5,
+        1, 177, 5, 208, 5],
+      axiomSources: @[
+        0'u32, 3, 5, 11, 5,
+        0, 13, 5, 23, 5,
+        0, 3, 5, 11, 5,
+        0, 13, 5, 23, 5],
+      constantSources: newSeq[uint32]())
+
+when htnDebugEnabled:
+  definition.debugMetadata = newDebugMetadata(debugTables())
