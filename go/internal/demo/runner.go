@@ -12,6 +12,7 @@ import (
 
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/atom"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/callterm"
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/debugger"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/integration"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/planner"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/internal/generated"
@@ -160,6 +161,9 @@ type Runner struct {
 	Registry *callterm.Registry
 	Database *integration.DatabaseHook
 	Report   callterm.ErrorCallback
+	// Debugger, when set before Select, records every decomposition
+	// (planners built with the "htndebug" tag only).
+	Debugger *debugger.Debugger
 	hook     *integration.PlannerHook
 	unit     *integration.PlanningUnit
 }
@@ -182,6 +186,9 @@ func (r *Runner) Select(definition *planner.Definition, method string) bool {
 	r.unit = integration.NewPlanningUnit(r.Database, r.hook, method)
 	r.unit.ExecutionContext().CallTermErrorPolicy = callterm.PolicyReport
 	r.unit.ExecutionContext().CallTermErrorCallback = r.Report
+	if r.Debugger != nil {
+		r.unit.SetGeneratedDebugger(r.Debugger)
+	}
 	return true
 }
 

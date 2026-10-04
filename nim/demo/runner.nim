@@ -2,7 +2,7 @@
 ## in the format of the C++ htn-demo-oracle (tools/oracle/demo_oracle.cpp).
 
 import std/[algorithm, os, strutils, tables]
-import htn/[atom, callterm, integration, planner]
+import htn/[atom, callterm, debugger, integration, planner]
 import ../tests/generated/registry
 import agent, world
 
@@ -20,6 +20,9 @@ type
     registry*: Registry
     database*: DatabaseHook
     report: ErrorCallback
+    debugger*: GeneratedDebugger
+      ## When set before `select`, records every decomposition (planners
+      ## built with -d:htnDebug only).
     hook: PlannerHook
     unit: PlanningUnit
 
@@ -130,6 +133,7 @@ proc select*(r: Runner, definition: Definition, methodName: string): bool =
   r.unit = newPlanningUnit(r.database, r.hook, methodName)
   r.unit.executionContext.callTermErrorPolicy = epReport
   r.unit.executionContext.callTermErrorCallback = r.report
+  if r.debugger != nil: r.unit.setGeneratedDebugger(r.debugger)
   true
 
 proc run*(r: Runner, methodName: string, mode: BacktrackingMode): (DecompositionStatus, seq[string]) =

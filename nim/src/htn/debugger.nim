@@ -9,7 +9,7 @@
 ##   discard unit.decompose()
 ##   for node in debugger.nodes: echo node.displayName
 
-import std/strutils
+import std/[algorithm, strutils, tables]
 import atom, debugmeta
 
 type
@@ -542,3 +542,55 @@ proc dump*(d: GeneratedDebugger): seq[string] =
       var line = "  children"
       for child in n.children: line.add " " & $child
       result.add line
+
+# ---------------------------------------------------------------------------
+# Text tree
+
+proc text*(d: GeneratedDebugger, verbose = false): string =
+  ## The recorded nodes as an indented tree, the terminal counterpart of the
+  ## original demo's debugger tree and watch panels. Each line shows the
+  ## node's state ([OK], [FAIL], [...] running, [--] not reached), title and
+  ## source line (with the file when it is not the domain's), followed by the
+  ## constants it references and its variables: the bindings it changed or,
+  ## when verbose, every bound variable before and after it. Without verbose
+  ## only executed nodes are shown.
+  var output = ""
+  proc visit(id: uint32, depth: int) =
+    let n = addr d.nodes[id]
+    if not verbose and not n.started: return
+    let indent = repeat("  ", depth)
+    let status = if n.completed and n.succeeded: "[OK]  "
+                 elif n.completed: "[FAIL]"
+                 elif n.started: "[...] "
+                 else: "[--]  "
+    output.add indent & status & " " & n.displayName
+    if n.source.line != 0:
+      if n.source.domainPath.len == 0 or n.source.domainPath == d.domainPath:
+        output.add "  (line " & $n.source.line & ")"
+      else:
+        output.add "  (" & n.source.domainPath & ":" & $n.source.line & ")"
+    output.add '\n'
+    let detail = indent & "       "
+    if n.constants.len > 0:
+      var parts: seq[string]
+      for c in n.constants: parts.add c.name & " = " & c.value
+      output.add detail & "constants: " & parts.join(", ") & "\n"
+    # The watch panel: variables bound before and after, by name.
+    var names: seq[string]
+    var before, after: Table[string, string]
+    for v in n.variablesBefore:
+      if v.name notin names: names.add v.name
+      before[v.name] = toString(v.value, true)
+    for v in n.variablesAfter:
+      if v.name notin names: names.add v.name
+      after[v.name] = toString(v.value, true)
+    names.sort()
+    for name in names:
+      let b = before.getOrDefault(name, "<unbound>")
+      let a = after.getOrDefault(name, "<unbound>")
+      if verbose or a != b: output.add detail & name & ": " & b & " -> " & a & "\n"
+    for child in n.children:
+      if int(child) < d.nodes.len: visit(child, depth + 1)
+  for i in 0 ..< d.nodes.len:
+    if d.nodes[i].parentEventNodeID == NoIndex: visit(uint32(i), 0)
+  output

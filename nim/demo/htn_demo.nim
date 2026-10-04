@@ -3,22 +3,26 @@
 ##
 ##   htn_demo list
 ##   htn_demo run <domain> [method] [--worldstate=PATH] [--backtracking=none|facts|branches|all] [--rt]
+##                [--debugger[=verbose]]
 ##   htn_demo simulate [--agents=8] [--speed=1] [--fps=30] [--seconds=N] [--ascii] [--rt]
 ##   htn_demo trace runner [--rt]
 ##   htn_demo trace simulate [--agents=8] [--steps=3600] [--snapshot-every=300] [--rt]
 ##
 ## --rt selects the planners generated with runtime backtracking support (the
-## only ones on which the backtracking mode has an effect). "trace" prints the
+## only ones on which the backtracking mode has an effect). --debugger prints
+## the generated event debugger's tree after the run (the demo's debugger
+## panel); it needs a build with -d:htnDebug. "trace" prints the
 ## deterministic output of the original demo's headless driver
 ## (tools/oracle/demo_oracle.cpp) used by the tests.
 
 import std/[monotimes, os, posix, sets, strformat, strutils, tables, terminal, times]
-import htn/[integration, planner]
+import htn/[debugger, integration, planner]
 import agent, runner, world
 
 const usage = """usage:
   htn_demo list
   htn_demo run <domain> [method] [--worldstate=PATH] [--backtracking=none|facts|branches|all] [--rt]
+               [--debugger[=verbose]]
   htn_demo simulate [--agents=8] [--speed=1] [--fps=30] [--seconds=N] [--ascii] [--rt]
   htn_demo trace runner [--rt]
   htn_demo trace simulate [--agents=8] [--steps=3600] [--snapshot-every=300] [--rt]
@@ -110,6 +114,16 @@ proc runCommand(o: Options) =
   let mode = parseMode(o.values.getOrDefault("backtracking"))
   let runtimeBacktracking = o.has("rt")
   let demoRunner = newRunner(callTermErrorReporter(writeStderr))
+  if o.has("debugger"):
+    when not htnDebugEnabled:
+      fail("--debugger needs htn_demo built with -d:htnDebug")
+    else:
+      demoRunner.debugger = newGeneratedDebugger()
+      demoRunner.debugger.setEnabled(true)
+  proc printDebugger() =
+    if demoRunner.debugger != nil:
+      echo "\nGenerated event debugger (", demoRunner.debugger.nodes.len, " events):"
+      stdout.write demoRunner.debugger.text(verbose = o.values.getOrDefault("debugger") == "verbose")
   if not demoRunner.select(d.definition(runtimeBacktracking), methodName):
     fail("could not load the generated planner of " & d.name)
   if not demoRunner.database.parseWorldStateFile(worldState):
@@ -125,9 +139,11 @@ proc runCommand(o: Options) =
     if status == dsCallFrameCapacityExceeded:
       echo "Generated call-frame capacity exceeded. Regenerate this domain with a larger " &
         "--call-frame-capacity and rebuild it."
+    printDebugger()
     quit 1
   echo &"Result:        Success in {elapsed:.3f} ms\nPlan ({steps.len} step(s)):"
   for i, step in steps: echo &"  {i + 1:>2}. {step}"
+  printDebugger()
 
 proc trace(o: Options) =
   if o.positional.len < 1: fail("trace needs runner or simulate")

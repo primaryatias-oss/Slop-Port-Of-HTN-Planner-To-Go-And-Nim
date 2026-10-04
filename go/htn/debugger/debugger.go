@@ -12,6 +12,7 @@ package debugger
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -922,3 +923,97 @@ func (d *Debugger) Dump() []string {
 }
 
 var _ planner.Debugger = (*Debugger)(nil)
+
+// Text renders the recorded nodes as an indented tree, the terminal
+// counterpart of the original demo's debugger tree and watch panels. Each
+// line shows the node's state ([OK], [FAIL], [...] running, [--] not
+// reached), title and source line (with the file when it is not the
+// domain's), followed by the constants it references and its variables: the
+// bindings it changed or, when verbose, every bound variable before and
+// after it. Without verbose only executed nodes are shown.
+func (d *Debugger) Text(verbose bool) string {
+	var b strings.Builder
+	var visit func(id uint32, depth int)
+	visit = func(id uint32, depth int) {
+		n := &d.nodes[id]
+		if !verbose && !n.Started {
+			return
+		}
+		indent := strings.Repeat("  ", depth)
+		status := "[--]  "
+		switch {
+		case n.Completed && n.Succeeded:
+			status = "[OK]  "
+		case n.Completed:
+			status = "[FAIL]"
+		case n.Started:
+			status = "[...] "
+		}
+		fmt.Fprintf(&b, "%s%s %s", indent, status, n.DisplayName)
+		switch {
+		case n.Source.Line == 0:
+		case n.Source.DomainPath == "" || n.Source.DomainPath == d.domainPath:
+			fmt.Fprintf(&b, "  (line %d)", n.Source.Line)
+		default:
+			fmt.Fprintf(&b, "  (%s:%d)", n.Source.DomainPath, n.Source.Line)
+		}
+		b.WriteByte('\n')
+		detail := indent + "       "
+		if len(n.Constants) > 0 {
+			parts := make([]string, len(n.Constants))
+			for i, c := range n.Constants {
+				parts[i] = c.Name + " = " + c.Value
+			}
+			b.WriteString(detail + "constants: " + strings.Join(parts, ", ") + "\n")
+		}
+		for _, v := range watch(n) {
+			if verbose || v.before != v.after {
+				fmt.Fprintf(&b, "%s%s: %s -> %s\n", detail, v.name, v.before, v.after)
+			}
+		}
+		for _, child := range n.Children {
+			if int(child) < len(d.nodes) {
+				visit(child, depth+1)
+			}
+		}
+	}
+	for i := range d.nodes {
+		if d.nodes[i].ParentEventNodeID == NoIndex {
+			visit(uint32(i), 0)
+		}
+	}
+	return b.String()
+}
+
+type watchedVariable struct{ name, before, after string }
+
+// watch pairs the variables bound before and after a node by name, sorted
+// like the original watch panel.
+func watch(n *Node) []watchedVariable {
+	values := map[string]*watchedVariable{}
+	var names []string
+	for _, group := range []struct {
+		variables []VariableValue
+		after     bool
+	}{{n.VariablesBefore, false}, {n.VariablesAfter, true}} {
+		for _, v := range group.variables {
+			w := values[v.Name]
+			if w == nil {
+				w = &watchedVariable{name: v.Name, before: "<unbound>", after: "<unbound>"}
+				values[v.Name] = w
+				names = append(names, v.Name)
+			}
+			if group.after {
+				w.after = atom.ToString(v.Value, true)
+			} else {
+				w.before = atom.ToString(v.Value, true)
+			}
+		}
+	}
+	sort.Strings(names)
+	result := make([]watchedVariable, len(names))
+	for i, name := range names {
+		result[i] = *values[name]
+	}
+	return result
+}

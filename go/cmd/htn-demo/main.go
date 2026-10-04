@@ -2,13 +2,15 @@
 // the demo domains and the NPC simulation of Wanderer agents.
 //
 //	htn-demo list
-//	htn-demo run <domain> [method] [--worldstate=PATH] [--backtracking=none|facts|branches|all] [--rt]
+//	htn-demo run <domain> [method] [--worldstate=PATH] [--backtracking=none|facts|branches|all] [--rt] [--debugger[=verbose]]
 //	htn-demo simulate [--agents=8] [--speed=1] [--fps=30] [--seconds=N] [--ascii] [--rt]
 //	htn-demo trace runner [--rt]
 //	htn-demo trace simulate [--agents=8] [--steps=3600] [--snapshot-every=300] [--rt]
 //
 // --rt selects the planners generated with runtime backtracking support (the
-// only ones on which the backtracking mode has an effect). "trace" prints the
+// only ones on which the backtracking mode has an effect). --debugger prints
+// the generated event debugger's tree after the run (the demo's debugger
+// panel); it needs a build with -tags htndebug. "trace" prints the
 // deterministic output of the original demo's headless driver
 // (tools/oracle/demo_oracle.cpp) used by the tests.
 package main
@@ -25,6 +27,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/debugger"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/htn/planner"
 	"github.com/primaryatias-oss/Slop-Port-Of-HTN-Planner-To-Go-And-Nim/go/internal/demo"
 )
@@ -32,6 +35,7 @@ import (
 const usage = `usage:
   htn-demo list
   htn-demo run <domain> [method] [--worldstate=PATH] [--backtracking=none|facts|branches|all] [--rt]
+               [--debugger[=verbose]]
   htn-demo simulate [--agents=8] [--speed=1] [--fps=30] [--seconds=N] [--ascii] [--rt]
   htn-demo trace runner [--rt]
   htn-demo trace simulate [--agents=8] [--steps=3600] [--snapshot-every=300] [--rt]
@@ -168,6 +172,19 @@ func run(o options) {
 	mode := parseMode(o.values["backtracking"])
 	runtimeBacktracking := o.has("rt")
 	runner := demo.NewRunner(demo.CallTermErrorReporter(os.Stderr))
+	if o.has("debugger") {
+		if !planner.DebugEnabled {
+			fail("--debugger needs htn-demo built with -tags htndebug")
+		}
+		runner.Debugger = debugger.New()
+		runner.Debugger.SetEnabled(true)
+	}
+	printDebugger := func() {
+		if runner.Debugger != nil {
+			fmt.Printf("\nGenerated event debugger (%d events):\n", len(runner.Debugger.Nodes()))
+			fmt.Print(runner.Debugger.Text(o.values["debugger"] == "verbose"))
+		}
+	}
 	definition := d.Definition(runtimeBacktracking)
 	if definition == nil || !runner.Select(definition, method) {
 		fail("could not load the generated planner of %s", d.Name)
@@ -190,12 +207,14 @@ func run(o options) {
 			fmt.Println("Generated call-frame capacity exceeded. Regenerate this domain with a larger " +
 				"--call-frame-capacity and rebuild it.")
 		}
+		printDebugger()
 		os.Exit(1)
 	}
 	fmt.Printf("Result:        Success in %.3f ms\nPlan (%d step(s)):\n", elapsed, len(steps))
 	for i, step := range steps {
 		fmt.Printf("  %2d. %s\n", i+1, step)
 	}
+	printDebugger()
 }
 
 func trace(o options) {
