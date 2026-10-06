@@ -1,0 +1,9 @@
+# Generated planners. Marked so that GitHub leaves them out of the language
+# statistics and collapses them in diffs. Linguist already recognises the Go
+# files by their "Code generated ... DO NOT EDIT." header, but not the Nim
+# ones; both are listed for clarity.
+go/internal/generated/*/*.generated.go linguist-generated=true
+go/internal/generated/registry.go linguist-generated=true
+go/examples/quickstart/human/*.generated.go linguist-generated=true
+nim/tests/generated/*.nim linguist-generated=true
+nim/examples/human_generated.nim linguist-generated=true
