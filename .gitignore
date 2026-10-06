@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+/build/
+# Nim binaries built by nimble (nim/htn.nimble)
+/nim/build/
+/nim/htn_translator
+/nim/htn_lsp

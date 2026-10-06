@@ -1,0 +1,14 @@
+scenario human_main
+planner Human
+worldstate WorldStates/Test/human.worldstate
+call behave
+resolve
+raw behave
+call behave_upper_body
+call no_such_method
+raw behave 1 2
+end
+scenario nested
+planner NestedCalls
+worldstate WorldStates/Test/callterms.worldstate
+call test_nested_calls

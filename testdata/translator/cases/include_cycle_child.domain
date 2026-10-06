@@ -1,0 +1,3 @@
+// child
+ (:include "include_cycle_root.domain")
+(:domain Base base)

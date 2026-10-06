@@ -1,0 +1,876 @@
+scenario HierarchicalBacktracking/no_combat
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+raw do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+rawdeferred do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+raw do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+rawdeferred do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !selected_fact second
+resolve
+exec !selected_fact second
+resolution completed
+raw validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_fact second
+rawdeferred validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_fact second
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !selected_axiom second
+resolve
+exec !selected_axiom second
+resolution completed
+raw validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_axiom second
+rawdeferred validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_axiom second
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HierarchicalBacktracking/empty
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+raw do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+rawdeferred do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+raw do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+rawdeferred do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+raw validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_fallback
+rawdeferred validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_fallback
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+raw validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_fallback
+rawdeferred validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HierarchicalBacktrackingRT/no_combat
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !selected_fact second
+resolve
+exec !selected_fact second
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !selected_axiom second
+resolve
+exec !selected_axiom second
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+raw do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+rawdeferred do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+raw do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+rawdeferred do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !selected_fact second
+resolve
+exec !selected_fact second
+resolution completed
+raw validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_fact second
+rawdeferred validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_fact second
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !selected_axiom second
+resolve
+exec !selected_axiom second
+resolution completed
+raw validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_axiom second
+rawdeferred validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_axiom second
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario HierarchicalBacktrackingRT/empty
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_parent_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call validate_child_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred validate_child_guard
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_parent_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_child_guard enemy
+status SUCCEEDED
+plan 1
+step !search enemy
+resolve
+exec !search enemy
+resolution completed
+raw do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+rawdeferred do_behavior_child_guard enemy
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search enemy
+call do_behavior_parent_guard friend
+status SUCCEEDED
+plan 1
+step !search friend
+resolve
+exec !search friend
+resolution completed
+raw do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+rawdeferred do_behavior_parent_guard friend
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search friend
+call do_behavior_child_guard 3
+status SUCCEEDED
+plan 1
+step !search 3
+resolve
+exec !search 3
+resolution completed
+raw do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+rawdeferred do_behavior_child_guard 3
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !search 3
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+resolve
+exec !fact_fallback
+resolution completed
+raw validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_fallback
+rawdeferred validate_fact_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fact_fallback
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+resolve
+exec !axiom_fallback
+resolution completed
+raw validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_fallback
+rawdeferred validate_axiom_backtracking
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !axiom_fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end

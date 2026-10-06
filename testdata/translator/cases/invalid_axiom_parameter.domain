@@ -1,0 +1,4 @@
+(:domain InvalidAxiom top_level_domain
+  (:axiom (bad ?value) ())
+  (:method (run) top_level_method (start () ((!act))))
+)

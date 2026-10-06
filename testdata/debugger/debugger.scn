@@ -1,0 +1,269 @@
+# Generated event debugger scenarios (needs htn-oracle-debug and the
+# "htndebug" builds of the ports). Every decomposition made while the debugger
+# is on is followed by a dump of the recorded nodes.
+#
+# The hand-written scenarios cover the debugger's lifecycle; the "selected/"
+# ones were chosen from the scenario sweeps and fuzzscenarios -debugger runs so
+# that together they cover every node kind and state, title token kind and
+# node detail line.
+
+scenario lifecycle
+planner Human
+worldstate WorldStates/Test/human.worldstate
+# Off: no dump.
+call behave
+debugger on
+call behave
+resolve
+debugger off
+call behave
+debugger on
+# A re-created planner keeps the debugger.
+planner Human
+worldstate WorldStates/Test/human.worldstate
+call behave
+raw behave
+end
+
+scenario deferred_resolution
+planner MissingCallterms
+policy report
+debugger on
+call deferred
+resolve
+call nested
+end
+
+scenario selected/fuzz/AtomListDemo/0
+planner AtomListDemo
+policy report
+debugger on
+call split_list_empty_fails
+resolve
+end
+
+scenario selected/fuzz/AxiomOverloads/1
+planner AxiomOverloads
+policy report
+debugger on
+fact overload_state sym
+fact overload_state 9
+raw backtrack
+end
+
+scenario selected/fuzz/Wanderer/1
+planner Wanderer
+policy report
+debugger on
+fact pathfind_state in_progress 0 "Already at location " 3
+fact pathfind_state succeeded 0 sym "Both coordinates are even!"
+fact wanderer_location (0 0)
+fact wanderer_location (0 0)
+fact wanderer_location (0 0)
+fact wanderer_state walking
+fact wanderer_state walking
+remove_fact pathfinding_segment 3 0
+rawdeferred talk_about_destination
+end
+
+scenario selected/fuzz/AxiomAssignments/0
+planner AxiomAssignments
+policy report
+debugger on
+fact candidate first
+fact candidate second
+raw io_alt_retry
+call io_literal_bound
+resolve
+end
+
+scenario selected/fuzz/BacktrackingPolicyFixedSmallRT/0
+planner BacktrackingPolicyFixedSmallRT
+policy report
+debugger on
+mode all
+raw run
+end
+
+scenario selected/fuzz/EliteNinja/0
+planner EliteNinja
+policy report
+debugger on
+fact elite_move_available
+raw run
+end
+
+scenario selected/typed_signatures_nested_calls
+callterms standard -inc -add -mul typed:inc:int typed:add:int,int typed:mul:int,float
+planner NestedCalls
+debugger on
+policy report
+worldstate WorldStates/Test/callterms.worldstate
+call test_nested_calls
+end
+
+scenario selected/fuzz/AtomListDemoRT/0
+planner AtomListDemoRT
+policy report
+debugger on
+mode all
+raw split_list_bound_outputs
+end
+
+scenario selected/fuzz/Human/1
+planner Human
+policy report
+debugger on
+fact has_mold "banana"
+fact has_mold 3
+fact has_peel "we are doing nothing"
+fact has_peel (3 ("Error"))
+fact has_peel "apple"
+fact is_eating 3
+fact is_wrapped ("text")
+fact is_wrapped "sandwich"
+fact type "orange" "fruit"
+fact type 3 sym
+fact type "apple" "fruit"
+call behave
+resolve
+end
+
+scenario selected/fuzz/Wanderer/0
+planner Wanderer
+policy report
+debugger on
+fact contextual_animation_at walking 1
+fact contextual_animation_at "text" 2
+fact pathfind_state in_progress 0 "Both coordinates are even!" 1.5
+fact pathfind_state in_progress (2 2 in_progress) "Both coordinates are even!" 1
+fact pathfind_state in_progress 1 succeeded contextual
+fact wanderer_destination (15 0)
+fact wanderer_destination (15 0)
+fact wanderer_location succeeded
+fact wanderer_location (0 0)
+rawdeferred talk_about_destination
+end
+
+scenario selected/fuzz/WandererRT/0
+planner WandererRT
+policy report
+debugger on
+fact contextual_animation_at 1 1.5
+fact pathfind_state succeeded walking 1 2
+fact pathfind_state succeeded "Both coordinates are even!" "Already at location " ("One coordinate is even and the other is odd!" "Both coordinates are odd!")
+fact pathfind_state in_progress walking 2 "text"
+fact wanderer_destination (15 0)
+fact wanderer_destination (15 0)
+fact wanderer_destination (15 0)
+fact wanderer_state walking
+fact wanderer_state "Already at location "
+mode all
+rawdeferred talk_about_destination
+end
+
+scenario selected/fuzz/NestedAxiomChoicesRT/0
+planner NestedAxiomChoicesRT
+policy report
+debugger on
+mode facts_and_axioms
+call no_candidates
+resolve
+mode facts_and_axioms
+call out_literal
+resolve
+mode all
+raw pair_backtrack
+mode none
+call internal_filter
+resolve
+mode all
+raw two_calls
+mode branches
+call no_candidates
+resolve
+mode facts_and_axioms
+call out_literal
+resolve
+mode facts_and_axioms
+raw out_arithmetic
+mode all
+raw alt_preserves_bound
+end
+
+scenario selected/IncludeDemo/elite_ninja
+planner IncludeDemo
+debugger on
+policy report
+worldstate WorldStates/Test/elite_ninja.worldstate
+call run_include_demo
+resolve
+raw run_include_demo
+rawdeferred run_include_demo
+call no_such_method
+end
+
+scenario selected/fuzz/IncludeDemoRT/1
+planner IncludeDemoRT
+policy report
+debugger on
+fact controlled_entity 7
+fact event_visible 2 "No active entity for include demo"
+fact route_blocked 2
+fact route_blocked 3
+mode facts_and_axioms
+remove_fact event_dangerous 1 0
+raw run_include_demo
+end
+
+scenario selected/fuzz/Wanderer/1-2
+planner Wanderer
+policy report
+debugger on
+fact pathfind_state succeeded in_progress 0 4
+fact pathfind_state succeeded 4 "One coordinate is even and the other is odd!" "One coordinate is even and the other is odd!"
+fact pathfind_state succeeded 3 3 ("One coordinate is even and the other is odd!")
+fact pathfinder "Already at location " contextual walking 3
+fact pathfinder succeeded "text" "text" in_progress
+fact pathfinding_segment "Both coordinates are odd!" contextual sym
+fact wanderer_destination "Already at location "
+fact wanderer_location (0 0)
+fact wanderer_location 1.5
+fact wanderer_state walking
+fact wanderer_state walking
+call run
+resolve
+call run
+resolve
+end
+
+scenario selected/ComplexScenario/idle
+planner ComplexScenario
+debugger on
+policy report
+worldstate WorldStates/Test/complex_scenario_idle.worldstate
+call run_scenario
+resolve
+raw run_scenario
+rawdeferred run_scenario
+call no_such_method
+end
+
+scenario selected/recursion_small_frames
+planner RecursionDispatchSmallFrames
+debugger on
+fact depth 3
+raw non_tail
+raw mutual
+raw deep_failure
+remove_fact depth 1 0
+fact depth 6
+raw non_tail
+raw mutual
+raw deep_failure
+remove_fact depth 1 0
+fact depth 7
+raw non_tail
+raw mutual
+raw deep_failure
+end

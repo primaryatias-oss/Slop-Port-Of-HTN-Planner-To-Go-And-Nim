@@ -1,0 +1,11 @@
+
+(:domain AnySingletonGenerated top_level_domain
+    (:method (run) top_level_method
+        (branch_main
+            (and
+                (threat ?any_threat_0)
+                (visible ?any_threat_1))
+            ((!capture))
+        )
+    )
+)

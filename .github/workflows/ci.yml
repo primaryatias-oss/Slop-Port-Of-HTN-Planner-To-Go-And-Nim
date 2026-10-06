@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      oracle:
+        description: Rebuild the original C++ reference and check that every golden file is reproduced
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    name: Go ${{ matrix.go }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ["1.22", "stable"]
+    defaults:
+      run:
+        working-directory: go
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+          cache-dependency-path: go/go.mod
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || { gofmt -l .; exit 1; }
+      - name: vet
+        run: |
+          go vet ./...
+          go vet -tags htndebug ./...
+      - name: test
+        run: go test ./...
+      - name: test (htndebug)
+        run: go test -tags htndebug ./...
+      - name: generated planners are current
+        run: |
+          go generate ./...
+          git diff --exit-code
+
+  nim:
+    name: Nim ${{ matrix.nim }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        nim: ["2.2.x"]
+    defaults:
+      run:
+        working-directory: nim
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jiro4989/setup-nim-action@v2
+        with:
+          nim-version: ${{ matrix.nim }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: build
+        run: |
+          nimble build -d:release
+          nim c -d:release --hints:off tools/htn_benchmark.nim
+          nim c -d:release --hints:off demo/htn_demo.nim
+          nim c -d:release -d:htnDebug --hints:off -o:build/htn_demo_debug demo/htn_demo.nim
+      - name: test
+        run: nimble test
+
+  oracle:
+    name: Goldens reproduced by the original
+    if: github.event_name == 'workflow_dispatch' && inputs.oracle
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: urosidoki/htn_planner
+          ref: 115df665cffa27a4b55616619c7775f80a849c1b
+          path: htn_planner
+      - name: build the reference
+        run: |
+          sudo apt-get update && sudo apt-get install -y ninja-build
+          cmake -S tools/oracle -B build/oracle -G Ninja -DCMAKE_BUILD_TYPE=Release -DHTN_ORIGINAL_ROOT="$PWD/htn_planner"
+          cmake --build build/oracle
+      - name: regenerate the goldens
+        run: |
+          for f in testdata/scenarios/*.scn; do build/oracle/htn-oracle "$f" > "${f%.scn}.golden"; done
+          build/oracle/htn-oracle-debug testdata/debugger/debugger.scn > testdata/debugger/debugger.golden
+          python3 tools/translator/make_goldens.py --oracle build/oracle/HTNTranslator
+          python3 tools/lsp/make_goldens.py --oracle build/oracle/HTNLanguageServer
+          python3 tools/demo/make_goldens.py --oracle build/oracle/htn-demo-oracle
+          git diff --exit-code

@@ -1,0 +1,74 @@
+--- message
+{"id":1,"jsonrpc":"2.0","result":{"capabilities":{"completionProvider":{"resolveProvider":false},"definitionProvider":true,"textDocumentSync":1},"serverInfo":{"name":"HTNLanguageServer","version":"0.1.0"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":2,"jsonrpc":"2.0","result":{"range":{"end":{"character":34,"line":11},"start":{"character":4,"line":9}},"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"id":3,"jsonrpc":"2.0","result":{"range":{"end":{"character":75,"line":11},"start":{"character":4,"line":10}},"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":4,"jsonrpc":"2.0","result":{"range":{"end":{"character":34,"line":8},"start":{"character":4,"line":7}},"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":5,"jsonrpc":"2.0","result":{"range":{"end":{"character":75,"line":11},"start":{"character":4,"line":10}},"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":6,"jsonrpc":"2.0","result":{"range":{"end":{"character":16,"line":3},"start":{"character":8,"line":3}},"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"id":7,"jsonrpc":"2.0","result":{"range":{"end":{"character":69,"line":14},"start":{"character":4,"line":13}},"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":8,"jsonrpc":"2.0","result":{"range":{"end":{"character":57,"line":7},"start":{"character":4,"line":6}},"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"id":9,"jsonrpc":"2.0","result":{"range":{"end":{"character":21,"line":4},"start":{"character":8,"line":4}},"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"id":10,"jsonrpc":"2.0","result":null}
+--- message
+{"id":11,"jsonrpc":"2.0","result":null}
+--- message
+{"id":12,"jsonrpc":"2.0","result":null}
+--- message
+{"id":13,"jsonrpc":"2.0","result":null}
+--- message
+{"id":14,"jsonrpc":"2.0","result":[{"insertText":"?distance","kind":6,"label":"?distance"},{"insertText":"?enemy","kind":6,"label":"?enemy"},{"insertText":"?inp_target","kind":6,"label":"?inp_target"}]}
+--- message
+{"id":15,"jsonrpc":"2.0","result":[{"insertText":"?inp_target","kind":6,"label":"?inp_target"}]}
+--- message
+{"id":16,"jsonrpc":"2.0","result":[{"insertText":"?enemy","kind":6,"label":"?enemy"},{"insertText":"?inp_target","kind":6,"label":"?inp_target"}]}
+--- message
+{"id":17,"jsonrpc":"2.0","result":[{"insertText":"?inp_amount","kind":6,"label":"?inp_amount"}]}
+--- message
+{"id":18,"jsonrpc":"2.0","result":[]}
+--- message
+{"id":19,"jsonrpc":"2.0","result":[]}
+--- message
+{"id":20,"jsonrpc":"2.0","result":{"diagnostics":[],"message":"Compile succeeded: Main (2 linked source file(s))","success":true}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Unknown variable 'unknown' used by primitive task 'rest'.","range":{"end":{"character":40,"line":8},"start":{"character":32,"line":8}},"severity":1,"source":"htn"}],"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":21,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Unknown variable 'unknown' used by primitive task 'rest'.","range":{"end":{"character":40,"line":8},"start":{"character":32,"line":8}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"message":"Compound method call 'Base::do_combat' cannot be resolved at link time: no overload accepts 1 argument(s)","range":{"end":{"character":36,"line":4},"start":{"character":13,"line":4}},"severity":1,"source":"htn"}],"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":22,"jsonrpc":"2.0","result":null}
+--- message
+{"id":23,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Compound method call 'Base::do_combat' cannot be resolved at link time: no overload accepts 1 argument(s)","range":{"end":{"character":36,"line":4},"start":{"character":13,"line":4}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"id":24,"jsonrpc":"2.0","result":{"diagnostics":[{"message":"Root domain must be top_level_domain","range":{"end":{"character":0,"line":12},"start":{"character":0,"line":1}},"severity":1,"source":"htn-compile","uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}],"message":"Compile failed with 1 error(s).","success":false}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"id":25,"jsonrpc":"2.0","result":{"diagnostics":[],"message":"Compile succeeded: Main (2 linked source file(s))","success":true}}
+--- message
+{"id":26,"jsonrpc":"2.0","result":{"range":{"end":{"character":34,"line":11},"start":{"character":4,"line":9}},"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}
+--- message
+{"id":27,"jsonrpc":"2.0","result":null}
+--- message
+{"id":28,"jsonrpc":"2.0","result":[]}
+--- message
+{"id":29,"jsonrpc":"2.0","result":{"diagnostics":[],"message":"The active HTN document is not open in the language server.","success":false}}
+--- message
+{"id":30,"jsonrpc":"2.0","result":null}
+--- stderr
+--- exit 0

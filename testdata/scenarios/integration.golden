@@ -1,0 +1,679 @@
+scenario missing_callterms_unregistered_report
+call condition
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:5:19 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:8:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call primitive
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:11:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call compound
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:13:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call nested
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:15:39 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:15:39 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+resolution failed
+call unused
+status SUCCEEDED
+plan 1
+step !safe
+end
+scenario missing_callterms_unregistered_silent
+call condition
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+status SUCCEEDED
+plan 1
+step !fallback
+call nested
+status NO_PLAN
+plan 0
+end
+scenario missing_callterms_unregistered_unset
+call condition
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+status SUCCEEDED
+plan 1
+step !fallback
+call nested
+status NO_PLAN
+plan 0
+end
+scenario missing_instance_then_recovery
+call condition
+error MissingInstance name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:5:19 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+error MissingInstance name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:8:29 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call condition
+trace probe() -> 1
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+trace probe() -> 1
+status SUCCEEDED
+plan 1
+step !unexpected 1
+call nested
+trace probe() -> 1
+trace identity(1) -> 1
+status SUCCEEDED
+plan 1
+step !use 1
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+trace probe() -> 1
+trace identity(1) -> 1
+exec !use 1
+resolution completed
+call primitive
+error MissingInstance name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:11:24 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+end
+scenario missing_binding
+call condition
+error MissingBinding name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:5:19 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call binding
+error MissingBinding name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:8:29 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call primitive
+error MissingBinding name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:11:24 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call nested
+error MissingBinding name=probe daemon=agent source=MissingCallTerms|Domains/Test/missing_callterms.domain:15:39 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+end
+scenario missing_binding_deferred_runtime
+call deferred
+status SUCCEEDED
+plan 1
+step &nested
+resolve
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:15:39 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+resolution failed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &nested
+rawdeferred nested
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:15:39 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+end
+scenario typed_signatures_nested_calls
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+error ArgumentTypeMismatch name=mul daemon=- source=NestedCallsDemo|Domains/Test/nested_calls.domain:14:25 arg=1 expected_count=2 actual_count=2 expected_type=3 actual_type=2 type_name=-
+status NO_PLAN
+plan 0
+end
+scenario typed_signature_count_mismatch
+call test_nested_calls
+error ArgumentCountMismatch name=inc daemon=- source=NestedCallsDemo|Domains/Test/nested_calls.domain:13:25 arg=- expected_count=2 actual_count=1 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+raw test_nested_calls
+error ArgumentCountMismatch name=inc daemon=- source=NestedCallsDemo|Domains/Test/nested_calls.domain:13:25 arg=- expected_count=2 actual_count=1 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+end
+scenario typed_signature_any
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+end
+scenario nested_operator_missing_member
+call missing_right
+error MissingInstance name=missing_distance_callterm daemon=agent source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call missing_arithmetic
+error MissingInstance name=missing_distance_callterm daemon=agent source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call missing_deep
+error MissingInstance name=missing_distance_callterm daemon=agent source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=0 actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+call missing_right
+trace missing_distance_callterm() -> 1
+status SUCCEEDED
+plan 1
+step !result
+call missing_arithmetic
+trace missing_distance_callterm() -> 1
+status NO_PLAN
+plan 0
+call missing_deep
+trace missing_distance_callterm() -> 1
+trace identity(1) -> 1
+status NO_PLAN
+plan 0
+call missing_task_arithmetic
+trace missing_distance_callterm() -> 1
+status SUCCEEDED
+plan 1
+step !result 2
+end
+scenario callterms_without_daemon
+call callterm_creates_fact_visible_immediately
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !target_available_visible "enemy0"
+call callterm_world_state_mutation_survives_backtracking
+trace add_target_available() -> true
+status SUCCEEDED
+plan 1
+step !persisted_target_available "enemy0"
+call test_callterms
+trace binded_function_with_args("we are doing nothing") -> true
+trace get_health(7) -> 50
+trace get_max_speed(7) -> 1.0
+status SUCCEEDED
+plan 3
+step !log "callterms succeeded"
+step !log 50
+step !log 1.0
+end
+scenario worldstate_reload_invalidates_fact_cache
+call behave
+status SUCCEEDED
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "orange"
+step !eat "orange"
+call behave
+status SUCCEEDED
+plan 0
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "banana"
+step !eat "banana"
+call behave
+trace binded_function_with_args("we are doing nothing") -> true
+status SUCCEEDED
+plan 2
+step !take "banana"
+step !eat "banana"
+raw behave
+status SUCCEEDED
+info peak=6 capacity=8192 error=-
+plan 3
+step !take "apple"
+step !peel "apple"
+step !eat "apple"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !log "Error"
+call behave_upper_body
+status SUCCEEDED
+plan 1
+step !talk "This fruit is very tasty!"
+end
+scenario recursion_capacity_then_reuse
+raw non_tail
+status CALL_FRAME_CAPACITY_EXCEEDED
+info peak=8192 capacity=8192 error=Domains/Test/recursion_dispatch.domain: Domain 'recursion_dispatch' exceeded its call-frame capacity (8192). Regenerate the domain with htn-translator --call-frame-capacity=<larger value> and recompile the generated code.
+plan 0
+raw non_tail
+status SUCCEEDED
+info peak=8 capacity=8192 error=-
+plan 5
+step !before 2
+step !before 1
+step !leaf
+step !after 1
+step !after 2
+raw non_tail
+status CALL_FRAME_CAPACITY_EXCEEDED
+info peak=8192 capacity=8192 error=Domains/Test/recursion_dispatch.domain: Domain 'recursion_dispatch' exceeded its call-frame capacity (8192). Regenerate the domain with htn-translator --call-frame-capacity=<larger value> and recompile the generated code.
+plan 0
+call non_tail
+status CALL_FRAME_CAPACITY_EXCEEDED
+plan 0
+raw non_tail
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !leaf
+call non_tail
+status SUCCEEDED
+plan 1
+step !leaf
+end
+scenario recursion_small_frames
+raw non_tail
+status SUCCEEDED
+info peak=10 capacity=16 error=-
+plan 7
+step !before 3
+step !before 2
+step !before 1
+step !leaf
+step !after 1
+step !after 2
+step !after 3
+raw mutual
+status SUCCEEDED
+info peak=10 capacity=16 error=-
+plan 4
+step !leaf
+step !even 1
+step !odd 2
+step !even 3
+raw deep_failure
+trace visit(3) -> true
+trace visit(2) -> true
+trace visit(1) -> true
+trace visit(0) -> true
+status SUCCEEDED
+info peak=9 capacity=16 error=-
+plan 1
+step !fallback "retained string"
+raw non_tail
+status SUCCEEDED
+info peak=16 capacity=16 error=-
+plan 13
+step !before 6
+step !before 5
+step !before 4
+step !before 3
+step !before 2
+step !before 1
+step !leaf
+step !after 1
+step !after 2
+step !after 3
+step !after 4
+step !after 5
+step !after 6
+raw mutual
+status SUCCEEDED
+info peak=16 capacity=16 error=-
+plan 7
+step !leaf
+step !odd 1
+step !even 2
+step !odd 3
+step !even 4
+step !odd 5
+step !even 6
+raw deep_failure
+trace visit(6) -> true
+trace visit(5) -> true
+trace visit(4) -> true
+trace visit(3) -> true
+trace visit(2) -> true
+trace visit(1) -> true
+trace visit(0) -> true
+status SUCCEEDED
+info peak=15 capacity=16 error=-
+plan 1
+step !fallback "retained string"
+raw non_tail
+status CALL_FRAME_CAPACITY_EXCEEDED
+info peak=16 capacity=16 error=Domains/Test/recursion_dispatch.domain: Domain 'recursion_dispatch' exceeded its call-frame capacity (16). Regenerate the domain with htn-translator --call-frame-capacity=<larger value> and recompile the generated code.
+plan 0
+raw mutual
+status CALL_FRAME_CAPACITY_EXCEEDED
+info peak=16 capacity=16 error=Domains/Test/recursion_dispatch.domain: Domain 'recursion_dispatch' exceeded its call-frame capacity (16). Regenerate the domain with htn-translator --call-frame-capacity=<larger value> and recompile the generated code.
+plan 0
+raw deep_failure
+trace visit(7) -> true
+trace visit(6) -> true
+trace visit(5) -> true
+trace visit(4) -> true
+trace visit(3) -> true
+trace visit(2) -> true
+trace visit(1) -> true
+status CALL_FRAME_CAPACITY_EXCEEDED
+info peak=16 capacity=16 error=Domains/Test/recursion_dispatch.domain: Domain 'recursion_dispatch' exceeded its call-frame capacity (16). Regenerate the domain with htn-translator --call-frame-capacity=<larger value> and recompile the generated code.
+plan 0
+end
+scenario policy_capacity_reuse
+raw run
+status BACKTRACKING_CAPACITY_EXCEEDED
+info peak=1 capacity=8192 error=-
+plan 0
+raw run_small
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 2
+step !step "small-one"
+step !step "small-two"
+call run
+status BACKTRACKING_CAPACITY_EXCEEDED
+plan 0
+call always_fail
+status NO_PLAN
+plan 0
+call run_small
+status SUCCEEDED
+plan 2
+step !step "small-one"
+step !step "small-two"
+end
+scenario hierarchical_modes
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !selected_fact second
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !selected_axiom second
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !fact_fallback
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !axiom_fallback
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+call validate_fact_backtracking
+status SUCCEEDED
+plan 1
+step !selected_fact second
+call validate_axiom_backtracking
+status SUCCEEDED
+plan 1
+step !selected_axiom second
+call validate_parent_guard
+status SUCCEEDED
+plan 1
+step !search enemy
+end
+scenario top_level_argument_types
+call echo_top_level true false 3
+status SUCCEEDED
+plan 1
+step !top_level_args true false 3
+call echo_top_level "text with spaces" 4 2.5
+status SUCCEEDED
+plan 1
+step !top_level_args "text with spaces" 4 2.5
+call echo_top_level (a (b "c") 1.0) (1) sym
+status SUCCEEDED
+plan 1
+step !top_level_args (a (b "c") 1.0) (1) sym
+call echo_top_level 2147483647 0 0.0
+status SUCCEEDED
+plan 1
+step !top_level_args 2147483647 0 0.0
+call echo_top_level
+status INVALID_CALL
+plan 0
+raw echo_top_level 1 2
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred echo_top_level 1 2 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !top_level_args 1 2 3
+end
+scenario wanderer_deferred_expansion
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !wanderer_idle
+resolve
+exec !wanderer_idle
+resolution completed
+rawdeferred talk_about_destination
+trace both_coordinates_even((3 4)) -> false
+trace both_coordinates_odd((3 4)) -> false
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !say "One coordinate is even and the other is odd!"
+end
+scenario method_overload_deferred_resolution
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+call mixed
+status INVALID_CALL
+plan 0
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+end
+scenario rebinding_after_preparation
+call test_nested_calls
+trace inc(1) -> 2
+trace inc(2) -> 3
+trace inc(3) -> 4
+trace inc(4) -> 5
+trace mul(3, 5) -> 15
+trace add(2, 15) -> 17
+trace inc(4) -> 5
+trace inc(5) -> 6
+trace inc(6) -> 7
+trace inc(7) -> 8
+trace add(6, 8) -> 14
+trace add(5, 14) -> 19
+status SUCCEEDED
+plan 2
+step !capture 17
+step !capture 19
+call test_nested_calls
+trace inc(1) -> 100
+trace inc(2) -> 100
+trace inc(3) -> 100
+trace inc(100) -> 100
+trace mul(100, 100) -> 10000
+trace add(100, 10000) -> 10100
+trace inc(4) -> 100
+trace inc(5) -> 100
+trace inc(6) -> 100
+trace inc(100) -> 100
+trace add(100, 100) -> 200
+trace add(100, 200) -> 300
+status SUCCEEDED
+plan 2
+step !capture 10100
+step !capture 300
+raw test_nested_calls
+trace inc(1) -> 100
+trace inc(2) -> 100
+trace inc(3) -> 100
+trace inc(100) -> 100
+trace mul(100, 100) -> 10000
+trace add(100, 10000) -> 10100
+trace inc(4) -> 100
+trace inc(5) -> 100
+trace inc(6) -> 100
+trace inc(100) -> 100
+trace add(100, 100) -> 200
+trace add(100, 200) -> 300
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 2
+step !capture 10100
+step !capture 300
+call test_nested_calls
+trace inc(1) -> 100
+trace inc(2) -> 100
+trace inc(3) -> 100
+trace inc(100) -> 100
+trace mul(100, 100) -> 10000
+trace add(100, 10000) -> 1
+trace inc(4) -> 100
+trace inc(5) -> 100
+trace inc(6) -> 100
+trace inc(100) -> 100
+trace add(100, 100) -> 1
+trace add(100, 1) -> 1
+status SUCCEEDED
+plan 2
+step !capture 1
+step !capture 1
+end
+scenario binding_added_after_preparation
+call condition
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:5:19 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+call condition
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:5:19 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+raw condition
+trace probe() -> 1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call binding
+error NotRegistered name=probe daemon=- source=MissingCallTerms|Domains/Test/missing_callterms.domain:8:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status SUCCEEDED
+plan 1
+step !fallback
+end

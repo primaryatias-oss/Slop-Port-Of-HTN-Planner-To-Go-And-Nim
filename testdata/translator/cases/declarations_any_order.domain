@@ -1,0 +1,5 @@
+(:domain UnorderedDeclarations top_level_domain
+  (:method (run) top_level_method (ready (and (#is_ready 7)) ((!act))))
+  (:axiom (is_ready ?inp_value) (and (ready_value ?inp_value)))
+  (:constants (expected 7))
+)

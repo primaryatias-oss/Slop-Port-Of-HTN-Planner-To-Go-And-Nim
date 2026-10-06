@@ -1,0 +1,3494 @@
+scenario NestedOperatorCalls/active_plan
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+plan 1
+step !continue
+resolve
+exec !continue
+resolution completed
+raw continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !continue
+rawdeferred continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !continue
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedOperatorCalls/other_plan
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedOperatorCalls/empty
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw continue_move
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred continue_move
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedOperatorCallsRT/active_plan
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+plan 1
+step !continue
+resolve
+exec !continue
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+plan 1
+step !continue
+resolve
+exec !continue
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+plan 1
+step !continue
+resolve
+exec !continue
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+plan 1
+step !continue
+resolve
+exec !continue
+resolution completed
+raw continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !continue
+rawdeferred continue_move
+trace get_entity_position(42) -> 20
+trace get_distance_from_to(10, 20) -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !continue
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedOperatorCallsRT/other_plan
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred continue_move
+trace get_entity_position(7) -> 107
+trace get_distance_from_to(3, 107) -> 1.0
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedOperatorCallsRT/empty
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call continue_move
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+call behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred behave
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:9:20 arg=- expected_count=- actual_count=2 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_right
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:15:29 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:17:32 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred missing_deep
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:19:40 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred bound_first
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:21:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_attempts
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:23:24 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:24:25 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_left
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_right
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_both
+trace distance() -> 0.1
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred valid_bound
+trace distance() -> 0.1
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred operators
+trace identity(2) -> 2
+trace identity(3) -> 3
+trace identity(4) -> 4
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(3) -> 3
+trace identity(1) -> 1
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(2) -> 2
+trace identity(7) -> 7
+trace identity(2) -> 2
+trace identity(4) -> 4
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call short_circuit
+status SUCCEEDED
+plan 1
+step !result
+resolve
+exec !result
+resolution completed
+raw short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+rawdeferred short_circuit
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result
+call task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred task_arithmetic
+trace identity(1) -> 1
+trace identity(2) -> 2
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+rawdeferred missing_task_arithmetic
+error NotRegistered name=missing_distance_callterm daemon=- source=NestedOperatorCalls|Domains/Test/nested_operator_calls.domain:61:35 arg=- expected_count=- actual_count=0 expected_type=- actual_type=- type_name=-
+status NO_PLAN
+info peak=2 capacity=8192 error=-
+plan 0
+call continue_move
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw continue_move
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred continue_move
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_backtracking
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_backtracking
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_skipped
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred debugger_skipped
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+plan 1
+step !result 3
+resolve
+exec !result 3
+resolution completed
+raw debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+rawdeferred debugger_assignment
+trace identity(2) -> 2
+trace identity(3) -> 3
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 3
+call no_such_method
+status INVALID_CALL
+plan 0
+end

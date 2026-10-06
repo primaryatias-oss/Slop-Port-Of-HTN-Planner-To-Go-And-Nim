@@ -1,0 +1,3 @@
+(:domain InvalidCompilerSignature top_level_domain
+  (:method (run ?out_target) top_level_method (ready () ((!act ?out_target))))
+)

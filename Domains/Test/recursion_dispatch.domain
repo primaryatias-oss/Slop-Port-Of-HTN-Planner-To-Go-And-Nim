@@ -1,0 +1,30 @@
+// Copyright (c) 2026 Jose Antonio Escribano joseantonioescribanoayllon@gmail.com
+(:domain recursion_dispatch top_level_domain
+    (:method (non_tail) top_level_method
+        (run (and (depth ?count)) ((descend ?count)))
+    )
+    (:method (descend ?inp_count)
+        (step (and (> ?inp_count 0))
+            ((!before ?inp_count) (descend (-- ?inp_count)) (!after ?inp_count)))
+        (done () ((!leaf)))
+    )
+    (:method (mutual) top_level_method
+        (run (and (depth ?count)) ((even_step ?count)))
+    )
+    (:method (even_step ?inp_count)
+        (step (and (> ?inp_count 0)) ((odd_step (-- ?inp_count)) (!even ?inp_count)))
+        (done () ((!leaf)))
+    )
+    (:method (odd_step ?inp_count)
+        (step (and (> ?inp_count 0)) ((even_step (-- ?inp_count)) (!odd ?inp_count)))
+        (done () ((!leaf)))
+    )
+    (:method (deep_failure) top_level_method
+        (attempt (and (depth ?count)) ((!discard "owned string") (fail_down ?count)))
+        (fallback () ((!fallback "retained string")))
+    )
+    (:method (fail_down ?inp_count)
+        (step (and (call visit ?inp_count) (> ?inp_count 0))
+            ((!discard ?inp_count) (fail_down (-- ?inp_count)) (!unreachable)))
+    )
+)

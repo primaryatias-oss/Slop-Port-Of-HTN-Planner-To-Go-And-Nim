@@ -1,0 +1,4059 @@
+scenario AxiomAssignments/candidates
+call regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomAssignments/other_entity
+call regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomAssignments/empty
+call regression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw regression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred regression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomAssignmentsRT/candidates
+call regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred regression
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomAssignmentsRT/other_entity
+call regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred regression
+trace get_entity_position(5) -> 105
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_solutions
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomAssignmentsRT/empty
+call regression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+call io_alt_retry
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+call regression
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw regression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred regression
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call restore_caller
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred restore_caller
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call bound_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred bound_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call literal_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred literal_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call arithmetic_output
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred arithmetic_output
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_bound
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_nested_unbound
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call nested_forwarding
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred nested_forwarding
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_restore_caller
+trace get_entity_position(1) -> 7
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_solutions
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_solutions
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_restore_alternative
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_restore_alternative
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_alt_retry
+status SUCCEEDED
+plan 1
+step !result 2
+resolve
+exec !result 2
+resolution completed
+raw io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+rawdeferred io_alt_retry
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 2
+call io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_exhausted
+trace get_entity_position(1) -> 7
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_nested_bound_different
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_nested_bound_different
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_literal
+status SUCCEEDED
+plan 1
+step !result 7
+resolve
+exec !result 7
+resolution completed
+raw io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+rawdeferred io_literal
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 7
+call io_literal_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_literal_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call io_arithmetic_bound
+status SUCCEEDED
+plan 1
+step !result 9
+resolve
+exec !result 9
+resolution completed
+raw io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+rawdeferred io_arithmetic_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !result 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end

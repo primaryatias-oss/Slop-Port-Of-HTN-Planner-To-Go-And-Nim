@@ -1,0 +1,60 @@
+# Generated planner variants shared by the C++ oracle, the Go port and the Nim port.
+# <variant> <domain file> <entry point> [translator options...]
+# Every root domain is translated twice: with runtime backtracking support
+# disabled (the default) and enabled (the *RT variants).
+AAACombatNPC Domains/AAACombatNPC.domain CreateAAACombatNPCHTN
+AAACombatNPCRT Domains/AAACombatNPC.domain CreateAAACombatNPCRTHTN --runtime-backtracking-support=enabled
+BuiltinComparisonsDemo Domains/BuiltinComparisonsDemo.domain CreateBuiltinComparisonsDemoHTN
+BuiltinComparisonsDemoRT Domains/BuiltinComparisonsDemo.domain CreateBuiltinComparisonsDemoRTHTN --runtime-backtracking-support=enabled
+EliteNinja Domains/EliteNinja.domain CreateEliteNinjaHTN
+EliteNinjaRT Domains/EliteNinja.domain CreateEliteNinjaRTHTN --runtime-backtracking-support=enabled
+Grunt Domains/Grunt.domain CreateGruntHTN
+GruntRT Domains/Grunt.domain CreateGruntRTHTN --runtime-backtracking-support=enabled
+NormalNinja Domains/NormalNinja.domain CreateNormalNinjaHTN
+NormalNinjaRT Domains/NormalNinja.domain CreateNormalNinjaRTHTN --runtime-backtracking-support=enabled
+RuntimeBacktrackingDemo Domains/RuntimeBacktrackingDemo.domain CreateRuntimeBacktrackingDemoHTN
+RuntimeBacktrackingDemoRT Domains/RuntimeBacktrackingDemo.domain CreateRuntimeBacktrackingDemoRTHTN --runtime-backtracking-support=enabled
+AtomListDemo Domains/Test/atom_list_demo.domain CreateAtomListDemoHTN
+AtomListDemoRT Domains/Test/atom_list_demo.domain CreateAtomListDemoRTHTN --runtime-backtracking-support=enabled
+AxiomAssignments Domains/Test/axiom_assignments.domain CreateAxiomAssignmentsHTN
+AxiomAssignmentsRT Domains/Test/axiom_assignments.domain CreateAxiomAssignmentsRTHTN --runtime-backtracking-support=enabled
+AxiomOverloads Domains/Test/axiom_overloads.domain CreateAxiomOverloadsHTN
+AxiomOverloadsRT Domains/Test/axiom_overloads.domain CreateAxiomOverloadsRTHTN --runtime-backtracking-support=enabled
+BacktrackingPolicy Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyHTN
+BacktrackingPolicyRT Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyRTHTN --runtime-backtracking-support=enabled
+Callterms Domains/Test/callterms.domain CreateCalltermsHTN
+CalltermsRT Domains/Test/callterms.domain CreateCalltermsRTHTN --runtime-backtracking-support=enabled
+ComplexScenario Domains/Test/complex_scenario.domain CreateComplexScenarioHTN
+ComplexScenarioRT Domains/Test/complex_scenario.domain CreateComplexScenarioRTHTN --runtime-backtracking-support=enabled
+HierarchicalBacktracking Domains/Test/hierarchical_backtracking.domain CreateHierarchicalBacktrackingHTN
+HierarchicalBacktrackingRT Domains/Test/hierarchical_backtracking.domain CreateHierarchicalBacktrackingRTHTN --runtime-backtracking-support=enabled
+Human Domains/Test/human.domain CreateHumanHTN
+HumanRT Domains/Test/human.domain CreateHumanRTHTN --runtime-backtracking-support=enabled
+MethodOverloads Domains/Test/method_overloads.domain CreateMethodOverloadsHTN
+MethodOverloadsRT Domains/Test/method_overloads.domain CreateMethodOverloadsRTHTN --runtime-backtracking-support=enabled
+MissingCallterms Domains/Test/missing_callterms.domain CreateMissingCalltermsHTN
+MissingCalltermsRT Domains/Test/missing_callterms.domain CreateMissingCalltermsRTHTN --runtime-backtracking-support=enabled
+NestedAxiomChoices Domains/Test/nested_axiom_choices.domain CreateNestedAxiomChoicesHTN
+NestedAxiomChoicesRT Domains/Test/nested_axiom_choices.domain CreateNestedAxiomChoicesRTHTN --runtime-backtracking-support=enabled
+NestedCalls Domains/Test/nested_calls.domain CreateNestedCallsHTN
+NestedCallsRT Domains/Test/nested_calls.domain CreateNestedCallsRTHTN --runtime-backtracking-support=enabled
+NestedOperatorCalls Domains/Test/nested_operator_calls.domain CreateNestedOperatorCallsHTN
+NestedOperatorCallsRT Domains/Test/nested_operator_calls.domain CreateNestedOperatorCallsRTHTN --runtime-backtracking-support=enabled
+NumericExpressions Domains/Test/numeric_expressions.domain CreateNumericExpressionsHTN
+NumericExpressionsRT Domains/Test/numeric_expressions.domain CreateNumericExpressionsRTHTN --runtime-backtracking-support=enabled
+RecursionDispatch Domains/Test/recursion_dispatch.domain CreateRecursionDispatchHTN
+RecursionDispatchRT Domains/Test/recursion_dispatch.domain CreateRecursionDispatchRTHTN --runtime-backtracking-support=enabled
+WorldstateLookupScenarios Domains/Test/worldstate_lookup_scenarios.domain CreateWorldstateLookupScenariosHTN
+WorldstateLookupScenariosRT Domains/Test/worldstate_lookup_scenarios.domain CreateWorldstateLookupScenariosRTHTN --runtime-backtracking-support=enabled
+Wanderer Domains/Wanderer.domain CreateWandererHTN
+WandererRT Domains/Wanderer.domain CreateWandererRTHTN --runtime-backtracking-support=enabled
+IncludeDemo Domains/include_demo.domain CreateIncludeDemoHTN
+IncludeDemoRT Domains/include_demo.domain CreateIncludeDemoRTHTN --runtime-backtracking-support=enabled
+BacktrackingPolicyOverflow Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyOverflowHTN --backtracking-policy=fixed-with-overflow --backtracking-capacity=2
+BacktrackingPolicyOverflowRT Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyOverflowRTHTN --backtracking-policy=fixed-with-overflow --backtracking-capacity=2 --runtime-backtracking-support=enabled
+BacktrackingPolicyFixedSmall Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyFixedSmallHTN --backtracking-policy=fixed-capacity --backtracking-capacity=2
+BacktrackingPolicyFixedSmallRT Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyFixedSmallRTHTN --backtracking-policy=fixed-capacity --backtracking-capacity=2 --runtime-backtracking-support=enabled
+BacktrackingPolicyFixedEnough Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyFixedEnoughHTN --backtracking-policy=fixed-capacity --backtracking-capacity=3
+BacktrackingPolicyFixedEnoughRT Domains/Test/backtracking_policy.domain CreateBacktrackingPolicyFixedEnoughRTHTN --backtracking-policy=fixed-capacity --backtracking-capacity=3 --runtime-backtracking-support=enabled
+RecursionDispatchSmallFrames Domains/Test/recursion_dispatch.domain CreateRecursionDispatchSmallFramesHTN --call-frame-capacity=16
+ComplexScenarioSmallFrames Domains/Test/complex_scenario.domain CreateComplexScenarioSmallFramesHTN --call-frame-capacity=64

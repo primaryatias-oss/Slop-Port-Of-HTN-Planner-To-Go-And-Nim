@@ -1,0 +1,4 @@
+# Build outputs
+/bin/
+nimcache/
+*.exe

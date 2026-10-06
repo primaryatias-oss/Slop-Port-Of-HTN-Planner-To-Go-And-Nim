@@ -1,0 +1,612 @@
+scenario AxiomOverloads/overloads
+call run
+status SUCCEEDED
+plan 1
+step !overloads 70 9
+resolve
+exec !overloads 70 9
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !overloads 70 9
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !overloads 70 9
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call backtrack
+status SUCCEEDED
+plan 1
+step !selected 71
+resolve
+exec !selected 71
+resolution completed
+raw backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 71
+rawdeferred backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 71
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 70 10
+resolve
+exec !selected_io 70 10
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 70 10
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 70 10
+call io_bound_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 71 9
+resolve
+exec !selected_io 71 9
+resolution completed
+raw io_bound_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 71 9
+rawdeferred io_bound_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 71 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomOverloads/empty
+call run
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw run
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomOverloadsRT/overloads
+call run
+status SUCCEEDED
+plan 1
+step !overloads 70 9
+resolve
+exec !overloads 70 9
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !overloads 70 9
+resolve
+exec !overloads 70 9
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status SUCCEEDED
+plan 1
+step !selected 71
+resolve
+exec !selected 71
+resolution completed
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 70 10
+resolve
+exec !selected_io 70 10
+resolution completed
+call io_bound_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 71 9
+resolve
+exec !selected_io 71 9
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !overloads 70 9
+resolve
+exec !overloads 70 9
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !overloads 70 9
+resolve
+exec !overloads 70 9
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !overloads 70 9
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !overloads 70 9
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call backtrack
+status SUCCEEDED
+plan 1
+step !selected 71
+resolve
+exec !selected 71
+resolution completed
+raw backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 71
+rawdeferred backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 71
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 70 10
+resolve
+exec !selected_io 70 10
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 70 10
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 70 10
+call io_bound_backtrack
+status SUCCEEDED
+plan 1
+step !selected_io 71 9
+resolve
+exec !selected_io 71 9
+resolution completed
+raw io_bound_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 71 9
+rawdeferred io_bound_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected_io 71 9
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario AxiomOverloadsRT/empty
+call run
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call run
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw run
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred run
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !controlled_failure
+resolve
+exec !controlled_failure
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !controlled_failure
+call backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_bound_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_such_method
+status INVALID_CALL
+plan 0
+end

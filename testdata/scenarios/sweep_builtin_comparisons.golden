@@ -1,0 +1,325 @@
+scenario BuiltinComparisonsDemo/critical
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolve
+exec !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemo/engage
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolve
+exec !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemo/out_of_ammo
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolve
+exec !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemo/safe
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolve
+exec !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemo/empty
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "fallback"
+resolve
+exec !report_comparison_case "fallback"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "fallback"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "fallback"
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemoRT/critical
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolve
+exec !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolve
+exec !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolve
+exec !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolve
+exec !report_comparison_case "critical_close_combat" 20 3 6 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "critical_close_combat" 20 3 6 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemoRT/engage
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolve
+exec !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolve
+exec !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolve
+exec !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolve
+exec !report_comparison_case "ready_to_engage" 80 12 15 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "ready_to_engage" 80 12 15 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemoRT/out_of_ammo
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolve
+exec !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolve
+exec !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolve
+exec !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolve
+exec !report_comparison_case "out_of_ammo" 60 0 8 combat
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "out_of_ammo" 60 0 8 combat
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemoRT/safe
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolve
+exec !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolve
+exec !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolve
+exec !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolve
+exec !report_comparison_case "safe_non_combat" 90 8 35 idle
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "safe_non_combat" 90 8 35 idle
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario BuiltinComparisonsDemoRT/empty
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "fallback"
+resolve
+exec !report_comparison_case "fallback"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "fallback"
+resolve
+exec !report_comparison_case "fallback"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "fallback"
+resolve
+exec !report_comparison_case "fallback"
+resolution completed
+call run
+status SUCCEEDED
+plan 1
+step !report_comparison_case "fallback"
+resolve
+exec !report_comparison_case "fallback"
+resolution completed
+raw run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "fallback"
+rawdeferred run
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !report_comparison_case "fallback"
+call no_such_method
+status INVALID_CALL
+plan 0
+end

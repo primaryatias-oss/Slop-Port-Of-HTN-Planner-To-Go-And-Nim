@@ -1,0 +1,5 @@
+(:domain AnyPrefix top_level_domain
+  (:method (run) top_level_method
+    (branch_main () ((!capture ?company_value)))
+  )
+)

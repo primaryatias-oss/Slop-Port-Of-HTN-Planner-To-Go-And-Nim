@@ -1,0 +1,4541 @@
+scenario NestedAxiomChoices/candidates
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+raw two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+rawdeferred two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call not_scope
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw not_scope
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred not_scope
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedAxiomChoices/reversed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call exhausted
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+raw two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+rawdeferred two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call or_cut
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedAxiomChoices/empty
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw deep_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred deep_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call first_solution
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw first_solution
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred first_solution
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call exhausted
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw exhausted
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred exhausted
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_candidates
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw internal_filter
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred internal_filter
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_calls
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_calls
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alt_preserves_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alt_preserves_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw nested_and
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred nested_and
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alt_choice
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alt_choice
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedAxiomChoicesRT/candidates
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(1) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(1) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+raw two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+rawdeferred two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call not_scope
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw not_scope
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred not_scope
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(1) -> true
+trace axiom_trace(2) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedAxiomChoicesRT/reversed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call not_scope
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call exhausted
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+call not_scope
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred out_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred io_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call deep_backtrack
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred deep_backtrack
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call first_solution
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred first_solution
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call exhausted
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred exhausted
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call no_candidates
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call internal_filter
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred internal_filter
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status SUCCEEDED
+plan 1
+step !pair 2 2
+resolve
+exec !pair 2 2
+resolution completed
+raw two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+rawdeferred two_calls
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !pair 2 2
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status SUCCEEDED
+plan 1
+step !selected 1
+resolve
+exec !selected 1
+resolution completed
+raw alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+rawdeferred alt_preserves_bound
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 1
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred nested_and
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call alt_choice
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred alt_choice
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call or_cut
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+plan 1
+step !unexpected
+resolve
+exec !unexpected
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !unexpected
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+trace axiom_trace(2) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(2) -> true
+trace axiom_trace(1) -> true
+trace axiom_trace(3) -> true
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario NestedAxiomChoicesRT/empty
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call first_solution
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call first_solution
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call first_solution
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call exhausted
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call no_candidates
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+call effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+call out_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call deep_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw deep_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred deep_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call first_solution
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw first_solution
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred first_solution
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred io_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call io_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred io_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call exhausted
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw exhausted
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred exhausted
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call no_candidates
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred no_candidates
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call internal_filter
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw internal_filter
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred internal_filter
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call pair_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred pair_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call two_calls
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw two_calls
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred two_calls
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call string_backtrack
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred string_backtrack
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_arithmetic
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_arithmetic
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call out_mismatch
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred out_mismatch
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call out_owned_literal
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred out_owned_literal
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_preserves_bound
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alt_preserves_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alt_preserves_bound
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alias_outputs
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alias_outputs
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call nested_and
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw nested_and
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred nested_and
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call alt_choice
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw alt_choice
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred alt_choice
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call or_cut
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred or_cut
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call not_scope
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred not_scope
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred effects
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_exhausted
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+plan 0
+resolve
+resolution completed
+raw effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+rawdeferred effects_nested
+trace axiom_trace(10) -> true
+trace axiom_trace(0) -> true
+trace axiom_value() -> 42
+status NO_PLAN
+info peak=1 capacity=8192 error=-
+plan 0
+call qualified_or
+status SUCCEEDED
+plan 1
+step !selected 2
+resolve
+exec !selected 2
+resolution completed
+raw qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+rawdeferred qualified_or
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !selected 2
+call effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+plan 1
+step !fallback
+resolve
+exec !fallback
+resolution completed
+raw effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+rawdeferred effects_alt_exhausted
+trace axiom_trace(10) -> true
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !fallback
+call no_such_method
+status INVALID_CALL
+plan 0
+end

@@ -1,0 +1,76 @@
+--- message
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"processId":null,"rootUri":"$ROOT_URI","capabilities":{}}}
+--- message
+{"jsonrpc":"2.0","method":"initialized","params":{}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain","languageId":"htn","version":1,"text":"(:include \"base.domain\")\n(:domain Main top_level_domain\n    (:method (run ?inp_target) top_level_method\n        (branch_combat (and (enemy ?enemy) (distance ?enemy ?distance) (not (#is_safe ?enemy)))\n            ((Base::do_combat ?enemy) (!move @speed) (&work ?distance)))\n        (branch_idle () ((work) (work 1))))\n\n    (:method (work)\n        (branch_rest () ((!rest))))\n\n    (:method (work ?inp_amount)\n        (branch_work (and (not (tired ?inp_amount))) ((!work ?inp_amount))))\n\n    (:axiom (is_safe ?inp_entity)\n        (and (#Base::is_hurt ?inp_entity) (cover ?inp_entity @cover)))\n)\n"}}}
+--- message
+{"jsonrpc":"2.0","id":2,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":17}}}
+--- message
+{"jsonrpc":"2.0","id":3,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":55}}}
+--- message
+{"jsonrpc":"2.0","id":4,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":5,"character":27}}}
+--- message
+{"jsonrpc":"2.0","id":5,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":5,"character":33}}}
+--- message
+{"jsonrpc":"2.0","id":6,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":47}}}
+--- message
+{"jsonrpc":"2.0","id":7,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":3,"character":77}}}
+--- message
+{"jsonrpc":"2.0","id":8,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":14,"character":22}}}
+--- message
+{"jsonrpc":"2.0","id":9,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":14,"character":67}}}
+--- message
+{"jsonrpc":"2.0","id":10,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":3,"character":30}}}
+--- message
+{"jsonrpc":"2.0","id":11,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":40}}}
+--- message
+{"jsonrpc":"2.0","id":12,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":2,"character":31}}}
+--- message
+{"jsonrpc":"2.0","id":13,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":3,"character":61}}}
+--- message
+{"jsonrpc":"2.0","id":14,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":38}}}
+--- message
+{"jsonrpc":"2.0","id":15,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":3,"character":23}}}
+--- message
+{"jsonrpc":"2.0","id":16,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":3,"character":43}}}
+--- message
+{"jsonrpc":"2.0","id":17,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":11,"character":54}}}
+--- message
+{"jsonrpc":"2.0","id":18,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":13,"character":4}}}
+--- message
+{"jsonrpc":"2.0","id":19,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":14,"character":32}}}
+--- message
+{"jsonrpc":"2.0","id":20,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain","version":2},"contentChanges":[{"text":"(:include \"base.domain\")\n(:domain Main top_level_domain\n    (:method (run ?inp_target) top_level_method\n        (branch_combat (and (enemy ?enemy) (distance ?enemy ?distance) (not (#is_safe ?enemy)))\n            ((Base::do_combat ?enemy) (!move @speed) (&work ?distance)))\n        (branch_idle () ((work) (work 1))))\n\n    (:method (work)\n        (branch_rest () ((!rest ?unknown))))\n\n    (:method (work ?inp_amount)\n        (branch_work (and (not (tired ?inp_amount))) ((!work ?inp_amount))))\n\n    (:axiom (is_safe ?inp_entity)\n        (and (#Base::is_hurt ?inp_entity) (cover ?inp_entity @cover)))\n)\n"}]}}
+--- message
+{"jsonrpc":"2.0","id":21,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain","languageId":"htn","version":1,"text":"// Included by main.domain in the language server sessions.\n(:domain Base base\n    (:constants\n        (speed 3)\n        (cover \"wall\"))\n\n    (:axiom (is_hurt ?inp_entity)\n        (and (health ?inp_entity ?health) (< ?health 50)))\n\n    (:method (fight ?inp_threat)\n        (branch_attack (and (#is_hurt ?inp_threat)) ((!attack ?inp_threat)))\n        (branch_wait () ((!wait))))\n)\n"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain","version":3},"contentChanges":[{"text":"(:include \"base.domain\")\n(:domain Main top_level_domain\n    (:method (run ?inp_target) top_level_method\n        (branch_combat (and (enemy ?enemy) (distance ?enemy ?distance) (not (#is_safe ?enemy)))\n            ((Base::do_combat ?enemy) (!move @speed) (&work ?distance)))\n        (branch_idle () ((work) (work 1))))\n\n    (:method (work)\n        (branch_rest () ((!rest))))\n\n    (:method (work ?inp_amount)\n        (branch_work (and (not (tired ?inp_amount))) ((!work ?inp_amount))))\n\n    (:axiom (is_safe ?inp_entity)\n        (and (#Base::is_hurt ?inp_entity) (cover ?inp_entity @cover)))\n)\n"}]}}
+--- message
+{"jsonrpc":"2.0","id":22,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":20}}}
+--- message
+{"jsonrpc":"2.0","id":23,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":24,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didClose","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/base.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":25,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":26,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":20}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didClose","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":27,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":20}}}
+--- message
+{"jsonrpc":"2.0","id":28,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"},"position":{"line":4,"character":38}}}
+--- message
+{"jsonrpc":"2.0","id":29,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":30,"method":"shutdown"}
+--- message
+{"jsonrpc":"2.0","method":"exit"}

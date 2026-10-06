@@ -1,0 +1,119 @@
+--- message
+{"jsonrpc":"2.0","id":"init","method":"initialize","params":{"capabilities":{}}}
+--- message
+{"jsonrpc":"2.0","id":null,"method":"initialize"}
+--- message
+{"jsonrpc":"2.0","id":1.5,"method":"shutdown-not","params":{}}
+--- message
+{"jsonrpc":"2.0","id":[1,{"b":2,"a":1}],"method":"unknown/request"}
+--- message
+{"jsonrpc":"2.0","method":"unknown/notification","params":{}}
+--- message
+{"jsonrpc":"2.0","method":"$/setTrace","params":{"value":"off"}}
+--- message
+{"jsonrpc":"2.0","id":1,"method":"textDocument/definition"}
+--- message
+{"jsonrpc":"2.0","id":2,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":3,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":"1","character":0}}}
+--- message
+{"jsonrpc":"2.0","id":4,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":1.0,"character":0}}}
+--- message
+{"jsonrpc":"2.0","id":5,"method":"htn/compile","params":{"textDocument":{"uri":7}}}
+--- message
+{"jsonrpc":"2.0","id":6,"method":"htn/compile"}
+--- message
+
+--- message
+{
+--- message
+tru
+--- message
+[1,]
+--- message
+{"a" 1}
+--- message
+{"a":1 "b":2}
+--- message
+1e400
+--- message
+"\q"
+--- message
+"\u12G4"
+--- message
+01x
+--- message
+{"id":1}garbage
+--- message
+"unterminated
+--- message
+-
+--- message
+1e-400
+--- message
+{"jsonrpc":"2.0"}
+--- message
+{"jsonrpc":"2.0","method":7,"id":3}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/hover","method":"initialize","id":"dup"}
+--- message
+	{ "jsonrpc" : "2.0" ,
+ "id" : -0 , "method" : "initialize" }
+--- message
+{"jsonrpc":"2.0","id":"\u00e9\ud83d\ude00\t\u0001\"\/","method":"nope"}
+--- message lowercase
+{"jsonrpc":"2.0","id":9223372036854775807,"method":"nope"}
+--- message
+{"jsonrpc":"2.0","id":3e-7,"method":"nope"}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain","languageId":"htn","version":1,"text":"// émoji 😀 comment\n(:domain Unicode top_level_domain\n    (:method (run) top_level_method (b () ((go \"😀\") (go \"x\")))) // 中\n    (:method (go ?inp_x) (b () ((!say ?inp_x)))))\n"}}}
+--- message
+{"jsonrpc":"2.0","id":7,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":2,"character":44}}}
+--- message
+{"jsonrpc":"2.0","id":8,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":2,"character":55}}}
+--- message
+{"jsonrpc":"2.0","id":9,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":3,"character":34}}}
+--- message
+{"jsonrpc":"2.0","id":10,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":3,"character":18}}}
+--- message
+{"jsonrpc":"2.0","id":11,"method":"textDocument/completion","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":3,"character":32}}}
+--- message
+{"jsonrpc":"2.0","id":12,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":2,"character":100}}}
+--- message
+{"jsonrpc":"2.0","id":13,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":99,"character":0}}}
+--- message
+{"jsonrpc":"2.0","id":14,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":-1,"character":5}}}
+--- message
+{"jsonrpc":"2.0","id":15,"method":"textDocument/definition","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"position":{"line":4294967298,"character":4}}}
+--- message
+{"jsonrpc":"2.0","id":16,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain","version":"x"},"contentChanges":[{"text":"// émoji 😀 comment\n(:domain Unicode top_level_domain\n    (:method (run) top_level_method (b () ((go \"😀\") (go \"x\")))) // 中\n    (:method (go ?inp_x) (b () ((!say ?inp_x)))))\n(extra"}]}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain","version":3},"contentChanges":[]}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"},"contentChanges":[{"range":{}}]}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain","version":4},"contentChanges":[{"text":"// \u00e9\ud83d\ude00\u0001\n(:domain Escaped top_level_domain $)"}]}}
+--- message
+{"jsonrpc":"2.0","id":17,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/unsaved%20unicode.domain","version":5}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":42,"text":""}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"untitled:Untitled-1","languageId":"htn","version":-4,"text":"(:domain Untitled top_level_domain (:method (run) top_level_method (b () ((!x ?y))))"}}}
+--- message
+{"jsonrpc":"2.0","id":18,"method":"htn/compile","params":{"textDocument":{"uri":"untitled:Untitled-1"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/./sub/../main.domain","languageId":"htn","version":1,"text":"(:include \"base.domain\")\n(:domain Relative top_level_domain)"}}}
+--- message
+{"jsonrpc":"2.0","id":19,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"textDocument/didClose","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/sub/../main.domain"}}}
+--- message
+{"jsonrpc":"2.0","id":20,"method":"htn/compile","params":{"textDocument":{"uri":"$ROOT_URI/testdata/lsp/workspace/main.domain"}}}
+--- message
+{"jsonrpc":"2.0","method":"exit"}
+--- message
+{"jsonrpc":"2.0","id":21,"method":"initialize","params":{}}

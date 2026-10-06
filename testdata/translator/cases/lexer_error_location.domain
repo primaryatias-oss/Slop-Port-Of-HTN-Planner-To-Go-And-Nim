@@ -1,0 +1,3 @@
+(:domain BrokenLexer top_level_domain
+  (:method (run) top_level_method (ready () ((!act $value))))
+)

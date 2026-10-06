@@ -1,0 +1,75 @@
+// Copyright (c) 2026 Jose Antonio Escribano joseantonioescribanoayllon@gmail.com
+
+(:domain AxiomAssignments top_level_domain
+    (:method (regression) top_level_method
+        (choose (and (entity ?entity) (#select_position ?entity ?selected_position)
+                     (== ?selected_position 7)) ((!result ?selected_position))))
+    (:method (literal) top_level_method
+        (choose (and (#literal ?value) (== ?value 7)) ((!result ?value))))
+    (:method (arithmetic) top_level_method
+        (choose (and (#arithmetic 5 ?value)) ((!result ?value))))
+    (:method (solutions) top_level_method
+        (choose (and (#solutions ?value) (== ?value 2)) ((!result ?value))))
+    (:method (restore_alternative) top_level_method
+        (choose (and (#restore ?value)) ((!result ?value))))
+    (:method (restore_caller) top_level_method
+        (choose (and (alt (#fails ?value) (#literal ?value))) ((!result ?value))))
+    (:method (bound_output) top_level_method
+        (choose (and (= ?value 7) (not (#select_position 1 ?value))) ((!result ?value))))
+    (:method (literal_output) top_level_method
+        (choose (and (not (#select_position 1 7))) ((!result 7))))
+    (:method (arithmetic_output) top_level_method
+        (choose (and (not (#select_position 1 (+ 5 2)))) ((!result 7))))
+    (:method (io_unbound) top_level_method
+        (choose (and (#initialize_io ?value)) ((!result ?value))))
+    (:method (io_bound) top_level_method
+        (choose (and (= ?value 7) (not (#initialize_io ?value))) ((!result ?value))))
+    (:method (io_nested_bound) top_level_method
+        (choose (and (= ?value 7) (not (#initialize_nested_io ?value))) ((!result ?value))))
+    (:method (io_nested_unbound) top_level_method
+        (choose (and (#initialize_nested_io ?value)) ((!result ?value))))
+    (:method (nested_forwarding) top_level_method
+        (choose (and (#forward ?value)) ((!result ?value))))
+
+    (:method (io_restore_caller) top_level_method
+        (choose (and (alt (#io_fails ?value) (#initialize_io ?value))) ((!result ?value))))
+    (:method (io_solutions) top_level_method
+        (choose (and (#io_solutions ?value) (== ?value 2)) ((!result ?value))))
+    (:method (io_restore_alternative) top_level_method
+        (choose (and (#io_restore ?value)) ((!result ?value))))
+    (:method (io_alt_retry) top_level_method
+        (choose (and (#io_alternatives ?value) (== ?value 2)) ((!result ?value))))
+    (:method (io_exhausted) top_level_method
+        (choose (and (alt (and (#io_solutions ?value) (== ?value 99))
+                         (#initialize_io ?value))) ((!result ?value))))
+    (:method (io_bound_different) top_level_method
+        (choose (and (= ?value 9) (not (#initialize_io ?value))) ((!result ?value))))
+    (:method (io_nested_bound_different) top_level_method
+        (choose (and (= ?value 9) (not (#initialize_nested_io ?value))) ((!result ?value))))
+    (:method (io_literal) top_level_method
+        (choose (and (#io_literal ?value)) ((!result ?value))))
+    (:method (io_literal_bound) top_level_method
+        (choose (and (= ?value 9) (not (#io_literal ?value))) ((!result ?value))))
+    (:method (io_arithmetic_bound) top_level_method
+        (choose (and (= ?value 9) (not (#io_arithmetic ?value))) ((!result ?value))))
+
+    (:axiom (select_position ?inp_entity ?out_position)
+        (and
+            (= ?out_position (call get_entity_position ?inp_entity))
+        )
+    )
+    (:axiom (literal ?out_value) (and (= ?out_value 7) (== ?out_value 7)))
+    (:axiom (arithmetic ?inp_value ?out_value) (and (= ?out_value (+ ?inp_value 2))))
+    (:axiom (solutions ?out_value) (and (candidate ?candidate) (= ?out_value (+ ?candidate 0))))
+    (:axiom (restore ?out_value) (alt (and (= ?out_value 1) (== 1 2)) (= ?out_value 2)))
+    (:axiom (fails ?out_value) (and (= ?out_value 9) (== 1 2)))
+    (:axiom (initialize_io ?io_value) (and (= ?io_value (call get_entity_position 1))))
+    (:axiom (initialize_nested_io ?io_value) (and (= ?io_value (+ (call get_entity_position 1) 0))))
+    (:axiom (forward ?out_value) (and (#literal ?out_value)))
+    (:axiom (io_fails ?io_value) (and (= ?io_value (call get_entity_position 1)) (== 1 2)))
+    (:axiom (io_solutions ?io_value) (and (candidate ?candidate) (= ?io_value (+ ?candidate 0))))
+    (:axiom (io_restore ?io_value) (alt (and (= ?io_value 1) (== 1 2)) (= ?io_value 2)))
+    (:axiom (io_alternatives ?io_value) (alt (= ?io_value 1) (= ?io_value 2)))
+    (:axiom (io_literal ?io_value) (and (= ?io_value 7) (== ?io_value 7)))
+    (:axiom (io_arithmetic ?io_value) (and (= ?io_value (+ 5 2))))
+)

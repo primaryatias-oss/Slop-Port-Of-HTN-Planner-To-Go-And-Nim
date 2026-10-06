@@ -1,0 +1,669 @@
+scenario MethodOverloads/empty
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+raw run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+rawdeferred run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+call run 42
+status SUCCEEDED
+plan 1
+step !override_one 42
+resolve
+exec !override_one 42
+resolution completed
+raw run 42
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !override_one 42
+rawdeferred run 42
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !override_one 42
+call run 1 2
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw run 1 2
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred run 1 2
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+raw run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+rawdeferred run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+call mixed
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw mixed
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !private_zero
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+raw mixed 9
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !public_one 9
+rawdeferred mixed 9
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !public_one 9
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+raw deferred 23
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later 23
+rawdeferred deferred 23
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later 23
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+raw defer_mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &mixed
+rawdeferred defer_mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &mixed
+rawdeferred later
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_zero
+rawdeferred later 5
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_one 5
+call no_such_method
+status INVALID_CALL
+plan 0
+end
+scenario MethodOverloadsRT/empty
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call run 42
+status SUCCEEDED
+plan 1
+step !override_one 42
+resolve
+exec !override_one 42
+resolution completed
+call run 1 2
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call mixed
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+rawdeferred later
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_zero
+rawdeferred later 5
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_one 5
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call run 42
+status SUCCEEDED
+plan 1
+step !override_one 42
+resolve
+exec !override_one 42
+resolution completed
+call run 1 2
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call mixed
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+rawdeferred later
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_zero
+rawdeferred later 5
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_one 5
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call run 42
+status SUCCEEDED
+plan 1
+step !override_one 42
+resolve
+exec !override_one 42
+resolution completed
+call run 1 2
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+call mixed
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+rawdeferred later
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_zero
+rawdeferred later 5
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_one 5
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+raw run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+rawdeferred run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+call run 42
+status SUCCEEDED
+plan 1
+step !override_one 42
+resolve
+exec !override_one 42
+resolution completed
+raw run 42
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !override_one 42
+rawdeferred run 42
+status SUCCEEDED
+info peak=4 capacity=8192 error=-
+plan 1
+step !override_one 42
+call run 1 2
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw run 1 2
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred run 1 2
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+call run
+status SUCCEEDED
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+resolve
+exec !base_zero
+exec !override_one 7
+exec !local_two 8 9
+exec !base_zero
+exec !base_one 10
+exec !walk_done 2
+resolution completed
+raw run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+rawdeferred run
+status SUCCEEDED
+info peak=20 capacity=8192 error=-
+plan 6
+step !base_zero
+step !override_one 7
+step !local_two 8 9
+step !base_zero
+step !base_one 10
+step !walk_done 2
+call mixed
+status INVALID_CALL
+plan 0
+resolve
+resolution completed
+raw mixed
+status INVALID_CALL
+info peak=0 capacity=8192 error=-
+plan 0
+rawdeferred mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !private_zero
+call mixed 9
+status SUCCEEDED
+plan 1
+step !public_one 9
+resolve
+exec !public_one 9
+resolution completed
+raw mixed 9
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !public_one 9
+rawdeferred mixed 9
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !public_one 9
+call deferred
+status SUCCEEDED
+plan 1
+step &later
+resolve
+exec !later_zero
+resolution completed
+raw deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later
+rawdeferred deferred
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later
+call deferred 23
+status SUCCEEDED
+plan 1
+step &later 23
+resolve
+exec !later_one 23
+resolution completed
+raw deferred 23
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later 23
+rawdeferred deferred 23
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &later 23
+call defer_mixed
+status SUCCEEDED
+plan 1
+step &mixed
+resolve
+exec !private_zero
+resolution completed
+raw defer_mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &mixed
+rawdeferred defer_mixed
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step &mixed
+rawdeferred later
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_zero
+rawdeferred later 5
+status SUCCEEDED
+info peak=2 capacity=8192 error=-
+plan 1
+step !later_one 5
+call no_such_method
+status INVALID_CALL
+plan 0
+end

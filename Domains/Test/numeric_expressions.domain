@@ -1,0 +1,316 @@
+(:domain NumericExpressionsDemo top_level_domain
+
+    (:method (run) top_level_method
+        (numeric_expressions_succeed
+            (and
+                (time ?time)
+                (plan_start_time ?plan_start_time)
+                (plan_duration ?plan_duration)
+                (<= ?time (+ ?plan_start_time ?plan_duration))
+                (== (+ 1 2 3) 6)
+                (== (- 10 3 2) 5)
+                (< (- 5) 0)
+                (== (* 2 3 4) 24)
+                (== (/ 20 2 2) 5)
+                (== (% 17 5) 2)
+                (== (+ 1 2.5) 3.5)
+                (== (++ 41) 42)
+                (== (-- 41) 40)
+                (== (++ 2.5) 3.5)
+                (== (-- (++ 10)) 10)
+                (> (* (- ?time 1) 2) (/ 100 2))
+            )
+            (
+                (!numeric_result "success")
+            )
+        )
+        (numeric_expressions_failed
+            (
+            )
+            (
+                (!numeric_result "failure")
+            )
+        )
+    )
+
+    (:method (division_by_zero) top_level_method
+        (invalid_expression_does_not_succeed
+            (and
+                (== (/ 1 0) 0)
+            )
+            (
+                (!numeric_result "unexpected_success")
+            )
+        )
+        (invalid_expression_falls_back
+            (
+            )
+            (
+                (!numeric_result "controlled_failure")
+            )
+        )
+    )
+
+    (:method (invalid_operand_type) top_level_method
+        (invalid_expression_does_not_succeed
+            (and
+                (== (+ invalid 1) 2)
+            )
+            (
+                (!numeric_result "unexpected_success")
+            )
+        )
+        (invalid_expression_falls_back
+            (
+            )
+            (
+                (!numeric_result "controlled_failure")
+            )
+        )
+    )
+
+    (:method (argument_expressions) top_level_method
+        (exercise_all_argument_contexts
+            ()
+            (
+                (compound_arithmetic_arguments
+                    (+ 1 2)
+                    (- 10 4)
+                    (* 2 3)
+                    (/ 12 2)
+                    (% 8 3)
+                    (++ 6)
+                    (-- 8)
+                )
+                (!primitive_arithmetic_arguments
+                    (+ 1 2)
+                    (- 10 4)
+                    (* 2 3)
+                    (/ 12 2)
+                    (% 8 3)
+                    (++ 6)
+                    (-- 8)
+                )
+                (!callterm_arithmetic_arguments
+                    (call add (+ 1 2) (- 10 4))
+                    (call add (* 2 3) (/ 12 2))
+                    (call add (% 8 3) (++ 6))
+                    (call inc (-- 8))
+                )
+                (recursive_method 0 2)
+            )
+        )
+    )
+
+    (:method (compound_arithmetic_arguments
+              ?inp_add ?inp_subtract ?inp_multiply ?inp_divide
+              ?inp_modulo ?inp_increment ?inp_decrement)
+        (emit_compound_arguments
+            ()
+            (
+                (!compound_arithmetic_arguments
+                    ?inp_add ?inp_subtract ?inp_multiply ?inp_divide
+                    ?inp_modulo ?inp_increment ?inp_decrement)
+            )
+        )
+    )
+
+    (:method (recursive_method ?inp_index ?inp_count)
+        (continue_recursion
+            (and
+                (< ?inp_index ?inp_count)
+            )
+            (
+                (recursive_method (++ ?inp_index) ?inp_count)
+            )
+        )
+        (finish_recursion
+            (and
+                (== ?inp_index ?inp_count)
+            )
+            (
+                (!recursive_arithmetic_result ?inp_index)
+            )
+        )
+    )
+
+    (:method (axiom_argument_expressions) top_level_method
+        (exercise_axiom_arguments
+            (and
+                (#accept_arithmetic_arguments
+                    (+ 1 2)
+                    (- 10 4)
+                    (* 2 3)
+                    (/ 12 2)
+                    (% 8 3)
+                    (++ 6)
+                    (-- 8)
+                )
+                (#accept_arithmetic_io (++ 6))
+            )
+            (
+                (!axiom_arithmetic_arguments "success")
+            )
+        )
+    )
+
+    (:method (axiom_output_expression) top_level_method
+        (matching_output
+            (and
+                (#produce_arithmetic_output (++ 6))
+            )
+            (
+                (!axiom_output_expression "success")
+            )
+        )
+    )
+
+    (:method (axiom_output_mismatch) top_level_method
+        (unexpected_match
+            (and
+                (#produce_arithmetic_output (++ 7))
+            )
+            (
+                (!axiom_output_mismatch "unexpected_success")
+            )
+        )
+        (expected_failure
+            ()
+            (
+                (!axiom_output_mismatch "controlled_failure")
+            )
+        )
+    )
+
+    (:method (axiom_io_mismatch) top_level_method
+        (unexpected_match
+            (and
+                (#accept_arithmetic_io (++ 7))
+            )
+            (
+                (!axiom_io_mismatch "unexpected_success")
+            )
+        )
+        (expected_failure
+            ()
+            (
+                (!axiom_io_mismatch "controlled_failure")
+            )
+        )
+    )
+
+    (:method (axiom_invalid_input_expression) top_level_method
+        (unexpected_match
+            (and
+                (#accept_arithmetic_arguments
+                    (/ 1 0) 6 6 6 2 7 7)
+            )
+            (
+                (!axiom_invalid_input_expression "unexpected_success")
+            )
+        )
+        (expected_failure
+            ()
+            (
+                (!axiom_invalid_input_expression "controlled_failure")
+            )
+        )
+    )
+
+    (:method (axiom_invalid_output_expression) top_level_method
+        (unexpected_match
+            (and
+                (#produce_arithmetic_output (/ 1 0))
+            )
+            (
+                (!axiom_invalid_output_expression "unexpected_success")
+            )
+        )
+        (expected_failure
+            ()
+            (
+                (!axiom_invalid_output_expression "controlled_failure")
+            )
+        )
+    )
+
+    (:axiom (accept_arithmetic_arguments
+             ?inp_add ?inp_subtract ?inp_multiply ?inp_divide
+             ?inp_modulo ?inp_increment ?inp_decrement)
+        (and
+            (== ?inp_add 3)
+            (== ?inp_subtract 6)
+            (== ?inp_multiply 6)
+            (== ?inp_divide 6)
+            (== ?inp_modulo 2)
+            (== ?inp_increment 7)
+            (== ?inp_decrement 7)
+        )
+    )
+
+    (:axiom (accept_arithmetic_io ?io_value)
+        (and
+            (== ?io_value 7)
+        )
+    )
+
+    (:axiom (produce_arithmetic_output ?out_value)
+        (and
+            (generated_number ?out_value)
+        )
+    )
+
+    (:method (assignment_values) top_level_method
+        (success
+            (and
+                (= ?kind main_threat)
+                (= ?number (+ 2 3))
+                (= ?copy ?number)
+                (= ?result (call assignment_probe ?copy))
+                (= ?flag false)
+            )
+            ((!assignment_values ?kind ?number ?result ?flag))
+        )
+    )
+
+    (:method (assignment_backtracking) top_level_method
+        (success
+            (and
+                (assignment_candidate ?candidate)
+                (= ?value (call assignment_probe ?candidate))
+                (== ?value 3)
+            )
+            ((!assignment_result ?value))
+        )
+    )
+
+    (:method (assignment_nested_calls) top_level_method
+        (success
+            (and (= ?value (+ (call assignment_probe 1) (call assignment_probe 2))))
+            ((!assignment_result ?value))
+        )
+    )
+
+    (:method (assignment_failure) top_level_method
+        (failed (and (= ?value (/ 1 0))) ((!unexpected ?value)))
+        (fallback (and (= ?value 9)) ((!assignment_result ?value)))
+    )
+
+    (:method (assignment_ordered_failure) top_level_method
+        (arithmetic_failure (and (= ?value (+ (/ 1 0) (call assignment_probe 1)))) ((!unexpected ?value)))
+        (type_failure (and (= ?value (+ false (call assignment_probe 1)))) ((!unexpected ?value)))
+        (argument_failure (and (= ?value (call assignment_probe (/ 1 0) (call assignment_probe 1)))) ((!unexpected ?value)))
+        (fallback (and (= ?value 9)) ((!assignment_result ?value)))
+    )
+
+    (:method (assignment_axiom) top_level_method
+        (success (and (#assignment_local ?result)) ((!assignment_result ?result)))
+    )
+    (:axiom (assignment_local ?out_result)
+        (and
+            (= ?local 2)
+            (assignment_candidate ?out_result)
+            (== ?out_result ?local)
+        )
+    )
+)

@@ -1,0 +1,1 @@
+(:domain Good top_level_domain (:method (run) top_level_method (b (and (#a) (#a 1)) ())) (:axiom (a) (and (#a 1))) (:axiom (a ?inp_x) (and (== ?inp_x 1))))
